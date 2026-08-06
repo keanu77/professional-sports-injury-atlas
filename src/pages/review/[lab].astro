@@ -1,0 +1,117 @@
+---
+/**
+ * Review-only component lab. `getStaticPaths()` returns exactly one static
+ * path named `component-lab` in review mode and zero paths in public mode,
+ * so the lab never enters the public route manifest. Every fixture below is
+ * an in-memory, visibly fictional record (fictional athlete, uploader, and
+ * video ID); no real player, team, diagnosis, or media ID appears, and the
+ * NBA-host fixture is a link that no test or reader flow ever requests.
+ */
+import CaseTimeline from "../../components/cases/CaseTimeline.astro";
+import CaseVideo from "../../components/cases/CaseVideo.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { resolveBuildMode } from "../../lib/governance/build-mode";
+import { componentLabStaticParams } from "../../lib/video/player-state";
+
+export function getStaticPaths(): Array<{ params: { lab: string } }> {
+  return componentLabStaticParams(
+    resolveBuildMode(process.env.ATLAS_BUILD_MODE),
+  ).map((params) => ({ params }));
+}
+
+const FICTIONAL_VIDEO_ID = "fIcTiOnAl01";
+const FICTIONAL_WATCH_URL = `https://www.youtube.com/watch?v=${FICTIONAL_VIDEO_ID}`;
+
+const fictionalYouTubeVideo = {
+  provider: "youtube",
+  canonicalUrl: FICTIONAL_WATCH_URL,
+  uploaderName: "虛構聯盟媒體頻道（Fictional League Media）",
+  durationSeconds: 187,
+  embedStatus: "verified",
+  captionStatus: "not-verified",
+} as const;
+
+const fictionalSegments = [
+  { startSeconds: 12, endSeconds: 18, observation: "虛構示範：起跳與落地瞬間" },
+  { startSeconds: 45, endSeconds: 52, observation: "虛構示範：受扶離場畫面" },
+];
+
+const fictionalNbaVideo = {
+  provider: "nba",
+  canonicalUrl: "https://www.nba.com/watch/fictional-demo-clip",
+  uploaderName: "虛構官方轉播單位（Fictional Broadcast Unit）",
+  durationSeconds: 95,
+  embedStatus: "external-link-only",
+  captionStatus: "not-verified",
+} as const;
+---
+
+<BaseLayout
+  title="元件實驗室（審查專用）"
+  description="Review-only 元件實驗室：虛構資料示範 click-to-load 影片、時間軸與失敗狀態。"
+>
+  <h1>元件實驗室（審查專用）</h1>
+  <p>
+    本頁僅存在於 review 建置，全部內容為明顯虛構的示範資料（虛構球員甲、虛構
+    聯盟媒體頻道），不含任何真實球員、球隊、診斷或媒體 ID。
+  </p>
+
+  <section aria-labelledby="lab-embed-review-heading">
+    <h2 id="lab-embed-review-heading">
+      案例：虛構球員甲（Fictional Player A）— 審查模式 click-to-load
+    </h2>
+    <CaseVideo
+      scopeId="lab-embed-review"
+      displayMode="review"
+      sourceTitle="虛構示範受傷片段（Fictional Demo Clip）"
+      video={fictionalYouTubeVideo}
+    />
+    <CaseTimeline
+      scopeId="lab-embed-review"
+      canonicalUrl={FICTIONAL_WATCH_URL}
+      segments={fictionalSegments}
+    />
+  </section>
+
+  <section aria-labelledby="lab-embed-public-heading">
+    <h2 id="lab-embed-public-heading">公開模式：字幕可用，站內播放器允許</h2>
+    <CaseVideo
+      scopeId="lab-embed-public"
+      displayMode="public"
+      sourceTitle="虛構示範片段：字幕可用（Fictional Captioned Clip）"
+      video={{ ...fictionalYouTubeVideo, captionStatus: "available" }}
+    />
+  </section>
+
+  <section aria-labelledby="lab-public-degraded-heading">
+    <h2 id="lab-public-degraded-heading">
+      公開模式：字幕未提供，降級為原始連結
+    </h2>
+    <CaseVideo
+      scopeId="lab-public-degraded"
+      displayMode="public"
+      sourceTitle="虛構示範片段：無字幕（Fictional Uncaptioned Clip）"
+      video={{ ...fictionalYouTubeVideo, captionStatus: "unavailable" }}
+    />
+  </section>
+
+  <section aria-labelledby="lab-external-heading">
+    <h2 id="lab-external-heading">已註冊 NBA provider：external-link-only</h2>
+    <CaseVideo
+      scopeId="lab-external"
+      displayMode="review"
+      sourceTitle="虛構官方平台片段（Fictional Official Platform Clip）"
+      video={fictionalNbaVideo}
+    />
+  </section>
+
+  <section aria-labelledby="lab-unavailable-heading">
+    <h2 id="lab-unavailable-heading">影片 unavailable：明確通知、無播放器</h2>
+    <CaseVideo
+      scopeId="lab-unavailable"
+      displayMode="review"
+      sourceTitle="虛構示範片段：已下架（Fictional Removed Clip）"
+      video={{ ...fictionalYouTubeVideo, embedStatus: "unavailable" }}
+    />
+  </section>
+</BaseLayout>

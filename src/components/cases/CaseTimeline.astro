@@ -1,0 +1,100 @@
+---
+/**
+ * Case video timeline. Every entry is a normal anchor whose href is the real
+ * canonical source timestamp URL, so the timeline works without JavaScript
+ * and whenever the in-site player is absent or failed. The client script
+ * intercepts clicks only while the matching click-to-load player is ready
+ * and then calls the typed adapter's `seekTo()` on the same player.
+ */
+import { formatDurationLabel } from "../../lib/video/player-state";
+import { buildTimestampUrl } from "../../lib/video/youtube";
+
+interface TimelineSegment {
+  startSeconds: number;
+  endSeconds: number;
+  observation: string;
+}
+
+interface Props {
+  scopeId: string;
+  canonicalUrl: string;
+  segments: TimelineSegment[];
+}
+
+const { scopeId, canonicalUrl, segments } = Astro.props;
+
+const entries = segments.map((segment) => ({
+  href: buildTimestampUrl(canonicalUrl, segment.startSeconds),
+  startSeconds: segment.startSeconds,
+  label: `${formatDurationLabel(segment.startSeconds)}–${formatDurationLabel(
+    segment.endSeconds,
+  )}`,
+  observation: segment.observation,
+}));
+---
+
+<section
+  class="case-timeline"
+  data-video-timeline
+  data-video-scope={scopeId}
+  aria-label="影片時間軸"
+>
+  <h3 class="case-timeline-heading">影片時間軸</h3>
+  <ol class="case-timeline-list">
+    {
+      entries.map((entry) => (
+        <li>
+          <a
+            class="case-timeline-link"
+            href={entry.href}
+            data-timecode={entry.startSeconds}
+            rel="noopener noreferrer"
+          >
+            <span class="case-timeline-time">{entry.label}</span>
+            <span>{entry.observation}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ol>
+</section>
+
+<script>
+  import { initCaseVideos } from "../../scripts/video-player";
+
+  initCaseVideos();
+</script>
+
+<style>
+  .case-timeline {
+    margin: 0;
+  }
+
+  .case-timeline-heading {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-heading);
+  }
+
+  .case-timeline-list {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+
+  .case-timeline-list li {
+    margin-bottom: 0.375rem;
+  }
+
+  .case-timeline-link {
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    min-height: 44px;
+    align-content: center;
+    color: var(--color-action);
+  }
+
+  .case-timeline-time {
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+  }
+</style>

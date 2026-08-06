@@ -1,0 +1,225 @@
+---
+/**
+ * Neutral click-to-load case video card. It never renders video screenshots
+ * or remote thumbnails: the initial card shows the source title, uploader,
+ * duration, visible caption state, a warm-orange play symbol with dark text,
+ * a normal canonical source anchor, and the load button. The presentation is
+ * resolved server-side from the validated video contract: click-to-load only
+ * for the registered YouTube provider with a permitted embed/caption state,
+ * external-link-only otherwise, and a clear notice (no player) when the
+ * video is unavailable. Review mode may expose the technical player state to
+ * the named reviewer while keeping the visible caption warning.
+ */
+import {
+  captionStatusLabel,
+  formatDurationLabel,
+  resolvePlayerPresentation,
+  type VideoDisplayMode,
+} from "../../lib/video/player-state";
+import { parseYouTubeVideoId } from "../../lib/video/youtube";
+import type { CaptionStatus } from "../../lib/contracts/case";
+import type { EmbedStatus } from "../../lib/contracts/taxonomy";
+
+interface Props {
+  scopeId: string;
+  displayMode: VideoDisplayMode;
+  sourceTitle: string;
+  video: {
+    provider: string;
+    canonicalUrl: string;
+    uploaderName: string;
+    durationSeconds: number;
+    embedStatus: EmbedStatus;
+    captionStatus: CaptionStatus;
+  };
+}
+
+const { scopeId, displayMode, sourceTitle, video } = Astro.props;
+
+const presentation = resolvePlayerPresentation({
+  providerCode: video.provider,
+  canonicalUrl: video.canonicalUrl,
+  embedStatus: video.embedStatus,
+  captionStatus: video.captionStatus,
+  displayMode,
+});
+
+let videoId: string | null = null;
+if (presentation === "click-to-load") {
+  videoId = parseYouTubeVideoId(video.canonicalUrl);
+  if (videoId === null) {
+    throw new Error(
+      `click-to-load requires a canonical YouTube URL: ${video.canonicalUrl}`,
+    );
+  }
+}
+
+const captionLabel = captionStatusLabel(video.captionStatus);
+const durationLabel = formatDurationLabel(video.durationSeconds);
+const captionWarning =
+  video.captionStatus === "available"
+    ? null
+    : displayMode === "public"
+      ? "依無障礙政策，字幕未確認可用的影片不在本站內嵌播放，僅提供原始平台連結與文字說明。"
+      : "字幕尚未確認可用：公開版將降級為原始平台連結，站內播放僅供審查。";
+---
+
+{
+  presentation === "unavailable-notice" ? (
+    <section
+      class="case-video case-video-unavailable"
+      data-video-unavailable
+      aria-label={`影片狀態：${sourceTitle}`}
+    >
+      <p class="case-video-title">{sourceTitle}</p>
+      <p class="case-video-facts">
+        上傳者：{video.uploaderName}｜長度：{durationLabel}
+      </p>
+      <p class="case-video-caption-status">{captionLabel}</p>
+      <p class="case-video-notice" data-video-unavailable-notice>
+        原始影片目前無法取得，本案例暫不提供影片播放。文字說明仍然完整可讀。
+      </p>
+    </section>
+  ) : (
+    <figure
+      class="case-video"
+      data-video-scope={presentation === "click-to-load" ? scopeId : undefined}
+      data-video-embed={presentation === "click-to-load" ? "" : undefined}
+      data-video-external={
+        presentation === "external-link-only" ? "" : undefined
+      }
+      data-video-id={videoId ?? undefined}
+      data-video-title={
+        presentation === "click-to-load"
+          ? `案例影片播放器：${sourceTitle}`
+          : undefined
+      }
+    >
+      <figcaption class="case-video-meta">
+        <p class="case-video-title">{sourceTitle}</p>
+        <p class="case-video-facts">
+          上傳者：{video.uploaderName}｜長度：{durationLabel}
+        </p>
+        <p
+          class="case-video-caption-status"
+          data-caption-status={video.captionStatus}
+        >
+          {captionLabel}
+        </p>
+        {captionWarning !== null && (
+          <p class="case-video-warning" data-caption-warning>
+            {captionWarning}
+          </p>
+        )}
+        {displayMode === "review" && (
+          <p class="case-video-review-state" data-review-state>
+            審查資訊：embedStatus={video.embedStatus}、captionStatus=
+            {video.captionStatus}、presentation={presentation}
+          </p>
+        )}
+        <p>
+          <a
+            class="case-video-source-link"
+            data-video-source-link
+            href={video.canonicalUrl}
+            rel="noopener noreferrer"
+          >
+            於原始平台觀看原始影片（外部連結）
+          </a>
+        </p>
+      </figcaption>
+      {presentation === "click-to-load" && (
+        <div class="case-video-stage" data-video-stage>
+          <button type="button" class="video-load-button" data-video-load>
+            <span class="video-play-symbol" aria-hidden="true">
+              ▶
+            </span>
+            <span>載入站內播放器（點擊後才會連線至 YouTube）</span>
+          </button>
+          <p class="case-video-failure" data-video-failure hidden>
+            站內播放器載入失敗，請改用上方原始連結；時間軸連結會直接開啟原始平台。
+          </p>
+        </div>
+      )}
+    </figure>
+  )
+}
+
+<script>
+  import { initCaseVideos } from "../../scripts/video-player";
+
+  initCaseVideos();
+</script>
+
+<style>
+  .case-video {
+    margin: 0;
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-surface);
+  }
+
+  .case-video-title {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-heading);
+    font-weight: 600;
+  }
+
+  .case-video-facts,
+  .case-video-caption-status,
+  .case-video-review-state {
+    margin: 0 0 0.5rem;
+  }
+
+  .case-video-warning {
+    margin: 0 0 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    font-weight: 600;
+  }
+
+  .case-video-stage {
+    margin-top: 0.75rem;
+  }
+
+  .video-load-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 44px;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--color-on-accent);
+    border-radius: 8px;
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .video-play-symbol {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid var(--color-on-accent);
+    border-radius: 50%;
+  }
+
+  .case-video-failure {
+    margin: 0.5rem 0 0;
+    font-weight: 600;
+  }
+
+  .case-video :global(.case-video-frame) {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    border-radius: 6px;
+  }
+</style>
