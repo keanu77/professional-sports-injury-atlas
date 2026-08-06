@@ -1,0 +1,52 @@
+---
+/**
+ * Site header with text-only identity (no league/team marks or imagery),
+ * a mobile navigation disclosure, and the theme/font-scale controls.
+ * src/scripts/preferences.ts drives aria-expanded, Escape close with focus
+ * return, and the focus trap while the panel is open.
+ */
+import FontScaleControl from "./FontScaleControl.astro";
+import ThemeToggle from "./ThemeToggle.astro";
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <p class="site-identity">
+      <a class="site-identity-link" href="/">職業運動傷害影片圖鑑</a>
+    </p>
+    <button
+      type="button"
+      class="control-button nav-toggle"
+      data-nav-toggle
+      aria-expanded="false"
+      aria-controls="site-nav-panel"
+      aria-label="主選單"
+    >
+      選單
+    </button>
+    <nav
+      id="site-nav-panel"
+      class="site-nav"
+      data-open="false"
+      aria-label="主導覽"
+    >
+      <ul class="site-nav-list">
+        <li>
+          <a
+            class="site-nav-link"
+            href="/"
+            aria-current={currentPath === "/" ? "page" : undefined}
+          >
+            首頁
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="site-controls">
+      <ThemeToggle />
+      <FontScaleControl />
+    </div>
+  </div>
+</header>

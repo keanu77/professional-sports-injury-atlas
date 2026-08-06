@@ -1,0 +1,26 @@
+---
+/**
+ * Font-scale stepper. Steps through 0.875-1.5 via
+ * src/scripts/preferences.ts; each button keeps an explicit label and a
+ * 44x44 target. The value persists only in the reader's localStorage.
+ */
+---
+
+<div class="font-scale-control" role="group" aria-label="字級調整">
+  <button
+    type="button"
+    class="control-button"
+    data-font-step="down"
+    aria-label="縮小字級"
+  >
+    A−
+  </button>
+  <button
+    type="button"
+    class="control-button"
+    data-font-step="up"
+    aria-label="放大字級"
+  >
+    A＋
+  </button>
+</div>

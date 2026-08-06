@@ -1,0 +1,17 @@
+---
+/**
+ * Manual dark-mode toggle. aria-pressed reflects the current theme; the
+ * persisted value lives only in the reader's localStorage. The button starts
+ * unpressed for the light default and src/scripts/preferences.ts syncs it to
+ * the restored preference on load.
+ */
+---
+
+<button
+  type="button"
+  class="control-button"
+  data-theme-toggle
+  aria-pressed="false"
+>
+  深色模式
+</button>

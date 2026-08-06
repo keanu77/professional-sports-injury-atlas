@@ -1,0 +1,22 @@
+---
+/**
+ * Review-build banner. Rendered only in review mode so every internal page
+ * states that content is still under medical review and must not be
+ * redistributed or indexed. Public builds render nothing.
+ */
+import type { BuildMode } from "../../lib/governance/build-mode";
+
+interface Props {
+  buildMode: BuildMode;
+}
+
+const { buildMode } = Astro.props;
+---
+
+{
+  buildMode === "review" && (
+    <p class="review-banner">
+      內部醫療審查版本：內容尚未完成審查與公開授權，請勿對外散布或索引。
+    </p>
+  )
+}

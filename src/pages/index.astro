@@ -1,14 +1,12 @@
 ---
-// Minimal bootstrap page on the governed BaseLayout. Task 5/7 add the full
-// design system and injury atlas routes.
+// Minimal bootstrap page on the governed BaseLayout, which now renders the
+// single main landmark and site chrome. Task 7 adds the injury atlas routes.
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const title = "職業運動傷害影片圖鑑";
 ---
 
 <BaseLayout title={title}>
-  <main>
-    <h1>{title}</h1>
-    <p>平台底座建置中；尚無案例內容。</p>
-  </main>
+  <h1>{title}</h1>
+  <p>平台底座建置中；尚無案例內容。</p>
 </BaseLayout>

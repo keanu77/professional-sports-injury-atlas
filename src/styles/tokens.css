@@ -1,0 +1,58 @@
+/**
+ * Design tokens aligned with sportsmedicine.tw. This file is the single
+ * source of truth parsed by tests/unit/color-contrast.test.ts, which enforces
+ * WCAG AA for every declared text/background pair. White text is forbidden on
+ * --brand-500 (the pair is below 4.5:1): white goes on --brand-action only,
+ * and the warm accent always carries dark ink. The semantic --color-* layer
+ * is what components consume; the manual dark theme re-aliases it.
+ */
+
+:root {
+  /* Brand palette (exact plan values) */
+  --brand-500: #2288bb;
+  --brand-action: #00658d;
+  --ink-strong: #002b3c;
+  --surface-page: #f9fcfc;
+  --surface-info: #edf7fc;
+  --accent-500: #e77846;
+  --accent-ink: #002b3c;
+  --dark-page: #001e2b;
+  --dark-surface: #083747;
+  --dark-ink: #eaf7fa;
+  --dark-action: #7cc8e8;
+  --dark-accent: #f49a6c;
+  --on-action: #ffffff;
+
+  /* Typography */
+  --font-display:
+    "Barlow Condensed", "PingFang TC", "Microsoft JhengHei", "Noto Sans CJK TC",
+    sans-serif;
+  --font-heading:
+    "Fraunces", "PingFang TC", "Microsoft JhengHei", "Noto Sans CJK TC", serif;
+  --font-body:
+    "Inter", "PingFang TC", "Microsoft JhengHei", "Noto Sans CJK TC", sans-serif;
+  --font-scale: 1;
+
+  /* Semantic colors: light theme (default) */
+  --color-page: var(--surface-page);
+  --color-surface: var(--surface-info);
+  --color-text: var(--ink-strong);
+  --color-action: var(--brand-action);
+  --color-on-action: var(--on-action);
+  --color-accent: var(--accent-500);
+  --color-on-accent: var(--accent-ink);
+  --color-border: var(--brand-500);
+  --color-focus: var(--brand-action);
+}
+
+:root[data-theme="dark"] {
+  --color-page: var(--dark-page);
+  --color-surface: var(--dark-surface);
+  --color-text: var(--dark-ink);
+  --color-action: var(--dark-action);
+  --color-on-action: var(--ink-strong);
+  --color-accent: var(--dark-accent);
+  --color-on-accent: var(--accent-ink);
+  --color-border: var(--dark-action);
+  --color-focus: var(--dark-action);
+}

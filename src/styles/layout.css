@@ -1,0 +1,130 @@
+/**
+ * Page shell: skip link, header with text-only identity, disclosure
+ * navigation, single main column, and footer. Widths are fluid with a single
+ * max-width so 200% zoom (320px reflow) never produces horizontal
+ * main-content scrolling.
+ */
+
+.skip-link {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  z-index: 100;
+  transform: translateY(-200%);
+  padding: 0.75rem 1.25rem;
+  background: var(--color-action);
+  color: var(--color-on-action);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.site-header {
+  background: var(--color-surface);
+  border-block-end: 2px solid var(--color-border);
+}
+
+.site-header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: 0.75rem 1rem;
+}
+
+.site-identity {
+  margin: 0;
+  margin-inline-end: auto;
+}
+
+.site-identity-link {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.site-nav {
+  display: none;
+}
+
+.site-nav[data-open="true"] {
+  display: block;
+  flex-basis: 100%;
+  order: 10;
+  border-block-start: 1px solid var(--color-border);
+  padding-block-start: 0.5rem;
+}
+
+.site-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 0.75rem;
+  color: var(--color-action);
+}
+
+.site-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (min-width: 48rem) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .site-nav,
+  .site-nav[data-open="false"] {
+    display: block;
+  }
+
+  .site-nav[data-open="true"] {
+    flex-basis: auto;
+    order: 0;
+    border-block-start: none;
+    padding-block-start: 0;
+  }
+}
+
+main {
+  flex: 1 0 auto;
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.site-footer {
+  background: var(--color-surface);
+  border-block-start: 2px solid var(--color-border);
+}
+
+.site-footer-inner {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: 1.5rem 1rem;
+  font-size: 0.9375rem;
+}
+
+.site-footer-inner p {
+  margin: 0 0 0.5rem;
+}
