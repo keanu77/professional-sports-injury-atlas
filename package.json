@@ -1,0 +1,54 @@
+{
+  "name": "professional-sports-injury-atlas",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.14.0 <25"
+  },
+  "scripts": {
+    "dev": "ATLAS_BUILD_MODE=review astro dev",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "astro check --minimumFailingSeverity warning",
+    "content:check": "tsx scripts/check-content.ts",
+    "test:unit": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "build:review": "ATLAS_BUILD_MODE=review astro build",
+    "preview": "astro preview",
+    "test:e2e": "playwright test",
+    "test:lighthouse": "tsx scripts/run-lighthouse.ts",
+    "plan:verify": "tsx scripts/verify-plan-binding.ts",
+    "plan:bind": "tsx scripts/bind-authority-document.ts",
+    "plan:assert-authorized": "tsx scripts/assert-plan-authorized.ts",
+    "plan:resolve": "tsx scripts/resolve-active-plan.ts",
+    "plan:decision:verify": "tsx scripts/validate-plan-execution-decision.ts",
+    "rtp:import": "tsx scripts/import-rtp-catalog.ts",
+    "external:verify": "tsx scripts/verify-external-sources.ts",
+    "brand:verify": "tsx scripts/verify-brand-assets.ts",
+    "review-set:generate": "tsx scripts/generate-review-set.ts",
+    "verify:review-artifact": "tsx scripts/verify-review-artifact.ts",
+    "release:public": "ATLAS_BUILD_MODE=public tsx scripts/release-check.ts && ATLAS_BUILD_MODE=public astro build && ATLAS_BUILD_MODE=public tsx scripts/verify-public-artifact.ts",
+    "verify": "npm run plan:verify && npm run format:check && npm run check && npm run content:check && npm run test:coverage && npm run build:review && npm run test:e2e && npm run test:lighthouse && npm run brand:verify && npm run verify:review-artifact"
+  },
+  "dependencies": {
+    "@fontsource/barlow-condensed": "5.3.0",
+    "@fontsource/fraunces": "5.3.0",
+    "@fontsource/inter": "5.3.0",
+    "astro": "7.1.6"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@axe-core/playwright": "4.12.1",
+    "@playwright/test": "1.62.1",
+    "@types/node": "24.13.3",
+    "@vitest/coverage-v8": "4.1.10",
+    "chrome-launcher": "1.2.1",
+    "lighthouse": "13.4.1",
+    "prettier": "3.9.6",
+    "prettier-plugin-astro": "0.14.1",
+    "tsx": "4.23.8",
+    "typescript": "5.9.3",
+    "vitest": "4.1.10"
+  }
+}

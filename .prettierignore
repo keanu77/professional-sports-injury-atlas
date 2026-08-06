@@ -1,0 +1,13 @@
+docs/superpowers/**
+docs/decisions/**
+src/data/generated/*.json
+src/data/governance/course-link-decisions/*.json
+src/data/governance/video-rights-decisions/*.json
+schemas/*.json
+research/source-manifests/*.json
+research/source-manifest-registry.v1.json
+research/reviews/source-batches/*.json
+research/verification/*.json
+public-release-history/*.json
+public-release-artifacts/**/*.json
+review/**/*.json
