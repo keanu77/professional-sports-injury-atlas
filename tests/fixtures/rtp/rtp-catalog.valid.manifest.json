@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-08-02T00:00:00Z",
+  "counts": {
+    "topics": 3,
+    "units": 3,
+    "evidenceReferences": 3,
+    "evidenceData": 3,
+    "videos": 0
+  },
+  "sourceDigest": "5555555555555555555555555555555555555555555555555555555555555555",
+  "catalogSha256": "0000000000000000000000000000000000000000000000000000000000000000"
+}

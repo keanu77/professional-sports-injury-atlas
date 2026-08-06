@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "links": [
+    {
+      "key": "ankle-lateral-nonoperative",
+      "injuryCode": "ankle-sprain",
+      "catalogSlug": "ankle-sprain-rehab-return-to-sport",
+      "scopeNote": "急性、非手術、外側踝扭傷；不代表所有腳踝扭傷",
+      "linkApproval": {
+        "status": "pending",
+        "approvedPublicUrl": null,
+        "approvedBy": null,
+        "approvedAt": null,
+        "approvedCatalogContentDigest": null,
+        "policyVersion": null,
+        "decisionPath": null,
+        "decisionDigest": null
+      }
+    },
+    {
+      "key": "acl-primary-reconstruction",
+      "injuryCode": "acl",
+      "catalogSlug": "acl-reconstruction-rehab-return-to-sport",
+      "scopeNote": "成人初次、單側、單純 ACL 重建術後；不代表所有 ACL 損傷",
+      "linkApproval": {
+        "status": "pending",
+        "approvedPublicUrl": null,
+        "approvedBy": null,
+        "approvedAt": null,
+        "approvedCatalogContentDigest": null,
+        "policyVersion": null,
+        "decisionPath": null,
+        "decisionDigest": null
+      }
+    },
+    {
+      "key": "achilles-primary-repair",
+      "injuryCode": "achilles-rupture",
+      "catalogSlug": "achilles-primary-repair-rehab-return-to-sport",
+      "scopeNote": "成人急性中段斷裂初次手術修補後；不代表所有阿基里斯腱斷裂",
+      "linkApproval": {
+        "status": "pending",
+        "approvedPublicUrl": null,
+        "approvedBy": null,
+        "approvedAt": null,
+        "approvedCatalogContentDigest": null,
+        "policyVersion": null,
+        "decisionPath": null,
+        "decisionDigest": null
+      }
+    }
+  ]
+}

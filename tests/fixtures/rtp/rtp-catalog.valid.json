@@ -1,0 +1,732 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-08-02T00:00:00Z",
+  "sourceDigest": "5555555555555555555555555555555555555555555555555555555555555555",
+  "counts": {
+    "topics": 3,
+    "units": 3,
+    "evidenceReferences": 3,
+    "evidenceData": 3,
+    "videos": 0
+  },
+  "topics": [
+    {
+      "slug": "achilles-primary-repair-rehab-return-to-sport",
+      "contentDigest": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "titleZh": "阿基里斯腱修補復健",
+      "titleEn": "Achilles Primary Repair Rehabilitation",
+      "subtitle": "阿基里斯腱修補復健的復健與回場流程。",
+      "expectedUnitCount": 1,
+      "contentUpdatedAt": "2026-08-02",
+      "taxonomy": {
+        "primaryBodyRegion": "foot-ankle",
+        "secondaryBodyRegions": [],
+        "structures": ["achilles-tendon"],
+        "carePathway": "operative",
+        "episode": "postoperative",
+        "sportContexts": ["daily", "running"]
+      },
+      "schemaEntities": {
+        "condition": {
+          "nameZh": "阿基里斯腱斷裂",
+          "nameEn": "Achilles Tendon Rupture"
+        }
+      },
+      "patientSummary": {
+        "id": "TOPIC-SUMMARY",
+        "text": "Fixture statement TOPIC-SUMMARY",
+        "referenceIds": ["REF-FIX-2021"],
+        "evidenceDataIds": ["U1-EVID-01"]
+      },
+      "appliesTo": [
+        {
+          "id": "TOPIC-APPLIES-01",
+          "text": "Fixture statement TOPIC-APPLIES-01",
+          "referenceIds": ["REF-FIX-2021"],
+          "evidenceDataIds": ["U1-EVID-01"]
+        }
+      ],
+      "keyExclusions": [
+        {
+          "id": "TOPIC-EXCLUSION-01",
+          "text": "Fixture statement TOPIC-EXCLUSION-01",
+          "referenceIds": ["REF-FIX-2021"],
+          "evidenceDataIds": ["U1-EVID-01"]
+        }
+      ],
+      "redFlags": [
+        {
+          "id": "TOPIC-REDFLAG-01",
+          "text": "Fixture statement TOPIC-REDFLAG-01",
+          "referenceIds": ["REF-FIX-2021"],
+          "evidenceDataIds": ["U1-EVID-01"]
+        }
+      ],
+      "returnGoal": {
+        "id": "TOPIC-RETURN-GOAL",
+        "text": "Fixture statement TOPIC-RETURN-GOAL",
+        "referenceIds": ["REF-FIX-2021"],
+        "evidenceDataIds": ["U1-EVID-01"]
+      },
+      "units": [
+        {
+          "id": "U1",
+          "order": 1,
+          "titleZh": "第一階段",
+          "titleEn": "Phase One",
+          "patientGuide": {
+            "overview": {
+              "id": "U1-PATIENT-OVERVIEW",
+              "text": "Fixture statement U1-PATIENT-OVERVIEW",
+              "referenceIds": ["REF-FIX-2021"],
+              "evidenceDataIds": ["U1-EVID-01"]
+            },
+            "whatYouMayNotice": [
+              {
+                "id": "U1-PATIENT-NOTICE-01",
+                "text": "Fixture statement U1-PATIENT-NOTICE-01",
+                "referenceIds": ["REF-FIX-2021"],
+                "evidenceDataIds": ["U1-EVID-01"]
+              }
+            ],
+            "howYouCanParticipate": [
+              {
+                "id": "U1-PATIENT-PARTICIPATE-01",
+                "text": "Fixture statement U1-PATIENT-PARTICIPATE-01",
+                "referenceIds": ["REF-FIX-2021"],
+                "evidenceDataIds": ["U1-EVID-01"]
+              }
+            ],
+            "contactCareTeamIf": [
+              {
+                "id": "U1-PATIENT-CONTACT-01",
+                "text": "Fixture statement U1-PATIENT-CONTACT-01",
+                "referenceIds": ["REF-FIX-2021"],
+                "evidenceDataIds": ["U1-EVID-01"]
+              }
+            ],
+            "takeHomeMessage": {
+              "id": "U1-PATIENT-TAKE-HOME",
+              "text": "Fixture statement U1-PATIENT-TAKE-HOME",
+              "referenceIds": ["REF-FIX-2021"],
+              "evidenceDataIds": ["U1-EVID-01"]
+            }
+          },
+          "goals": [
+            {
+              "id": "U1-GOAL-01",
+              "text": "Fixture statement U1-GOAL-01",
+              "referenceIds": ["REF-FIX-2021"],
+              "evidenceDataIds": ["U1-EVID-01"]
+            }
+          ],
+          "beforeStart": [
+            {
+              "id": "U1-BEFORE-01",
+              "text": "Fixture statement U1-BEFORE-01",
+              "referenceIds": ["REF-FIX-2021"],
+              "evidenceDataIds": ["U1-EVID-01"]
+            }
+          ],
+          "progressWhen": [
+            {
+              "id": "U1-PROGRESS-01",
+              "text": "Fixture statement U1-PROGRESS-01",
+              "referenceIds": ["REF-FIX-2021"],
+              "evidenceDataIds": ["U1-EVID-01"]
+            }
+          ],
+          "holdRegressOrSeekCare": [
+            {
+              "id": "U1-HOLD-01",
+              "text": "Fixture statement U1-HOLD-01",
+              "referenceIds": ["REF-FIX-2021"],
+              "evidenceDataIds": ["U1-EVID-01"]
+            }
+          ],
+          "clinicalActions": [
+            {
+              "id": "U1-CLINICAL-01",
+              "text": "Fixture statement U1-CLINICAL-01",
+              "referenceIds": ["REF-FIX-2021"],
+              "evidenceDataIds": ["U1-EVID-01"]
+            }
+          ],
+          "monitoring": [
+            {
+              "id": "U1-MONITOR-01",
+              "text": "Fixture statement U1-MONITOR-01",
+              "referenceIds": ["REF-FIX-2021"],
+              "evidenceDataIds": ["U1-EVID-01"]
+            }
+          ],
+          "evidenceDataIds": ["U1-EVID-01"],
+          "referenceIds": ["REF-FIX-2021"],
+          "videoIds": [],
+          "medicalReviewStatus": "approved"
+        }
+      ],
+      "evidenceReferences": [
+        {
+          "id": "REF-FIX-2021",
+          "title": "Fixture Clinical Practice Guideline",
+          "citation": "Fixture A, et al. Fixture guideline. J Fixture. 2021.",
+          "year": 2021,
+          "type": "clinical practice guideline",
+          "authority": "Fixture Society",
+          "url": "https://example.com/references/fixture-guideline-2021",
+          "medicalReviewStatus": "approved"
+        }
+      ],
+      "evidenceData": [
+        {
+          "id": "U1-EVID-01",
+          "unitIds": ["U1"],
+          "claimIds": ["U1-GOAL-01"],
+          "metric": "fixture metric",
+          "value": "fixture value",
+          "application": "fixture application",
+          "limitation": "fixture limitation",
+          "evidenceKind": "decision-threshold",
+          "authorityLevel": "guideline",
+          "decisionRole": "supporting-criterion",
+          "population": "fixture population",
+          "doNotUseAlone": true,
+          "referenceIds": ["REF-FIX-2021"],
+          "sourceLocator": "fixture-source.md#L1"
+        }
+      ],
+      "videos": [],
+      "faqs": [
+        {
+          "id": "FAQ-01",
+          "question": "這是測試問題嗎？",
+          "answer": {
+            "id": "FAQ-01-ANSWER",
+            "text": "Fixture statement FAQ-01-ANSWER",
+            "referenceIds": ["REF-FIX-2021"],
+            "evidenceDataIds": ["U1-EVID-01"]
+          },
+          "reviewStatus": "approved"
+        }
+      ],
+      "searchAliases": ["阿基里斯腱修補復健別名"],
+      "relatedRehabSlugs": [],
+      "displayOrder": 1,
+      "theme": {
+        "key": "achilles-titanium",
+        "accent": "#0f766e",
+        "accentStrong": "#115e59",
+        "accentSoft": "#ccfbf1",
+        "onAccent": "#ffffff",
+        "focusRing": "#14b8a6",
+        "controlBorder": "#5eead4"
+      },
+      "seo": {
+        "title": "阿基里斯腱修補復健｜復健與回場",
+        "description": "阿基里斯腱修補復健的復健與回場衛教內容。",
+        "directAnswer": {
+          "id": "TOPIC-DIRECT-ANSWER",
+          "text": "Fixture statement TOPIC-DIRECT-ANSWER",
+          "referenceIds": ["REF-FIX-2021"],
+          "evidenceDataIds": ["U1-EVID-01"]
+        }
+      },
+      "governance": {
+        "allowIndexing": false,
+        "evidenceVerifiedAt": "2026-08-02",
+        "indexingAuthorization": {
+          "status": "not-requested"
+        },
+        "medicalReview": {
+          "status": "pending"
+        }
+      }
+    },
+    {
+      "slug": "acl-reconstruction-rehab-return-to-sport",
+      "contentDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "titleZh": "前十字韌帶重建復健",
+      "titleEn": "ACL Reconstruction Rehabilitation",
+      "subtitle": "前十字韌帶重建復健的復健與回場流程。",
+      "expectedUnitCount": 1,
+      "contentUpdatedAt": "2026-08-02",
+      "taxonomy": {
+        "primaryBodyRegion": "knee",
+        "secondaryBodyRegions": [],
+        "structures": ["anterior-cruciate-ligament"],
+        "carePathway": "operative",
+        "episode": "postoperative",
+        "sportContexts": ["field-court"]
+      },
+      "schemaEntities": {
+        "condition": {
+          "nameZh": "前十字韌帶損傷",
+          "nameEn": "ACL Injury"
+        }
+      },
+      "patientSummary": {
+        "id": "TOPIC-SUMMARY",
+        "text": "Fixture statement TOPIC-SUMMARY",
+        "referenceIds": ["REF-FIX-2021"],
+        "evidenceDataIds": ["U1-EVID-01"]
+      },
+      "appliesTo": [
+        {
+          "id": "TOPIC-APPLIES-01",
+          "text": "Fixture statement TOPIC-APPLIES-01",
+          "referenceIds": ["REF-FIX-2021"],
+          "evidenceDataIds": ["U1-EVID-01"]
+        }
+      ],
+      "keyExclusions": [
+        {
+          "id": "TOPIC-EXCLUSION-01",
+          "text": "Fixture statement TOPIC-EXCLUSION-01",
+          "referenceIds": ["REF-FIX-2021"],
+          "evidenceDataIds": ["U1-EVID-01"]
+        }
+      ],
+      "redFlags": [
+        {
+          "id": "TOPIC-REDFLAG-01",
+          "text": "Fixture statement TOPIC-REDFLAG-01",
+          "referenceIds": ["REF-FIX-2021"],
+          "evidenceDataIds": ["U1-EVID-01"]
+        }
+      ],
+      "returnGoal": {
+        "id": "TOPIC-RETURN-GOAL",
+        "text": "Fixture statement TOPIC-RETURN-GOAL",
+        "referenceIds": ["REF-FIX-2021"],
+        "evidenceDataIds": ["U1-EVID-01"]
+      },
+      "units": [
+        {
+          "id": "U1",
+          "order": 1,
+          "titleZh": "第一階段",
+          "titleEn": "Phase One",
+          "patientGuide": {
+            "overview": {
+              "id": "U1-PATIENT-OVERVIEW",
+              "text": "Fixture statement U1-PATIENT-OVERVIEW",
+              "referenceIds": ["REF-FIX-2021"],
+              "evidenceDataIds": ["U1-EVID-01"]
+            },
+            "whatYouMayNotice": [
+              {
+                "id": "U1-PATIENT-NOTICE-01",
+                "text": "Fixture statement U1-PATIENT-NOTICE-01",
+                "referenceIds": ["REF-FIX-2021"],
+                "evidenceDataIds": ["U1-EVID-01"]
+              }
+            ],
+            "howYouCanParticipate": [
+              {
+                "id": "U1-PATIENT-PARTICIPATE-01",
+                "text": "Fixture statement U1-PATIENT-PARTICIPATE-01",
+                "referenceIds": ["REF-FIX-2021"],
+                "evidenceDataIds": ["U1-EVID-01"]
+              }
+            ],
+            "contactCareTeamIf": [
+              {
+                "id": "U1-PATIENT-CONTACT-01",
+                "text": "Fixture statement U1-PATIENT-CONTACT-01",
+                "referenceIds": ["REF-FIX-2021"],
+                "evidenceDataIds": ["U1-EVID-01"]
+              }
+            ],
+            "takeHomeMessage": {
+              "id": "U1-PATIENT-TAKE-HOME",
+              "text": "Fixture statement U1-PATIENT-TAKE-HOME",
+              "referenceIds": ["REF-FIX-2021"],
+              "evidenceDataIds": ["U1-EVID-01"]
+            }
+          },
+          "goals": [
+            {
+              "id": "U1-GOAL-01",
+              "text": "Fixture statement U1-GOAL-01",
+              "referenceIds": ["REF-FIX-2021"],
+              "evidenceDataIds": ["U1-EVID-01"]
+            }
+          ],
+          "beforeStart": [
+            {
+              "id": "U1-BEFORE-01",
+              "text": "Fixture statement U1-BEFORE-01",
+              "referenceIds": ["REF-FIX-2021"],
+              "evidenceDataIds": ["U1-EVID-01"]
+            }
+          ],
+          "progressWhen": [
+            {
+              "id": "U1-PROGRESS-01",
+              "text": "Fixture statement U1-PROGRESS-01",
+              "referenceIds": ["REF-FIX-2021"],
+              "evidenceDataIds": ["U1-EVID-01"]
+            }
+          ],
+          "holdRegressOrSeekCare": [
+            {
+              "id": "U1-HOLD-01",
+              "text": "Fixture statement U1-HOLD-01",
+              "referenceIds": ["REF-FIX-2021"],
+              "evidenceDataIds": ["U1-EVID-01"]
+            }
+          ],
+          "clinicalActions": [
+            {
+              "id": "U1-CLINICAL-01",
+              "text": "Fixture statement U1-CLINICAL-01",
+              "referenceIds": ["REF-FIX-2021"],
+              "evidenceDataIds": ["U1-EVID-01"]
+            }
+          ],
+          "monitoring": [
+            {
+              "id": "U1-MONITOR-01",
+              "text": "Fixture statement U1-MONITOR-01",
+              "referenceIds": ["REF-FIX-2021"],
+              "evidenceDataIds": ["U1-EVID-01"]
+            }
+          ],
+          "evidenceDataIds": ["U1-EVID-01"],
+          "referenceIds": ["REF-FIX-2021"],
+          "videoIds": [],
+          "medicalReviewStatus": "approved"
+        }
+      ],
+      "evidenceReferences": [
+        {
+          "id": "REF-FIX-2021",
+          "title": "Fixture Clinical Practice Guideline",
+          "citation": "Fixture A, et al. Fixture guideline. J Fixture. 2021.",
+          "year": 2021,
+          "type": "clinical practice guideline",
+          "authority": "Fixture Society",
+          "url": "https://example.com/references/fixture-guideline-2021",
+          "medicalReviewStatus": "approved"
+        }
+      ],
+      "evidenceData": [
+        {
+          "id": "U1-EVID-01",
+          "unitIds": ["U1"],
+          "claimIds": ["U1-GOAL-01"],
+          "metric": "fixture metric",
+          "value": "fixture value",
+          "application": "fixture application",
+          "limitation": "fixture limitation",
+          "evidenceKind": "decision-threshold",
+          "authorityLevel": "guideline",
+          "decisionRole": "supporting-criterion",
+          "population": "fixture population",
+          "doNotUseAlone": true,
+          "referenceIds": ["REF-FIX-2021"],
+          "sourceLocator": "fixture-source.md#L1"
+        }
+      ],
+      "videos": [],
+      "faqs": [
+        {
+          "id": "FAQ-01",
+          "question": "這是測試問題嗎？",
+          "answer": {
+            "id": "FAQ-01-ANSWER",
+            "text": "Fixture statement FAQ-01-ANSWER",
+            "referenceIds": ["REF-FIX-2021"],
+            "evidenceDataIds": ["U1-EVID-01"]
+          },
+          "reviewStatus": "approved"
+        }
+      ],
+      "searchAliases": ["前十字韌帶重建復健別名"],
+      "relatedRehabSlugs": [],
+      "displayOrder": 2,
+      "theme": {
+        "key": "acl-cyan",
+        "accent": "#0f766e",
+        "accentStrong": "#115e59",
+        "accentSoft": "#ccfbf1",
+        "onAccent": "#ffffff",
+        "focusRing": "#14b8a6",
+        "controlBorder": "#5eead4"
+      },
+      "seo": {
+        "title": "前十字韌帶重建復健｜復健與回場",
+        "description": "前十字韌帶重建復健的復健與回場衛教內容。",
+        "directAnswer": {
+          "id": "TOPIC-DIRECT-ANSWER",
+          "text": "Fixture statement TOPIC-DIRECT-ANSWER",
+          "referenceIds": ["REF-FIX-2021"],
+          "evidenceDataIds": ["U1-EVID-01"]
+        }
+      },
+      "governance": {
+        "allowIndexing": false,
+        "evidenceVerifiedAt": "2026-08-02",
+        "indexingAuthorization": {
+          "status": "not-requested"
+        },
+        "medicalReview": {
+          "status": "pending"
+        }
+      }
+    },
+    {
+      "slug": "ankle-sprain-rehab-return-to-sport",
+      "contentDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "titleZh": "腳踝扭傷復健",
+      "titleEn": "Acute Lateral Ankle Sprain Rehabilitation",
+      "subtitle": "腳踝扭傷復健的復健與回場流程。",
+      "expectedUnitCount": 1,
+      "contentUpdatedAt": "2026-08-02",
+      "taxonomy": {
+        "primaryBodyRegion": "foot-ankle",
+        "secondaryBodyRegions": [],
+        "structures": ["lateral-ankle-ligament"],
+        "carePathway": "nonoperative",
+        "episode": "acute",
+        "sportContexts": ["daily", "running", "field-court"]
+      },
+      "schemaEntities": {
+        "condition": {
+          "nameZh": "外側踝關節扭傷",
+          "nameEn": "Lateral Ankle Sprain"
+        }
+      },
+      "patientSummary": {
+        "id": "TOPIC-SUMMARY",
+        "text": "Fixture statement TOPIC-SUMMARY",
+        "referenceIds": ["REF-FIX-2021"],
+        "evidenceDataIds": ["U1-EVID-01"]
+      },
+      "appliesTo": [
+        {
+          "id": "TOPIC-APPLIES-01",
+          "text": "Fixture statement TOPIC-APPLIES-01",
+          "referenceIds": ["REF-FIX-2021"],
+          "evidenceDataIds": ["U1-EVID-01"]
+        }
+      ],
+      "keyExclusions": [
+        {
+          "id": "TOPIC-EXCLUSION-01",
+          "text": "Fixture statement TOPIC-EXCLUSION-01",
+          "referenceIds": ["REF-FIX-2021"],
+          "evidenceDataIds": ["U1-EVID-01"]
+        }
+      ],
+      "redFlags": [
+        {
+          "id": "TOPIC-REDFLAG-01",
+          "text": "Fixture statement TOPIC-REDFLAG-01",
+          "referenceIds": ["REF-FIX-2021"],
+          "evidenceDataIds": ["U1-EVID-01"]
+        }
+      ],
+      "returnGoal": {
+        "id": "TOPIC-RETURN-GOAL",
+        "text": "Fixture statement TOPIC-RETURN-GOAL",
+        "referenceIds": ["REF-FIX-2021"],
+        "evidenceDataIds": ["U1-EVID-01"]
+      },
+      "units": [
+        {
+          "id": "U1",
+          "order": 1,
+          "titleZh": "第一階段",
+          "titleEn": "Phase One",
+          "patientGuide": {
+            "overview": {
+              "id": "U1-PATIENT-OVERVIEW",
+              "text": "Fixture statement U1-PATIENT-OVERVIEW",
+              "referenceIds": ["REF-FIX-2021"],
+              "evidenceDataIds": ["U1-EVID-01"]
+            },
+            "whatYouMayNotice": [
+              {
+                "id": "U1-PATIENT-NOTICE-01",
+                "text": "Fixture statement U1-PATIENT-NOTICE-01",
+                "referenceIds": ["REF-FIX-2021"],
+                "evidenceDataIds": ["U1-EVID-01"]
+              }
+            ],
+            "howYouCanParticipate": [
+              {
+                "id": "U1-PATIENT-PARTICIPATE-01",
+                "text": "Fixture statement U1-PATIENT-PARTICIPATE-01",
+                "referenceIds": ["REF-FIX-2021"],
+                "evidenceDataIds": ["U1-EVID-01"]
+              }
+            ],
+            "contactCareTeamIf": [
+              {
+                "id": "U1-PATIENT-CONTACT-01",
+                "text": "Fixture statement U1-PATIENT-CONTACT-01",
+                "referenceIds": ["REF-FIX-2021"],
+                "evidenceDataIds": ["U1-EVID-01"]
+              }
+            ],
+            "takeHomeMessage": {
+              "id": "U1-PATIENT-TAKE-HOME",
+              "text": "Fixture statement U1-PATIENT-TAKE-HOME",
+              "referenceIds": ["REF-FIX-2021"],
+              "evidenceDataIds": ["U1-EVID-01"]
+            }
+          },
+          "goals": [
+            {
+              "id": "U1-GOAL-01",
+              "text": "Fixture statement U1-GOAL-01",
+              "referenceIds": ["REF-FIX-2021"],
+              "evidenceDataIds": ["U1-EVID-01"]
+            }
+          ],
+          "beforeStart": [
+            {
+              "id": "U1-BEFORE-01",
+              "text": "Fixture statement U1-BEFORE-01",
+              "referenceIds": ["REF-FIX-2021"],
+              "evidenceDataIds": ["U1-EVID-01"]
+            }
+          ],
+          "progressWhen": [
+            {
+              "id": "U1-PROGRESS-01",
+              "text": "Fixture statement U1-PROGRESS-01",
+              "referenceIds": ["REF-FIX-2021"],
+              "evidenceDataIds": ["U1-EVID-01"]
+            }
+          ],
+          "holdRegressOrSeekCare": [
+            {
+              "id": "U1-HOLD-01",
+              "text": "Fixture statement U1-HOLD-01",
+              "referenceIds": ["REF-FIX-2021"],
+              "evidenceDataIds": ["U1-EVID-01"]
+            }
+          ],
+          "clinicalActions": [
+            {
+              "id": "U1-CLINICAL-01",
+              "text": "Fixture statement U1-CLINICAL-01",
+              "referenceIds": ["REF-FIX-2021"],
+              "evidenceDataIds": ["U1-EVID-01"]
+            }
+          ],
+          "monitoring": [
+            {
+              "id": "U1-MONITOR-01",
+              "text": "Fixture statement U1-MONITOR-01",
+              "referenceIds": ["REF-FIX-2021"],
+              "evidenceDataIds": ["U1-EVID-01"]
+            }
+          ],
+          "evidenceDataIds": ["U1-EVID-01"],
+          "referenceIds": ["REF-FIX-2021"],
+          "videoIds": [],
+          "medicalReviewStatus": "approved"
+        }
+      ],
+      "evidenceReferences": [
+        {
+          "id": "REF-FIX-2021",
+          "title": "Fixture Clinical Practice Guideline",
+          "citation": "Fixture A, et al. Fixture guideline. J Fixture. 2021.",
+          "year": 2021,
+          "type": "clinical practice guideline",
+          "authority": "Fixture Society",
+          "url": "https://example.com/references/fixture-guideline-2021",
+          "medicalReviewStatus": "approved"
+        }
+      ],
+      "evidenceData": [
+        {
+          "id": "U1-EVID-01",
+          "unitIds": ["U1"],
+          "claimIds": ["U1-GOAL-01"],
+          "metric": "fixture metric",
+          "value": "fixture value",
+          "application": "fixture application",
+          "limitation": "fixture limitation",
+          "evidenceKind": "decision-threshold",
+          "authorityLevel": "guideline",
+          "decisionRole": "supporting-criterion",
+          "population": "fixture population",
+          "doNotUseAlone": true,
+          "referenceIds": ["REF-FIX-2021"],
+          "sourceLocator": "fixture-source.md#L1"
+        }
+      ],
+      "videos": [],
+      "faqs": [
+        {
+          "id": "FAQ-01",
+          "question": "這是測試問題嗎？",
+          "answer": {
+            "id": "FAQ-01-ANSWER",
+            "text": "Fixture statement FAQ-01-ANSWER",
+            "referenceIds": ["REF-FIX-2021"],
+            "evidenceDataIds": ["U1-EVID-01"]
+          },
+          "reviewStatus": "approved"
+        }
+      ],
+      "searchAliases": ["腳踝扭傷復健別名"],
+      "relatedRehabSlugs": [],
+      "displayOrder": 3,
+      "theme": {
+        "key": "ankle-teal",
+        "accent": "#0f766e",
+        "accentStrong": "#115e59",
+        "accentSoft": "#ccfbf1",
+        "onAccent": "#ffffff",
+        "focusRing": "#14b8a6",
+        "controlBorder": "#5eead4"
+      },
+      "seo": {
+        "title": "腳踝扭傷復健｜復健與回場",
+        "description": "腳踝扭傷復健的復健與回場衛教內容。",
+        "directAnswer": {
+          "id": "TOPIC-DIRECT-ANSWER",
+          "text": "Fixture statement TOPIC-DIRECT-ANSWER",
+          "referenceIds": ["REF-FIX-2021"],
+          "evidenceDataIds": ["U1-EVID-01"]
+        }
+      },
+      "governance": {
+        "allowIndexing": true,
+        "evidenceVerifiedAt": "2026-08-01",
+        "indexingAuthorization": {
+          "status": "authorized",
+          "authorizedById": "site-owner-01",
+          "authorizedByName": "Site Owner",
+          "authorizedAt": "2026-08-02T00:00:00Z",
+          "approvedContentDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "note": "fixture authorization"
+        },
+        "medicalReview": {
+          "status": "approved",
+          "reviewer": {
+            "id": "rev-01",
+            "name": "Dr. Fixture Reviewer",
+            "qualification": "PT, PhD",
+            "profileUrl": "https://example.com/reviewers/rev-01"
+          },
+          "reviewedAt": "2026-08-02T00:00:00Z",
+          "approvedContentDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "sourceReviewProvenance": {
+            "algorithm": "sha256",
+            "digest": "5555555555555555555555555555555555555555555555555555555555555555",
+            "scope": "rtp-course-source.v1"
+          }
+        }
+      }
+    }
+  ]
+}
