@@ -212,14 +212,14 @@ export type ExternalVerificationArtifact = z.infer<
   typeof externalVerificationArtifactSchema
 >;
 
-interface ExternalUrlEntry {
+export interface ExternalUrlEntry {
   kind: string;
   sourceId: string | null;
   url: string;
   expectedIdentity: Record<string, string>;
 }
 
-function externalUrlEntries(record: InjuryCase): ExternalUrlEntry[] {
+export function externalUrlEntries(record: InjuryCase): ExternalUrlEntry[] {
   const entries: ExternalUrlEntry[] = [
     {
       kind: "video-canonical",
