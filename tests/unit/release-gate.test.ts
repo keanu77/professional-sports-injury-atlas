@@ -49,7 +49,7 @@ const REVIEWER = "Dr. Synthetic Reviewer";
 const QUALIFICATION = "Synthetic Sports Medicine Physician";
 const REVIEWED_AT = "2026-08-05T00:00:00Z";
 const COURSE_POLICY = "course-link-policy-v1";
-const PUBLIC_URL = "https://atlas.example.com";
+const PUBLIC_URL = "https://atlas.example.org";
 const DECISION_PATH = "docs/decisions/2026-08-06-site-publication.v1.json";
 const MANIFEST_ID = "SYN-SOURCE-2026-08-06-001";
 const MANIFEST_PATH = `research/source-manifests/${MANIFEST_ID}.v1.json`;
@@ -186,7 +186,7 @@ function syntheticCourse(slug: string, contentDigest: string): any {
           id: "rev-1",
           name: "Dr. Synthetic Upstream",
           qualification: "MD",
-          profileUrl: "https://example.com/reviewer",
+          profileUrl: "https://example.org/reviewer",
         },
         reviewedAt: "2026-08-01",
         approvedContentDigest: contentDigest,
@@ -460,7 +460,7 @@ export function buildAuthorizedFixture(): Fixture {
       injuryCode: meta.injuryCode,
       catalogSlug: meta.slug,
       catalogContentDigest: contentDigest,
-      publicUrl: `https://courses.example.com/${meta.slug}/`,
+      publicUrl: `https://courses.example.org/${meta.slug}/`,
       linkPolicyVersion: COURSE_POLICY,
       approvedBy: "Synthetic Course Approver",
       approvedAt: "2026-08-05T10:00:00Z",
@@ -550,7 +550,7 @@ export function buildAuthorizedFixture(): Fixture {
     schemaVersion: 1,
     receiptType: "served-artifact",
     artifactManifestDigest,
-    urlHash: sha256Hex("https://private-review.example.com"),
+    urlHash: sha256Hex("https://private-review.example.org"),
     deploymentIdHash: sha256Hex("synthetic-deployment-1"),
     checkedAt: "2026-08-05T20:00:00Z",
     bodyComparison: "exact-bytes",
@@ -864,7 +864,7 @@ describe("public release gate: negative conditions", () => {
     );
 
     const fx2 = buildAuthorizedFixture();
-    fx2.governance.publicSiteUrl = "https://other.example.com";
+    fx2.governance.publicSiteUrl = "https://other.example.org";
     expect(codes(evaluatePublicReleaseGate(gateInput(fx2)))).toContain(
       "gate-publication-decision-url",
     );

@@ -258,7 +258,7 @@ describe("public release history contract", () => {
       "history-schema",
     );
     const badUrl = makeRelease(
-      { publicUrlHash: "https://example.com" },
+      { publicUrlHash: "https://example.org" },
       null,
       EMPTY_PUBLIC_RELEASE_HISTORY_BYTES,
     );

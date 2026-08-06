@@ -338,7 +338,7 @@ describe("medical-review decision", () => {
       schemaVersion: 1,
       receiptType: "served-artifact",
       artifactManifestDigest,
-      urlHash: sha256Hex("https://private.example.com"),
+      urlHash: sha256Hex("https://private.example.org"),
       deploymentIdHash: sha256Hex("deployment-1"),
       checkedAt: "2026-08-05T20:00:00Z",
       bodyComparison: "exact-bytes",

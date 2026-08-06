@@ -161,7 +161,7 @@
       "publisher": "Riverport Foxes Communications",
       "independenceGroup": "riverport-foxes",
       "originReportId": null,
-      "url": "https://foxes.example.com/medical-statement-fic-002",
+      "url": "https://foxes.example.org/medical-statement-fic-002",
       "publishedAt": "2014-03-04",
       "accessedAt": "2026-08-01",
       "supports": ["injury.confirmedDiagnosis", "general.confirmedUpdate"]
@@ -173,7 +173,7 @@
       "publisher": "Fictional Basketball League Data",
       "independenceGroup": "fictional-league-data",
       "originReportId": null,
-      "url": "https://league.example.com/games/fic-2014-03-02",
+      "url": "https://league.example.org/games/fic-2014-03-02",
       "publishedAt": "2014-03-02",
       "accessedAt": "2026-08-01",
       "supports": ["general.whatHappened"]
@@ -218,7 +218,7 @@
     "reviewerName": "Dr. Fictional Reviewer Two",
     "reviewerQualification": "Fictional Sports Medicine Physician",
     "reviewedAt": "2026-08-05T00:00:00Z",
-    "reviewedContentDigest": "41ea7c5d911bfd8baf60e87d4dd221cbf57b5ddea9a8f61ab52a00aea14026af"
+    "reviewedContentDigest": "990dffed7ad8cbd9a3b9818d36918b8123b9269ca36f77d1ef584b79d01919de"
   },
   "audit": {
     "createdAt": "2026-08-01T00:00:00Z",

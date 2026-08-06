@@ -78,7 +78,7 @@ describe("canonical case digests", () => {
         r.professional.clinicalLimitations += " Changed.";
         r.professional.claims[2].text += " Changed.";
       },
-      (r) => (r.sources[1].url = "https://comets.example.com/other-report"),
+      (r) => (r.sources[1].url = "https://comets.example.org/other-report"),
       (r) => (r.sources[1].title = "Changed fictional title"),
       (r) => (r.sources[1].publisher = "Changed Fictional Publisher"),
       (r) => (r.sources[3].supports = r.sources[3].supports.slice(0, 3)),

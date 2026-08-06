@@ -150,7 +150,7 @@ describe("review output policy (condition 13)", () => {
   it("rejects external preconnects in review output", () => {
     const page = {
       path: "index.html",
-      html: `<!doctype html><html><head><meta name="robots" content="${NOINDEX_ROBOTS_META}"/><link rel="preconnect" href="https://cdn.example.com"/></head><body></body></html>`,
+      html: `<!doctype html><html><head><meta name="robots" content="${NOINDEX_ROBOTS_META}"/><link rel="preconnect" href="https://cdn.example.org"/></head><body></body></html>`,
     };
     expect(
       validateReviewOutput([page], ["index.html"]).map((entry) => entry.code),
@@ -189,7 +189,7 @@ describe("public output policy (condition 12)", () => {
   it("rejects unmarked iframes and unknown case embeds", () => {
     const page = {
       path: "cases/x/index.html",
-      html: '<html><head></head><body><iframe src="https://example.com"></iframe><span data-case-embed="CASE-UNKNOWN"></span></body></html>',
+      html: '<html><head></head><body><iframe src="https://example.org"></iframe><span data-case-embed="CASE-UNKNOWN"></span></body></html>',
     };
     const observed = validatePublicOutput(
       [page],

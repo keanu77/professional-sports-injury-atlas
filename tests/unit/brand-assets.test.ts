@@ -84,13 +84,13 @@ describe("brand-asset scan", () => {
       "src/content/cases/some-case.json",
       JSON.stringify({
         title: "case",
-        teamLogoUrl: "https://cdn.example.com/logo-asset",
+        teamLogoUrl: "https://cdn.example.org/logo-asset",
       }),
     );
     writeInto(
       root,
       "src/data/extra.json",
-      JSON.stringify({ hero: "https://cdn.example.com/hero.png" }),
+      JSON.stringify({ hero: "https://cdn.example.org/hero.png" }),
     );
     const observed = scanBrandAssets(root).map((entry) => entry.code);
     expect(observed).toContain("brand-content-logo-field");

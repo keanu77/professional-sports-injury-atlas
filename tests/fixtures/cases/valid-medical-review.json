@@ -161,7 +161,7 @@
       "publisher": "Metro City Comets Communications",
       "independenceGroup": "metro-city-comets",
       "originReportId": null,
-      "url": "https://comets.example.com/injury-report-fic-001",
+      "url": "https://comets.example.org/injury-report-fic-001",
       "publishedAt": "2026-01-17",
       "accessedAt": "2026-08-01",
       "supports": ["injury.confirmedDiagnosis", "general.confirmedUpdate"]
@@ -173,7 +173,7 @@
       "publisher": "Fictional Basketball League Data",
       "independenceGroup": "fictional-league-data",
       "originReportId": null,
-      "url": "https://league.example.com/games/fic-2026-01-15",
+      "url": "https://league.example.org/games/fic-2026-01-15",
       "publishedAt": "2026-01-15",
       "accessedAt": "2026-08-01",
       "supports": ["general.whatHappened"]

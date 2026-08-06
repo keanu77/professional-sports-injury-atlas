@@ -53,14 +53,14 @@ function baseInput(): SiteDigestInput {
     courseLinks: [
       {
         courseKey: "acl-primary-reconstruction",
-        approvedPublicUrl: "https://courses.example.com/acl/",
+        approvedPublicUrl: "https://courses.example.org/acl/",
         courseGovernanceProjectionDigest: hex("f"),
         linkApprovalDecisionDigest: hex("0"),
       },
     ],
-    publicSiteUrl: "https://atlas.example.com",
-    privacyPolicyUrl: "https://atlas.example.com/privacy/",
-    rightsPolicyUrl: "https://atlas.example.com/rights/",
+    publicSiteUrl: "https://atlas.example.org",
+    privacyPolicyUrl: "https://atlas.example.org/privacy/",
+    rightsPolicyUrl: "https://atlas.example.org/rights/",
     sourcePolicyVersion: "source-policy-v1",
     publicRightsPolicyVersion: "public-rights-policy-v1",
     courseLinkPolicyVersion: "course-link-policy-v1",
@@ -174,7 +174,7 @@ describe("site digest", () => {
       [
         "the public site URL",
         (input) => {
-          input.publicSiteUrl = "https://other.example.com";
+          input.publicSiteUrl = "https://other.example.org";
         },
       ],
       [

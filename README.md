@@ -13,4 +13,11 @@ digest、fail-closed 發布治理、review-only build 與虛構測試 fixtures�
 - Node 24.14.0（見 `.node-version`；不得以其他版本產生 lockfile）
 - `npm ci && npm run verify`
 
-詳細架構與資料契約文件於 Task 9 補齊（`docs/architecture.md`、`docs/content-contract.md`）。
+`npm run verify` 依序執行 plan binding、Prettier、Astro/content checks、單元測試與覆蓋率、review build、四瀏覽器 Playwright＋Axe、本機 Lighthouse（Accessibility ≥ 0.95、LCP ≤ 2500ms）、品牌資產政策與 review artifact 驗證。`npm run release:public` 必須另行單獨執行並以非零結束，證明公開閘門 fail-closed。
+
+## 文件
+
+- `docs/architecture.md` — 選擇器邊界、digest 體系、build modes、RTP 唯讀匯入、noindex ≠ 私人。
+- `docs/content-contract.md` — 全部受控 enum、診斷／經典案例／權利／時間軸規則與來源證據區分。
+- `docs/operations/quarterly-curation-runbook.md` — 季度策展固定順序、影片失效替換與診斷衝突回滾。
+- `docs/reviews/` — 平台驗證證據與 execution log。

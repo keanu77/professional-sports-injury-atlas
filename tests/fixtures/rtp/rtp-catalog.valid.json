@@ -175,7 +175,7 @@
           "year": 2021,
           "type": "clinical practice guideline",
           "authority": "Fixture Society",
-          "url": "https://example.com/references/fixture-guideline-2021",
+          "url": "https://example.org/references/fixture-guideline-2021",
           "medicalReviewStatus": "approved"
         }
       ],
@@ -408,7 +408,7 @@
           "year": 2021,
           "type": "clinical practice guideline",
           "authority": "Fixture Society",
-          "url": "https://example.com/references/fixture-guideline-2021",
+          "url": "https://example.org/references/fixture-guideline-2021",
           "medicalReviewStatus": "approved"
         }
       ],
@@ -641,7 +641,7 @@
           "year": 2021,
           "type": "clinical practice guideline",
           "authority": "Fixture Society",
-          "url": "https://example.com/references/fixture-guideline-2021",
+          "url": "https://example.org/references/fixture-guideline-2021",
           "medicalReviewStatus": "approved"
         }
       ],
@@ -716,7 +716,7 @@
             "id": "rev-01",
             "name": "Dr. Fixture Reviewer",
             "qualification": "PT, PhD",
-            "profileUrl": "https://example.com/reviewers/rev-01"
+            "profileUrl": "https://example.org/reviewers/rev-01"
           },
           "reviewedAt": "2026-08-02T00:00:00Z",
           "approvedContentDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",

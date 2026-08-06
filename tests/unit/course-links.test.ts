@@ -229,7 +229,7 @@ describe("CourseLinkApprovalDecisionV1 parsing", () => {
     ["non-UTC approvedAt", { approvedAt: "2026-08-05T00:00:00+08:00" }],
     ["impossible approvedAt", { approvedAt: "2026-13-05T00:00:00Z" }],
     ["blank approver", { approvedBy: "   " }],
-    ["non-HTTPS url", { publicUrl: "http://rtp.example.com/course" }],
+    ["non-HTTPS url", { publicUrl: "http://rtp.example.org/course" }],
     ["wrong decision type", { decisionType: "video-rights" }],
     ["wrong schema version", { schemaVersion: 2 }],
     ["malformed digest", { catalogContentDigest: "zz" }],
@@ -384,7 +384,7 @@ describe("evaluatePublicCourseLink", () => {
 
   it("rejects an approved URL that differs from the decision", () => {
     const { input, link } = approvedAnkleScenario();
-    link.linkApproval.approvedPublicUrl = "https://rtp.example.com/other";
+    link.linkApproval.approvedPublicUrl = "https://rtp.example.org/other";
     expect(codesOf(evaluatePublicCourseLink(input))).toContain(
       "cta-decision-field-mismatch",
     );

@@ -150,7 +150,7 @@ describe("bounded verifier configuration", () => {
       {
         kind: "source-event-context",
         sourceId: "src-http",
-        url: "http://insecure.example.com/report",
+        url: "http://insecure.example.org/report",
         expectedIdentity: { title: "t", publisher: "p" },
       },
       deps,
@@ -165,7 +165,7 @@ describe("URL check outcomes", () => {
   const entry = {
     kind: "source-event-context",
     sourceId: "src-fic-002-event",
-    url: "https://league.example.com/games/fic-2014-03-02",
+    url: "https://league.example.org/games/fic-2014-03-02",
     expectedIdentity: {
       title: "Fictional Game Report",
       publisher: "Fictional League",
@@ -188,7 +188,7 @@ describe("URL check outcomes", () => {
     const { deps } = makeDeps(() =>
       response(
         200,
-        "https://league.example.com/archive/fic-2014-03-02",
+        "https://league.example.org/archive/fic-2014-03-02",
         "Fictional Game Report Fictional League",
       ),
     );
@@ -196,7 +196,7 @@ describe("URL check outcomes", () => {
     expect(result.status).toBe("failed");
     expect(result.outcome).toBe("redirected-new-canonical");
     expect(result.finalUrl).toBe(
-      "https://league.example.com/archive/fic-2014-03-02",
+      "https://league.example.org/archive/fic-2014-03-02",
     );
   });
 
@@ -397,7 +397,7 @@ describe("case verification and artifact validation", () => {
     const extra = buildExternalVerificationArtifact([caseResult], NOW);
     extra.cases[0]!.results = [
       ...extra.cases[0]!.results,
-      { urlHash: sha256Hex("https://unrelated.example.com/"), status: "ok" },
+      { urlHash: sha256Hex("https://unrelated.example.org/"), status: "ok" },
     ];
     expect(
       validateExternalVerificationArtifact(extra, [record], NOW).map(

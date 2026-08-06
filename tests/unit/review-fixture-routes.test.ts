@@ -43,7 +43,7 @@ describe("review fixture records", () => {
       for (const source of record.sources) {
         expect(source.title).toMatch(FICTIONAL_RE);
         expect(source.publisher).toMatch(FICTIONAL_RE);
-        expect(source.url).not.toContain("example.com");
+        expect(source.url).not.toContain("example.org");
       }
     }
     expect(reviewFixtureClassicCase.review.reviewerName).toMatch(FICTIONAL_RE);

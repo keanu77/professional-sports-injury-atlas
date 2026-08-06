@@ -75,7 +75,7 @@ describe("parseYouTubeVideoId", () => {
 
   it("rejects arbitrary and look-alike hosts, including embed hosts", () => {
     expect(
-      parseYouTubeVideoId(`https://example.com/watch?v=${FICTIONAL_ID}`),
+      parseYouTubeVideoId(`https://example.org/watch?v=${FICTIONAL_ID}`),
     ).toBeNull();
     expect(
       parseYouTubeVideoId(

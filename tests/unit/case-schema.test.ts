@@ -47,7 +47,7 @@ describe("caseSchema single-entry contract", () => {
 
   it("rejects stored thumbnail URLs as unknown fields", () => {
     const record = recent();
-    record.video.thumbnailUrl = "https://img.example.com/thumb.jpg";
+    record.video.thumbnailUrl = "https://img.example.org/thumb.jpg";
     expect(caseSchema.safeParse(record).success).toBe(false);
   });
 
@@ -66,7 +66,7 @@ describe("caseSchema single-entry contract", () => {
     expect(caseSchema.safeParse(httpVideo).success).toBe(false);
     const httpSource = recent();
     httpSource.sources[1].url =
-      "http://comets.example.com/injury-report-fic-001";
+      "http://comets.example.org/injury-report-fic-001";
     expect(caseSchema.safeParse(httpSource).success).toBe(false);
   });
 
