@@ -6,6 +6,7 @@ src/data/governance/video-rights-decisions/*.json
 schemas/*.json
 research/source-manifests/*.json
 research/source-manifest-registry.v1.json
+research/source-policy/source-policy.v1.json
 research/reviews/source-batches/*.json
 research/verification/*.json
 public-release-history/*.json

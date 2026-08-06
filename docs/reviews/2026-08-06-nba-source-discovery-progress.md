@@ -21,7 +21,8 @@ checkboxes are maintained here.
 
 - [x] Task 0 — strict research parsing and validation; committed as
       `667e7465a7fb424eb991e71bcfee5a96b0c59287`
-- [ ] Task 1 — frozen NBA source policy
+- [x] Task 1 — frozen NBA source policy; committed by the local
+      `docs: freeze NBA source policy` commit
 - [ ] Task 2 — three candidate ledgers and discovery
 - [ ] Task 3 — bounded live link and video metadata verification
 - [ ] Task 4 — root audit and final review-set freeze
@@ -57,6 +58,30 @@ checkboxes are maintained here.
   a fresh plan authorization assertion each exited `0`.
 - Expected pre-ledger CLI state: `research:check` is implemented but is not run
   as a positive gate until Task 2 creates the three required ledgers.
+
+### Task 1
+
+- Expected red: `npm run test:unit -- tests/unit/research-source-policy.test.ts`
+  produced 14 failures and 1 pass because the policy JSON did not yet exist;
+  the failures were the intended `ENOENT` contract-test state.
+- The seven fixed official reference pages were each opened at their original
+  URL on `2026-08-06`. The policy stores each canonical URL observation,
+  publisher, and access date; search-result summaries were not accepted as
+  evidence.
+- Frozen Markdown SHA-256:
+  `f983c682d3504902ff9ae8a57cbd414e4855de2abbb3b6f2855d3532df8fed46`.
+- Frozen canonical JSON SHA-256:
+  `a588b68f3468bec8d24cda9005435ecb0177cc74dbaff7d14f793ec45dcdd280`.
+  The JSON declares the exact Markdown digest and is compact canonical JSON
+  without a trailing newline. The narrow `.prettierignore` entry prevents a
+  repository-wide formatting check from rewriting those frozen bytes.
+- Green: the exact Task 1 unit command exited `0` with 17 tests passing. The
+  combined Task 0 and Task 1 run exited `0` with 45 tests passing.
+- Green: `npm run format:check`, `npx tsc --noEmit`, `npm run plan:verify`,
+  `git diff --check`, and a final read-only policy audit each passed.
+- No media was downloaded, copied, reproduced, or captured. No remote,
+  external account, protected path, medical-review field, indexing field, or
+  named reviewer/approver identity was changed.
 
 ## Resolved execution blocker
 

@@ -1,0 +1,832 @@
+import { readFileSync } from "node:fs";
+import { describe, expect, it } from "vitest";
+
+import {
+  CANDIDATE_CAPTION_STATUSES,
+  CANDIDATE_COMPETITIONS,
+  CANDIDATE_DIAGNOSIS_STATUSES,
+  CANDIDATE_DISCOVERY_STATUSES,
+  CANDIDATE_EMBED_STATUSES,
+  CANDIDATE_INJURY_CODES,
+  CANDIDATE_VIDEO_CONTENT_TYPES,
+  CANDIDATE_VIDEO_PROVIDERS,
+  DIAGNOSIS_SOURCE_TYPES,
+  FIRST_PARTY_AVAILABILITY_STATUSES,
+  PROVENANCE_CHECK_STATUSES,
+  RECENT_CANDIDATE_CUTOFF,
+  VIDEO_UPLOADER_PROVENANCES,
+} from "../../src/lib/research/candidate-contract";
+import {
+  canonicalJson,
+  parseStrictJson,
+  sha256Hex,
+} from "../../src/lib/cases/canonical-json";
+
+const JSON_POLICY_PATH =
+  "research/source-policy/source-policy.v1.json" as const;
+const MARKDOWN_POLICY_PATH = "research/source-policy/nba.v1.md" as const;
+
+const EXPECTED_ROOT_KEYS = [
+  "captionRules",
+  "controlledTokens",
+  "cutoffDate",
+  "decisionTable",
+  "diagnosisRules",
+  "eventVideoRules",
+  "humanPolicyDocument",
+  "mediaHandlingRules",
+  "officialReferences",
+  "privacyAccessRules",
+  "schemaVersion",
+  "sourcePageRules",
+  "sourcePolicyVersion",
+  "uploaderProviderRules",
+  "versionChangeRules",
+  "workflowRules",
+] as const;
+
+const EXPECTED_CONTROLLED_TOKENS = {
+  candidateCaptionStatus: ["not-verified", "available", "unavailable"],
+  candidateCompetition: [
+    "nba-preseason",
+    "nba-regular-season",
+    "nba-play-in",
+    "nba-playoffs",
+    "nba-all-star",
+  ],
+  candidateDiagnosisStatus: ["unconfirmed", "confirmed", "conflicted"],
+  candidateDiscoveryStatus: [
+    "discovered",
+    "needs-source",
+    "source-ready",
+    "source-verified",
+    "excluded",
+  ],
+  candidateEmbedStatus: [
+    "unchecked",
+    "verified",
+    "external-link-only",
+    "unavailable",
+  ],
+  candidateInjuryCode: ["acl", "ankle-sprain", "achilles-rupture"],
+  candidateVideoContentType: ["in-game-injury-event"],
+  candidateVideoProvider: ["youtube", "nba"],
+  diagnosisSourceType: ["", "diagnosis-first-party", "diagnosis-secondary"],
+  firstPartyAvailabilityStatus: [
+    "available",
+    "documented-unavailable",
+    "not-applicable",
+  ],
+  provenanceCheckStatus: ["pending", "verified", "rejected"],
+  videoUploaderProvenance: [
+    "league",
+    "team",
+    "broadcaster-rightsholder",
+    "official-player",
+    "unknown",
+  ],
+} as const;
+
+const EXPECTED_PLAN_REFERENCE_URLS = [
+  "https://official.nba.com/nba-injury-report-2025-26-season/",
+  "https://www.nba.com/termsofuse",
+  "https://support.google.com/youtube/answer/171780",
+  "https://developers.google.com/youtube/player_parameters",
+  "https://developers.google.com/youtube/iframe_api_reference",
+  "https://developers.google.com/youtube/terms/developer-policies",
+  "https://developers.google.com/youtube/v3/docs/videos/list",
+] as const;
+
+const YOUTUBE_HELP_PLAN_URL =
+  "https://support.google.com/youtube/answer/171780";
+const YOUTUBE_HELP_CANONICAL_URL = `${YOUTUBE_HELP_PLAN_URL}?hl=en`;
+const REFERENCE_URLS_WITHOUT_OBSERVED_CANONICAL = new Set([
+  "https://official.nba.com/nba-injury-report-2025-26-season/",
+  "https://www.nba.com/termsofuse",
+]);
+
+const EXPECTED_OFFICIAL_REFERENCES = [
+  {
+    accessedAt: "2026-08-06",
+    declaredCanonicalUrl: null,
+    finalUrl: "https://official.nba.com/nba-injury-report-2025-26-season/",
+    key: "nba-official-injury-reports",
+    planUrl: "https://official.nba.com/nba-injury-report-2025-26-season/",
+    publisher: "NBA Official",
+    title: "NBA Injury Report: 2025-26 Season | NBA Official",
+  },
+  {
+    accessedAt: "2026-08-06",
+    declaredCanonicalUrl: null,
+    finalUrl: "https://www.nba.com/termsofuse",
+    key: "nba-terms-of-use",
+    planUrl: "https://www.nba.com/termsofuse",
+    publisher: "NBA.com",
+    title: "Terms of Use | NBA.com",
+  },
+  {
+    accessedAt: "2026-08-06",
+    declaredCanonicalUrl: YOUTUBE_HELP_CANONICAL_URL,
+    finalUrl: YOUTUBE_HELP_PLAN_URL,
+    key: "youtube-privacy-enhanced-embedding",
+    planUrl: YOUTUBE_HELP_PLAN_URL,
+    publisher: "YouTube Help",
+    title: "Embed videos & playlists - YouTube Help",
+  },
+  {
+    accessedAt: "2026-08-06",
+    declaredCanonicalUrl:
+      "https://developers.google.com/youtube/player_parameters",
+    finalUrl: "https://developers.google.com/youtube/player_parameters",
+    key: "youtube-player-parameters",
+    planUrl: "https://developers.google.com/youtube/player_parameters",
+    publisher: "Google for Developers (YouTube)",
+    title:
+      "YouTube Embedded Players and Player Parameters | YouTube IFrame Player API | Google for Developers",
+  },
+  {
+    accessedAt: "2026-08-06",
+    declaredCanonicalUrl:
+      "https://developers.google.com/youtube/iframe_api_reference",
+    finalUrl: "https://developers.google.com/youtube/iframe_api_reference",
+    key: "youtube-iframe-api",
+    planUrl: "https://developers.google.com/youtube/iframe_api_reference",
+    publisher: "Google for Developers (YouTube)",
+    title:
+      "YouTube Player API Reference for iframe Embeds | YouTube IFrame Player API | Google for Developers",
+  },
+  {
+    accessedAt: "2026-08-06",
+    declaredCanonicalUrl:
+      "https://developers.google.com/youtube/terms/developer-policies",
+    finalUrl: "https://developers.google.com/youtube/terms/developer-policies",
+    key: "youtube-developer-policies",
+    planUrl: "https://developers.google.com/youtube/terms/developer-policies",
+    publisher: "Google for Developers (YouTube)",
+    title: "YouTube API Services - Developer Policies | Google for Developers",
+  },
+  {
+    accessedAt: "2026-08-06",
+    declaredCanonicalUrl:
+      "https://developers.google.com/youtube/v3/docs/videos/list",
+    finalUrl: "https://developers.google.com/youtube/v3/docs/videos/list",
+    key: "youtube-videos-api",
+    planUrl: "https://developers.google.com/youtube/v3/docs/videos/list",
+    publisher: "Google for Developers (YouTube)",
+    title: "Videos: list | YouTube Data API | Google for Developers",
+  },
+] as const;
+
+const EXPECTED_UPLOADER_DECISIONS = [
+  { provenance: "league", action: "accepted" },
+  { provenance: "team", action: "accepted" },
+  { provenance: "broadcaster-rightsholder", action: "accepted" },
+  {
+    provenance: "official-player",
+    action: "requires-separate-documented-authority",
+  },
+  {
+    provenance: "unknown",
+    action: "requires-separate-documented-authority",
+  },
+  { provenance: "fan-compilation-repost", action: "excluded" },
+] as const;
+
+const EXPECTED_DECISION_TABLE = [
+  {
+    condition:
+      "First-party diagnosis + accepted original uploader + verified embed",
+    candidateAction: "eligible for source review",
+  },
+  {
+    condition: "First-party diagnosis + accepted uploader + embed disabled",
+    candidateAction: "eligible as external-link-only",
+  },
+  {
+    condition:
+      "Classic + two independent explicit secondary diagnoses + accepted video",
+    candidateAction: "eligible for classic exception review",
+  },
+  {
+    condition: "Diagnosis based only on video/commentary",
+    candidateAction: "needs-source or excluded",
+  },
+  {
+    condition: "Fan/compilation/repost uploader",
+    candidateAction: "excluded",
+  },
+  {
+    condition:
+      "Official recap/interview/practice/warm-up/rehab clip rather than the in-game injury event",
+    candidateAction: "excluded as primary video",
+  },
+  {
+    condition: "Source conflict",
+    candidateAction: "conflicted; not source-verified",
+  },
+  {
+    condition: "Video deleted but audit sources remain",
+    candidateAction: "unavailable; not counted in manifest",
+  },
+  {
+    condition: "Search snippet only",
+    candidateAction: "not a source",
+  },
+] as const;
+
+// The immutable nba-v1 version-to-bytes binding. Changing either literal
+// requires a new version and the complete downstream policy cycle.
+const EXPECTED_JSON_SHA256 =
+  "a588b68f3468bec8d24cda9005435ecb0177cc74dbaff7d14f793ec45dcdd280";
+const EXPECTED_MARKDOWN_SHA256 =
+  "f983c682d3504902ff9ae8a57cbd414e4855de2abbb3b6f2855d3532df8fed46";
+
+const FROZEN_POLICY_BY_VERSION = Object.freeze({
+  "nba-v1": Object.freeze({
+    jsonPath: JSON_POLICY_PATH,
+    jsonSha256: EXPECTED_JSON_SHA256,
+    markdownPath: MARKDOWN_POLICY_PATH,
+    markdownSha256: EXPECTED_MARKDOWN_SHA256,
+  }),
+});
+
+type FrozenPolicyVersion = keyof typeof FROZEN_POLICY_BY_VERSION;
+
+function readPolicyFile(
+  path: typeof JSON_POLICY_PATH | typeof MARKDOWN_POLICY_PATH,
+): string {
+  return readFileSync(new URL(`../../${path}`, import.meta.url), "utf8");
+}
+
+function asRecord(value: unknown, label = "value"): Record<string, unknown> {
+  if (value === null || typeof value !== "object" || Array.isArray(value)) {
+    throw new Error(`${label} must be an object`);
+  }
+  return value as Record<string, unknown>;
+}
+
+function asRecordArray(
+  value: unknown,
+  label: string,
+): Record<string, unknown>[] {
+  if (!Array.isArray(value)) throw new Error(`${label} must be an array`);
+  return value.map((entry, index) => asRecord(entry, `${label}[${index}]`));
+}
+
+function parseCanonicalPolicy(jsonBytes = readPolicyFile(JSON_POLICY_PATH)) {
+  const parsed = asRecord(parseStrictJson(jsonBytes), "source policy");
+  if (canonicalJson(parsed) !== jsonBytes) {
+    throw new Error("source policy JSON is not canonical JSON");
+  }
+  return parsed;
+}
+
+function verifyFrozenPolicyBytes(
+  jsonBytes: string,
+  markdownBytes: string,
+): {
+  sourcePolicyVersion: FrozenPolicyVersion;
+  jsonSha256: string;
+  markdownSha256: string;
+} {
+  const policy = parseCanonicalPolicy(jsonBytes);
+  const sourcePolicyVersion = policy.sourcePolicyVersion;
+  if (typeof sourcePolicyVersion !== "string") {
+    throw new Error("source policy has no declared sourcePolicyVersion");
+  }
+  if (!(sourcePolicyVersion in FROZEN_POLICY_BY_VERSION)) {
+    throw new Error(
+      `unregistered source-policy version ${sourcePolicyVersion}`,
+    );
+  }
+
+  const frozen =
+    FROZEN_POLICY_BY_VERSION[sourcePolicyVersion as FrozenPolicyVersion];
+  const jsonSha256 = sha256Hex(jsonBytes);
+  const markdownSha256 = sha256Hex(markdownBytes);
+  if (
+    frozen.jsonSha256 !== jsonSha256 ||
+    frozen.markdownSha256 !== markdownSha256
+  ) {
+    throw new Error(`same-version content drift for ${sourcePolicyVersion}`);
+  }
+
+  const humanPolicy = asRecord(
+    policy.humanPolicyDocument,
+    "humanPolicyDocument",
+  );
+  if (
+    humanPolicy.path !== MARKDOWN_POLICY_PATH ||
+    humanPolicy.sha256 !== markdownSha256
+  ) {
+    throw new Error("human policy path/digest does not match its exact bytes");
+  }
+
+  return {
+    sourcePolicyVersion: sourcePolicyVersion as FrozenPolicyVersion,
+    jsonSha256,
+    markdownSha256,
+  };
+}
+
+function markdownTable(
+  markdown: string,
+  heading: string,
+): Array<[string, string]> {
+  const afterHeading = markdown.split(`${heading}\n`)[1];
+  if (afterHeading === undefined) throw new Error(`missing ${heading}`);
+  const section = afterHeading.split(/\n## /u)[0] ?? "";
+  return section
+    .split("\n")
+    .filter((line) => /^\s*\|/u.test(line))
+    .filter((line) => !/^\s*\|(?:\s*:?-+:?\s*\|)+\s*$/u.test(line))
+    .map((line) => {
+      const cells = line
+        .trim()
+        .slice(1, -1)
+        .split("|")
+        .map((cell) => cell.trim());
+      if (cells.length !== 2) {
+        throw new Error(`${heading} must contain exactly two columns`);
+      }
+      return [cells[0] as string, cells[1] as string];
+    });
+}
+
+describe("NBA source-policy nba-v1 contract", () => {
+  it("is strict canonical JSON with the exact later-consumer root, version, and cutoff", () => {
+    const bytes = readPolicyFile(JSON_POLICY_PATH);
+    const policy = parseCanonicalPolicy(bytes);
+
+    expect(Object.keys(policy)).toEqual(EXPECTED_ROOT_KEYS);
+    expect(bytes.endsWith("\n")).toBe(false);
+    expect(policy.schemaVersion).toBe(1);
+    expect(policy.sourcePolicyVersion).toBe("nba-v1");
+    expect(policy.cutoffDate).toBe("2016-08-06");
+    expect(policy.cutoffDate).toBe(RECENT_CANDIDATE_CUTOFF);
+  });
+
+  it("carries every controlled token exactly and stays synchronized with the ledger contract", () => {
+    const policy = parseCanonicalPolicy();
+    expect(policy.controlledTokens).toEqual(EXPECTED_CONTROLLED_TOKENS);
+
+    expect(CANDIDATE_CAPTION_STATUSES).toEqual(
+      EXPECTED_CONTROLLED_TOKENS.candidateCaptionStatus,
+    );
+    expect(CANDIDATE_COMPETITIONS).toEqual(
+      EXPECTED_CONTROLLED_TOKENS.candidateCompetition,
+    );
+    expect(CANDIDATE_DIAGNOSIS_STATUSES).toEqual(
+      EXPECTED_CONTROLLED_TOKENS.candidateDiagnosisStatus,
+    );
+    expect(CANDIDATE_DISCOVERY_STATUSES).toEqual(
+      EXPECTED_CONTROLLED_TOKENS.candidateDiscoveryStatus,
+    );
+    expect(CANDIDATE_EMBED_STATUSES).toEqual(
+      EXPECTED_CONTROLLED_TOKENS.candidateEmbedStatus,
+    );
+    expect(CANDIDATE_INJURY_CODES).toEqual(
+      EXPECTED_CONTROLLED_TOKENS.candidateInjuryCode,
+    );
+    expect(CANDIDATE_VIDEO_CONTENT_TYPES).toEqual(
+      EXPECTED_CONTROLLED_TOKENS.candidateVideoContentType,
+    );
+    expect(CANDIDATE_VIDEO_PROVIDERS).toEqual(
+      EXPECTED_CONTROLLED_TOKENS.candidateVideoProvider,
+    );
+    expect(DIAGNOSIS_SOURCE_TYPES).toEqual(
+      EXPECTED_CONTROLLED_TOKENS.diagnosisSourceType,
+    );
+    expect(FIRST_PARTY_AVAILABILITY_STATUSES).toEqual(
+      EXPECTED_CONTROLLED_TOKENS.firstPartyAvailabilityStatus,
+    );
+    expect(PROVENANCE_CHECK_STATUSES).toEqual(
+      EXPECTED_CONTROLLED_TOKENS.provenanceCheckStatus,
+    );
+    expect(VIDEO_UPLOADER_PROVENANCES).toEqual(
+      EXPECTED_CONTROLLED_TOKENS.videoUploaderProvenance,
+    );
+  });
+
+  it("records the exact seven opened plan URLs with canonical metadata and access date", () => {
+    const policy = parseCanonicalPolicy();
+    const references = asRecordArray(
+      policy.officialReferences,
+      "officialReferences",
+    );
+    expect(references).toHaveLength(7);
+    expect(references.map(({ planUrl }) => planUrl)).toEqual(
+      EXPECTED_PLAN_REFERENCE_URLS,
+    );
+    expect(references).toEqual(EXPECTED_OFFICIAL_REFERENCES);
+    expect(new Set(references.map(({ key }) => key)).size).toBe(7);
+
+    for (const reference of references) {
+      expect(Object.keys(reference).sort()).toEqual([
+        "accessedAt",
+        "declaredCanonicalUrl",
+        "finalUrl",
+        "key",
+        "planUrl",
+        "publisher",
+        "title",
+      ]);
+      expect(reference.accessedAt).toBe("2026-08-06");
+      expect(reference.key).toEqual(expect.stringMatching(/^[a-z0-9-]+$/u));
+      expect(reference.publisher).toEqual(expect.stringMatching(/\S/u));
+      expect(reference.title).toEqual(expect.stringMatching(/\S/u));
+      expect(reference.finalUrl).toEqual(expect.stringMatching(/^https:\/\//u));
+
+      if (reference.planUrl === YOUTUBE_HELP_PLAN_URL) {
+        expect(reference.declaredCanonicalUrl).toBe(YOUTUBE_HELP_CANONICAL_URL);
+      } else if (
+        REFERENCE_URLS_WITHOUT_OBSERVED_CANONICAL.has(
+          reference.planUrl as string,
+        )
+      ) {
+        expect(reference.finalUrl).toBe(reference.planUrl);
+        expect(reference.declaredCanonicalUrl).toBeNull();
+      } else {
+        expect(reference.finalUrl).toBe(reference.planUrl);
+        expect(reference.declaredCanonicalUrl).toBe(reference.planUrl);
+      }
+    }
+  });
+
+  it("fixes the first-party diagnosis hierarchy and independent classic exception", () => {
+    const rules = asRecord(parseCanonicalPolicy().diagnosisRules);
+    expect(rules).toEqual({
+      classicException: {
+        firstPartyRuleAppliesWhenAvailable: true,
+        originReportIdMayBeEmpty: true,
+        requiredAuditFacts: [
+          "official-locations-searched",
+          "attempted-canonical-or-archived-urls",
+          "observed-http-or-search-outcome",
+          "checked-by",
+          "checked-at",
+          "exact-candidate-audit-reference",
+        ],
+        requiredFirstPartyAvailabilityStatus: "documented-unavailable",
+        requiredMinimumExplicitSecondarySources: 2,
+        requiresDifferentIndependenceGroups: true,
+        requiresExactCandidateAuditReference: true,
+        requiresNoSharedNonEmptyOriginReportId: true,
+        requiresNamedCheckerAndDate: true,
+        status: "proposal-requiring-named-approval",
+      },
+      conflictAction: "conflicted-not-source-verified",
+      diagnosisClaim: {
+        addedGradeAllowed: false,
+        addedPrognosisAllowed: false,
+        format: "brief-factual-paraphrase",
+      },
+      acceptedFirstPartySourceTypes: [
+        "league",
+        "team",
+        "official-injury-report",
+        "official-press-release",
+        "other-first-party",
+      ],
+      injuryReportClaimLimits: [
+        "written-diagnosis-only",
+        "no-unwritten-grade",
+        "no-unwritten-imaging",
+        "no-unwritten-surgery",
+        "no-unwritten-rehabilitation-length",
+        "no-unwritten-return-date",
+      ],
+      recentCandidateMinimumExplicitFirstPartySources: 1,
+      sameIndependenceGroupIsIndependent: false,
+      sameNonEmptyOriginReportIdIsIndependent: false,
+      searchResultSnippetIsEvidence: false,
+      videoOrCommentaryConfirmsDiagnosis: false,
+    });
+  });
+
+  it("limits launch video to the same in-game injury event and excludes substitute clip types", () => {
+    const rules = asRecord(parseCanonicalPolicy().eventVideoRules);
+    expect(rules).toEqual({
+      canonicalUrlRule: "original-platform-page-without-tracking-parameters",
+      eventIdentityDoesNotConfirmDiagnosis: true,
+      eventIdentityEvidenceMustAgree: [
+        "event-source",
+        "video-title-or-context",
+        "root-audit",
+      ],
+      eventIdentityMustMatch: [
+        "athlete",
+        "event-date",
+        "opponent",
+        "competition",
+      ],
+      excludedPrimaryContent: [
+        "official-interview",
+        "news-recap",
+        "analysis-package",
+        "practice",
+        "warm-up",
+        "rehabilitation",
+        "return-footage",
+        "compilation",
+      ],
+      launchPrimaryContentTypes: ["in-game-injury-event"],
+    });
+  });
+
+  it("fixes uploader acceptance, original-platform URLs, and provider/embed boundaries", () => {
+    const rules = asRecord(parseCanonicalPolicy().uploaderProviderRules);
+    expect(rules).toEqual({
+      newProviderRequiresPolicyRevisionAndTest: true,
+      oEmbedProvesEmbeddabilityOrRights: false,
+      provenanceVerifiedMeans:
+        "uploader-rightsholder-provenance-passed-source-policy-only",
+      providerRules: [
+        {
+          allowedEmbedStatuses: [
+            "verified",
+            "external-link-only",
+            "unavailable",
+          ],
+          provider: "youtube",
+          verifiedEmbedRequiresManualPrivacyEnhancedCheck: true,
+        },
+        {
+          allowedEmbedStatuses: ["external-link-only", "unavailable"],
+          provider: "nba",
+          verifiedEmbedAllowed: false,
+        },
+      ],
+      requiredProvenanceFacts: [
+        "original-platform-url",
+        "channel-url",
+        "uploader-name",
+        "publication-date",
+        "access-date",
+        "provenance-token",
+        "factual-provenance-basis",
+      ],
+      technicalEmbeddabilityProvesRights: false,
+      uploaderAcceptance: EXPECTED_UPLOADER_DECISIONS,
+      youtubeApiProvesCopyrightPermissionOrRegionalAvailability: false,
+    });
+  });
+
+  it("requires captions while preserving the external-link accessibility fallback", () => {
+    expect(parseCanonicalPolicy().captionRules).toEqual({
+      checkOriginalPlatformControlRequired: true,
+      notVerifiedCanReachSourceReady: false,
+      siteWrittenSummaryRequired: true,
+      transcriptCopiedOrStored: false,
+      unavailableCanReachAuthoring: true,
+      unavailablePublicBehavior: "clearly-labeled-original-external-link",
+    });
+  });
+
+  it("forbids downloads and screenshots and fixes click-to-load, noindex, and permission boundaries", () => {
+    expect(parseCanonicalPolicy().mediaHandlingRules).toEqual({
+      downloadAllowed: false,
+      downloadIntoRepository: false,
+      permittedStoredFacts: [
+        "short-factual-paraphrase",
+        "page-title",
+        "publisher-name",
+        "date",
+        "canonical-url",
+        "uploader-provenance",
+        "verification-outcome",
+      ],
+      platformMediaMayBePlacedBehindPaidViewingGate: false,
+      playerBrandingOrUploaderIdentityMayBeObscured: false,
+      prohibitedStoredMedia: [
+        "video",
+        "audio",
+        "screenshot",
+        "thumbnail",
+        "transcript",
+        "article-body",
+        "copyrighted-media",
+      ],
+      reproductionOrReuploadAllowed: false,
+      screenshotCaptureOrStorage: false,
+    });
+    expect(parseCanonicalPolicy().privacyAccessRules).toEqual({
+      atlasControlsNotOfficialReferenceQuotations: [
+        "click-to-load",
+        "no-screenshot",
+        "noindex-is-not-privacy",
+      ],
+      authorizedScope: "nba-source-discovery-only",
+      autoplay: false,
+      clickToLoad: true,
+      closedScopes: [
+        "medical-content-authoring",
+        "private-hosting",
+        "public-release",
+        "deployment",
+        "indexing",
+      ],
+      noPreClickThirdPartyPlayerRequest: true,
+      noindexIsAccessControl: false,
+      noindexIsPrivacy: false,
+      privateReviewRequiresHostingLayerAccessControl: true,
+      privateReviewRequiresUnauthorizedRequestTesting: true,
+      sourceVerifiedDoesNotMean: [
+        "medically-reviewed",
+        "publicly-releasable",
+        "legally-licensed",
+        "private",
+        "safe-to-index",
+      ],
+      sourceVerifiedMeans: "ready-for-case-authoring-only",
+      technicalEmbeddingIsLegalPermission: false,
+      youtubePrivacyEnhancedHost: "www.youtube-nocookie.com",
+    });
+  });
+
+  it("stops researchers at source-ready and reserves promotion for the named content owner", () => {
+    expect(parseCanonicalPolicy().workflowRules).toEqual({
+      agentMayInventReviewIdentity: false,
+      agentMayPromoteToSourceVerified: false,
+      researcherMaximumStatus: "source-ready",
+      sourceReadyRequiresAllSourceFieldsPass: true,
+      sourceVerifiedPromotionRequires: [
+        "root-audit-pass",
+        "named-content-owner",
+        "durable-source-review-decision",
+        "frozen-candidate-set-digest",
+        "both-policy-digests",
+      ],
+    });
+    const markdown = readPolicyFile(MARKDOWN_POLICY_PATH);
+    expect(markdown).toMatch(/Researchers and agents stop at `source-ready`/u);
+    expect(markdown).toMatch(
+      /Only the named content owner may promote a root-audited row to `source-verified`/u,
+    );
+    expect(markdown).toMatch(
+      /No researcher or agent may invent that identity/u,
+    );
+  });
+
+  it("requires every included diagnosis, event, and video source original page to be opened", () => {
+    expect(parseCanonicalPolicy().sourcePageRules).toEqual({
+      appliesTo: ["diagnosis-source", "event-source", "video-source"],
+      everyIncludedSourcePageMustBeOpened: true,
+      requiredMetadata: ["canonical-url", "publisher", "access-date"],
+      searchResultSnippetMaySubstituteForOpenedPage: false,
+      sourceUrlDateOrDiagnosisFabricationAllowed: false,
+      unresolvedFactsRemainUnresolved: true,
+    });
+    const markdown = readPolicyFile(MARKDOWN_POLICY_PATH);
+    expect(markdown).toMatch(
+      /Every included diagnosis, event, and video source page must be opened on its original page/u,
+    );
+    expect(markdown).toMatch(/canonical URL, publisher, and access date/u);
+    expect(markdown).toMatch(
+      /No worker invents a source, URL, date, or diagnosis/u,
+    );
+    expect(markdown).toMatch(
+      /Unavailable information remains explicitly unresolved or is recorded as not found/u,
+    );
+  });
+
+  it("contains exactly the nine authorized candidate decisions in JSON and Markdown", () => {
+    const policy = parseCanonicalPolicy();
+    expect(policy.decisionTable).toEqual(EXPECTED_DECISION_TABLE);
+    expect(EXPECTED_DECISION_TABLE).toHaveLength(9);
+
+    const table = markdownTable(
+      readPolicyFile(MARKDOWN_POLICY_PATH),
+      "## Candidate decision table",
+    );
+    expect(table).toEqual([
+      ["Condition", "Candidate action"],
+      ...EXPECTED_DECISION_TABLE.map(
+        ({ condition, candidateAction }): [string, string] => [
+          condition,
+          candidateAction,
+        ],
+      ),
+    ]);
+  });
+
+  it("states the required human diagnosis, event, uploader, and media boundaries", () => {
+    const markdown = readPolicyFile(MARKDOWN_POLICY_PATH);
+    expect(markdown).toContain("`nba-v1`");
+    expect(markdown).toContain("`2016-08-06`");
+    for (const url of EXPECTED_PLAN_REFERENCE_URLS) {
+      expect(markdown).toContain(url);
+    }
+    expect(markdown).toMatch(/first-party source is required/iu);
+    expect(markdown).toMatch(/two explicit secondary diagnosis sources/iu);
+    expect(markdown).toMatch(/different normalized `independence_group`/iu);
+    expect(markdown).toMatch(/same non-empty `origin_report_id`/iu);
+    expect(markdown).toMatch(/same athlete's injury event/iu);
+    expect(markdown).toMatch(
+      /event identity only and never establishes a diagnosis/iu,
+    );
+    expect(markdown).toMatch(/official interviews, recaps/iu);
+
+    const uploaderSection = markdown.split(
+      "## Provider and uploader acceptance",
+    )[1];
+    expect(uploaderSection).toBeDefined();
+    expect(uploaderSection).toContain("`league`");
+    expect(uploaderSection).toContain("`team`");
+    expect(uploaderSection).toContain("`broadcaster-rightsholder`");
+    expect(uploaderSection).toContain("`official-player`");
+    expect(uploaderSection).toContain("`unknown`");
+    expect(uploaderSection).toMatch(/fan, compilation, (?:edit, )?or repost/iu);
+
+    expect(markdown).toMatch(/No worker downloads/iu);
+    expect(markdown).toMatch(/No screenshot or custom thumbnail/iu);
+    expect(markdown).toMatch(
+      /privacy-enhanced `youtube-nocookie\.com` player/iu,
+    );
+    expect(markdown).toMatch(/click-to-load behavior without autoplay/iu);
+    expect(markdown).toMatch(
+      /`noindex` is an indexing directive, not privacy/iu,
+    );
+    expect(markdown).toMatch(/Technical embedding is not legal permission/iu);
+  });
+
+  it("binds the exact human-policy path and digest into canonical JSON", () => {
+    const policy = parseCanonicalPolicy();
+    expect(policy.humanPolicyDocument).toEqual({
+      path: MARKDOWN_POLICY_PATH,
+      sha256: EXPECTED_MARKDOWN_SHA256,
+    });
+    expect(sha256Hex(readPolicyFile(MARKDOWN_POLICY_PATH))).toBe(
+      EXPECTED_MARKDOWN_SHA256,
+    );
+  });
+
+  it("requires a new version and full verifier/review-set/decision/manifest cycle for change", () => {
+    expect(parseCanonicalPolicy().versionChangeRules).toEqual({
+      immutableForSourcePolicyVersion: true,
+      policyChangeRequires: [
+        "new-source-policy-version",
+        "complete-verifier-cycle",
+        "complete-root-audit-cycle",
+        "complete-review-set-cycle",
+        "complete-decision-cycle",
+        "complete-manifest-cycle",
+      ],
+      sameVersionContentDriftAction: "reject",
+    });
+    const markdown = readPolicyFile(MARKDOWN_POLICY_PATH);
+    expect(markdown).toMatch(/immutable for `nba-v1`/iu);
+    expect(markdown).toMatch(
+      /new source-policy version and a complete link-verifier, root-audit, candidate-set digest, named source-review decision, and manifest cycle/iu,
+    );
+  });
+
+  it("maps the declared version one-to-one to one exact immutable SHA-256 pair", () => {
+    expect(Object.keys(FROZEN_POLICY_BY_VERSION)).toEqual(["nba-v1"]);
+    const pairs = Object.values(FROZEN_POLICY_BY_VERSION).map(
+      ({ jsonSha256, markdownSha256 }) => `${jsonSha256}:${markdownSha256}`,
+    );
+    expect(new Set(pairs).size).toBe(pairs.length);
+
+    const jsonBytes = readPolicyFile(JSON_POLICY_PATH);
+    const markdownBytes = readPolicyFile(MARKDOWN_POLICY_PATH);
+    expect(sha256Hex(jsonBytes)).toBe(EXPECTED_JSON_SHA256);
+    expect(sha256Hex(markdownBytes)).toBe(EXPECTED_MARKDOWN_SHA256);
+    expect(verifyFrozenPolicyBytes(jsonBytes, markdownBytes)).toEqual({
+      sourcePolicyVersion: "nba-v1",
+      jsonSha256: EXPECTED_JSON_SHA256,
+      markdownSha256: EXPECTED_MARKDOWN_SHA256,
+    });
+  });
+
+  it("rejects canonical JSON or human-policy drift under the same version", () => {
+    const jsonBytes = readPolicyFile(JSON_POLICY_PATH);
+    const markdownBytes = readPolicyFile(MARKDOWN_POLICY_PATH);
+    const policy = parseCanonicalPolicy(jsonBytes);
+
+    expect(() =>
+      verifyFrozenPolicyBytes(
+        canonicalJson({ ...policy, cutoffDate: "2016-08-07" }),
+        markdownBytes,
+      ),
+    ).toThrow(/same-version content drift for nba-v1/);
+    expect(() =>
+      verifyFrozenPolicyBytes(jsonBytes, `${markdownBytes}<!-- drift -->\n`),
+    ).toThrow(/same-version content drift for nba-v1/);
+    expect(() =>
+      verifyFrozenPolicyBytes(`${jsonBytes}\n`, markdownBytes),
+    ).toThrow(/not canonical JSON/);
+  });
+
+  it("rejects an unregistered replacement version until its complete cycle is frozen", () => {
+    const jsonBytes = readPolicyFile(JSON_POLICY_PATH);
+    const markdownBytes = readPolicyFile(MARKDOWN_POLICY_PATH);
+    const policy = parseCanonicalPolicy(jsonBytes);
+    expect(() =>
+      verifyFrozenPolicyBytes(
+        canonicalJson({ ...policy, sourcePolicyVersion: "nba-v2" }),
+        markdownBytes,
+      ),
+    ).toThrow(/unregistered source-policy version nba-v2/);
+  });
+});
