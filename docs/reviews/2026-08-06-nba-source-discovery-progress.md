@@ -23,7 +23,9 @@ checkboxes are maintained here.
       `667e7465a7fb424eb991e71bcfee5a96b0c59287`
 - [x] Task 1 — frozen NBA source policy; committed by the local
       `docs: freeze NBA source policy` commit
-- [ ] Task 2 — three candidate ledgers and discovery
+- [ ] Task 2 — three candidate ledgers and discovery; stopped at the Browser
+      verification blocker recorded in
+      `docs/reviews/2026-08-06-nba-task-2-browser-verification-blocker.md`
 - [ ] Task 3 — bounded live link and video metadata verification
 - [ ] Task 4 — root audit and final review-set freeze
 - [ ] Named content-owner source review received
@@ -82,6 +84,19 @@ checkboxes are maintained here.
 - No media was downloaded, copied, reproduced, or captured. No remote,
   external account, protected path, medical-review field, indexing field, or
   named reviewer/approver identity was changed.
+
+### Task 2 — stopped
+
+- Created the three exact-header-only candidate ledgers with `apply_patch`.
+- Expected red: `npm run research:check` exited `1`; all ledgers parsed with
+  zero rows and the only issues were the three expected `candidate-count-zero`
+  diagnostics.
+- The correct target-URL Browser availability check then failed three
+  consecutive times with `No browser is available`; troubleshooting reported
+  an empty browser list. No candidate row or discovery log was written.
+- Execution stopped without replacing the required manual privacy-enhanced
+  embed and caption checks with search summaries, HTTP extraction, oEmbed, or
+  API metadata.
 
 ## Resolved execution blocker
 
