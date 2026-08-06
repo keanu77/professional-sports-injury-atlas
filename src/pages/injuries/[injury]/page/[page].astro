@@ -1,0 +1,95 @@
+---
+/**
+ * Additional static injury listing pages (2+). The canonical page 1 lives at
+ * `/injuries/{injury}/`; every page here carries semantic previous/next
+ * links so no-JavaScript browsing stays complete with a bounded DOM.
+ */
+import { getCollection } from "astro:content";
+import CaseCard from "../../../../components/atlas/CaseCard.astro";
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import { findInjury } from "../../../../lib/contracts/taxonomy";
+import {
+  LISTING_PAGE_SIZE,
+  paginateItems,
+  permittedCasesForMode,
+} from "../../../../lib/cases/pagination";
+import { groupCasesByInjury } from "../../../../lib/cases/selectors";
+import { resolveBuildMode } from "../../../../lib/governance/build-mode";
+import { injuryPageParams } from "../../../../lib/routes/static-paths";
+
+export async function getStaticPaths(): Promise<
+  Array<{ params: { injury: string; page: string } }>
+> {
+  const mode = resolveBuildMode(process.env.ATLAS_BUILD_MODE);
+  const caseRecords = (await getCollection("cases")).map((entry) => entry.data);
+  return injuryPageParams(mode, caseRecords).map((params) => ({ params }));
+}
+
+const { injury, page } = Astro.params;
+const injuryCode = injury as string;
+const pageNumber = Number.parseInt(page as string, 10);
+const buildMode = resolveBuildMode(process.env.ATLAS_BUILD_MODE);
+const injuryLabel = findInjury(injuryCode)?.labelZh ?? injuryCode;
+
+const caseRecords = (await getCollection("cases")).map((entry) => entry.data);
+const permitted = permittedCasesForMode(buildMode, caseRecords);
+const injuryCases = groupCasesByInjury(permitted).get(injuryCode) ?? [];
+const pageCases =
+  paginateItems(injuryCases, LISTING_PAGE_SIZE)[pageNumber - 1] ?? [];
+const previousPath =
+  pageNumber === 2
+    ? `/injuries/${injuryCode}/`
+    : `/injuries/${injuryCode}/page/${pageNumber - 1}/`;
+const hasNext = pageNumber * LISTING_PAGE_SIZE < injuryCases.length;
+const nextPath = hasNext
+  ? `/injuries/${injuryCode}/page/${pageNumber + 1}/`
+  : null;
+---
+
+<BaseLayout
+  title={`${injuryLabel} 案例列表 第 ${pageNumber} 頁｜職業運動傷害影片圖鑑`}
+  description={`${injuryLabel} 已審查案例列表第 ${pageNumber} 頁。`}
+>
+  <h1>{injuryLabel} 案例列表（第 {pageNumber} 頁）</h1>
+  <section data-static-listing>
+    <ol class="case-list">
+      {
+        pageCases.map((record) => (
+          <li>
+            <CaseCard
+              record={record}
+              showWorkflowBadge={buildMode === "review"}
+            />
+          </li>
+        ))
+      }
+    </ol>
+    <nav class="listing-pagination" aria-label="案例列表分頁">
+      <a rel="prev" href={previousPath}>上一頁</a>
+      {
+        nextPath !== null && (
+          <a rel="next" href={nextPath}>
+            下一頁
+          </a>
+        )
+      }
+    </nav>
+  </section>
+</BaseLayout>
+
+<style>
+  .case-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .listing-pagination {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+  }
+</style>

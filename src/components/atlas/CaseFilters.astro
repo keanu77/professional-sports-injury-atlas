@@ -1,0 +1,233 @@
+---
+/**
+ * Progressive filter block for listing pages. The static listing and its
+ * pagination remain the complete no-JavaScript experience; this form is a
+ * documented JavaScript enhancement that loads the case-index manifest and
+ * needed 100-entry shards only after the first filter interaction. The two
+ * status controls carry distinct labels: external diagnosis confirmation is
+ * never the private review workflow and vice versa.
+ */
+import { INJURIES } from "../../data/taxonomy/injuries";
+import { LEAGUES } from "../../data/taxonomy/leagues";
+import { MECHANISMS } from "../../data/taxonomy/mechanisms";
+import { SPORTS } from "../../data/taxonomy/sports";
+import { CASE_STATUSES, CONFIRMATION_STATUSES } from "../../lib/contracts/case";
+import { confirmationStatusLabel } from "../../lib/routes/static-paths";
+import type { BuildMode } from "../../lib/governance/build-mode";
+
+interface Props {
+  buildMode: BuildMode;
+  /** Preset injury scope for injury listing pages; null on league pages. */
+  scopeInjury: string | null;
+}
+
+const { buildMode, scopeInjury } = Astro.props;
+
+const WORKFLOW_LABELS: Record<string, string> = {
+  draft: "草稿",
+  "source-verified": "來源已驗證",
+  "medical-review": "醫療審查中",
+  approved: "已核准",
+  rejected: "已退回",
+  retired: "已下架",
+};
+---
+
+<section
+  class="case-filters"
+  data-case-filters
+  data-filter-scope={scopeInjury ?? undefined}
+  aria-labelledby="case-filters-heading"
+>
+  <h2 id="case-filters-heading">篩選案例</h2>
+  <noscript>
+    <p class="filters-noscript">
+      進階複合篩選需要 JavaScript；這是本站已記載的降級行為。沒有 JavaScript
+      時，下方靜態列表與分頁仍完整可讀。
+    </p>
+  </noscript>
+  <form data-filter-form>
+    <div class="filter-grid">
+      <label>
+        球員或球隊關鍵字
+        <input type="search" name="keyword" autocomplete="off" />
+      </label>
+      <label>
+        事件年份
+        <input type="number" name="eventYear" min="1900" max="2999" />
+      </label>
+      <label>
+        球季
+        <input type="text" name="season" autocomplete="off" />
+      </label>
+      <label>
+        運動
+        <select name="sport">
+          <option value="">全部運動</option>
+          {
+            SPORTS.map((sport) => (
+              <option value={sport.code}>{sport.labelZh}</option>
+            ))
+          }
+        </select>
+      </label>
+      <label>
+        聯盟
+        <select name="league">
+          <option value="">全部聯盟</option>
+          {
+            LEAGUES.map((league) => (
+              <option value={league.code}>{league.labelZh}</option>
+            ))
+          }
+        </select>
+      </label>
+      <label>
+        傷種
+        <select name="injury">
+          <option value="">全部傷種</option>
+          {
+            INJURIES.map((injury) => (
+              <option
+                value={injury.code}
+                selected={injury.code === scopeInjury}
+              >
+                {injury.labelZh}
+              </option>
+            ))
+          }
+        </select>
+      </label>
+      <label>
+        可見機轉標籤（觀察分類，非診斷）
+        <select name="mechanism">
+          <option value="">全部機轉標籤</option>
+          {
+            MECHANISMS.map((mechanism) => (
+              <option value={mechanism.code}>{mechanism.labelZh}</option>
+            ))
+          }
+        </select>
+      </label>
+      <label>
+        診斷確認狀態（外部來源）
+        <select name="confirmationStatus">
+          <option value="">全部診斷確認狀態</option>
+          {
+            CONFIRMATION_STATUSES.map((status) => (
+              <option value={status}>{confirmationStatusLabel(status)}</option>
+            ))
+          }
+        </select>
+      </label>
+      {
+        buildMode === "review" && (
+          <label>
+            內部審查工作流程狀態（非診斷）
+            <select name="workflowStatus">
+              <option value="">全部工作流程狀態</option>
+              {CASE_STATUSES.map((status) => (
+                <option value={status}>{WORKFLOW_LABELS[status]}</option>
+              ))}
+            </select>
+          </label>
+        )
+      }
+      <label class="filter-classic">
+        <input type="checkbox" name="classicOnly" value="1" />
+        只看經典案例
+      </label>
+    </div>
+    <button type="button" class="filter-reset-button" data-filter-reset>
+      重設全部篩選
+    </button>
+  </form>
+  <p class="filter-status" data-filter-status role="status" aria-live="polite">
+  </p>
+  <ol class="filter-results" data-filter-results hidden></ol>
+</section>
+
+<script>
+  import { initCaseFilters } from "../../scripts/case-filters";
+
+  initCaseFilters();
+</script>
+
+<style>
+  .case-filters {
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-surface);
+  }
+
+  .case-filters h2 {
+    margin-top: 0;
+    font-family: var(--font-heading);
+  }
+
+  .filters-noscript {
+    font-weight: 600;
+  }
+
+  .filter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 0.75rem;
+  }
+
+  .filter-grid label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-weight: 600;
+  }
+
+  .filter-grid input,
+  .filter-grid select {
+    min-height: 44px;
+    padding: 0.375rem 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    background: var(--color-page);
+    color: var(--color-text);
+    font: inherit;
+  }
+
+  .filter-classic {
+    flex-direction: row !important;
+    align-items: center;
+  }
+
+  .filter-classic input {
+    min-height: auto;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .filter-reset-button {
+    margin-top: 0.75rem;
+    min-height: 44px;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--color-action);
+    border-radius: 8px;
+    background: var(--color-surface);
+    color: var(--color-text);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .filter-status {
+    margin: 0.75rem 0 0;
+    font-weight: 600;
+  }
+
+  .filter-results {
+    margin: 0.75rem 0 0;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+</style>

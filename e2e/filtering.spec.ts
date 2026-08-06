@@ -1,0 +1,103 @@
+/**
+ * Progressive filtering spec. The initial page load must never fetch a
+ * case-index shard; only the first filter interaction loads the manifest
+ * (and, with zero entries, no shard at all). Filter state round-trips
+ * through the query string via `history.replaceState`, result counts are
+ * announced through the `aria-live` status region, and a single reset action
+ * restores the complete static listing.
+ */
+
+import { expect, test, type Page } from "@playwright/test";
+import { expectNoAxeViolations } from "./helpers/a11y";
+
+function trackCaseIndexRequests(page: Page): string[] {
+  const urls: string[] = [];
+  page.on("request", (request) => {
+    if (request.url().includes("/case-index/")) urls.push(request.url());
+  });
+  return urls;
+}
+
+test.describe("progressive case filtering", () => {
+  test("initial page load fetches no case-index manifest or shard", async ({
+    page,
+  }) => {
+    const indexRequests = trackCaseIndexRequests(page);
+    await page.goto("/injuries/acl/");
+    await expect(page.locator("[data-case-filters]")).toBeVisible();
+    expect(indexRequests).toEqual([]);
+  });
+
+  test("first interaction loads only the manifest and announces the count", async ({
+    page,
+  }) => {
+    const indexRequests = trackCaseIndexRequests(page);
+    await page.goto("/injuries/acl/");
+
+    await page.getByLabel("球員或球隊關鍵字").fill("虛構");
+    const status = page.locator("[data-filter-status]");
+    await expect(status).toHaveText(/符合條件的案例共 0 筆/);
+
+    // The manifest loads exactly; zero-entry injuries produce no shard fetch.
+    expect(
+      indexRequests.filter((url) => url.endsWith("/case-index/manifest.json")),
+    ).toHaveLength(1);
+    expect(indexRequests.filter((url) => /\/\d+\.json$/.test(url))).toEqual([]);
+
+    // The status region is a polite live region.
+    await expect(status).toHaveAttribute("aria-live", "polite");
+    await expect(page.locator("[data-static-listing]")).toBeHidden();
+    await expectNoAxeViolations(page);
+  });
+
+  test("compound filter state updates the query string via replaceState", async ({
+    page,
+  }) => {
+    await page.goto("/injuries/acl/");
+    await page.getByLabel("球員或球隊關鍵字").fill("虛構球員");
+    await page.getByLabel("只看經典案例").check();
+    await page.getByLabel("事件年份").fill("2024");
+
+    await expect(page.locator("[data-filter-status]")).toHaveText(
+      /符合條件的案例共 0 筆/,
+    );
+    await expect(page).toHaveURL(/keyword=/);
+    await expect(page).toHaveURL(/classic=1/);
+    await expect(page).toHaveURL(/year=2024/);
+    // replaceState keeps the path canonical; no navigation happened.
+    expect(new URL(page.url()).pathname).toBe("/injuries/acl/");
+  });
+
+  test("prefills the form from an existing query string", async ({ page }) => {
+    await page.goto("/injuries/acl/?keyword=%E8%99%9B%E6%A7%8B&classic=1");
+    await expect(page.getByLabel("球員或球隊關鍵字")).toHaveValue("虛構");
+    await expect(page.getByLabel("只看經典案例")).toBeChecked();
+  });
+
+  test("one reset action restores the static listing and clears the query", async ({
+    page,
+  }) => {
+    await page.goto("/injuries/acl/");
+    await page.getByLabel("球員或球隊關鍵字").fill("虛構");
+    await expect(page.locator("[data-static-listing]")).toBeHidden();
+
+    await page.getByRole("button", { name: "重設全部篩選" }).click();
+    await expect(page.locator("[data-static-listing]")).toBeVisible();
+    await expect(page.locator("[data-filter-status]")).toHaveText(
+      /已重設全部篩選/,
+    );
+    await expect(page.getByLabel("球員或球隊關鍵字")).toHaveValue("");
+    expect(new URL(page.url()).search).toBe("");
+    await expectNoAxeViolations(page);
+  });
+
+  test("the two status filters carry distinct diagnosis and workflow labels", async ({
+    page,
+  }) => {
+    await page.goto("/injuries/acl/");
+    await expect(page.getByLabel("診斷確認狀態（外部來源）")).toBeVisible();
+    await expect(
+      page.getByLabel("內部審查工作流程狀態（非診斷）"),
+    ).toBeVisible();
+  });
+});

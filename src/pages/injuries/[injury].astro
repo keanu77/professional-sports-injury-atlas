@@ -1,0 +1,173 @@
+---
+/**
+ * Canonical injury route (listing page 1). It always exists for the three
+ * registry injuries and renders the injury/course scope information, the
+ * teaching overview (or the transparent `傷種教學待審查` state), a featured
+ * case only when one exists, the first 12 case cards, the progressive filter
+ * block, and semantic pagination links to the `/page/{n}/` routes.
+ */
+import { getCollection } from "astro:content";
+import CaseCard from "../../components/atlas/CaseCard.astro";
+import CaseFilters from "../../components/atlas/CaseFilters.astro";
+import EmptyState from "../../components/atlas/EmptyState.astro";
+import RtpCourseLink from "../../components/cases/RtpCourseLink.astro";
+import InjuryOverviewView from "../../components/injuries/InjuryOverview.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import courseLinksData from "../../data/professional-course-links.v1.json";
+import courseSummariesData from "../../data/generated/rtp-course-summaries.v1.json";
+import { findInjury } from "../../lib/contracts/taxonomy";
+import {
+  LISTING_PAGE_SIZE,
+  paginateItems,
+  permittedCasesForMode,
+} from "../../lib/cases/pagination";
+import { groupCasesByInjury } from "../../lib/cases/selectors";
+import { resolveBuildMode } from "../../lib/governance/build-mode";
+import {
+  injuryListingPages,
+  injuryRouteParams,
+} from "../../lib/routes/static-paths";
+import {
+  professionalCourseLinksSchema,
+  rtpCourseSummariesSchema,
+} from "../../lib/rtp/course-links";
+
+export function getStaticPaths(): Array<{ params: { injury: string } }> {
+  return injuryRouteParams().map((params) => ({ params }));
+}
+
+const { injury } = Astro.params;
+const injuryCode = injury as string;
+const buildMode = resolveBuildMode(process.env.ATLAS_BUILD_MODE);
+const injuryLabel = findInjury(injuryCode)?.labelZh ?? injuryCode;
+
+const caseRecords = (await getCollection("cases")).map((entry) => entry.data);
+const overviewRecords = (await getCollection("injuries")).map(
+  (entry) => entry.data,
+);
+
+const permitted = permittedCasesForMode(buildMode, caseRecords);
+const injuryCases = groupCasesByInjury(permitted).get(injuryCode) ?? [];
+const overview =
+  overviewRecords.find((record) => record.injuryCode === injuryCode) ?? null;
+const featuredCase = injuryCases.length > 0 ? injuryCases[0] : null;
+const pageCases = paginateItems(injuryCases, LISTING_PAGE_SIZE)[0] ?? [];
+const listingPages = injuryListingPages(buildMode, caseRecords, injuryCode);
+const currentPage = listingPages[0];
+
+const courseLinks = professionalCourseLinksSchema.parse(courseLinksData);
+const courseSummaries = rtpCourseSummariesSchema.parse(courseSummariesData);
+const injuryCourseLinks = courseLinks.links.filter(
+  (link) => link.injuryCode === injuryCode,
+);
+const courseBySlug = new Map(
+  courseSummaries.courses.map((course) => [course.slug, course]),
+);
+---
+
+<BaseLayout
+  title={`${injuryLabel}｜職業運動傷害影片圖鑑`}
+  description={`${injuryLabel} 的教學總覽、已審查案例與課程範圍資訊。`}
+>
+  <h1>{injuryLabel}</h1>
+  <p data-injury-scope>
+    本頁整理 {injuryLabel} 的教學總覽與已審查案例；目前共有
+    {injuryCases.length} 筆已審查顯示案例（{injuryCases.length} reviewed cases）。
+  </p>
+
+  <section aria-labelledby="overview-heading">
+    <h2 id="overview-heading">傷種教學總覽</h2>
+    <InjuryOverviewView overview={overview} injuryLabel={injuryLabel} />
+  </section>
+
+  <section aria-labelledby="course-scope-heading">
+    <h2 id="course-scope-heading">對應回場課程範圍</h2>
+    {
+      injuryCourseLinks.length === 0 ? (
+        <EmptyState title="本傷種目前沒有對應的課程範圍資訊" />
+      ) : (
+        <div class="card-grid">
+          {injuryCourseLinks.map((link) => {
+            const course = courseBySlug.get(link.catalogSlug);
+            return course === undefined ? null : (
+              <RtpCourseLink link={link} course={course} />
+            );
+          })}
+        </div>
+      )
+    }
+  </section>
+
+  {
+    featuredCase !== null && (
+      <section aria-labelledby="featured-heading">
+        <h2 id="featured-heading">精選案例</h2>
+        <CaseCard
+          record={featuredCase}
+          showWorkflowBadge={buildMode === "review"}
+        />
+      </section>
+    )
+  }
+
+  <CaseFilters buildMode={buildMode} scopeInjury={injuryCode} />
+
+  <section aria-labelledby="listing-heading" data-static-listing>
+    <h2 id="listing-heading">
+      案例列表（第 {currentPage?.pageNumber ?? 1} 頁）
+    </h2>
+    {
+      pageCases.length === 0 ? (
+        <EmptyState
+          title="目前沒有已審查的案例"
+          description="真實案例完成來源、影片與診斷驗證並通過具名醫療審查後才會出現在這裡。"
+        />
+      ) : (
+        <ol class="case-list">
+          {pageCases.map((record) => (
+            <li>
+              <CaseCard
+                record={record}
+                showWorkflowBadge={buildMode === "review"}
+              />
+            </li>
+          ))}
+        </ol>
+      )
+    }
+    {
+      listingPages.length > 1 && currentPage !== undefined && (
+        <nav class="listing-pagination" aria-label="案例列表分頁">
+          {currentPage.nextPath !== null && (
+            <a rel="next" href={currentPage.nextPath}>
+              下一頁
+            </a>
+          )}
+        </nav>
+      )
+    }
+  </section>
+</BaseLayout>
+
+<style>
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1rem;
+  }
+
+  .case-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .listing-pagination {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+  }
+</style>

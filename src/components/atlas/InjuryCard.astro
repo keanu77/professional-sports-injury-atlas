@@ -1,0 +1,41 @@
+---
+/**
+ * Home-page injury atlas card. The reviewed-case count comes only from the
+ * mode-permitted selector output and renders transparently, including the
+ * explicit `0 reviewed cases` state before any real case exists.
+ */
+interface Props {
+  injuryCode: string;
+  labelZh: string;
+  reviewedCaseCount: number;
+}
+
+const { injuryCode, labelZh, reviewedCaseCount } = Astro.props;
+---
+
+<article class="injury-card" data-injury-card={injuryCode}>
+  <h3 class="injury-card-title">
+    <a href={`/injuries/${injuryCode}/`}>{labelZh}</a>
+  </h3>
+  <p class="injury-card-count" data-reviewed-case-count={reviewedCaseCount}>
+    已審查案例：{reviewedCaseCount} 筆（{reviewedCaseCount} reviewed cases）
+  </p>
+</article>
+
+<style>
+  .injury-card {
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-surface);
+  }
+
+  .injury-card-title {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-heading);
+  }
+
+  .injury-card-count {
+    margin: 0;
+  }
+</style>

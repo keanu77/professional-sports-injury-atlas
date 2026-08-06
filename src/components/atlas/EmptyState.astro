@@ -1,0 +1,35 @@
+---
+/**
+ * Transparent empty state. It states plainly what does not exist yet and
+ * never substitutes fabricated content.
+ */
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<div class="empty-state" data-empty-state>
+  <p class="empty-state-title">{title}</p>
+  {description !== undefined && <p class="empty-state-body">{description}</p>}
+</div>
+
+<style>
+  .empty-state {
+    padding: 1rem;
+    border: 1px dashed var(--color-border);
+    border-radius: 8px;
+    background: var(--color-surface);
+  }
+
+  .empty-state-title {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .empty-state-body {
+    margin: 0.5rem 0 0;
+  }
+</style>

@@ -1,0 +1,33 @@
+---
+/**
+ * Private review-workflow badge, rendered in review builds only. It labels
+ * itself as an internal workflow state and never masquerades as a diagnosis;
+ * the external diagnosis-confirmation status renders elsewhere with its own
+ * distinct label.
+ */
+import type { InjuryCase } from "../../lib/contracts/case";
+import { labelCaseWorkflowState } from "../../lib/cases/selectors";
+
+interface Props {
+  record: InjuryCase;
+}
+
+const { record } = Astro.props;
+const label = labelCaseWorkflowState(record);
+---
+
+<p class="review-badge" data-review-badge data-workflow-status={record.status}>
+  內部審查工作流程狀態（非診斷）：<strong>{label}</strong>
+</p>
+
+<style>
+  .review-badge {
+    display: inline-block;
+    margin: 0;
+    padding: 0.375rem 0.75rem;
+    border: 1px dashed var(--color-border);
+    border-radius: 6px;
+    background: var(--color-surface);
+    font-size: 0.9375rem;
+  }
+</style>

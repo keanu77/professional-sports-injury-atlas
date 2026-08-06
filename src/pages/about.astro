@@ -1,0 +1,48 @@
+---
+/**
+ * About page: teaching purpose, the two-layer note design, and the named
+ * review workflow. Text only; no clinical claims and no fabricated content.
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="關於本站｜職業運動傷害影片圖鑑"
+  description="本站的教學目的、雙層筆記設計與具名醫療審查流程。"
+>
+  <h1>關於本站</h1>
+  <p>
+    職業運動傷害影片圖鑑以公開比賽影片的觀察為基礎，整理職業運動常見傷害的
+    教學案例。本站是教學資源，不是醫療建議；任何傷害的診斷與處置都需要具
+    資格的臨床專業人員評估。
+  </p>
+
+  <section aria-labelledby="layers-heading">
+    <h2 id="layers-heading">雙層筆記設計</h2>
+    <p>
+      每個案例同時提供「一般讀者筆記」與「專業筆記」，兩層永遠同時顯示：
+      一般層描述發生了什麼、畫面看得到什麼、畫面不能證明什麼與已確認的後續
+      更新；專業層整理機轉分析、臨床限制、鑑別脈絡與治療回場意涵，且每個
+      專業主張都必須綁定教學文獻證據。
+    </p>
+  </section>
+
+  <section aria-labelledby="review-heading">
+    <h2 id="review-heading">審查流程</h2>
+    <p>
+      每筆案例依固定順序處理：來源蒐集與去重、來源驗證、影片驗證、診斷驗證、
+      撰寫雙層筆記、結構驗證、內容 digest 計算、具名醫療審查、內部品質確認，
+      最後才個別決定是否公開。畫面觀察永遠與外部診斷來源分開標示；審查工作
+      流程狀態是內部管理資訊，不代表診斷。
+    </p>
+  </section>
+
+  <section aria-labelledby="visibility-heading">
+    <h2 id="visibility-heading">審查版能見度說明</h2>
+    <p>
+      審查版頁面全部帶有 noindex 標記並以 robots.txt 全面禁止爬取；這代表
+      「不請求索引」，不等於存取控制。在完成主機層驗證之前，本站不宣稱審查
+      版是私有的。
+    </p>
+  </section>
+</BaseLayout>

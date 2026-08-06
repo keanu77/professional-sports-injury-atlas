@@ -1,0 +1,96 @@
+---
+/**
+ * Injury teaching overview. When a real (or fixture) overview record exists
+ * it renders the seven controlled narrative sections plus the current review
+ * digest; before real authoring it renders the transparent `傷種教學待審查`
+ * state instead of fabricated clinical copy.
+ */
+import EmptyState from "../atlas/EmptyState.astro";
+import { computeInjuryOverviewDigest } from "../../lib/cases/injury-overview-digest";
+import type { InjuryOverview } from "../../lib/contracts/injury-overview";
+
+interface Props {
+  overview: InjuryOverview | null;
+  injuryLabel: string;
+}
+
+const { overview, injuryLabel } = Astro.props;
+const overviewDigest =
+  overview === null ? null : computeInjuryOverviewDigest(overview);
+
+const SECTIONS: Array<{
+  field:
+    | "scope"
+    | "basicAnatomyAndDefinition"
+    | "commonObservedMechanisms"
+    | "whatVideoCannotProve"
+    | "diagnosisContext"
+    | "treatmentContext"
+    | "rtpContext";
+  heading: string;
+}> = [
+  { field: "scope", heading: "教學範圍" },
+  { field: "basicAnatomyAndDefinition", heading: "基本解剖與定義" },
+  { field: "commonObservedMechanisms", heading: "常見可見機轉（非診斷）" },
+  { field: "whatVideoCannotProve", heading: "畫面不能證明什麼" },
+  { field: "diagnosisContext", heading: "診斷脈絡" },
+  { field: "treatmentContext", heading: "治療脈絡" },
+  { field: "rtpContext", heading: "回場脈絡" },
+];
+---
+
+{
+  overview === null ? (
+    <EmptyState
+      title="傷種教學待審查"
+      description={`${injuryLabel} 的教學總覽尚未完成醫療審查；本站不會顯示未經審查的臨床內容。`}
+    />
+  ) : (
+    <section class="injury-overview" data-injury-overview={overview.injuryCode}>
+      <h2>{overview.titleZh}</h2>
+      <p>{overview.summaryZh}</p>
+      {SECTIONS.map((section) => (
+        <section class="overview-section">
+          <h3>{section.heading}</h3>
+          <p>{overview[section.field]}</p>
+        </section>
+      ))}
+      <div class="overview-digest">
+        <label class="digest-label">
+          目前教學內容 digest（可複製）
+          <input
+            class="digest-field"
+            type="text"
+            readonly
+            value={overviewDigest}
+          />
+        </label>
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .injury-overview h2,
+  .overview-section h3 {
+    font-family: var(--font-heading);
+  }
+
+  .digest-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-weight: 600;
+  }
+
+  .digest-field {
+    min-height: 44px;
+    width: min(100%, 36rem);
+    padding: 0.375rem 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    background: var(--color-page);
+    color: var(--color-text);
+    font-family: ui-monospace, monospace;
+  }
+</style>

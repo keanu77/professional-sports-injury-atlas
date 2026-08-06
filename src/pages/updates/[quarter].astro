@@ -1,0 +1,154 @@
+---
+/**
+ * Quarterly update route, generated only from actual update entries. Review
+ * mode renders every authored update; public mode renders only approved,
+ * published updates whose added/updated cases pass the public selector,
+ * while retired/unavailable entries render non-clinical facts only.
+ */
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { computeQuarterlyUpdateDigest } from "../../lib/cases/update-digest";
+import { resolveBuildMode } from "../../lib/governance/build-mode";
+import { updateRouteParams } from "../../lib/routes/static-paths";
+
+export async function getStaticPaths(): Promise<
+  Array<{ params: { quarter: string } }>
+> {
+  const mode = resolveBuildMode(process.env.ATLAS_BUILD_MODE);
+  const updateRecords = (await getCollection("updates")).map(
+    (entry) => entry.data,
+  );
+  return updateRouteParams(mode, updateRecords).map((params) => ({ params }));
+}
+
+const { quarter } = Astro.params;
+const buildMode = resolveBuildMode(process.env.ATLAS_BUILD_MODE);
+const updateRecords = (await getCollection("updates")).map(
+  (entry) => entry.data,
+);
+const update = updateRecords.find((candidate) => candidate.id === quarter);
+if (update === undefined) {
+  throw new Error(`update route for unknown update ${String(quarter)}`);
+}
+const updateDigest = computeQuarterlyUpdateDigest(update);
+
+const STATUS_LABELS: Record<string, string> = {
+  draft: "草稿",
+  "medical-review": "醫療審查中",
+  approved: "已核准",
+};
+---
+
+<BaseLayout
+  title={`季度更新 ${update.id}｜職業運動傷害影片圖鑑`}
+  description={`季度更新 ${update.id} 的案例變更清單。`}
+>
+  <article data-atlas-view="quarterly-update" data-update-id={update.id}>
+    <h1>季度更新 {update.id}</h1>
+    <p>
+      期間：{update.period.startDate} 至 {update.period.endDate}｜狀態：
+      {STATUS_LABELS[update.status] ?? update.status}
+    </p>
+    <p>{update.summary}</p>
+
+    <section aria-labelledby="added-heading">
+      <h2 id="added-heading">新增案例（{update.addedCases.length}）</h2>
+      {
+        update.addedCases.length === 0 ? (
+          <p>本季沒有新增案例。</p>
+        ) : (
+          <ul>
+            {update.addedCases.map((entry) => (
+              <li>
+                <code>{entry.caseId}</code>
+                ｜clinical digest：<code>{entry.currentClinicalDigest}</code>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </section>
+
+    <section aria-labelledby="updated-heading">
+      <h2 id="updated-heading">內容更新（{update.updatedCases.length}）</h2>
+      {
+        update.updatedCases.length === 0 ? (
+          <p>本季沒有內容更新的案例。</p>
+        ) : (
+          <ul>
+            {update.updatedCases.map((entry) => (
+              <li>
+                <code>{entry.caseId}</code>｜原因：{entry.reason}
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </section>
+
+    <section aria-labelledby="retired-heading">
+      <h2 id="retired-heading">
+        下架與影片失效（{
+          update.retiredCases.length + update.unavailableCases.length
+        }）
+      </h2>
+      {
+        update.retiredCases.length === 0 &&
+        update.unavailableCases.length === 0 ? (
+          <p>本季沒有下架或影片失效的案例。</p>
+        ) : (
+          <ul>
+            {update.retiredCases.map((entry) => (
+              <li>
+                <code>{entry.caseId}</code>｜已下架｜原因：{entry.reason}
+              </li>
+            ))}
+            {update.unavailableCases.map((entry) => (
+              <li>
+                <code>{entry.caseId}</code>｜原始影片已無法取得（
+                {entry.detectedAt} 偵測）｜處置：{entry.action}
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </section>
+
+    {
+      buildMode === "review" && (
+        <section aria-labelledby="update-digest-heading" data-review-digests>
+          <h2 id="update-digest-heading">審查識別與 digest</h2>
+          <label class="digest-label">
+            更新內容 digest（可複製）
+            <input
+              class="digest-field"
+              type="text"
+              readonly
+              value={updateDigest}
+            />
+          </label>
+        </section>
+      )
+    }
+  </article>
+</BaseLayout>
+
+<style>
+  .digest-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-weight: 600;
+  }
+
+  .digest-field {
+    min-height: 44px;
+    width: min(100%, 36rem);
+    padding: 0.375rem 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    background: var(--color-page);
+    color: var(--color-text);
+    font-family: ui-monospace, monospace;
+  }
+</style>

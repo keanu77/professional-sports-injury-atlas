@@ -1,12 +1,143 @@
 ---
-// Minimal bootstrap page on the governed BaseLayout, which now renders the
-// single main landmark and site chrome. Task 7 adds the injury atlas routes.
+/**
+ * Injury atlas home. Injury cards, the transparent reviewed-case counts, the
+ * latest approved/review update state, the search/filter entry, the source
+ * and review policy links, and the three read-only RTP mapping summaries all
+ * derive from the mode-permitted selectors and real records only; no fixture
+ * ever renders here.
+ */
+import { getCollection } from "astro:content";
+import InjuryCard from "../components/atlas/InjuryCard.astro";
+import EmptyState from "../components/atlas/EmptyState.astro";
+import RtpCourseLink from "../components/cases/RtpCourseLink.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import courseLinksData from "../data/professional-course-links.v1.json";
+import courseSummariesData from "../data/generated/rtp-course-summaries.v1.json";
+import governance from "../data/site-governance.v1.json";
+import { INJURIES } from "../data/taxonomy/injuries";
+import { permittedCasesForMode } from "../lib/cases/pagination";
+import { groupCasesByInjury } from "../lib/cases/selectors";
+import { resolveBuildMode } from "../lib/governance/build-mode";
+import { latestUpdateRef } from "../lib/routes/static-paths";
+import {
+  professionalCourseLinksSchema,
+  rtpCourseSummariesSchema,
+} from "../lib/rtp/course-links";
 
 const title = "職業運動傷害影片圖鑑";
+const buildMode = resolveBuildMode(process.env.ATLAS_BUILD_MODE);
+
+const caseRecords = (await getCollection("cases")).map((entry) => entry.data);
+const updateRecords = (await getCollection("updates")).map(
+  (entry) => entry.data,
+);
+
+const permitted = permittedCasesForMode(buildMode, caseRecords);
+const grouped = groupCasesByInjury(permitted);
+const latestUpdate = latestUpdateRef(
+  buildMode,
+  updateRecords,
+  governance.currentUpdateId,
+);
+
+const courseLinks = professionalCourseLinksSchema.parse(courseLinksData);
+const courseSummaries = rtpCourseSummariesSchema.parse(courseSummariesData);
+const courseBySlug = new Map(
+  courseSummaries.courses.map((course) => [course.slug, course]),
+);
 ---
 
-<BaseLayout title={title}>
+<BaseLayout
+  title={title}
+  description="以公開影片觀察為基礎的職業運動傷害教學圖鑑：三大傷種、雙層筆記與已審查案例。"
+>
   <h1>{title}</h1>
-  <p>平台底座建置中；尚無案例內容。</p>
+  <p>
+    本站以公開比賽影片的觀察為基礎，整理職業運動常見傷害的教學案例。畫面只能
+    呈現可見的受傷過程，不能證明診斷；所有診斷資訊都來自外部具名來源。
+  </p>
+
+  <section aria-labelledby="injury-atlas-heading">
+    <h2 id="injury-atlas-heading">三大傷種圖鑑</h2>
+    <p data-total-reviewed-count>
+      目前全站共有 {permitted.length} 筆已審查顯示案例（{permitted.length}
+      reviewed cases）。
+    </p>
+    <div class="card-grid">
+      {
+        INJURIES.map((injury) => (
+          <InjuryCard
+            injuryCode={injury.code}
+            labelZh={injury.labelZh}
+            reviewedCaseCount={grouped.get(injury.code)?.length ?? 0}
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <section aria-labelledby="latest-update-heading">
+    <h2 id="latest-update-heading">最新季度更新</h2>
+    {
+      latestUpdate === null ? (
+        <EmptyState
+          title="尚無季度更新"
+          description="第一個季度更新完成審查後，會在此提供更新連結與變更清單。"
+        />
+      ) : (
+        <p>
+          <a data-latest-update-link href={latestUpdate.path}>
+            最新季度更新：{latestUpdate.id}
+          </a>
+        </p>
+      )
+    }
+  </section>
+
+  <section aria-labelledby="search-entry-heading">
+    <h2 id="search-entry-heading">搜尋與篩選入口</h2>
+    <p>
+      每個傷種頁提供球員／球隊關鍵字、年份、球季、聯盟、可見機轉標籤與經典案例
+      等複合篩選：
+    </p>
+    <ul>
+      {
+        INJURIES.map((injury) => (
+          <li>
+            <a href={`/injuries/${injury.code}/`}>篩選{injury.labelZh}案例</a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section aria-labelledby="rtp-courses-heading">
+    <h2 id="rtp-courses-heading">回場復健課程對應（唯讀）</h2>
+    <div class="card-grid">
+      {
+        courseLinks.links.map((link) => {
+          const course = courseBySlug.get(link.catalogSlug);
+          return course === undefined ? null : (
+            <RtpCourseLink link={link} course={course} />
+          );
+        })
+      }
+    </div>
+  </section>
+
+  <section aria-labelledby="policy-heading">
+    <h2 id="policy-heading">來源與審查政策</h2>
+    <ul>
+      <li><a href="/source-policy/">來源與證據政策</a></li>
+      <li><a href="/about/">關於本站與審查流程</a></li>
+    </ul>
+  </section>
 </BaseLayout>
+
+<style>
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1rem;
+  }
+</style>

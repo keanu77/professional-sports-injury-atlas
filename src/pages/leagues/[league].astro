@@ -1,0 +1,101 @@
+---
+/**
+ * Canonical league listing (page 1). League routes derive only from actual
+ * selector-permitted entries: with zero cases no league route exists, and no
+ * MLB/football/empty-league route is ever generated.
+ */
+import { getCollection } from "astro:content";
+import CaseCard from "../../components/atlas/CaseCard.astro";
+import CaseFilters from "../../components/atlas/CaseFilters.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { findLeague } from "../../lib/contracts/taxonomy";
+import {
+  LISTING_PAGE_SIZE,
+  paginateItems,
+  permittedCasesForMode,
+} from "../../lib/cases/pagination";
+import { resolveBuildMode } from "../../lib/governance/build-mode";
+import {
+  leagueListingPages,
+  leagueRouteParams,
+} from "../../lib/routes/static-paths";
+
+export async function getStaticPaths(): Promise<
+  Array<{ params: { league: string } }>
+> {
+  const mode = resolveBuildMode(process.env.ATLAS_BUILD_MODE);
+  const caseRecords = (await getCollection("cases")).map((entry) => entry.data);
+  return leagueRouteParams(mode, caseRecords).map((params) => ({ params }));
+}
+
+const { league } = Astro.params;
+const leagueCode = league as string;
+const buildMode = resolveBuildMode(process.env.ATLAS_BUILD_MODE);
+const leagueLabel = findLeague(leagueCode)?.labelZh ?? leagueCode;
+
+const caseRecords = (await getCollection("cases")).map((entry) => entry.data);
+const leagueCases = permittedCasesForMode(buildMode, caseRecords).filter(
+  (record) => record.league.code === leagueCode,
+);
+const pageCases = paginateItems(leagueCases, LISTING_PAGE_SIZE)[0] ?? [];
+const listingPages = leagueListingPages(buildMode, caseRecords, leagueCode);
+const currentPage = listingPages[0];
+---
+
+<BaseLayout
+  title={`${leagueLabel} 案例列表｜職業運動傷害影片圖鑑`}
+  description={`${leagueLabel} 的已審查傷害案例列表。`}
+>
+  <h1>{leagueLabel} 案例列表</h1>
+  <p>
+    共有 {leagueCases.length} 筆已審查顯示案例（{leagueCases.length} reviewed cases）。
+  </p>
+
+  <CaseFilters buildMode={buildMode} scopeInjury={null} />
+
+  <section data-static-listing aria-labelledby="league-listing-heading">
+    <h2 id="league-listing-heading">
+      案例列表（第 {currentPage?.pageNumber ?? 1} 頁）
+    </h2>
+    <ol class="case-list">
+      {
+        pageCases.map((record) => (
+          <li>
+            <CaseCard
+              record={record}
+              showWorkflowBadge={buildMode === "review"}
+            />
+          </li>
+        ))
+      }
+    </ol>
+    {
+      listingPages.length > 1 &&
+        currentPage !== undefined &&
+        currentPage.nextPath !== null && (
+          <nav class="listing-pagination" aria-label="案例列表分頁">
+            <a rel="next" href={currentPage.nextPath}>
+              下一頁
+            </a>
+          </nav>
+        )
+    }
+  </section>
+</BaseLayout>
+
+<style>
+  .case-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .listing-pagination {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+  }
+</style>

@@ -1,0 +1,77 @@
+---
+/**
+ * Read-only RTP course mapping card. The public URL renders only when the
+ * fail-closed durable-decision evaluation passes; in every other state the
+ * card shows the exact `課程連結待核准` label and never guesses a URL.
+ */
+import { existsSync, readFileSync } from "node:fs";
+import governance from "../../data/site-governance.v1.json";
+import { courseLinkPresentation } from "../../lib/routes/static-paths";
+import { courseLinkDecisionPathFor } from "../../lib/rtp/course-link-decision";
+import type {
+  ProfessionalCourseLink,
+  RtpCourseSummary,
+} from "../../lib/rtp/course-links";
+
+interface Props {
+  link: ProfessionalCourseLink;
+  course: RtpCourseSummary;
+}
+
+const { link, course } = Astro.props;
+
+const durablePath = courseLinkDecisionPathFor(link.key);
+const decisionBytes = existsSync(durablePath)
+  ? readFileSync(durablePath)
+  : null;
+const presentation = courseLinkPresentation({
+  link,
+  course,
+  decisionBytes,
+  decisionPath: decisionBytes === null ? null : durablePath,
+  courseLinkPolicyVersion: governance.courseLinkPolicyVersion ?? "",
+});
+---
+
+<article class="course-card" data-course-key={link.key}>
+  <h3 class="course-title">{course.titleZh}</h3>
+  <p class="course-scope">適用範圍：{link.scopeNote}</p>
+  <p class="course-subtitle">{course.subtitle}</p>
+  {
+    presentation.state === "approved" && presentation.url !== null ? (
+      <p>
+        <a href={presentation.url} rel="noopener noreferrer">
+          前往課程（外部連結）
+        </a>
+      </p>
+    ) : (
+      <p class="course-pending" data-course-link-pending>
+        {presentation.pendingLabel}
+      </p>
+    )
+  }
+</article>
+
+<style>
+  .course-card {
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-surface);
+  }
+
+  .course-title {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-heading);
+  }
+
+  .course-scope,
+  .course-subtitle {
+    margin: 0 0 0.5rem;
+  }
+
+  .course-pending {
+    margin: 0;
+    font-weight: 600;
+  }
+</style>

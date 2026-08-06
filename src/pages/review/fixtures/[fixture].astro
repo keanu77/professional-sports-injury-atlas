@@ -1,0 +1,345 @@
+---
+/**
+ * Review-only, data-bearing fixture routes. `getStaticPaths()` returns the
+ * four fixture paths in review mode and zero paths in public mode. Every
+ * fixture renders the same production view components (CaseVideo,
+ * CaseTimeline, LayeredNotes, ReviewBadge, CaseCard, InjuryOverview) with
+ * the visibly fictional in-memory records from `src/data/review-fixtures.ts`,
+ * proving the data-bearing templates before any real content exists.
+ */
+import CaseCard from "../../../components/atlas/CaseCard.astro";
+import CaseTimeline from "../../../components/cases/CaseTimeline.astro";
+import CaseVideo from "../../../components/cases/CaseVideo.astro";
+import LayeredNotes from "../../../components/cases/LayeredNotes.astro";
+import ReviewBadge from "../../../components/cases/ReviewBadge.astro";
+import InjuryOverviewView from "../../../components/injuries/InjuryOverview.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import {
+  reviewFixtureClassicCase,
+  reviewFixtureExternalLinkCase,
+  reviewFixtureOverview,
+  reviewFixtureUpdate,
+  REVIEW_FIXTURE_NOTICE,
+  selectReviewFixtureCases,
+} from "../../../data/review-fixtures";
+import { computeCaseContentDigest } from "../../../lib/cases/digest";
+import { computeQuarterlyUpdateDigest } from "../../../lib/cases/update-digest";
+import { findInjury, findLeague } from "../../../lib/contracts/taxonomy";
+import { resolveBuildMode } from "../../../lib/governance/build-mode";
+import {
+  CLASSIC_CASE_LABEL,
+  computeRenderedSetDigest,
+  confirmationStatusLabel,
+  reviewFixtureParams,
+} from "../../../lib/routes/static-paths";
+
+export function getStaticPaths(): Array<{ params: { fixture: string } }> {
+  return reviewFixtureParams(
+    resolveBuildMode(process.env.ATLAS_BUILD_MODE),
+  ).map(({ fixture }) => ({ params: { fixture } }));
+}
+
+const { fixture } = Astro.params;
+const buildMode = resolveBuildMode(process.env.ATLAS_BUILD_MODE);
+const fixtureCases = selectReviewFixtureCases(buildMode);
+
+const record = reviewFixtureClassicCase;
+const externalRecord = reviewFixtureExternalLinkCase;
+const injuryLabel =
+  findInjury(record.injury.code)?.labelZh ?? record.injury.code;
+const leagueLabel =
+  findLeague(record.league.code)?.labelZh ?? record.league.code;
+
+const TITLES: Record<string, string> = {
+  "case-detail": "案例詳情 fixture（審查專用）",
+  "injury-overview": "傷種教學總覽 fixture（審查專用）",
+  "league-listing": "聯盟列表 fixture（審查專用）",
+  "latest-update": "季度更新 fixture（審查專用）",
+};
+
+const contentDigest = computeCaseContentDigest(record);
+const renderedSetDigest = computeRenderedSetDigest(fixtureCases);
+const updateDigest = computeQuarterlyUpdateDigest(reviewFixtureUpdate);
+---
+
+<BaseLayout
+  title={TITLES[fixture as string] ?? "Fixture（審查專用）"}
+  description="Review-only 資料承載 fixture：以明顯虛構資料渲染正式版型元件。"
+>
+  <p class="fixture-banner" data-review-only-marker>
+    <strong>審查專用（Review-only fixture）</strong>：{REVIEW_FIXTURE_NOTICE}
+  </p>
+
+  {
+    fixture === "case-detail" && (
+      <article data-atlas-view="case-detail" data-case-id={record.id}>
+        <h1>
+          {record.athlete.name}｜{injuryLabel}
+        </h1>
+        <p class="case-facts">
+          {leagueLabel}｜{record.season} 球季｜{record.eventDate}｜
+          {record.teamAtEvent.name} 對 {record.opponent.name}
+        </p>
+        <p
+          class="case-confirmation"
+          data-confirmation-status={record.injury.confirmationStatus}
+        >
+          診斷確認狀態（外部來源）：
+          <strong>
+            {confirmationStatusLabel(record.injury.confirmationStatus)}
+          </strong>
+          ｜外部確認診斷：{record.injury.confirmedDiagnosis}
+        </p>
+        {record.isClassic && (
+          <p class="case-classic" data-classic-label>
+            <strong>{CLASSIC_CASE_LABEL}</strong>
+            {record.classicReason !== null && <>：{record.classicReason}</>}
+          </p>
+        )}
+        <ReviewBadge record={record} />
+        <p class="mechanism-tags">
+          可見機轉標籤（觀察分類，非診斷）：
+          {record.observedMechanismTags.join("、")}
+        </p>
+
+        <div class="case-detail-grid">
+          <div class="case-video-column">
+            <CaseVideo
+              scopeId={record.slug}
+              displayMode={buildMode}
+              sourceTitle={`${record.athlete.name} 案例影片（原始平台來源）`}
+              video={{
+                provider: record.video.provider,
+                canonicalUrl: record.video.canonicalUrl,
+                uploaderName: record.video.uploaderName,
+                durationSeconds: record.video.durationSeconds,
+                embedStatus: record.video.embedStatus,
+                captionStatus: record.video.captionStatus,
+              }}
+            />
+          </div>
+          <div class="case-notes-column">
+            <LayeredNotes
+              scopeId={record.slug}
+              general={record.general}
+              professional={record.professional}
+            >
+              <CaseTimeline
+                scopeId={record.slug}
+                canonicalUrl={record.video.canonicalUrl}
+                segments={record.video.segments}
+              />
+            </LayeredNotes>
+          </div>
+        </div>
+
+        <section aria-labelledby="fixture-external-heading">
+          <h2 id="fixture-external-heading">
+            External-link 狀態示範（虛構球員乙）
+          </h2>
+          <CaseVideo
+            scopeId={externalRecord.slug}
+            displayMode={buildMode}
+            sourceTitle={`${externalRecord.athlete.name} 案例影片（原始平台來源）`}
+            video={{
+              provider: externalRecord.video.provider,
+              canonicalUrl: externalRecord.video.canonicalUrl,
+              uploaderName: externalRecord.video.uploaderName,
+              durationSeconds: externalRecord.video.durationSeconds,
+              embedStatus: externalRecord.video.embedStatus,
+              captionStatus: externalRecord.video.captionStatus,
+            }}
+          />
+        </section>
+
+        <section aria-labelledby="fixture-sources-heading">
+          <h2 id="fixture-sources-heading">來源與證據</h2>
+          <ul class="source-list">
+            {record.sources.map((source) => (
+              <li>
+                <a href={source.url} rel="noopener noreferrer">
+                  {source.title}
+                </a>
+                ｜{source.publisher}｜{source.publishedAt}（{source.type}）
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section aria-labelledby="fixture-digest-heading" data-review-digests>
+          <h2 id="fixture-digest-heading">審查識別與 digest</h2>
+          <p>
+            記錄 ID：<code data-record-id>{record.id}</code>
+          </p>
+          <label class="digest-label">
+            案例內容 digest（可複製）
+            <input
+              class="digest-field"
+              type="text"
+              readonly
+              value={contentDigest}
+            />
+          </label>
+          <label class="digest-label">
+            本次建置審查集合 digest（可複製）
+            <input
+              class="digest-field"
+              type="text"
+              readonly
+              value={renderedSetDigest}
+            />
+          </label>
+        </section>
+
+        <section aria-labelledby="fixture-related-heading">
+          <h2 id="fixture-related-heading">其他案例（最多 3 筆）</h2>
+          <ol class="case-list">
+            <li>
+              <CaseCard record={externalRecord} showWorkflowBadge={true} />
+            </li>
+          </ol>
+        </section>
+      </article>
+    )
+  }
+
+  {
+    fixture === "injury-overview" && (
+      <article data-atlas-view="injury-overview">
+        <h1>傷種教學總覽（虛構示範資料）</h1>
+        <InjuryOverviewView
+          overview={reviewFixtureOverview}
+          injuryLabel={
+            findInjury(reviewFixtureOverview.injuryCode)?.labelZh ??
+            reviewFixtureOverview.injuryCode
+          }
+        />
+      </article>
+    )
+  }
+
+  {
+    fixture === "league-listing" && (
+      <article data-atlas-view="league-listing">
+        <h1>{leagueLabel} 案例列表（虛構示範資料）</h1>
+        <p>
+          共有 {fixtureCases.length} 筆虛構示範案例（{fixtureCases.length}
+          reviewed cases）。
+        </p>
+        <ol class="case-list" data-static-listing>
+          {fixtureCases.map((candidate) => (
+            <li>
+              <CaseCard record={candidate} showWorkflowBadge={true} />
+            </li>
+          ))}
+        </ol>
+      </article>
+    )
+  }
+
+  {
+    fixture === "latest-update" && (
+      <article
+        data-atlas-view="quarterly-update"
+        data-update-id={reviewFixtureUpdate.id}
+      >
+        <h1>季度更新 {reviewFixtureUpdate.id}（虛構示範資料）</h1>
+        <p>
+          期間：{reviewFixtureUpdate.period.startDate} 至
+          {reviewFixtureUpdate.period.endDate}｜狀態：草稿（虛構示範）
+        </p>
+        <p>{reviewFixtureUpdate.summary}</p>
+        <section aria-labelledby="fixture-added-heading">
+          <h2 id="fixture-added-heading">
+            新增案例（{reviewFixtureUpdate.addedCases.length}）
+          </h2>
+          <ul>
+            {reviewFixtureUpdate.addedCases.map((entry) => (
+              <li>
+                <code>{entry.caseId}</code>
+                ｜clinical digest：<code>{entry.currentClinicalDigest}</code>
+              </li>
+            ))}
+          </ul>
+        </section>
+        <section aria-labelledby="fixture-home-link-heading">
+          <h2 id="fixture-home-link-heading">首頁最新更新連結示範</h2>
+          <p>
+            <a data-latest-update-link href={`/review/fixtures/latest-update/`}>
+              最新季度更新：{reviewFixtureUpdate.id}
+            </a>
+          </p>
+        </section>
+        <section
+          aria-labelledby="fixture-update-digest-heading"
+          data-review-digests
+        >
+          <h2 id="fixture-update-digest-heading">審查識別與 digest</h2>
+          <label class="digest-label">
+            更新內容 digest（可複製）
+            <input
+              class="digest-field"
+              type="text"
+              readonly
+              value={updateDigest}
+            />
+          </label>
+        </section>
+      </article>
+    )
+  }
+</BaseLayout>
+
+<style>
+  .fixture-banner {
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--color-accent);
+    border-radius: 8px;
+    background: var(--color-surface);
+  }
+
+  .case-detail-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  @media (min-width: 60rem) {
+    .case-detail-grid {
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    }
+  }
+
+  .case-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .source-list li {
+    margin-bottom: 0.5rem;
+  }
+
+  .digest-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+
+  .digest-field {
+    min-height: 44px;
+    width: min(100%, 36rem);
+    padding: 0.375rem 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    background: var(--color-page);
+    color: var(--color-text);
+    font-family: ui-monospace, monospace;
+  }
+</style>

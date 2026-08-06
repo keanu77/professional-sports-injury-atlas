@@ -1,0 +1,75 @@
+---
+/**
+ * Listing case card. Renders factual card fields only, the exact `經典案例`
+ * label with a readable reason when applicable, and the external
+ * diagnosis-confirmation status; the private review workflow renders
+ * separately (review builds only) and never replaces the diagnosis status.
+ */
+import ReviewBadge from "../cases/ReviewBadge.astro";
+import { findInjury, findLeague } from "../../lib/contracts/taxonomy";
+import type { InjuryCase } from "../../lib/contracts/case";
+import {
+  CLASSIC_CASE_LABEL,
+  confirmationStatusLabel,
+} from "../../lib/routes/static-paths";
+
+interface Props {
+  record: InjuryCase;
+  showWorkflowBadge: boolean;
+}
+
+const { record, showWorkflowBadge } = Astro.props;
+const injuryLabel =
+  findInjury(record.injury.code)?.labelZh ?? record.injury.code;
+const leagueLabel =
+  findLeague(record.league.code)?.labelZh ?? record.league.code;
+---
+
+<article class="case-card" data-case-card={record.id}>
+  <h3 class="case-card-title">
+    <a href={`/cases/${record.slug}/`}>
+      {record.athlete.name}｜{injuryLabel}
+    </a>
+  </h3>
+  <p class="case-card-facts">
+    {leagueLabel}｜{record.season} 球季｜{record.eventDate}｜
+    {record.teamAtEvent.name} 對 {record.opponent.name}
+  </p>
+  <p
+    class="case-card-confirmation"
+    data-confirmation-status={record.injury.confirmationStatus}
+  >
+    診斷確認狀態（外部來源）：{
+      confirmationStatusLabel(record.injury.confirmationStatus)
+    }
+  </p>
+  {
+    record.isClassic && (
+      <p class="case-card-classic" data-classic-label>
+        <strong>{CLASSIC_CASE_LABEL}</strong>
+        {record.classicReason !== null && <>：{record.classicReason}</>}
+      </p>
+    )
+  }
+  {showWorkflowBadge && <ReviewBadge record={record} />}
+</article>
+
+<style>
+  .case-card {
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-surface);
+  }
+
+  .case-card-title {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-heading);
+  }
+
+  .case-card-facts,
+  .case-card-confirmation,
+  .case-card-classic {
+    margin: 0 0 0.5rem;
+  }
+</style>

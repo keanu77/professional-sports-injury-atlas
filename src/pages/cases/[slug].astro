@@ -1,0 +1,262 @@
+---
+/**
+ * Case detail route, generated only from actual selector-permitted entries.
+ * Desktop places the video left and the dual-layer notes right; the DOM
+ * order stays video → general notes → timeline → professional notes →
+ * related cases so the mobile reading order is correct without JavaScript.
+ * Review builds additionally expose the record ID, content digest, and the
+ * rendered-set digest as copyable text, plus the private workflow badge that
+ * never masquerades as a diagnosis.
+ */
+import { getCollection } from "astro:content";
+import CaseCard from "../../components/atlas/CaseCard.astro";
+import CaseTimeline from "../../components/cases/CaseTimeline.astro";
+import CaseVideo from "../../components/cases/CaseVideo.astro";
+import LayeredNotes from "../../components/cases/LayeredNotes.astro";
+import ReviewBadge from "../../components/cases/ReviewBadge.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { computeCaseContentDigest } from "../../lib/cases/digest";
+import {
+  permittedCasesForMode,
+  relatedCases,
+} from "../../lib/cases/pagination";
+import { findInjury, findLeague } from "../../lib/contracts/taxonomy";
+import { resolveBuildMode } from "../../lib/governance/build-mode";
+import {
+  caseRouteParams,
+  CLASSIC_CASE_LABEL,
+  computeRenderedSetDigest,
+  confirmationStatusLabel,
+} from "../../lib/routes/static-paths";
+import { parseYouTubeVideoId } from "../../lib/video/youtube";
+
+export async function getStaticPaths(): Promise<
+  Array<{ params: { slug: string } }>
+> {
+  const mode = resolveBuildMode(process.env.ATLAS_BUILD_MODE);
+  const caseRecords = (await getCollection("cases")).map((entry) => entry.data);
+  return caseRouteParams(mode, caseRecords).map((params) => ({ params }));
+}
+
+const { slug } = Astro.params;
+const buildMode = resolveBuildMode(process.env.ATLAS_BUILD_MODE);
+const caseRecords = (await getCollection("cases")).map((entry) => entry.data);
+const permitted = permittedCasesForMode(buildMode, caseRecords);
+const record = permitted.find((candidate) => candidate.slug === slug);
+if (record === undefined) {
+  throw new Error(`case route for unknown permitted slug ${String(slug)}`);
+}
+
+const injuryLabel =
+  findInjury(record.injury.code)?.labelZh ?? record.injury.code;
+const leagueLabel =
+  findLeague(record.league.code)?.labelZh ?? record.league.code;
+const related = relatedCases(record, permitted);
+const hasYouTubeTimeline =
+  parseYouTubeVideoId(record.video.canonicalUrl) !== null &&
+  record.video.segments.length > 0;
+const contentDigest = computeCaseContentDigest(record);
+const renderedSetDigest = computeRenderedSetDigest(permitted);
+---
+
+<BaseLayout
+  title={`${record.athlete.name}｜${injuryLabel}｜職業運動傷害影片圖鑑`}
+  description={`${record.athlete.name} 的 ${injuryLabel} 教學案例：可見過程觀察與外部確認診斷。`}
+>
+  <article data-atlas-view="case-detail" data-case-id={record.id}>
+    <h1>{record.athlete.name}｜{injuryLabel}</h1>
+    <p class="case-facts">
+      {leagueLabel}｜{record.season} 球季｜{record.eventDate}｜
+      {record.teamAtEvent.name} 對 {record.opponent.name}
+    </p>
+    <p
+      class="case-confirmation"
+      data-confirmation-status={record.injury.confirmationStatus}
+    >
+      診斷確認狀態（外部來源）：
+      <strong
+        >{confirmationStatusLabel(record.injury.confirmationStatus)}</strong
+      >
+      ｜外部確認診斷：{record.injury.confirmedDiagnosis}
+    </p>
+    {
+      record.isClassic && (
+        <p class="case-classic" data-classic-label>
+          <strong>{CLASSIC_CASE_LABEL}</strong>
+          {record.classicReason !== null && <>：{record.classicReason}</>}
+        </p>
+      )
+    }
+    {buildMode === "review" && <ReviewBadge record={record} />}
+    <p class="mechanism-tags">
+      可見機轉標籤（觀察分類，非診斷）：{
+        record.observedMechanismTags.join("、")
+      }
+    </p>
+
+    <div class="case-detail-grid">
+      <div class="case-video-column">
+        <CaseVideo
+          scopeId={record.slug}
+          displayMode={buildMode}
+          sourceTitle={`${record.athlete.name} 案例影片（原始平台來源）`}
+          video={{
+            provider: record.video.provider,
+            canonicalUrl: record.video.canonicalUrl,
+            uploaderName: record.video.uploaderName,
+            durationSeconds: record.video.durationSeconds,
+            embedStatus: record.video.embedStatus,
+            captionStatus: record.video.captionStatus,
+          }}
+        />
+      </div>
+      <div class="case-notes-column">
+        <LayeredNotes
+          scopeId={record.slug}
+          general={record.general}
+          professional={record.professional}
+        >
+          {
+            hasYouTubeTimeline ? (
+              <CaseTimeline
+                scopeId={record.slug}
+                canonicalUrl={record.video.canonicalUrl}
+                segments={record.video.segments}
+              />
+            ) : (
+              record.video.segments.length > 0 && (
+                <section class="segment-observations" aria-label="影片段落觀察">
+                  <h3>影片段落觀察</h3>
+                  <ol>
+                    {record.video.segments.map((segment) => (
+                      <li>
+                        {segment.startSeconds}–{segment.endSeconds} 秒：
+                        {segment.observation}
+                      </li>
+                    ))}
+                  </ol>
+                </section>
+              )
+            )
+          }
+        </LayeredNotes>
+      </div>
+    </div>
+
+    <section aria-labelledby="sources-heading">
+      <h2 id="sources-heading">來源與證據</h2>
+      <ul class="source-list">
+        {
+          record.sources.map((source) => (
+            <li>
+              <a href={source.url} rel="noopener noreferrer">
+                {source.title}
+              </a>
+              ｜{source.publisher}｜{source.publishedAt}（{source.type}）
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    {
+      buildMode === "review" && (
+        <section aria-labelledby="digest-heading" data-review-digests>
+          <h2 id="digest-heading">審查識別與 digest</h2>
+          <p>
+            記錄 ID：<code data-record-id>{record.id}</code>
+          </p>
+          <label class="digest-label">
+            案例內容 digest（可複製）
+            <input
+              class="digest-field"
+              type="text"
+              readonly
+              value={contentDigest}
+            />
+          </label>
+          <label class="digest-label">
+            本次建置審查集合 digest（可複製）
+            <input
+              class="digest-field"
+              type="text"
+              readonly
+              value={renderedSetDigest}
+            />
+          </label>
+        </section>
+      )
+    }
+
+    <section aria-labelledby="related-heading">
+      <h2 id="related-heading">其他 {injuryLabel} 案例（最多 3 筆）</h2>
+      {
+        related.length === 0 ? (
+          <p>目前沒有其他已審查的 {injuryLabel} 案例。</p>
+        ) : (
+          <ol class="case-list">
+            {related.map((candidate) => (
+              <li>
+                <CaseCard
+                  record={candidate}
+                  showWorkflowBadge={buildMode === "review"}
+                />
+              </li>
+            ))}
+          </ol>
+        )
+      }
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .case-detail-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  @media (min-width: 60rem) {
+    .case-detail-grid {
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    }
+  }
+
+  .case-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .source-list li {
+    margin-bottom: 0.5rem;
+  }
+
+  .digest-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+
+  .digest-field {
+    min-height: 44px;
+    width: min(100%, 36rem);
+    padding: 0.375rem 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    background: var(--color-page);
+    color: var(--color-text);
+    font-family: ui-monospace, monospace;
+  }
+
+  .segment-observations h3 {
+    font-family: var(--font-heading);
+  }
+</style>
