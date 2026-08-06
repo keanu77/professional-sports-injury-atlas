@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "identityPolicy": "text-and-css-geometry-only",
+  "leagueLogoAllowlist": [],
+  "teamLogoAllowlist": [],
+  "imageAssetAllowlist": [],
+  "allowedFontPackages": [
+    "@fontsource/barlow-condensed",
+    "@fontsource/fraunces",
+    "@fontsource/inter"
+  ],
+  "editorialTextPolicy": "plain-league-names-allowed-with-independent-site-disclaimer",
+  "thirdPartyPlayerPolicy": "unavoidable-branding-inside-official-player-not-altered-or-obscured"
+}

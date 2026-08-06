@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "siteStatus": "medical-review",
+  "allowIndexing": false,
+  "currentUpdateId": null,
+  "currentReviewSetDigest": null,
+  "medicalReviewDecisionDigest": null,
+  "reviewedContentCommit": null,
+  "publicRendererTreeDigest": null,
+  "baseReleaseDigest": null,
+  "baseHistoryBytesDigest": null,
+  "publicSiteUrl": null,
+  "privacyPolicyUrl": null,
+  "rightsPolicyUrl": null,
+  "publicRightsPolicyVersion": null,
+  "courseLinkPolicyVersion": null,
+  "indexingAuthorization": {
+    "status": "not-requested",
+    "authorizedBy": null,
+    "authorizedAt": null,
+    "authorizedSiteDigest": null,
+    "decisionPath": null,
+    "decisionDigest": null
+  }
+}

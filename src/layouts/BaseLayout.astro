@@ -1,0 +1,40 @@
+---
+/**
+ * Minimal semantic base layout. It resolves the build mode once and emits the
+ * exact review robots meta on every HTML page in review mode. Review builds
+ * emit no sitemap, analytics, third-party iframe, or external preconnect.
+ * Task 5 extends this same layout with the complete visual and preference
+ * system.
+ */
+import {
+  resolveBuildMode,
+  robotsMetaContent,
+} from "../lib/governance/build-mode";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const buildMode = resolveBuildMode(process.env.ATLAS_BUILD_MODE);
+const robotsContent = robotsMetaContent(buildMode);
+---
+
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {robotsContent !== null && <meta name="robots" content={robotsContent} />}
+    <title>{title}</title>
+    {
+      description !== undefined && (
+        <meta name="description" content={description} />
+      )
+    }
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
