@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "2026-q3",
+  "period": {
+    "year": 2026,
+    "quarter": 3,
+    "startDate": "2026-07-01",
+    "endDate": "2026-09-30"
+  },
+  "status": "draft",
+  "summary": "Fictional baseline quarterly update covering the initial two fictional cases.",
+  "publishedAt": null,
+  "addedCases": [
+    {
+      "caseId": "CASE-FIC-2014-002",
+      "currentClinicalDigest": "41ea7c5d911bfd8baf60e87d4dd221cbf57b5ddea9a8f61ab52a00aea14026af",
+      "currentVideoSourceDigest": "3c7692076e7cdac0700ce1838ef8493f649089e27b47ad1b848eb18c50a91397"
+    },
+    {
+      "caseId": "CASE-FIC-2026-001",
+      "currentClinicalDigest": "eefa4acd5f0899788ed04768bf0d1edef73c16e493af3f511354a365d6b260b8",
+      "currentVideoSourceDigest": "a696ca44cbd47ff25778d7dee68b723fe60ebe0785aa8e8da6a82cb0e63be09c"
+    }
+  ],
+  "updatedCases": [],
+  "retiredCases": [],
+  "unavailableCases": [],
+  "review": {
+    "status": "not-requested",
+    "reviewerName": null,
+    "reviewerQualification": null,
+    "reviewedAt": null,
+    "reviewedContentDigest": null
+  },
+  "audit": {
+    "createdAt": "2026-08-01T00:00:00Z",
+    "updatedAt": "2026-08-05T00:00:00Z"
+  }
+}

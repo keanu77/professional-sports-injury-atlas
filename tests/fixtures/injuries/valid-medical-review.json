@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "injuryCode": "ankle-sprain",
+  "status": "medical-review",
+  "titleZh": "踝關節扭傷",
+  "summaryZh": "以公開影片觀察為基礎的踝關節扭傷教學總覽（全部為虛構示範內容）。",
+  "scope": "This fictional overview covers lateral ankle sprain as seen in professional basketball game video, for observational teaching only.",
+  "basicAnatomyAndDefinition": "The lateral ankle ligament complex stabilizes the ankle against inversion; a lateral ankle sprain is a stretch or tear of these ligaments.",
+  "commonObservedMechanisms": "Commonly observed non-diagnostic video patterns include inversion landings, landing on another player's foot, and contact landings.",
+  "whatVideoCannotProve": "Video cannot prove ligament grade, fracture, or syndesmotic involvement; only clinical examination and imaging can establish a diagnosis.",
+  "diagnosisContext": "Diagnosis rests on clinical examination supplemented by imaging when indicated, not on video appearance.",
+  "treatmentContext": "Treatment is individualized and typically emphasizes early protected loading guided by clinical progress.",
+  "rtpContext": "Return-to-play decisions use graded functional criteria at a high level; this overview does not reproduce any specific rehabilitation program.",
+  "claims": [
+    {
+      "id": "ov-claim-01",
+      "field": "scope",
+      "text": "This fictional overview covers lateral ankle sprain as seen in professional basketball game video, for observational teaching only.",
+      "evidenceIds": ["ov-src-a"]
+    },
+    {
+      "id": "ov-claim-02",
+      "field": "basicAnatomyAndDefinition",
+      "text": "The lateral ankle ligament complex stabilizes the ankle against inversion; a lateral ankle sprain is a stretch or tear of these ligaments.",
+      "evidenceIds": ["ov-src-a"]
+    },
+    {
+      "id": "ov-claim-03",
+      "field": "commonObservedMechanisms",
+      "text": "Commonly observed non-diagnostic video patterns include inversion landings, landing on another player's foot, and contact landings.",
+      "evidenceIds": ["ov-src-a", "ov-src-b"]
+    },
+    {
+      "id": "ov-claim-04",
+      "field": "whatVideoCannotProve",
+      "text": "Video cannot prove ligament grade, fracture, or syndesmotic involvement; only clinical examination and imaging can establish a diagnosis.",
+      "evidenceIds": ["ov-src-b"]
+    },
+    {
+      "id": "ov-claim-05",
+      "field": "diagnosisContext",
+      "text": "Diagnosis rests on clinical examination supplemented by imaging when indicated, not on video appearance.",
+      "evidenceIds": ["ov-src-a"]
+    },
+    {
+      "id": "ov-claim-06",
+      "field": "treatmentContext",
+      "text": "Treatment is individualized and typically emphasizes early protected loading guided by clinical progress.",
+      "evidenceIds": ["ov-src-b"]
+    },
+    {
+      "id": "ov-claim-07",
+      "field": "rtpContext",
+      "text": "Return-to-play decisions use graded functional criteria at a high level; this overview does not reproduce any specific rehabilitation program.",
+      "evidenceIds": ["ov-src-b"]
+    }
+  ],
+  "evidenceIds": ["ov-src-a", "ov-src-b"],
+  "sources": [
+    {
+      "id": "ov-src-a",
+      "type": "teaching-evidence",
+      "title": "Fictional review of lateral ankle sprain anatomy and mechanisms",
+      "publisher": "Fictional Journal of Sports Medicine",
+      "independenceGroup": "fictional-journal",
+      "originReportId": null,
+      "url": "https://journal.example.org/fictional-ankle-overview",
+      "publishedAt": "2024-05-01",
+      "accessedAt": "2026-08-01",
+      "supports": [
+        "scope",
+        "basicAnatomyAndDefinition",
+        "commonObservedMechanisms",
+        "whatVideoCannotProve",
+        "diagnosisContext",
+        "treatmentContext",
+        "rtpContext"
+      ]
+    },
+    {
+      "id": "ov-src-b",
+      "type": "teaching-evidence",
+      "title": "Fictional consensus statement on ankle sprain management",
+      "publisher": "Fictional Sports Physiotherapy Society",
+      "independenceGroup": "fictional-physio-society",
+      "originReportId": null,
+      "url": "https://society.example.org/fictional-ankle-management",
+      "publishedAt": "2023-11-15",
+      "accessedAt": "2026-08-01",
+      "supports": [
+        "scope",
+        "basicAnatomyAndDefinition",
+        "commonObservedMechanisms",
+        "whatVideoCannotProve",
+        "diagnosisContext",
+        "treatmentContext",
+        "rtpContext"
+      ]
+    }
+  ],
+  "review": {
+    "status": "in-review",
+    "reviewerName": null,
+    "reviewerQualification": null,
+    "reviewedAt": null,
+    "reviewedContentDigest": null
+  },
+  "audit": {
+    "createdAt": "2026-08-01T00:00:00Z",
+    "updatedAt": "2026-08-05T00:00:00Z"
+  }
+}

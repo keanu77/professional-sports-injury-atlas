@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "manifestId": "FICTIONAL-SOURCE-2026-08-06-001",
+  "batchType": "launch",
+  "period": "2026-08-06",
+  "sourcePolicyVersion": "source-policy-v1",
+  "entries": [
+    {
+      "candidateId": "FIC-CAND-001",
+      "athleteName": "Fictional Forward Alpha",
+      "teamName": "Metro City Comets",
+      "opponentName": "Harbor Bay Gulls",
+      "sportCode": "basketball",
+      "leagueCode": "nba",
+      "competitionCode": "nba-regular-season",
+      "season": "2025-26",
+      "eventDate": "2026-01-15",
+      "injuryCode": "ankle-sprain",
+      "confirmedDiagnosis": "Right lateral ankle sprain (fictional case)",
+      "videoProvider": "youtube",
+      "canonicalVideoUrl": "https://www.youtube.com/watch?v=fic-alpha-001",
+      "uploaderName": "Metro City Comets Official",
+      "uploaderProvenance": "official-team-channel",
+      "durationSeconds": 94,
+      "classicProposal": null
+    },
+    {
+      "candidateId": "FIC-CAND-002",
+      "athleteName": "Fictional Guard Beta",
+      "teamName": "Riverport Foxes",
+      "opponentName": "Summit Ridge Owls",
+      "sportCode": "basketball",
+      "leagueCode": "nba",
+      "competitionCode": "nba-regular-season",
+      "season": "2013-14",
+      "eventDate": "2014-03-02",
+      "injuryCode": "acl",
+      "confirmedDiagnosis": "Left anterior cruciate ligament tear (fictional case)",
+      "videoProvider": "youtube",
+      "canonicalVideoUrl": "https://www.youtube.com/watch?v=fic-beta-002",
+      "uploaderName": "Fictional League Classics Channel",
+      "uploaderProvenance": "official-league-channel",
+      "durationSeconds": 128,
+      "classicProposal": {
+        "proposedBy": "Fictional Curator One",
+        "reason": "Frequently cited fictional teaching example of a non-contact cutting mechanism with clear broadcast footage.",
+        "firstPartyDiagnosisEvidence": "available"
+      }
+    }
+  ]
+}

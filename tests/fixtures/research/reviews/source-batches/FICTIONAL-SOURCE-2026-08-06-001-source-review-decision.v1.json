@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "decisionType": "source-batch-review",
+  "manifestId": "FICTIONAL-SOURCE-2026-08-06-001",
+  "manifestDigest": "a64a3d2024e4e755db74f976905abfc89ce506a6b7266a9a6420c90fadeb097f",
+  "decisionStatus": "approved",
+  "sourcePolicyVersion": "source-policy-v1",
+  "reviewedBy": "Fictional Screener One",
+  "reviewedAt": "2026-08-06T00:00:00Z",
+  "candidateDecisions": [
+    {
+      "candidateId": "FIC-CAND-001",
+      "status": "accepted",
+      "classicProposal": null
+    },
+    {
+      "candidateId": "FIC-CAND-002",
+      "status": "accepted",
+      "classicProposal": {
+        "proposedBy": "Fictional Curator One",
+        "firstPartyDiagnosisEvidence": "available"
+      }
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "id": "CASE-FIC-2014-002",
+  "slug": "fictional-guard-beta-acl-2014",
+  "status": "approved",
+  "sourceManifestBinding": {
+    "candidateId": "FIC-CAND-002",
+    "manifestId": "FICTIONAL-SOURCE-2026-08-06-001",
+    "manifestDigest": "a64a3d2024e4e755db74f976905abfc89ce506a6b7266a9a6420c90fadeb097f",
+    "entryDigest": "ab560163215cac2e984b62c7dcf573fc8ad53557bab9b7652274806db3a83103",
+    "sourceReviewDecisionDigest": "fa16a420083614cfebd6152f2f0301eacf5bb201128afcd9482fb9355107017d",
+    "sourcePolicyVersion": "source-policy-v1"
+  },
+  "sport": {
+    "code": "basketball"
+  },
+  "league": {
+    "code": "nba"
+  },
+  "competition": {
+    "code": "nba-regular-season"
+  },
+  "athlete": {
+    "name": "Fictional Guard Beta"
+  },
+  "teamAtEvent": {
+    "name": "Riverport Foxes"
+  },
+  "season": "2013-14",
+  "eventDate": "2014-03-02",
+  "opponent": {
+    "name": "Summit Ridge Owls"
+  },
+  "injury": {
+    "code": "acl",
+    "confirmedDiagnosis": "Left anterior cruciate ligament tear (fictional case)",
+    "confirmationStatus": "confirmed"
+  },
+  "observedMechanismTags": ["non-contact-cut"],
+  "isClassic": true,
+  "classicReason": "Frequently cited fictional teaching example of a non-contact cutting mechanism with clear broadcast footage.",
+  "classicProposedBy": "Fictional Curator One",
+  "classicExceptionApprovedBy": "Dr. Fictional Reviewer Two",
+  "video": {
+    "provider": "youtube",
+    "contentType": "in-game-injury-event",
+    "eventBinding": {
+      "status": "verified",
+      "eventSourceId": "src-fic-002-event",
+      "checkedBy": "Fictional Verifier One",
+      "checkedAt": "2026-08-02T00:00:00Z",
+      "basis": "Fictional league game log confirms athlete, date, opponent, and competition without making a diagnosis."
+    },
+    "canonicalUrl": "https://www.youtube.com/watch?v=fic-beta-002",
+    "uploaderName": "Fictional League Classics Channel",
+    "uploaderProvenance": "official-league-channel",
+    "embedStatus": "verified",
+    "embedCheckedAt": "2026-08-02T00:00:00Z",
+    "durationSeconds": 128,
+    "startSeconds": 12,
+    "endSeconds": 58,
+    "fallbackUrl": "https://www.youtube.com/watch?v=fic-beta-002",
+    "sourceProvenanceVerification": {
+      "status": "verified",
+      "verifiedBy": "Fictional Verifier One",
+      "verifiedAt": "2026-08-02T00:00:00Z",
+      "basis": "Official fictional league archive upload matched to the fictional event context source.",
+      "notes": null,
+      "verifiedPolicyVersion": "source-policy-v1",
+      "reviewedVideoIdentityDigest": "dbbff21b7ef385adb51cd9f9dbf1983b5a2d8f1e911c7461d91e5205a23fdd44"
+    },
+    "captionStatus": "available",
+    "captionCheckedAt": "2026-08-02T00:00:00Z",
+    "publicRightsReview": {
+      "status": "not-requested",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "reviewedVideoDigest": null,
+      "policyVersion": null,
+      "termsCheckedAt": null,
+      "decisionBasis": null,
+      "notes": null,
+      "decisionPath": null,
+      "decisionDigest": null
+    },
+    "segments": [
+      {
+        "startSeconds": 15,
+        "endSeconds": 30,
+        "observation": "Fictional segment: non-contact cut with sudden deceleration near the sideline."
+      }
+    ]
+  },
+  "general": {
+    "whatHappened": "In a fictional regular-season game, Fictional Guard Beta planted to change direction on a fast break and fell without any contact.",
+    "whatIsVisible": "The visible pattern is a non-contact cut: a sudden deceleration and direction change with the knee collapsing inward over a planted foot.",
+    "whatVideoCannotProve": "Video cannot confirm the ligament tear, associated meniscal injury, or severity; those require clinical examination and imaging.",
+    "confirmedUpdate": "The fictional club later confirmed a left anterior cruciate ligament tear in an official medical statement."
+  },
+  "professional": {
+    "mechanismAnalysis": "Fictional analysis: the athlete decelerates sharply and cuts, and the knee collapses inward without any external contact.\n\nNon-contact cutting with the knee near extension is a classic visible loading pattern discussed for anterior cruciate ligament injury.",
+    "clinicalLimitations": "Video observation cannot confirm an anterior cruciate ligament tear or grade associated injuries.",
+    "differentialContext": "Meniscal injury and collateral ligament involvement cannot be excluded on video alone and require imaging.",
+    "treatmentAndRtpMeaning": "Published recovery and return-to-play discussions for anterior cruciate ligament injury emphasize criterion-based progression rather than fixed dates.",
+    "claims": [
+      {
+        "id": "claim-fic-002-01",
+        "field": "professional.mechanismAnalysis",
+        "text": "Fictional analysis: the athlete decelerates sharply and cuts, and the knee collapses inward without any external contact.",
+        "evidenceIds": ["src-fic-002-teach-a"]
+      },
+      {
+        "id": "claim-fic-002-02",
+        "field": "professional.mechanismAnalysis",
+        "text": "Non-contact cutting with the knee near extension is a classic visible loading pattern discussed for anterior cruciate ligament injury.",
+        "evidenceIds": ["src-fic-002-teach-a"]
+      },
+      {
+        "id": "claim-fic-002-03",
+        "field": "professional.clinicalLimitations",
+        "text": "Video observation cannot confirm an anterior cruciate ligament tear or grade associated injuries.",
+        "evidenceIds": ["src-fic-002-teach-b"]
+      },
+      {
+        "id": "claim-fic-002-04",
+        "field": "professional.differentialContext",
+        "text": "Meniscal injury and collateral ligament involvement cannot be excluded on video alone and require imaging.",
+        "evidenceIds": ["src-fic-002-teach-b"]
+      },
+      {
+        "id": "claim-fic-002-05",
+        "field": "professional.treatmentAndRtpMeaning",
+        "text": "Published recovery and return-to-play discussions for anterior cruciate ligament injury emphasize criterion-based progression rather than fixed dates.",
+        "evidenceIds": ["src-fic-002-teach-a", "src-fic-002-teach-b"]
+      }
+    ],
+    "evidenceIds": ["src-fic-002-teach-a", "src-fic-002-teach-b"],
+    "rtpCourseKey": null
+  },
+  "sources": [
+    {
+      "id": "src-fic-002-video",
+      "type": "video-original",
+      "title": "Fictional archival broadcast clip of the event",
+      "publisher": "Fictional League Classics",
+      "independenceGroup": "fictional-league-media",
+      "originReportId": null,
+      "url": "https://www.youtube.com/watch?v=fic-beta-002",
+      "publishedAt": "2014-03-03",
+      "accessedAt": "2026-08-01",
+      "supports": [
+        "general.whatHappened",
+        "general.whatIsVisible",
+        "video.segmentObservation"
+      ]
+    },
+    {
+      "id": "src-fic-002-first-party",
+      "type": "diagnosis-first-party",
+      "title": "Fictional club medical statement",
+      "publisher": "Riverport Foxes Communications",
+      "independenceGroup": "riverport-foxes",
+      "originReportId": null,
+      "url": "https://foxes.example.com/medical-statement-fic-002",
+      "publishedAt": "2014-03-04",
+      "accessedAt": "2026-08-01",
+      "supports": ["injury.confirmedDiagnosis", "general.confirmedUpdate"]
+    },
+    {
+      "id": "src-fic-002-event",
+      "type": "event-context",
+      "title": "Fictional league game log",
+      "publisher": "Fictional Basketball League Data",
+      "independenceGroup": "fictional-league-data",
+      "originReportId": null,
+      "url": "https://league.example.com/games/fic-2014-03-02",
+      "publishedAt": "2014-03-02",
+      "accessedAt": "2026-08-01",
+      "supports": ["general.whatHappened"]
+    },
+    {
+      "id": "src-fic-002-teach-a",
+      "type": "teaching-evidence",
+      "title": "Fictional review of non-contact anterior cruciate ligament mechanisms",
+      "publisher": "Fictional Journal of Sports Medicine",
+      "independenceGroup": "fictional-journal",
+      "originReportId": null,
+      "url": "https://journal.example.org/fictional-acl-mechanisms",
+      "publishedAt": "2024-02-01",
+      "accessedAt": "2026-08-01",
+      "supports": [
+        "professional.mechanismAnalysis",
+        "professional.clinicalLimitations",
+        "professional.differentialContext",
+        "professional.treatmentAndRtpMeaning"
+      ]
+    },
+    {
+      "id": "src-fic-002-teach-b",
+      "type": "teaching-evidence",
+      "title": "Fictional consensus on knee ligament rehabilitation and return to play",
+      "publisher": "Fictional Knee Research Collaborative",
+      "independenceGroup": "fictional-knee-collaborative",
+      "originReportId": null,
+      "url": "https://collab.example.org/fictional-acl-consensus",
+      "publishedAt": "2023-09-10",
+      "accessedAt": "2026-08-01",
+      "supports": [
+        "professional.mechanismAnalysis",
+        "professional.clinicalLimitations",
+        "professional.differentialContext",
+        "professional.treatmentAndRtpMeaning"
+      ]
+    }
+  ],
+  "review": {
+    "status": "approved",
+    "reviewerName": "Dr. Fictional Reviewer Two",
+    "reviewerQualification": "Fictional Sports Medicine Physician",
+    "reviewedAt": "2026-08-05T00:00:00Z",
+    "reviewedContentDigest": "41ea7c5d911bfd8baf60e87d4dd221cbf57b5ddea9a8f61ab52a00aea14026af"
+  },
+  "audit": {
+    "createdAt": "2026-08-01T00:00:00Z",
+    "updatedAt": "2026-08-05T00:00:00Z",
+    "sourceRecordId": "FIC-CAND-002"
+  }
+}

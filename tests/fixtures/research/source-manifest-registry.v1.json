@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "manifestId": "FICTIONAL-SOURCE-2026-08-06-001",
+      "manifestPath": "research/source-manifests/FICTIONAL-SOURCE-2026-08-06-001.v1.json",
+      "manifestDigest": "a64a3d2024e4e755db74f976905abfc89ce506a6b7266a9a6420c90fadeb097f",
+      "sourceReviewDecisionPath": "research/reviews/source-batches/FICTIONAL-SOURCE-2026-08-06-001-source-review-decision.v1.json",
+      "sourceReviewDecisionDigest": "fa16a420083614cfebd6152f2f0301eacf5bb201128afcd9482fb9355107017d",
+      "sourcePolicyVersion": "source-policy-v1",
+      "batchType": "launch",
+      "period": "2026-08-06",
+      "createdAt": "2026-08-06T01:00:00Z",
+      "previousRegistryBytesDigest": "eaf741c591ae9eb798b55a703ddadfeec7c803b91b3199272a7ccd39e56160c1",
+      "supersedes": []
+    }
+  ]
+}
