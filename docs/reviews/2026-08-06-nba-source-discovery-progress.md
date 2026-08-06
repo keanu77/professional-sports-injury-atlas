@@ -19,8 +19,8 @@ checkboxes are maintained here.
 
 ## Task progress
 
-- [ ] Task 0 — strict research parsing and validation (implementation and
-      verification complete; required local commit blocked by sandbox)
+- [x] Task 0 — strict research parsing and validation; committed as
+      `667e7465a7fb424eb991e71bcfee5a96b0c59287`
 - [ ] Task 1 — frozen NBA source policy
 - [ ] Task 2 — three candidate ledgers and discovery
 - [ ] Task 3 — bounded live link and video metadata verification
@@ -58,23 +58,21 @@ checkboxes are maintained here.
 - Expected pre-ledger CLI state: `research:check` is implemented but is not run
   as a positive gate until Task 2 creates the three required ledgers.
 
-## Execution blocker
+## Resolved execution blocker
 
-Task 0 cannot be closed and Task 1 cannot start because the required local
-commit is unavailable in this execution environment. The exact first staging
-attempt failed before changing the Git index:
+The first Task 0 staging attempt in the prior execution environment failed
+before changing the Git index:
 
 ```text
 fatal: Unable to create '/Users/ethanai/co-work/online_sportsinjury/professional-sports-injury-atlas/.git/index.lock': Operation not permitted
 ```
 
-The active filesystem policy permits repository worktree writes but exposes
-`.git` read-only. No alternate Git-write tool is available, and sandbox
-escalation is disabled. The executor did not move or replace `.git`, create an
-alternate repository, forge a commit, weaken a check, or proceed to Task 1.
+That prior filesystem policy exposed `.git` read-only. The executor did not move
+or replace `.git`, create an alternate repository, forge a commit, weaken a
+check, or proceed to Task 1.
 
-Resolution needed: resume in an environment that allows local writes to this
-repository's `.git` directory. On resume, rerun the Task 0 green checks, stage
-the exact Task 0 files and this progress record, run
-`git diff --cached --check`, and create the required conventional commit
-`feat: validate NBA research candidates` before starting Task 1.
+The repository owner subsequently created the required local conventional
+commit `667e7465a7fb424eb991e71bcfee5a96b0c59287` with subject
+`feat: validate NBA research candidates`. This execution resumed with `.git`
+write access, a clean worktree, Node `v24.14.0`, and a fresh successful plan
+authorization assertion.
