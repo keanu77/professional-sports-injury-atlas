@@ -26,8 +26,8 @@ import {
 export const SOURCE_REVIEW_DECISION_PATH =
   "research/reviews/source-batches/NBA-SOURCE-2026-08-06-001-source-review-decision.v1.json";
 export const SOURCE_POLICY_JSON_PATH =
-  "research/source-policy/source-policy.v1.json";
-export const SOURCE_POLICY_MARKDOWN_PATH = "research/source-policy/nba.v1.md";
+  "research/source-policy/source-policy.v2.json";
+export const SOURCE_POLICY_MARKDOWN_PATH = "research/source-policy/nba.v2.md";
 
 interface CanonicalArtifact<T> {
   bytes: string;

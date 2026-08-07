@@ -1,0 +1,56 @@
+# NBA source policy v2 candidate-video browser handoff — 2026-08-07
+
+Status: browser verification required; no ledger row was changed or promoted in this execution.
+
+## Scope and evidence boundary
+
+This handoff implements the owner-authorized `nba-v2` date-window change while preserving the source-discovery boundary. It was assembled from the existing ACL and Achilles ledgers and their discovery logs. No source page, player, embed, caption control, or uploader page was opened in this execution, so every URL below remains a lead that a browser-enabled executor must reopen on the original page.
+
+Under `nba-v2`, a primary video's event-date identity check passes when `video_published_at` is within the inclusive asymmetric window from `event_date` through `event_date + 3 days`, or when its title contains `event_date`. Uploads before the event remain ineligible. All other rules remain unchanged: the video must be the same NBA in-game injury event; fan/repost footage and recap, analysis, interview, practice, warm-up, rehabilitation, return, or compilation content remain excluded; provenance, embed/external-link, caption, diagnosis, classic-exception, and duplicate checks still apply.
+
+The active v2 policy bytes for the next verifier cycle are:
+
+- `research/source-policy/nba.v2.md`: `b07adf72fb6e5e5bb087401c1056003853c8fa5798456e199e58d722b7db6570`
+- `research/source-policy/source-policy.v2.json`: `6b5909369134839196d2285cba5ba9f1e59d69b56b0c377ef17a10b0e6effe07`
+
+## Policy implementation review packet
+
+- The immutable `nba-v1` Markdown and JSON files retain their original exact-byte hashes. Tests now bind both `nba-v1` and `nba-v2` one-to-one to distinct Markdown/JSON hash pairs and reject same-version drift.
+- The candidate validator accepts a valid ISO `video_published_at` only at offsets `0`, `+1`, `+2`, or `+3` days from `event_date`, unless the video title contains `event_date`. The event-source title/publication rule was not widened.
+- Regression tests explicitly prove `+3 days` passes, `+4 days` fails, the day before the event fails, the title-date alternative remains valid, and a next-day event-source publication still fails when its title omits the event date.
+- The read-only verification checker and its mocked file-copy tests now resolve the v2 policy pair. No case-authoring/publication policy namespace was changed.
+- Final `npm run research:check` passed with ACL `7`, ankle sprain `12`, and Achilles rupture `7` source-ready-or-verified rows; all `reviewed_by` fields remain untouched and all 26 accepted rows remain `source-ready`, not `source-verified`.
+- Final `npm run test:unit` passed all 568 tests. The complete `npm run verify` pipeline also passed: plan and formatting checks, Astro/content checks, 568 coverage tests, review build, 152 Playwright tests, Lighthouse, brand policy, and review-artifact verification.
+
+The browser-dependent policy cycle is deliberately incomplete. `research:verify-links` was not run, no live-verification artifact or new root audit was created, no ledger metadata was rewritten, and no candidate-set digest, named source-review decision, manifest, registry entry, or promotion was produced. This package therefore stops before—not at or after—the named content-owner review gate.
+
+## Candidate-video queue
+
+| candidate_id                                               | Injury and event                                        | Recorded publication  | Pending original-video URL                                                               | Current state and browser work required                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| ---------------------------------------------------------- | ------------------------------------------------------- | --------------------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `CAND-NBA-ACL-2019-006`                                    | Klay Thompson; ACL; 2019-06-13 vs Toronto               | 2019-06-14 (`+1 day`) | <https://www.nba.com/watch/video/2019/06/14/20190613-gametime-thompson-suffers-torn-acl> | Existing `needs-source` row. The ACL log records that this page was opened and playable under v1 and that the next-day date was the recorded video blocker. Reopen the video and <https://www.nba.com/news/thompson-tears-acl>; verify final canonical URLs, exact title/date, same in-game event, NBA uploader provenance, caption state, `external-link-only` handling, diagnosis fields, and duplicate/root audit before considering `source-ready`.                                                                                                                                                                                                                                            |
+| `CAND-NBA-ACL-2021-011`                                    | Jamal Murray; ACL; 2021-04-12 vs Golden State           | 2021-04-13 (`+1 day`) | <https://www.nba.com/watch/video/murrayinjuryvswarriors>                                 | Existing `needs-source` row. The ACL log records that this page was opened and playable under v1 and that the next-day date was the recorded video blocker. Reopen the video and <https://www.nba.com/news/jamal-murray-out-indefinitely-with-torn-acl-in-left-knee>; perform the same canonical, event-identity, provenance, caption, external-link, diagnosis, duplicate, and root-audit checks.                                                                                                                                                                                                                                                                                                 |
+| `CAND-NBA-ACHILLES-2015-018`                               | Wesley Matthews; Achilles rupture; 2015-03-05 vs Dallas | 2015-03-06 (`+1 day`) | <https://www.nba.com/watch/video/games/blazers/2015/03/05/0021400910-dal-por-play5.nba>  | Existing `needs-source` classic proposal. The Achilles log records a next-day NBA Watch lead, but the ledger does not retain its video metadata. Reopen and canonicalize the lead; verify playability, exact in-game identity, NBA provenance, captions, and external-link state. Date eligibility alone is insufficient: locate and open an explicit first-party diagnosis, or complete the policy's structured first-party-unavailability audit plus two independent explicit secondary diagnosis sources. The existing ESPN lead is <https://www.espn.com/nba/story/_/id/12430843/wesley-matthews-portland-trail-blazers-injures-left-foot>. Classic approval remains a later named-human gate. |
+| `CAND-NBA-ACHILLES-2026-019` **(proposed; not in ledger)** | Donte DiVincenzo; Achilles rupture lead; 2026-04-25     | 2026-04-26 (`+1 day`) | <https://www.youtube.com/watch?v=YPqI1prKvVE>                                            | Do not treat this identifier as an accepted row or promotion. The discovery log records an opened ESPN Australia broadcaster-footage lead, but no ledger row or stable metadata exists. Reopen the watch and channel pages; resolve the recorded Game 3/Game 4 event-identity tension; verify opponent/competition, broadcaster-rightsholder basis, canonical URL, date, privacy-enhanced embed, captions, and duplicates. Reopen the first-party diagnosis lead <https://www.nba.com/timberwolves/news/donte-divincenzo-injury-update-2>. Add a row only if every contract field is supported by opened original pages.                                                                           |
+
+The Wesley and Donte video URLs are intentionally treated as recovery leads because their exact URLs are not frozen in the current ledger rows. A browser executor must not copy their metadata into the ledger without reopening the original pages.
+
+## Count impact and remaining gap
+
+The validated ledger snapshot currently has 7 `source-ready` ACL rows and 7 `source-ready` Achilles rows. The queue does not establish the owner target of 12 per injury:
+
+- If both existing ACL rows pass every browser and source check, ACL reaches at most 9 and still needs 3 additional compliant candidates.
+- If Wesley passes every check and the proposed Donte lead becomes a valid new row, Achilles reaches at most 9 and still needs 3 additional compliant candidates. Wesley and Donte each have non-date blockers, so even that count is only a ceiling.
+
+No evidence in the current logs supports reclassifying fan/repost footage or official recap, analysis, rehabilitation, status, or return packages. Additional original-page discovery is required to close the remaining counts; the v2 date window alone is insufficient.
+
+## Browser executor checklist
+
+1. Re-run the Node `v24.14.0`, clean-worktree, and authorized-plan preconditions before editing a ledger.
+2. Open each original video, uploader/channel, event, and diagnosis page. Preserve final canonical URL, publisher, exact title, publication/access dates, and unresolved facts without inference.
+3. Confirm same athlete, event date, opponent, and competition; exclude any reupload, analysis, recap, interview, practice, warm-up, rehabilitation, return footage, or compilation.
+4. Perform the manual provider-specific player and caption checks. NBA remains `external-link-only`; YouTube requires a privacy-enhanced `youtube-nocookie.com` embed check without autoplay.
+5. Re-run cross-ledger event/video duplicate validation and root audit. Researchers may stop at `source-ready`; do not populate `reviewed_by` or promote to `source-verified`.
+6. After the final ledger/root-audit change, run the complete v2 verifier and freeze loop in the required order. Stop before the named content-owner review gate and report the still-missing ACL/Achilles count rather than lowering policy standards.
+
+No remote, push, hosting, deployment, public release, indexing, medical-review change, reviewer identity, media download, screenshot, transcript, or protected parent-workspace write is authorized by this handoff.

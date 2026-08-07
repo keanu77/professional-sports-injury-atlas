@@ -426,6 +426,54 @@ describe("status-dependent validation", () => {
     ).toContain("event-video-identity-mismatch");
   });
 
+  it("uses an inclusive event-day through +3-day primary-video publication window", () => {
+    const [recent] = validRows();
+    const videoTitleWithoutDate = "Avery Example exits game with injury";
+
+    expect(
+      rowCodes(
+        row(recent!, {
+          videoTitle: videoTitleWithoutDate,
+          videoPublishedAt: "2025-01-18",
+        }),
+      ),
+    ).not.toContain("event-video-identity-mismatch");
+    expect(
+      rowCodes(
+        row(recent!, {
+          videoTitle: videoTitleWithoutDate,
+          videoPublishedAt: "2025-01-19",
+        }),
+      ),
+    ).toContain("event-video-identity-mismatch");
+    expect(
+      rowCodes(
+        row(recent!, {
+          videoTitle: videoTitleWithoutDate,
+          videoPublishedAt: "2025-01-14",
+        }),
+      ),
+    ).toContain("event-video-identity-mismatch");
+  });
+
+  it("preserves the title-date alternative and exact event-source date rule", () => {
+    const [recent] = validRows();
+
+    expect(
+      rowCodes(row(recent!, { videoPublishedAt: "2025-01-19" })),
+    ).not.toContain("event-video-identity-mismatch");
+    expect(
+      rowCodes(
+        row(recent!, {
+          videoTitle: "Avery Example exits game with injury",
+          videoPublishedAt: "2025-01-18",
+          eventSourceTitle: "Avery Example game report",
+          eventSourcePublishedAt: "2025-01-16",
+        }),
+      ),
+    ).toContain("event-video-identity-mismatch");
+  });
+
   it("defers full opponent and competition identity to the root audit", () => {
     const [recent] = validRows();
     expect(

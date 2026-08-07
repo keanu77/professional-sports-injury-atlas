@@ -64,8 +64,8 @@ const CANDIDATE_PATHS = [
   "research/candidates/achilles-rupture.csv",
 ] as const;
 const POLICY_PATHS = [
-  "research/source-policy/source-policy.v1.json",
-  "research/source-policy/nba.v1.md",
+  "research/source-policy/source-policy.v2.json",
+  "research/source-policy/nba.v2.md",
 ] as const;
 
 function absolutePath(root: string, relativePath: string): string {

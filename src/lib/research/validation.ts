@@ -32,6 +32,8 @@ const SEASON_RE = /^(19|20)[0-9]{2}-[0-9]{2}$/;
 const HTTPS_URL_RE = /^https:\/\/[^\s<>"']+$/;
 const JSON_POINTER_RE = /^(?:#)?(?:\/(?:[^~/]|~[01])*)+$/;
 const TRACKING_PARAMETER_RE = /^(?:utm_.+|si|feature|fbclid|gclid)$/i;
+const MILLISECONDS_PER_DAY = 86_400_000;
+const PRIMARY_VIDEO_EVENT_DATE_WINDOW_DAYS = 3;
 
 const ID_INJURY_TOKEN: Record<string, string> = {
   acl: "ACL",
@@ -341,6 +343,23 @@ function identityContains(text: string, expected: string): boolean {
   );
 }
 
+function primaryVideoPublishedWithinEventDateWindow(
+  eventDate: string,
+  videoPublishedAt: string,
+): boolean {
+  if (!isValidIsoDate(eventDate) || !isValidIsoDate(videoPublishedAt)) {
+    return false;
+  }
+  const daysAfterEvent =
+    (Date.parse(`${videoPublishedAt}T00:00:00Z`) -
+      Date.parse(`${eventDate}T00:00:00Z`)) /
+    MILLISECONDS_PER_DAY;
+  return (
+    daysAfterEvent >= 0 &&
+    daysAfterEvent <= PRIMARY_VIDEO_EVENT_DATE_WINDOW_DAYS
+  );
+}
+
 function normalizeGroup(value: string): string {
   return normalizeIdentity(value);
 }
@@ -557,7 +576,10 @@ function validateSourceReady(
   }
   const videoDateMatches =
     identityContains(row.videoTitle, row.eventDate) ||
-    row.videoPublishedAt === row.eventDate;
+    primaryVideoPublishedWithinEventDateWindow(
+      row.eventDate,
+      row.videoPublishedAt,
+    );
   const eventDateMatches =
     identityContains(row.eventSourceTitle, row.eventDate) ||
     row.eventSourcePublishedAt === row.eventDate;

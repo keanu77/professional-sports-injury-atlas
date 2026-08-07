@@ -22,9 +22,14 @@ import {
   sha256Hex,
 } from "../../src/lib/cases/canonical-json";
 
-const JSON_POLICY_PATH =
+const V1_JSON_POLICY_PATH =
   "research/source-policy/source-policy.v1.json" as const;
-const MARKDOWN_POLICY_PATH = "research/source-policy/nba.v1.md" as const;
+const V1_MARKDOWN_POLICY_PATH = "research/source-policy/nba.v1.md" as const;
+const JSON_POLICY_PATH =
+  "research/source-policy/source-policy.v2.json" as const;
+const MARKDOWN_POLICY_PATH = "research/source-policy/nba.v2.md" as const;
+const V2_DATE_RULE_PARAGRAPH =
+  "For the primary video's event-date identity check, `video_published_at` must fall within the inclusive window from `event_date` through `event_date + 3 days`, or the video title must contain `event_date`. This window is asymmetric: publication before `event_date` is ineligible.";
 
 const EXPECTED_ROOT_KEYS = [
   "captionRules",
@@ -234,15 +239,25 @@ const EXPECTED_DECISION_TABLE = [
   },
 ] as const;
 
-// The immutable nba-v1 version-to-bytes binding. Changing either literal
-// requires a new version and the complete downstream policy cycle.
-const EXPECTED_JSON_SHA256 =
+// Immutable version-to-bytes bindings. Changing any literal requires a new
+// version and the complete downstream policy cycle.
+const EXPECTED_V1_JSON_SHA256 =
   "a588b68f3468bec8d24cda9005435ecb0177cc74dbaff7d14f793ec45dcdd280";
-const EXPECTED_MARKDOWN_SHA256 =
+const EXPECTED_V1_MARKDOWN_SHA256 =
   "f983c682d3504902ff9ae8a57cbd414e4855de2abbb3b6f2855d3532df8fed46";
+const EXPECTED_JSON_SHA256 =
+  "6b5909369134839196d2285cba5ba9f1e59d69b56b0c377ef17a10b0e6effe07";
+const EXPECTED_MARKDOWN_SHA256 =
+  "b07adf72fb6e5e5bb087401c1056003853c8fa5798456e199e58d722b7db6570";
 
 const FROZEN_POLICY_BY_VERSION = Object.freeze({
   "nba-v1": Object.freeze({
+    jsonPath: V1_JSON_POLICY_PATH,
+    jsonSha256: EXPECTED_V1_JSON_SHA256,
+    markdownPath: V1_MARKDOWN_POLICY_PATH,
+    markdownSha256: EXPECTED_V1_MARKDOWN_SHA256,
+  }),
+  "nba-v2": Object.freeze({
     jsonPath: JSON_POLICY_PATH,
     jsonSha256: EXPECTED_JSON_SHA256,
     markdownPath: MARKDOWN_POLICY_PATH,
@@ -253,7 +268,11 @@ const FROZEN_POLICY_BY_VERSION = Object.freeze({
 type FrozenPolicyVersion = keyof typeof FROZEN_POLICY_BY_VERSION;
 
 function readPolicyFile(
-  path: typeof JSON_POLICY_PATH | typeof MARKDOWN_POLICY_PATH,
+  path:
+    | typeof V1_JSON_POLICY_PATH
+    | typeof V1_MARKDOWN_POLICY_PATH
+    | typeof JSON_POLICY_PATH
+    | typeof MARKDOWN_POLICY_PATH,
 ): string {
   return readFileSync(new URL(`../../${path}`, import.meta.url), "utf8");
 }
@@ -316,7 +335,7 @@ function verifyFrozenPolicyBytes(
     "humanPolicyDocument",
   );
   if (
-    humanPolicy.path !== MARKDOWN_POLICY_PATH ||
+    humanPolicy.path !== frozen.markdownPath ||
     humanPolicy.sha256 !== markdownSha256
   ) {
     throw new Error("human policy path/digest does not match its exact bytes");
@@ -353,7 +372,7 @@ function markdownTable(
     });
 }
 
-describe("NBA source-policy nba-v1 contract", () => {
+describe("NBA source-policy nba-v2 contract", () => {
   it("is strict canonical JSON with the exact later-consumer root, version, and cutoff", () => {
     const bytes = readPolicyFile(JSON_POLICY_PATH);
     const policy = parseCanonicalPolicy(bytes);
@@ -361,7 +380,7 @@ describe("NBA source-policy nba-v1 contract", () => {
     expect(Object.keys(policy)).toEqual(EXPECTED_ROOT_KEYS);
     expect(bytes.endsWith("\n")).toBe(false);
     expect(policy.schemaVersion).toBe(1);
-    expect(policy.sourcePolicyVersion).toBe("nba-v1");
+    expect(policy.sourcePolicyVersion).toBe("nba-v2");
     expect(policy.cutoffDate).toBe("2016-08-06");
     expect(policy.cutoffDate).toBe(RECENT_CANDIDATE_CUTOFF);
   });
@@ -531,6 +550,14 @@ describe("NBA source-policy nba-v1 contract", () => {
         "compilation",
       ],
       launchPrimaryContentTypes: ["in-game-injury-event"],
+      primaryVideoEventDateRule: {
+        titleContainsEventDateAlternative: true,
+        videoPublishedAtWindow: {
+          endOffsetDays: 3,
+          inclusive: true,
+          startOffsetDays: 0,
+        },
+      },
     });
   });
 
@@ -712,8 +739,9 @@ describe("NBA source-policy nba-v1 contract", () => {
 
   it("states the required human diagnosis, event, uploader, and media boundaries", () => {
     const markdown = readPolicyFile(MARKDOWN_POLICY_PATH);
-    expect(markdown).toContain("`nba-v1`");
+    expect(markdown).toContain("`nba-v2`");
     expect(markdown).toContain("`2016-08-06`");
+    expect(markdown).toContain(V2_DATE_RULE_PARAGRAPH);
     for (const url of EXPECTED_PLAN_REFERENCE_URLS) {
       expect(markdown).toContain(url);
     }
@@ -750,6 +778,34 @@ describe("NBA source-policy nba-v1 contract", () => {
     expect(markdown).toMatch(/Technical embedding is not legal permission/iu);
   });
 
+  it("preserves every nba-v1 JSON rule and Markdown byte outside the authorized v2 deltas", () => {
+    const v1Policy = parseCanonicalPolicy(readPolicyFile(V1_JSON_POLICY_PATH));
+    const v2Policy = parseCanonicalPolicy();
+    const v2EventRules = asRecord(v2Policy.eventVideoRules);
+    const { primaryVideoEventDateRule, ...unchangedEventRules } = v2EventRules;
+
+    expect(primaryVideoEventDateRule).toEqual({
+      titleContainsEventDateAlternative: true,
+      videoPublishedAtWindow: {
+        endOffsetDays: 3,
+        inclusive: true,
+        startOffsetDays: 0,
+      },
+    });
+    expect({
+      ...v2Policy,
+      eventVideoRules: unchangedEventRules,
+      humanPolicyDocument: v1Policy.humanPolicyDocument,
+      sourcePolicyVersion: "nba-v1",
+    }).toEqual(v1Policy);
+
+    const normalizedV2Markdown = readPolicyFile(MARKDOWN_POLICY_PATH)
+      .replace(`${V2_DATE_RULE_PARAGRAPH}\n\n`, "")
+      .replaceAll("`nba-v2`", "`nba-v1`")
+      .replaceAll("source-policy.v2.json", "source-policy.v1.json");
+    expect(normalizedV2Markdown).toBe(readPolicyFile(V1_MARKDOWN_POLICY_PATH));
+  });
+
   it("binds the exact human-policy path and digest into canonical JSON", () => {
     const policy = parseCanonicalPolicy();
     expect(policy.humanPolicyDocument).toEqual({
@@ -775,28 +831,32 @@ describe("NBA source-policy nba-v1 contract", () => {
       sameVersionContentDriftAction: "reject",
     });
     const markdown = readPolicyFile(MARKDOWN_POLICY_PATH);
-    expect(markdown).toMatch(/immutable for `nba-v1`/iu);
+    expect(markdown).toMatch(/immutable for `nba-v2`/iu);
     expect(markdown).toMatch(
       /new source-policy version and a complete link-verifier, root-audit, candidate-set digest, named source-review decision, and manifest cycle/iu,
     );
   });
 
   it("maps the declared version one-to-one to one exact immutable SHA-256 pair", () => {
-    expect(Object.keys(FROZEN_POLICY_BY_VERSION)).toEqual(["nba-v1"]);
+    expect(Object.keys(FROZEN_POLICY_BY_VERSION)).toEqual(["nba-v1", "nba-v2"]);
     const pairs = Object.values(FROZEN_POLICY_BY_VERSION).map(
       ({ jsonSha256, markdownSha256 }) => `${jsonSha256}:${markdownSha256}`,
     );
     expect(new Set(pairs).size).toBe(pairs.length);
 
-    const jsonBytes = readPolicyFile(JSON_POLICY_PATH);
-    const markdownBytes = readPolicyFile(MARKDOWN_POLICY_PATH);
-    expect(sha256Hex(jsonBytes)).toBe(EXPECTED_JSON_SHA256);
-    expect(sha256Hex(markdownBytes)).toBe(EXPECTED_MARKDOWN_SHA256);
-    expect(verifyFrozenPolicyBytes(jsonBytes, markdownBytes)).toEqual({
-      sourcePolicyVersion: "nba-v1",
-      jsonSha256: EXPECTED_JSON_SHA256,
-      markdownSha256: EXPECTED_MARKDOWN_SHA256,
-    });
+    for (const [sourcePolicyVersion, frozen] of Object.entries(
+      FROZEN_POLICY_BY_VERSION,
+    )) {
+      const jsonBytes = readPolicyFile(frozen.jsonPath);
+      const markdownBytes = readPolicyFile(frozen.markdownPath);
+      expect(sha256Hex(jsonBytes)).toBe(frozen.jsonSha256);
+      expect(sha256Hex(markdownBytes)).toBe(frozen.markdownSha256);
+      expect(verifyFrozenPolicyBytes(jsonBytes, markdownBytes)).toEqual({
+        sourcePolicyVersion,
+        jsonSha256: frozen.jsonSha256,
+        markdownSha256: frozen.markdownSha256,
+      });
+    }
   });
 
   it("rejects canonical JSON or human-policy drift under the same version", () => {
@@ -809,10 +869,10 @@ describe("NBA source-policy nba-v1 contract", () => {
         canonicalJson({ ...policy, cutoffDate: "2016-08-07" }),
         markdownBytes,
       ),
-    ).toThrow(/same-version content drift for nba-v1/);
+    ).toThrow(/same-version content drift for nba-v2/);
     expect(() =>
       verifyFrozenPolicyBytes(jsonBytes, `${markdownBytes}<!-- drift -->\n`),
-    ).toThrow(/same-version content drift for nba-v1/);
+    ).toThrow(/same-version content drift for nba-v2/);
     expect(() =>
       verifyFrozenPolicyBytes(`${jsonBytes}\n`, markdownBytes),
     ).toThrow(/not canonical JSON/);
@@ -824,9 +884,9 @@ describe("NBA source-policy nba-v1 contract", () => {
     const policy = parseCanonicalPolicy(jsonBytes);
     expect(() =>
       verifyFrozenPolicyBytes(
-        canonicalJson({ ...policy, sourcePolicyVersion: "nba-v2" }),
+        canonicalJson({ ...policy, sourcePolicyVersion: "nba-v3" }),
         markdownBytes,
       ),
-    ).toThrow(/unregistered source-policy version nba-v2/);
+    ).toThrow(/unregistered source-policy version nba-v3/);
   });
 });
