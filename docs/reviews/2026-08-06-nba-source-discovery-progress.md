@@ -162,6 +162,29 @@ checkboxes are maintained here.
   audit queue. No media, transcript, screenshot, thumbnail, or article body was
   downloaded or stored.
 
+### Task 2 source-ready expansion — 2026-08-07
+
+- Independently opened and promoted Damian Lillard's Achilles event plus Joe
+  Ingles, Kyrie Irving, and Moritz Wagner ACL events. Moritz Wagner is a new,
+  non-duplicate candidate supported by the opened Orlando Magic diagnosis
+  release; the other three upgrade existing `needs-source` rows.
+- Independently opened and promoted five ankle rows: Kevin Durant, Anfernee
+  Simons, LaMelo Ball, Kyrie Irving, and LeBron James. Ankle-sprain therefore
+  reached the owner-requested 12 `source-ready` rows.
+- Current validated counts are ACL 23 total with 7 `source-ready`, ankle-sprain
+  28 total with 12 `source-ready`, and Achilles rupture 18 total with 7
+  `source-ready`. All reviewed fields remain blank and no row was promoted to
+  `source-verified`.
+- Further policy-compliant promotions were not found in the strongest remaining
+  leads. The opened pages resolved to fan/repost footage, official analysis or
+  rehabilitation packages, unavailable original events, or a visible video
+  publication date that differs from the event date while the title contains no
+  date. The frozen policy and candidate contract were not relaxed, and source
+  metadata was not rewritten to meet the requested count.
+- `npm run research:check` exited `0` with a 26-row source-ready audit queue. No
+  media, transcript, screenshot, thumbnail, or article body was downloaded or
+  stored.
+
 ### Task 3 offline toolchain — 2026-08-07
 
 - Added the bounded verification library, live verifier CLI, read-only exact-

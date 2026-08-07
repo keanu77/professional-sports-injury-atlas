@@ -126,8 +126,22 @@ No video, audio, screenshot, thumbnail, transcript, article body, clip, or copyr
 - Total candidates: 28
 - Recent candidates: 26
 - Classic candidates: 2
-- Source-ready: 7
-- Needs-source: 20
+- Source-ready: 12
+- Needs-source: 15
 - Excluded: 1
 - Source-verified: 0
 - Reviewed fields: intentionally blank
+
+## Source-ready follow-up — 2026-08-07
+
+Five Browser-opened original pages completed the target of 12 source-ready ankle-sprain rows:
+
+| Candidate                   | Original event page                                                                                | First-party diagnosis page                                               |
+| --------------------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| Kyrie Irving, 2021-06-13    | `https://www.nba.com/news/kyrie-irving-exits-game-4-with-right-ankle-sprain`                       | same opened NBA.com event/diagnosis page                                 |
+| LeBron James, 2021-03-20    | `https://www.nba.com/news/lebron-james-leaves-lakers-game-with-right-ankle-injury-will-not-return` | same opened NBA.com event/diagnosis page                                 |
+| Anfernee Simons, 2023-02-14 | `https://www.nba.com/watch/video/anfernee-simons-leaves-the-game-due-to-injury`                    | `https://www.nba.com/news/blazers-anfernee-simons-injury-update`         |
+| LaMelo Ball, 2023-11-26     | `https://www.nba.com/watch/video/lamelo-ball-leaves-the-game-with-a-right-leg-injury`              | `https://www.nba.com/news/hornets-lamelo-ball-out-right-ankle-strain`    |
+| Kevin Durant, 2024-12-03    | `https://www.nba.com/watch/video/kevin-durant-left-ankle-sprain-injury-suns-spurs-dec-3`           | `https://www.nba.com/suns/news/12-05-2024-suns-vs-pelicans-game-preview` |
+
+Each row preserves the original visible title and date, uses accepted NBA league provenance, records NBA as external-link-only, and records captions as unavailable after the original player controls were inspected. No media or transcript was stored.

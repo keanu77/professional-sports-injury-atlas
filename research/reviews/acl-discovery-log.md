@@ -92,12 +92,24 @@ Derrick Rose's 2012 playoff event is retained as the one ACL classic candidate. 
 
 ## Current status
 
-- Total candidates: 22
-- Recent candidates: 21
+- Total candidates: 23
+- Recent candidates: 22
 - Classic candidates: 1
-- Source-ready: 4
-- Needs-source: 18
+- Source-ready: 7
+- Needs-source: 16
 - Source-verified: 0
 - Excluded rows: 0 (unresolved plausible events were retained as `needs-source`)
 - Reviewed fields: intentionally blank
 - Commit: none; this research role does not commit
+
+## Source-ready follow-up — 2026-08-07
+
+Three additional rows were independently opened and promoted after the earlier checkpoint:
+
+| Candidate                 | Original event page                                                                            | First-party diagnosis page                                                                               | Result                                                                                                                                    |
+| ------------------------- | ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Joe Ingles, 2022-01-30    | `https://www.nba.com/watch/video/20220130joeinglesinjury`                                      | `https://www.nba.com/jazz/news/joe-ingles-injury-update`                                                 | Exact event, full athlete identity, event-date publication, explicit Jazz ACL diagnosis; NBA external-link-only and captions unavailable. |
+| Moritz Wagner, 2024-12-21 | `https://www.nba.com/watch/video/moritz-wagner-left-knee-injury-heat-magic-dec-21`             | `https://www.nba.com/magic/news/orlando-magic-center-moe-wagner-suffers-torn-acl-injury-update-20241222` | New non-duplicate candidate; exact event and explicit Orlando Magic torn-ACL release; NBA external-link-only and captions unavailable.    |
+| Kyrie Irving, 2025-03-03  | `https://www.nba.com/watch/video/kyrie-irving-left-knee-sprain-injury-kings-mavericks-march-3` | `https://www.nba.com/news/kyrie-irving-knee-injury-mavericks-kings`                                      | Exact event and event-date publication; opened NBA article exposes the Mavericks MRI statement confirming the left ACL tear.              |
+
+The previous `needs-source` notes for Joe Ingles and Kyrie Irving are superseded by this follow-up. Searches for Saddiq Bey, Grant Williams, P.J. Dozier, Jimmy Butler, and the older unresolved cases did not yield another policy-compliant original event page. Fan/repost clips and official analysis/status packages were rejected. The original event pages that expose a next-day publication date without a date in the title remain unresolved rather than being normalized.

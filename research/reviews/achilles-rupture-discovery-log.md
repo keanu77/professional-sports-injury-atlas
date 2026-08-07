@@ -53,8 +53,24 @@ Two explicit lead-file exclusions were not appended: Klay Thompson's 2020 ruptur
 - Total candidates: 18
 - Recent candidates: 16
 - Classic candidates: 2
-- Source-ready: 0
-- Needs-source: 18
+- Source-ready: 7
+- Needs-source: 11
 - Source-verified: 0
 - Excluded ledger rows: 0 (the two non-game leads were not appended)
 - Reviewed fields: intentionally blank
+
+## Source-ready follow-up — 2026-08-07
+
+The following seven rows now pass the frozen source-ready contract. For every row, the NBA Watch event page and the first-party diagnosis page were opened in the Browser. The event page identifies the full athlete, carries the event date as its visible publication date, and shows the exact in-game injury event. NBA is recorded as `external-link-only`; no caption/subtitle control was observable. Claims remain narrow diagnosis paraphrases.
+
+| Candidate                     | Original event page                                                                                        | First-party diagnosis page                                                               |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| Kevin Durant, 2019-06-10      | `https://www.nba.com/watch/video/kevin-durant-leaves-game-5-with-injury`                                   | `https://www.nba.com/news/warriors-durant-achilles-injury-update`                        |
+| Dwight Powell, 2020-01-21     | `https://www.nba.com/watch/video/dwight-powell-injury`                                                     | `https://www.nba.com/news/dwight-powell-has-surgery-achilles`                            |
+| Brandon Clarke, 2023-03-03    | `https://www.nba.com/watch/video/brandon-clarke-leaves-the-game-due-to-injury`                             | `https://www.nba.com/grizzlies/news/memphis-grizzlies-medical-update-030423`             |
+| Dejounte Murray, 2025-01-31   | `https://www.nba.com/watch/video/dejounte-murray-right-leg-injury-pelicans-celtics-jan-31`                 | `https://www.nba.com/news/pelicans-murray-injury`                                        |
+| Damian Lillard, 2025-04-27    | `https://www.nba.com/watch/video/damian-lillard-lower-left-leg-injury-exits-1st-quarter-game-4-pacers`     | `https://www.nba.com/bucks/news/medical-update-on-damian-lillard-3`                      |
+| Jayson Tatum, 2025-05-12      | `https://www.nba.com/watch/video/jayson-tatum-right-lower-leg-injury-celtics-knicks-game-4`                | `https://celtics.com/news/press-release-20250513-jayson-tatum-injury-update`             |
+| Tyrese Haliburton, 2025-06-22 | `https://www.nba.com/watch/video/tyrese-haliburton-right-leg-injury-pacers-thunder-game-7-2025-nba-finals` | `https://www.nba.com/pacers/news/indiana-pacers-medical-update-tyrese-haliburton-250623` |
+
+The remaining strongest leads were not promoted. NBA Watch pages for Wesley Matthews, Klay Thompson, and Jamal Murray display the day after the local event date and their titles do not contain the date; other candidates resolve only to fan/repost footage, official analysis/rehabilitation packages, or no accepted original event video. The ESPN Australia Donte DiVincenzo event short was opened and verified as broadcaster footage, but its visible publication date is 2026-04-26 while the event was 2026-04-25 and its title contains no event date. Those gaps are preserved rather than rewriting source metadata or weakening the immutable policy.
