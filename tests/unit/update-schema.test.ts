@@ -1,7 +1,19 @@
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import {
+  computeCaseContentDigest,
+  computeVideoIdentityDigest,
+} from "../../src/lib/cases/digest";
+import { caseSchema } from "../../src/lib/contracts/case";
 import { updateSchema } from "../../src/lib/contracts/update";
 import { validateUpdateStructure } from "../../src/lib/contracts/update";
+import {
+  latestUpdateRef,
+  updateRouteParams,
+} from "../../src/lib/routes/static-paths";
+
+const ROOT = join(import.meta.dirname, "../..");
 
 const baseline = (): any =>
   JSON.parse(
@@ -14,6 +26,58 @@ const codes = (update: unknown): string[] =>
   validateUpdateStructure(update).map((issue) => issue.code);
 
 describe("quarterly update contract", () => {
+  it("materializes the real 2026 Q3 baseline with all 26 current case digests", () => {
+    const update = updateSchema.parse(
+      JSON.parse(
+        readFileSync(join(ROOT, "src/content/updates/2026-q3.json"), "utf8"),
+      ),
+    );
+    const cases = readdirSync(join(ROOT, "src/content/cases"))
+      .filter((name) => name.endsWith(".json"))
+      .map((name) =>
+        caseSchema.parse(
+          JSON.parse(
+            readFileSync(join(ROOT, "src/content/cases", name), "utf8"),
+          ),
+        ),
+      );
+    expect(update.id).toBe("2026-q3");
+    expect(update.period).toEqual({
+      year: 2026,
+      quarter: 3,
+      startDate: "2026-07-01",
+      endDate: "2026-09-30",
+    });
+    expect(update.status).toBe("medical-review");
+    expect(update.publishedAt).toBeNull();
+    expect(update.updatedCases).toEqual([]);
+    expect(update.retiredCases).toEqual([]);
+    expect(update.unavailableCases).toEqual([]);
+    expect(update.addedCases).toEqual(
+      cases
+        .map((record) => ({
+          caseId: record.id,
+          currentClinicalDigest: computeCaseContentDigest(record),
+          currentVideoSourceDigest: computeVideoIdentityDigest(record),
+        }))
+        .sort((a, b) => a.caseId.localeCompare(b.caseId)),
+    );
+    expect(update.review).toEqual({
+      status: "in-review",
+      reviewerName: null,
+      reviewerQualification: null,
+      reviewedAt: null,
+      reviewedContentDigest: null,
+    });
+    expect(updateRouteParams("review", [update])).toEqual([
+      { quarter: "2026-q3" },
+    ]);
+    expect(latestUpdateRef("review", [update], null)).toEqual({
+      id: "2026-q3",
+      path: "/updates/2026-q3/",
+    });
+  });
+
   it("parses the valid baseline fixture", () => {
     expect(updateSchema.safeParse(baseline()).success).toBe(true);
     expect(validateUpdateStructure(baseline())).toEqual([]);

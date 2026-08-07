@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "id": "2026-q3",
+  "period": {
+    "year": 2026,
+    "quarter": 3,
+    "startDate": "2026-07-01",
+    "endDate": "2026-09-30"
+  },
+  "status": "medical-review",
+  "summary": "2026 年第三季初始基線：納入 26 筆已完成來源綁定、目前等待醫療審閱的 NBA 傷害案例。",
+  "publishedAt": null,
+  "addedCases": [
+    {
+      "caseId": "CASE-NBAACHILLES-2019-005",
+      "currentClinicalDigest": "8d9e322e6cd4f420459b1c97c9418ed34f4da20970d6d43073dacaf1f56798bb",
+      "currentVideoSourceDigest": "bd29403dde3fc63a73f4eccc6eed040636ce23173f6b2690873ea6f37745fe6c"
+    },
+    {
+      "caseId": "CASE-NBAACHILLES-2020-008",
+      "currentClinicalDigest": "afefec3f66131af00834ad4eda5af1088c5b70697619a01f3c36cd4b770e09ba",
+      "currentVideoSourceDigest": "f5ef34f1246f2c5d2d7967474f72928a2b53bc3121c6962aa5d10b538c55cbbe"
+    },
+    {
+      "caseId": "CASE-NBAACHILLES-2023-010",
+      "currentClinicalDigest": "062d9c74e5ea4747e1f4832d5001cc88046eda4882c2f97ef39479be0702afdc",
+      "currentVideoSourceDigest": "c8538fc093360100e64563e8132adb0eb8d723896e9a161e1c79e0e59e1841d2"
+    },
+    {
+      "caseId": "CASE-NBAACHILLES-2025-014",
+      "currentClinicalDigest": "c65564de33d8e10b968ed19779ee92f150df03c896619a9aeed50dcad7af2b10",
+      "currentVideoSourceDigest": "03a52c97afcab7052b669aac546ae04631ff896fd3220217a88ec4976baf7f1f"
+    },
+    {
+      "caseId": "CASE-NBAACHILLES-2025-015",
+      "currentClinicalDigest": "702d6a52c3fcb26819b1510197a1ffa5e573e35b3dbaddaa107976252e221a0b",
+      "currentVideoSourceDigest": "4496ca2b585d2a38717afbcaab086af11f01d718b7bef8263e1508b4381d7207"
+    },
+    {
+      "caseId": "CASE-NBAACHILLES-2025-016",
+      "currentClinicalDigest": "0d040d5f56f23ecb88ca75e0d83f70317e21aeb7a340c24f55c4597251dec953",
+      "currentVideoSourceDigest": "8b0837be5615b3d7c363747571a06d7962e190666c1db1add3db763a73cc5586"
+    },
+    {
+      "caseId": "CASE-NBAACHILLES-2025-017",
+      "currentClinicalDigest": "c6aee02cae3858f932185cf9135ccb689d0b3fecfd7449a5390ff3914bddee6f",
+      "currentVideoSourceDigest": "b0fe5aebda20922b686f2534cee04b917b806ccecb0bfdc7cce47b49ea1fdeec"
+    },
+    {
+      "caseId": "CASE-NBAACL-2021-009",
+      "currentClinicalDigest": "bc69d3efacdf2256447570d29c58ae39f47553140efc844f161eee2387c2df5e",
+      "currentVideoSourceDigest": "2349eaa91df751b46a80932a5740349aea4b29273ecb9a199e52d760386970bb"
+    },
+    {
+      "caseId": "CASE-NBAACL-2021-010",
+      "currentClinicalDigest": "027b788055b6382c0177803796ac33495e1e7b8fed1096542597ae38802135df",
+      "currentVideoSourceDigest": "5b9edfbce5eb265d6bafd9cc3c2bcf60ee25bf5974aa63059ca8d187fb85c3e8"
+    },
+    {
+      "caseId": "CASE-NBAACL-2021-015",
+      "currentClinicalDigest": "9c74169cab091376c47c1a3dc5342f2a8cff79d3dd8d72cf66d5205c8256c06b",
+      "currentVideoSourceDigest": "3b853951d8393608ae70ce24e2fed31f40e88f88fe1c8f7ba43a1612b1fbee35"
+    },
+    {
+      "caseId": "CASE-NBAACL-2022-016",
+      "currentClinicalDigest": "abc7bfc7dfd93761772ef81c1d89a07d22b86d85784985531f0edf3de2f02702",
+      "currentVideoSourceDigest": "21cb3487448a204dda9d30d4c16065a86861690807bcd7d8fa6d2aeb81346772"
+    },
+    {
+      "caseId": "CASE-NBAACL-2022-017",
+      "currentClinicalDigest": "3c634fdca7fd7fe7a639b630471ee4a1a2202939a6a1dc396399353a824612ff",
+      "currentVideoSourceDigest": "af81847cb99e685a99489468d572b826bd00b562aa6ced8659791997ed6cfcb0"
+    },
+    {
+      "caseId": "CASE-NBAACL-2024-023",
+      "currentClinicalDigest": "9adeca47b0a4ccb7bb2f06f07d968742d9e991a806e6a8136da36e394c30899a",
+      "currentVideoSourceDigest": "6d5904461a2d5b77302f42152f2079cd39c379ece9ea1dd596c47b9a90402f94"
+    },
+    {
+      "caseId": "CASE-NBAACL-2025-021",
+      "currentClinicalDigest": "2db7092e47602edc21d9f2af6fbe1ca93bcb2d9c902db059dc4acfa0d6c30cbc",
+      "currentVideoSourceDigest": "d931295870d051f7e5e07a747c3536ca735bb53b56c3debd224031262808b17a"
+    },
+    {
+      "caseId": "CASE-NBAANKLE-2020-001",
+      "currentClinicalDigest": "f5d707bb14c73c62798c65b21612bb8e29de1fadb571f936fc54953ad39a394a",
+      "currentVideoSourceDigest": "a8f1cd0ba58693a34db8b667093f07662eab8d6f86ab1f1b42844e21851bf340"
+    },
+    {
+      "caseId": "CASE-NBAANKLE-2020-002",
+      "currentClinicalDigest": "5351bdcc2e768b4a6dbefc9b25e0263789f40d5d76063a2b67b1caf6ad34ddb5",
+      "currentVideoSourceDigest": "69b410330656d2ff0e9edd07cdc25986bce753b74c6bc93c08bbf378b0730241"
+    },
+    {
+      "caseId": "CASE-NBAANKLE-2021-001",
+      "currentClinicalDigest": "2be424679b6ca0a508db2f82f34c5149f60cafa4b6ae3a1a80dfa2d926e8e5e7",
+      "currentVideoSourceDigest": "7c86b5c14ab7ea278ee43994f594bdec909e6b42aff705f2f6b7e66b17bec58e"
+    },
+    {
+      "caseId": "CASE-NBAANKLE-2021-002",
+      "currentClinicalDigest": "d5cc8c6a9f94d8be8f373892ec32582f47e10ed00f2ab92dfe31cfa9a32b6c4b",
+      "currentVideoSourceDigest": "920f1bea1db3dca1c44b3291c5eef364aa36f786eba43ba9ee922bde6d52a632"
+    },
+    {
+      "caseId": "CASE-NBAANKLE-2021-003",
+      "currentClinicalDigest": "f2481683a618754f1c983c355ee29aaaaddd6cf7ee7bd7fb667927bf9b79b91a",
+      "currentVideoSourceDigest": "4053ebe305b20f53005126239d154acd8b7bd8e101f81ebc5345788ca5cc7fe0"
+    },
+    {
+      "caseId": "CASE-NBAANKLE-2022-001",
+      "currentClinicalDigest": "22cfe1470e254ac9b62ffec5593242599a2aa705ce1ebc7d14f311042906f6c0",
+      "currentVideoSourceDigest": "c63170887380886868a2e72c6cf0ec5776a7df74c5a6839ce36d009cea17b0d8"
+    },
+    {
+      "caseId": "CASE-NBAANKLE-2023-001",
+      "currentClinicalDigest": "26e62a6d7a474167ebed2185771e53cd854eb5a54a8c7e20e8b87adff03fce0a",
+      "currentVideoSourceDigest": "0d4d492fac7ac1dac84b8497ea28a1381188ec5256961884f13b2610cc1a8303"
+    },
+    {
+      "caseId": "CASE-NBAANKLE-2023-004",
+      "currentClinicalDigest": "0958fd8fe550da13460c3cbe80fc7ff5783cc7d9b3188785174bba6314633988",
+      "currentVideoSourceDigest": "ffee1ee1bcf11f82aedd8e8274aa30143650b603a1cfa09709a9d81afc5362ee"
+    },
+    {
+      "caseId": "CASE-NBAANKLE-2023-008",
+      "currentClinicalDigest": "66898904cadb552b307143e2ab772a6df3e6d31eadbaab1bbfaa8b962f4aafa2",
+      "currentVideoSourceDigest": "e541e6228b9d383ff00b725810ff5bda5538b299455abbb7fdf7d0967967299b"
+    },
+    {
+      "caseId": "CASE-NBAANKLE-2024-001",
+      "currentClinicalDigest": "8a02ec96731ada49d1dec2cee29e5ea1a8a67f0a6482e0f2077fed6c73c1b73e",
+      "currentVideoSourceDigest": "1d10493c554ff449bcdddc336b9e43c3113a8e34bc746700ede9230e0b8afc0a"
+    },
+    {
+      "caseId": "CASE-NBAANKLE-2025-001",
+      "currentClinicalDigest": "e741161ff8f7461ad1119dc991b7d2d5cd498055a8b7cfecc3c3b65f0e996907",
+      "currentVideoSourceDigest": "604d320f140dbeebc285a9de6f50d031b3fb567e08aadb82757b9d8574ca7f56"
+    },
+    {
+      "caseId": "CASE-NBAANKLE-2025-002",
+      "currentClinicalDigest": "b3389d4d64cd4be54c8f1ee333049da667a9d9f3ca7f59e4bbebeda66e4b4227",
+      "currentVideoSourceDigest": "af4a20ed322562cd9f97dae434dbde3ec2cd6376775dda260e6d6acb56c9bde6"
+    }
+  ],
+  "updatedCases": [],
+  "retiredCases": [],
+  "unavailableCases": [],
+  "review": {
+    "status": "in-review",
+    "reviewerName": null,
+    "reviewerQualification": null,
+    "reviewedAt": null,
+    "reviewedContentDigest": null
+  },
+  "audit": {
+    "createdAt": "2026-08-08T03:15:00Z",
+    "updatedAt": "2026-08-08T03:15:00Z"
+  }
+}
