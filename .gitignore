@@ -8,3 +8,5 @@ artifacts/external-verification.v1.json
 artifacts/lighthouse-review.json
 .env*
 !.env.example
+research/.source-batch-tmp/
+research/.source-batch-registry.lock

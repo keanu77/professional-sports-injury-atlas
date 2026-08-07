@@ -10,6 +10,10 @@ import {
   validateSourceManifestRegistryAppend,
   validateSourceManifestRegistryArtifacts,
 } from "../../src/lib/contracts/source-manifest-registry";
+import {
+  computeCandidateManifestEntryDigest,
+  parseCandidateManifestBytes,
+} from "../../src/lib/research/candidate-manifest";
 
 const hex = (ch: string): string => ch.repeat(64);
 const loadFixture = (rel: string): any =>
@@ -164,22 +168,224 @@ function quarterlyDecision(manifestId: string, candidateId: string): any {
   };
 }
 
+function bakeCanonicalArtifacts(
+  manifest: any,
+  decision: any,
+  previousBytes = EMPTY_SOURCE_MANIFEST_REGISTRY_BYTES,
+  prefix: any[] = [],
+) {
+  const manifestBytes = canonicalJson(manifest);
+  const decisionBytes = canonicalJson(decision);
+  const baked: BakedBatch = {
+    manifestBytes,
+    manifestDigest: sha256Hex(manifestBytes),
+    decisionBytes,
+    decisionDigest: sha256Hex(decisionBytes),
+    manifestPath: `research/source-manifests/${manifest.manifestId}.v1.json`,
+    decisionPath: `research/reviews/source-batches/${manifest.manifestId}-source-review-decision.v1.json`,
+  };
+  const entry = registryEntryFor(
+    manifest,
+    baked,
+    manifest.generatedAt,
+    previousBytes,
+    manifest.supersedes,
+  );
+  const registry = { schemaVersion: 1, entries: [...prefix, entry] };
+  const files = new Map<string, string>([
+    [baked.manifestPath, baked.manifestBytes],
+    [baked.decisionPath, baked.decisionBytes],
+  ]);
+  const loadFile = (path: string): Uint8Array => {
+    const bytes = files.get(path);
+    if (bytes === undefined) throw new Error(`missing artifact ${path}`);
+    return Buffer.from(bytes);
+  };
+  return { manifest, decision, baked, entry, registry, files, loadFile };
+}
+
+function canonicalScenario(candidateOverrides: Record<string, unknown> = {}) {
+  const manifestId = "FICTIONAL-SOURCE-2026-11-01-002";
+  const reviewedBy = "Fictional Source Reviewer";
+  const reviewedAt = "2026-11-01T00:00:00Z";
+  const policyJsonDigest = hex("a");
+  const policyMarkdownDigest = hex("b");
+  const candidateSetDigest = hex("c");
+  const verificationDigest = hex("d");
+  const rootAuditDigest = hex("e");
+  const decision = {
+    schemaVersion: 1,
+    manifestId,
+    status: "approved-for-manifest",
+    sourcePolicyJsonDigest: policyJsonDigest,
+    sourcePolicyMarkdownDigest: policyMarkdownDigest,
+    reviewedBy,
+    reviewedAt,
+    candidateSetDigest,
+    classicProposalCandidateIds: [],
+  };
+  const decisionDigest = sha256Hex(canonicalJson(decision));
+  const payload: any = {
+    supersedes: null,
+    sourceStatus: "source-verified",
+    candidateId: "FIC-CAND-201",
+    injuryCode: "acl",
+    athleteDisplayName: "Fictional Guard Delta",
+    teamAtEvent: "Harbor City Owls",
+    season: "2026-27",
+    eventDate: "2026-10-25",
+    opponent: "Lakeside Herons",
+    competition: "nba-regular-season",
+    isClassic: false,
+    classicReason: null,
+    classicProposedBy: null,
+    video: {
+      provider: "nba",
+      contentType: "in-game-injury-event",
+      canonicalUrl: "https://www.nba.com/watch/video/fic-delta-201",
+      title: "Fictional Guard Delta injury event",
+      uploaderName: "Fictional Basketball League",
+      uploaderProvenance: "league",
+      channelUrl: "https://www.nba.com/watch",
+      publishedAt: "2026-10-26",
+      accessedAt: "2026-10-31",
+      embedStatus: "external-link-only",
+      embedCheckedAt: "2026-10-31T12:00:00Z",
+      captionStatus: "unavailable",
+      captionCheckedAt: "2026-10-31T12:00:00Z",
+      provenanceBasis: "League-hosted event video",
+      provenanceStatus: "verified",
+      provenanceCheckedBy: "Fictional Source Reviewer",
+      provenanceCheckedAt: "2026-10-31T12:00:00Z",
+    },
+    eventBinding: {
+      status: "passed",
+      rootAuditReference: "/candidates/0",
+      basis: "Event, athlete, and opponent agree across sources",
+    },
+    diagnosisClaim: "Left ACL tear (fictional source-contract case)",
+    diagnosisSources: [
+      {
+        type: "diagnosis-first-party",
+        title: "Fictional team injury update",
+        publisher: "Harbor City Owls",
+        independenceGroup: "harbor-city-owls",
+        originReportId: null,
+        url: "https://example.com/owls/injury-update-delta",
+        publishedAt: "2026-10-26",
+        accessedAt: "2026-10-31",
+      },
+      null,
+    ],
+    eventSource: {
+      title: "Fictional Owls at Herons gamebook",
+      publisher: "Fictional Basketball League",
+      url: "https://example.com/gamebooks/owls-herons-2026-10-25",
+      publishedAt: "2026-10-25",
+      accessedAt: "2026-10-31",
+    },
+    firstPartyAvailability: {
+      status: "available",
+      basis: null,
+      checkedBy: "Fictional Source Reviewer",
+      checkedAt: "2026-10-31T12:00:00Z",
+      auditReference: "/candidates/0/firstPartyAvailability",
+      officialLocationsChecked: [
+        {
+          url: "https://example.com/owls/injury-update-delta",
+          outcome: "Team diagnosis statement located",
+          observedAt: "2026-10-31T12:00:00Z",
+        },
+      ],
+      archiveOrSearchChecks: [],
+    },
+    sourceReviewDecision: {
+      digest: decisionDigest,
+      reviewedBy,
+      reviewedAt,
+    },
+    verification: {
+      artifactDigest: verificationDigest,
+      rootAuditDigest,
+      rootAuditReference: "/candidates/0",
+      rootAuditStatus: "passed",
+      resultReferences: ["/results/0"],
+    },
+    ...candidateOverrides,
+  };
+  const candidate = {
+    entryDigest: computeCandidateManifestEntryDigest(payload),
+    ...payload,
+  };
+  const manifest = {
+    schemaVersion: 1,
+    manifestId,
+    batchType: "quarterly",
+    period: "2026-q4",
+    sourcePolicyVersion: "source-policy-v2",
+    cutoffDate: "2016-08-06",
+    generatedAt: reviewedAt,
+    sourceReview: {
+      status: "approved-for-authoring",
+      manifestId,
+      sourcePolicyJsonDigest: policyJsonDigest,
+      sourcePolicyMarkdownDigest: policyMarkdownDigest,
+      reviewedBy,
+      reviewedAt,
+      candidateSetDigest,
+      classicProposalCandidateIds: [],
+    },
+    sourceDigests: {
+      aclCsvSha256: hex("1"),
+      ankleSprainCsvSha256: hex("2"),
+      achillesRuptureCsvSha256: hex("3"),
+      verificationArtifactSha256: verificationDigest,
+      rootAuditSha256: rootAuditDigest,
+      sourcePolicyJsonSha256: policyJsonDigest,
+      sourcePolicyMarkdownSha256: policyMarkdownDigest,
+      sourceReviewDecisionSha256: decisionDigest,
+    },
+    counts: {
+      byInjury: { acl: 1, "ankle-sprain": 0, "achilles-rupture": 0 },
+      total: 1,
+      recent: 1,
+      classic: 0,
+      byEmbedStatus: { verified: 0, externalLinkOnly: 1 },
+    },
+    supersedes: [],
+    entries: [candidate],
+  };
+  return bakeCanonicalArtifacts(manifest, decision);
+}
+
 describe("source-manifest registry contract", () => {
-  it("pins the initial exact canonical bytes and committed artifact", () => {
+  it("pins the initial exact canonical bytes and accepts the committed append state", () => {
     expect(EMPTY_SOURCE_MANIFEST_REGISTRY_BYTES).toBe(
       '{"entries":[],"schemaVersion":1}',
     );
     expect(canonicalJson({ entries: [], schemaVersion: 1 })).toBe(
       EMPTY_SOURCE_MANIFEST_REGISTRY_BYTES,
     );
-    const committed = readFileSync(
+    const committedBytes = readFileSync(
       new URL(
         "../../research/source-manifest-registry.v1.json",
         import.meta.url,
       ),
-      "utf8",
     );
-    expect(committed).toBe(EMPTY_SOURCE_MANIFEST_REGISTRY_BYTES);
+    const committed = parseSourceManifestRegistryBytes(committedBytes);
+    expect(committed.issues).toEqual([]);
+    expect(committed.registry).not.toBeNull();
+
+    const entries = committed.registry?.entries ?? [];
+    if (entries.length === 0) {
+      expect(committedBytes.toString("utf8")).toBe(
+        EMPTY_SOURCE_MANIFEST_REGISTRY_BYTES,
+      );
+    } else {
+      expect(entries[0]?.previousRegistryBytesDigest).toBe(
+        sha256Hex(EMPTY_SOURCE_MANIFEST_REGISTRY_BYTES),
+      );
+    }
   });
 
   it("accepts the baked fictional launch registry and artifacts", () => {
@@ -188,6 +394,59 @@ describe("source-manifest registry contract", () => {
     expect(
       validateSourceManifestRegistryArtifacts(registry as any, loadFile),
     ).toEqual([]);
+  });
+
+  it("accepts a rich canonical manifest bound to the real source-review decision", () => {
+    const scenario = canonicalScenario();
+    expect(parseCandidateManifestBytes(scenario.baked.manifestBytes)).toEqual({
+      manifest: scenario.manifest,
+      issues: [],
+    });
+    expect(validateSourceManifestRegistry(scenario.registry)).toEqual([]);
+    expect(
+      validateSourceManifestRegistryArtifacts(
+        scenario.registry as any,
+        scenario.loadFile,
+      ),
+    ).toEqual([]);
+  });
+
+  it("rejects rich manifest entry payload drift even when the registry digest is rebaked", () => {
+    const scenario = canonicalScenario();
+    const manifest = structuredClone(scenario.manifest);
+    manifest.entries[0].video.title = "Tampered title after entry digest";
+    const tampered = bakeCanonicalArtifacts(manifest, scenario.decision);
+
+    expect(
+      parseCandidateManifestBytes(tampered.baked.manifestBytes).issues.map(
+        (entry) => entry.code,
+      ),
+    ).toContain("manifest-entry-digest");
+    expect(
+      validateSourceManifestRegistryArtifacts(
+        tampered.registry as any,
+        tampered.loadFile,
+      ).map((entry) => entry.code),
+    ).toContain("artifact-schema");
+  });
+
+  it("rejects a rebaked real decision that is not the decision bound by the rich manifest", () => {
+    const scenario = canonicalScenario();
+    const decision = {
+      ...scenario.decision,
+      reviewedBy: "Different Source Reviewer",
+    };
+    const drifted = bakeCanonicalArtifacts(scenario.manifest, decision);
+
+    expect(
+      parseCandidateManifestBytes(drifted.baked.manifestBytes).issues,
+    ).toEqual([]);
+    expect(
+      validateSourceManifestRegistryArtifacts(
+        drifted.registry as any,
+        drifted.loadFile,
+      ).map((entry) => entry.code),
+    ).toContain("artifact-mismatch");
   });
 
   it("matches the committed fixture registry against recomputed digests", () => {
@@ -562,6 +821,32 @@ describe("source-manifest registry contract", () => {
           registry as any,
           scenario.loadFile,
         ).map((issue) => issue.code),
+      ).toContain("active-duplicate-candidate");
+    });
+
+    it("applies active-set duplicate checks across legacy and rich artifacts", () => {
+      const legacy = launchScenario();
+      const previousBytes = canonicalJson(legacy.registry);
+      const canonical = canonicalScenario({ candidateId: "FIC-CAND-001" });
+      const rich = bakeCanonicalArtifacts(
+        canonical.manifest,
+        canonical.decision,
+        previousBytes,
+        [legacy.entry],
+      );
+      const files = new Map([...legacy.files, ...rich.files]);
+      const loadFile = (path: string): Uint8Array => {
+        const bytes = files.get(path);
+        if (bytes === undefined) throw new Error(`missing artifact ${path}`);
+        return Buffer.from(bytes);
+      };
+
+      expect(validateSourceManifestRegistry(rich.registry)).toEqual([]);
+      expect(
+        validateSourceManifestRegistryArtifacts(
+          rich.registry as any,
+          loadFile,
+        ).map((entry) => entry.code),
       ).toContain("active-duplicate-candidate");
     });
 

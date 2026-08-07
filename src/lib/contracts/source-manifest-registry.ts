@@ -18,6 +18,10 @@ import {
   type ValidationIssue,
 } from "./canonical";
 import type { SourceManifestBinding } from "./case";
+import {
+  parseCandidateManifestBytes,
+  type CandidateSourceManifestV1,
+} from "../research/candidate-manifest";
 
 export const EMPTY_SOURCE_MANIFEST_REGISTRY_BYTES =
   '{"entries":[],"schemaVersion":1}';
@@ -132,6 +136,28 @@ export const sourceReviewDecisionSchema = z.strictObject({
     .min(1),
 });
 export type SourceReviewDecision = z.infer<typeof sourceReviewDecisionSchema>;
+
+/**
+ * Source discovery's canonical decision predates the manifest it authorizes,
+ * so unlike the legacy platform fixture it binds policy/candidate-set bytes
+ * rather than a not-yet-created manifest digest.
+ */
+export const canonicalSourceReviewDecisionSchema = z.strictObject({
+  schemaVersion: z.literal(1),
+  manifestId: nonEmpty,
+  status: z.literal("approved-for-manifest"),
+  sourcePolicyJsonDigest: sha256Lower,
+  sourcePolicyMarkdownDigest: sha256Lower,
+  reviewedBy: nonEmpty,
+  reviewedAt: nonEmpty.refine(isValidUtcTimestamp, {
+    message: "reviewedAt must be a valid UTC timestamp",
+  }),
+  candidateSetDigest: sha256Lower,
+  classicProposalCandidateIds: z.array(nonEmpty),
+});
+export type CanonicalSourceReviewDecision = z.infer<
+  typeof canonicalSourceReviewDecisionSchema
+>;
 
 export interface ResolvedSourceManifestBinding {
   entry: SourceManifestRegistryEntry;
@@ -450,6 +476,44 @@ export function validateSourceManifestRegistryAppend(
 
 export type RegistryArtifactLoader = (path: string) => Uint8Array;
 
+interface RegistryArtifactCandidate {
+  candidateId: string;
+  athleteName: string;
+  eventDate: string;
+  opponentName: string;
+  competitionCode: string;
+  canonicalVideoUrl: string;
+  entryDigest: string;
+}
+
+interface ParsedLegacyManifestArtifact {
+  format: "legacy";
+  manifest: SourceBatchManifest;
+  candidates: RegistryArtifactCandidate[];
+}
+
+interface ParsedCanonicalManifestArtifact {
+  format: "canonical";
+  manifest: CandidateSourceManifestV1;
+  candidates: RegistryArtifactCandidate[];
+}
+
+type ParsedManifestArtifact =
+  ParsedLegacyManifestArtifact | ParsedCanonicalManifestArtifact;
+
+interface ParsedLegacyDecisionArtifact {
+  format: "legacy";
+  decision: SourceReviewDecision;
+}
+
+interface ParsedCanonicalDecisionArtifact {
+  format: "canonical";
+  decision: CanonicalSourceReviewDecision;
+}
+
+type ParsedDecisionArtifact =
+  ParsedLegacyDecisionArtifact | ParsedCanonicalDecisionArtifact;
+
 interface ActiveEntryRecord {
   manifestId: string;
   entryDigest: string;
@@ -461,7 +525,7 @@ function parseManifestArtifact(
   entry: SourceManifestRegistryEntry,
   loadFile: RegistryArtifactLoader,
   issues: ValidationIssue[],
-): SourceBatchManifest | null {
+): ParsedManifestArtifact | null {
   let bytes: Uint8Array;
   try {
     bytes = loadFile(entry.manifestPath);
@@ -499,35 +563,96 @@ function parseManifestArtifact(
     return null;
   }
   const manifest = sourceBatchManifestSchema.safeParse(parsed);
-  if (!manifest.success) {
-    issues.push(
-      issue("artifact-schema", entry.manifestPath, "manifest shape is invalid"),
-    );
+  if (manifest.success) {
+    if (
+      manifest.data.manifestId !== entry.manifestId ||
+      manifest.data.batchType !== entry.batchType ||
+      manifest.data.period !== entry.period ||
+      manifest.data.sourcePolicyVersion !== entry.sourcePolicyVersion
+    ) {
+      issues.push(
+        issue(
+          "artifact-mismatch",
+          entry.manifestPath,
+          "manifest header does not match its registry entry",
+        ),
+      );
+      return null;
+    }
+    return {
+      format: "legacy",
+      manifest: manifest.data,
+      candidates: manifest.data.entries.map((candidate) => ({
+        candidateId: candidate.candidateId,
+        athleteName: candidate.athleteName,
+        eventDate: candidate.eventDate,
+        opponentName: candidate.opponentName,
+        competitionCode: candidate.competitionCode,
+        canonicalVideoUrl: candidate.canonicalVideoUrl,
+        entryDigest: sha256Hex(canonicalJson(candidate)),
+      })),
+    };
+  }
+
+  const canonical = parseCandidateManifestBytes(bytes);
+  if (canonical.manifest === null) {
+    for (const manifestIssue of canonical.issues) {
+      issues.push(
+        issue(
+          "artifact-schema",
+          manifestIssue.path === ""
+            ? entry.manifestPath
+            : `${entry.manifestPath}.${manifestIssue.path}`,
+          `[${manifestIssue.code}] ${manifestIssue.message}`,
+        ),
+      );
+    }
+    if (canonical.issues.length === 0) {
+      issues.push(
+        issue(
+          "artifact-schema",
+          entry.manifestPath,
+          "manifest shape is invalid for both supported contracts",
+        ),
+      );
+    }
     return null;
   }
   if (
-    manifest.data.manifestId !== entry.manifestId ||
-    manifest.data.batchType !== entry.batchType ||
-    manifest.data.period !== entry.period ||
-    manifest.data.sourcePolicyVersion !== entry.sourcePolicyVersion
+    canonical.manifest.manifestId !== entry.manifestId ||
+    canonical.manifest.batchType !== entry.batchType ||
+    canonical.manifest.period !== entry.period ||
+    canonical.manifest.sourcePolicyVersion !== entry.sourcePolicyVersion
   ) {
     issues.push(
       issue(
         "artifact-mismatch",
         entry.manifestPath,
-        "manifest header does not match its registry entry",
+        "canonical manifest header does not match its registry entry",
       ),
     );
     return null;
   }
-  return manifest.data;
+  return {
+    format: "canonical",
+    manifest: canonical.manifest,
+    candidates: canonical.manifest.entries.map((candidate) => ({
+      candidateId: candidate.candidateId,
+      athleteName: candidate.athleteDisplayName,
+      eventDate: candidate.eventDate,
+      opponentName: candidate.opponent,
+      competitionCode: candidate.competition,
+      canonicalVideoUrl: candidate.video.canonicalUrl,
+      entryDigest: candidate.entryDigest,
+    })),
+  };
 }
 
 function parseDecisionArtifact(
   entry: SourceManifestRegistryEntry,
   loadFile: RegistryArtifactLoader,
   issues: ValidationIssue[],
-): SourceReviewDecision | null {
+): ParsedDecisionArtifact | null {
   let bytes: Uint8Array;
   try {
     bytes = loadFile(entry.sourceReviewDecisionPath);
@@ -565,31 +690,185 @@ function parseDecisionArtifact(
     return null;
   }
   const decision = sourceReviewDecisionSchema.safeParse(parsed);
-  if (!decision.success) {
+  if (decision.success) {
+    if (
+      decision.data.manifestId !== entry.manifestId ||
+      decision.data.manifestDigest !== entry.manifestDigest ||
+      decision.data.sourcePolicyVersion !== entry.sourcePolicyVersion
+    ) {
+      issues.push(
+        issue(
+          "artifact-mismatch",
+          entry.sourceReviewDecisionPath,
+          "decision does not match its registry entry",
+        ),
+      );
+      return null;
+    }
+    return { format: "legacy", decision: decision.data };
+  }
+
+  const canonical = canonicalSourceReviewDecisionSchema.safeParse(parsed);
+  if (!canonical.success) {
     issues.push(
       issue(
         "artifact-schema",
         entry.sourceReviewDecisionPath,
-        "decision shape is invalid",
+        "decision shape is invalid for both supported contracts",
       ),
     );
     return null;
   }
+  const text = Buffer.from(bytes).toString("utf8");
+  if (canonicalJson(parsed) !== text) {
+    issues.push(
+      issue(
+        "artifact-schema",
+        entry.sourceReviewDecisionPath,
+        "canonical source-review decision bytes are not compact canonical JSON",
+      ),
+    );
+    return null;
+  }
+  const classicIds = canonical.data.classicProposalCandidateIds;
+  const sortedClassicIds = [...classicIds].sort();
   if (
-    decision.data.manifestId !== entry.manifestId ||
-    decision.data.manifestDigest !== entry.manifestDigest ||
-    decision.data.sourcePolicyVersion !== entry.sourcePolicyVersion
+    new Set(classicIds).size !== classicIds.length ||
+    canonicalJson(classicIds) !== canonicalJson(sortedClassicIds)
   ) {
+    issues.push(
+      issue(
+        "artifact-schema",
+        `${entry.sourceReviewDecisionPath}.classicProposalCandidateIds`,
+        "classic proposal candidate IDs must be sorted and unique",
+      ),
+    );
+    return null;
+  }
+  if (canonical.data.manifestId !== entry.manifestId) {
     issues.push(
       issue(
         "artifact-mismatch",
         entry.sourceReviewDecisionPath,
-        "decision does not match its registry entry",
+        "canonical decision manifest ID does not match its registry entry",
       ),
     );
     return null;
   }
-  return decision.data;
+  return { format: "canonical", decision: canonical.data };
+}
+
+function canonicalArtifactBindingIssues(
+  entry: SourceManifestRegistryEntry,
+  manifest: CandidateSourceManifestV1,
+  decision: CanonicalSourceReviewDecision,
+): ValidationIssue[] {
+  const issues: ValidationIssue[] = [];
+  const review = manifest.sourceReview;
+  const digests = manifest.sourceDigests;
+
+  if (
+    manifest.generatedAt !== entry.createdAt ||
+    canonicalJson(manifest.supersedes) !== canonicalJson(entry.supersedes)
+  ) {
+    issues.push(
+      issue(
+        "artifact-mismatch",
+        entry.manifestPath,
+        "canonical manifest timestamp/supersedes do not match the registry entry",
+      ),
+    );
+  }
+  if (digests.sourceReviewDecisionSha256 !== entry.sourceReviewDecisionDigest) {
+    issues.push(
+      issue(
+        "artifact-mismatch",
+        `${entry.manifestPath}.sourceDigests.sourceReviewDecisionSha256`,
+        "manifest does not bind the registered source-review decision bytes",
+      ),
+    );
+  }
+  if (
+    review.manifestId !== decision.manifestId ||
+    review.reviewedBy !== decision.reviewedBy ||
+    review.reviewedAt !== decision.reviewedAt ||
+    review.candidateSetDigest !== decision.candidateSetDigest ||
+    review.sourcePolicyJsonDigest !== decision.sourcePolicyJsonDigest ||
+    review.sourcePolicyMarkdownDigest !== decision.sourcePolicyMarkdownDigest ||
+    canonicalJson(review.classicProposalCandidateIds) !==
+      canonicalJson(decision.classicProposalCandidateIds)
+  ) {
+    issues.push(
+      issue(
+        "artifact-mismatch",
+        `${entry.manifestPath}.sourceReview`,
+        "canonical manifest source review does not match the durable decision",
+      ),
+    );
+  }
+  if (
+    digests.sourcePolicyJsonSha256 !== decision.sourcePolicyJsonDigest ||
+    digests.sourcePolicyMarkdownSha256 !== decision.sourcePolicyMarkdownDigest
+  ) {
+    issues.push(
+      issue(
+        "artifact-mismatch",
+        `${entry.manifestPath}.sourceDigests`,
+        "manifest policy digests do not match the durable source-review decision",
+      ),
+    );
+  }
+
+  const classicIds = manifest.entries
+    .filter((candidate) => candidate.isClassic)
+    .map((candidate) => candidate.candidateId)
+    .sort();
+  if (
+    canonicalJson(classicIds) !==
+    canonicalJson(decision.classicProposalCandidateIds)
+  ) {
+    issues.push(
+      issue(
+        "artifact-mismatch",
+        `${entry.manifestPath}.entries`,
+        "canonical manifest classic membership does not match the durable decision",
+      ),
+    );
+  }
+
+  for (const candidate of manifest.entries) {
+    const provenance = candidate.sourceReviewDecision;
+    if (
+      provenance.digest !== entry.sourceReviewDecisionDigest ||
+      provenance.reviewedBy !== decision.reviewedBy ||
+      provenance.reviewedAt !== decision.reviewedAt
+    ) {
+      issues.push(
+        issue(
+          "artifact-mismatch",
+          `${entry.manifestPath}.entries.${candidate.candidateId}.sourceReviewDecision`,
+          "candidate source-review provenance does not match the durable decision",
+        ),
+      );
+    }
+    const classic = candidate.classicProposedBy;
+    if (
+      classic !== null &&
+      (classic.sourceReviewDecisionDigest !==
+        entry.sourceReviewDecisionDigest ||
+        classic.reviewedBy !== decision.reviewedBy ||
+        classic.reviewedAt !== decision.reviewedAt)
+    ) {
+      issues.push(
+        issue(
+          "artifact-mismatch",
+          `${entry.manifestPath}.entries.${candidate.candidateId}.classicProposedBy`,
+          "classic proposal provenance does not match the durable decision",
+        ),
+      );
+    }
+  }
+  return issues;
 }
 
 /**
@@ -608,20 +887,55 @@ export function validateSourceManifestRegistryArtifacts(
   const active = new Map<string, ActiveEntryRecord>();
 
   for (const entry of registry.entries) {
-    const manifest = parseManifestArtifact(entry, loadFile, issues);
-    const decision = parseDecisionArtifact(entry, loadFile, issues);
-    if (manifest === null || decision === null) continue;
+    const manifestArtifact = parseManifestArtifact(entry, loadFile, issues);
+    const decisionArtifact = parseDecisionArtifact(entry, loadFile, issues);
+    if (manifestArtifact === null || decisionArtifact === null) continue;
 
-    const decisionByCandidate = new Map(
-      decision.candidateDecisions.map((candidate) => [
-        candidate.candidateId,
-        candidate,
-      ]),
-    );
+    const candidates = manifestArtifact.candidates;
+    let decisionByCandidate: Map<
+      string,
+      SourceReviewDecision["candidateDecisions"][number]
+    > | null = null;
+    if (manifestArtifact.format === "legacy") {
+      if (decisionArtifact.format !== "legacy") {
+        issues.push(
+          issue(
+            "artifact-mismatch",
+            entry.manifestId,
+            "legacy manifest requires a legacy source-review decision",
+          ),
+        );
+        continue;
+      }
+      decisionByCandidate = new Map(
+        decisionArtifact.decision.candidateDecisions.map((candidate) => [
+          candidate.candidateId,
+          candidate,
+        ]),
+      );
+    } else {
+      if (decisionArtifact.format !== "canonical") {
+        issues.push(
+          issue(
+            "artifact-mismatch",
+            entry.manifestId,
+            "canonical manifest requires an approved-for-manifest decision",
+          ),
+        );
+        continue;
+      }
+      const bindingIssues = canonicalArtifactBindingIssues(
+        entry,
+        manifestArtifact.manifest,
+        decisionArtifact.decision,
+      );
+      issues.push(...bindingIssues);
+      if (bindingIssues.length > 0) continue;
+    }
 
     if (entry.batchType === "correction") {
       const replacementIds = new Set(
-        manifest.entries.map((candidate) => candidate.candidateId),
+        candidates.map((candidate) => candidate.candidateId),
       );
       for (const reference of entry.supersedes) {
         const current = active.get(reference.candidateId);
@@ -640,7 +954,7 @@ export function validateSourceManifestRegistryArtifacts(
           continue;
         }
         active.delete(reference.candidateId);
-        const replacements = manifest.entries.filter(
+        const replacements = candidates.filter(
           (candidate) => candidate.candidateId === reference.candidateId,
         );
         if (replacements.length !== 1) {
@@ -653,7 +967,7 @@ export function validateSourceManifestRegistryArtifacts(
           );
         }
       }
-      for (const candidate of manifest.entries) {
+      for (const candidate of candidates) {
         if (!replacementIds.has(candidate.candidateId)) continue;
         if (
           !entry.supersedes.some(
@@ -671,19 +985,23 @@ export function validateSourceManifestRegistryArtifacts(
       }
     }
 
-    for (const candidate of manifest.entries) {
-      const candidateDecision = decisionByCandidate.get(candidate.candidateId);
-      if (candidateDecision === undefined) {
-        issues.push(
-          issue(
-            "artifact-mismatch",
-            `${entry.manifestId}.${candidate.candidateId}`,
-            "manifest entry has no matching candidate decision",
-          ),
+    for (const candidate of candidates) {
+      if (decisionByCandidate !== null) {
+        const candidateDecision = decisionByCandidate.get(
+          candidate.candidateId,
         );
-        continue;
+        if (candidateDecision === undefined) {
+          issues.push(
+            issue(
+              "artifact-mismatch",
+              `${entry.manifestId}.${candidate.candidateId}`,
+              "manifest entry has no matching candidate decision",
+            ),
+          );
+          continue;
+        }
+        if (candidateDecision.status !== "accepted") continue;
       }
-      if (candidateDecision.status !== "accepted") continue;
       const identityKey = [
         candidate.athleteName,
         candidate.eventDate,
@@ -722,7 +1040,7 @@ export function validateSourceManifestRegistryArtifacts(
       }
       active.set(candidate.candidateId, {
         manifestId: entry.manifestId,
-        entryDigest: sha256Hex(canonicalJson(candidate)),
+        entryDigest: candidate.entryDigest,
         identityKey,
         canonicalVideoUrl: candidate.canonicalVideoUrl,
       });
