@@ -30,6 +30,18 @@ const AUTHORED_TASKS = [
   "case-acl-05",
   "case-acl-06",
   "case-acl-07",
+  "case-ankle-01",
+  "case-ankle-02",
+  "case-ankle-03",
+  "case-ankle-04",
+  "case-ankle-05",
+  "case-ankle-06",
+  "case-ankle-07",
+  "case-ankle-08",
+  "case-ankle-09",
+  "case-ankle-10",
+  "case-ankle-11",
+  "case-ankle-12",
 ] as const;
 
 function loadCoverage(): CaseAuthoringCoverageV1 {
@@ -61,7 +73,7 @@ function loadAuthoredCases(coverage: CaseAuthoringCoverageV1): InjuryCase[] {
 }
 
 describe("authorized real NBA case authoring", () => {
-  it("materializes the exact ACL plan coverage with valid bindings and routes", () => {
+  it("materializes the exact authorized plan coverage with valid bindings and routes", () => {
     const coverage = loadCoverage();
     const records = loadAuthoredCases(coverage);
     const registryResult = loadRealRegistry(ROOT);

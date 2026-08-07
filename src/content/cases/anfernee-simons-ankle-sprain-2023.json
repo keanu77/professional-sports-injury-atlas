@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "id": "CASE-NBAANKLE-2023-004",
+  "slug": "anfernee-simons-ankle-sprain-2023",
+  "status": "medical-review",
+  "sourceManifestBinding": {
+    "candidateId": "CAND-NBA-ANKLE-2023-004",
+    "manifestId": "NBA-SOURCE-2026-08-06-001",
+    "manifestDigest": "8beedf3fcc0c7c498bf08ffb2fbc671759e7a61ed4e04f09afab579b6a86eb4d",
+    "entryDigest": "41c20c51b043257c9a516c7197e000343e26328dea5a161f0083da3b21b3c0c9",
+    "sourceReviewDecisionDigest": "cd40d39d8c3463c0bb2cbdb1125a613cf1100d341bb8c6f4d59456462875ad0c",
+    "sourcePolicyVersion": "nba-v2"
+  },
+  "sport": {
+    "code": "basketball"
+  },
+  "league": {
+    "code": "nba"
+  },
+  "competition": {
+    "code": "nba-regular-season"
+  },
+  "athlete": {
+    "name": "Anfernee Simons"
+  },
+  "teamAtEvent": {
+    "name": "Portland Trail Blazers"
+  },
+  "season": "2022-23",
+  "eventDate": "2023-02-14",
+  "opponent": {
+    "name": "Washington Wizards"
+  },
+  "injury": {
+    "code": "ankle-sprain",
+    "confirmedDiagnosis": "Grade 2 right ankle sprain.",
+    "confirmationStatus": "confirmed"
+  },
+  "observedMechanismTags": ["unclear"],
+  "isClassic": false,
+  "classicReason": null,
+  "classicProposedBy": null,
+  "classicExceptionApprovedBy": null,
+  "video": {
+    "provider": "nba",
+    "contentType": "in-game-injury-event",
+    "eventBinding": {
+      "status": "verified",
+      "eventSourceId": "src-nba-ankle-2023-004-event",
+      "checkedBy": "Codex G3 authoring audit",
+      "checkedAt": "2026-08-08T02:30:00Z",
+      "basis": "PASS — Browser reopened the original event/video and first-party diagnosis pages. The combined visible title, date, event context, and first-party text matched Anfernee Simons, 2023-02-14, Portland Trail Blazers vs. Washington Wizards, and nba-regular-season; the diagnosis explicitly supports “Grade 2 right ankle sprain.” No duplicate accepted event identity or canonical video URL was found, and no extra grade, mechanism, surgery, prognosis, rehabilitation, or return-to-play claim was inferred. The diagnosis page is distinct from the event/video page; only the diagnosis page is treated as diagnostic evidence."
+    },
+    "canonicalUrl": "https://www.nba.com/watch/video/anfernee-simons-leaves-the-game-due-to-injury",
+    "uploaderName": "NBA Organization",
+    "uploaderProvenance": "league",
+    "embedStatus": "external-link-only",
+    "embedCheckedAt": "2026-08-07T11:46:19Z",
+    "durationSeconds": 81,
+    "startSeconds": 0,
+    "endSeconds": 81,
+    "fallbackUrl": "https://www.nba.com/watch/video/anfernee-simons-leaves-the-game-due-to-injury",
+    "sourceProvenanceVerification": {
+      "status": "verified",
+      "verifiedBy": "Codex ankle-sprain source researcher",
+      "verifiedAt": "2026-08-07T11:46:19Z",
+      "basis": "NBA.com original-platform Watch page with NBA Organization publisher attribution; the exact-event page was opened and no caption/subtitle control was observable.",
+      "notes": "NBA 原頁播放器未提供可用字幕控制；以同一 canonical URL 作外連 fallback。",
+      "verifiedPolicyVersion": "nba-v2",
+      "reviewedVideoIdentityDigest": "ffee1ee1bcf11f82aedd8e8274aa30143650b603a1cfa09709a9d81afc5362ee"
+    },
+    "captionStatus": "unavailable",
+    "captionCheckedAt": "2026-08-07T11:46:19Z",
+    "publicRightsReview": {
+      "status": "not-requested",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "reviewedVideoDigest": null,
+      "policyVersion": null,
+      "termsCheckedAt": null,
+      "decisionBasis": null,
+      "notes": null,
+      "decisionPath": null,
+      "decisionDigest": null
+    },
+    "segments": [
+      {
+        "startSeconds": 0,
+        "endSeconds": 81,
+        "observation": "片段呈現 Anfernee Simons 在第三節末段腳踝事件後離場；畫面不足以判定分級。"
+      }
+    ]
+  },
+  "general": {
+    "whatHappened": "Anfernee Simons 於 2023-02-14 代表 Portland Trail Blazers 對 Washington Wizards 出賽；原始事件頁與診斷來源已分開記錄。",
+    "whatIsVisible": "片段呈現 Anfernee Simons 在第三節末段腳踝事件後離場；畫面不足以判定分級。",
+    "whatVideoCannotProve": "這段影片不能單獨證明診斷、分級、側別以外的合併傷、影像結果、治療方式、預後或回場日期。",
+    "confirmedUpdate": "NBA.com 的具名來源明載診斷：Grade 2 right ankle sprain."
+  },
+  "professional": {
+    "mechanismAnalysis": "影片可描述踩到他人腳部、落地或足部翻轉等外觀；若角度或接觸點不清楚，應標示機轉不明。",
+    "clinicalLimitations": "畫面不能分辨韌帶分級、骨折或高位踝損傷，仍須以症狀、觸診、負重能力與適當檢查評估。",
+    "differentialContext": "急性腳踝事件的鑑別不只外側韌帶扭傷；若臨床疑慮存在，還需排除骨折、脛腓聯合與其他周邊組織損傷。",
+    "treatmentAndRtpMeaning": "處置與回場應依疼痛、活動度、力量、平衡、信心與運動任務逐項評估，不能由新聞時程或影片單獨決定。",
+    "claims": [
+      {
+        "id": "claim-anfernee-simons-ankle-sprain-2023-01",
+        "field": "professional.mechanismAnalysis",
+        "text": "影片可描述踩到他人腳部、落地或足部翻轉等外觀；若角度或接觸點不清楚，應標示機轉不明。",
+        "evidenceIds": ["src-nba-ankle-2023-004-teaching-01"]
+      },
+      {
+        "id": "claim-anfernee-simons-ankle-sprain-2023-02",
+        "field": "professional.clinicalLimitations",
+        "text": "畫面不能分辨韌帶分級、骨折或高位踝損傷，仍須以症狀、觸診、負重能力與適當檢查評估。",
+        "evidenceIds": ["src-nba-ankle-2023-004-teaching-01"]
+      },
+      {
+        "id": "claim-anfernee-simons-ankle-sprain-2023-03",
+        "field": "professional.differentialContext",
+        "text": "急性腳踝事件的鑑別不只外側韌帶扭傷；若臨床疑慮存在，還需排除骨折、脛腓聯合與其他周邊組織損傷。",
+        "evidenceIds": ["src-nba-ankle-2023-004-teaching-01"]
+      },
+      {
+        "id": "claim-anfernee-simons-ankle-sprain-2023-04",
+        "field": "professional.treatmentAndRtpMeaning",
+        "text": "處置與回場應依疼痛、活動度、力量、平衡、信心與運動任務逐項評估，不能由新聞時程或影片單獨決定。",
+        "evidenceIds": ["src-nba-ankle-2023-004-teaching-01"]
+      }
+    ],
+    "evidenceIds": ["src-nba-ankle-2023-004-teaching-01"],
+    "rtpCourseKey": null
+  },
+  "sources": [
+    {
+      "id": "src-nba-ankle-2023-004-video",
+      "type": "video-original",
+      "title": "Trail Blazers' Anfernee Simons leaves game with injury",
+      "publisher": "NBA Organization",
+      "independenceGroup": "nba-organization",
+      "originReportId": null,
+      "url": "https://www.nba.com/watch/video/anfernee-simons-leaves-the-game-due-to-injury",
+      "publishedAt": "2023-02-14",
+      "accessedAt": "2026-08-07",
+      "supports": [
+        "general.whatHappened",
+        "general.whatIsVisible",
+        "video.segmentObservation"
+      ]
+    },
+    {
+      "id": "src-nba-ankle-2023-004-diagnosis-01",
+      "type": "diagnosis-first-party",
+      "title": "Trail Blazers' Anfernee Simons sidelined with grade 2 ankle sprain",
+      "publisher": "NBA.com",
+      "independenceGroup": "nba",
+      "originReportId": null,
+      "url": "https://www.nba.com/news/blazers-anfernee-simons-injury-update",
+      "publishedAt": "2023-02-17",
+      "accessedAt": "2026-08-07",
+      "supports": ["injury.confirmedDiagnosis", "general.confirmedUpdate"]
+    },
+    {
+      "id": "src-nba-ankle-2023-004-event",
+      "type": "event-context",
+      "title": "Trail Blazers' Anfernee Simons leaves game with injury",
+      "publisher": "NBA.com",
+      "independenceGroup": "nba-com",
+      "originReportId": null,
+      "url": "https://www.nba.com/watch/video/anfernee-simons-leaves-the-game-due-to-injury",
+      "publishedAt": "2023-02-14",
+      "accessedAt": "2026-08-07",
+      "supports": ["general.whatHappened"]
+    },
+    {
+      "id": "src-nba-ankle-2023-004-teaching-01",
+      "type": "teaching-evidence",
+      "title": "Ankle Stability and Movement Coordination Impairments: Lateral Ankle Ligament Sprains Revision 2021",
+      "publisher": "Journal of Orthopaedic & Sports Physical Therapy",
+      "independenceGroup": "journal-of-orthopaedic-sports-physical-therapy",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33789434/",
+      "publishedAt": "2021-04-01",
+      "supports": [
+        "professional.mechanismAnalysis",
+        "professional.clinicalLimitations",
+        "professional.differentialContext",
+        "professional.treatmentAndRtpMeaning"
+      ],
+      "originReportId": null,
+      "accessedAt": "2026-08-08"
+    }
+  ],
+  "review": {
+    "status": "in-review",
+    "reviewerName": null,
+    "reviewerQualification": null,
+    "reviewedAt": null,
+    "reviewedContentDigest": null
+  },
+  "audit": {
+    "createdAt": "2026-08-08T02:30:00Z",
+    "updatedAt": "2026-08-08T02:30:00Z",
+    "sourceRecordId": "CAND-NBA-ANKLE-2023-004"
+  }
+}

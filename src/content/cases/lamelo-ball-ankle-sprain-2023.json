@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "id": "CASE-NBAANKLE-2023-008",
+  "slug": "lamelo-ball-ankle-sprain-2023",
+  "status": "medical-review",
+  "sourceManifestBinding": {
+    "candidateId": "CAND-NBA-ANKLE-2023-008",
+    "manifestId": "NBA-SOURCE-2026-08-06-001",
+    "manifestDigest": "8beedf3fcc0c7c498bf08ffb2fbc671759e7a61ed4e04f09afab579b6a86eb4d",
+    "entryDigest": "cd2cfe1c8e310969f80f2b5379eb34345f113a9e8e43c1cb00f4f09f52481276",
+    "sourceReviewDecisionDigest": "cd40d39d8c3463c0bb2cbdb1125a613cf1100d341bb8c6f4d59456462875ad0c",
+    "sourcePolicyVersion": "nba-v2"
+  },
+  "sport": {
+    "code": "basketball"
+  },
+  "league": {
+    "code": "nba"
+  },
+  "competition": {
+    "code": "nba-regular-season"
+  },
+  "athlete": {
+    "name": "LaMelo Ball"
+  },
+  "teamAtEvent": {
+    "name": "Charlotte Hornets"
+  },
+  "season": "2023-24",
+  "eventDate": "2023-11-26",
+  "opponent": {
+    "name": "Orlando Magic"
+  },
+  "injury": {
+    "code": "ankle-sprain",
+    "confirmedDiagnosis": "Right ankle strain.",
+    "confirmationStatus": "confirmed"
+  },
+  "observedMechanismTags": ["unclear"],
+  "isClassic": false,
+  "classicReason": null,
+  "classicProposedBy": null,
+  "classicExceptionApprovedBy": null,
+  "video": {
+    "provider": "nba",
+    "contentType": "in-game-injury-event",
+    "eventBinding": {
+      "status": "verified",
+      "eventSourceId": "src-nba-ankle-2023-008-event",
+      "checkedBy": "Codex G3 authoring audit",
+      "checkedAt": "2026-08-08T02:30:00Z",
+      "basis": "PASS — Browser reopened the original event/video and first-party diagnosis pages. The combined visible title, date, event context, and first-party text matched LaMelo Ball, 2023-11-26, Charlotte Hornets vs. Orlando Magic, and nba-regular-season; the diagnosis explicitly supports “Right ankle strain.” No duplicate accepted event identity or canonical video URL was found, and no extra grade, mechanism, surgery, prognosis, rehabilitation, or return-to-play claim was inferred. The diagnosis page is distinct from the event/video page; only the diagnosis page is treated as diagnostic evidence."
+    },
+    "canonicalUrl": "https://www.nba.com/watch/video/lamelo-ball-leaves-the-game-with-a-right-leg-injury",
+    "uploaderName": "NBA Organization",
+    "uploaderProvenance": "league",
+    "embedStatus": "external-link-only",
+    "embedCheckedAt": "2026-08-07T11:46:19Z",
+    "durationSeconds": 28,
+    "startSeconds": 0,
+    "endSeconds": 28,
+    "fallbackUrl": "https://www.nba.com/watch/video/lamelo-ball-leaves-the-game-with-a-right-leg-injury",
+    "sourceProvenanceVerification": {
+      "status": "verified",
+      "verifiedBy": "Codex ankle-sprain source researcher",
+      "verifiedAt": "2026-08-07T11:46:19Z",
+      "basis": "NBA.com original-platform Watch page with NBA Organization publisher attribution; the exact-event page was opened and no caption/subtitle control was observable.",
+      "notes": "NBA 原頁播放器未提供可用字幕控制；以同一 canonical URL 作外連 fallback。",
+      "verifiedPolicyVersion": "nba-v2",
+      "reviewedVideoIdentityDigest": "e541e6228b9d383ff00b725810ff5bda5538b299455abbb7fdf7d0967967299b"
+    },
+    "captionStatus": "unavailable",
+    "captionCheckedAt": "2026-08-07T11:46:19Z",
+    "publicRightsReview": {
+      "status": "not-requested",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "reviewedVideoDigest": null,
+      "policyVersion": null,
+      "termsCheckedAt": null,
+      "decisionBasis": null,
+      "notes": null,
+      "decisionPath": null,
+      "decisionDigest": null
+    },
+    "segments": [
+      {
+        "startSeconds": 0,
+        "endSeconds": 28,
+        "observation": "片段呈現 LaMelo Ball 右腳踝事件後停止比賽；僅記錄可見事件序列。"
+      }
+    ]
+  },
+  "general": {
+    "whatHappened": "LaMelo Ball 於 2023-11-26 代表 Charlotte Hornets 對 Orlando Magic 出賽；原始事件頁與診斷來源已分開記錄。",
+    "whatIsVisible": "片段呈現 LaMelo Ball 右腳踝事件後停止比賽；僅記錄可見事件序列。",
+    "whatVideoCannotProve": "這段影片不能單獨證明診斷、分級、側別以外的合併傷、影像結果、治療方式、預後或回場日期。",
+    "confirmedUpdate": "NBA.com 的具名來源明載診斷：Right ankle strain."
+  },
+  "professional": {
+    "mechanismAnalysis": "影片可描述踩到他人腳部、落地或足部翻轉等外觀；若角度或接觸點不清楚，應標示機轉不明。",
+    "clinicalLimitations": "畫面不能分辨韌帶分級、骨折或高位踝損傷，仍須以症狀、觸診、負重能力與適當檢查評估。",
+    "differentialContext": "急性腳踝事件的鑑別不只外側韌帶扭傷；若臨床疑慮存在，還需排除骨折、脛腓聯合與其他周邊組織損傷。",
+    "treatmentAndRtpMeaning": "處置與回場應依疼痛、活動度、力量、平衡、信心與運動任務逐項評估，不能由新聞時程或影片單獨決定。",
+    "claims": [
+      {
+        "id": "claim-lamelo-ball-ankle-sprain-2023-01",
+        "field": "professional.mechanismAnalysis",
+        "text": "影片可描述踩到他人腳部、落地或足部翻轉等外觀；若角度或接觸點不清楚，應標示機轉不明。",
+        "evidenceIds": ["src-nba-ankle-2023-008-teaching-01"]
+      },
+      {
+        "id": "claim-lamelo-ball-ankle-sprain-2023-02",
+        "field": "professional.clinicalLimitations",
+        "text": "畫面不能分辨韌帶分級、骨折或高位踝損傷，仍須以症狀、觸診、負重能力與適當檢查評估。",
+        "evidenceIds": ["src-nba-ankle-2023-008-teaching-01"]
+      },
+      {
+        "id": "claim-lamelo-ball-ankle-sprain-2023-03",
+        "field": "professional.differentialContext",
+        "text": "急性腳踝事件的鑑別不只外側韌帶扭傷；若臨床疑慮存在，還需排除骨折、脛腓聯合與其他周邊組織損傷。",
+        "evidenceIds": ["src-nba-ankle-2023-008-teaching-01"]
+      },
+      {
+        "id": "claim-lamelo-ball-ankle-sprain-2023-04",
+        "field": "professional.treatmentAndRtpMeaning",
+        "text": "處置與回場應依疼痛、活動度、力量、平衡、信心與運動任務逐項評估，不能由新聞時程或影片單獨決定。",
+        "evidenceIds": ["src-nba-ankle-2023-008-teaching-01"]
+      }
+    ],
+    "evidenceIds": ["src-nba-ankle-2023-008-teaching-01"],
+    "rtpCourseKey": null
+  },
+  "sources": [
+    {
+      "id": "src-nba-ankle-2023-008-video",
+      "type": "video-original",
+      "title": "LaMelo Ball leaves the game with a right ankle injury",
+      "publisher": "NBA Organization",
+      "independenceGroup": "nba-organization",
+      "originReportId": null,
+      "url": "https://www.nba.com/watch/video/lamelo-ball-leaves-the-game-with-a-right-leg-injury",
+      "publishedAt": "2023-11-26",
+      "accessedAt": "2026-08-07",
+      "supports": [
+        "general.whatHappened",
+        "general.whatIsVisible",
+        "video.segmentObservation"
+      ]
+    },
+    {
+      "id": "src-nba-ankle-2023-008-diagnosis-01",
+      "type": "diagnosis-first-party",
+      "title": "Hornets' LaMelo Ball carried off with ankle strain, misses rest of game vs. Magic",
+      "publisher": "NBA.com",
+      "independenceGroup": "nba",
+      "originReportId": null,
+      "url": "https://www.nba.com/news/hornets-lamelo-ball-out-right-ankle-strain",
+      "publishedAt": "2023-11-27",
+      "accessedAt": "2026-08-07",
+      "supports": ["injury.confirmedDiagnosis", "general.confirmedUpdate"]
+    },
+    {
+      "id": "src-nba-ankle-2023-008-event",
+      "type": "event-context",
+      "title": "LaMelo Ball leaves the game with a right ankle injury",
+      "publisher": "NBA.com",
+      "independenceGroup": "nba-com",
+      "originReportId": null,
+      "url": "https://www.nba.com/watch/video/lamelo-ball-leaves-the-game-with-a-right-leg-injury",
+      "publishedAt": "2023-11-26",
+      "accessedAt": "2026-08-07",
+      "supports": ["general.whatHappened"]
+    },
+    {
+      "id": "src-nba-ankle-2023-008-teaching-01",
+      "type": "teaching-evidence",
+      "title": "Ankle Stability and Movement Coordination Impairments: Lateral Ankle Ligament Sprains Revision 2021",
+      "publisher": "Journal of Orthopaedic & Sports Physical Therapy",
+      "independenceGroup": "journal-of-orthopaedic-sports-physical-therapy",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33789434/",
+      "publishedAt": "2021-04-01",
+      "supports": [
+        "professional.mechanismAnalysis",
+        "professional.clinicalLimitations",
+        "professional.differentialContext",
+        "professional.treatmentAndRtpMeaning"
+      ],
+      "originReportId": null,
+      "accessedAt": "2026-08-08"
+    }
+  ],
+  "review": {
+    "status": "in-review",
+    "reviewerName": null,
+    "reviewerQualification": null,
+    "reviewedAt": null,
+    "reviewedContentDigest": null
+  },
+  "audit": {
+    "createdAt": "2026-08-08T02:30:00Z",
+    "updatedAt": "2026-08-08T02:30:00Z",
+    "sourceRecordId": "CAND-NBA-ANKLE-2023-008"
+  }
+}

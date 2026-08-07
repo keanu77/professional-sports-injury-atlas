@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "id": "CASE-NBAANKLE-2022-001",
+  "slug": "lamelo-ball-ankle-sprain-2022",
+  "status": "medical-review",
+  "sourceManifestBinding": {
+    "candidateId": "CAND-NBA-ANKLE-2022-001",
+    "manifestId": "NBA-SOURCE-2026-08-06-001",
+    "manifestDigest": "8beedf3fcc0c7c498bf08ffb2fbc671759e7a61ed4e04f09afab579b6a86eb4d",
+    "entryDigest": "fa712ba7e930b082b6648645e6fcce7773874407d2371a42f2d4251103f17316",
+    "sourceReviewDecisionDigest": "cd40d39d8c3463c0bb2cbdb1125a613cf1100d341bb8c6f4d59456462875ad0c",
+    "sourcePolicyVersion": "nba-v2"
+  },
+  "sport": {
+    "code": "basketball"
+  },
+  "league": {
+    "code": "nba"
+  },
+  "competition": {
+    "code": "nba-regular-season"
+  },
+  "athlete": {
+    "name": "LaMelo Ball"
+  },
+  "teamAtEvent": {
+    "name": "Charlotte Hornets"
+  },
+  "season": "2022-23",
+  "eventDate": "2022-11-16",
+  "opponent": {
+    "name": "Indiana Pacers"
+  },
+  "injury": {
+    "code": "ankle-sprain",
+    "confirmedDiagnosis": "Charlotte reported a left ankle sprain.",
+    "confirmationStatus": "confirmed"
+  },
+  "observedMechanismTags": ["unclear"],
+  "isClassic": false,
+  "classicReason": null,
+  "classicProposedBy": null,
+  "classicExceptionApprovedBy": null,
+  "video": {
+    "provider": "nba",
+    "contentType": "in-game-injury-event",
+    "eventBinding": {
+      "status": "verified",
+      "eventSourceId": "src-nba-ankle-2022-001-event",
+      "checkedBy": "Codex G3 authoring audit",
+      "checkedAt": "2026-08-08T02:30:00Z",
+      "basis": "PASS — Browser reopened the original event/video and first-party diagnosis pages. The combined visible title, date, event context, and first-party text matched LaMelo Ball, 2022-11-16, Charlotte Hornets vs. Indiana Pacers, and nba-regular-season; the diagnosis explicitly supports “Charlotte reported a left ankle sprain.” No duplicate accepted event identity or canonical video URL was found, and no extra grade, mechanism, surgery, prognosis, rehabilitation, or return-to-play claim was inferred. The diagnosis page is distinct from the event/video page; only the diagnosis page is treated as diagnostic evidence."
+    },
+    "canonicalUrl": "https://www.nba.com/watch/video/lamelo-ball-leaves-game-with-left-ankle-injury",
+    "uploaderName": "NBA",
+    "uploaderProvenance": "league",
+    "embedStatus": "external-link-only",
+    "embedCheckedAt": "2026-08-07T10:08:25Z",
+    "durationSeconds": 36,
+    "startSeconds": 0,
+    "endSeconds": 36,
+    "fallbackUrl": "https://www.nba.com/watch/video/lamelo-ball-leaves-game-with-left-ankle-injury",
+    "sourceProvenanceVerification": {
+      "status": "verified",
+      "verifiedBy": "Codex ankle-sprain researcher",
+      "verifiedAt": "2026-08-07T10:08:25Z",
+      "basis": "NBA-hosted original Watch page on the league official platform; NBA Watch channel page opened and matched.",
+      "notes": "NBA 原頁播放器未提供可用字幕控制；以同一 canonical URL 作外連 fallback。",
+      "verifiedPolicyVersion": "nba-v2",
+      "reviewedVideoIdentityDigest": "c63170887380886868a2e72c6cf0ec5776a7df74c5a6839ce36d009cea17b0d8"
+    },
+    "captionStatus": "unavailable",
+    "captionCheckedAt": "2026-08-07T10:08:25Z",
+    "publicRightsReview": {
+      "status": "not-requested",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "reviewedVideoDigest": null,
+      "policyVersion": null,
+      "termsCheckedAt": null,
+      "decisionBasis": null,
+      "notes": null,
+      "decisionPath": null,
+      "decisionDigest": null
+    },
+    "segments": [
+      {
+        "startSeconds": 0,
+        "endSeconds": 36,
+        "observation": "片段呈現 LaMelo Ball 在第四節末段左腳踝事件後停止比賽；僅記錄可見序列。"
+      }
+    ]
+  },
+  "general": {
+    "whatHappened": "LaMelo Ball 於 2022-11-16 代表 Charlotte Hornets 對 Indiana Pacers 出賽；原始事件頁與診斷來源已分開記錄。",
+    "whatIsVisible": "片段呈現 LaMelo Ball 在第四節末段左腳踝事件後停止比賽；僅記錄可見序列。",
+    "whatVideoCannotProve": "這段影片不能單獨證明診斷、分級、側別以外的合併傷、影像結果、治療方式、預後或回場日期。",
+    "confirmedUpdate": "NBA.com 的具名來源明載診斷：Charlotte reported a left ankle sprain."
+  },
+  "professional": {
+    "mechanismAnalysis": "影片可描述踩到他人腳部、落地或足部翻轉等外觀；若角度或接觸點不清楚，應標示機轉不明。",
+    "clinicalLimitations": "畫面不能分辨韌帶分級、骨折或高位踝損傷，仍須以症狀、觸診、負重能力與適當檢查評估。",
+    "differentialContext": "急性腳踝事件的鑑別不只外側韌帶扭傷；若臨床疑慮存在，還需排除骨折、脛腓聯合與其他周邊組織損傷。",
+    "treatmentAndRtpMeaning": "處置與回場應依疼痛、活動度、力量、平衡、信心與運動任務逐項評估，不能由新聞時程或影片單獨決定。",
+    "claims": [
+      {
+        "id": "claim-lamelo-ball-ankle-sprain-2022-01",
+        "field": "professional.mechanismAnalysis",
+        "text": "影片可描述踩到他人腳部、落地或足部翻轉等外觀；若角度或接觸點不清楚，應標示機轉不明。",
+        "evidenceIds": ["src-nba-ankle-2022-001-teaching-01"]
+      },
+      {
+        "id": "claim-lamelo-ball-ankle-sprain-2022-02",
+        "field": "professional.clinicalLimitations",
+        "text": "畫面不能分辨韌帶分級、骨折或高位踝損傷，仍須以症狀、觸診、負重能力與適當檢查評估。",
+        "evidenceIds": ["src-nba-ankle-2022-001-teaching-01"]
+      },
+      {
+        "id": "claim-lamelo-ball-ankle-sprain-2022-03",
+        "field": "professional.differentialContext",
+        "text": "急性腳踝事件的鑑別不只外側韌帶扭傷；若臨床疑慮存在，還需排除骨折、脛腓聯合與其他周邊組織損傷。",
+        "evidenceIds": ["src-nba-ankle-2022-001-teaching-01"]
+      },
+      {
+        "id": "claim-lamelo-ball-ankle-sprain-2022-04",
+        "field": "professional.treatmentAndRtpMeaning",
+        "text": "處置與回場應依疼痛、活動度、力量、平衡、信心與運動任務逐項評估，不能由新聞時程或影片單獨決定。",
+        "evidenceIds": ["src-nba-ankle-2022-001-teaching-01"]
+      }
+    ],
+    "evidenceIds": ["src-nba-ankle-2022-001-teaching-01"],
+    "rtpCourseKey": null
+  },
+  "sources": [
+    {
+      "id": "src-nba-ankle-2022-001-video",
+      "type": "video-original",
+      "title": "LaMelo Ball leaves game with left ankle injury",
+      "publisher": "NBA",
+      "independenceGroup": "nba",
+      "originReportId": null,
+      "url": "https://www.nba.com/watch/video/lamelo-ball-leaves-game-with-left-ankle-injury",
+      "publishedAt": "2022-11-16",
+      "accessedAt": "2026-08-07",
+      "supports": [
+        "general.whatHappened",
+        "general.whatIsVisible",
+        "video.segmentObservation"
+      ]
+    },
+    {
+      "id": "src-nba-ankle-2022-001-diagnosis-01",
+      "type": "diagnosis-first-party",
+      "title": "Hornets’ LaMelo Ball re-injures ankle after stepping on fan’s foot",
+      "publisher": "NBA.com",
+      "independenceGroup": "nba",
+      "originReportId": null,
+      "url": "https://www.nba.com/news/lamelo-ball-reinjures-ankle-after-stepping-on-fans-foot",
+      "publishedAt": "2022-11-17",
+      "accessedAt": "2026-08-07",
+      "supports": ["injury.confirmedDiagnosis", "general.confirmedUpdate"]
+    },
+    {
+      "id": "src-nba-ankle-2022-001-event",
+      "type": "event-context",
+      "title": "LaMelo Ball leaves game with left ankle injury",
+      "publisher": "NBA",
+      "independenceGroup": "nba",
+      "originReportId": null,
+      "url": "https://www.nba.com/watch/video/lamelo-ball-leaves-game-with-left-ankle-injury",
+      "publishedAt": "2022-11-16",
+      "accessedAt": "2026-08-07",
+      "supports": ["general.whatHappened"]
+    },
+    {
+      "id": "src-nba-ankle-2022-001-teaching-01",
+      "type": "teaching-evidence",
+      "title": "Ankle Stability and Movement Coordination Impairments: Lateral Ankle Ligament Sprains Revision 2021",
+      "publisher": "Journal of Orthopaedic & Sports Physical Therapy",
+      "independenceGroup": "journal-of-orthopaedic-sports-physical-therapy",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33789434/",
+      "publishedAt": "2021-04-01",
+      "supports": [
+        "professional.mechanismAnalysis",
+        "professional.clinicalLimitations",
+        "professional.differentialContext",
+        "professional.treatmentAndRtpMeaning"
+      ],
+      "originReportId": null,
+      "accessedAt": "2026-08-08"
+    }
+  ],
+  "review": {
+    "status": "in-review",
+    "reviewerName": null,
+    "reviewerQualification": null,
+    "reviewedAt": null,
+    "reviewedContentDigest": null
+  },
+  "audit": {
+    "createdAt": "2026-08-08T02:30:00Z",
+    "updatedAt": "2026-08-08T02:30:00Z",
+    "sourceRecordId": "CAND-NBA-ANKLE-2022-001"
+  }
+}

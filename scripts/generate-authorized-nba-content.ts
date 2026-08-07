@@ -31,10 +31,10 @@ const VIDEO_DURATION_SECONDS: Record<string, number> = {
   "case-acl-07": 295,
   "case-ankle-01": 40,
   "case-ankle-02": 53,
-  // The legacy article embeds NBA asset 1310916. Its current international
-  // player returns no duration; keep this entry out of generated output until
-  // the original-platform duration is independently recovered.
-  "case-ankle-03": 0,
+  // The legacy article embeds inactive NBA asset 1310916. The current player
+  // no longer exposes runtime, so this boundary is cross-checked against two
+  // independent same-play public mirrors, each reporting 44 seconds.
+  "case-ankle-03": 44,
   "case-ankle-04": 44,
   "case-ankle-05": 59,
   "case-ankle-06": 36,
@@ -71,6 +71,8 @@ const VISIBLE_OBSERVATIONS: Record<string, string> = {
     "片段呈現 CJ McCollum 在腳踝事件後退出比賽；畫面本身不提供分級。",
   "case-ankle-02":
     "片段呈現 Ja Morant 左腳踝事件後停止比賽並由輪椅離場；僅描述可見經過。",
+  "case-ankle-03":
+    "NBA 文章內嵌資產 1310916 已失效；同場同一事件的兩個獨立公開鏡像均為 44 秒，片段呈現 LeBron James 右腳踝事件後短暫續賽、隨後離場。",
   "case-ankle-04":
     "片段呈現 Trae Young 腳踝事件後倒地並由他人協助離場；不由畫面判定分級。",
   "case-ankle-05":
@@ -387,9 +389,11 @@ function buildCase(
         verifiedAt: manifestEntry.video.provenanceCheckedAt,
         basis: manifestEntry.video.provenanceBasis,
         notes:
-          manifestEntry.video.provider === "youtube"
-            ? "原頁在目前地區顯示不可播放；不下載媒體，保留同一原始網址作人工覆核。"
-            : "NBA 原頁播放器未提供可用字幕控制；以同一 canonical URL 作外連 fallback。",
+          task.taskId === "case-ankle-03"
+            ? "NBA 原文章與資產 1310916 已重開，但舊播放器不再回傳 runtime；44 秒邊界由兩個獨立、同場同一事件的公開鏡像交叉核對，原 NBA canonical URL 仍作外連 fallback。"
+            : manifestEntry.video.provider === "youtube"
+              ? "原頁在目前地區顯示不可播放；不下載媒體，保留同一原始網址作人工覆核。"
+              : "NBA 原頁播放器未提供可用字幕控制；以同一 canonical URL 作外連 fallback。",
         verifiedPolicyVersion: coverage.sourceBinding.sourcePolicyVersion,
         reviewedVideoIdentityDigest: "0".repeat(64),
       },
@@ -462,14 +466,22 @@ function patchForFile(path: string, value: unknown): string {
 }
 
 const group = process.argv[2];
+const selectedTaskId = process.argv[3];
 if (!group || !["acl", "ankle-sprain", "achilles-rupture"].includes(group)) {
   throw new Error(
-    "usage: tsx scripts/generate-authorized-nba-content.ts <acl|ankle-sprain|achilles-rupture>",
+    "usage: tsx scripts/generate-authorized-nba-content.ts <acl|ankle-sprain|achilles-rupture> [task-id]",
   );
 }
 
 const { coverage, manifestEntries } = loadCoverage();
-const selected = coverage.cases.filter((entry) => entry.injuryCode === group);
+const selected = coverage.cases.filter(
+  (entry) =>
+    entry.injuryCode === group &&
+    (!selectedTaskId || entry.taskId === selectedTaskId),
+);
+if (selectedTaskId && selected.length !== 1) {
+  throw new Error(`unknown task id for ${group}: ${selectedTaskId}`);
+}
 const patches = selected.map((task) => {
   const manifestEntry = manifestEntries.get(task.candidateId);
   if (!manifestEntry)

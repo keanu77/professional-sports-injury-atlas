@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "id": "CASE-NBAANKLE-2023-001",
+  "slug": "anthony-edwards-ankle-sprain-2023",
+  "status": "medical-review",
+  "sourceManifestBinding": {
+    "candidateId": "CAND-NBA-ANKLE-2023-001",
+    "manifestId": "NBA-SOURCE-2026-08-06-001",
+    "manifestDigest": "8beedf3fcc0c7c498bf08ffb2fbc671759e7a61ed4e04f09afab579b6a86eb4d",
+    "entryDigest": "1143ef138f4838fd6ec7607b504d54bbfbd661a69a2995568b1b465a71cfbcc7",
+    "sourceReviewDecisionDigest": "cd40d39d8c3463c0bb2cbdb1125a613cf1100d341bb8c6f4d59456462875ad0c",
+    "sourcePolicyVersion": "nba-v2"
+  },
+  "sport": {
+    "code": "basketball"
+  },
+  "league": {
+    "code": "nba"
+  },
+  "competition": {
+    "code": "nba-regular-season"
+  },
+  "athlete": {
+    "name": "Anthony Edwards"
+  },
+  "teamAtEvent": {
+    "name": "Minnesota Timberwolves"
+  },
+  "season": "2022-23",
+  "eventDate": "2023-03-17",
+  "opponent": {
+    "name": "Chicago Bulls"
+  },
+  "injury": {
+    "code": "ankle-sprain",
+    "confirmedDiagnosis": "NBA.com reported a right ankle sprain.",
+    "confirmationStatus": "confirmed"
+  },
+  "observedMechanismTags": ["unclear"],
+  "isClassic": false,
+  "classicReason": null,
+  "classicProposedBy": null,
+  "classicExceptionApprovedBy": null,
+  "video": {
+    "provider": "youtube",
+    "contentType": "in-game-injury-event",
+    "eventBinding": {
+      "status": "verified",
+      "eventSourceId": "src-nba-ankle-2023-001-event",
+      "checkedBy": "Codex G3 authoring audit",
+      "checkedAt": "2026-08-08T02:30:00Z",
+      "basis": "PASS — Browser reopened the original event/video and first-party diagnosis pages. The combined visible title, date, event context, and first-party text matched Anthony Edwards, 2023-03-17, Minnesota Timberwolves vs. Chicago Bulls, and nba-regular-season; the diagnosis explicitly supports “NBA.com reported a right ankle sprain.” No duplicate accepted event identity or canonical video URL was found, and no extra grade, mechanism, surgery, prognosis, rehabilitation, or return-to-play claim was inferred. The diagnosis page is distinct from the event/video page; only the diagnosis page is treated as diagnostic evidence. The verified ESPN channel and privacy-enhanced player were reopened; the latter returned player configuration error 153, consistent with external-link-only handling."
+    },
+    "canonicalUrl": "https://www.youtube.com/watch?v=V9mtX4mE8wQ",
+    "uploaderName": "ESPN",
+    "uploaderProvenance": "broadcaster-rightsholder",
+    "embedStatus": "verified",
+    "embedCheckedAt": "2026-08-07T10:08:25Z",
+    "durationSeconds": 93,
+    "startSeconds": 0,
+    "endSeconds": 93,
+    "fallbackUrl": "https://www.youtube.com/watch?v=V9mtX4mE8wQ",
+    "sourceProvenanceVerification": {
+      "status": "verified",
+      "verifiedBy": "Codex ankle-sprain researcher",
+      "verifiedAt": "2026-08-07T10:08:25Z",
+      "basis": "ESPN original verified YouTube channel and broadcaster/rightsholder upload; privacy-enhanced player opened paused with autoplay disabled.",
+      "notes": "原頁在目前地區顯示不可播放；不下載媒體，保留同一原始網址作人工覆核。",
+      "verifiedPolicyVersion": "nba-v2",
+      "reviewedVideoIdentityDigest": "0d4d492fac7ac1dac84b8497ea28a1381188ec5256961884f13b2610cc1a8303"
+    },
+    "captionStatus": "unavailable",
+    "captionCheckedAt": "2026-08-07T10:08:25Z",
+    "publicRightsReview": {
+      "status": "not-requested",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "reviewedVideoDigest": null,
+      "policyVersion": null,
+      "termsCheckedAt": null,
+      "decisionBasis": null,
+      "notes": null,
+      "decisionPath": null,
+      "decisionDigest": null
+    },
+    "segments": [
+      {
+        "startSeconds": 0,
+        "endSeconds": 93,
+        "observation": "ESPN 原頁目前受地區限制；保留完整 93 秒時間窗供人工重開，不從不可播放畫面新增機轉判讀。"
+      }
+    ]
+  },
+  "general": {
+    "whatHappened": "Anthony Edwards 於 2023-03-17 代表 Minnesota Timberwolves 對 Chicago Bulls 出賽；原始事件頁與診斷來源已分開記錄。",
+    "whatIsVisible": "ESPN 原頁目前受地區限制；保留完整 93 秒時間窗供人工重開，不從不可播放畫面新增機轉判讀。",
+    "whatVideoCannotProve": "這段影片不能單獨證明診斷、分級、側別以外的合併傷、影像結果、治療方式、預後或回場日期。",
+    "confirmedUpdate": "NBA.com 的具名來源明載診斷：NBA.com reported a right ankle sprain."
+  },
+  "professional": {
+    "mechanismAnalysis": "影片可描述踩到他人腳部、落地或足部翻轉等外觀；若角度或接觸點不清楚，應標示機轉不明。",
+    "clinicalLimitations": "畫面不能分辨韌帶分級、骨折或高位踝損傷，仍須以症狀、觸診、負重能力與適當檢查評估。",
+    "differentialContext": "急性腳踝事件的鑑別不只外側韌帶扭傷；若臨床疑慮存在，還需排除骨折、脛腓聯合與其他周邊組織損傷。",
+    "treatmentAndRtpMeaning": "處置與回場應依疼痛、活動度、力量、平衡、信心與運動任務逐項評估，不能由新聞時程或影片單獨決定。",
+    "claims": [
+      {
+        "id": "claim-anthony-edwards-ankle-sprain-2023-01",
+        "field": "professional.mechanismAnalysis",
+        "text": "影片可描述踩到他人腳部、落地或足部翻轉等外觀；若角度或接觸點不清楚，應標示機轉不明。",
+        "evidenceIds": ["src-nba-ankle-2023-001-teaching-01"]
+      },
+      {
+        "id": "claim-anthony-edwards-ankle-sprain-2023-02",
+        "field": "professional.clinicalLimitations",
+        "text": "畫面不能分辨韌帶分級、骨折或高位踝損傷，仍須以症狀、觸診、負重能力與適當檢查評估。",
+        "evidenceIds": ["src-nba-ankle-2023-001-teaching-01"]
+      },
+      {
+        "id": "claim-anthony-edwards-ankle-sprain-2023-03",
+        "field": "professional.differentialContext",
+        "text": "急性腳踝事件的鑑別不只外側韌帶扭傷；若臨床疑慮存在，還需排除骨折、脛腓聯合與其他周邊組織損傷。",
+        "evidenceIds": ["src-nba-ankle-2023-001-teaching-01"]
+      },
+      {
+        "id": "claim-anthony-edwards-ankle-sprain-2023-04",
+        "field": "professional.treatmentAndRtpMeaning",
+        "text": "處置與回場應依疼痛、活動度、力量、平衡、信心與運動任務逐項評估，不能由新聞時程或影片單獨決定。",
+        "evidenceIds": ["src-nba-ankle-2023-001-teaching-01"]
+      }
+    ],
+    "evidenceIds": ["src-nba-ankle-2023-001-teaching-01"],
+    "rtpCourseKey": null
+  },
+  "sources": [
+    {
+      "id": "src-nba-ankle-2023-001-video",
+      "type": "video-original",
+      "title": "Anthony Edwards helped off court after apparent ankle injury | NBA on ESPN",
+      "publisher": "ESPN",
+      "independenceGroup": "espn",
+      "originReportId": null,
+      "url": "https://www.youtube.com/watch?v=V9mtX4mE8wQ",
+      "publishedAt": "2023-03-17",
+      "accessedAt": "2026-08-07",
+      "supports": [
+        "general.whatHappened",
+        "general.whatIsVisible",
+        "video.segmentObservation"
+      ]
+    },
+    {
+      "id": "src-nba-ankle-2023-001-diagnosis-01",
+      "type": "diagnosis-first-party",
+      "title": "Anthony Edwards sprains right ankle, exits early vs. Bulls",
+      "publisher": "NBA.com",
+      "independenceGroup": "nba",
+      "originReportId": null,
+      "url": "https://www.nba.com/news/anthony-edwards-sprains-right-ankle-exits-early-vs-bulls",
+      "publishedAt": "2023-03-18",
+      "accessedAt": "2026-08-07",
+      "supports": ["injury.confirmedDiagnosis", "general.confirmedUpdate"]
+    },
+    {
+      "id": "src-nba-ankle-2023-001-event",
+      "type": "event-context",
+      "title": "Anthony Edwards helped off court after apparent ankle injury | NBA on ESPN",
+      "publisher": "ESPN",
+      "independenceGroup": "espn",
+      "originReportId": null,
+      "url": "https://www.youtube.com/watch?v=V9mtX4mE8wQ",
+      "publishedAt": "2023-03-17",
+      "accessedAt": "2026-08-07",
+      "supports": ["general.whatHappened"]
+    },
+    {
+      "id": "src-nba-ankle-2023-001-teaching-01",
+      "type": "teaching-evidence",
+      "title": "Ankle Stability and Movement Coordination Impairments: Lateral Ankle Ligament Sprains Revision 2021",
+      "publisher": "Journal of Orthopaedic & Sports Physical Therapy",
+      "independenceGroup": "journal-of-orthopaedic-sports-physical-therapy",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33789434/",
+      "publishedAt": "2021-04-01",
+      "supports": [
+        "professional.mechanismAnalysis",
+        "professional.clinicalLimitations",
+        "professional.differentialContext",
+        "professional.treatmentAndRtpMeaning"
+      ],
+      "originReportId": null,
+      "accessedAt": "2026-08-08"
+    }
+  ],
+  "review": {
+    "status": "in-review",
+    "reviewerName": null,
+    "reviewerQualification": null,
+    "reviewedAt": null,
+    "reviewedContentDigest": null
+  },
+  "audit": {
+    "createdAt": "2026-08-08T02:30:00Z",
+    "updatedAt": "2026-08-08T02:30:00Z",
+    "sourceRecordId": "CAND-NBA-ANKLE-2023-001"
+  }
+}

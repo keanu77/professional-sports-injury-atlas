@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "id": "CASE-NBAANKLE-2025-001",
+  "slug": "anthony-edwards-ankle-sprain-2025",
+  "status": "medical-review",
+  "sourceManifestBinding": {
+    "candidateId": "CAND-NBA-ANKLE-2025-001",
+    "manifestId": "NBA-SOURCE-2026-08-06-001",
+    "manifestDigest": "8beedf3fcc0c7c498bf08ffb2fbc671759e7a61ed4e04f09afab579b6a86eb4d",
+    "entryDigest": "e839dfeca91387dfa59d7b6add14f1ac2c9aa14df1ffae1d6010616edf2833e8",
+    "sourceReviewDecisionDigest": "cd40d39d8c3463c0bb2cbdb1125a613cf1100d341bb8c6f4d59456462875ad0c",
+    "sourcePolicyVersion": "nba-v2"
+  },
+  "sport": {
+    "code": "basketball"
+  },
+  "league": {
+    "code": "nba"
+  },
+  "competition": {
+    "code": "nba-regular-season"
+  },
+  "athlete": {
+    "name": "Anthony Edwards"
+  },
+  "teamAtEvent": {
+    "name": "Minnesota Timberwolves"
+  },
+  "season": "2024-25",
+  "eventDate": "2025-04-03",
+  "opponent": {
+    "name": "Brooklyn Nets"
+  },
+  "injury": {
+    "code": "ankle-sprain",
+    "confirmedDiagnosis": "NBA.com reported that Anthony Edwards sustained an ankle sprain in the game.",
+    "confirmationStatus": "confirmed"
+  },
+  "observedMechanismTags": ["unclear"],
+  "isClassic": false,
+  "classicReason": null,
+  "classicProposedBy": null,
+  "classicExceptionApprovedBy": null,
+  "video": {
+    "provider": "nba",
+    "contentType": "in-game-injury-event",
+    "eventBinding": {
+      "status": "verified",
+      "eventSourceId": "src-nba-ankle-2025-001-event",
+      "checkedBy": "Codex G3 authoring audit",
+      "checkedAt": "2026-08-08T02:30:00Z",
+      "basis": "PASS — Browser reopened the original event/video and first-party diagnosis pages. The combined visible title, date, event context, and first-party text matched Anthony Edwards, 2025-04-03, Minnesota Timberwolves vs. Brooklyn Nets, and nba-regular-season; the diagnosis explicitly supports “NBA.com reported that Anthony Edwards sustained an ankle sprain in the game.” No duplicate accepted event identity or canonical video URL was found, and no extra grade, mechanism, surgery, prognosis, rehabilitation, or return-to-play claim was inferred. The diagnosis page is distinct from the event/video page; only the diagnosis page is treated as diagnostic evidence."
+    },
+    "canonicalUrl": "https://www.nba.com/watch/video/anthony-edwards-ankle-injury-scare-heads-to-locker-room",
+    "uploaderName": "NBA",
+    "uploaderProvenance": "league",
+    "embedStatus": "external-link-only",
+    "embedCheckedAt": "2026-08-07T10:08:25Z",
+    "durationSeconds": 81,
+    "startSeconds": 0,
+    "endSeconds": 81,
+    "fallbackUrl": "https://www.nba.com/watch/video/anthony-edwards-ankle-injury-scare-heads-to-locker-room",
+    "sourceProvenanceVerification": {
+      "status": "verified",
+      "verifiedBy": "Codex ankle-sprain researcher",
+      "verifiedAt": "2026-08-07T10:08:25Z",
+      "basis": "NBA-hosted original Watch page on the league official platform; NBA Watch channel page opened and matched.",
+      "notes": "NBA 原頁播放器未提供可用字幕控制；以同一 canonical URL 作外連 fallback。",
+      "verifiedPolicyVersion": "nba-v2",
+      "reviewedVideoIdentityDigest": "604d320f140dbeebc285a9de6f50d031b3fb567e08aadb82757b9d8574ca7f56"
+    },
+    "captionStatus": "unavailable",
+    "captionCheckedAt": "2026-08-07T10:08:25Z",
+    "publicRightsReview": {
+      "status": "not-requested",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "reviewedVideoDigest": null,
+      "policyVersion": null,
+      "termsCheckedAt": null,
+      "decisionBasis": null,
+      "notes": null,
+      "decisionPath": null,
+      "decisionDigest": null
+    },
+    "segments": [
+      {
+        "startSeconds": 0,
+        "endSeconds": 81,
+        "observation": "片段呈現 Anthony Edwards 踩到場邊人員腳部後落地不穩並前往休息室。"
+      }
+    ]
+  },
+  "general": {
+    "whatHappened": "Anthony Edwards 於 2025-04-03 代表 Minnesota Timberwolves 對 Brooklyn Nets 出賽；原始事件頁與診斷來源已分開記錄。",
+    "whatIsVisible": "片段呈現 Anthony Edwards 踩到場邊人員腳部後落地不穩並前往休息室。",
+    "whatVideoCannotProve": "這段影片不能單獨證明診斷、分級、側別以外的合併傷、影像結果、治療方式、預後或回場日期。",
+    "confirmedUpdate": "NBA.com 的具名來源明載診斷：NBA.com reported that Anthony Edwards sustained an ankle sprain in the game."
+  },
+  "professional": {
+    "mechanismAnalysis": "影片可描述踩到他人腳部、落地或足部翻轉等外觀；若角度或接觸點不清楚，應標示機轉不明。",
+    "clinicalLimitations": "畫面不能分辨韌帶分級、骨折或高位踝損傷，仍須以症狀、觸診、負重能力與適當檢查評估。",
+    "differentialContext": "急性腳踝事件的鑑別不只外側韌帶扭傷；若臨床疑慮存在，還需排除骨折、脛腓聯合與其他周邊組織損傷。",
+    "treatmentAndRtpMeaning": "處置與回場應依疼痛、活動度、力量、平衡、信心與運動任務逐項評估，不能由新聞時程或影片單獨決定。",
+    "claims": [
+      {
+        "id": "claim-anthony-edwards-ankle-sprain-2025-01",
+        "field": "professional.mechanismAnalysis",
+        "text": "影片可描述踩到他人腳部、落地或足部翻轉等外觀；若角度或接觸點不清楚，應標示機轉不明。",
+        "evidenceIds": ["src-nba-ankle-2025-001-teaching-01"]
+      },
+      {
+        "id": "claim-anthony-edwards-ankle-sprain-2025-02",
+        "field": "professional.clinicalLimitations",
+        "text": "畫面不能分辨韌帶分級、骨折或高位踝損傷，仍須以症狀、觸診、負重能力與適當檢查評估。",
+        "evidenceIds": ["src-nba-ankle-2025-001-teaching-01"]
+      },
+      {
+        "id": "claim-anthony-edwards-ankle-sprain-2025-03",
+        "field": "professional.differentialContext",
+        "text": "急性腳踝事件的鑑別不只外側韌帶扭傷；若臨床疑慮存在，還需排除骨折、脛腓聯合與其他周邊組織損傷。",
+        "evidenceIds": ["src-nba-ankle-2025-001-teaching-01"]
+      },
+      {
+        "id": "claim-anthony-edwards-ankle-sprain-2025-04",
+        "field": "professional.treatmentAndRtpMeaning",
+        "text": "處置與回場應依疼痛、活動度、力量、平衡、信心與運動任務逐項評估，不能由新聞時程或影片單獨決定。",
+        "evidenceIds": ["src-nba-ankle-2025-001-teaching-01"]
+      }
+    ],
+    "evidenceIds": ["src-nba-ankle-2025-001-teaching-01"],
+    "rtpCourseKey": null
+  },
+  "sources": [
+    {
+      "id": "src-nba-ankle-2025-001-video",
+      "type": "video-original",
+      "title": "Anthony Edwards lands awkwardly and heads to the locker room",
+      "publisher": "NBA",
+      "independenceGroup": "nba",
+      "originReportId": null,
+      "url": "https://www.nba.com/watch/video/anthony-edwards-ankle-injury-scare-heads-to-locker-room",
+      "publishedAt": "2025-04-03",
+      "accessedAt": "2026-08-07",
+      "supports": [
+        "general.whatHappened",
+        "general.whatIsVisible",
+        "video.segmentObservation"
+      ]
+    },
+    {
+      "id": "src-nba-ankle-2025-001-diagnosis-01",
+      "type": "diagnosis-first-party",
+      "title": "Nightly Pulse: NBA News & Highlights from April 3",
+      "publisher": "NBA.com",
+      "independenceGroup": "nba",
+      "originReportId": null,
+      "url": "https://www.nba.com/news/nightly-pulse-nba-news-highlights-from-april-3",
+      "publishedAt": "2025-04-04",
+      "accessedAt": "2026-08-07",
+      "supports": ["injury.confirmedDiagnosis", "general.confirmedUpdate"]
+    },
+    {
+      "id": "src-nba-ankle-2025-001-event",
+      "type": "event-context",
+      "title": "Anthony Edwards lands awkwardly and heads to the locker room",
+      "publisher": "NBA",
+      "independenceGroup": "nba",
+      "originReportId": null,
+      "url": "https://www.nba.com/watch/video/anthony-edwards-ankle-injury-scare-heads-to-locker-room",
+      "publishedAt": "2025-04-03",
+      "accessedAt": "2026-08-07",
+      "supports": ["general.whatHappened"]
+    },
+    {
+      "id": "src-nba-ankle-2025-001-teaching-01",
+      "type": "teaching-evidence",
+      "title": "Ankle Stability and Movement Coordination Impairments: Lateral Ankle Ligament Sprains Revision 2021",
+      "publisher": "Journal of Orthopaedic & Sports Physical Therapy",
+      "independenceGroup": "journal-of-orthopaedic-sports-physical-therapy",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33789434/",
+      "publishedAt": "2021-04-01",
+      "supports": [
+        "professional.mechanismAnalysis",
+        "professional.clinicalLimitations",
+        "professional.differentialContext",
+        "professional.treatmentAndRtpMeaning"
+      ],
+      "originReportId": null,
+      "accessedAt": "2026-08-08"
+    }
+  ],
+  "review": {
+    "status": "in-review",
+    "reviewerName": null,
+    "reviewerQualification": null,
+    "reviewedAt": null,
+    "reviewedContentDigest": null
+  },
+  "audit": {
+    "createdAt": "2026-08-08T02:30:00Z",
+    "updatedAt": "2026-08-08T02:30:00Z",
+    "sourceRecordId": "CAND-NBA-ANKLE-2025-001"
+  }
+}

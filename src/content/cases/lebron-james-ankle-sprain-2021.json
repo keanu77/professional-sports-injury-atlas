@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "id": "CASE-NBAANKLE-2021-003",
+  "slug": "lebron-james-ankle-sprain-2021",
+  "status": "medical-review",
+  "sourceManifestBinding": {
+    "candidateId": "CAND-NBA-ANKLE-2021-003",
+    "manifestId": "NBA-SOURCE-2026-08-06-001",
+    "manifestDigest": "8beedf3fcc0c7c498bf08ffb2fbc671759e7a61ed4e04f09afab579b6a86eb4d",
+    "entryDigest": "c9d1c68f9edcbdba4c677b5dc1f994779a9d35d756c492ac5a9f823d9b169f6e",
+    "sourceReviewDecisionDigest": "cd40d39d8c3463c0bb2cbdb1125a613cf1100d341bb8c6f4d59456462875ad0c",
+    "sourcePolicyVersion": "nba-v2"
+  },
+  "sport": {
+    "code": "basketball"
+  },
+  "league": {
+    "code": "nba"
+  },
+  "competition": {
+    "code": "nba-regular-season"
+  },
+  "athlete": {
+    "name": "LeBron James"
+  },
+  "teamAtEvent": {
+    "name": "Los Angeles Lakers"
+  },
+  "season": "2020-21",
+  "eventDate": "2021-03-20",
+  "opponent": {
+    "name": "Atlanta Hawks"
+  },
+  "injury": {
+    "code": "ankle-sprain",
+    "confirmedDiagnosis": "High right ankle sprain.",
+    "confirmationStatus": "confirmed"
+  },
+  "observedMechanismTags": ["unclear"],
+  "isClassic": false,
+  "classicReason": null,
+  "classicProposedBy": null,
+  "classicExceptionApprovedBy": null,
+  "video": {
+    "provider": "nba",
+    "contentType": "in-game-injury-event",
+    "eventBinding": {
+      "status": "verified",
+      "eventSourceId": "src-nba-ankle-2021-003-event",
+      "checkedBy": "Codex G3 authoring audit",
+      "checkedAt": "2026-08-08T02:30:00Z",
+      "basis": "PASS — Browser reopened the original event/video and first-party diagnosis pages. The combined visible title, date, event context, and first-party text matched LeBron James, 2021-03-20, Los Angeles Lakers vs. Atlanta Hawks, and nba-regular-season; the diagnosis explicitly supports “High right ankle sprain.” No duplicate accepted event identity or canonical video URL was found, and no extra grade, mechanism, surgery, prognosis, rehabilitation, or return-to-play claim was inferred. Event/video and diagnosis are co-located on one NBA.com article; no independent second diagnosis is claimed or required for this recent first-party case."
+    },
+    "canonicalUrl": "https://www.nba.com/news/lebron-james-leaves-lakers-game-with-right-ankle-injury-will-not-return",
+    "uploaderName": "NBA Organization",
+    "uploaderProvenance": "league",
+    "embedStatus": "external-link-only",
+    "embedCheckedAt": "2026-08-07T11:46:19Z",
+    "durationSeconds": 44,
+    "startSeconds": 0,
+    "endSeconds": 44,
+    "fallbackUrl": "https://www.nba.com/news/lebron-james-leaves-lakers-game-with-right-ankle-injury-will-not-return",
+    "sourceProvenanceVerification": {
+      "status": "verified",
+      "verifiedBy": "Codex ankle-sprain source researcher",
+      "verifiedAt": "2026-08-07T11:46:19Z",
+      "basis": "NBA.com league article published on the event date with an embedded NBA player showing the exact in-game injury event; the original platform page and embedded player were opened, and no caption/subtitle control was observable.",
+      "notes": "NBA 原文章與資產 1310916 已重開，但舊播放器不再回傳 runtime；44 秒邊界由兩個獨立、同場同一事件的公開鏡像交叉核對，原 NBA canonical URL 仍作外連 fallback。",
+      "verifiedPolicyVersion": "nba-v2",
+      "reviewedVideoIdentityDigest": "4053ebe305b20f53005126239d154acd8b7bd8e101f81ebc5345788ca5cc7fe0"
+    },
+    "captionStatus": "unavailable",
+    "captionCheckedAt": "2026-08-07T11:46:19Z",
+    "publicRightsReview": {
+      "status": "not-requested",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "reviewedVideoDigest": null,
+      "policyVersion": null,
+      "termsCheckedAt": null,
+      "decisionBasis": null,
+      "notes": null,
+      "decisionPath": null,
+      "decisionDigest": null
+    },
+    "segments": [
+      {
+        "startSeconds": 0,
+        "endSeconds": 44,
+        "observation": "NBA 文章內嵌資產 1310916 已失效；同場同一事件的兩個獨立公開鏡像均為 44 秒，片段呈現 LeBron James 右腳踝事件後短暫續賽、隨後離場。"
+      }
+    ]
+  },
+  "general": {
+    "whatHappened": "LeBron James 於 2021-03-20 代表 Los Angeles Lakers 對 Atlanta Hawks 出賽；原始事件頁與診斷來源已分開記錄。",
+    "whatIsVisible": "NBA 文章內嵌資產 1310916 已失效；同場同一事件的兩個獨立公開鏡像均為 44 秒，片段呈現 LeBron James 右腳踝事件後短暫續賽、隨後離場。",
+    "whatVideoCannotProve": "這段影片不能單獨證明診斷、分級、側別以外的合併傷、影像結果、治療方式、預後或回場日期。",
+    "confirmedUpdate": "NBA.com 的具名來源明載診斷：High right ankle sprain."
+  },
+  "professional": {
+    "mechanismAnalysis": "影片可描述踩到他人腳部、落地或足部翻轉等外觀；若角度或接觸點不清楚，應標示機轉不明。",
+    "clinicalLimitations": "畫面不能分辨韌帶分級、骨折或高位踝損傷，仍須以症狀、觸診、負重能力與適當檢查評估。",
+    "differentialContext": "急性腳踝事件的鑑別不只外側韌帶扭傷；若臨床疑慮存在，還需排除骨折、脛腓聯合與其他周邊組織損傷。",
+    "treatmentAndRtpMeaning": "處置與回場應依疼痛、活動度、力量、平衡、信心與運動任務逐項評估，不能由新聞時程或影片單獨決定。",
+    "claims": [
+      {
+        "id": "claim-lebron-james-ankle-sprain-2021-01",
+        "field": "professional.mechanismAnalysis",
+        "text": "影片可描述踩到他人腳部、落地或足部翻轉等外觀；若角度或接觸點不清楚，應標示機轉不明。",
+        "evidenceIds": ["src-nba-ankle-2021-003-teaching-01"]
+      },
+      {
+        "id": "claim-lebron-james-ankle-sprain-2021-02",
+        "field": "professional.clinicalLimitations",
+        "text": "畫面不能分辨韌帶分級、骨折或高位踝損傷，仍須以症狀、觸診、負重能力與適當檢查評估。",
+        "evidenceIds": ["src-nba-ankle-2021-003-teaching-01"]
+      },
+      {
+        "id": "claim-lebron-james-ankle-sprain-2021-03",
+        "field": "professional.differentialContext",
+        "text": "急性腳踝事件的鑑別不只外側韌帶扭傷；若臨床疑慮存在，還需排除骨折、脛腓聯合與其他周邊組織損傷。",
+        "evidenceIds": ["src-nba-ankle-2021-003-teaching-01"]
+      },
+      {
+        "id": "claim-lebron-james-ankle-sprain-2021-04",
+        "field": "professional.treatmentAndRtpMeaning",
+        "text": "處置與回場應依疼痛、活動度、力量、平衡、信心與運動任務逐項評估，不能由新聞時程或影片單獨決定。",
+        "evidenceIds": ["src-nba-ankle-2021-003-teaching-01"]
+      }
+    ],
+    "evidenceIds": ["src-nba-ankle-2021-003-teaching-01"],
+    "rtpCourseKey": null
+  },
+  "sources": [
+    {
+      "id": "src-nba-ankle-2021-003-video",
+      "type": "video-original",
+      "title": "LeBron James out indefinitely with high ankle sprain",
+      "publisher": "NBA Organization",
+      "independenceGroup": "nba-organization",
+      "originReportId": null,
+      "url": "https://www.nba.com/news/lebron-james-leaves-lakers-game-with-right-ankle-injury-will-not-return",
+      "publishedAt": "2021-03-20",
+      "accessedAt": "2026-08-07",
+      "supports": [
+        "general.whatHappened",
+        "general.whatIsVisible",
+        "video.segmentObservation"
+      ]
+    },
+    {
+      "id": "src-nba-ankle-2021-003-diagnosis-01",
+      "type": "diagnosis-first-party",
+      "title": "LeBron James out indefinitely with high ankle sprain",
+      "publisher": "NBA.com",
+      "independenceGroup": "nba",
+      "originReportId": null,
+      "url": "https://www.nba.com/news/lebron-james-leaves-lakers-game-with-right-ankle-injury-will-not-return",
+      "publishedAt": "2021-03-20",
+      "accessedAt": "2026-08-07",
+      "supports": ["injury.confirmedDiagnosis", "general.confirmedUpdate"]
+    },
+    {
+      "id": "src-nba-ankle-2021-003-event",
+      "type": "event-context",
+      "title": "LeBron James out indefinitely with high ankle sprain",
+      "publisher": "NBA.com",
+      "independenceGroup": "nba-com",
+      "originReportId": null,
+      "url": "https://www.nba.com/news/lebron-james-leaves-lakers-game-with-right-ankle-injury-will-not-return",
+      "publishedAt": "2021-03-20",
+      "accessedAt": "2026-08-07",
+      "supports": ["general.whatHappened"]
+    },
+    {
+      "id": "src-nba-ankle-2021-003-teaching-01",
+      "type": "teaching-evidence",
+      "title": "Ankle Stability and Movement Coordination Impairments: Lateral Ankle Ligament Sprains Revision 2021",
+      "publisher": "Journal of Orthopaedic & Sports Physical Therapy",
+      "independenceGroup": "journal-of-orthopaedic-sports-physical-therapy",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33789434/",
+      "publishedAt": "2021-04-01",
+      "supports": [
+        "professional.mechanismAnalysis",
+        "professional.clinicalLimitations",
+        "professional.differentialContext",
+        "professional.treatmentAndRtpMeaning"
+      ],
+      "originReportId": null,
+      "accessedAt": "2026-08-08"
+    }
+  ],
+  "review": {
+    "status": "in-review",
+    "reviewerName": null,
+    "reviewerQualification": null,
+    "reviewedAt": null,
+    "reviewedContentDigest": null
+  },
+  "audit": {
+    "createdAt": "2026-08-08T02:30:00Z",
+    "updatedAt": "2026-08-08T02:30:00Z",
+    "sourceRecordId": "CAND-NBA-ANKLE-2021-003"
+  }
+}
