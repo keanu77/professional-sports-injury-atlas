@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "injuryCode": "achilles-rupture",
+  "status": "medical-review",
+  "titleZh": "阿基里斯腱斷裂",
+  "summaryZh": "將職業籃球事件影片的可見線索，與急性阿基里斯腱斷裂的臨床診斷、治療和回場脈絡清楚分開。",
+  "scope": "本總覽用職業籃球影片做事件觀察教學；阿基里斯腱斷裂的診斷與治療原則來自專業學會文件，而非影片推論。",
+  "basicAnatomyAndDefinition": "阿基里斯腱連接小腿後側肌群與跟骨，是蹬地與踝關節蹠屈的重要結構；急性斷裂表示肌腱連續性受破壞。",
+  "commonObservedMechanisms": "影片中可能看到無明顯外部接觸下的突然停步、蹬地失敗、回頭查看後側小腿或無法繼續比賽，但這些只是非診斷性的外觀。",
+  "whatVideoCannotProve": "影片不能確認肌腱是否斷裂、斷裂位置或完整程度，也不能排除腓腸肌、比目魚肌或其他後側小腿病變。",
+  "diagnosisContext": "診斷需依病史與臨床檢查，並在需要時結合影像；比賽影片不能取代直接檢查。",
+  "treatmentContext": "手術與非手術治療都可能適用，選擇需考量病人特徵、功能需求、風險與共同決策，且通常搭配早期功能性復健策略。",
+  "rtpContext": "回場需依肌腱癒合、力量、耐力、跳躍與運動專項功能綜合評估；本總覽不提供固定月份、分期表或個人化處方。",
+  "claims": [
+    {
+      "id": "overview-achilles-claim-01",
+      "field": "scope",
+      "text": "本總覽用職業籃球影片做事件觀察教學；阿基里斯腱斷裂的診斷與治療原則來自專業學會文件，而非影片推論。",
+      "evidenceIds": ["overview-achilles-source-01"]
+    },
+    {
+      "id": "overview-achilles-claim-02",
+      "field": "basicAnatomyAndDefinition",
+      "text": "阿基里斯腱連接小腿後側肌群與跟骨，是蹬地與踝關節蹠屈的重要結構；急性斷裂表示肌腱連續性受破壞。",
+      "evidenceIds": ["overview-achilles-source-01"]
+    },
+    {
+      "id": "overview-achilles-claim-03",
+      "field": "commonObservedMechanisms",
+      "text": "影片中可能看到無明顯外部接觸下的突然停步、蹬地失敗、回頭查看後側小腿或無法繼續比賽，但這些只是非診斷性的外觀。",
+      "evidenceIds": ["overview-achilles-source-01"]
+    },
+    {
+      "id": "overview-achilles-claim-04",
+      "field": "whatVideoCannotProve",
+      "text": "影片不能確認肌腱是否斷裂、斷裂位置或完整程度，也不能排除腓腸肌、比目魚肌或其他後側小腿病變。",
+      "evidenceIds": ["overview-achilles-source-01"]
+    },
+    {
+      "id": "overview-achilles-claim-05",
+      "field": "diagnosisContext",
+      "text": "診斷需依病史與臨床檢查，並在需要時結合影像；比賽影片不能取代直接檢查。",
+      "evidenceIds": ["overview-achilles-source-01"]
+    },
+    {
+      "id": "overview-achilles-claim-06",
+      "field": "treatmentContext",
+      "text": "手術與非手術治療都可能適用，選擇需考量病人特徵、功能需求、風險與共同決策，且通常搭配早期功能性復健策略。",
+      "evidenceIds": ["overview-achilles-source-01"]
+    },
+    {
+      "id": "overview-achilles-claim-07",
+      "field": "rtpContext",
+      "text": "回場需依肌腱癒合、力量、耐力、跳躍與運動專項功能綜合評估；本總覽不提供固定月份、分期表或個人化處方。",
+      "evidenceIds": ["overview-achilles-source-01"]
+    }
+  ],
+  "evidenceIds": ["overview-achilles-source-01"],
+  "sources": [
+    {
+      "id": "overview-achilles-source-01",
+      "type": "teaching-evidence",
+      "title": "Position Statement on the Management of Acute Achilles Tendon Ruptures",
+      "publisher": "American Orthopaedic Foot & Ankle Society",
+      "independenceGroup": "american-orthopaedic-foot-ankle-society",
+      "originReportId": null,
+      "url": "https://www.aofas.org/docs/default-source/research-and-policy/position-statements/positionstatement_acuteachillesruptures_nov2024.pdf",
+      "publishedAt": "2024-11-19",
+      "accessedAt": "2026-08-08",
+      "supports": [
+        "scope",
+        "basicAnatomyAndDefinition",
+        "commonObservedMechanisms",
+        "whatVideoCannotProve",
+        "diagnosisContext",
+        "treatmentContext",
+        "rtpContext"
+      ]
+    }
+  ],
+  "review": {
+    "status": "in-review",
+    "reviewerName": null,
+    "reviewerQualification": null,
+    "reviewedAt": null,
+    "reviewedContentDigest": null
+  },
+  "audit": {
+    "createdAt": "2026-08-08T03:10:00Z",
+    "updatedAt": "2026-08-08T03:10:00Z"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "injuryCode": "ankle-sprain",
+  "status": "medical-review",
+  "titleZh": "踝關節扭傷",
+  "summaryZh": "以比賽影片觀察踝部事件，並以臨床實務指南界定診斷、處置與回場的專業脈絡。",
+  "scope": "本總覽聚焦職業籃球中的急性踝部事件；影片用於可見事件教學，診斷與照護內容則依臨床實務指南。",
+  "basicAnatomyAndDefinition": "踝關節外側韌帶群協助抵抗足部內翻與維持穩定；外側踝扭傷是相關韌帶受到不同程度的拉伸或撕裂。",
+  "commonObservedMechanisms": "比賽畫面可能呈現落地踩到他人腳部、足部翻轉或接觸後失衡；角度不足時應將機轉標示為不明。",
+  "whatVideoCannotProve": "影片不能判定韌帶分級，也不能排除骨折、脛腓聯合損傷或其他周邊組織損傷。",
+  "diagnosisContext": "診斷應整合症狀、觸診、活動度、負重能力、穩定度測試及有指徵時的影像，而非依影片外觀下結論。",
+  "treatmentContext": "治療需依損傷嚴重度與個別功能調整，通常包含保護、漸進負重及神經肌肉與平衡訓練的臨床決策。",
+  "rtpContext": "回場應綜合疼痛、活動度、力量、平衡、運動任務表現與運動員信心；本總覽不提供個人化時程或運動劑量。",
+  "claims": [
+    {
+      "id": "overview-ankle-claim-01",
+      "field": "scope",
+      "text": "本總覽聚焦職業籃球中的急性踝部事件；影片用於可見事件教學，診斷與照護內容則依臨床實務指南。",
+      "evidenceIds": ["overview-ankle-source-01"]
+    },
+    {
+      "id": "overview-ankle-claim-02",
+      "field": "basicAnatomyAndDefinition",
+      "text": "踝關節外側韌帶群協助抵抗足部內翻與維持穩定；外側踝扭傷是相關韌帶受到不同程度的拉伸或撕裂。",
+      "evidenceIds": ["overview-ankle-source-01"]
+    },
+    {
+      "id": "overview-ankle-claim-03",
+      "field": "commonObservedMechanisms",
+      "text": "比賽畫面可能呈現落地踩到他人腳部、足部翻轉或接觸後失衡；角度不足時應將機轉標示為不明。",
+      "evidenceIds": ["overview-ankle-source-01"]
+    },
+    {
+      "id": "overview-ankle-claim-04",
+      "field": "whatVideoCannotProve",
+      "text": "影片不能判定韌帶分級，也不能排除骨折、脛腓聯合損傷或其他周邊組織損傷。",
+      "evidenceIds": ["overview-ankle-source-01"]
+    },
+    {
+      "id": "overview-ankle-claim-05",
+      "field": "diagnosisContext",
+      "text": "診斷應整合症狀、觸診、活動度、負重能力、穩定度測試及有指徵時的影像，而非依影片外觀下結論。",
+      "evidenceIds": ["overview-ankle-source-01"]
+    },
+    {
+      "id": "overview-ankle-claim-06",
+      "field": "treatmentContext",
+      "text": "治療需依損傷嚴重度與個別功能調整，通常包含保護、漸進負重及神經肌肉與平衡訓練的臨床決策。",
+      "evidenceIds": ["overview-ankle-source-01"]
+    },
+    {
+      "id": "overview-ankle-claim-07",
+      "field": "rtpContext",
+      "text": "回場應綜合疼痛、活動度、力量、平衡、運動任務表現與運動員信心；本總覽不提供個人化時程或運動劑量。",
+      "evidenceIds": ["overview-ankle-source-01"]
+    }
+  ],
+  "evidenceIds": ["overview-ankle-source-01"],
+  "sources": [
+    {
+      "id": "overview-ankle-source-01",
+      "type": "teaching-evidence",
+      "title": "Ankle Stability and Movement Coordination Impairments: Lateral Ankle Ligament Sprains Revision 2021",
+      "publisher": "Journal of Orthopaedic & Sports Physical Therapy",
+      "independenceGroup": "journal-of-orthopaedic-sports-physical-therapy",
+      "originReportId": null,
+      "url": "https://www.orthopt.org/uploads/content_files/files/jospt.2021.0302.pdf",
+      "publishedAt": "2021-04-01",
+      "accessedAt": "2026-08-08",
+      "supports": [
+        "scope",
+        "basicAnatomyAndDefinition",
+        "commonObservedMechanisms",
+        "whatVideoCannotProve",
+        "diagnosisContext",
+        "treatmentContext",
+        "rtpContext"
+      ]
+    }
+  ],
+  "review": {
+    "status": "in-review",
+    "reviewerName": null,
+    "reviewerQualification": null,
+    "reviewedAt": null,
+    "reviewedContentDigest": null
+  },
+  "audit": {
+    "createdAt": "2026-08-08T03:10:00Z",
+    "updatedAt": "2026-08-08T03:10:00Z"
+  }
+}

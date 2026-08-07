@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "injuryCode": "acl",
+  "status": "medical-review",
+  "titleZh": "前十字韌帶損傷",
+  "summaryZh": "以公開比賽影片做事件觀察，並以臨床指南界定前十字韌帶損傷的診斷、治療與回場脈絡。",
+  "scope": "本總覽供專業教學使用：影片只用來描述比賽事件與可見動作，前十字韌帶診斷與照護原則則由專業指南支持。",
+  "basicAnatomyAndDefinition": "前十字韌帶位於膝關節內，協助限制脛骨相對股骨的前移與旋轉不穩；其損傷可為部分或完全斷裂。",
+  "commonObservedMechanisms": "比賽影片中常可見急停、變向、落地或接觸後膝部失衡等事件外觀，但可見外觀不等於已確定的受傷機轉。",
+  "whatVideoCannotProve": "單一影片不能證明前十字韌帶是否斷裂、損傷分級、合併半月板或軟骨損傷，也不能取代病史、理學檢查與影像。",
+  "diagnosisContext": "臨床診斷需整合受傷史、膝關節檢查與適當影像；影片只能補充事件脈絡，不能單獨建立診斷。",
+  "treatmentContext": "治療選擇需依個別活動需求、功能性不穩、合併損傷與共同決策評估，不能由新聞報導或事件影片直接推定。",
+  "rtpContext": "回場是以膝部功能、症狀、心理準備與運動需求綜合判斷的個別決策；本總覽不提供固定時程或復健處方。",
+  "claims": [
+    {
+      "id": "overview-acl-claim-01",
+      "field": "scope",
+      "text": "本總覽供專業教學使用：影片只用來描述比賽事件與可見動作，前十字韌帶診斷與照護原則則由專業指南支持。",
+      "evidenceIds": ["overview-acl-source-01", "overview-acl-source-02"]
+    },
+    {
+      "id": "overview-acl-claim-02",
+      "field": "basicAnatomyAndDefinition",
+      "text": "前十字韌帶位於膝關節內，協助限制脛骨相對股骨的前移與旋轉不穩；其損傷可為部分或完全斷裂。",
+      "evidenceIds": ["overview-acl-source-01"]
+    },
+    {
+      "id": "overview-acl-claim-03",
+      "field": "commonObservedMechanisms",
+      "text": "比賽影片中常可見急停、變向、落地或接觸後膝部失衡等事件外觀，但可見外觀不等於已確定的受傷機轉。",
+      "evidenceIds": ["overview-acl-source-01", "overview-acl-source-02"]
+    },
+    {
+      "id": "overview-acl-claim-04",
+      "field": "whatVideoCannotProve",
+      "text": "單一影片不能證明前十字韌帶是否斷裂、損傷分級、合併半月板或軟骨損傷，也不能取代病史、理學檢查與影像。",
+      "evidenceIds": ["overview-acl-source-01"]
+    },
+    {
+      "id": "overview-acl-claim-05",
+      "field": "diagnosisContext",
+      "text": "臨床診斷需整合受傷史、膝關節檢查與適當影像；影片只能補充事件脈絡，不能單獨建立診斷。",
+      "evidenceIds": ["overview-acl-source-01"]
+    },
+    {
+      "id": "overview-acl-claim-06",
+      "field": "treatmentContext",
+      "text": "治療選擇需依個別活動需求、功能性不穩、合併損傷與共同決策評估，不能由新聞報導或事件影片直接推定。",
+      "evidenceIds": ["overview-acl-source-01", "overview-acl-source-02"]
+    },
+    {
+      "id": "overview-acl-claim-07",
+      "field": "rtpContext",
+      "text": "回場是以膝部功能、症狀、心理準備與運動需求綜合判斷的個別決策；本總覽不提供固定時程或復健處方。",
+      "evidenceIds": ["overview-acl-source-02"]
+    }
+  ],
+  "evidenceIds": ["overview-acl-source-01", "overview-acl-source-02"],
+  "sources": [
+    {
+      "id": "overview-acl-source-01",
+      "type": "teaching-evidence",
+      "title": "Management of Anterior Cruciate Ligament Injuries: Evidence-Based Clinical Practice Guideline",
+      "publisher": "American Academy of Orthopaedic Surgeons",
+      "independenceGroup": "american-academy-of-orthopaedic-surgeons",
+      "originReportId": null,
+      "url": "https://new.aaos.org/globalassets/quality-and-practice-resources/anterior-cruciate-ligament-injuries/aclcpg.pdf",
+      "publishedAt": "2022-08-22",
+      "accessedAt": "2026-08-08",
+      "supports": [
+        "scope",
+        "basicAnatomyAndDefinition",
+        "commonObservedMechanisms",
+        "whatVideoCannotProve",
+        "diagnosisContext",
+        "treatmentContext"
+      ]
+    },
+    {
+      "id": "overview-acl-source-02",
+      "type": "teaching-evidence",
+      "title": "Aspetar clinical practice guideline on rehabilitation after anterior cruciate ligament reconstruction",
+      "publisher": "British Journal of Sports Medicine",
+      "independenceGroup": "british-journal-of-sports-medicine",
+      "originReportId": null,
+      "url": "https://bjsm.bmj.com/content/57/9/500",
+      "publishedAt": "2023-02-02",
+      "accessedAt": "2026-08-08",
+      "supports": [
+        "scope",
+        "commonObservedMechanisms",
+        "treatmentContext",
+        "rtpContext"
+      ]
+    }
+  ],
+  "review": {
+    "status": "in-review",
+    "reviewerName": null,
+    "reviewerQualification": null,
+    "reviewedAt": null,
+    "reviewedContentDigest": null
+  },
+  "audit": {
+    "createdAt": "2026-08-08T03:10:00Z",
+    "updatedAt": "2026-08-08T03:10:00Z"
+  }
+}
