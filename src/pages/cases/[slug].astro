@@ -10,6 +10,7 @@
  */
 import { getCollection } from "astro:content";
 import CaseCard from "../../components/atlas/CaseCard.astro";
+import CaseCover from "../../components/cases/CaseCover.astro";
 import CaseTimeline from "../../components/cases/CaseTimeline.astro";
 import CaseVideo from "../../components/cases/CaseVideo.astro";
 import LayeredNotes from "../../components/cases/LayeredNotes.astro";
@@ -64,6 +65,7 @@ const renderedSetDigest = computeRenderedSetDigest(permitted);
   description={`${record.athlete.name} 的 ${injuryLabel} 教學案例：可見過程觀察與外部確認診斷。`}
 >
   <article data-atlas-view="case-detail" data-case-id={record.id}>
+    <CaseCover injuryCode={record.injury.code} injuryLabel={injuryLabel} />
     <h1>{record.athlete.name}｜{injuryLabel}</h1>
     <p class="case-facts">
       {leagueLabel}｜{record.season} 球季｜{record.eventDate}｜

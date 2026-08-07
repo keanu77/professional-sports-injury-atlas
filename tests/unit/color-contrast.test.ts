@@ -22,18 +22,22 @@ const otherSheets = ["global.css", "layout.css", "components.css"].map(
 
 /** Exact brand palette required by the plan. */
 const EXPECTED_TOKENS: Record<string, string> = {
-  "brand-500": "#2288bb",
-  "brand-action": "#00658d",
-  "ink-strong": "#002b3c",
-  "surface-page": "#f9fcfc",
-  "surface-info": "#edf7fc",
-  "accent-500": "#e77846",
-  "accent-ink": "#002b3c",
-  "dark-page": "#001e2b",
-  "dark-surface": "#083747",
-  "dark-ink": "#eaf7fa",
-  "dark-action": "#7cc8e8",
-  "dark-accent": "#f49a6c",
+  "brand-500": "#1cb3cc",
+  "brand-deep": "#148da1",
+  "brand-action": "#3a5f66",
+  "brand-soft": "#d4f6ff",
+  "accent-500": "#66bbdd",
+  "ink-strong": "#222222",
+  "ink-muted": "#535353",
+  "surface-page": "#ffffff",
+  "surface-info": "#f6f6f6",
+  "surface-muted": "#eeeeee",
+  "accent-ink": "#222222",
+  "dark-page": "#10262b",
+  "dark-surface": "#183940",
+  "dark-ink": "#f6f6f6",
+  "dark-action": "#d4f6ff",
+  "dark-accent": "#66bbdd",
 };
 
 function parseHexTokens(css: string): Map<string, string> {
@@ -87,6 +91,8 @@ function contrastRatio(foreground: string, background: string): number {
 const NORMAL_TEXT_PAIRS: Array<[string, string]> = [
   ["ink-strong", "surface-page"],
   ["ink-strong", "surface-info"],
+  ["ink-muted", "surface-page"],
+  ["ink-muted", "surface-info"],
   ["brand-action", "surface-page"],
   ["brand-action", "surface-info"],
   ["#ffffff", "brand-action"],
@@ -97,13 +103,13 @@ const NORMAL_TEXT_PAIRS: Array<[string, string]> = [
   ["dark-action", "dark-surface"],
   ["ink-strong", "dark-action"],
   ["accent-ink", "dark-accent"],
-  ["dark-accent", "dark-page"],
+  ["accent-ink", "brand-soft"],
 ];
 
 /** Large-text and non-text (border/focus) boundaries. */
 const LARGE_AND_NON_TEXT_PAIRS: Array<[string, string]> = [
-  ["brand-500", "surface-page"],
-  ["brand-500", "surface-info"],
+  ["brand-deep", "surface-page"],
+  ["brand-deep", "surface-info"],
   ["brand-action", "surface-page"],
   ["brand-action", "surface-info"],
   ["dark-action", "dark-page"],
@@ -128,6 +134,30 @@ describe("design token palette", () => {
       expect(contrastRatio(foreground, background)).toBeGreaterThanOrEqual(3);
     });
   }
+});
+
+describe("case cover red lines", () => {
+  const component = readFileSync(
+    new URL("../../src/components/cases/CaseCover.astro", import.meta.url),
+    "utf8",
+  );
+  const caseRoute = readFileSync(
+    new URL("../../src/pages/cases/[slug].astro", import.meta.url),
+    "utf8",
+  );
+
+  it("renders one original inline SVG cover on every case route", () => {
+    expect(caseRoute).toMatch(/<CaseCover\s/);
+    expect(component).toMatch(/<svg[\s\S]*role="img"/);
+    for (const injury of ["acl", "ankle-sprain", "achilles-rupture"]) {
+      expect(component).toContain(`data-cover-illustration="${injury}"`);
+    }
+  });
+
+  it("contains no image, game-frame, thumbnail, or portrait dependency", () => {
+    expect(component).not.toMatch(/<image\b|<img\b|https?:\/\//i);
+    expect(component).toContain("非診斷影像 · 非特定球員身體");
+  });
 });
 
 describe("forbidden white-on-brand-500 pairing", () => {

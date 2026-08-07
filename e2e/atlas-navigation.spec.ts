@@ -1,8 +1,7 @@
 /**
- * Atlas navigation spec against the empty-collection review build. Covers
- * the three home injury cards with the transparent `0 reviewed cases` state,
- * the always-present injury routes with scope/course information and no
- * fabricated cases, the absence of MLB/football/empty league routes, the
+ * Atlas navigation spec against the authorized 26-case review build. Covers
+ * the exact 7/12/7 home counts, injury routes with reviewed overviews and
+ * cases, the NBA route and absence of MLB/football routes, the
  * exact pending course-link label without a guessed URL, and the review-only
  * markers on lab/fixture routes.
  */
@@ -11,9 +10,14 @@ import { expect, test } from "@playwright/test";
 import { expectNoAxeViolations } from "./helpers/a11y";
 
 const INJURY_CODES = ["acl", "ankle-sprain", "achilles-rupture"];
+const REVIEW_COUNTS: Record<string, number> = {
+  acl: 7,
+  "ankle-sprain": 12,
+  "achilles-rupture": 7,
+};
 
 test.describe("atlas navigation", () => {
-  test("home shows the three injury cards with a transparent zero state", async ({
+  test("home shows the exact authorized case distribution", async ({
     page,
   }) => {
     await page.goto("/");
@@ -22,12 +26,12 @@ test.describe("atlas navigation", () => {
       await expect(page.locator(`[data-injury-card="${code}"]`)).toBeVisible();
       await expect(
         page.locator(
-          `[data-injury-card="${code}"] [data-reviewed-case-count="0"]`,
+          `[data-injury-card="${code}"] [data-reviewed-case-count="${REVIEW_COUNTS[code]}"]`,
         ),
-      ).toContainText("0 reviewed cases");
+      ).toContainText(`${REVIEW_COUNTS[code]} reviewed cases`);
     }
     await expect(page.locator("[data-total-reviewed-count]")).toContainText(
-      "0",
+      "26",
     );
     await expect(page.locator("[data-total-reviewed-count]")).toContainText(
       "reviewed cases",
@@ -35,36 +39,31 @@ test.describe("atlas navigation", () => {
     await expectNoAxeViolations(page);
   });
 
-  test("the three injury routes exist with scope info and no fake cases", async ({
+  test("the three injury routes expose their real overviews and exact cases", async ({
     page,
   }) => {
     for (const code of INJURY_CODES) {
       const response = await page.goto(`/injuries/${code}/`);
       expect(response?.status()).toBe(200);
       await expect(page.locator("[data-injury-scope]")).toContainText(
-        "0 reviewed cases",
+        `${REVIEW_COUNTS[code]} reviewed cases`,
       );
-      // Transparent teaching-overview state instead of fabricated clinical copy.
       await expect(
-        page.getByText("傷種教學待審查", { exact: false }).first(),
+        page.getByRole("heading", { level: 2, name: "傷種教學總覽" }),
       ).toBeVisible();
-      // The empty listing states plainly that no reviewed case exists.
       await expect(
-        page
-          .locator("[data-static-listing] [data-empty-state]")
-          .getByText("目前沒有已審查的案例"),
-      ).toBeVisible();
-      // No case card renders anywhere on the page.
-      await expect(page.locator(".case-list li")).toHaveCount(0);
+        page.locator("[data-static-listing] .case-list li"),
+      ).toHaveCount(REVIEW_COUNTS[code]!);
     }
     await expectNoAxeViolations(page);
   });
 
-  test("no MLB, football, or empty league route is generated", async ({
+  test("generates NBA but no MLB, football, or unknown injury route", async ({
     page,
   }) => {
+    const nba = await page.goto("/leagues/nba/");
+    expect(nba?.status()).toBe(200);
     for (const path of [
-      "/leagues/nba/",
       "/leagues/mlb/",
       "/sports/football/",
       "/injuries/hamstring-strain/",

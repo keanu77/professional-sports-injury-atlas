@@ -2,25 +2,29 @@
  * Design tokens aligned with sportsmedicine.tw. This file is the single
  * source of truth parsed by tests/unit/color-contrast.test.ts, which enforces
  * WCAG AA for every declared text/background pair. White text is forbidden on
- * --brand-500 (the pair is below 4.5:1): white goes on --brand-action only,
- * and the warm accent always carries dark ink. The semantic --color-* layer
+ * --brand-500 (the pair is below 4.5:1): white goes on --brand-action only.
+ * The semantic --color-* layer
  * is what components consume; the manual dark theme re-aliases it.
  */
 
 :root {
   /* Brand palette (exact plan values) */
-  --brand-500: #2288bb;
-  --brand-action: #00658d;
-  --ink-strong: #002b3c;
-  --surface-page: #f9fcfc;
-  --surface-info: #edf7fc;
-  --accent-500: #e77846;
-  --accent-ink: #002b3c;
-  --dark-page: #001e2b;
-  --dark-surface: #083747;
-  --dark-ink: #eaf7fa;
-  --dark-action: #7cc8e8;
-  --dark-accent: #f49a6c;
+  --brand-500: #1cb3cc;
+  --brand-deep: #148da1;
+  --brand-action: #3a5f66;
+  --brand-soft: #d4f6ff;
+  --accent-500: #66bbdd;
+  --ink-strong: #222222;
+  --ink-muted: #535353;
+  --surface-page: #ffffff;
+  --surface-info: #f6f6f6;
+  --surface-muted: #eeeeee;
+  --accent-ink: #222222;
+  --dark-page: #10262b;
+  --dark-surface: #183940;
+  --dark-ink: #f6f6f6;
+  --dark-action: #d4f6ff;
+  --dark-accent: #66bbdd;
   --on-action: #ffffff;
 
   /* Typography */
@@ -37,11 +41,12 @@
   --color-page: var(--surface-page);
   --color-surface: var(--surface-info);
   --color-text: var(--ink-strong);
+  --color-muted: var(--ink-muted);
   --color-action: var(--brand-action);
   --color-on-action: var(--on-action);
   --color-accent: var(--accent-500);
   --color-on-accent: var(--accent-ink);
-  --color-border: var(--brand-500);
+  --color-border: var(--brand-deep);
   --color-focus: var(--brand-action);
 }
 
@@ -49,6 +54,7 @@
   --color-page: var(--dark-page);
   --color-surface: var(--dark-surface);
   --color-text: var(--dark-ink);
+  --color-muted: var(--dark-ink);
   --color-action: var(--dark-action);
   --color-on-action: var(--ink-strong);
   --color-accent: var(--dark-accent);

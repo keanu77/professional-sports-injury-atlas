@@ -1,7 +1,7 @@
 /**
  * Progressive filtering spec. The initial page load must never fetch a
  * case-index shard; only the first filter interaction loads the manifest
- * (and, with zero entries, no shard at all). Filter state round-trips
+ * and the three one-page injury shards for the real 26-case corpus. Filter state round-trips
  * through the query string via `history.replaceState`, result counts are
  * announced through the `aria-live` status region, and a single reset action
  * restores the complete static listing.
@@ -28,7 +28,7 @@ test.describe("progressive case filtering", () => {
     expect(indexRequests).toEqual([]);
   });
 
-  test("first interaction loads only the manifest and announces the count", async ({
+  test("first interaction loads the manifest and exact real shards", async ({
     page,
   }) => {
     const indexRequests = trackCaseIndexRequests(page);
@@ -38,11 +38,20 @@ test.describe("progressive case filtering", () => {
     const status = page.locator("[data-filter-status]");
     await expect(status).toHaveText(/符合條件的案例共 0 筆/);
 
-    // The manifest loads exactly; zero-entry injuries produce no shard fetch.
+    // The manifest and each real one-page injury shard load exactly once.
     expect(
       indexRequests.filter((url) => url.endsWith("/case-index/manifest.json")),
     ).toHaveLength(1);
-    expect(indexRequests.filter((url) => /\/\d+\.json$/.test(url))).toEqual([]);
+    expect(
+      indexRequests
+        .filter((url) => /\/\d+\.json$/.test(url))
+        .map((url) => new URL(url).pathname)
+        .sort(),
+    ).toEqual([
+      "/case-index/achilles-rupture/1.json",
+      "/case-index/acl/1.json",
+      "/case-index/ankle-sprain/1.json",
+    ]);
 
     // The status region is a polite live region.
     await expect(status).toHaveAttribute("aria-live", "polite");

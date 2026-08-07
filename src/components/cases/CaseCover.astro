@@ -1,0 +1,255 @@
+---
+/**
+ * Original vector cover shared by every case route. The three variants are
+ * anatomy/mechanism concepts only: no athlete likeness, game frame, or source
+ * thumbnail is reproduced.
+ */
+interface Props {
+  injuryCode: string;
+  injuryLabel: string;
+}
+
+const { injuryCode, injuryLabel } = Astro.props;
+const titleId = `case-cover-${injuryCode}-title`;
+const descriptionId = `case-cover-${injuryCode}-description`;
+---
+
+<figure class="case-cover" data-case-cover={injuryCode}>
+  <svg
+    viewBox="0 0 1200 480"
+    role="img"
+    aria-labelledby={`${titleId} ${descriptionId}`}
+    preserveAspectRatio="xMidYMid meet"
+  >
+    <title id={titleId}>{injuryLabel}原創解剖示意封面</title>
+    <desc id={descriptionId}>
+      青藍色抽象球場與{injuryLabel}解剖概念圖，不代表任何特定球員身體。
+    </desc>
+    <rect width="1200" height="480" rx="36" fill="#d4f6ff"></rect>
+    <path
+      d="M0 350 C240 275 395 430 620 334 C835 242 978 290 1200 198 V480 H0 Z"
+      fill="#66bbdd"
+      opacity="0.48"></path>
+    <circle
+      cx="970"
+      cy="84"
+      r="190"
+      fill="none"
+      stroke="#1cb3cc"
+      stroke-width="24"
+      opacity="0.45"></circle>
+    <path
+      d="M88 62 H1112 M88 418 H1112"
+      stroke="#148da1"
+      stroke-width="5"
+      stroke-linecap="round"
+      opacity="0.35"></path>
+
+    {
+      injuryCode === "acl" ? (
+        <g data-cover-illustration="acl" transform="translate(690 40)">
+          <path
+            d="M145 32 C92 92 96 151 130 208 C154 248 154 293 126 370"
+            fill="none"
+            stroke="#3a5f66"
+            stroke-width="54"
+            stroke-linecap="round"
+          />
+          <path
+            d="M279 32 C328 92 323 151 291 208 C268 250 270 298 298 370"
+            fill="none"
+            stroke="#148da1"
+            stroke-width="54"
+            stroke-linecap="round"
+          />
+          <ellipse
+            cx="211"
+            cy="217"
+            rx="118"
+            ry="82"
+            fill="#ffffff"
+            opacity="0.9"
+          />
+          <path
+            d="M165 164 L256 270 M259 162 L170 272"
+            stroke="#1cb3cc"
+            stroke-width="18"
+            stroke-linecap="round"
+          />
+          <circle
+            cx="211"
+            cy="217"
+            r="126"
+            fill="none"
+            stroke="#3a5f66"
+            stroke-width="8"
+            stroke-dasharray="18 15"
+          />
+        </g>
+      ) : injuryCode === "ankle-sprain" ? (
+        <g data-cover-illustration="ankle-sprain" transform="translate(700 46)">
+          <path
+            d="M160 18 L144 264"
+            stroke="#3a5f66"
+            stroke-width="58"
+            stroke-linecap="round"
+          />
+          <path
+            d="M242 40 L218 272"
+            stroke="#148da1"
+            stroke-width="34"
+            stroke-linecap="round"
+          />
+          <path
+            d="M134 267 C191 248 223 274 238 312 C270 334 329 337 366 369 C306 408 196 414 112 370 C83 354 87 292 134 267 Z"
+            fill="#ffffff"
+            stroke="#3a5f66"
+            stroke-width="10"
+          />
+          <path
+            d="M132 271 C174 293 204 317 224 358"
+            fill="none"
+            stroke="#1cb3cc"
+            stroke-width="18"
+            stroke-linecap="round"
+          />
+          <path
+            d="M224 269 C192 302 176 333 171 371"
+            fill="none"
+            stroke="#66bbdd"
+            stroke-width="13"
+            stroke-linecap="round"
+          />
+          <circle
+            cx="184"
+            cy="286"
+            r="105"
+            fill="none"
+            stroke="#148da1"
+            stroke-width="8"
+            stroke-dasharray="18 15"
+          />
+        </g>
+      ) : (
+        <g
+          data-cover-illustration="achilles-rupture"
+          transform="translate(710 34)"
+        >
+          <path
+            d="M148 26 C108 98 111 172 145 236"
+            fill="none"
+            stroke="#3a5f66"
+            stroke-width="72"
+            stroke-linecap="round"
+          />
+          <path
+            d="M258 26 C298 99 290 169 257 236"
+            fill="none"
+            stroke="#148da1"
+            stroke-width="72"
+            stroke-linecap="round"
+          />
+          <path
+            d="M202 170 C196 226 197 286 202 350"
+            fill="none"
+            stroke="#1cb3cc"
+            stroke-width="22"
+            stroke-linecap="round"
+          />
+          <path
+            d="M202 350 C205 382 248 390 319 384"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="58"
+            stroke-linecap="round"
+          />
+          <path
+            d="M202 350 C205 382 248 390 319 384"
+            fill="none"
+            stroke="#3a5f66"
+            stroke-width="10"
+            stroke-linecap="round"
+          />
+          <path
+            d="M174 258 L230 286 M174 286 L230 258"
+            stroke="#148da1"
+            stroke-width="16"
+            stroke-linecap="round"
+          />
+          <circle
+            cx="202"
+            cy="272"
+            r="91"
+            fill="none"
+            stroke="#148da1"
+            stroke-width="8"
+            stroke-dasharray="18 15"
+          />
+        </g>
+      )
+    }
+
+    <g transform="translate(84 112)">
+      <text class="cover-kicker" x="0" y="0">PROFESSIONAL CASE ATLAS</text>
+      <text class="cover-title" x="0" y="78">{injuryLabel}</text>
+      <text class="cover-caption" x="0" y="132">解剖與事件觀察示意</text>
+      <path
+        d="M0 176 H420"
+        stroke="#148da1"
+        stroke-width="8"
+        stroke-linecap="round"></path>
+      <text class="cover-note" x="0" y="226">非診斷影像 · 非特定球員身體</text>
+    </g>
+  </svg>
+  <figcaption>{injuryLabel}概念封面｜原創向量示意，非賽事畫面</figcaption>
+</figure>
+
+<style>
+  .case-cover {
+    margin: 0 0 1.5rem;
+  }
+
+  .case-cover svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    background: var(--color-surface);
+  }
+
+  .case-cover figcaption {
+    margin-top: 0.45rem;
+    color: var(--color-muted);
+    font-size: 0.875rem;
+  }
+
+  .cover-kicker,
+  .cover-title,
+  .cover-caption,
+  .cover-note {
+    fill: #222222;
+    font-family: var(--font-body);
+  }
+
+  .cover-kicker {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .cover-title {
+    font-family: var(--font-heading);
+    font-size: 58px;
+    font-weight: 700;
+  }
+
+  .cover-caption {
+    font-size: 27px;
+    font-weight: 650;
+  }
+
+  .cover-note {
+    font-size: 20px;
+  }
+</style>
