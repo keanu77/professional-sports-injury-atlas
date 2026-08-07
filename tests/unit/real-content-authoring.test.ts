@@ -42,6 +42,13 @@ const AUTHORED_TASKS = [
   "case-ankle-10",
   "case-ankle-11",
   "case-ankle-12",
+  "case-achilles-01",
+  "case-achilles-02",
+  "case-achilles-03",
+  "case-achilles-04",
+  "case-achilles-05",
+  "case-achilles-06",
+  "case-achilles-07",
 ] as const;
 
 function loadCoverage(): CaseAuthoringCoverageV1 {

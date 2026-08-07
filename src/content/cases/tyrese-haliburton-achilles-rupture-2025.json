@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "id": "CASE-NBAACHILLES-2025-017",
+  "slug": "tyrese-haliburton-achilles-rupture-2025",
+  "status": "medical-review",
+  "sourceManifestBinding": {
+    "candidateId": "CAND-NBA-ACHILLES-2025-017",
+    "manifestId": "NBA-SOURCE-2026-08-06-001",
+    "manifestDigest": "8beedf3fcc0c7c498bf08ffb2fbc671759e7a61ed4e04f09afab579b6a86eb4d",
+    "entryDigest": "9341384e98fde6234074002d29eb97f0ca990f8899890ad4dcfecaf9f4ee0c56",
+    "sourceReviewDecisionDigest": "cd40d39d8c3463c0bb2cbdb1125a613cf1100d341bb8c6f4d59456462875ad0c",
+    "sourcePolicyVersion": "nba-v2"
+  },
+  "sport": {
+    "code": "basketball"
+  },
+  "league": {
+    "code": "nba"
+  },
+  "competition": {
+    "code": "nba-playoffs"
+  },
+  "athlete": {
+    "name": "Tyrese Haliburton"
+  },
+  "teamAtEvent": {
+    "name": "Indiana Pacers"
+  },
+  "season": "2024-25",
+  "eventDate": "2025-06-22",
+  "opponent": {
+    "name": "Oklahoma City Thunder"
+  },
+  "injury": {
+    "code": "achilles-rupture",
+    "confirmedDiagnosis": "Torn right Achilles tendon.",
+    "confirmationStatus": "confirmed"
+  },
+  "observedMechanismTags": ["unclear"],
+  "isClassic": false,
+  "classicReason": null,
+  "classicProposedBy": null,
+  "classicExceptionApprovedBy": null,
+  "video": {
+    "provider": "nba",
+    "contentType": "in-game-injury-event",
+    "eventBinding": {
+      "status": "verified",
+      "eventSourceId": "src-nba-achilles-2025-017-event",
+      "checkedBy": "Codex G3 authoring audit",
+      "checkedAt": "2026-08-08T02:30:00Z",
+      "basis": "PASS — Browser reopened the original event/video and first-party diagnosis pages. The combined visible title, date, event context, and first-party text matched Tyrese Haliburton, 2025-06-22, Indiana Pacers vs. Oklahoma City Thunder, and nba-playoffs; the diagnosis explicitly supports “Torn right Achilles tendon.” No duplicate accepted event identity or canonical video URL was found, and no extra grade, mechanism, surgery, prognosis, rehabilitation, or return-to-play claim was inferred. The diagnosis page is distinct from the event/video page; only the diagnosis page is treated as diagnostic evidence."
+    },
+    "canonicalUrl": "https://www.nba.com/watch/video/tyrese-haliburton-right-leg-injury-pacers-thunder-game-7-2025-nba-finals",
+    "uploaderName": "NBA Organization",
+    "uploaderProvenance": "league",
+    "embedStatus": "external-link-only",
+    "embedCheckedAt": "2026-08-07T11:34:14Z",
+    "durationSeconds": 100,
+    "startSeconds": 0,
+    "endSeconds": 100,
+    "fallbackUrl": "https://www.nba.com/watch/video/tyrese-haliburton-right-leg-injury-pacers-thunder-game-7-2025-nba-finals",
+    "sourceProvenanceVerification": {
+      "status": "verified",
+      "verifiedBy": "Codex Achilles source researcher",
+      "verifiedAt": "2026-08-07T11:34:14Z",
+      "basis": "NBA.com original-platform Watch page with NBA Organization publisher attribution; player controls opened and no caption/subtitle control or text track was observable.",
+      "notes": "NBA 原頁播放器未提供可用字幕控制；以同一 canonical URL 作外連 fallback。",
+      "verifiedPolicyVersion": "nba-v2",
+      "reviewedVideoIdentityDigest": "b0fe5aebda20922b686f2534cee04b917b806ccecb0bfdc7cce47b49ea1fdeec"
+    },
+    "captionStatus": "unavailable",
+    "captionCheckedAt": "2026-08-07T11:34:14Z",
+    "publicRightsReview": {
+      "status": "not-requested",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "reviewedVideoDigest": null,
+      "policyVersion": null,
+      "termsCheckedAt": null,
+      "decisionBasis": null,
+      "notes": null,
+      "decisionPath": null,
+      "decisionDigest": null
+    },
+    "segments": [
+      {
+        "startSeconds": 0,
+        "endSeconds": 100,
+        "observation": "片段呈現 Tyrese Haliburton 在總冠軍賽第七戰第一節右下肢事件後由他人協助離場。"
+      }
+    ]
+  },
+  "general": {
+    "whatHappened": "Tyrese Haliburton 於 2025-06-22 代表 Indiana Pacers 對 Oklahoma City Thunder 出賽；原始事件頁與診斷來源已分開記錄。",
+    "whatIsVisible": "片段呈現 Tyrese Haliburton 在總冠軍賽第七戰第一節右下肢事件後由他人協助離場。",
+    "whatVideoCannotProve": "這段影片不能單獨證明診斷、分級、側別以外的合併傷、影像結果、治療方式、預後或回場日期。",
+    "confirmedUpdate": "Indiana Pacers 的具名來源明載診斷：Torn right Achilles tendon."
+  },
+  "professional": {
+    "mechanismAnalysis": "影片可描述蹬地、加速、減速或非接觸下肢事件等外觀，但不能僅憑動作確認 Achilles tendon rupture。",
+    "clinicalLimitations": "Achilles tendon rupture 的判定需要臨床評估，必要時搭配超音波等影像；影片不能確認斷裂位置、間隙或完整性。",
+    "differentialContext": "急性小腿後側事件尚需與其他肌腱、肌肉或踝部病灶區分；本案例只採用具名來源明載的診斷。",
+    "treatmentAndRtpMeaning": "急性 Achilles tendon rupture 可有手術或非手術路徑；選擇與功能復健、進階及回場都應個別化，不能套用單一時程。",
+    "claims": [
+      {
+        "id": "claim-tyrese-haliburton-achilles-rupture-2025-01",
+        "field": "professional.mechanismAnalysis",
+        "text": "影片可描述蹬地、加速、減速或非接觸下肢事件等外觀，但不能僅憑動作確認 Achilles tendon rupture。",
+        "evidenceIds": ["src-nba-achilles-2025-017-teaching-01"]
+      },
+      {
+        "id": "claim-tyrese-haliburton-achilles-rupture-2025-02",
+        "field": "professional.clinicalLimitations",
+        "text": "Achilles tendon rupture 的判定需要臨床評估，必要時搭配超音波等影像；影片不能確認斷裂位置、間隙或完整性。",
+        "evidenceIds": ["src-nba-achilles-2025-017-teaching-01"]
+      },
+      {
+        "id": "claim-tyrese-haliburton-achilles-rupture-2025-03",
+        "field": "professional.differentialContext",
+        "text": "急性小腿後側事件尚需與其他肌腱、肌肉或踝部病灶區分；本案例只採用具名來源明載的診斷。",
+        "evidenceIds": ["src-nba-achilles-2025-017-teaching-01"]
+      },
+      {
+        "id": "claim-tyrese-haliburton-achilles-rupture-2025-04",
+        "field": "professional.treatmentAndRtpMeaning",
+        "text": "急性 Achilles tendon rupture 可有手術或非手術路徑；選擇與功能復健、進階及回場都應個別化，不能套用單一時程。",
+        "evidenceIds": ["src-nba-achilles-2025-017-teaching-01"]
+      }
+    ],
+    "evidenceIds": ["src-nba-achilles-2025-017-teaching-01"],
+    "rtpCourseKey": null
+  },
+  "sources": [
+    {
+      "id": "src-nba-achilles-2025-017-video",
+      "type": "video-original",
+      "title": "2025 NBA Finals: Tyrese Haliburton suffers right lower leg injury, exits Game 7",
+      "publisher": "NBA Organization",
+      "independenceGroup": "nba-organization",
+      "originReportId": null,
+      "url": "https://www.nba.com/watch/video/tyrese-haliburton-right-leg-injury-pacers-thunder-game-7-2025-nba-finals",
+      "publishedAt": "2025-06-22",
+      "accessedAt": "2026-08-07",
+      "supports": [
+        "general.whatHappened",
+        "general.whatIsVisible",
+        "video.segmentObservation"
+      ]
+    },
+    {
+      "id": "src-nba-achilles-2025-017-diagnosis-01",
+      "type": "diagnosis-first-party",
+      "title": "Indiana Pacers Medical Update",
+      "publisher": "Indiana Pacers",
+      "independenceGroup": "indiana-pacers",
+      "originReportId": null,
+      "url": "https://www.nba.com/pacers/news/indiana-pacers-medical-update-tyrese-haliburton-250623",
+      "publishedAt": "2025-06-23",
+      "accessedAt": "2026-08-07",
+      "supports": ["injury.confirmedDiagnosis", "general.confirmedUpdate"]
+    },
+    {
+      "id": "src-nba-achilles-2025-017-event",
+      "type": "event-context",
+      "title": "2025 NBA Finals: Tyrese Haliburton suffers right lower leg injury, exits Game 7",
+      "publisher": "NBA.com",
+      "independenceGroup": "nba-com",
+      "originReportId": null,
+      "url": "https://www.nba.com/watch/video/tyrese-haliburton-right-leg-injury-pacers-thunder-game-7-2025-nba-finals",
+      "publishedAt": "2025-06-22",
+      "accessedAt": "2026-08-07",
+      "supports": ["general.whatHappened"]
+    },
+    {
+      "id": "src-nba-achilles-2025-017-teaching-01",
+      "type": "teaching-evidence",
+      "title": "Position Statement: Management of Acute Achilles Ruptures",
+      "publisher": "American Orthopaedic Foot & Ankle Society",
+      "independenceGroup": "aofas",
+      "url": "https://www.aofas.org/docs/default-source/research-and-policy/position-statements/positionstatement_acuteachillesruptures_nov2024.pdf",
+      "publishedAt": "2024-11-19",
+      "supports": [
+        "professional.mechanismAnalysis",
+        "professional.clinicalLimitations",
+        "professional.differentialContext",
+        "professional.treatmentAndRtpMeaning"
+      ],
+      "originReportId": null,
+      "accessedAt": "2026-08-08"
+    }
+  ],
+  "review": {
+    "status": "in-review",
+    "reviewerName": null,
+    "reviewerQualification": null,
+    "reviewedAt": null,
+    "reviewedContentDigest": null
+  },
+  "audit": {
+    "createdAt": "2026-08-08T02:30:00Z",
+    "updatedAt": "2026-08-08T02:30:00Z",
+    "sourceRecordId": "CAND-NBA-ACHILLES-2025-017"
+  }
+}
