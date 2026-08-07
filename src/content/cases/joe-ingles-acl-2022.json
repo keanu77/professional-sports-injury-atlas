@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "id": "CASE-NBAACL-2022-016",
+  "slug": "joe-ingles-acl-2022",
+  "status": "medical-review",
+  "sourceManifestBinding": {
+    "candidateId": "CAND-NBA-ACL-2022-016",
+    "manifestId": "NBA-SOURCE-2026-08-06-001",
+    "manifestDigest": "8beedf3fcc0c7c498bf08ffb2fbc671759e7a61ed4e04f09afab579b6a86eb4d",
+    "entryDigest": "eb6f20e796d38445426a575ca229812845e6f77b9c788c5a78714024abb15e6a",
+    "sourceReviewDecisionDigest": "cd40d39d8c3463c0bb2cbdb1125a613cf1100d341bb8c6f4d59456462875ad0c",
+    "sourcePolicyVersion": "nba-v2"
+  },
+  "sport": {
+    "code": "basketball"
+  },
+  "league": {
+    "code": "nba"
+  },
+  "competition": {
+    "code": "nba-regular-season"
+  },
+  "athlete": {
+    "name": "Joe Ingles"
+  },
+  "teamAtEvent": {
+    "name": "Utah Jazz"
+  },
+  "season": "2021-22",
+  "eventDate": "2022-01-30",
+  "opponent": {
+    "name": "Minnesota Timberwolves"
+  },
+  "injury": {
+    "code": "acl",
+    "confirmedDiagnosis": "Torn ACL in left knee.",
+    "confirmationStatus": "confirmed"
+  },
+  "observedMechanismTags": ["unclear"],
+  "isClassic": false,
+  "classicReason": null,
+  "classicProposedBy": null,
+  "classicExceptionApprovedBy": null,
+  "video": {
+    "provider": "nba",
+    "contentType": "in-game-injury-event",
+    "eventBinding": {
+      "status": "verified",
+      "eventSourceId": "src-nba-acl-2022-016-event",
+      "checkedBy": "Codex G3 authoring audit",
+      "checkedAt": "2026-08-08T02:30:00Z",
+      "basis": "PASS — Browser reopened the original event/video and first-party diagnosis pages. The combined visible title, date, event context, and first-party text matched Joe Ingles, 2022-01-30, Utah Jazz vs. Minnesota Timberwolves, and nba-regular-season; the diagnosis explicitly supports “Torn ACL in left knee.” No duplicate accepted event identity or canonical video URL was found, and no extra grade, mechanism, surgery, prognosis, rehabilitation, or return-to-play claim was inferred. The diagnosis page is distinct from the event/video page; only the diagnosis page is treated as diagnostic evidence. The official NBA game page https://www.nba.com/game/uta-vs-min-0022100757 was also opened and fixes Utah at Minnesota, the 2022-01-30 regular-season event, and Ingles' second-quarter knee injury."
+    },
+    "canonicalUrl": "https://www.nba.com/watch/video/20220130joeinglesinjury",
+    "uploaderName": "NBA Organization",
+    "uploaderProvenance": "league",
+    "embedStatus": "external-link-only",
+    "embedCheckedAt": "2026-08-07T12:06:06Z",
+    "durationSeconds": 78,
+    "startSeconds": 0,
+    "endSeconds": 78,
+    "fallbackUrl": "https://www.nba.com/watch/video/20220130joeinglesinjury",
+    "sourceProvenanceVerification": {
+      "status": "verified",
+      "verifiedBy": "Codex ACL source researcher",
+      "verifiedAt": "2026-08-07T12:06:06Z",
+      "basis": "NBA.com original-platform Watch page with NBA Organization publisher attribution; the exact-event page was opened and no caption/subtitle control was observable.",
+      "notes": "NBA 原頁播放器未提供可用字幕控制；以同一 canonical URL 作外連 fallback。",
+      "verifiedPolicyVersion": "nba-v2",
+      "reviewedVideoIdentityDigest": "21cb3487448a204dda9d30d4c16065a86861690807bcd7d8fa6d2aeb81346772"
+    },
+    "captionStatus": "unavailable",
+    "captionCheckedAt": "2026-08-07T12:06:06Z",
+    "publicRightsReview": {
+      "status": "not-requested",
+      "reviewedBy": null,
+      "reviewedAt": null,
+      "reviewedVideoDigest": null,
+      "policyVersion": null,
+      "termsCheckedAt": null,
+      "decisionBasis": null,
+      "notes": null,
+      "decisionPath": null,
+      "decisionDigest": null
+    },
+    "segments": [
+      {
+        "startSeconds": 0,
+        "endSeconds": 78,
+        "observation": "片段呈現 Joe Ingles 左膝事件與離場過程；畫面本身不提供診斷。"
+      }
+    ]
+  },
+  "general": {
+    "whatHappened": "Joe Ingles 於 2022-01-30 代表 Utah Jazz 對 Minnesota Timberwolves 出賽；原始事件頁與診斷來源已分開記錄。",
+    "whatIsVisible": "片段呈現 Joe Ingles 左膝事件與離場過程；畫面本身不提供診斷。",
+    "whatVideoCannotProve": "這段影片不能單獨證明診斷、分級、側別以外的合併傷、影像結果、治療方式、預後或回場日期。",
+    "confirmedUpdate": "Utah Jazz 的具名來源明載診斷：Torn ACL in left knee."
+  },
+  "professional": {
+    "mechanismAnalysis": "單一比賽剪輯只能描述接觸、落地、減速或變向等可見線索；不能由倒地方式反推 ACL 斷裂、側別或嚴重度。",
+    "clinicalLimitations": "ACL 損傷的判定須整合病史、理學檢查與適當影像；影片不能取代臨床診斷。",
+    "differentialContext": "急性膝傷可能同時涉及半月板、軟骨或其他韌帶；本案例只採用具名來源明載的診斷，不從影片增列合併傷。",
+    "treatmentAndRtpMeaning": "治療與回場須依個別病況決定；若進入 ACL 重建術後復健，進階應結合症狀、功能與客觀里程碑，而非套用固定回場日期。",
+    "claims": [
+      {
+        "id": "claim-joe-ingles-acl-2022-01",
+        "field": "professional.mechanismAnalysis",
+        "text": "單一比賽剪輯只能描述接觸、落地、減速或變向等可見線索；不能由倒地方式反推 ACL 斷裂、側別或嚴重度。",
+        "evidenceIds": ["src-nba-acl-2022-016-teaching-01"]
+      },
+      {
+        "id": "claim-joe-ingles-acl-2022-02",
+        "field": "professional.clinicalLimitations",
+        "text": "ACL 損傷的判定須整合病史、理學檢查與適當影像；影片不能取代臨床診斷。",
+        "evidenceIds": ["src-nba-acl-2022-016-teaching-01"]
+      },
+      {
+        "id": "claim-joe-ingles-acl-2022-03",
+        "field": "professional.differentialContext",
+        "text": "急性膝傷可能同時涉及半月板、軟骨或其他韌帶；本案例只採用具名來源明載的診斷，不從影片增列合併傷。",
+        "evidenceIds": ["src-nba-acl-2022-016-teaching-01"]
+      },
+      {
+        "id": "claim-joe-ingles-acl-2022-04",
+        "field": "professional.treatmentAndRtpMeaning",
+        "text": "治療與回場須依個別病況決定；若進入 ACL 重建術後復健，進階應結合症狀、功能與客觀里程碑，而非套用固定回場日期。",
+        "evidenceIds": [
+          "src-nba-acl-2022-016-teaching-01",
+          "src-nba-acl-2022-016-teaching-02"
+        ]
+      }
+    ],
+    "evidenceIds": [
+      "src-nba-acl-2022-016-teaching-01",
+      "src-nba-acl-2022-016-teaching-02"
+    ],
+    "rtpCourseKey": null
+  },
+  "sources": [
+    {
+      "id": "src-nba-acl-2022-016-video",
+      "type": "video-original",
+      "title": "Joe Ingles injures knee",
+      "publisher": "NBA Organization",
+      "independenceGroup": "nba-organization",
+      "originReportId": null,
+      "url": "https://www.nba.com/watch/video/20220130joeinglesinjury",
+      "publishedAt": "2022-01-30",
+      "accessedAt": "2026-08-07",
+      "supports": [
+        "general.whatHappened",
+        "general.whatIsVisible",
+        "video.segmentObservation"
+      ]
+    },
+    {
+      "id": "src-nba-acl-2022-016-diagnosis-01",
+      "type": "diagnosis-first-party",
+      "title": "Joe Ingles Injury Update",
+      "publisher": "Utah Jazz",
+      "independenceGroup": "utah-jazz",
+      "originReportId": null,
+      "url": "https://www.nba.com/jazz/news/joe-ingles-injury-update",
+      "publishedAt": "2022-01-31",
+      "accessedAt": "2026-08-07",
+      "supports": ["injury.confirmedDiagnosis", "general.confirmedUpdate"]
+    },
+    {
+      "id": "src-nba-acl-2022-016-event",
+      "type": "event-context",
+      "title": "Joe Ingles injures knee",
+      "publisher": "NBA.com",
+      "independenceGroup": "nba-com",
+      "originReportId": null,
+      "url": "https://www.nba.com/watch/video/20220130joeinglesinjury",
+      "publishedAt": "2022-01-30",
+      "accessedAt": "2026-08-07",
+      "supports": ["general.whatHappened"]
+    },
+    {
+      "id": "src-nba-acl-2022-016-teaching-01",
+      "type": "teaching-evidence",
+      "title": "Management of Anterior Cruciate Ligament Injuries: Evidence-Based Clinical Practice Guideline",
+      "publisher": "American Academy of Orthopaedic Surgeons",
+      "independenceGroup": "aaos",
+      "url": "https://new.aaos.org/globalassets/quality-and-practice-resources/anterior-cruciate-ligament-injuries/aclcpg.pdf",
+      "publishedAt": "2022-08-22",
+      "supports": [
+        "professional.mechanismAnalysis",
+        "professional.clinicalLimitations",
+        "professional.differentialContext",
+        "professional.treatmentAndRtpMeaning"
+      ],
+      "originReportId": null,
+      "accessedAt": "2026-08-08"
+    },
+    {
+      "id": "src-nba-acl-2022-016-teaching-02",
+      "type": "teaching-evidence",
+      "title": "Aspetar clinical practice guideline on rehabilitation after anterior cruciate ligament reconstruction",
+      "publisher": "British Journal of Sports Medicine",
+      "independenceGroup": "british-journal-of-sports-medicine",
+      "url": "https://bjsm.bmj.com/content/57/9/500",
+      "publishedAt": "2023-02-02",
+      "supports": ["professional.treatmentAndRtpMeaning"],
+      "originReportId": null,
+      "accessedAt": "2026-08-08"
+    }
+  ],
+  "review": {
+    "status": "in-review",
+    "reviewerName": null,
+    "reviewerQualification": null,
+    "reviewedAt": null,
+    "reviewedContentDigest": null
+  },
+  "audit": {
+    "createdAt": "2026-08-08T02:30:00Z",
+    "updatedAt": "2026-08-08T02:30:00Z",
+    "sourceRecordId": "CAND-NBA-ACL-2022-016"
+  }
+}
