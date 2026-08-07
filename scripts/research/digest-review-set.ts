@@ -7,6 +7,7 @@ import { pathToFileURL } from "node:url";
 import {
   canonicalJson,
   parseStrictJson,
+  sha256Hex,
 } from "../../src/lib/contracts/canonical";
 import {
   computeCandidateReviewSetDigest,
@@ -14,7 +15,9 @@ import {
   validateCandidateVerification,
   type CandidateVerificationArtifactV1,
   type RootSourceAuditV1,
+  type SourceReviewDecisionV1,
 } from "../../src/lib/research/link-verification";
+import { SOURCE_REVIEW_DECISION_PATH } from "./check-candidate-verification";
 import { checkCandidateLedgers } from "./check-candidates";
 import {
   ROOT_AUDIT_PATH,
@@ -67,11 +70,29 @@ export function digestReviewSet(root: string = process.cwd()): string {
     join(root, ...SOURCE_POLICY_MARKDOWN_PATH.split("/")),
     "utf8",
   );
+  const decisionPath = join(root, ...SOURCE_REVIEW_DECISION_PATH.split("/"));
+  const decision = existsSync(decisionPath)
+    ? loadCanonical<SourceReviewDecisionV1>(root, SOURCE_REVIEW_DECISION_PATH)
+        .parsed
+    : undefined;
+  const candidateSetDigest = computeCandidateReviewSetDigest({
+    rows: candidateCheck.rows,
+    rootAuditBytes: rootAudit.bytes,
+    verificationBytes: verification.bytes,
+    sourcePolicyJsonBytes,
+    sourcePolicyMarkdownBytes,
+  });
   const issues = validateCandidateVerification({
     rows: candidateCheck.rows,
     artifact: verification.parsed,
     now: new Date().toISOString().replace(/\.\d{3}Z$/u, "Z"),
     rootAudit: rootAudit.parsed,
+    decision,
+    policyDigests: {
+      json: sha256Hex(sourcePolicyJsonBytes),
+      markdown: sha256Hex(sourcePolicyMarkdownBytes),
+    },
+    expectedCandidateSetDigest: candidateSetDigest,
   });
   if (issues.length > 0) {
     throw new Error(
@@ -80,13 +101,7 @@ export function digestReviewSet(root: string = process.cwd()): string {
         .join("\n"),
     );
   }
-  return computeCandidateReviewSetDigest({
-    rows: candidateCheck.rows,
-    rootAuditBytes: rootAudit.bytes,
-    verificationBytes: verification.bytes,
-    sourcePolicyJsonBytes,
-    sourcePolicyMarkdownBytes,
-  });
+  return candidateSetDigest;
 }
 
 if (

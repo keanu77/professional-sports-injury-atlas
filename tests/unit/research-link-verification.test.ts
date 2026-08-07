@@ -37,8 +37,14 @@ import {
   type VerificationIssue,
   type VerificationResponse,
 } from "../../src/lib/research/link-verification";
-import { runCandidateVerificationCheck } from "../../scripts/research/check-candidate-verification";
+import {
+  SOURCE_POLICY_JSON_PATH,
+  SOURCE_POLICY_MARKDOWN_PATH,
+  SOURCE_REVIEW_DECISION_PATH,
+  runCandidateVerificationCheck,
+} from "../../scripts/research/check-candidate-verification";
 import { checkCandidateLedgers } from "../../scripts/research/check-candidates";
+import { digestReviewSet } from "../../scripts/research/digest-review-set";
 import {
   ROOT_AUDIT_PATH,
   VERIFICATION_ARTIFACT_PATH,
@@ -1296,7 +1302,58 @@ describe("mocked verifier and checker scripts", () => {
         absolutePath(temporaryRoot, ROOT_AUDIT_PATH),
         "utf8",
       );
+      const finalCandidateCheck = checkCandidateLedgers(temporaryRoot);
+      const verifiedRows = finalCandidateCheck.rows.filter(
+        (row) => row.discoveryStatus === "source-verified",
+      );
+      const reviewedBy = [
+        ...new Set(verifiedRows.map((row) => row.reviewedBy)),
+      ];
+      const reviewedAt = [
+        ...new Set(verifiedRows.map((row) => row.reviewedAt)),
+      ];
+      expect(reviewedBy).toHaveLength(1);
+      expect(reviewedAt).toHaveLength(1);
+      const sourcePolicyJsonBytes = readFileSync(
+        absolutePath(temporaryRoot, SOURCE_POLICY_JSON_PATH),
+        "utf8",
+      );
+      const sourcePolicyMarkdownBytes = readFileSync(
+        absolutePath(temporaryRoot, SOURCE_POLICY_MARKDOWN_PATH),
+        "utf8",
+      );
+      const candidateSetDigest = computeCandidateReviewSetDigest({
+        rows: finalCandidateCheck.rows,
+        rootAuditBytes: finalRootAudit,
+        verificationBytes: finalArtifact,
+        sourcePolicyJsonBytes,
+        sourcePolicyMarkdownBytes,
+      });
+      writeRelativeFile(
+        temporaryRoot,
+        SOURCE_REVIEW_DECISION_PATH,
+        canonicalJson({
+          candidateSetDigest,
+          classicProposalCandidateIds: finalCandidateCheck.rows
+            .filter(
+              (row) =>
+                (row.discoveryStatus === "source-ready" ||
+                  row.discoveryStatus === "source-verified") &&
+                row.isClassic,
+            )
+            .map((row) => row.candidateId)
+            .sort(),
+          manifestId: "NBA-SOURCE-2026-08-06-001",
+          reviewedAt: reviewedAt[0],
+          reviewedBy: reviewedBy[0],
+          schemaVersion: 1,
+          sourcePolicyJsonDigest: sha256Hex(sourcePolicyJsonBytes),
+          sourcePolicyMarkdownDigest: sha256Hex(sourcePolicyMarkdownBytes),
+          status: "approved-for-manifest",
+        }),
+      );
       expect(runCandidateVerificationCheck(temporaryRoot)).toBe(0);
+      expect(digestReviewSet(temporaryRoot)).toBe(candidateSetDigest);
       expect(readFileSync(artifactPath, "utf8")).toBe(finalArtifact);
       expect(
         readFileSync(absolutePath(temporaryRoot, ROOT_AUDIT_PATH), "utf8"),

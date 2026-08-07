@@ -9,6 +9,7 @@ research/source-manifest-registry.v1.json
 research/source-policy/source-policy.v1.json
 research/source-policy/source-policy.v2.json
 research/reviews/source-batches/*.json
+research/reviews/root-source-audit.v1.json
 research/verification/*.json
 public-release-history/*.json
 public-release-artifacts/**/*.json
