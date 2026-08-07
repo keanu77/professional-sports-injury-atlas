@@ -1,0 +1,103 @@
+# ACL candidate discovery log
+
+## Scope and execution record
+
+- Injury ledger: `research/candidates/acl.csv`
+- Research role: `nba-injury-case-source-discovery`
+- Policy: `research/source-policy/nba.v1.md` and `research/source-policy/source-policy.v1.json`
+- Cutoff: 2016-08-06; post-cutoff cases are recent and pre-cutoff cases require an explicit classic rationale.
+- Checked: 2026-08-07 (UTC-facing Browser session; Taiwan workstation timezone).
+- Plan assertion passed under Node.js v24.14.0 for the exact ACL ledger and log paths.
+- Browser preflight opened `https://official.nba.com/nba-injury-report-2025-26-season/` and verified the NBA Official page before candidate work.
+
+The checkpoint contains 22 plausible NBA ACL events: 21 recent candidates and one curated classic. Four rows reached `source-ready`; 18 remain `needs-source`. No row was promoted beyond the research role's allowed status.
+
+## Search families and domains
+
+Searches combined athlete, injury, date/year, opponent, and source-family restrictions. Repeated query families included:
+
+- `site:nba.com/{team} <athlete> ACL injury update <year>`
+- `site:nba.com/news <athlete> ACL`
+- `site:nba.com/watch/video <athlete> injury <opponent/date>`
+- YouTube searches for `<athlete> injury <opponent/date> NBA ESPN`
+- NBA game summaries, team releases, NBA News Services pages, official injury-report references, and NBA player biographies for identity corroboration.
+
+Opened domains and first-party subpaths included NBA.com News and Watch; NBA Official; Timberwolves, Bucks, Knicks, Spurs, Warriors, Magic, Nets, Wizards, Nuggets, Clippers, Suns, Pelicans, Cavaliers, Jazz, Sixers, Bulls, and Heat pages; and YouTube original video/channel pages when evaluating uploader provenance. Search-result snippets were used only to discover URLs and were never treated as evidence.
+
+## Source-ready page audits
+
+Every source listed in this table was opened in the Browser. The shared publisher page `https://www.nba.com/watch/featured` was also opened and resolved from `https://www.nba.com/watch`; it displayed the NBA Watch surface. Each event page loaded an original-platform player with a visible play control after the player initialized, had no unavailability message, and attributed the publisher to NBA Organization.
+
+| Candidate                               | Original event page                                                         | First-party diagnosis page                                                                                                                | Caption and provider result                                                                                             |
+| --------------------------------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Markelle Fultz, 2021-01-06 vs Cleveland | `https://www.nba.com/watch/video/markelle-fultz-goes-down-with-leg-injury`  | Orlando Magic, `https://www.nba.com/magic/news/magic-sweep-mini-series-against-cavs-lose-markelle-fultz-torn-acl-20210106`                | NBA provider; external-link-only by policy; no original-platform caption control or caption/subtitle track was visible. |
+| Thomas Bryant, 2021-01-09 vs Miami      | `https://www.nba.com/watch/video/thomas-bryant-leaves-with-leg-injury`      | Washington Wizards, `https://www.nba.com/wizards/thomas-bryant-injury-update-1-10-21`                                                     | NBA provider; external-link-only by policy; no original-platform caption control or caption/subtitle track was visible. |
+| Ricky Rubio, 2021-12-28 vs New Orleans  | `https://www.nba.com/watch/video/20211228rubioinjury`                       | Cleveland Cavaliers, `https://www.nba.com/cavaliers/releases/rubio-status-update-211229`                                                  | NBA provider; external-link-only by policy; no original-platform caption control or caption/subtitle track was visible. |
+| Danny Green, 2022-05-12 vs Miami        | `https://www.nba.com/watch/video/danny-green-leaves-the-game-due-to-injury` | NBA.com league report of the team MRI announcement, `https://www.nba.com/news/76ers-guard-danny-green-exits-game-6-with-left-knee-injury` | NBA provider; external-link-only by policy; no original-platform caption control or caption/subtitle track was visible. |
+
+For these four rows, the event-page title contains the full athlete identity, the visible NBA publication date matches the local event date, the video is the in-game injury event rather than a recap or analysis package, and the diagnosis page contains an explicit written ACL diagnosis. Claims in the ledger are narrow paraphrases and do not add an unwritten grade, prognosis, rehabilitation duration, or return date.
+
+## Needs-source audit trail
+
+These rows are intentionally retained rather than silently dropped. Diagnosis pages below were opened in the Browser except where the gap itself is a dated-source problem.
+
+| Candidate                                          | Opened diagnosis or corroboration page                                                             | Unresolved source gap                                                                                                                                                                                                                                                                                                                                           |
+| -------------------------------------------------- | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Derrick Rose, 2012-04-28 vs Philadelphia (classic) | Chicago Bulls, `https://www.nba.com/bulls/news/derrick-rose-moving-forward-and-keeping-faith.html` | The team page explicitly identifies the ACL injury and event date. The NBA on ESPN YouTube retrospective `https://www.youtube.com/watch?v=IKpCGkZ_LcQ` and its uploader page were opened, but the five-minute retrospective is an analysis package, not the primary in-game event. Other results were fan/repost channels. No accepted primary video was found. |
+| Zach LaVine, 2017-02-03 vs Detroit                 | `https://www.nba.com/news/minnesota-timberwolves-announce-zach-lavine-out-torn-acl`                | No accepted original in-game event page was located; YouTube results were fan/repost uploads.                                                                                                                                                                                                                                                                   |
+| Jabari Parker, 2017-02-08 vs Miami                 | `https://www.nba.com/bucks/release/injury-update-jabari-parker-021417`                             | The located NBA TV status video was an analysis/status package and the other video result was a fan upload; no accepted primary event video was found.                                                                                                                                                                                                          |
+| Kristaps Porzingis, 2018-02-06 vs Milwaukee        | `https://www.nba.com/news/new-york-knicks-kristaps-porzingis-has-successful-surgery-torn-acl`      | No accepted original in-game event page was located.                                                                                                                                                                                                                                                                                                            |
+| Dejounte Murray, 2018-10-07 vs Houston             | `https://www.nba.com/news/spurs-dejounte-murray-torn-acl`                                          | The located NBA TV page was an analysis package; no accepted primary event video was found.                                                                                                                                                                                                                                                                     |
+| Klay Thompson, 2019-06-13 vs Toronto               | `https://www.nba.com/news/thompson-tears-acl`                                                      | NBA Watch event page `https://www.nba.com/watch/video/2019/06/14/20190613-gametime-thompson-suffers-torn-acl` was opened and playable, but its visible publication date is 2019-06-14 while the game event date is 2019-06-13. The row remains unresolved rather than normalizing the date.                                                                     |
+| Jonathan Isaac, 2020-08-02 vs Sacramento           | `https://www.nba.com/news/orlando-magic-jonathan-isaac-surgery-official-release`                   | Located Watch results were either an injury-impact analysis package or footage of a different January injury. No accepted event page for this ACL event was found.                                                                                                                                                                                              |
+| Spencer Dinwiddie, 2020-12-27 vs Charlotte         | `https://www.nba.com/news/report-nets-spencer-dinwiddie-suffers-partially-torn-acl`                | The located NBA Watch result was an analysis package, not the in-game event.                                                                                                                                                                                                                                                                                    |
+| Jamal Murray, 2021-04-12 vs Golden State           | `https://www.nba.com/news/jamal-murray-out-indefinitely-with-torn-acl-in-left-knee`                | NBA Watch event page `https://www.nba.com/watch/video/murrayinjuryvswarriors` was opened and playable, but its visible publication date is 2021-04-13 while the local game date is 2021-04-12. The discrepancy is preserved.                                                                                                                                    |
+| Kawhi Leonard, 2021-06-14 vs Utah                  | `https://www.nba.com/news/kawhi-leonard-has-surgery-to-repair-partially-torn-acl`                  | The located NBA TV item was analysis/status coverage, not the primary in-game event.                                                                                                                                                                                                                                                                            |
+| Dario Saric, 2021-07-06 vs Milwaukee               | `https://www.nba.com/news/suns-dario-saric-torn-acl-out-indefinitely`                              | NBA Watch page `https://www.nba.com/watch/video/20210706phxsaricinjury` was opened and playable, but its stored title is only “Saric exits Game 1 with knee injury”; it does not carry the full athlete identity required by the candidate contract.                                                                                                            |
+| Kira Lewis Jr., 2021-12-08 vs Denver               | `https://www.nba.com/pelicans/news/kira-lewis-jr-injury-update-12-9-21`                            | No accepted original in-game event page was located.                                                                                                                                                                                                                                                                                                            |
+| Joe Ingles, 2022-01-30 vs Minnesota                | `https://www.nba.com/jazz/news/joe-ingles-injury-update`                                           | Search results were fan clips or later analysis; no accepted original event page was found.                                                                                                                                                                                                                                                                     |
+| Dru Smith, 2023-11-22 vs Cleveland                 | `https://www.nba.com/player/1630696/dru-smith/bio`                                                 | The opened official NBA biography explicitly records the right ACL event, but it provides no candidate-specific publication date for source metadata; no accepted original event video was found. Diagnosis remains `unconfirmed` in the ledger rather than inventing a date.                                                                                   |
+
+## External leads intake — 2026-08-07
+
+The files under `/Users/ethanai/co-work/online_sportsinjury/.claude/external-leads/` were treated only as a lead queue. Every missing event below was independently opened in the Browser before any field was retained. No external JSON title, date, diagnosis, or URL was accepted merely because it appeared in that file.
+
+| Candidate                                                        | Browser-opened evidence                                                                                                                                                                                                                           | Intake decision and remaining gap                                                                                                                                                                                                                                                        |
+| ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| P.J. Dozier, 2021-11-23 at Portland (`CAND-NBA-ACL-2021-019`)    | NBA.com, `https://www.nba.com/news/nuggets-pj-dozier-suffers-torn-acl-in-left-knee`; NBA game page, `https://www.nba.com/game/den-vs-por-0022100265/box-score`                                                                                    | The NBA article visibly identifies the left ACL diagnosis and the Tuesday Portland game; the NBA game page confirms 2021-11-23. Retained `needs-source` because the lead supplied no original event video and none was verified.                                                         |
+| Saddiq Bey, 2024-03-10 vs New Orleans (`CAND-NBA-ACL-2024-020`)  | NBA.com, `https://www.nba.com/news/hawks-saddiq-bey-torn-acl`; game page, `https://www.basketball-reference.com/boxscores/202403100ATL.html`                                                                                                      | The opened NBA article explicitly identifies the left ACL tear and Pelicans game; the opened game page fixes the event date. Retained `needs-source`; no original event video was supplied or verified.                                                                                  |
+| Kyrie Irving, 2025-03-03 vs Sacramento (`CAND-NBA-ACL-2025-021`) | ESPN, `https://www.espn.com/nba/story/_/id/44107102/sources-mavericks-kyrie-irving-torn-acl-rest-season`; game page, `https://www.basketball-reference.com/boxscores/202503030DAL.html`                                                           | The Browser exposed ESPN's explicit torn-ACL document title but did not render the article body; the game page confirms the date and matchup. Retained `needs-source`; diagnosis-source fields that could not be visibly audited remain blank, and no original event video was verified. |
+| Jimmy Butler, 2026-01-19 vs Miami (`CAND-NBA-ACL-2026-022`)      | Yahoo Sports, `https://sports.yahoo.com/nba/breaking-news/article/warriors-all-star-jimmy-butler-out-for-season-with-torn-acl-will-undergo-surgery-044425188.html`; game page, `https://www.basketball-reference.com/boxscores/202601190GSW.html` | The opened article visibly reports the right ACL tear after the Monday Miami game; the game page confirms 2026-01-19. Retained `needs-source`; no original event video was supplied or verified.                                                                                         |
+
+Three ACL-file leads were not appended as candidates: Dejounte Murray's 2025 injury was an Achilles injury rather than an ACL event, Fred VanVleet's event occurred during an offseason workout, and Jamir Watkins' event occurred in Summer League rather than an NBA game. These explicit lead-file exclusions were checked against the intake instructions and do not create duplicate ledger rows.
+
+## Classic curation decision
+
+Derrick Rose's 2012 playoff event is retained as the one ACL classic candidate. It is well documented by an opened Chicago Bulls page, has a specific game/date/opponent identity, and is pedagogically distinct as a historically prominent non-contact planting sequence. It remains `needs-source`: the available accepted-channel YouTube result is retrospective analysis, and fan/repost event clips do not satisfy the uploader policy. The classic label is not used to relax video or diagnosis standards.
+
+## Duplicate and recurrence audit
+
+- No two rows share the same athlete/date/opponent event identity or the same accepted canonical event-video URL.
+- Jabari Parker's 2017 event is not his earlier 2014 ACL event.
+- Ricky Rubio's 2021 event is not his 2012 ACL event.
+- Derrick Rose's 2012 classic is a distinct pre-cutoff event and is not confused with his later meniscus or ankle injuries.
+- Klay Thompson's 2019 ACL event is not his 2020 Achilles event.
+
+## Privacy, captions, and media handling
+
+- No YouTube candidate qualified as an accepted primary event video. The NBA on ESPN Derrick Rose result was rejected as an analysis package before embed testing, and the remaining YouTube results were fan/repost or analysis items. Therefore no YouTube row reached the privacy-enhanced embed check; `youtube-nocookie.com` testing was not applicable to this ACL source-ready set.
+- NBA is an external-link-only provider under the frozen policy. All four source-ready NBA pages are recorded `external-link-only`, never `verified` embeds, and autoplay was not used.
+- Caption checks were made on the original NBA platform after the players initialized. No caption control or caption/subtitle track was visible, so the four rows record `unavailable`; no transcript was copied or stored.
+- No video, audio, screenshot, thumbnail, transcript, article body, or other media asset was downloaded, captured, copied, or stored. Only permitted short factual paraphrases, titles, publisher identities, dates, canonical URLs, and audit outcomes were written.
+
+## Current status
+
+- Total candidates: 22
+- Recent candidates: 21
+- Classic candidates: 1
+- Source-ready: 4
+- Needs-source: 18
+- Source-verified: 0
+- Excluded rows: 0 (unresolved plausible events were retained as `needs-source`)
+- Reviewed fields: intentionally blank
+- Commit: none; this research role does not commit
