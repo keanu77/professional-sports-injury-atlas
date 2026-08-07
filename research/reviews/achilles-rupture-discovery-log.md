@@ -74,3 +74,13 @@ The following seven rows now pass the frozen source-ready contract. For every ro
 | Tyrese Haliburton, 2025-06-22 | `https://www.nba.com/watch/video/tyrese-haliburton-right-leg-injury-pacers-thunder-game-7-2025-nba-finals` | `https://www.nba.com/pacers/news/indiana-pacers-medical-update-tyrese-haliburton-250623` |
 
 The remaining strongest leads were not promoted. NBA Watch pages for Wesley Matthews, Klay Thompson, and Jamal Murray display the day after the local event date and their titles do not contain the date; other candidates resolve only to fan/repost footage, official analysis/rehabilitation packages, or no accepted original event video. The ESPN Australia Donte DiVincenzo event short was opened and verified as broadcaster footage, but its visible publication date is 2026-04-26 while the event was 2026-04-25 and its title contains no event date. Those gaps are preserved rather than rewriting source metadata or weakening the immutable policy.
+
+## NBA v2 video-lead verification — 2026-08-07
+
+The wider NBA v2 primary-video date window resolves the date eligibility of Wesley Matthews' next-day Watch upload, but it does not change the separate event-source rule. The opened Portland Trail Blazers release explicitly confirms a ruptured left Achilles and the Watch page shows the event, so those verified fields are now retained in the ledger. The row remains `needs-source` because the event source is dated 2015-03-06 for the 2015-03-05 event and its exact title contains no event date.
+
+The other supplied leads did not qualify: DeMarcus Cousins is a SportsCenter impact discussion rather than the primary event, and the James Wiseman ESPN video is unavailable in the Browser's region. NBA.com's Videos search was run for James Wiseman, Isaiah Jackson, Dru Smith, Rodney Hood, David Nwaba, Chris Clemons, DeMarcus Cousins, J.J. Barea, Rudy Gay, Kobe Bryant, and Wesley Matthews. Most returned no matching event or only unrelated, analysis, interview, rehabilitation, or status footage. The same-day J.J. Barea Watch page was opened, but its stored title is only “Barea Injured” and therefore does not satisfy the full-athlete identity rule.
+
+The proposed Donte DiVincenzo row was not added. The verified ESPN Australia clip identifies Game 4, while the opened Timberwolves diagnosis says the injury occurred in Game 3; that is an unresolved event-identity conflict, not a date-window issue.
+
+The validated count therefore remains **7 source-ready and 11 needs-source**. No reviewer fields were populated, no media or transcript was stored, and no policy threshold was lowered.
