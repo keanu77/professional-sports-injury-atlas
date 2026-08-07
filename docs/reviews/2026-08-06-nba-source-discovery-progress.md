@@ -23,10 +23,11 @@ checkboxes are maintained here.
       `667e7465a7fb424eb991e71bcfee5a96b0c59287`
 - [x] Task 1 — frozen NBA source policy; committed by the local
       `docs: freeze NBA source policy` commit
-- [ ] Task 2 — three candidate ledgers and discovery; stopped at the Browser
-      verification blocker recorded in
-      `docs/reviews/2026-08-06-nba-task-2-browser-verification-blocker.md`
-- [ ] Task 3 — bounded live link and video metadata verification
+- [x] Task 2 — three candidate ledgers and discovery; completed after original-
+      page Browser verification and external-lead gap intake
+- [ ] Task 3 — offline bounded verifier/checker toolchain implemented and
+      tested; owner-directed live execution and canonical artifact remain
+      intentionally deferred
 - [ ] Task 4 — root audit and final review-set freeze
 - [ ] Named content-owner source review received
 - [ ] Task 5 — canonical authoring manifest
@@ -108,6 +109,93 @@ checkboxes are maintained here.
   `docs/reviews/2026-08-07-nba-task-2-browser-verification-blocker.md`.
 - No research agent was started, no candidate row was added, and all three
   ledgers remain exact-header-only.
+
+### Task 2 resume — 2026-08-07 Browser available
+
+- The bundled runtime was again placed first on `PATH`; `node --version`
+  returned `v24.14.0`. The worktree was clean before execution and the exact
+  plan authorization assertion exited `0`.
+- The Browser target-URL path selected the Codex in-app Browser and opened
+  `https://www.nba.com/news/nuggets-pj-dozier-suffers-torn-acl-in-left-knee`.
+  The live page exposed the matching NBA.com article title, publisher context,
+  event description, and publication date, so the Browser precondition passed.
+- Three mutually exclusive researchers are opening original event, diagnosis,
+  video, channel, privacy-enhanced embed, and caption surfaces for ACL,
+  ankle-sprain, and Achilles candidates. Search snippets are leads only; failed
+  original-video provenance or availability remains `needs-source` or
+  `excluded`.
+- While the three discovery paths were browsing, the root executor wrote the
+  Task 3 pure mocked verifier tests. The intended red run failed because the
+  verifier module did not exist; the bounded verifier/checker implementation
+  was subsequently completed and expanded to 27 mocked tests.
+- The live verifier has not run and no verification artifact has been
+  published. It remains sequenced after complete Task 2 ledgers.
+
+### Task 2 external-lead intake — 2026-08-07
+
+- The owner-provided files under `.claude/external-leads/` were treated as a
+  lead queue only. A ledger identity diff found 18 valid missing events: four
+  ACL, thirteen ankle-sprain (including one diagnosis conflict), and one
+  Achilles event.
+- Every missing event was checked one-by-one on an opened original page in the
+  in-app Browser. Date-only gaps were corroborated on opened NBA schedule or
+  game pages. Search snippets and the external JSON itself were not accepted as
+  evidence.
+- Seventeen events were retained as `needs-source`; none had a supplied and
+  Browser-verified original in-game event video. Trae Young's 2021-06-27 lead
+  was retained as an `excluded` audit row with `diagnosis_status=conflicted`
+  because the follow-up report visibly recorded the Hawks' MRI diagnosis as a
+  right-foot bone bruise rather than a confirmed ankle sprain.
+- Explicit non-game/wrong-injury exclusions were not appended: Dejounte Murray
+  (Achilles rather than ACL), Fred VanVleet (offseason workout), Jamir Watkins
+  (Summer League), Klay Thompson (offseason workout), and John Wall (fall at
+  home).
+- Final Task 2 counts are ACL 22 (21 recent, 1 classic, 4 `source-ready`, 18
+  `needs-source`), ankle-sprain 28 (26 recent, 2 classic, 7 `source-ready`, 20
+  `needs-source`, 1 `excluded`), and Achilles 18 (16 recent, 2 classic, all 18
+  `needs-source`). Reviewed fields remain blank.
+- The seven existing ankle `source-ready` rows now use the Browser-opened
+  original event-video page for both video and event-source identity; the
+  next-day diagnosis articles remain in diagnosis-source fields with their
+  actual dates.
+- `npm run research:check` exited `0` and printed an 11-candidate source-ready
+  audit queue. No media, transcript, screenshot, thumbnail, or article body was
+  downloaded or stored.
+
+### Task 3 offline toolchain — 2026-08-07
+
+- Added the bounded verification library, live verifier CLI, read-only exact-
+  bijection checker, and mocked unit suite. The toolchain uses default
+  concurrency 2 (hard maximum 3), a 15-second per-attempt deadline, and one
+  combined maximum-three-attempt budget across page reachability and optional
+  YouTube API corroboration.
+- Requests use deterministic identification, manual bounded redirects, public-
+  HTTPS lexical safeguards, canonical-URL drift detection, body cancellation,
+  retry classification, and separate removed/temporary/mismatch outcomes. Page
+  or article bodies are never serialized.
+- When `YOUTUBE_API_KEY` is absent, the result is explicitly `not-obtained`
+  without an embeddability inference or API request. When present, only the
+  official `videos.list` endpoint with `snippet,contentDetails,status` is used;
+  the key is never printed or serialized.
+- Any existing root audit is strict-shape and accepted-set validated before the
+  first request. The mutation CLI validates in memory, writes a bounded temp
+  file, rereads and validates those exact bytes, then atomically replaces only
+  `research/verification/nba-source-verification.v1.json`. A failed run retains
+  the prior artifact.
+- The checker is read-only and enforces exact accepted URL/source-kind/
+  publisher/title/uploader/event identity coverage, freshness, root-audit
+  binding, workflow-free accepted-set projection, policy and review-set
+  digests, and durable decision identity for any `source-verified` row.
+- The 27-test suite includes real mocked redirect handling, hard timeout even
+  when fetch ignores abort, 404/410, exhausted retry, DNS classification,
+  unsafe URL rejection, content mismatch, canonical drift, YouTube API states,
+  independent artifact/result staleness, exact root-audit binding, review-set
+  byte drift, and temp-directory script publication/read-only behavior. It
+  makes no external request and leaves no repository verification artifact.
+- Green: the scoped 27-test run and `npx tsc --noEmit`. The owner explicitly
+  directed this execution to stop after the Task 3 toolchain, so
+  `npm run research:verify-links` was not run and the canonical verification
+  artifact was not created.
 
 ## Resolved execution blocker
 
