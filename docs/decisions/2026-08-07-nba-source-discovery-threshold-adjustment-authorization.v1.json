@@ -1,0 +1,17 @@
+{
+  "authorizedAt": "2026-08-07T15:31:19Z",
+  "authorizedBy": "吳易澄醫師",
+  "closedScopeIds": [
+    "deployment",
+    "medical-content-authoring",
+    "private-hosting",
+    "public-release"
+  ],
+  "decisionType": "plan-execution",
+  "executionScopeId": "nba-source-discovery-only",
+  "executionStatus": "authorized",
+  "planPath": "docs/superpowers/plans/2026-08-07-nba-injury-case-source-discovery-rev2.md",
+  "planSha256": "3a384060ae7d3cad7989046f131ca5e24b99eb6ad654c9319bcdaa4d4c26c522",
+  "role": "nba-injury-case-source-discovery",
+  "schemaVersion": 1
+}
