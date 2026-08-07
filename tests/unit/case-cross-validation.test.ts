@@ -104,6 +104,162 @@ const fixtureDecision = (): any =>
     "research/reviews/source-batches/FICTIONAL-SOURCE-2026-08-06-001-source-review-decision.v1.json",
   );
 
+const richManifest = (): any =>
+  JSON.parse(
+    readFileSync(
+      new URL(
+        "../../research/source-manifests/NBA-SOURCE-2026-08-06-001.v1.json",
+        import.meta.url,
+      ),
+      "utf8",
+    ),
+  );
+const richRegistry = (): SourceManifestRegistryV1 =>
+  JSON.parse(
+    readFileSync(
+      new URL(
+        "../../research/source-manifest-registry.v1.json",
+        import.meta.url,
+      ),
+      "utf8",
+    ),
+  );
+const loadRichArtifact = (path: string): Uint8Array =>
+  readFileSync(new URL(`../../${path}`, import.meta.url));
+
+/** Maps the first real rich-manifest entry onto a non-production case fixture. */
+function richBoundRecord(): any {
+  const manifest = richManifest();
+  const entry = manifest.entries[0];
+  const registryEntry = richRegistry().entries[0];
+  const record = recent();
+  record.sourceManifestBinding = {
+    candidateId: entry.candidateId,
+    manifestId: manifest.manifestId,
+    manifestDigest: registryEntry.manifestDigest,
+    entryDigest: entry.entryDigest,
+    sourceReviewDecisionDigest: registryEntry.sourceReviewDecisionDigest,
+    sourcePolicyVersion: manifest.sourcePolicyVersion,
+  };
+  record.athlete.name = entry.athleteDisplayName;
+  record.teamAtEvent.name = entry.teamAtEvent;
+  record.opponent.name = entry.opponent;
+  record.sport.code = "basketball";
+  record.league.code = "nba";
+  record.competition.code = entry.competition;
+  record.season = entry.season;
+  record.eventDate = entry.eventDate;
+  record.injury.code = entry.injuryCode;
+  record.injury.confirmedDiagnosis = entry.diagnosisClaim;
+  record.injury.confirmationStatus = "confirmed";
+  record.observedMechanismTags = ["unclear"];
+  record.isClassic = entry.isClassic;
+  record.classicReason = entry.classicReason;
+  record.classicProposedBy = null;
+  record.classicExceptionApprovedBy = null;
+  record.video.provider = entry.video.provider;
+  record.video.contentType = entry.video.contentType;
+  record.video.canonicalUrl = entry.video.canonicalUrl;
+  record.video.fallbackUrl = entry.video.canonicalUrl;
+  record.video.uploaderName = entry.video.uploaderName;
+  record.video.uploaderProvenance = entry.video.uploaderProvenance;
+  record.video.embedStatus = entry.video.embedStatus;
+  record.video.embedCheckedAt = entry.video.embedCheckedAt;
+  record.video.captionStatus = entry.video.captionStatus;
+  record.video.captionCheckedAt = entry.video.captionCheckedAt;
+  record.video.sourceProvenanceVerification = {
+    status: entry.video.provenanceStatus,
+    verifiedBy: entry.video.provenanceCheckedBy,
+    verifiedAt: entry.video.provenanceCheckedAt,
+    basis: entry.video.provenanceBasis,
+    notes: null,
+    verifiedPolicyVersion: manifest.sourcePolicyVersion,
+    reviewedVideoIdentityDigest: "1".repeat(64),
+  };
+
+  const videoSource = {
+    id: "src-nba-acl-2021-009-video",
+    type: "video-original",
+    title: entry.video.title,
+    publisher: entry.video.uploaderName,
+    independenceGroup: "nba-organization",
+    originReportId: null,
+    url: entry.video.canonicalUrl,
+    publishedAt: entry.video.publishedAt,
+    accessedAt: entry.video.accessedAt,
+    supports: [
+      "general.whatHappened",
+      "general.whatIsVisible",
+      "video.segmentObservation",
+    ],
+  };
+  const diagnosisSources = entry.diagnosisSources
+    .filter((source: any) => source !== null)
+    .map((source: any, index: number) => ({
+      id: `src-nba-acl-2021-009-diagnosis-${String(index + 1).padStart(2, "0")}`,
+      ...source,
+      supports: ["injury.confirmedDiagnosis", "general.confirmedUpdate"],
+    }));
+  const eventSource = {
+    id: "src-nba-acl-2021-009-event",
+    type: "event-context",
+    ...entry.eventSource,
+    independenceGroup: "nba-com",
+    originReportId: null,
+    supports: ["general.whatHappened"],
+  };
+  const teachingSources = record.sources.filter(
+    (source: any) => source.type === "teaching-evidence",
+  );
+  record.sources = [
+    videoSource,
+    ...diagnosisSources,
+    eventSource,
+    ...teachingSources,
+  ];
+  record.video.eventBinding = {
+    status: "verified",
+    eventSourceId: eventSource.id,
+    checkedBy: entry.video.provenanceCheckedBy,
+    checkedAt: entry.video.provenanceCheckedAt,
+    basis: entry.eventBinding.basis,
+  };
+  record.audit.sourceRecordId = entry.candidateId;
+  return record;
+}
+
+function bakeRichArtifacts(
+  options: {
+    manifest?: any;
+    decisionBytes?: string;
+  } = {},
+) {
+  const manifest = options.manifest ?? richManifest();
+  const registry = structuredClone(richRegistry());
+  const manifestBytes = canonicalJson(manifest);
+  const decisionPath = registry.entries[0].sourceReviewDecisionPath;
+  const decisionBytes =
+    options.decisionBytes ??
+    readFileSync(new URL(`../../${decisionPath}`, import.meta.url), "utf8");
+  registry.entries[0].manifestDigest = sha256Hex(manifestBytes);
+  registry.entries[0].sourceReviewDecisionDigest = sha256Hex(decisionBytes);
+  const record = richBoundRecord();
+  record.sourceManifestBinding.manifestDigest =
+    registry.entries[0].manifestDigest;
+  record.sourceManifestBinding.sourceReviewDecisionDigest =
+    registry.entries[0].sourceReviewDecisionDigest;
+  const files = new Map<string, Uint8Array>([
+    [registry.entries[0].manifestPath, Buffer.from(manifestBytes)],
+    [decisionPath, Buffer.from(decisionBytes)],
+  ]);
+  const loadFile = (path: string): Uint8Array => {
+    const bytes = files.get(path);
+    if (bytes === undefined) throw new Error(`missing artifact ${path}`);
+    return bytes;
+  };
+  return { manifest, registry, record, loadFile };
+}
+
 describe("registry token validation", () => {
   it("rejects unknown injury, league, competition, and mechanism tokens", () => {
     const badInjury = recent();
@@ -446,6 +602,304 @@ describe("filename and loader boundaries", () => {
 });
 
 describe("source-manifest binding cross-validation", () => {
+  it("accepts a case bound to the registered rich canonical manifest", () => {
+    expect(
+      validateCaseSourceBinding(
+        richBoundRecord(),
+        richRegistry(),
+        loadRichArtifact,
+      ),
+    ).toEqual([]);
+  });
+
+  it("fails closed on stale rich manifest, decision, and entry digests", () => {
+    const manifestBytesDrift = (path: string): Uint8Array => {
+      const bytes = loadRichArtifact(path);
+      return path.endsWith("NBA-SOURCE-2026-08-06-001.v1.json")
+        ? Buffer.concat([bytes, Buffer.from("\n")])
+        : bytes;
+    };
+    expect(
+      validateCaseSourceBinding(
+        richBoundRecord(),
+        richRegistry(),
+        manifestBytesDrift,
+      ).map((entry) => entry.code),
+    ).toContain("binding-manifest-digest");
+
+    const decisionBytesDrift = (path: string): Uint8Array => {
+      const bytes = loadRichArtifact(path);
+      return path.includes("source-review-decision")
+        ? Buffer.concat([bytes, Buffer.from("\n")])
+        : bytes;
+    };
+    expect(
+      validateCaseSourceBinding(
+        richBoundRecord(),
+        richRegistry(),
+        decisionBytesDrift,
+      ).map((entry) => entry.code),
+    ).toContain("binding-decision-digest");
+
+    const staleDecision = richBoundRecord();
+    staleDecision.sourceManifestBinding.sourceReviewDecisionDigest = "3".repeat(
+      64,
+    );
+    expect(
+      validateCaseSourceBinding(
+        staleDecision,
+        richRegistry(),
+        loadRichArtifact,
+      ).map((entry) => entry.code),
+    ).toContain("binding-unresolved");
+
+    const staleEntry = richBoundRecord();
+    staleEntry.sourceManifestBinding.entryDigest = "4".repeat(64);
+    expect(
+      validateCaseSourceBinding(
+        staleEntry,
+        richRegistry(),
+        loadRichArtifact,
+      ).map((entry) => entry.code),
+    ).toContain("binding-entry-digest");
+  });
+
+  it("rejects missing or duplicate rich candidates", () => {
+    const missing = richBoundRecord();
+    missing.sourceManifestBinding.candidateId = "CAND-NBA-ACL-2099-999";
+    expect(
+      validateCaseSourceBinding(missing, richRegistry(), loadRichArtifact).map(
+        (entry) => entry.code,
+      ),
+    ).toContain("binding-entry-missing");
+
+    const duplicateManifest = structuredClone(richManifest());
+    duplicateManifest.entries.splice(
+      1,
+      0,
+      structuredClone(duplicateManifest.entries[0]),
+    );
+    const duplicate = bakeRichArtifacts({ manifest: duplicateManifest });
+    expect(
+      validateCaseSourceBinding(
+        duplicate.record,
+        duplicate.registry,
+        duplicate.loadFile,
+      ).map((entry) => entry.code),
+    ).toContain("binding-artifact-schema");
+  });
+
+  it("rejects rich candidate, video identity, and mapped-source drift", () => {
+    const mutations: Array<(record: any) => void> = [
+      (record) => {
+        record.athlete.name = "Markelle Fultz Jr.";
+      },
+      (record) => {
+        record.video.provider = "youtube";
+      },
+      (record) => {
+        record.video.canonicalUrl = "https://www.nba.com/watch/video/drift";
+      },
+      (record) => {
+        record.video.uploaderName = "Different Uploader";
+      },
+    ];
+    for (const mutate of mutations) {
+      const record = richBoundRecord();
+      mutate(record);
+      expect(
+        validateCaseSourceBinding(record, richRegistry(), loadRichArtifact).map(
+          (entry) => entry.code,
+        ),
+      ).toContain("binding-fact-drift");
+    }
+
+    for (const sourceType of [
+      "video-original",
+      "diagnosis-first-party",
+      "event-context",
+    ]) {
+      const record = richBoundRecord();
+      const source = record.sources.find(
+        (candidate: any) => candidate.type === sourceType,
+      );
+      source.title = `${source.title} drift`;
+      expect(
+        validateCaseSourceBinding(record, richRegistry(), loadRichArtifact).map(
+          (entry) => entry.code,
+        ),
+      ).toContain("binding-source-drift");
+    }
+  });
+
+  it("rejects rich policy drift and unapproved source/review states", () => {
+    const stalePolicy = richBoundRecord();
+    stalePolicy.sourceManifestBinding.sourcePolicyVersion = "nba-v1";
+    expect(
+      validateCaseSourceBinding(
+        stalePolicy,
+        richRegistry(),
+        loadRichArtifact,
+      ).map((entry) => entry.code),
+    ).toContain("binding-unresolved");
+
+    const policyRegistry = structuredClone(richRegistry());
+    policyRegistry.entries[0].sourcePolicyVersion = "nba-v3";
+    const policyRecord = richBoundRecord();
+    policyRecord.sourceManifestBinding.sourcePolicyVersion = "nba-v3";
+    expect(
+      validateCaseSourceBinding(
+        policyRecord,
+        policyRegistry,
+        loadRichArtifact,
+      ).map((entry) => entry.code),
+    ).toContain("binding-artifact-schema");
+
+    const unverifiedManifest = structuredClone(richManifest());
+    unverifiedManifest.entries[0].sourceStatus = "draft";
+    const unverified = bakeRichArtifacts({ manifest: unverifiedManifest });
+    expect(
+      validateCaseSourceBinding(
+        unverified.record,
+        unverified.registry,
+        unverified.loadFile,
+      ).map((entry) => entry.code),
+    ).toContain("binding-artifact-schema");
+
+    const unreviewedManifest = structuredClone(richManifest());
+    unreviewedManifest.sourceReview.status = "pending";
+    const unreviewed = bakeRichArtifacts({ manifest: unreviewedManifest });
+    expect(
+      validateCaseSourceBinding(
+        unreviewed.record,
+        unreviewed.registry,
+        unreviewed.loadFile,
+      ).map((entry) => entry.code),
+    ).toContain("binding-artifact-schema");
+  });
+
+  it("rejects superseded origins and both registered fixture paths", () => {
+    const record = richBoundRecord();
+    const registry = structuredClone(richRegistry());
+    const origin = registry.entries[0];
+    registry.entries.push({
+      manifestId: "NBA-SOURCE-2026-08-08-001",
+      manifestPath:
+        "research/source-manifests/NBA-SOURCE-2026-08-08-001.v1.json",
+      manifestDigest: "5".repeat(64),
+      sourceReviewDecisionPath:
+        "research/reviews/source-batches/NBA-SOURCE-2026-08-08-001-source-review-decision.v1.json",
+      sourceReviewDecisionDigest: "6".repeat(64),
+      sourcePolicyVersion: "nba-v2",
+      batchType: "correction",
+      period: "2026-08-08",
+      createdAt: "2026-08-08T00:00:00Z",
+      previousRegistryBytesDigest: sha256Hex(canonicalJson(registry)),
+      supersedes: [
+        {
+          manifestId: origin.manifestId,
+          candidateId: record.sourceManifestBinding.candidateId,
+          entryDigest: record.sourceManifestBinding.entryDigest,
+        },
+      ],
+    });
+    expect(
+      validateCaseSourceBinding(record, registry, loadRichArtifact).map(
+        (entry) => entry.code,
+      ),
+    ).toContain("binding-unresolved");
+
+    for (const pathKey of [
+      "manifestPath",
+      "sourceReviewDecisionPath",
+    ] as const) {
+      const fixtureRegistry = structuredClone(richRegistry());
+      fixtureRegistry.entries[0][pathKey] =
+        `research/${pathKey === "manifestPath" ? "source-manifests" : "reviews/source-batches"}/tests/fixture.json`;
+      expect(
+        validateCaseSourceBinding(
+          richBoundRecord(),
+          fixtureRegistry,
+          loadRichArtifact,
+        ).map((entry) => entry.code),
+      ).toContain("binding-fixture-path");
+    }
+  });
+
+  it("returns issues, not throws, for malformed and cross-format decisions", () => {
+    const malformed = bakeRichArtifacts({ decisionBytes: "{" });
+    expect(() =>
+      validateCaseSourceBinding(
+        malformed.record,
+        malformed.registry,
+        malformed.loadFile,
+      ),
+    ).not.toThrow();
+    expect(
+      validateCaseSourceBinding(
+        malformed.record,
+        malformed.registry,
+        malformed.loadFile,
+      ).map((entry) => entry.code),
+    ).toContain("binding-artifact-schema");
+
+    const confused = bakeRichArtifacts({
+      decisionBytes: canonicalJson(fixtureDecision()),
+    });
+    expect(
+      validateCaseSourceBinding(
+        confused.record,
+        confused.registry,
+        confused.loadFile,
+      ).map((entry) => entry.code),
+    ).toContain("binding-artifact-schema");
+
+    const reverseConfused = bakeResearchRoot(
+      fixtureManifest(),
+      JSON.parse(
+        readFileSync(
+          new URL(
+            "../../research/reviews/source-batches/NBA-SOURCE-2026-08-06-001-source-review-decision.v1.json",
+            import.meta.url,
+          ),
+          "utf8",
+        ),
+      ),
+    );
+    const legacyRecord = recent();
+    legacyRecord.sourceManifestBinding =
+      reverseConfused.bindingFor("FIC-CAND-001");
+    expect(
+      validateCaseSourceBinding(
+        legacyRecord,
+        reverseConfused.registry,
+        reverseConfused.loadFile,
+      ).map((entry) => entry.code),
+    ).toContain("binding-artifact-schema");
+  });
+
+  it("does not fabricate rich-manifest duration while retaining runtime bounds", () => {
+    const inspected = richBoundRecord();
+    inspected.video.durationSeconds = 240;
+    inspected.video.startSeconds = 20;
+    inspected.video.endSeconds = 45;
+    inspected.video.segments = [
+      { startSeconds: 22, endSeconds: 40, observation: "Visible-only test." },
+    ];
+    expect(
+      validateCaseSourceBinding(inspected, richRegistry(), loadRichArtifact),
+    ).toEqual([]);
+
+    inspected.video.durationSeconds = 30;
+    expect(codes(inspected)).toContain("video-window");
+
+    inspected.video.durationSeconds = 240;
+    inspected.video.segments = [
+      { startSeconds: 10, endSeconds: 15, observation: "Outside window." },
+    ];
+    expect(codes(inspected)).toContain("segment-window");
+  });
+
   it("passes both fixtures against the baked fictional research root", () => {
     const baked = bakeResearchRoot(fixtureManifest(), fixtureDecision());
     const one = recent();

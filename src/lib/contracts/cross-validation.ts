@@ -33,14 +33,20 @@ import {
   type TaxonomyRegistries,
 } from "./taxonomy";
 import {
+  canonicalSourceReviewDecisionSchema,
   resolveSourceManifestBinding,
   sourceBatchManifestSchema,
   sourceReviewDecisionSchema,
+  validateSourceManifestRegistryArtifacts,
   type RegistryArtifactLoader,
   type SourceCandidateEntry,
   type SourceManifestRegistryV1,
   type SourceReviewDecision,
 } from "./source-manifest-registry";
+import {
+  parseCandidateManifestBytes,
+  type CandidateSourceManifestEntryV1,
+} from "../research/candidate-manifest";
 
 const TWO_YEAR_SEASON_RE = /^(19|20)\d{2}-\d{2}$/;
 
@@ -373,6 +379,18 @@ export function validateCaseRecord(
           "segment-range",
           path,
           "segment must satisfy 0 <= start < end <= durationSeconds",
+        ),
+      );
+    }
+    if (
+      segment.startSeconds < startSeconds ||
+      segment.endSeconds > endSeconds
+    ) {
+      issues.push(
+        issue(
+          "segment-window",
+          path,
+          "segment must stay within the selected start/end window",
         ),
       );
     }
@@ -815,6 +833,293 @@ function classicBindingIssues(
   return issues;
 }
 
+function canonicalFactDriftIssue(
+  path: string,
+  actual: unknown,
+  expected: unknown,
+): ValidationIssue | null {
+  if (canonicalJson(actual) === canonicalJson(expected)) return null;
+  return issue(
+    "binding-fact-drift",
+    path,
+    `case value ${String(actual)} drifted from frozen origin value ${String(expected)}`,
+  );
+}
+
+function lowerKebabSourceGroup(value: string): string {
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+function richSourceBindingIssues(
+  record: InjuryCase,
+  entry: CandidateSourceManifestEntryV1,
+): ValidationIssue[] {
+  const issues: ValidationIssue[] = [];
+  const expectedDiagnosis = entry.diagnosisSources.filter(
+    (source) => source !== null,
+  );
+  const actualDiagnosis = record.sources.filter(
+    (source) =>
+      source.type === "diagnosis-first-party" ||
+      source.type === "diagnosis-secondary",
+  );
+
+  if (actualDiagnosis.length !== expectedDiagnosis.length) {
+    issues.push(
+      issue(
+        "binding-source-drift",
+        "sources",
+        `case has ${actualDiagnosis.length} diagnosis sources; frozen origin has ${expectedDiagnosis.length}`,
+      ),
+    );
+  }
+  for (const expected of expectedDiagnosis) {
+    const matches = actualDiagnosis.filter(
+      (source) => source.type === expected.type && source.url === expected.url,
+    );
+    if (matches.length !== 1) {
+      issues.push(
+        issue(
+          "binding-source-drift",
+          "sources",
+          `expected exactly one ${expected.type} source for ${expected.url}`,
+        ),
+      );
+      continue;
+    }
+    const actual = matches[0] as CaseSource;
+    const projection = {
+      type: actual.type,
+      title: actual.title,
+      publisher: actual.publisher,
+      independenceGroup: actual.independenceGroup,
+      originReportId: actual.originReportId,
+      url: actual.url,
+      publishedAt: actual.publishedAt,
+      accessedAt: actual.accessedAt,
+      supports: actual.supports,
+    };
+    const expectedProjection = {
+      ...expected,
+      supports: ["injury.confirmedDiagnosis", "general.confirmedUpdate"],
+    };
+    if (canonicalJson(projection) !== canonicalJson(expectedProjection)) {
+      issues.push(
+        issue(
+          "binding-source-drift",
+          `sources.${actual.id}`,
+          "diagnosis source metadata drifted from the frozen origin record",
+        ),
+      );
+    }
+  }
+
+  const videoSources = record.sources.filter(
+    (source) => source.type === "video-original",
+  );
+  if (videoSources.length !== 1) {
+    issues.push(
+      issue(
+        "binding-source-drift",
+        "sources",
+        "case must contain exactly one video-original source",
+      ),
+    );
+  } else {
+    const actual = videoSources[0] as CaseSource;
+    const projection = {
+      type: actual.type,
+      title: actual.title,
+      publisher: actual.publisher,
+      independenceGroup: actual.independenceGroup,
+      originReportId: actual.originReportId,
+      url: actual.url,
+      publishedAt: actual.publishedAt,
+      accessedAt: actual.accessedAt,
+      supports: actual.supports,
+    };
+    const expectedProjection = {
+      type: "video-original",
+      title: entry.video.title,
+      publisher: entry.video.uploaderName,
+      independenceGroup: lowerKebabSourceGroup(entry.video.uploaderName),
+      originReportId: null,
+      url: entry.video.canonicalUrl,
+      publishedAt: entry.video.publishedAt,
+      accessedAt: entry.video.accessedAt,
+      supports: [
+        "general.whatHappened",
+        "general.whatIsVisible",
+        "video.segmentObservation",
+      ],
+    };
+    if (canonicalJson(projection) !== canonicalJson(expectedProjection)) {
+      issues.push(
+        issue(
+          "binding-source-drift",
+          `sources.${actual.id}`,
+          "video source metadata drifted from the frozen origin record",
+        ),
+      );
+    }
+  }
+
+  const eventSources = record.sources.filter(
+    (source) => source.type === "event-context",
+  );
+  if (eventSources.length !== 1) {
+    issues.push(
+      issue(
+        "binding-source-drift",
+        "sources",
+        "case must contain exactly one event-context source",
+      ),
+    );
+  } else {
+    const actual = eventSources[0] as CaseSource;
+    const projection = {
+      type: actual.type,
+      title: actual.title,
+      publisher: actual.publisher,
+      independenceGroup: actual.independenceGroup,
+      originReportId: actual.originReportId,
+      url: actual.url,
+      publishedAt: actual.publishedAt,
+      accessedAt: actual.accessedAt,
+      supports: actual.supports,
+    };
+    const expectedProjection = {
+      type: "event-context",
+      ...entry.eventSource,
+      independenceGroup: lowerKebabSourceGroup(entry.eventSource.publisher),
+      originReportId: null,
+      supports: ["general.whatHappened"],
+    };
+    if (canonicalJson(projection) !== canonicalJson(expectedProjection)) {
+      issues.push(
+        issue(
+          "binding-source-drift",
+          `sources.${actual.id}`,
+          "event source metadata drifted from the frozen origin record",
+        ),
+      );
+    }
+    if (record.video.eventBinding.eventSourceId !== actual.id) {
+      issues.push(
+        issue(
+          "binding-source-drift",
+          "video.eventBinding.eventSourceId",
+          "event binding must point to the frozen event-context source",
+        ),
+      );
+    }
+  }
+
+  return issues;
+}
+
+function richBindingIssues(
+  record: InjuryCase,
+  entry: CandidateSourceManifestEntryV1,
+  sourcePolicyVersion: string,
+): ValidationIssue[] {
+  const issues: ValidationIssue[] = [];
+  const richFacts: Array<[string, unknown, unknown]> = [
+    ["audit.sourceRecordId", record.audit.sourceRecordId, entry.candidateId],
+    ["athlete.name", record.athlete.name, entry.athleteDisplayName],
+    ["teamAtEvent.name", record.teamAtEvent.name, entry.teamAtEvent],
+    ["opponent.name", record.opponent.name, entry.opponent],
+    ["sport.code", record.sport.code, "basketball"],
+    ["league.code", record.league.code, "nba"],
+    ["competition.code", record.competition.code, entry.competition],
+    ["season", record.season, entry.season],
+    ["eventDate", record.eventDate, entry.eventDate],
+    ["injury.code", record.injury.code, entry.injuryCode],
+    [
+      "injury.confirmedDiagnosis",
+      record.injury.confirmedDiagnosis,
+      entry.diagnosisClaim,
+    ],
+    [
+      "injury.confirmationStatus",
+      record.injury.confirmationStatus,
+      "confirmed",
+    ],
+    ["isClassic", record.isClassic, entry.isClassic],
+    ["classicReason", record.classicReason, entry.classicReason],
+    [
+      "classicProposedBy",
+      record.classicProposedBy,
+      entry.classicProposedBy?.reviewedBy ?? null,
+    ],
+    ["video.provider", record.video.provider, entry.video.provider],
+    ["video.contentType", record.video.contentType, entry.video.contentType],
+    ["video.canonicalUrl", record.video.canonicalUrl, entry.video.canonicalUrl],
+    ["video.uploaderName", record.video.uploaderName, entry.video.uploaderName],
+    [
+      "video.uploaderProvenance",
+      record.video.uploaderProvenance,
+      entry.video.uploaderProvenance,
+    ],
+    ["video.embedStatus", record.video.embedStatus, entry.video.embedStatus],
+    [
+      "video.embedCheckedAt",
+      record.video.embedCheckedAt,
+      entry.video.embedCheckedAt,
+    ],
+    [
+      "video.captionStatus",
+      record.video.captionStatus,
+      entry.video.captionStatus,
+    ],
+    [
+      "video.captionCheckedAt",
+      record.video.captionCheckedAt,
+      entry.video.captionCheckedAt,
+    ],
+    [
+      "video.sourceProvenanceVerification.status",
+      record.video.sourceProvenanceVerification.status,
+      entry.video.provenanceStatus,
+    ],
+    [
+      "video.sourceProvenanceVerification.verifiedBy",
+      record.video.sourceProvenanceVerification.verifiedBy,
+      entry.video.provenanceCheckedBy,
+    ],
+    [
+      "video.sourceProvenanceVerification.verifiedAt",
+      record.video.sourceProvenanceVerification.verifiedAt,
+      entry.video.provenanceCheckedAt,
+    ],
+    [
+      "video.sourceProvenanceVerification.basis",
+      record.video.sourceProvenanceVerification.basis,
+      entry.video.provenanceBasis,
+    ],
+    [
+      "video.sourceProvenanceVerification.verifiedPolicyVersion",
+      record.video.sourceProvenanceVerification.verifiedPolicyVersion,
+      sourcePolicyVersion,
+    ],
+    ["video.eventBinding.status", record.video.eventBinding.status, "verified"],
+    [
+      "video.eventBinding.basis",
+      record.video.eventBinding.basis,
+      entry.eventBinding.basis,
+    ],
+  ];
+  for (const [path, actual, expected] of richFacts) {
+    const drift = canonicalFactDriftIssue(path, actual, expected);
+    if (drift !== null) issues.push(drift);
+  }
+  issues.push(...richSourceBindingIssues(record, entry));
+  return issues;
+}
+
 /**
  * Loads the immutable origin batch artifacts through the append-only registry,
  * requires all digests to match, and compares the case's bound facts to the
@@ -843,15 +1148,22 @@ export function validateCaseSourceBinding(
   }
 
   const entry = resolved.entry;
-  if (
-    entry.manifestPath
+  const registeredPaths = [entry.manifestPath, entry.sourceReviewDecisionPath];
+  const fixturePath = registeredPaths.find((path) =>
+    path
       .split("/")
-      .some((segment) => segment === "fixtures" || segment === "tests")
-  ) {
+      .some(
+        (segment) =>
+          segment === "fixtures" ||
+          segment === "tests" ||
+          segment === "__mocks__",
+      ),
+  );
+  if (fixturePath !== undefined) {
     issues.push(
       issue(
         "binding-fixture-path",
-        entry.manifestPath,
+        fixturePath,
         "production bindings must not reference fixture paths",
       ),
     );
@@ -894,37 +1206,140 @@ export function validateCaseSourceBinding(
     return issues;
   }
 
-  const manifestParsed = sourceBatchManifestSchema.safeParse(
-    parseStrictJson(Buffer.from(manifestBytes).toString("utf8")),
+  const registeredArtifactIssues = validateSourceManifestRegistryArtifacts(
+    registry,
+    loadFile,
   );
-  const decisionParsed = sourceReviewDecisionSchema.safeParse(
-    parseStrictJson(Buffer.from(decisionBytes).toString("utf8")),
-  );
-  if (!manifestParsed.success || !decisionParsed.success) {
+  if (registeredArtifactIssues.length > 0) {
+    const first = registeredArtifactIssues[0] as ValidationIssue;
     issues.push(
       issue(
         "binding-artifact-schema",
         entry.manifestPath,
-        "immutable batch artifacts have an invalid shape",
+        `registered source artifacts are invalid: [${first.code}] ${first.message}`,
       ),
     );
     return issues;
   }
 
-  const candidate = manifestParsed.data.entries.find(
-    (candidateEntry) => candidateEntry.candidateId === binding.candidateId,
-  );
-  if (candidate === undefined) {
+  let manifestValue: unknown;
+  let decisionValue: unknown;
+  try {
+    manifestValue = parseStrictJson(
+      Buffer.from(manifestBytes).toString("utf8"),
+    );
+    decisionValue = parseStrictJson(
+      Buffer.from(decisionBytes).toString("utf8"),
+    );
+  } catch (error) {
     issues.push(
       issue(
-        "binding-entry-missing",
-        "sourceManifestBinding.candidateId",
-        `candidate ${binding.candidateId} is absent from the bound manifest`,
+        "binding-artifact-schema",
+        entry.manifestPath,
+        error instanceof Error
+          ? `immutable batch artifact is not strict JSON: ${error.message}`
+          : "immutable batch artifact is not strict JSON",
       ),
     );
     return issues;
   }
-  if (sha256Hex(canonicalJson(candidate)) !== binding.entryDigest) {
+
+  const legacyManifest = sourceBatchManifestSchema.safeParse(manifestValue);
+  if (legacyManifest.success) {
+    const legacyDecision = sourceReviewDecisionSchema.safeParse(decisionValue);
+    if (!legacyDecision.success) {
+      issues.push(
+        issue(
+          "binding-artifact-schema",
+          entry.sourceReviewDecisionPath,
+          "legacy manifest requires a legacy source-review decision",
+        ),
+      );
+      return issues;
+    }
+    const candidates = legacyManifest.data.entries.filter(
+      (candidateEntry) => candidateEntry.candidateId === binding.candidateId,
+    );
+    if (candidates.length !== 1) {
+      issues.push(
+        issue(
+          "binding-entry-missing",
+          "sourceManifestBinding.candidateId",
+          `candidate ${binding.candidateId} must occur exactly once in the bound manifest`,
+        ),
+      );
+      return issues;
+    }
+    const candidate = candidates[0] as SourceCandidateEntry;
+    if (sha256Hex(canonicalJson(candidate)) !== binding.entryDigest) {
+      issues.push(
+        issue(
+          "binding-entry-digest",
+          "sourceManifestBinding.entryDigest",
+          "the frozen origin entry does not match the bound canonical entry digest",
+        ),
+      );
+      return issues;
+    }
+    if (record.audit.sourceRecordId !== binding.candidateId) {
+      issues.push(
+        issue(
+          "binding-fact-drift",
+          "audit.sourceRecordId",
+          "audit.sourceRecordId must equal the bound candidate ID",
+        ),
+      );
+    }
+
+    for (const [path, fromRecord, fromEntry] of BOUND_FACTS) {
+      const recordValue = fromRecord(record);
+      const entryValue = fromEntry(candidate);
+      if (recordValue !== entryValue) {
+        issues.push(
+          issue(
+            "binding-fact-drift",
+            path,
+            `case value ${String(recordValue)} drifted from frozen origin value ${String(entryValue)}`,
+          ),
+        );
+      }
+    }
+
+    issues.push(
+      ...classicBindingIssues(record, candidate, legacyDecision.data),
+    );
+    return issues;
+  }
+
+  const canonicalManifest = parseCandidateManifestBytes(manifestBytes);
+  const canonicalDecision =
+    canonicalSourceReviewDecisionSchema.safeParse(decisionValue);
+  if (canonicalManifest.manifest === null || !canonicalDecision.success) {
+    issues.push(
+      issue(
+        "binding-artifact-schema",
+        entry.manifestPath,
+        "immutable batch artifacts do not form a recognized canonical manifest/decision pair",
+      ),
+    );
+    return issues;
+  }
+
+  const candidates = canonicalManifest.manifest.entries.filter(
+    (candidateEntry) => candidateEntry.candidateId === binding.candidateId,
+  );
+  if (candidates.length !== 1) {
+    issues.push(
+      issue(
+        "binding-entry-missing",
+        "sourceManifestBinding.candidateId",
+        `candidate ${binding.candidateId} must occur exactly once in the bound manifest`,
+      ),
+    );
+    return issues;
+  }
+  const candidate = candidates[0] as CandidateSourceManifestEntryV1;
+  if (candidate.entryDigest !== binding.entryDigest) {
     issues.push(
       issue(
         "binding-entry-digest",
@@ -934,31 +1349,14 @@ export function validateCaseSourceBinding(
     );
     return issues;
   }
-  if (record.audit.sourceRecordId !== binding.candidateId) {
-    issues.push(
-      issue(
-        "binding-fact-drift",
-        "audit.sourceRecordId",
-        "audit.sourceRecordId must equal the bound candidate ID",
-      ),
-    );
-  }
 
-  for (const [path, fromRecord, fromEntry] of BOUND_FACTS) {
-    const recordValue = fromRecord(record);
-    const entryValue = fromEntry(candidate);
-    if (recordValue !== entryValue) {
-      issues.push(
-        issue(
-          "binding-fact-drift",
-          path,
-          `case value ${String(recordValue)} drifted from frozen origin value ${String(entryValue)}`,
-        ),
-      );
-    }
-  }
-
-  issues.push(...classicBindingIssues(record, candidate, decisionParsed.data));
+  issues.push(
+    ...richBindingIssues(
+      record,
+      candidate,
+      canonicalManifest.manifest.sourcePolicyVersion,
+    ),
+  );
 
   return issues;
 }
