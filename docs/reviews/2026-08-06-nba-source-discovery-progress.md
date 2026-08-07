@@ -98,6 +98,17 @@ checkboxes are maintained here.
   embed and caption checks with search summaries, HTTP extraction, oEmbed, or
   API metadata.
 
+### Task 2 resume — 2026-08-07 stopped
+
+- The Node, clean-worktree, and plan-authorization preconditions all passed.
+- Three new correct target-URL Browser checks each returned
+  `No browser is available`; the intervening troubleshooting check returned an
+  empty backend list.
+- The renewed stop is recorded in
+  `docs/reviews/2026-08-07-nba-task-2-browser-verification-blocker.md`.
+- No research agent was started, no candidate row was added, and all three
+  ledgers remain exact-header-only.
+
 ## Resolved execution blocker
 
 The first Task 0 staging attempt in the prior execution environment failed
