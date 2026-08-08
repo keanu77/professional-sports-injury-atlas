@@ -15,7 +15,10 @@ import {
   validateQuarterlyUpdateAgainstRelease,
   type CandidateReleaseInput,
 } from "../../src/lib/releases/history";
-import { CURRENT_PUBLIC_RIGHTS_POLICY_VERSION } from "../../src/lib/contracts/site-governance";
+import {
+  CURRENT_PUBLIC_RIGHTS_POLICY_VERSION,
+  CURRENT_SOURCE_POLICY_VERSION,
+} from "../../src/lib/contracts/site-governance";
 import {
   EMPTY_SOURCE_MANIFEST_REGISTRY_BYTES,
   type SourceManifestRegistryV1,
@@ -37,10 +40,28 @@ const fixtureDecision = (): any =>
     "research/reviews/source-batches/FICTIONAL-SOURCE-2026-08-06-001-source-review-decision.v1.json",
   );
 
-function launchRegistry(): SourceManifestRegistryV1 {
+function currentSourceBatch(): {
+  manifest: any;
+  manifestDigest: string;
+  decisionDigest: string;
+} {
   const manifest = fixtureManifest();
+  manifest.sourcePolicyVersion = CURRENT_SOURCE_POLICY_VERSION;
   const manifestDigest = sha256Hex(canonicalJson(manifest));
-  const decision = { ...fixtureDecision(), manifestDigest };
+  const decision = {
+    ...fixtureDecision(),
+    manifestDigest,
+    sourcePolicyVersion: CURRENT_SOURCE_POLICY_VERSION,
+  };
+  return {
+    manifest,
+    manifestDigest,
+    decisionDigest: sha256Hex(canonicalJson(decision)),
+  };
+}
+
+function launchRegistry(): SourceManifestRegistryV1 {
+  const { manifest, manifestDigest, decisionDigest } = currentSourceBatch();
   return {
     schemaVersion: 1,
     entries: [
@@ -49,7 +70,7 @@ function launchRegistry(): SourceManifestRegistryV1 {
         manifestPath: `research/source-manifests/${manifest.manifestId}.v1.json`,
         manifestDigest,
         sourceReviewDecisionPath: `research/reviews/source-batches/${manifest.manifestId}-source-review-decision.v1.json`,
-        sourceReviewDecisionDigest: sha256Hex(canonicalJson(decision)),
+        sourceReviewDecisionDigest: decisionDigest,
         sourcePolicyVersion: manifest.sourcePolicyVersion,
         batchType: "launch",
         period: manifest.period,
@@ -65,6 +86,19 @@ function launchRegistry(): SourceManifestRegistryV1 {
 
 /** Promotes a fixture case to fully approved + rights-cleared public state. */
 function makePublic(record: any): any {
+  const { manifest, manifestDigest, decisionDigest } = currentSourceBatch();
+  const entry = manifest.entries.find(
+    (candidate: any) =>
+      candidate.candidateId === record.sourceManifestBinding.candidateId,
+  );
+  if (entry === undefined) throw new Error("fixture source binding is missing");
+  record.sourceManifestBinding.manifestDigest = manifestDigest;
+  record.sourceManifestBinding.entryDigest = sha256Hex(canonicalJson(entry));
+  record.sourceManifestBinding.sourceReviewDecisionDigest = decisionDigest;
+  record.sourceManifestBinding.sourcePolicyVersion =
+    CURRENT_SOURCE_POLICY_VERSION;
+  record.video.sourceProvenanceVerification.verifiedPolicyVersion =
+    CURRENT_SOURCE_POLICY_VERSION;
   record.status = "approved";
   if (record.isClassic && record.classicExceptionApprovedBy === null) {
     record.classicExceptionApprovedBy = "Dr. Fictional Reviewer Two";
@@ -527,7 +561,7 @@ describe("release transitions", () => {
           sourceReviewDecisionPath:
             "research/reviews/source-batches/FICTIONAL-SOURCE-2026-09-01-001-source-review-decision.v1.json",
           sourceReviewDecisionDigest: hex("8"),
-          sourcePolicyVersion: "source-policy-v1",
+          sourcePolicyVersion: CURRENT_SOURCE_POLICY_VERSION,
           batchType: "correction",
           period: "2026-09-01",
           createdAt: "2026-09-01T00:00:00Z",

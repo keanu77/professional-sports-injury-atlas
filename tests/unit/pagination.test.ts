@@ -26,7 +26,10 @@ import {
   computeVideoIdentityDigest,
   computeVideoSourceDigest,
 } from "../../src/lib/cases/digest";
-import { CURRENT_PUBLIC_RIGHTS_POLICY_VERSION } from "../../src/lib/contracts/site-governance";
+import {
+  CURRENT_PUBLIC_RIGHTS_POLICY_VERSION,
+  CURRENT_SOURCE_POLICY_VERSION,
+} from "../../src/lib/contracts/site-governance";
 
 const loadFixture = (rel: string): any =>
   JSON.parse(
@@ -48,6 +51,10 @@ const finalize = (record: any): any => {
 
 const publicCase = (): any => {
   const record = loadFixture("cases/valid-approved-classic.json");
+  record.sourceManifestBinding.sourcePolicyVersion =
+    CURRENT_SOURCE_POLICY_VERSION;
+  record.video.sourceProvenanceVerification.verifiedPolicyVersion =
+    CURRENT_SOURCE_POLICY_VERSION;
   record.video.publicRightsReview = {
     status: "cleared",
     reviewedBy: "Fictional Rights Reviewer",

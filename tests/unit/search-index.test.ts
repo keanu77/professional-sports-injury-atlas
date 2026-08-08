@@ -7,7 +7,10 @@ import {
 } from "../../src/lib/cases/digest";
 import { buildClientSearchIndex } from "../../src/lib/cases/search-index";
 import { selectPublicCases } from "../../src/lib/cases/selectors";
-import { CURRENT_PUBLIC_RIGHTS_POLICY_VERSION } from "../../src/lib/contracts/site-governance";
+import {
+  CURRENT_PUBLIC_RIGHTS_POLICY_VERSION,
+  CURRENT_SOURCE_POLICY_VERSION,
+} from "../../src/lib/contracts/site-governance";
 
 const loadFixture = (rel: string): any =>
   JSON.parse(
@@ -18,6 +21,10 @@ const classic = (): any => loadFixture("cases/valid-approved-classic.json");
 
 const publicCase = (): any => {
   const record = classic();
+  record.sourceManifestBinding.sourcePolicyVersion =
+    CURRENT_SOURCE_POLICY_VERSION;
+  record.video.sourceProvenanceVerification.verifiedPolicyVersion =
+    CURRENT_SOURCE_POLICY_VERSION;
   record.video.publicRightsReview = {
     status: "cleared",
     reviewedBy: "Fictional Rights Reviewer",
