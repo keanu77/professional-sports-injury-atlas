@@ -5,10 +5,10 @@
   "status": "medical-review",
   "sourceManifestBinding": {
     "candidateId": "CAND-NBA-ACHILLES-2019-005",
-    "manifestId": "NBA-SOURCE-2026-08-06-001",
-    "manifestDigest": "8beedf3fcc0c7c498bf08ffb2fbc671759e7a61ed4e04f09afab579b6a86eb4d",
-    "entryDigest": "d718b475799a1ca3e38a1daeb7c8133ca4c8a93b710d37a315a943d19f4e3d21",
-    "sourceReviewDecisionDigest": "cd40d39d8c3463c0bb2cbdb1125a613cf1100d341bb8c6f4d59456462875ad0c",
+    "manifestId": "NBA-SOURCE-2026-08-08-001",
+    "manifestDigest": "4a25692e27115b6ec16818a64dd6e85778360e4f00e2b3f6a288b4ca5f0ed0bc",
+    "entryDigest": "f22491e605eb1767e67ed96ca93086c7112ebf966679e41b8facb8d4d20537ed",
+    "sourceReviewDecisionDigest": "dd08a891325f384621f61af9dd14084de579a9b5b86ce2cccecff893827d8464",
     "sourcePolicyVersion": "nba-v2"
   },
   "sport": {
@@ -42,7 +42,7 @@
   "classicProposedBy": null,
   "classicExceptionApprovedBy": null,
   "video": {
-    "provider": "nba",
+    "provider": "youtube",
     "contentType": "in-game-injury-event",
     "eventBinding": {
       "status": "verified",
@@ -51,26 +51,26 @@
       "checkedAt": "2026-08-08T02:30:00Z",
       "basis": "PASS — Browser reopened the original event/video and first-party diagnosis pages. The combined visible title, date, event context, and first-party text matched Kevin Durant, 2019-06-10, Golden State Warriors vs. Toronto Raptors, and nba-playoffs; the diagnosis explicitly supports “Ruptured right Achilles tendon.” No duplicate accepted event identity or canonical video URL was found, and no extra grade, mechanism, surgery, prognosis, rehabilitation, or return-to-play claim was inferred. The diagnosis page is distinct from the event/video page; only the diagnosis page is treated as diagnostic evidence."
     },
-    "canonicalUrl": "https://www.nba.com/watch/video/kevin-durant-leaves-game-5-with-injury",
-    "uploaderName": "NBA Organization",
-    "uploaderProvenance": "league",
-    "embedStatus": "external-link-only",
-    "embedCheckedAt": "2026-08-07T11:34:14Z",
-    "durationSeconds": 78,
+    "canonicalUrl": "https://www.youtube.com/watch?v=YcSOLHMsJYw",
+    "uploaderName": "ESPN",
+    "uploaderProvenance": "broadcaster-rightsholder",
+    "embedStatus": "verified",
+    "embedCheckedAt": "2026-08-08T11:16:32Z",
+    "durationSeconds": 155,
     "startSeconds": 0,
-    "endSeconds": 78,
-    "fallbackUrl": "https://www.nba.com/watch/video/kevin-durant-leaves-game-5-with-injury",
+    "endSeconds": 155,
+    "fallbackUrl": "https://www.youtube.com/watch?v=YcSOLHMsJYw",
     "sourceProvenanceVerification": {
       "status": "verified",
-      "verifiedBy": "Codex Achilles source researcher",
-      "verifiedAt": "2026-08-07T11:34:14Z",
-      "basis": "NBA.com original-platform Watch page with NBA Organization publisher attribution; player controls opened and no caption/subtitle control or text track was observable.",
-      "notes": "NBA 原頁播放器未提供可用字幕控制；以同一 canonical URL 作外連 fallback。",
+      "verifiedBy": "Codex embed enrichment auditor",
+      "verifiedAt": "2026-08-08T11:16:32Z",
+      "basis": "PASS — watch metadata matched ESPN and the event date; the privacy-enhanced iframe loaded without autoplay, started after user action, advanced playback and exposed a captions control.",
+      "notes": "ESPN 原始頻道影片採 click-to-load privacy-enhanced player；不下載或重製媒體。",
       "verifiedPolicyVersion": "nba-v2",
-      "reviewedVideoIdentityDigest": "bd29403dde3fc63a73f4eccc6eed040636ce23173f6b2690873ea6f37745fe6c"
+      "reviewedVideoIdentityDigest": "ff223d9cca9620d9f54f6381b5cea4abb93f39b15089d103c9f9662c9dafdd7e"
     },
-    "captionStatus": "unavailable",
-    "captionCheckedAt": "2026-08-07T11:34:14Z",
+    "captionStatus": "available",
+    "captionCheckedAt": "2026-08-08T11:16:32Z",
     "publicRightsReview": {
       "status": "not-requested",
       "reviewedBy": null,
@@ -86,14 +86,14 @@
     "segments": [
       {
         "startSeconds": 0,
-        "endSeconds": 78,
-        "observation": "片段呈現 Kevin Durant 在比賽回合中右下肢事件後停止比賽並離場；不由畫面確認診斷。"
+        "endSeconds": 155,
+        "observation": "ESPN 片段呈現 Kevin Durant 在總冠軍賽第五戰回到場上、右下肢事件後停止比賽並離場；不由畫面確認診斷。"
       }
     ]
   },
   "general": {
     "whatHappened": "Kevin Durant 於 2019-06-10 代表 Golden State Warriors 對 Toronto Raptors 出賽；原始事件頁與診斷來源已分開記錄。",
-    "whatIsVisible": "片段呈現 Kevin Durant 在比賽回合中右下肢事件後停止比賽並離場；不由畫面確認診斷。",
+    "whatIsVisible": "ESPN 片段呈現 Kevin Durant 在總冠軍賽第五戰回到場上、右下肢事件後停止比賽並離場；不由畫面確認診斷。",
     "whatVideoCannotProve": "這段影片不能單獨證明診斷、分級、側別以外的合併傷、影像結果、治療方式、預後或回場日期。",
     "confirmedUpdate": "NBA.com 的具名來源明載診斷：Ruptured right Achilles tendon."
   },
@@ -135,13 +135,13 @@
     {
       "id": "src-nba-achilles-2019-005-video",
       "type": "video-original",
-      "title": "Kevin Durant leaves Game 5 with injury",
-      "publisher": "NBA Organization",
-      "independenceGroup": "nba-organization",
+      "title": "Kevin Durant suffers Achilles injury after hot start, exits Game 5 | 2019 NBA Finals Highlights",
+      "publisher": "ESPN",
+      "independenceGroup": "espn",
       "originReportId": null,
-      "url": "https://www.nba.com/watch/video/kevin-durant-leaves-game-5-with-injury",
+      "url": "https://www.youtube.com/watch?v=YcSOLHMsJYw",
       "publishedAt": "2019-06-10",
-      "accessedAt": "2026-08-07",
+      "accessedAt": "2026-08-08",
       "supports": [
         "general.whatHappened",
         "general.whatIsVisible",
@@ -199,7 +199,7 @@
   },
   "audit": {
     "createdAt": "2026-08-08T02:30:00Z",
-    "updatedAt": "2026-08-08T02:30:00Z",
+    "updatedAt": "2026-08-08T11:33:30Z",
     "sourceRecordId": "CAND-NBA-ACHILLES-2019-005"
   }
 }

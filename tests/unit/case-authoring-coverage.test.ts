@@ -33,11 +33,17 @@ const MANIFEST_PATH =
   "research/source-manifests/NBA-SOURCE-2026-08-06-001.v1.json";
 const DECISION_PATH =
   "research/reviews/source-batches/NBA-SOURCE-2026-08-06-001-source-review-decision.v1.json";
+const CORRECTION_MANIFEST_PATH =
+  "research/source-manifests/NBA-SOURCE-2026-08-08-001.v1.json";
+const CORRECTION_DECISION_PATH =
+  "research/reviews/source-batches/NBA-SOURCE-2026-08-08-001-source-review-decision.v1.json";
 const FIXTURE_PATHS = [
   CASE_AUTHORING_PLAN_PATH,
   REGISTRY_PATH,
   MANIFEST_PATH,
   DECISION_PATH,
+  CORRECTION_MANIFEST_PATH,
+  CORRECTION_DECISION_PATH,
 ] as const;
 
 const cleanupRoots: string[] = [];
@@ -177,7 +183,7 @@ function appendLegacyBatch(
     decisionStatus: "approved",
     sourcePolicyVersion: "nba-v2",
     reviewedBy: "Fixture Source Reviewer",
-    reviewedAt: correction ? "2026-08-08T00:00:00Z" : "2026-10-01T00:00:00Z",
+    reviewedAt: correction ? "2026-08-09T00:00:00Z" : "2026-10-01T00:00:00Z",
     candidateDecisions: [
       {
         candidateId: candidate.candidateId,
@@ -207,7 +213,7 @@ function appendLegacyBatch(
     sourcePolicyVersion: "nba-v2",
     batchType,
     period: manifest.period,
-    createdAt: correction ? "2026-08-08T00:00:00Z" : "2026-10-01T00:00:00Z",
+    createdAt: correction ? "2026-08-09T00:00:00Z" : "2026-10-01T00:00:00Z",
     previousRegistryBytesDigest: sha256Hex(registryBytes),
     supersedes,
   });
@@ -564,7 +570,14 @@ describe("NBA case-authoring plan coverage", () => {
       expect(result.manifest?.manifestId).toBe("NBA-SOURCE-2026-08-06-001");
     });
 
-    it("fails closed when a later correction supersedes a planned candidate", () => {
+    it("accepts only the digest-pinned, physician-approved correction", () => {
+      const result = checkCaseAuthoringCoverage(fixtureRoot());
+
+      expect(result.issues).toEqual([]);
+      expect(result.coverage?.cases).toHaveLength(26);
+    });
+
+    it("fails closed when another later correction supersedes a planned candidate", () => {
       const root = fixtureRoot();
       appendLegacyBatch(root, "correction");
 

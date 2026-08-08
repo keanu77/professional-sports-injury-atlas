@@ -51,6 +51,33 @@ const AUTHORED_TASKS = [
   "case-achilles-07",
 ] as const;
 
+const AUTHORIZED_CORRECTIONS = new Map([
+  [
+    "CAND-NBA-ACHILLES-2019-005",
+    {
+      entryDigest:
+        "f22491e605eb1767e67ed96ca93086c7112ebf966679e41b8facb8d4d20537ed",
+      videoUrl: "https://www.youtube.com/watch?v=YcSOLHMsJYw",
+    },
+  ],
+  [
+    "CAND-NBA-ANKLE-2021-002",
+    {
+      entryDigest:
+        "6cc42a1e4591fad875bd9b490e9ecf5c314d63af031d938e8209fb345d315180",
+      videoUrl: "https://www.youtube.com/watch?v=FQAPZASQyX0",
+    },
+  ],
+  [
+    "CAND-NBA-ANKLE-2023-008",
+    {
+      entryDigest:
+        "9d80dc156b44ae0d107c1a34f9cc3a2340ba258f4180426190c7e9b56cef9b69",
+      videoUrl: "https://www.youtube.com/watch?v=RDDGpqOvSdg",
+    },
+  ],
+] as const);
+
 function loadCoverage(): CaseAuthoringCoverageV1 {
   const result = checkCaseAuthoringCoverage(ROOT);
   expect(result.issues).toEqual([]);
@@ -72,7 +99,18 @@ function loadAuthoredCases(coverage: CaseAuthoringCoverageV1): InjuryCase[] {
     expect(record.id).toBe(planned!.caseId);
     expect(record.slug).toBe(planned!.slug);
     expect(record.sourceManifestBinding.candidateId).toBe(planned!.candidateId);
-    expect(record.sourceManifestBinding.entryDigest).toBe(planned!.entryDigest);
+    const correction = AUTHORIZED_CORRECTIONS.get(planned!.candidateId);
+    expect(record.sourceManifestBinding.entryDigest).toBe(
+      correction?.entryDigest ?? planned!.entryDigest,
+    );
+    if (correction !== undefined) {
+      expect(record.sourceManifestBinding.manifestId).toBe(
+        "NBA-SOURCE-2026-08-08-001",
+      );
+      expect(record.video.provider).toBe("youtube");
+      expect(record.video.embedStatus).toBe("verified");
+      expect(record.video.canonicalUrl).toBe(correction.videoUrl);
+    }
     expect(validateCaseRecord(record)).toEqual([]);
     expect(validateCaseFilename(planned!.path, record)).toEqual([]);
     return record;

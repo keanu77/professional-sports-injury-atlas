@@ -5,10 +5,10 @@
   "status": "medical-review",
   "sourceManifestBinding": {
     "candidateId": "CAND-NBA-ANKLE-2021-002",
-    "manifestId": "NBA-SOURCE-2026-08-06-001",
-    "manifestDigest": "8beedf3fcc0c7c498bf08ffb2fbc671759e7a61ed4e04f09afab579b6a86eb4d",
-    "entryDigest": "0a89a3fef7d984f32fe7b8ef22b983b305f9c74a6f5bb6f83c1963e4fe115e11",
-    "sourceReviewDecisionDigest": "cd40d39d8c3463c0bb2cbdb1125a613cf1100d341bb8c6f4d59456462875ad0c",
+    "manifestId": "NBA-SOURCE-2026-08-08-001",
+    "manifestDigest": "4a25692e27115b6ec16818a64dd6e85778360e4f00e2b3f6a288b4ca5f0ed0bc",
+    "entryDigest": "6cc42a1e4591fad875bd9b490e9ecf5c314d63af031d938e8209fb345d315180",
+    "sourceReviewDecisionDigest": "dd08a891325f384621f61af9dd14084de579a9b5b86ce2cccecff893827d8464",
     "sourcePolicyVersion": "nba-v2"
   },
   "sport": {
@@ -42,7 +42,7 @@
   "classicProposedBy": null,
   "classicExceptionApprovedBy": null,
   "video": {
-    "provider": "nba",
+    "provider": "youtube",
     "contentType": "in-game-injury-event",
     "eventBinding": {
       "status": "verified",
@@ -51,26 +51,26 @@
       "checkedAt": "2026-08-08T02:30:00Z",
       "basis": "PASS — Browser reopened the original event/video and first-party diagnosis pages. The combined visible title, date, event context, and first-party text matched Kyrie Irving, 2021-06-13, Brooklyn Nets vs. Milwaukee Bucks, and nba-playoffs; the diagnosis explicitly supports “Right ankle sprain.” No duplicate accepted event identity or canonical video URL was found, and no extra grade, mechanism, surgery, prognosis, rehabilitation, or return-to-play claim was inferred. Event/video and diagnosis are co-located on one NBA.com article; no independent second diagnosis is claimed or required for this recent first-party case."
     },
-    "canonicalUrl": "https://www.nba.com/news/kyrie-irving-exits-game-4-with-right-ankle-sprain",
-    "uploaderName": "NBA Organization",
-    "uploaderProvenance": "league",
-    "embedStatus": "external-link-only",
-    "embedCheckedAt": "2026-08-07T11:46:19Z",
-    "durationSeconds": 59,
+    "canonicalUrl": "https://www.youtube.com/watch?v=FQAPZASQyX0",
+    "uploaderName": "ESPN",
+    "uploaderProvenance": "broadcaster-rightsholder",
+    "embedStatus": "verified",
+    "embedCheckedAt": "2026-08-08T11:16:32Z",
+    "durationSeconds": 31,
     "startSeconds": 0,
-    "endSeconds": 59,
-    "fallbackUrl": "https://www.nba.com/news/kyrie-irving-exits-game-4-with-right-ankle-sprain",
+    "endSeconds": 31,
+    "fallbackUrl": "https://www.youtube.com/watch?v=FQAPZASQyX0",
     "sourceProvenanceVerification": {
       "status": "verified",
-      "verifiedBy": "Codex ankle-sprain source researcher",
-      "verifiedAt": "2026-08-07T11:46:19Z",
-      "basis": "NBA.com league article published on the event date with an embedded NBA player showing the exact in-game injury event; the original platform page and embedded player were opened, and no caption/subtitle control was observable.",
-      "notes": "NBA 原頁播放器未提供可用字幕控制；以同一 canonical URL 作外連 fallback。",
+      "verifiedBy": "Codex embed enrichment auditor",
+      "verifiedAt": "2026-08-08T11:16:32Z",
+      "basis": "PASS — watch metadata matched ESPN and the event date; the privacy-enhanced iframe loaded without autoplay, started after user action, advanced playback and exposed a captions control.",
+      "notes": "ESPN 標題誤植為 Game 3；事件日、對手與既有 root evidence 均確認本事件為 Game 4。",
       "verifiedPolicyVersion": "nba-v2",
-      "reviewedVideoIdentityDigest": "920f1bea1db3dca1c44b3291c5eef364aa36f786eba43ba9ee922bde6d52a632"
+      "reviewedVideoIdentityDigest": "fd0531eb665ba2dbdce3be60b48c3a879cb7f587ddf0188843613f3124acf07d"
     },
-    "captionStatus": "unavailable",
-    "captionCheckedAt": "2026-08-07T11:46:19Z",
+    "captionStatus": "available",
+    "captionCheckedAt": "2026-08-08T11:16:32Z",
     "publicRightsReview": {
       "status": "not-requested",
       "reviewedBy": null,
@@ -86,14 +86,14 @@
     "segments": [
       {
         "startSeconds": 0,
-        "endSeconds": 59,
-        "observation": "NBA 文章內嵌片與官方 Watch 資產 568084 一致；片段呈現 Kyrie Irving 腳踝事件後離場。"
+        "endSeconds": 31,
+        "observation": "ESPN Short 呈現 Kyrie Irving 在第二節腳踝事件後停止比賽；片名的 Game 3 為 uploader 誤植，本案例依事件日與 root evidence 綁定 Game 4。"
       }
     ]
   },
   "general": {
     "whatHappened": "Kyrie Irving 於 2021-06-13 代表 Brooklyn Nets 對 Milwaukee Bucks 出賽；原始事件頁與診斷來源已分開記錄。",
-    "whatIsVisible": "NBA 文章內嵌片與官方 Watch 資產 568084 一致；片段呈現 Kyrie Irving 腳踝事件後離場。",
+    "whatIsVisible": "ESPN Short 呈現 Kyrie Irving 在第二節腳踝事件後停止比賽；片名的 Game 3 為 uploader 誤植，本案例依事件日與 root evidence 綁定 Game 4。",
     "whatVideoCannotProve": "這段影片不能單獨證明診斷、分級、側別以外的合併傷、影像結果、治療方式、預後或回場日期。",
     "confirmedUpdate": "NBA.com 的具名來源明載診斷：Right ankle sprain."
   },
@@ -135,13 +135,13 @@
     {
       "id": "src-nba-ankle-2021-002-video",
       "type": "video-original",
-      "title": "Kyrie Irving exits Game 4 with right ankle sprain",
-      "publisher": "NBA Organization",
-      "independenceGroup": "nba-organization",
+      "title": "Kyrie Irving sustains 2nd quarter ankle injury, out for rest of Game 3 #Shorts",
+      "publisher": "ESPN",
+      "independenceGroup": "espn",
       "originReportId": null,
-      "url": "https://www.nba.com/news/kyrie-irving-exits-game-4-with-right-ankle-sprain",
+      "url": "https://www.youtube.com/watch?v=FQAPZASQyX0",
       "publishedAt": "2021-06-13",
-      "accessedAt": "2026-08-07",
+      "accessedAt": "2026-08-08",
       "supports": [
         "general.whatHappened",
         "general.whatIsVisible",
@@ -199,7 +199,7 @@
   },
   "audit": {
     "createdAt": "2026-08-08T02:30:00Z",
-    "updatedAt": "2026-08-08T02:30:00Z",
+    "updatedAt": "2026-08-08T11:33:30Z",
     "sourceRecordId": "CAND-NBA-ANKLE-2021-002"
   }
 }

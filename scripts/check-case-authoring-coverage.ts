@@ -54,6 +54,44 @@ const TARGET_MANIFEST_PATH =
 const TARGET_DECISION_PATH =
   "research/reviews/source-batches/NBA-SOURCE-2026-08-06-001-source-review-decision.v1.json";
 
+const AUTHORIZED_CORRECTION_ENTRY = {
+  manifestId: "NBA-SOURCE-2026-08-08-001",
+  manifestPath:
+    "research/source-manifests/NBA-SOURCE-2026-08-08-001.v1.json",
+  manifestDigest:
+    "4a25692e27115b6ec16818a64dd6e85778360e4f00e2b3f6a288b4ca5f0ed0bc",
+  sourceReviewDecisionPath:
+    "research/reviews/source-batches/NBA-SOURCE-2026-08-08-001-source-review-decision.v1.json",
+  sourceReviewDecisionDigest:
+    "dd08a891325f384621f61af9dd14084de579a9b5b86ce2cccecff893827d8464",
+  sourcePolicyVersion: "nba-v2",
+  batchType: "correction",
+  period: "2026-08-08",
+  createdAt: "2026-08-08T11:33:30Z",
+  previousRegistryBytesDigest:
+    "0e1b0279eabc5c0dccee52cf498242242acd3c38801056b4a213369bb4b3fc30",
+  supersedes: [
+    {
+      manifestId: TARGET_MANIFEST_ID,
+      candidateId: "CAND-NBA-ACHILLES-2019-005",
+      entryDigest:
+        "d718b475799a1ca3e38a1daeb7c8133ca4c8a93b710d37a315a943d19f4e3d21",
+    },
+    {
+      manifestId: TARGET_MANIFEST_ID,
+      candidateId: "CAND-NBA-ANKLE-2021-002",
+      entryDigest:
+        "0a89a3fef7d984f32fe7b8ef22b983b305f9c74a6f5bb6f83c1963e4fe115e11",
+    },
+    {
+      manifestId: TARGET_MANIFEST_ID,
+      candidateId: "CAND-NBA-ANKLE-2023-008",
+      entryDigest:
+        "cd2cfe1c8e310969f80f2b5379eb34345f113a9e8e43c1cb00f4f09f52481276",
+    },
+  ],
+} as const;
+
 const EXPECTED_SOURCE_BINDING = {
   task5Commit: "e26d24c6288c73df8733f0aaf9e60177c778e965",
   manifestId: TARGET_MANIFEST_ID,
@@ -809,10 +847,13 @@ export function validateCaseAuthoringCoverage(
     manifest.entries.map((entry) => entry.candidateId),
   );
   for (const later of registry.entries.slice(targetIndex + 1)) {
+    const isAuthorizedCorrection =
+      canonicalJson(later) === canonicalJson(AUTHORIZED_CORRECTION_ENTRY);
     for (const reference of later.supersedes) {
       if (
         reference.manifestId === TARGET_MANIFEST_ID &&
-        targetCandidates.has(reference.candidateId)
+        targetCandidates.has(reference.candidateId) &&
+        !isAuthorizedCorrection
       ) {
         issues.push(
           issue(

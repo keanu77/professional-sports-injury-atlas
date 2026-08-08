@@ -5,10 +5,10 @@
   "status": "medical-review",
   "sourceManifestBinding": {
     "candidateId": "CAND-NBA-ANKLE-2023-008",
-    "manifestId": "NBA-SOURCE-2026-08-06-001",
-    "manifestDigest": "8beedf3fcc0c7c498bf08ffb2fbc671759e7a61ed4e04f09afab579b6a86eb4d",
-    "entryDigest": "cd2cfe1c8e310969f80f2b5379eb34345f113a9e8e43c1cb00f4f09f52481276",
-    "sourceReviewDecisionDigest": "cd40d39d8c3463c0bb2cbdb1125a613cf1100d341bb8c6f4d59456462875ad0c",
+    "manifestId": "NBA-SOURCE-2026-08-08-001",
+    "manifestDigest": "4a25692e27115b6ec16818a64dd6e85778360e4f00e2b3f6a288b4ca5f0ed0bc",
+    "entryDigest": "9d80dc156b44ae0d107c1a34f9cc3a2340ba258f4180426190c7e9b56cef9b69",
+    "sourceReviewDecisionDigest": "dd08a891325f384621f61af9dd14084de579a9b5b86ce2cccecff893827d8464",
     "sourcePolicyVersion": "nba-v2"
   },
   "sport": {
@@ -42,7 +42,7 @@
   "classicProposedBy": null,
   "classicExceptionApprovedBy": null,
   "video": {
-    "provider": "nba",
+    "provider": "youtube",
     "contentType": "in-game-injury-event",
     "eventBinding": {
       "status": "verified",
@@ -51,26 +51,26 @@
       "checkedAt": "2026-08-08T02:30:00Z",
       "basis": "PASS — Browser reopened the original event/video and first-party diagnosis pages. The combined visible title, date, event context, and first-party text matched LaMelo Ball, 2023-11-26, Charlotte Hornets vs. Orlando Magic, and nba-regular-season; the diagnosis explicitly supports “Right ankle strain.” No duplicate accepted event identity or canonical video URL was found, and no extra grade, mechanism, surgery, prognosis, rehabilitation, or return-to-play claim was inferred. The diagnosis page is distinct from the event/video page; only the diagnosis page is treated as diagnostic evidence."
     },
-    "canonicalUrl": "https://www.nba.com/watch/video/lamelo-ball-leaves-the-game-with-a-right-leg-injury",
-    "uploaderName": "NBA Organization",
-    "uploaderProvenance": "league",
-    "embedStatus": "external-link-only",
-    "embedCheckedAt": "2026-08-07T11:46:19Z",
-    "durationSeconds": 28,
+    "canonicalUrl": "https://www.youtube.com/watch?v=RDDGpqOvSdg",
+    "uploaderName": "ESPN",
+    "uploaderProvenance": "broadcaster-rightsholder",
+    "embedStatus": "verified",
+    "embedCheckedAt": "2026-08-08T11:16:32Z",
+    "durationSeconds": 19,
     "startSeconds": 0,
-    "endSeconds": 28,
-    "fallbackUrl": "https://www.nba.com/watch/video/lamelo-ball-leaves-the-game-with-a-right-leg-injury",
+    "endSeconds": 19,
+    "fallbackUrl": "https://www.youtube.com/watch?v=RDDGpqOvSdg",
     "sourceProvenanceVerification": {
       "status": "verified",
-      "verifiedBy": "Codex ankle-sprain source researcher",
-      "verifiedAt": "2026-08-07T11:46:19Z",
-      "basis": "NBA.com original-platform Watch page with NBA Organization publisher attribution; the exact-event page was opened and no caption/subtitle control was observable.",
-      "notes": "NBA 原頁播放器未提供可用字幕控制；以同一 canonical URL 作外連 fallback。",
+      "verifiedBy": "Codex embed enrichment auditor",
+      "verifiedAt": "2026-08-08T11:16:32Z",
+      "basis": "PASS — watch metadata matched ESPN and the event date; the privacy-enhanced vertical iframe loaded without autoplay, started after user action, advanced playback and exposed a captions control.",
+      "notes": "直式 Short 由 responsive player 容器呈現；不下載或重製縮圖。",
       "verifiedPolicyVersion": "nba-v2",
-      "reviewedVideoIdentityDigest": "e541e6228b9d383ff00b725810ff5bda5538b299455abbb7fdf7d0967967299b"
+      "reviewedVideoIdentityDigest": "11cdb0328091bac7653344d0d7f73fc1c9243532310b986ff4ab2e17ddbf73c5"
     },
-    "captionStatus": "unavailable",
-    "captionCheckedAt": "2026-08-07T11:46:19Z",
+    "captionStatus": "available",
+    "captionCheckedAt": "2026-08-08T11:16:32Z",
     "publicRightsReview": {
       "status": "not-requested",
       "reviewedBy": null,
@@ -86,14 +86,14 @@
     "segments": [
       {
         "startSeconds": 0,
-        "endSeconds": 28,
-        "observation": "片段呈現 LaMelo Ball 右腳踝事件後停止比賽；僅記錄可見事件序列。"
+        "endSeconds": 19,
+        "observation": "ESPN Short 呈現 LaMelo Ball 在場上事件後由他人協助前往休息室；僅記錄可見事件序列。"
       }
     ]
   },
   "general": {
     "whatHappened": "LaMelo Ball 於 2023-11-26 代表 Charlotte Hornets 對 Orlando Magic 出賽；原始事件頁與診斷來源已分開記錄。",
-    "whatIsVisible": "片段呈現 LaMelo Ball 右腳踝事件後停止比賽；僅記錄可見事件序列。",
+    "whatIsVisible": "ESPN Short 呈現 LaMelo Ball 在場上事件後由他人協助前往休息室；僅記錄可見事件序列。",
     "whatVideoCannotProve": "這段影片不能單獨證明診斷、分級、側別以外的合併傷、影像結果、治療方式、預後或回場日期。",
     "confirmedUpdate": "NBA.com 的具名來源明載診斷：Right ankle strain."
   },
@@ -135,13 +135,13 @@
     {
       "id": "src-nba-ankle-2023-008-video",
       "type": "video-original",
-      "title": "LaMelo Ball leaves the game with a right ankle injury",
-      "publisher": "NBA Organization",
-      "independenceGroup": "nba-organization",
+      "title": "LaMelo Ball was helped to the locker room after suffering an apparent injury",
+      "publisher": "ESPN",
+      "independenceGroup": "espn",
       "originReportId": null,
-      "url": "https://www.nba.com/watch/video/lamelo-ball-leaves-the-game-with-a-right-leg-injury",
+      "url": "https://www.youtube.com/watch?v=RDDGpqOvSdg",
       "publishedAt": "2023-11-26",
-      "accessedAt": "2026-08-07",
+      "accessedAt": "2026-08-08",
       "supports": [
         "general.whatHappened",
         "general.whatIsVisible",
@@ -199,7 +199,7 @@
   },
   "audit": {
     "createdAt": "2026-08-08T02:30:00Z",
-    "updatedAt": "2026-08-08T02:30:00Z",
+    "updatedAt": "2026-08-08T11:33:30Z",
     "sourceRecordId": "CAND-NBA-ANKLE-2023-008"
   }
 }
