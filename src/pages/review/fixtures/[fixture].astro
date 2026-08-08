@@ -23,6 +23,7 @@ import {
   selectReviewFixtureCases,
 } from "../../../data/review-fixtures";
 import { computeCaseContentDigest } from "../../../lib/cases/digest";
+import { computeInjuryOverviewDigest } from "../../../lib/cases/injury-overview-digest";
 import { computeQuarterlyUpdateDigest } from "../../../lib/cases/update-digest";
 import { findInjury, findLeague } from "../../../lib/contracts/taxonomy";
 import { resolveBuildMode } from "../../../lib/governance/build-mode";
@@ -62,11 +63,30 @@ const TITLES: Record<string, string> = {
 const contentDigest = computeCaseContentDigest(record);
 const renderedSetDigest = computeRenderedSetDigest(fixtureCases);
 const updateDigest = computeQuarterlyUpdateDigest(reviewFixtureUpdate);
+const overviewDigest = computeInjuryOverviewDigest(reviewFixtureOverview);
+const fixtureArtifactRecordIds =
+  fixture === "case-detail"
+    ? [record.id]
+    : fixture === "league-listing"
+      ? fixtureCases.map((candidate) => candidate.id)
+      : fixture === "latest-update"
+        ? reviewFixtureUpdate.addedCases.map((entry) => entry.caseId)
+        : [];
+const fixtureArtifactDigest =
+  fixture === "case-detail"
+    ? contentDigest
+    : fixture === "injury-overview"
+      ? overviewDigest
+      : fixture === "latest-update"
+        ? updateDigest
+        : renderedSetDigest;
 ---
 
 <BaseLayout
   title={TITLES[fixture as string] ?? "Fixture（審查專用）"}
   description="Review-only 資料承載 fixture：以明顯虛構資料渲染正式版型元件。"
+  artifactRecordIds={fixtureArtifactRecordIds}
+  artifactDigest={fixtureArtifactDigest}
 >
   <p class="fixture-banner" data-review-only-marker>
     <strong>審查專用（Review-only fixture）</strong>：{REVIEW_FIXTURE_NOTICE}
@@ -261,7 +281,7 @@ const updateDigest = computeQuarterlyUpdateDigest(reviewFixtureUpdate);
           </h2>
           <ul>
             {reviewFixtureUpdate.addedCases.map((entry) => (
-              <li>
+              <li data-update-case-id={entry.caseId}>
                 <code>{entry.caseId}</code>
                 ｜clinical digest：<code>{entry.currentClinicalDigest}</code>
               </li>

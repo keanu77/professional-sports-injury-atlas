@@ -14,7 +14,10 @@ import {
   permittedCasesForMode,
 } from "../../../../lib/cases/pagination";
 import { resolveBuildMode } from "../../../../lib/governance/build-mode";
-import { leaguePageParams } from "../../../../lib/routes/static-paths";
+import {
+  computeRenderedSetDigest,
+  leaguePageParams,
+} from "../../../../lib/routes/static-paths";
 
 export async function getStaticPaths(): Promise<
   Array<{ params: { league: string; page: string } }>
@@ -49,6 +52,8 @@ const nextPath = hasNext
 <BaseLayout
   title={`${leagueLabel} 案例列表 第 ${pageNumber} 頁｜職業運動傷害影片圖鑑`}
   description={`${leagueLabel} 已審查案例列表第 ${pageNumber} 頁。`}
+  artifactRecordIds={pageCases.map((record) => record.id)}
+  artifactDigest={computeRenderedSetDigest(pageCases)}
 >
   <h1>{leagueLabel} 案例列表（第 {pageNumber} 頁）</h1>
   <section data-static-listing>

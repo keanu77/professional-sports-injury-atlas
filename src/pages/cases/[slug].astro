@@ -62,6 +62,8 @@ const renderedSetDigest = computeRenderedSetDigest(permitted);
 <BaseLayout
   title={`${record.athlete.name}｜${injuryLabel}｜職業運動傷害影片圖鑑`}
   description={`${record.athlete.name} 的 ${injuryLabel} 教學案例：可見過程觀察與外部確認診斷。`}
+  artifactRecordIds={[record.id]}
+  artifactDigest={contentDigest}
 >
   <article data-atlas-view="case-detail" data-case-id={record.id}>
     <h1>{record.athlete.name}｜{injuryLabel}</h1>

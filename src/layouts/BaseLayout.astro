@@ -26,15 +26,46 @@ import {
   resolveBuildMode,
   robotsMetaContent,
 } from "../lib/governance/build-mode";
+import {
+  ARTIFACT_IDENTITY_META_NAME,
+  encodeArtifactIdentity,
+} from "../lib/governance/artifact-manifest";
+import { compareCodePoints } from "../lib/contracts/canonical";
 
 interface Props {
   title: string;
   description?: string;
+  artifactRecordIds?: readonly string[];
+  artifactDigest?: string | null;
 }
 
-const { title, description } = Astro.props;
+const {
+  title,
+  description,
+  artifactRecordIds = [],
+  artifactDigest = null,
+} = Astro.props;
 const buildMode = resolveBuildMode(process.env.ATLAS_BUILD_MODE);
 const robotsContent = robotsMetaContent(buildMode);
+const sortedArtifactRecordIds = [...artifactRecordIds].sort(compareCodePoints);
+if (
+  sortedArtifactRecordIds.some(
+    (recordId, index) =>
+      index > 0 && recordId === sortedArtifactRecordIds[index - 1],
+  )
+) {
+  throw new Error("artifact identity record IDs must be unique");
+}
+const artifactIdentity =
+  buildMode === "review"
+    ? encodeArtifactIdentity({
+        kind: "html-page",
+        pageIds: [Astro.url.pathname],
+        recordIds: sortedArtifactRecordIds,
+        digest: artifactDigest,
+        shardIds: [],
+      })
+    : null;
 
 const publicSiteUrl: string | null = governance.publicSiteUrl;
 const canonicalUrl =
@@ -50,6 +81,11 @@ const canonicalUrl =
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {robotsContent !== null && <meta name="robots" content={robotsContent} />}
+    {
+      artifactIdentity !== null && (
+        <meta name={ARTIFACT_IDENTITY_META_NAME} content={artifactIdentity} />
+      )
+    }
     <title>{title}</title>
     {
       description !== undefined && (

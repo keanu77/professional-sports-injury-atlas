@@ -16,6 +16,7 @@ import {
 } from "../../lib/cases/pagination";
 import { resolveBuildMode } from "../../lib/governance/build-mode";
 import {
+  computeRenderedSetDigest,
   leagueListingPages,
   leagueRouteParams,
 } from "../../lib/routes/static-paths";
@@ -45,6 +46,8 @@ const currentPage = listingPages[0];
 <BaseLayout
   title={`${leagueLabel} 案例列表｜職業運動傷害影片圖鑑`}
   description={`${leagueLabel} 的已審查傷害案例列表。`}
+  artifactRecordIds={pageCases.map((record) => record.id)}
+  artifactDigest={computeRenderedSetDigest(pageCases)}
 >
   <h1>{leagueLabel} 案例列表</h1>
   <p>

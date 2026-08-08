@@ -18,7 +18,10 @@ import { INJURIES } from "../data/taxonomy/injuries";
 import { permittedCasesForMode } from "../lib/cases/pagination";
 import { groupCasesByInjury } from "../lib/cases/selectors";
 import { resolveBuildMode } from "../lib/governance/build-mode";
-import { latestUpdateRef } from "../lib/routes/static-paths";
+import {
+  computeRenderedSetDigest,
+  latestUpdateRef,
+} from "../lib/routes/static-paths";
 import {
   professionalCourseLinksSchema,
   rtpCourseSummariesSchema,
@@ -50,6 +53,8 @@ const courseBySlug = new Map(
 <BaseLayout
   title={title}
   description="以公開影片觀察為基礎的職業運動傷害教學圖鑑：三大傷種、雙層筆記與已審查案例。"
+  artifactRecordIds={permitted.map((record) => record.id)}
+  artifactDigest={computeRenderedSetDigest(permitted)}
 >
   <h1>{title}</h1>
   <p>

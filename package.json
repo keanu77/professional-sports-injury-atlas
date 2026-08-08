@@ -37,6 +37,7 @@
     "external:verify": "tsx scripts/verify-external-sources.ts",
     "brand:verify": "tsx scripts/verify-brand-assets.ts",
     "review-set:generate": "tsx scripts/generate-review-set.ts",
+    "private:manifest": "ATLAS_BUILD_MODE=review tsx scripts/private-hosting/generate-private-dist-manifest.ts",
     "verify:review-artifact": "tsx scripts/verify-review-artifact.ts",
     "release:public": "ATLAS_BUILD_MODE=public tsx scripts/release-check.ts && ATLAS_BUILD_MODE=public astro build && ATLAS_BUILD_MODE=public tsx scripts/verify-public-artifact.ts",
     "verify": "npm run plan:verify && npm run format:check && npm run check && npm run content:check && npm run test:coverage && npm run build:review && npm run test:e2e && npm run test:lighthouse && npm run brand:verify && npm run verify:review-artifact"
@@ -56,6 +57,7 @@
     "chrome-launcher": "1.2.1",
     "csv-parse": "7.0.2",
     "lighthouse": "13.4.1",
+    "parse5": "7.3.0",
     "prettier": "3.9.6",
     "prettier-plugin-astro": "0.14.1",
     "tsx": "4.23.8",

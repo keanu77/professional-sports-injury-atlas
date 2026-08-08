@@ -29,6 +29,7 @@ export const REVIEW_SET_BUILD_PATH = "review/review-set.json";
 export const REVIEW_SET_REQUEST_PATH = "/review/review-set.json";
 export const REVIEW_ROBOTS_TXT_SHA256 =
   "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1";
+export const ARTIFACT_IDENTITY_META_NAME = "atlas-artifact-identity-v1";
 
 const sha256Lower = z.string().regex(SHA256_RE);
 const gitCommit = z.string().regex(/^[0-9a-f]{40}$/);
@@ -53,6 +54,83 @@ export const artifactIdentitySchema = z.strictObject({
   shardIds: sortedIdArray,
 });
 export type ArtifactIdentity = z.infer<typeof artifactIdentitySchema>;
+
+export class ArtifactIdentityError extends Error {}
+
+/**
+ * Encodes one identity as canonical JSON wrapped in unpadded base64url. The
+ * resulting token is safe in a quoted HTML meta attribute without entity
+ * decoding and can be required byte-for-byte by the private manifest.
+ */
+export function encodeArtifactIdentity(value: ArtifactIdentity): string {
+  const parsed = artifactIdentitySchema.safeParse(value);
+  if (!parsed.success) {
+    throw new ArtifactIdentityError(
+      parsed.error.issues.map((entry) => entry.message).join("; "),
+    );
+  }
+  for (const values of [
+    parsed.data.pageIds,
+    parsed.data.recordIds,
+    parsed.data.shardIds,
+  ]) {
+    for (let index = 1; index < values.length; index += 1) {
+      if (compareCodePoints(values[index - 1]!, values[index]!) >= 0) {
+        throw new ArtifactIdentityError(
+          "artifact identity IDs must be unique and strictly sorted",
+        );
+      }
+    }
+  }
+  return Buffer.from(canonicalJson(parsed.data), "utf8").toString("base64url");
+}
+
+/** Strict inverse of `encodeArtifactIdentity()`. */
+export function decodeArtifactIdentity(encoded: string): ArtifactIdentity {
+  if (!/^[A-Za-z0-9_-]+$/.test(encoded)) {
+    throw new ArtifactIdentityError(
+      "artifact identity meta must be unpadded base64url",
+    );
+  }
+  const bytes = Buffer.from(encoded, "base64url");
+  if (bytes.toString("base64url") !== encoded) {
+    throw new ArtifactIdentityError(
+      "artifact identity meta is not canonical base64url",
+    );
+  }
+  let text: string;
+  try {
+    text = new TextDecoder("utf-8", { fatal: true }).decode(bytes);
+  } catch {
+    throw new ArtifactIdentityError(
+      "artifact identity meta is not valid UTF-8",
+    );
+  }
+  let value: unknown;
+  try {
+    value = parseStrictJson(text);
+  } catch (error) {
+    throw new ArtifactIdentityError(
+      error instanceof Error ? error.message : String(error),
+    );
+  }
+  if (canonicalJson(value) !== text) {
+    throw new ArtifactIdentityError(
+      "artifact identity meta JSON is not canonical",
+    );
+  }
+  const parsed = artifactIdentitySchema.safeParse(value);
+  if (!parsed.success) {
+    throw new ArtifactIdentityError(
+      parsed.error.issues.map((entry) => entry.message).join("; "),
+    );
+  }
+  // Reuse the encoder's sorted/unique checks and canonical projection.
+  if (encodeArtifactIdentity(parsed.data) !== encoded) {
+    throw new ArtifactIdentityError("artifact identity meta is not canonical");
+  }
+  return parsed.data;
+}
 
 export const artifactFileSchema = z.strictObject({
   buildPath: nonEmpty,

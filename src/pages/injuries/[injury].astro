@@ -13,6 +13,7 @@ import EmptyState from "../../components/atlas/EmptyState.astro";
 import RtpCourseLink from "../../components/cases/RtpCourseLink.astro";
 import InjuryOverviewView from "../../components/injuries/InjuryOverview.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { computeInjuryOverviewDigest } from "../../lib/cases/injury-overview-digest";
 import courseLinksData from "../../data/professional-course-links.v1.json";
 import courseSummariesData from "../../data/generated/rtp-course-summaries.v1.json";
 import { findInjury } from "../../lib/contracts/taxonomy";
@@ -24,6 +25,7 @@ import {
 import { groupCasesByInjury } from "../../lib/cases/selectors";
 import { resolveBuildMode } from "../../lib/governance/build-mode";
 import {
+  computeRenderedSetDigest,
   injuryListingPages,
   injuryRouteParams,
 } from "../../lib/routes/static-paths";
@@ -68,6 +70,10 @@ const courseBySlug = new Map(
 <BaseLayout
   title={`${injuryLabel}｜職業運動傷害影片圖鑑`}
   description={`${injuryLabel} 的教學總覽、已審查案例與課程範圍資訊。`}
+  artifactRecordIds={pageCases.map((record) => record.id)}
+  artifactDigest={overview === null
+    ? computeRenderedSetDigest(injuryCases)
+    : computeInjuryOverviewDigest(overview)}
 >
   <h1>{injuryLabel}</h1>
   <p data-injury-scope>
