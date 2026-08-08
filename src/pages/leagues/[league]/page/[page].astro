@@ -6,6 +6,7 @@
  */
 import { getCollection } from "astro:content";
 import CaseCard from "../../../../components/atlas/CaseCard.astro";
+import ListingPagination from "../../../../components/atlas/ListingPagination.astro";
 import BaseLayout from "../../../../layouts/BaseLayout.astro";
 import { findLeague } from "../../../../lib/contracts/taxonomy";
 import {
@@ -55,46 +56,41 @@ const nextPath = hasNext
   artifactRecordIds={pageCases.map((record) => record.id)}
   artifactDigest={computeRenderedSetDigest(pageCases)}
 >
-  <h1>{leagueLabel} 案例列表（第 {pageNumber} 頁）</h1>
-  <section data-static-listing>
-    <ol class="case-list">
-      {
-        pageCases.map((record) => (
-          <li>
-            <CaseCard
-              record={record}
-              showWorkflowBadge={buildMode === "review"}
-            />
-          </li>
-        ))
-      }
-    </ol>
-    <nav class="listing-pagination" aria-label="案例列表分頁">
-      <a rel="prev" href={previousPath}>上一頁</a>
-      {
-        nextPath !== null && (
-          <a rel="next" href={nextPath}>
-            下一頁
-          </a>
-        )
-      }
-    </nav>
-  </section>
+  <div class="league-page">
+    <h1>{leagueLabel} 案例列表（第 {pageNumber} 頁）</h1>
+    <section data-static-listing>
+      <ol class="case-list">
+        {
+          pageCases.map((record) => (
+            <li>
+              <CaseCard
+                record={record}
+                showWorkflowBadge={buildMode === "review"}
+              />
+            </li>
+          ))
+        }
+      </ol>
+      <ListingPagination
+        currentPage={pageNumber}
+        previousPath={previousPath}
+        nextPath={nextPath}
+      />
+    </section>
+  </div>
 </BaseLayout>
 
 <style>
   .case-list {
-    margin: 0;
+    margin: var(--space-block) 0 0;
     padding: 0;
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(19rem, 100%), 1fr));
+    gap: 2.5rem 1.5rem;
   }
 
-  .listing-pagination {
-    margin-top: 1rem;
-    display: flex;
-    gap: 1rem;
+  .case-list > li {
+    min-width: 0;
   }
 </style>

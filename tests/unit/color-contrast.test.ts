@@ -6,7 +6,7 @@
  * carry information; all SVG text uses the high-contrast ink token.
  */
 
-import { readdirSync, readFileSync } from "node:fs";
+import { readdirSync, readFileSync, statSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 
 interface OklchColor {
@@ -22,6 +22,31 @@ const tokensCss = readFileSync(
   new URL("../../src/styles/tokens.css", import.meta.url),
   "utf8",
 );
+
+describe("editorial typography assets", () => {
+  const globalCss = readFileSync(
+    new URL("../../src/styles/global.css", import.meta.url),
+    "utf8",
+  );
+  const fontNames = [
+    "noto-serif-tc-600.woff2",
+    "noto-serif-tc-700.woff2",
+    "noto-serif-tc-heading-600.woff2",
+    "noto-serif-tc-heading-700.woff2",
+  ];
+
+  it("self-hosts valid sub-250KB WOFF2 files with swap rendering", () => {
+    for (const name of fontNames) {
+      const url = new URL(`../../public/fonts/${name}`, import.meta.url);
+      expect(statSync(url).size, name).toBeLessThan(250_000);
+      expect(readFileSync(url).subarray(0, 4).toString("ascii"), name).toBe(
+        "wOF2",
+      );
+      expect(globalCss).toContain(`/fonts/${name}`);
+    }
+    expect(globalCss.match(/font-display:\s*swap/g)).toHaveLength(4);
+  });
+});
 
 function walkUiStyleSources(directory: URL): URL[] {
   const files: URL[] = [];
@@ -103,6 +128,14 @@ const expectedTokens: Record<string, ThemePair> = {
   "color-danger-border": [
     { lightness: 0.7, chroma: 0.17, hue: 25 },
     { lightness: 0.55, chroma: 0.13, hue: 25 },
+  ],
+  hairline: [
+    { lightness: 0.9, chroma: 0.005, hue: 220 },
+    { lightness: 0.32, chroma: 0.015, hue: 240 },
+  ],
+  "hairline-strong": [
+    { lightness: 0.8, chroma: 0.008, hue: 220 },
+    { lightness: 0.4, chroma: 0.015, hue: 240 },
   ],
 };
 
@@ -276,31 +309,34 @@ describe("governed case cover", () => {
       'import CaseCover from "./CaseCover.astro"',
     );
     expect(videoComponent).toMatch(/<CaseCover\s/);
-    expect(component).toMatch(/<svg[\s\S]*role="img"/);
-    for (const injury of ["acl", "ankle-sprain", "achilles-rupture"]) {
-      expect(component).toContain(`data-cover-illustration="${injury}"`);
-    }
+    expect(component).toMatch(/<Picture\s/);
+    expect(component).toContain("data-cover-illustration={injuryCode}");
+    expect(component).not.toMatch(/<svg\b/i);
   });
 
-  it("uses only the governed brand-primary/accent/metric SVG palette", () => {
-    for (const color of [
-      "--color-brand-primary",
-      "--color-brand-accent",
-      "--color-metric",
-    ]) {
-      expect(component).toContain(`var(${color})`);
-    }
-    expect(component).not.toMatch(/#[0-9a-f]{3,8}\b/i);
-  });
-
-  it("backs the small cover note with an opaque high-contrast surface", () => {
-    expect(component).toMatch(
-      /<rect[\s\S]*?y="195"[\s\S]*?fill="var\(--color-surface-raised\)"[\s\S]*?<text class="cover-note"/,
+  it("uses the local Astro image pipeline without vector drawing primitives", () => {
+    expect(component).toContain('import { Picture } from "astro:assets"');
+    expect(component).toContain("caseImageFor(injuryCode, recordId)");
+    expect(component).toContain('formats={["avif", "webp"]}');
+    expect(component).toContain('fallbackFormat="png"');
+    expect(component).toContain("widths={renditionWidths}");
+    expect(component).not.toContain("image-set(");
+    expect(component).not.toMatch(
+      /<(?:path|rect|text|circle|ellipse|line|polyline|polygon)\b/i,
     );
   });
 
-  it("contains no image, game-frame, thumbnail, or portrait dependency", () => {
+  it("binds every cover to stable responsive case-photo renditions", () => {
+    expect(component).toContain("recordId = idPrefix");
+    expect(component).toContain("data-cover-variant={String(variant)}");
+    expect(component).toContain("[360, 560, 768, 960]");
+    expect(component).toContain("[480, 768, 960, 1536]");
+    expect(component).toContain('loading="lazy"');
+  });
+
+  it("contains no authored HTML image tag, game frame, remote thumbnail, or portrait dependency", () => {
     expect(component).not.toMatch(/<image\b|<img\b|https?:\/\//i);
-    expect(component).toContain("非診斷影像 · 非特定球員身體");
+    expect(component).toContain("匿名運動員面孔不可見");
+    expect(component).toContain("不代表任何特定球員或真實受傷事件");
   });
 });

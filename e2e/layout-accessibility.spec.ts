@@ -184,6 +184,86 @@ test.describe("layout accessibility", () => {
     expect(overflow.main).toBeLessThanOrEqual(1);
   });
 
+  test("keeps all three redesigned templates stable across target breakpoints", async ({
+    page,
+  }) => {
+    const targets = [
+      { path: "/", hero: "band" },
+      { path: "/injuries/ankle-sprain/", hero: "band" },
+      {
+        path: "/cases/anthony-edwards-ankle-sprain-2023/",
+        hero: "case",
+      },
+    ] as const;
+
+    for (const width of [320, 768, 1280, 1536]) {
+      await page.setViewportSize({ width, height: 900 });
+      for (const target of targets) {
+        await page.goto(target.path);
+        const geometry = await page.evaluate(() => {
+          const root = document.documentElement;
+          const main = document.querySelector("main");
+          return {
+            documentOverflow: root.scrollWidth - root.clientWidth,
+            mainOverflow:
+              main === null ? Number.NaN : main.scrollWidth - main.clientWidth,
+          };
+        });
+        expect(
+          geometry.documentOverflow,
+          `${width}px ${target.path}`,
+        ).toBeLessThanOrEqual(1);
+        // The home hero is intentionally full-bleed beyond the 72rem main
+        // column on wide screens; the document itself must still never scroll.
+        if (!(target.path === "/" && width > 1152)) {
+          expect(
+            geometry.mainOverflow,
+            `${width}px ${target.path}`,
+          ).toBeLessThanOrEqual(1);
+        }
+
+        if (target.hero === "band") {
+          const picture = page.locator(".editorial-band-picture");
+          const copy = page.locator(".editorial-band-copy");
+          const stage = page.locator(".editorial-band-stage");
+          await expect(picture).toBeVisible();
+          await expect(copy).toBeVisible();
+          const [pictureBox, copyBox, stageBox] = await Promise.all([
+            picture.boundingBox(),
+            copy.boundingBox(),
+            stage.boundingBox(),
+          ]);
+          expect(pictureBox).not.toBeNull();
+          expect(copyBox).not.toBeNull();
+          expect(stageBox).not.toBeNull();
+          if (width < 768) {
+            expect(pictureBox!.y + pictureBox!.height).toBeLessThanOrEqual(
+              copyBox!.y + 1,
+            );
+            await expect(page.locator(".editorial-band-scrim")).toHaveCSS(
+              "display",
+              "none",
+            );
+          } else {
+            expect(copyBox!.y).toBeGreaterThanOrEqual(stageBox!.y);
+            expect(copyBox!.y + copyBox!.height).toBeLessThanOrEqual(
+              stageBox!.y + stageBox!.height + 1,
+            );
+          }
+        } else {
+          const titleBox = await page.locator("h1").boundingBox();
+          const figureBox = await page
+            .locator(".editorial-case-figure")
+            .boundingBox();
+          expect(titleBox).not.toBeNull();
+          expect(figureBox).not.toBeNull();
+          expect(figureBox!.y).toBeGreaterThan(titleBox!.y + titleBox!.height);
+          expect(figureBox!.width).toBeLessThanOrEqual(768);
+        }
+      }
+    }
+  });
+
   test("honors prefers-reduced-motion", async ({ page }) => {
     await page.emulateMedia({ reducedMotion: "no-preference" });
     await page.goto("/");

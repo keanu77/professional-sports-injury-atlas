@@ -1,0 +1,323 @@
+---
+/**
+ * Three-level editorial hero system. Home and injury variants use responsive
+ * Astro Picture output; the case variant uses the same governed case-photo
+ * registry as cards/facades while keeping the headline-first reading order.
+ */
+import { Picture } from "astro:assets";
+import {
+  caseImageFor,
+  homeEditorialImage,
+  overviewImageFor,
+} from "../../lib/ui/editorial-images";
+
+interface Props {
+  variant: "home" | "injury" | "case";
+  injuryCode?: string;
+  injuryLabel?: string;
+  recordId?: string;
+  imageAlt: string;
+}
+
+const { variant, injuryCode, injuryLabel, recordId, imageAlt } = Astro.props;
+
+if (variant !== "home" && injuryCode === undefined) {
+  throw new Error(`${variant} editorial hero requires an injuryCode`);
+}
+if (
+  variant === "case" &&
+  (injuryLabel === undefined || recordId === undefined)
+) {
+  throw new Error("case editorial hero requires injuryLabel and recordId");
+}
+
+const bandImage =
+  variant === "home"
+    ? homeEditorialImage
+    : variant === "injury"
+      ? overviewImageFor(injuryCode!)
+      : null;
+
+const caseSelection =
+  variant === "case" ? caseImageFor(injuryCode!, recordId!) : null;
+const casePhoto = caseSelection?.image ?? null;
+---
+
+{
+  variant === "case" ? (
+    <header
+      class="editorial-case-header"
+      data-editorial-hero="case"
+      data-injury-theme={injuryCode}
+    >
+      <div class="editorial-case-eyebrow eyebrow">
+        <slot name="eyebrow" />
+      </div>
+      <div class="editorial-case-title">
+        <slot name="title" />
+      </div>
+      <div class="editorial-case-meta meta-row">
+        <slot name="meta" />
+      </div>
+      <figure
+        class="editorial-case-figure"
+        data-editorial-case-cover={recordId}
+        data-cover-variant={String(caseSelection!.variant)}
+      >
+        <div class="editorial-case-photo">
+          <Picture
+            src={casePhoto!}
+            formats={["avif", "webp"]}
+            fallbackFormat="png"
+            widths={[480, 768, 960, 1536]}
+            sizes="(min-width: 48rem) 48rem, calc(100vw - 2rem)"
+            quality={60}
+            alt={imageAlt}
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+            class="editorial-case-image"
+            pictureAttributes={{ class: "editorial-case-picture" }}
+          />
+        </div>
+        <figcaption>
+          {injuryLabel}原創 AI
+          生成攝影意象，非球員實際影像；不代表任何特定球員或真實受傷事件。
+        </figcaption>
+      </figure>
+    </header>
+  ) : (
+    <section
+      class:list={[
+        "editorial-band",
+        `editorial-band-${variant}`,
+        { "full-bleed": variant === "home" },
+      ]}
+      data-editorial-hero={variant}
+      data-injury-theme={injuryCode}
+      aria-label={
+        variant === "home" ? "圖鑑導言" : `${injuryLabel ?? "傷種"}導言`
+      }
+    >
+      <div class="editorial-band-inner">
+        <div class="editorial-band-stage">
+          <Picture
+            src={bandImage!}
+            formats={["avif", "webp"]}
+            fallbackFormat="png"
+            widths={[480, 720, 768, 840, 960, 1280, 1600, 2400]}
+            sizes={
+              variant === "home"
+                ? "(min-width: 72rem) 72rem, 100vw"
+                : "(min-width: 72rem) 72rem, calc(100vw - 2rem)"
+            }
+            quality={60}
+            alt={imageAlt}
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+            class="editorial-band-image"
+            pictureAttributes={{ class: "editorial-band-picture" }}
+          />
+          <div class="editorial-band-scrim" aria-hidden="true" />
+          <div class="editorial-band-copy">
+            <div class="editorial-band-eyebrow eyebrow">
+              <slot name="eyebrow" />
+            </div>
+            <div class="editorial-band-title">
+              <slot name="title" />
+            </div>
+            <div class="editorial-band-meta meta-row">
+              <slot name="meta" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .full-bleed {
+    width: 100vw;
+    margin-inline: calc(50% - 50vw);
+  }
+
+  .editorial-band {
+    background: var(--color-surface-muted);
+  }
+
+  .editorial-band-inner {
+    max-width: 72rem;
+    margin-inline: auto;
+  }
+
+  .editorial-band-stage {
+    position: relative;
+    overflow: hidden;
+    min-height: clamp(200px, 24vw, 300px);
+  }
+
+  .editorial-band-home .editorial-band-stage {
+    min-height: clamp(260px, 32vw, 400px);
+  }
+
+  .editorial-band-injury {
+    border-block-end: 2px solid var(--injury-color);
+  }
+
+  .editorial-band-picture,
+  .editorial-band-scrim {
+    position: absolute;
+    inset: 0;
+  }
+
+  .editorial-band :global(.editorial-band-image) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .editorial-band-scrim {
+    background: linear-gradient(
+      90deg,
+      var(--scrim) 0%,
+      var(--scrim) 50%,
+      var(--scrim-fade) 75%
+    );
+    pointer-events: none;
+  }
+
+  .editorial-band-copy {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: min(52%, 39rem);
+    min-height: inherit;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    color: var(--on-scrim);
+  }
+
+  .editorial-band-eyebrow,
+  .editorial-band-meta {
+    color: var(--on-scrim);
+  }
+
+  .editorial-band-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .editorial-band-eyebrow::before {
+    width: 2rem;
+    height: 2px;
+    flex: 0 0 auto;
+    background: var(--injury-color, var(--color-brand-accent));
+    content: "";
+  }
+
+  .editorial-band-title :global(h1) {
+    margin: 0.45rem 0 0.65rem;
+    color: var(--on-scrim);
+    font-size: var(--text-display);
+    line-height: 1.15;
+  }
+
+  .editorial-band-meta :global(*) {
+    margin: 0;
+  }
+
+  .editorial-case-header {
+    margin-block-end: var(--space-block);
+  }
+
+  .editorial-case-eyebrow {
+    display: inline-flex;
+    gap: 0.5em;
+    margin-block-end: 0.5rem;
+    text-transform: none;
+  }
+
+  .editorial-case-eyebrow :global(.injury-name) {
+    border-block-end: 2px solid var(--injury-color);
+  }
+
+  .editorial-case-title :global(h1) {
+    max-width: 52rem;
+    margin: 0;
+  }
+
+  .editorial-case-meta :global(*) {
+    margin: 0.625rem 0 0;
+  }
+
+  .editorial-case-figure {
+    width: min(100%, 48rem);
+    margin: 1.25rem 0 0;
+  }
+
+  .editorial-case-photo {
+    overflow: hidden;
+    aspect-ratio: 5 / 2;
+    background-color: var(--color-surface-muted);
+    border-block-end: 2px solid var(--injury-color);
+  }
+
+  .editorial-case-photo :global(picture),
+  .editorial-case-photo :global(img) {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .editorial-case-photo :global(img) {
+    object-fit: cover;
+  }
+
+  .editorial-case-figure figcaption {
+    margin-block-start: 0.45rem;
+    color: var(--color-ink-muted);
+    font: 400 var(--text-meta) / 1.5 var(--font-meta);
+  }
+
+  @media (max-width: 47.999rem) {
+    .editorial-band-stage,
+    .editorial-band-home .editorial-band-stage {
+      min-height: 0;
+    }
+
+    .editorial-band-picture {
+      position: relative;
+      display: block;
+      aspect-ratio: 21 / 9;
+    }
+
+    .editorial-band-scrim {
+      display: none;
+    }
+
+    .editorial-band-copy {
+      width: 100%;
+      min-height: 0;
+      padding: 1.25rem 1rem 1.5rem;
+      color: var(--color-ink);
+    }
+
+    .editorial-band-eyebrow,
+    .editorial-band-meta {
+      color: var(--color-ink-muted);
+    }
+
+    .editorial-band-title :global(h1) {
+      color: var(--color-ink);
+    }
+
+    .editorial-band-injury :global(.editorial-band-image) {
+      object-position: 72% center;
+    }
+  }
+</style>

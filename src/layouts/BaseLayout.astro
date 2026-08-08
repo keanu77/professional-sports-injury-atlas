@@ -8,12 +8,13 @@
  * before first paint. Canonical metadata is emitted only when governance
  * records an authorized public site URL (currently none). Review builds
  * emit no sitemap, analytics, third-party iframe, or external preconnect;
- * fonts load only from the pinned local @fontsource packages.
+ * fonts load only from local static assets and pinned @fontsource packages.
  */
 import "@fontsource/barlow-condensed/latin-600.css";
-import "@fontsource/fraunces/latin-600.css";
+import "@fontsource/fraunces/latin-700.css";
 import "@fontsource/inter/latin-400.css";
 import "@fontsource/inter/latin-600.css";
+import { getImage } from "astro:assets";
 import "../styles/tokens.css";
 import "../styles/global.css";
 import "../styles/layout.css";
@@ -37,6 +38,9 @@ interface Props {
   description?: string;
   artifactRecordIds?: readonly string[];
   artifactDigest?: string | null;
+  heroImage?: ImageMetadata;
+  heroImageMode?: "band" | "case";
+  heroImageSizes?: string;
 }
 
 const {
@@ -44,6 +48,9 @@ const {
   description,
   artifactRecordIds = [],
   artifactDigest = null,
+  heroImage,
+  heroImageMode = "band",
+  heroImageSizes = "(min-width: 72rem) 72rem, 100vw",
 } = Astro.props;
 const buildMode = resolveBuildMode(process.env.ATLAS_BUILD_MODE);
 const robotsContent = robotsMetaContent(buildMode);
@@ -73,6 +80,25 @@ const canonicalUrl =
   governance.indexingAuthorization.status === "authorized"
     ? new URL(Astro.url.pathname, publicSiteUrl).href
     : null;
+
+const bandPreloadWidths = [480, 720, 768, 840, 960, 1280, 1600, 2400];
+const casePreloadWidths = [480, 768, 960, 1536];
+const bandPreloads =
+  heroImage === undefined || heroImageMode !== "band"
+    ? []
+    : await Promise.all(
+        bandPreloadWidths.map((width) =>
+          getImage({ src: heroImage, width, format: "avif", quality: 60 }),
+        ),
+      );
+const casePreloads =
+  heroImage === undefined || heroImageMode !== "case"
+    ? []
+    : await Promise.all(
+        casePreloadWidths.map((width) =>
+          getImage({ src: heroImage, width, format: "avif", quality: 60 }),
+        ),
+      );
 ---
 
 <!doctype html>
@@ -93,6 +119,42 @@ const canonicalUrl =
       )
     }
     {canonicalUrl !== null && <link rel="canonical" href={canonicalUrl} />}
+    {
+      bandPreloads.length > 0 && (
+        <link
+          rel="preload"
+          as="image"
+          type="image/avif"
+          href={bandPreloads.at(-1)!.src}
+          imagesrcset={bandPreloads
+            .map(
+              (rendition, index) =>
+                `${rendition.src} ${bandPreloadWidths[index]}w`,
+            )
+            .join(", ")}
+          imagesizes={heroImageSizes}
+          fetchpriority="high"
+        />
+      )
+    }
+    {
+      casePreloads.length > 0 && (
+        <link
+          rel="preload"
+          as="image"
+          type="image/avif"
+          href={casePreloads.at(-1)!.src}
+          imagesrcset={casePreloads
+            .map(
+              (rendition, index) =>
+                `${rendition.src} ${casePreloadWidths[index]}w`,
+            )
+            .join(", ")}
+          imagesizes={heroImageSizes}
+          fetchpriority="high"
+        />
+      )
+    }
     <script is:inline>
       (() => {
         const root = document.documentElement;
@@ -119,8 +181,9 @@ const canonicalUrl =
   </head>
   <body>
     <a class="skip-link" href="#main-content">跳至主要內容</a>
-    <SiteHeader />
     <ReviewBanner buildMode={buildMode} />
+    <div class="header-sentinel" data-header-sentinel aria-hidden="true"></div>
+    <SiteHeader />
     <main id="main-content" tabindex="-1">
       <slot />
     </main>

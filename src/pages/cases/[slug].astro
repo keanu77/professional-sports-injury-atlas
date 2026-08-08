@@ -10,6 +10,7 @@
  */
 import { getCollection } from "astro:content";
 import CaseCard from "../../components/atlas/CaseCard.astro";
+import EditorialHero from "../../components/atlas/EditorialHero.astro";
 import CaseTimeline from "../../components/cases/CaseTimeline.astro";
 import CaseVideo from "../../components/cases/CaseVideo.astro";
 import LayeredNotes from "../../components/cases/LayeredNotes.astro";
@@ -28,6 +29,7 @@ import {
   computeRenderedSetDigest,
   confirmationStatusLabel,
 } from "../../lib/routes/static-paths";
+import { caseImageFor } from "../../lib/ui/editorial-images";
 import { parseYouTubeVideoId } from "../../lib/video/youtube";
 
 export async function getStaticPaths(): Promise<
@@ -64,15 +66,36 @@ const renderedSetDigest = computeRenderedSetDigest(permitted);
   description={`${record.athlete.name} 的 ${injuryLabel} 教學案例：可見過程觀察與外部確認診斷。`}
   artifactRecordIds={[record.id]}
   artifactDigest={contentDigest}
+  heroImage={caseImageFor(record.injury.code, record.id).image}
+  heroImageMode="case"
+  heroImageSizes="(min-width: 48rem) 48rem, calc(100vw - 2rem)"
 >
-  <article data-atlas-view="case-detail" data-case-id={record.id}>
-    <h1>{record.athlete.name}｜{injuryLabel}</h1>
-    <p class="case-facts">
-      {leagueLabel}｜{record.season} 球季｜{record.eventDate}｜
-      {record.teamAtEvent.name} 對 {record.opponent.name}
-    </p>
+  <article
+    data-atlas-view="case-detail"
+    data-case-id={record.id}
+    data-injury-theme={record.injury.code}
+  >
+    <EditorialHero
+      variant="case"
+      injuryCode={record.injury.code}
+      injuryLabel={injuryLabel}
+      recordId={record.id}
+      imageAlt={`${injuryLabel}匿名運動員運動醫學攝影意象；面孔不可見，不代表${record.athlete.name}或任何特定球員，也不是實際受傷畫面。`}
+    >
+      <span slot="eyebrow">
+        <span class="injury-name">{injuryLabel}</span><span>·</span><span
+          >{leagueLabel}</span
+        >
+      </span>
+      <h1 slot="title">{record.athlete.name}｜{injuryLabel}</h1>
+      <p slot="meta" class="case-facts">
+        {leagueLabel}｜{record.season} 球季｜{record.eventDate}｜
+        {record.teamAtEvent.name} 對 {record.opponent.name}
+      </p>
+    </EditorialHero>
+
     <p
-      class="case-confirmation"
+      class="case-confirmation meta-row"
       data-confirmation-status={record.injury.confirmationStatus}
     >
       診斷確認狀態（外部來源）：
@@ -83,72 +106,81 @@ const renderedSetDigest = computeRenderedSetDigest(permitted);
     </p>
     {
       record.isClassic && (
-        <p class="case-classic" data-classic-label>
+        <p class="case-classic meta-row" data-classic-label>
           <strong>{CLASSIC_CASE_LABEL}</strong>
           {record.classicReason !== null && <>：{record.classicReason}</>}
         </p>
       )
     }
     {buildMode === "review" && <ReviewBadge record={record} />}
-    <p class="mechanism-tags">
+    <p class="mechanism-tags meta-row">
       可見機轉標籤（觀察分類，非診斷）：{
         record.observedMechanismTags.join("、")
       }
     </p>
 
-    <div class="case-detail-grid">
-      <div class="case-video-column">
-        <CaseVideo
-          scopeId={record.slug}
-          displayMode={buildMode}
-          sourceTitle={`${record.athlete.name} 案例影片（原始平台來源）`}
-          injuryCode={record.injury.code}
-          injuryLabel={injuryLabel}
-          video={{
-            provider: record.video.provider,
-            canonicalUrl: record.video.canonicalUrl,
-            uploaderName: record.video.uploaderName,
-            durationSeconds: record.video.durationSeconds,
-            embedStatus: record.video.embedStatus,
-            captionStatus: record.video.captionStatus,
-          }}
-        />
-      </div>
-      <div class="case-notes-column">
-        <LayeredNotes
-          scopeId={record.slug}
-          general={record.general}
-          professional={record.professional}
-        >
-          {
-            hasYouTubeTimeline ? (
-              <CaseTimeline
-                scopeId={record.slug}
-                canonicalUrl={record.video.canonicalUrl}
-                segments={record.video.segments}
-              />
-            ) : (
-              record.video.segments.length > 0 && (
-                <section class="segment-observations" aria-label="影片段落觀察">
-                  <h3>影片段落觀察</h3>
-                  <ol>
-                    {record.video.segments.map((segment) => (
-                      <li>
-                        {segment.startSeconds}–{segment.endSeconds} 秒：
-                        {segment.observation}
-                      </li>
-                    ))}
-                  </ol>
-                </section>
+    <section aria-labelledby="case-analysis-heading">
+      <h2 class="section-title" id="case-analysis-heading">
+        案例影片與雙層筆記
+      </h2>
+      <div class="case-detail-grid">
+        <div class="case-video-column">
+          <CaseVideo
+            scopeId={record.slug}
+            recordId={record.id}
+            displayMode={buildMode}
+            sourceTitle={`${record.athlete.name} 案例影片（原始平台來源）`}
+            injuryCode={record.injury.code}
+            injuryLabel={injuryLabel}
+            video={{
+              provider: record.video.provider,
+              canonicalUrl: record.video.canonicalUrl,
+              uploaderName: record.video.uploaderName,
+              durationSeconds: record.video.durationSeconds,
+              embedStatus: record.video.embedStatus,
+              captionStatus: record.video.captionStatus,
+            }}
+          />
+        </div>
+        <div class="case-notes-column">
+          <LayeredNotes
+            scopeId={record.slug}
+            general={record.general}
+            professional={record.professional}
+          >
+            {
+              hasYouTubeTimeline ? (
+                <CaseTimeline
+                  scopeId={record.slug}
+                  canonicalUrl={record.video.canonicalUrl}
+                  segments={record.video.segments}
+                />
+              ) : (
+                record.video.segments.length > 0 && (
+                  <section
+                    class="segment-observations"
+                    aria-label="影片段落觀察"
+                  >
+                    <h3>影片段落觀察</h3>
+                    <ol>
+                      {record.video.segments.map((segment) => (
+                        <li>
+                          {segment.startSeconds}–{segment.endSeconds} 秒：
+                          {segment.observation}
+                        </li>
+                      ))}
+                    </ol>
+                  </section>
+                )
               )
-            )
-          }
-        </LayeredNotes>
+            }
+          </LayeredNotes>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <section aria-labelledby="sources-heading">
-      <h2 id="sources-heading">來源與證據</h2>
+    <section class="case-section" aria-labelledby="sources-heading">
+      <h2 class="section-title" id="sources-heading">來源與證據</h2>
       <ul class="source-list">
         {
           record.sources.map((source) => (
@@ -165,8 +197,14 @@ const renderedSetDigest = computeRenderedSetDigest(permitted);
 
     {
       buildMode === "review" && (
-        <section aria-labelledby="digest-heading" data-review-digests>
-          <h2 id="digest-heading">審查識別與 digest</h2>
+        <section
+          class="case-section"
+          aria-labelledby="digest-heading"
+          data-review-digests
+        >
+          <h2 class="section-title" id="digest-heading">
+            審查識別與 digest
+          </h2>
           <p>
             記錄 ID：<code data-record-id>{record.id}</code>
           </p>
@@ -192,8 +230,10 @@ const renderedSetDigest = computeRenderedSetDigest(permitted);
       )
     }
 
-    <section aria-labelledby="related-heading">
-      <h2 id="related-heading">其他 {injuryLabel} 案例（最多 3 筆）</h2>
+    <section class="case-section" aria-labelledby="related-heading">
+      <h2 class="section-title" id="related-heading">
+        其他 {injuryLabel} 案例（最多 3 筆）
+      </h2>
       {
         related.length === 0 ? (
           <p>目前沒有其他已審查的 {injuryLabel} 案例。</p>
@@ -219,22 +259,51 @@ const renderedSetDigest = computeRenderedSetDigest(permitted);
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: 1.5rem;
-    margin: 1.5rem 0;
+    margin: var(--space-block) 0 0;
   }
 
-  @media (min-width: 60rem) {
+  @media (min-width: 64rem) {
     .case-detail-grid {
       grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
     }
   }
 
+  .case-notes-column {
+    max-width: 42rem;
+  }
+
+  .case-confirmation {
+    display: inline-block;
+    margin: 0.75rem 0 0;
+    border: 1px solid var(--hairline);
+    border-radius: 2px;
+    padding: 2px 10px;
+  }
+
+  .case-confirmation[data-confirmation-status="confirmed"] {
+    border-inline-start: 3px solid var(--color-brand-primary);
+  }
+
+  .case-classic {
+    border-inline-start: 3px solid var(--color-metric);
+    padding-inline-start: 0.75rem;
+  }
+
+  .mechanism-tags {
+    margin-block-start: 1rem;
+  }
+
+  .case-section {
+    margin-block-start: var(--space-section);
+  }
+
   .case-list {
-    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(19rem, 100%), 1fr));
+    gap: 2.5rem 1.5rem;
+    margin: var(--space-block) 0 0;
     padding: 0;
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
   }
 
   .source-list li {
@@ -253,8 +322,8 @@ const renderedSetDigest = computeRenderedSetDigest(permitted);
     min-height: 44px;
     width: min(100%, 36rem);
     padding: 0.375rem 0.5rem;
-    border: 1px solid var(--color-brand-primary);
-    border-radius: 6px;
+    border: 1px solid var(--hairline-strong);
+    border-radius: 0;
     background: var(--color-surface-raised);
     color: var(--color-ink);
     font-family: ui-monospace, monospace;

@@ -1,4 +1,11 @@
-import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { createHash } from "node:crypto";
+import {
+  mkdirSync,
+  mkdtempSync,
+  readFileSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -18,10 +25,96 @@ function makeRoot(): string {
   return root;
 }
 
-function writeInto(root: string, relPath: string, content: string): void {
+function writeInto(
+  root: string,
+  relPath: string,
+  content: string | Uint8Array,
+): void {
   const fullPath = join(root, relPath);
   mkdirSync(dirname(fullPath), { recursive: true });
   writeFileSync(fullPath, content);
+}
+
+function fakePng(width: number, height: number, marker: number): Buffer {
+  const bytes = Buffer.alloc(33);
+  Buffer.from("89504e470d0a1a0a", "hex").copy(bytes, 0);
+  bytes.writeUInt32BE(13, 8);
+  bytes.write("IHDR", 12, "ascii");
+  bytes.writeUInt32BE(width, 16);
+  bytes.writeUInt32BE(height, 20);
+  bytes[24] = 8;
+  bytes[25] = 2;
+  bytes[32] = marker;
+  return bytes;
+}
+
+function writeEditorialFixture(root: string): Record<string, unknown> {
+  const promptNames = ["home", "acl", "ankle-sprain", "achilles-rupture"];
+  for (const promptName of promptNames) {
+    writeInto(
+      root,
+      `src/assets/heroes/provenance/${promptName}.md`,
+      "Exact prompt: anonymous athlete, face not visible; no logos; no real event.\n",
+    );
+  }
+
+  const assets: Array<Record<string, unknown>> = [];
+  let marker = 1;
+  const add = (
+    path: string,
+    role: string,
+    injuryTheme: string | null,
+    width: number,
+    height: number,
+  ): void => {
+    const bytes = fakePng(width, height, marker);
+    marker += 1;
+    writeInto(root, path, bytes);
+    assets.push({
+      path,
+      role,
+      injuryTheme,
+      promptRecord: `src/assets/heroes/provenance/${injuryTheme ?? "home"}.md`,
+      width,
+      height,
+      sha256: createHash("sha256").update(bytes).digest("hex"),
+    });
+  };
+
+  add("src/assets/heroes/home-atlas.png", "home", null, 2400, 900);
+  for (const injury of ["acl", "ankle-sprain", "achilles-rupture"]) {
+    add(
+      `src/assets/heroes/${injury}-overview.png`,
+      "injury-overview",
+      injury,
+      2400,
+      720,
+    );
+    for (let variant = 1; variant <= 4; variant += 1) {
+      add(
+        `src/assets/heroes/${injury}-case-0${variant}.png`,
+        "case-cover",
+        injury,
+        2400,
+        960,
+      );
+    }
+  }
+
+  const manifest = {
+    schemaVersion: 1,
+    generator: "OpenAI built-in imagegen",
+    generationDate: "2026-08-09",
+    originality:
+      "AI-generated original editorial photography; no source/broadcast photographs",
+    assets,
+  };
+  writeInto(
+    root,
+    "src/assets/heroes/provenance.json",
+    `${JSON.stringify(manifest)}\n`,
+  );
+  return manifest;
 }
 
 afterEach(() => {
@@ -131,6 +224,42 @@ describe("brand-asset scan", () => {
     expect(
       observed.filter((code) => code === "brand-endorsement-claim").length,
     ).toBeGreaterThanOrEqual(2);
+  });
+
+  it("accepts only an exact hash-bound editorial inventory", () => {
+    const root = makeRoot();
+    writeEditorialFixture(root);
+    expect(scanBrandAssets(root)).toEqual([]);
+  });
+
+  it("fails closed when a provenance-listed raster is replaced", () => {
+    const root = makeRoot();
+    writeEditorialFixture(root);
+    const target = join(root, "src/assets/heroes/acl-case-01.png");
+    const tampered = readFileSync(target);
+    tampered[tampered.length - 1]! ^= 1;
+    writeFileSync(target, tampered);
+
+    const observed = scanBrandAssets(root).map((entry) => entry.code);
+    expect(observed).toContain("brand-editorial-provenance");
+    expect(observed).toContain("brand-image-asset");
+  });
+
+  it("rejects an incomplete editorial inventory", () => {
+    const root = makeRoot();
+    const manifest = writeEditorialFixture(root) as {
+      assets: Array<Record<string, unknown>>;
+    };
+    manifest.assets.pop();
+    writeInto(
+      root,
+      "src/assets/heroes/provenance.json",
+      `${JSON.stringify(manifest)}\n`,
+    );
+
+    expect(scanBrandAssets(root).map((entry) => entry.code)).toContain(
+      "brand-editorial-provenance",
+    );
   });
 });
 

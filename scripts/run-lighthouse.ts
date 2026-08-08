@@ -2,8 +2,8 @@
  * Local Lighthouse gate. Starts `astro preview` on 127.0.0.1, launches the
  * Playwright Chromium executable through chrome-launcher, asserts each
  * fixture/atlas route's page identity (so a fallback or 404 can never pass),
- * runs mobile Lighthouse against the home page, the three injury routes and
- * the two data-bearing fixture routes, writes
+ * runs mobile Lighthouse against the home page, the three injury routes, one
+ * real governed case route and the quarterly-update fixture, writes
  * `artifacts/lighthouse-review.json`, and exits nonzero when any
  * Accessibility score drops below 0.95 or any LCP exceeds 2500 ms. This is a
  * supplement to keyboard/screen-reader/manual medical review, never a
@@ -39,7 +39,7 @@ function routeTargets(): RouteTarget[] {
       identityMarker: `>${injury.labelZh}</h1>`,
     })),
     {
-      path: "/review/fixtures/case-detail/",
+      path: "/cases/anthony-edwards-ankle-sprain-2023/",
       identityMarker: 'data-atlas-view="case-detail"',
     },
     {

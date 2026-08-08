@@ -7,6 +7,7 @@
  * ever renders here.
  */
 import { getCollection } from "astro:content";
+import EditorialHero from "../components/atlas/EditorialHero.astro";
 import InjuryCard from "../components/atlas/InjuryCard.astro";
 import EmptyState from "../components/atlas/EmptyState.astro";
 import RtpCourseLink from "../components/cases/RtpCourseLink.astro";
@@ -22,6 +23,7 @@ import {
   computeRenderedSetDigest,
   latestUpdateRef,
 } from "../lib/routes/static-paths";
+import { homeEditorialImage } from "../lib/ui/editorial-images";
 import {
   professionalCourseLinksSchema,
   rtpCourseSummariesSchema,
@@ -55,94 +57,246 @@ const courseBySlug = new Map(
   description="以公開影片觀察為基礎的職業運動傷害教學圖鑑：三大傷種、雙層筆記與已審查案例。"
   artifactRecordIds={permitted.map((record) => record.id)}
   artifactDigest={computeRenderedSetDigest(permitted)}
+  heroImage={homeEditorialImage}
+  heroImageSizes="(min-width: 72rem) 72rem, 100vw"
 >
-  <h1>{title}</h1>
-  <p>
+  <EditorialHero
+    variant="home"
+    imageAlt="匿名運動員的膝、踝與跟腱運動醫學攝影意象；面孔不可見，不代表任何特定球員或真實受傷事件。"
+  >
+    <span slot="eyebrow">職業運動傷害教學圖鑑</span>
+    <h1 slot="title">{title}</h1>
+    <p slot="meta">
+      {permitted.length} 筆已審查案例｜{INJURIES.length} 大傷種｜全部經醫療核准
+    </p>
+  </EditorialHero>
+
+  <p class="home-intro">
     本站以公開比賽影片的觀察為基礎，整理職業運動常見傷害的教學案例。畫面只能
     呈現可見的受傷過程，不能證明診斷；所有診斷資訊都來自外部具名來源。
   </p>
 
-  <section aria-labelledby="injury-atlas-heading">
-    <h2 id="injury-atlas-heading">三大傷種圖鑑</h2>
-    <p data-total-reviewed-count>
-      目前全站共有 {permitted.length} 筆已審查顯示案例（{permitted.length}
-      reviewed cases）。
-    </p>
-    <div class="card-grid">
-      {
-        INJURIES.map((injury) => (
-          <InjuryCard
-            injuryCode={injury.code}
-            labelZh={injury.labelZh}
-            reviewedCaseCount={grouped.get(injury.code)?.length ?? 0}
-          />
-        ))
-      }
-    </div>
-  </section>
-
-  <section aria-labelledby="latest-update-heading">
-    <h2 id="latest-update-heading">最新季度更新</h2>
-    {
-      latestUpdate === null ? (
-        <EmptyState
-          title="尚無季度更新"
-          description="第一個季度更新完成審查後，會在此提供更新連結與變更清單。"
-        />
-      ) : (
-        <p>
-          <a data-latest-update-link href={latestUpdate.path}>
-            最新季度更新：{latestUpdate.id}
-          </a>
+  <div class="home-grid">
+    <div class="home-primary">
+      <section
+        class="home-injury-section"
+        aria-labelledby="injury-atlas-heading"
+      >
+        <h2 class="section-title" id="injury-atlas-heading">三大傷種圖鑑</h2>
+        <p class="meta-row" data-total-reviewed-count>
+          目前全站共有 {permitted.length} 筆已審查顯示案例（{permitted.length}
+          reviewed cases）。
         </p>
-      )
-    }
-  </section>
+        <div class="injury-feature-grid">
+          {
+            INJURIES.map((injury) => (
+              <InjuryCard
+                injuryCode={injury.code}
+                labelZh={injury.labelZh}
+                reviewedCaseCount={grouped.get(injury.code)?.length ?? 0}
+              />
+            ))
+          }
+        </div>
+      </section>
 
-  <section aria-labelledby="search-entry-heading">
-    <h2 id="search-entry-heading">搜尋與篩選入口</h2>
-    <p>
-      每個傷種頁提供球員／球隊關鍵字、年份、球季、聯盟、可見機轉標籤與經典案例
-      等複合篩選：
-    </p>
-    <ul>
-      {
-        INJURIES.map((injury) => (
-          <li>
-            <a href={`/injuries/${injury.code}/`}>篩選{injury.labelZh}案例</a>
-          </li>
-        ))
-      }
-    </ul>
-  </section>
+      <div class="home-muted-band">
+        <section aria-labelledby="latest-update-heading">
+          <h2 class="section-title" id="latest-update-heading">最新季度更新</h2>
+          {
+            latestUpdate === null ? (
+              <EmptyState
+                title="尚無季度更新"
+                description="第一個季度更新完成審查後，會在此提供更新連結與變更清單。"
+              />
+            ) : (
+              <p>
+                <a data-latest-update-link href={latestUpdate.path}>
+                  最新季度更新：{latestUpdate.id}
+                </a>
+              </p>
+            )
+          }
+        </section>
 
-  <section aria-labelledby="rtp-courses-heading">
-    <h2 id="rtp-courses-heading">回場復健課程對應（唯讀）</h2>
-    <div class="card-grid">
-      {
-        courseLinks.links.map((link) => {
-          const course = courseBySlug.get(link.catalogSlug);
-          return course === undefined ? null : (
-            <RtpCourseLink link={link} course={course} />
-          );
-        })
-      }
+        <section aria-labelledby="search-entry-heading">
+          <h2 class="section-title" id="search-entry-heading">
+            搜尋與篩選入口
+          </h2>
+          <p>
+            每個傷種頁提供球員／球隊關鍵字、年份、球季、聯盟、可見機轉標籤與經典案例
+            等複合篩選：
+          </p>
+          <ul class="home-search-links">
+            {
+              INJURIES.map((injury) => (
+                <li>
+                  <a href={`/injuries/${injury.code}/`}>
+                    篩選{injury.labelZh}案例
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+      </div>
     </div>
-  </section>
 
-  <section aria-labelledby="policy-heading">
-    <h2 id="policy-heading">來源與審查政策</h2>
-    <ul>
-      <li><a href="/source-policy/">來源與證據政策</a></li>
-      <li><a href="/about/">關於本站與審查流程</a></li>
-    </ul>
-  </section>
+    <aside class="home-sidebar" aria-label="課程、政策與全站統計">
+      <section aria-labelledby="rtp-courses-heading">
+        <h2 class="sidebar-title" id="rtp-courses-heading">
+          回場復健課程對應（唯讀）
+        </h2>
+        <div class="headline-list">
+          {
+            courseLinks.links.map((link) => {
+              const course = courseBySlug.get(link.catalogSlug);
+              return course === undefined ? null : (
+                <RtpCourseLink link={link} course={course} />
+              );
+            })
+          }
+        </div>
+      </section>
+
+      <section aria-labelledby="policy-heading">
+        <h2 class="sidebar-title" id="policy-heading">來源與審查政策</h2>
+        <ul class="sidebar-link-list">
+          <li><a href="/source-policy/">來源與證據政策</a></li>
+          <li><a href="/about/">關於本站與審查流程</a></li>
+        </ul>
+      </section>
+
+      <section class="site-stat" aria-label="全站統計">
+        <p class="eyebrow">全站統計</p>
+        <p class="site-stat-value">
+          <strong>{permitted.length}</strong><span>總案例數</span>
+        </p>
+      </section>
+    </aside>
+  </div>
 </BaseLayout>
 
 <style>
-  .card-grid {
+  .home-intro {
+    margin: 1.5rem 0 0;
+  }
+
+  .home-grid {
+    margin-block-start: var(--space-section);
+  }
+
+  .home-primary,
+  .home-sidebar {
+    min-width: 0;
+  }
+
+  .injury-feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-block-start: var(--space-block);
+  }
+
+  .home-muted-band {
+    margin-block-start: var(--space-section);
+    padding-block: 3rem;
+    background: var(--color-surface-muted);
+    box-shadow: 0 0 0 100vmax var(--color-surface-muted);
+    clip-path: inset(0 -100vmax);
+  }
+
+  .home-muted-band section + section,
+  .home-sidebar section + section {
+    margin-block-start: var(--space-section);
+  }
+
+  .home-search-links,
+  .sidebar-link-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .home-search-links li,
+  .sidebar-link-list li {
+    border-block-end: 1px solid var(--hairline);
+  }
+
+  .home-search-links a,
+  .sidebar-link-list a {
+    display: flex;
+    min-height: 44px;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .sidebar-title {
+    margin: 0;
+    color: var(--color-ink-muted);
+    font: 600 var(--text-eyebrow) / 1.5 var(--font-meta);
+    letter-spacing: 0.08em;
+  }
+
+  .site-stat {
+    border: 1px solid var(--hairline);
+    padding: 1rem;
+    background: var(--color-surface-raised);
+  }
+
+  .site-stat > p {
+    margin: 0;
+  }
+
+  .site-stat-value {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+
+  .site-stat-value strong {
+    position: relative;
+    padding-block-end: 0.5rem;
+    font: 600 2.25rem/1 var(--font-display);
+  }
+
+  .site-stat-value strong::after {
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    width: 3rem;
+    height: 2px;
+    background: var(--color-metric);
+    content: "";
+  }
+
+  .site-stat-value span {
+    color: var(--color-ink-muted);
+    font: 400 var(--text-meta) / 1.5 var(--font-meta);
+  }
+
+  @media (min-width: 64rem) {
+    .home-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 19rem;
+      gap: 3rem;
+    }
+
+    .home-sidebar {
+      border-inline-start: 1px solid var(--hairline);
+      padding-inline-start: 1.5rem;
+    }
+  }
+
+  @media (max-width: 63.999rem) {
+    .home-sidebar {
+      margin-block-start: var(--space-section);
+    }
+  }
+
+  @media (max-width: 47.999rem) {
+    .injury-feature-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
   }
 </style>

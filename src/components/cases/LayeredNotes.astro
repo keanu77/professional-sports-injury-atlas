@@ -118,22 +118,23 @@ const professionalId = `${scopeId}-professional-notes`;
 
   .layer-switch-note {
     margin: 0;
-    font-size: 0.9375rem;
+    color: var(--color-ink-muted);
+    font: 400 var(--text-meta) / 1.5 var(--font-meta);
   }
 
   .notes-layer {
     padding: 1rem;
-    border: 2px solid var(--color-brand-primary);
-    border-radius: 8px;
+    border: 1px solid var(--hairline);
+    border-radius: 0;
     background: var(--color-surface-raised);
   }
 
-  /* Emphasis only: the highlighted layer gains an accent border; text
+  /* Emphasis only: the highlighted layer gains a stronger neutral border; text
      contrast in both layers is never reduced. */
   .layered-notes[data-emphasis="general"] .notes-layer[data-layer="general"],
   .layered-notes[data-emphasis="professional"]
     .notes-layer[data-layer="professional"] {
-    border-color: var(--color-brand-accent-hover);
+    border-color: var(--hairline-strong);
   }
 
   .notes-layer h3 {

@@ -1,0 +1,70 @@
+---
+/** Compact, square static-listing pagination with a visible current page. */
+interface Props {
+  currentPage: number;
+  previousPath?: string | null;
+  nextPath?: string | null;
+}
+
+const { currentPage, previousPath = null, nextPath = null } = Astro.props;
+---
+
+<nav class="listing-pagination" aria-label="案例列表分頁">
+  {
+    previousPath !== null && (
+      <a rel="prev" href={previousPath}>
+        上一頁
+      </a>
+    )
+  }
+  <span aria-current="page" aria-label={`目前是第 ${currentPage} 頁`}>
+    {currentPage}
+  </span>
+  {
+    nextPath !== null && (
+      <a rel="next" href={nextPath}>
+        下一頁
+      </a>
+    )
+  }
+</nav>
+
+<style>
+  .listing-pagination {
+    display: flex;
+    gap: 0.5rem;
+    margin-block-start: 2rem;
+  }
+
+  .listing-pagination :where(a, span) {
+    display: inline-flex;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--hairline-strong);
+    border-radius: 0;
+    padding-inline: 0.75rem;
+    text-decoration: none;
+  }
+
+  .listing-pagination a {
+    background: var(--color-surface-raised);
+    color: var(--color-brand-primary);
+  }
+
+  .listing-pagination a:hover {
+    background: var(--color-brand-primary-hover);
+    color: var(--color-on-brand);
+    transition:
+      color 0.15s ease-in-out,
+      background-color 0.15s ease-in-out;
+  }
+
+  .listing-pagination [aria-current="page"] {
+    border-block-end: 2px solid var(--injury-color, var(--color-brand-primary));
+    background: var(--color-brand-primary);
+    color: var(--color-on-brand);
+    font-weight: 600;
+  }
+</style>

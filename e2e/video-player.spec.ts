@@ -10,7 +10,7 @@
  * and the public caption gate. Every ID and name in the fixture is fictional.
  */
 
-import { expect, test, type Page } from "@playwright/test";
+import { expect, test, type Locator, type Page } from "@playwright/test";
 import { expectNoAxeViolations } from "./helpers/a11y";
 
 const LAB_PATH = "/review/component-lab/";
@@ -164,6 +164,47 @@ function reviewCard(page: Page) {
   );
 }
 
+async function expectLocalResponsiveCover(
+  cover: Locator,
+  injuryLabel?: string,
+): Promise<void> {
+  const picture = cover.locator("picture");
+  const image = picture.locator("img");
+  await expect(picture).toHaveCount(1);
+  await expect(image).toBeVisible();
+  await expect(image).toHaveAttribute(
+    "alt",
+    new RegExp(
+      `${injuryLabel ?? "原創"}.*匿名運動員面孔不可見.*不代表任何特定球員`,
+    ),
+  );
+
+  const sources = picture.locator("source");
+  await expect(sources).toHaveCount(2);
+  const sourceData = await sources.evaluateAll((elements) =>
+    elements.map((element) => ({
+      type: element.getAttribute("type"),
+      srcset: element.getAttribute("srcset") ?? "",
+    })),
+  );
+  expect(sourceData.map(({ type }) => type)).toEqual([
+    "image/avif",
+    "image/webp",
+  ]);
+  for (const source of sourceData) {
+    expect(source.srcset).toContain(" 480w");
+    expect(source.srcset).toContain(" 1536w");
+    for (const candidate of source.srcset.split(",")) {
+      const url = candidate.trim().split(/\s+/)[0]!;
+      expect(new URL(url, PAGE_ORIGIN).origin).toBe(PAGE_ORIGIN);
+    }
+  }
+  const currentSrc = await image.evaluate(
+    (element) => (element as HTMLImageElement).currentSrc,
+  );
+  expect(new URL(currentSrc, PAGE_ORIGIN).origin).toBe(PAGE_ORIGIN);
+}
+
 async function readStub(page: Page): Promise<StubState> {
   const state = await page.evaluate(
     () => (window as unknown as { __stub?: StubState }).__stub,
@@ -191,7 +232,7 @@ test.describe("component lab before enhancement", () => {
     expect(log.unmocked).toEqual([]);
 
     await expect(page.locator("iframe")).toHaveCount(0);
-    await expect(page.locator("img")).toHaveCount(0);
+    expect(await page.locator("img").count()).toBeGreaterThan(0);
     await expect(page.locator("link[rel='preconnect']")).toHaveCount(0);
     await expect(page.locator("link[rel='dns-prefetch']")).toHaveCount(0);
     await expect(page.locator("[autoplay]")).toHaveCount(0);
@@ -201,7 +242,7 @@ test.describe("component lab before enhancement", () => {
     expect(html).not.toContain("autoplay");
 
     const facade = reviewCard(page).locator("[data-video-facade]");
-    await expect(facade.locator("[data-case-cover] svg")).toBeVisible();
+    await expectLocalResponsiveCover(facade.locator("[data-case-cover]"));
     await expect(facade.locator("[data-video-load]")).toContainText(
       "載入 YouTube 播放器",
     );
@@ -225,39 +266,24 @@ test.describe("component lab before enhancement", () => {
     await expectNoAxeViolations(page);
   });
 
-  test("every facade has a local SVG with unique accessible IDs", async ({
+  test("every photo facade uses a responsive local picture with descriptive alt text", async ({
     page,
   }) => {
     await stubYouTubeRoutes(page);
     await page.goto(LAB_PATH);
 
     const cards = page.locator(".case-video");
-    const covers = cards.locator("[data-case-cover] svg");
-    await expect(covers).toHaveCount(await cards.count());
-    const coverMetadata = await covers.evaluateAll((elements) =>
-      elements.map((element) => ({
-        references: (element.getAttribute("aria-labelledby") ?? "")
-          .split(/\s+/)
-          .filter(Boolean),
-        descendantIds: Array.from(
-          element.querySelectorAll("title[id], desc[id]"),
-          (child) => child.id,
-        ),
-      })),
-    );
-    const allIds = coverMetadata.flatMap((cover) => cover.descendantIds);
-    expect(new Set(allIds).size).toBe(allIds.length);
-    for (const cover of coverMetadata) {
-      expect(cover.references).toEqual(cover.descendantIds);
-      for (const id of cover.references) {
-        await expect(page.locator(`[id="${id}"]`)).toHaveCount(1);
-      }
+    const covers = cards.locator("[data-case-cover]");
+    const count = await cards.count();
+    await expect(covers).toHaveCount(count);
+    for (let index = 0; index < count; index += 1) {
+      await expectLocalResponsiveCover(covers.nth(index));
     }
   });
 });
 
 test.describe("governed case facades", () => {
-  test("all four YouTube cases use one SVG facade and make zero pre-click requests", async ({
+  test("all four YouTube cases use one local photo facade and make zero pre-click requests", async ({
     page,
   }) => {
     const log = await stubYouTubeRoutes(page);
@@ -279,18 +305,16 @@ test.describe("governed case facades", () => {
       );
       const cover = card.locator("[data-video-facade] [data-case-cover]");
       await expect(cover).toHaveAttribute("data-case-cover", entry.injuryCode);
-      await expect(cover.locator("svg")).toBeVisible();
+      await expectLocalResponsiveCover(cover, entry.injuryLabel);
       await expect(
         cover.locator(`[data-cover-illustration="${entry.injuryCode}"]`),
       ).toHaveCount(1);
-      await expect(cover.locator("title")).toHaveText(
-        `${entry.injuryLabel}原創解剖示意封面`,
-      );
       await expect(card.locator("[data-video-load]")).toContainText(
         "載入 YouTube 播放器",
       );
       await expect(page.locator("[data-case-cover]")).toHaveCount(1);
-      await expect(page.locator("iframe, img")).toHaveCount(0);
+      await expect(page.locator("iframe")).toHaveCount(0);
+      expect(await page.locator("img").count()).toBeGreaterThanOrEqual(2);
       expect(log.youtubeRequests).toEqual([]);
       expect(thirdPartyRequests).toEqual([]);
     }
@@ -337,7 +361,7 @@ test.describe("governed case facades", () => {
     expect(log.unmocked).toEqual([]);
   });
 
-  test("a real NBA case uses its governed SVG external facade with zero third-party requests", async ({
+  test("a real NBA case uses its governed local-photo external facade with zero third-party requests", async ({
     page,
   }) => {
     const log = await stubYouTubeRoutes(page);
@@ -358,15 +382,14 @@ test.describe("governed case facades", () => {
       "data-case-cover",
       GOVERNED_NBA_CASE.injuryCode,
     );
+    await expectLocalResponsiveCover(cover, GOVERNED_NBA_CASE.injuryLabel);
     await expect(
       cover.locator(
         `[data-cover-illustration="${GOVERNED_NBA_CASE.injuryCode}"]`,
       ),
     ).toHaveCount(1);
-    await expect(cover.locator("title")).toHaveText(
-      `${GOVERNED_NBA_CASE.injuryLabel}原創解剖示意封面`,
-    );
-    await expect(page.locator("iframe, img")).toHaveCount(0);
+    await expect(page.locator("iframe")).toHaveCount(0);
+    expect(await page.locator("img").count()).toBeGreaterThanOrEqual(2);
     expect(log.youtubeRequests).toEqual([]);
     expect(thirdPartyRequests).toEqual([]);
   });
@@ -551,9 +574,9 @@ test.describe("non-embedded states and caption policy", () => {
       "href",
       "https://www.nba.com/watch/fictional-demo-clip",
     );
-    await expect(
-      external.locator("[data-video-source-link] [data-case-cover] svg"),
-    ).toBeVisible();
+    await expectLocalResponsiveCover(
+      external.locator("[data-video-source-link] [data-case-cover]"),
+    );
     await expect(external.locator("[data-video-source-link]")).toContainText(
       "於 NBA.com 觀看",
     );

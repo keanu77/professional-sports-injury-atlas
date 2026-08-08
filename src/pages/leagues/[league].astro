@@ -7,6 +7,7 @@
 import { getCollection } from "astro:content";
 import CaseCard from "../../components/atlas/CaseCard.astro";
 import CaseFilters from "../../components/atlas/CaseFilters.astro";
+import ListingPagination from "../../components/atlas/ListingPagination.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { findLeague } from "../../lib/contracts/taxonomy";
 import {
@@ -49,56 +50,60 @@ const currentPage = listingPages[0];
   artifactRecordIds={pageCases.map((record) => record.id)}
   artifactDigest={computeRenderedSetDigest(pageCases)}
 >
-  <h1>{leagueLabel} 案例列表</h1>
-  <p>
-    共有 {leagueCases.length} 筆已審查顯示案例（{leagueCases.length} reviewed cases）。
-  </p>
+  <div class="league-page">
+    <h1>{leagueLabel} 案例列表</h1>
+    <p class="meta-row">
+      共有 {leagueCases.length} 筆已審查顯示案例（{leagueCases.length} reviewed cases）。
+    </p>
 
-  <CaseFilters buildMode={buildMode} scopeInjury={null} />
+    <CaseFilters buildMode={buildMode} scopeInjury={null} />
 
-  <section data-static-listing aria-labelledby="league-listing-heading">
-    <h2 id="league-listing-heading">
-      案例列表（第 {currentPage?.pageNumber ?? 1} 頁）
-    </h2>
-    <ol class="case-list">
+    <section data-static-listing aria-labelledby="league-listing-heading">
+      <h2 class="section-title" id="league-listing-heading">
+        案例列表（第 {currentPage?.pageNumber ?? 1} 頁）
+      </h2>
+      <ol class="case-list">
+        {
+          pageCases.map((record) => (
+            <li>
+              <CaseCard
+                record={record}
+                showWorkflowBadge={buildMode === "review"}
+              />
+            </li>
+          ))
+        }
+      </ol>
       {
-        pageCases.map((record) => (
-          <li>
-            <CaseCard
-              record={record}
-              showWorkflowBadge={buildMode === "review"}
+        listingPages.length > 1 &&
+          currentPage !== undefined &&
+          currentPage.nextPath !== null && (
+            <ListingPagination
+              currentPage={currentPage.pageNumber}
+              nextPath={currentPage.nextPath}
             />
-          </li>
-        ))
+          )
       }
-    </ol>
-    {
-      listingPages.length > 1 &&
-        currentPage !== undefined &&
-        currentPage.nextPath !== null && (
-          <nav class="listing-pagination" aria-label="案例列表分頁">
-            <a rel="next" href={currentPage.nextPath}>
-              下一頁
-            </a>
-          </nav>
-        )
-    }
-  </section>
+    </section>
+  </div>
 </BaseLayout>
 
 <style>
-  .case-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  .league-page > :global(.case-filters),
+  .league-page > section {
+    margin-block-start: var(--space-section);
   }
 
-  .listing-pagination {
-    margin-top: 1rem;
-    display: flex;
-    gap: 1rem;
+  .case-list {
+    margin: var(--space-block) 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(19rem, 100%), 1fr));
+    gap: 2.5rem 1.5rem;
+  }
+
+  .case-list > li {
+    min-width: 0;
   }
 </style>

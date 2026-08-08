@@ -1,8 +1,9 @@
 ---
 /**
  * Privacy-preserving case-video facade. Before activation it renders only the
- * case's governed inline SVG cover, local metadata, and a real source anchor:
- * no remote thumbnail, game frame, iframe, preconnect, or third-party request.
+ * case's governed local editorial-photo cover, local metadata, and a real
+ * source anchor: no remote thumbnail, game frame, iframe, preconnect, or
+ * third-party request.
  * Verified YouTube videos gain an explicit load button; NBA-hosted and
  * caption-degraded videos use a styled external-link cover. The two governed
  * Shorts receive a centered 9:16 iframe after activation without changing the
@@ -22,6 +23,7 @@ import type { EmbedStatus } from "../../lib/contracts/taxonomy";
 
 interface Props {
   scopeId: string;
+  recordId?: string;
   displayMode: VideoDisplayMode;
   sourceTitle: string;
   injuryCode: string;
@@ -36,8 +38,15 @@ interface Props {
   };
 }
 
-const { scopeId, displayMode, sourceTitle, injuryCode, injuryLabel, video } =
-  Astro.props;
+const {
+  scopeId,
+  recordId = scopeId,
+  displayMode,
+  sourceTitle,
+  injuryCode,
+  injuryLabel,
+  video,
+} = Astro.props;
 
 const presentation = resolvePlayerPresentation({
   providerCode: video.provider,
@@ -102,6 +111,7 @@ const coverIdPrefix = `video-cover-${scopeId}`;
             injuryCode={injuryCode}
             injuryLabel={injuryLabel}
             idPrefix={coverIdPrefix}
+            recordId={recordId}
             presentation="facade"
           />
           <button type="button" class="video-load-button" data-video-load>
@@ -135,6 +145,7 @@ const coverIdPrefix = `video-cover-${scopeId}`;
           injuryCode={injuryCode}
           injuryLabel={injuryLabel}
           idPrefix={coverIdPrefix}
+          recordId={recordId}
           presentation="facade"
         />
         <span class="video-external-label">
@@ -153,6 +164,7 @@ const coverIdPrefix = `video-cover-${scopeId}`;
         injuryCode={injuryCode}
         injuryLabel={injuryLabel}
         idPrefix={coverIdPrefix}
+        recordId={recordId}
         presentation="facade"
       />
     )
@@ -218,8 +230,7 @@ const coverIdPrefix = `video-cover-${scopeId}`;
   .case-video {
     margin: 0;
     padding: 1rem;
-    border: 1px solid var(--color-brand-primary);
-    border-radius: 12px;
+    border: 1px solid var(--hairline);
     background: var(--color-surface-raised);
   }
 
@@ -238,9 +249,8 @@ const coverIdPrefix = `video-cover-${scopeId}`;
     min-height: 44px;
     padding: clamp(0.65rem, 3vw, 1.25rem);
     border: 0;
-    border-radius: 18px;
     background: transparent;
-    color: var(--color-on-warm);
+    color: var(--color-on-brand);
     font: inherit;
     cursor: pointer;
   }
@@ -256,16 +266,15 @@ const coverIdPrefix = `video-cover-${scopeId}`;
     gap: 0.75rem;
     max-width: 100%;
     padding: 0.65rem 0.9rem;
-    border: 2px solid var(--color-on-warm);
+    border: 2px solid var(--color-on-brand);
     border-radius: 999px;
-    background: var(--color-brand-accent);
-    box-shadow: 0 0.5rem 1.5rem
-      color-mix(in oklch, var(--color-ink) 24%, transparent);
+    background: var(--color-brand-primary);
+    box-shadow: 0 0.5rem 1.5rem var(--shadow-overlay);
   }
 
   .video-load-button:hover .video-load-label {
-    outline: 3px solid var(--color-brand-accent-hover);
-    outline-offset: 2px;
+    background: var(--color-brand-primary-hover);
+    transition: background-color 0.15s ease-in-out;
   }
 
   .video-play-symbol {
@@ -290,13 +299,12 @@ const coverIdPrefix = `video-cover-${scopeId}`;
   }
 
   .video-load-copy small {
-    font-size: 0.75rem;
+    font-size: var(--text-eyebrow);
   }
 
   .video-external-facade {
     display: block;
     overflow: hidden;
-    border-radius: 18px;
     color: var(--color-ink);
     text-decoration: none;
   }
@@ -327,7 +335,7 @@ const coverIdPrefix = `video-cover-${scopeId}`;
   .case-video-title {
     margin: 0 0 0.5rem;
     font-family: var(--font-heading);
-    font-weight: 600;
+    font-weight: 700;
   }
 
   .case-video-facts,
@@ -335,6 +343,8 @@ const coverIdPrefix = `video-cover-${scopeId}`;
   .case-video-review-state,
   .case-video-source-action {
     margin: 0 0 0.5rem;
+    color: var(--color-ink-muted);
+    font: 400 var(--text-meta) / 1.5 var(--font-meta);
   }
 
   .case-video-warning {
@@ -363,7 +373,6 @@ const coverIdPrefix = `video-cover-${scopeId}`;
     width: 100%;
     aspect-ratio: 16 / 9;
     border: 0;
-    border-radius: 10px;
     background: var(--color-surface-muted);
   }
 

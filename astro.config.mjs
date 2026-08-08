@@ -5,4 +5,9 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   output: "static",
   trailingSlash: "always",
+  build: {
+    // The complete editorial stylesheet is small; inlining it removes the
+    // render-blocking round trip while local fonts continue to use swap.
+    inlineStylesheets: "always",
+  },
 });

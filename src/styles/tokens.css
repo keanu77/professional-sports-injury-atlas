@@ -3,7 +3,7 @@
  * Every canonical color is a light-dark() pair; the root color-scheme below
  * selects the light value by default and the dark value for the site's
  * explicit, locally persisted theme. Components consume only this semantic
- * layer, including the governed inline SVG case covers.
+ * layer, including the governed editorial-photo presentation layer.
  */
 
 :root {
@@ -39,17 +39,52 @@
   --color-on-brand: var(--color-surface-raised);
   --color-on-warm: light-dark(var(--color-ink), var(--color-surface));
 
+  /* Neutral structure and image-overlay colors. */
+  --hairline: light-dark(oklch(90% 0.005 220), oklch(32% 0.015 240));
+  --hairline-strong: light-dark(oklch(80% 0.008 220), oklch(40% 0.015 240));
+  --scrim: oklch(24% 0.02 240 / 0.78);
+  --scrim-fade: oklch(24% 0.02 240 / 0);
+  --on-scrim: oklch(97% 0.005 220);
+  --shadow-stuck: oklch(0% 0 0 / 0.16);
+  --shadow-overlay: oklch(0% 0 0 / 0.24);
+
+  /* Editorial spacing rhythm. */
+  --space-section: clamp(3rem, 8vw, 5rem);
+  --space-block: 1.5rem;
+
   /* Typography */
   --font-display:
-    "Barlow Condensed", "PingFang TC", "Microsoft JhengHei", "Noto Sans CJK TC",
+    "Barlow Condensed", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei",
     sans-serif;
   --font-heading:
-    "Fraunces", "PingFang TC", "Microsoft JhengHei", "Noto Sans CJK TC", serif;
+    "Fraunces", "Noto Serif TC Heading", "Noto Serif TC", "Songti TC",
+    "PingFang TC", serif;
   --font-body:
-    "Inter", "PingFang TC", "Microsoft JhengHei", "Noto Sans CJK TC", sans-serif;
+    "Inter", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-meta: "Inter", "PingFang TC", sans-serif;
+  --text-display: clamp(2rem, 1.2rem + 3.5vw, 3.25rem);
+  --text-h1: clamp(1.75rem, 1.3rem + 1.8vw, 2.5rem);
+  --text-h2: 1.375rem;
+  --text-card-title: 1.125rem;
+  --text-body: 1.0625rem;
+  --text-meta: 0.8125rem;
+  --text-eyebrow: 0.75rem;
   --font-scale: 1;
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
+}
+
+[data-injury-theme="acl"] {
+  --injury-color: var(--color-brand-primary);
+}
+
+[data-injury-theme="ankle-sprain"] {
+  --injury-color: var(--color-brand-accent);
+}
+
+[data-injury-theme="achilles"],
+[data-injury-theme="achilles-rupture"] {
+  --injury-color: var(--color-metric);
 }

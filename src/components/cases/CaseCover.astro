@@ -1,288 +1,110 @@
 ---
 /**
- * Governed vector cover shared by case routes and video facades. The three
- * variants are anatomy/mechanism concepts only: no athlete likeness, game
- * frame, source thumbnail, or remote image is reproduced. Every SVG color
- * comes from the sportsmedicine.tw light-dark() token system.
+ * Governed local editorial-photo cover shared by case cards and video
+ * facades. The photograph is an original AI-generated asset selected by a
+ * stable record-id hash and delivered through Astro's responsive Picture
+ * pipeline. Legacy data-cover-illustration markers remain as nonvisual data
+ * hooks; no vector artwork is rendered.
  */
+import { Picture } from "astro:assets";
+import { caseImageFor } from "../../lib/ui/editorial-images";
+
 interface Props {
   injuryCode: string;
   injuryLabel: string;
   idPrefix?: string;
-  presentation?: "standalone" | "facade";
+  recordId?: string;
+  presentation?: "standalone" | "facade" | "thumb";
 }
 
 const {
   injuryCode,
   injuryLabel,
   idPrefix = "case-cover",
+  recordId = idPrefix,
   presentation = "standalone",
 } = Astro.props;
-const titleId = `${idPrefix}-${injuryCode}-title`;
-const descriptionId = `${idPrefix}-${injuryCode}-description`;
+const { image: photo, variant } = caseImageFor(injuryCode, recordId);
+const renditionWidths =
+  presentation === "thumb" ? [360, 560, 768, 960] : [480, 768, 960, 1536];
+const photoSizes =
+  presentation === "thumb"
+    ? "(min-width: 64rem) 22rem, (min-width: 40rem) 42rem, calc(100vw - 2rem)"
+    : "(min-width: 64rem) 43rem, calc(100vw - 4rem)";
+const photoAlt = `${injuryLabel}原創 AI 生成運動醫學攝影意象；匿名運動員面孔不可見，不代表任何特定球員或真實受傷事件。`;
 ---
 
 <figure
-  class:list={[
-    "case-cover",
-    { "case-cover-facade": presentation === "facade" },
-  ]}
-  data-case-cover={injuryCode}
+  class:list={["case-cover", `case-cover-${presentation}`]}
+  data-case-cover={presentation === "thumb" ? undefined : injuryCode}
+  data-case-thumb={presentation === "thumb" ? injuryCode : undefined}
   data-cover-presentation={presentation}
+  data-cover-variant={String(variant)}
+  data-injury-theme={injuryCode}
 >
-  <svg
-    viewBox="0 0 1200 480"
-    role="img"
-    aria-labelledby={`${titleId} ${descriptionId}`}
-    preserveAspectRatio="xMidYMid meet"
-  >
-    <title id={titleId}>{injuryLabel}原創解剖示意封面</title>
-    <desc id={descriptionId}>
-      沉穩藍、暖橘與金琥珀色的抽象球場及{
-        injuryLabel
-      }解剖概念圖，不代表任何特定球員身體。
-    </desc>
-    <rect width="1200" height="480" rx="36" fill="var(--color-surface-muted)"
-    ></rect>
-    <path
-      d="M0 350 C240 275 395 430 620 334 C835 242 978 290 1200 198 V480 H0 Z"
-      fill="var(--color-brand-accent)"
-      opacity="0.36"></path>
-    <circle
-      cx="970"
-      cy="84"
-      r="190"
-      fill="none"
-      stroke="var(--color-metric)"
-      stroke-width="24"
-      opacity="0.62"></circle>
-    <path
-      d="M88 62 H1112 M88 418 H1112"
-      stroke="var(--color-brand-primary)"
-      stroke-width="5"
-      stroke-linecap="round"
-      opacity="0.48"></path>
-
-    {
-      injuryCode === "acl" ? (
-        <g data-cover-illustration="acl" transform="translate(690 40)">
-          <path
-            d="M145 32 C92 92 96 151 130 208 C154 248 154 293 126 370"
-            fill="none"
-            stroke="var(--color-brand-primary)"
-            stroke-width="54"
-            stroke-linecap="round"
-          />
-          <path
-            d="M279 32 C328 92 323 151 291 208 C268 250 270 298 298 370"
-            fill="none"
-            stroke="var(--color-brand-accent)"
-            stroke-width="54"
-            stroke-linecap="round"
-          />
-          <ellipse
-            cx="211"
-            cy="217"
-            rx="118"
-            ry="82"
-            fill="var(--color-surface-raised)"
-            opacity="0.9"
-          />
-          <path
-            d="M165 164 L256 270 M259 162 L170 272"
-            stroke="var(--color-metric)"
-            stroke-width="18"
-            stroke-linecap="round"
-          />
-          <circle
-            cx="211"
-            cy="217"
-            r="126"
-            fill="none"
-            stroke="var(--color-brand-primary)"
-            stroke-width="8"
-            stroke-dasharray="18 15"
-          />
-        </g>
-      ) : injuryCode === "ankle-sprain" ? (
-        <g data-cover-illustration="ankle-sprain" transform="translate(700 46)">
-          <path
-            d="M160 18 L144 264"
-            stroke="var(--color-brand-primary)"
-            stroke-width="58"
-            stroke-linecap="round"
-          />
-          <path
-            d="M242 40 L218 272"
-            stroke="var(--color-brand-accent)"
-            stroke-width="34"
-            stroke-linecap="round"
-          />
-          <path
-            d="M134 267 C191 248 223 274 238 312 C270 334 329 337 366 369 C306 408 196 414 112 370 C83 354 87 292 134 267 Z"
-            fill="var(--color-surface-raised)"
-            stroke="var(--color-brand-primary)"
-            stroke-width="10"
-          />
-          <path
-            d="M132 271 C174 293 204 317 224 358"
-            fill="none"
-            stroke="var(--color-metric)"
-            stroke-width="18"
-            stroke-linecap="round"
-          />
-          <path
-            d="M224 269 C192 302 176 333 171 371"
-            fill="none"
-            stroke="var(--color-brand-accent)"
-            stroke-width="13"
-            stroke-linecap="round"
-          />
-          <circle
-            cx="184"
-            cy="286"
-            r="105"
-            fill="none"
-            stroke="var(--color-brand-primary)"
-            stroke-width="8"
-            stroke-dasharray="18 15"
-          />
-        </g>
-      ) : (
-        <g
-          data-cover-illustration="achilles-rupture"
-          transform="translate(710 34)"
-        >
-          <path
-            d="M148 26 C108 98 111 172 145 236"
-            fill="none"
-            stroke="var(--color-brand-primary)"
-            stroke-width="72"
-            stroke-linecap="round"
-          />
-          <path
-            d="M258 26 C298 99 290 169 257 236"
-            fill="none"
-            stroke="var(--color-brand-accent)"
-            stroke-width="72"
-            stroke-linecap="round"
-          />
-          <path
-            d="M202 170 C196 226 197 286 202 350"
-            fill="none"
-            stroke="var(--color-metric)"
-            stroke-width="22"
-            stroke-linecap="round"
-          />
-          <path
-            d="M202 350 C205 382 248 390 319 384"
-            fill="none"
-            stroke="var(--color-surface-raised)"
-            stroke-width="58"
-            stroke-linecap="round"
-          />
-          <path
-            d="M202 350 C205 382 248 390 319 384"
-            fill="none"
-            stroke="var(--color-brand-primary)"
-            stroke-width="10"
-            stroke-linecap="round"
-          />
-          <path
-            d="M174 258 L230 286 M174 286 L230 258"
-            stroke="var(--color-brand-accent)"
-            stroke-width="16"
-            stroke-linecap="round"
-          />
-          <circle
-            cx="202"
-            cy="272"
-            r="91"
-            fill="none"
-            stroke="var(--color-brand-primary)"
-            stroke-width="8"
-            stroke-dasharray="18 15"
-          />
-        </g>
-      )
-    }
-
-    <g transform="translate(84 112)">
-      <text class="cover-kicker" x="0" y="0">PROFESSIONAL CASE ATLAS</text>
-      <text class="cover-title" x="0" y="78">{injuryLabel}</text>
-      <text class="cover-caption" x="0" y="132">解剖與事件觀察示意</text>
-      <path
-        d="M0 176 H420"
-        stroke="var(--color-brand-accent)"
-        stroke-width="8"
-        stroke-linecap="round"></path>
-      <rect
-        x="-12"
-        y="195"
-        width="338"
-        height="46"
-        rx="12"
-        fill="var(--color-surface-raised)"></rect>
-      <text class="cover-note" x="0" y="226">非診斷影像 · 非特定球員身體</text>
-    </g>
-  </svg>
+  <div class="case-cover-media">
+    <Picture
+      src={photo}
+      formats={["avif", "webp"]}
+      fallbackFormat="png"
+      widths={renditionWidths}
+      sizes={photoSizes}
+      quality={72}
+      loading="lazy"
+      decoding="async"
+      alt={photoAlt}
+      class="case-cover-photo"
+      pictureAttributes={{ class: "case-cover-picture" }}
+    />
+    <span data-cover-illustration={injuryCode} aria-hidden="true"></span>
+  </div>
   {
     presentation === "standalone" && (
-      <figcaption>{injuryLabel}概念封面｜原創向量示意，非賽事畫面</figcaption>
+      <figcaption>原創 AI 生成攝影意象，非球員實際影像。</figcaption>
     )
   }
 </figure>
 
 <style>
   .case-cover {
+    --cover-aspect-ratio: 5 / 2;
     margin: 0 0 1.5rem;
   }
 
-  .case-cover svg {
-    display: block;
-    width: 100%;
-    height: auto;
-    border: 1px solid var(--color-brand-primary);
-    border-radius: 18px;
-    background: var(--color-surface-muted);
+  .case-cover-thumb {
+    --cover-aspect-ratio: 16 / 9;
+    margin: 0;
   }
 
   .case-cover-facade {
     margin: 0;
   }
 
+  .case-cover-media {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: var(--cover-aspect-ratio);
+    background-color: var(--color-surface-muted);
+  }
+
+  .case-cover-media :global(picture),
+  .case-cover-media :global(img) {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .case-cover-media :global(img) {
+    object-fit: cover;
+  }
+
+  [data-cover-illustration] {
+    display: none;
+  }
+
   .case-cover figcaption {
     margin-top: 0.45rem;
     color: var(--color-ink-muted);
-    font-size: 0.875rem;
-  }
-
-  .cover-kicker,
-  .cover-title,
-  .cover-caption,
-  .cover-note {
-    fill: var(--color-ink);
-    font-family: var(--font-body);
-  }
-
-  .cover-kicker {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-  }
-
-  .cover-title {
-    font-family: var(--font-heading);
-    font-size: 58px;
-    font-weight: 700;
-  }
-
-  .cover-caption {
-    font-size: 27px;
-    font-weight: 650;
-  }
-
-  .cover-note {
-    font-size: 20px;
+    font: 400 var(--text-meta) / 1.5 var(--font-meta);
   }
 </style>

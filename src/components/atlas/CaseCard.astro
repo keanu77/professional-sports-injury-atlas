@@ -1,10 +1,9 @@
 ---
 /**
- * Listing case card. Renders factual card fields only, the exact `經典案例`
- * label with a readable reason when applicable, and the external
- * diagnosis-confirmation status; the private review workflow renders
- * separately (review builds only) and never replaces the diagnosis status.
+ * Editorial case teaser. All factual text and governance selectors remain
+ * unchanged; only the presentation order and visual hierarchy change.
  */
+import CaseCover from "../cases/CaseCover.astro";
 import ReviewBadge from "../cases/ReviewBadge.astro";
 import { findInjury, findLeague } from "../../lib/contracts/taxonomy";
 import type { InjuryCase } from "../../lib/contracts/case";
@@ -25,51 +24,137 @@ const leagueLabel =
   findLeague(record.league.code)?.labelZh ?? record.league.code;
 ---
 
-<article class="case-card" data-case-card={record.id}>
-  <h3 class="case-card-title">
-    <a href={`/cases/${record.slug}/`}>
-      {record.athlete.name}｜{injuryLabel}
-    </a>
-  </h3>
-  <p class="case-card-facts">
-    {leagueLabel}｜{record.season} 球季｜{record.eventDate}｜
-    {record.teamAtEvent.name} 對 {record.opponent.name}
-  </p>
-  <p
-    class="case-card-confirmation"
-    data-confirmation-status={record.injury.confirmationStatus}
-  >
-    診斷確認狀態（外部來源）：{
-      confirmationStatusLabel(record.injury.confirmationStatus)
+<article
+  class="case-card"
+  data-case-card={record.id}
+  data-injury-theme={record.injury.code}
+>
+  <CaseCover
+    injuryCode={record.injury.code}
+    injuryLabel={injuryLabel}
+    idPrefix={`case-card-cover-${record.id}`}
+    recordId={record.id}
+    presentation="thumb"
+  />
+  <div class="case-card-body">
+    <p class="case-card-eyebrow eyebrow"><span>{injuryLabel}</span></p>
+    <h3 class="case-card-title">
+      <a href={`/cases/${record.slug}/`}>
+        {record.athlete.name}｜{injuryLabel}
+      </a>
+    </h3>
+    <p class="case-card-facts meta-row">
+      {leagueLabel}｜{record.season} 球季｜{record.eventDate}｜
+      {record.teamAtEvent.name} 對 {record.opponent.name}
+    </p>
+    <p
+      class="case-card-confirmation meta-row"
+      data-confirmation-status={record.injury.confirmationStatus}
+    >
+      診斷確認狀態（外部來源）：{
+        confirmationStatusLabel(record.injury.confirmationStatus)
+      }
+    </p>
+    {
+      record.isClassic && (
+        <p class="case-card-classic" data-classic-label>
+          <strong>{CLASSIC_CASE_LABEL}</strong>
+          {record.classicReason !== null && <>：{record.classicReason}</>}
+        </p>
+      )
     }
-  </p>
-  {
-    record.isClassic && (
-      <p class="case-card-classic" data-classic-label>
-        <strong>{CLASSIC_CASE_LABEL}</strong>
-        {record.classicReason !== null && <>：{record.classicReason}</>}
-      </p>
-    )
-  }
-  {showWorkflowBadge && <ReviewBadge record={record} />}
+    {showWorkflowBadge && <ReviewBadge record={record} />}
+  </div>
 </article>
 
 <style>
   .case-card {
-    padding: 1rem;
-    border: 1px solid var(--color-brand-primary);
-    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    border: 1px solid var(--hairline);
     background: var(--color-surface-raised);
   }
 
-  .case-card-title {
-    margin: 0 0 0.5rem;
-    font-family: var(--font-heading);
+  .case-card-body {
+    padding: 0.875rem 1rem 1rem;
   }
 
-  .case-card-facts,
-  .case-card-confirmation,
-  .case-card-classic {
+  .case-card-eyebrow {
+    display: flex;
+    align-items: center;
+    margin: 0 0 0.625rem;
+  }
+
+  .case-card-eyebrow span {
+    flex: 0 0 auto;
+    padding-right: 0.375rem;
+    background: var(--color-surface-raised);
+  }
+
+  .case-card-eyebrow::after {
+    width: 100%;
+    height: 2px;
+    background: var(--injury-color);
+    content: "";
+  }
+
+  .case-card-title {
+    display: -webkit-box;
+    overflow: hidden;
     margin: 0 0 0.5rem;
+    font-size: var(--text-card-title);
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .case-card-title a {
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+
+  .case-card-title a::after {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    content: "";
+  }
+
+  .case-card-title a:hover {
+    color: var(--color-brand-primary);
+    transition: color 0.15s ease-in-out;
+  }
+
+  .case-card-title a:focus-visible {
+    outline: none;
+  }
+
+  .case-card-title a:focus-visible::after {
+    outline: 3px solid var(--color-brand-primary-hover);
+    outline-offset: -3px;
+  }
+
+  .case-card-facts {
+    margin: 0 0 0.625rem;
+  }
+
+  .case-card-confirmation {
+    display: inline-block;
+    margin: 0 0 0.625rem;
+    padding: 2px 10px;
+    border: 1px solid var(--hairline);
+    border-radius: 2px;
+  }
+
+  .case-card-confirmation[data-confirmation-status="confirmed"] {
+    border-inline-start: 3px solid var(--color-brand-primary);
+  }
+
+  .case-card-classic {
+    margin: 0 0 0.625rem;
+    padding-inline-start: 0.625rem;
+    border-inline-start: 3px solid var(--color-metric);
+    color: var(--color-ink-muted);
+    font: 400 var(--text-meta) / 1.5 var(--font-meta);
   }
 </style>

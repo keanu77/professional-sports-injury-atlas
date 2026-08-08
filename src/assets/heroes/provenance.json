@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "generator": "OpenAI built-in imagegen",
+  "generationDate": "2026-08-09",
+  "originality": "AI-generated original editorial photography; no source/broadcast photographs",
+  "assets": [
+    {
+      "path": "src/assets/heroes/home-atlas.png",
+      "role": "home",
+      "injuryTheme": null,
+      "promptRecord": "src/assets/heroes/provenance/home.md",
+      "width": 2400,
+      "height": 900,
+      "sha256": "178f3989118f0f2f9cc5218c9c17aee4e72a1fccf16caf3e66279eba2d7f71bb"
+    },
+    {
+      "path": "src/assets/heroes/acl-overview.png",
+      "role": "injury-overview",
+      "injuryTheme": "acl",
+      "promptRecord": "src/assets/heroes/provenance/acl.md",
+      "width": 2400,
+      "height": 720,
+      "sha256": "7704bc944a8781f6b07c1fe9acc542c6aed5ecb7427b72d6ea6789c80700fc9b"
+    },
+    {
+      "path": "src/assets/heroes/acl-case-01.png",
+      "role": "case-cover",
+      "injuryTheme": "acl",
+      "promptRecord": "src/assets/heroes/provenance/acl.md",
+      "width": 2400,
+      "height": 960,
+      "sha256": "1eadfeab2babd48da41810f0e9f9a3bfa865d198d0077ad1fc71d298a937c50d"
+    },
+    {
+      "path": "src/assets/heroes/acl-case-02.png",
+      "role": "case-cover",
+      "injuryTheme": "acl",
+      "promptRecord": "src/assets/heroes/provenance/acl.md",
+      "width": 2400,
+      "height": 960,
+      "sha256": "f8a48b36a4a056886f3c49fa794b5f7580daaa1580ce2085b5a2f549b4aa6953"
+    },
+    {
+      "path": "src/assets/heroes/acl-case-03.png",
+      "role": "case-cover",
+      "injuryTheme": "acl",
+      "promptRecord": "src/assets/heroes/provenance/acl.md",
+      "width": 2400,
+      "height": 960,
+      "sha256": "ad5be2de623028b90614e09ed3811af93e36f2d0b0de32c60299d60d6460d4f8"
+    },
+    {
+      "path": "src/assets/heroes/acl-case-04.png",
+      "role": "case-cover",
+      "injuryTheme": "acl",
+      "promptRecord": "src/assets/heroes/provenance/acl.md",
+      "width": 2400,
+      "height": 960,
+      "sha256": "8565ff1cfd55be4f0cf1732bfa2700144801051c8e8b7c75360f6a219bd8352e"
+    },
+    {
+      "path": "src/assets/heroes/ankle-sprain-overview.png",
+      "role": "injury-overview",
+      "injuryTheme": "ankle-sprain",
+      "promptRecord": "src/assets/heroes/provenance/ankle-sprain.md",
+      "width": 2400,
+      "height": 720,
+      "sha256": "f92167e9bcbaaf745843efb1d2cd24eb63f105889c38d6cf5931b4302529a0e9"
+    },
+    {
+      "path": "src/assets/heroes/ankle-sprain-case-01.png",
+      "role": "case-cover",
+      "injuryTheme": "ankle-sprain",
+      "promptRecord": "src/assets/heroes/provenance/ankle-sprain.md",
+      "width": 2400,
+      "height": 960,
+      "sha256": "30edc84ba131fa068214be49e3688894ef0cf83e773520e0131f8867d85522eb"
+    },
+    {
+      "path": "src/assets/heroes/ankle-sprain-case-02.png",
+      "role": "case-cover",
+      "injuryTheme": "ankle-sprain",
+      "promptRecord": "src/assets/heroes/provenance/ankle-sprain.md",
+      "width": 2400,
+      "height": 960,
+      "sha256": "b8ce93d3862b17b5f5fe7911c48fbab15574ce26eab598809de9767e3c7a12b1"
+    },
+    {
+      "path": "src/assets/heroes/ankle-sprain-case-03.png",
+      "role": "case-cover",
+      "injuryTheme": "ankle-sprain",
+      "promptRecord": "src/assets/heroes/provenance/ankle-sprain.md",
+      "width": 2400,
+      "height": 960,
+      "sha256": "68a0e76730fd3922e785af502aaf7ff7ce866250cbd144b9255129168852b139"
+    },
+    {
+      "path": "src/assets/heroes/ankle-sprain-case-04.png",
+      "role": "case-cover",
+      "injuryTheme": "ankle-sprain",
+      "promptRecord": "src/assets/heroes/provenance/ankle-sprain.md",
+      "width": 2400,
+      "height": 960,
+      "sha256": "cf45e134c69c1cd20785758549930cef52dc8896b1e79864db04e13da2a6f8ae"
+    },
+    {
+      "path": "src/assets/heroes/achilles-rupture-overview.png",
+      "role": "injury-overview",
+      "injuryTheme": "achilles-rupture",
+      "promptRecord": "src/assets/heroes/provenance/achilles-rupture.md",
+      "width": 2400,
+      "height": 720,
+      "sha256": "6d7858ec369c61e74891718672b6e66ed728a557124e236d60c306e82637387b"
+    },
+    {
+      "path": "src/assets/heroes/achilles-rupture-case-01.png",
+      "role": "case-cover",
+      "injuryTheme": "achilles-rupture",
+      "promptRecord": "src/assets/heroes/provenance/achilles-rupture.md",
+      "width": 2400,
+      "height": 960,
+      "sha256": "0a9702b965b72ddc1c9130ce34dc1b48fab268a9dd628422958380b2d2629bec"
+    },
+    {
+      "path": "src/assets/heroes/achilles-rupture-case-02.png",
+      "role": "case-cover",
+      "injuryTheme": "achilles-rupture",
+      "promptRecord": "src/assets/heroes/provenance/achilles-rupture.md",
+      "width": 2400,
+      "height": 960,
+      "sha256": "037bb950968e93b7ff1277f597b4eda0ed94589bb88f9bba888fdd13368777df"
+    },
+    {
+      "path": "src/assets/heroes/achilles-rupture-case-03.png",
+      "role": "case-cover",
+      "injuryTheme": "achilles-rupture",
+      "promptRecord": "src/assets/heroes/provenance/achilles-rupture.md",
+      "width": 2400,
+      "height": 960,
+      "sha256": "2f5fb577d579ed13ef607a4aec4342e9924df83b55cc427f833ecea1bcc7f46f"
+    },
+    {
+      "path": "src/assets/heroes/achilles-rupture-case-04.png",
+      "role": "case-cover",
+      "injuryTheme": "achilles-rupture",
+      "promptRecord": "src/assets/heroes/provenance/achilles-rupture.md",
+      "width": 2400,
+      "height": 960,
+      "sha256": "6334f689d1b26b2a6e959708d6f1560594a9cf1249f9da2f3baa82f93db67b0d"
+    }
+  ]
+}

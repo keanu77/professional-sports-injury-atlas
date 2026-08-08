@@ -16,9 +16,7 @@
   border-radius: 6px;
   background: var(--color-surface-raised);
   color: var(--color-brand-primary);
-  font: inherit;
-  font-size: 0.9375rem;
-  font-weight: 600;
+  font: 600 var(--text-meta) / 1.5 var(--font-meta);
   cursor: pointer;
 }
 
@@ -40,4 +38,41 @@
   color: var(--color-on-warm);
   font-weight: 600;
   text-align: center;
+}
+
+:where(.section-title, main h2:not(.sidebar-title)) {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-block-end: var(--space-block);
+  font-size: var(--text-h2);
+}
+
+:where(.section-title, main h2:not(.sidebar-title))::after {
+  height: 2px;
+  flex: 1;
+  background: linear-gradient(
+    90deg,
+    var(--injury-color, var(--color-brand-primary)) 0 2.5rem,
+    var(--hairline) 2.5rem 100%
+  );
+  content: "";
+}
+
+main > section:not(:first-child),
+main > article > section {
+  margin-block-start: var(--space-section);
+}
+
+.headline-list {
+  border-block-start: 1px solid var(--hairline);
+}
+
+.meta-en {
+  font-size: 0.75rem;
+  opacity: 0.75;
+}
+
+:where(h2, h3, [data-case-card], [data-course-key]) {
+  scroll-margin-top: 8rem;
 }

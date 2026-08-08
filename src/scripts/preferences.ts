@@ -159,10 +159,27 @@ function initSkipLink(root: Document): void {
   });
 }
 
-/** Wires theme, font-scale, mobile navigation, and skip-link behavior. */
+function initStickyHeader(root: Document): void {
+  const header = root.querySelector<HTMLElement>(".site-header");
+  const sentinel = root.querySelector<HTMLElement>("[data-header-sentinel]");
+  if (
+    header === null ||
+    sentinel === null ||
+    !("IntersectionObserver" in window)
+  ) {
+    return;
+  }
+  const observer = new IntersectionObserver(([entry]) => {
+    header.classList.toggle("is-stuck", entry?.isIntersecting === false);
+  });
+  observer.observe(sentinel);
+}
+
+/** Wires theme, type scale, navigation, sticky chrome, and skip-link behavior. */
 export function initSiteChrome(root: Document = document): void {
   initThemeToggle(root);
   initFontScaleControls(root);
   initMobileNav(root);
   initSkipLink(root);
+  initStickyHeader(root);
 }
