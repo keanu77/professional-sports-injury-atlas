@@ -1,31 +1,43 @@
 /**
- * Design tokens aligned with sportsmedicine.tw. This file is the single
- * source of truth parsed by tests/unit/color-contrast.test.ts, which enforces
- * WCAG AA for every declared text/background pair. White text is forbidden on
- * --brand-500 (the pair is below 4.5:1): white goes on --brand-action only.
- * The semantic --color-* layer
- * is what components consume; the manual dark theme re-aliases it.
+ * Production color tokens measured from sportsmedicine.tw on 2026-08-08.
+ * Every canonical color is a light-dark() pair; the root color-scheme below
+ * selects the light value by default and the dark value for the site's
+ * explicit, locally persisted theme. Components consume only this semantic
+ * layer, including the governed inline SVG case covers.
  */
 
 :root {
-  /* Brand palette (exact plan values) */
-  --brand-500: #1cb3cc;
-  --brand-deep: #148da1;
-  --brand-action: #3a5f66;
-  --brand-soft: #d4f6ff;
-  --accent-500: #66bbdd;
-  --ink-strong: #222222;
-  --ink-muted: #535353;
-  --surface-page: #ffffff;
-  --surface-info: #f6f6f6;
-  --surface-muted: #eeeeee;
-  --accent-ink: #222222;
-  --dark-page: #10262b;
-  --dark-surface: #183940;
-  --dark-ink: #f6f6f6;
-  --dark-action: #d4f6ff;
-  --dark-accent: #66bbdd;
-  --on-action: #ffffff;
+  color-scheme: light;
+
+  /* sportsmedicine.tw brand and surface system */
+  --color-brand-primary: light-dark(oklch(53% 0.12 228), oklch(66% 0.13 228));
+  --color-brand-primary-hover: light-dark(
+    oklch(46% 0.11 228),
+    oklch(74% 0.12 228)
+  );
+  --color-brand-accent: light-dark(oklch(70% 0.15 45), oklch(72% 0.16 45));
+  --color-brand-accent-hover: light-dark(
+    oklch(60% 0.14 45),
+    oklch(66% 0.15 45)
+  );
+  --color-metric: light-dark(oklch(80% 0.16 80), oklch(82% 0.16 80));
+  --color-surface: light-dark(oklch(98.8% 0.003 220), oklch(19% 0.013 240));
+  --color-surface-muted: light-dark(oklch(97% 0.006 220), oklch(23% 0.015 240));
+  --color-surface-raised: light-dark(oklch(100% 0 0), oklch(25% 0.017 240));
+  --color-ink: light-dark(oklch(18% 0.02 240), oklch(92% 0.013 240));
+  --color-ink-muted: light-dark(oklch(42% 0.015 240), oklch(70% 0.012 240));
+
+  /* sportsmedicine.tw status colors */
+  --color-warning: light-dark(oklch(47% 0.12 75), oklch(85% 0.12 85));
+  --color-warning-surface: light-dark(oklch(97% 0.04 85), oklch(30% 0.05 85));
+  --color-warning-border: light-dark(oklch(88% 0.08 85), oklch(45% 0.08 85));
+  --color-danger: light-dark(oklch(51% 0.2 27), oklch(78% 0.15 25));
+  --color-danger-surface: light-dark(oklch(96% 0.03 25), oklch(27% 0.06 25));
+  --color-danger-border: light-dark(oklch(70% 0.17 25), oklch(55% 0.13 25));
+
+  /* Accessible foregrounds for saturated brand fills. */
+  --color-on-brand: var(--color-surface-raised);
+  --color-on-warm: light-dark(var(--color-ink), var(--color-surface));
 
   /* Typography */
   --font-display:
@@ -36,29 +48,8 @@
   --font-body:
     "Inter", "PingFang TC", "Microsoft JhengHei", "Noto Sans CJK TC", sans-serif;
   --font-scale: 1;
-
-  /* Semantic colors: light theme (default) */
-  --color-page: var(--surface-page);
-  --color-surface: var(--surface-info);
-  --color-text: var(--ink-strong);
-  --color-muted: var(--ink-muted);
-  --color-action: var(--brand-action);
-  --color-on-action: var(--on-action);
-  --color-accent: var(--accent-500);
-  --color-on-accent: var(--accent-ink);
-  --color-border: var(--brand-deep);
-  --color-focus: var(--brand-action);
 }
 
 :root[data-theme="dark"] {
-  --color-page: var(--dark-page);
-  --color-surface: var(--dark-surface);
-  --color-text: var(--dark-ink);
-  --color-muted: var(--dark-ink);
-  --color-action: var(--dark-action);
-  --color-on-action: var(--ink-strong);
-  --color-accent: var(--dark-accent);
-  --color-on-accent: var(--accent-ink);
-  --color-border: var(--dark-action);
-  --color-focus: var(--dark-action);
+  color-scheme: dark;
 }

@@ -135,6 +135,8 @@ export function scanBrandAssets(root: string): ValidationIssue[] {
     "src/layouts",
     "src/components",
     "src/scripts",
+    "src/styles",
+    "src/lib/video",
   ];
   for (const templateDir of templateDirs) {
     for (const filePath of walkFiles(join(root, templateDir))) {

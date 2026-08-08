@@ -1,16 +1,18 @@
 /**
  * Progressive click-to-load enhancement for case videos. Before any click the
  * page contains no YouTube iframe, request, thumbnail, preconnect, autoplay,
- * or tracker: only the neutral card, a normal canonical source anchor, and
- * real timestamp anchors that work without JavaScript. The first click (and
- * only then) builds the validated `youtube-nocookie.com` embed URL with the
- * runtime page origin, inserts exactly one iframe (accessible title,
+ * or tracker: only the governed inline SVG facade, a normal canonical source
+ * anchor, and real timestamp anchors that work without JavaScript. The first
+ * click (and only then) hides that local facade, builds the validated
+ * `youtube-nocookie.com` embed URL with the runtime page origin, inserts
+ * exactly one iframe (accessible title,
  * `loading='lazy'`, `referrerpolicy='strict-origin-when-cross-origin'`, allow
  * list without autoplay), loads the official IFrame API, and hands that same
  * iframe to one `YT.Player`. Timeline anchors are intercepted only while the
  * player is ready and call the typed adapter's `seekTo()`; on API load or
- * readiness failure the iframe is removed, focus returns to the load button,
- * and the browser follows the original timestamp URLs.
+ * readiness failure the iframe is removed, the SVG facade is restored, focus
+ * returns to the load button, and the browser follows the original timestamp
+ * URLs.
  */
 
 import {
@@ -66,8 +68,10 @@ function setupEmbed(
   const scope = root.dataset.videoScope ?? "";
   const button = root.querySelector<HTMLButtonElement>("[data-video-load]");
   const stage = root.querySelector<HTMLElement>("[data-video-stage]");
+  const facade = root.querySelector<HTMLElement>("[data-video-facade]");
   const failureNote = root.querySelector<HTMLElement>("[data-video-failure]");
-  if (scope === "" || button === null || stage === null) return;
+  if (scope === "" || button === null || stage === null || facade === null)
+    return;
   if (root.dataset.videoWired === "true") return;
   root.dataset.videoWired = "true";
 
@@ -80,7 +84,7 @@ function setupEmbed(
     controller.player = null;
     controller.state = "failed";
     root.dataset.videoState = "failed";
-    button.hidden = false;
+    facade.hidden = false;
     if (failureNote !== null) failureNote.hidden = false;
     button.focus();
   };
@@ -112,8 +116,8 @@ function setupEmbed(
     iframe.allowFullscreen = true;
     iframe.className = "case-video-frame";
 
-    button.hidden = true;
-    stage.append(iframe);
+    facade.hidden = true;
+    stage.prepend(iframe);
     iframe.focus();
 
     loadIframeApi()

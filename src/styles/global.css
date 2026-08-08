@@ -22,8 +22,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: var(--color-page);
-  color: var(--color-text);
+  background: var(--color-surface);
+  color: var(--color-ink);
   font-family: var(--font-body);
   line-height: 1.6;
   overflow-wrap: anywhere;
@@ -37,7 +37,7 @@ h5,
 h6 {
   font-family: var(--font-heading);
   line-height: 1.25;
-  color: var(--color-text);
+  color: var(--color-ink);
 }
 
 h1 {
@@ -45,11 +45,11 @@ h1 {
 }
 
 a {
-  color: var(--color-action);
+  color: var(--color-brand-primary);
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-focus);
+  outline: 3px solid var(--color-brand-primary-hover);
   outline-offset: 2px;
 }
 

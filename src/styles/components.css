@@ -1,8 +1,8 @@
 /**
  * Interactive component styles. Every persistent control keeps a 44x44
  * minimum target. Pressed/expanded states invert to the accessible action
- * color (never --brand-500 behind text). The review banner uses the warm
- * accent with dark ink in both themes.
+ * brand color. The review banner uses the warm accent with a theme-aware
+ * high-contrast foreground.
  */
 
 .control-button {
@@ -12,10 +12,10 @@
   min-width: 44px;
   min-height: 44px;
   padding: 0 0.75rem;
-  border: 2px solid var(--color-action);
+  border: 2px solid var(--color-brand-primary);
   border-radius: 6px;
-  background: var(--color-surface);
-  color: var(--color-action);
+  background: var(--color-surface-raised);
+  color: var(--color-brand-primary);
   font: inherit;
   font-size: 0.9375rem;
   font-weight: 600;
@@ -24,8 +24,8 @@
 
 .control-button[aria-pressed="true"],
 .control-button[aria-expanded="true"] {
-  background: var(--color-action);
-  color: var(--color-on-action);
+  background: var(--color-brand-primary);
+  color: var(--color-on-brand);
 }
 
 .font-scale-control {
@@ -36,8 +36,8 @@
 .review-banner {
   margin: 0;
   padding: 0.625rem 1rem;
-  background: var(--color-accent);
-  color: var(--color-on-accent);
+  background: var(--color-brand-accent);
+  color: var(--color-on-warm);
   font-weight: 600;
   text-align: center;
 }

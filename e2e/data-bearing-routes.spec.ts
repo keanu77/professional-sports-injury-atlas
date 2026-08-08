@@ -116,6 +116,13 @@ test.describe("data-bearing fixture routes", () => {
     await expect(generalButton).toHaveAttribute("aria-pressed", "true");
     await expect(professionalButton).toHaveAttribute("aria-pressed", "false");
     await expect(notes).toHaveAttribute("data-emphasis", "general");
+    const generalAccent = await general.evaluate(
+      (element) => window.getComputedStyle(element).borderTopColor,
+    );
+    const professionalBase = await professional.evaluate(
+      (element) => window.getComputedStyle(element).borderTopColor,
+    );
+    expect(generalAccent).not.toBe(professionalBase);
     await expectNoAxeViolations(page);
 
     // Click moves emphasis only: aria-pressed swaps, both sections remain
@@ -126,6 +133,20 @@ test.describe("data-bearing fixture routes", () => {
     await expect(notes).toHaveAttribute("data-emphasis", "professional");
     await expect(general).toBeVisible();
     await expect(professional).toBeVisible();
+    await expect
+      .poll(() =>
+        general.evaluate(
+          (element) => window.getComputedStyle(element).borderTopColor,
+        ),
+      )
+      .toBe(professionalBase);
+    await expect
+      .poll(() =>
+        professional.evaluate(
+          (element) => window.getComputedStyle(element).borderTopColor,
+        ),
+      )
+      .toBe(generalAccent);
     const focusInsideLayer = await page.evaluate(() => {
       const active = document.activeElement;
       if (active === null) return false;

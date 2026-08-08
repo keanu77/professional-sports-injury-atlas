@@ -1,21 +1,21 @@
 ---
 /**
- * Neutral click-to-load case video card. It never renders video screenshots
- * or remote thumbnails: the initial card shows the source title, uploader,
- * duration, visible caption state, a warm-orange play symbol with dark text,
- * a normal canonical source anchor, and the load button. The presentation is
- * resolved server-side from the validated video contract: click-to-load only
- * for the registered YouTube provider with a permitted embed/caption state,
- * external-link-only otherwise, and a clear notice (no player) when the
- * video is unavailable. Review mode may expose the technical player state to
- * the named reviewer while keeping the visible caption warning.
+ * Privacy-preserving case-video facade. Before activation it renders only the
+ * case's governed inline SVG cover, local metadata, and a real source anchor:
+ * no remote thumbnail, game frame, iframe, preconnect, or third-party request.
+ * Verified YouTube videos gain an explicit load button; NBA-hosted and
+ * caption-degraded videos use a styled external-link cover. The two governed
+ * Shorts receive a centered 9:16 iframe after activation without changing the
+ * frozen case contract.
  */
+import CaseCover from "./CaseCover.astro";
 import {
   captionStatusLabel,
   formatDurationLabel,
   resolvePlayerPresentation,
   type VideoDisplayMode,
 } from "../../lib/video/player-state";
+import { resolveVideoOrientation } from "../../lib/video/facade";
 import { parseYouTubeVideoId } from "../../lib/video/youtube";
 import type { CaptionStatus } from "../../lib/contracts/case";
 import type { EmbedStatus } from "../../lib/contracts/taxonomy";
@@ -24,6 +24,8 @@ interface Props {
   scopeId: string;
   displayMode: VideoDisplayMode;
   sourceTitle: string;
+  injuryCode: string;
+  injuryLabel: string;
   video: {
     provider: string;
     canonicalUrl: string;
@@ -34,7 +36,8 @@ interface Props {
   };
 }
 
-const { scopeId, displayMode, sourceTitle, video } = Astro.props;
+const { scopeId, displayMode, sourceTitle, injuryCode, injuryLabel, video } =
+  Astro.props;
 
 const presentation = resolvePlayerPresentation({
   providerCode: video.provider,
@@ -54,6 +57,7 @@ if (presentation === "click-to-load") {
   }
 }
 
+const orientation = resolveVideoOrientation(video.provider, video.canonicalUrl);
 const captionLabel = captionStatusLabel(video.captionStatus);
 const durationLabel = formatDurationLabel(video.durationSeconds);
 const captionWarning =
@@ -62,88 +66,147 @@ const captionWarning =
     : displayMode === "public"
       ? "依無障礙政策，字幕未確認可用的影片不在本站內嵌播放，僅提供原始平台連結與文字說明。"
       : "字幕尚未確認可用：公開版將降級為原始平台連結，站內播放僅供審查。";
+const platformLabel =
+  video.provider === "nba"
+    ? "NBA.com"
+    : video.provider === "youtube"
+      ? "YouTube"
+      : "原始平台";
+const coverIdPrefix = `video-cover-${scopeId}`;
 ---
 
-{
-  presentation === "unavailable-notice" ? (
-    <section
-      class="case-video case-video-unavailable"
-      data-video-unavailable
-      aria-label={`影片狀態：${sourceTitle}`}
-    >
-      <p class="case-video-title">{sourceTitle}</p>
-      <p class="case-video-facts">
-        上傳者：{video.uploaderName}｜長度：{durationLabel}
-      </p>
-      <p class="case-video-caption-status">{captionLabel}</p>
-      <p class="case-video-notice" data-video-unavailable-notice>
-        原始影片目前無法取得，本案例暫不提供影片播放。文字說明仍然完整可讀。
-      </p>
-    </section>
-  ) : (
-    <figure
-      class="case-video"
-      data-video-scope={presentation === "click-to-load" ? scopeId : undefined}
-      data-video-embed={presentation === "click-to-load" ? "" : undefined}
-      data-video-external={
-        presentation === "external-link-only" ? "" : undefined
-      }
-      data-video-id={videoId ?? undefined}
-      data-video-title={
-        presentation === "click-to-load"
-          ? `案例影片播放器：${sourceTitle}`
-          : undefined
-      }
-    >
-      <figcaption class="case-video-meta">
-        <p class="case-video-title">{sourceTitle}</p>
-        <p class="case-video-facts">
-          上傳者：{video.uploaderName}｜長度：{durationLabel}
+<section
+  class="case-video"
+  data-video-scope={presentation === "click-to-load" ? scopeId : undefined}
+  data-video-embed={presentation === "click-to-load" ? "" : undefined}
+  data-video-external={presentation === "external-link-only" ? "" : undefined}
+  data-video-unavailable={presentation === "unavailable-notice"
+    ? ""
+    : undefined}
+  data-video-id={videoId ?? undefined}
+  data-video-title={presentation === "click-to-load"
+    ? `案例影片播放器：${sourceTitle}`
+    : undefined}
+  data-video-orientation={orientation}
+  aria-label={`影片來源：${sourceTitle}`}
+>
+  {
+    presentation === "click-to-load" && (
+      <div
+        class="case-video-stage"
+        data-video-stage
+        data-video-orientation={orientation}
+      >
+        <div class="video-facade" data-video-facade>
+          <CaseCover
+            injuryCode={injuryCode}
+            injuryLabel={injuryLabel}
+            idPrefix={coverIdPrefix}
+            presentation="facade"
+          />
+          <button type="button" class="video-load-button" data-video-load>
+            <span class="video-load-label">
+              <span class="video-play-symbol" aria-hidden="true">
+                ▶
+              </span>
+              <span class="video-load-copy">
+                <strong>載入 YouTube 播放器</strong>
+                <small>點擊後才會連線至 YouTube</small>
+              </span>
+            </span>
+          </button>
+        </div>
+        <p class="case-video-failure" data-video-failure hidden>
+          站內播放器載入失敗，請改用下方原始連結；時間軸連結會直接開啟原始平台。
         </p>
-        <p
-          class="case-video-caption-status"
-          data-caption-status={video.captionStatus}
-        >
-          {captionLabel}
+      </div>
+    )
+  }
+
+  {
+    presentation === "external-link-only" && (
+      <a
+        class="video-external-facade"
+        data-video-source-link
+        href={video.canonicalUrl}
+        rel="noopener noreferrer"
+      >
+        <CaseCover
+          injuryCode={injuryCode}
+          injuryLabel={injuryLabel}
+          idPrefix={coverIdPrefix}
+          presentation="facade"
+        />
+        <span class="video-external-label">
+          <strong>於 {platformLabel} 觀看</strong>
+          <small>
+            外部連結 <span aria-hidden="true">↗</span>
+          </small>
+        </span>
+      </a>
+    )
+  }
+
+  {
+    presentation === "unavailable-notice" && (
+      <CaseCover
+        injuryCode={injuryCode}
+        injuryLabel={injuryLabel}
+        idPrefix={coverIdPrefix}
+        presentation="facade"
+      />
+    )
+  }
+
+  <div class="case-video-meta">
+    <p class="case-video-title">{sourceTitle}</p>
+    <p class="case-video-facts">
+      上傳者：{video.uploaderName}｜長度：{durationLabel}
+    </p>
+    <p
+      class="case-video-caption-status"
+      data-caption-status={video.captionStatus}
+    >
+      {captionLabel}
+    </p>
+    {
+      captionWarning !== null && (
+        <p class="case-video-warning" data-caption-warning>
+          {captionWarning}
         </p>
-        {captionWarning !== null && (
-          <p class="case-video-warning" data-caption-warning>
-            {captionWarning}
-          </p>
-        )}
-        {displayMode === "review" && (
-          <p class="case-video-review-state" data-review-state>
-            審查資訊：embedStatus={video.embedStatus}、captionStatus=
-            {video.captionStatus}、presentation={presentation}
-          </p>
-        )}
-        <p>
+      )
+    }
+    {
+      displayMode === "review" && (
+        <p class="case-video-review-state" data-review-state>
+          審查資訊：embedStatus={video.embedStatus}、captionStatus=
+          {video.captionStatus}、presentation={presentation}
+        </p>
+      )
+    }
+    {
+      presentation === "click-to-load" && (
+        <p class="case-video-source-action">
           <a
             class="case-video-source-link"
             data-video-source-link
             href={video.canonicalUrl}
             rel="noopener noreferrer"
           >
-            於原始平台觀看原始影片（外部連結）
+            於 YouTube 觀看原始影片（外部連結）
           </a>
         </p>
-      </figcaption>
-      {presentation === "click-to-load" && (
-        <div class="case-video-stage" data-video-stage>
-          <button type="button" class="video-load-button" data-video-load>
-            <span class="video-play-symbol" aria-hidden="true">
-              ▶
-            </span>
-            <span>載入站內播放器（點擊後才會連線至 YouTube）</span>
-          </button>
-          <p class="case-video-failure" data-video-failure hidden>
-            站內播放器載入失敗，請改用上方原始連結；時間軸連結會直接開啟原始平台。
-          </p>
-        </div>
-      )}
-    </figure>
-  )
-}
+      )
+    }
+    {
+      presentation === "unavailable-notice" && (
+        <p class="case-video-notice" data-video-unavailable-notice>
+          原始影片目前無法取得，本案例暫不提供影片播放。文字說明仍然完整可讀。
+        </p>
+      )
+    }
+  </div>
+</section>
 
 <script>
   import { initCaseVideos } from "../../scripts/video-player";
@@ -155,9 +218,110 @@ const captionWarning =
   .case-video {
     margin: 0;
     padding: 1rem;
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    background: var(--color-surface);
+    border: 1px solid var(--color-brand-primary);
+    border-radius: 12px;
+    background: var(--color-surface-raised);
+  }
+
+  .case-video-stage,
+  .video-facade {
+    position: relative;
+  }
+
+  .video-load-button {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    min-height: 44px;
+    padding: clamp(0.65rem, 3vw, 1.25rem);
+    border: 0;
+    border-radius: 18px;
+    background: transparent;
+    color: var(--color-on-warm);
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .video-load-button:focus-visible {
+    outline: 4px solid var(--color-brand-primary-hover);
+    outline-offset: 3px;
+  }
+
+  .video-load-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    max-width: 100%;
+    padding: 0.65rem 0.9rem;
+    border: 2px solid var(--color-on-warm);
+    border-radius: 999px;
+    background: var(--color-brand-accent);
+    box-shadow: 0 0.5rem 1.5rem
+      color-mix(in oklch, var(--color-ink) 24%, transparent);
+  }
+
+  .video-load-button:hover .video-load-label {
+    outline: 3px solid var(--color-brand-accent-hover);
+    outline-offset: 2px;
+  }
+
+  .video-play-symbol {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding-inline-start: 0.12rem;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+  }
+
+  .video-load-copy {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.3;
+    text-align: start;
+  }
+
+  .video-load-copy small {
+    font-size: 0.75rem;
+  }
+
+  .video-external-facade {
+    display: block;
+    overflow: hidden;
+    border-radius: 18px;
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+
+  .video-external-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    min-height: 44px;
+    padding: 0.7rem 1rem;
+    background: var(--color-brand-primary);
+    color: var(--color-on-brand);
+  }
+
+  .video-external-facade:hover .video-external-label {
+    background: var(--color-brand-primary-hover);
+  }
+
+  .video-external-label small {
+    white-space: nowrap;
+  }
+
+  .case-video-meta {
+    margin-top: 1rem;
   }
 
   .case-video-title {
@@ -168,50 +332,29 @@ const captionWarning =
 
   .case-video-facts,
   .case-video-caption-status,
-  .case-video-review-state {
+  .case-video-review-state,
+  .case-video-source-action {
     margin: 0 0 0.5rem;
   }
 
   .case-video-warning {
     margin: 0 0 0.5rem;
     padding: 0.5rem 0.75rem;
+    border: 1px solid var(--color-warning-border);
     border-radius: 6px;
-    background: var(--color-accent);
-    color: var(--color-on-accent);
+    background: var(--color-warning-surface);
+    color: var(--color-warning);
     font-weight: 600;
   }
 
-  .case-video-stage {
-    margin-top: 0.75rem;
-  }
-
-  .video-load-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    min-height: 44px;
-    padding: 0.75rem 1rem;
-    border: 2px solid var(--color-on-accent);
-    border-radius: 8px;
-    background: var(--color-accent);
-    color: var(--color-on-accent);
-    font: inherit;
-    font-weight: 600;
-    cursor: pointer;
-  }
-
-  .video-play-symbol {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2rem;
-    height: 2rem;
-    border: 2px solid var(--color-on-accent);
-    border-radius: 50%;
-  }
-
-  .case-video-failure {
-    margin: 0.5rem 0 0;
+  .case-video-failure,
+  .case-video-notice {
+    margin: 0.75rem 0 0;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--color-danger-border);
+    border-radius: 6px;
+    background: var(--color-danger-surface);
+    color: var(--color-danger);
     font-weight: 600;
   }
 
@@ -220,6 +363,29 @@ const captionWarning =
     width: 100%;
     aspect-ratio: 16 / 9;
     border: 0;
-    border-radius: 6px;
+    border-radius: 10px;
+    background: var(--color-surface-muted);
+  }
+
+  .case-video[data-video-orientation="portrait"] :global(.case-video-frame) {
+    max-width: 24rem;
+    margin-inline: auto;
+    aspect-ratio: 9 / 16;
+  }
+
+  @media (max-width: 28rem) {
+    .video-load-label {
+      gap: 0.5rem;
+      padding: 0.5rem 0.7rem;
+    }
+
+    .video-play-symbol {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    .video-load-copy small {
+      display: none;
+    }
   }
 </style>

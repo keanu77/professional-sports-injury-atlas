@@ -21,6 +21,8 @@ export function getStaticPaths(): Array<{ params: { lab: string } }> {
 
 const FICTIONAL_VIDEO_ID = "fIcTiOnAl01";
 const FICTIONAL_WATCH_URL = `https://www.youtube.com/watch?v=${FICTIONAL_VIDEO_ID}`;
+const FICTIONAL_INJURY_CODE = "acl";
+const FICTIONAL_INJURY_LABEL = "前十字韌帶損傷";
 
 const fictionalYouTubeVideo = {
   provider: "youtube",
@@ -64,6 +66,8 @@ const fictionalNbaVideo = {
       scopeId="lab-embed-review"
       displayMode="review"
       sourceTitle="虛構示範受傷片段（Fictional Demo Clip）"
+      injuryCode={FICTIONAL_INJURY_CODE}
+      injuryLabel={FICTIONAL_INJURY_LABEL}
       video={fictionalYouTubeVideo}
     />
     <CaseTimeline
@@ -79,6 +83,8 @@ const fictionalNbaVideo = {
       scopeId="lab-embed-public"
       displayMode="public"
       sourceTitle="虛構示範片段：字幕可用（Fictional Captioned Clip）"
+      injuryCode={FICTIONAL_INJURY_CODE}
+      injuryLabel={FICTIONAL_INJURY_LABEL}
       video={{ ...fictionalYouTubeVideo, captionStatus: "available" }}
     />
   </section>
@@ -91,6 +97,8 @@ const fictionalNbaVideo = {
       scopeId="lab-public-degraded"
       displayMode="public"
       sourceTitle="虛構示範片段：無字幕（Fictional Uncaptioned Clip）"
+      injuryCode={FICTIONAL_INJURY_CODE}
+      injuryLabel={FICTIONAL_INJURY_LABEL}
       video={{ ...fictionalYouTubeVideo, captionStatus: "unavailable" }}
     />
   </section>
@@ -101,6 +109,8 @@ const fictionalNbaVideo = {
       scopeId="lab-external"
       displayMode="review"
       sourceTitle="虛構官方平台片段（Fictional Official Platform Clip）"
+      injuryCode={FICTIONAL_INJURY_CODE}
+      injuryLabel={FICTIONAL_INJURY_LABEL}
       video={fictionalNbaVideo}
     />
   </section>
@@ -111,6 +121,8 @@ const fictionalNbaVideo = {
       scopeId="lab-unavailable"
       displayMode="review"
       sourceTitle="虛構示範片段：已下架（Fictional Removed Clip）"
+      injuryCode={FICTIONAL_INJURY_CODE}
+      injuryLabel={FICTIONAL_INJURY_LABEL}
       video={{ ...fictionalYouTubeVideo, embedStatus: "unavailable" }}
     />
   </section>

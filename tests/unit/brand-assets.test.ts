@@ -64,6 +64,24 @@ describe("brand-asset scan", () => {
     expect(observed).toContain("brand-remote-thumbnail");
   });
 
+  it("also rejects thumbnail hosts hidden in styles or video helpers", () => {
+    const root = makeRoot();
+    writeInto(
+      root,
+      "src/styles/facade.css",
+      ".facade { background-image: url(https://i.ytimg.com/vi/abc/hqdefault.jpg); }",
+    );
+    writeInto(
+      root,
+      "src/lib/video/facade.ts",
+      'export const forbidden = "https://img.youtube.com/vi/abc/0.jpg";',
+    );
+    const observed = scanBrandAssets(root).map((entry) => entry.code);
+    expect(
+      observed.filter((code) => code === "brand-remote-thumbnail"),
+    ).toHaveLength(2);
+  });
+
   it("fails on trademark-like asset names and logo class names", () => {
     const root = makeRoot();
     writeInto(root, "public/nba-logo.webmanifest", "{}");

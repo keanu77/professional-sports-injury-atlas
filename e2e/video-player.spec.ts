@@ -18,6 +18,43 @@ const FICTIONAL_ID = "fIcTiOnAl01";
 const WATCH_URL = `https://www.youtube.com/watch?v=${FICTIONAL_ID}`;
 const IFRAME_API_URL = "https://www.youtube.com/iframe_api";
 const PAGE_ORIGIN = "http://127.0.0.1:4321";
+const GOVERNED_YOUTUBE_CASES = [
+  {
+    slug: "anthony-edwards-ankle-sprain-2023",
+    videoId: "V9mtX4mE8wQ",
+    orientation: "landscape",
+    injuryCode: "ankle-sprain",
+    injuryLabel: "踝關節扭傷",
+  },
+  {
+    slug: "kevin-durant-achilles-rupture-2019",
+    videoId: "YcSOLHMsJYw",
+    orientation: "landscape",
+    injuryCode: "achilles-rupture",
+    injuryLabel: "阿基里斯腱斷裂",
+  },
+  {
+    slug: "kyrie-irving-ankle-sprain-2021",
+    videoId: "FQAPZASQyX0",
+    orientation: "portrait",
+    injuryCode: "ankle-sprain",
+    injuryLabel: "踝關節扭傷",
+  },
+  {
+    slug: "lamelo-ball-ankle-sprain-2023",
+    videoId: "RDDGpqOvSdg",
+    orientation: "portrait",
+    injuryCode: "ankle-sprain",
+    injuryLabel: "踝關節扭傷",
+  },
+] as const;
+const GOVERNED_NBA_CASE = {
+  slug: "damian-lillard-achilles-rupture-2025",
+  canonicalUrl:
+    "https://www.nba.com/watch/video/damian-lillard-lower-left-leg-injury-exits-1st-quarter-game-4-pacers",
+  injuryCode: "achilles-rupture",
+  injuryLabel: "阿基里斯腱斷裂",
+} as const;
 
 const YOUTUBE_FAMILY_RE =
   /(^|\.)(youtube\.com|youtube-nocookie\.com|youtu\.be|ytimg\.com|ggpht\.com|googlevideo\.com|doubleclick\.net|google-analytics\.com|googletagmanager\.com|googlesyndication\.com)$/;
@@ -163,6 +200,13 @@ test.describe("component lab before enhancement", () => {
     expect(html).not.toContain("youtube-nocookie");
     expect(html).not.toContain("autoplay");
 
+    const facade = reviewCard(page).locator("[data-video-facade]");
+    await expect(facade.locator("[data-case-cover] svg")).toBeVisible();
+    await expect(facade.locator("[data-video-load]")).toContainText(
+      "載入 YouTube 播放器",
+    );
+    await expect(facade).toContainText("點擊後才會連線至 YouTube");
+
     const sourceLink = reviewCard(page).locator("[data-video-source-link]");
     await expect(sourceLink).toHaveAttribute("href", WATCH_URL);
     const timeline = page.locator(
@@ -175,6 +219,156 @@ test.describe("component lab before enhancement", () => {
     );
 
     await expectNoAxeViolations(page);
+
+    await page.getByRole("button", { name: "深色模式" }).click();
+    await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+    await expectNoAxeViolations(page);
+  });
+
+  test("every facade has a local SVG with unique accessible IDs", async ({
+    page,
+  }) => {
+    await stubYouTubeRoutes(page);
+    await page.goto(LAB_PATH);
+
+    const cards = page.locator(".case-video");
+    const covers = cards.locator("[data-case-cover] svg");
+    await expect(covers).toHaveCount(await cards.count());
+    const coverMetadata = await covers.evaluateAll((elements) =>
+      elements.map((element) => ({
+        references: (element.getAttribute("aria-labelledby") ?? "")
+          .split(/\s+/)
+          .filter(Boolean),
+        descendantIds: Array.from(
+          element.querySelectorAll("title[id], desc[id]"),
+          (child) => child.id,
+        ),
+      })),
+    );
+    const allIds = coverMetadata.flatMap((cover) => cover.descendantIds);
+    expect(new Set(allIds).size).toBe(allIds.length);
+    for (const cover of coverMetadata) {
+      expect(cover.references).toEqual(cover.descendantIds);
+      for (const id of cover.references) {
+        await expect(page.locator(`[id="${id}"]`)).toHaveCount(1);
+      }
+    }
+  });
+});
+
+test.describe("governed case facades", () => {
+  test("all four YouTube cases use one SVG facade and make zero pre-click requests", async ({
+    page,
+  }) => {
+    const log = await stubYouTubeRoutes(page);
+    const thirdPartyRequests: string[] = [];
+    page.on("request", (request) => {
+      if (new URL(request.url()).origin !== PAGE_ORIGIN) {
+        thirdPartyRequests.push(request.url());
+      }
+    });
+
+    for (const entry of GOVERNED_YOUTUBE_CASES) {
+      await page.goto(`/cases/${entry.slug}/`);
+      const card = page.locator(
+        `[data-video-embed][data-video-id="${entry.videoId}"]`,
+      );
+      await expect(card).toHaveAttribute(
+        "data-video-orientation",
+        entry.orientation,
+      );
+      const cover = card.locator("[data-video-facade] [data-case-cover]");
+      await expect(cover).toHaveAttribute("data-case-cover", entry.injuryCode);
+      await expect(cover.locator("svg")).toBeVisible();
+      await expect(
+        cover.locator(`[data-cover-illustration="${entry.injuryCode}"]`),
+      ).toHaveCount(1);
+      await expect(cover.locator("title")).toHaveText(
+        `${entry.injuryLabel}原創解剖示意封面`,
+      );
+      await expect(card.locator("[data-video-load]")).toContainText(
+        "載入 YouTube 播放器",
+      );
+      await expect(page.locator("[data-case-cover]")).toHaveCount(1);
+      await expect(page.locator("iframe, img")).toHaveCount(0);
+      expect(log.youtubeRequests).toEqual([]);
+      expect(thirdPartyRequests).toEqual([]);
+    }
+  });
+
+  test("both Shorts load at 9:16 while landscape remains 16:9", async ({
+    page,
+  }) => {
+    const log = await stubYouTubeRoutes(page);
+    const geometryCases = [
+      ...GOVERNED_YOUTUBE_CASES.filter(
+        (entry) => entry.orientation === "portrait",
+      ),
+      GOVERNED_YOUTUBE_CASES.find(
+        (entry) => entry.slug === "kevin-durant-achilles-rupture-2019",
+      )!,
+    ];
+
+    for (const entry of geometryCases) {
+      await page.goto(`/cases/${entry.slug}/`);
+      const card = page.locator(
+        `[data-video-embed][data-video-id="${entry.videoId}"]`,
+      );
+      await card.locator("[data-video-load]").click();
+      await expect(card).toHaveAttribute("data-video-state", "ready");
+
+      const iframe = card.locator("iframe");
+      await expect(iframe).toHaveCount(1);
+      const box = await iframe.boundingBox();
+      expect(box).not.toBeNull();
+      if (entry.orientation === "portrait") {
+        expect(Math.abs(box!.height / box!.width - 16 / 9)).toBeLessThan(0.02);
+        expect(box!.width).toBeLessThanOrEqual(385);
+        const stageBox = await card.locator("[data-video-stage]").boundingBox();
+        expect(stageBox).not.toBeNull();
+        const centerOffset = Math.abs(
+          box!.x + box!.width / 2 - (stageBox!.x + stageBox!.width / 2),
+        );
+        expect(centerOffset).toBeLessThanOrEqual(2);
+      } else {
+        expect(Math.abs(box!.width / box!.height - 16 / 9)).toBeLessThan(0.02);
+      }
+    }
+    expect(log.unmocked).toEqual([]);
+  });
+
+  test("a real NBA case uses its governed SVG external facade with zero third-party requests", async ({
+    page,
+  }) => {
+    const log = await stubYouTubeRoutes(page);
+    const thirdPartyRequests: string[] = [];
+    page.on("request", (request) => {
+      if (new URL(request.url()).origin !== PAGE_ORIGIN) {
+        thirdPartyRequests.push(request.url());
+      }
+    });
+
+    await page.goto(`/cases/${GOVERNED_NBA_CASE.slug}/`);
+    const card = page.locator("[data-video-external]");
+    const link = card.locator("[data-video-source-link]");
+    await expect(link).toHaveAttribute("href", GOVERNED_NBA_CASE.canonicalUrl);
+    await expect(link).toContainText("於 NBA.com 觀看");
+    const cover = link.locator("[data-case-cover]");
+    await expect(cover).toHaveAttribute(
+      "data-case-cover",
+      GOVERNED_NBA_CASE.injuryCode,
+    );
+    await expect(
+      cover.locator(
+        `[data-cover-illustration="${GOVERNED_NBA_CASE.injuryCode}"]`,
+      ),
+    ).toHaveCount(1);
+    await expect(cover.locator("title")).toHaveText(
+      `${GOVERNED_NBA_CASE.injuryLabel}原創解剖示意封面`,
+    );
+    await expect(page.locator("iframe, img")).toHaveCount(0);
+    expect(log.youtubeRequests).toEqual([]);
+    expect(thirdPartyRequests).toEqual([]);
   });
 });
 
@@ -356,6 +550,15 @@ test.describe("non-embedded states and caption policy", () => {
     await expect(external.locator("[data-video-source-link]")).toHaveAttribute(
       "href",
       "https://www.nba.com/watch/fictional-demo-clip",
+    );
+    await expect(
+      external.locator("[data-video-source-link] [data-case-cover] svg"),
+    ).toBeVisible();
+    await expect(external.locator("[data-video-source-link]")).toContainText(
+      "於 NBA.com 觀看",
+    );
+    await expect(external.locator("[data-video-source-link]")).toContainText(
+      "外部連結",
     );
     await expect(external.locator("[data-video-load]")).toHaveCount(0);
     await expect(external.locator("[data-video-stage]")).toHaveCount(0);
