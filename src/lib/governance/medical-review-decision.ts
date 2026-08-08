@@ -26,10 +26,15 @@ import { computeQuarterlyUpdateDigest } from "../cases/update-digest";
 import type { InjuryCase } from "../contracts/case";
 import type { InjuryOverview } from "../contracts/injury-overview";
 import type { QuarterlyUpdate } from "../contracts/update";
-import type { ArtifactManifest } from "./artifact-manifest";
+import {
+  REVIEW_SET_REQUEST_PATH,
+  type ArtifactManifest,
+} from "./artifact-manifest";
 import type { ReviewSetManifest } from "./review-set";
-import { REVIEW_SET_ROUTE } from "./review-set";
-import { validateServedArtifactReceipt } from "./served-artifact-receipt";
+import {
+  validateServedArtifactReceipt,
+  type ServedArtifactReceipt,
+} from "./served-artifact-receipt";
 
 const sha256Lower = z.string().regex(SHA256_RE);
 const nonEmpty = z.string().min(1);
@@ -190,6 +195,21 @@ export function validateMedicalReviewDecisionArtifacts(
     );
   }
   if (
+    context.artifactManifest.reviewSetDigest !== context.reviewSetDigest ||
+    context.artifactManifest.reviewSetResponseSha256 !==
+      sha256Hex(context.reviewSetBytes) ||
+    context.artifactManifest.rendererTreeDigest !==
+      context.reviewSetManifest.rendererTreeDigest
+  ) {
+    issues.push(
+      issue(
+        "medical-decision-manifest-review-set",
+        "privateDistManifestDigest",
+        "private manifest does not bind the current review-set identity and exact bytes",
+      ),
+    );
+  }
+  if (
     decision.servedReviewArtifactReceiptDigest !== context.servedReceiptDigest
   ) {
     issues.push(
@@ -207,12 +227,8 @@ export function validateMedicalReviewDecisionArtifacts(
   );
   issues.push(...receiptIssues);
   if (receiptIssues.length === 0) {
-    const receipt = context.servedReceipt as {
-      urlHash: string;
-      deploymentIdHash: string;
-      responses: Array<{ path: string; sha256: string }>;
-    };
-    if (receipt.urlHash !== decision.privateUrlHash) {
+    const receipt = context.servedReceipt as ServedArtifactReceipt;
+    if (receipt.privateOriginHash !== decision.privateUrlHash) {
       issues.push(
         issue(
           "medical-decision-url",
@@ -230,18 +246,26 @@ export function validateMedicalReviewDecisionArtifacts(
         ),
       );
     }
-    const reviewSetPath = REVIEW_SET_ROUTE.replace(/^\//, "");
-    const servedReviewSet = receipt.responses.find(
-      (response) => response.path === reviewSetPath,
+    if (receipt.reviewSetResponseSha256 !== decision.reviewSetResponseSha256) {
+      issues.push(
+        issue(
+          "medical-decision-review-set-response",
+          "reviewSetResponseSha256",
+          "receipt review-set response hash does not match the decision",
+        ),
+      );
+    }
+    const servedReviewSet = receipt.authorizedResponses.find(
+      (response) => response.requestPath === REVIEW_SET_REQUEST_PATH,
     );
     if (
       servedReviewSet === undefined ||
-      servedReviewSet.sha256 !== decision.reviewSetResponseSha256
+      servedReviewSet.decodedSha256 !== decision.reviewSetResponseSha256
     ) {
       issues.push(
         issue(
           "medical-decision-review-set-response",
-          reviewSetPath,
+          REVIEW_SET_REQUEST_PATH,
           "the served review-set response bytes do not match the decision",
         ),
       );

@@ -20,6 +20,9 @@ import { EMPTY_SOURCE_MANIFEST_REGISTRY_BYTES } from "../../src/lib/contracts/so
 import {
   buildArtifactManifest,
   computeArtifactManifestDigest,
+  PRIVATE_HTTP_HEADER_CONTRACT_ID,
+  PRIVATE_HTTP_HEADER_POLICY_SHA256,
+  type ArtifactManifest,
 } from "../../src/lib/governance/artifact-manifest";
 import {
   parseMedicalReviewDecisionBytes,
@@ -34,13 +37,134 @@ import {
   parseReviewSetManifestBytes,
   ReviewSetError,
 } from "../../src/lib/governance/review-set";
-import { computeResponseMetadataDigest } from "../../src/lib/governance/served-artifact-receipt";
+import {
+  computeAuthorizedMetadataDigest,
+  computeUnauthorizedMetadataDigest,
+  EMPTY_BODY_SHA256,
+  G4_AUTHORIZATION_DECISION_SHA256,
+  G4_PLAN_PATH,
+  G4_PLAN_SHA256,
+  UNAUTHORIZED_SCENARIOS,
+} from "../../src/lib/governance/served-artifact-receipt";
 
 const hex = (ch: string): string => ch.repeat(64);
 const COMMIT = "a".repeat(40);
 const REVIEWER = "Dr. Fictional Reviewer Two";
 const QUALIFICATION = "Fictional Sports Medicine Physician";
 const REVIEWED_AT = "2026-08-05T00:00:00Z";
+
+function servedReceiptFixture(manifest: ArtifactManifest): any {
+  const authorizedResponses = manifest.files
+    .map((file) => ({
+      requestPath: file.requestPath,
+      method: "GET",
+      status: 200,
+      redirectMode: "manual",
+      redirected: false,
+      contentType: file.contentType,
+      decodedByteLength: file.byteLength,
+      decodedSha256: file.sha256,
+      identityResult: "passed",
+      shardResult: ["case-index-manifest", "case-index-shard"].includes(
+        file.identity.kind,
+      )
+        ? "passed"
+        : "not-applicable",
+      robotsMetaResult:
+        file.identity.kind === "html-page" ? "passed" : "not-applicable",
+      robotsTxtResult:
+        file.identity.kind === "robots-txt" ? "passed" : "not-applicable",
+      headerContractId: PRIVATE_HTTP_HEADER_CONTRACT_ID,
+      headersResult: "passed",
+      forbiddenHeadersAbsent: true,
+      contentEncodingPresent: false,
+      bodyKind: "manifest-artifact",
+      loginDocument: false,
+      denyDocument: false,
+      fallbackDocument: false,
+      setCookiePresent: false,
+      cacheBypassObserved: false,
+    }))
+    .sort((a, b) => (a.requestPath < b.requestPath ? -1 : 1));
+  const unauthorizedResponses = manifest.files
+    .flatMap((file) =>
+      UNAUTHORIZED_SCENARIOS.map((scenario) => ({
+        scenario,
+        requestPath: file.requestPath,
+        method: "GET",
+        redirectMode: "manual",
+        redirected: false,
+        status: 401,
+        contentType: null,
+        bodyByteLength: 0,
+        bodySha256: EMPTY_BODY_SHA256,
+        wwwAuthenticateResult: "passed",
+        headerContractId: PRIVATE_HTTP_HEADER_CONTRACT_ID,
+        headersResult: "passed",
+        forbiddenHeadersAbsent: true,
+        contentEncodingPresent: false,
+        setCookiePresent: false,
+        cacheBypassObserved: false,
+        leaks: {
+          atlasIdentity: false,
+          reviewSetBytes: false,
+          reviewSetDigest: false,
+          cardSummaries: false,
+          workflowStatus: false,
+          deploymentIdentity: false,
+        },
+      })),
+    )
+    .sort((a, b) =>
+      `${a.requestPath}\0${a.scenario}` < `${b.requestPath}\0${b.scenario}`
+        ? -1
+        : 1,
+    );
+  return {
+    schemaVersion: 1,
+    receiptType: "served-private-review",
+    privateDistManifestDigest: computeArtifactManifestDigest(manifest),
+    reviewSetResponseSha256: manifest.reviewSetResponseSha256,
+    privateOriginHash: sha256Hex("http://private-origin.invalid"),
+    deploymentIdHash: sha256Hex("deployment-1"),
+    checkedAt: "2026-08-08T14:30:00Z",
+    requestMethod: "GET",
+    authenticationMethod: "http-basic-scrypt-keychain-v1",
+    bodyComparisonMethod: "decoded-sha256-exact",
+    redirectMode: "manual",
+    verifiedBy: {
+      authorizationDecisionDigest: G4_AUTHORIZATION_DECISION_SHA256,
+      authorizedBy: "吳易澄醫師",
+      role: "atlas-private-hosting-and-review",
+      executionScopeId: "g4-local-mini-tailscale-private-hosting-only",
+      planPath: G4_PLAN_PATH,
+      planSha256: G4_PLAN_SHA256,
+    },
+    manifestPathCount: manifest.files.length,
+    authorizedCheckCount: authorizedResponses.length,
+    unauthorizedScenarioCount: UNAUTHORIZED_SCENARIOS.length,
+    unauthorizedPathCount: manifest.files.length,
+    unauthorizedCheckCount: unauthorizedResponses.length,
+    mismatchCounts: {
+      access: 0,
+      byte: 0,
+      cache: 0,
+      header: 0,
+      identity: 0,
+      leak: 0,
+      metadata: 0,
+      redirect: 0,
+    },
+    authorizedResponses,
+    authorizedMetadataDigest: computeAuthorizedMetadataDigest(
+      authorizedResponses as any,
+    ),
+    unauthorizedResponses,
+    unauthorizedMetadataDigest: computeUnauthorizedMetadataDigest(
+      unauthorizedResponses as any,
+    ),
+  };
+}
 
 const loadFixture = (rel: string): any =>
   JSON.parse(
@@ -414,42 +538,37 @@ describe("medical-review decision", () => {
     const { record, overview, update, manifest } = buildManifestFixture();
     const reviewSetBytes = canonicalReviewSetBytes(manifest);
     const reviewSetDigest = sha256Hex(reviewSetBytes);
-    const artifactManifest = buildArtifactManifest("review", [
+    const artifactManifest = buildArtifactManifest(
+      "review",
+      [
+        {
+          path: "cases/fictional-forward-alpha-ankle-sprain-2026/index.html",
+          bytes: "<html>case page</html>",
+          contentType: "text/html; charset=utf-8",
+        },
+        {
+          path: "index.html",
+          bytes: "<html>home</html>",
+          contentType: "text/html; charset=utf-8",
+        },
+        {
+          path: "review/review-set.json",
+          bytes: reviewSetBytes,
+          contentType: "application/json",
+        },
+      ],
       {
-        path: "cases/fictional-forward-alpha-ankle-sprain-2026/index.html",
-        bytes: "<html>case page</html>",
-        contentType: "text/html; charset=utf-8",
+        buildCommit: COMMIT,
+        reviewSetDigest,
+        reviewSetResponseSha256: reviewSetDigest,
+        rendererTreeDigest: manifest.rendererTreeDigest,
+        headerPolicyDigest: PRIVATE_HTTP_HEADER_POLICY_SHA256,
+        generatedAt: "2026-08-08T14:00:00Z",
       },
-      {
-        path: "index.html",
-        bytes: "<html>home</html>",
-        contentType: "text/html; charset=utf-8",
-      },
-      {
-        path: "review/review-set.json",
-        bytes: reviewSetBytes,
-        contentType: "application/json",
-      },
-    ]);
+    );
     const artifactManifestDigest =
       computeArtifactManifestDigest(artifactManifest);
-    const responses = artifactManifest.files.map((file) => ({
-      path: file.path,
-      status: 200,
-      contentType: file.contentType,
-      sha256: file.sha256,
-    }));
-    const receipt = {
-      schemaVersion: 1,
-      receiptType: "served-artifact",
-      artifactManifestDigest,
-      urlHash: sha256Hex("https://private.example.org"),
-      deploymentIdHash: sha256Hex("deployment-1"),
-      checkedAt: "2026-08-05T20:00:00Z",
-      bodyComparison: "exact-bytes",
-      responses,
-      responseMetadataDigest: computeResponseMetadataDigest(responses as any),
-    };
+    const receipt = servedReceiptFixture(artifactManifest);
     const decision = {
       schemaVersion: 1,
       decisionType: "site-medical-review",
@@ -461,7 +580,7 @@ describe("medical-review decision", () => {
       privateDistManifestDigest: artifactManifestDigest,
       servedReviewArtifactReceiptDigest: sha256Hex(canonicalJson(receipt)),
       reviewSetResponseSha256: sha256Hex(reviewSetBytes),
-      privateUrlHash: receipt.urlHash,
+      privateUrlHash: receipt.privateOriginHash,
       deploymentIdHash: receipt.deploymentIdHash,
       caseDecisions: [
         {
@@ -540,15 +659,19 @@ describe("medical-review decision", () => {
 
   it("fails when one case HTML page changed while the review-set JSON is intact", () => {
     const fx = decisionFixture();
-    const tamperedResponses = fx.receipt.responses.map((response) =>
-      response.path.startsWith("cases/")
-        ? { ...response, sha256: sha256Hex("tampered case page") }
-        : response,
+    const tamperedResponses = fx.receipt.authorizedResponses.map(
+      (response: any) =>
+        response.requestPath.startsWith("/cases/")
+          ? {
+              ...response,
+              decodedSha256: sha256Hex("tampered case page"),
+            }
+          : response,
     );
     const tamperedReceipt = {
       ...fx.receipt,
-      responses: tamperedResponses,
-      responseMetadataDigest: computeResponseMetadataDigest(
+      authorizedResponses: tamperedResponses,
+      authorizedMetadataDigest: computeAuthorizedMetadataDigest(
         tamperedResponses as any,
       ),
     };

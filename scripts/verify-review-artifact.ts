@@ -68,7 +68,10 @@ export function checkHeaderPolicy(root: string): ValidationIssue[] {
   }
   const parsed = parseStrictJson(readFileSync(policyPath, "utf8")) as {
     schemaVersion?: unknown;
-    review?: Record<string, unknown>;
+    contractId?: unknown;
+    requiredHeaders?: Record<string, unknown>;
+    unauthorizedHeaders?: Record<string, unknown>;
+    forbiddenHeaders?: unknown;
   };
   const issues: ValidationIssue[] = [];
   if (parsed.schemaVersion !== 1) {
@@ -80,12 +83,41 @@ export function checkHeaderPolicy(root: string): ValidationIssue[] {
       ),
     );
   }
-  if (parsed.review?.["X-Robots-Tag"] !== REVIEW_X_ROBOTS_TAG) {
+  if (
+    parsed.contractId !== "atlas-private-review-http-headers-v1" ||
+    parsed.requiredHeaders?.["X-Robots-Tag"] !== REVIEW_X_ROBOTS_TAG
+  ) {
     issues.push(
       issue(
         "header-policy-x-robots-tag",
         HTTP_HEADER_POLICY_PATH,
         `review X-Robots-Tag must be exactly "${REVIEW_X_ROBOTS_TAG}"`,
+      ),
+    );
+  }
+  if (
+    parsed.requiredHeaders?.["Cache-Control"] !==
+      "private, no-store, max-age=0" ||
+    parsed.requiredHeaders?.Pragma !== "no-cache" ||
+    parsed.requiredHeaders?.Vary !== "Authorization" ||
+    parsed.requiredHeaders?.["X-Content-Type-Options"] !== "nosniff" ||
+    parsed.unauthorizedHeaders?.["WWW-Authenticate"] !==
+      'Basic realm="Private review", charset="UTF-8"' ||
+    JSON.stringify(parsed.forbiddenHeaders) !==
+      JSON.stringify([
+        "Content-Encoding",
+        "ETag",
+        "Last-Modified",
+        "Location",
+        "Server",
+        "Set-Cookie",
+      ])
+  ) {
+    issues.push(
+      issue(
+        "header-policy-private-contract",
+        HTTP_HEADER_POLICY_PATH,
+        "private review cache, auth, security, and forbidden-header contract is incomplete",
       ),
     );
   }

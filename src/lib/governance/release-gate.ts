@@ -1282,7 +1282,7 @@ function checkReviewSetAndMedicalDecision(
       issue(
         "gate-review-artifacts-missing",
         "review-artifacts",
-        "the private dist manifest and served-review receipt are required",
+        "the G4-complete private-dist manifest and full served-review receipt are required",
       ),
     );
   } else {
@@ -1292,6 +1292,10 @@ function checkReviewSetAndMedicalDecision(
     const parsedReceipt = parseServedArtifactReceiptBytes(
       input.servedReviewReceiptBytes,
     );
+    // The strict V1 parsers reject the legacy short contracts before the
+    // medical/public gate can consume them. The shared validator below then
+    // requires exact authorized bytes plus the complete five-scenario denial
+    // matrix and zero mismatch counters.
     if (parsedManifest.manifest === null || parsedReceipt.receipt === null) {
       issues.push(...parsedManifest.issues, ...parsedReceipt.issues);
     } else {

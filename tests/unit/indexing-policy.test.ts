@@ -93,11 +93,28 @@ describe("robots.txt policy", () => {
     );
     expect(policy).toEqual({
       schemaVersion: 1,
-      review: {
+      contractId: "atlas-private-review-http-headers-v1",
+      requiredHeaders: {
+        "Cache-Control": "private, no-store, max-age=0",
+        Pragma: "no-cache",
+        Vary: "Authorization",
+        "X-Content-Type-Options": "nosniff",
         "X-Robots-Tag": "noindex, nofollow, noarchive, nosnippet, noimageindex",
       },
+      unauthorizedHeaders: {
+        "WWW-Authenticate": 'Basic realm="Private review", charset="UTF-8"',
+      },
+      forbiddenHeaders: [
+        "Content-Encoding",
+        "ETag",
+        "Last-Modified",
+        "Location",
+        "Server",
+        "Set-Cookie",
+      ],
     });
-    expect(policy.review["X-Robots-Tag"]).toBe(REVIEW_X_ROBOTS_TAG);
+    expect(policy.requiredHeaders["X-Robots-Tag"]).toBe(REVIEW_X_ROBOTS_TAG);
+    expect(policy).not.toHaveProperty("verified");
   });
 });
 
