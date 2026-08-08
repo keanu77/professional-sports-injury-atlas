@@ -1,0 +1,19 @@
+{
+  "authorizedAt": "2026-08-08T13:08:54Z",
+  "authorizedBy": "吳易澄醫師",
+  "closedScopeIds": [
+    "external-account-mutation",
+    "indexing",
+    "medical-content-authoring",
+    "medical-review-decision",
+    "public-release",
+    "remote-repository-mutation"
+  ],
+  "decisionType": "plan-execution",
+  "executionScopeId": "g4-local-mini-tailscale-private-hosting-only",
+  "executionStatus": "authorized",
+  "planPath": "docs/superpowers/plans/2026-08-08-atlas-private-hosting-and-review.md",
+  "planSha256": "981e5acae525768a4005cae288e76e66159c2823f671b95be92afc066b66fd21",
+  "role": "atlas-private-hosting-and-review",
+  "schemaVersion": 1
+}
