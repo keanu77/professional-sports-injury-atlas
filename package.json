@@ -27,6 +27,7 @@
     "research:verify-links": "tsx scripts/research/verify-candidate-links.ts",
     "research:check-verification": "tsx scripts/research/check-candidate-verification.ts",
     "research:review-set-digest": "tsx scripts/research/digest-review-set.ts",
+    "research:check-embed-enrichment": "tsx scripts/research/check-embed-enrichment-review-set.ts",
     "research:manifest": "tsx scripts/research/generate-candidate-manifest.ts",
     "research:check-manifest": "tsx scripts/research/check-candidate-manifest.ts",
     "research:digest": "tsx scripts/research/digest-candidate-manifest.ts",

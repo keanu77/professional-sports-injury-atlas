@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "reviewSetId": "NBA-EMBED-2026-08-08-001",
+  "status": "awaiting-owner-review",
+  "createdAt": "2026-08-08T11:16:32Z",
+  "sourcePolicyVersion": "nba-v2",
+  "sourcePolicyDigests": {
+    "json": "6b5909369134839196d2285cba5ba9f1e59d69b56b0c377ef17a10b0e6effe07",
+    "markdown": "b07adf72fb6e5e5bb087401c1056003853c8fa5798456e199e58d722b7db6570"
+  },
+  "originManifest": {
+    "manifestId": "NBA-SOURCE-2026-08-06-001",
+    "manifestDigest": "8beedf3fcc0c7c498bf08ffb2fbc671759e7a61ed4e04f09afab579b6a86eb4d",
+    "manifestPath": "research/source-manifests/NBA-SOURCE-2026-08-06-001.v1.json"
+  },
+  "audit": {
+    "checkedBy": "Codex embed enrichment auditor",
+    "checkedAt": "2026-08-08T11:16:32Z",
+    "browserRegion": "TW",
+    "leadCount": 16,
+    "acceptedVideoCount": 3,
+    "acceptedCandidateCount": 3,
+    "mediaDownloadedOrCopied": false,
+    "method": [
+      "Opened every supplied YouTube watch page in Browser and checked visible title, uploader/channel, upload date, duration, playability and caption control.",
+      "Opened every privacy-enhanced youtube-nocookie.com embed endpoint without autoplay.",
+      "For watch pages that were playable in TW, loaded the player inside a local review-mode iframe with a normal HTTP referrer and manually started playback.",
+      "Accepted only the same in-game injury event from an allowed original broadcaster/rightsholder channel; news packages, full-game highlights, unavailable videos and region-blocked embeds were rejected."
+    ]
+  },
+  "acceptedCorrections": [
+    {
+      "candidateId": "CAND-NBA-ANKLE-2021-002",
+      "casePath": "src/content/cases/kyrie-irving-ankle-sprain-2021.json",
+      "supersedes": {
+        "manifestId": "NBA-SOURCE-2026-08-06-001",
+        "candidateId": "CAND-NBA-ANKLE-2021-002",
+        "entryDigest": "0a89a3fef7d984f32fe7b8ef22b983b305f9c74a6f5bb6f83c1963e4fe115e11"
+      },
+      "eventIdentity": {
+        "athlete": "Kyrie Irving",
+        "eventDate": "2021-06-13",
+        "opponent": "Milwaukee Bucks",
+        "competition": "nba-playoffs"
+      },
+      "video": {
+        "provider": "youtube",
+        "contentType": "in-game-injury-event",
+        "canonicalUrl": "https://www.youtube.com/watch?v=FQAPZASQyX0",
+        "title": "Kyrie Irving sustains 2nd quarter ankle injury, out for rest of Game 3 #Shorts",
+        "titleIdentityNote": "The uploader title says Game 3, but the original event/root evidence identifies the 2021-06-13 game as Game 4; the athlete, event date, opponent and visible event match.",
+        "uploaderName": "ESPN",
+        "uploaderProvenance": "broadcaster-rightsholder",
+        "channelUrl": "https://www.youtube.com/@espn",
+        "publishedAt": "2021-06-13",
+        "accessedAt": "2026-08-08",
+        "durationSeconds": 31,
+        "embedStatus": "verified",
+        "embedCheckedAt": "2026-08-08T11:16:32Z",
+        "captionStatus": "available",
+        "captionCheckedAt": "2026-08-08T11:16:32Z",
+        "privacyEnhancedPlayer": "https://www.youtube-nocookie.com/embed/FQAPZASQyX0",
+        "browserResult": "PASS — watch metadata matched ESPN and the event date; the privacy-enhanced iframe loaded without autoplay, started after user action, advanced playback and exposed a captions control."
+      }
+    },
+    {
+      "candidateId": "CAND-NBA-ANKLE-2023-008",
+      "casePath": "src/content/cases/lamelo-ball-ankle-sprain-2023.json",
+      "supersedes": {
+        "manifestId": "NBA-SOURCE-2026-08-06-001",
+        "candidateId": "CAND-NBA-ANKLE-2023-008",
+        "entryDigest": "cd2cfe1c8e310969f80f2b5379eb34345f113a9e8e43c1cb00f4f09f52481276"
+      },
+      "eventIdentity": {
+        "athlete": "LaMelo Ball",
+        "eventDate": "2023-11-26",
+        "opponent": "Orlando Magic",
+        "competition": "nba-regular-season"
+      },
+      "video": {
+        "provider": "youtube",
+        "contentType": "in-game-injury-event",
+        "canonicalUrl": "https://www.youtube.com/watch?v=RDDGpqOvSdg",
+        "title": "LaMelo Ball was helped to the locker room after suffering an apparent injury",
+        "titleIdentityNote": null,
+        "uploaderName": "ESPN",
+        "uploaderProvenance": "broadcaster-rightsholder",
+        "channelUrl": "https://www.youtube.com/@espn",
+        "publishedAt": "2023-11-26",
+        "accessedAt": "2026-08-08",
+        "durationSeconds": 19,
+        "embedStatus": "verified",
+        "embedCheckedAt": "2026-08-08T11:16:32Z",
+        "captionStatus": "available",
+        "captionCheckedAt": "2026-08-08T11:16:32Z",
+        "privacyEnhancedPlayer": "https://www.youtube-nocookie.com/embed/RDDGpqOvSdg",
+        "browserResult": "PASS — watch metadata matched ESPN and the event date; the privacy-enhanced vertical iframe loaded without autoplay, started after user action, advanced playback and exposed a captions control."
+      }
+    },
+    {
+      "candidateId": "CAND-NBA-ACHILLES-2019-005",
+      "casePath": "src/content/cases/kevin-durant-achilles-rupture-2019.json",
+      "supersedes": {
+        "manifestId": "NBA-SOURCE-2026-08-06-001",
+        "candidateId": "CAND-NBA-ACHILLES-2019-005",
+        "entryDigest": "d718b475799a1ca3e38a1daeb7c8133ca4c8a93b710d37a315a943d19f4e3d21"
+      },
+      "eventIdentity": {
+        "athlete": "Kevin Durant",
+        "eventDate": "2019-06-10",
+        "opponent": "Toronto Raptors",
+        "competition": "nba-playoffs"
+      },
+      "video": {
+        "provider": "youtube",
+        "contentType": "in-game-injury-event",
+        "canonicalUrl": "https://www.youtube.com/watch?v=YcSOLHMsJYw",
+        "title": "Kevin Durant suffers Achilles injury after hot start, exits Game 5 | 2019 NBA Finals Highlights",
+        "titleIdentityNote": null,
+        "uploaderName": "ESPN",
+        "uploaderProvenance": "broadcaster-rightsholder",
+        "channelUrl": "https://www.youtube.com/@espn",
+        "publishedAt": "2019-06-10",
+        "accessedAt": "2026-08-08",
+        "durationSeconds": 155,
+        "embedStatus": "verified",
+        "embedCheckedAt": "2026-08-08T11:16:32Z",
+        "captionStatus": "available",
+        "captionCheckedAt": "2026-08-08T11:16:32Z",
+        "privacyEnhancedPlayer": "https://www.youtube-nocookie.com/embed/YcSOLHMsJYw",
+        "browserResult": "PASS — watch metadata matched ESPN and the event date; the privacy-enhanced iframe loaded without autoplay, started after user action, advanced playback and exposed a captions control."
+      }
+    }
+  ],
+  "rejectedLeads": [
+    {
+      "candidateId": "CAND-NBA-ACHILLES-2025-017",
+      "url": "https://www.youtube.com/watch?v=sooh3Zd_36s",
+      "observedTitle": "Tyrese Haliburton helped off the court in first quarter of Game 7 | NBA Finals",
+      "observedUploader": "ESPN",
+      "observedPublishedAt": "2025-06-22",
+      "observedDurationSeconds": 130,
+      "reasonCode": "regional-playback-unavailable",
+      "reason": "The TW watch page reported uploader-imposed regional unavailability and the privacy-enhanced iframe exposed no startable player."
+    },
+    {
+      "candidateId": "CAND-NBA-ACHILLES-2025-017",
+      "url": "https://www.youtube.com/watch?v=VJWLhVLWzsY",
+      "observedTitle": null,
+      "observedUploader": null,
+      "observedPublishedAt": null,
+      "observedDurationSeconds": null,
+      "reasonCode": "video-unavailable",
+      "reason": "The watch page reported that the video is no longer playable."
+    },
+    {
+      "candidateId": "CAND-NBA-ACHILLES-2025-016",
+      "url": "https://www.youtube.com/watch?v=_hkttbPdMs8",
+      "observedTitle": "Jayson Tatum exits Game 4 with a lower leg injury late in the 4th quarter | NBA on ESPN",
+      "observedUploader": "NBA on ESPN",
+      "observedPublishedAt": "2025-05-12",
+      "observedDurationSeconds": 101,
+      "reasonCode": "regional-playback-unavailable",
+      "reason": "The TW watch page reported uploader-imposed regional unavailability and the privacy-enhanced iframe exposed no startable player."
+    },
+    {
+      "candidateId": "CAND-NBA-ACHILLES-2025-016",
+      "url": "https://www.youtube.com/watch?v=sCsQz1-oV8Y",
+      "observedTitle": "Jayson Tatum goes down with non-contact ankle injury in Game 4",
+      "observedUploader": "NBC Sports Boston",
+      "observedPublishedAt": "2025-05-12",
+      "observedDurationSeconds": 46,
+      "reasonCode": "regional-playback-unavailable",
+      "reason": "The TW watch page reported uploader-imposed regional unavailability and the privacy-enhanced iframe exposed no startable player."
+    },
+    {
+      "candidateId": "CAND-NBA-ACHILLES-2025-015",
+      "url": "https://www.youtube.com/watch?v=dmYCjHWlJms",
+      "observedTitle": "Damian Lillard exits Game 4 after suffering an apparent injury | NBA on ESPN",
+      "observedUploader": "NBA on ESPN",
+      "observedPublishedAt": "2025-04-27",
+      "observedDurationSeconds": 95,
+      "reasonCode": "regional-playback-unavailable",
+      "reason": "The TW watch page reported uploader-imposed regional unavailability and the privacy-enhanced iframe exposed no startable player."
+    },
+    {
+      "candidateId": "CAND-NBA-ACHILLES-2023-010",
+      "url": "https://www.youtube.com/watch?v=kmG_HO0IhFY",
+      "observedTitle": "Brandon Clarke helped to locker room after non-contact injury | NBA on ESPN",
+      "observedUploader": "ESPN",
+      "observedPublishedAt": "2023-03-03",
+      "observedDurationSeconds": 40,
+      "reasonCode": "regional-playback-unavailable",
+      "reason": "The TW watch page reported uploader-imposed regional unavailability and the privacy-enhanced iframe exposed no startable player."
+    },
+    {
+      "candidateId": "CAND-NBA-ACL-2022-017",
+      "url": "https://www.youtube.com/watch?v=A5BGIpDmeGk",
+      "observedTitle": "Danny Green had to be helped off the floor after colliding with Joel Embiid 🙏",
+      "observedUploader": "ESPN",
+      "observedPublishedAt": "2022-05-12",
+      "observedDurationSeconds": 42,
+      "reasonCode": "regional-playback-unavailable",
+      "reason": "The TW watch page reported uploader-imposed regional unavailability and the privacy-enhanced iframe exposed no startable player."
+    },
+    {
+      "candidateId": "CAND-NBA-ACL-2025-021",
+      "url": "https://www.youtube.com/watch?v=qZKTS532beA",
+      "observedTitle": "Mavericks lose Kyrie Irving, Jaden Hardy to injury against Kings",
+      "observedUploader": "WFAA",
+      "observedPublishedAt": "2025-03-03",
+      "observedDurationSeconds": 112,
+      "reasonCode": "primary-provenance-and-content-type-rejected",
+      "reason": "WFAA is a local news publisher rather than an accepted event broadcaster/rightsholder for this primary source, and the video is a packaged news report rather than a dedicated in-game injury-event clip."
+    },
+    {
+      "candidateId": "CAND-NBA-ACL-2024-023",
+      "url": "https://www.youtube.com/watch?v=T_6Ohfxg_v0",
+      "observedTitle": null,
+      "observedUploader": null,
+      "observedPublishedAt": null,
+      "observedDurationSeconds": null,
+      "reasonCode": "unverifiable-uploader-and-metadata",
+      "reason": "The watch page exposed no stable title, uploader, publication date or duration, so provenance and event identity could not be verified."
+    },
+    {
+      "candidateId": "CAND-NBA-ANKLE-2024-001",
+      "url": "https://www.youtube.com/watch?v=rL0oKG7tgK0",
+      "observedTitle": "Kevin Durant leaves game vs. Spurs with ankle sprain | NBA on ESPN",
+      "observedUploader": "NBA on ESPN",
+      "observedPublishedAt": "2024-12-03",
+      "observedDurationSeconds": 59,
+      "reasonCode": "regional-playback-unavailable",
+      "reason": "The TW watch page reported uploader-imposed regional unavailability and the privacy-enhanced iframe exposed no startable player."
+    },
+    {
+      "candidateId": "CAND-NBA-ANKLE-2022-001",
+      "url": "https://www.youtube.com/watch?v=JOpERGK_bb8",
+      "observedTitle": "LaMelo Ball rolls his ankle on a fan’s foot 😬",
+      "observedUploader": "ESPN",
+      "observedPublishedAt": "2022-11-16",
+      "observedDurationSeconds": 30,
+      "reasonCode": "regional-playback-unavailable",
+      "reason": "The TW watch page reported uploader-imposed regional unavailability and the privacy-enhanced iframe exposed no startable player."
+    },
+    {
+      "candidateId": "CAND-NBA-ANKLE-2021-003",
+      "url": "https://www.youtube.com/watch?v=tJto_hyevFU",
+      "observedTitle": "LeBron James leaves with ankle injury as Lakers fall to Hawks [FULL GAME HIGHLIGHTS] | NBA on ESPN",
+      "observedUploader": "ESPN",
+      "observedPublishedAt": "2021-03-20",
+      "observedDurationSeconds": 421,
+      "reasonCode": "excluded-full-game-highlights",
+      "reason": "The source is a full-game highlights package rather than a dedicated in-game injury-event primary clip; it was also region-blocked in TW."
+    },
+    {
+      "candidateId": "CAND-NBA-ANKLE-2021-003",
+      "url": "https://www.youtube.com/watch?v=ceJdvaxH9k4",
+      "observedTitle": "LeBron James out ‘indefinitely’ with high ankle sprain | SportsCenter",
+      "observedUploader": "ESPN",
+      "observedPublishedAt": "2021-03-20",
+      "observedDurationSeconds": 212,
+      "reasonCode": "excluded-news-analysis",
+      "reason": "The source is a SportsCenter news-analysis package rather than a dedicated in-game injury-event primary clip."
+    }
+  ],
+  "ownerDecision": null
+}
