@@ -316,11 +316,12 @@ function checkPublishedArtifacts(): void {
     );
   }
   const expectedRegistry = canonicalJson(buildEmbedEnrichmentRegistry());
-  const actualRegistry = read(REGISTRY_PATH).toString("utf8");
+  const actualRegistryBytes = read(REGISTRY_PATH);
+  const actualRegistry = actualRegistryBytes.toString("utf8");
   if (actualRegistry !== expectedRegistry) {
     throw new Error("published registry bytes drifted from expected");
   }
-  const parsed = parseSourceManifestRegistryBytes(actualRegistry);
+  const parsed = parseSourceManifestRegistryBytes(actualRegistryBytes);
   if (parsed.registry === null)
     throw new Error("published registry is invalid");
   const artifactIssues = validateSourceManifestRegistryArtifacts(

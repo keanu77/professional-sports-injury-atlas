@@ -56,8 +56,7 @@ const TARGET_DECISION_PATH =
 
 const AUTHORIZED_CORRECTION_ENTRY = {
   manifestId: "NBA-SOURCE-2026-08-08-001",
-  manifestPath:
-    "research/source-manifests/NBA-SOURCE-2026-08-08-001.v1.json",
+  manifestPath: "research/source-manifests/NBA-SOURCE-2026-08-08-001.v1.json",
   manifestDigest:
     "4a25692e27115b6ec16818a64dd6e85778360e4f00e2b3f6a288b4ca5f0ed0bc",
   sourceReviewDecisionPath:

@@ -51,7 +51,10 @@ const AUTHORED_TASKS = [
   "case-achilles-07",
 ] as const;
 
-const AUTHORIZED_CORRECTIONS = new Map([
+const AUTHORIZED_CORRECTIONS: ReadonlyMap<
+  string,
+  { entryDigest: string; videoUrl: string }
+> = new Map([
   [
     "CAND-NBA-ACHILLES-2019-005",
     {
@@ -76,7 +79,7 @@ const AUTHORIZED_CORRECTIONS = new Map([
       videoUrl: "https://www.youtube.com/watch?v=RDDGpqOvSdg",
     },
   ],
-] as const);
+]);
 
 function loadCoverage(): CaseAuthoringCoverageV1 {
   const result = checkCaseAuthoringCoverage(ROOT);

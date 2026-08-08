@@ -13,8 +13,8 @@
   "addedCases": [
     {
       "caseId": "CASE-NBAACHILLES-2019-005",
-      "currentClinicalDigest": "8d9e322e6cd4f420459b1c97c9418ed34f4da20970d6d43073dacaf1f56798bb",
-      "currentVideoSourceDigest": "bd29403dde3fc63a73f4eccc6eed040636ce23173f6b2690873ea6f37745fe6c"
+      "currentClinicalDigest": "be755b6759f6ffa39a645ac322cddf39698064eca6cf6c185611162d9be83f21",
+      "currentVideoSourceDigest": "ff223d9cca9620d9f54f6381b5cea4abb93f39b15089d103c9f9662c9dafdd7e"
     },
     {
       "caseId": "CASE-NBAACHILLES-2020-008",
@@ -98,8 +98,8 @@
     },
     {
       "caseId": "CASE-NBAANKLE-2021-002",
-      "currentClinicalDigest": "d5cc8c6a9f94d8be8f373892ec32582f47e10ed00f2ab92dfe31cfa9a32b6c4b",
-      "currentVideoSourceDigest": "920f1bea1db3dca1c44b3291c5eef364aa36f786eba43ba9ee922bde6d52a632"
+      "currentClinicalDigest": "87b125a719641a21549e4664e8167d6ccfd7b871ed94f34f5a6afa95deb58737",
+      "currentVideoSourceDigest": "fd0531eb665ba2dbdce3be60b48c3a879cb7f587ddf0188843613f3124acf07d"
     },
     {
       "caseId": "CASE-NBAANKLE-2021-003",
@@ -123,8 +123,8 @@
     },
     {
       "caseId": "CASE-NBAANKLE-2023-008",
-      "currentClinicalDigest": "66898904cadb552b307143e2ab772a6df3e6d31eadbaab1bbfaa8b962f4aafa2",
-      "currentVideoSourceDigest": "e541e6228b9d383ff00b725810ff5bda5538b299455abbb7fdf7d0967967299b"
+      "currentClinicalDigest": "bf7d4d49e1d2eb40a53bc4ac06d3aee34d90e00bc646b7e3f398962b1e912242",
+      "currentVideoSourceDigest": "11cdb0328091bac7653344d0d7f73fc1c9243532310b986ff4ab2e17ddbf73c5"
     },
     {
       "caseId": "CASE-NBAANKLE-2024-001",
@@ -154,6 +154,6 @@
   },
   "audit": {
     "createdAt": "2026-08-08T03:15:00Z",
-    "updatedAt": "2026-08-08T03:15:00Z"
+    "updatedAt": "2026-08-08T11:33:30Z"
   }
 }
