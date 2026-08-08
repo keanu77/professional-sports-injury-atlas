@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "CASE-NBAACHILLES-2025-014",
   "slug": "dejounte-murray-achilles-rupture-2025",
-  "status": "medical-review",
+  "status": "approved",
   "sourceManifestBinding": {
     "candidateId": "CAND-NBA-ACHILLES-2025-014",
     "manifestId": "NBA-SOURCE-2026-08-06-001",
@@ -191,11 +191,11 @@
     }
   ],
   "review": {
-    "status": "in-review",
-    "reviewerName": null,
-    "reviewerQualification": null,
-    "reviewedAt": null,
-    "reviewedContentDigest": null
+    "status": "approved",
+    "reviewerName": "吳易澄醫師",
+    "reviewerQualification": "復健科專科醫師",
+    "reviewedAt": "2026-08-08T11:52:39Z",
+    "reviewedContentDigest": "c65564de33d8e10b968ed19779ee92f150df03c896619a9aeed50dcad7af2b10"
   },
   "audit": {
     "createdAt": "2026-08-08T02:30:00Z",

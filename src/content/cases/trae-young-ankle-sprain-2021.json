@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "CASE-NBAANKLE-2021-001",
   "slug": "trae-young-ankle-sprain-2021",
-  "status": "medical-review",
+  "status": "approved",
   "sourceManifestBinding": {
     "candidateId": "CAND-NBA-ANKLE-2021-001",
     "manifestId": "NBA-SOURCE-2026-08-06-001",
@@ -191,11 +191,11 @@
     }
   ],
   "review": {
-    "status": "in-review",
-    "reviewerName": null,
-    "reviewerQualification": null,
-    "reviewedAt": null,
-    "reviewedContentDigest": null
+    "status": "approved",
+    "reviewerName": "吳易澄醫師",
+    "reviewerQualification": "復健科專科醫師",
+    "reviewedAt": "2026-08-08T11:52:39Z",
+    "reviewedContentDigest": "2be424679b6ca0a508db2f82f34c5149f60cafa4b6ae3a1a80dfa2d926e8e5e7"
   },
   "audit": {
     "createdAt": "2026-08-08T02:30:00Z",

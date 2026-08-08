@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "CASE-NBAACHILLES-2023-010",
   "slug": "brandon-clarke-achilles-rupture-2023",
-  "status": "medical-review",
+  "status": "approved",
   "sourceManifestBinding": {
     "candidateId": "CAND-NBA-ACHILLES-2023-010",
     "manifestId": "NBA-SOURCE-2026-08-06-001",
@@ -191,11 +191,11 @@
     }
   ],
   "review": {
-    "status": "in-review",
-    "reviewerName": null,
-    "reviewerQualification": null,
-    "reviewedAt": null,
-    "reviewedContentDigest": null
+    "status": "approved",
+    "reviewerName": "吳易澄醫師",
+    "reviewerQualification": "復健科專科醫師",
+    "reviewedAt": "2026-08-08T11:52:39Z",
+    "reviewedContentDigest": "062d9c74e5ea4747e1f4832d5001cc88046eda4882c2f97ef39479be0702afdc"
   },
   "audit": {
     "createdAt": "2026-08-08T02:30:00Z",

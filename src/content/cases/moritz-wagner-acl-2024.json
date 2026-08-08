@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "CASE-NBAACL-2024-023",
   "slug": "moritz-wagner-acl-2024",
-  "status": "medical-review",
+  "status": "approved",
   "sourceManifestBinding": {
     "candidateId": "CAND-NBA-ACL-2024-023",
     "manifestId": "NBA-SOURCE-2026-08-06-001",
@@ -209,11 +209,11 @@
     }
   ],
   "review": {
-    "status": "in-review",
-    "reviewerName": null,
-    "reviewerQualification": null,
-    "reviewedAt": null,
-    "reviewedContentDigest": null
+    "status": "approved",
+    "reviewerName": "吳易澄醫師",
+    "reviewerQualification": "復健科專科醫師",
+    "reviewedAt": "2026-08-08T11:52:39Z",
+    "reviewedContentDigest": "9adeca47b0a4ccb7bb2f06f07d968742d9e991a806e6a8136da36e394c30899a"
   },
   "audit": {
     "createdAt": "2026-08-08T02:30:00Z",

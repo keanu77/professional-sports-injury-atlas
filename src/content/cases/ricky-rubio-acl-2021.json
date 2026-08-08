@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "CASE-NBAACL-2021-015",
   "slug": "ricky-rubio-acl-2021",
-  "status": "medical-review",
+  "status": "approved",
   "sourceManifestBinding": {
     "candidateId": "CAND-NBA-ACL-2021-015",
     "manifestId": "NBA-SOURCE-2026-08-06-001",
@@ -209,11 +209,11 @@
     }
   ],
   "review": {
-    "status": "in-review",
-    "reviewerName": null,
-    "reviewerQualification": null,
-    "reviewedAt": null,
-    "reviewedContentDigest": null
+    "status": "approved",
+    "reviewerName": "吳易澄醫師",
+    "reviewerQualification": "復健科專科醫師",
+    "reviewedAt": "2026-08-08T11:52:39Z",
+    "reviewedContentDigest": "9c74169cab091376c47c1a3dc5342f2a8cff79d3dd8d72cf66d5205c8256c06b"
   },
   "audit": {
     "createdAt": "2026-08-08T02:30:00Z",

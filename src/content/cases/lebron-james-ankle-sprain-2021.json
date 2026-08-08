@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "CASE-NBAANKLE-2021-003",
   "slug": "lebron-james-ankle-sprain-2021",
-  "status": "medical-review",
+  "status": "approved",
   "sourceManifestBinding": {
     "candidateId": "CAND-NBA-ANKLE-2021-003",
     "manifestId": "NBA-SOURCE-2026-08-06-001",
@@ -191,11 +191,11 @@
     }
   ],
   "review": {
-    "status": "in-review",
-    "reviewerName": null,
-    "reviewerQualification": null,
-    "reviewedAt": null,
-    "reviewedContentDigest": null
+    "status": "approved",
+    "reviewerName": "吳易澄醫師",
+    "reviewerQualification": "復健科專科醫師",
+    "reviewedAt": "2026-08-08T11:52:39Z",
+    "reviewedContentDigest": "f2481683a618754f1c983c355ee29aaaaddd6cf7ee7bd7fb667927bf9b79b91a"
   },
   "audit": {
     "createdAt": "2026-08-08T02:30:00Z",

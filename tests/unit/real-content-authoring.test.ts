@@ -17,6 +17,8 @@ import {
   validateCaseRecord,
   validateCaseSourceBinding,
 } from "../../src/lib/contracts/cross-validation";
+import { computeCaseContentDigest } from "../../src/lib/cases/digest";
+import { hasMatchingApprovedReview } from "../../src/lib/cases/review-validation";
 import { caseSchema, type InjuryCase } from "../../src/lib/contracts/case";
 import { caseRouteParams } from "../../src/lib/routes/static-paths";
 
@@ -136,14 +138,15 @@ describe("authorized real NBA case authoring", () => {
           registryArtifactLoader(ROOT),
         ),
       ).toEqual([]);
-      expect(record.status).toBe("medical-review");
+      expect(record.status).toBe("approved");
       expect(record.review).toEqual({
-        status: "in-review",
-        reviewerName: null,
-        reviewerQualification: null,
-        reviewedAt: null,
-        reviewedContentDigest: null,
+        status: "approved",
+        reviewerName: "吳易澄醫師",
+        reviewerQualification: "復健科專科醫師",
+        reviewedAt: "2026-08-08T11:52:39Z",
+        reviewedContentDigest: computeCaseContentDigest(record),
       });
+      expect(hasMatchingApprovedReview(record)).toBe(true);
       expect(record.video.publicRightsReview.status).toBe("not-requested");
     }
 

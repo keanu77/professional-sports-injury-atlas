@@ -60,12 +60,20 @@ interface ReviewCorrection {
   };
 }
 
+interface EmbedOwnerDecision {
+  status: "approved";
+  reviewedBy: string;
+  reviewedAt: string;
+  reviewedReviewSetDigest: string;
+}
+
 interface ReviewSet {
   reviewSetId: string;
-  status: string;
+  status: "owner-approved";
   audit: { checkedBy: string; checkedAt: string };
   acceptedCorrections: ReviewCorrection[];
-  ownerDecision: null;
+  rejectedLeads: Array<{ url: string }>;
+  ownerDecision: EmbedOwnerDecision;
 }
 
 function read(path: string): Buffer {
@@ -88,11 +96,25 @@ function parseReviewSet(): ReviewSet {
   ) as ReviewSet;
   if (
     value.reviewSetId !== "NBA-EMBED-2026-08-08-001" ||
-    value.status !== "awaiting-owner-review" ||
-    value.ownerDecision !== null ||
-    value.acceptedCorrections.length !== 3
+    value.status !== "owner-approved" ||
+    value.acceptedCorrections.length !== 3 ||
+    value.rejectedLeads.length !== 13 ||
+    value.ownerDecision.status !== "approved" ||
+    value.ownerDecision.reviewedBy !== "吳易澄醫師" ||
+    value.ownerDecision.reviewedAt !== "2026-08-08T11:52:39Z"
   ) {
     throw new Error("review-set identity/status/count drift");
+  }
+  const reviewedSnapshotBytes = `${JSON.stringify(
+    { ...value, status: "awaiting-owner-review", ownerDecision: null },
+    null,
+    2,
+  )}\n`;
+  if (
+    value.ownerDecision.reviewedReviewSetDigest !==
+    sha256Hex(reviewedSnapshotBytes)
+  ) {
+    throw new Error("owner decision does not bind the reviewed snapshot");
   }
   return value;
 }
@@ -135,9 +157,8 @@ function compareSupersedes(
 }
 
 export function buildEmbedEnrichmentCorrectionManifest(): CandidateSourceManifestV1 {
-  const reviewBytes = read(REVIEW_SET_PATH);
-  const reviewDigest = sha256Hex(reviewBytes);
   const reviewSet = parseReviewSet();
+  const reviewDigest = reviewSet.ownerDecision.reviewedReviewSetDigest;
   const decisionBytes = read(DECISION_PATH);
   const decisionDigest = sha256Hex(decisionBytes);
   const decision = parseDecision();

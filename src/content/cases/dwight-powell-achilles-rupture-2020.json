@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "CASE-NBAACHILLES-2020-008",
   "slug": "dwight-powell-achilles-rupture-2020",
-  "status": "medical-review",
+  "status": "approved",
   "sourceManifestBinding": {
     "candidateId": "CAND-NBA-ACHILLES-2020-008",
     "manifestId": "NBA-SOURCE-2026-08-06-001",
@@ -191,11 +191,11 @@
     }
   ],
   "review": {
-    "status": "in-review",
-    "reviewerName": null,
-    "reviewerQualification": null,
-    "reviewedAt": null,
-    "reviewedContentDigest": null
+    "status": "approved",
+    "reviewerName": "吳易澄醫師",
+    "reviewerQualification": "復健科專科醫師",
+    "reviewedAt": "2026-08-08T11:52:39Z",
+    "reviewedContentDigest": "afefec3f66131af00834ad4eda5af1088c5b70697619a01f3c36cd4b770e09ba"
   },
   "audit": {
     "createdAt": "2026-08-08T02:30:00Z",

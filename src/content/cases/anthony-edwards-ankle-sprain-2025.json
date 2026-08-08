@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "CASE-NBAANKLE-2025-001",
   "slug": "anthony-edwards-ankle-sprain-2025",
-  "status": "medical-review",
+  "status": "approved",
   "sourceManifestBinding": {
     "candidateId": "CAND-NBA-ANKLE-2025-001",
     "manifestId": "NBA-SOURCE-2026-08-06-001",
@@ -191,11 +191,11 @@
     }
   ],
   "review": {
-    "status": "in-review",
-    "reviewerName": null,
-    "reviewerQualification": null,
-    "reviewedAt": null,
-    "reviewedContentDigest": null
+    "status": "approved",
+    "reviewerName": "吳易澄醫師",
+    "reviewerQualification": "復健科專科醫師",
+    "reviewedAt": "2026-08-08T11:52:39Z",
+    "reviewedContentDigest": "e741161ff8f7461ad1119dc991b7d2d5cd498055a8b7cfecc3c3b65f0e996907"
   },
   "audit": {
     "createdAt": "2026-08-08T02:30:00Z",

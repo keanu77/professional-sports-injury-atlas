@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "CASE-NBAACHILLES-2025-017",
   "slug": "tyrese-haliburton-achilles-rupture-2025",
-  "status": "medical-review",
+  "status": "approved",
   "sourceManifestBinding": {
     "candidateId": "CAND-NBA-ACHILLES-2025-017",
     "manifestId": "NBA-SOURCE-2026-08-06-001",
@@ -191,11 +191,11 @@
     }
   ],
   "review": {
-    "status": "in-review",
-    "reviewerName": null,
-    "reviewerQualification": null,
-    "reviewedAt": null,
-    "reviewedContentDigest": null
+    "status": "approved",
+    "reviewerName": "吳易澄醫師",
+    "reviewerQualification": "復健科專科醫師",
+    "reviewedAt": "2026-08-08T11:52:39Z",
+    "reviewedContentDigest": "c6aee02cae3858f932185cf9135ccb689d0b3fecfd7449a5390ff3914bddee6f"
   },
   "audit": {
     "createdAt": "2026-08-08T02:30:00Z",

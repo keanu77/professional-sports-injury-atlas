@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "CASE-NBAANKLE-2021-002",
   "slug": "kyrie-irving-ankle-sprain-2021",
-  "status": "medical-review",
+  "status": "approved",
   "sourceManifestBinding": {
     "candidateId": "CAND-NBA-ANKLE-2021-002",
     "manifestId": "NBA-SOURCE-2026-08-08-001",
@@ -191,11 +191,11 @@
     }
   ],
   "review": {
-    "status": "in-review",
-    "reviewerName": null,
-    "reviewerQualification": null,
-    "reviewedAt": null,
-    "reviewedContentDigest": null
+    "status": "approved",
+    "reviewerName": "吳易澄醫師",
+    "reviewerQualification": "復健科專科醫師",
+    "reviewedAt": "2026-08-08T11:52:39Z",
+    "reviewedContentDigest": "87b125a719641a21549e4664e8167d6ccfd7b871ed94f34f5a6afa95deb58737"
   },
   "audit": {
     "createdAt": "2026-08-08T02:30:00Z",

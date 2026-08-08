@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "CASE-NBAACL-2021-010",
   "slug": "thomas-bryant-acl-2021",
-  "status": "medical-review",
+  "status": "approved",
   "sourceManifestBinding": {
     "candidateId": "CAND-NBA-ACL-2021-010",
     "manifestId": "NBA-SOURCE-2026-08-06-001",
@@ -209,11 +209,11 @@
     }
   ],
   "review": {
-    "status": "in-review",
-    "reviewerName": null,
-    "reviewerQualification": null,
-    "reviewedAt": null,
-    "reviewedContentDigest": null
+    "status": "approved",
+    "reviewerName": "吳易澄醫師",
+    "reviewerQualification": "復健科專科醫師",
+    "reviewedAt": "2026-08-08T11:52:39Z",
+    "reviewedContentDigest": "027b788055b6382c0177803796ac33495e1e7b8fed1096542597ae38802135df"
   },
   "audit": {
     "createdAt": "2026-08-08T02:30:00Z",

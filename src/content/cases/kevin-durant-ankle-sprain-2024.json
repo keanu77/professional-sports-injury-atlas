@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "CASE-NBAANKLE-2024-001",
   "slug": "kevin-durant-ankle-sprain-2024",
-  "status": "medical-review",
+  "status": "approved",
   "sourceManifestBinding": {
     "candidateId": "CAND-NBA-ANKLE-2024-001",
     "manifestId": "NBA-SOURCE-2026-08-06-001",
@@ -191,11 +191,11 @@
     }
   ],
   "review": {
-    "status": "in-review",
-    "reviewerName": null,
-    "reviewerQualification": null,
-    "reviewedAt": null,
-    "reviewedContentDigest": null
+    "status": "approved",
+    "reviewerName": "吳易澄醫師",
+    "reviewerQualification": "復健科專科醫師",
+    "reviewedAt": "2026-08-08T11:52:39Z",
+    "reviewedContentDigest": "8a02ec96731ada49d1dec2cee29e5ea1a8a67f0a6482e0f2077fed6c73c1b73e"
   },
   "audit": {
     "createdAt": "2026-08-08T02:30:00Z",

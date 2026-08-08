@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "CASE-NBAACHILLES-2019-005",
   "slug": "kevin-durant-achilles-rupture-2019",
-  "status": "medical-review",
+  "status": "approved",
   "sourceManifestBinding": {
     "candidateId": "CAND-NBA-ACHILLES-2019-005",
     "manifestId": "NBA-SOURCE-2026-08-08-001",
@@ -191,11 +191,11 @@
     }
   ],
   "review": {
-    "status": "in-review",
-    "reviewerName": null,
-    "reviewerQualification": null,
-    "reviewedAt": null,
-    "reviewedContentDigest": null
+    "status": "approved",
+    "reviewerName": "吳易澄醫師",
+    "reviewerQualification": "復健科專科醫師",
+    "reviewedAt": "2026-08-08T11:52:39Z",
+    "reviewedContentDigest": "be755b6759f6ffa39a645ac322cddf39698064eca6cf6c185611162d9be83f21"
   },
   "audit": {
     "createdAt": "2026-08-08T02:30:00Z",

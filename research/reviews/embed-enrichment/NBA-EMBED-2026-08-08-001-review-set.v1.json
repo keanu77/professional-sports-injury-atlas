@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "reviewSetId": "NBA-EMBED-2026-08-08-001",
-  "status": "awaiting-owner-review",
+  "status": "owner-approved",
   "createdAt": "2026-08-08T11:16:32Z",
   "sourcePolicyVersion": "nba-v2",
   "sourcePolicyDigests": {
@@ -264,5 +264,10 @@
       "reason": "The source is a SportsCenter news-analysis package rather than a dedicated in-game injury-event primary clip."
     }
   ],
-  "ownerDecision": null
+  "ownerDecision": {
+    "status": "approved",
+    "reviewedBy": "吳易澄醫師",
+    "reviewedAt": "2026-08-08T11:52:39Z",
+    "reviewedReviewSetDigest": "282f8f545bc74d38142d3a177287b6c7a82e7e8759451ea967f7b5f2435cd8aa"
+  }
 }

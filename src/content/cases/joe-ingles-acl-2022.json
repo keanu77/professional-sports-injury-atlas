@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "CASE-NBAACL-2022-016",
   "slug": "joe-ingles-acl-2022",
-  "status": "medical-review",
+  "status": "approved",
   "sourceManifestBinding": {
     "candidateId": "CAND-NBA-ACL-2022-016",
     "manifestId": "NBA-SOURCE-2026-08-06-001",
@@ -209,11 +209,11 @@
     }
   ],
   "review": {
-    "status": "in-review",
-    "reviewerName": null,
-    "reviewerQualification": null,
-    "reviewedAt": null,
-    "reviewedContentDigest": null
+    "status": "approved",
+    "reviewerName": "吳易澄醫師",
+    "reviewerQualification": "復健科專科醫師",
+    "reviewedAt": "2026-08-08T11:52:39Z",
+    "reviewedContentDigest": "abc7bfc7dfd93761772ef81c1d89a07d22b86d85784985531f0edf3de2f02702"
   },
   "audit": {
     "createdAt": "2026-08-08T02:30:00Z",

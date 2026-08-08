@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "CASE-NBAACL-2025-021",
   "slug": "kyrie-irving-acl-2025",
-  "status": "medical-review",
+  "status": "approved",
   "sourceManifestBinding": {
     "candidateId": "CAND-NBA-ACL-2025-021",
     "manifestId": "NBA-SOURCE-2026-08-06-001",
@@ -209,11 +209,11 @@
     }
   ],
   "review": {
-    "status": "in-review",
-    "reviewerName": null,
-    "reviewerQualification": null,
-    "reviewedAt": null,
-    "reviewedContentDigest": null
+    "status": "approved",
+    "reviewerName": "吳易澄醫師",
+    "reviewerQualification": "復健科專科醫師",
+    "reviewedAt": "2026-08-08T11:52:39Z",
+    "reviewedContentDigest": "2db7092e47602edc21d9f2af6fbe1ca93bcb2d9c902db059dc4acfa0d6c30cbc"
   },
   "audit": {
     "createdAt": "2026-08-08T02:30:00Z",

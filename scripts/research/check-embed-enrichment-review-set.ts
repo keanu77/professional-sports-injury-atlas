@@ -52,6 +52,20 @@ const TOP_LEVEL_KEYS = [
   "status",
 ] as const;
 
+const OWNER_DECISION_KEYS = [
+  "reviewedAt",
+  "reviewedBy",
+  "reviewedReviewSetDigest",
+  "status",
+] as const;
+
+const EXPECTED_OWNER = "吳易澄醫師";
+const EXPECTED_OWNER_REVIEWED_AT = "2026-08-08T11:52:39Z";
+const EXPECTED_REVIEWED_REVIEW_SET_DIGEST =
+  "282f8f545bc74d38142d3a177287b6c7a82e7e8759451ea967f7b5f2435cd8aa";
+const EXPECTED_REFROZEN_REVIEW_SET_DIGEST =
+  "9971d3161b72f19c7d19bb504cd65d226e2d3a54c65ecd9a2d81e10fff388a3e";
+
 type UnknownRecord = Record<string, unknown>;
 
 function record(value: unknown, path: string): UnknownRecord {
@@ -84,6 +98,19 @@ function fileDigest(path: string): string {
   return sha256Hex(readFileSync(resolve(path)));
 }
 
+/**
+ * Reconstructs the exact pretty-printed bytes presented for owner review.
+ * The approved artifact can therefore carry a durable decision without
+ * changing the digest already bound by the append-only correction batch.
+ */
+function reviewedSnapshotBytes(value: UnknownRecord): string {
+  return `${JSON.stringify(
+    { ...value, status: "awaiting-owner-review", ownerDecision: null },
+    null,
+    2,
+  )}\n`;
+}
+
 const bytes = readFileSync(resolve(REVIEW_SET_PATH));
 const parsed = record(parseStrictJson(bytes.toString("utf8")), REVIEW_SET_PATH);
 exactKeys(parsed, TOP_LEVEL_KEYS, REVIEW_SET_PATH);
@@ -92,8 +119,8 @@ if (parsed.schemaVersion !== 1) throw new Error("schemaVersion must be 1");
 if (parsed.reviewSetId !== "NBA-EMBED-2026-08-08-001") {
   throw new Error("unexpected reviewSetId");
 }
-if (parsed.status !== "awaiting-owner-review") {
-  throw new Error("review set must stop at awaiting-owner-review");
+if (parsed.status !== "owner-approved") {
+  throw new Error("review set must be owner-approved");
 }
 if (
   typeof parsed.createdAt !== "string" ||
@@ -104,10 +131,6 @@ if (
 if (parsed.sourcePolicyVersion !== "nba-v2") {
   throw new Error("sourcePolicyVersion must be nba-v2");
 }
-if (parsed.ownerDecision !== null) {
-  throw new Error("ownerDecision must remain null until exact digest review");
-}
-
 const policyDigests = record(parsed.sourcePolicyDigests, "sourcePolicyDigests");
 if (policyDigests.json !== fileDigest(POLICY_JSON_PATH)) {
   throw new Error("source policy JSON digest drift");
@@ -224,6 +247,34 @@ if (new Set([...acceptedUrls, ...rejectedUrls]).size !== 16) {
   );
 }
 
+const ownerDecision = record(parsed.ownerDecision, "ownerDecision");
+exactKeys(ownerDecision, OWNER_DECISION_KEYS, "ownerDecision");
+if (
+  ownerDecision.status !== "approved" ||
+  ownerDecision.reviewedBy !== EXPECTED_OWNER ||
+  ownerDecision.reviewedAt !== EXPECTED_OWNER_REVIEWED_AT ||
+  !isValidUtcTimestamp(ownerDecision.reviewedAt as string)
+) {
+  throw new Error("ownerDecision identity, status, or timestamp drifted");
+}
+if (
+  typeof ownerDecision.reviewedReviewSetDigest !== "string" ||
+  !/^[0-9a-f]{64}$/u.test(ownerDecision.reviewedReviewSetDigest) ||
+  ownerDecision.reviewedReviewSetDigest !== EXPECTED_REVIEWED_REVIEW_SET_DIGEST
+) {
+  throw new Error("ownerDecision reviewedReviewSetDigest is invalid");
+}
+const reconstructedReviewedDigest = sha256Hex(reviewedSnapshotBytes(parsed));
+if (ownerDecision.reviewedReviewSetDigest !== reconstructedReviewedDigest) {
+  throw new Error(
+    "ownerDecision does not bind the exact awaiting-owner-review bytes",
+  );
+}
+const refrozenDigest = sha256Hex(bytes);
+if (refrozenDigest !== EXPECTED_REFROZEN_REVIEW_SET_DIGEST) {
+  throw new Error("owner-approved review-set bytes drifted after re-freeze");
+}
+
 console.log(
-  `embed-enrichment review set OK accepted=3 rejected=13 digest=${sha256Hex(bytes)}`,
+  `embed-enrichment review set OK accepted=3 rejected=13 reviewedDigest=${reconstructedReviewedDigest} refrozenDigest=${refrozenDigest}`,
 );
