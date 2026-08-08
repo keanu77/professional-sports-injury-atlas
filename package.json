@@ -37,7 +37,10 @@
     "external:verify": "tsx scripts/verify-external-sources.ts",
     "brand:verify": "tsx scripts/verify-brand-assets.ts",
     "review-set:generate": "tsx scripts/generate-review-set.ts",
+    "private:credential": "tsx scripts/private-hosting/provision-review-credential.ts",
     "private:manifest": "ATLAS_BUILD_MODE=review tsx scripts/private-hosting/generate-private-dist-manifest.ts",
+    "private:serve": "tsx scripts/private-hosting/serve-private-review.ts",
+    "private:service": "tsx scripts/private-hosting/manage-private-review-service.ts",
     "verify:review-artifact": "tsx scripts/verify-review-artifact.ts",
     "release:public": "ATLAS_BUILD_MODE=public tsx scripts/release-check.ts && ATLAS_BUILD_MODE=public astro build && ATLAS_BUILD_MODE=public tsx scripts/verify-public-artifact.ts",
     "verify": "npm run plan:verify && npm run format:check && npm run check && npm run content:check && npm run test:coverage && npm run build:review && npm run test:e2e && npm run test:lighthouse && npm run brand:verify && npm run verify:review-artifact"

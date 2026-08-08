@@ -1549,7 +1549,10 @@ export function buildPrivateDistManifestFromDisk(
   return manifest;
 }
 
-function gitSourceState(root: string): PrivateDistSourceState {
+/** Recomputes the complete clean source projection used by production consumers. */
+export function currentPrivateDistSourceState(
+  root: string,
+): PrivateDistSourceState {
   const git = (...args: string[]): string =>
     execFileSync("git", args, {
       cwd: root,
@@ -1684,13 +1687,13 @@ export function writePrivateDistManifest(
 function main(): void {
   const root = process.cwd();
   try {
-    const sourceStateBefore = gitSourceState(root);
+    const sourceStateBefore = currentPrivateDistSourceState(root);
     const manifest = buildPrivateDistManifestFromDisk({
       root,
       buildMode: process.env.ATLAS_BUILD_MODE ?? "review",
       sourceState: sourceStateBefore,
     });
-    const sourceStateAfter = gitSourceState(root);
+    const sourceStateAfter = currentPrivateDistSourceState(root);
     if (canonicalJson(sourceStateAfter) !== canonicalJson(sourceStateBefore)) {
       throw new PrivateDistManifestError(
         "source state changed while generating the private manifest",

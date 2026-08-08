@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "serviceId": "tw.sportsmedicine.atlas.private-review",
+  "nodeVersion": "24.14.0",
+  "bind": {
+    "tailscaleCliPath": "/opt/homebrew/bin/tailscale",
+    "tailscaleDnsName": "mac-mini.tailbc16e9.ts.net",
+    "tailscaleIPv4": "100.114.3.93",
+    "port": 8140
+  },
+  "authentication": {
+    "method": "http-basic-scrypt-keychain-v1",
+    "username": "atlas-reviewer",
+    "realm": "Private review",
+    "keychainService": "tw.sportsmedicine.atlas.private-review.auth-v1",
+    "keychainAccount": "atlas-reviewer",
+    "scrypt": {
+      "algorithm": "scrypt-v1",
+      "N": 16384,
+      "r": 8,
+      "p": 1,
+      "keyLength": 32,
+      "saltBytes": 32
+    }
+  },
+  "artifact": {
+    "distDirectory": "dist",
+    "manifestPath": "review/private-dist-manifest.v1.json",
+    "reviewSetPath": "review/review-set.v1.json",
+    "headerPolicyPath": "ops/http-header-policy.v1.json"
+  },
+  "launchd": {
+    "label": "tw.sportsmedicine.atlas.private-review.v1",
+    "templatePath": "ops/launchd/tw.sportsmedicine.atlas.private-review.plist.template",
+    "localStateDirectoryName": "tw.sportsmedicine.atlas.private-review",
+    "renderedPlistName": "tw.sportsmedicine.atlas.private-review.plist",
+    "serverScriptPath": "scripts/private-hosting/serve-private-review.ts",
+    "tsxCliPath": "node_modules/tsx/dist/cli.mjs"
+  }
+}

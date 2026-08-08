@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>@@LABEL@@</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>@@NODE_BINARY@@</string>
+      <string>@@TSX_CLI@@</string>
+      <string>@@SERVER_SCRIPT@@</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>@@REPOSITORY_ROOT@@</string>
+    <key>StandardInPath</key>
+    <string>/dev/null</string>
+    <key>RunAtLoad</key>
+    <true />
+    <key>KeepAlive</key>
+    <false />
+    <key>ProcessType</key>
+    <string>Background</string>
+    <key>ThrottleInterval</key>
+    <integer>30</integer>
+    <key>ExitTimeOut</key>
+    <integer>10</integer>
+    <key>Umask</key>
+    <integer>63</integer>
+    <key>AbandonProcessGroup</key>
+    <false />
+    <key>HardResourceLimits</key>
+    <dict>
+      <key>Core</key>
+      <integer>0</integer>
+    </dict>
+    <key>StandardOutPath</key>
+    <string>@@STDOUT_LOG@@</string>
+    <key>StandardErrorPath</key>
+    <string>@@STDERR_LOG@@</string>
+  </dict>
+</plist>
