@@ -85,8 +85,12 @@ function syntheticCase(index: number): any {
   record.video.fallbackUrl = url;
   record.sourceManifestBinding.candidateId = candidateId;
   record.sourceManifestBinding.manifestId = MANIFEST_ID;
+  record.sourceManifestBinding.sourcePolicyVersion =
+    CURRENT_SOURCE_POLICY_VERSION;
   record.audit.sourceRecordId = candidateId;
   record.video.eventBinding.eventSourceId = `src-syn-${pad(index)}-event`;
+  record.video.sourceProvenanceVerification.verifiedPolicyVersion =
+    CURRENT_SOURCE_POLICY_VERSION;
   for (const source of record.sources) {
     source.id = source.id.replace("src-fic-001", `src-syn-${pad(index)}`);
     source.url = `${source.url}-syn-${pad(index)}`;
@@ -1046,6 +1050,47 @@ describe("public release gate: negative conditions", () => {
     const issues = evaluatePublicReleaseGate(gateInput(fx));
     expect(issues.some((entry) => entry.message.includes("superseded"))).toBe(
       true,
+    );
+  });
+
+  it("7d. validates active source binding for medically approved cases even when they are not public", () => {
+    const fx = buildAuthorizedFixture();
+    fx.cases[0].video.publicRightsReview = {
+      status: "not-requested",
+      reviewedBy: null,
+      reviewedAt: null,
+      reviewedVideoDigest: null,
+      policyVersion: null,
+      termsCheckedAt: null,
+      decisionBasis: null,
+      notes: null,
+      decisionPath: null,
+      decisionDigest: null,
+    };
+    fx.registry.entries.push({
+      manifestId: "SYN-CORRECTION-2026-08-07-001",
+      manifestPath:
+        "research/source-manifests/SYN-CORRECTION-2026-08-07-001.v1.json",
+      manifestDigest: "1".repeat(64),
+      sourceReviewDecisionPath:
+        "research/reviews/source-batches/SYN-CORRECTION-2026-08-07-001-source-review-decision.v1.json",
+      sourceReviewDecisionDigest: "2".repeat(64),
+      sourcePolicyVersion: CURRENT_SOURCE_POLICY_VERSION,
+      batchType: "correction",
+      period: "2026-08-07",
+      createdAt: "2026-08-07T00:00:00Z",
+      previousRegistryBytesDigest: "3".repeat(64),
+      supersedes: [
+        {
+          manifestId: MANIFEST_ID,
+          candidateId: "SYN-CAND-001",
+          entryDigest: fx.cases[0].sourceManifestBinding.entryDigest,
+        },
+      ],
+    });
+
+    expect(codes(evaluatePublicReleaseGate(gateInput(fx)))).toContain(
+      "binding-unresolved",
     );
   });
 

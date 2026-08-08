@@ -28,9 +28,12 @@ import {
 } from "../src/lib/governance/site-digest";
 import type { SourceManifestRegistryV1 } from "../src/lib/contracts/source-manifest-registry";
 import type { InjuryCase } from "../src/lib/contracts/case";
+import { selectMedicallyApprovedCases } from "../src/lib/cases/selectors";
+import { validateCaseSourceBinding } from "../src/lib/contracts/cross-validation";
 import {
   loadContentCollections,
   loadRealRegistry,
+  registryArtifactLoader,
   REPO_ROOT,
 } from "./check-content";
 import { parseRtpCourseSummariesBytes } from "../src/lib/rtp/course-links";
@@ -146,11 +149,17 @@ export function currentSupportingDataDigest(
   });
 }
 
+const CONTENT_AUTHORITY_PLAN_ROLES = new Set([
+  "platform-foundation",
+  "nba-injury-case-source-discovery",
+  "nba-injury-case-authoring",
+]);
+
 /**
  * Content-authority snapshot from the plan binding: only the bound spec,
- * controller, and authorized plans (with their execution-decision digests).
- * The mutable whole-file plan-binding digest and unauthorized future roles
- * are excluded.
+ * controller, platform foundation, active source discovery, and active
+ * authoring roles (with their execution-decision digests). The mutable
+ * whole-file binding and operational hosting/public roles are excluded.
  */
 export function currentContentAuthoritySnapshotDigest(
   root: string = REPO_ROOT,
@@ -164,6 +173,7 @@ export function currentContentAuthoritySnapshotDigest(
       sha256: string;
       executionAuthorization: {
         status: string;
+        role: string;
         decisionSha256: string | null;
       } | null;
     }>;
@@ -183,16 +193,21 @@ export function currentContentAuthoritySnapshotDigest(
       });
       continue;
     }
+    const authorization = document.executionAuthorization;
     if (
       document.documentType === "plan" &&
-      document.executionAuthorization !== null &&
-      document.executionAuthorization.status === "authorized"
+      authorization !== null &&
+      authorization.status === "authorized" &&
+      CONTENT_AUTHORITY_PLAN_ROLES.has(authorization.role)
     ) {
       documents.push({
+        // Keep the established digest projection stable; the execution role
+        // selects eligible plans, while `plan` remains the canonical document
+        // role already frozen into completed review-set snapshots.
         role: "plan",
         path: document.path,
         documentSha256: document.sha256,
-        executionDecisionSha256: document.executionAuthorization.decisionSha256,
+        executionDecisionSha256: authorization.decisionSha256,
       });
     }
   }
@@ -229,10 +244,40 @@ function main(): void {
     process.exit(1);
   }
   const cases = loaded.cases.map((entry) => entry.record);
+  const medicallyApprovedCases = selectMedicallyApprovedCases(cases);
+  if (medicallyApprovedCases.length !== cases.length) {
+    const selectedIds = new Set(
+      medicallyApprovedCases.map((record) => record.id),
+    );
+    for (const record of cases) {
+      if (!selectedIds.has(record.id)) {
+        console.error(
+          `review-set:generate FAILED — ${record.id} is outside the current medically approved projection`,
+        );
+      }
+    }
+    process.exit(1);
+  }
+  const sourceBindingIssues = medicallyApprovedCases.flatMap((record) =>
+    validateCaseSourceBinding(
+      record,
+      registryResult.registry!,
+      registryArtifactLoader(root),
+    ).map((entry) => ({
+      ...entry,
+      path: `${record.id}.${entry.path}`,
+    })),
+  );
+  if (sourceBindingIssues.length > 0) {
+    for (const entry of sourceBindingIssues) {
+      console.error(`[${entry.code}] ${entry.path}: ${entry.message}`);
+    }
+    process.exit(1);
+  }
   const updates = loaded.updates.map((entry) => entry.record);
   const manifest = buildReviewSetManifest({
     contentCommit: build.commit,
-    cases,
+    cases: medicallyApprovedCases,
     overviews: loaded.overviews.map((entry) => entry.record),
     currentUpdate: updates.length === 1 ? updates[0]! : null,
     registry: registryResult.registry,
@@ -241,7 +286,7 @@ function main(): void {
     supportingDataDigest: currentSupportingDataDigest(
       root,
       registryResult.registry,
-      cases,
+      medicallyApprovedCases,
     ),
   });
   const bytes = canonicalReviewSetBytes(manifest);

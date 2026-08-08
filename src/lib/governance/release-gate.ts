@@ -25,7 +25,11 @@ import {
 } from "../cases/digest";
 import { computeInjuryOverviewDigest } from "../cases/injury-overview-digest";
 import { validateInjuryOverviewForApproval } from "../cases/injury-overview-digest";
-import { effectiveVideoRendering, selectPublicCases } from "../cases/selectors";
+import {
+  effectiveVideoRendering,
+  selectMedicallyApprovedCases,
+  selectPublicCases,
+} from "../cases/selectors";
 import { computeQuarterlyUpdateDigest } from "../cases/update-digest";
 import { INJURY_CODES, type InjuryCase } from "../contracts/case";
 import {
@@ -857,6 +861,23 @@ function resolvePublicContent(
 ): ResolvedPublicContent {
   issues.push(...validateCaseCollection([...input.cases]));
 
+  // Source registry and immutable decision validation is independent of
+  // public-rights selection. G4's medically approved set must remain bound to
+  // active, non-superseded source artifacts even while its public set is empty.
+  const medicallyApprovedCases = selectMedicallyApprovedCases([...input.cases]);
+  for (const record of medicallyApprovedCases) {
+    issues.push(
+      ...validateCaseSourceBinding(
+        record,
+        input.registry,
+        input.loadRegistryArtifact,
+      ).map((bindingIssue) => ({
+        ...bindingIssue,
+        path: `${record.id}.${bindingIssue.path}`,
+      })),
+    );
+  }
+
   const publicCases = selectPublicCases([...input.cases]);
   const publicCaseTuples: SitePublicCaseTuple[] = [];
   const batchTupleByKey = new Map<string, SiteSourceBatchTuple>();
@@ -871,16 +892,6 @@ function resolvePublicContent(
         })),
       );
     }
-    issues.push(
-      ...validateCaseSourceBinding(
-        record,
-        input.registry,
-        input.loadRegistryArtifact,
-      ).map((bindingIssue) => ({
-        ...bindingIssue,
-        path: `${record.id}.${bindingIssue.path}`,
-      })),
-    );
     const provenance = record.video.sourceProvenanceVerification;
     if (provenance.verifiedPolicyVersion !== CURRENT_SOURCE_POLICY_VERSION) {
       issues.push(

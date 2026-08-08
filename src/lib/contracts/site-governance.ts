@@ -8,7 +8,10 @@
 import { z } from "astro/zod";
 import { issue, type ValidationIssue } from "./canonical";
 
-export const CURRENT_SOURCE_POLICY_VERSION = "source-policy-v1";
+/** Canonical identity of the frozen NBA v2 source-policy contract. */
+export const NBA_V2_SOURCE_POLICY_VERSION = "nba-v2";
+/** The single production source-policy authority used by case selection. */
+export const CURRENT_SOURCE_POLICY_VERSION = NBA_V2_SOURCE_POLICY_VERSION;
 export const CURRENT_PUBLIC_RIGHTS_POLICY_VERSION = "public-rights-policy-v1";
 
 export const siteGovernanceSchema = z.strictObject({

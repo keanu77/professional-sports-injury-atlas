@@ -1,5 +1,14 @@
-import { readFileSync } from "node:fs";
+import {
+  mkdirSync,
+  mkdtempSync,
+  readFileSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import { currentContentAuthoritySnapshotDigest } from "../../scripts/generate-review-set";
 import { canonicalJson, sha256Hex } from "../../src/lib/cases/canonical-json";
 import {
   computeCaseContentDigest,
@@ -301,6 +310,102 @@ describe("content-authority snapshot", () => {
     expect(() =>
       computeContentAuthoritySnapshotDigest([...documents, documents[0]!]),
     ).toThrow(ReviewSetError);
+  });
+
+  it("projects authority roles without letting G4/G6 create an authorization cycle", () => {
+    const root = mkdtempSync(join(tmpdir(), "atlas-content-authority-"));
+    const bindingPath = join(root, "docs/decisions/plan-binding.v1.json");
+    mkdirSync(join(root, "docs/decisions"), { recursive: true });
+
+    const plan = (
+      path: string,
+      role: string,
+      status: "authorized" | "not-authorized" = "authorized",
+      documentSha256 = hex("3"),
+      decisionSha256 = hex("4"),
+    ): any => ({
+      documentType: "plan",
+      lifecycle: "active",
+      path,
+      sha256: documentSha256,
+      executionAuthorization: {
+        status,
+        role,
+        decisionSha256: status === "authorized" ? decisionSha256 : null,
+      },
+    });
+    const documents: any[] = [
+      {
+        documentType: "specification",
+        lifecycle: "active",
+        path: "docs/superpowers/specs/spec.md",
+        sha256: hex("1"),
+        executionAuthorization: null,
+      },
+      {
+        documentType: "execution-controller",
+        lifecycle: "active",
+        path: "docs/superpowers/plans/controller.md",
+        sha256: hex("2"),
+        executionAuthorization: null,
+      },
+      plan("plans/platform-3.md", "platform-foundation"),
+      plan("plans/source-4.md", "nba-injury-case-source-discovery"),
+      plan("plans/authoring-5.md", "nba-injury-case-authoring"),
+      plan(
+        "plans/hosting-6.md",
+        "atlas-private-hosting-and-review",
+        "not-authorized",
+      ),
+    ];
+    const writeBinding = (): void => {
+      writeFileSync(
+        bindingPath,
+        canonicalJson({ schemaVersion: 1, documents }),
+      );
+    };
+
+    try {
+      writeBinding();
+      const baseline = currentContentAuthoritySnapshotDigest(root);
+
+      documents[5].executionAuthorization = {
+        status: "authorized",
+        role: "atlas-private-hosting-and-review",
+        decisionSha256: hex("6"),
+      };
+      writeBinding();
+      expect(currentContentAuthoritySnapshotDigest(root)).toBe(baseline);
+
+      documents.push(
+        plan("plans/public-7.md", "atlas-public-release", "authorized"),
+        plan("plans/future-8.md", "unrelated-future", "not-authorized"),
+      );
+      writeBinding();
+      expect(currentContentAuthoritySnapshotDigest(root)).toBe(baseline);
+
+      documents[3].sha256 = hex("a");
+      writeBinding();
+      const changedSource = currentContentAuthoritySnapshotDigest(root);
+      expect(changedSource).not.toBe(baseline);
+
+      documents[3].sha256 = hex("3");
+      documents[4].executionAuthorization.decisionSha256 = hex("b");
+      writeBinding();
+      expect(currentContentAuthoritySnapshotDigest(root)).not.toBe(baseline);
+    } finally {
+      rmSync(root, { recursive: true, force: true });
+    }
+  });
+
+  it("preserves the completed real clinical authority snapshot after G4 authorization", () => {
+    const root = join(import.meta.dirname, "../..");
+    const frozenReviewSet = JSON.parse(
+      readFileSync(join(root, "review/review-set.v1.json"), "utf8"),
+    ) as { contentAuthoritySnapshotDigest: string };
+    expect(currentContentAuthoritySnapshotDigest(root)).toBe(
+      frozenReviewSet.contentAuthoritySnapshotDigest,
+    );
   });
 });
 

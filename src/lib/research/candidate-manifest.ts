@@ -15,6 +15,7 @@ import {
   sha256Hex,
   type ValidationIssue,
 } from "../contracts/canonical";
+import { NBA_V2_SOURCE_POLICY_VERSION } from "../contracts/site-governance";
 import {
   CANDIDATE_COMPETITIONS,
   CANDIDATE_INJURY_CODES,
@@ -69,7 +70,7 @@ export const G2_LAUNCH_DEFAULT_MIN_CLASSIC_ENTRIES = 1;
 export const NBA_LAUNCH_ZERO_CLASSIC_MANIFEST_ID = "NBA-SOURCE-2026-08-06-001";
 
 export const NBA_LAUNCH_MANIFEST_PERIOD = "2026-08-06";
-export const NBA_LAUNCH_SOURCE_POLICY_VERSION = "nba-v2";
+export const NBA_LAUNCH_SOURCE_POLICY_VERSION = NBA_V2_SOURCE_POLICY_VERSION;
 export const NBA_LAUNCH_CUTOFF_DATE = RECENT_CANDIDATE_CUTOFF;
 export const NBA_LAUNCH_SOURCE_POLICY_JSON_DIGEST =
   "6b5909369134839196d2285cba5ba9f1e59d69b56b0c377ef17a10b0e6effe07";

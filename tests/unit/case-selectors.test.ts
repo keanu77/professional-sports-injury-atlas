@@ -13,14 +13,27 @@ import {
   selectPublicCases,
   selectReviewCases,
 } from "../../src/lib/cases/selectors";
-import { CURRENT_PUBLIC_RIGHTS_POLICY_VERSION } from "../../src/lib/contracts/site-governance";
+import { hasCurrentProvenanceVerification } from "../../src/lib/cases/review-validation";
+import {
+  CURRENT_PUBLIC_RIGHTS_POLICY_VERSION,
+  CURRENT_SOURCE_POLICY_VERSION,
+} from "../../src/lib/contracts/site-governance";
 
 const loadFixture = (rel: string): any =>
   JSON.parse(
     readFileSync(new URL(`../fixtures/${rel}`, import.meta.url), "utf8"),
   );
-const recent = (): any => loadFixture("cases/valid-medical-review.json");
-const classic = (): any => loadFixture("cases/valid-approved-classic.json");
+const withCurrentSourcePolicy = (record: any): any => {
+  record.sourceManifestBinding.sourcePolicyVersion =
+    CURRENT_SOURCE_POLICY_VERSION;
+  record.video.sourceProvenanceVerification.verifiedPolicyVersion =
+    CURRENT_SOURCE_POLICY_VERSION;
+  return record;
+};
+const recent = (): any =>
+  withCurrentSourcePolicy(loadFixture("cases/valid-medical-review.json"));
+const classic = (): any =>
+  withCurrentSourcePolicy(loadFixture("cases/valid-approved-classic.json"));
 
 /** Recomputes the digests that bind provenance and (if approved) review. */
 const finalize = (record: any): any => {
@@ -115,6 +128,42 @@ describe("deterministic case selectors", () => {
     const unconfirmed = classic();
     unconfirmed.injury.confirmationStatus = "conflicted";
     expect(selectMedicallyApprovedCases([unconfirmed])).toEqual([]);
+  });
+
+  it("admits only exact nba-v2 binding/provenance agreement with a current identity digest", () => {
+    const current = classic();
+    current.sourceManifestBinding.sourcePolicyVersion = "nba-v2";
+    current.video.sourceProvenanceVerification.verifiedPolicyVersion = "nba-v2";
+    finalize(current);
+    expect(hasCurrentProvenanceVerification(current)).toBe(true);
+    expect(selectMedicallyApprovedCases([current])).toEqual([current]);
+    expect(CURRENT_SOURCE_POLICY_VERSION).toBe("nba-v2");
+
+    for (const policyVersion of [
+      "source-policy-v1",
+      "nba-v1",
+      "unknown-policy",
+    ]) {
+      const stale = finalize(classic());
+      stale.sourceManifestBinding.sourcePolicyVersion = policyVersion;
+      stale.video.sourceProvenanceVerification.verifiedPolicyVersion =
+        policyVersion;
+      expect(hasCurrentProvenanceVerification(stale)).toBe(false);
+      expect(selectMedicallyApprovedCases([stale])).toEqual([]);
+    }
+
+    const mismatched = finalize(classic());
+    mismatched.sourceManifestBinding.sourcePolicyVersion = "nba-v2";
+    mismatched.video.sourceProvenanceVerification.verifiedPolicyVersion =
+      "nba-v1";
+    expect(hasCurrentProvenanceVerification(mismatched)).toBe(false);
+    expect(selectMedicallyApprovedCases([mismatched])).toEqual([]);
+
+    const staleIdentity = finalize(classic());
+    staleIdentity.video.sourceProvenanceVerification.reviewedVideoIdentityDigest =
+      "f".repeat(64);
+    expect(hasCurrentProvenanceVerification(staleIdentity)).toBe(false);
+    expect(selectMedicallyApprovedCases([staleIdentity])).toEqual([]);
   });
 
   it("public selector additionally requires current cleared rights", () => {

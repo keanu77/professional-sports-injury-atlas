@@ -19,7 +19,16 @@ import {
 } from "../../src/lib/contracts/cross-validation";
 import { computeCaseContentDigest } from "../../src/lib/cases/digest";
 import { hasMatchingApprovedReview } from "../../src/lib/cases/review-validation";
+import {
+  selectMedicallyApprovedCases,
+  selectPublicCases,
+} from "../../src/lib/cases/selectors";
 import { caseSchema, type InjuryCase } from "../../src/lib/contracts/case";
+import { CURRENT_SOURCE_POLICY_VERSION } from "../../src/lib/contracts/site-governance";
+import {
+  MIN_PUBLIC_CASES_PER_INJURY,
+  MIN_PUBLIC_CASES_TOTAL,
+} from "../../src/lib/governance/release-gate";
 import { caseRouteParams } from "../../src/lib/routes/static-paths";
 
 const ROOT = join(import.meta.dirname, "../..");
@@ -131,6 +140,10 @@ describe("authorized real NBA case authoring", () => {
     expect(registryResult.registry).not.toBeNull();
 
     for (const record of records) {
+      expect(record.sourceManifestBinding.sourcePolicyVersion).toBe("nba-v2");
+      expect(
+        record.video.sourceProvenanceVerification.verifiedPolicyVersion,
+      ).toBe("nba-v2");
       expect(
         validateCaseSourceBinding(
           record,
@@ -156,5 +169,28 @@ describe("authorized real NBA case authoring", () => {
     expect(new Set(routes.map((route) => route.slug))).toEqual(
       new Set(records.map((record) => record.slug)),
     );
+  });
+
+  it("selects the exact 26-case medical projection without opening public readiness", () => {
+    const records = loadAuthoredCases(loadCoverage());
+    const medicallyApproved = selectMedicallyApprovedCases(records);
+    expect(medicallyApproved).toHaveLength(26);
+    expect(CURRENT_SOURCE_POLICY_VERSION).toBe("nba-v2");
+    expect(
+      Object.fromEntries(
+        ["acl", "ankle-sprain", "achilles-rupture"].map((injuryCode) => [
+          injuryCode,
+          medicallyApproved.filter(
+            (record) => record.injury.code === injuryCode,
+          ).length,
+        ]),
+      ),
+    ).toEqual({ acl: 7, "ankle-sprain": 12, "achilles-rupture": 7 });
+
+    expect(selectPublicCases(records)).toEqual([]);
+    expect(MIN_PUBLIC_CASES_PER_INJURY).toBe(10);
+    expect(MIN_PUBLIC_CASES_TOTAL).toBe(30);
+    expect(medicallyApproved).toHaveLength(26);
+    expect(medicallyApproved.length).toBeLessThan(MIN_PUBLIC_CASES_TOTAL);
   });
 });

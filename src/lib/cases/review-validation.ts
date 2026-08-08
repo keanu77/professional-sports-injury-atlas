@@ -55,7 +55,11 @@ export function hasCurrentProvenanceVerification(record: InjuryCase): boolean {
   const provenance = record.video.sourceProvenanceVerification;
   return (
     provenance.status === "verified" &&
+    record.sourceManifestBinding.sourcePolicyVersion ===
+      CURRENT_SOURCE_POLICY_VERSION &&
     provenance.verifiedPolicyVersion === CURRENT_SOURCE_POLICY_VERSION &&
+    provenance.verifiedPolicyVersion ===
+      record.sourceManifestBinding.sourcePolicyVersion &&
     provenance.reviewedVideoIdentityDigest ===
       computeVideoIdentityDigest(record)
   );
