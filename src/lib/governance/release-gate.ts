@@ -8,6 +8,7 @@
  */
 
 import { z } from "astro/zod";
+import { parse, type DefaultTreeAdapterTypes } from "parse5";
 import {
   canonicalJson,
   CanonicalJsonError,
@@ -303,6 +304,110 @@ const IFRAME_RE = /<iframe\b[^>]*>/gi;
 const PRECONNECT_RE = /rel=["']?(preconnect|dns-prefetch)/i;
 const SITEMAP_FILE_RE = /(^|\/)sitemap[^/]*\.xml$/;
 const CASE_EMBED_RE = /data-case-embed="([^"]*)"/g;
+const IMAGE_URL_BASE = "https://atlas.invalid/";
+
+type HtmlElement = DefaultTreeAdapterTypes.Element;
+type HtmlNode = DefaultTreeAdapterTypes.Node;
+
+function isHtmlElement(node: HtmlNode): node is HtmlElement {
+  return "tagName" in node;
+}
+
+function descendantElements(node: HtmlNode): HtmlElement[] {
+  if (!("childNodes" in node)) return [];
+  const result: HtmlElement[] = [];
+  for (const child of node.childNodes) {
+    if (!isHtmlElement(child)) continue;
+    result.push(child, ...descendantElements(child));
+  }
+  return result;
+}
+
+function htmlAttribute(element: HtmlElement, name: string): string | null {
+  return element.attrs.find((entry) => entry.name === name)?.value ?? null;
+}
+
+function isLocalBuiltImageUrl(value: string): boolean {
+  const candidate = value.trim();
+  if (
+    candidate === "" ||
+    /[\\\u0000-\u001f\u007f]/u.test(candidate) ||
+    /^[a-z][a-z0-9+.-]*:/iu.test(candidate) ||
+    candidate.startsWith("//")
+  ) {
+    return false;
+  }
+  try {
+    const resolved = new URL(candidate, IMAGE_URL_BASE);
+    return resolved.origin === new URL(IMAGE_URL_BASE).origin;
+  } catch {
+    return false;
+  }
+}
+
+function srcsetUrls(value: string): string[] {
+  return value
+    .split(",")
+    .map((candidate) => candidate.trim().split(/\s+/u)[0] ?? "");
+}
+
+function reviewImageAttributes(
+  document: DefaultTreeAdapterTypes.Document,
+): Array<{ element: HtmlElement; attribute: string; value: string }> {
+  const attributes: Array<{
+    element: HtmlElement;
+    attribute: string;
+    value: string;
+  }> = [];
+  for (const element of descendantElements(document)) {
+    const names: string[] = [];
+    if (element.tagName === "img" || element.tagName === "source") {
+      names.push("src", "srcset");
+    } else if (element.tagName === "link") {
+      const rel = (htmlAttribute(element, "rel") ?? "")
+        .toLowerCase()
+        .split(/\s+/u);
+      if (
+        rel.includes("preload") &&
+        htmlAttribute(element, "as")?.toLowerCase() === "image"
+      ) {
+        names.push("href", "imagesrcset");
+      }
+    }
+    for (const name of names) {
+      const value = htmlAttribute(element, name);
+      if (value !== null) attributes.push({ element, attribute: name, value });
+    }
+  }
+  return attributes;
+}
+
+/** Review builds must load every rendered image from their own artifact. */
+export function validateReviewImageReferences(
+  pages: readonly BuiltPage[],
+): ValidationIssue[] {
+  const issues: ValidationIssue[] = [];
+  for (const page of pages) {
+    const document = parse(page.html);
+    for (const { element, attribute, value } of reviewImageAttributes(
+      document,
+    )) {
+      const candidates = attribute.endsWith("srcset")
+        ? srcsetUrls(value)
+        : [value];
+      if (candidates.some((candidate) => !isLocalBuiltImageUrl(candidate))) {
+        issues.push(
+          issue(
+            "review-output-nonlocal-image",
+            page.path,
+            `${element.tagName}[${attribute}] must reference only local built image files`,
+          ),
+        );
+      }
+    }
+  }
+  return issues;
+}
 
 function hasNoindexMeta(html: string): boolean {
   return (
@@ -319,7 +424,7 @@ export function validateReviewOutput(
   pages: readonly BuiltPage[],
   filePaths: readonly string[],
 ): ValidationIssue[] {
-  const issues: ValidationIssue[] = [];
+  const issues: ValidationIssue[] = [...validateReviewImageReferences(pages)];
   for (const page of pages) {
     if (!hasNoindexMeta(page.html)) {
       issues.push(

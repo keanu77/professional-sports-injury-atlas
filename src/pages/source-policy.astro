@@ -1,8 +1,8 @@
 ---
 /**
  * Source and evidence policy page. Documents the controlled source types,
- * independence rules, video rights posture, and the timecode rule in
- * reader-facing language. Text only.
+ * independence rules, video rights posture, licensed static-photo posture,
+ * and the timecode rule in reader-facing language. Text only.
  */
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
@@ -40,8 +40,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <p>
       本站不下載、不側錄、不備份任何比賽影片，只連結原始平台上的公開頁面。
       站內播放器只在點擊後載入，且僅適用於已驗證可嵌入、字幕可用的來源；其
-      他狀態一律顯示清楚標示的原始平台外部連結。畫面截圖與球隊、聯盟標誌不
-      會出現在本站。
+      他狀態一律顯示清楚標示的原始平台外部連結。本站不重製畫面截圖、影片縮
+      圖，也不使用獨立的球隊或聯盟標誌素材。
+    </p>
+  </section>
+
+  <section aria-labelledby="photo-heading">
+    <h2 id="photo-heading">球員資料照片</h2>
+    <p>
+      案例封面只會使用通過身份與來源核對、且採 CC BY、CC BY-SA、CC0 或公眾
+      領域授權的 Wikimedia Commons 靜態球場照片。每次顯示都附攝影者、授權條款與
+      Commons 原始頁連結，並清楚標示這是球員球場資料照片，不是本案例受
+      傷當下影像。授權照片中可能自然出現球衣或場館標記；本站不將這些附帶元素
+      拆出作為標誌素材，也不代表聯盟、球隊或其他第三方對本站的合作關係或背
+      書。無法完整核對時維持原有傷種主題圖。
     </p>
   </section>
 

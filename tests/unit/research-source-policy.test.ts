@@ -28,6 +28,9 @@ const V1_MARKDOWN_POLICY_PATH = "research/source-policy/nba.v1.md" as const;
 const JSON_POLICY_PATH =
   "research/source-policy/source-policy.v2.json" as const;
 const MARKDOWN_POLICY_PATH = "research/source-policy/nba.v2.md" as const;
+const V3_JSON_POLICY_PATH =
+  "research/source-policy/source-policy.v3.json" as const;
+const V3_MARKDOWN_POLICY_PATH = "research/source-policy/nba.v3.md" as const;
 const V2_DATE_RULE_PARAGRAPH =
   "For the primary video's event-date identity check, `video_published_at` must fall within the inclusive window from `event_date` through `event_date + 3 days`, or the video title must contain `event_date`. This window is asymmetric: publication before `event_date` is ineligible.";
 
@@ -249,6 +252,10 @@ const EXPECTED_JSON_SHA256 =
   "6b5909369134839196d2285cba5ba9f1e59d69b56b0c377ef17a10b0e6effe07";
 const EXPECTED_MARKDOWN_SHA256 =
   "b07adf72fb6e5e5bb087401c1056003853c8fa5798456e199e58d722b7db6570";
+const EXPECTED_V3_JSON_SHA256 =
+  "284a88792f281564799eeae6b62646b855072725824ef21f3cea4204a3d14270";
+const EXPECTED_V3_MARKDOWN_SHA256 =
+  "7dc98d1146ffe701a312694512bfe513f27d3edb8ecaeeb2f933a92f9fb32ca2";
 
 const FROZEN_POLICY_BY_VERSION = Object.freeze({
   "nba-v1": Object.freeze({
@@ -263,6 +270,12 @@ const FROZEN_POLICY_BY_VERSION = Object.freeze({
     markdownPath: MARKDOWN_POLICY_PATH,
     markdownSha256: EXPECTED_MARKDOWN_SHA256,
   }),
+  "nba-v3": Object.freeze({
+    jsonPath: V3_JSON_POLICY_PATH,
+    jsonSha256: EXPECTED_V3_JSON_SHA256,
+    markdownPath: V3_MARKDOWN_POLICY_PATH,
+    markdownSha256: EXPECTED_V3_MARKDOWN_SHA256,
+  }),
 });
 
 type FrozenPolicyVersion = keyof typeof FROZEN_POLICY_BY_VERSION;
@@ -272,7 +285,9 @@ function readPolicyFile(
     | typeof V1_JSON_POLICY_PATH
     | typeof V1_MARKDOWN_POLICY_PATH
     | typeof JSON_POLICY_PATH
-    | typeof MARKDOWN_POLICY_PATH,
+    | typeof MARKDOWN_POLICY_PATH
+    | typeof V3_JSON_POLICY_PATH
+    | typeof V3_MARKDOWN_POLICY_PATH,
 ): string {
   return readFileSync(new URL(`../../${path}`, import.meta.url), "utf8");
 }
@@ -838,7 +853,11 @@ describe("NBA source-policy nba-v2 contract", () => {
   });
 
   it("maps the declared version one-to-one to one exact immutable SHA-256 pair", () => {
-    expect(Object.keys(FROZEN_POLICY_BY_VERSION)).toEqual(["nba-v1", "nba-v2"]);
+    expect(Object.keys(FROZEN_POLICY_BY_VERSION)).toEqual([
+      "nba-v1",
+      "nba-v2",
+      "nba-v3",
+    ]);
     const pairs = Object.values(FROZEN_POLICY_BY_VERSION).map(
       ({ jsonSha256, markdownSha256 }) => `${jsonSha256}:${markdownSha256}`,
     );
@@ -884,9 +903,184 @@ describe("NBA source-policy nba-v2 contract", () => {
     const policy = parseCanonicalPolicy(jsonBytes);
     expect(() =>
       verifyFrozenPolicyBytes(
-        canonicalJson({ ...policy, sourcePolicyVersion: "nba-v3" }),
+        canonicalJson({ ...policy, sourcePolicyVersion: "nba-v4" }),
         markdownBytes,
       ),
-    ).toThrow(/unregistered source-policy version nba-v3/);
+    ).toThrow(/unregistered source-policy version nba-v4/);
+  });
+});
+
+describe("NBA source-policy nba-v3 static-player-photo annex", () => {
+  it("is canonical, immutable, and inherits every nba-v2 clinical/video rule unchanged", () => {
+    const v2 = parseCanonicalPolicy(readPolicyFile(JSON_POLICY_PATH));
+    const v3Bytes = readPolicyFile(V3_JSON_POLICY_PATH);
+    const v3 = parseCanonicalPolicy(v3Bytes);
+    const {
+      clinicalVideoPolicyInheritance,
+      playerStaticPhotoRules,
+      ...v3WithoutAnnex
+    } = v3;
+
+    expect(v3Bytes.endsWith("\n")).toBe(false);
+    expect(v3.sourcePolicyVersion).toBe("nba-v3");
+    expect(clinicalVideoPolicyInheritance).toEqual({
+      jsonPath: JSON_POLICY_PATH,
+      jsonSha256: EXPECTED_JSON_SHA256,
+      markdownPath: MARKDOWN_POLICY_PATH,
+      markdownSha256: EXPECTED_MARKDOWN_SHA256,
+      sourcePolicyVersion: "nba-v2",
+    });
+    expect({
+      ...v3WithoutAnnex,
+      humanPolicyDocument: v2.humanPolicyDocument,
+      sourcePolicyVersion: "nba-v2",
+      versionChangeRules: v2.versionChangeRules,
+    }).toEqual(v2);
+    expect(playerStaticPhotoRules).toBeDefined();
+  });
+
+  it("permits only exact free-license pairs and a local original Commons JPEG", () => {
+    const v3 = parseCanonicalPolicy(readPolicyFile(V3_JSON_POLICY_PATH));
+    const annex = asRecord(v3.playerStaticPhotoRules, "playerStaticPhotoRules");
+    expect(annex.scopeId).toBe("decision-7-commons-player-photo-covers-only");
+    expect(annex.allowedMimeTypes).toEqual(["image/jpeg"]);
+    expect(annex.allowedSourceClassification).toBe(
+      "wikimedia-commons-player-basketball-court-photo",
+    );
+    expect(annex.allowedLicenses).toEqual([
+      {
+        name: "CC BY 2.0",
+        token: "cc-by-2.0",
+        url: "https://creativecommons.org/licenses/by/2.0",
+      },
+      {
+        name: "CC BY 3.0",
+        token: "cc-by-3.0",
+        url: "https://creativecommons.org/licenses/by/3.0",
+      },
+      {
+        name: "CC BY 4.0",
+        token: "cc-by-4.0",
+        url: "https://creativecommons.org/licenses/by/4.0",
+      },
+      {
+        name: "CC BY-SA 2.0",
+        token: "cc-by-sa-2.0",
+        url: "https://creativecommons.org/licenses/by-sa/2.0",
+      },
+      {
+        name: "CC BY-SA 3.0",
+        token: "cc-by-sa-3.0",
+        url: "https://creativecommons.org/licenses/by-sa/3.0",
+      },
+      {
+        name: "CC BY-SA 4.0",
+        token: "cc-by-sa-4.0",
+        url: "https://creativecommons.org/licenses/by-sa/4.0",
+      },
+      {
+        name: "CC0 1.0",
+        token: "cc0-1.0",
+        url: "https://creativecommons.org/publicdomain/zero/1.0/",
+      },
+      {
+        name: "Public Domain Mark 1.0",
+        token: "public-domain-mark-1.0",
+        url: "https://creativecommons.org/publicdomain/mark/1.0/",
+      },
+    ]);
+    expect(annex.downloadRules).toEqual({
+      descriptionHost: "commons.wikimedia.org",
+      originalDownloadHost: "upload.wikimedia.org",
+      originalPathMustExclude: "/thumb/",
+      repositoryDirectory: "src/assets/players/",
+      runtimeRemoteFetchAllowed: false,
+      staticJpegDownloadAllowed: true,
+    });
+    expect(v3.mediaHandlingRules).toEqual(
+      parseCanonicalPolicy(readPolicyFile(JSON_POLICY_PATH)).mediaHandlingRules,
+    );
+  });
+
+  it("fails closed for every non-free or forbidden source class", () => {
+    const annex = asRecord(
+      parseCanonicalPolicy(readPolicyFile(V3_JSON_POLICY_PATH))
+        .playerStaticPhotoRules,
+    );
+    expect(annex.prohibitedClassifications).toEqual([
+      "all-rights-reserved",
+      "cc-nc",
+      "cc-nd",
+      "fair-use",
+      "footage-derived",
+      "news-agency",
+      "non-basketball-court",
+      "official-headshot",
+      "screenshot",
+      "thumbnail",
+      "unknown-license",
+      "wrong-athlete",
+    ]);
+    expect(annex.failClosedFallback).toBe(
+      "existing-governed-injury-theme-cover",
+    );
+    expect(annex.explicitNegativeFiles).toEqual([
+      {
+        filename: "2025_C.J._McCollum_(cropped).jpg",
+        reason: "official-media-day-portrait",
+      },
+      {
+        filename:
+          "Anthony_Edwards_Argentina_v_Egypt_7_July_2026-069_(cropped).jpg",
+        reason: "non-basketball-court-fifa-event-photo",
+      },
+      {
+        filename: "Dwight_Powell.jpg",
+        reason: "official-team-photo-shoot",
+      },
+    ]);
+  });
+
+  it("requires complete visible attribution, crop review, and scope-specific future cycles", () => {
+    const policy = parseCanonicalPolicy(readPolicyFile(V3_JSON_POLICY_PATH));
+    const annex = asRecord(policy.playerStaticPhotoRules);
+    expect(annex.attributionRequirements).toEqual({
+      alterationTextForCcBySaCrop: "改作自原作",
+      commonsDescriptionLinkVisible: true,
+      exactLicenseNameAndTermsLinkVisible: true,
+      nonEventText: "球員球場資料照片；非本案例受傷當下影像",
+      photographerVisible: true,
+    });
+    expect(annex.cropRules).toEqual({
+      focalPositionRequired: true,
+      presentationCropRatios: ["5:2", "16:9"],
+      storedJpegModificationAllowed: false,
+    });
+    expect(policy.versionChangeRules).toEqual({
+      clinicalVideoPolicyChangeRequires: [
+        "new-source-policy-version",
+        "complete-verifier-cycle",
+        "complete-root-audit-cycle",
+        "complete-review-set-cycle",
+        "complete-decision-cycle",
+        "complete-manifest-cycle",
+      ],
+      immutableForSourcePolicyVersion: true,
+      playerStaticPhotoAnnexChangeRequires: [
+        "new-source-policy-version",
+        "complete-photo-license-provenance-verification",
+        "renderer-review-set-refresh",
+        "private-dist-manifest-refresh",
+      ],
+      sameVersionContentDriftAction: "reject",
+    });
+    expect(policy.humanPolicyDocument).toEqual({
+      path: V3_MARKDOWN_POLICY_PATH,
+      sha256: EXPECTED_V3_MARKDOWN_SHA256,
+    });
+    expect(readPolicyFile(V3_MARKDOWN_POLICY_PATH)).toContain(
+      "球員球場資料照片；非本案例受傷當下影像",
+    );
+    expect(readPolicyFile(V3_MARKDOWN_POLICY_PATH)).toContain("改作自原作");
   });
 });

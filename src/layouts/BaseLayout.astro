@@ -32,6 +32,10 @@ import {
   encodeArtifactIdentity,
 } from "../lib/governance/artifact-manifest";
 import { compareCodePoints } from "../lib/contracts/canonical";
+import {
+  CASE_HERO_QUALITY,
+  caseHeroWidthsFor,
+} from "../lib/ui/image-renditions";
 
 interface Props {
   title: string;
@@ -82,7 +86,11 @@ const canonicalUrl =
     : null;
 
 const bandPreloadWidths = [480, 720, 768, 840, 960, 1280, 1600, 2400];
-const casePreloadWidths = [480, 768, 960, 1536];
+const casePreloadWidths =
+  heroImage === undefined || heroImageMode !== "case"
+    ? []
+    : caseHeroWidthsFor(heroImage.width);
+const casePreloadWidth = casePreloadWidths.at(-1);
 const bandPreloads =
   heroImage === undefined || heroImageMode !== "band"
     ? []
@@ -91,14 +99,18 @@ const bandPreloads =
           getImage({ src: heroImage, width, format: "avif", quality: 60 }),
         ),
       );
-const casePreloads =
-  heroImage === undefined || heroImageMode !== "case"
-    ? []
-    : await Promise.all(
-        casePreloadWidths.map((width) =>
-          getImage({ src: heroImage, width, format: "avif", quality: 60 }),
-        ),
-      );
+const casePreload =
+  heroImage === undefined ||
+  heroImageMode !== "case" ||
+  casePreloadWidth === undefined
+    ? null
+    : await getImage({
+        src: heroImage,
+        width: casePreloadWidth,
+        widths: casePreloadWidths,
+        format: "avif",
+        quality: CASE_HERO_QUALITY,
+      });
 ---
 
 <!doctype html>
@@ -138,18 +150,13 @@ const casePreloads =
       )
     }
     {
-      casePreloads.length > 0 && (
+      casePreload !== null && (
         <link
           rel="preload"
           as="image"
           type="image/avif"
-          href={casePreloads.at(-1)!.src}
-          imagesrcset={casePreloads
-            .map(
-              (rendition, index) =>
-                `${rendition.src} ${casePreloadWidths[index]}w`,
-            )
-            .join(", ")}
+          href={casePreload.src}
+          imagesrcset={casePreload.srcSet.attribute}
           imagesizes={heroImageSizes}
           fetchpriority="high"
         />

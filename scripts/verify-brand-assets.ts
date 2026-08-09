@@ -1,8 +1,9 @@
 /**
  * Brand-asset verifier. Site identity remains text/CSS-geometry only with an
- * empty league/team/logo allowlist. The sole raster exception is an exact
- * path listed in the local editorial-image provenance manifest beneath
- * `src/assets/heroes/`; arbitrary assets, source intermediates, authored
+ * empty league/team/logo allowlist. Raster exceptions are limited to two
+ * exact governed inventories: generated injury-theme images beneath
+ * `src/assets/heroes/` and licensed Commons player photos beneath
+ * `src/assets/players/`. Arbitrary assets, source intermediates, authored
  * `<img>` tags, remote thumbnails/logos, trademark-like names, and claims of
  * official partnership/authorization still fail closed.
  */
@@ -16,6 +17,7 @@ import {
   parseStrictJson,
   type ValidationIssue,
 } from "../src/lib/contracts/canonical";
+import { loadPlayerPhotoAssets } from "./verify-player-photo-assets";
 
 export const BRAND_ASSET_POLICY_PATH = "src/data/brand-asset-policy.v1.json";
 export const EDITORIAL_IMAGE_PROVENANCE_PATH =
@@ -402,18 +404,29 @@ function scanJsonValue(
 /** Scans the repository for brand-asset violations. */
 export function scanBrandAssets(root: string): ValidationIssue[] {
   const provenance = loadEditorialImageProvenance(root);
-  const issues: ValidationIssue[] = [...provenance.issues];
+  const playerDirectory = join(root, "src/assets/players");
+  const playerPhotos = existsSync(playerDirectory)
+    ? loadPlayerPhotoAssets(root)
+    : { allowedPaths: [], issues: [] };
+  const governedPaths = new Set([
+    ...provenance.allowedPaths,
+    ...playerPhotos.allowedPaths,
+  ]);
+  const issues: ValidationIssue[] = [
+    ...provenance.issues,
+    ...playerPhotos.issues,
+  ];
 
   for (const assetDir of ["public", "src/assets"]) {
     for (const filePath of walkFiles(join(root, assetDir))) {
       const relPath = relative(root, filePath);
       if (IMAGE_EXT_RE.test(relPath)) {
-        if (provenance.allowedPaths.has(relPath)) continue;
+        if (governedPaths.has(relPath)) continue;
         issues.push(
           issue(
             "brand-image-asset",
             relPath,
-            "image file is not an exact provenance-listed original editorial raster",
+            "image file is not listed in an exact governed raster inventory",
           ),
         );
       } else if (TRADEMARK_FILENAME_RE.test(relPath)) {
@@ -557,7 +570,7 @@ function main(): void {
   const issues = [...validateBrandAssetPolicy(root), ...scanBrandAssets(root)];
   if (issues.length === 0) {
     console.log(
-      "brand:verify OK — editorial rasters are provenance-listed; no arbitrary images, logos, remote thumbnails, or endorsement claims",
+      "brand:verify OK — generated and licensed rasters are provenance-listed; no arbitrary images, logos, remote thumbnails, or endorsement claims",
     );
     return;
   }

@@ -25,6 +25,7 @@ const GOVERNED_YOUTUBE_CASES = [
     orientation: "landscape",
     injuryCode: "ankle-sprain",
     injuryLabel: "踝關節扭傷",
+    athleteName: "Anthony Edwards",
   },
   {
     slug: "kevin-durant-achilles-rupture-2019",
@@ -32,6 +33,7 @@ const GOVERNED_YOUTUBE_CASES = [
     orientation: "landscape",
     injuryCode: "achilles-rupture",
     injuryLabel: "阿基里斯腱斷裂",
+    athleteName: "Kevin Durant",
   },
   {
     slug: "kyrie-irving-ankle-sprain-2021",
@@ -39,6 +41,7 @@ const GOVERNED_YOUTUBE_CASES = [
     orientation: "portrait",
     injuryCode: "ankle-sprain",
     injuryLabel: "踝關節扭傷",
+    athleteName: "Kyrie Irving",
   },
   {
     slug: "lamelo-ball-ankle-sprain-2023",
@@ -46,6 +49,7 @@ const GOVERNED_YOUTUBE_CASES = [
     orientation: "portrait",
     injuryCode: "ankle-sprain",
     injuryLabel: "踝關節扭傷",
+    athleteName: "LaMelo Ball",
   },
 ] as const;
 const GOVERNED_NBA_CASE = {
@@ -54,6 +58,7 @@ const GOVERNED_NBA_CASE = {
     "https://www.nba.com/watch/video/damian-lillard-lower-left-leg-injury-exits-1st-quarter-game-4-pacers",
   injuryCode: "achilles-rupture",
   injuryLabel: "阿基里斯腱斷裂",
+  athleteName: "Damian Lillard",
 } as const;
 
 const YOUTUBE_FAMILY_RE =
@@ -166,18 +171,52 @@ function reviewCard(page: Page) {
 
 async function expectLocalResponsiveCover(
   cover: Locator,
-  injuryLabel?: string,
+  expected: { athleteName?: string; injuryLabel?: string } = {},
 ): Promise<void> {
   const picture = cover.locator("picture");
   const image = picture.locator("img");
   await expect(picture).toHaveCount(1);
   await expect(image).toBeVisible();
-  await expect(image).toHaveAttribute(
-    "alt",
-    new RegExp(
-      `${injuryLabel ?? "原創"}.*匿名運動員面孔不可見.*不代表任何特定球員`,
-    ),
-  );
+  if (expected.athleteName === undefined) {
+    await expect(cover).toHaveAttribute("data-cover-kind", "injury-theme");
+    await expect(image).toHaveAttribute(
+      "alt",
+      new RegExp(
+        `${expected.injuryLabel ?? "原創"}.*匿名運動員面孔不可見.*不代表任何特定球員`,
+      ),
+    );
+  } else {
+    await expect(cover).toHaveAttribute(
+      "data-cover-kind",
+      "licensed-player-photo",
+    );
+    await expect(cover).toHaveAttribute(
+      "data-player-photo",
+      expected.athleteName,
+    );
+    await expect(image).toHaveAttribute(
+      "alt",
+      new RegExp(
+        `${expected.athleteName}.*球員球場資料照片.*非本案例受傷當下影像`,
+      ),
+    );
+    const attribution = cover.locator("figcaption.case-cover-attribution");
+    await expect(attribution).toContainText("攝影：");
+    await expect(attribution).toContainText(
+      "球員球場資料照片；非本案例受傷當下影像",
+    );
+    await expect(
+      attribution.locator('a[href^="https://creativecommons.org/"]'),
+    ).toHaveCount(1);
+    await expect(
+      attribution.locator(
+        'a[href^="https://commons.wikimedia.org/wiki/File:"]',
+      ),
+    ).toHaveCount(1);
+  }
+
+  await expect(cover).toHaveAttribute("data-focal-x", /^(?:0|[1-9]\d?|100)$/u);
+  await expect(cover).toHaveAttribute("data-focal-y", /^(?:0|[1-9]\d?|100)$/u);
 
   const sources = picture.locator("source");
   await expect(sources).toHaveCount(2);
@@ -191,13 +230,19 @@ async function expectLocalResponsiveCover(
     "image/avif",
     "image/webp",
   ]);
+  let expectedWidths: number[] | null = null;
   for (const source of sourceData) {
     expect(source.srcset).toContain(" 480w");
-    expect(source.srcset).toContain(" 1536w");
+    const widths: number[] = [];
     for (const candidate of source.srcset.split(",")) {
-      const url = candidate.trim().split(/\s+/)[0]!;
+      const [url, widthDescriptor] = candidate.trim().split(/\s+/);
       expect(new URL(url, PAGE_ORIGIN).origin).toBe(PAGE_ORIGIN);
+      widths.push(Number.parseInt(widthDescriptor!, 10));
     }
+    expect(widths).toEqual([...widths].sort((a, b) => a - b));
+    expect(widths.length).toBeGreaterThanOrEqual(3);
+    if (expectedWidths === null) expectedWidths = widths;
+    else expect(widths).toEqual(expectedWidths);
   }
   const currentSrc = await image.evaluate(
     (element) => (element as HTMLImageElement).currentSrc,
@@ -305,14 +350,17 @@ test.describe("governed case facades", () => {
       );
       const cover = card.locator("[data-video-facade] [data-case-cover]");
       await expect(cover).toHaveAttribute("data-case-cover", entry.injuryCode);
-      await expectLocalResponsiveCover(cover, entry.injuryLabel);
+      await expectLocalResponsiveCover(cover, {
+        athleteName: entry.athleteName,
+        injuryLabel: entry.injuryLabel,
+      });
       await expect(
         cover.locator(`[data-cover-illustration="${entry.injuryCode}"]`),
       ).toHaveCount(1);
       await expect(card.locator("[data-video-load]")).toContainText(
         "載入 YouTube 播放器",
       );
-      await expect(page.locator("[data-case-cover]")).toHaveCount(1);
+      await expect(page.locator("[data-case-cover]")).toHaveCount(2);
       await expect(page.locator("iframe")).toHaveCount(0);
       expect(await page.locator("img").count()).toBeGreaterThanOrEqual(2);
       expect(log.youtubeRequests).toEqual([]);
@@ -377,12 +425,16 @@ test.describe("governed case facades", () => {
     const link = card.locator("[data-video-source-link]");
     await expect(link).toHaveAttribute("href", GOVERNED_NBA_CASE.canonicalUrl);
     await expect(link).toContainText("於 NBA.com 觀看");
-    const cover = link.locator("[data-case-cover]");
+    const cover = card.locator("[data-case-cover]");
     await expect(cover).toHaveAttribute(
       "data-case-cover",
       GOVERNED_NBA_CASE.injuryCode,
     );
-    await expectLocalResponsiveCover(cover, GOVERNED_NBA_CASE.injuryLabel);
+    await expectLocalResponsiveCover(cover, {
+      athleteName: GOVERNED_NBA_CASE.athleteName,
+      injuryLabel: GOVERNED_NBA_CASE.injuryLabel,
+    });
+    await expect(link.locator("a, button, [data-case-cover]")).toHaveCount(0);
     await expect(
       cover.locator(
         `[data-cover-illustration="${GOVERNED_NBA_CASE.injuryCode}"]`,
@@ -574,9 +626,12 @@ test.describe("non-embedded states and caption policy", () => {
       "href",
       "https://www.nba.com/watch/fictional-demo-clip",
     );
-    await expectLocalResponsiveCover(
-      external.locator("[data-video-source-link] [data-case-cover]"),
-    );
+    await expectLocalResponsiveCover(external.locator("[data-case-cover]"));
+    await expect(
+      external.locator(
+        "[data-video-source-link] a, [data-video-source-link] button",
+      ),
+    ).toHaveCount(0);
     await expect(external.locator("[data-video-source-link]")).toContainText(
       "於 NBA.com 觀看",
     );

@@ -238,6 +238,7 @@ export const RENDERER_TREE_EXCLUDED_PATHS: readonly string[] = [];
  */
 export function isRendererTreePath(path: string): boolean {
   if (RENDERER_TREE_EXCLUDED_PATHS.includes(path)) return false;
+  if (path.startsWith("src/assets/players/")) return true;
   if (RENDERER_CODE_RE.test(path)) return true;
   if (path.startsWith("public/")) return true;
   if (RENDERER_SCRIPT_RE.test(path)) return true;

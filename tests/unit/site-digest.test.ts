@@ -213,6 +213,14 @@ describe("renderer tree digest", () => {
     { path: "package-lock.json", sha256: hex("a") },
     { path: "src/data/taxonomy/injuries.ts", sha256: hex("b") },
     { path: "public/fonts.css", sha256: hex("c") },
+    {
+      path: "src/assets/players/anthony-edwards.jpg",
+      sha256: hex("d"),
+    },
+    {
+      path: "src/assets/players/player-photo-registry.v1.json",
+      sha256: hex("e"),
+    },
   ];
 
   it("includes exactly the tracked implementation surface", () => {
@@ -222,6 +230,7 @@ describe("renderer tree digest", () => {
     // Bound by dedicated digests, never by the renderer tree:
     for (const excluded of [
       "src/content/cases/some-case.json",
+      "src/assets/heroes/acl-case-01.png",
       "src/data/site-governance.v1.json",
       "src/data/generated/rtp-course-summaries.v1.json",
       "docs/superpowers/plans/plan.md",

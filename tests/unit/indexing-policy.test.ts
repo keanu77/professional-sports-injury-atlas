@@ -173,6 +173,33 @@ describe("review output policy (condition 13)", () => {
       validateReviewOutput([page], ["index.html"]).map((entry) => entry.code),
     ).toContain("review-output-preconnect");
   });
+
+  it("allows local responsive images alongside ordinary external attribution links", () => {
+    const page = reviewPage(`
+      <link rel="preload" as="image" href="/_astro/player.avif" imagesrcset="/_astro/player-480.avif 480w, /_astro/player-960.avif 960w" />
+      <picture>
+        <source srcset="/_astro/player-480.avif 480w, /_astro/player-960.avif 960w" type="image/avif" />
+        <img src="/_astro/player.jpg" srcset="/_astro/player-480.jpg 480w, /_astro/player-960.jpg 960w" alt="球員資料照片" />
+      </picture>
+      <a href="https://commons.wikimedia.org/wiki/File:Player.jpg">Commons</a>
+      <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>
+    `);
+    expect(validateReviewOutput([page], ["index.html"])).toEqual([]);
+  });
+
+  it.each([
+    '<img src="https://upload.wikimedia.org/player.jpg" alt="x" />',
+    '<img srcset="/_astro/player.jpg 480w, https://cdn.example/player.jpg 960w" alt="x" />',
+    '<picture><source srcset="//cdn.example/player.avif 480w" /><img src="/_astro/player.jpg" alt="x" /></picture>',
+    '<link rel="preload" as="image" href="https://cdn.example/player.avif" />',
+    '<link rel="preload" as="image" href="/_astro/player.avif" imagesrcset="data:image/avif;base64,abc 480w" />',
+  ])("rejects nonlocal built image references: %s", (markup) => {
+    expect(
+      validateReviewOutput([reviewPage(markup)], ["index.html"]).map(
+        (entry) => entry.code,
+      ),
+    ).toContain("review-output-nonlocal-image");
+  });
 });
 
 describe("public output policy (condition 12)", () => {

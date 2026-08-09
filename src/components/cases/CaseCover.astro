@@ -1,66 +1,141 @@
 ---
 /**
- * Governed local editorial-photo cover shared by case cards and video
- * facades. The photograph is an original AI-generated asset selected by a
- * stable record-id hash and delivered through Astro's responsive Picture
- * pipeline. Legacy data-cover-illustration markers remain as nonvisual data
- * hooks; no vector artwork is rendered.
+ * Governed case cover shared by heroes, cards, and privacy-preserving video
+ * facades. Registered cases use a local, hash-bound Commons JPEG with visible
+ * attribution; unknown fixture IDs retain the injury-theme fallback.
  */
 import { Picture } from "astro:assets";
-import { caseImageFor } from "../../lib/ui/editorial-images";
+import {
+  caseImageFor,
+  type CaseImageSelection,
+} from "../../lib/ui/editorial-images";
+import {
+  CASE_COVER_QUALITY,
+  CASE_HERO_QUALITY,
+  caseHeroWidthsFor,
+  caseThumbWidthsFor,
+} from "../../lib/ui/image-renditions";
 
 interface Props {
+  athleteName?: string;
+  imageAlt?: string;
   injuryCode: string;
   injuryLabel: string;
   idPrefix?: string;
   recordId?: string;
-  presentation?: "standalone" | "facade" | "thumb";
+  presentation?: "hero" | "standalone" | "facade" | "thumb";
+  selection?: CaseImageSelection;
 }
 
 const {
+  athleteName,
+  imageAlt,
   injuryCode,
   injuryLabel,
   idPrefix = "case-cover",
   recordId = idPrefix,
   presentation = "standalone",
+  selection: suppliedSelection,
 } = Astro.props;
-const { image: photo, variant } = caseImageFor(injuryCode, recordId);
-const renditionWidths =
-  presentation === "thumb" ? [360, 560, 768, 960] : [480, 768, 960, 1536];
-const photoSizes =
-  presentation === "thumb"
+const selection =
+  suppliedSelection ?? caseImageFor(injuryCode, recordId, athleteName);
+if (
+  selection.kind === "licensed-player-photo" &&
+  selection.athleteName !== athleteName
+) {
+  throw new Error(
+    `Case cover athlete mismatch for ${recordId}: expected ${selection.athleteName}, received ${athleteName ?? "missing athlete"}`,
+  );
+}
+
+const isHero = presentation === "hero";
+const isThumb = presentation === "thumb";
+const renditionWidths = isThumb
+  ? caseThumbWidthsFor(selection.image.width)
+  : caseHeroWidthsFor(selection.image.width);
+const photoSizes = isHero
+  ? "(min-width: 48rem) 48rem, calc(100vw - 2rem)"
+  : isThumb
     ? "(min-width: 64rem) 22rem, (min-width: 40rem) 42rem, calc(100vw - 2rem)"
     : "(min-width: 64rem) 43rem, calc(100vw - 4rem)";
-const photoAlt = `${injuryLabel}原創 AI 生成運動醫學攝影意象；匿名運動員面孔不可見，不代表任何特定球員或真實受傷事件。`;
+const photoAlt =
+  selection.kind === "licensed-player-photo"
+    ? `${selection.athleteName}球員球場資料照片；非本案例受傷當下影像。`
+    : (imageAlt ??
+      `${injuryLabel}原創 AI 生成運動醫學攝影意象；匿名運動員面孔不可見，不代表任何特定球員或真實受傷事件。`);
+const showFallbackCaption = isHero || presentation === "standalone";
 ---
 
 <figure
-  class:list={["case-cover", `case-cover-${presentation}`]}
-  data-case-cover={presentation === "thumb" ? undefined : injuryCode}
-  data-case-thumb={presentation === "thumb" ? injuryCode : undefined}
+  class:list={[
+    "case-cover",
+    `case-cover-${presentation}`,
+    { "editorial-case-figure": isHero },
+  ]}
+  data-case-cover={isThumb ? undefined : injuryCode}
+  data-case-thumb={isThumb ? injuryCode : undefined}
+  data-cover-kind={selection.kind}
   data-cover-presentation={presentation}
-  data-cover-variant={String(variant)}
+  data-cover-variant={selection.variant === null
+    ? undefined
+    : String(selection.variant)}
+  data-editorial-case-cover={isHero ? recordId : undefined}
   data-injury-theme={injuryCode}
+  data-player-photo={selection.kind === "licensed-player-photo"
+    ? selection.athleteName
+    : undefined}
+  data-focal-x={String(selection.focalPosition.xPercent)}
+  data-focal-y={String(selection.focalPosition.yPercent)}
+  style={`--cover-focal-x: ${selection.focalPosition.xPercent}%; --cover-focal-y: ${selection.focalPosition.yPercent}%;`}
 >
   <div class="case-cover-media">
     <Picture
-      src={photo}
+      src={selection.image}
       formats={["avif", "webp"]}
-      fallbackFormat="png"
+      fallbackFormat={selection.kind === "licensed-player-photo"
+        ? "jpg"
+        : "png"}
       widths={renditionWidths}
+      width={renditionWidths.at(-1)!}
       sizes={photoSizes}
-      quality={72}
-      loading="lazy"
+      quality={isHero ? CASE_HERO_QUALITY : CASE_COVER_QUALITY}
+      loading={isHero ? "eager" : "lazy"}
       decoding="async"
+      fetchpriority={isHero ? "high" : undefined}
       alt={photoAlt}
       class="case-cover-photo"
       pictureAttributes={{ class: "case-cover-picture" }}
     />
+    <slot name="media-action" />
     <span data-cover-illustration={injuryCode} aria-hidden="true"></span>
   </div>
   {
-    presentation === "standalone" && (
-      <figcaption>原創 AI 生成攝影意象，非球員實際影像。</figcaption>
+    selection.kind === "licensed-player-photo" ? (
+      <figcaption class="case-cover-attribution">
+        <span>攝影：{selection.attribution.photographer}</span>
+        <span aria-hidden="true"> · </span>
+        <a
+          href={selection.attribution.license.url}
+          rel="license noopener noreferrer"
+        >
+          {selection.attribution.license.name}
+        </a>
+        <span aria-hidden="true"> · </span>
+        <a
+          href={selection.attribution.commonsDescriptionUrl}
+          rel="noopener noreferrer"
+        >
+          Wikimedia Commons 原始說明頁
+        </a>
+        <span aria-hidden="true"> · </span>
+        <span>{selection.attribution.nonEventCaption}</span>
+        <span aria-hidden="true"> · </span>
+        <span>{selection.attribution.alterationDisclosure}</span>
+      </figcaption>
+    ) : (
+      showFallbackCaption && (
+        <figcaption>原創 AI 生成攝影意象，非球員實際影像。</figcaption>
+      )
     )
   }
 </figure>
@@ -69,6 +144,11 @@ const photoAlt = `${injuryLabel}原創 AI 生成運動醫學攝影意象；匿�
   .case-cover {
     --cover-aspect-ratio: 5 / 2;
     margin: 0 0 1.5rem;
+  }
+
+  .case-cover-hero {
+    width: min(100%, 48rem);
+    margin: 1.25rem 0 0;
   }
 
   .case-cover-thumb {
@@ -87,6 +167,10 @@ const photoAlt = `${injuryLabel}原創 AI 生成運動醫學攝影意象；匿�
     background-color: var(--color-surface-muted);
   }
 
+  .case-cover-hero .case-cover-media {
+    border-block-end: 2px solid var(--injury-color);
+  }
+
   .case-cover-media :global(picture),
   .case-cover-media :global(img) {
     display: block;
@@ -96,6 +180,7 @@ const photoAlt = `${injuryLabel}原創 AI 生成運動醫學攝影意象；匿�
 
   .case-cover-media :global(img) {
     object-fit: cover;
+    object-position: var(--cover-focal-x) var(--cover-focal-y);
   }
 
   [data-cover-illustration] {
@@ -106,5 +191,14 @@ const photoAlt = `${injuryLabel}原創 AI 生成運動醫學攝影意象；匿�
     margin-top: 0.45rem;
     color: var(--color-ink-muted);
     font: 400 var(--text-meta) / 1.5 var(--font-meta);
+  }
+
+  .case-cover-attribution a {
+    color: inherit;
+    text-underline-offset: 0.15em;
+  }
+
+  .case-cover-attribution a:hover {
+    color: var(--color-brand-primary);
   }
 </style>

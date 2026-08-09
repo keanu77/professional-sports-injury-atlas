@@ -1,7 +1,8 @@
 /**
  * Verifies the built review artifact in `dist/`: every HTML page carries the
  * exact noindex robots meta, robots.txt disallows everything, and no
- * YouTube iframe, analytics, sitemap, or external preconnect exists. The
+ * YouTube iframe, analytics, sitemap, external preconnect, or nonlocal image
+ * reference exists. The
  * deployment-neutral header policy file is checked structurally; actual HTTP
  * access/header delivery is explicitly reported as not-verified until a
  * hosting plan sends a real request — it is never called a pass here.
@@ -186,7 +187,7 @@ function main(): void {
   }
 
   console.log(
-    "Static review artifact checks OK: noindex meta on every page; no sitemap/analytics/iframe/preconnect.",
+    "Static review artifact checks OK: noindex meta on every page; no sitemap/analytics/iframe/preconnect/nonlocal images.",
   );
   console.log(
     "HTTP access/header delivery: not-verified — no hosting request has been made; this is not a pass for header delivery.",

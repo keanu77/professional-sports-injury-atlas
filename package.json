@@ -35,6 +35,7 @@
     "research:registry:check": "tsx scripts/research/check-source-manifest-registry.ts",
     "rtp:import": "tsx scripts/import-rtp-catalog.ts",
     "external:verify": "tsx scripts/verify-external-sources.ts",
+    "player-photos:verify": "tsx scripts/verify-player-photo-assets.ts",
     "brand:verify": "tsx scripts/verify-brand-assets.ts",
     "review-set:generate": "tsx scripts/generate-review-set.ts",
     "private:credential": "tsx scripts/private-hosting/provision-review-credential.ts",

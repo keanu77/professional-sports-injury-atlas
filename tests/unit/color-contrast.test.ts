@@ -316,9 +316,13 @@ describe("governed case cover", () => {
 
   it("uses the local Astro image pipeline without vector drawing primitives", () => {
     expect(component).toContain('import { Picture } from "astro:assets"');
-    expect(component).toContain("caseImageFor(injuryCode, recordId)");
+    expect(component).toContain(
+      "caseImageFor(injuryCode, recordId, athleteName)",
+    );
     expect(component).toContain('formats={["avif", "webp"]}');
-    expect(component).toContain('fallbackFormat="png"');
+    expect(component).toMatch(
+      /fallbackFormat=\{selection\.kind === "licensed-player-photo"\s*\? "jpg"\s*: "png"\}/u,
+    );
     expect(component).toContain("widths={renditionWidths}");
     expect(component).not.toContain("image-set(");
     expect(component).not.toMatch(
@@ -328,15 +332,20 @@ describe("governed case cover", () => {
 
   it("binds every cover to stable responsive case-photo renditions", () => {
     expect(component).toContain("recordId = idPrefix");
-    expect(component).toContain("data-cover-variant={String(variant)}");
-    expect(component).toContain("[360, 560, 768, 960]");
-    expect(component).toContain("[480, 768, 960, 1536]");
-    expect(component).toContain('loading="lazy"');
+    expect(component).toContain("data-cover-variant={selection.variant");
+    expect(component).toContain("caseThumbWidthsFor(selection.image.width)");
+    expect(component).toContain("caseHeroWidthsFor(selection.image.width)");
+    expect(component).toContain('loading={isHero ? "eager" : "lazy"}');
+    expect(component).toContain(
+      "object-position: var(--cover-focal-x) var(--cover-focal-y)",
+    );
   });
 
   it("contains no authored HTML image tag, game frame, remote thumbnail, or portrait dependency", () => {
     expect(component).not.toMatch(/<image\b|<img\b|https?:\/\//i);
     expect(component).toContain("匿名運動員面孔不可見");
     expect(component).toContain("不代表任何特定球員或真實受傷事件");
+    expect(component).toContain("球員球場資料照片；非本案例受傷當下影像");
+    expect(component).toContain("Wikimedia Commons 原始說明頁");
   });
 });

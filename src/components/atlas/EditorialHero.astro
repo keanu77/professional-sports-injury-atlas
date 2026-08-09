@@ -5,6 +5,7 @@
  * registry as cards/facades while keeping the headline-first reading order.
  */
 import { Picture } from "astro:assets";
+import CaseCover from "../cases/CaseCover.astro";
 import {
   caseImageFor,
   homeEditorialImage,
@@ -16,19 +17,25 @@ interface Props {
   injuryCode?: string;
   injuryLabel?: string;
   recordId?: string;
+  athleteName?: string;
   imageAlt: string;
 }
 
-const { variant, injuryCode, injuryLabel, recordId, imageAlt } = Astro.props;
+const { variant, injuryCode, injuryLabel, recordId, athleteName, imageAlt } =
+  Astro.props;
 
 if (variant !== "home" && injuryCode === undefined) {
   throw new Error(`${variant} editorial hero requires an injuryCode`);
 }
 if (
   variant === "case" &&
-  (injuryLabel === undefined || recordId === undefined)
+  (injuryLabel === undefined ||
+    recordId === undefined ||
+    athleteName === undefined)
 ) {
-  throw new Error("case editorial hero requires injuryLabel and recordId");
+  throw new Error(
+    "case editorial hero requires injuryLabel, recordId, and athleteName",
+  );
 }
 
 const bandImage =
@@ -39,8 +46,9 @@ const bandImage =
       : null;
 
 const caseSelection =
-  variant === "case" ? caseImageFor(injuryCode!, recordId!) : null;
-const casePhoto = caseSelection?.image ?? null;
+  variant === "case"
+    ? caseImageFor(injuryCode!, recordId!, athleteName!)
+    : null;
 ---
 
 {
@@ -59,32 +67,15 @@ const casePhoto = caseSelection?.image ?? null;
       <div class="editorial-case-meta meta-row">
         <slot name="meta" />
       </div>
-      <figure
-        class="editorial-case-figure"
-        data-editorial-case-cover={recordId}
-        data-cover-variant={String(caseSelection!.variant)}
-      >
-        <div class="editorial-case-photo">
-          <Picture
-            src={casePhoto!}
-            formats={["avif", "webp"]}
-            fallbackFormat="png"
-            widths={[480, 768, 960, 1536]}
-            sizes="(min-width: 48rem) 48rem, calc(100vw - 2rem)"
-            quality={60}
-            alt={imageAlt}
-            loading="eager"
-            decoding="async"
-            fetchpriority="high"
-            class="editorial-case-image"
-            pictureAttributes={{ class: "editorial-case-picture" }}
-          />
-        </div>
-        <figcaption>
-          {injuryLabel}原創 AI
-          生成攝影意象，非球員實際影像；不代表任何特定球員或真實受傷事件。
-        </figcaption>
-      </figure>
+      <CaseCover
+        athleteName={athleteName!}
+        imageAlt={imageAlt}
+        injuryCode={injuryCode!}
+        injuryLabel={injuryLabel!}
+        recordId={recordId!}
+        presentation="hero"
+        selection={caseSelection!}
+      />
     </header>
   ) : (
     <section
@@ -253,35 +244,6 @@ const casePhoto = caseSelection?.image ?? null;
 
   .editorial-case-meta :global(*) {
     margin: 0.625rem 0 0;
-  }
-
-  .editorial-case-figure {
-    width: min(100%, 48rem);
-    margin: 1.25rem 0 0;
-  }
-
-  .editorial-case-photo {
-    overflow: hidden;
-    aspect-ratio: 5 / 2;
-    background-color: var(--color-surface-muted);
-    border-block-end: 2px solid var(--injury-color);
-  }
-
-  .editorial-case-photo :global(picture),
-  .editorial-case-photo :global(img) {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-
-  .editorial-case-photo :global(img) {
-    object-fit: cover;
-  }
-
-  .editorial-case-figure figcaption {
-    margin-block-start: 0.45rem;
-    color: var(--color-ink-muted);
-    font: 400 var(--text-meta) / 1.5 var(--font-meta);
   }
 
   @media (max-width: 47.999rem) {

@@ -22,6 +22,7 @@ import type { CaptionStatus } from "../../lib/contracts/case";
 import type { EmbedStatus } from "../../lib/contracts/taxonomy";
 
 interface Props {
+  athleteName?: string;
   scopeId: string;
   recordId?: string;
   displayMode: VideoDisplayMode;
@@ -39,6 +40,7 @@ interface Props {
 }
 
 const {
+  athleteName,
   scopeId,
   recordId = scopeId,
   displayMode,
@@ -108,23 +110,30 @@ const coverIdPrefix = `video-cover-${scopeId}`;
       >
         <div class="video-facade" data-video-facade>
           <CaseCover
+            athleteName={athleteName}
             injuryCode={injuryCode}
             injuryLabel={injuryLabel}
             idPrefix={coverIdPrefix}
             recordId={recordId}
             presentation="facade"
-          />
-          <button type="button" class="video-load-button" data-video-load>
-            <span class="video-load-label">
-              <span class="video-play-symbol" aria-hidden="true">
-                ▶
+          >
+            <button
+              slot="media-action"
+              type="button"
+              class="video-load-button"
+              data-video-load
+            >
+              <span class="video-load-label">
+                <span class="video-play-symbol" aria-hidden="true">
+                  ▶
+                </span>
+                <span class="video-load-copy">
+                  <strong>載入 YouTube 播放器</strong>
+                  <small>點擊後才會連線至 YouTube</small>
+                </span>
               </span>
-              <span class="video-load-copy">
-                <strong>載入 YouTube 播放器</strong>
-                <small>點擊後才會連線至 YouTube</small>
-              </span>
-            </span>
-          </button>
+            </button>
+          </CaseCover>
         </div>
         <p class="case-video-failure" data-video-failure hidden>
           站內播放器載入失敗，請改用下方原始連結；時間軸連結會直接開啟原始平台。
@@ -135,32 +144,36 @@ const coverIdPrefix = `video-cover-${scopeId}`;
 
   {
     presentation === "external-link-only" && (
-      <a
-        class="video-external-facade"
-        data-video-source-link
-        href={video.canonicalUrl}
-        rel="noopener noreferrer"
+      <CaseCover
+        athleteName={athleteName}
+        injuryCode={injuryCode}
+        injuryLabel={injuryLabel}
+        idPrefix={coverIdPrefix}
+        recordId={recordId}
+        presentation="facade"
       >
-        <CaseCover
-          injuryCode={injuryCode}
-          injuryLabel={injuryLabel}
-          idPrefix={coverIdPrefix}
-          recordId={recordId}
-          presentation="facade"
-        />
-        <span class="video-external-label">
-          <strong>於 {platformLabel} 觀看</strong>
-          <small>
-            外部連結 <span aria-hidden="true">↗</span>
-          </small>
-        </span>
-      </a>
+        <a
+          slot="media-action"
+          class="video-external-facade"
+          data-video-source-link
+          href={video.canonicalUrl}
+          rel="noopener noreferrer"
+        >
+          <span class="video-external-label">
+            <strong>於 {platformLabel} 觀看</strong>
+            <small>
+              外部連結 <span aria-hidden="true">↗</span>
+            </small>
+          </span>
+        </a>
+      </CaseCover>
     )
   }
 
   {
     presentation === "unavailable-notice" && (
       <CaseCover
+        athleteName={athleteName}
         injuryCode={injuryCode}
         injuryLabel={injuryLabel}
         idPrefix={coverIdPrefix}
@@ -303,8 +316,12 @@ const coverIdPrefix = `video-cover-${scopeId}`;
   }
 
   .video-external-facade {
-    display: block;
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    display: flex;
     overflow: hidden;
+    align-items: flex-end;
     color: var(--color-ink);
     text-decoration: none;
   }
@@ -314,6 +331,7 @@ const coverIdPrefix = `video-cover-${scopeId}`;
     align-items: center;
     justify-content: space-between;
     gap: 0.75rem;
+    width: 100%;
     min-height: 44px;
     padding: 0.7rem 1rem;
     background: var(--color-brand-primary);

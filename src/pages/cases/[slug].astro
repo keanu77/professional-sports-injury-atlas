@@ -59,6 +59,11 @@ const hasYouTubeTimeline =
   record.video.segments.length > 0;
 const contentDigest = computeCaseContentDigest(record);
 const renderedSetDigest = computeRenderedSetDigest(permitted);
+const heroSelection = caseImageFor(
+  record.injury.code,
+  record.id,
+  record.athlete.name,
+);
 ---
 
 <BaseLayout
@@ -66,7 +71,7 @@ const renderedSetDigest = computeRenderedSetDigest(permitted);
   description={`${record.athlete.name} 的 ${injuryLabel} 教學案例：可見過程觀察與外部確認診斷。`}
   artifactRecordIds={[record.id]}
   artifactDigest={contentDigest}
-  heroImage={caseImageFor(record.injury.code, record.id).image}
+  heroImage={heroSelection.image}
   heroImageMode="case"
   heroImageSizes="(min-width: 48rem) 48rem, calc(100vw - 2rem)"
 >
@@ -80,6 +85,7 @@ const renderedSetDigest = computeRenderedSetDigest(permitted);
       injuryCode={record.injury.code}
       injuryLabel={injuryLabel}
       recordId={record.id}
+      athleteName={record.athlete.name}
       imageAlt={`${injuryLabel}匿名運動員運動醫學攝影意象；面孔不可見，不代表${record.athlete.name}或任何特定球員，也不是實際受傷畫面。`}
     >
       <span slot="eyebrow">
@@ -126,6 +132,7 @@ const renderedSetDigest = computeRenderedSetDigest(permitted);
       <div class="case-detail-grid">
         <div class="case-video-column">
           <CaseVideo
+            athleteName={record.athlete.name}
             scopeId={record.slug}
             recordId={record.id}
             displayMode={buildMode}

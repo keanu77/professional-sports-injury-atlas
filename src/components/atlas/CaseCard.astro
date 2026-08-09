@@ -30,12 +30,19 @@ const leagueLabel =
   data-injury-theme={record.injury.code}
 >
   <CaseCover
+    athleteName={record.athlete.name}
     injuryCode={record.injury.code}
     injuryLabel={injuryLabel}
     idPrefix={`case-card-cover-${record.id}`}
     recordId={record.id}
     presentation="thumb"
-  />
+  >
+    <a
+      slot="media-action"
+      class="case-card-media-link"
+      href={`/cases/${record.slug}/`}
+      aria-label={`查看${record.athlete.name}的${injuryLabel}案例`}></a>
+  </CaseCover>
   <div class="case-card-body">
     <p class="case-card-eyebrow eyebrow"><span>{injuryLabel}</span></p>
     <h3 class="case-card-title">
@@ -113,11 +120,10 @@ const leagueLabel =
     text-decoration: none;
   }
 
-  .case-card-title a::after {
+  .case-card-media-link {
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     inset: 0;
-    content: "";
   }
 
   .case-card-title a:hover {
@@ -126,10 +132,12 @@ const leagueLabel =
   }
 
   .case-card-title a:focus-visible {
-    outline: none;
+    border-radius: 2px;
+    outline: 3px solid var(--color-brand-primary-hover);
+    outline-offset: 3px;
   }
 
-  .case-card-title a:focus-visible::after {
+  .case-card-media-link:focus-visible {
     outline: 3px solid var(--color-brand-primary-hover);
     outline-offset: -3px;
   }

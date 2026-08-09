@@ -1,5 +1,11 @@
 import type { ImageMetadata } from "astro";
 
+import playerPhotoRegistryJson from "../../assets/players/player-photo-registry.v1.json";
+import type {
+  PlayerPhotoAssetRecord,
+  PlayerPhotoRegistryV1,
+} from "../contracts/player-photo";
+
 import achillesCase01 from "../../assets/heroes/achilles-rupture-case-01.png";
 import achillesCase02 from "../../assets/heroes/achilles-rupture-case-02.png";
 import achillesCase03 from "../../assets/heroes/achilles-rupture-case-03.png";
@@ -49,6 +55,36 @@ const overviewImages: Record<EditorialInjuryCode, ImageMetadata> = {
   "achilles-rupture": achillesOverview,
 };
 
+const playerPhotoModules = import.meta.glob<{ default: ImageMetadata }>(
+  "../../assets/players/*.jpg",
+  { eager: true },
+);
+
+export const playerPhotoRegistry =
+  playerPhotoRegistryJson as PlayerPhotoRegistryV1;
+
+interface RegisteredPlayerPhoto {
+  asset: PlayerPhotoAssetRecord;
+  image: ImageMetadata;
+}
+
+const registeredPhotoByCaseId = new Map<string, RegisteredPlayerPhoto>();
+for (const asset of playerPhotoRegistry.assets) {
+  const importPath = asset.localFile.path.replace(/^src\//u, "../../");
+  const image = playerPhotoModules[importPath]?.default;
+  if (image === undefined) {
+    throw new Error(
+      `Player-photo registry asset is not importable through Astro: ${asset.localFile.path}`,
+    );
+  }
+  for (const caseId of asset.caseIds) {
+    if (registeredPhotoByCaseId.has(caseId)) {
+      throw new Error(`Duplicate player-photo case mapping: ${caseId}`);
+    }
+    registeredPhotoByCaseId.set(caseId, { asset, image });
+  }
+}
+
 export const homeEditorialImage = homeAtlas;
 
 export function isEditorialInjuryCode(
@@ -88,15 +124,71 @@ export function injuryOverviewEditorialImage(
   return overviewImages[requireEditorialInjuryCode(injuryCode)];
 }
 
-/** Hero/card-friendly resolver that returns both the selected asset and 1-based variant. */
+export interface LicensedPlayerPhotoSelection {
+  kind: "licensed-player-photo";
+  image: ImageMetadata;
+  variant: null;
+  athleteName: string;
+  focalPosition: PlayerPhotoAssetRecord["focalPosition"];
+  attribution: Pick<
+    PlayerPhotoAssetRecord,
+    | "alterationDisclosure"
+    | "commonsDescriptionUrl"
+    | "license"
+    | "nonEventCaption"
+    | "photographer"
+  >;
+}
+
+export interface InjuryThemeImageSelection {
+  kind: "injury-theme";
+  image: ImageMetadata;
+  variant: number;
+  focalPosition: { xPercent: 50; yPercent: 50 };
+}
+
+export type CaseImageSelection =
+  LicensedPlayerPhotoSelection | InjuryThemeImageSelection;
+
+/**
+ * Resolves an immutable case ID to its governed local player photo. Unknown
+ * fixture IDs retain the stable injury-theme fallback. A registered case must
+ * supply the matching rendered athlete identity or rendering fails closed.
+ */
 export function caseImageFor(
   injuryCode: string,
   recordId: string,
-): { image: ImageMetadata; variant: number } {
+  athleteName?: string,
+): CaseImageSelection {
+  const code = requireEditorialInjuryCode(injuryCode);
+  const registered = registeredPhotoByCaseId.get(recordId);
+  if (registered !== undefined) {
+    if (athleteName !== registered.asset.athleteName) {
+      throw new Error(
+        `Player-photo athlete mismatch for ${recordId}: expected ${registered.asset.athleteName}, received ${athleteName ?? "missing athlete"}`,
+      );
+    }
+    return {
+      kind: "licensed-player-photo",
+      image: registered.image,
+      variant: null,
+      athleteName: registered.asset.athleteName,
+      focalPosition: registered.asset.focalPosition,
+      attribution: {
+        alterationDisclosure: registered.asset.alterationDisclosure,
+        commonsDescriptionUrl: registered.asset.commonsDescriptionUrl,
+        license: registered.asset.license,
+        nonEventCaption: registered.asset.nonEventCaption,
+        photographer: registered.asset.photographer,
+      },
+    };
+  }
   const variant = editorialCaseVariant(recordId);
   return {
-    image: caseImages[requireEditorialInjuryCode(injuryCode)][variant],
+    kind: "injury-theme",
+    image: caseImages[code][variant],
     variant: variant + 1,
+    focalPosition: { xPercent: 50, yPercent: 50 },
   };
 }
 
