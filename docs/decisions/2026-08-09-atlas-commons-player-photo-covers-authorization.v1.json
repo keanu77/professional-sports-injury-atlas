@@ -1,0 +1,21 @@
+{
+  "authorizedAt": "2026-08-09T10:01:27Z",
+  "authorizedBy": "吳易澄醫師",
+  "closedScopeIds": [
+    "deployment",
+    "external-account-mutation",
+    "hosting-service-mutation",
+    "indexing",
+    "medical-content-authoring",
+    "medical-review-decision",
+    "public-release",
+    "remote-repository-mutation"
+  ],
+  "decisionType": "plan-execution",
+  "executionScopeId": "decision-7-commons-player-photo-covers-only",
+  "executionStatus": "authorized",
+  "planPath": "docs/superpowers/plans/2026-08-09-atlas-commons-player-photo-covers.md",
+  "planSha256": "8e0bd5f4772ed7fa7cf006c540381d2d764edcec08121d3a550982d52b540d49",
+  "role": "atlas-commons-player-photo-covers",
+  "schemaVersion": 1
+}
