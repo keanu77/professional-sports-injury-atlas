@@ -1,0 +1,19 @@
+{
+  "authorizedAt": "2026-08-10T11:48:02Z",
+  "authorizedBy": "吳易澄醫師",
+  "closedScopeIds": [
+    "deployment",
+    "external-account-mutation",
+    "hosting-service-mutation",
+    "indexing",
+    "public-release",
+    "remote-repository-mutation"
+  ],
+  "decisionType": "plan-execution",
+  "executionScopeId": "decision-8-nba-embed-batch2-correction-only",
+  "executionStatus": "authorized",
+  "planPath": "docs/superpowers/plans/2026-08-10-nba-embed-batch2-correction.md",
+  "planSha256": "b805f58970131082f409968d0616e8f2458483cce47325c4d03c66b796537d39",
+  "role": "nba-embed-batch2-correction",
+  "schemaVersion": 1
+}
