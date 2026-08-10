@@ -7,7 +7,8 @@
  * with one official `YT.Player` over the same element, `seekTo()` timeline
  * enhancement, API-failure fallback to the real timestamp URLs with focus
  * return, external-link-only and unavailable states, caption-state labeling,
- * and the public caption gate. Every ID and name in the fixture is fictional.
+ * and the public caption gate. Component-lab fixtures are fictional; governed
+ * real-case requests are intercepted and never replay remote media.
  */
 
 import { expect, test, type Locator, type Page } from "@playwright/test";
@@ -26,6 +27,7 @@ const GOVERNED_YOUTUBE_CASES = [
     injuryCode: "ankle-sprain",
     injuryLabel: "踝關節扭傷",
     athleteName: "Anthony Edwards",
+    captionStatus: "unavailable",
   },
   {
     slug: "kevin-durant-achilles-rupture-2019",
@@ -34,6 +36,7 @@ const GOVERNED_YOUTUBE_CASES = [
     injuryCode: "achilles-rupture",
     injuryLabel: "阿基里斯腱斷裂",
     athleteName: "Kevin Durant",
+    captionStatus: "available",
   },
   {
     slug: "kyrie-irving-ankle-sprain-2021",
@@ -42,6 +45,7 @@ const GOVERNED_YOUTUBE_CASES = [
     injuryCode: "ankle-sprain",
     injuryLabel: "踝關節扭傷",
     athleteName: "Kyrie Irving",
+    captionStatus: "available",
   },
   {
     slug: "lamelo-ball-ankle-sprain-2023",
@@ -50,6 +54,43 @@ const GOVERNED_YOUTUBE_CASES = [
     injuryCode: "ankle-sprain",
     injuryLabel: "踝關節扭傷",
     athleteName: "LaMelo Ball",
+    captionStatus: "available",
+  },
+  {
+    slug: "anfernee-simons-ankle-sprain-2023",
+    videoId: "8TIJGIRP634",
+    orientation: "landscape",
+    injuryCode: "ankle-sprain",
+    injuryLabel: "踝關節扭傷",
+    athleteName: "Anfernee Simons",
+    captionStatus: "available",
+  },
+  {
+    slug: "jayson-tatum-achilles-rupture-2025",
+    videoId: "xSUKd03LJwE",
+    orientation: "portrait",
+    injuryCode: "achilles-rupture",
+    injuryLabel: "阿基里斯腱斷裂",
+    athleteName: "Jayson Tatum",
+    captionStatus: "unavailable",
+  },
+  {
+    slug: "lamelo-ball-ankle-sprain-2025",
+    videoId: "zZdndTqOexc",
+    orientation: "portrait",
+    injuryCode: "ankle-sprain",
+    injuryLabel: "踝關節扭傷",
+    athleteName: "LaMelo Ball",
+    captionStatus: "available",
+  },
+  {
+    slug: "tyrese-haliburton-achilles-rupture-2025",
+    videoId: "azQpbyDBktk",
+    orientation: "portrait",
+    injuryCode: "achilles-rupture",
+    injuryLabel: "阿基里斯腱斷裂",
+    athleteName: "Tyrese Haliburton",
+    captionStatus: "unavailable",
   },
 ] as const;
 const GOVERNED_NBA_CASE = {
@@ -328,7 +369,7 @@ test.describe("component lab before enhancement", () => {
 });
 
 test.describe("governed case facades", () => {
-  test("all four YouTube cases use one local photo facade and make zero pre-click requests", async ({
+  test("all eight YouTube cases use one local photo facade and make zero pre-click requests", async ({
     page,
   }) => {
     const log = await stubYouTubeRoutes(page);
@@ -338,6 +379,36 @@ test.describe("governed case facades", () => {
         thirdPartyRequests.push(request.url());
       }
     });
+
+    expect(GOVERNED_YOUTUBE_CASES).toHaveLength(8);
+    expect(
+      GOVERNED_YOUTUBE_CASES.filter(
+        (entry) => entry.orientation === "portrait",
+      ).map((entry) => entry.videoId),
+    ).toEqual([
+      "FQAPZASQyX0",
+      "RDDGpqOvSdg",
+      "xSUKd03LJwE",
+      "zZdndTqOexc",
+      "azQpbyDBktk",
+    ]);
+    expect(
+      GOVERNED_YOUTUBE_CASES.find((entry) => entry.videoId === "8TIJGIRP634")
+        ?.orientation,
+    ).toBe("landscape");
+    expect(
+      GOVERNED_YOUTUBE_CASES.filter((entry) =>
+        ["xSUKd03LJwE", "azQpbyDBktk"].includes(entry.videoId),
+      ).map((entry) => [entry.videoId, entry.captionStatus]),
+    ).toEqual([
+      ["xSUKd03LJwE", "unavailable"],
+      ["azQpbyDBktk", "unavailable"],
+    ]);
+    expect(
+      GOVERNED_YOUTUBE_CASES.filter(
+        (entry) => entry.captionStatus === "unavailable",
+      ).map((entry) => entry.videoId),
+    ).toEqual(["V9mtX4mE8wQ", "xSUKd03LJwE", "azQpbyDBktk"]);
 
     for (const entry of GOVERNED_YOUTUBE_CASES) {
       await page.goto(`/cases/${entry.slug}/`);
@@ -360,26 +431,60 @@ test.describe("governed case facades", () => {
       await expect(card.locator("[data-video-load]")).toContainText(
         "載入 YouTube 播放器",
       );
+      const loadTarget = await card.locator("[data-video-load]").boundingBox();
+      expect(loadTarget).not.toBeNull();
+      expect(loadTarget!.width).toBeGreaterThanOrEqual(44);
+      expect(loadTarget!.height).toBeGreaterThanOrEqual(44);
+      await expect(card.locator("[data-video-source-link]")).toHaveAttribute(
+        "href",
+        `https://www.youtube.com/watch?v=${entry.videoId}`,
+      );
+      const timestampLinks = page.locator(
+        `[data-video-timeline][data-video-scope="${entry.slug}"] a[data-timecode]`,
+      );
+      expect(await timestampLinks.count()).toBeGreaterThan(0);
+      for (const href of await timestampLinks.evaluateAll((anchors) =>
+        anchors.map((anchor) => anchor.getAttribute("href") ?? ""),
+      )) {
+        expect(href).toMatch(
+          new RegExp(
+            `^https://www\\.youtube\\.com/watch\\?v=${entry.videoId}&t=\\d+s$`,
+          ),
+        );
+      }
+      await expect(card.locator("[data-caption-status]")).toHaveAttribute(
+        "data-caption-status",
+        entry.captionStatus,
+      );
+      await expect(card.locator("[data-review-state]")).toContainText(
+        "presentation=click-to-load",
+      );
+      if (entry.captionStatus === "unavailable") {
+        await expect(card.locator("[data-caption-warning]")).toContainText(
+          "公開版將降級為原始平台連結",
+        );
+      } else {
+        await expect(card.locator("[data-caption-warning]")).toHaveCount(0);
+      }
       await expect(page.locator("[data-case-cover]")).toHaveCount(2);
       await expect(page.locator("iframe")).toHaveCount(0);
+      await expect(page.locator("link[rel='preconnect']")).toHaveCount(0);
+      await expect(page.locator("link[rel='dns-prefetch']")).toHaveCount(0);
+      await expect(page.locator("[autoplay]")).toHaveCount(0);
       expect(await page.locator("img").count()).toBeGreaterThanOrEqual(2);
+      expect(await page.content()).not.toContain("ytimg");
+      expect(await page.content()).not.toContain("youtube-nocookie");
       expect(log.youtubeRequests).toEqual([]);
       expect(thirdPartyRequests).toEqual([]);
     }
   });
 
-  test("both Shorts load at 9:16 while landscape remains 16:9", async ({
+  test("all eight load on click with five portraits at 9:16 and Simons at 16:9", async ({
     page,
   }) => {
     const log = await stubYouTubeRoutes(page);
-    const geometryCases = [
-      ...GOVERNED_YOUTUBE_CASES.filter(
-        (entry) => entry.orientation === "portrait",
-      ),
-      GOVERNED_YOUTUBE_CASES.find(
-        (entry) => entry.slug === "kevin-durant-achilles-rupture-2019",
-      )!,
-    ];
+    const geometryCases = GOVERNED_YOUTUBE_CASES;
+    expect(geometryCases).toHaveLength(8);
 
     for (const entry of geometryCases) {
       await page.goto(`/cases/${entry.slug}/`);

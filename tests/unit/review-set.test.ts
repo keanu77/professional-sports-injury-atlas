@@ -436,7 +436,7 @@ describe("content-authority snapshot", () => {
     ).toThrow(ReviewSetError);
   });
 
-  it("projects authority roles without letting G4/G6 create an authorization cycle", () => {
+  it("projects authorized content correction authority and excludes operational roles", () => {
     const root = mkdtempSync(join(tmpdir(), "atlas-content-authority-"));
     const bindingPath = join(root, "docs/decisions/plan-binding.v1.json");
     mkdirSync(join(root, "docs/decisions"), { recursive: true });
@@ -493,42 +493,66 @@ describe("content-authority snapshot", () => {
       writeBinding();
       const baseline = currentContentAuthoritySnapshotDigest(root);
 
+      documents.push(
+        plan(
+          "plans/embed-batch2-correction-7.md",
+          "nba-embed-batch2-correction",
+          "not-authorized",
+          hex("7"),
+        ),
+      );
+      writeBinding();
+      expect(currentContentAuthoritySnapshotDigest(root)).toBe(baseline);
+
+      documents[6].executionAuthorization = {
+        status: "authorized",
+        role: "nba-embed-batch2-correction",
+        decisionSha256: hex("8"),
+      };
+      writeBinding();
+      const corrected = currentContentAuthoritySnapshotDigest(root);
+      expect(corrected).not.toBe(baseline);
+
+      documents[6].executionAuthorization.decisionSha256 = hex("9");
+      writeBinding();
+      expect(currentContentAuthoritySnapshotDigest(root)).not.toBe(corrected);
+      documents[6].executionAuthorization.decisionSha256 = hex("8");
+
       documents[5].executionAuthorization = {
         status: "authorized",
         role: "atlas-private-hosting-and-review",
         decisionSha256: hex("6"),
       };
-      writeBinding();
-      expect(currentContentAuthoritySnapshotDigest(root)).toBe(baseline);
-
       documents.push(
-        plan("plans/public-7.md", "atlas-public-release", "authorized"),
-        plan("plans/future-8.md", "unrelated-future", "not-authorized"),
+        plan(
+          "plans/photo-8.md",
+          "atlas-commons-player-photo-covers",
+          "authorized",
+        ),
+        plan("plans/public-9.md", "atlas-public-release", "authorized"),
+        plan("plans/future-10.md", "unrelated-future", "authorized"),
       );
       writeBinding();
-      expect(currentContentAuthoritySnapshotDigest(root)).toBe(baseline);
+      expect(currentContentAuthoritySnapshotDigest(root)).toBe(corrected);
 
       documents[3].sha256 = hex("a");
       writeBinding();
       const changedSource = currentContentAuthoritySnapshotDigest(root);
-      expect(changedSource).not.toBe(baseline);
+      expect(changedSource).not.toBe(corrected);
 
       documents[3].sha256 = hex("3");
       documents[4].executionAuthorization.decisionSha256 = hex("b");
       writeBinding();
-      expect(currentContentAuthoritySnapshotDigest(root)).not.toBe(baseline);
+      expect(currentContentAuthoritySnapshotDigest(root)).not.toBe(corrected);
     } finally {
       rmSync(root, { recursive: true, force: true });
     }
   });
 
-  it("preserves the completed real clinical authority snapshot after G4 authorization", () => {
+  it("projects the exact Decision 8 authority into the real content snapshot", () => {
     const root = join(import.meta.dirname, "../..");
-    const frozenReviewSet = JSON.parse(
-      readFileSync(join(root, "review/review-set.v1.json"), "utf8"),
-    ) as { contentAuthoritySnapshotDigest: string };
     expect(currentContentAuthoritySnapshotDigest(root)).toBe(
-      frozenReviewSet.contentAuthoritySnapshotDigest,
+      "400cc376e95c000ecc70a594f81129f6b9857bd5bb122d4d9e2d9d18baeba48b",
     );
   });
 });

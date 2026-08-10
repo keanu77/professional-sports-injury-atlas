@@ -281,14 +281,16 @@ export function buildEmbedEnrichmentRegistry(): SourceManifestRegistryV1 {
   if (observed.registry === null) {
     throw new Error("current source-manifest registry is invalid");
   }
-  const alreadyAppended =
-    observed.registry.entries.at(-1)?.manifestId === MANIFEST_ID;
-  const priorRegistry: SourceManifestRegistryV1 = alreadyAppended
-    ? {
-        schemaVersion: 1,
-        entries: observed.registry.entries.slice(0, -1),
-      }
-    : observed.registry;
+  const existingIndex = observed.registry.entries.findIndex(
+    (entry) => entry.manifestId === MANIFEST_ID,
+  );
+  const priorRegistry: SourceManifestRegistryV1 =
+    existingIndex >= 0
+      ? {
+          schemaVersion: 1,
+          entries: observed.registry.entries.slice(0, existingIndex),
+        }
+      : observed.registry;
   const priorBytes = Buffer.from(canonicalJson(priorRegistry));
   const manifest = buildEmbedEnrichmentCorrectionManifest();
   const decisionDigest = sha256Hex(read(DECISION_PATH));
@@ -336,15 +338,18 @@ function checkPublishedArtifacts(): void {
       "published correction manifest bytes drifted from expected",
     );
   }
-  const expectedRegistry = canonicalJson(buildEmbedEnrichmentRegistry());
+  const expectedRegistry = buildEmbedEnrichmentRegistry();
   const actualRegistryBytes = read(REGISTRY_PATH);
-  const actualRegistry = actualRegistryBytes.toString("utf8");
-  if (actualRegistry !== expectedRegistry) {
-    throw new Error("published registry bytes drifted from expected");
-  }
   const parsed = parseSourceManifestRegistryBytes(actualRegistryBytes);
   if (parsed.registry === null)
     throw new Error("published registry is invalid");
+  const actualPrefix = {
+    schemaVersion: 1 as const,
+    entries: parsed.registry.entries.slice(0, expectedRegistry.entries.length),
+  };
+  if (canonicalJson(actualPrefix) !== canonicalJson(expectedRegistry)) {
+    throw new Error("published registry prefix bytes drifted from expected");
+  }
   const artifactIssues = validateSourceManifestRegistryArtifacts(
     parsed.registry,
     artifactLoader,

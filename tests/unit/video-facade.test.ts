@@ -1,4 +1,4 @@
-/** UI-only orientation registry for the four governed YouTube facades. */
+/** UI-only orientation registry for all eight governed YouTube facades. */
 
 import { describe, expect, it } from "vitest";
 import { resolveVideoOrientation } from "../../src/lib/video/facade";
@@ -9,6 +9,10 @@ describe("video facade orientation", () => {
     ["YcSOLHMsJYw", "landscape"],
     ["FQAPZASQyX0", "portrait"],
     ["RDDGpqOvSdg", "portrait"],
+    ["8TIJGIRP634", "landscape"],
+    ["xSUKd03LJwE", "portrait"],
+    ["zZdndTqOexc", "portrait"],
+    ["azQpbyDBktk", "portrait"],
   ] as const)("maps governed YouTube video %s to %s", (videoId, expected) => {
     expect(
       resolveVideoOrientation(

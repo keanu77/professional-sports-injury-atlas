@@ -5,7 +5,10 @@
  * behavior, caption labeling, and the review-only component-lab path set.
  */
 
+import { readdirSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import { caseSchema } from "../../src/lib/contracts/case";
 import {
   captionStatusLabel,
   componentLabStaticParams,
@@ -17,6 +20,7 @@ import {
 
 const FICTIONAL_WATCH_URL = "https://www.youtube.com/watch?v=fIcTiOnAl01";
 const FICTIONAL_NBA_URL = "https://www.nba.com/watch/fictional-demo-clip";
+const ROOT = join(import.meta.dirname, "../..");
 
 const base = (
   overrides: Partial<VideoPresentationInput> = {},
@@ -181,6 +185,136 @@ describe("resolvePlayerPresentation", () => {
     expect(() =>
       resolvePlayerPresentation(base({ providerCode: "unregistered" })),
     ).toThrow(/video-provider-unknown/);
+  });
+});
+
+describe("real governed YouTube presentation", () => {
+  const expected = [
+    {
+      slug: "anfernee-simons-ankle-sprain-2023",
+      videoId: "8TIJGIRP634",
+      captionStatus: "available",
+      publicPresentation: "click-to-load",
+    },
+    {
+      slug: "anthony-edwards-ankle-sprain-2023",
+      videoId: "V9mtX4mE8wQ",
+      captionStatus: "unavailable",
+      publicPresentation: "external-link-only",
+    },
+    {
+      slug: "jayson-tatum-achilles-rupture-2025",
+      videoId: "xSUKd03LJwE",
+      captionStatus: "unavailable",
+      publicPresentation: "external-link-only",
+    },
+    {
+      slug: "kevin-durant-achilles-rupture-2019",
+      videoId: "YcSOLHMsJYw",
+      captionStatus: "available",
+      publicPresentation: "click-to-load",
+    },
+    {
+      slug: "kyrie-irving-ankle-sprain-2021",
+      videoId: "FQAPZASQyX0",
+      captionStatus: "available",
+      publicPresentation: "click-to-load",
+    },
+    {
+      slug: "lamelo-ball-ankle-sprain-2023",
+      videoId: "RDDGpqOvSdg",
+      captionStatus: "available",
+      publicPresentation: "click-to-load",
+    },
+    {
+      slug: "lamelo-ball-ankle-sprain-2025",
+      videoId: "zZdndTqOexc",
+      captionStatus: "available",
+      publicPresentation: "click-to-load",
+    },
+    {
+      slug: "tyrese-haliburton-achilles-rupture-2025",
+      videoId: "azQpbyDBktk",
+      captionStatus: "unavailable",
+      publicPresentation: "external-link-only",
+    },
+  ] as const;
+
+  const records = readdirSync(join(ROOT, "src/content/cases"))
+    .filter((name) => name.endsWith(".json"))
+    .sort()
+    .map((name) =>
+      caseSchema.parse(
+        JSON.parse(readFileSync(join(ROOT, "src/content/cases", name), "utf8")),
+      ),
+    );
+  const reviewEmbeds = records.filter(
+    (record) =>
+      resolvePlayerPresentation({
+        providerCode: record.video.provider,
+        canonicalUrl: record.video.canonicalUrl,
+        embedStatus: record.video.embedStatus,
+        captionStatus: record.video.captionStatus,
+        displayMode: "review",
+      }) === "click-to-load",
+  );
+
+  it("renders exactly eight of 26 cases as review click-to-load players", () => {
+    expect(records).toHaveLength(26);
+    expect(reviewEmbeds).toHaveLength(8);
+    expect(reviewEmbeds.map((record) => record.slug).sort()).toEqual(
+      expected.map((entry) => entry.slug).sort(),
+    );
+  });
+
+  it("preserves Anthony's fallback and adds the Tatum and Haliburton fallbacks", () => {
+    for (const entry of expected) {
+      const record = reviewEmbeds.find(
+        (candidate) => candidate.slug === entry.slug,
+      );
+      expect(record, `missing governed case ${entry.slug}`).toBeDefined();
+      expect(record!.video.canonicalUrl).toBe(
+        `https://www.youtube.com/watch?v=${entry.videoId}`,
+      );
+      expect(record!.video.captionStatus).toBe(entry.captionStatus);
+      expect(record!.video.publicRightsReview.status).toBe("not-requested");
+      expect(
+        resolvePlayerPresentation({
+          providerCode: record!.video.provider,
+          canonicalUrl: record!.video.canonicalUrl,
+          embedStatus: record!.video.embedStatus,
+          captionStatus: record!.video.captionStatus,
+          displayMode: "public",
+        }),
+      ).toBe(entry.publicPresentation);
+    }
+
+    expect(
+      expected
+        .filter((entry) => entry.publicPresentation === "external-link-only")
+        .map((entry) => entry.slug),
+    ).toEqual([
+      "anthony-edwards-ankle-sprain-2023",
+      "jayson-tatum-achilles-rupture-2025",
+      "tyrese-haliburton-achilles-rupture-2025",
+    ]);
+    expect(
+      expected
+        .filter(
+          (entry) =>
+            [
+              "8TIJGIRP634",
+              "xSUKd03LJwE",
+              "zZdndTqOexc",
+              "azQpbyDBktk",
+            ].includes(entry.videoId) &&
+            entry.publicPresentation === "external-link-only",
+        )
+        .map((entry) => entry.slug),
+    ).toEqual([
+      "jayson-tatum-achilles-rupture-2025",
+      "tyrese-haliburton-achilles-rupture-2025",
+    ]);
   });
 });
 

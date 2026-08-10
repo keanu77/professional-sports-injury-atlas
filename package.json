@@ -29,6 +29,7 @@
     "research:review-set-digest": "tsx scripts/research/digest-review-set.ts",
     "research:check-embed-enrichment": "tsx scripts/research/check-embed-enrichment-review-set.ts",
     "research:check-embed-correction": "tsx scripts/research/check-embed-enrichment-correction.ts --check",
+    "research:check-embed-batch2-correction": "tsx scripts/research/check-embed-batch2-correction.ts --check",
     "research:manifest": "tsx scripts/research/generate-candidate-manifest.ts",
     "research:check-manifest": "tsx scripts/research/check-candidate-manifest.ts",
     "research:digest": "tsx scripts/research/digest-candidate-manifest.ts",

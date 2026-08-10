@@ -64,30 +64,89 @@ const AUTHORED_TASKS = [
 
 const AUTHORIZED_CORRECTIONS: ReadonlyMap<
   string,
-  { entryDigest: string; videoUrl: string }
+  {
+    manifestId: string;
+    entryDigest: string;
+    videoUrl: string;
+    captionStatus: "available" | "unavailable";
+    reviewedAt: string;
+  }
 > = new Map([
   [
     "CAND-NBA-ACHILLES-2019-005",
     {
+      manifestId: "NBA-SOURCE-2026-08-08-001",
       entryDigest:
         "f22491e605eb1767e67ed96ca93086c7112ebf966679e41b8facb8d4d20537ed",
       videoUrl: "https://www.youtube.com/watch?v=YcSOLHMsJYw",
+      captionStatus: "available",
+      reviewedAt: "2026-08-08T11:52:39Z",
     },
   ],
   [
     "CAND-NBA-ANKLE-2021-002",
     {
+      manifestId: "NBA-SOURCE-2026-08-08-001",
       entryDigest:
         "6cc42a1e4591fad875bd9b490e9ecf5c314d63af031d938e8209fb345d315180",
       videoUrl: "https://www.youtube.com/watch?v=FQAPZASQyX0",
+      captionStatus: "available",
+      reviewedAt: "2026-08-08T11:52:39Z",
     },
   ],
   [
     "CAND-NBA-ANKLE-2023-008",
     {
+      manifestId: "NBA-SOURCE-2026-08-08-001",
       entryDigest:
         "9d80dc156b44ae0d107c1a34f9cc3a2340ba258f4180426190c7e9b56cef9b69",
       videoUrl: "https://www.youtube.com/watch?v=RDDGpqOvSdg",
+      captionStatus: "available",
+      reviewedAt: "2026-08-08T11:52:39Z",
+    },
+  ],
+  [
+    "CAND-NBA-ANKLE-2023-004",
+    {
+      manifestId: "NBA-SOURCE-2026-08-10-001",
+      entryDigest:
+        "739d6b2d68a10614e8a09af958868c46e7179dabe98e5cafdd2653c9d0603f49",
+      videoUrl: "https://www.youtube.com/watch?v=8TIJGIRP634",
+      captionStatus: "available",
+      reviewedAt: "2026-08-10T11:36:08Z",
+    },
+  ],
+  [
+    "CAND-NBA-ANKLE-2025-002",
+    {
+      manifestId: "NBA-SOURCE-2026-08-10-001",
+      entryDigest:
+        "24f6651056db5d64fe7735fb9e9403c3075399ca1c9923a5fe702d9755ee4488",
+      videoUrl: "https://www.youtube.com/watch?v=zZdndTqOexc",
+      captionStatus: "available",
+      reviewedAt: "2026-08-10T11:36:08Z",
+    },
+  ],
+  [
+    "CAND-NBA-ACHILLES-2025-016",
+    {
+      manifestId: "NBA-SOURCE-2026-08-10-001",
+      entryDigest:
+        "fa494db9042435914774946b0524a3c51d5249ca57c88dbb777bb83b3bc2d71a",
+      videoUrl: "https://www.youtube.com/watch?v=xSUKd03LJwE",
+      captionStatus: "unavailable",
+      reviewedAt: "2026-08-10T11:36:08Z",
+    },
+  ],
+  [
+    "CAND-NBA-ACHILLES-2025-017",
+    {
+      manifestId: "NBA-SOURCE-2026-08-10-001",
+      entryDigest:
+        "848910fc37f9aa8270f879730a13c5d32c9e674cc790feb2d68a52d598f80e94",
+      videoUrl: "https://www.youtube.com/watch?v=azQpbyDBktk",
+      captionStatus: "unavailable",
+      reviewedAt: "2026-08-10T11:36:08Z",
     },
   ],
 ]);
@@ -119,11 +178,12 @@ function loadAuthoredCases(coverage: CaseAuthoringCoverageV1): InjuryCase[] {
     );
     if (correction !== undefined) {
       expect(record.sourceManifestBinding.manifestId).toBe(
-        "NBA-SOURCE-2026-08-08-001",
+        correction.manifestId,
       );
       expect(record.video.provider).toBe("youtube");
       expect(record.video.embedStatus).toBe("verified");
       expect(record.video.canonicalUrl).toBe(correction.videoUrl);
+      expect(record.video.captionStatus).toBe(correction.captionStatus);
     }
     expect(validateCaseRecord(record)).toEqual([]);
     expect(validateCaseFilename(planned!.path, record)).toEqual([]);
@@ -156,7 +216,9 @@ describe("authorized real NBA case authoring", () => {
         status: "approved",
         reviewerName: "吳易澄醫師",
         reviewerQualification: "復健科專科醫師",
-        reviewedAt: "2026-08-08T11:52:39Z",
+        reviewedAt:
+          AUTHORIZED_CORRECTIONS.get(record.sourceManifestBinding.candidateId)
+            ?.reviewedAt ?? "2026-08-08T11:52:39Z",
         reviewedContentDigest: computeCaseContentDigest(record),
       });
       expect(hasMatchingApprovedReview(record)).toBe(true);

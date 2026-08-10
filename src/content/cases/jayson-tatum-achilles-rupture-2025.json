@@ -5,10 +5,10 @@
   "status": "approved",
   "sourceManifestBinding": {
     "candidateId": "CAND-NBA-ACHILLES-2025-016",
-    "manifestId": "NBA-SOURCE-2026-08-06-001",
-    "manifestDigest": "8beedf3fcc0c7c498bf08ffb2fbc671759e7a61ed4e04f09afab579b6a86eb4d",
-    "entryDigest": "d9b0468b2b683bed03141a48b8d839fd751d923eb49ca6a98afca713174bc171",
-    "sourceReviewDecisionDigest": "cd40d39d8c3463c0bb2cbdb1125a613cf1100d341bb8c6f4d59456462875ad0c",
+    "manifestId": "NBA-SOURCE-2026-08-10-001",
+    "manifestDigest": "bd1121d29e6ffda0122d920b6588e378dd2a1d011fa602689ccefa60c2bf86ff",
+    "entryDigest": "fa494db9042435914774946b0524a3c51d5249ca57c88dbb777bb83b3bc2d71a",
+    "sourceReviewDecisionDigest": "d5b934a3f450b4c3d93bdcd396dc032abe690bb11f1638095ad815e38d3c2ca7",
     "sourcePolicyVersion": "nba-v2"
   },
   "sport": {
@@ -42,7 +42,7 @@
   "classicProposedBy": null,
   "classicExceptionApprovedBy": null,
   "video": {
-    "provider": "nba",
+    "provider": "youtube",
     "contentType": "in-game-injury-event",
     "eventBinding": {
       "status": "verified",
@@ -51,26 +51,26 @@
       "checkedAt": "2026-08-08T02:30:00Z",
       "basis": "PASS — Browser reopened the original event/video and first-party diagnosis pages. The combined visible title, date, event context, and first-party text matched Jayson Tatum, 2025-05-12, Boston Celtics vs. New York Knicks, and nba-playoffs; the diagnosis explicitly supports “Ruptured right Achilles tendon.” No duplicate accepted event identity or canonical video URL was found, and no extra grade, mechanism, surgery, prognosis, rehabilitation, or return-to-play claim was inferred. The diagnosis page is distinct from the event/video page; only the diagnosis page is treated as diagnostic evidence."
     },
-    "canonicalUrl": "https://www.nba.com/watch/video/jayson-tatum-right-lower-leg-injury-celtics-knicks-game-4",
-    "uploaderName": "NBA Organization",
-    "uploaderProvenance": "league",
-    "embedStatus": "external-link-only",
-    "embedCheckedAt": "2026-08-07T11:34:14Z",
-    "durationSeconds": 91,
+    "canonicalUrl": "https://www.youtube.com/watch?v=xSUKd03LJwE",
+    "uploaderName": "NBA on ESPN",
+    "uploaderProvenance": "broadcaster-rightsholder",
+    "embedStatus": "verified",
+    "embedCheckedAt": "2026-08-10T10:56:27Z",
+    "durationSeconds": 22,
     "startSeconds": 0,
-    "endSeconds": 91,
-    "fallbackUrl": "https://www.nba.com/watch/video/jayson-tatum-right-lower-leg-injury-celtics-knicks-game-4",
+    "endSeconds": 22,
+    "fallbackUrl": "https://www.youtube.com/watch?v=xSUKd03LJwE",
     "sourceProvenanceVerification": {
       "status": "verified",
-      "verifiedBy": "Codex Achilles source researcher",
-      "verifiedAt": "2026-08-07T11:34:14Z",
-      "basis": "NBA.com original-platform Watch page with NBA Organization publisher attribution; player controls opened and no caption/subtitle control or text track was observable.",
-      "notes": "NBA 原頁播放器未提供可用字幕控制；以同一 canonical URL 作外連 fallback。",
+      "verifiedBy": "Codex embed batch 2 Playwright auditor",
+      "verifiedAt": "2026-08-10T10:56:27Z",
+      "basis": "PASS — target ID matched; the 21.181-second 576×1024 portrait player reached readyState 4 and played at 2.163778 seconds after user action; the visible caption control was disabled and reported that no captions were available.",
+      "notes": "凍結證據確認無字幕；public build 維持標示外連降級，不重跑遠端測試或下載媒體。",
       "verifiedPolicyVersion": "nba-v2",
-      "reviewedVideoIdentityDigest": "8b0837be5615b3d7c363747571a06d7962e190666c1db1add3db763a73cc5586"
+      "reviewedVideoIdentityDigest": "76239fb9b8846de425fc26cc9c8bcce49653741d9f27f7758252873f0223e9bb"
     },
     "captionStatus": "unavailable",
-    "captionCheckedAt": "2026-08-07T11:34:14Z",
+    "captionCheckedAt": "2026-08-10T10:56:27Z",
     "publicRightsReview": {
       "status": "not-requested",
       "reviewedBy": null,
@@ -86,7 +86,7 @@
     "segments": [
       {
         "startSeconds": 0,
-        "endSeconds": 91,
+        "endSeconds": 22,
         "observation": "片段呈現 Jayson Tatum 在第四節出現非接觸右小腿事件後停止比賽。"
       }
     ]
@@ -135,13 +135,13 @@
     {
       "id": "src-nba-achilles-2025-016-video",
       "type": "video-original",
-      "title": "Jayson Tatum suffers right lower leg injury late in Game 4, exits early vs. Knicks",
-      "publisher": "NBA Organization",
-      "independenceGroup": "nba-organization",
+      "title": "Jayson Tatum left Game 4 after suffering a non-contact injury",
+      "publisher": "NBA on ESPN",
+      "independenceGroup": "nba-on-espn",
       "originReportId": null,
-      "url": "https://www.nba.com/watch/video/jayson-tatum-right-lower-leg-injury-celtics-knicks-game-4",
+      "url": "https://www.youtube.com/watch?v=xSUKd03LJwE",
       "publishedAt": "2025-05-12",
-      "accessedAt": "2026-08-07",
+      "accessedAt": "2026-08-10",
       "supports": [
         "general.whatHappened",
         "general.whatIsVisible",
@@ -194,8 +194,8 @@
     "status": "approved",
     "reviewerName": "吳易澄醫師",
     "reviewerQualification": "復健科專科醫師",
-    "reviewedAt": "2026-08-08T11:52:39Z",
-    "reviewedContentDigest": "0d040d5f56f23ecb88ca75e0d83f70317e21aeb7a340c24f55c4597251dec953"
+    "reviewedAt": "2026-08-10T11:36:08Z",
+    "reviewedContentDigest": "42bea5d660ce308618596bce9bb4121bfff4f1db4ab77822998df36dc94eed4c"
   },
   "audit": {
     "createdAt": "2026-08-08T02:30:00Z",

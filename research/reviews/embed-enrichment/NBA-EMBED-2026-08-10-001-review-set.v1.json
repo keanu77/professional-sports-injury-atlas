@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "reviewSetId": "NBA-EMBED-2026-08-10-001",
+  "status": "owner-approved",
+  "createdAt": "2026-08-10T11:00:23Z",
+  "sourcePolicyVersion": "nba-v2",
+  "sourcePolicyDigests": {
+    "json": "6b5909369134839196d2285cba5ba9f1e59d69b56b0c377ef17a10b0e6effe07",
+    "markdown": "b07adf72fb6e5e5bb087401c1056003853c8fa5798456e199e58d722b7db6570"
+  },
+  "originManifest": {
+    "manifestId": "NBA-SOURCE-2026-08-06-001",
+    "manifestDigest": "8beedf3fcc0c7c498bf08ffb2fbc671759e7a61ed4e04f09afab579b6a86eb4d",
+    "manifestPath": "research/source-manifests/NBA-SOURCE-2026-08-06-001.v1.json"
+  },
+  "evidence": {
+    "playwrightRecordPath": "docs/reviews/2026-08-10-nba-embed-batch2-playwright-stop.md",
+    "playwrightRecordDigest": "9b35c30764c984ca71522c9191274ebcd2e555a49a82c8f5eb0de39d3592b0f4",
+    "leadPackagePath": "/Users/ethanai/co-work/online_sportsinjury/.claude/external-leads/embed-hunt-round2.json",
+    "leadPackageDigest": "9f743a5eeb7e669a3038287ee55608136f11fb2d3d44b608daf53442a2db8dd5"
+  },
+  "audit": {
+    "checkedBy": "Codex embed batch 2 Playwright auditor",
+    "checkedAt": "2026-08-10T11:00:23Z",
+    "browserRegion": "TW",
+    "acceptedVideoCount": 4,
+    "acceptedCandidateCount": 4,
+    "nonSelectedAlternateCount": 1,
+    "mediaDownloadedOrCopied": false,
+    "thumbnailDownloadedOrCopied": false,
+    "transcriptDownloadedOrCopied": false,
+    "captionTextDownloadedOrCopied": false,
+    "audioDownloadedOrCopied": false,
+    "videoDownloadedOrCopied": false,
+    "method": [
+      "Reused the frozen Taiwan Playwright record; no remote page, player, caption, or media check was repeated during correction execution.",
+      "Accepted only the four owner-selected canonical YouTube watch identities whose privacy-enhanced players had matched the requested ID and advanced after a real pointer action without autoplay.",
+      "Preserved the recorded caption result exactly: available for Anfernee Simons and LaMelo Ball; unavailable for Jayson Tatum and Tyrese Haliburton.",
+      "Kept the verified Tyrese Haliburton alternate non-selected because Decision 8 selected the primary as closer to the injury moment."
+    ]
+  },
+  "acceptedCorrections": [
+    {
+      "candidateId": "CAND-NBA-ANKLE-2023-004",
+      "casePath": "src/content/cases/anfernee-simons-ankle-sprain-2023.json",
+      "supersedes": {
+        "manifestId": "NBA-SOURCE-2026-08-06-001",
+        "candidateId": "CAND-NBA-ANKLE-2023-004",
+        "entryDigest": "41c20c51b043257c9a516c7197e000343e26328dea5a161f0083da3b21b3c0c9"
+      },
+      "eventIdentity": {
+        "athlete": "Anfernee Simons",
+        "eventDate": "2023-02-14",
+        "opponent": "Washington Wizards",
+        "competition": "nba-regular-season"
+      },
+      "video": {
+        "provider": "youtube",
+        "contentType": "in-game-injury-event",
+        "canonicalUrl": "https://www.youtube.com/watch?v=8TIJGIRP634",
+        "title": "Anfernee Simons helped to locker room after suffering leg injury | NBA on ESPN",
+        "titleIdentityNote": null,
+        "uploaderName": "NBA on ESPN",
+        "uploaderProvenance": "broadcaster-rightsholder",
+        "channelUrl": "https://www.youtube.com/@nbaonespn",
+        "publishedAt": "2023-02-14",
+        "accessedAt": "2026-08-10",
+        "durationSeconds": 86,
+        "embedStatus": "verified",
+        "embedCheckedAt": "2026-08-10T10:55:07Z",
+        "captionStatus": "available",
+        "captionCheckedAt": "2026-08-10T10:55:07Z",
+        "privacyEnhancedPlayer": "https://www.youtube-nocookie.com/embed/8TIJGIRP634",
+        "browserResult": "PASS — target ID matched; no autoplay; the 85.521-second 640×360 player advanced from 0.158147 to 1.187259 seconds after a pointer action; the visible caption control toggled true to false to true."
+      }
+    },
+    {
+      "candidateId": "CAND-NBA-ACHILLES-2025-016",
+      "casePath": "src/content/cases/jayson-tatum-achilles-rupture-2025.json",
+      "supersedes": {
+        "manifestId": "NBA-SOURCE-2026-08-06-001",
+        "candidateId": "CAND-NBA-ACHILLES-2025-016",
+        "entryDigest": "d9b0468b2b683bed03141a48b8d839fd751d923eb49ca6a98afca713174bc171"
+      },
+      "eventIdentity": {
+        "athlete": "Jayson Tatum",
+        "eventDate": "2025-05-12",
+        "opponent": "New York Knicks",
+        "competition": "nba-playoffs"
+      },
+      "video": {
+        "provider": "youtube",
+        "contentType": "in-game-injury-event",
+        "canonicalUrl": "https://www.youtube.com/watch?v=xSUKd03LJwE",
+        "title": "Jayson Tatum left Game 4 after suffering a non-contact injury",
+        "titleIdentityNote": null,
+        "uploaderName": "NBA on ESPN",
+        "uploaderProvenance": "broadcaster-rightsholder",
+        "channelUrl": "https://www.youtube.com/@nbaonespn",
+        "publishedAt": "2025-05-12",
+        "accessedAt": "2026-08-10",
+        "durationSeconds": 22,
+        "embedStatus": "verified",
+        "embedCheckedAt": "2026-08-10T10:56:27Z",
+        "captionStatus": "unavailable",
+        "captionCheckedAt": "2026-08-10T10:56:27Z",
+        "privacyEnhancedPlayer": "https://www.youtube-nocookie.com/embed/xSUKd03LJwE",
+        "browserResult": "PASS — target ID matched; the 21.181-second 576×1024 portrait player reached readyState 4 and played at 2.163778 seconds after user action; the visible caption control was disabled and reported that no captions were available."
+      }
+    },
+    {
+      "candidateId": "CAND-NBA-ANKLE-2025-002",
+      "casePath": "src/content/cases/lamelo-ball-ankle-sprain-2025.json",
+      "supersedes": {
+        "manifestId": "NBA-SOURCE-2026-08-06-001",
+        "candidateId": "CAND-NBA-ANKLE-2025-002",
+        "entryDigest": "5318b193e5a43baa31fc29c82c47d6ff392cc9e07c0badfde951e577b51f22a8"
+      },
+      "eventIdentity": {
+        "athlete": "LaMelo Ball",
+        "eventDate": "2025-01-27",
+        "opponent": "Los Angeles Lakers",
+        "competition": "nba-regular-season"
+      },
+      "video": {
+        "provider": "youtube",
+        "contentType": "in-game-injury-event",
+        "canonicalUrl": "https://www.youtube.com/watch?v=zZdndTqOexc",
+        "title": "LaMelo Ball would go into the locker room after noticeably limping on court.",
+        "titleIdentityNote": null,
+        "uploaderName": "NBA on ESPN",
+        "uploaderProvenance": "broadcaster-rightsholder",
+        "channelUrl": "https://www.youtube.com/@nbaonespn",
+        "publishedAt": "2025-01-27",
+        "accessedAt": "2026-08-10",
+        "durationSeconds": 47,
+        "embedStatus": "verified",
+        "embedCheckedAt": "2026-08-10T10:57:32Z",
+        "captionStatus": "available",
+        "captionCheckedAt": "2026-08-10T10:57:32Z",
+        "privacyEnhancedPlayer": "https://www.youtube-nocookie.com/embed/zZdndTqOexc",
+        "browserResult": "PASS — target ID matched; no autoplay; the 46.221-second 360×640 portrait player advanced from 0.042585 to 1.072445 seconds after a pointer action; the visible caption control toggled true to false to true."
+      }
+    },
+    {
+      "candidateId": "CAND-NBA-ACHILLES-2025-017",
+      "casePath": "src/content/cases/tyrese-haliburton-achilles-rupture-2025.json",
+      "supersedes": {
+        "manifestId": "NBA-SOURCE-2026-08-06-001",
+        "candidateId": "CAND-NBA-ACHILLES-2025-017",
+        "entryDigest": "9341384e98fde6234074002d29eb97f0ca990f8899890ad4dcfecaf9f4ee0c56"
+      },
+      "eventIdentity": {
+        "athlete": "Tyrese Haliburton",
+        "eventDate": "2025-06-22",
+        "opponent": "Oklahoma City Thunder",
+        "competition": "nba-playoffs"
+      },
+      "video": {
+        "provider": "youtube",
+        "contentType": "in-game-injury-event",
+        "canonicalUrl": "https://www.youtube.com/watch?v=azQpbyDBktk",
+        "title": "The moment Tyrese Haliburton suffered an injury in Game 7",
+        "titleIdentityNote": null,
+        "uploaderName": "ESPN",
+        "uploaderProvenance": "broadcaster-rightsholder",
+        "channelUrl": "https://www.youtube.com/@espn",
+        "publishedAt": "2025-06-22",
+        "accessedAt": "2026-08-10",
+        "durationSeconds": 52,
+        "embedStatus": "verified",
+        "embedCheckedAt": "2026-08-10T10:58:41Z",
+        "captionStatus": "unavailable",
+        "captionCheckedAt": "2026-08-10T10:58:41Z",
+        "privacyEnhancedPlayer": "https://www.youtube-nocookie.com/embed/azQpbyDBktk",
+        "browserResult": "PASS — target ID matched; the 51.561-second 360×640 portrait player reached readyState 4 and played at 2.087709 seconds after user action; the visible caption control was disabled and reported that no captions were available."
+      }
+    }
+  ],
+  "nonSelectedAlternates": [
+    {
+      "candidateId": "CAND-NBA-ACHILLES-2025-017",
+      "url": "https://www.youtube.com/watch?v=JNoDsgkZUbc",
+      "observedTitle": "Dave McMenamin's angle of Tyrese Haliburton exiting Game 7 of the NBA Finals",
+      "observedUploader": "NBA on ESPN",
+      "observedPublishedAt": "2025-06-22",
+      "observedDurationSeconds": 30,
+      "embedStatus": "verified",
+      "embedCheckedAt": "2026-08-10T11:00:23Z",
+      "captionStatus": "unavailable",
+      "captionCheckedAt": "2026-08-10T11:00:23Z",
+      "reasonCode": "owner-selected-closer-injury-moment",
+      "reason": "Decision 8 selects azQpbyDBktk because it is closer to the injury moment."
+    }
+  ],
+  "ownerDecision": {
+    "status": "approved",
+    "reviewedBy": "吳易澄醫師",
+    "reviewedAt": "2026-08-10T11:36:08Z",
+    "reviewedReviewSetDigest": "02747f8a5aca555f9f4ff04232fdb0bcc820ed039793180b7904dce290d4c867"
+  }
+}

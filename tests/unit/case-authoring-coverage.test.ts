@@ -37,6 +37,10 @@ const CORRECTION_MANIFEST_PATH =
   "research/source-manifests/NBA-SOURCE-2026-08-08-001.v1.json";
 const CORRECTION_DECISION_PATH =
   "research/reviews/source-batches/NBA-SOURCE-2026-08-08-001-source-review-decision.v1.json";
+const BATCH2_CORRECTION_MANIFEST_PATH =
+  "research/source-manifests/NBA-SOURCE-2026-08-10-001.v1.json";
+const BATCH2_CORRECTION_DECISION_PATH =
+  "research/reviews/source-batches/NBA-SOURCE-2026-08-10-001-source-review-decision.v1.json";
 const FIXTURE_PATHS = [
   CASE_AUTHORING_PLAN_PATH,
   REGISTRY_PATH,
@@ -44,6 +48,8 @@ const FIXTURE_PATHS = [
   DECISION_PATH,
   CORRECTION_MANIFEST_PATH,
   CORRECTION_DECISION_PATH,
+  BATCH2_CORRECTION_MANIFEST_PATH,
+  BATCH2_CORRECTION_DECISION_PATH,
 ] as const;
 
 const cleanupRoots: string[] = [];
@@ -123,7 +129,7 @@ function appendLegacyBatch(
   const original = richManifest.entries[0];
   const correction = batchType === "correction";
   const manifestId = correction
-    ? "NBA-SOURCE-2026-08-08-999"
+    ? "NBA-SOURCE-2026-08-11-999"
     : "NBA-SOURCE-2026-10-01-999";
   const candidate = correction
     ? {
@@ -169,7 +175,7 @@ function appendLegacyBatch(
     schemaVersion: 1,
     manifestId,
     batchType,
-    period: correction ? "2026-08-08" : "2026-q4",
+    period: correction ? "2026-08-11" : "2026-q4",
     sourcePolicyVersion: "nba-v2",
     entries: [candidate],
   };
@@ -183,7 +189,7 @@ function appendLegacyBatch(
     decisionStatus: "approved",
     sourcePolicyVersion: "nba-v2",
     reviewedBy: "Fixture Source Reviewer",
-    reviewedAt: correction ? "2026-08-09T00:00:00Z" : "2026-10-01T00:00:00Z",
+    reviewedAt: correction ? "2026-08-11T00:00:00Z" : "2026-10-01T00:00:00Z",
     candidateDecisions: [
       {
         candidateId: candidate.candidateId,
@@ -213,7 +219,7 @@ function appendLegacyBatch(
     sourcePolicyVersion: "nba-v2",
     batchType,
     period: manifest.period,
-    createdAt: correction ? "2026-08-09T00:00:00Z" : "2026-10-01T00:00:00Z",
+    createdAt: correction ? "2026-08-11T00:00:00Z" : "2026-10-01T00:00:00Z",
     previousRegistryBytesDigest: sha256Hex(registryBytes),
     supersedes,
   });
@@ -570,11 +576,22 @@ describe("NBA case-authoring plan coverage", () => {
       expect(result.manifest?.manifestId).toBe("NBA-SOURCE-2026-08-06-001");
     });
 
-    it("accepts only the digest-pinned, physician-approved correction", () => {
+    it("accepts only the two digest-pinned, physician-approved corrections", () => {
       const result = checkCaseAuthoringCoverage(fixtureRoot());
 
       expect(result.issues).toEqual([]);
       expect(result.coverage?.cases).toHaveLength(26);
+    });
+
+    it("fails closed when any field in the exact batch-2 allowlist drifts", () => {
+      const root = fixtureRoot();
+      const registry = parseStrictJson(
+        readFileSync(join(root, REGISTRY_PATH), "utf8"),
+      ) as any;
+      registry.entries.at(-1).createdAt = "2026-08-10T11:36:09Z";
+      writeFileSync(join(root, REGISTRY_PATH), canonicalJson(registry));
+
+      expect(issueCodes(root)).toContain("coverage-superseded");
     });
 
     it("fails closed when another later correction supersedes a planned candidate", () => {

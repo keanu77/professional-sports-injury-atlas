@@ -151,14 +151,16 @@ test.describe("licensed player-photo covers", () => {
       await hero.locator('source[type="image/avif"]').getAttribute("srcset"),
     );
 
-    const video = page.locator("[data-video-external]");
+    const video = page.locator(
+      '[data-video-embed][data-video-id="azQpbyDBktk"]',
+    );
     const facade = video.locator(
       '[data-cover-presentation="facade"][data-player-photo="Tyrese Haliburton"]',
     );
     await expectLicensedCover(facade);
     await expect(facade.locator("img")).toHaveAttribute("loading", "lazy");
-    const videoAction = video.locator("[data-video-source-link]");
-    await expect(videoAction).toContainText("於 NBA.com 觀看");
+    const videoAction = video.locator("[data-video-load]");
+    await expect(videoAction).toContainText("載入 YouTube 播放器");
     await expect(videoAction.locator("a, button, figcaption")).toHaveCount(0);
     await expect(facade.locator("figcaption a")).toHaveCount(2);
     expect(

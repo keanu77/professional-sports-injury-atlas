@@ -38,13 +38,13 @@
     },
     {
       "caseId": "CASE-NBAACHILLES-2025-016",
-      "currentClinicalDigest": "0d040d5f56f23ecb88ca75e0d83f70317e21aeb7a340c24f55c4597251dec953",
-      "currentVideoSourceDigest": "8b0837be5615b3d7c363747571a06d7962e190666c1db1add3db763a73cc5586"
+      "currentClinicalDigest": "42bea5d660ce308618596bce9bb4121bfff4f1db4ab77822998df36dc94eed4c",
+      "currentVideoSourceDigest": "76239fb9b8846de425fc26cc9c8bcce49653741d9f27f7758252873f0223e9bb"
     },
     {
       "caseId": "CASE-NBAACHILLES-2025-017",
-      "currentClinicalDigest": "c6aee02cae3858f932185cf9135ccb689d0b3fecfd7449a5390ff3914bddee6f",
-      "currentVideoSourceDigest": "b0fe5aebda20922b686f2534cee04b917b806ccecb0bfdc7cce47b49ea1fdeec"
+      "currentClinicalDigest": "6ba5b730b9ae097e9bb7831b782a8066485ed932bdc5a7a608d2cbe6ab18cd9b",
+      "currentVideoSourceDigest": "74e3964cff644105e1ba770f38f89236759b9df11d464616a65ccf490975100d"
     },
     {
       "caseId": "CASE-NBAACL-2021-009",
@@ -118,8 +118,8 @@
     },
     {
       "caseId": "CASE-NBAANKLE-2023-004",
-      "currentClinicalDigest": "0958fd8fe550da13460c3cbe80fc7ff5783cc7d9b3188785174bba6314633988",
-      "currentVideoSourceDigest": "ffee1ee1bcf11f82aedd8e8274aa30143650b603a1cfa09709a9d81afc5362ee"
+      "currentClinicalDigest": "9464e5a427490784d73e21752e7873047ff24aec98195e06c3a2d3b1d5a0363c",
+      "currentVideoSourceDigest": "09b5738f711a50d954cda02bb3cb9f00b01df760ae496e88793244448b19be76"
     },
     {
       "caseId": "CASE-NBAANKLE-2023-008",
@@ -138,8 +138,8 @@
     },
     {
       "caseId": "CASE-NBAANKLE-2025-002",
-      "currentClinicalDigest": "b3389d4d64cd4be54c8f1ee333049da667a9d9f3ca7f59e4bbebeda66e4b4227",
-      "currentVideoSourceDigest": "af4a20ed322562cd9f97dae434dbde3ec2cd6376775dda260e6d6acb56c9bde6"
+      "currentClinicalDigest": "0f0bd07f6484dd26645f0090ddf3213c4791d3bf24c0e7b7f5b9f08ff545536d",
+      "currentVideoSourceDigest": "0d400734dcc0b75943834e9705ec0601a4e13ef46bcbcecb8089bc3ab79ad4eb"
     }
   ],
   "updatedCases": [],
@@ -154,6 +154,6 @@
   },
   "audit": {
     "createdAt": "2026-08-08T03:15:00Z",
-    "updatedAt": "2026-08-08T11:33:30Z"
+    "updatedAt": "2026-08-10T11:36:08Z"
   }
 }

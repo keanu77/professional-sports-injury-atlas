@@ -54,6 +54,7 @@ import {
   SITE_GOVERNANCE_DATA_PATH,
   validateSiteGovernanceRecord,
 } from "../src/lib/governance/site-digest";
+import { checkNbaEmbedBatch2ContentCorrection } from "./check-nba-embed-batch2-content-correction";
 
 export const REPO_ROOT = process.cwd();
 
@@ -214,6 +215,7 @@ export function runContentCheck(root: string = REPO_ROOT): ValidationIssue[] {
   const issues: ValidationIssue[] = [];
 
   issues.push(...validateTaxonomyRegistries());
+  issues.push(...checkNbaEmbedBatch2ContentCorrection(root).issues);
 
   const loaded = loadContentCollections(root);
   issues.push(...loaded.issues);

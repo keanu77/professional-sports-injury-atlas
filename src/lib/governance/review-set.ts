@@ -79,12 +79,12 @@ export class ReviewSetError extends Error {}
 
 /**
  * An explicit sorted projection of only the bound spec, controller, platform
- * plan, source-discovery plans that produced a referenced batch, and the
- * active authoring plan — each with its document digest and any
- * execution-decision digest required to reach G3. It excludes the mutable
- * whole-file plan-binding digest and all future hosting/public roles, so
- * appending a later operational plan neither rewrites history nor invalidates
- * a completed clinical review.
+ * plan, source-discovery plans that produced a referenced batch, the active
+ * authoring plan, and an authorized content-correction plan — each with its
+ * document digest and any execution-decision digest required for that content
+ * state. It excludes the mutable whole-file plan-binding digest and
+ * hosting/photo/public roles, so operational authority cannot rewrite the
+ * clinical snapshot.
  */
 export interface ContentAuthorityDocument {
   role: string;

@@ -153,13 +153,15 @@ const CONTENT_AUTHORITY_PLAN_ROLES = new Set([
   "platform-foundation",
   "nba-injury-case-source-discovery",
   "nba-injury-case-authoring",
+  "nba-embed-batch2-correction",
 ]);
 
 /**
  * Content-authority snapshot from the plan binding: only the bound spec,
- * controller, platform foundation, active source discovery, and active
- * authoring roles (with their execution-decision digests). The mutable
- * whole-file binding and operational hosting/public roles are excluded.
+ * controller, platform foundation, active source discovery, active authoring,
+ * and authorized content-correction roles (with their execution-decision
+ * digests). The mutable whole-file binding and operational hosting, photo,
+ * and public roles are excluded.
  */
 export function currentContentAuthoritySnapshotDigest(
   root: string = REPO_ROOT,
