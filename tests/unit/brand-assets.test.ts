@@ -12,6 +12,7 @@ import { fileURLToPath } from "node:url";
 import { afterEach, describe, expect, it } from "vitest";
 import {
   scanBrandAssets,
+  scanShareAlikeCompositeRisks,
   validateBrandAssetPolicy,
 } from "../../scripts/verify-brand-assets";
 
@@ -260,6 +261,69 @@ describe("brand-asset scan", () => {
     expect(scanBrandAssets(root).map((entry) => entry.code)).toContain(
       "brand-editorial-provenance",
     );
+  });
+});
+
+describe("ShareAlike composite guard", () => {
+  it("accepts ordinary responsive photo selection without a raster compositor", () => {
+    const root = makeRoot();
+    writeInto(
+      root,
+      "src/lib/ui/editorial-images.ts",
+      'import registry from "../../assets/players/player-photo-registry.v1.json";\nexport const photos = registry.assets;\n',
+    );
+    writeInto(
+      root,
+      "src/components/cases/CaseCover.astro",
+      '---\nimport { Picture } from "astro:assets";\n---\n<Picture src={Astro.props.src} alt="" />\n',
+    );
+    expect(scanShareAlikeCompositeRisks(root)).toEqual([]);
+  });
+
+  it("rejects player-photo composition code and social metadata wiring", () => {
+    const root = makeRoot();
+    writeInto(
+      root,
+      "scripts/generate-og.ts",
+      'import registry from "../src/assets/players/player-photo-registry.v1.json";\ncanvas.drawImage(registry.assets[0]);\ncanvas.fillText("Atlas", 1, 1);\n',
+    );
+    writeInto(
+      root,
+      "src/layouts/Unsafe.astro",
+      '<meta property="og:image" content={playerPhoto.path} /> <!-- assets/players -->',
+    );
+    const codes = scanShareAlikeCompositeRisks(root).map((entry) => entry.code);
+    expect(codes).toContain("brand-sharealike-composite-code");
+    expect(codes).toContain("brand-sharealike-social-meta");
+  });
+
+  it("rejects an unreviewed production consumer even before it composes pixels", () => {
+    const root = makeRoot();
+    writeInto(
+      root,
+      "src/pages/og.png.ts",
+      'import { caseImageFor } from "../lib/ui/editorial-images";\nexport const GET = () => caseImageFor("acl", "case", "athlete");\n',
+    );
+    expect(
+      scanShareAlikeCompositeRisks(root).map((entry) => entry.code),
+    ).toContain("brand-sharealike-new-consumer");
+  });
+
+  it("rejects new composite-like rasters, generator scripts, and direct tooling", () => {
+    const root = makeRoot();
+    writeInto(root, "public/og-share.png", fakePng(1200, 630, 9));
+    writeInto(
+      root,
+      "package.json",
+      JSON.stringify({
+        scripts: { "og:generate": "tsx scripts/generate-og.ts" },
+        dependencies: { sharp: "1.0.0" },
+      }),
+    );
+    const codes = scanShareAlikeCompositeRisks(root).map((entry) => entry.code);
+    expect(codes).toContain("brand-sharealike-composite-asset");
+    expect(codes).toContain("brand-sharealike-composite-script");
+    expect(codes).toContain("brand-sharealike-composite-dependency");
   });
 });
 

@@ -1,9 +1,12 @@
 /**
- * Decision 8 content guard for the second NBA embed correction.
+ * Decision 8 content guard for the second NBA embed correction, extended by
+ * Decision 11's exact Anthony Edwards playback-state remediation.
  *
  * The four corrected cases are compared with the exact pre-correction commit
  * after removing only the fields Decision 8 allows to change. Every other
- * case and every injury overview is compared byte-for-byte. The dependent Q3
+ * case except the single Decision 11 target and every injury overview is
+ * compared byte-for-byte. The Decision 11 target gets a three-field
+ * projection with an unchanged clinical digest. The dependent Q3
  * record gets a separate, exact allowlist for four digest pairs and one audit
  * timestamp.
  */
@@ -37,6 +40,11 @@ export const NBA_EMBED_BATCH2_MANIFEST_DIGEST =
 export const NBA_EMBED_BATCH2_SOURCE_DECISION_DIGEST =
   "d5b934a3f450b4c3d93bdcd396dc032abe690bb11f1638095ad815e38d3c2ca7";
 export const DECISION_8_REVIEWED_AT = "2026-08-10T11:36:08Z";
+export const DECISION_11_P0_CASE_PATH =
+  "src/content/cases/anthony-edwards-ankle-sprain-2023.json";
+export const DECISION_11_P0_EMBED_CHECKED_AT = "2026-08-11T17:29:36Z";
+export const DECISION_11_P0_NOTES =
+  "2026-08-11 台灣重查：availableCountries 60 國不含 TW，playabilityStatus=UNPLAYABLE，playableInEmbed 缺失；不下載媒體，保留同一原始網址作外部連結。";
 
 export interface CorrectedCaseExpectation {
   path: string;
@@ -174,6 +182,15 @@ export function decision8Q3Projection(record: unknown): unknown {
   return projected;
 }
 
+/** Remove only the three presentation-state fields authorized by Decision 11 P0-1. */
+export function decision11P0CaseProjection(record: unknown): unknown {
+  const projected = cloneJson(record);
+  delete projected.video.embedStatus;
+  delete projected.video.embedCheckedAt;
+  delete projected.video.sourceProvenanceVerification.notes;
+  return projected;
+}
+
 function projectionIssue(
   code: string,
   path: string,
@@ -184,6 +201,65 @@ function projectionIssue(
   return canonicalJson(current) === canonicalJson(baseline)
     ? []
     : [issue(code, path, message)];
+}
+
+/**
+ * Allows Anthony Edwards' current playback state to fail closed while proving
+ * that video identity, sources, clinical prose, and the approved clinical
+ * digest remain identical to the pre-Decision-8 baseline.
+ */
+export function validateDecision11P0Case(
+  current: InjuryCase,
+  baseline: InjuryCase,
+  path = DECISION_11_P0_CASE_PATH,
+): ValidationIssue[] {
+  const issues = projectionIssue(
+    "decision11-p0-case-projection-drift",
+    path,
+    decision11P0CaseProjection(current),
+    decision11P0CaseProjection(baseline),
+    `content outside the three Decision 11 P0-1 playback-state fields drifted from ${NBA_EMBED_BATCH2_BASELINE}`,
+  );
+  const exactFacts: Array<[string, unknown, unknown]> = [
+    ["video.embedStatus", current.video.embedStatus, "external-link-only"],
+    [
+      "video.embedCheckedAt",
+      current.video.embedCheckedAt,
+      DECISION_11_P0_EMBED_CHECKED_AT,
+    ],
+    [
+      "video.sourceProvenanceVerification.notes",
+      current.video.sourceProvenanceVerification.notes,
+      DECISION_11_P0_NOTES,
+    ],
+  ];
+  for (const [field, actual, expected] of exactFacts) {
+    if (canonicalJson(actual) !== canonicalJson(expected)) {
+      issues.push(
+        issue(
+          "decision11-p0-case-fact",
+          `${path}.${field}`,
+          `expected ${String(expected)}, received ${String(actual)}`,
+        ),
+      );
+    }
+  }
+
+  const currentClinicalDigest = computeCaseContentDigest(current);
+  const baselineClinicalDigest = computeCaseContentDigest(baseline);
+  if (
+    currentClinicalDigest !== baselineClinicalDigest ||
+    current.review.reviewedContentDigest !== currentClinicalDigest
+  ) {
+    issues.push(
+      issue(
+        "decision11-p0-clinical-digest",
+        `${path}.review.reviewedContentDigest`,
+        "Decision 11 playback remediation must not change or stale the approved clinical payload",
+      ),
+    );
+  }
+  return issues;
 }
 
 export function validateDecision8CorrectedCase(
@@ -466,6 +542,7 @@ function baselineJsonNames(root: string, directory: string): string[] {
 export interface Decision8ContentGuardResult {
   issues: ValidationIssue[];
   correctedCaseCount: number;
+  rightsRemediatedCaseCount: number;
   unchangedCaseCount: number;
   unchangedOverviewCount: number;
 }
@@ -480,6 +557,7 @@ export function checkNbaEmbedBatch2ContentCorrection(
     NBA_EMBED_BATCH2_CORRECTED_CASES.map((entry) => entry.path),
   );
   let unchangedCaseCount = 0;
+  let rightsRemediatedCaseCount = 0;
   let unchangedOverviewCount = 0;
 
   try {
@@ -498,6 +576,15 @@ export function checkNbaEmbedBatch2ContentCorrection(
     for (const name of baselineNames) {
       const path = `${casesDirectory}/${name}`;
       if (expectedPaths.has(path)) continue;
+      if (path === DECISION_11_P0_CASE_PATH) {
+        const current = caseSchema.parse(
+          parseStrictJson(readFileSync(join(root, path), "utf8")),
+        );
+        const baseline = caseSchema.parse(baselineJson(root, path));
+        issues.push(...validateDecision11P0Case(current, baseline, path));
+        rightsRemediatedCaseCount += 1;
+        continue;
+      }
       const current = readFileSync(join(root, path));
       const baseline = gitBytes(root, path);
       if (!current.equals(baseline)) {
@@ -572,6 +659,7 @@ export function checkNbaEmbedBatch2ContentCorrection(
   return {
     issues,
     correctedCaseCount: NBA_EMBED_BATCH2_CORRECTED_CASES.length,
+    rightsRemediatedCaseCount,
     unchangedCaseCount,
     unchangedOverviewCount,
   };
@@ -592,6 +680,7 @@ export function runNbaEmbedBatch2ContentCorrectionCli(
   }
   console.log(
     `nba-embed-batch2 content correction OK corrected=${result.correctedCaseCount} ` +
+      `rightsRemediated=${result.rightsRemediatedCaseCount} ` +
       `unchangedCases=${result.unchangedCaseCount} ` +
       `unchangedOverviews=${result.unchangedOverviewCount}`,
   );

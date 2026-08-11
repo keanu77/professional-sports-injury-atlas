@@ -93,6 +93,12 @@ const GOVERNED_YOUTUBE_CASES = [
     captionStatus: "unavailable",
   },
 ] as const;
+const REGION_BLOCKED_YOUTUBE_CASE = GOVERNED_YOUTUBE_CASES.find(
+  (entry) => entry.videoId === "V9mtX4mE8wQ",
+)!;
+const EMBEDDABLE_GOVERNED_YOUTUBE_CASES = GOVERNED_YOUTUBE_CASES.filter(
+  (entry) => entry.videoId !== REGION_BLOCKED_YOUTUBE_CASE.videoId,
+);
 const GOVERNED_NBA_CASE = {
   slug: "damian-lillard-achilles-rupture-2025",
   canonicalUrl:
@@ -369,7 +375,7 @@ test.describe("component lab before enhancement", () => {
 });
 
 test.describe("governed case facades", () => {
-  test("all eight YouTube cases use one local photo facade and make zero pre-click requests", async ({
+  test("all seven embeddable YouTube cases use one local photo facade and make zero pre-click requests", async ({
     page,
   }) => {
     const log = await stubYouTubeRoutes(page);
@@ -381,6 +387,7 @@ test.describe("governed case facades", () => {
     });
 
     expect(GOVERNED_YOUTUBE_CASES).toHaveLength(8);
+    expect(EMBEDDABLE_GOVERNED_YOUTUBE_CASES).toHaveLength(7);
     expect(
       GOVERNED_YOUTUBE_CASES.filter(
         (entry) => entry.orientation === "portrait",
@@ -410,7 +417,7 @@ test.describe("governed case facades", () => {
       ).map((entry) => entry.videoId),
     ).toEqual(["V9mtX4mE8wQ", "xSUKd03LJwE", "azQpbyDBktk"]);
 
-    for (const entry of GOVERNED_YOUTUBE_CASES) {
+    for (const entry of EMBEDDABLE_GOVERNED_YOUTUBE_CASES) {
       await page.goto(`/cases/${entry.slug}/`);
       const card = page.locator(
         `[data-video-embed][data-video-id="${entry.videoId}"]`,
@@ -479,12 +486,12 @@ test.describe("governed case facades", () => {
     }
   });
 
-  test("all eight load on click with five portraits at 9:16 and Simons at 16:9", async ({
+  test("all seven unrestricted cases load on click with five portraits at 9:16", async ({
     page,
   }) => {
     const log = await stubYouTubeRoutes(page);
-    const geometryCases = GOVERNED_YOUTUBE_CASES;
-    expect(geometryCases).toHaveLength(8);
+    const geometryCases = EMBEDDABLE_GOVERNED_YOUTUBE_CASES;
+    expect(geometryCases).toHaveLength(7);
 
     for (const entry of geometryCases) {
       await page.goto(`/cases/${entry.slug}/`);
@@ -512,6 +519,44 @@ test.describe("governed case facades", () => {
       }
     }
     expect(log.unmocked).toEqual([]);
+  });
+
+  test("the Taiwan-blocked Anthony Edwards video is a labeled external link with no facade or request", async ({
+    page,
+  }) => {
+    const log = await stubYouTubeRoutes(page);
+    const thirdPartyRequests: string[] = [];
+    page.on("request", (request) => {
+      if (new URL(request.url()).origin !== PAGE_ORIGIN) {
+        thirdPartyRequests.push(request.url());
+      }
+    });
+
+    await page.goto(`/cases/${REGION_BLOCKED_YOUTUBE_CASE.slug}/`);
+    const card = page.locator(
+      '[data-video-external][data-video-region-blocked="TW"]',
+    );
+    await expect(card).toHaveCount(1);
+    await expect(card.locator("[data-video-region-fallback]")).toContainText(
+      "台灣地區站內播放器已停用",
+    );
+    await expect(card.locator("[data-video-region-warning]")).toContainText(
+      "目前未對台灣提供播放",
+    );
+    await expect(card.locator("[data-video-source-link]")).toHaveAttribute(
+      "href",
+      `https://www.youtube.com/watch?v=${REGION_BLOCKED_YOUTUBE_CASE.videoId}`,
+    );
+    await expect(card.locator("[data-case-cover]")).toHaveCount(0);
+    await expect(card.locator("[data-video-facade]")).toHaveCount(0);
+    await expect(card.locator("[data-video-load]")).toHaveCount(0);
+    await expect(card.locator("[data-video-stage]")).toHaveCount(0);
+    await expect(card.locator("iframe")).toHaveCount(0);
+    await expect(card.locator("[data-review-state]")).toContainText(
+      "embedStatus=external-link-only",
+    );
+    expect(log.youtubeRequests).toEqual([]);
+    expect(thirdPartyRequests).toEqual([]);
   });
 
   test("a real NBA case uses its governed local-photo external facade with zero third-party requests", async ({

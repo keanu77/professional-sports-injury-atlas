@@ -6,11 +6,13 @@ import { describe, expect, it } from "vitest";
 
 import {
   DECISION_8_REVIEWED_AT,
+  DECISION_11_P0_CASE_PATH,
   NBA_EMBED_BATCH2_BASELINE,
   NBA_EMBED_BATCH2_CORRECTED_CASES,
   checkNbaEmbedBatch2ContentCorrection,
   validateDecision8CorrectedCase,
   validateDecision8Q3,
+  validateDecision11P0Case,
 } from "../../scripts/check-nba-embed-batch2-content-correction";
 import { caseSchema, type InjuryCase } from "../../src/lib/contracts/case";
 import { updateSchema } from "../../src/lib/contracts/update";
@@ -40,12 +42,42 @@ function baselineCase(index = 0): InjuryCase {
 }
 
 describe("Decision 8 NBA embed batch 2 content correction", () => {
-  it("proves four exact corrections, 22 byte-identical cases, and three byte-identical overviews", () => {
+  it("proves four Decision 8 corrections, one Decision 11 playback remediation, and all frozen bytes", () => {
     const result = checkNbaEmbedBatch2ContentCorrection(ROOT);
     expect(result.issues).toEqual([]);
     expect(result.correctedCaseCount).toBe(4);
-    expect(result.unchangedCaseCount).toBe(22);
+    expect(result.rightsRemediatedCaseCount).toBe(1);
+    expect(result.unchangedCaseCount).toBe(21);
     expect(result.unchangedOverviewCount).toBe(3);
+  });
+
+  it("allows only Anthony's exact three playback-state fields and preserves the clinical digest", () => {
+    const current = caseSchema.parse(
+      JSON.parse(readFileSync(join(ROOT, DECISION_11_P0_CASE_PATH), "utf8")),
+    );
+    const baseline = caseSchema.parse(baselineJson(DECISION_11_P0_CASE_PATH));
+    expect(validateDecision11P0Case(current, baseline)).toEqual([]);
+
+    const clinicalDrift = structuredClone(current);
+    clinicalDrift.general.whatHappened += " drift";
+    expect(
+      validateDecision11P0Case(clinicalDrift, baseline).map(
+        (entry) => entry.code,
+      ),
+    ).toEqual(
+      expect.arrayContaining([
+        "decision11-p0-case-projection-drift",
+        "decision11-p0-clinical-digest",
+      ]),
+    );
+
+    const playbackDrift = structuredClone(current);
+    playbackDrift.video.embedStatus = "verified";
+    expect(
+      validateDecision11P0Case(playbackDrift, baseline).map(
+        (entry) => entry.code,
+      ),
+    ).toContain("decision11-p0-case-fact");
   });
 
   it.each([

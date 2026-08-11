@@ -10,6 +10,10 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { caseSchema } from "../../src/lib/contracts/case";
 import {
+  governedVideoRegionRestrictions,
+  videoRegionRestrictionFor,
+} from "../../src/lib/video/availability";
+import {
   captionStatusLabel,
   componentLabStaticParams,
   formatDurationLabel,
@@ -108,7 +112,7 @@ describe("validateProviderEmbedState", () => {
 });
 
 describe("resolvePlayerPresentation", () => {
-  it("keeps click-to-load for verified YouTube video in review mode", () => {
+  it("keeps click-to-load for unrestricted verified YouTube video in review mode", () => {
     for (const captionStatus of [
       "available",
       "unavailable",
@@ -118,6 +122,33 @@ describe("resolvePlayerPresentation", () => {
         "click-to-load",
       );
     }
+  });
+
+  it("records the Taiwan restriction and honors its current external-link state", () => {
+    const restricted = base({
+      canonicalUrl: "https://www.youtube.com/watch?v=V9mtX4mE8wQ",
+      embedStatus: "external-link-only",
+    });
+    expect(resolvePlayerPresentation(restricted)).toBe("external-link-only");
+    expect(
+      resolvePlayerPresentation({ ...restricted, displayMode: "public" }),
+    ).toBe("external-link-only");
+    expect(
+      videoRegionRestrictionFor("youtube", restricted.canonicalUrl),
+    ).toEqual(
+      expect.objectContaining({
+        audienceCountryCode: "TW",
+        availableCountryCount: 60,
+        checkedAt: "2026-08-11T17:29:36Z",
+        playabilityStatus: "UNPLAYABLE",
+        playableInEmbed: null,
+        videoId: "V9mtX4mE8wQ",
+      }),
+    );
+    expect(
+      videoRegionRestrictionFor("youtube", FICTIONAL_WATCH_URL),
+    ).toBeNull();
+    expect(governedVideoRegionRestrictions()).toHaveLength(1);
   });
 
   it("gates the public in-site player on captionStatus available", () => {
@@ -259,19 +290,20 @@ describe("real governed YouTube presentation", () => {
       }) === "click-to-load",
   );
 
-  it("renders exactly eight of 26 cases as review click-to-load players", () => {
+  it("renders exactly seven of 26 cases as review click-to-load players", () => {
     expect(records).toHaveLength(26);
-    expect(reviewEmbeds).toHaveLength(8);
+    expect(reviewEmbeds).toHaveLength(7);
     expect(reviewEmbeds.map((record) => record.slug).sort()).toEqual(
-      expected.map((entry) => entry.slug).sort(),
+      expected
+        .filter((entry) => entry.videoId !== "V9mtX4mE8wQ")
+        .map((entry) => entry.slug)
+        .sort(),
     );
   });
 
-  it("preserves Anthony's fallback and adds the Tatum and Haliburton fallbacks", () => {
+  it("keeps Anthony external in both modes and preserves caption fallbacks", () => {
     for (const entry of expected) {
-      const record = reviewEmbeds.find(
-        (candidate) => candidate.slug === entry.slug,
-      );
+      const record = records.find((candidate) => candidate.slug === entry.slug);
       expect(record, `missing governed case ${entry.slug}`).toBeDefined();
       expect(record!.video.canonicalUrl).toBe(
         `https://www.youtube.com/watch?v=${entry.videoId}`,
@@ -287,6 +319,19 @@ describe("real governed YouTube presentation", () => {
           displayMode: "public",
         }),
       ).toBe(entry.publicPresentation);
+      expect(
+        resolvePlayerPresentation({
+          providerCode: record!.video.provider,
+          canonicalUrl: record!.video.canonicalUrl,
+          embedStatus: record!.video.embedStatus,
+          captionStatus: record!.video.captionStatus,
+          displayMode: "review",
+        }),
+      ).toBe(
+        entry.videoId === "V9mtX4mE8wQ"
+          ? "external-link-only"
+          : "click-to-load",
+      );
     }
 
     expect(

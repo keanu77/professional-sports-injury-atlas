@@ -45,6 +45,35 @@ const IMAGE_URL_VALUE_RE =
 const LOGO_FIELD_RE = /(logo|thumbnail|image)(url|src|path)?$/i;
 const ENDORSEMENT_RE =
   /official(ly)?\s+(partner|licens|authoriz|endors)|in\s+partnership\s+with\s+the\s+nba|官方合作|官方授權|官方夥伴|官方認證/i;
+const COMPOSITE_ASSET_FILENAME_RE =
+  /(?:^|[-_.])(?:og|open-graph|social|share|infographic|composite)(?:[-_.]|$)/i;
+const PLAYER_PHOTO_PIPELINE_RE =
+  /(?:src\/assets\/players|assets\/players|player-photo-registry|editorial-images|CaseCover)/;
+const RASTER_COMPOSITION_CALL_RE =
+  /(?:\.composite\s*\(|\bcreateCanvas\s*\(|\bdrawImage\s*\(|\bfillText\s*\(|\bsatori\s*\(|\bImageResponse\s*\(|\bnew\s+Resvg\s*\()/;
+const PLAYER_SOCIAL_META_RE =
+  /(?:og:image|twitter:image)[\s\S]{0,400}(?:player-photo|assets\/players)|(?:player-photo|assets\/players)[\s\S]{0,400}(?:og:image|twitter:image)/i;
+const DIRECT_COMPOSITION_PACKAGES = new Set([
+  "@resvg/resvg-js",
+  "@vercel/og",
+  "canvas",
+  "satori",
+  "sharp",
+]);
+const APPROVED_PLAYER_PHOTO_PRODUCTION_CONSUMERS = new Set([
+  "src/components/atlas/CaseCard.astro",
+  "src/components/atlas/EditorialHero.astro",
+  "src/components/atlas/EmptyState.astro",
+  "src/components/atlas/InjuryCard.astro",
+  "src/components/cases/CaseCover.astro",
+  "src/components/cases/CaseVideo.astro",
+  "src/lib/contracts/player-photo.ts",
+  "src/lib/governance/site-digest.ts",
+  "src/lib/ui/editorial-images.ts",
+  "src/pages/cases/[slug].astro",
+  "src/pages/index.astro",
+  "src/pages/injuries/[injury].astro",
+]);
 
 function walkFiles(directory: string): string[] {
   if (!existsSync(directory)) return [];
@@ -401,6 +430,131 @@ function scanJsonValue(
   }
 }
 
+/**
+ * Fail-closed ShareAlike composite guard. The governed player JPEGs may flow
+ * through Astro's ordinary Picture resize/crop encoder, but no authored code
+ * may combine that pipeline with canvas/SVG/raster composition or feed it to
+ * social-image metadata. A newly tracked OG/social/composite raster or direct
+ * composition dependency also requires a fresh rights audit before it enters
+ * the governed inventory.
+ */
+export function scanShareAlikeCompositeRisks(root: string): ValidationIssue[] {
+  const issues: ValidationIssue[] = [];
+
+  for (const assetDir of ["public", "src/assets"]) {
+    for (const filePath of walkFiles(join(root, assetDir))) {
+      const relPath = relative(root, filePath);
+      if (
+        IMAGE_EXT_RE.test(relPath) &&
+        COMPOSITE_ASSET_FILENAME_RE.test(relPath)
+      ) {
+        issues.push(
+          issue(
+            "brand-sharealike-composite-asset",
+            relPath,
+            "OG/social/share/composite rasters require a fresh rights audit and must not contain governed player photos",
+          ),
+        );
+      }
+    }
+  }
+
+  for (const codeDir of ["src", "scripts"]) {
+    for (const filePath of walkFiles(join(root, codeDir))) {
+      const relPath = relative(root, filePath);
+      if (
+        relPath === "scripts/verify-brand-assets.ts" ||
+        !/\.(astro|ts|tsx|js|mjs|css)$/.test(relPath)
+      ) {
+        continue;
+      }
+      const text = readFileSync(filePath, "utf8");
+      if (
+        codeDir === "src" &&
+        PLAYER_PHOTO_PIPELINE_RE.test(text) &&
+        !APPROVED_PLAYER_PHOTO_PRODUCTION_CONSUMERS.has(relPath)
+      ) {
+        issues.push(
+          issue(
+            "brand-sharealike-new-consumer",
+            relPath,
+            "new player-photo production consumers require a fresh rights audit before they can produce cards, social images, or other outputs",
+          ),
+        );
+      }
+      if (
+        PLAYER_PHOTO_PIPELINE_RE.test(text) &&
+        RASTER_COMPOSITION_CALL_RE.test(text)
+      ) {
+        issues.push(
+          issue(
+            "brand-sharealike-composite-code",
+            relPath,
+            "player-photo pipeline references must not enter authored raster-composition code",
+          ),
+        );
+      }
+      if (PLAYER_SOCIAL_META_RE.test(text)) {
+        issues.push(
+          issue(
+            "brand-sharealike-social-meta",
+            relPath,
+            "OG/Twitter image metadata must not resolve from the governed player-photo pipeline",
+          ),
+        );
+      }
+    }
+  }
+
+  const packagePath = join(root, "package.json");
+  if (existsSync(packagePath)) {
+    try {
+      const packageJson = JSON.parse(readFileSync(packagePath, "utf8")) as {
+        dependencies?: Record<string, unknown>;
+        devDependencies?: Record<string, unknown>;
+        scripts?: Record<string, unknown>;
+      };
+      for (const section of [
+        packageJson.dependencies ?? {},
+        packageJson.devDependencies ?? {},
+      ]) {
+        for (const packageName of Object.keys(section)) {
+          if (DIRECT_COMPOSITION_PACKAGES.has(packageName)) {
+            issues.push(
+              issue(
+                "brand-sharealike-composite-dependency",
+                `package.json.${packageName}`,
+                "a direct raster-composition dependency requires a fresh rights audit before use with governed photos",
+              ),
+            );
+          }
+        }
+      }
+      for (const [scriptName, command] of Object.entries(
+        packageJson.scripts ?? {},
+      )) {
+        if (
+          /(?:^|:)(?:og|social|share|composite)(?::|$)/i.test(scriptName) &&
+          typeof command === "string" &&
+          !/verify|check|audit/i.test(command)
+        ) {
+          issues.push(
+            issue(
+              "brand-sharealike-composite-script",
+              `package.json.scripts.${scriptName}`,
+              "an OG/social/composite generator requires a fresh rights audit and an explicit non-SA input contract",
+            ),
+          );
+        }
+      }
+    } catch {
+      // Other project checks own malformed package.json diagnostics.
+    }
+  }
+
+  return issues;
+}
+
 /** Scans the repository for brand-asset violations. */
 export function scanBrandAssets(root: string): ValidationIssue[] {
   const provenance = loadEditorialImageProvenance(root);
@@ -415,6 +569,7 @@ export function scanBrandAssets(root: string): ValidationIssue[] {
   const issues: ValidationIssue[] = [
     ...provenance.issues,
     ...playerPhotos.issues,
+    ...scanShareAlikeCompositeRisks(root),
   ];
 
   for (const assetDir of ["public", "src/assets"]) {
@@ -570,7 +725,7 @@ function main(): void {
   const issues = [...validateBrandAssetPolicy(root), ...scanBrandAssets(root)];
   if (issues.length === 0) {
     console.log(
-      "brand:verify OK — generated and licensed rasters are provenance-listed; no arbitrary images, logos, remote thumbnails, or endorsement claims",
+      "brand:verify OK — generated and licensed rasters are provenance-listed; no arbitrary images, logos, remote thumbnails, ShareAlike composites, or endorsement claims",
     );
     return;
   }

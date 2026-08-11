@@ -1064,12 +1064,6 @@ function richBindingIssues(
       record.video.uploaderProvenance,
       entry.video.uploaderProvenance,
     ],
-    ["video.embedStatus", record.video.embedStatus, entry.video.embedStatus],
-    [
-      "video.embedCheckedAt",
-      record.video.embedCheckedAt,
-      entry.video.embedCheckedAt,
-    ],
     [
       "video.captionStatus",
       record.video.captionStatus,
@@ -1115,6 +1109,28 @@ function richBindingIssues(
   for (const [path, actual, expected] of richFacts) {
     const drift = canonicalFactDriftIssue(path, actual, expected);
     if (drift !== null) issues.push(drift);
+  }
+  const embedStateMatchesOrigin =
+    record.video.embedStatus === entry.video.embedStatus &&
+    record.video.embedCheckedAt === entry.video.embedCheckedAt;
+  const isLaterVerifiedToExternalRecheck =
+    entry.video.embedStatus === "verified" &&
+    record.video.embedStatus === "external-link-only" &&
+    Date.parse(record.video.embedCheckedAt) >
+      Date.parse(entry.video.embedCheckedAt);
+  if (!embedStateMatchesOrigin && !isLaterVerifiedToExternalRecheck) {
+    const statusDrift = canonicalFactDriftIssue(
+      "video.embedStatus",
+      record.video.embedStatus,
+      entry.video.embedStatus,
+    );
+    if (statusDrift !== null) issues.push(statusDrift);
+    const checkedAtDrift = canonicalFactDriftIssue(
+      "video.embedCheckedAt",
+      record.video.embedCheckedAt,
+      entry.video.embedCheckedAt,
+    );
+    if (checkedAtDrift !== null) issues.push(checkedAtDrift);
   }
   issues.push(...richSourceBindingIssues(record, entry));
   return issues;

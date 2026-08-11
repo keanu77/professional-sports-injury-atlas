@@ -127,10 +127,13 @@ const richRegistry = (): SourceManifestRegistryV1 =>
 const loadRichArtifact = (path: string): Uint8Array =>
   readFileSync(new URL(`../../${path}`, import.meta.url));
 
-/** Maps the first real rich-manifest entry onto a non-production case fixture. */
-function richBoundRecord(): any {
+/** Maps one real rich-manifest entry onto a non-production case fixture. */
+function richBoundRecord(candidateId = "CAND-NBA-ACL-2021-009"): any {
   const manifest = richManifest();
-  const entry = manifest.entries[0];
+  const entry = manifest.entries.find(
+    (candidate: any) => candidate.candidateId === candidateId,
+  );
+  if (entry === undefined) throw new Error(`missing fixture ${candidateId}`);
   const registryEntry = richRegistry().entries[0];
   const record = recent();
   record.sourceManifestBinding = {
@@ -996,6 +999,41 @@ describe("source-manifest binding cross-validation", () => {
         (i) => i.code,
       ),
     ).toContain("binding-fact-drift");
+  });
+
+  it("allows only a later verified-to-external embed recheck without rewriting origin artifacts", () => {
+    const candidateId = "CAND-NBA-ANKLE-2023-001";
+    const degraded = richBoundRecord(candidateId);
+    degraded.video.embedStatus = "external-link-only";
+    degraded.video.embedCheckedAt = "2026-08-11T17:29:36Z";
+    expect(
+      validateCaseSourceBinding(
+        degraded,
+        richRegistry(),
+        loadRichArtifact,
+      ).filter((entry) => entry.path.startsWith("video.embed")),
+    ).toEqual([]);
+
+    const staleTime = richBoundRecord(candidateId);
+    staleTime.video.embedStatus = "external-link-only";
+    expect(
+      validateCaseSourceBinding(
+        staleTime,
+        richRegistry(),
+        loadRichArtifact,
+      ).map((entry) => [entry.code, entry.path]),
+    ).toContainEqual(["binding-fact-drift", "video.embedStatus"]);
+
+    const unavailable = richBoundRecord(candidateId);
+    unavailable.video.embedStatus = "unavailable";
+    unavailable.video.embedCheckedAt = "2026-08-11T17:29:36Z";
+    expect(
+      validateCaseSourceBinding(
+        unavailable,
+        richRegistry(),
+        loadRichArtifact,
+      ).map((entry) => [entry.code, entry.path]),
+    ).toContainEqual(["binding-fact-drift", "video.embedStatus"]);
   });
 
   it("requires classic proposer identity to match the frozen source-review decision", () => {

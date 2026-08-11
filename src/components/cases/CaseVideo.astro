@@ -17,6 +17,7 @@ import {
   type VideoDisplayMode,
 } from "../../lib/video/player-state";
 import { resolveVideoOrientation } from "../../lib/video/facade";
+import { videoRegionRestrictionFor } from "../../lib/video/availability";
 import { parseYouTubeVideoId } from "../../lib/video/youtube";
 import type { CaptionStatus } from "../../lib/contracts/case";
 import type { EmbedStatus } from "../../lib/contracts/taxonomy";
@@ -57,6 +58,10 @@ const presentation = resolvePlayerPresentation({
   captionStatus: video.captionStatus,
   displayMode,
 });
+const regionRestriction = videoRegionRestrictionFor(
+  video.provider,
+  video.canonicalUrl,
+);
 
 let videoId: string | null = null;
 if (presentation === "click-to-load") {
@@ -94,6 +99,7 @@ const coverIdPrefix = `video-cover-${scopeId}`;
   data-video-unavailable={presentation === "unavailable-notice"
     ? ""
     : undefined}
+  data-video-region-blocked={regionRestriction?.audienceCountryCode}
   data-video-id={videoId ?? undefined}
   data-video-title={presentation === "click-to-load"
     ? `案例影片播放器：${sourceTitle}`
@@ -143,7 +149,7 @@ const coverIdPrefix = `video-cover-${scopeId}`;
   }
 
   {
-    presentation === "external-link-only" && (
+    presentation === "external-link-only" && regionRestriction === null && (
       <CaseCover
         athleteName={athleteName}
         injuryCode={injuryCode}
@@ -167,6 +173,25 @@ const coverIdPrefix = `video-cover-${scopeId}`;
           </span>
         </a>
       </CaseCover>
+    )
+  }
+
+  {
+    presentation === "external-link-only" && regionRestriction !== null && (
+      <div class="video-region-restricted" data-video-region-fallback>
+        <p>
+          <strong>台灣地區站內播放器已停用</strong>
+          <span>原始平台仍可能顯示地區限制。</span>
+        </p>
+        <a
+          class="case-video-source-link"
+          data-video-source-link
+          href={video.canonicalUrl}
+          rel="noopener noreferrer"
+        >
+          開啟 ESPN 原始頁（外部連結）
+        </a>
+      </div>
     )
   }
 
@@ -198,6 +223,14 @@ const coverIdPrefix = `video-cover-${scopeId}`;
       captionWarning !== null && (
         <p class="case-video-warning" data-caption-warning>
           {captionWarning}
+        </p>
+      )
+    }
+    {
+      regionRestriction !== null && (
+        <p class="case-video-warning" data-video-region-warning>
+          此原始影片目前未對台灣提供播放；本站不載入播放器，僅保留 ESPN
+          原始頁外部連結，原平台仍可能顯示地區限制。
         </p>
       )
     }
@@ -344,6 +377,32 @@ const coverIdPrefix = `video-cover-${scopeId}`;
 
   .video-external-label small {
     white-space: nowrap;
+  }
+
+  .video-region-restricted {
+    display: grid;
+    gap: 0.75rem;
+    padding: 1rem;
+    border: 1px solid var(--color-warning-border);
+    border-radius: 6px;
+    background: var(--color-warning-surface);
+  }
+
+  .video-region-restricted p {
+    display: grid;
+    gap: 0.25rem;
+    margin: 0;
+    color: var(--color-warning);
+  }
+
+  .video-region-restricted a {
+    width: fit-content;
+    min-height: 44px;
+    padding: 0.65rem 0.9rem;
+    border-radius: 6px;
+    background: var(--color-brand-primary);
+    color: var(--color-on-brand);
+    font-weight: 700;
   }
 
   .case-video-meta {
