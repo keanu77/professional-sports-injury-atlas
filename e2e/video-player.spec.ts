@@ -252,14 +252,29 @@ async function expectLocalResponsiveCover(
     await expect(attribution).toContainText(
       "球員球場資料照片；非本案例受傷當下影像",
     );
+    const licenseBucket = await attribution.getAttribute("data-license-bucket");
+    expect(["cc-by", "cc-by-sa", "cc0"]).toContain(licenseBucket);
+    await expect(attribution).toHaveAttribute(
+      "data-source-revision-id",
+      /^\d+$/u,
+    );
     await expect(
       attribution.locator('a[href^="https://creativecommons.org/"]'),
-    ).toHaveCount(1);
-    await expect(
-      attribution.locator(
-        'a[href^="https://commons.wikimedia.org/wiki/File:"]',
-      ),
-    ).toHaveCount(1);
+    ).toHaveCount(licenseBucket === "cc-by-sa" ? 2 : 1);
+    const revisionLink = attribution.locator("a", {
+      hasText: "Wikimedia Commons 永久說明頁",
+    });
+    await expect(revisionLink).toHaveCount(1);
+    await expect(revisionLink).toHaveAttribute(
+      "href",
+      /^https:\/\/commons\.wikimedia\.org\/w\/index\.php\?.*oldid=\d+/u,
+    );
+    if (licenseBucket === "cc-by-sa") {
+      await expect(attribution).toContainText("Adapter's License");
+      await expect(attribution).toContainText("不及於頁面其他內容");
+    } else {
+      await expect(attribution).not.toContainText("Adapter's License：");
+    }
   }
 
   await expect(cover).toHaveAttribute("data-focal-x", /^(?:0|[1-9]\d?|100)$/u);

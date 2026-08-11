@@ -221,6 +221,10 @@ describe("renderer tree digest", () => {
       path: "src/assets/players/player-photo-registry.v1.json",
       sha256: hex("e"),
     },
+    {
+      path: "src/assets/players/player-photo-registry.v2.json",
+      sha256: hex("0"),
+    },
   ];
 
   it("includes exactly the tracked implementation surface", () => {

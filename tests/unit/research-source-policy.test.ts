@@ -31,6 +31,9 @@ const MARKDOWN_POLICY_PATH = "research/source-policy/nba.v2.md" as const;
 const V3_JSON_POLICY_PATH =
   "research/source-policy/source-policy.v3.json" as const;
 const V3_MARKDOWN_POLICY_PATH = "research/source-policy/nba.v3.md" as const;
+const V4_JSON_POLICY_PATH =
+  "research/source-policy/source-policy.v4.json" as const;
+const V4_MARKDOWN_POLICY_PATH = "research/source-policy/nba.v4.md" as const;
 const V2_DATE_RULE_PARAGRAPH =
   "For the primary video's event-date identity check, `video_published_at` must fall within the inclusive window from `event_date` through `event_date + 3 days`, or the video title must contain `event_date`. This window is asymmetric: publication before `event_date` is ineligible.";
 
@@ -256,6 +259,10 @@ const EXPECTED_V3_JSON_SHA256 =
   "284a88792f281564799eeae6b62646b855072725824ef21f3cea4204a3d14270";
 const EXPECTED_V3_MARKDOWN_SHA256 =
   "7dc98d1146ffe701a312694512bfe513f27d3edb8ecaeeb2f933a92f9fb32ca2";
+const EXPECTED_V4_JSON_SHA256 =
+  "3320fe2051fc091aa055d5cdd8bcdacf24073c3964cac3d1a982666a2aafbf68";
+const EXPECTED_V4_MARKDOWN_SHA256 =
+  "929ac5f125db222d8eb6e98a3a52b1778ebd28c743884c945ab917619ebd5994";
 
 const FROZEN_POLICY_BY_VERSION = Object.freeze({
   "nba-v1": Object.freeze({
@@ -276,6 +283,12 @@ const FROZEN_POLICY_BY_VERSION = Object.freeze({
     markdownPath: V3_MARKDOWN_POLICY_PATH,
     markdownSha256: EXPECTED_V3_MARKDOWN_SHA256,
   }),
+  "nba-v4": Object.freeze({
+    jsonPath: V4_JSON_POLICY_PATH,
+    jsonSha256: EXPECTED_V4_JSON_SHA256,
+    markdownPath: V4_MARKDOWN_POLICY_PATH,
+    markdownSha256: EXPECTED_V4_MARKDOWN_SHA256,
+  }),
 });
 
 type FrozenPolicyVersion = keyof typeof FROZEN_POLICY_BY_VERSION;
@@ -287,7 +300,9 @@ function readPolicyFile(
     | typeof JSON_POLICY_PATH
     | typeof MARKDOWN_POLICY_PATH
     | typeof V3_JSON_POLICY_PATH
-    | typeof V3_MARKDOWN_POLICY_PATH,
+    | typeof V3_MARKDOWN_POLICY_PATH
+    | typeof V4_JSON_POLICY_PATH
+    | typeof V4_MARKDOWN_POLICY_PATH,
 ): string {
   return readFileSync(new URL(`../../${path}`, import.meta.url), "utf8");
 }
@@ -857,6 +872,7 @@ describe("NBA source-policy nba-v2 contract", () => {
       "nba-v1",
       "nba-v2",
       "nba-v3",
+      "nba-v4",
     ]);
     const pairs = Object.values(FROZEN_POLICY_BY_VERSION).map(
       ({ jsonSha256, markdownSha256 }) => `${jsonSha256}:${markdownSha256}`,
@@ -903,10 +919,10 @@ describe("NBA source-policy nba-v2 contract", () => {
     const policy = parseCanonicalPolicy(jsonBytes);
     expect(() =>
       verifyFrozenPolicyBytes(
-        canonicalJson({ ...policy, sourcePolicyVersion: "nba-v4" }),
+        canonicalJson({ ...policy, sourcePolicyVersion: "nba-v5" }),
         markdownBytes,
       ),
-    ).toThrow(/unregistered source-policy version nba-v4/);
+    ).toThrow(/unregistered source-policy version nba-v5/);
   });
 });
 
@@ -1082,5 +1098,103 @@ describe("NBA source-policy nba-v3 static-player-photo annex", () => {
       "球員球場資料照片；非本案例受傷當下影像",
     );
     expect(readPolicyFile(V3_MARKDOWN_POLICY_PATH)).toContain("改作自原作");
+  });
+});
+
+describe("NBA source-policy nba-v4 Decision 11 attribution addendum", () => {
+  it("is canonical, immutable, and changes only the inherited photo attribution controls", () => {
+    const v3 = parseCanonicalPolicy(readPolicyFile(V3_JSON_POLICY_PATH));
+    const v4Bytes = readPolicyFile(V4_JSON_POLICY_PATH);
+    const v4 = parseCanonicalPolicy(v4Bytes);
+    const inheritance = asRecord(v4.playerStaticPhotoPolicyInheritance);
+
+    expect(v4Bytes.endsWith("\n")).toBe(false);
+    expect(v4.sourcePolicyVersion).toBe("nba-v4");
+    expect(inheritance).toEqual({
+      jsonPath: V3_JSON_POLICY_PATH,
+      jsonSha256: EXPECTED_V3_JSON_SHA256,
+      markdownPath: V3_MARKDOWN_POLICY_PATH,
+      markdownSha256: EXPECTED_V3_MARKDOWN_SHA256,
+      sourcePolicyVersion: "nba-v3",
+    });
+
+    const {
+      humanPolicyDocument: _v4Human,
+      playerStaticPhotoPolicyInheritance: _v4Inheritance,
+      playerStaticPhotoRules: _v4PhotoRules,
+      sourcePolicyVersion: _v4Version,
+      ...v4Unchanged
+    } = v4;
+    const {
+      humanPolicyDocument: _v3Human,
+      playerStaticPhotoRules: _v3PhotoRules,
+      sourcePolicyVersion: _v3Version,
+      ...v3Unchanged
+    } = v3;
+    expect(v4Unchanged).toEqual(v3Unchanged);
+
+    const v3Photo = asRecord(v3.playerStaticPhotoRules);
+    const v4Photo = asRecord(v4.playerStaticPhotoRules);
+    const {
+      attributionRequirements: _v4Attribution,
+      requiredProvenanceFields: _v4Fields,
+      ...v4PhotoUnchanged
+    } = v4Photo;
+    const {
+      attributionRequirements: _v3Attribution,
+      requiredProvenanceFields: _v3Fields,
+      ...v3PhotoUnchanged
+    } = v3Photo;
+    expect(v4PhotoUnchanged).toEqual(v3PhotoUnchanged);
+  });
+
+  it("requires license buckets, revision permalinks, exact notice states, and compatible adapter licenses", () => {
+    const policy = parseCanonicalPolicy(readPolicyFile(V4_JSON_POLICY_PATH));
+    const annex = asRecord(policy.playerStaticPhotoRules);
+    expect(annex.attributionRequirements).toEqual({
+      adapterLicenseLimitedToCropContribution: true,
+      adapterLicenseSameVersionRequiredForCcBySaCrop: true,
+      commonsRevisionPermalinkVisible: true,
+      copyrightNoticeRetentionStateRequired: true,
+      disclaimerNoticeRetentionStateRequired: true,
+      exactLicenseNameAndTermsLinkVisible: true,
+      licenseBuckets: ["cc-by", "cc-by-sa", "cc0"],
+      nonEventText: "球員球場資料照片；非本案例受傷當下影像",
+      otherPerFileNoticeRetentionStateRequired: true,
+      photographerVisible: true,
+      suppliedCopyrightNoticeVisible: true,
+      suppliedOtherPerFileNoticeVisible: true,
+      suppliedTitleVisibleForLicenseVersion: "2.0",
+      titleSupplyStateRequired: true,
+      unscopedDocumentLicenseRelationForbidden: true,
+    });
+    expect(annex.requiredProvenanceFields).toEqual(
+      [
+        ...(asRecord(
+          parseCanonicalPolicy(readPolicyFile(V3_JSON_POLICY_PATH))
+            .playerStaticPhotoRules,
+        ).requiredProvenanceFields as string[]),
+        "adapter-license",
+        "commons-revision-id",
+        "commons-revision-permalink",
+        "commons-revision-timestamp",
+        "copyright-notice-state",
+        "disclaimer-notice-state",
+        "license-bucket",
+        "other-per-file-notice-state",
+        "source-alteration-state",
+        "title-supply-state",
+        "work-title",
+      ].sort(),
+    );
+    expect(policy.humanPolicyDocument).toEqual({
+      path: V4_MARKDOWN_POLICY_PATH,
+      sha256: EXPECTED_V4_MARKDOWN_SHA256,
+    });
+    const markdown = readPolicyFile(V4_MARKDOWN_POLICY_PATH);
+    expect(markdown).toContain("Adapter's License");
+    expect(markdown).toContain("does not license the surrounding page");
+    expect(markdown).toContain("`not-supplied` with `null`");
+    expect(markdown).toContain('unscoped `rel="license"`');
   });
 });

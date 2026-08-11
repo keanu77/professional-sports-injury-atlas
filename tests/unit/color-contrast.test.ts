@@ -330,6 +330,20 @@ describe("governed case cover", () => {
     );
   });
 
+  it("renders one bucket-independent notice block without licensing the host page", () => {
+    expect(component.match(/data-attribution-notices/g) ?? []).toHaveLength(1);
+    expect(
+      component.match(/rightsAttribution\.copyrightNotice\.status/g) ?? [],
+    ).toHaveLength(1);
+    expect(
+      component.match(/rightsAttribution\.disclaimerNotice\.status/g) ?? [],
+    ).toHaveLength(1);
+    expect(
+      component.match(/rightsAttribution\.otherPerFileNotice\.status/g) ?? [],
+    ).toHaveLength(1);
+    expect(component).not.toContain('rel="license');
+  });
+
   it("binds every cover to stable responsive case-photo renditions", () => {
     expect(component).toContain("recordId = idPrefix");
     expect(component).toContain("data-cover-variant={selection.variant");
@@ -346,6 +360,6 @@ describe("governed case cover", () => {
     expect(component).toContain("匿名運動員面孔不可見");
     expect(component).toContain("不代表任何特定球員或真實受傷事件");
     expect(component).toContain("球員球場資料照片；非本案例受傷當下影像");
-    expect(component).toContain("Wikimedia Commons 原始說明頁");
+    expect(component).toContain("Wikimedia Commons 永久說明頁");
   });
 });

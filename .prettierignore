@@ -9,7 +9,9 @@ research/source-manifest-registry.v1.json
 research/source-policy/source-policy.v1.json
 research/source-policy/source-policy.v2.json
 research/source-policy/source-policy.v3.json
+research/source-policy/source-policy.v4.json
 src/assets/players/player-photo-registry.v1.json
+src/assets/players/player-photo-registry.v2.json
 research/reviews/source-batches/*.json
 research/reviews/root-source-audit.v1.json
 research/verification/*.json

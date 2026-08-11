@@ -9,7 +9,7 @@ import {
   type PlayerPhotoValidationInput,
 } from "../../scripts/verify-player-photo-assets";
 import { canonicalJson } from "../../src/lib/contracts/canonical";
-import type { PlayerPhotoRegistryV1 } from "../../src/lib/contracts/player-photo";
+import type { PlayerPhotoRegistryV2 } from "../../src/lib/contracts/player-photo";
 
 const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -29,9 +29,9 @@ function validationInput(): PlayerPhotoValidationInput {
 
 function mutateRegistry(
   input: PlayerPhotoValidationInput,
-  mutate: (registry: PlayerPhotoRegistryV1) => void,
+  mutate: (registry: PlayerPhotoRegistryV2) => void,
 ): void {
-  const registry = JSON.parse(input.registryBytes!) as PlayerPhotoRegistryV1;
+  const registry = JSON.parse(input.registryBytes!) as PlayerPhotoRegistryV2;
   mutate(registry);
   input.registryBytes = canonicalJson(registry);
 }
@@ -81,6 +81,21 @@ describe("governed Commons player-photo assets", () => {
     ).toHaveLength(26);
     expect(result.allowedPaths).toHaveLength(21);
     expect(
+      result.registry?.assets.filter(
+        (asset) => asset.rightsAttribution.licenseBucket === "cc-by",
+      ),
+    ).toHaveLength(9);
+    expect(
+      result.registry?.assets.filter(
+        (asset) => asset.rightsAttribution.licenseBucket === "cc-by-sa",
+      ),
+    ).toHaveLength(12);
+    expect(
+      result.registry?.assets.filter(
+        (asset) => asset.rightsAttribution.licenseBucket === "cc0",
+      ),
+    ).toHaveLength(0);
+    expect(
       result.registry?.assets.every(
         (asset) =>
           asset.nonEventCaption === "球員球場資料照片；非本案例受傷當下影像" &&
@@ -89,11 +104,13 @@ describe("governed Commons player-photo assets", () => {
     ).toBe(true);
   });
 
-  it("accepts a fail-closed injury-theme fallback in place of one athlete photo", () => {
+  it("rejects unversioned fallback drift from the immutable v1 projection", () => {
     const input = validationInput();
     moveAssetToFallback(input, "Anfernee Simons");
     const result = validatePlayerPhotoAssets(input);
-    expect(result.issues).toEqual([]);
+    expect(result.issues.map((entry) => entry.code)).toContain(
+      "player-photo-registry-projection",
+    );
     expect(result.registry?.assets).toHaveLength(20);
     expect(result.registry?.fallbacks).toEqual([
       {
@@ -275,5 +292,170 @@ describe("governed Commons player-photo assets", () => {
       registry.assets[0]!.sourcePolicyBinding.jsonSha256 = "0".repeat(64);
     });
     expect(issueCodes(binding)).toContain("player-photo-policy-binding");
+  });
+
+  it("binds the immutable v1 registry and every current Commons oldid", () => {
+    const lineage = validationInput();
+    lineage.previousRegistryBytes = `${lineage.previousRegistryBytes} `;
+    expect(issueCodes(lineage)).toContain("player-photo-registry-lineage");
+
+    const revision = validationInput();
+    mutateRegistry(revision, (registry) => {
+      registry.assets[0]!.rightsAttribution.sourceRevision.id += 1;
+    });
+    expect(issueCodes(revision)).toContain("player-photo-source-revision");
+
+    const projection = validationInput();
+    mutateRegistry(projection, (registry) => {
+      registry.assets[0]!.photographer = "Rewritten photographer";
+    });
+    expect(issueCodes(projection)).toContain(
+      "player-photo-registry-projection",
+    );
+  });
+
+  it("rejects a missing supplied 2.0 title and an unverified invented title", () => {
+    const missing = validationInput();
+    mutateRegistry(missing, (registry) => {
+      const record = registry.assets.find(
+        (asset) => asset.athleteName === "Anthony Edwards",
+      )!;
+      record.rightsAttribution.workTitle.text = null;
+    });
+    expect(issueCodes(missing)).toContain("player-photo-work-title");
+
+    const invented = validationInput();
+    mutateRegistry(invented, (registry) => {
+      const record = registry.assets.find(
+        (asset) => asset.athleteName === "Brandon Clarke",
+      )!;
+      record.rightsAttribution.workTitle.status = "supplied";
+      record.rightsAttribution.workTitle.text = null;
+    });
+    expect(issueCodes(invented)).toContain("player-photo-work-title");
+
+    const downgraded = validationInput();
+    mutateRegistry(downgraded, (registry) => {
+      const record = registry.assets.find(
+        (asset) => asset.athleteName === "Anthony Edwards",
+      )!;
+      record.rightsAttribution.workTitle.status = "not-supplied";
+      record.rightsAttribution.workTitle.text = null;
+    });
+    expect(issueCodes(downgraded)).toContain("player-photo-registry-digest");
+  });
+
+  it("requires explicit 4.0 notice states and retains personality warnings", () => {
+    const notice = validationInput();
+    mutateRegistry(notice, (registry) => {
+      const record = registry.assets.find(
+        (asset) => asset.athleteName === "Anfernee Simons",
+      )!;
+      record.rightsAttribution.copyrightNotice.url =
+        record.rightsAttribution.sourceRevision.permalink;
+    });
+    expect(issueCodes(notice)).toContain("player-photo-rights-notice");
+
+    const personality = validationInput();
+    mutateRegistry(personality, (registry) => {
+      const record = registry.assets.find(
+        (asset) => asset.athleteName === "Dwight Powell",
+      )!;
+      record.rightsAttribution.otherPerFileNotice = {
+        status: "not-supplied",
+        text: null,
+        url: null,
+      };
+    });
+    expect(issueCodes(personality)).toContain("player-photo-rights-notice");
+
+    const copyrightDowngrade = validationInput();
+    mutateRegistry(copyrightDowngrade, (registry) => {
+      const record = registry.assets.find(
+        (asset) => asset.athleteName === "Dwight Powell",
+      )!;
+      record.rightsAttribution.copyrightNotice = {
+        status: "not-supplied",
+        text: null,
+        url: null,
+      };
+    });
+    expect(issueCodes(copyrightDowngrade)).toContain(
+      "player-photo-registry-digest",
+    );
+
+    const dwight = JSON.parse(
+      validationInput().registryBytes!,
+    ) as PlayerPhotoRegistryV2;
+    expect(
+      dwight.assets.find((asset) => asset.athleteName === "Dwight Powell")!
+        .rightsAttribution.workTitle,
+    ).toMatchObject({
+      status: "supplied",
+      text: "Basketball-Länderspiel: Deutschland gegen Kanada",
+    });
+  });
+
+  it("binds supplied Flickr titles to the actual supporting source URLs", () => {
+    const registry = JSON.parse(
+      validationInput().registryBytes!,
+    ) as PlayerPhotoRegistryV2;
+    expect(
+      registry.assets.find((asset) => asset.athleteName === "Ja Morant")!
+        .rightsAttribution.workTitle.evidenceUrl,
+    ).toBe("https://www.flickr.com/photos/joeglo/51664923611/");
+    expect(
+      registry.assets.find((asset) => asset.athleteName === "LaMelo Ball")!
+        .rightsAttribution.workTitle.evidenceUrl,
+    ).toBe("https://www.flickr.com/photos/edrost88/51916059508/");
+
+    const rewritten = validationInput();
+    mutateRegistry(rewritten, (candidate) => {
+      candidate.assets.find(
+        (asset) => asset.athleteName === "Ja Morant",
+      )!.rightsAttribution.workTitle.evidenceUrl =
+        "https://commons.wikimedia.org/wiki/File:Ja_Morant_2021.jpg";
+    });
+    expect(issueCodes(rewritten)).toContain("player-photo-registry-digest");
+  });
+
+  it("requires a same-version adapter license only for CC BY-SA crops", () => {
+    const shareAlike = validationInput();
+    mutateRegistry(shareAlike, (registry) => {
+      const record = registry.assets.find(
+        (asset) => asset.athleteName === "Anthony Edwards",
+      )!;
+      record.rightsAttribution.adapterLicense = null;
+    });
+    expect(issueCodes(shareAlike)).toContain("player-photo-adapter-license");
+
+    const by = validationInput();
+    mutateRegistry(by, (registry) => {
+      const record = registry.assets.find(
+        (asset) => asset.athleteName === "CJ McCollum",
+      )!;
+      record.rightsAttribution.adapterLicense = { ...record.license };
+    });
+    expect(issueCodes(by)).toContain("player-photo-adapter-license");
+  });
+
+  it("recognizes CC0 semantics but rejects retroactive v1 license changes", () => {
+    const input = validationInput();
+    mutateRegistry(input, (registry) => {
+      const record = registry.assets.find(
+        (asset) => asset.athleteName === "CJ McCollum",
+      )!;
+      record.license = {
+        name: "CC0 1.0",
+        token: "cc0-1.0",
+        url: "https://creativecommons.org/publicdomain/zero/1.0/",
+      };
+      record.rightsAttribution.licenseBucket = "cc0";
+      record.rightsAttribution.adapterLicense = null;
+    });
+    const codes = issueCodes(input);
+    expect(codes).toContain("player-photo-registry-projection");
+    expect(codes).not.toContain("player-photo-license-bucket");
+    expect(codes).not.toContain("player-photo-adapter-license");
   });
 });

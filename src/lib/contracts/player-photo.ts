@@ -1,4 +1,6 @@
 export const PLAYER_PHOTO_REGISTRY_PATH =
+  "src/assets/players/player-photo-registry.v2.json" as const;
+export const PREVIOUS_PLAYER_PHOTO_REGISTRY_PATH =
   "src/assets/players/player-photo-registry.v1.json" as const;
 export const PLAYER_PHOTO_SCOPE_ID =
   "decision-7-commons-player-photo-covers-only" as const;
@@ -6,11 +8,51 @@ export const PLAYER_PHOTO_SOURCE_CLASSIFICATION =
   "wikimedia-commons-player-basketball-court-photo" as const;
 export const PLAYER_PHOTO_NON_EVENT_CAPTION =
   "球員球場資料照片；非本案例受傷當下影像" as const;
-export const PLAYER_PHOTO_POLICY_VERSION = "nba-v3" as const;
+export const PLAYER_PHOTO_POLICY_VERSION = "nba-v4" as const;
 export const PLAYER_PHOTO_POLICY_JSON_PATH =
-  "research/source-policy/source-policy.v3.json" as const;
+  "research/source-policy/source-policy.v4.json" as const;
 export const PLAYER_PHOTO_POLICY_MARKDOWN_PATH =
-  "research/source-policy/nba.v3.md" as const;
+  "research/source-policy/nba.v4.md" as const;
+
+export type PlayerPhotoLicenseBucket = "cc-by" | "cc-by-sa" | "cc0";
+
+export interface PlayerPhotoLicense {
+  name: string;
+  token: string;
+  url: string;
+}
+
+export interface PlayerPhotoNotice {
+  status: "not-supplied" | "supplied";
+  text: string | null;
+  url: string | null;
+}
+
+export interface PlayerPhotoRightsAttribution {
+  adapterLicense: PlayerPhotoLicense | null;
+  alterationState: {
+    commonsFileStatus: "cropped" | "no-crop-declared";
+    evidence: string;
+    sitePresentation: "css-object-fit-cover-crop";
+  };
+  copyrightNotice: PlayerPhotoNotice;
+  disclaimerNotice: PlayerPhotoNotice;
+  licenseBucket: PlayerPhotoLicenseBucket;
+  otherPerFileNotice: PlayerPhotoNotice;
+  sourceRevision: {
+    checkedAt: string;
+    id: number;
+    permalink: string;
+    timestamp: string;
+    title: string;
+  };
+  workTitle: {
+    evidence: string;
+    evidenceUrl: string;
+    status: "not-supplied" | "supplied";
+    text: string | null;
+  };
+}
 
 export interface PlayerPhotoPolicyBinding {
   sourcePolicyVersion: typeof PLAYER_PHOTO_POLICY_VERSION;
@@ -47,11 +89,7 @@ export interface PlayerPhotoAssetRecord {
     status: "verified";
     url: string;
   };
-  license: {
-    name: string;
-    token: string;
-    url: string;
-  };
+  license: PlayerPhotoLicense;
   localFile: {
     byteLength: number;
     height: number;
@@ -69,6 +107,7 @@ export interface PlayerPhotoAssetRecord {
     width: number;
   };
   photographer: string;
+  rightsAttribution: PlayerPhotoRightsAttribution;
   sourceClassification: typeof PLAYER_PHOTO_SOURCE_CLASSIFICATION;
   sourcePolicyBinding: PlayerPhotoPolicyBinding;
 }
@@ -79,9 +118,14 @@ export interface PlayerPhotoFallbackRecord {
   reason: "no-qualified-commons-photo";
 }
 
-export interface PlayerPhotoRegistryV1 {
+export interface PlayerPhotoRegistryV2 {
   assets: PlayerPhotoAssetRecord[];
   fallbacks: PlayerPhotoFallbackRecord[];
-  schemaVersion: 1;
+  previousRegistryBinding: {
+    path: typeof PREVIOUS_PLAYER_PHOTO_REGISTRY_PATH;
+    schemaVersion: 1;
+    sha256: string;
+  };
+  schemaVersion: 2;
   scopeId: typeof PLAYER_PHOTO_SCOPE_ID;
 }

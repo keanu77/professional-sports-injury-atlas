@@ -2,7 +2,8 @@
  * Fail-closed verifier for the Decision 7 Wikimedia Commons player-photo
  * inventory. It validates canonical provenance, the exact 26-case athlete
  * partition, free-license pairs, Commons-only URLs, original JPEG bytes,
- * human crop declarations, and both immutable nba-v3 policy digests.
+ * human crop declarations, Decision 11 attribution facts, append-only
+ * registry lineage, and both immutable nba-v4 policy digests.
  */
 
 import { createHash } from "node:crypto";
@@ -26,13 +27,20 @@ import {
   PLAYER_PHOTO_REGISTRY_PATH,
   PLAYER_PHOTO_SCOPE_ID,
   PLAYER_PHOTO_SOURCE_CLASSIFICATION,
-  type PlayerPhotoRegistryV1,
+  PREVIOUS_PLAYER_PHOTO_REGISTRY_PATH,
+  type PlayerPhotoLicenseBucket,
+  type PlayerPhotoRegistryV2,
 } from "../src/lib/contracts/player-photo";
 
 const EXPECTED_ATHLETE_COUNT = 21;
 const EXPECTED_CASE_COUNT = 26;
 const EXPECTED_DOWNLOAD_DATE = "2026-08-09";
+const EXPECTED_RIGHTS_CHECK_DATE = "2026-08-12";
 const EXPECTED_CHECKER = "atlas-commons-player-photo-covers";
+const EXPECTED_CURRENT_REGISTRY_SHA256 =
+  "0fa9a14660d798b32586047eaec1a0fc14912ca8710aaccc83963ac4f9dc28d0";
+const EXPECTED_PREVIOUS_REGISTRY_SHA256 =
+  "770a7e6d7f13ecd0dda17a629b13f179357b9c64ebc268404a5640ad9aa08eec";
 const SHA256_RE = /^[a-f0-9]{64}$/u;
 const SHA1_RE = /^[a-f0-9]{40}$/u;
 const SAFE_LOCAL_PATH_RE =
@@ -53,13 +61,14 @@ export interface PlayerPhotoValidationInput {
   cases: CaseIdentity[];
   policyJsonBytes: string | null;
   policyMarkdownBytes: string | null;
+  previousRegistryBytes: string | null;
   registryBytes: string | null;
 }
 
 export interface PlayerPhotoAssetLoadResult {
   allowedPaths: string[];
   issues: ValidationIssue[];
-  registry: PlayerPhotoRegistryV1 | null;
+  registry: PlayerPhotoRegistryV2 | null;
 }
 
 function asRecord(value: unknown): Record<string, unknown> | null {
@@ -195,6 +204,11 @@ export function readPlayerPhotoValidationInput(
     )
       ? readFileSync(join(root, PLAYER_PHOTO_POLICY_MARKDOWN_PATH), "utf8")
       : null,
+    previousRegistryBytes: existsSync(
+      join(root, PREVIOUS_PLAYER_PHOTO_REGISTRY_PATH),
+    )
+      ? readFileSync(join(root, PREVIOUS_PLAYER_PHOTO_REGISTRY_PATH), "utf8")
+      : null,
     registryBytes: existsSync(join(root, PLAYER_PHOTO_REGISTRY_PATH))
       ? readFileSync(join(root, PLAYER_PHOTO_REGISTRY_PATH), "utf8")
       : null,
@@ -215,6 +229,67 @@ function safeHttpsUrl(value: unknown, host: string): URL | null {
   } catch {
     return null;
   }
+}
+
+function safeEvidenceUrl(value: unknown): URL | null {
+  if (typeof value !== "string") return null;
+  try {
+    const parsed = new URL(value);
+    return parsed.protocol === "https:" &&
+      (parsed.hostname === "commons.wikimedia.org" ||
+        parsed.hostname === "www.flickr.com") &&
+      parsed.username === "" &&
+      parsed.password === "" &&
+      parsed.hash === ""
+      ? parsed
+      : null;
+  } catch {
+    return null;
+  }
+}
+
+function expectedLicenseBucket(
+  token: unknown,
+): PlayerPhotoLicenseBucket | null {
+  if (typeof token !== "string") return null;
+  if (token.startsWith("cc-by-sa-")) return "cc-by-sa";
+  if (token.startsWith("cc-by-")) return "cc-by";
+  if (token === "cc0-1.0") return "cc0";
+  return null;
+}
+
+function validNotice(value: unknown, revisionPermalink: unknown): boolean {
+  const notice = asRecord(value);
+  if (notice === null || !hasExactKeys(notice, ["status", "text", "url"])) {
+    return false;
+  }
+  if (notice.status === "not-supplied") {
+    return notice.text === null && notice.url === null;
+  }
+  return (
+    notice.status === "supplied" &&
+    nonEmptyString(notice.text) &&
+    notice.url === revisionPermalink
+  );
+}
+
+function normalizedCommonsTitle(value: string): string {
+  return value.replaceAll("_", " ");
+}
+
+function projectAssetWithoutP1Fields(
+  value: unknown,
+  removeRightsAttribution: boolean,
+): unknown {
+  const record = asRecord(value);
+  if (record === null) return value;
+  return Object.fromEntries(
+    Object.entries(record).filter(
+      ([key]) =>
+        key !== "sourcePolicyBinding" &&
+        (!removeRightsAttribution || key !== "rightsAttribution"),
+    ),
+  );
 }
 
 export function validatePlayerPhotoAssets(
@@ -242,7 +317,20 @@ export function validatePlayerPhotoAssets(
         issue(
           "player-photo-policy-missing",
           PLAYER_PHOTO_REGISTRY_PATH,
-          "the nba-v3 source-policy bytes are missing",
+          "the nba-v4 source-policy bytes are missing",
+        ),
+      ],
+      registry: null,
+    };
+  }
+  if (input.previousRegistryBytes === null) {
+    return {
+      allowedPaths: [],
+      issues: [
+        issue(
+          "player-photo-registry-lineage",
+          PLAYER_PHOTO_REGISTRY_PATH,
+          "the immutable previous player-photo registry is missing",
         ),
       ],
       registry: null,
@@ -274,16 +362,26 @@ export function validatePlayerPhotoAssets(
       ),
     );
   }
+  if (sha256Hex(input.registryBytes) !== EXPECTED_CURRENT_REGISTRY_SHA256) {
+    issues.push(
+      issue(
+        "player-photo-registry-digest",
+        PLAYER_PHOTO_REGISTRY_PATH,
+        "the immutable Decision 11 registry v2 bytes do not match the audited digest",
+      ),
+    );
+  }
   const registryRecord = asRecord(parsed);
   if (
     registryRecord === null ||
     !hasExactKeys(registryRecord, [
       "assets",
       "fallbacks",
+      "previousRegistryBinding",
       "schemaVersion",
       "scopeId",
     ]) ||
-    registryRecord.schemaVersion !== 1 ||
+    registryRecord.schemaVersion !== 2 ||
     registryRecord.scopeId !== PLAYER_PHOTO_SCOPE_ID ||
     !Array.isArray(registryRecord.assets) ||
     !Array.isArray(registryRecord.fallbacks)
@@ -297,7 +395,91 @@ export function validatePlayerPhotoAssets(
     );
     return { allowedPaths: [], issues, registry: null };
   }
-  const registry = parsed as PlayerPhotoRegistryV1;
+  const registry = parsed as PlayerPhotoRegistryV2;
+  const previousRegistrySha256 = sha256Hex(input.previousRegistryBytes);
+  let previousRegistryRecord: Record<string, unknown> | null = null;
+  try {
+    const previousParsed = parseStrictJson(input.previousRegistryBytes);
+    previousRegistryRecord = asRecord(previousParsed);
+    if (
+      previousRegistrySha256 !== EXPECTED_PREVIOUS_REGISTRY_SHA256 ||
+      canonicalJson(previousParsed) !== input.previousRegistryBytes ||
+      previousRegistryRecord === null ||
+      !hasExactKeys(previousRegistryRecord, [
+        "assets",
+        "fallbacks",
+        "schemaVersion",
+        "scopeId",
+      ]) ||
+      previousRegistryRecord.schemaVersion !== 1 ||
+      previousRegistryRecord.scopeId !== PLAYER_PHOTO_SCOPE_ID ||
+      !Array.isArray(previousRegistryRecord.assets) ||
+      !Array.isArray(previousRegistryRecord.fallbacks)
+    ) {
+      issues.push(
+        issue(
+          "player-photo-registry-lineage",
+          PREVIOUS_PLAYER_PHOTO_REGISTRY_PATH,
+          "the historical registry v1 bytes must match the frozen canonical digest and schema",
+        ),
+      );
+      previousRegistryRecord = null;
+    }
+  } catch {
+    issues.push(
+      issue(
+        "player-photo-registry-lineage",
+        PREVIOUS_PLAYER_PHOTO_REGISTRY_PATH,
+        "the historical registry v1 must remain valid canonical JSON",
+      ),
+    );
+  }
+  const previousRegistryBinding = asRecord(
+    registryRecord.previousRegistryBinding,
+  );
+  if (
+    previousRegistryBinding === null ||
+    !hasExactKeys(previousRegistryBinding, [
+      "path",
+      "schemaVersion",
+      "sha256",
+    ]) ||
+    previousRegistryBinding.path !== PREVIOUS_PLAYER_PHOTO_REGISTRY_PATH ||
+    previousRegistryBinding.schemaVersion !== 1 ||
+    previousRegistryBinding.sha256 !== EXPECTED_PREVIOUS_REGISTRY_SHA256 ||
+    previousRegistryBinding.sha256 !== previousRegistrySha256
+  ) {
+    issues.push(
+      issue(
+        "player-photo-registry-lineage",
+        `${PLAYER_PHOTO_REGISTRY_PATH}.previousRegistryBinding`,
+        "registry v2 must bind the exact immutable registry v1 bytes",
+      ),
+    );
+  }
+  if (previousRegistryRecord !== null) {
+    const previousAssets = previousRegistryRecord.assets as unknown[];
+    const previousFallbacks = previousRegistryRecord.fallbacks as unknown[];
+    const previousProjection = previousAssets.map((asset) =>
+      projectAssetWithoutP1Fields(asset, false),
+    );
+    const currentProjection = registryRecord.assets.map((asset) =>
+      projectAssetWithoutP1Fields(asset, true),
+    );
+    if (
+      canonicalJson(currentProjection) !== canonicalJson(previousProjection) ||
+      canonicalJson(registryRecord.fallbacks) !==
+        canonicalJson(previousFallbacks)
+    ) {
+      issues.push(
+        issue(
+          "player-photo-registry-projection",
+          PLAYER_PHOTO_REGISTRY_PATH,
+          "registry v2 may only add rights attribution and replace the source-policy binding; every v1 asset and fallback fact must project byte-for-byte",
+        ),
+      );
+    }
+  }
 
   let policy: Record<string, unknown> | null = null;
   try {
@@ -322,17 +504,38 @@ export function validatePlayerPhotoAssets(
           .map((row) => String(row.filename).toLocaleLowerCase("en-US"))
       : [],
   );
+  const attributionRequirements = asRecord(annex?.attributionRequirements);
+  const expectedAttributionRequirements = {
+    adapterLicenseLimitedToCropContribution: true,
+    adapterLicenseSameVersionRequiredForCcBySaCrop: true,
+    commonsRevisionPermalinkVisible: true,
+    copyrightNoticeRetentionStateRequired: true,
+    disclaimerNoticeRetentionStateRequired: true,
+    exactLicenseNameAndTermsLinkVisible: true,
+    licenseBuckets: ["cc-by", "cc-by-sa", "cc0"],
+    nonEventText: PLAYER_PHOTO_NON_EVENT_CAPTION,
+    otherPerFileNoticeRetentionStateRequired: true,
+    photographerVisible: true,
+    suppliedCopyrightNoticeVisible: true,
+    suppliedOtherPerFileNoticeVisible: true,
+    suppliedTitleVisibleForLicenseVersion: "2.0",
+    titleSupplyStateRequired: true,
+    unscopedDocumentLicenseRelationForbidden: true,
+  };
   if (
     policy?.sourcePolicyVersion !== PLAYER_PHOTO_POLICY_VERSION ||
     annex?.scopeId !== PLAYER_PHOTO_SCOPE_ID ||
     licensePairs.size === 0 ||
-    negativeFilenames.size !== 3
+    negativeFilenames.size !== 3 ||
+    attributionRequirements === null ||
+    canonicalJson(attributionRequirements) !==
+      canonicalJson(expectedAttributionRequirements)
   ) {
     issues.push(
       issue(
         "player-photo-policy",
         PLAYER_PHOTO_POLICY_JSON_PATH,
-        "nba-v3 player-static-photo annex is missing or invalid",
+        "nba-v4 player-static-photo attribution annex is missing or invalid",
       ),
     );
   }
@@ -398,6 +601,7 @@ export function validatePlayerPhotoAssets(
         "nonEventCaption",
         "originalFile",
         "photographer",
+        "rightsAttribution",
         "sourceClassification",
         "sourcePolicyBinding",
       ])
@@ -685,6 +889,189 @@ export function validatePlayerPhotoAssets(
       );
     }
 
+    const rights = asRecord(asset.rightsAttribution);
+    if (
+      rights === null ||
+      !hasExactKeys(rights, [
+        "adapterLicense",
+        "alterationState",
+        "copyrightNotice",
+        "disclaimerNotice",
+        "licenseBucket",
+        "otherPerFileNotice",
+        "sourceRevision",
+        "workTitle",
+      ])
+    ) {
+      issues.push(
+        issue(
+          "player-photo-rights-schema",
+          `${location}.rightsAttribution`,
+          "Decision 11 rights attribution must contain the exact version-aware fields",
+        ),
+      );
+    } else {
+      const sourceRevision = asRecord(rights.sourceRevision);
+      const revisionPermalink = safeHttpsUrl(
+        sourceRevision?.permalink,
+        "commons.wikimedia.org",
+      );
+      const revisionTitle = sourceRevision?.title;
+      const descriptionTitle =
+        descriptionUrl === null
+          ? null
+          : normalizedCommonsTitle(
+              decodeURIComponent(
+                descriptionUrl.pathname.slice("/wiki/".length),
+              ),
+            );
+      const permalinkTitle = revisionPermalink?.searchParams.get("title");
+      const permalinkKeys =
+        revisionPermalink === null
+          ? []
+          : [...revisionPermalink.searchParams.keys()].sort(compareCodePoints);
+      if (
+        sourceRevision === null ||
+        !hasExactKeys(sourceRevision, [
+          "checkedAt",
+          "id",
+          "permalink",
+          "timestamp",
+          "title",
+        ]) ||
+        sourceRevision.checkedAt !== EXPECTED_RIGHTS_CHECK_DATE ||
+        !positiveInteger(sourceRevision.id) ||
+        !nonEmptyString(sourceRevision.timestamp) ||
+        !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/u.test(
+          sourceRevision.timestamp,
+        ) ||
+        !nonEmptyString(revisionTitle) ||
+        !revisionTitle.startsWith("File:") ||
+        descriptionTitle !== revisionTitle ||
+        revisionPermalink === null ||
+        revisionPermalink.pathname !== "/w/index.php" ||
+        revisionPermalink.hash !== "" ||
+        permalinkKeys.join("\0") !== "oldid\0title" ||
+        normalizedCommonsTitle(permalinkTitle ?? "") !== revisionTitle ||
+        revisionPermalink.searchParams.get("oldid") !==
+          String(sourceRevision.id)
+      ) {
+        issues.push(
+          issue(
+            "player-photo-source-revision",
+            `${location}.rightsAttribution.sourceRevision`,
+            "current Commons revision ID, timestamp, title, checked date, and oldid permalink must agree",
+          ),
+        );
+      }
+
+      const workTitle = asRecord(rights.workTitle);
+      if (
+        workTitle === null ||
+        !hasExactKeys(workTitle, [
+          "evidence",
+          "evidenceUrl",
+          "status",
+          "text",
+        ]) ||
+        !nonEmptyString(workTitle.evidence) ||
+        safeEvidenceUrl(workTitle.evidenceUrl) === null ||
+        (workTitle.status === "supplied"
+          ? !nonEmptyString(workTitle.text)
+          : workTitle.status !== "not-supplied" || workTitle.text !== null)
+      ) {
+        issues.push(
+          issue(
+            "player-photo-work-title",
+            `${location}.rightsAttribution.workTitle`,
+            "work title must preserve a verified supplied value or an explicit evidence-backed null state",
+          ),
+        );
+      }
+
+      const expectedBucket = expectedLicenseBucket(license?.token);
+      if (expectedBucket === null || rights.licenseBucket !== expectedBucket) {
+        issues.push(
+          issue(
+            "player-photo-license-bucket",
+            `${location}.rightsAttribution.licenseBucket`,
+            "license bucket must agree with the exact CC BY, CC BY-SA, or CC0 token",
+          ),
+        );
+      }
+
+      const adapterLicense = asRecord(rights.adapterLicense);
+      if (
+        expectedBucket === "cc-by-sa"
+          ? adapterLicense === null ||
+            !hasExactKeys(adapterLicense, ["name", "token", "url"]) ||
+            canonicalJson(adapterLicense) !== canonicalJson(license)
+          : rights.adapterLicense !== null
+      ) {
+        issues.push(
+          issue(
+            "player-photo-adapter-license",
+            `${location}.rightsAttribution.adapterLicense`,
+            "every CC BY-SA crop needs the same-version linked Adapter's License, while CC BY and CC0 prohibit one",
+          ),
+        );
+      }
+
+      if (
+        !validNotice(rights.copyrightNotice, sourceRevision?.permalink) ||
+        !validNotice(rights.disclaimerNotice, sourceRevision?.permalink) ||
+        !validNotice(rights.otherPerFileNotice, sourceRevision?.permalink)
+      ) {
+        issues.push(
+          issue(
+            "player-photo-rights-notice",
+            `${location}.rightsAttribution`,
+            "copyright, disclaimer, and per-file notice states must retain exact supplied text or explicit nulls",
+          ),
+        );
+      }
+      const otherNotice = asRecord(rights.otherPerFileNotice);
+      const hasPersonalityRestriction = Array.isArray(asset.commonsRestrictions)
+        ? asset.commonsRestrictions.includes("personality")
+        : false;
+      if (
+        hasPersonalityRestriction
+          ? otherNotice?.status !== "supplied" ||
+            otherNotice.text !== "Personality rights warning"
+          : otherNotice?.status !== "not-supplied"
+      ) {
+        issues.push(
+          issue(
+            "player-photo-rights-notice",
+            `${location}.rightsAttribution.otherPerFileNotice`,
+            "the retained per-file notice must agree with the Commons personality restriction",
+          ),
+        );
+      }
+
+      const alterationState = asRecord(rights.alterationState);
+      if (
+        alterationState === null ||
+        !hasExactKeys(alterationState, [
+          "commonsFileStatus",
+          "evidence",
+          "sitePresentation",
+        ]) ||
+        (alterationState.commonsFileStatus !== "cropped" &&
+          alterationState.commonsFileStatus !== "no-crop-declared") ||
+        !nonEmptyString(alterationState.evidence) ||
+        alterationState.sitePresentation !== "css-object-fit-cover-crop"
+      ) {
+        issues.push(
+          issue(
+            "player-photo-alteration-state",
+            `${location}.rightsAttribution.alterationState`,
+            "Commons alteration evidence and the site's CSS crop state are required",
+          ),
+        );
+      }
+    }
+
     const identity = asRecord(asset.identityEvidence);
     if (
       identity === null ||
@@ -747,7 +1134,7 @@ export function validatePlayerPhotoAssets(
         issue(
           "player-photo-policy-binding",
           `${location}.sourcePolicyBinding`,
-          "record does not bind the exact nba-v3 JSON and Markdown bytes",
+          "record does not bind the exact nba-v4 JSON and Markdown bytes",
         ),
       );
     }

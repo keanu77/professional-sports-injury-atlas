@@ -29,16 +29,44 @@ async function expectLicensedCover(cover: Locator): Promise<void> {
   await expect(sources.nth(1)).toHaveAttribute("type", "image/webp");
 
   const attribution = cover.locator("figcaption.case-cover-attribution");
-  await expect(attribution).toContainText("攝影：");
+  const licenseBucket = await attribution.getAttribute("data-license-bucket");
+  expect(["cc-by", "cc-by-sa", "cc0"]).toContain(licenseBucket);
+  await expect(attribution).toHaveAttribute(
+    "data-source-revision-id",
+    /^\d+$/u,
+  );
+  await expect(attribution.locator("[data-attribution-notices]")).toHaveCount(
+    1,
+  );
   await expect(attribution).toContainText(
     "球員球場資料照片；非本案例受傷當下影像",
   );
-  await expect(
-    attribution.locator('a[href^="https://creativecommons.org/"]'),
-  ).toHaveCount(1);
-  await expect(
-    attribution.locator('a[href^="https://commons.wikimedia.org/wiki/File:"]'),
-  ).toHaveCount(1);
+  const licenseLinks = attribution.locator(
+    'a[href^="https://creativecommons.org/"]',
+  );
+  await expect(licenseLinks).toHaveCount(licenseBucket === "cc-by-sa" ? 2 : 1);
+  expect(
+    await licenseLinks.evaluateAll((links) =>
+      links.every(
+        (link) =>
+          !(link.getAttribute("rel") ?? "").split(/\s+/u).includes("license"),
+      ),
+    ),
+  ).toBe(true);
+  const revisionLink = attribution.locator("a", {
+    hasText: "Wikimedia Commons 永久說明頁",
+  });
+  await expect(revisionLink).toHaveCount(1);
+  await expect(revisionLink).toHaveAttribute(
+    "href",
+    /^https:\/\/commons\.wikimedia\.org\/w\/index\.php\?.*oldid=\d+/u,
+  );
+  if (licenseBucket === "cc-by-sa") {
+    await expect(attribution).toContainText("Adapter's License");
+    await expect(attribution).toContainText("不及於頁面其他內容");
+  } else {
+    await expect(attribution).not.toContainText("Adapter's License：");
+  }
 }
 
 async function remoteImageUrls(page: Page): Promise<string[]> {
@@ -142,7 +170,9 @@ test.describe("licensed player-photo covers", () => {
     const heroImage = hero.locator("img");
     await expect(heroImage).toHaveAttribute("loading", "eager");
     await expect(heroImage).toHaveAttribute("fetchpriority", "high");
-    await expect(hero.locator("figcaption")).toContainText("改作自原作");
+    await expect(hero.locator("figcaption")).toContainText(
+      "本站版面以 CSS 裁切（改作）",
+    );
 
     const preload = page.locator('link[rel="preload"][as="image"]');
     await expect(preload).toHaveCount(1);
@@ -162,7 +192,7 @@ test.describe("licensed player-photo covers", () => {
     const videoAction = video.locator("[data-video-load]");
     await expect(videoAction).toContainText("載入 YouTube 播放器");
     await expect(videoAction.locator("a, button, figcaption")).toHaveCount(0);
-    await expect(facade.locator("figcaption a")).toHaveCount(2);
+    await expect(facade.locator("figcaption a")).toHaveCount(3);
     expect(
       await facade
         .locator("figcaption a")
@@ -185,7 +215,42 @@ test.describe("licensed player-photo covers", () => {
     );
     const attribution = hero.locator("figcaption");
     await expect(attribution).toContainText("CC BY 2.0");
-    await expect(attribution).toContainText("版面依驗證焦點裁切。");
-    await expect(attribution).not.toContainText("改作自原作");
+    await expect(attribution).toContainText("本站版面以 CSS 裁切（已作變更）");
+    await expect(attribution).not.toContainText("Adapter's License：");
+  });
+
+  test("2.0 titles, source notices, and license-specific templates remain visible", async ({
+    page,
+  }) => {
+    await page.goto("/cases/anthony-edwards-ankle-sprain-2023/");
+    const anthony = page.locator(
+      '[data-editorial-case-cover][data-player-photo="Anthony Edwards"] figcaption',
+    );
+    await expect(anthony).toContainText("作品：〈MCP_35〉");
+    await expect(anthony).toHaveAttribute("data-license-bucket", "cc-by-sa");
+    await expect(anthony).toContainText("Adapter's License：CC BY-SA 2.0");
+
+    await page.goto("/cases/cj-mccollum-ankle-sprain-2020/");
+    const cj = page.locator(
+      '[data-editorial-case-cover][data-player-photo="CJ McCollum"] figcaption',
+    );
+    await expect(cj).toContainText("作品：〈CJ McCollum〉");
+    await expect(cj).toContainText("著作權聲明：Erik Drost");
+    await expect(cj).toHaveAttribute("data-license-bucket", "cc-by");
+    await expect(cj).not.toContainText("Adapter's License：");
+
+    await page.goto("/cases/dwight-powell-achilles-rupture-2020/");
+    const dwight = page.locator(
+      '[data-editorial-case-cover][data-player-photo="Dwight Powell"] figcaption',
+    );
+    await expect(dwight).toContainText(
+      "作品：〈Basketball-Länderspiel: Deutschland gegen Kanada〉",
+    );
+    await expect(dwight).toContainText(
+      "著作權聲明：Sandro Halank, CC BY-SA 4.0",
+    );
+    await expect(
+      dwight.locator("a", { hasText: "Personality rights warning" }),
+    ).toHaveCount(1);
   });
 });

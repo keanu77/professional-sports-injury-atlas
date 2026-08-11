@@ -111,26 +111,182 @@ const showFallbackCaption = isHero || presentation === "standalone";
   </div>
   {
     selection.kind === "licensed-player-photo" ? (
-      <figcaption class="case-cover-attribution">
-        <span>攝影：{selection.attribution.photographer}</span>
-        <span aria-hidden="true"> · </span>
-        <a
-          href={selection.attribution.license.url}
-          rel="license noopener noreferrer"
-        >
-          {selection.attribution.license.name}
-        </a>
-        <span aria-hidden="true"> · </span>
-        <a
-          href={selection.attribution.commonsDescriptionUrl}
-          rel="noopener noreferrer"
-        >
-          Wikimedia Commons 原始說明頁
-        </a>
-        <span aria-hidden="true"> · </span>
-        <span>{selection.attribution.nonEventCaption}</span>
-        <span aria-hidden="true"> · </span>
-        <span>{selection.attribution.alterationDisclosure}</span>
+      <figcaption
+        class="case-cover-attribution"
+        data-license-bucket={
+          selection.attribution.rightsAttribution.licenseBucket
+        }
+        data-source-revision-id={String(
+          selection.attribution.rightsAttribution.sourceRevision.id,
+        )}
+      >
+        {selection.attribution.rightsAttribution.licenseBucket === "cc-by" ? (
+          <>
+            {selection.attribution.rightsAttribution.workTitle.status ===
+            "supplied" ? (
+              <>
+                <span>
+                  作品：〈
+                  {selection.attribution.rightsAttribution.workTitle.text}〉
+                </span>
+                <span aria-hidden="true"> · </span>
+              </>
+            ) : (
+              selection.attribution.license.token.endsWith("-2.0") && (
+                <>
+                  <span>作品標題：目前來源未提供</span>
+                  <span aria-hidden="true"> · </span>
+                </>
+              )
+            )}
+            <span>攝影：{selection.attribution.photographer}</span>
+            <span aria-hidden="true"> · </span>
+            <a
+              href={selection.attribution.license.url}
+              rel="noopener noreferrer"
+            >
+              原作 {selection.attribution.license.name}
+            </a>
+            <span aria-hidden="true"> · </span>
+            <a
+              href={
+                selection.attribution.rightsAttribution.sourceRevision.permalink
+              }
+              rel="noopener noreferrer"
+            >
+              Wikimedia Commons 永久說明頁
+            </a>
+            <span aria-hidden="true"> · </span>
+            <span>{selection.attribution.nonEventCaption}</span>
+            <span aria-hidden="true"> · </span>
+            <span>本站版面以 CSS 裁切（已作變更）。</span>
+          </>
+        ) : selection.attribution.rightsAttribution.licenseBucket ===
+          "cc-by-sa" ? (
+          <>
+            {selection.attribution.rightsAttribution.workTitle.status ===
+            "supplied" ? (
+              <>
+                <span>
+                  作品：〈
+                  {selection.attribution.rightsAttribution.workTitle.text}〉
+                </span>
+                <span aria-hidden="true"> · </span>
+              </>
+            ) : (
+              selection.attribution.license.token.endsWith("-2.0") && (
+                <>
+                  <span>作品標題：目前來源未提供</span>
+                  <span aria-hidden="true"> · </span>
+                </>
+              )
+            )}
+            <span>攝影：{selection.attribution.photographer}</span>
+            <span aria-hidden="true"> · </span>
+            <a
+              href={selection.attribution.license.url}
+              rel="noopener noreferrer"
+            >
+              原作 {selection.attribution.license.name}
+            </a>
+            <span aria-hidden="true"> · </span>
+            <a
+              href={
+                selection.attribution.rightsAttribution.sourceRevision.permalink
+              }
+              rel="noopener noreferrer"
+            >
+              Wikimedia Commons 永久說明頁
+            </a>
+            <span aria-hidden="true"> · </span>
+            <span>{selection.attribution.nonEventCaption}</span>
+            <span aria-hidden="true"> · </span>
+            <span>本站版面以 CSS 裁切（改作）。</span>
+            <span aria-hidden="true"> · </span>
+            <a
+              href={selection.attribution.rightsAttribution.adapterLicense!.url}
+              rel="noopener noreferrer"
+            >
+              本站裁切改作貢獻之 Adapter&apos;s License：
+              {selection.attribution.rightsAttribution.adapterLicense!.name}
+            </a>
+            <span>（不及於頁面其他內容）</span>
+          </>
+        ) : (
+          <>
+            {selection.attribution.rightsAttribution.workTitle.status ===
+              "supplied" && (
+              <>
+                <span>
+                  作品：〈
+                  {selection.attribution.rightsAttribution.workTitle.text}〉
+                </span>
+                <span aria-hidden="true"> · </span>
+              </>
+            )}
+            <span>創作者：{selection.attribution.photographer}</span>
+            <span aria-hidden="true"> · </span>
+            <a
+              href={selection.attribution.license.url}
+              rel="noopener noreferrer"
+            >
+              {selection.attribution.license.name}
+            </a>
+            <span aria-hidden="true"> · </span>
+            <a
+              href={
+                selection.attribution.rightsAttribution.sourceRevision.permalink
+              }
+              rel="noopener noreferrer"
+            >
+              Wikimedia Commons 永久說明頁
+            </a>
+            <span aria-hidden="true"> · </span>
+            <span>{selection.attribution.nonEventCaption}</span>
+            <span aria-hidden="true"> · </span>
+            <span>本站版面以 CSS 裁切；不宣告 Adapter&apos;s License。</span>
+          </>
+        )}
+        <span data-attribution-notices>
+          {selection.attribution.rightsAttribution.copyrightNotice.status ===
+            "supplied" && (
+            <>
+              <span aria-hidden="true"> · </span>
+              <span>
+                著作權聲明：
+                {selection.attribution.rightsAttribution.copyrightNotice.text}
+              </span>
+            </>
+          )}
+          {selection.attribution.rightsAttribution.disclaimerNotice.status ===
+            "supplied" && (
+            <>
+              <span aria-hidden="true"> · </span>
+              <span>
+                來源免責通知：
+                {selection.attribution.rightsAttribution.disclaimerNotice.text}
+              </span>
+            </>
+          )}
+          {selection.attribution.rightsAttribution.otherPerFileNotice.status ===
+            "supplied" && (
+            <>
+              <span aria-hidden="true"> · </span>
+              <a
+                href={
+                  selection.attribution.rightsAttribution.otherPerFileNotice
+                    .url!
+                }
+                rel="noopener noreferrer"
+              >
+                {
+                  selection.attribution.rightsAttribution.otherPerFileNotice
+                    .text
+                }
+              </a>
+            </>
+          )}
+        </span>
       </figcaption>
     ) : (
       showFallbackCaption && (
