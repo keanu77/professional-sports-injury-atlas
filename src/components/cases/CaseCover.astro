@@ -64,6 +64,23 @@ const photoAlt =
     : (imageAlt ??
       `${injuryLabel}原創 AI 生成運動醫學攝影意象；匿名運動員面孔不可見，不代表任何特定球員或真實受傷事件。`);
 const showFallbackCaption = isHero || presentation === "standalone";
+let sourceRiskLabel: string | null = null;
+if (selection.kind === "licensed-player-photo") {
+  const category = selection.attribution.sourceRiskClassification.category;
+  switch (category) {
+    case "game-action-high-risk":
+      sourceRiskLabel =
+        "賽場實拍（game-action-high-risk；Flickr-washing 高風險）";
+      break;
+    case "non-event-low-risk":
+      sourceRiskLabel = "非賽事場合（non-event-low-risk；低風險分類）";
+      break;
+    default:
+      throw new Error(
+        `Unsupported player-photo source-risk category for ${recordId}: ${String(category)}`,
+      );
+  }
+}
 ---
 
 <figure
@@ -119,6 +136,9 @@ const showFallbackCaption = isHero || presentation === "standalone";
         data-source-revision-id={String(
           selection.attribution.rightsAttribution.sourceRevision.id,
         )}
+        data-source-risk-category={
+          selection.attribution.sourceRiskClassification.category
+        }
       >
         {selection.attribution.rightsAttribution.licenseBucket === "cc-by" ? (
           <>
@@ -286,6 +306,32 @@ const showFallbackCaption = isHero || presentation === "standalone";
               </a>
             </>
           )}
+        </span>
+        <span aria-hidden="true"> · </span>
+        <span
+          data-source-risk-classification
+          data-source-risk-checked-at={
+            selection.attribution.sourceRiskClassification.checkedAt
+          }
+          data-source-risk-revision-permalink={
+            selection.attribution.sourceRiskClassification
+              .sourceRevisionPermalink
+          }
+        >
+          <span>來源風險分類：{sourceRiskLabel}</span>
+          <span aria-hidden="true"> · </span>
+          <span>
+            查核日：
+            {selection.attribution.sourceRiskClassification.checkedAt}
+          </span>
+          <span aria-hidden="true"> · </span>
+          <span data-source-risk-basis>
+            分類依據：{selection.attribution.sourceRiskClassification.basis}
+          </span>
+          <span aria-hidden="true"> · </span>
+          <span data-source-risk-no-clearance>
+            此分類不代表著作權、肖像權或公開使用已獲放行。
+          </span>
         </span>
       </figcaption>
     ) : (

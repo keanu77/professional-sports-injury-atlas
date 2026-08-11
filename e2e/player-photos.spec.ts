@@ -35,6 +35,13 @@ async function expectLicensedCover(cover: Locator): Promise<void> {
     "data-source-revision-id",
     /^\d+$/u,
   );
+  await expect(attribution).toHaveAttribute(
+    "data-source-risk-category",
+    /^(?:game-action-high-risk|non-event-low-risk)$/u,
+  );
+  const riskCategory = await attribution.getAttribute(
+    "data-source-risk-category",
+  );
   await expect(attribution.locator("[data-attribution-notices]")).toHaveCount(
     1,
   );
@@ -61,6 +68,33 @@ async function expectLicensedCover(cover: Locator): Promise<void> {
     "href",
     /^https:\/\/commons\.wikimedia\.org\/w\/index\.php\?.*oldid=\d+/u,
   );
+  const riskClassification = attribution.locator(
+    "[data-source-risk-classification]",
+  );
+  await expect(riskClassification).toHaveCount(1);
+  await expect(riskClassification).toHaveAttribute(
+    "data-source-risk-checked-at",
+    "2026-08-12",
+  );
+  await expect(riskClassification).toContainText("來源風險分類：");
+  await expect(riskClassification).toContainText(
+    riskCategory === "game-action-high-risk"
+      ? "賽場實拍（game-action-high-risk；Flickr-washing 高風險）"
+      : "非賽事場合（non-event-low-risk；低風險分類）",
+  );
+  await expect(
+    riskClassification.locator("[data-source-risk-basis]"),
+  ).toContainText(
+    "Source-context classification only; this is not rights clearance or publication approval.",
+  );
+  await expect(
+    riskClassification.locator("[data-source-risk-no-clearance]"),
+  ).toHaveText("此分類不代表著作權、肖像權或公開使用已獲放行。");
+  expect(
+    await riskClassification.getAttribute(
+      "data-source-risk-revision-permalink",
+    ),
+  ).toBe(await revisionLink.getAttribute("href"));
   if (licenseBucket === "cc-by-sa") {
     await expect(attribution).toContainText("Adapter's License");
     await expect(attribution).toContainText("不及於頁面其他內容");
@@ -111,6 +145,7 @@ test.describe("licensed player-photo covers", () => {
   }) => {
     const caseIds = new Set<string>();
     const athleteNames = new Set<string>();
+    const riskCategoryByAthlete = new Map<string, string>();
     const thirdPartyRequests: string[] = [];
     page.on("request", (request) => {
       if (new URL(request.url()).origin !== PAGE_ORIGIN) {
@@ -128,7 +163,16 @@ test.describe("licensed player-photo covers", () => {
         caseIds.add((await card.getAttribute("data-case-card"))!);
         const cover = card.locator("[data-case-thumb]");
         await expectLicensedCover(cover);
-        athleteNames.add((await cover.getAttribute("data-player-photo"))!);
+        const athleteName = (await cover.getAttribute("data-player-photo"))!;
+        const riskCategory = (await cover
+          .locator("figcaption")
+          .getAttribute("data-source-risk-category"))!;
+        athleteNames.add(athleteName);
+        const existingRiskCategory = riskCategoryByAthlete.get(athleteName);
+        if (existingRiskCategory !== undefined) {
+          expect(riskCategory).toBe(existingRiskCategory);
+        }
+        riskCategoryByAthlete.set(athleteName, riskCategory);
         await expect(cover.locator("img")).toHaveAttribute("loading", "lazy");
 
         const mediaLink = cover.locator(".case-card-media-link");
@@ -149,6 +193,17 @@ test.describe("licensed player-photo covers", () => {
 
     expect(caseIds.size).toBe(26);
     expect(athleteNames.size).toBe(21);
+    expect(
+      [...riskCategoryByAthlete.values()].filter(
+        (category) => category === "game-action-high-risk",
+      ),
+    ).toHaveLength(19);
+    expect(
+      [...riskCategoryByAthlete.entries()]
+        .filter(([, category]) => category === "non-event-low-risk")
+        .map(([athleteName]) => athleteName)
+        .sort(),
+    ).toEqual(["Dwight Powell", "Trae Young"]);
     expect(thirdPartyRequests).toEqual([]);
   });
 

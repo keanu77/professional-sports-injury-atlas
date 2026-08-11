@@ -1,15 +1,18 @@
 ---
 /**
  * Privacy-preserving case-video facade. Before activation it renders only the
- * case's governed local editorial-photo cover, local metadata, and a real
- * source anchor: no remote thumbnail, game frame, iframe, preconnect, or
- * third-party request.
- * Verified YouTube videos gain an explicit load button; NBA-hosted and
- * caption-degraded videos use a styled external-link cover. The five governed
- * portrait videos receive a centered 9:16 iframe after activation without
- * changing the frozen case contract.
+ * case's governed local editorial-photo cover and local metadata. Depending
+ * on the source policy it exposes either a real source anchor or a literal
+ * non-clickable citation: no remote thumbnail, game frame, iframe,
+ * preconnect, or third-party request.
+ * Verified YouTube videos gain an explicit load button; caption-degraded
+ * YouTube videos use an external-link cover, while NBA-hosted sources use a
+ * non-clickable citation cover. The five governed portrait videos receive a
+ * centered 9:16 iframe after activation without changing the frozen case
+ * contract.
  */
 import CaseCover from "./CaseCover.astro";
+import ExternalSourceCitation from "../citations/ExternalSourceCitation.astro";
 import {
   captionStatusLabel,
   formatDurationLabel,
@@ -19,6 +22,7 @@ import {
 import { resolveVideoOrientation } from "../../lib/video/facade";
 import { videoRegionRestrictionFor } from "../../lib/video/availability";
 import { parseYouTubeVideoId } from "../../lib/video/youtube";
+import { externalUrlPresentationFor } from "../../lib/rights/nba-link-policy";
 import type { CaptionStatus } from "../../lib/contracts/case";
 import type { EmbedStatus } from "../../lib/contracts/taxonomy";
 
@@ -28,6 +32,12 @@ interface Props {
   recordId?: string;
   displayMode: VideoDisplayMode;
   sourceTitle: string;
+  sourceCitation: {
+    title: string;
+    publisher: string;
+    publishedAt: string;
+    url: string;
+  };
   injuryCode: string;
   injuryLabel: string;
   video: {
@@ -46,6 +56,7 @@ const {
   recordId = scopeId,
   displayMode,
   sourceTitle,
+  sourceCitation,
   injuryCode,
   injuryLabel,
   video,
@@ -62,6 +73,20 @@ const regionRestriction = videoRegionRestrictionFor(
   video.provider,
   video.canonicalUrl,
 );
+const sourceUrlPresentation = externalUrlPresentationFor(video.canonicalUrl);
+if (sourceCitation.url !== video.canonicalUrl) {
+  throw new Error(
+    `video source citation URL mismatch for ${scopeId}: ${sourceCitation.url}`,
+  );
+}
+if (
+  (presentation === "click-to-load" || regionRestriction !== null) &&
+  sourceUrlPresentation !== "clickable-link"
+) {
+  throw new Error(
+    `navigable video state is forbidden for governed plain-text citation ${video.canonicalUrl}`,
+  );
+}
 
 let videoId: string | null = null;
 if (presentation === "click-to-load") {
@@ -76,12 +101,16 @@ if (presentation === "click-to-load") {
 const orientation = resolveVideoOrientation(video.provider, video.canonicalUrl);
 const captionLabel = captionStatusLabel(video.captionStatus);
 const durationLabel = formatDurationLabel(video.durationSeconds);
+const sourceAccessLabel =
+  sourceUrlPresentation !== "clickable-link"
+    ? "原始頁純文字引註"
+    : "原始平台連結";
 const captionWarning =
   video.captionStatus === "available"
     ? null
     : displayMode === "public"
-      ? "依無障礙政策，字幕未確認可用的影片不在本站內嵌播放，僅提供原始平台連結與文字說明。"
-      : "字幕尚未確認可用：公開版將降級為原始平台連結，站內播放僅供審查。";
+      ? `依無障礙政策，字幕未確認可用的影片不在本站內嵌播放，僅提供${sourceAccessLabel}與文字說明。`
+      : `字幕尚未確認可用：公開版將降級為${sourceAccessLabel}，站內播放僅供審查。`;
 const platformLabel =
   video.provider === "nba"
     ? "NBA.com"
@@ -149,50 +178,80 @@ const coverIdPrefix = `video-cover-${scopeId}`;
   }
 
   {
-    presentation === "external-link-only" && regionRestriction === null && (
-      <CaseCover
-        athleteName={athleteName}
-        injuryCode={injuryCode}
-        injuryLabel={injuryLabel}
-        idPrefix={coverIdPrefix}
-        recordId={recordId}
-        presentation="facade"
-      >
-        <a
-          slot="media-action"
-          class="video-external-facade"
-          data-video-source-link
-          href={video.canonicalUrl}
-          rel="noopener noreferrer"
+    presentation === "external-link-only" &&
+      regionRestriction === null &&
+      sourceUrlPresentation === "clickable-link" && (
+        <CaseCover
+          athleteName={athleteName}
+          injuryCode={injuryCode}
+          injuryLabel={injuryLabel}
+          idPrefix={coverIdPrefix}
+          recordId={recordId}
+          presentation="facade"
         >
-          <span class="video-external-label">
-            <strong>於 {platformLabel} 觀看</strong>
-            <small>
-              外部連結 <span aria-hidden="true">↗</span>
-            </small>
-          </span>
-        </a>
-      </CaseCover>
-    )
+          <a
+            slot="media-action"
+            class="video-external-facade"
+            data-video-source-link
+            href={video.canonicalUrl}
+            rel="noopener noreferrer"
+          >
+            <span class="video-external-label">
+              <strong>於 {platformLabel} 觀看</strong>
+              <small>
+                外部連結 <span aria-hidden="true">↗</span>
+              </small>
+            </span>
+          </a>
+        </CaseCover>
+      )
   }
 
   {
-    presentation === "external-link-only" && regionRestriction !== null && (
-      <div class="video-region-restricted" data-video-region-fallback>
-        <p>
-          <strong>台灣地區站內播放器已停用</strong>
-          <span>原始平台仍可能顯示地區限制。</span>
-        </p>
-        <a
-          class="case-video-source-link"
-          data-video-source-link
-          href={video.canonicalUrl}
-          rel="noopener noreferrer"
+    presentation === "external-link-only" &&
+      regionRestriction === null &&
+      sourceUrlPresentation !== "clickable-link" && (
+        <CaseCover
+          athleteName={athleteName}
+          injuryCode={injuryCode}
+          injuryLabel={injuryLabel}
+          idPrefix={coverIdPrefix}
+          recordId={recordId}
+          presentation="facade"
         >
-          開啟 ESPN 原始頁（外部連結）
-        </a>
-      </div>
-    )
+          <span
+            slot="media-action"
+            class="video-external-facade video-external-citation-facade"
+            data-video-source-citation-facade
+          >
+            <span class="video-external-label">
+              <strong>{platformLabel} 原始頁不設超連結</strong>
+              <small>完整純文字引註見下方</small>
+            </span>
+          </span>
+        </CaseCover>
+      )
+  }
+
+  {
+    presentation === "external-link-only" &&
+      regionRestriction !== null &&
+      sourceUrlPresentation === "clickable-link" && (
+        <div class="video-region-restricted" data-video-region-fallback>
+          <p>
+            <strong>台灣地區站內播放器已停用</strong>
+            <span>原始平台仍可能顯示地區限制。</span>
+          </p>
+          <a
+            class="case-video-source-link"
+            data-video-source-link
+            href={video.canonicalUrl}
+            rel="noopener noreferrer"
+          >
+            開啟 ESPN 原始頁（外部連結）
+          </a>
+        </div>
+      )
   }
 
   {
@@ -213,6 +272,13 @@ const coverIdPrefix = `video-cover-${scopeId}`;
     <p class="case-video-facts">
       上傳者：{video.uploaderName}｜長度：{durationLabel}
     </p>
+    {
+      sourceUrlPresentation !== "clickable-link" && (
+        <p class="case-video-source-citation" data-video-source-citation>
+          <ExternalSourceCitation context="video" {...sourceCitation} />
+        </p>
+      )
+    }
     <p
       class="case-video-caption-status"
       data-caption-status={video.captionStatus}
@@ -243,18 +309,19 @@ const coverIdPrefix = `video-cover-${scopeId}`;
       )
     }
     {
-      presentation === "click-to-load" && (
-        <p class="case-video-source-action">
-          <a
-            class="case-video-source-link"
-            data-video-source-link
-            href={video.canonicalUrl}
-            rel="noopener noreferrer"
-          >
-            於 YouTube 觀看原始影片（外部連結）
-          </a>
-        </p>
-      )
+      presentation === "click-to-load" &&
+        sourceUrlPresentation === "clickable-link" && (
+          <p class="case-video-source-action">
+            <a
+              class="case-video-source-link"
+              data-video-source-link
+              href={video.canonicalUrl}
+              rel="noopener noreferrer"
+            >
+              於 YouTube 觀看原始影片（外部連結）
+            </a>
+          </p>
+        )
     }
     {
       presentation === "unavailable-notice" && (
@@ -375,6 +442,14 @@ const coverIdPrefix = `video-cover-${scopeId}`;
     background: var(--color-brand-primary-hover);
   }
 
+  .video-external-citation-facade {
+    cursor: default;
+  }
+
+  .video-external-citation-facade:hover .video-external-label {
+    background: var(--color-brand-primary);
+  }
+
   .video-external-label small {
     white-space: nowrap;
   }
@@ -418,7 +493,8 @@ const coverIdPrefix = `video-cover-${scopeId}`;
   .case-video-facts,
   .case-video-caption-status,
   .case-video-review-state,
-  .case-video-source-action {
+  .case-video-source-action,
+  .case-video-source-citation {
     margin: 0 0 0.5rem;
     color: var(--color-ink-muted);
     font: 400 var(--text-meta) / 1.5 var(--font-meta);

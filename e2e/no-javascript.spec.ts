@@ -100,7 +100,34 @@ test.describe("no-javascript readability", () => {
     }
   });
 
-  test("video click-to-load and external states degrade to plain links", async ({
+  test("a real NBA source list keeps complete literal citations without NBA anchors", async ({
+    page,
+  }) => {
+    await page.goto("/cases/damian-lillard-achilles-rupture-2025/");
+
+    await expect(page.locator('a[href*="nba.com"]')).toHaveCount(0);
+    const citations = page.locator(
+      '.source-list [data-link-policy="nba-plain-text-citation"]',
+    );
+    await expect(citations).toHaveCount(3);
+    for (let index = 0; index < (await citations.count()); index += 1) {
+      const citation = citations.nth(index);
+      await expect(citation.locator("[data-citation-title]")).not.toBeEmpty();
+      await expect(
+        citation.locator("[data-citation-publisher]"),
+      ).not.toBeEmpty();
+      await expect(citation.locator("[data-citation-date]")).toHaveAttribute(
+        "datetime",
+        /^\d{4}-\d{2}-\d{2}$/u,
+      );
+      await expect(citation.locator("[data-citation-url]")).toContainText(
+        /^https:\/\/www\.nba\.com\//u,
+      );
+      await expect(citation.locator("a")).toHaveCount(0);
+    }
+  });
+
+  test("video states degrade to a source link or governed plain-text citation", async ({
     page,
   }) => {
     await page.goto("/review/fixtures/case-detail/");
@@ -108,7 +135,7 @@ test.describe("no-javascript readability", () => {
     // No YouTube iframe can exist without JavaScript.
     await expect(page.locator("iframe")).toHaveCount(0);
 
-    // Every rendered video block keeps a normal canonical source anchor.
+    // The YouTube video keeps a normal canonical source anchor.
     const sourceAnchors = page.locator("[data-video-source-link]");
     expect(await sourceAnchors.count()).toBeGreaterThan(0);
     for (const href of await sourceAnchors.evaluateAll((anchors) =>
@@ -117,11 +144,22 @@ test.describe("no-javascript readability", () => {
       expect(href).toMatch(/^https:\/\//);
     }
 
-    // The registered NBA-host fixture renders external-link-only UI.
-    await expect(page.locator("[data-video-external]")).toHaveCount(1);
-    await expect(
-      page.locator("[data-video-external] [data-video-source-link]"),
-    ).toContainText("外部連結");
+    // The NBA-host fixture preserves all citation facts without a link.
+    const nba = page.locator("[data-video-external]");
+    await expect(nba).toHaveCount(1);
+    await expect(nba.locator("[data-video-source-link]")).toHaveCount(0);
+    await expect(nba.locator('a[href*="nba.com"]')).toHaveCount(0);
+    const citation = nba.locator("[data-video-source-citation]");
+    await expect(citation).toContainText(
+      "虛構官方平台片段（Fictional official platform clip）",
+    );
+    await expect(citation).toContainText(
+      "虛構官方轉播單位（Fictional Broadcast Unit）",
+    );
+    await expect(citation).toContainText("2026-01-21");
+    await expect(citation).toContainText(
+      "https://www.nba.com/watch/fictional-demo-clip-beta",
+    );
   });
 
   test("fixture league listing and update page render without JavaScript", async ({

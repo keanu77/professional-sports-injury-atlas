@@ -9,7 +9,10 @@ import {
   type PlayerPhotoValidationInput,
 } from "../../scripts/verify-player-photo-assets";
 import { canonicalJson } from "../../src/lib/contracts/canonical";
-import type { PlayerPhotoRegistryV2 } from "../../src/lib/contracts/player-photo";
+import {
+  PLAYER_PHOTO_SOURCE_RISK_DISCLAIMER,
+  type PlayerPhotoRegistryV3,
+} from "../../src/lib/contracts/player-photo";
 
 const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -29,9 +32,9 @@ function validationInput(): PlayerPhotoValidationInput {
 
 function mutateRegistry(
   input: PlayerPhotoValidationInput,
-  mutate: (registry: PlayerPhotoRegistryV2) => void,
+  mutate: (registry: PlayerPhotoRegistryV3) => void,
 ): void {
-  const registry = JSON.parse(input.registryBytes!) as PlayerPhotoRegistryV2;
+  const registry = JSON.parse(input.registryBytes!) as PlayerPhotoRegistryV3;
   mutate(registry);
   input.registryBytes = canonicalJson(registry);
 }
@@ -102,9 +105,38 @@ describe("governed Commons player-photo assets", () => {
           asset.cropValidation.ratios.every((ratio) => ratio.faceSafe),
       ),
     ).toBe(true);
+    expect(
+      result.registry?.assets.filter(
+        (asset) =>
+          asset.sourceRiskClassification.category === "game-action-high-risk",
+      ),
+    ).toHaveLength(19);
+    expect(
+      result.registry?.assets
+        .filter(
+          (asset) =>
+            asset.sourceRiskClassification.category === "non-event-low-risk",
+        )
+        .map((asset) => asset.athleteName),
+    ).toEqual(["Dwight Powell", "Trae Young"]);
+    expect(
+      result.registry?.assets.every(
+        (asset) =>
+          Object.keys(asset.sourceRiskClassification).sort().join("\0") ===
+            ["basis", "category", "checkedAt", "sourceRevisionPermalink"]
+              .sort()
+              .join("\0") &&
+          asset.sourceRiskClassification.checkedAt === "2026-08-12" &&
+          asset.sourceRiskClassification.basis.endsWith(
+            PLAYER_PHOTO_SOURCE_RISK_DISCLAIMER,
+          ) &&
+          asset.sourceRiskClassification.sourceRevisionPermalink ===
+            asset.rightsAttribution.sourceRevision.permalink,
+      ),
+    ).toBe(true);
   });
 
-  it("rejects unversioned fallback drift from the immutable v1 projection", () => {
+  it("rejects unversioned fallback drift from the immutable v2 projection", () => {
     const input = validationInput();
     moveAssetToFallback(input, "Anfernee Simons");
     const result = validatePlayerPhotoAssets(input);
@@ -294,10 +326,14 @@ describe("governed Commons player-photo assets", () => {
     expect(issueCodes(binding)).toContain("player-photo-policy-binding");
   });
 
-  it("binds the immutable v1 registry and every current Commons oldid", () => {
+  it("binds the immutable v1/v2 registries and every current Commons oldid", () => {
     const lineage = validationInput();
     lineage.previousRegistryBytes = `${lineage.previousRegistryBytes} `;
     expect(issueCodes(lineage)).toContain("player-photo-registry-lineage");
+
+    const historical = validationInput();
+    historical.historicalRegistryV1Bytes = `${historical.historicalRegistryV1Bytes} `;
+    expect(issueCodes(historical)).toContain("player-photo-registry-lineage");
 
     const revision = validationInput();
     mutateRegistry(revision, (registry) => {
@@ -312,6 +348,53 @@ describe("governed Commons player-photo assets", () => {
     expect(issueCodes(projection)).toContain(
       "player-photo-registry-projection",
     );
+  });
+
+  it("enforces the exact source-risk audit without treating low risk as clearance", () => {
+    const category = validationInput();
+    mutateRegistry(category, (registry) => {
+      Object.assign(registry.assets[0]!.sourceRiskClassification, {
+        category: "non-event-low-risk",
+      });
+    });
+    expect(issueCodes(category)).toContain("player-photo-source-risk");
+
+    const checkedAt = validationInput();
+    mutateRegistry(checkedAt, (registry) => {
+      Object.assign(registry.assets[0]!.sourceRiskClassification, {
+        checkedAt: "2026-08-11",
+      });
+    });
+    expect(issueCodes(checkedAt)).toContain("player-photo-source-risk");
+
+    const permalink = validationInput();
+    mutateRegistry(permalink, (registry) => {
+      registry.assets[0]!.sourceRiskClassification.sourceRevisionPermalink =
+        "https://commons.wikimedia.org/w/index.php?title=File%3AAnferneeSimons_%28cropped%29.jpg&oldid=1";
+    });
+    expect(issueCodes(permalink)).toContain("player-photo-source-risk");
+
+    const clearance = validationInput();
+    mutateRegistry(clearance, (registry) => {
+      registry.assets[0]!.sourceRiskClassification.basis = `Cleared for publication. ${PLAYER_PHOTO_SOURCE_RISK_DISCLAIMER}`;
+    });
+    expect(issueCodes(clearance)).toContain("player-photo-source-risk");
+
+    const confirmedPermission = validationInput();
+    mutateRegistry(confirmedPermission, (registry) => {
+      registry.assets[0]!.sourceRiskClassification.basis = `Publication permission confirmed. ${PLAYER_PHOTO_SOURCE_RISK_DISCLAIMER}`;
+    });
+    expect(issueCodes(confirmedPermission)).toContain(
+      "player-photo-source-risk",
+    );
+
+    const extraKey = validationInput();
+    mutateRegistry(extraKey, (registry) => {
+      Object.assign(registry.assets[0]!.sourceRiskClassification, {
+        clearance: "approved",
+      });
+    });
+    expect(issueCodes(extraKey)).toContain("player-photo-source-risk");
   });
 
   it("rejects a missing supplied 2.0 title and an unverified invented title", () => {
@@ -386,7 +469,7 @@ describe("governed Commons player-photo assets", () => {
 
     const dwight = JSON.parse(
       validationInput().registryBytes!,
-    ) as PlayerPhotoRegistryV2;
+    ) as PlayerPhotoRegistryV3;
     expect(
       dwight.assets.find((asset) => asset.athleteName === "Dwight Powell")!
         .rightsAttribution.workTitle,
@@ -399,7 +482,7 @@ describe("governed Commons player-photo assets", () => {
   it("binds supplied Flickr titles to the actual supporting source URLs", () => {
     const registry = JSON.parse(
       validationInput().registryBytes!,
-    ) as PlayerPhotoRegistryV2;
+    ) as PlayerPhotoRegistryV3;
     expect(
       registry.assets.find((asset) => asset.athleteName === "Ja Morant")!
         .rightsAttribution.workTitle.evidenceUrl,

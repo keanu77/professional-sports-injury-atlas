@@ -7,6 +7,7 @@ import {
   caseImageFor,
   playerPhotoRegistry,
 } from "../../src/lib/ui/editorial-images";
+import { PLAYER_PHOTO_SOURCE_RISK_DISCLAIMER } from "../../src/lib/contracts/player-photo";
 import {
   caseHeroWidthsFor,
   caseThumbWidthsFor,
@@ -61,6 +62,31 @@ describe("case editorial image resolver", () => {
       ).size,
     ).toBe(21);
     expect(playerPhotoRegistry.assets).toHaveLength(21);
+    expect(
+      playerPhotoRegistry.assets.filter(
+        (asset) =>
+          asset.sourceRiskClassification.category === "game-action-high-risk",
+      ),
+    ).toHaveLength(19);
+    expect(
+      playerPhotoRegistry.assets
+        .filter(
+          (asset) =>
+            asset.sourceRiskClassification.category === "non-event-low-risk",
+        )
+        .map((asset) => asset.athleteName),
+    ).toEqual(["Dwight Powell", "Trae Young"]);
+    expect(
+      playerPhotoRegistry.assets.every(
+        (asset) =>
+          asset.sourceRiskClassification.checkedAt === "2026-08-12" &&
+          asset.sourceRiskClassification.basis.endsWith(
+            PLAYER_PHOTO_SOURCE_RISK_DISCLAIMER,
+          ) &&
+          asset.sourceRiskClassification.sourceRevisionPermalink ===
+            asset.rightsAttribution.sourceRevision.permalink,
+      ),
+    ).toBe(true);
   });
 
   it("fails closed when a registered case omits or mismatches its athlete", () => {

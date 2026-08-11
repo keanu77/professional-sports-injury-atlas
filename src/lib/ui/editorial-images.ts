@@ -1,9 +1,9 @@
 import type { ImageMetadata } from "astro";
 
-import playerPhotoRegistryJson from "../../assets/players/player-photo-registry.v2.json";
+import playerPhotoRegistryJson from "../../assets/players/player-photo-registry.v3.json";
 import type {
   PlayerPhotoAssetRecord,
-  PlayerPhotoRegistryV2,
+  PlayerPhotoRegistryV3,
 } from "../contracts/player-photo";
 
 import achillesCase01 from "../../assets/heroes/achilles-rupture-case-01.png";
@@ -61,7 +61,7 @@ const playerPhotoModules = import.meta.glob<{ default: ImageMetadata }>(
 );
 
 export const playerPhotoRegistry =
-  playerPhotoRegistryJson as PlayerPhotoRegistryV2;
+  playerPhotoRegistryJson as PlayerPhotoRegistryV3;
 
 interface RegisteredPlayerPhoto {
   asset: PlayerPhotoAssetRecord;
@@ -138,6 +138,7 @@ export interface LicensedPlayerPhotoSelection {
     | "nonEventCaption"
     | "photographer"
     | "rightsAttribution"
+    | "sourceRiskClassification"
   >;
 }
 
@@ -182,6 +183,7 @@ export function caseImageFor(
         nonEventCaption: registered.asset.nonEventCaption,
         photographer: registered.asset.photographer,
         rightsAttribution: registered.asset.rightsAttribution,
+        sourceRiskClassification: registered.asset.sourceRiskClassification,
       },
     };
   }

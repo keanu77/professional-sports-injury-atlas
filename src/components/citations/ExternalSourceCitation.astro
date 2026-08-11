@@ -1,0 +1,63 @@
+---
+/**
+ * Central external-source renderer. Decision 11 P2-5 keeps NBA evidence URLs
+ * visible for auditability while never emitting a navigable NBA.com target.
+ */
+import { externalUrlPresentationFor } from "../../lib/rights/nba-link-policy";
+
+interface Props {
+  context: "source-list" | "video";
+  sourceId?: string;
+  title: string;
+  publisher: string;
+  publishedAt: string;
+  url: string;
+  type?: string;
+}
+
+const { context, sourceId, title, publisher, publishedAt, url, type } =
+  Astro.props;
+const presentation = externalUrlPresentationFor(url);
+---
+
+{
+  presentation !== "clickable-link" ? (
+    <span
+      class="external-source-citation"
+      data-source-citation
+      data-citation-context={context}
+      data-citation-source-id={sourceId}
+      data-link-policy={presentation}
+    >
+      <span data-citation-title>{title}</span>｜
+      <span data-citation-publisher>{publisher}</span>｜
+      <time datetime={publishedAt} data-citation-date>
+        {publishedAt}
+      </time>
+      ｜URL：
+      <span class="citation-url" data-citation-url>
+        {url}
+      </span>
+      {type !== undefined && <>（{type}）</>}
+    </span>
+  ) : (
+    <span
+      class="external-source-citation"
+      data-source-citation
+      data-citation-context={context}
+      data-citation-source-id={sourceId}
+    >
+      <a href={url} rel="noopener noreferrer">
+        {title}
+      </a>
+      ｜{publisher}｜<time datetime={publishedAt}>{publishedAt}</time>
+      {type !== undefined && <>（{type}）</>}
+    </span>
+  )
+}
+
+<style>
+  .citation-url {
+    overflow-wrap: anywhere;
+  }
+</style>

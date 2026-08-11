@@ -10,6 +10,7 @@
 import CaseCard from "../../../components/atlas/CaseCard.astro";
 import CaseTimeline from "../../../components/cases/CaseTimeline.astro";
 import CaseVideo from "../../../components/cases/CaseVideo.astro";
+import ExternalSourceCitation from "../../../components/citations/ExternalSourceCitation.astro";
 import LayeredNotes from "../../../components/cases/LayeredNotes.astro";
 import ReviewBadge from "../../../components/cases/ReviewBadge.astro";
 import InjuryOverviewView from "../../../components/injuries/InjuryOverview.astro";
@@ -52,6 +53,21 @@ const externalInjuryLabel =
   findInjury(externalRecord.injury.code)?.labelZh ?? externalRecord.injury.code;
 const leagueLabel =
   findLeague(record.league.code)?.labelZh ?? record.league.code;
+const recordVideoSource = record.sources.find(
+  (source) =>
+    source.type === "video-original" &&
+    source.url === record.video.canonicalUrl,
+);
+const externalVideoSource = externalRecord.sources.find(
+  (source) =>
+    source.type === "video-original" &&
+    source.url === externalRecord.video.canonicalUrl,
+);
+if (recordVideoSource === undefined || externalVideoSource === undefined) {
+  throw new Error(
+    "review fixture is missing a canonical video source citation",
+  );
+}
 
 const TITLES: Record<string, string> = {
   "case-detail": "案例詳情 fixture（審查專用）",
@@ -130,6 +146,7 @@ const fixtureArtifactDigest =
               scopeId={record.slug}
               displayMode={buildMode}
               sourceTitle={`${record.athlete.name} 案例影片（原始平台來源）`}
+              sourceCitation={recordVideoSource}
               injuryCode={record.injury.code}
               injuryLabel={injuryLabel}
               video={{
@@ -165,6 +182,7 @@ const fixtureArtifactDigest =
             scopeId={externalRecord.slug}
             displayMode={buildMode}
             sourceTitle={`${externalRecord.athlete.name} 案例影片（原始平台來源）`}
+            sourceCitation={externalVideoSource}
             injuryCode={externalRecord.injury.code}
             injuryLabel={externalInjuryLabel}
             video={{
@@ -183,10 +201,11 @@ const fixtureArtifactDigest =
           <ul class="source-list">
             {record.sources.map((source) => (
               <li>
-                <a href={source.url} rel="noopener noreferrer">
-                  {source.title}
-                </a>
-                ｜{source.publisher}｜{source.publishedAt}（{source.type}）
+                <ExternalSourceCitation
+                  context="source-list"
+                  sourceId={source.id}
+                  {...source}
+                />
               </li>
             ))}
           </ul>

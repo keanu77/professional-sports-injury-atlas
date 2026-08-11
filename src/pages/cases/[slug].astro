@@ -13,6 +13,7 @@ import CaseCard from "../../components/atlas/CaseCard.astro";
 import EditorialHero from "../../components/atlas/EditorialHero.astro";
 import CaseTimeline from "../../components/cases/CaseTimeline.astro";
 import CaseVideo from "../../components/cases/CaseVideo.astro";
+import ExternalSourceCitation from "../../components/citations/ExternalSourceCitation.astro";
 import LayeredNotes from "../../components/cases/LayeredNotes.astro";
 import ReviewBadge from "../../components/cases/ReviewBadge.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
@@ -64,6 +65,14 @@ const heroSelection = caseImageFor(
   record.id,
   record.athlete.name,
 );
+const videoSource = record.sources.find(
+  (source) =>
+    source.type === "video-original" &&
+    source.url === record.video.canonicalUrl,
+);
+if (videoSource === undefined) {
+  throw new Error(`missing canonical video source citation for ${record.id}`);
+}
 ---
 
 <BaseLayout
@@ -137,6 +146,7 @@ const heroSelection = caseImageFor(
             recordId={record.id}
             displayMode={buildMode}
             sourceTitle={`${record.athlete.name} 案例影片（原始平台來源）`}
+            sourceCitation={videoSource}
             injuryCode={record.injury.code}
             injuryLabel={injuryLabel}
             video={{
@@ -192,10 +202,11 @@ const heroSelection = caseImageFor(
         {
           record.sources.map((source) => (
             <li>
-              <a href={source.url} rel="noopener noreferrer">
-                {source.title}
-              </a>
-              ｜{source.publisher}｜{source.publishedAt}（{source.type}）
+              <ExternalSourceCitation
+                context="source-list"
+                sourceId={source.id}
+                {...source}
+              />
             </li>
           ))
         }

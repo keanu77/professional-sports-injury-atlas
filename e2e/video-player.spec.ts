@@ -106,6 +106,10 @@ const GOVERNED_NBA_CASE = {
   injuryCode: "achilles-rupture",
   injuryLabel: "阿基里斯腱斷裂",
   athleteName: "Damian Lillard",
+  sourceTitle:
+    "Damian Lillard suffers lower left leg injury, exits in 1st quarter of Game 4 vs. Pacers",
+  sourcePublisher: "NBA Organization",
+  sourcePublishedAt: "2025-04-27",
 } as const;
 
 const YOUTUBE_FAMILY_RE =
@@ -574,7 +578,7 @@ test.describe("governed case facades", () => {
     expect(thirdPartyRequests).toEqual([]);
   });
 
-  test("a real NBA case uses its governed local-photo external facade with zero third-party requests", async ({
+  test("a real NBA case uses a governed local-photo facade and complete plain-text citation", async ({
     page,
   }) => {
     const log = await stubYouTubeRoutes(page);
@@ -587,9 +591,17 @@ test.describe("governed case facades", () => {
 
     await page.goto(`/cases/${GOVERNED_NBA_CASE.slug}/`);
     const card = page.locator("[data-video-external]");
-    const link = card.locator("[data-video-source-link]");
-    await expect(link).toHaveAttribute("href", GOVERNED_NBA_CASE.canonicalUrl);
-    await expect(link).toContainText("於 NBA.com 觀看");
+    await expect(card.locator("[data-video-source-link]")).toHaveCount(0);
+    await expect(page.locator('a[href*="nba.com"]')).toHaveCount(0);
+    await expect(
+      card.locator("[data-video-source-citation-facade]"),
+    ).toContainText("NBA.com 原始頁不設超連結");
+    const citation = card.locator("[data-video-source-citation]");
+    await expect(citation).toContainText(GOVERNED_NBA_CASE.sourceTitle);
+    await expect(citation).toContainText(GOVERNED_NBA_CASE.sourcePublisher);
+    await expect(citation).toContainText(GOVERNED_NBA_CASE.sourcePublishedAt);
+    await expect(citation).toContainText(GOVERNED_NBA_CASE.canonicalUrl);
+    await expect(citation.locator("a")).toHaveCount(0);
     const cover = card.locator("[data-case-cover]");
     await expect(cover).toHaveAttribute(
       "data-case-cover",
@@ -599,7 +611,11 @@ test.describe("governed case facades", () => {
       athleteName: GOVERNED_NBA_CASE.athleteName,
       injuryLabel: GOVERNED_NBA_CASE.injuryLabel,
     });
-    await expect(link.locator("a, button, [data-case-cover]")).toHaveCount(0);
+    await expect(
+      cover.locator(
+        "[data-video-source-citation-facade] a, [data-video-source-citation-facade] button",
+      ),
+    ).toHaveCount(0);
     await expect(
       cover.locator(
         `[data-cover-illustration="${GOVERNED_NBA_CASE.injuryCode}"]`,
@@ -775,7 +791,7 @@ test.describe("click-to-load player", () => {
 });
 
 test.describe("non-embedded states and caption policy", () => {
-  test("external-link-only renders a source link and no blank player", async ({
+  test("NBA external-link-only renders a complete plain-text citation and no player", async ({
     page,
   }) => {
     const log = await stubYouTubeRoutes(page);
@@ -787,22 +803,27 @@ test.describe("non-embedded states and caption policy", () => {
       })
       .locator(".case-video");
     await expect(external).toHaveAttribute("data-video-external", "");
-    await expect(external.locator("[data-video-source-link]")).toHaveAttribute(
-      "href",
-      "https://www.nba.com/watch/fictional-demo-clip",
-    );
+    await expect(external.locator("[data-video-source-link]")).toHaveCount(0);
+    await expect(external.locator('a[href*="nba.com"]')).toHaveCount(0);
     await expectLocalResponsiveCover(external.locator("[data-case-cover]"));
     await expect(
-      external.locator(
-        "[data-video-source-link] a, [data-video-source-link] button",
-      ),
+      external.locator("[data-video-source-citation-facade] a, button"),
     ).toHaveCount(0);
-    await expect(external.locator("[data-video-source-link]")).toContainText(
-      "於 NBA.com 觀看",
+    await expect(
+      external.locator("[data-video-source-citation-facade]"),
+    ).toContainText("NBA.com 原始頁不設超連結");
+    const citation = external.locator("[data-video-source-citation]");
+    await expect(citation).toContainText(
+      "虛構官方平台片段（Fictional Official Platform Clip）",
     );
-    await expect(external.locator("[data-video-source-link]")).toContainText(
-      "外部連結",
+    await expect(citation).toContainText(
+      "虛構官方轉播單位（Fictional Broadcast Unit）",
     );
+    await expect(citation).toContainText("2026-01-21");
+    await expect(citation).toContainText(
+      "https://www.nba.com/watch/fictional-demo-clip",
+    );
+    await expect(citation.locator("a")).toHaveCount(0);
     await expect(external.locator("[data-video-load]")).toHaveCount(0);
     await expect(external.locator("[data-video-stage]")).toHaveCount(0);
     await expect(external.locator("iframe")).toHaveCount(0);

@@ -2,8 +2,9 @@
  * Fail-closed verifier for the Decision 7 Wikimedia Commons player-photo
  * inventory. It validates canonical provenance, the exact 26-case athlete
  * partition, free-license pairs, Commons-only URLs, original JPEG bytes,
- * human crop declarations, Decision 11 attribution facts, append-only
- * registry lineage, and both immutable nba-v4 policy digests.
+ * human crop declarations, Decision 11 attribution/source-risk facts,
+ * append-only v1→v2→v3 registry lineage, and both immutable nba-v4 policy
+ * digests.
  */
 
 import { createHash } from "node:crypto";
@@ -20,6 +21,7 @@ import {
   type ValidationIssue,
 } from "../src/lib/contracts/canonical";
 import {
+  HISTORICAL_PLAYER_PHOTO_REGISTRY_V1_PATH,
   PLAYER_PHOTO_NON_EVENT_CAPTION,
   PLAYER_PHOTO_POLICY_JSON_PATH,
   PLAYER_PHOTO_POLICY_MARKDOWN_PATH,
@@ -27,9 +29,11 @@ import {
   PLAYER_PHOTO_REGISTRY_PATH,
   PLAYER_PHOTO_SCOPE_ID,
   PLAYER_PHOTO_SOURCE_CLASSIFICATION,
+  PLAYER_PHOTO_SOURCE_RISK_CHECKED_AT,
+  PLAYER_PHOTO_SOURCE_RISK_DISCLAIMER,
   PREVIOUS_PLAYER_PHOTO_REGISTRY_PATH,
   type PlayerPhotoLicenseBucket,
-  type PlayerPhotoRegistryV2,
+  type PlayerPhotoRegistryV3,
 } from "../src/lib/contracts/player-photo";
 
 const EXPECTED_ATHLETE_COUNT = 21;
@@ -38,8 +42,10 @@ const EXPECTED_DOWNLOAD_DATE = "2026-08-09";
 const EXPECTED_RIGHTS_CHECK_DATE = "2026-08-12";
 const EXPECTED_CHECKER = "atlas-commons-player-photo-covers";
 const EXPECTED_CURRENT_REGISTRY_SHA256 =
-  "0fa9a14660d798b32586047eaec1a0fc14912ca8710aaccc83963ac4f9dc28d0";
+  "d91e97aa34e347375dd5ca14cf961208ae4b2c43cc8a90a01bea49f1172a3c05";
 const EXPECTED_PREVIOUS_REGISTRY_SHA256 =
+  "0fa9a14660d798b32586047eaec1a0fc14912ca8710aaccc83963ac4f9dc28d0";
+const EXPECTED_HISTORICAL_REGISTRY_V1_SHA256 =
   "770a7e6d7f13ecd0dda17a629b13f179357b9c64ebc268404a5640ad9aa08eec";
 const SHA256_RE = /^[a-f0-9]{64}$/u;
 const SHA1_RE = /^[a-f0-9]{40}$/u;
@@ -49,6 +55,9 @@ const IMAGE_FILE_RE = /\.(?:avif|bmp|gif|ico|jpe?g|png|svg|tiff?|webp)$/iu;
 const NEWS_AGENCY_RE =
   /(?:^|\b)(?:AP|Associated Press|Getty|Reuters|USA Today)(?:\b|$)/iu;
 const ALLOWED_RESTRICTIONS = new Set(["personality"]);
+const EXPECTED_LOW_RISK_ATHLETES = new Set(["Dwight Powell", "Trae Young"]);
+const CLEARANCE_CLAIM_RE =
+  /\b(?:cleared|clearance granted|approved for publication|safe to publish|licensed for publication|publication permission confirmed|permission (?:is )?(?:confirmed|granted)|authorized for (?:publication|public use))\b|(?:已放行|授權完成|核准發布|可安全發布|已獲授權|允許公開使用)/iu;
 
 interface CaseIdentity {
   athleteName: string;
@@ -59,6 +68,7 @@ export interface PlayerPhotoValidationInput {
   actualImagePaths: string[];
   assetBytesByPath: Map<string, Buffer>;
   cases: CaseIdentity[];
+  historicalRegistryV1Bytes: string | null;
   policyJsonBytes: string | null;
   policyMarkdownBytes: string | null;
   previousRegistryBytes: string | null;
@@ -68,7 +78,7 @@ export interface PlayerPhotoValidationInput {
 export interface PlayerPhotoAssetLoadResult {
   allowedPaths: string[];
   issues: ValidationIssue[];
-  registry: PlayerPhotoRegistryV2 | null;
+  registry: PlayerPhotoRegistryV3 | null;
 }
 
 function asRecord(value: unknown): Record<string, unknown> | null {
@@ -196,6 +206,14 @@ export function readPlayerPhotoValidationInput(
     actualImagePaths,
     assetBytesByPath,
     cases,
+    historicalRegistryV1Bytes: existsSync(
+      join(root, HISTORICAL_PLAYER_PHOTO_REGISTRY_V1_PATH),
+    )
+      ? readFileSync(
+          join(root, HISTORICAL_PLAYER_PHOTO_REGISTRY_V1_PATH),
+          "utf8",
+        )
+      : null,
     policyJsonBytes: existsSync(join(root, PLAYER_PHOTO_POLICY_JSON_PATH))
       ? readFileSync(join(root, PLAYER_PHOTO_POLICY_JSON_PATH), "utf8")
       : null,
@@ -277,7 +295,7 @@ function normalizedCommonsTitle(value: string): string {
   return value.replaceAll("_", " ");
 }
 
-function projectAssetWithoutP1Fields(
+function projectV1CompatibleAsset(
   value: unknown,
   removeRightsAttribution: boolean,
 ): unknown {
@@ -288,6 +306,16 @@ function projectAssetWithoutP1Fields(
       ([key]) =>
         key !== "sourcePolicyBinding" &&
         (!removeRightsAttribution || key !== "rightsAttribution"),
+    ),
+  );
+}
+
+function projectV2CompatibleAsset(value: unknown): unknown {
+  const record = asRecord(value);
+  if (record === null) return value;
+  return Object.fromEntries(
+    Object.entries(record).filter(
+      ([key]) => key !== "sourceRiskClassification",
     ),
   );
 }
@@ -323,14 +351,17 @@ export function validatePlayerPhotoAssets(
       registry: null,
     };
   }
-  if (input.previousRegistryBytes === null) {
+  if (
+    input.previousRegistryBytes === null ||
+    input.historicalRegistryV1Bytes === null
+  ) {
     return {
       allowedPaths: [],
       issues: [
         issue(
           "player-photo-registry-lineage",
           PLAYER_PHOTO_REGISTRY_PATH,
-          "the immutable previous player-photo registry is missing",
+          "an immutable v1/v2 player-photo lineage registry is missing",
         ),
       ],
       registry: null,
@@ -367,7 +398,7 @@ export function validatePlayerPhotoAssets(
       issue(
         "player-photo-registry-digest",
         PLAYER_PHOTO_REGISTRY_PATH,
-        "the immutable Decision 11 registry v2 bytes do not match the audited digest",
+        "the immutable Decision 11 registry v3 bytes do not match the audited digest",
       ),
     );
   }
@@ -381,7 +412,7 @@ export function validatePlayerPhotoAssets(
       "schemaVersion",
       "scopeId",
     ]) ||
-    registryRecord.schemaVersion !== 2 ||
+    registryRecord.schemaVersion !== 3 ||
     registryRecord.scopeId !== PLAYER_PHOTO_SCOPE_ID ||
     !Array.isArray(registryRecord.assets) ||
     !Array.isArray(registryRecord.fallbacks)
@@ -395,8 +426,9 @@ export function validatePlayerPhotoAssets(
     );
     return { allowedPaths: [], issues, registry: null };
   }
-  const registry = parsed as PlayerPhotoRegistryV2;
+  const registry = parsed as PlayerPhotoRegistryV3;
   const previousRegistrySha256 = sha256Hex(input.previousRegistryBytes);
+  const historicalRegistryV1Sha256 = sha256Hex(input.historicalRegistryV1Bytes);
   let previousRegistryRecord: Record<string, unknown> | null = null;
   try {
     const previousParsed = parseStrictJson(input.previousRegistryBytes);
@@ -408,10 +440,11 @@ export function validatePlayerPhotoAssets(
       !hasExactKeys(previousRegistryRecord, [
         "assets",
         "fallbacks",
+        "previousRegistryBinding",
         "schemaVersion",
         "scopeId",
       ]) ||
-      previousRegistryRecord.schemaVersion !== 1 ||
+      previousRegistryRecord.schemaVersion !== 2 ||
       previousRegistryRecord.scopeId !== PLAYER_PHOTO_SCOPE_ID ||
       !Array.isArray(previousRegistryRecord.assets) ||
       !Array.isArray(previousRegistryRecord.fallbacks)
@@ -420,7 +453,7 @@ export function validatePlayerPhotoAssets(
         issue(
           "player-photo-registry-lineage",
           PREVIOUS_PLAYER_PHOTO_REGISTRY_PATH,
-          "the historical registry v1 bytes must match the frozen canonical digest and schema",
+          "the previous registry v2 bytes must match the frozen canonical digest and schema",
         ),
       );
       previousRegistryRecord = null;
@@ -430,10 +463,49 @@ export function validatePlayerPhotoAssets(
       issue(
         "player-photo-registry-lineage",
         PREVIOUS_PLAYER_PHOTO_REGISTRY_PATH,
+        "the previous registry v2 must remain valid canonical JSON",
+      ),
+    );
+  }
+
+  let historicalRegistryV1Record: Record<string, unknown> | null = null;
+  try {
+    const historicalParsed = parseStrictJson(input.historicalRegistryV1Bytes);
+    historicalRegistryV1Record = asRecord(historicalParsed);
+    if (
+      historicalRegistryV1Sha256 !== EXPECTED_HISTORICAL_REGISTRY_V1_SHA256 ||
+      canonicalJson(historicalParsed) !== input.historicalRegistryV1Bytes ||
+      historicalRegistryV1Record === null ||
+      !hasExactKeys(historicalRegistryV1Record, [
+        "assets",
+        "fallbacks",
+        "schemaVersion",
+        "scopeId",
+      ]) ||
+      historicalRegistryV1Record.schemaVersion !== 1 ||
+      historicalRegistryV1Record.scopeId !== PLAYER_PHOTO_SCOPE_ID ||
+      !Array.isArray(historicalRegistryV1Record.assets) ||
+      !Array.isArray(historicalRegistryV1Record.fallbacks)
+    ) {
+      issues.push(
+        issue(
+          "player-photo-registry-lineage",
+          HISTORICAL_PLAYER_PHOTO_REGISTRY_V1_PATH,
+          "the historical registry v1 bytes must match the frozen canonical digest and schema",
+        ),
+      );
+      historicalRegistryV1Record = null;
+    }
+  } catch {
+    issues.push(
+      issue(
+        "player-photo-registry-lineage",
+        HISTORICAL_PLAYER_PHOTO_REGISTRY_V1_PATH,
         "the historical registry v1 must remain valid canonical JSON",
       ),
     );
   }
+
   const previousRegistryBinding = asRecord(
     registryRecord.previousRegistryBinding,
   );
@@ -445,7 +517,7 @@ export function validatePlayerPhotoAssets(
       "sha256",
     ]) ||
     previousRegistryBinding.path !== PREVIOUS_PLAYER_PHOTO_REGISTRY_PATH ||
-    previousRegistryBinding.schemaVersion !== 1 ||
+    previousRegistryBinding.schemaVersion !== 2 ||
     previousRegistryBinding.sha256 !== EXPECTED_PREVIOUS_REGISTRY_SHA256 ||
     previousRegistryBinding.sha256 !== previousRegistrySha256
   ) {
@@ -453,21 +525,45 @@ export function validatePlayerPhotoAssets(
       issue(
         "player-photo-registry-lineage",
         `${PLAYER_PHOTO_REGISTRY_PATH}.previousRegistryBinding`,
+        "registry v3 must bind the exact immutable registry v2 bytes",
+      ),
+    );
+  }
+
+  const historicalRegistryBinding = asRecord(
+    previousRegistryRecord?.previousRegistryBinding,
+  );
+  if (
+    historicalRegistryBinding === null ||
+    !hasExactKeys(historicalRegistryBinding, [
+      "path",
+      "schemaVersion",
+      "sha256",
+    ]) ||
+    historicalRegistryBinding.path !==
+      HISTORICAL_PLAYER_PHOTO_REGISTRY_V1_PATH ||
+    historicalRegistryBinding.schemaVersion !== 1 ||
+    historicalRegistryBinding.sha256 !==
+      EXPECTED_HISTORICAL_REGISTRY_V1_SHA256 ||
+    historicalRegistryBinding.sha256 !== historicalRegistryV1Sha256
+  ) {
+    issues.push(
+      issue(
+        "player-photo-registry-lineage",
+        `${PREVIOUS_PLAYER_PHOTO_REGISTRY_PATH}.previousRegistryBinding`,
         "registry v2 must bind the exact immutable registry v1 bytes",
       ),
     );
   }
+
   if (previousRegistryRecord !== null) {
     const previousAssets = previousRegistryRecord.assets as unknown[];
     const previousFallbacks = previousRegistryRecord.fallbacks as unknown[];
-    const previousProjection = previousAssets.map((asset) =>
-      projectAssetWithoutP1Fields(asset, false),
-    );
     const currentProjection = registryRecord.assets.map((asset) =>
-      projectAssetWithoutP1Fields(asset, true),
+      projectV2CompatibleAsset(asset),
     );
     if (
-      canonicalJson(currentProjection) !== canonicalJson(previousProjection) ||
+      canonicalJson(currentProjection) !== canonicalJson(previousAssets) ||
       canonicalJson(registryRecord.fallbacks) !==
         canonicalJson(previousFallbacks)
     ) {
@@ -475,6 +571,30 @@ export function validatePlayerPhotoAssets(
         issue(
           "player-photo-registry-projection",
           PLAYER_PHOTO_REGISTRY_PATH,
+          "registry v3 may only add sourceRiskClassification; every v2 asset and fallback fact must project byte-for-byte",
+        ),
+      );
+    }
+  }
+  if (previousRegistryRecord !== null && historicalRegistryV1Record !== null) {
+    const historicalAssets = historicalRegistryV1Record.assets as unknown[];
+    const previousAssets = previousRegistryRecord.assets as unknown[];
+    const historicalProjection = historicalAssets.map((asset) =>
+      projectV1CompatibleAsset(asset, false),
+    );
+    const previousProjection = previousAssets.map((asset) =>
+      projectV1CompatibleAsset(asset, true),
+    );
+    if (
+      canonicalJson(previousProjection) !==
+        canonicalJson(historicalProjection) ||
+      canonicalJson(previousRegistryRecord.fallbacks) !==
+        canonicalJson(historicalRegistryV1Record.fallbacks)
+    ) {
+      issues.push(
+        issue(
+          "player-photo-registry-projection",
+          PREVIOUS_PLAYER_PHOTO_REGISTRY_PATH,
           "registry v2 may only add rights attribution and replace the source-policy binding; every v1 asset and fallback fact must project byte-for-byte",
         ),
       );
@@ -565,6 +685,8 @@ export function validatePlayerPhotoAssets(
   const seenPaths = new Set<string>();
   const athleteOrder: string[] = [];
   const fallbackOrder: string[] = [];
+  let highRiskCount = 0;
+  let lowRiskCount = 0;
 
   if (
     expectedAthleteNames.length !== EXPECTED_ATHLETE_COUNT ||
@@ -604,6 +726,7 @@ export function validatePlayerPhotoAssets(
         "rightsAttribution",
         "sourceClassification",
         "sourcePolicyBinding",
+        "sourceRiskClassification",
       ])
     ) {
       issues.push(
@@ -1072,6 +1195,49 @@ export function validatePlayerPhotoAssets(
       }
     }
 
+    const sourceRisk = asRecord(asset.sourceRiskClassification);
+    const sourceRiskBasis = sourceRisk?.basis;
+    const sourceRiskBasisPrefix =
+      typeof sourceRiskBasis === "string" &&
+      sourceRiskBasis.endsWith(PLAYER_PHOTO_SOURCE_RISK_DISCLAIMER)
+        ? sourceRiskBasis
+            .slice(0, -PLAYER_PHOTO_SOURCE_RISK_DISCLAIMER.length)
+            .trim()
+        : "";
+    const expectedRiskCategory = EXPECTED_LOW_RISK_ATHLETES.has(
+      String(athleteName),
+    )
+      ? "non-event-low-risk"
+      : "game-action-high-risk";
+    const rightsSourceRevision = asRecord(rights?.sourceRevision);
+    if (
+      sourceRisk === null ||
+      !hasExactKeys(sourceRisk, [
+        "basis",
+        "category",
+        "checkedAt",
+        "sourceRevisionPermalink",
+      ]) ||
+      sourceRisk.category !== expectedRiskCategory ||
+      sourceRisk.checkedAt !== PLAYER_PHOTO_SOURCE_RISK_CHECKED_AT ||
+      !nonEmptyString(sourceRiskBasisPrefix) ||
+      CLEARANCE_CLAIM_RE.test(sourceRiskBasisPrefix) ||
+      sourceRisk.sourceRevisionPermalink !== rightsSourceRevision?.permalink
+    ) {
+      issues.push(
+        issue(
+          "player-photo-source-risk",
+          `${location}.sourceRiskClassification`,
+          "source-risk classification must use the exact athlete category, audit date, non-clearance basis, and bound Commons oldid; low risk is not rights clearance or publication approval",
+        ),
+      );
+    }
+    if (sourceRisk?.category === "game-action-high-risk") {
+      highRiskCount += 1;
+    } else if (sourceRisk?.category === "non-event-low-risk") {
+      lowRiskCount += 1;
+    }
+
     const identity = asRecord(asset.identityEvidence);
     if (
       identity === null ||
@@ -1149,6 +1315,15 @@ export function validatePlayerPhotoAssets(
         "player-photo-order",
         `${PLAYER_PHOTO_REGISTRY_PATH}.assets`,
         "photo records must be Unicode-code-point sorted by athlete name",
+      ),
+    );
+  }
+  if (highRiskCount !== 19 || lowRiskCount !== 2) {
+    issues.push(
+      issue(
+        "player-photo-source-risk",
+        `${PLAYER_PHOTO_REGISTRY_PATH}.assets`,
+        "the audited Decision 11 registry partition must remain exactly 19 game-action-high-risk and 2 non-event-low-risk records; neither category is publication clearance",
       ),
     );
   }

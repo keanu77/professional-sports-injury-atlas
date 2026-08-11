@@ -14,7 +14,11 @@ import { selectPublicCases } from "../src/lib/cases/selectors";
 import { resolveBuildMode } from "../src/lib/governance/build-mode";
 import { validatePublicOutput } from "../src/lib/governance/release-gate";
 import { loadContentCollections, REPO_ROOT } from "./check-content";
-import { loadBuiltOutput } from "./verify-review-artifact";
+import {
+  checkNbaDeepLinkRedirectArtifacts,
+  checkNbaPlainTextCitations,
+  loadBuiltOutput,
+} from "./verify-review-artifact";
 
 function main(): void {
   const mode = resolveBuildMode();
@@ -40,6 +44,9 @@ function main(): void {
   );
 
   issues.push(...validatePublicOutput(pages, files, publicCases));
+  issues.push(...checkNbaDeepLinkRedirectArtifacts(distDir, files));
+  const nbaCitations = checkNbaPlainTextCitations(root, pages, publicCases);
+  issues.push(...nbaCitations.issues);
 
   const robotsPath = join(distDir, "robots.txt");
   if (!existsSync(robotsPath)) {
@@ -58,6 +65,9 @@ function main(): void {
 
   console.log(
     `verify:public-artifact pages=${pages.length} publicCases=${publicCases.length}`,
+  );
+  console.log(
+    `Decision 11 NBA citations: videoSources=${nbaCitations.videoSources} sourceRows=${nbaCitations.sourceRows}`,
   );
   if (issues.length > 0) {
     for (const entry of issues) {

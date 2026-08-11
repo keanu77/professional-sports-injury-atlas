@@ -174,6 +174,64 @@ describe("review output policy (condition 13)", () => {
     ).toContain("review-output-preconnect");
   });
 
+  it.each([
+    '<a href="https://www.nba.com/">NBA home</a>',
+    '<a href="https://www.nba.com/watch/video/example">NBA</a>',
+    '<iframe src="//www.nba.com/watch/video/example"></iframe>',
+    '<meta http-equiv="refresh" content="0; url=https://www.nba.com/news/example" />',
+    '<div data-redirect="https://official.nba.com/injury-report/"></div>',
+  ])(
+    "rejects any non-allowlisted NBA target in an HTML attribute: %s",
+    (markup) => {
+      expect(
+        validateReviewOutput([reviewPage(markup)], ["index.html"]).map(
+          (entry) => entry.code,
+        ),
+      ).toContain("output-nba-deep-link-attribute");
+    },
+  );
+
+  it("rejects NBA deep targets in JSON-LD while allowing literal citation text", () => {
+    const schema = reviewPage(
+      '<script type="application/ld+json">{"url":"https:\\/\\/www.nba.com\\/watch\\/video\\/example"}</script>',
+    );
+    expect(
+      validateReviewOutput([schema], ["index.html"]).map((entry) => entry.code),
+    ).toContain("output-nba-deep-link-schema");
+
+    const citation = reviewPage(
+      '<p data-link-policy="nba-plain-text-citation">NBA.com｜Example｜2026-01-01｜URL：https://www.nba.com/watch/video/example</p>',
+    );
+    expect(validateReviewOutput([citation], ["index.html"])).toEqual([]);
+  });
+
+  it("rejects an NBA homepage in JSON-LD until an explicit allowlist exists", () => {
+    const schema = reviewPage(
+      '<script type="application/ld+json">{"url":"https://www.nba.com/"}</script>',
+    );
+    expect(
+      validateReviewOutput([schema], ["index.html"]).map((entry) => entry.code),
+    ).toContain("output-nba-deep-link-schema");
+  });
+
+  it("parses parameterized JSON-LD and rejects unicode-escaped NBA targets", () => {
+    const schema = reviewPage(
+      '<script type="application/ld+json; charset=utf-8">{"url":"https:\\u002F\\u002Fwww.nba.com\\u002Fnews\\u002Fexample"}</script>',
+    );
+    expect(
+      validateReviewOutput([schema], ["index.html"]).map((entry) => entry.code),
+    ).toContain("output-nba-deep-link-schema");
+  });
+
+  it("rejects an NBA deep redirect target in inline script", () => {
+    const page = reviewPage(
+      '<script>location.assign("https://www.nba.com/watch/video/example")</script>',
+    );
+    expect(
+      validateReviewOutput([page], ["index.html"]).map((entry) => entry.code),
+    ).toContain("output-nba-deep-link-script");
+  });
+
   it("allows local responsive images alongside ordinary external attribution links", () => {
     const page = reviewPage(`
       <link rel="preload" as="image" href="/_astro/player.avif" imagesrcset="/_astro/player-480.avif 480w, /_astro/player-960.avif 960w" />
@@ -210,6 +268,18 @@ describe("public output policy (condition 12)", () => {
 
   it("accepts a clean public page set", () => {
     expect(validatePublicOutput([publicPage], ["index.html"], [])).toEqual([]);
+  });
+
+  it("also rejects NBA deep attributes in public output", () => {
+    const page = {
+      path: "index.html",
+      html: '<!doctype html><html><head><title>t</title></head><body><a href="https://www.nba.com/news/example">NBA</a></body></html>',
+    };
+    expect(
+      validatePublicOutput([page], ["index.html"], []).map(
+        (entry) => entry.code,
+      ),
+    ).toContain("output-nba-deep-link-attribute");
   });
 
   it("rejects a review-only route in public output", () => {

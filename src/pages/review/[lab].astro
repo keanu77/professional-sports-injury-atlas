@@ -5,7 +5,7 @@
  * so the lab never enters the public route manifest. Every fixture below is
  * an in-memory, visibly fictional record (fictional athlete, uploader, and
  * video ID); no real player, team, diagnosis, or media ID appears, and the
- * NBA-host fixture is a link that no test or reader flow ever requests.
+ * NBA-host fixture is a non-clickable citation that no reader flow requests.
  */
 import CaseTimeline from "../../components/cases/CaseTimeline.astro";
 import CaseVideo from "../../components/cases/CaseVideo.astro";
@@ -46,6 +46,18 @@ const fictionalNbaVideo = {
   embedStatus: "external-link-only",
   captionStatus: "not-verified",
 } as const;
+const fictionalYouTubeCitation = {
+  title: "虛構示範受傷片段（Fictional Demo Clip）",
+  publisher: "虛構聯盟媒體頻道（Fictional League Media）",
+  publishedAt: "2026-01-20",
+  url: FICTIONAL_WATCH_URL,
+} as const;
+const fictionalNbaCitation = {
+  title: "虛構官方平台片段（Fictional Official Platform Clip）",
+  publisher: "虛構官方轉播單位（Fictional Broadcast Unit）",
+  publishedAt: "2026-01-21",
+  url: fictionalNbaVideo.canonicalUrl,
+} as const;
 ---
 
 <BaseLayout
@@ -66,6 +78,7 @@ const fictionalNbaVideo = {
       scopeId="lab-embed-review"
       displayMode="review"
       sourceTitle="虛構示範受傷片段（Fictional Demo Clip）"
+      sourceCitation={fictionalYouTubeCitation}
       injuryCode={FICTIONAL_INJURY_CODE}
       injuryLabel={FICTIONAL_INJURY_LABEL}
       video={fictionalYouTubeVideo}
@@ -83,6 +96,7 @@ const fictionalNbaVideo = {
       scopeId="lab-embed-public"
       displayMode="public"
       sourceTitle="虛構示範片段：字幕可用（Fictional Captioned Clip）"
+      sourceCitation={fictionalYouTubeCitation}
       injuryCode={FICTIONAL_INJURY_CODE}
       injuryLabel={FICTIONAL_INJURY_LABEL}
       video={{ ...fictionalYouTubeVideo, captionStatus: "available" }}
@@ -97,6 +111,7 @@ const fictionalNbaVideo = {
       scopeId="lab-public-degraded"
       displayMode="public"
       sourceTitle="虛構示範片段：無字幕（Fictional Uncaptioned Clip）"
+      sourceCitation={fictionalYouTubeCitation}
       injuryCode={FICTIONAL_INJURY_CODE}
       injuryLabel={FICTIONAL_INJURY_LABEL}
       video={{ ...fictionalYouTubeVideo, captionStatus: "unavailable" }}
@@ -109,6 +124,7 @@ const fictionalNbaVideo = {
       scopeId="lab-external"
       displayMode="review"
       sourceTitle="虛構官方平台片段（Fictional Official Platform Clip）"
+      sourceCitation={fictionalNbaCitation}
       injuryCode={FICTIONAL_INJURY_CODE}
       injuryLabel={FICTIONAL_INJURY_LABEL}
       video={fictionalNbaVideo}
@@ -121,6 +137,7 @@ const fictionalNbaVideo = {
       scopeId="lab-unavailable"
       displayMode="review"
       sourceTitle="虛構示範片段：已下架（Fictional Removed Clip）"
+      sourceCitation={fictionalYouTubeCitation}
       injuryCode={FICTIONAL_INJURY_CODE}
       injuryLabel={FICTIONAL_INJURY_LABEL}
       video={{ ...fictionalYouTubeVideo, embedStatus: "unavailable" }}

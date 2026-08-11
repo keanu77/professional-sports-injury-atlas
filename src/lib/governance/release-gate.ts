@@ -71,6 +71,7 @@ import {
 } from "../rtp/course-links";
 import { NOINDEX_ROBOTS_META } from "./build-mode";
 import { parseMedicalReviewDecisionBytes } from "./medical-review-decision";
+import { isNbaUrl } from "../rights/nba-link-policy";
 import {
   validateAppliedMedicalReviewDecision,
   validateMedicalReviewDecisionArtifacts,
@@ -327,6 +328,97 @@ function htmlAttribute(element: HtmlElement, name: string): string | null {
   return element.attrs.find((entry) => entry.name === name)?.value ?? null;
 }
 
+function absoluteUrlCandidates(value: string): string[] {
+  const normalized = value
+    .replaceAll("\\/", "/")
+    .replace(/\\u002f/giu, "/")
+    .replace(/\\x2f/giu, "/");
+  return (normalized.match(/(?:https?:)?\/\/[^\s"'<>\\]+/giu) ?? []).map(
+    (candidate) =>
+      candidate.startsWith("//") ? `https:${candidate}` : candidate,
+  );
+}
+
+function jsonStringValues(value: unknown): string[] {
+  if (typeof value === "string") return [value];
+  if (Array.isArray(value)) return value.flatMap(jsonStringValues);
+  if (value === null || typeof value !== "object") return [];
+  return Object.values(value).flatMap(jsonStringValues);
+}
+
+function nbaUrlInJson(text: string): string | undefined {
+  let strings: string[];
+  try {
+    strings = jsonStringValues(JSON.parse(text));
+  } catch {
+    strings = [text];
+  }
+  return strings
+    .flatMap((value) => absoluteUrlCandidates(value))
+    .find((value) => isNbaUrl(value));
+}
+
+function htmlNodeText(node: HtmlNode): string {
+  if ("value" in node && typeof node.value === "string") return node.value;
+  if (!("childNodes" in node)) return "";
+  return node.childNodes.map((child) => htmlNodeText(child)).join("");
+}
+
+/**
+ * Decision 11 P2-5: rendered output may preserve NBA.com URLs only as text.
+ * Attributes cover anchors, iframes, metadata, and HTML refresh redirects;
+ * JSON-LD is checked separately because its URL values are text nodes.
+ * No NBA homepage is allowlisted, so the built-output gate rejects the entire
+ * NBA host family until a later explicit policy and test authorize one.
+ */
+export function validateNoNbaDeepLinkReferences(
+  pages: readonly BuiltPage[],
+): ValidationIssue[] {
+  const issues: ValidationIssue[] = [];
+  for (const page of pages) {
+    const document = parse(page.html);
+    for (const element of descendantElements(document)) {
+      for (const attribute of element.attrs) {
+        const target = absoluteUrlCandidates(attribute.value).find((value) =>
+          isNbaUrl(value),
+        );
+        if (target !== undefined) {
+          issues.push(
+            issue(
+              "output-nba-deep-link-attribute",
+              page.path,
+              `${element.tagName}[${attribute.name}] must not point to NBA.com deep URL ${target}`,
+            ),
+          );
+        }
+      }
+      if (element.tagName === "script") {
+        const scriptText = htmlNodeText(element);
+        const scriptType = (htmlAttribute(element, "type") ?? "")
+          .split(";", 1)[0]
+          ?.trim()
+          .toLowerCase();
+        const isSchema = scriptType === "application/ld+json";
+        const target = isSchema
+          ? nbaUrlInJson(scriptText)
+          : absoluteUrlCandidates(scriptText).find((value) => isNbaUrl(value));
+        if (target !== undefined) {
+          issues.push(
+            issue(
+              isSchema
+                ? "output-nba-deep-link-schema"
+                : "output-nba-deep-link-script",
+              page.path,
+              `${isSchema ? "JSON-LD" : "inline script"} must not point to NBA.com deep URL ${target}`,
+            ),
+          );
+        }
+      }
+    }
+  }
+  return issues;
+}
+
 function isLocalBuiltImageUrl(value: string): boolean {
   const candidate = value.trim();
   if (
@@ -424,7 +516,10 @@ export function validateReviewOutput(
   pages: readonly BuiltPage[],
   filePaths: readonly string[],
 ): ValidationIssue[] {
-  const issues: ValidationIssue[] = [...validateReviewImageReferences(pages)];
+  const issues: ValidationIssue[] = [
+    ...validateReviewImageReferences(pages),
+    ...validateNoNbaDeepLinkReferences(pages),
+  ];
   for (const page of pages) {
     if (!hasNoindexMeta(page.html)) {
       issues.push(
@@ -489,7 +584,7 @@ export function validatePublicOutput(
   filePaths: readonly string[],
   publicCases: readonly InjuryCase[],
 ): ValidationIssue[] {
-  const issues: ValidationIssue[] = [];
+  const issues: ValidationIssue[] = [...validateNoNbaDeepLinkReferences(pages)];
   const caseById = new Map(publicCases.map((record) => [record.id, record]));
   for (const path of filePaths) {
     if (
