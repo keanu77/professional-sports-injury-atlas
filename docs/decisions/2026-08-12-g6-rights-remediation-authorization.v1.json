@@ -1,0 +1,21 @@
+{
+  "authorizedAt": "2026-08-11T17:24:39Z",
+  "authorizedBy": "吳易澄醫師",
+  "closedScopeIds": [
+    "deployment",
+    "external-account-mutation",
+    "hosting-service-mutation",
+    "indexing",
+    "medical-content-authoring",
+    "medical-review-decision",
+    "public-release",
+    "remote-repository-mutation"
+  ],
+  "decisionType": "plan-execution",
+  "executionScopeId": "decision-11-g6-rights-remediation-only",
+  "executionStatus": "authorized",
+  "planPath": "docs/superpowers/plans/2026-08-12-g6-rights-remediation.md",
+  "planSha256": "55bb49398a5139e0f209817719646cd5ff168bd9c2c1d3bf93ad30c0593862e4",
+  "role": "g6-rights-remediation",
+  "schemaVersion": 1
+}
