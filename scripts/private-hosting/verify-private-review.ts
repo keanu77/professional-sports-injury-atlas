@@ -698,7 +698,7 @@ export function validatePrivateNetworkInspection(
   if (
     tailscale.backendState !== "Running" ||
     tailscale.selfOnline !== true ||
-    normalizedDns !== "mac-mini.tailbc16e9.ts.net" ||
+    normalizedDns !== "mac-mini-m5.tailbc16e9.ts.net" ||
     tailscale.selfTailscaleIPs.filter(
       (address) => address === PRIVATE_REVIEW_TAILSCALE_IPV4,
     ).length !== 1 ||

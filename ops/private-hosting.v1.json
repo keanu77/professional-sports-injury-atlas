@@ -4,7 +4,7 @@
   "nodeVersion": "24.14.0",
   "bind": {
     "tailscaleCliPath": "/opt/homebrew/bin/tailscale",
-    "tailscaleDnsName": "mac-mini.tailbc16e9.ts.net",
+    "tailscaleDnsName": "mac-mini-m5.tailbc16e9.ts.net",
     "tailscaleIPv4": "100.114.3.93",
     "port": 8140
   },

@@ -52,7 +52,7 @@ export interface PrivateHostingConfigV1 {
   nodeVersion: typeof PRIVATE_REVIEW_NODE_VERSION;
   bind: {
     tailscaleCliPath: typeof TAILSCALE_CLI_PATH;
-    tailscaleDnsName: "mac-mini.tailbc16e9.ts.net";
+    tailscaleDnsName: "mac-mini-m5.tailbc16e9.ts.net";
     tailscaleIPv4: "100.114.3.93";
     port: 8140;
   };
@@ -200,7 +200,7 @@ function parseConfigValue(value: unknown): PrivateHostingConfigV1 {
   );
   expectLiteral(
     bind.tailscaleDnsName,
-    "mac-mini.tailbc16e9.ts.net",
+    "mac-mini-m5.tailbc16e9.ts.net",
     "bind.tailscaleDnsName",
   );
   expectLiteral(bind.tailscaleIPv4, "100.114.3.93", "bind.tailscaleIPv4");

@@ -83,7 +83,7 @@ function fixedConfig(): Record<string, unknown> {
     nodeVersion: "24.14.0",
     bind: {
       tailscaleCliPath: "/opt/homebrew/bin/tailscale",
-      tailscaleDnsName: "mac-mini.tailbc16e9.ts.net",
+      tailscaleDnsName: "mac-mini-m5.tailbc16e9.ts.net",
       tailscaleIPv4: PRIVATE_REVIEW_TAILSCALE_IPV4,
       port: PRIVATE_REVIEW_PORT,
     },
@@ -248,7 +248,7 @@ function dependencies(
     loadTailscaleStatus: () => ({
       backendState: "Running",
       selfOnline: true,
-      selfDnsName: "mac-mini.tailbc16e9.ts.net.",
+      selfDnsName: "mac-mini-m5.tailbc16e9.ts.net.",
       selfTailscaleIPs: [PRIVATE_REVIEW_TAILSCALE_IPV4, "fd7a:115c:a1e0::1"],
     }),
     loadCredentialVerifier: () => token,
@@ -550,7 +550,7 @@ describe("private-review authentication gateway", () => {
     const loadStatus = vi.fn(() => ({
       backendState: "Running",
       selfOnline: true,
-      selfDnsName: "mac-mini.tailbc16e9.ts.net",
+      selfDnsName: "mac-mini-m5.tailbc16e9.ts.net",
       selfTailscaleIPs: [PRIVATE_REVIEW_TAILSCALE_IPV4],
     }));
     await startFixture(fixture, {
@@ -564,7 +564,7 @@ describe("private-review authentication gateway", () => {
       {
         backendState: "Running",
         selfOnline: false,
-        selfDnsName: "mac-mini.tailbc16e9.ts.net.",
+        selfDnsName: "mac-mini-m5.tailbc16e9.ts.net.",
         selfTailscaleIPs: [PRIVATE_REVIEW_TAILSCALE_IPV4],
       },
       {
@@ -609,7 +609,7 @@ describe("private-review authentication gateway", () => {
             return {
               backendState: "Running",
               selfOnline: statusChecks === 1,
-              selfDnsName: "mac-mini.tailbc16e9.ts.net.",
+              selfDnsName: "mac-mini-m5.tailbc16e9.ts.net.",
               selfTailscaleIPs: [PRIVATE_REVIEW_TAILSCALE_IPV4],
             };
           },

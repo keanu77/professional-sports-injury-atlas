@@ -396,7 +396,7 @@ function baselineNetwork(fixture: VerifierFixture): PrivateNetworkInspection {
     tailscale: {
       backendState: "Running",
       selfOnline: true,
-      selfDnsName: "mac-mini.tailbc16e9.ts.net.",
+      selfDnsName: "mac-mini-m5.tailbc16e9.ts.net.",
       selfTailscaleIPs: ["100.114.3.93", "fd7a:115c:a1e0::1"],
       identityDigest: sha256Hex("synthetic-tailscale-identity"),
       serveStateDigest: sha256Hex("synthetic-serve-state"),
@@ -1752,19 +1752,19 @@ describe("private live host verifier", () => {
   it("strictly parses and canonically hashes Tailscale Serve/Funnel state", () => {
     const identity = inspectTailscaleIdentityStateBytes(
       Buffer.from(
-        '{"Self":{"TailscaleIPs":["fd7a::1","100.114.3.93"],"DNSName":"mac-mini.tailbc16e9.ts.net.","Online":true},"BackendState":"Running","Peer":{}}',
+        '{"Self":{"TailscaleIPs":["fd7a::1","100.114.3.93"],"DNSName":"mac-mini-m5.tailbc16e9.ts.net.","Online":true},"BackendState":"Running","Peer":{}}',
       ),
     );
     expect(identity).toEqual({
       backendState: "Running",
       selfOnline: true,
-      selfDnsName: "mac-mini.tailbc16e9.ts.net.",
+      selfDnsName: "mac-mini-m5.tailbc16e9.ts.net.",
       selfTailscaleIPs: ["100.114.3.93", "fd7a::1"],
       identityDigest: sha256Hex(
         canonicalJson({
           backendState: "Running",
           selfOnline: true,
-          selfDnsName: "mac-mini.tailbc16e9.ts.net.",
+          selfDnsName: "mac-mini-m5.tailbc16e9.ts.net.",
           selfTailscaleIPs: ["100.114.3.93", "fd7a::1"],
         }),
       ),

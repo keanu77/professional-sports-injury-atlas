@@ -86,7 +86,7 @@ const FIXED_PRIVATE_HOSTING_CONFIG = {
   nodeVersion: PRIVATE_REVIEW_NODE_VERSION,
   bind: {
     tailscaleCliPath: TAILSCALE_CLI_PATH,
-    tailscaleDnsName: "mac-mini.tailbc16e9.ts.net",
+    tailscaleDnsName: "mac-mini-m5.tailbc16e9.ts.net",
     tailscaleIPv4: PRIVATE_REVIEW_TAILSCALE_IPV4,
     port: PRIVATE_REVIEW_PORT,
   },
