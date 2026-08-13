@@ -19,6 +19,7 @@ import {
   DECISION_14_WASHING_SIGNAL_IDS,
   containsAffirmativeClearanceClaim,
   decideDecision14PhotoEligibility,
+  decideDecision14PhotoEligibilityAgainstPolicy,
   validateDecision14AllowlistRecord,
   validateDecision14PromotionAthlete,
   validateDecision14ProtectedCovers,
@@ -26,6 +27,7 @@ import {
   type Decision14AllowlistRecord,
   type Decision14EligibilityInput,
   type Decision14EventPhotoRecord,
+  type Decision14FrozenAllowlistPolicy,
 } from "../../src/lib/contracts/decision-14-photo-contract";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
@@ -417,6 +419,135 @@ describe("Decision 14 allowlist floors", () => {
       },
       "decision14-allowlist-washing-signal",
     ],
+    [
+      "sample work outside the enumerated ledger",
+      (row: Decision14AllowlistRecord) => {
+        row.licenseHistory.sampledWorks[0]!.workIdOrUrl = "outside-ledger";
+      },
+      "decision14-allowlist-license-history-floor",
+    ],
+    [
+      "duplicate sampled work ID",
+      (row: Decision14AllowlistRecord) => {
+        row.licenseHistory.sampledWorks[1]!.workIdOrUrl =
+          row.licenseHistory.sampledWorks[0]!.workIdOrUrl;
+      },
+      "decision14-allowlist-license-history-floor",
+    ],
+    [
+      "only two sampled years",
+      (row: Decision14AllowlistRecord) => {
+        for (const [
+          index,
+          sample,
+        ] of row.licenseHistory.sampledWorks.entries()) {
+          sample.publishedAt = `${index < 15 ? "2018" : "2022"}-02-${String((index % 15) + 1).padStart(2, "0")}`;
+        }
+      },
+      "decision14-allowlist-license-history-floor",
+    ],
+    [
+      "sampled exact-license mismatch",
+      (row: Decision14AllowlistRecord) => {
+        row.licenseHistory.sampledWorks[0]!.exactLicenseToken = "cc-by-4.0";
+      },
+      "decision14-allowlist-license-history-floor",
+    ],
+    [
+      "license-dependent sample assertion",
+      (row: Decision14AllowlistRecord) => {
+        (
+          row.licenseHistory as { licenseIndependentSampling: boolean }
+        ).licenseIndependentSampling = false;
+      },
+      "decision14-allowlist-license-history-floor",
+    ],
+    [
+      "non-stratified sample assertion",
+      (row: Decision14AllowlistRecord) => {
+        (row.licenseHistory as { dateStratified: boolean }).dateStratified =
+          false;
+      },
+      "decision14-allowlist-license-history-floor",
+    ],
+    [
+      "missing deterministic collection method",
+      (row: Decision14AllowlistRecord) => {
+        row.licenseHistory.deterministicCollectionMethod = "";
+      },
+      "decision14-allowlist-license-history-floor",
+    ],
+    [
+      "claimed matching-count drift",
+      (row: Decision14AllowlistRecord) => {
+        row.licenseHistory.matchingWorkCount = 29;
+      },
+      "decision14-allowlist-license-history-floor",
+    ],
+    [
+      "fixed-revision count drift",
+      (row: Decision14AllowlistRecord) => {
+        row.reuseChain.revisionCount = 3;
+      },
+      "decision14-allowlist-reuse-floor",
+    ],
+    [
+      "fixed-revision timestamp drift",
+      (row: Decision14AllowlistRecord) => {
+        row.reuseChain.earliestRevisionAt = "2020-01-02T00:00:00.000Z";
+      },
+      "decision14-allowlist-reuse-floor",
+    ],
+    [
+      "duplicate fixed-revision permalink",
+      (row: Decision14AllowlistRecord) => {
+        row.reuseChain.fixedRevisions[1]!.permalink =
+          row.reuseChain.fixedRevisions[0]!.permalink;
+      },
+      "decision14-allowlist-reuse-floor",
+    ],
+    [
+      "missing dispute-search URL set",
+      (row: Decision14AllowlistRecord) => {
+        row.disputeSearch.searchedUrls = [];
+      },
+      "decision14-allowlist-dispute-search",
+    ],
+    [
+      "missing washing-signal key",
+      (row: Decision14AllowlistRecord) => {
+        delete (row.washingChecks as Partial<typeof row.washingChecks>)[
+          "exif-series-consistency"
+        ];
+      },
+      "decision14-allowlist-washing-signal",
+    ],
+    [
+      "extra washing-signal key",
+      (row: Decision14AllowlistRecord) => {
+        (
+          row.washingChecks as Record<
+            string,
+            ReturnType<typeof validWashingCheck>
+          >
+        )["unregistered-signal"] = validWashingCheck();
+      },
+      "decision14-allowlist-washing-signal",
+    ],
+    [
+      "impossible ISO date",
+      (row: Decision14AllowlistRecord) => {
+        row.firstDatedSportsWork.date = "2018-02-31";
+      },
+      "decision14-allowlist-history-floor",
+    ],
+    [
+      "traversing evidence path",
+      (row: Decision14AllowlistRecord) => {
+        row.evidencePath = "docs/reviews/../decisions/fake.md";
+      },
+      "decision14-allowlist-evidence-binding",
+    ],
   ] as const)("rejects %s", (_label, mutate, expectedCode) => {
     const row = validAllowlistRecord();
     mutate(row);
@@ -533,6 +664,92 @@ describe("Decision 14 conditional event decision table", () => {
     });
   });
 
+  it.each(DECISION_14_CONDITIONAL_EVENT_OCCASIONS)(
+    "keeps %s ineligible against the actual empty nba-v7 allowlist",
+    (occasion) => {
+      const policy = JSON.parse(
+        readFileSync(
+          join(ROOT, "research/source-policy/source-policy.v7.json"),
+          "utf8",
+        ),
+      ) as {
+        playerStaticPhotoRules: {
+          decision14NamedPhotographerEventException: {
+            allowlistEvidenceBinding: { path: string; sha256: string };
+            namedPhotographerAllowlist: Decision14FrozenAllowlistPolicy["namedPhotographerAllowlist"];
+          };
+        };
+      };
+      const exception =
+        policy.playerStaticPhotoRules.decision14NamedPhotographerEventException;
+      const event = validEventPhoto();
+      event.eventOccasion = occasion;
+      expect(
+        decideDecision14PhotoEligibilityAgainstPolicy(
+          {
+            allowlistEvidenceBytes: ALLOWLIST_EVIDENCE_BYTES,
+            athleteName: event.athleteName,
+            eventPhoto: event,
+            v6QualifiedNonEvent: false,
+          },
+          {
+            evidencePath: exception.allowlistEvidenceBinding.path,
+            evidenceSha256: exception.allowlistEvidenceBinding.sha256,
+            namedPhotographerAllowlist: exception.namedPhotographerAllowlist,
+          },
+        ),
+      ).toEqual({
+        outcome: "retain-current-svg",
+        reasons: ["photographer-not-in-frozen-policy-allowlist"],
+      });
+    },
+  );
+
+  it("rejects a fabricated valid record that is absent from the frozen policy", () => {
+    const event = validEventPhoto();
+    expect(
+      decideDecision14PhotoEligibilityAgainstPolicy(
+        {
+          allowlistEvidenceBytes: ALLOWLIST_EVIDENCE_BYTES,
+          athleteName: event.athleteName,
+          eventPhoto: event,
+          v6QualifiedNonEvent: false,
+        },
+        {
+          evidencePath:
+            "docs/reviews/2026-08-13-decision-14-p1-photographer-allowlist-evidence.md",
+          evidenceSha256: sha256Hex(ALLOWLIST_EVIDENCE_BYTES),
+          namedPhotographerAllowlist: [],
+        },
+      ),
+    ).toEqual({
+      outcome: "retain-current-svg",
+      reasons: ["photographer-not-in-frozen-policy-allowlist"],
+    });
+  });
+
+  it("keeps the inherited v6 non-event branch open under the empty nba-v7 allowlist", () => {
+    expect(
+      decideDecision14PhotoEligibilityAgainstPolicy(
+        {
+          allowlistEvidenceBytes: null,
+          athleteName: "Anfernee Simons",
+          eventPhoto: null,
+          v6QualifiedNonEvent: true,
+        },
+        {
+          evidencePath:
+            "docs/reviews/2026-08-13-decision-14-p1-photographer-allowlist-evidence.md",
+          evidenceSha256: "0".repeat(64),
+          namedPhotographerAllowlist: [],
+        },
+      ),
+    ).toEqual({
+      outcome: "eligible-photo",
+      reasons: ["v6-qualified-non-event"],
+    });
+  });
+
   it.each([
     ["selfPublishedOriginalVerified", false, "self-publication-unverified"],
     ["perFileChecksComplete", false, "per-file-checks-incomplete"],
@@ -640,6 +857,12 @@ describe("Decision 14 conditional event decision table", () => {
       decideDecision14PhotoEligibility(eventInput(citation)).reasons,
     ).toContain("owner-record-reference-missing");
 
+    const ownerPath = validEventPhoto();
+    ownerPath.ownerRecordPath = "docs/reviews/not-the-owner-record.md";
+    expect(
+      decideDecision14PhotoEligibility(eventInput(ownerPath)).reasons,
+    ).toContain("owner-record-reference-missing");
+
     for (const relationship of ["same-event", "unresolved"] as const) {
       const event = validEventPhoto();
       event.injuryEventRelationship = relationship;
@@ -684,6 +907,41 @@ describe("Decision 14 conditional event decision table", () => {
       "event-identity-incomplete",
     ],
     [
+      "missing event date evidence",
+      (event: Decision14EventPhotoRecord) => {
+        event.eventDateEvidence = "";
+      },
+      "event-identity-incomplete",
+    ],
+    [
+      "missing competition evidence",
+      (event: Decision14EventPhotoRecord) => {
+        event.eventCompetitionEvidence = "";
+      },
+      "event-identity-incomplete",
+    ],
+    [
+      "arbitrary event occasion",
+      (event: Decision14EventPhotoRecord) => {
+        event.eventOccasion = "festival-game";
+      },
+      "occasion-ineligible",
+    ],
+    [
+      "allowlist photographer ID mismatch",
+      (event: Decision14EventPhotoRecord) => {
+        event.allowlistPhotographerId = "another-photographer";
+      },
+      "allowlist-photographer-id-mismatch",
+    ],
+    [
+      "allowlist evidence path mismatch",
+      (event: Decision14EventPhotoRecord) => {
+        event.allowlistEvidencePath = "docs/reviews/another-frozen-evidence.md";
+      },
+      "allowlist-evidence-digest-mismatch",
+    ],
+    [
       "invalid allowlist evidence digest",
       (event: Decision14EventPhotoRecord) => {
         event.allowlistEvidenceSha256 = "not-a-digest";
@@ -704,6 +962,74 @@ describe("Decision 14 conditional event decision table", () => {
     expect(
       decideDecision14PhotoEligibility(eventInput(event)).reasons,
     ).toContain(expectedReason);
+  });
+
+  it("fails closed for invalid or duplicate frozen-policy records", () => {
+    const event = validEventPhoto();
+    const record = validAllowlistRecord();
+    const basePolicy: Decision14FrozenAllowlistPolicy = {
+      evidencePath: record.evidencePath,
+      evidenceSha256: record.evidenceSha256,
+      namedPhotographerAllowlist: [record],
+    };
+
+    const invalid = structuredClone(record);
+    invalid.licenseHistory.observedWorkCount = 49;
+    expect(
+      decideDecision14PhotoEligibilityAgainstPolicy(
+        {
+          allowlistEvidenceBytes: ALLOWLIST_EVIDENCE_BYTES,
+          athleteName: event.athleteName,
+          eventPhoto: event,
+          v6QualifiedNonEvent: false,
+        },
+        { ...basePolicy, namedPhotographerAllowlist: [invalid] },
+      ),
+    ).toEqual({
+      outcome: "retain-current-svg",
+      reasons: ["frozen-allowlist-policy-invalid"],
+    });
+
+    const duplicateAccount = structuredClone(record);
+    duplicateAccount.photographerId = "second-photographer";
+    duplicateAccount.canonicalPublicName = "Second Photographer";
+    duplicateAccount.creditedMakerIdentity.canonicalName =
+      "Second Photographer";
+    expect(
+      decideDecision14PhotoEligibilityAgainstPolicy(
+        {
+          allowlistEvidenceBytes: ALLOWLIST_EVIDENCE_BYTES,
+          athleteName: event.athleteName,
+          eventPhoto: event,
+          v6QualifiedNonEvent: false,
+        },
+        {
+          ...basePolicy,
+          namedPhotographerAllowlist: [record, duplicateAccount],
+        },
+      ),
+    ).toEqual({
+      outcome: "retain-current-svg",
+      reasons: ["frozen-allowlist-policy-invalid"],
+    });
+
+    expect(
+      decideDecision14PhotoEligibilityAgainstPolicy(
+        {
+          allowlistEvidenceBytes: ALLOWLIST_EVIDENCE_BYTES,
+          athleteName: event.athleteName,
+          eventPhoto: event,
+          v6QualifiedNonEvent: false,
+        },
+        {
+          ...basePolicy,
+          evidencePath: "docs/reviews/../decisions/fake.md",
+        },
+      ),
+    ).toEqual({
+      outcome: "retain-current-svg",
+      reasons: ["frozen-allowlist-policy-invalid"],
+    });
   });
 
   it("rejects an outside athlete and ambiguous branch instead of widening scope", () => {

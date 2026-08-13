@@ -250,6 +250,17 @@ export interface Decision14EligibilityResult {
   reasons: string[];
 }
 
+export interface Decision14FrozenAllowlistPolicy {
+  evidencePath: string;
+  evidenceSha256: string;
+  namedPhotographerAllowlist: readonly Decision14AllowlistRecord[];
+}
+
+export type Decision14PolicyBoundEligibilityInput = Omit<
+  Decision14EligibilityInput,
+  "allowlistRecord"
+>;
+
 const SHA256_RE = /^[a-f0-9]{64}$/u;
 const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/u;
 const ISO_DATE_RE = /^\d{4}-\d{2}-\d{2}$/u;
@@ -265,6 +276,19 @@ const ALLOWED_LICENSE_TOKENS = new Set([
   "cc-by-sa-4.0",
   "cc0-1.0",
 ]);
+
+function validIsoDate(value: string): boolean {
+  if (!ISO_DATE_RE.test(value)) return false;
+  const parsed = new Date(`${value}T00:00:00Z`);
+  return (
+    Number.isFinite(parsed.valueOf()) &&
+    parsed.toISOString().slice(0, 10) === value
+  );
+}
+
+function validReviewEvidencePath(value: string): boolean {
+  return /^docs\/reviews\/[a-zA-Z0-9_.-]+\.md$/u.test(value);
+}
 
 function contractIssue(
   code: string,
@@ -577,8 +601,8 @@ export function validateDecision14AllowlistRecord(
     );
   }
   if (
-    !ISO_DATE_RE.test(record.firstDatedSportsWork.date) ||
-    !ISO_DATE_RE.test(record.latestDatedSportsWork.date) ||
+    !validIsoDate(record.firstDatedSportsWork.date) ||
+    !validIsoDate(record.latestDatedSportsWork.date) ||
     !nonEmpty(record.firstDatedSportsWork.id) ||
     !nonEmpty(record.latestDatedSportsWork.id) ||
     !HTTPS_RE.test(record.firstDatedSportsWork.url) ||
@@ -647,10 +671,7 @@ export function validateDecision14AllowlistRecord(
       (sample) =>
         !nonEmpty(sample.workIdOrUrl) ||
         !history.enumeratedWorkIdsOrUrls.includes(sample.workIdOrUrl) ||
-        !ISO_DATE_RE.test(sample.publishedAt) ||
-        !Number.isFinite(
-          new Date(`${sample.publishedAt}T00:00:00Z`).valueOf(),
-        ) ||
+        !validIsoDate(sample.publishedAt) ||
         !HTTPS_RE.test(sample.licenseEvidenceUrl) ||
         sample.exactLicenseToken !== record.expectedLicenseToken,
     )
@@ -672,6 +693,9 @@ export function validateDecision14AllowlistRecord(
     .sort((a, b) => a.valueOf() - b.valueOf());
   const measuredEarliestRevisionAt = revisionTimes.at(0)?.toISOString();
   const measuredLatestRevisionAt = revisionTimes.at(-1)?.toISOString();
+  const revisionPermalinks = reuse.fixedRevisions.map(
+    (revision) => revision.permalink,
+  );
   if (
     reuse.spanMonths < DECISION_14_ALLOWLIST_FLOORS.minimumReuseMonths ||
     measuredReuseMonths < DECISION_14_ALLOWLIST_FLOORS.minimumReuseMonths ||
@@ -688,6 +712,7 @@ export function validateDecision14AllowlistRecord(
     !positiveInteger(reuse.revisionCount) ||
     reuse.revisionCount !== reuse.fixedRevisions.length ||
     reuse.fixedRevisions.length < 2 ||
+    !allUnique(revisionPermalinks) ||
     !ISO_DATE_RE.test(reuse.earliestRevisionAt.slice(0, 10)) ||
     !ISO_DATE_RE.test(reuse.latestRevisionAt.slice(0, 10)) ||
     measuredEarliestRevisionAt !== reuse.earliestRevisionAt ||
@@ -750,7 +775,7 @@ export function validateDecision14AllowlistRecord(
     !nonEmpty(record.checkedBy) ||
     !nonEmpty(record.evidenceParagraph) ||
     containsAffirmativeClearanceClaim(record.evidenceParagraph) ||
-    !/^docs\/reviews\/[a-zA-Z0-9_./-]+\.md$/u.test(record.evidencePath) ||
+    !validReviewEvidencePath(record.evidencePath) ||
     !SHA256_RE.test(record.evidenceSha256)
   ) {
     add(
@@ -853,9 +878,7 @@ function validateEventPhoto(
   }
   if (
     !SLUG_RE.test(record.allowlistPhotographerId) ||
-    !/^docs\/reviews\/[a-zA-Z0-9_./-]+\.md$/u.test(
-      record.allowlistEvidencePath,
-    ) ||
+    !validReviewEvidencePath(record.allowlistEvidencePath) ||
     !SHA256_RE.test(record.allowlistEvidenceSha256)
   ) {
     reasons.push("allowlist-evidence-binding-invalid");
@@ -918,6 +941,77 @@ export function decideDecision14PhotoEligibility(
         reasons: ["qualified-decision14-event-photo"],
       }
     : { outcome: "retain-current-svg", reasons };
+}
+
+/**
+ * Joins event eligibility to the trusted immutable-policy object loaded by the
+ * caller instead of trusting a separately supplied allowlist record. The
+ * name-independent decision function above remains useful for testing the
+ * abstract contract.
+ */
+export function decideDecision14PhotoEligibilityAgainstPolicy(
+  input: Decision14PolicyBoundEligibilityInput,
+  policy: Decision14FrozenAllowlistPolicy,
+): Decision14EligibilityResult {
+  if (input.v6QualifiedNonEvent || input.eventPhoto === null) {
+    return decideDecision14PhotoEligibility({
+      ...input,
+      allowlistRecord: null,
+    });
+  }
+
+  const policyRecords = policy.namedPhotographerAllowlist;
+  const globalAccountIds = policyRecords.flatMap((record) =>
+    record.verifiedAccounts.map(
+      (account) => `${account.platform}:${account.accountId}`,
+    ),
+  );
+  const policyInvalid =
+    !validReviewEvidencePath(policy.evidencePath) ||
+    !SHA256_RE.test(policy.evidenceSha256) ||
+    !allUnique(policyRecords.map((record) => record.photographerId)) ||
+    !allUnique(globalAccountIds) ||
+    policyRecords.some(
+      (record) =>
+        validateDecision14AllowlistRecord(record).length > 0 ||
+        record.evidencePath !== policy.evidencePath ||
+        record.evidenceSha256 !== policy.evidenceSha256,
+    );
+  if (policyInvalid) {
+    return {
+      outcome: "retain-current-svg",
+      reasons: ["frozen-allowlist-policy-invalid"],
+    };
+  }
+
+  const evidenceMatches =
+    input.allowlistEvidenceBytes !== null &&
+    sha256Hex(input.allowlistEvidenceBytes) === policy.evidenceSha256;
+  const event = input.eventPhoto;
+  const matchingRecords = policyRecords.filter(
+    (record) => record.photographerId === event.allowlistPhotographerId,
+  );
+  if (matchingRecords.length !== 1) {
+    return {
+      outcome: "retain-current-svg",
+      reasons: ["photographer-not-in-frozen-policy-allowlist"],
+    };
+  }
+  if (
+    event.allowlistEvidencePath !== policy.evidencePath ||
+    event.allowlistEvidenceSha256 !== policy.evidenceSha256 ||
+    !evidenceMatches
+  ) {
+    return {
+      outcome: "retain-current-svg",
+      reasons: ["frozen-allowlist-evidence-mismatch"],
+    };
+  }
+
+  return decideDecision14PhotoEligibility({
+    ...input,
+    allowlistRecord: matchingRecords[0]!,
+  });
 }
 
 /** Helper shared by tests/generators for exact selection-subtree bindings. */

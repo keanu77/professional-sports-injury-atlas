@@ -40,6 +40,11 @@ const V5_MARKDOWN_POLICY_PATH = "research/source-policy/nba.v5.md" as const;
 const V6_JSON_POLICY_PATH =
   "research/source-policy/source-policy.v6.json" as const;
 const V6_MARKDOWN_POLICY_PATH = "research/source-policy/nba.v6.md" as const;
+const V7_JSON_POLICY_PATH =
+  "research/source-policy/source-policy.v7.json" as const;
+const V7_MARKDOWN_POLICY_PATH = "research/source-policy/nba.v7.md" as const;
+const DECISION_14_P1_EVIDENCE_PATH =
+  "docs/reviews/2026-08-13-decision-14-p1-photographer-allowlist-evidence.md" as const;
 const V2_DATE_RULE_PARAGRAPH =
   "For the primary video's event-date identity check, `video_published_at` must fall within the inclusive window from `event_date` through `event_date + 3 days`, or the video title must contain `event_date`. This window is asymmetric: publication before `event_date` is ineligible.";
 
@@ -277,6 +282,10 @@ const EXPECTED_V6_JSON_SHA256 =
   "1e27041de184b7b6397b2cfdde225706b40696f1d4456757193baa340f4cc93c";
 const EXPECTED_V6_MARKDOWN_SHA256 =
   "b9a469344ff5061546619ea0ecbb5b7320965af40cde254d4939cf2e8835b0c1";
+const EXPECTED_V7_JSON_SHA256 =
+  "d1062c1ffa045397d13489319534acbfe24653615df5ce83aac40e40539a8b15";
+const EXPECTED_V7_MARKDOWN_SHA256 =
+  "61ed88f92d80b77cd2c1410d03305215eedbb391356c073fb19fac944dea2fd1";
 
 const FROZEN_POLICY_BY_VERSION = Object.freeze({
   "nba-v1": Object.freeze({
@@ -315,6 +324,12 @@ const FROZEN_POLICY_BY_VERSION = Object.freeze({
     markdownPath: V6_MARKDOWN_POLICY_PATH,
     markdownSha256: EXPECTED_V6_MARKDOWN_SHA256,
   }),
+  "nba-v7": Object.freeze({
+    jsonPath: V7_JSON_POLICY_PATH,
+    jsonSha256: EXPECTED_V7_JSON_SHA256,
+    markdownPath: V7_MARKDOWN_POLICY_PATH,
+    markdownSha256: EXPECTED_V7_MARKDOWN_SHA256,
+  }),
 });
 
 type FrozenPolicyVersion = keyof typeof FROZEN_POLICY_BY_VERSION;
@@ -332,7 +347,10 @@ function readPolicyFile(
     | typeof V5_JSON_POLICY_PATH
     | typeof V5_MARKDOWN_POLICY_PATH
     | typeof V6_JSON_POLICY_PATH
-    | typeof V6_MARKDOWN_POLICY_PATH,
+    | typeof V6_MARKDOWN_POLICY_PATH
+    | typeof V7_JSON_POLICY_PATH
+    | typeof V7_MARKDOWN_POLICY_PATH
+    | typeof DECISION_14_P1_EVIDENCE_PATH,
 ): string {
   return readFileSync(new URL(`../../${path}`, import.meta.url), "utf8");
 }
@@ -905,6 +923,7 @@ describe("NBA source-policy nba-v2 contract", () => {
       "nba-v4",
       "nba-v5",
       "nba-v6",
+      "nba-v7",
     ]);
     const pairs = Object.values(FROZEN_POLICY_BY_VERSION).map(
       ({ jsonSha256, markdownSha256 }) => `${jsonSha256}:${markdownSha256}`,
@@ -951,10 +970,10 @@ describe("NBA source-policy nba-v2 contract", () => {
     const policy = parseCanonicalPolicy(jsonBytes);
     expect(() =>
       verifyFrozenPolicyBytes(
-        canonicalJson({ ...policy, sourcePolicyVersion: "nba-v7" }),
+        canonicalJson({ ...policy, sourcePolicyVersion: "nba-v8" }),
         markdownBytes,
       ),
-    ).toThrow(/unregistered source-policy version nba-v7/);
+    ).toThrow(/unregistered source-policy version nba-v8/);
   });
 });
 
@@ -1516,5 +1535,308 @@ describe("NBA source-policy nba-v6 Decision 13 consistency correction", () => {
     expect(markdown).toContain(
       "CC BY-SA material remains forbidden as an input",
     );
+  });
+});
+
+describe("NBA source-policy nba-v7 Decision 14 named-photographer exception", () => {
+  it("is canonical and binds exact immutable v6 and evidence-first bytes", () => {
+    const bytes = readPolicyFile(V7_JSON_POLICY_PATH);
+    const policy = parseCanonicalPolicy(bytes);
+    const v6Bytes = readPolicyFile(V6_JSON_POLICY_PATH);
+    const v6MarkdownBytes = readPolicyFile(V6_MARKDOWN_POLICY_PATH);
+    const v7MarkdownBytes = readPolicyFile(V7_MARKDOWN_POLICY_PATH);
+    const evidenceBytes = readPolicyFile(DECISION_14_P1_EVIDENCE_PATH);
+
+    expect(bytes.endsWith("\n")).toBe(false);
+    expect(policy.sourcePolicyVersion).toBe("nba-v7");
+    expect(policy.playerStaticPhotoPolicyInheritance).toEqual({
+      jsonPath: V6_JSON_POLICY_PATH,
+      jsonSha256: sha256Hex(v6Bytes),
+      markdownPath: V6_MARKDOWN_POLICY_PATH,
+      markdownSha256: sha256Hex(v6MarkdownBytes),
+      sourcePolicyVersion: "nba-v6",
+    });
+    expect(policy.humanPolicyDocument).toEqual({
+      path: V7_MARKDOWN_POLICY_PATH,
+      sha256: sha256Hex(v7MarkdownBytes),
+    });
+    expect(verifyFrozenPolicyBytes(bytes, v7MarkdownBytes)).toEqual({
+      sourcePolicyVersion: "nba-v7",
+      jsonSha256: EXPECTED_V7_JSON_SHA256,
+      markdownSha256: EXPECTED_V7_MARKDOWN_SHA256,
+    });
+
+    const annex = asRecord(policy.playerStaticPhotoRules);
+    const exception = asRecord(annex.decision14NamedPhotographerEventException);
+    expect(exception.allowlistEvidenceBinding).toEqual({
+      committedBeforePolicy: true,
+      evidenceFirstCommit: "52b0608a36960bcc09d7ef8ec7b60816267f7b9e",
+      path: DECISION_14_P1_EVIDENCE_PATH,
+      sha256: sha256Hex(evidenceBytes),
+    });
+    expect(exception.namedPhotographerAllowlist).toEqual([]);
+    expect(exception.photographerCount).toBe(0);
+    expect(exception.status).toBe("empty-fail-closed");
+
+    const driftedPolicy = structuredClone(policy);
+    const driftedAnnex = asRecord(driftedPolicy.playerStaticPhotoRules);
+    const driftedException = asRecord(
+      driftedAnnex.decision14NamedPhotographerEventException,
+    );
+    driftedException.namedPhotographerAllowlist = [
+      { photographerId: "unfrozen-entry" },
+    ];
+    expect(() =>
+      verifyFrozenPolicyBytes(canonicalJson(driftedPolicy), v7MarkdownBytes),
+    ).toThrow(/same-version content drift for nba-v7/);
+  });
+
+  it("preserves v6 defaults and adds only the narrow conditional photo delta", () => {
+    const v6 = parseCanonicalPolicy(readPolicyFile(V6_JSON_POLICY_PATH));
+    const v7 = parseCanonicalPolicy(readPolicyFile(V7_JSON_POLICY_PATH));
+    const {
+      humanPolicyDocument: _v6Human,
+      playerStaticPhotoPolicyInheritance: _v6Inheritance,
+      playerStaticPhotoRules: _v6PhotoRules,
+      sourcePolicyVersion: _v6Version,
+      ...v6RootUnchanged
+    } = v6;
+    const {
+      humanPolicyDocument: _v7Human,
+      playerStaticPhotoPolicyInheritance: _v7Inheritance,
+      playerStaticPhotoRules: _v7PhotoRules,
+      sourcePolicyVersion: _v7Version,
+      ...v7RootUnchanged
+    } = v7;
+    expect(v7RootUnchanged).toEqual(v6RootUnchanged);
+
+    const v6Annex = asRecord(v6.playerStaticPhotoRules);
+    const v7Annex = asRecord(v7.playerStaticPhotoRules);
+    const {
+      attributionRequirements: _v6Attribution,
+      scopeId: _v6Scope,
+      ...v6Unchanged
+    } = v6Annex;
+    const {
+      attributionRequirements: _v7Attribution,
+      conditionallyAllowedSourceClassifications: _conditional,
+      decision14NamedPhotographerEventException: _exception,
+      scopeId: _v7Scope,
+      ...v7Unchanged
+    } = v7Annex;
+    expect(v7Unchanged).toEqual(v6Unchanged);
+    expect(v7Annex.ineligibleOccasions).toEqual(v6Annex.ineligibleOccasions);
+    expect(v7Annex.conditionallyAllowedSourceClassifications).toEqual([
+      "wikimedia-commons-player-allowlisted-event-photo",
+    ]);
+    expect(v7Annex.allowedSourceClassifications).toEqual(
+      v6Annex.allowedSourceClassifications,
+    );
+    expect(v7Annex.allowedSourceClassifications).not.toContain(
+      "wikimedia-commons-player-allowlisted-event-photo",
+    );
+    expect(v7Annex.scopeId).toBe(
+      "decision-14-lowrisk-photographer-covers-only",
+    );
+
+    const v6Attribution = asRecord(v6Annex.attributionRequirements);
+    const v7Attribution = asRecord(v7Annex.attributionRequirements);
+    const { eventText, ...v7AttributionWithoutEvent } = v7Attribution;
+    expect(eventText).toBe("賽事場合資料照片；非本案例受傷當下影像");
+    expect(v7AttributionWithoutEvent).toEqual(v6Attribution);
+  });
+
+  it("freezes the closed roster, numeric floors, washing signals, and decision table", () => {
+    const policy = parseCanonicalPolicy(readPolicyFile(V7_JSON_POLICY_PATH));
+    const annex = asRecord(policy.playerStaticPhotoRules);
+    const exception = asRecord(annex.decision14NamedPhotographerEventException);
+    const contract = asRecord(exception.allowlistRecordContract);
+    const washing = asRecord(exception.washingSignalContract);
+    const perEvent = asRecord(exception.perEventPhotoContract);
+
+    expect(exception.targetAthletes).toEqual([
+      "Anfernee Simons",
+      "Anthony Edwards",
+      "Brandon Clarke",
+      "Damian Lillard",
+      "Danny Green",
+      "Dejounte Murray",
+      "Ja Morant",
+      "Jayson Tatum",
+      "Joe Ingles",
+      "LaMelo Ball",
+      "Markelle Fultz",
+      "Moritz Wagner",
+      "Ricky Rubio",
+      "Thomas Bryant",
+      "Trae Young",
+      "Tyrese Haliburton",
+    ]);
+    expect(exception.protectedAthletes).toEqual([
+      "CJ McCollum",
+      "Dwight Powell",
+      "Kevin Durant",
+      "Kyrie Irving",
+      "LeBron James",
+    ]);
+    expect(contract.numericFloors).toEqual({
+      minimumHistoryYears: 3,
+      minimumReuseMonths: 24,
+      minimumSampleSize: 30,
+      minimumSelfPublishedSportsWorks: 50,
+      requiredLicenseMatchRate: 1,
+      toleratedUnexplainedDeviations: 0,
+    });
+    expect(contract.requiredFields).toEqual([
+      "accountControlType",
+      "canonicalPublicName",
+      "checkedAt",
+      "checkedBy",
+      "creditedMakerIdentity",
+      "disputeSearch",
+      "evidenceParagraph",
+      "evidencePath",
+      "evidenceSha256",
+      "expectedLicenseToken",
+      "firstDatedSportsWork",
+      "latestDatedSportsWork",
+      "licenseHistory",
+      "photographerId",
+      "reuseChain",
+      "selfPublicationProof",
+      "verifiedAccounts",
+      "washingChecks",
+    ]);
+    expect(contract.unresolvedRequiredFieldEligible).toBe(false);
+    expect(contract.uploaderNameAloneProvesMakerOrAuthority).toBe(false);
+    expect(perEvent.requiredFields).toEqual([
+      "allowlistEvidencePath",
+      "allowlistEvidenceSha256",
+      "allowlistPhotographerId",
+      "athleteName",
+      "candidateLicenseMatchesExpected",
+      "candidateLicenseToken",
+      "creditedMakerCanonicalName",
+      "eventCompetitionEvidence",
+      "eventDateEvidence",
+      "eventOccasion",
+      "eventOpponentEvidence",
+      "expectedLicenseToken",
+      "injuryEventRelationship",
+      "matchedSelfPublishedAccountId",
+      "nonClearanceStatement",
+      "originalSelfUploadUrl",
+      "originalUploaderAccountId",
+      "ownerRecordHeading",
+      "ownerRecordPath",
+      "perFileChecksComplete",
+      "residualRiskToken",
+      "selfPublishedOriginalVerified",
+    ]);
+    expect(perEvent.sameInjuryEventEligible).toBe(false);
+    expect(perEvent.unresolvedInjuryEventRelationshipEligible).toBe(false);
+    expect(perEvent.assetSpecificOccasionCaptionRequired).toBe(true);
+    expect(exception.emptyAllowlistEffect).toBe(
+      "no event photo can satisfy the exact named allowlist join; inherited v6 non-event review remains available",
+    );
+    expect(exception.conditionalEventOccasions).toEqual([
+      "all-star-game-action",
+      "international-competition-action",
+      "live-preseason-competition",
+      "postseason-action",
+      "regular-season-action",
+      "regular-season-pregame-or-warm-up",
+    ]);
+    expect(exception.alwaysIneligibleOccasions).toEqual([
+      "ambiguous-credentialed-court-context",
+      "closed-practice",
+      "other",
+      "unknown",
+      "unresolved",
+    ]);
+    expect(washing.requiredSignals).toEqual([
+      "account-compilation-or-repost-behavior",
+      "capture-time-and-location-plausibility",
+      "exif-series-consistency",
+      "native-resolution-patterns",
+      "neighboring-event-sequence-continuity",
+    ]);
+    expect(washing.allowedRequiredStatus).toBe("pass");
+    expect(washing.commonsThumbnailCanEstablishOriginalSeriesFacts).toBe(false);
+    expect(washing.thirdPartyDerivativeCanEstablishOriginalSeriesFacts).toBe(
+      false,
+    );
+    expect(exception.successorRequiredFor).toEqual([
+      "add-photographer",
+      "remove-photographer",
+      "new-event-occasion",
+      "weaker-numeric-floor",
+      "allowlist-evidence-change",
+      "same-version-policy-change",
+    ]);
+    expect(exception.decisionTable).toEqual([
+      {
+        branch: "inherited-v6-non-event",
+        ifAll: ["v6-qualified-non-event", "event-photo-record-absent"],
+        outcome: "eligible-photo",
+      },
+      {
+        branch: "named-photographer-event",
+        ifAll: [
+          "finite-conditional-event-occasion",
+          "fixed-16-target-athlete",
+          "exact-named-allowlist-entry",
+          "credited-maker-canonical-name-match",
+          "exact-verified-self-published-account-match",
+          "verified-photographer-owned-original",
+          "original-uploader-account-match",
+          "complete-independent-per-file-checks",
+          "candidate-license-token-equals-history-token",
+          "complete-event-date-opponent-competition-evidence",
+          "different-injury-event-verified",
+          "immutable-allowlist-evidence-path-and-digest-match",
+          "credentialed-access-residual-risk",
+          "exact-decision-14-owner-reference",
+          "fixed-non-clearance-statement",
+        ],
+        outcome: "eligible-photo",
+      },
+      {
+        branch: "ambiguous-dual-branch",
+        ifAll: ["v6-qualified-non-event", "event-photo-record-present"],
+        outcome: "original-svg-fallback",
+      },
+      {
+        branch: "fail-closed",
+        otherwise: true,
+        outcome: "original-svg-fallback",
+      },
+    ]);
+  });
+
+  it("retains residual risk, owner citation, non-clearance, and BY-SA isolation", () => {
+    const policy = parseCanonicalPolicy(readPolicyFile(V7_JSON_POLICY_PATH));
+    const annex = asRecord(policy.playerStaticPhotoRules);
+    const exception = asRecord(annex.decision14NamedPhotographerEventException);
+    const owner = asRecord(exception.ownerResidualRiskReference);
+    const composite = asRecord(annex.compositeUseRules);
+    const markdown = readPolicyFile(V7_MARKDOWN_POLICY_PATH);
+
+    expect(owner).toEqual({
+      heading: "Decision 14 — 放寬為具名低風險攝影者的賽場封面照",
+      path: "../.claude/g2-owner-decisions.md",
+      requiredRiskToken: "credentialed-access-residual-risk",
+    });
+    expect(exception.nonClearanceStatement).toBe(
+      "Decision 14 accepts a bounded credentialed-access residual risk; no copyright, personality-rights, or public-release approval is created.",
+    );
+    expect(composite.ccBySaForbiddenAsSiteComposedInput).toBe(true);
+    expect(markdown).toContain(
+      "named allowlist therefore contains exactly zero entries",
+    );
+    expect(markdown).toContain(
+      "Decision 14 accepts a bounded\ncredentialed-access residual risk; no copyright, personality-rights, or\npublic-release approval is created.",
+    );
+    expect(markdown).toContain("same-injury-event");
   });
 });
