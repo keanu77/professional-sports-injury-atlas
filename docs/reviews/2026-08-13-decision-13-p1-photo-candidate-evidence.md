@@ -202,7 +202,7 @@ an allowed occasion beyond ambiguous All-Star credentialed-court context.
 - Commons original:
   `https://upload.wikimedia.org/wikipedia/commons/8/8b/2023-08-09_Deutschland_gegen_Kanada_%28Basketball-L%C3%A4nderspiel%29_by_Sandro_Halank%E2%80%93021.jpg`
   (`2192x2827`, 2,398,388 bytes, MediaWiki SHA-1
-  `9fc679a8eb0d1555068fdc77d5bdcbed074235e2`).
+  `9fc6790088174d921465415d294a29cdac5d9d2b`).
 - Creator/uploader: Sandro Halank / Sandro Halank; self-photographed.
 - Supplied title: `Basketball-Länderspiel: Deutschland gegen Kanada`.
 - License bucket: `cc-by-sa`; exact license and Adapter's License:
