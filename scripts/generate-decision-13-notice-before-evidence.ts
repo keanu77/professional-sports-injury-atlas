@@ -46,6 +46,64 @@ const expectedDistAggregateSha256 =
 const checkedDate = "2026-08-13";
 const desktop = { id: "desktop-1440x900", width: 1440, height: 900 } as const;
 const mobile = { id: "mobile-390x844", width: 390, height: 844 } as const;
+const ownerLegalDisposition = {
+  confirmedAtUtc: "2026-08-13T10:28:18Z",
+  confirmedBy: "吳易澄醫師（本站 owner、執業復健科醫師，具名核定）",
+  exactZhHantText:
+    "本站為教學用途的衛教內容，不構成醫療建議，也無法取代醫師診察。症狀持續或惡化請就醫。",
+  existingStringDisposition: {
+    aboutStatement: "preserve（About 主文說明保留原字，不改）",
+    footerLong:
+      "canonicalize——刪除，與 footerShort 合併為核定文字單一句（消除 41 路由的相鄰重複）",
+    footerShort: "replace——由核定文字取代",
+  },
+  legalAuthorityRelationship: {
+    additionalAuthorities:
+      "醫療法第 85、86 條（醫療廣告規範）列為備註——本站為非商業教學衛教內容，不涉醫療業務招徠；此外無其他適用法源。",
+    physiciansActArticle11:
+      "本站不對個人提供診療，不直接適用；其親自診察原則支持本站不做遠距個別診斷之立場。",
+    physiciansActArticle25:
+      "適用為風險脈絡。本站維持教學觀察定位，不對未親自診察之個人作診斷或處置建議；醫療聲明於內容消費點可見，明示教學用途與不取代醫師診察。",
+  },
+  minimumVisibleClauses: [
+    "教學用途",
+    "不構成醫療建議",
+    "無法取代醫師診察",
+    "症狀持續或惡化請就醫",
+  ],
+  placement:
+    "消費點＋footer——\n26 個案例頁、3 個傷種總覽、季度更新頁：臨床內容開頭放單行 compact notice\n（初始 viewport 內可見，桌機與 390px 手機皆然）；\n全站 footer 保留核定文字單一句；\n完整授權與說明集中到 central credits/notices 專頁，內容頁以一行連結指過去。",
+  reviewedCommitSha: inputCommit,
+  routeClassDisposition: {
+    about: "保留主文說明＋footer 核定句；不另加消費點聲明",
+    caseDetail26: "消費點 compact notice＋footer 核定句",
+    home: "footer 核定句即可，不加消費點聲明",
+    injuryOverview3: "同案例頁處理",
+    leagueListings: "footer 核定句即可，不加消費點聲明",
+    quarterlyUpdate: "同案例頁處理",
+    reviewFixtures: "維持 fixture 現狀，不納入（非核准臨床內容）",
+  },
+  status: "confirmed",
+} as const;
+
+function assertOwnerLegalDisposition(): void {
+  if (ownerLegalDisposition.reviewedCommitSha !== inputCommit) {
+    throw new Error("owner/legal disposition reviewed commit drift");
+  }
+  if (
+    !ownerLegalDisposition.minimumVisibleClauses.every((clause) =>
+      ownerLegalDisposition.exactZhHantText.includes(clause),
+    )
+  ) {
+    throw new Error(
+      "owner/legal disposition minimum visible clause is absent from exact text",
+    );
+  }
+  const serialized = canonicalJson(ownerLegalDisposition);
+  if (serialized.includes("null") || serialized.includes('"pending"')) {
+    throw new Error("owner/legal disposition is incomplete");
+  }
+}
 
 type NecessityClass =
   | "license-required"
@@ -66,7 +124,7 @@ interface NoticeRule {
   frozenClinicalContent?: boolean;
   necessityClass: NecessityClass;
   note: string;
-  ownerLegalDisposition?: "pending";
+  ownerLegalDisposition?: "confirmed";
   routePattern?: string;
   selector: string;
   sourceBindings: SourceBinding[];
@@ -184,7 +242,7 @@ const RULES: NoticeRule[] = [
     familyId: "footer-medical-short",
     necessityClass: "medical-legal-review-required",
     note: "First of two adjacent footer medical-purpose statements.",
-    ownerLegalDisposition: "pending",
+    ownerLegalDisposition: "confirmed",
     selector: ".site-footer-legal .footer-legal-inner > div > p:nth-of-type(2)",
     sourceBindings: [
       source("src/components/layout/SiteFooter.astro", "SiteFooter", 48, 48),
@@ -195,7 +253,7 @@ const RULES: NoticeRule[] = [
     familyId: "footer-medical-long",
     necessityClass: "medical-legal-review-required",
     note: "Second of two adjacent footer medical-purpose statements.",
-    ownerLegalDisposition: "pending",
+    ownerLegalDisposition: "confirmed",
     selector: ".site-footer-legal .footer-legal-inner > p",
     sourceBindings: [
       source("src/components/layout/SiteFooter.astro", "SiteFooter", 50, 50),
@@ -457,7 +515,7 @@ const RULES: NoticeRule[] = [
     familyId: "about-medical-purpose",
     necessityClass: "medical-legal-review-required",
     note: "Longer About-page medical-purpose statement; final treatment requires named review.",
-    ownerLegalDisposition: "pending",
+    ownerLegalDisposition: "confirmed",
     routePattern: "^/about/$",
     selector: "main > p",
     sourceBindings: [source("src/pages/about.astro", "About", 14, 18)],
@@ -2438,6 +2496,7 @@ async function main(): Promise<void> {
   if (process.version !== expectedNodeVersion) {
     throw new Error(`expected ${expectedNodeVersion}, got ${process.version}`);
   }
+  assertOwnerLegalDisposition();
   verifyDecision13ClinicalFreeze();
   execFileSync("git", ["merge-base", "--is-ancestor", inputCommit, "HEAD"], {
     cwd: root,
@@ -3081,11 +3140,11 @@ async function main(): Promise<void> {
         String(a.definitionId).localeCompare(String(b.definitionId)),
       ),
       dispositionGate: {
-        implementationAuthorized: false,
-        medicalRow: "pending-named-owner-legal-confirmation",
-        minimumVisibleContent: "pending-named-owner-legal-confirmation",
-        phase3AcceptanceComplete: false,
-        phase4Blocked: true,
+        implementationAuthorized: true,
+        medicalRow: "accepted-named-owner-legal-disposition",
+        minimumVisibleContent: "accepted-named-owner-legal-disposition",
+        phase3AcceptanceComplete: true,
+        phase4Blocked: false,
       },
       extractionContract: {
         clinicalExclusions: CLINICAL_EXCLUSIONS,
@@ -3115,34 +3174,7 @@ async function main(): Promise<void> {
       occurrences: occurrences.sort((a, b) =>
         String(a.occurrenceId).localeCompare(String(b.occurrenceId)),
       ),
-      ownerLegalDisposition: {
-        confirmedAtUtc: null,
-        confirmedBy: null,
-        exactZhHantText: null,
-        existingStringDisposition: {
-          aboutStatement: "pending",
-          footerLong: "pending",
-          footerShort: "pending",
-        },
-        legalAuthorityRelationship: {
-          additionalAuthorities: "pending",
-          physiciansActArticle11: "pending",
-          physiciansActArticle25: "pending",
-        },
-        minimumVisibleClauses: null,
-        placement: null,
-        reviewedCommitSha: inputCommit,
-        routeClassDisposition: {
-          about: "pending",
-          caseDetail26: "pending",
-          home: "pending",
-          injuryOverview3: "pending",
-          leagueListings: "pending",
-          quarterlyUpdate: "pending",
-          reviewFixtures: "pending",
-        },
-        status: "pending",
-      },
+      ownerLegalDisposition,
       policyGaps: [
         {
           disposition: "must-correct-in-phase4-after-gate",
@@ -3210,6 +3242,8 @@ async function main(): Promise<void> {
         `runtime logical notices: ${RUNTIME_RULES.length}`,
         `definitions: ${definitions.size}`,
         `manifest files: ${evidenceFiles.length}`,
+        "Phase 3 accepted",
+        "Phase 4 unblocked",
       ].join("\n") + "\n",
     );
   } finally {

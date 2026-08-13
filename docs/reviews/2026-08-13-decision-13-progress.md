@@ -2,7 +2,7 @@
 
 Date: 2026-08-13
 
-Status: clean governance pause at the Phase 3 named owner/legal gate
+Status: Phase 3 accepted; Phase 4 unblocked
 
 ## Completed work
 
@@ -13,14 +13,14 @@ Status: clean governance pause at the Phase 3 named owner/legal gate
 - Two append-only Phase 2 corrections are complete: the v6/v5 policy-lineage correction and the Playwright expectation correction. Historical policy/registry bytes remain unchanged.
 - Phase 3 before-state inventory and evidence capture are committed. Machine coverage is 41 desktop routes, 41 mobile routes, eight no-JavaScript route/viewport observations, 274 definitions, 1,273 logical occurrences, 44 visibility deltas, and six runtime notice states. Two independent read-only audits found zero integrity or regression failures.
 
-## Current gate and required owner input
+## Phase 3 gate release
 
-Phase 3 acceptance is not complete, and Phase 4 has not started. The plan requires a named owner/legal reviewer to approve the medical-notice row and minimum visible content before implementation. The pending schema is recorded in:
+吳易澄醫師（本站 owner、執業復健科醫師）於 `2026-08-13T10:28:18Z` 提供完整具名 disposition，綁定 product-byte input commit `d625989de94969ecb9c248038fb00e0890f1f51b`。Disposition 已依既有 schema 逐欄記錄於：
 
 - `docs/reviews/2026-08-13-decision-13-p3-notice-inventory-and-necessity.md`
 - `docs/reviews/evidence/decision-13/notices-before/notice-inventory.v1.json`
 
-The disposition must be tied to product-byte input commit `d625989de94969ecb9c248038fb00e0890f1f51b` unless the owner authorizes a later impact review. It must provide the named reviewer/capacity and UTC timestamp, exact approved Traditional Chinese compact notice, minimum visible clauses, placement, disposition of the three existing strings, route-class treatment, and the reviewer's applicability/treatment conclusions for Physicians Act Articles 11 and 25 plus any additional authority or explicit none.
+重跑 fail-closed Phase 3 generator後明確回報 `Phase 3 accepted` 與 `Phase 4 unblocked`。核定的全站唯一精簡醫療聲明為：「本站為教學用途的衛教內容，不構成醫療建議，也無法取代醫師診察。症狀持續或惡化請就醫。」四個 minimum visible clauses、placement、三個 existing-string dispositions、所有 route-class treatments、醫師法第 11/25 條及醫療法第 85/86 條 treatment 均已完整記錄。
 
 This is a bounded notice-treatment decision. It is not authority to write or revise approved case, injury-overview, quarterly-update, diagnosis, observation, management, or return-to-play prose, and it does not open the closed `medical-review-decision` scope generally.
 
@@ -54,12 +54,12 @@ All listed passing commands used the pinned Node `v24.14.0` runtime.
 | content/research/manifest/registry checks                                      | passed                                                                                      |
 | source-policy v6, player-photo v5/v4, asset, brand, and clinical-freeze checks | passed                                                                                      |
 | `npm run build:review`                                                         | passed; 41 pages, 355 optimized image outputs                                               |
-| Phase 3 generator after the build                                              | passed; evidence hashes reproduced exactly                                                  |
+| Phase 3 generator after the build                                              | passed three consecutive times; `Phase 3 accepted`; `Phase 4 unblocked`                     |
 
 Phase 3 evidence digests:
 
-- inventory: `2766e7e7ede0329a260ca77a22f257252414b6c0e8b3b45cf06f39dd44eb6589`
-- manifest: `3fb5715be1d75e23730919dd5d7e3564ad66d7bbb2402fe04e9c924b118755e2`
+- inventory: `b9e203b9320155712a9cc6222ec74264e3702513613277b649715caa585ffcd0`
+- manifest: `b466192bafbd4e8c31772bb03ba4a621d06e599a3c191ba7b618776294da0a2c`
 - runtime: `e457ea29db8d0743418d6e348f374cae320156306365039b6de503b826f3144c`
 - governed clinical aggregate: `bb02fb617055d836eae29daec6994e499586779a4073fde91213d9e5f7ea2e73` (30/30 files)
 
@@ -67,7 +67,7 @@ Phase 3 evidence digests:
 
 - Phase 4 notice consolidation is not started.
 - Phase 5 review-set/private-manifest artifact chain is not started.
-- The private review service was not restarted and private authenticated/unauthenticated smoke was not run because the artifact chain is prohibited before the Phase 3 gate is released.
+- The private review service has not been restarted and private authenticated/unauthenticated smoke has not run; those actions remain ordered after the Phase 5 review-set/build/private-manifest commits.
 - Nothing was pushed, deployed, indexed, or publicly released.
 - No external account, hosting configuration, credential, listener, or external service was mutated.
 - No medical content or medical-review decision was authored or inferred.
@@ -75,7 +75,7 @@ Phase 3 evidence digests:
 
 ## Resume sequence
 
-1. Obtain and record the complete named owner/legal disposition above without editing any bound artifact or approved clinical content.
-2. Re-run the Phase 3 gate and commit the disposition/evidence conventionally.
-3. Only after the gate reports Phase 3 accepted and Phase 4 unblocked, implement Phase 4 exactly from the approved matrix.
+1. Complete: record the complete named owner/legal disposition without editing any bound artifact or approved clinical content.
+2. Complete: re-run the Phase 3 gate; it reports Phase 3 accepted and Phase 4 unblocked.
+3. Next: commit Phase 3 conventionally, then implement Phase 4 exactly from the approved matrix.
 4. Complete Phase 5 in the mandated review-set commit → review build → private-manifest commit → exact existing-service restart → authenticated/unauthenticated smoke order.

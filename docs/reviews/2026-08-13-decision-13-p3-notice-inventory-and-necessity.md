@@ -12,20 +12,20 @@ Execution scope: `decision-13-named-covers-and-notice-consolidation-only`
 
 The before-state inventory and reproducible evidence capture are complete. The current review build has 41 HTML routes: 36 public-content templates and five review-only routes. Every selected statement-like sink is mapped one-to-one to a machine occurrence, a unique normalized-text definition, a source binding, a route and DOM location, a build mode, and a necessity class. No license-required or other required field is proposed for deletion. Every `redundant-or-editorial` definition is bound either to its unchanged same-route location or to an explicit surviving canonical location.
 
-Phase 3 acceptance is **not complete**. Decision 13 requires named owner/legal confirmation of the medical row and its minimum visible content before implementation. No such disposition exists in the bound execution authorization, and `medical-review-decision` remains a closed scope. The machine gate therefore deliberately records:
+吳易澄醫師以本站 owner、執業復健科醫師身分於 `2026-08-13T10:28:18Z` 具名核定完整的 bounded owner/legal disposition，並明確綁定 product-byte input commit `d625989de94969ecb9c248038fb00e0890f1f51b`。核定只涵蓋 notice treatment，不開啟一般 `medical-review-decision` scope，也不授權改寫任何核准臨床內容。重跑 fail-closed machine gate 後：**Phase 3 accepted；Phase 4 unblocked**。Machine inventory 記錄：
 
-- `ownerLegalDisposition.status = pending`;
-- `dispositionGate.implementationAuthorized = false`;
-- `dispositionGate.phase3AcceptanceComplete = false`;
-- `dispositionGate.phase4Blocked = true`.
+- `ownerLegalDisposition.status = confirmed`;
+- `dispositionGate.implementationAuthorized = true`;
+- `dispositionGate.phase3AcceptanceComplete = true`;
+- `dispositionGate.phase4Blocked = false`.
 
-This report freezes the inventory and asks for the missing bounded disposition. It does not make a medical or legal decision, change approved clinical wording, authorize Phase 4, or alter a product byte. The separate append-only photo-policy correction that established the product-byte input is recorded in `2026-08-13-decision-13-photo-policy-forward-correction.md`. During final validation, commit `2398deb9cae84ecf3ea28769eb93cb1da29145d3` corrected only stale Playwright expectations to consume current registry v5; it changed no source, public asset, package, build, clinical, policy, registry, or evidence byte. The generator therefore deliberately continues to bind the exact product-byte input above while requiring it to remain an ancestor and rejecting drift in every build input.
+This report records the supplied disposition and releases only the Phase 3 implementation gate. It does not independently make a medical or legal decision, change approved clinical wording, or alter a product byte. The separate append-only photo-policy correction that established the product-byte input is recorded in `2026-08-13-decision-13-photo-policy-forward-correction.md`. During final validation, commit `2398deb9cae84ecf3ea28769eb93cb1da29145d3` corrected only stale Playwright expectations to consume current registry v5; it changed no source, public asset, package, build, clinical, policy, registry, or evidence byte. The generator deliberately continues to bind the exact product-byte input above while requiring it to remain an ancestor and rejecting drift in every build input.
 
 ## Reproducible evidence set
 
-The canonical machine inventory is [`evidence/decision-13/notices-before/notice-inventory.v1.json`](evidence/decision-13/notices-before/notice-inventory.v1.json), SHA-256 `2766e7e7ede0329a260ca77a22f257252414b6c0e8b3b45cf06f39dd44eb6589`. It contains the full 41-route ledger, all 450 review-build file hashes, 274 definitions, 1,273 logical occurrence rows, source bindings, exact normalized text and hashes, links, true landmarks, nearest semantic containers, ancestor-aware visibility/clipping results, family-specific consumption-point criteria, viewport behavior, classifications, the governed 30-file clinical ledger, authority references, gaps, and the pending owner/legal schema.
+The canonical machine inventory is [`evidence/decision-13/notices-before/notice-inventory.v1.json`](evidence/decision-13/notices-before/notice-inventory.v1.json), SHA-256 `b9e203b9320155712a9cc6222ec74264e3702513613277b649715caa585ffcd0`. It contains the full 41-route ledger, all 450 review-build file hashes, 274 definitions, 1,273 logical occurrence rows, source bindings, exact normalized text and hashes, links, true landmarks, nearest semantic containers, ancestor-aware visibility/clipping results, family-specific consumption-point criteria, viewport behavior, classifications, the governed 30-file clinical ledger, authority references, gaps, and the complete confirmed owner/legal disposition.
 
-The evidence manifest is [`evidence/decision-13/notices-before/evidence-manifest.v1.json`](evidence/decision-13/notices-before/evidence-manifest.v1.json), SHA-256 `3fb5715be1d75e23730919dd5d7e3564ad66d7bbb2402fe04e9c924b118755e2`. It binds 92 evidence files totaling 11,158,997 bytes. The runtime-state record is [`evidence/decision-13/notices-before/runtime/runtime-states.v1.json`](evidence/decision-13/notices-before/runtime/runtime-states.v1.json), SHA-256 `e457ea29db8d0743418d6e348f374cae320156306365039b6de503b826f3144c`.
+The evidence manifest is [`evidence/decision-13/notices-before/evidence-manifest.v1.json`](evidence/decision-13/notices-before/evidence-manifest.v1.json), SHA-256 `b466192bafbd4e8c31772bb03ba4a621d06e599a3c191ba7b618776294da0a2c`. It binds 92 evidence files totaling 11,160,536 bytes. The runtime-state record is [`evidence/decision-13/notices-before/runtime/runtime-states.v1.json`](evidence/decision-13/notices-before/runtime/runtime-states.v1.json), SHA-256 `e457ea29db8d0743418d6e348f374cae320156306365039b6de503b826f3144c`.
 
 The generator is `scripts/generate-decision-13-notice-before-evidence.ts`. It fails closed unless:
 
@@ -81,9 +81,9 @@ The machine inventory is the row-level source of truth. This human matrix summar
 
 | Family                                 | Class                                              | Definitions | Occurrences / routes | Current disposition or surviving location                                          |
 | -------------------------------------- | -------------------------------------------------- | ----------: | -------------------: | ---------------------------------------------------------------------------------- |
-| `about-medical-purpose`                | medical/legal                                      |           1 |                1 / 1 | Pending named owner/legal disposition                                              |
-| `footer-medical-short`                 | medical/legal                                      |           1 |              41 / 41 | Pending; CSS-visible footer-only, 0/41 at clinical main-content point              |
-| `footer-medical-long`                  | medical/legal                                      |           1 |              41 / 41 | Pending; CSS-visible footer-only, 0/41 at clinical main-content point              |
+| `about-medical-purpose`                | medical/legal                                      |           1 |                1 / 1 | Preserve exactly; About receives no added consumption-point notice                 |
+| `footer-medical-short`                 | medical/legal                                      |           1 |              41 / 41 | Replace with the exact approved sentence                                           |
+| `footer-medical-long`                  | medical/legal                                      |           1 |              41 / 41 | Canonicalize into the one approved footer sentence                                 |
 | `licensed-photo-attribution`           | license + policy compound                          |           5 |              46 / 27 | Retain every asset-specific CC field; policy segment remains separately identified |
 | `original-svg-cover-clarification`     | evidence/policy                                    |           1 |             138 / 31 | Retain original-artwork and non-event clarification                                |
 | `footer-independent-site`              | evidence/policy                                    |           1 |              41 / 41 | Retain independence/non-affiliation fact                                           |
@@ -148,7 +148,7 @@ The controlling Creative Commons legal-code references checked on 2026-08-13 are
 
 The classification preserves every applicable title, creator, source, license, change, notice, and ShareAlike/Adapter's License fact, while retaining explicit unknown/not-supplied policy state separately. It does not infer that the phrase “educational use” grants copyright permission. Educational purpose is only a purpose description and cannot replace CC compliance, other rights review, or medical/legal review.
 
-## Medical/legal row awaiting named disposition
+## Confirmed medical/legal disposition
 
 The current build has three exact medical-purpose strings and 83 occurrences:
 
@@ -166,27 +166,33 @@ The official Taiwan Ministry of Justice Laws & Regulations Database was checked 
 - Official Article 11: <https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=L0020001&flno=11>
 - Full Physicians Act: <https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0020001>
 
-Engineering observation only: Article 25 enumerates physician disciplinary-referral grounds; it does not specify website-disclaimer wording, placement, or sufficiency. Article 11 context may also be relevant to professional review. Deciding applicability, exact wording, minimum clauses, or placement is therefore not an engineering inference and remains pending named owner/legal confirmation.
+Engineering observation only: Article 25 enumerates physician disciplinary-referral grounds; it does not specify website-disclaimer wording, placement, or sufficiency. Engineering did not infer those conclusions. The named owner/legal disposition below supplies the bounded applicability, wording, minimum-clause, and placement decision.
 
-## Required owner/legal disposition fields
+## Recorded owner/legal disposition fields
 
-To release the Phase 3 gate, a named owner/legal reviewer must provide a disposition tied to corrective input commit `d625989de94969ecb9c248038fb00e0890f1f51b` covering all of the following fields already present as `null` or `pending` in the inventory:
+The following owner/legal disposition is recorded field-for-field in the canonical machine inventory and tied to corrective input commit `d625989de94969ecb9c248038fb00e0890f1f51b`:
 
-| Field                                               | Required decision                                                                                                                  |
-| --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `confirmedBy`                                       | Named person and capacity                                                                                                          |
-| `confirmedAtUtc`                                    | Exact UTC timestamp                                                                                                                |
-| `reviewedCommitSha`                                 | Must be `d625989de94969ecb9c248038fb00e0890f1f51b` unless a later impact review is authorized                                      |
-| `exactZhHantText`                                   | Exact approved compact medical-notice text                                                                                         |
-| `minimumVisibleClauses`                             | Exact clauses that must remain visible, not merely linked/hidden                                                                   |
-| `placement`                                         | Approved consumption-point placement and any allowed canonical-page duplication                                                    |
-| `existingStringDisposition.aboutStatement`          | Preserve, replace with approved exact text, or canonicalize                                                                        |
-| `existingStringDisposition.footerShort`             | Preserve, replace with approved exact text, or canonicalize                                                                        |
-| `existingStringDisposition.footerLong`              | Preserve, replace with approved exact text, or canonicalize                                                                        |
-| `routeClassDisposition.*`                           | Explicit treatment for About, home, 26 case routes, three injury overviews, league listings, quarterly update, and review fixtures |
-| `legalAuthorityRelationship.physiciansActArticle11` | Named reviewer's applicability/treatment conclusion                                                                                |
-| `legalAuthorityRelationship.physiciansActArticle25` | Named reviewer's applicability/treatment conclusion                                                                                |
-| `legalAuthorityRelationship.additionalAuthorities`  | Any additional governing authority, or explicit none                                                                               |
+| Field                                               | Recorded value                                                                                                                                                                                                                                       |
+| --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `confirmedBy`                                       | 吳易澄醫師（本站 owner、執業復健科醫師，具名核定）                                                                                                                                                                                                   |
+| `confirmedAtUtc`                                    | `2026-08-13T10:28:18Z`                                                                                                                                                                                                                               |
+| `reviewedCommitSha`                                 | `d625989de94969ecb9c248038fb00e0890f1f51b`                                                                                                                                                                                                           |
+| `exactZhHantText`                                   | 本站為教學用途的衛教內容，不構成醫療建議，也無法取代醫師診察。症狀持續或惡化請就醫。                                                                                                                                                                 |
+| `minimumVisibleClauses`                             | 1) 教學用途 2) 不構成醫療建議 3) 無法取代醫師診察 4) 症狀持續或惡化請就醫（即核定文字整句可見；不得拆刪任一子句）                                                                                                                                    |
+| `placement`                                         | 消費點＋footer——26 個案例頁、3 個傷種總覽、季度更新頁：臨床內容開頭放單行 compact notice（初始 viewport 內可見，桌機與 390px 手機皆然）；全站 footer 保留核定文字單一句；完整授權與說明集中到 central credits/notices 專頁，內容頁以一行連結指過去。 |
+| `existingStringDisposition.aboutStatement`          | preserve（About 主文說明保留原字，不改）                                                                                                                                                                                                             |
+| `existingStringDisposition.footerShort`             | replace——由核定文字取代                                                                                                                                                                                                                              |
+| `existingStringDisposition.footerLong`              | canonicalize——刪除，與 footerShort 合併為核定文字單一句（消除 41 路由的相鄰重複）                                                                                                                                                                    |
+| `routeClassDisposition.about`                       | 保留主文說明＋footer 核定句；不另加消費點聲明                                                                                                                                                                                                        |
+| `routeClassDisposition.home`                        | footer 核定句即可，不加消費點聲明                                                                                                                                                                                                                    |
+| `routeClassDisposition.leagueListings`              | footer 核定句即可，不加消費點聲明                                                                                                                                                                                                                    |
+| `routeClassDisposition.caseDetail26`                | 消費點 compact notice＋footer 核定句                                                                                                                                                                                                                 |
+| `routeClassDisposition.injuryOverview3`             | 同案例頁處理                                                                                                                                                                                                                                         |
+| `routeClassDisposition.quarterlyUpdate`             | 同案例頁處理                                                                                                                                                                                                                                         |
+| `routeClassDisposition.reviewFixtures`              | 維持 fixture 現狀，不納入（非核准臨床內容）                                                                                                                                                                                                          |
+| `legalAuthorityRelationship.physiciansActArticle25` | 適用為風險脈絡。本站維持教學觀察定位，不對未親自診察之個人作診斷或處置建議；醫療聲明於內容消費點可見，明示教學用途與不取代醫師診察。                                                                                                                 |
+| `legalAuthorityRelationship.physiciansActArticle11` | 本站不對個人提供診療，不直接適用；其親自診察原則支持本站不做遠距個別診斷之立場。                                                                                                                                                                     |
+| `legalAuthorityRelationship.additionalAuthorities`  | 醫療法第 85、86 條（醫療廣告規範）列為備註——本站為非商業教學衛教內容，不涉醫療業務招徠；此外無其他適用法源。                                                                                                                                         |
 
 This confirmation is limited to notice treatment. It cannot rewrite case, overview, update, diagnosis, observation, management, or return-to-play prose and is not authority to open the closed `medical-review-decision` scope generally.
 
@@ -230,7 +236,7 @@ Four concrete gaps are frozen for a later authorized implementation:
 3. The two footer medical-purpose strings repeat adjacently on all 41 routes and remain footer-only at clinical consumption routes. Their consolidation, exact surviving text, and placement require the named disposition above.
 4. The YouTube connection notice exists but is CSS-hidden at the 390px viewport. Any later density reduction must preserve this disclosure visibly before activation.
 
-No Phase 4 fix is implemented here. In particular, the report does not decide whether educational-purpose language belongs in the compact medical notice, the central route, or both; that decision is part of the pending necessity row.
+No Phase 4 fix is implemented in this Phase 3 commit. The disposition now decides that the exact approved sentence appears at the 30 clinical consumption points and once in the footer, while complete authorization and explanatory material is consolidated on the central credits/notices route. Phase 4 must implement that matrix without changing frozen clinical prose.
 
 ## Closed-scope and negative assertions
 
@@ -245,4 +251,4 @@ During Phase 3 inventory work:
 - no license-required statement or field was deleted;
 - Phase 4 consolidation did not begin.
 
-The next permissible action is receipt of the bounded named owner/legal disposition. Until then, Phase 3 remains paused at its final acceptance gate and Phase 4 remains prohibited.
+The bounded named owner/legal disposition is complete, the regenerated machine gate reports **Phase 3 accepted** and **Phase 4 unblocked**, and the next permissible action is Phase 4 implementation exactly within that approved matrix.
