@@ -253,7 +253,7 @@ const RULES: NoticeRule[] = [
     familyId: "footer-site-copyright",
     necessityClass: "evidence-or-policy-required",
     note: "Site copyright line; no deletion is proposed in Phase 3.",
-    selector: ".site-footer-legal .footer-legal-inner > div > p:nth-of-type(1)",
+    selector: "[data-footer-site-copyright]",
     sourceBindings: [
       source("src/components/layout/SiteFooter.astro", "SiteFooter", 46, 47),
     ],
