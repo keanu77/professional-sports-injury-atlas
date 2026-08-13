@@ -49,8 +49,15 @@ import {
   PLAYER_PHOTO_REGISTRY_V5_PATH,
   PLAYER_PHOTO_REGISTRY_V5_SHA256,
   validatePlayerPhotoRegistryV5,
-  type PlayerPhotoRegistryV5,
 } from "../src/lib/contracts/player-photo-registry-v5";
+import {
+  PLAYER_PHOTO_POLICY_V7_JSON_PATH,
+  PLAYER_PHOTO_POLICY_V7_MARKDOWN_PATH,
+  PLAYER_PHOTO_REGISTRY_V6_PATH,
+  PLAYER_PHOTO_REGISTRY_V6_SHA256,
+  validatePlayerPhotoRegistryV6,
+  type PlayerPhotoRegistryV6,
+} from "../src/lib/contracts/player-photo-registry-v6";
 
 const EXPECTED_ATHLETE_COUNT = 21;
 const EXPECTED_CASE_COUNT = 26;
@@ -95,7 +102,7 @@ export interface PlayerPhotoAssetLoadResult {
   allowedPaths: string[];
   issues: ValidationIssue[];
   registry: PlayerPhotoRegistryV3 | null;
-  currentRegistry?: PlayerPhotoRegistryV5 | null;
+  currentRegistry?: PlayerPhotoRegistryV6 | null;
 }
 
 function asRecord(value: unknown): Record<string, unknown> | null {
@@ -1484,7 +1491,9 @@ export function loadPlayerPhotoAssets(
 ): PlayerPhotoAssetLoadResult {
   const historicalInput = readPlayerPhotoValidationInput(root);
   historicalInput.actualImagePaths = historicalInput.actualImagePaths.filter(
-    (path) => !path.startsWith("src/assets/players/decision-13/"),
+    (path) =>
+      !path.startsWith("src/assets/players/decision-13/") &&
+      !path.startsWith("src/assets/players/decision-14/"),
   );
   const historical = validatePlayerPhotoAssets(historicalInput);
   const registryV4Path = join(root, PLAYER_PHOTO_REGISTRY_V4_PATH);
@@ -1520,8 +1529,10 @@ export function loadPlayerPhotoAssets(
   for (const ids of expectedAthleteCases.values()) ids.sort(compareCodePoints);
 
   const localAssetBytesByPath = new Map<string, Uint8Array>();
-  for (const path of walkFiles(join(root, "src/assets/players/decision-13"))) {
-    localAssetBytesByPath.set(relative(root, path), readFileSync(path));
+  for (const directory of ["decision-13", "decision-14"]) {
+    for (const path of walkFiles(join(root, "src/assets/players", directory))) {
+      localAssetBytesByPath.set(relative(root, path), readFileSync(path));
+    }
   }
   const currentV4 = validatePlayerPhotoRegistryV4({
     expectedAthleteCases,
@@ -1572,44 +1583,95 @@ export function loadPlayerPhotoAssets(
     predecessorRegistryV4Bytes: readFileSync(registryV4Path, "utf8"),
     registryBytes: readFileSync(registryV5Path, "utf8"),
   });
+  const registryV6Path = join(root, PLAYER_PHOTO_REGISTRY_V6_PATH);
+  if (!existsSync(registryV6Path)) {
+    return {
+      ...historical,
+      issues: [
+        ...historical.issues,
+        ...currentV4.issues,
+        ...currentV5.issues,
+        issue(
+          "player-photo-v6-missing-registry",
+          PLAYER_PHOTO_REGISTRY_V6_PATH,
+          "current Decision 14 registry v6 is missing",
+        ),
+      ],
+      currentRegistry: null,
+    };
+  }
+  const currentV6 = validatePlayerPhotoRegistryV6({
+    expectedAthleteCases,
+    expectedRegistrySha256: PLAYER_PHOTO_REGISTRY_V6_SHA256,
+    localAssetBytesByPath,
+    policyJsonBytes: readFileSync(
+      join(root, PLAYER_PHOTO_POLICY_V7_JSON_PATH),
+      "utf8",
+    ),
+    policyMarkdownBytes: readFileSync(
+      join(root, PLAYER_PHOTO_POLICY_V7_MARKDOWN_PATH),
+      "utf8",
+    ),
+    policyV5JsonBytes: readFileSync(
+      join(root, PLAYER_PHOTO_POLICY_V5_JSON_PATH),
+      "utf8",
+    ),
+    policyV5MarkdownBytes: readFileSync(
+      join(root, PLAYER_PHOTO_POLICY_V5_MARKDOWN_PATH),
+      "utf8",
+    ),
+    predecessorRegistryBytesByPath: new Map(
+      PLAYER_PHOTO_REGISTRY_PREDECESSORS.map((binding) => [
+        binding.path,
+        readFileSync(join(root, binding.path), "utf8"),
+      ]),
+    ),
+    predecessorRegistryV5Bytes: readFileSync(registryV5Path, "utf8"),
+    registryBytes: readFileSync(registryV6Path, "utf8"),
+  });
   const currentPaths =
+    currentV6.registry?.selections.map(
+      (selection) => selection.localFile.path,
+    ) ?? [];
+  const rollbackPaths =
     currentV5.registry?.selections.map(
       (selection) => selection.localFile.path,
     ) ?? [];
+  const governedPaths = new Set([...currentPaths, ...rollbackPaths]);
   const trackedCurrentPaths = new Set(localAssetBytesByPath.keys());
-  const currentPathSet = new Set(currentPaths);
   const inventoryIssues = [
     ...[...trackedCurrentPaths]
-      .filter((path) => !currentPathSet.has(path))
+      .filter((path) => !governedPaths.has(path))
       .map((path) =>
         issue(
-          "player-photo-v5-extra-image",
+          "player-photo-v6-extra-image",
           path,
-          "Decision 13 asset is not a current registry v5 selection",
+          "Decision 13/14 asset is neither a current v6 selection nor an exact v5 rollback asset",
         ),
       ),
-    ...currentPaths
+    ...[...governedPaths]
       .filter((path) => !trackedCurrentPaths.has(path))
       .map((path) =>
         issue(
-          "player-photo-v5-missing-image",
+          "player-photo-v6-missing-image",
           path,
-          "current registry v5 selection is missing its local asset",
+          "current v6 selection or immutable v5 rollback asset is missing",
         ),
       ),
   ];
   return {
     allowedPaths: [
-      ...new Set([...historical.allowedPaths, ...currentPaths]),
+      ...new Set([...historical.allowedPaths, ...governedPaths]),
     ].sort(compareCodePoints),
     issues: [
       ...historical.issues,
       ...currentV4.issues,
       ...currentV5.issues,
+      ...currentV6.issues,
       ...inventoryIssues,
     ],
     registry: historical.registry,
-    currentRegistry: currentV5.registry,
+    currentRegistry: currentV6.registry,
   };
 }
 
@@ -1623,7 +1685,7 @@ function main(): void {
     process.exit(1);
   }
   console.log(
-    "player-photo assets OK — current registry v5 selects 5 Commons photos and 16 original SVG fallbacks covering 26 cases; frozen v4 and earlier registries remain historical-only",
+    "player-photo assets OK — current registry v6 selects 7 Commons photos and 14 original SVG fallbacks covering 26 cases; exact v5 rollback assets and frozen v1-v5 registries remain historical-only",
   );
 }
 

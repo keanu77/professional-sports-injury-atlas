@@ -1,10 +1,10 @@
 import { readFileSync } from "node:fs";
 import { expect, test, type Locator, type Page } from "@playwright/test";
 import type {
-  PlayerPhotoCommonsSelectionV5,
-  PlayerPhotoSelectionV5,
-  PlayerPhotoSvgFallbackSelectionV5,
-} from "../src/lib/contracts/player-photo-registry-v5";
+  PlayerPhotoCommonsSelectionV6,
+  PlayerPhotoSelectionV6,
+  PlayerPhotoSvgFallbackSelectionV6,
+} from "../src/lib/contracts/player-photo-registry-v6";
 import { expectNoAxeViolations } from "./helpers/a11y";
 
 const PAGE_ORIGIN = "http://127.0.0.1:4321";
@@ -17,15 +17,15 @@ const LISTING_PATHS = [
 const playerPhotoRegistry = JSON.parse(
   readFileSync(
     new URL(
-      "../src/assets/players/player-photo-registry.v5.json",
+      "../src/assets/players/player-photo-registry.v6.json",
       import.meta.url,
     ),
     "utf8",
   ),
-) as { selections: PlayerPhotoSelectionV5[] };
+) as { selections: PlayerPhotoSelectionV6[] };
 const registrySelections = playerPhotoRegistry.selections;
 const commonsSelections = registrySelections.filter(
-  (selection): selection is PlayerPhotoCommonsSelectionV5 =>
+  (selection): selection is PlayerPhotoCommonsSelectionV6 =>
     selection.coverKind === "commons-photo",
 );
 const selectionByCaseId = new Map(
@@ -33,10 +33,34 @@ const selectionByCaseId = new Map(
     selection.caseIds.map((caseId) => [caseId, selection] as const),
   ),
 );
+const NEW_V6_PHOTOS = [
+  {
+    athleteName: "Damian Lillard",
+    caption:
+      "Damian Lillard 於 2014 年芝加哥 63rd Street Beach 世界籃球節公開舞台；非本案例受傷當下影像",
+    caseId: "CASE-NBAACHILLES-2025-015",
+    creditAnchor: "photo-credit-1195923850",
+    path: "/cases/damian-lillard-achilles-rupture-2025/",
+  },
+  {
+    athleteName: "Jayson Tatum",
+    caption:
+      "Jayson Tatum 於 2018 NBA 全明星週末公開訪談舞台；非本案例受傷當下影像",
+    caseId: "CASE-NBAACHILLES-2025-016",
+    creditAnchor: "photo-credit-756925233",
+    path: "/cases/jayson-tatum-achilles-rupture-2025/",
+  },
+] as const;
+const INTERNAL_OWNER_RISK_MARKERS = [
+  "credentialed-access-residual-risk",
+  "Decision 14 — 放寬為具名低風險攝影者的賽場封面照",
+  "../.claude/g2-owner-decisions.md",
+  "Decision 14 accepts a bounded credentialed-access residual risk",
+] as const;
 
 async function expectLicensedCover(
   cover: Locator,
-  selection: PlayerPhotoCommonsSelectionV5,
+  selection: PlayerPhotoCommonsSelectionV6,
 ): Promise<void> {
   await expect(cover).toHaveAttribute(
     "data-cover-kind",
@@ -101,7 +125,7 @@ async function expectLicensedCover(
 
 async function expectOriginalSvgCover(
   cover: Locator,
-  selection: PlayerPhotoSvgFallbackSelectionV5,
+  selection: PlayerPhotoSvgFallbackSelectionV6,
 ): Promise<void> {
   await expect(cover).toHaveAttribute(
     "data-cover-kind",
@@ -138,7 +162,7 @@ async function expectOriginalSvgCover(
 
 async function expectRegisteredCover(
   cover: Locator,
-  selection: PlayerPhotoSelectionV5,
+  selection: PlayerPhotoSelectionV6,
 ): Promise<void> {
   if (selection.coverKind === "commons-photo") {
     await expectLicensedCover(cover, selection);
@@ -183,8 +207,8 @@ async function remoteImageUrls(page: Page): Promise<string[]> {
   });
 }
 
-test.describe("Decision 13 registered player covers", () => {
-  test("the three NBA listing pages render the exact registry v5 26-case partition", async ({
+test.describe("Decision 14 registered player covers", () => {
+  test("the three NBA listing pages render the exact registry v6 26-case partition", async ({
     page,
   }) => {
     const caseIds = new Set<string>();
@@ -209,7 +233,7 @@ test.describe("Decision 13 registered player covers", () => {
         const selection = selectionByCaseId.get(caseId);
         expect(
           selection,
-          `missing registry v5 selection for ${caseId}`,
+          `missing registry v6 selection for ${caseId}`,
         ).toBeDefined();
         caseIds.add(caseId);
         const cover = card.locator("[data-case-thumb]");
@@ -247,20 +271,20 @@ test.describe("Decision 13 registered player covers", () => {
       [...coverKindsByAthlete.values()].filter(
         (kind) => kind === "commons-photo",
       ),
-    ).toHaveLength(5);
+    ).toHaveLength(7);
     expect(
       [...coverKindsByAthlete.entries()]
         .filter(([, kind]) => kind === "original-svg-fallback")
         .map(([athleteName]) => athleteName),
-    ).toHaveLength(16);
+    ).toHaveLength(14);
     expect(
       [...coverKindsByCase.values()].filter((kind) => kind === "commons-photo"),
-    ).toHaveLength(7);
+    ).toHaveLength(9);
     expect(
       [...coverKindsByCase.values()].filter(
         (kind) => kind === "original-svg-fallback",
       ),
-    ).toHaveLength(19);
+    ).toHaveLength(17);
     expect(thirdPartyRequests).toEqual([]);
   });
 
@@ -275,7 +299,7 @@ test.describe("Decision 13 registered player covers", () => {
     });
     const selection = selectionByCaseId.get(
       "CASE-NBAACHILLES-2019-005",
-    )! as PlayerPhotoCommonsSelectionV5;
+    )! as PlayerPhotoCommonsSelectionV6;
     await page.goto("/cases/kevin-durant-achilles-rupture-2019/");
 
     const hero = page.locator(
@@ -318,18 +342,55 @@ test.describe("Decision 13 registered player covers", () => {
     await expectNoAxeViolations(page);
   });
 
+  test("the two new public-event covers use exact captions and central anchors without owner-risk copy", async ({
+    page,
+  }) => {
+    const thirdPartyRequests: string[] = [];
+    page.on("request", (request) => {
+      if (new URL(request.url()).origin !== PAGE_ORIGIN) {
+        thirdPartyRequests.push(request.url());
+      }
+    });
+
+    for (const fixture of NEW_V6_PHOTOS) {
+      const selection = selectionByCaseId.get(
+        fixture.caseId,
+      ) as PlayerPhotoCommonsSelectionV6;
+      expect(selection.coverKind).toBe("commons-photo");
+      expect(selection.nonEventCaption).toBe(fixture.caption);
+
+      await page.goto(fixture.path);
+      const hero = page.locator(
+        `[data-editorial-case-cover][data-player-photo="${fixture.athleteName}"]`,
+      );
+      await expectLicensedCover(hero, selection);
+      await expect(hero.locator("figcaption")).toContainText(fixture.caption);
+      await expect(hero.locator("[data-asset-credit-link]")).toHaveAttribute(
+        "href",
+        `/credits-notices/#${fixture.creditAnchor}`,
+      );
+      for (const marker of INTERNAL_OWNER_RISK_MARKERS) {
+        await expect(page.locator("main")).not.toContainText(marker);
+      }
+      expect(await remoteImageUrls(page)).toEqual([]);
+      await expectNoAxeViolations(page);
+    }
+
+    expect(thirdPartyRequests).toEqual([]);
+  });
+
   test("an original SVG fallback remains local and carries no Creative Commons attribution", async ({
     page,
   }) => {
-    await page.goto("/cases/damian-lillard-achilles-rupture-2025/");
+    await page.goto("/cases/anfernee-simons-ankle-sprain-2023/");
     const hero = page.locator(
-      '[data-editorial-case-cover][data-original-svg-fallback="Damian Lillard"]',
+      '[data-editorial-case-cover][data-original-svg-fallback="Anfernee Simons"]',
     );
     await expectOriginalSvgCover(
       hero,
       selectionByCaseId.get(
-        "CASE-NBAACHILLES-2025-015",
-      )! as PlayerPhotoSvgFallbackSelectionV5,
+        "CASE-NBAANKLE-2023-004",
+      )! as PlayerPhotoSvgFallbackSelectionV6,
     );
     await expect(
       hero.locator('a[href^="https://creativecommons.org/"]'),
@@ -341,7 +402,7 @@ test.describe("Decision 13 registered player covers", () => {
   }) => {
     await page.goto("/credits-notices/");
     const rows = page.locator("[data-asset-credit-row][id]");
-    await expect(rows).toHaveCount(5);
+    await expect(rows).toHaveCount(7);
 
     for (const selection of commonsSelections) {
       const row = page.locator(
@@ -438,6 +499,40 @@ test.describe("Decision 13 registered player covers", () => {
         '[data-athlete-name="LeBron James"] [data-credit-field="work-title"]',
       ),
     ).toContainText("目前來源未提供");
+    for (const fixture of NEW_V6_PHOTOS) {
+      const row = page.locator(`#${fixture.creditAnchor}`);
+      await expect(row).toHaveAttribute(
+        "data-athlete-name",
+        fixture.athleteName,
+      );
+      await expect(row).toContainText(fixture.caption);
+      await expect(
+        row.locator('[data-credit-field="adapter-license"] a'),
+      ).toHaveAttribute(
+        "href",
+        "https://creativecommons.org/licenses/by-sa/4.0",
+      );
+    }
+    await expect(page.locator("main")).toContainText(
+      "每張照片均依逐檔證據標示實際場合",
+    );
+    for (const marker of INTERNAL_OWNER_RISK_MARKERS) {
+      await expect(page.locator("main")).not.toContainText(marker);
+    }
+    await expectNoAxeViolations(page);
+  });
+
+  test("the reader-facing photo policy is conditional and omits the internal owner-risk statement", async ({
+    page,
+  }) => {
+    await page.goto("/source-policy/");
+    const photoPolicy = page.locator('[aria-labelledby="photo-heading"]');
+    await expect(photoPolicy).toContainText("非賽事候選必須符合受控場合");
+    await expect(photoPolicy).toContainText("賽事候選另須同時符合有限場合");
+    await expect(photoPolicy).toContainText("每筆照片均依逐檔證據標示實際場合");
+    for (const marker of INTERNAL_OWNER_RISK_MARKERS) {
+      await expect(photoPolicy).not.toContainText(marker);
+    }
     await expectNoAxeViolations(page);
   });
 });

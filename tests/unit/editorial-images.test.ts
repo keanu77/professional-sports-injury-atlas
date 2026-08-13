@@ -64,12 +64,12 @@ describe("case editorial image resolver", () => {
       playerPhotoRegistry.selections.filter(
         (selection) => selection.coverKind === "commons-photo",
       ),
-    ).toHaveLength(5);
+    ).toHaveLength(7);
     expect(
       playerPhotoRegistry.selections.filter(
         (selection) => selection.coverKind === "original-svg-fallback",
       ),
-    ).toHaveLength(16);
+    ).toHaveLength(14);
     expect(
       playerPhotoRegistry.selections
         .filter((selection) => selection.coverKind === "commons-photo")
@@ -82,6 +82,26 @@ describe("case editorial image resolver", () => {
         ),
     ).toBe(true);
     expect(
+      Object.fromEntries(
+        playerPhotoRegistry.selections
+          .filter((selection) => selection.coverKind === "commons-photo")
+          .map((selection) => [
+            selection.athleteName,
+            selection.nonEventCaption,
+          ]),
+      ),
+    ).toMatchObject({
+      "CJ McCollum":
+        "C.J. McCollum 於 2025–26 華盛頓巫師媒體日；非本案例受傷當下影像",
+      "Dwight Powell":
+        "Dwight Powell 於德國—加拿大熱身賽賽前暖身；非本案例受傷當下影像",
+      "Kevin Durant":
+        "Kevin Durant 於 2023 DC Open 公開訪談；非本案例受傷當下影像",
+      "Kyrie Irving": "Kyrie Irving 於 2016 冠軍遊行；非本案例受傷當下影像",
+      "LeBron James":
+        "LeBron James 於《More Than a Game》紐約公開活動；非本案例受傷當下影像",
+    });
+    expect(
       playerPhotoRegistry.selections
         .filter((selection) => selection.coverKind === "original-svg-fallback")
         .every(
@@ -90,6 +110,59 @@ describe("case editorial image resolver", () => {
             "本站原創抽象運動醫學封面；非球員照片，亦非本案例受傷當下影像",
         ),
     ).toBe(true);
+  });
+
+  it("resolves both new inherited-v6 public-event photos with exact facts", () => {
+    const expected = [
+      {
+        athleteName: "Damian Lillard",
+        caption:
+          "Damian Lillard 於 2014 年芝加哥 63rd Street Beach 世界籃球節公開舞台；非本案例受傷當下影像",
+        caseId: "CASE-NBAACHILLES-2025-015",
+        focalPosition: { xPercent: 28, yPercent: 35 },
+        revisionId: 1195923850,
+      },
+      {
+        athleteName: "Jayson Tatum",
+        caption:
+          "Jayson Tatum 於 2018 NBA 全明星週末公開訪談舞台；非本案例受傷當下影像",
+        caseId: "CASE-NBAACHILLES-2025-016",
+        focalPosition: { xPercent: 30, yPercent: 35 },
+        revisionId: 756925233,
+      },
+    ] as const;
+
+    for (const fixture of expected) {
+      const registrySelection = playerPhotoRegistry.selections.find(
+        ({ athleteName }) => athleteName === fixture.athleteName,
+      );
+      expect(registrySelection?.coverKind).toBe("commons-photo");
+      if (registrySelection?.coverKind !== "commons-photo") continue;
+      expect(registrySelection.nonEventCaption).toBe(fixture.caption);
+      expect(registrySelection.focalPosition).toEqual(fixture.focalPosition);
+      expect(registrySelection.sourceRevision.id).toBe(fixture.revisionId);
+      expect(registrySelection.occasionEvidence.category).toBe(
+        "public-event-or-fan-interaction",
+      );
+      expect(registrySelection.photographerRiskEvidence.category).toBe(
+        "independent-public-event-low-risk",
+      );
+      expect("eventPhoto" in registrySelection).toBe(false);
+
+      const resolved = caseImageFor(
+        "achilles-rupture",
+        fixture.caseId,
+        fixture.athleteName,
+      );
+      expect(resolved.kind).toBe("licensed-player-photo");
+      if (resolved.kind !== "licensed-player-photo") continue;
+      expect(resolved.nonEventCaption).toBe(fixture.caption);
+      expect(resolved.focalPosition).toEqual(fixture.focalPosition);
+      expect(resolved.attribution.sourceRevision.id).toBe(fixture.revisionId);
+      expect(resolved.attribution.sourceRiskClassification.category).toBe(
+        "non-event-low-risk",
+      );
+    }
   });
 
   it("fails closed when a registered case omits or mismatches its athlete", () => {

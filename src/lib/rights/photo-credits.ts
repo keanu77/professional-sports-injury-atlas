@@ -1,17 +1,17 @@
-import registryJson from "../../assets/players/player-photo-registry.v5.json";
+import registryJson from "../../assets/players/player-photo-registry.v6.json";
 import type {
-  PlayerPhotoCommonsSelectionV5,
-  PlayerPhotoRegistryV5,
-  PlayerPhotoSelectionV5,
-} from "../contracts/player-photo-registry-v5";
+  PlayerPhotoCommonsSelectionV6,
+  PlayerPhotoRegistryV6,
+  PlayerPhotoSelectionV6,
+} from "../contracts/player-photo-registry-v6";
 
 export const ASSET_CREDITS_ROUTE = "/credits-notices/" as const;
 
-const registry = registryJson as unknown as PlayerPhotoRegistryV5;
+const registry = registryJson as unknown as PlayerPhotoRegistryV6;
 
 function isCommonsPhoto(
-  selection: PlayerPhotoSelectionV5,
-): selection is PlayerPhotoCommonsSelectionV5 {
+  selection: PlayerPhotoSelectionV6,
+): selection is PlayerPhotoCommonsSelectionV6 {
   return selection.coverKind === "commons-photo";
 }
 
@@ -30,7 +30,7 @@ export interface PhotoCreditPresentation {
   anchorId: string;
   bucketLabel: string;
   creatorLabel: "創作者" | "攝影";
-  selection: PlayerPhotoCommonsSelectionV5;
+  selection: PlayerPhotoCommonsSelectionV6;
   workTitleText: string | null;
 }
 
@@ -40,7 +40,7 @@ export interface PhotoCreditPresentation {
  * never silently share the wrong attribution template.
  */
 export function photoCreditPresentation(
-  selection: PlayerPhotoCommonsSelectionV5,
+  selection: PlayerPhotoCommonsSelectionV6,
 ): PhotoCreditPresentation {
   const bucket = selection.rightsAttribution.licenseBucket;
   const adapterLicense = selection.rightsAttribution.adapterLicense;

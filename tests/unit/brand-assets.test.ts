@@ -270,7 +270,7 @@ describe("ShareAlike composite guard", () => {
     writeInto(
       root,
       "src/lib/ui/editorial-images.ts",
-      'import registry from "../../assets/players/player-photo-registry.v5.json";\nconst photos = import.meta.glob("../../assets/players/decision-13/*.jpg");\nexport const covers = [registry.selections, photos];\n',
+      'import registry from "../../assets/players/player-photo-registry.v6.json";\nconst photos = import.meta.glob(["../../assets/players/decision-13/*.jpg", "../../assets/players/decision-14/*.jpg"]);\nexport const covers = [registry.selections, photos];\n',
     );
     writeInto(
       root,
@@ -280,20 +280,20 @@ describe("ShareAlike composite guard", () => {
     expect(scanShareAlikeCompositeRisks(root)).toEqual([]);
   });
 
-  it("accepts the reviewed Decision 13 pure registry contract but still rejects composition added to it", () => {
+  it("accepts the reviewed Decision 14 pure registry contract but still rejects composition added to it", () => {
     const root = makeRoot();
-    const path = "src/lib/contracts/player-photo-registry-v5.ts";
+    const path = "src/lib/contracts/player-photo-registry-v6.ts";
     writeInto(
       root,
       path,
-      'export const registryPath = "src/assets/players/player-photo-registry.v5.json";\n',
+      'export const registryPath = "src/assets/players/player-photo-registry.v6.json";\n',
     );
     expect(scanShareAlikeCompositeRisks(root)).toEqual([]);
 
     writeInto(
       root,
       path,
-      'export const registryPath = "src/assets/players/player-photo-registry.v5.json";\ncanvas.drawImage(registryPath);\n',
+      'export const registryPath = "src/assets/players/player-photo-registry.v6.json";\ncanvas.drawImage(registryPath);\n',
     );
     expect(
       scanShareAlikeCompositeRisks(root).map((entry) => entry.code),

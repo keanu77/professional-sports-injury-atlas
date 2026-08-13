@@ -1,10 +1,10 @@
 ---
 /** Complete, registry-derived credit row for one governed Commons asset. */
-import type { PlayerPhotoCommonsSelectionV5 } from "../../lib/contracts/player-photo-registry-v5";
+import type { PlayerPhotoCommonsSelectionV6 } from "../../lib/contracts/player-photo-registry-v6";
 import { photoCreditPresentation } from "../../lib/rights/photo-credits";
 
 interface Props {
-  selection: PlayerPhotoCommonsSelectionV5;
+  selection: PlayerPhotoCommonsSelectionV6;
 }
 
 const credit = photoCreditPresentation(Astro.props.selection);

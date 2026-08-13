@@ -95,18 +95,18 @@ describe("governed Commons player-photo assets", () => {
     expect(
       result.registry?.assets.flatMap((asset) => asset.caseIds),
     ).toHaveLength(26);
-    expect(result.allowedPaths).toHaveLength(42);
+    expect(result.allowedPaths).toHaveLength(44);
     expect(result.currentRegistry?.selections).toHaveLength(21);
     expect(
       result.currentRegistry?.selections.filter(
         (selection) => selection.coverKind === "commons-photo",
       ),
-    ).toHaveLength(5);
+    ).toHaveLength(7);
     expect(
       result.currentRegistry?.selections.filter(
         (selection) => selection.coverKind === "original-svg-fallback",
       ),
-    ).toHaveLength(16);
+    ).toHaveLength(14);
     expect(
       result.registry?.assets.filter(
         (asset) => asset.rightsAttribution.licenseBucket === "cc-by",

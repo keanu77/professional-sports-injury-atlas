@@ -157,7 +157,30 @@ test.describe("no-javascript readability", () => {
     await expect(
       target.locator('[data-credit-field="work-title"]'),
     ).toHaveAttribute("data-work-title-status", "not-supplied");
-    await expect(page.locator("[data-asset-credit-row]")).toHaveCount(5);
+    await expect(page.locator("[data-asset-credit-row]")).toHaveCount(7);
+
+    await page.goto("/cases/damian-lillard-achilles-rupture-2025/");
+    const newCreditLink = page
+      .locator(
+        '[data-editorial-case-cover][data-player-photo="Damian Lillard"]',
+      )
+      .locator("[data-asset-credit-link]");
+    await expect(newCreditLink).toHaveAttribute(
+      "href",
+      "/credits-notices/#photo-credit-1195923850",
+    );
+    await newCreditLink.click();
+    await expect(page).toHaveURL(
+      /\/credits-notices\/#photo-credit-1195923850$/u,
+    );
+    const newTarget = page.locator("#photo-credit-1195923850");
+    await expect(newTarget).toHaveAttribute(
+      "data-athlete-name",
+      "Damian Lillard",
+    );
+    await expect(newTarget).toContainText(
+      "Damian Lillard 於 2014 年芝加哥 63rd Street Beach 世界籃球節公開舞台；非本案例受傷當下影像",
+    );
   });
 
   test("video states degrade to a source link or governed plain-text citation", async ({

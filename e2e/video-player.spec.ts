@@ -14,9 +14,9 @@
 import { readFileSync } from "node:fs";
 import { expect, test, type Locator, type Page } from "@playwright/test";
 import type {
-  PlayerPhotoSelectionV5,
-  PlayerPhotoSvgFallbackSelectionV5,
-} from "../src/lib/contracts/player-photo-registry-v5";
+  PlayerPhotoSelectionV6,
+  PlayerPhotoSvgFallbackSelectionV6,
+} from "../src/lib/contracts/player-photo-registry-v6";
 import { expectNoAxeViolations } from "./helpers/a11y";
 
 const LAB_PATH = "/review/component-lab/";
@@ -129,12 +129,12 @@ const GOVERNED_NBA_CASE = {
 const playerPhotoRegistry = JSON.parse(
   readFileSync(
     new URL(
-      "../src/assets/players/player-photo-registry.v5.json",
+      "../src/assets/players/player-photo-registry.v6.json",
       import.meta.url,
     ),
     "utf8",
   ),
-) as { selections: PlayerPhotoSelectionV5[] };
+) as { selections: PlayerPhotoSelectionV6[] };
 const registrySelections = playerPhotoRegistry.selections;
 const selectionByCaseId = new Map(
   registrySelections.flatMap((selection) =>
@@ -255,7 +255,7 @@ async function expectLocalResponsiveCover(
   expected: {
     athleteName?: string;
     injuryLabel?: string;
-    selection?: PlayerPhotoSelectionV5;
+    selection?: PlayerPhotoSelectionV6;
   } = {},
 ): Promise<void> {
   const selection = expected.selection;
@@ -317,7 +317,7 @@ async function expectLocalResponsiveCover(
     );
     await expect(attribution.locator("a")).toHaveCount(1);
   } else {
-    const fallback = selection as PlayerPhotoSvgFallbackSelectionV5;
+    const fallback = selection as PlayerPhotoSvgFallbackSelectionV6;
     expect(expected.athleteName).toBe(fallback.athleteName);
     await expect(picture).toHaveCount(0);
     await expect(cover).toHaveAttribute(
@@ -471,7 +471,7 @@ test.describe("component lab before enhancement", () => {
 });
 
 test.describe("governed case facades", () => {
-  test("all seven embeddable YouTube cases use their registry v5 local facade and make zero pre-click requests", async ({
+  test("all seven embeddable YouTube cases use their registry v6 local facade and make zero pre-click requests", async ({
     page,
   }) => {
     const log = await stubYouTubeRoutes(page);
@@ -527,7 +527,7 @@ test.describe("governed case facades", () => {
       const selection = selectionByCaseId.get(entry.caseId);
       expect(
         selection,
-        `missing registry v5 selection for ${entry.caseId}`,
+        `missing registry v6 selection for ${entry.caseId}`,
       ).toBeDefined();
       await expectLocalResponsiveCover(cover, {
         athleteName: entry.athleteName,
@@ -661,7 +661,7 @@ test.describe("governed case facades", () => {
     expect(thirdPartyRequests).toEqual([]);
   });
 
-  test("a real NBA case uses its registry v5 SVG facade and complete plain-text citation", async ({
+  test("a real NBA case uses its registry v6 photo facade and complete plain-text citation", async ({
     page,
   }) => {
     const log = await stubYouTubeRoutes(page);
@@ -690,11 +690,23 @@ test.describe("governed case facades", () => {
       "data-case-cover",
       GOVERNED_NBA_CASE.injuryCode,
     );
+    const selection = selectionByCaseId.get(GOVERNED_NBA_CASE.caseId);
+    expect(selection?.coverKind).toBe("commons-photo");
+    if (selection?.coverKind === "commons-photo") {
+      expect(selection.nonEventCaption).toBe(
+        "Damian Lillard 於 2014 年芝加哥 63rd Street Beach 世界籃球節公開舞台；非本案例受傷當下影像",
+      );
+      expect(selection.sourceRevision.id).toBe(1195923850);
+    }
     await expectLocalResponsiveCover(cover, {
       athleteName: GOVERNED_NBA_CASE.athleteName,
       injuryLabel: GOVERNED_NBA_CASE.injuryLabel,
-      selection: selectionByCaseId.get(GOVERNED_NBA_CASE.caseId),
+      selection,
     });
+    await expect(cover.locator("[data-asset-credit-link]")).toHaveAttribute(
+      "href",
+      "/credits-notices/#photo-credit-1195923850",
+    );
     await expect(
       cover.locator(
         "[data-video-source-citation-facade] a, [data-video-source-citation-facade] button",
