@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="d13-markelle-fultz-bg" x1="95" y1="80" x2="1510" y2="830" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1c153a" />
+      <stop offset="1" stop-color="#382359" />
+    </linearGradient>
+    <linearGradient id="d13-markelle-fultz-repair" x1="420" y1="680" x2="1190" y2="205" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#818cf8" />
+      <stop offset="0.52" stop-color="#c084fc" />
+      <stop offset="1" stop-color="#f0abfc" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="64" fill="url(#d13-markelle-fultz-bg)" />
+  <path d="M412 653A384 384 0 0 1 535 257" fill="none" stroke="#4c1d95" stroke-width="98" stroke-linecap="round" opacity="0.58" />
+  <path d="M623 194A384 384 0 0 1 1070 262" fill="none" stroke="#5b21b6" stroke-width="98" stroke-linecap="round" opacity="0.58" />
+  <path d="M1140 342A384 384 0 0 1 1128 649" fill="none" stroke="#6b21a8" stroke-width="98" stroke-linecap="round" opacity="0.58" />
+  <path d="M1040 724A384 384 0 0 1 510 734" fill="none" stroke="#7e22ce" stroke-width="98" stroke-linecap="round" opacity="0.58" />
+  <path d="M431 631A350 350 0 0 1 547 283M638 229A350 350 0 0 1 1042 290M1104 359A350 350 0 0 1 1091 625M1014 688A350 350 0 0 1 536 699" fill="none" stroke="url(#d13-markelle-fultz-repair)" stroke-width="25" stroke-linecap="round" />
+  <path d="M569 319L703 446L606 563L771 664L880 528L1026 613L1080 436L948 343L828 452L703 337Z" fill="#211346" stroke="#e9d5ff" stroke-width="13" stroke-linejoin="round" />
+  <circle cx="808" cy="477" r="40" fill="#c084fc" opacity="0.78" />
+  <path d="M176 222H404M1204 686H1455" stroke="#a78bfa" stroke-width="12" stroke-linecap="round" opacity="0.3" />
+</svg>

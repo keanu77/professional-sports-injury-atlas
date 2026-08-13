@@ -7,7 +7,6 @@ import {
   caseImageFor,
   playerPhotoRegistry,
 } from "../../src/lib/ui/editorial-images";
-import { PLAYER_PHOTO_SOURCE_RISK_DISCLAIMER } from "../../src/lib/contracts/player-photo";
 import {
   caseHeroWidthsFor,
   caseThumbWidthsFor,
@@ -31,7 +30,7 @@ const cases = readdirSync(join(REPO_ROOT, "src/content/cases"))
   );
 
 describe("case editorial image resolver", () => {
-  it("resolves all 26 governed cases to 21 athlete-matched local photos", () => {
+  it("resolves all 26 governed cases to 21 athlete-matched local named covers", () => {
     const resolved = cases.map((record) => ({
       athleteName: record.athlete.name,
       caseId: record.id,
@@ -46,46 +45,50 @@ describe("case editorial image resolver", () => {
     expect(
       resolved.every(
         ({ athleteName, selection }) =>
-          selection.kind === "licensed-player-photo" &&
+          selection.kind !== "injury-theme" &&
           selection.athleteName === athleteName &&
-          selection.attribution.nonEventCaption ===
-            "球員球場資料照片；非本案例受傷當下影像",
+          selection.nonEventCaption.includes("非本案例受傷當下影像"),
       ),
     ).toBe(true);
     expect(
       new Set(
         resolved.map(({ selection }) =>
-          selection.kind === "licensed-player-photo"
+          selection.kind !== "injury-theme"
             ? selection.athleteName
             : "fallback",
         ),
       ).size,
     ).toBe(21);
-    expect(playerPhotoRegistry.assets).toHaveLength(21);
+    expect(playerPhotoRegistry.selections).toHaveLength(21);
     expect(
-      playerPhotoRegistry.assets.filter(
-        (asset) =>
-          asset.sourceRiskClassification.category === "game-action-high-risk",
+      playerPhotoRegistry.selections.filter(
+        (selection) => selection.coverKind === "commons-photo",
       ),
-    ).toHaveLength(19);
+    ).toHaveLength(5);
     expect(
-      playerPhotoRegistry.assets
-        .filter(
-          (asset) =>
-            asset.sourceRiskClassification.category === "non-event-low-risk",
-        )
-        .map((asset) => asset.athleteName),
-    ).toEqual(["Dwight Powell", "Trae Young"]);
-    expect(
-      playerPhotoRegistry.assets.every(
-        (asset) =>
-          asset.sourceRiskClassification.checkedAt === "2026-08-12" &&
-          asset.sourceRiskClassification.basis.endsWith(
-            PLAYER_PHOTO_SOURCE_RISK_DISCLAIMER,
-          ) &&
-          asset.sourceRiskClassification.sourceRevisionPermalink ===
-            asset.rightsAttribution.sourceRevision.permalink,
+      playerPhotoRegistry.selections.filter(
+        (selection) => selection.coverKind === "original-svg-fallback",
       ),
+    ).toHaveLength(16);
+    expect(
+      playerPhotoRegistry.selections
+        .filter((selection) => selection.coverKind === "commons-photo")
+        .every(
+          (selection) =>
+            selection.sourceRiskClassification.category ===
+              "non-event-low-risk" &&
+            selection.sourceRiskClassification.nonClearanceStatement ===
+              "Low risk is not rights clearance or public-release approval.",
+        ),
+    ).toBe(true);
+    expect(
+      playerPhotoRegistry.selections
+        .filter((selection) => selection.coverKind === "original-svg-fallback")
+        .every(
+          (selection) =>
+            selection.nonEventCaption ===
+            "本站原創抽象運動醫學封面；非球員照片，亦非本案例受傷當下影像",
+        ),
     ).toBe(true);
   });
 

@@ -1,3 +1,5 @@
+import { mkdtempSync, rmSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
@@ -75,6 +77,17 @@ function moveAssetToFallback(
 }
 
 describe("governed Commons player-photo assets", () => {
+  it("fails closed when the current Decision 13 registry is missing", () => {
+    const root = mkdtempSync(join(tmpdir(), "player-photo-v4-missing-"));
+    try {
+      expect(
+        loadPlayerPhotoAssets(root).issues.map((entry) => entry.code),
+      ).toContain("player-photo-v4-missing-registry");
+    } finally {
+      rmSync(root, { recursive: true, force: true });
+    }
+  });
+
   it("accepts the exact real 21-photo registry covering all 26 cases", () => {
     const result = loadPlayerPhotoAssets(REPO_ROOT);
     expect(result.issues).toEqual([]);
@@ -82,7 +95,18 @@ describe("governed Commons player-photo assets", () => {
     expect(
       result.registry?.assets.flatMap((asset) => asset.caseIds),
     ).toHaveLength(26);
-    expect(result.allowedPaths).toHaveLength(21);
+    expect(result.allowedPaths).toHaveLength(42);
+    expect(result.currentRegistry?.selections).toHaveLength(21);
+    expect(
+      result.currentRegistry?.selections.filter(
+        (selection) => selection.coverKind === "commons-photo",
+      ),
+    ).toHaveLength(5);
+    expect(
+      result.currentRegistry?.selections.filter(
+        (selection) => selection.coverKind === "original-svg-fallback",
+      ),
+    ).toHaveLength(16);
     expect(
       result.registry?.assets.filter(
         (asset) => asset.rightsAttribution.licenseBucket === "cc-by",

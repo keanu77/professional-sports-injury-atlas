@@ -1,10 +1,11 @@
 ---
 /**
  * Governed case cover shared by heroes, cards, and privacy-preserving video
- * facades. Registered cases use a local, hash-bound Commons JPEG with visible
- * attribution; unknown fixture IDs retain the injury-theme fallback.
+ * facades. Registered cases use either a local, hash-bound Commons photo with
+ * visible attribution or a site-owned SVG illustration; unknown fixture IDs
+ * retain the injury-theme fallback.
  */
-import { Picture } from "astro:assets";
+import { Image, Picture } from "astro:assets";
 import {
   caseImageFor,
   type CaseImageSelection,
@@ -40,7 +41,7 @@ const {
 const selection =
   suppliedSelection ?? caseImageFor(injuryCode, recordId, athleteName);
 if (
-  selection.kind === "licensed-player-photo" &&
+  selection.kind !== "injury-theme" &&
   selection.athleteName !== athleteName
 ) {
   throw new Error(
@@ -50,6 +51,7 @@ if (
 
 const isHero = presentation === "hero";
 const isThumb = presentation === "thumb";
+const isOriginalSvgFallback = selection.kind === "original-svg-fallback";
 const renditionWidths = isThumb
   ? caseThumbWidthsFor(selection.image.width)
   : caseHeroWidthsFor(selection.image.width);
@@ -60,26 +62,22 @@ const photoSizes = isHero
     : "(min-width: 64rem) 43rem, calc(100vw - 4rem)";
 const photoAlt =
   selection.kind === "licensed-player-photo"
-    ? `${selection.athleteName}球員球場資料照片；非本案例受傷當下影像。`
-    : (imageAlt ??
-      `${injuryLabel}原創 AI 生成運動醫學攝影意象；匿名運動員面孔不可見，不代表任何特定球員或真實受傷事件。`);
+    ? `${selection.nonEventCaption}。`
+    : selection.kind === "original-svg-fallback"
+      ? `${selection.athleteName} 案例：${selection.nonEventCaption}。`
+      : (imageAlt ??
+        `${injuryLabel}原創 AI 生成運動醫學攝影意象；匿名運動員面孔不可見，不代表任何特定球員或真實受傷事件。`);
 const showFallbackCaption = isHero || presentation === "standalone";
 let sourceRiskLabel: string | null = null;
 if (selection.kind === "licensed-player-photo") {
-  const category = selection.attribution.sourceRiskClassification.category;
-  switch (category) {
-    case "game-action-high-risk":
-      sourceRiskLabel =
-        "賽場實拍（game-action-high-risk；Flickr-washing 高風險）";
-      break;
-    case "non-event-low-risk":
-      sourceRiskLabel = "非賽事場合（non-event-low-risk；低風險分類）";
-      break;
-    default:
-      throw new Error(
-        `Unsupported player-photo source-risk category for ${recordId}: ${String(category)}`,
-      );
+  const category: string =
+    selection.attribution.sourceRiskClassification.category;
+  if (category !== "non-event-low-risk") {
+    throw new Error(
+      `Unsupported current player-photo source-risk category for ${recordId}: ${category}`,
+    );
   }
+  sourceRiskLabel = "非賽事場合（non-event-low-risk；低風險分類）";
 }
 ---
 
@@ -101,28 +99,45 @@ if (selection.kind === "licensed-player-photo") {
   data-player-photo={selection.kind === "licensed-player-photo"
     ? selection.athleteName
     : undefined}
+  data-original-svg-fallback={isOriginalSvgFallback
+    ? selection.athleteName
+    : undefined}
   data-focal-x={String(selection.focalPosition.xPercent)}
   data-focal-y={String(selection.focalPosition.yPercent)}
   style={`--cover-focal-x: ${selection.focalPosition.xPercent}%; --cover-focal-y: ${selection.focalPosition.yPercent}%;`}
 >
   <div class="case-cover-media">
-    <Picture
-      src={selection.image}
-      formats={["avif", "webp"]}
-      fallbackFormat={selection.kind === "licensed-player-photo"
-        ? "jpg"
-        : "png"}
-      widths={renditionWidths}
-      width={renditionWidths.at(-1)!}
-      sizes={photoSizes}
-      quality={isHero ? CASE_HERO_QUALITY : CASE_COVER_QUALITY}
-      loading={isHero ? "eager" : "lazy"}
-      decoding="async"
-      fetchpriority={isHero ? "high" : undefined}
-      alt={photoAlt}
-      class="case-cover-photo"
-      pictureAttributes={{ class: "case-cover-picture" }}
-    />
+    {
+      isOriginalSvgFallback ? (
+        <Image
+          src={selection.image}
+          width={selection.image.width}
+          height={selection.image.height}
+          loading={isHero ? "eager" : "lazy"}
+          decoding="async"
+          fetchpriority={isHero ? "high" : undefined}
+          alt={photoAlt}
+          class="case-cover-photo case-cover-original-svg"
+          data-local-original-svg
+        />
+      ) : (
+        <Picture
+          src={selection.image}
+          formats={["avif", "webp"]}
+          fallbackFormat={selection.image.format === "png" ? "png" : "jpg"}
+          widths={renditionWidths}
+          width={renditionWidths.at(-1)!}
+          sizes={photoSizes}
+          quality={isHero ? CASE_HERO_QUALITY : CASE_COVER_QUALITY}
+          loading={isHero ? "eager" : "lazy"}
+          decoding="async"
+          fetchpriority={isHero ? "high" : undefined}
+          alt={photoAlt}
+          class="case-cover-photo"
+          pictureAttributes={{ class: "case-cover-picture" }}
+        />
+      )
+    }
     <slot name="media-action" />
     <span data-cover-illustration={injuryCode} aria-hidden="true"></span>
   </div>
@@ -134,7 +149,7 @@ if (selection.kind === "licensed-player-photo") {
           selection.attribution.rightsAttribution.licenseBucket
         }
         data-source-revision-id={String(
-          selection.attribution.rightsAttribution.sourceRevision.id,
+          selection.attribution.sourceRevision.id,
         )}
         data-source-risk-category={
           selection.attribution.sourceRiskClassification.category
@@ -169,17 +184,15 @@ if (selection.kind === "licensed-player-photo") {
             </a>
             <span aria-hidden="true"> · </span>
             <a
-              href={
-                selection.attribution.rightsAttribution.sourceRevision.permalink
-              }
+              href={selection.attribution.sourceRevision.permalink}
               rel="noopener noreferrer"
             >
               Wikimedia Commons 永久說明頁
             </a>
             <span aria-hidden="true"> · </span>
-            <span>{selection.attribution.nonEventCaption}</span>
+            <span>{selection.nonEventCaption}</span>
             <span aria-hidden="true"> · </span>
-            <span>本站版面以 CSS 裁切（已作變更）。</span>
+            <span>{selection.attribution.alterationDisclosure}</span>
           </>
         ) : selection.attribution.rightsAttribution.licenseBucket ===
           "cc-by-sa" ? (
@@ -211,17 +224,15 @@ if (selection.kind === "licensed-player-photo") {
             </a>
             <span aria-hidden="true"> · </span>
             <a
-              href={
-                selection.attribution.rightsAttribution.sourceRevision.permalink
-              }
+              href={selection.attribution.sourceRevision.permalink}
               rel="noopener noreferrer"
             >
               Wikimedia Commons 永久說明頁
             </a>
             <span aria-hidden="true"> · </span>
-            <span>{selection.attribution.nonEventCaption}</span>
+            <span>{selection.nonEventCaption}</span>
             <span aria-hidden="true"> · </span>
-            <span>本站版面以 CSS 裁切（改作）。</span>
+            <span>{selection.attribution.alterationDisclosure}</span>
             <span aria-hidden="true"> · </span>
             <a
               href={selection.attribution.rightsAttribution.adapterLicense!.url}
@@ -254,17 +265,15 @@ if (selection.kind === "licensed-player-photo") {
             </a>
             <span aria-hidden="true"> · </span>
             <a
-              href={
-                selection.attribution.rightsAttribution.sourceRevision.permalink
-              }
+              href={selection.attribution.sourceRevision.permalink}
               rel="noopener noreferrer"
             >
               Wikimedia Commons 永久說明頁
             </a>
             <span aria-hidden="true"> · </span>
-            <span>{selection.attribution.nonEventCaption}</span>
+            <span>{selection.nonEventCaption}</span>
             <span aria-hidden="true"> · </span>
-            <span>本站版面以 CSS 裁切；不宣告 Adapter&apos;s License。</span>
+            <span>{selection.attribution.alterationDisclosure}</span>
           </>
         )}
         <span data-attribution-notices>
@@ -311,28 +320,31 @@ if (selection.kind === "licensed-player-photo") {
         <span
           data-source-risk-classification
           data-source-risk-checked-at={
-            selection.attribution.sourceRiskClassification.checkedAt
+            selection.attribution.occasionEvidence.checkedAt
           }
           data-source-risk-revision-permalink={
-            selection.attribution.sourceRiskClassification
-              .sourceRevisionPermalink
+            selection.attribution.sourceRevision.permalink
           }
         >
           <span>來源風險分類：{sourceRiskLabel}</span>
           <span aria-hidden="true"> · </span>
           <span>
             查核日：
-            {selection.attribution.sourceRiskClassification.checkedAt}
+            {selection.attribution.occasionEvidence.checkedAt}
           </span>
           <span aria-hidden="true"> · </span>
           <span data-source-risk-basis>
-            分類依據：{selection.attribution.sourceRiskClassification.basis}
+            分類依據：{selection.attribution.occasionEvidence.basis}
           </span>
           <span aria-hidden="true"> · </span>
           <span data-source-risk-no-clearance>
             此分類不代表著作權、肖像權或公開使用已獲放行。
           </span>
         </span>
+      </figcaption>
+    ) : selection.kind === "original-svg-fallback" ? (
+      <figcaption data-original-svg-label>
+        {selection.nonEventCaption}。
       </figcaption>
     ) : (
       showFallbackCaption && (
@@ -374,6 +386,7 @@ if (selection.kind === "licensed-player-photo") {
   }
 
   .case-cover-media :global(picture),
+  .case-cover-media :global(svg),
   .case-cover-media :global(img) {
     display: block;
     width: 100%;

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="d13-anfernee-simons-bg" x1="120" y1="80" x2="1480" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10162f" />
+      <stop offset="1" stop-color="#25205f" />
+    </linearGradient>
+    <linearGradient id="d13-anfernee-simons-flow" x1="150" y1="700" x2="1450" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8b5cf6" />
+      <stop offset="0.55" stop-color="#38bdf8" />
+      <stop offset="1" stop-color="#f0abfc" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="64" fill="url(#d13-anfernee-simons-bg)" />
+  <path d="M-80 760C280 760 360 315 735 390S1190 710 1680 195" fill="none" stroke="#4c1d95" stroke-width="156" opacity="0.38" />
+  <path d="M-40 710C285 720 392 278 748 350S1195 642 1640 145" fill="none" stroke="url(#d13-anfernee-simons-flow)" stroke-width="28" stroke-linecap="round" />
+  <path d="M110 746L415 536L652 582L890 332L1198 380L1460 118" fill="none" stroke="#e0f2fe" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.78" />
+  <circle cx="415" cy="536" r="26" fill="#10162f" stroke="#c4b5fd" stroke-width="10" />
+  <circle cx="890" cy="332" r="34" fill="#10162f" stroke="#67e8f9" stroke-width="12" />
+  <circle cx="1198" cy="380" r="19" fill="#f0abfc" />
+  <path d="M122 188H548" stroke="#6366f1" stroke-width="14" stroke-linecap="round" opacity="0.35" />
+  <path d="M170 236H454" stroke="#38bdf8" stroke-width="8" stroke-linecap="round" opacity="0.32" />
+</svg>

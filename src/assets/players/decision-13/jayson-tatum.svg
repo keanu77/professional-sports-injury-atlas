@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="d13-jayson-tatum-bg" x1="170" y1="100" x2="1420" y2="810" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827" />
+      <stop offset="1" stop-color="#20352e" />
+    </linearGradient>
+    <radialGradient id="d13-jayson-tatum-core" cx="0" cy="0" r="1" gradientTransform="translate(820 458) rotate(90) scale(278)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#a7f3d0" />
+      <stop offset="0.34" stop-color="#34d399" stop-opacity="0.64" />
+      <stop offset="1" stop-color="#10b981" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" rx="64" fill="url(#d13-jayson-tatum-bg)" />
+  <circle cx="820" cy="458" r="276" fill="url(#d13-jayson-tatum-core)" />
+  <circle cx="820" cy="458" r="256" fill="none" stroke="#34d399" stroke-width="18" stroke-dasharray="190 70" opacity="0.7" />
+  <circle cx="820" cy="458" r="176" fill="none" stroke="#6ee7b7" stroke-width="12" stroke-dasharray="74 42" opacity="0.78" />
+  <circle cx="820" cy="458" r="84" fill="#0f2923" stroke="#d1fae5" stroke-width="17" />
+  <path d="M820 374V136M904 458H1350M820 542V780M736 458H250" stroke="#a7f3d0" stroke-width="12" stroke-linecap="round" opacity="0.55" />
+  <path d="M761 399L543 181M879 399L1098 180M879 517L1110 748M761 517L528 747" stroke="#10b981" stroke-width="8" stroke-linecap="round" opacity="0.42" />
+  <circle cx="1350" cy="458" r="22" fill="#d1fae5" />
+  <circle cx="250" cy="458" r="15" fill="#6ee7b7" />
+</svg>

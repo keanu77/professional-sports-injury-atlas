@@ -53,6 +53,11 @@ const RASTER_COMPOSITION_CALL_RE =
   /(?:\.composite\s*\(|\bcreateCanvas\s*\(|\bdrawImage\s*\(|\bfillText\s*\(|\bsatori\s*\(|\bImageResponse\s*\(|\bnew\s+Resvg\s*\()/;
 const PLAYER_SOCIAL_META_RE =
   /(?:og:image|twitter:image)[\s\S]{0,400}(?:player-photo|assets\/players)|(?:player-photo|assets\/players)[\s\S]{0,400}(?:og:image|twitter:image)/i;
+const CURRENT_RENDER_SOURCE_RE = /^src\/(?:components|layouts|lib\/ui|pages)\//;
+const HISTORICAL_PLAYER_REGISTRY_REFERENCE_RE =
+  /player-photo-registry\.v[123]\.json/;
+const HISTORICAL_PLAYER_ASSET_REFERENCE_RE =
+  /assets\/players\/(?!decision-13\/|player-photo-registry\.v4\.json)/;
 const DIRECT_COMPOSITION_PACKAGES = new Set([
   "@resvg/resvg-js",
   "@vercel/og",
@@ -472,6 +477,19 @@ export function scanShareAlikeCompositeRisks(root: string): ValidationIssue[] {
         continue;
       }
       const text = readFileSync(filePath, "utf8");
+      if (
+        CURRENT_RENDER_SOURCE_RE.test(relPath) &&
+        (HISTORICAL_PLAYER_REGISTRY_REFERENCE_RE.test(text) ||
+          HISTORICAL_PLAYER_ASSET_REFERENCE_RE.test(text))
+      ) {
+        issues.push(
+          issue(
+            "brand-current-cover-historical-reference",
+            relPath,
+            "current render code must consume only registry v4 and Decision 13 named-cover assets",
+          ),
+        );
+      }
       if (
         codeDir === "src" &&
         PLAYER_PHOTO_PIPELINE_RE.test(text) &&

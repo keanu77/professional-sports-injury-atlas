@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="d13-thomas-bryant-bg" x1="110" y1="820" x2="1460" y2="70" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#052e2b" />
+      <stop offset="1" stop-color="#164e3f" />
+    </linearGradient>
+    <linearGradient id="d13-thomas-bryant-lift" x1="0" y1="780" x2="0" y2="145" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10b981" />
+      <stop offset="0.54" stop-color="#6ee7b7" />
+      <stop offset="1" stop-color="#ecfccb" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="64" fill="url(#d13-thomas-bryant-bg)" />
+  <path d="M316 756V478M544 756V319M800 756V207M1056 756V365M1284 756V522" stroke="#065f46" stroke-width="116" stroke-linecap="round" opacity="0.72" />
+  <path d="M316 756V478M544 756V319M800 756V207M1056 756V365M1284 756V522" stroke="url(#d13-thomas-bryant-lift)" stroke-width="27" stroke-linecap="round" />
+  <path d="M236 758H1364" stroke="#a7f3d0" stroke-width="15" stroke-linecap="round" opacity="0.7" />
+  <path d="M270 470L316 414L362 470M498 311L544 255L590 311M754 198L800 142L846 198M1010 357L1056 301L1102 357M1238 514L1284 458L1330 514" fill="none" stroke="#ecfccb" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M184 210H445M1155 210H1416" stroke="#34d399" stroke-width="12" stroke-linecap="round" opacity="0.3" />
+  <rect x="658" y="655" width="284" height="66" rx="33" fill="#022c22" stroke="#6ee7b7" stroke-width="10" />
+</svg>

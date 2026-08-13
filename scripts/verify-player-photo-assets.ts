@@ -35,6 +35,15 @@ import {
   type PlayerPhotoLicenseBucket,
   type PlayerPhotoRegistryV3,
 } from "../src/lib/contracts/player-photo";
+import {
+  PLAYER_PHOTO_POLICY_V5_JSON_PATH,
+  PLAYER_PHOTO_POLICY_V5_MARKDOWN_PATH,
+  PLAYER_PHOTO_REGISTRY_PREDECESSORS,
+  PLAYER_PHOTO_REGISTRY_V4_PATH,
+  PLAYER_PHOTO_REGISTRY_V4_SHA256,
+  validatePlayerPhotoRegistryV4,
+  type PlayerPhotoRegistryV4,
+} from "../src/lib/contracts/player-photo-registry-v4";
 
 const EXPECTED_ATHLETE_COUNT = 21;
 const EXPECTED_CASE_COUNT = 26;
@@ -79,6 +88,7 @@ export interface PlayerPhotoAssetLoadResult {
   allowedPaths: string[];
   issues: ValidationIssue[];
   registry: PlayerPhotoRegistryV3 | null;
+  currentRegistry?: PlayerPhotoRegistryV4 | null;
 }
 
 function asRecord(value: unknown): Record<string, unknown> | null {
@@ -1465,7 +1475,100 @@ export function validatePlayerPhotoAssets(
 export function loadPlayerPhotoAssets(
   root: string,
 ): PlayerPhotoAssetLoadResult {
-  return validatePlayerPhotoAssets(readPlayerPhotoValidationInput(root));
+  const historicalInput = readPlayerPhotoValidationInput(root);
+  historicalInput.actualImagePaths = historicalInput.actualImagePaths.filter(
+    (path) => !path.startsWith("src/assets/players/decision-13/"),
+  );
+  const historical = validatePlayerPhotoAssets(historicalInput);
+  const registryV4Path = join(root, PLAYER_PHOTO_REGISTRY_V4_PATH);
+  if (!existsSync(registryV4Path)) {
+    return {
+      ...historical,
+      issues: [
+        ...historical.issues,
+        issue(
+          "player-photo-v4-missing-registry",
+          PLAYER_PHOTO_REGISTRY_V4_PATH,
+          "current Decision 13 registry v4 is missing",
+        ),
+      ],
+      currentRegistry: null,
+    };
+  }
+
+  const caseDirectory = join(root, "src/content/cases");
+  const expectedAthleteCases = new Map<string, string[]>();
+  for (const filename of readdirSync(caseDirectory).sort(compareCodePoints)) {
+    if (!filename.endsWith(".json")) continue;
+    const value = JSON.parse(
+      readFileSync(join(caseDirectory, filename), "utf8"),
+    ) as {
+      athlete: { name: string };
+      id: string;
+    };
+    const ids = expectedAthleteCases.get(value.athlete.name) ?? [];
+    ids.push(value.id);
+    expectedAthleteCases.set(value.athlete.name, ids);
+  }
+  for (const ids of expectedAthleteCases.values()) ids.sort(compareCodePoints);
+
+  const localAssetBytesByPath = new Map<string, Uint8Array>();
+  for (const path of walkFiles(join(root, "src/assets/players/decision-13"))) {
+    localAssetBytesByPath.set(relative(root, path), readFileSync(path));
+  }
+  const current = validatePlayerPhotoRegistryV4({
+    expectedAthleteCases,
+    expectedRegistrySha256: PLAYER_PHOTO_REGISTRY_V4_SHA256,
+    localAssetBytesByPath,
+    policyJsonBytes: readFileSync(
+      join(root, PLAYER_PHOTO_POLICY_V5_JSON_PATH),
+      "utf8",
+    ),
+    policyMarkdownBytes: readFileSync(
+      join(root, PLAYER_PHOTO_POLICY_V5_MARKDOWN_PATH),
+      "utf8",
+    ),
+    predecessorRegistryBytesByPath: new Map(
+      PLAYER_PHOTO_REGISTRY_PREDECESSORS.map((binding) => [
+        binding.path,
+        readFileSync(join(root, binding.path), "utf8"),
+      ]),
+    ),
+    registryBytes: readFileSync(registryV4Path, "utf8"),
+  });
+  const currentPaths =
+    current.registry?.selections.map((selection) => selection.localFile.path) ??
+    [];
+  const trackedCurrentPaths = new Set(localAssetBytesByPath.keys());
+  const currentPathSet = new Set(currentPaths);
+  const inventoryIssues = [
+    ...[...trackedCurrentPaths]
+      .filter((path) => !currentPathSet.has(path))
+      .map((path) =>
+        issue(
+          "player-photo-v4-extra-image",
+          path,
+          "Decision 13 asset is not a current registry v4 selection",
+        ),
+      ),
+    ...currentPaths
+      .filter((path) => !trackedCurrentPaths.has(path))
+      .map((path) =>
+        issue(
+          "player-photo-v4-missing-image",
+          path,
+          "current registry v4 selection is missing its local asset",
+        ),
+      ),
+  ];
+  return {
+    allowedPaths: [
+      ...new Set([...historical.allowedPaths, ...currentPaths]),
+    ].sort(compareCodePoints),
+    issues: [...historical.issues, ...current.issues, ...inventoryIssues],
+    registry: historical.registry,
+    currentRegistry: current.registry,
+  };
 }
 
 function main(): void {
@@ -1478,7 +1581,7 @@ function main(): void {
     process.exit(1);
   }
   console.log(
-    `player-photo assets OK — ${result.registry!.assets.length} Commons JPEGs and ${result.registry!.fallbacks.length} fallbacks cover ${result.registry!.assets.flatMap((asset) => asset.caseIds).length + result.registry!.fallbacks.flatMap((fallback) => fallback.caseIds).length} cases`,
+    "player-photo assets OK — current registry v4 selects 5 Commons photos and 16 original SVG fallbacks covering 26 cases; frozen v3 assets remain historical-only",
   );
 }
 

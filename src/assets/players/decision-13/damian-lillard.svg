@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="d13-damian-lillard-bg" x1="210" y1="72" x2="1390" y2="850" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#21102d" />
+      <stop offset="1" stop-color="#451536" />
+    </linearGradient>
+    <linearGradient id="d13-damian-lillard-arc" x1="435" y1="698" x2="1240" y2="190" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f472b6" />
+      <stop offset="0.5" stop-color="#c084fc" />
+      <stop offset="1" stop-color="#67e8f9" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="64" fill="url(#d13-damian-lillard-bg)" />
+  <circle cx="802" cy="448" r="308" fill="none" stroke="#7e22ce" stroke-width="88" opacity="0.2" />
+  <path d="M515 558A314 314 0 0 1 1018 216" fill="none" stroke="url(#d13-damian-lillard-arc)" stroke-width="32" stroke-linecap="round" />
+  <path d="M1094 292A314 314 0 0 1 682 738" fill="none" stroke="#f9a8d4" stroke-width="17" stroke-linecap="round" opacity="0.82" />
+  <path d="M800 450L1084 280" stroke="#e0f2fe" stroke-width="16" stroke-linecap="round" />
+  <path d="M800 450L612 612" stroke="#f5d0fe" stroke-width="10" stroke-linecap="round" opacity="0.72" />
+  <circle cx="800" cy="450" r="56" fill="#2e1065" stroke="#f0abfc" stroke-width="18" />
+  <circle cx="1084" cy="280" r="24" fill="#67e8f9" />
+  <path d="M160 185H520M1085 735H1445" stroke="#a855f7" stroke-width="12" stroke-linecap="round" opacity="0.33" />
+  <path d="M203 231H438M1178 686H1394" stroke="#ec4899" stroke-width="7" stroke-linecap="round" opacity="0.4" />
+</svg>

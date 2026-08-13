@@ -1,10 +1,13 @@
 import type { ImageMetadata } from "astro";
+import type { SvgComponent } from "astro/types";
 
-import playerPhotoRegistryJson from "../../assets/players/player-photo-registry.v3.json";
+import playerPhotoRegistryJson from "../../assets/players/player-photo-registry.v4.json";
 import type {
-  PlayerPhotoAssetRecord,
-  PlayerPhotoRegistryV3,
-} from "../contracts/player-photo";
+  PlayerPhotoCommonsSelectionV4,
+  PlayerPhotoRegistryV4,
+  PlayerPhotoSelectionV4,
+  PlayerPhotoSvgFallbackSelectionV4,
+} from "../contracts/player-photo-registry-v4";
 
 import achillesCase01 from "../../assets/heroes/achilles-rupture-case-01.png";
 import achillesCase02 from "../../assets/heroes/achilles-rupture-case-02.png";
@@ -55,33 +58,35 @@ const overviewImages: Record<EditorialInjuryCode, ImageMetadata> = {
   "achilles-rupture": achillesOverview,
 };
 
-const playerPhotoModules = import.meta.glob<{ default: ImageMetadata }>(
-  "../../assets/players/*.jpg",
+type NamedCoverImage = ImageMetadata | (SvgComponent & ImageMetadata);
+
+const playerPhotoModules = import.meta.glob<{ default: NamedCoverImage }>(
+  "../../assets/players/decision-13/*.{jpg,jpeg,png,svg}",
   { eager: true },
 );
 
 export const playerPhotoRegistry =
-  playerPhotoRegistryJson as PlayerPhotoRegistryV3;
+  playerPhotoRegistryJson as PlayerPhotoRegistryV4;
 
-interface RegisteredPlayerPhoto {
-  asset: PlayerPhotoAssetRecord;
-  image: ImageMetadata;
+interface RegisteredPlayerCover {
+  asset: PlayerPhotoSelectionV4;
+  image: NamedCoverImage;
 }
 
-const registeredPhotoByCaseId = new Map<string, RegisteredPlayerPhoto>();
-for (const asset of playerPhotoRegistry.assets) {
+const registeredCoverByCaseId = new Map<string, RegisteredPlayerCover>();
+for (const asset of playerPhotoRegistry.selections) {
   const importPath = asset.localFile.path.replace(/^src\//u, "../../");
   const image = playerPhotoModules[importPath]?.default;
   if (image === undefined) {
     throw new Error(
-      `Player-photo registry asset is not importable through Astro: ${asset.localFile.path}`,
+      `Named-cover registry asset is not importable through Astro: ${asset.localFile.path}`,
     );
   }
   for (const caseId of asset.caseIds) {
-    if (registeredPhotoByCaseId.has(caseId)) {
-      throw new Error(`Duplicate player-photo case mapping: ${caseId}`);
+    if (registeredCoverByCaseId.has(caseId)) {
+      throw new Error(`Duplicate named-cover case mapping: ${caseId}`);
     }
-    registeredPhotoByCaseId.set(caseId, { asset, image });
+    registeredCoverByCaseId.set(caseId, { asset, image });
   }
 }
 
@@ -129,17 +134,27 @@ export interface LicensedPlayerPhotoSelection {
   image: ImageMetadata;
   variant: null;
   athleteName: string;
-  focalPosition: PlayerPhotoAssetRecord["focalPosition"];
-  attribution: Pick<
-    PlayerPhotoAssetRecord,
-    | "alterationDisclosure"
-    | "commonsDescriptionUrl"
-    | "license"
-    | "nonEventCaption"
-    | "photographer"
-    | "rightsAttribution"
-    | "sourceRiskClassification"
-  >;
+  focalPosition: PlayerPhotoCommonsSelectionV4["focalPosition"];
+  nonEventCaption: PlayerPhotoCommonsSelectionV4["nonEventCaption"];
+  attribution: {
+    alterationDisclosure: string;
+    commonsDescriptionUrl: string;
+    license: PlayerPhotoCommonsSelectionV4["license"];
+    occasionEvidence: PlayerPhotoCommonsSelectionV4["occasionEvidence"];
+    photographer: string;
+    rightsAttribution: PlayerPhotoCommonsSelectionV4["rightsAttribution"];
+    sourceRevision: PlayerPhotoCommonsSelectionV4["sourceRevision"];
+    sourceRiskClassification: PlayerPhotoCommonsSelectionV4["sourceRiskClassification"];
+  };
+}
+
+export interface OriginalSvgFallbackSelection {
+  kind: "original-svg-fallback";
+  image: SvgComponent & ImageMetadata;
+  variant: null;
+  athleteName: string;
+  focalPosition: PlayerPhotoSvgFallbackSelectionV4["focalPosition"];
+  nonEventCaption: PlayerPhotoSvgFallbackSelectionV4["nonEventCaption"];
 }
 
 export interface InjuryThemeImageSelection {
@@ -150,10 +165,12 @@ export interface InjuryThemeImageSelection {
 }
 
 export type CaseImageSelection =
-  LicensedPlayerPhotoSelection | InjuryThemeImageSelection;
+  | LicensedPlayerPhotoSelection
+  | OriginalSvgFallbackSelection
+  | InjuryThemeImageSelection;
 
 /**
- * Resolves an immutable case ID to its governed local player photo. Unknown
+ * Resolves an immutable case ID to its governed local named cover. Unknown
  * fixture IDs retain the stable injury-theme fallback. A registered case must
  * supply the matching rendered athlete identity or rendering fails closed.
  */
@@ -163,26 +180,39 @@ export function caseImageFor(
   athleteName?: string,
 ): CaseImageSelection {
   const code = requireEditorialInjuryCode(injuryCode);
-  const registered = registeredPhotoByCaseId.get(recordId);
+  const registered = registeredCoverByCaseId.get(recordId);
   if (registered !== undefined) {
     if (athleteName !== registered.asset.athleteName) {
       throw new Error(
-        `Player-photo athlete mismatch for ${recordId}: expected ${registered.asset.athleteName}, received ${athleteName ?? "missing athlete"}`,
+        `Named-cover athlete mismatch for ${recordId}: expected ${registered.asset.athleteName}, received ${athleteName ?? "missing athlete"}`,
       );
+    }
+    if (registered.asset.coverKind === "original-svg-fallback") {
+      return {
+        kind: "original-svg-fallback",
+        image: registered.image as SvgComponent & ImageMetadata,
+        variant: null,
+        athleteName: registered.asset.athleteName,
+        focalPosition: registered.asset.focalPosition,
+        nonEventCaption: registered.asset.nonEventCaption,
+      };
     }
     return {
       kind: "licensed-player-photo",
-      image: registered.image,
+      image: registered.image as ImageMetadata,
       variant: null,
       athleteName: registered.asset.athleteName,
       focalPosition: registered.asset.focalPosition,
+      nonEventCaption: registered.asset.nonEventCaption,
       attribution: {
-        alterationDisclosure: registered.asset.alterationDisclosure,
+        alterationDisclosure:
+          registered.asset.rightsAttribution.alterationState.disclosure,
         commonsDescriptionUrl: registered.asset.commonsDescriptionUrl,
         license: registered.asset.license,
-        nonEventCaption: registered.asset.nonEventCaption,
-        photographer: registered.asset.photographer,
+        occasionEvidence: registered.asset.occasionEvidence,
+        photographer: registered.asset.photographerIdentity.name,
         rightsAttribution: registered.asset.rightsAttribution,
+        sourceRevision: registered.asset.sourceRevision,
         sourceRiskClassification: registered.asset.sourceRiskClassification,
       },
     };

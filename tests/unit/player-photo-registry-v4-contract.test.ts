@@ -64,6 +64,7 @@ function photoSelection(): PlayerPhotoCommonsSelectionV4 {
       ],
     },
     currentCoverStatus: "current",
+    focalPosition: { xPercent: 50, yPercent: 25 },
     identityEvidence: {
       ...evidence(revisionPermalink),
       status: "verified",
@@ -81,6 +82,8 @@ function photoSelection(): PlayerPhotoCommonsSelectionV4 {
       sha256: sha256Hex(PHOTO_BYTES),
       width: 1,
     },
+    nonEventCaption:
+      "C.J. McCollum 於 2025–26 華盛頓巫師媒體日；非本案例受傷當下影像",
     occasionEvidence: {
       ...evidence(revisionPermalink),
       category: "public-event-or-fan-interaction",
@@ -153,6 +156,7 @@ function fallbackSelection(): PlayerPhotoSvgFallbackSelectionV4 {
     caseIds: ["CASE-NBAACHILLES-2020-008"],
     coverKind: "original-svg-fallback",
     currentCoverStatus: "current",
+    focalPosition: { xPercent: 50, yPercent: 50 },
     fallbackProvenance: {
       athleteLikeness: "none",
       copiedTeamOrLeagueMarks: "none",
@@ -171,6 +175,7 @@ function fallbackSelection(): PlayerPhotoSvgFallbackSelectionV4 {
       sha256: sha256Hex(SVG_BYTES),
       width: 1200,
     },
+    nonEventCaption: "本站原創抽象運動醫學封面；非球員照片或受傷事件影像",
     supersession: {
       previousLocalFilePath: "src/assets/players/dwight-powell.jpg",
       previousLocalFileSha256:
@@ -424,6 +429,23 @@ describe("Decision 13 player-photo registry v4 contract", () => {
         },
       ),
     ).toContain("player-photo-v4-svg-third-party-content");
+  });
+
+  it("rejects a generic inline SVG definition ID that can collide across covers", () => {
+    const unsafe = Buffer.from(
+      '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480"><defs><linearGradient id="bg"><stop stop-color="#10232f"/></linearGradient></defs><rect width="1200" height="480" fill="url(#bg)"/></svg>',
+    );
+    expect(
+      issueCodes(
+        (registry) => {
+          const fallback = registry
+            .selections[1] as PlayerPhotoSvgFallbackSelectionV4;
+          fallback.localFile.byteLength = unsafe.byteLength;
+          fallback.localFile.sha256 = sha256Hex(unsafe);
+        },
+        (bytes) => bytes.set(SVG_PATH, unsafe),
+      ),
+    ).toContain("player-photo-v4-svg-definition-id");
   });
 
   it("binds the Commons description title to the fixed revision and oldid permalink", () => {

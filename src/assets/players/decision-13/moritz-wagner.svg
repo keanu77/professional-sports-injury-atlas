@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="d13-moritz-wagner-bg" x1="90" y1="80" x2="1510" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#18181b" />
+      <stop offset="1" stop-color="#3b171d" />
+    </linearGradient>
+    <linearGradient id="d13-moritz-wagner-wave" x1="100" y1="650" x2="1500" y2="245" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ef4444" />
+      <stop offset="0.48" stop-color="#fb923c" />
+      <stop offset="1" stop-color="#fde68a" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="64" fill="url(#d13-moritz-wagner-bg)" />
+  <path d="M160 194L1440 706M160 706L1440 194" stroke="#7f1d1d" stroke-width="18" stroke-linecap="round" opacity="0.34" />
+  <path d="M283 142L1290 758M310 758L1318 142" stroke="#991b1b" stroke-width="8" stroke-linecap="round" opacity="0.32" />
+  <path d="M-50 578C167 576 280 321 502 323C721 325 837 609 1050 607C1249 605 1358 368 1650 348" fill="none" stroke="#7c2d12" stroke-width="144" opacity="0.48" />
+  <path d="M-30 542C177 541 286 287 505 289C731 291 843 575 1048 573C1240 571 1354 335 1630 316" fill="none" stroke="url(#d13-moritz-wagner-wave)" stroke-width="29" stroke-linecap="round" />
+  <path d="M45 648C244 621 346 406 523 408C707 410 844 678 1067 660C1268 644 1355 444 1550 410" fill="none" stroke="#fecaca" stroke-width="9" stroke-linecap="round" opacity="0.6" />
+  <rect x="450" y="241" width="110" height="110" rx="24" fill="#18181b" stroke="#fb923c" stroke-width="13" transform="rotate(23 505 296)" />
+  <rect x="995" y="519" width="106" height="106" rx="24" fill="#18181b" stroke="#fde68a" stroke-width="13" transform="rotate(-20 1048 572)" />
+</svg>

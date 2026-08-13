@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="d13-danny-green-bg" x1="80" y1="80" x2="1520" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07251d" />
+      <stop offset="1" stop-color="#143f36" />
+    </linearGradient>
+    <linearGradient id="d13-danny-green-lane" x1="132" y1="744" x2="1470" y2="162" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22c55e" />
+      <stop offset="0.52" stop-color="#bef264" />
+      <stop offset="1" stop-color="#fef08a" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="64" fill="url(#d13-danny-green-bg)" />
+  <path d="M-40 758L552 472L912 548L1640 170" fill="none" stroke="#14532d" stroke-width="174" stroke-linejoin="round" opacity="0.76" />
+  <path d="M-28 700L550 420L920 495L1624 128" fill="none" stroke="url(#d13-danny-green-lane)" stroke-width="30" stroke-linejoin="round" />
+  <path d="M95 818L568 587L900 655L1513 336" fill="none" stroke="#86efac" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.62" />
+  <path d="M548 421L568 587M920 495L900 655" stroke="#f7fee7" stroke-width="9" stroke-linecap="round" opacity="0.72" />
+  <rect x="512" y="383" width="80" height="80" rx="24" fill="#052e16" stroke="#bef264" stroke-width="12" transform="rotate(-26 552 423)" />
+  <rect x="870" y="459" width="96" height="96" rx="29" fill="#052e16" stroke="#86efac" stroke-width="12" transform="rotate(12 918 507)" />
+  <path d="M204 178L540 260M1112 704L1452 618" stroke="#4ade80" stroke-width="15" stroke-linecap="round" opacity="0.3" />
+</svg>

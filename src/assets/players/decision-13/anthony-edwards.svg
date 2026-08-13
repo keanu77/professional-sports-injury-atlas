@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="d13-anthony-edwards-bg" x1="180" y1="80" x2="1370" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#250e1b" />
+      <stop offset="1" stop-color="#4a1421" />
+    </linearGradient>
+    <linearGradient id="d13-anthony-edwards-flare" x1="305" y1="706" x2="1280" y2="166" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fb7185" />
+      <stop offset="0.5" stop-color="#f97316" />
+      <stop offset="1" stop-color="#fde047" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="64" fill="url(#d13-anthony-edwards-bg)" />
+  <path d="M205 724L532 536L394 432L770 382L704 164L963 332L1165 150L1120 430L1438 488L1092 568L1198 770L912 628L694 790L735 572L340 648L522 508Z" fill="#7f1d1d" opacity="0.42" />
+  <path d="M282 705L590 528L476 444L790 411L747 238L950 365L1110 232L1078 455L1322 493L1050 550L1128 706L906 599L725 731L766 552L450 615L607 497Z" fill="url(#d13-anthony-edwards-flare)" opacity="0.94" />
+  <path d="M310 742L785 454L668 434L923 334L883 428L1268 192" fill="none" stroke="#fff7ed" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.84" />
+  <path d="M107 242L476 319" stroke="#fb7185" stroke-width="22" stroke-linecap="round" opacity="0.34" />
+  <path d="M1160 702L1486 628" stroke="#fde047" stroke-width="15" stroke-linecap="round" opacity="0.34" />
+</svg>

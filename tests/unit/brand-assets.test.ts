@@ -270,7 +270,7 @@ describe("ShareAlike composite guard", () => {
     writeInto(
       root,
       "src/lib/ui/editorial-images.ts",
-      'import registry from "../../assets/players/player-photo-registry.v1.json";\nexport const photos = registry.assets;\n',
+      'import registry from "../../assets/players/player-photo-registry.v4.json";\nconst photos = import.meta.glob("../../assets/players/decision-13/*.jpg");\nexport const covers = [registry.selections, photos];\n',
     );
     writeInto(
       root,
@@ -327,6 +327,18 @@ describe("ShareAlike composite guard", () => {
     expect(
       scanShareAlikeCompositeRisks(root).map((entry) => entry.code),
     ).toContain("brand-sharealike-new-consumer");
+  });
+
+  it("rejects historical registries, photos, and broad player globs from current render code", () => {
+    const root = makeRoot();
+    writeInto(
+      root,
+      "src/components/cases/CaseCover.astro",
+      '---\nimport oldRegistry from "../../assets/players/player-photo-registry.v3.json";\nconst oldPhotos = import.meta.glob("../../assets/players/*.jpg");\n---\n<div>{oldRegistry.schemaVersion}{Object.keys(oldPhotos).length}</div>\n',
+    );
+    expect(
+      scanShareAlikeCompositeRisks(root).map((entry) => entry.code),
+    ).toContain("brand-current-cover-historical-reference");
   });
 
   it("rejects new composite-like rasters, generator scripts, and direct tooling", () => {

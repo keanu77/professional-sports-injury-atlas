@@ -11,6 +11,8 @@ export const PLAYER_PHOTO_REGISTRY_V4_PATH =
   "src/assets/players/player-photo-registry.v4.json" as const;
 export const PLAYER_PHOTO_REGISTRY_V4_SCOPE_ID =
   "decision-13-named-covers-and-notice-consolidation-only" as const;
+export const PLAYER_PHOTO_REGISTRY_V4_SHA256 =
+  "ef7149b57ab5d08a328a0a7ed88177fc4d6a35af998bcfd95a0ec318bcf345b5" as const;
 export const PLAYER_PHOTO_POLICY_V5_JSON_PATH =
   "research/source-policy/source-policy.v5.json" as const;
 export const PLAYER_PHOTO_POLICY_V5_MARKDOWN_PATH =
@@ -80,6 +82,11 @@ export interface PlayerPhotoCommonSelectionV4 {
   athleteName: string;
   caseIds: string[];
   currentCoverStatus: "current";
+  focalPosition: {
+    xPercent: number;
+    yPercent: number;
+  };
+  nonEventCaption: string;
   supersession: {
     previousLocalFilePath: string;
     previousLocalFileSha256: string;
@@ -414,6 +421,27 @@ function svgContainsForbiddenContent(bytes: Uint8Array): boolean {
   return SVG_FORBIDDEN_RE.test(svg);
 }
 
+function svgHasNamespacedDefinitionIds(
+  bytes: Uint8Array,
+  localPath: string,
+): boolean {
+  const slug = localPath.match(/\/([a-z0-9]+(?:-[a-z0-9]+)*)\.svg$/u)?.[1];
+  if (slug === undefined) return false;
+  const svg = Buffer.from(bytes).toString("utf8");
+  const ids = [...svg.matchAll(/\bid=["']([^"']+)["']/giu)].map(
+    (match) => match[1]!,
+  );
+  const references = [...svg.matchAll(/url\(\s*#([^)\s]+)\s*\)/giu)].map(
+    (match) => match[1]!,
+  );
+  const idSet = new Set(ids);
+  return (
+    idSet.size === ids.length &&
+    ids.every((id) => id.startsWith(`d13-${slug}-`)) &&
+    references.every((reference) => idSet.has(reference))
+  );
+}
+
 function validateLocalFile(
   value: unknown,
   kind: "commons-photo" | "original-svg-fallback",
@@ -624,7 +652,9 @@ export function validatePlayerPhotoRegistryV4(
       "caseIds",
       "coverKind",
       "currentCoverStatus",
+      "focalPosition",
       "localFile",
+      "nonEventCaption",
       "supersession",
     ];
     const expectedKeys =
@@ -717,6 +747,26 @@ export function validatePlayerPhotoRegistryV4(
           "player-photo-v4-current-cover",
           `${location}.currentCoverStatus`,
           "every registry v4 selection must be the current cover",
+        ),
+      );
+    }
+    const focalPosition = asRecord(selection.focalPosition);
+    if (
+      focalPosition === null ||
+      !hasExactKeys(focalPosition, ["xPercent", "yPercent"]) ||
+      typeof focalPosition.xPercent !== "number" ||
+      typeof focalPosition.yPercent !== "number" ||
+      focalPosition.xPercent < 0 ||
+      focalPosition.xPercent > 100 ||
+      focalPosition.yPercent < 0 ||
+      focalPosition.yPercent > 100 ||
+      !nonEmptyString(selection.nonEventCaption)
+    ) {
+      issues.push(
+        issue(
+          "player-photo-v4-presentation",
+          location,
+          "current cover must carry safe focal coordinates and a non-event caption",
         ),
       );
     }
@@ -836,6 +886,19 @@ export function validatePlayerPhotoRegistryV4(
             "player-photo-v4-svg-third-party-content",
             `${location}.localFile.path`,
             "SVG fallback contains a linked/embedded raster, external fetch, script, text/font, use, style, or foreign object",
+          ),
+        );
+      }
+      if (
+        svgBytes === undefined ||
+        typeof localFile?.path !== "string" ||
+        !svgHasNamespacedDefinitionIds(svgBytes, localFile.path)
+      ) {
+        issues.push(
+          issue(
+            "player-photo-v4-svg-definition-id",
+            `${location}.localFile.path`,
+            "inline SVG definition IDs must use the asset slug namespace and all local fragment references must resolve",
           ),
         );
       }

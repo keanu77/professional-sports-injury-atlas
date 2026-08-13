@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="d13-ricky-rubio-bg" x1="120" y1="80" x2="1480" y2="830" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0b1b37" />
+      <stop offset="1" stop-color="#203650" />
+    </linearGradient>
+    <linearGradient id="d13-ricky-rubio-thread" x1="210" y1="690" x2="1390" y2="170" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38bdf8" />
+      <stop offset="0.52" stop-color="#f59e0b" />
+      <stop offset="1" stop-color="#fed7aa" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="64" fill="url(#d13-ricky-rubio-bg)" />
+  <path d="M169 680C415 647 437 362 698 372C923 380 971 633 1192 545C1318 495 1359 342 1444 209" fill="none" stroke="#1e3a5f" stroke-width="126" stroke-linecap="round" opacity="0.7" />
+  <path d="M169 680C415 647 437 362 698 372C923 380 971 633 1192 545C1318 495 1359 342 1444 209" fill="none" stroke="url(#d13-ricky-rubio-thread)" stroke-width="27" stroke-linecap="round" />
+  <path d="M190 758C449 718 506 465 704 468C885 471 981 718 1234 612C1377 552 1428 387 1498 270" fill="none" stroke="#dbeafe" stroke-width="9" stroke-linecap="round" opacity="0.56" />
+  <circle cx="698" cy="372" r="53" fill="#0b1b37" stroke="#7dd3fc" stroke-width="15" />
+  <circle cx="1192" cy="545" r="41" fill="#0b1b37" stroke="#fbbf24" stroke-width="14" />
+  <path d="M698 319L629 213M751 372L884 290M1192 504L1264 403M1233 545L1373 570" stroke="#bae6fd" stroke-width="10" stroke-linecap="round" opacity="0.58" />
+  <circle cx="1444" cy="209" r="22" fill="#fed7aa" />
+</svg>

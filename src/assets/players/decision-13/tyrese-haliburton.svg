@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="d13-tyrese-haliburton-bg" x1="110" y1="80" x2="1490" y2="830" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#071a35" />
+      <stop offset="1" stop-color="#173760" />
+    </linearGradient>
+    <linearGradient id="d13-tyrese-haliburton-network" x1="246" y1="684" x2="1364" y2="189" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3b82f6" />
+      <stop offset="0.48" stop-color="#38bdf8" />
+      <stop offset="1" stop-color="#fde047" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="64" fill="url(#d13-tyrese-haliburton-bg)" />
+  <path d="M216 677L437 455L668 570L862 285L1115 420L1374 190M437 455L862 285M668 570L1115 420M862 285L1030 689M437 455L362 222" fill="none" stroke="#1e3a8a" stroke-width="88" stroke-linecap="round" stroke-linejoin="round" opacity="0.34" />
+  <path d="M216 677L437 455L668 570L862 285L1115 420L1374 190M437 455L862 285M668 570L1115 420M862 285L1030 689M437 455L362 222" fill="none" stroke="url(#d13-tyrese-haliburton-network)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="216" cy="677" r="29" fill="#071a35" stroke="#60a5fa" stroke-width="12" />
+  <circle cx="437" cy="455" r="44" fill="#071a35" stroke="#38bdf8" stroke-width="14" />
+  <circle cx="668" cy="570" r="34" fill="#071a35" stroke="#7dd3fc" stroke-width="13" />
+  <circle cx="862" cy="285" r="55" fill="#071a35" stroke="#bae6fd" stroke-width="15" />
+  <circle cx="1115" cy="420" r="40" fill="#071a35" stroke="#fde047" stroke-width="14" />
+  <circle cx="1374" cy="190" r="27" fill="#fef08a" />
+  <circle cx="1030" cy="689" r="23" fill="#38bdf8" />
+  <circle cx="362" cy="222" r="20" fill="#60a5fa" />
+</svg>

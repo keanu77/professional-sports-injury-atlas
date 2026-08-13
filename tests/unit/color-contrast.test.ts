@@ -310,19 +310,24 @@ describe("governed case cover", () => {
     );
     expect(videoComponent).toMatch(/<CaseCover\s/);
     expect(component).toMatch(/<Picture\s/);
+    expect(component).toMatch(/<Image\s/);
+    expect(component).toContain("data-local-original-svg");
     expect(component).toContain("data-cover-illustration={injuryCode}");
     expect(component).not.toMatch(/<svg\b/i);
   });
 
   it("uses the local Astro image pipeline without vector drawing primitives", () => {
-    expect(component).toContain('import { Picture } from "astro:assets"');
+    expect(component).toContain(
+      'import { Image, Picture } from "astro:assets"',
+    );
     expect(component).toContain(
       "caseImageFor(injuryCode, recordId, athleteName)",
     );
     expect(component).toContain('formats={["avif", "webp"]}');
     expect(component).toMatch(
-      /fallbackFormat=\{selection\.kind === "licensed-player-photo"\s*\? "jpg"\s*: "png"\}/u,
+      /fallbackFormat=\{selection\.image\.format === "png" \? "png" : "jpg"\}/u,
     );
+    expect(component).toContain("src={selection.image}");
     expect(component).toContain("widths={renditionWidths}");
     expect(component).not.toContain("image-set(");
     expect(component).not.toMatch(
@@ -355,11 +360,12 @@ describe("governed case cover", () => {
     );
   });
 
-  it("contains no authored HTML image tag, game frame, remote thumbnail, or portrait dependency", () => {
-    expect(component).not.toMatch(/<image\b|<img\b|https?:\/\//i);
+  it("contains no authored image tag, inline SVG, game frame, remote thumbnail, or portrait dependency", () => {
+    expect(component).not.toMatch(/<image\b|<img\b|https?:\/\//);
     expect(component).toContain("匿名運動員面孔不可見");
     expect(component).toContain("不代表任何特定球員或真實受傷事件");
-    expect(component).toContain("球員球場資料照片；非本案例受傷當下影像");
+    expect(component).toContain("selection.nonEventCaption");
+    expect(component).toContain("data-original-svg-label");
     expect(component).toContain("Wikimedia Commons 永久說明頁");
   });
 });

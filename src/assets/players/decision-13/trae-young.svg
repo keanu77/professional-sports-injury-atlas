@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="d13-trae-young-bg" x1="100" y1="80" x2="1500" y2="830" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#18181b" />
+      <stop offset="1" stop-color="#352315" />
+    </linearGradient>
+    <linearGradient id="d13-trae-young-speed" x1="110" y1="670" x2="1500" y2="225" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ef4444" />
+      <stop offset="0.5" stop-color="#facc15" />
+      <stop offset="1" stop-color="#fef9c3" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="64" fill="url(#d13-trae-young-bg)" />
+  <path d="M-30 690L455 505L715 548L1055 341L1630 193" fill="none" stroke="#713f12" stroke-width="132" stroke-linejoin="round" opacity="0.52" />
+  <path d="M-20 650L448 469L708 511L1042 307L1620 158" fill="none" stroke="url(#d13-trae-young-speed)" stroke-width="27" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M46 731L480 568L735 610L1081 403L1539 285" fill="none" stroke="#fef3c7" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.58" />
+  <path d="M123 526L482 387M210 620L539 493M843 453L1144 273M931 514L1231 332" stroke="#fb923c" stroke-width="13" stroke-linecap="round" opacity="0.34" />
+  <path d="M156 280L604 391M1051 657L1468 513" stroke="#ef4444" stroke-width="19" stroke-linecap="round" opacity="0.31" />
+  <circle cx="448" cy="469" r="34" fill="#18181b" stroke="#fde047" stroke-width="13" />
+  <circle cx="1042" cy="307" r="45" fill="#18181b" stroke="#fef08a" stroke-width="14" />
+</svg>

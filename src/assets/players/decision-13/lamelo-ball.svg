@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="d13-lamelo-ball-bg" x1="140" y1="70" x2="1460" y2="840" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#09203a" />
+      <stop offset="1" stop-color="#143b55" />
+    </linearGradient>
+    <linearGradient id="d13-lamelo-ball-prism" x1="489" y1="675" x2="1104" y2="225" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22d3ee" />
+      <stop offset="0.5" stop-color="#a78bfa" />
+      <stop offset="1" stop-color="#f472b6" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="64" fill="url(#d13-lamelo-ball-bg)" />
+  <path d="M801 147L1117 343L1050 691L672 762L420 483L571 217Z" fill="#164e63" stroke="url(#d13-lamelo-ball-prism)" stroke-width="24" stroke-linejoin="round" />
+  <path d="M801 147L791 455L1117 343M791 455L1050 691M791 455L672 762M791 455L420 483M791 455L571 217" fill="none" stroke="#cffafe" stroke-width="10" stroke-linejoin="round" opacity="0.68" />
+  <path d="M571 217L1117 343L672 762L571 217ZM420 483L1050 691L801 147L420 483Z" fill="none" stroke="#c4b5fd" stroke-width="7" opacity="0.4" />
+  <ellipse cx="791" cy="455" rx="478" ry="254" fill="none" stroke="#67e8f9" stroke-width="12" stroke-dasharray="52 38" transform="rotate(-14 791 455)" opacity="0.56" />
+  <circle cx="791" cy="455" r="45" fill="#0f172a" stroke="#f0abfc" stroke-width="15" />
+  <circle cx="1117" cy="343" r="19" fill="#f9a8d4" />
+  <circle cx="420" cy="483" r="16" fill="#67e8f9" />
+</svg>

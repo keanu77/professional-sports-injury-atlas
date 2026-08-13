@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="d13-dejounte-murray-bg" x1="130" y1="85" x2="1480" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#071d3b" />
+      <stop offset="1" stop-color="#0c3b61" />
+    </linearGradient>
+    <linearGradient id="d13-dejounte-murray-route" x1="188" y1="692" x2="1395" y2="211" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2563eb" />
+      <stop offset="0.5" stop-color="#22d3ee" />
+      <stop offset="1" stop-color="#a5f3fc" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="64" fill="url(#d13-dejounte-murray-bg)" />
+  <path d="M148 700H445V574H714V438H1022V306H1425" fill="none" stroke="#1e40af" stroke-width="102" stroke-linejoin="round" opacity="0.42" />
+  <path d="M148 700H445V574H714V438H1022V306H1425" fill="none" stroke="url(#d13-dejounte-murray-route)" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M230 770H530V652H800V514H1107V383H1490" fill="none" stroke="#bae6fd" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" opacity="0.55" />
+  <circle cx="445" cy="574" r="43" fill="#071d3b" stroke="#38bdf8" stroke-width="14" />
+  <circle cx="714" cy="438" r="34" fill="#071d3b" stroke="#67e8f9" stroke-width="12" />
+  <circle cx="1022" cy="306" r="51" fill="#071d3b" stroke="#a5f3fc" stroke-width="15" />
+  <path d="M212 188H502M1080 696H1402" stroke="#0ea5e9" stroke-width="15" stroke-linecap="round" opacity="0.28" />
+  <path d="M282 232H426M1205 650H1460" stroke="#67e8f9" stroke-width="8" stroke-linecap="round" opacity="0.32" />
+</svg>

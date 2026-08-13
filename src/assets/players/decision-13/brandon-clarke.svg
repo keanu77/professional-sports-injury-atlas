@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="d13-brandon-clarke-bg" x1="100" y1="80" x2="1500" y2="850" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#062b2a" />
+      <stop offset="1" stop-color="#123c2c" />
+    </linearGradient>
+    <radialGradient id="d13-brandon-clarke-pulse" cx="0" cy="0" r="1" gradientTransform="translate(812 448) rotate(90) scale(350 560)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6ee7b7" stop-opacity="0.42" />
+      <stop offset="1" stop-color="#6ee7b7" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" rx="64" fill="url(#d13-brandon-clarke-bg)" />
+  <ellipse cx="812" cy="448" rx="565" ry="354" fill="url(#d13-brandon-clarke-pulse)" />
+  <path d="M170 682C410 634 449 436 668 428C824 422 860 594 1034 565C1202 537 1249 300 1448 235" fill="none" stroke="#34d399" stroke-width="38" stroke-linecap="round" />
+  <path d="M176 718C430 666 478 492 676 483C817 477 879 649 1049 617C1246 580 1287 350 1462 290" fill="none" stroke="#a7f3d0" stroke-width="10" stroke-linecap="round" opacity="0.72" />
+  <ellipse cx="678" cy="456" rx="92" ry="128" fill="#064e3b" stroke="#6ee7b7" stroke-width="18" transform="rotate(-18 678 456)" />
+  <ellipse cx="1039" cy="588" rx="76" ry="106" fill="#064e3b" stroke="#a7f3d0" stroke-width="14" transform="rotate(21 1039 588)" />
+  <path d="M678 332V224M598 367L508 282M1040 482L1118 382M1102 548L1245 508" stroke="#5eead4" stroke-width="12" stroke-linecap="round" opacity="0.65" />
+  <circle cx="678" cy="456" r="24" fill="#ecfdf5" />
+  <circle cx="1039" cy="588" r="19" fill="#ecfdf5" />
+</svg>

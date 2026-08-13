@@ -87,7 +87,9 @@ const canonicalUrl =
 
 const bandPreloadWidths = [480, 720, 768, 840, 960, 1280, 1600, 2400];
 const casePreloadWidths =
-  heroImage === undefined || heroImageMode !== "case"
+  heroImage === undefined ||
+  heroImageMode !== "case" ||
+  heroImage.format === "svg"
     ? []
     : caseHeroWidthsFor(heroImage.width);
 const casePreloadWidth = casePreloadWidths.at(-1);
@@ -102,6 +104,7 @@ const bandPreloads =
 const casePreload =
   heroImage === undefined ||
   heroImageMode !== "case" ||
+  heroImage.format === "svg" ||
   casePreloadWidth === undefined
     ? null
     : await getImage({
