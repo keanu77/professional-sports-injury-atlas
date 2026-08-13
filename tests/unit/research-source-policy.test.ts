@@ -34,6 +34,9 @@ const V3_MARKDOWN_POLICY_PATH = "research/source-policy/nba.v3.md" as const;
 const V4_JSON_POLICY_PATH =
   "research/source-policy/source-policy.v4.json" as const;
 const V4_MARKDOWN_POLICY_PATH = "research/source-policy/nba.v4.md" as const;
+const V5_JSON_POLICY_PATH =
+  "research/source-policy/source-policy.v5.json" as const;
+const V5_MARKDOWN_POLICY_PATH = "research/source-policy/nba.v5.md" as const;
 const V2_DATE_RULE_PARAGRAPH =
   "For the primary video's event-date identity check, `video_published_at` must fall within the inclusive window from `event_date` through `event_date + 3 days`, or the video title must contain `event_date`. This window is asymmetric: publication before `event_date` is ineligible.";
 
@@ -263,6 +266,10 @@ const EXPECTED_V4_JSON_SHA256 =
   "3320fe2051fc091aa055d5cdd8bcdacf24073c3964cac3d1a982666a2aafbf68";
 const EXPECTED_V4_MARKDOWN_SHA256 =
   "929ac5f125db222d8eb6e98a3a52b1778ebd28c743884c945ab917619ebd5994";
+const EXPECTED_V5_JSON_SHA256 =
+  "5f38066ce0ef0c10f0494856f90114dc403c068986b4c323cbb2ef3ebbda56ac";
+const EXPECTED_V5_MARKDOWN_SHA256 =
+  "a59111d915caeb7f1e8f730492e826be63ff95fb5b1feeb1576eeb75a95e6aae";
 
 const FROZEN_POLICY_BY_VERSION = Object.freeze({
   "nba-v1": Object.freeze({
@@ -289,6 +296,12 @@ const FROZEN_POLICY_BY_VERSION = Object.freeze({
     markdownPath: V4_MARKDOWN_POLICY_PATH,
     markdownSha256: EXPECTED_V4_MARKDOWN_SHA256,
   }),
+  "nba-v5": Object.freeze({
+    jsonPath: V5_JSON_POLICY_PATH,
+    jsonSha256: EXPECTED_V5_JSON_SHA256,
+    markdownPath: V5_MARKDOWN_POLICY_PATH,
+    markdownSha256: EXPECTED_V5_MARKDOWN_SHA256,
+  }),
 });
 
 type FrozenPolicyVersion = keyof typeof FROZEN_POLICY_BY_VERSION;
@@ -302,7 +315,9 @@ function readPolicyFile(
     | typeof V3_JSON_POLICY_PATH
     | typeof V3_MARKDOWN_POLICY_PATH
     | typeof V4_JSON_POLICY_PATH
-    | typeof V4_MARKDOWN_POLICY_PATH,
+    | typeof V4_MARKDOWN_POLICY_PATH
+    | typeof V5_JSON_POLICY_PATH
+    | typeof V5_MARKDOWN_POLICY_PATH,
 ): string {
   return readFileSync(new URL(`../../${path}`, import.meta.url), "utf8");
 }
@@ -873,6 +888,7 @@ describe("NBA source-policy nba-v2 contract", () => {
       "nba-v2",
       "nba-v3",
       "nba-v4",
+      "nba-v5",
     ]);
     const pairs = Object.values(FROZEN_POLICY_BY_VERSION).map(
       ({ jsonSha256, markdownSha256 }) => `${jsonSha256}:${markdownSha256}`,
@@ -919,10 +935,10 @@ describe("NBA source-policy nba-v2 contract", () => {
     const policy = parseCanonicalPolicy(jsonBytes);
     expect(() =>
       verifyFrozenPolicyBytes(
-        canonicalJson({ ...policy, sourcePolicyVersion: "nba-v5" }),
+        canonicalJson({ ...policy, sourcePolicyVersion: "nba-v6" }),
         markdownBytes,
       ),
-    ).toThrow(/unregistered source-policy version nba-v5/);
+    ).toThrow(/unregistered source-policy version nba-v6/);
   });
 });
 
@@ -1196,5 +1212,213 @@ describe("NBA source-policy nba-v4 Decision 11 attribution addendum", () => {
     expect(markdown).toContain("does not license the surrounding page");
     expect(markdown).toContain("`not-supplied` with `null`");
     expect(markdown).toContain('unscoped `rel="license"`');
+  });
+});
+
+describe("NBA source-policy nba-v5 Decision 13 named-cover addendum", () => {
+  it("is canonical, immutable, and binds the exact immutable nba-v4 pair", () => {
+    const bytes = readPolicyFile(V5_JSON_POLICY_PATH);
+    const policy = parseCanonicalPolicy(bytes);
+
+    expect(bytes.endsWith("\n")).toBe(false);
+    expect(policy.sourcePolicyVersion).toBe("nba-v5");
+    expect(policy.playerStaticPhotoPolicyInheritance).toEqual({
+      jsonPath: V4_JSON_POLICY_PATH,
+      jsonSha256: EXPECTED_V4_JSON_SHA256,
+      markdownPath: V4_MARKDOWN_POLICY_PATH,
+      markdownSha256: EXPECTED_V4_MARKDOWN_SHA256,
+      sourcePolicyVersion: "nba-v4",
+    });
+    expect(policy.humanPolicyDocument).toEqual({
+      path: V5_MARKDOWN_POLICY_PATH,
+      sha256: EXPECTED_V5_MARKDOWN_SHA256,
+    });
+    expect(
+      verifyFrozenPolicyBytes(bytes, readPolicyFile(V5_MARKDOWN_POLICY_PATH)),
+    ).toEqual({
+      sourcePolicyVersion: "nba-v5",
+      jsonSha256: EXPECTED_V5_JSON_SHA256,
+      markdownSha256: EXPECTED_V5_MARKDOWN_SHA256,
+    });
+  });
+
+  it("has one fail-closed photo-rule field set and does not retain the superseded singular classification", () => {
+    const v4 = parseCanonicalPolicy(readPolicyFile(V4_JSON_POLICY_PATH));
+    const v5 = parseCanonicalPolicy(readPolicyFile(V5_JSON_POLICY_PATH));
+    const v4Annex = asRecord(v4.playerStaticPhotoRules);
+    const v5Annex = asRecord(v5.playerStaticPhotoRules);
+
+    expect(Object.keys(v5Annex).sort()).toEqual(
+      [
+        "acceptedNonEventOccasions",
+        "allowedLicenses",
+        "allowedMimeTypes",
+        "allowedSourceClassifications",
+        "attributionRequirements",
+        "compositeUseRules",
+        "cropRules",
+        "downloadRules",
+        "explicitNegativeFiles",
+        "failClosedFallback",
+        "ineligibleOccasions",
+        "nonClearanceInterpretation",
+        "photographerProvenanceRules",
+        "prohibitedClassifications",
+        "requiredProvenanceFields",
+        "scopeId",
+        "svgFallbackRules",
+      ].sort(),
+    );
+    expect(v5Annex).not.toHaveProperty("allowedSourceClassification");
+
+    const {
+      allowedLicenses: _v5Licenses,
+      allowedMimeTypes: _v5Mimes,
+      allowedSourceClassifications: _v5Sources,
+      acceptedNonEventOccasions: _v5Occasions,
+      compositeUseRules: _v5Composite,
+      downloadRules: _v5Downloads,
+      explicitNegativeFiles: _v5NegativeFiles,
+      failClosedFallback: _v5Fallback,
+      ineligibleOccasions: _v5Ineligible,
+      nonClearanceInterpretation: _v5NonClearance,
+      photographerProvenanceRules: _v5Photographer,
+      prohibitedClassifications: _v5Prohibited,
+      requiredProvenanceFields: _v5Fields,
+      scopeId: _v5Scope,
+      svgFallbackRules: _v5Svg,
+      ...v5Compatible
+    } = v5Annex;
+    const {
+      allowedLicenses: _v4Licenses,
+      allowedMimeTypes: _v4Mimes,
+      allowedSourceClassification: _v4Source,
+      downloadRules: _v4Downloads,
+      explicitNegativeFiles: _v4NegativeFiles,
+      failClosedFallback: _v4Fallback,
+      prohibitedClassifications: _v4Prohibited,
+      requiredProvenanceFields: _v4Fields,
+      scopeId: _v4Scope,
+      ...v4Compatible
+    } = v4Annex;
+    expect(v5Compatible).toEqual(v4Compatible);
+  });
+
+  it("separates accepted occasions from photographer risk and rejects unresolved provenance", () => {
+    const annex = asRecord(
+      parseCanonicalPolicy(readPolicyFile(V5_JSON_POLICY_PATH))
+        .playerStaticPhotoRules,
+    );
+    expect(annex.acceptedNonEventOccasions).toEqual([
+      "award-ceremony",
+      "documented-preseason-tune-up-warm-up-outside-live-competition",
+      "press-conference",
+      "public-event-or-fan-interaction",
+      "verified-media-day",
+    ]);
+    expect(annex.ineligibleOccasions).toEqual([
+      "all-star-game-action",
+      "ambiguous-credentialed-court-context",
+      "international-competition-action",
+      "live-preseason-competition",
+      "postseason-action",
+      "regular-season-action",
+      "regular-season-pregame-or-warm-up",
+    ]);
+    expect(annex.photographerProvenanceRules).toEqual({
+      acceptedCurrentPhotoCategories: [
+        "credentialed-media-residual-risk",
+        "independent-public-event-low-risk",
+      ],
+      categories: [
+        "credentialed-media-residual-risk",
+        "independent-public-event-low-risk",
+        "unresolved-reject",
+      ],
+      commonsOrFlickrUploaderNameProvesAuthority: false,
+      occasionAndPhotographerRiskRecordedSeparately: true,
+      unresolvedRejectEligibleAsCurrentPhoto: false,
+      verifiedLicenseChainRequired: true,
+    });
+    expect(annex.nonClearanceInterpretation).toEqual({
+      occasionClassificationIsRightsClearance: false,
+      photographerRiskClassificationIsRightsClearance: false,
+      publicReleaseApprovalCreated: false,
+    });
+  });
+
+  it("keeps BY, BY-SA, and CC0 exact while excluding Public Domain Mark and BY-SA composites", () => {
+    const annex = asRecord(
+      parseCanonicalPolicy(readPolicyFile(V5_JSON_POLICY_PATH))
+        .playerStaticPhotoRules,
+    );
+    const licenseTokens = asRecordArray(
+      annex.allowedLicenses,
+      "allowedLicenses",
+    ).map((license) => license.token);
+    expect(licenseTokens).toEqual([
+      "cc-by-2.0",
+      "cc-by-3.0",
+      "cc-by-4.0",
+      "cc-by-sa-2.0",
+      "cc-by-sa-3.0",
+      "cc-by-sa-4.0",
+      "cc0-1.0",
+    ]);
+    expect(licenseTokens).not.toContain("public-domain-mark-1.0");
+    expect(annex.allowedMimeTypes).toEqual(["image/jpeg", "image/png"]);
+    expect(annex.downloadRules).toMatchObject({
+      acceptedLocalMimeTypes: ["image/jpeg", "image/png"],
+      runtimeRemoteFetchAllowed: false,
+      staticOriginalDownloadAllowed: true,
+    });
+    expect(annex.downloadRules).not.toHaveProperty("staticJpegDownloadAllowed");
+    expect(annex.compositeUseRules).toMatchObject({
+      ccBySaForbiddenAsSiteComposedInput: true,
+      ordinaryHtmlCssPlacementIsNotSiteComposition: true,
+      ordinaryResponsiveRenditionIsNotSiteComposition: true,
+    });
+    expect(annex.failClosedFallback).toBe("original-svg-fallback");
+    expect(annex.explicitNegativeFiles).toEqual([
+      {
+        filename: "2025_C.J._McCollum_(cropped).jpg",
+        reason: "official-media-day-portrait",
+      },
+      {
+        filename: "Dwight_Powell.jpg",
+        reason: "official-team-photo-shoot",
+      },
+    ]);
+  });
+
+  it("preserves the v4 attribution semantics and requires local original SVG provenance", () => {
+    const v4Annex = asRecord(
+      parseCanonicalPolicy(readPolicyFile(V4_JSON_POLICY_PATH))
+        .playerStaticPhotoRules,
+    );
+    const v5Annex = asRecord(
+      parseCanonicalPolicy(readPolicyFile(V5_JSON_POLICY_PATH))
+        .playerStaticPhotoRules,
+    );
+    expect(v5Annex.attributionRequirements).toEqual(
+      v4Annex.attributionRequirements,
+    );
+    expect(v5Annex.svgFallbackRules).toEqual({
+      athleteLikenessForbidden: true,
+      copiedTeamOrLeagueMarksForbidden: true,
+      creativeCommonsLicenseForbidden: true,
+      embeddedOrLinkedRasterForbidden: true,
+      externalFetchForbidden: true,
+      mimeType: "image/svg+xml",
+      provenanceRequired: true,
+      scriptOrForeignObjectForbidden: true,
+      thirdPartyArtworkOrFontForbidden: true,
+    });
+
+    const markdown = readPolicyFile(V5_MARKDOWN_POLICY_PATH);
+    expect(markdown).toContain("Low risk is not public-use clearance");
+    expect(markdown).toContain("official team or league headshot");
+    expect(markdown).toContain("must never be inputs to site-composed OG");
+    expect(markdown).toContain("without inventing a Creative Commons license");
   });
 });

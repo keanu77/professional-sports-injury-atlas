@@ -37,6 +37,8 @@
     "rtp:import": "tsx scripts/import-rtp-catalog.ts",
     "external:verify": "tsx scripts/verify-external-sources.ts",
     "player-photos:verify": "tsx scripts/verify-player-photo-assets.ts",
+    "decision13:clinical-freeze": "tsx scripts/verify-decision-13-clinical-freeze.ts",
+    "decision13:cover-baseline": "tsx scripts/generate-decision-13-cover-baseline.ts",
     "brand:verify": "tsx scripts/verify-brand-assets.ts",
     "review-set:generate": "tsx scripts/generate-review-set.ts",
     "private:credential": "tsx scripts/private-hosting/provision-review-credential.ts",

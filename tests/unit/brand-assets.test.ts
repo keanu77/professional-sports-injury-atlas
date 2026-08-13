@@ -280,6 +280,26 @@ describe("ShareAlike composite guard", () => {
     expect(scanShareAlikeCompositeRisks(root)).toEqual([]);
   });
 
+  it("accepts the reviewed Decision 13 pure registry contract but still rejects composition added to it", () => {
+    const root = makeRoot();
+    const path = "src/lib/contracts/player-photo-registry-v4.ts";
+    writeInto(
+      root,
+      path,
+      'export const registryPath = "src/assets/players/player-photo-registry.v4.json";\n',
+    );
+    expect(scanShareAlikeCompositeRisks(root)).toEqual([]);
+
+    writeInto(
+      root,
+      path,
+      'export const registryPath = "src/assets/players/player-photo-registry.v4.json";\ncanvas.drawImage(registryPath);\n',
+    );
+    expect(
+      scanShareAlikeCompositeRisks(root).map((entry) => entry.code),
+    ).toContain("brand-sharealike-composite-code");
+  });
+
   it("rejects player-photo composition code and social metadata wiring", () => {
     const root = makeRoot();
     writeInto(
