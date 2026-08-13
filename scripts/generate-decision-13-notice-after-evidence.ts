@@ -3072,7 +3072,7 @@ function assertNoticeField(
     ) {
       throw new Error(`${row.id} ${fieldId} supplied notice is incomplete`);
     }
-  } else if (!field.normalizedText.includes("未提供")) {
+  } else if (!field.normalizedText.includes("目前來源未另行提供")) {
     throw new Error(`${row.id} ${fieldId} must visibly preserve not-supplied`);
   }
 }
