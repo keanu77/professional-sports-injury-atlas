@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-08-13T13:27:09Z",
+  "keychain": {
+    "account": "atlas-reviewer",
+    "command": "security find-generic-password -s <configured-service> -a <configured-account> (metadata/exit status only; no -w)",
+    "metadataPresent": true,
+    "secretRead": false,
+    "service": "tw.sportsmedicine.atlas.private-review.auth-v1"
+  },
+  "launchd": {
+    "command": "launchctl print gui/501/tw.sportsmedicine.atlas.private-review.v1",
+    "label": "tw.sportsmedicine.atlas.private-review.v1",
+    "outputSha256": "66c235cd13e02463bb093b63530d81ad63fbe08c3518422ebf1d632d3a7f65f7",
+    "plistPath": "/Users/ethanai/Library/Application Support/tw.sportsmedicine.atlas.private-review/tw.sportsmedicine.atlas.private-review.plist",
+    "program": "/Users/ethanai/.local/share/mise/installs/node/24.14.0/bin/node",
+    "runCount": 10,
+    "state": "running",
+    "wrapperPid": 71225
+  },
+  "listener": {
+    "address": "100.114.3.93:8140",
+    "command": "lsof -nP -iTCP@100.114.3.93:8140 -sTCP:LISTEN",
+    "outputSha256": "2679c47f1229dc73d27bbb663f9a550942b3d7b232896cb4367fde8a5c02ad77",
+    "pid": 71237
+  },
+  "mutationCommandsExecuted": [],
+  "renderedPlist": {
+    "byteLength": 1643,
+    "gid": 20,
+    "hardLinkCount": 1,
+    "mode": "0600",
+    "sha256": "fe3ba9f506255f1243e8977eaa93fa14e4158aa6e5016a793a16ad3dc5ea5f45",
+    "uid": 501
+  },
+  "schemaVersion": 1,
+  "tailscale": {
+    "backendState": "Running",
+    "command": "/opt/homebrew/bin/tailscale status --json | jq -S <bounded-self-status-projection>",
+    "dnsName": "mac-mini-m5.tailbc16e9.ts.net",
+    "hostname": "mac-mini",
+    "ipv4": "100.114.3.93",
+    "online": true,
+    "outputSha256": "2e93b8930a9be8e8db0831df98d751273c55ecb6d383f6fd7f8dcbe51e4573f0"
+  }
+}
