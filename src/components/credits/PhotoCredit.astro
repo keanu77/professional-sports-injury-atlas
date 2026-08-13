@@ -1,10 +1,10 @@
 ---
 /** Complete, registry-derived credit row for one governed Commons asset. */
-import type { PlayerPhotoCommonsSelectionV6 } from "../../lib/contracts/player-photo-registry-v6";
+import type { PlayerPhotoSelectionV7 } from "../../lib/contracts/player-photo-registry-v7";
 import { photoCreditPresentation } from "../../lib/rights/photo-credits";
 
 interface Props {
-  selection: PlayerPhotoCommonsSelectionV6;
+  selection: PlayerPhotoSelectionV7;
 }
 
 const credit = photoCreditPresentation(Astro.props.selection);
@@ -14,17 +14,17 @@ const noticeFields = [
   {
     field: "copyright-notice",
     label: "著作權聲明",
-    notice: rightsAttribution.copyrightNotice,
+    notice: credit.notices.copyright,
   },
   {
     field: "disclaimer-notice",
     label: "來源免責通知",
-    notice: rightsAttribution.disclaimerNotice,
+    notice: credit.notices.disclaimer,
   },
   {
     field: "other-notice",
     label: "其他逐檔通知",
-    notice: rightsAttribution.otherPerFileNotice,
+    notice: credit.notices.other,
   },
 ] as const;
 ---
@@ -36,12 +36,13 @@ const noticeFields = [
   data-athlete-name={selection.athleteName}
   data-license-bucket={rightsAttribution.licenseBucket}
   data-source-revision-id={String(selection.sourceRevision.id)}
+  data-policy-version={credit.policyVersion}
 >
   <h2>{selection.athleteName}</h2>
   <dl>
     <div data-credit-field="creator">
       <dt>{credit.creatorLabel}</dt>
-      <dd>{selection.photographerIdentity.name}</dd>
+      <dd>{credit.creditText}</dd>
     </div>
     <div
       data-credit-field="work-title"
@@ -54,18 +55,22 @@ const noticeFields = [
             ? "目前來源未提供"
             : `〈${credit.workTitleText}〉`
         }
-        （<a
-          href={rightsAttribution.workTitle.evidenceUrl}
-          rel="noopener noreferrer">標題狀態依據</a
+        （<a href={credit.workTitleEvidenceUrl} rel="noopener noreferrer"
+          >標題狀態依據</a
         >）
       </dd>
     </div>
     <div data-credit-field="license">
-      <dt>原作授權</dt>
+      <dt>{credit.license.isPublicDomain ? "公有領域狀態" : "原作授權"}</dt>
       <dd>
-        <a href={selection.license.url} rel="noopener noreferrer">
-          {selection.license.name}
+        <a href={credit.license.url} rel="noopener noreferrer">
+          {
+            credit.license.isPublicDomain
+              ? credit.license.token
+              : credit.license.name
+          }
         </a>
+        {credit.license.isPublicDomain && <span>{credit.license.name}</span>}
         <span>；類別：{credit.bucketLabel}</span>
       </dd>
     </div>
@@ -81,24 +86,24 @@ const noticeFields = [
       <dt>變更說明</dt>
       <dd>{rightsAttribution.alterationState.disclosure}</dd>
     </div>
-    <div data-credit-field="uploader">
-      <dt>上傳者溯源</dt>
-      <dd>
-        {selection.uploaderIdentity.name}；{
-          selection.uploaderIdentity.relationshipToPhotographer
-        }
-      </dd>
-    </div>
+    {
+      credit.uploaderText !== null && (
+        <div data-credit-field="uploader">
+          <dt>上傳者溯源</dt>
+          <dd>{credit.uploaderText}</dd>
+        </div>
+      )
+    }
     {
       noticeFields.map(({ field, label, notice }) => (
         <div data-credit-field={field} data-notice-status={notice.status}>
           <dt>{label}</dt>
           <dd>
             {notice.status === "supplied" ? (
-              notice.url === null ? (
+              notice.sourceUrl === null ? (
                 notice.text
               ) : (
-                <a href={notice.url} rel="noopener noreferrer">
+                <a href={notice.sourceUrl} rel="noopener noreferrer">
                   {notice.text}
                 </a>
               )
@@ -127,17 +132,20 @@ const noticeFields = [
     }
     <div
       data-credit-field="occasion-risk"
-      data-source-risk-category={selection.sourceRiskClassification.category}
+      data-source-risk-category={credit.sourceRiskCategory ?? undefined}
+      data-policy-version={credit.policyVersion}
     >
-      <dt>資料照片脈絡與風險分類</dt>
+      <dt>來源事件與權利邊界</dt>
       <dd>
         <span>{selection.nonEventCaption}。</span>
-        <span> 場合分類：{selection.occasionEvidence.category}；</span>
-        <span>查核日：{selection.occasionEvidence.checkedAt}；</span>
-        <span>分類依據：{selection.occasionEvidence.basis}</span>
+        {
+          credit.injuryRelationshipEvidence.map((evidence) => (
+            <span>事件區分依據：{evidence}</span>
+          ))
+        }
         <span>
-          {selection.sourceRiskClassification.nonClearanceStatement}
-          此分類不代表著作權、肖像權或公開使用已獲放行。
+          {credit.nonClearanceStatement}
+          此紀錄不代表著作權、肖像權或公開使用已獲放行。
         </span>
       </dd>
     </div>

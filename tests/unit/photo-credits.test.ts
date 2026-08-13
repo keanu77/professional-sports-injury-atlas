@@ -1,9 +1,10 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import type {
-  PlayerPhotoCommonsSelectionV6,
-  PlayerPhotoSelectionV6,
-} from "../../src/lib/contracts/player-photo-registry-v6";
+import type { PlayerPhotoCommonsSelectionV6 } from "../../src/lib/contracts/player-photo-registry-v6";
+import {
+  isDecision15PhotoSelectionV7,
+  type PlayerPhotoSelectionV7,
+} from "../../src/lib/contracts/player-photo-registry-v7";
 import {
   assetCreditAnchor,
   assetCreditHref,
@@ -14,20 +15,17 @@ import {
 const registry = JSON.parse(
   readFileSync(
     new URL(
-      "../../src/assets/players/player-photo-registry.v6.json",
+      "../../src/assets/players/player-photo-registry.v7.json",
       import.meta.url,
     ),
     "utf8",
   ),
-) as { selections: PlayerPhotoSelectionV6[] };
-const commonsSelections = registry.selections.filter(
-  (selection): selection is PlayerPhotoCommonsSelectionV6 =>
-    selection.coverKind === "commons-photo",
-);
+) as { selections: PlayerPhotoSelectionV7[] };
+const commonsSelections = registry.selections;
 
 describe("central asset credits", () => {
-  it("derives seven unique stable rows from the current registry", () => {
-    expect(currentPhotoCredits).toHaveLength(7);
+  it("derives 21 unique stable rows from the current registry", () => {
+    expect(currentPhotoCredits).toHaveLength(21);
     expect(currentPhotoCredits.map(({ anchorId }) => anchorId)).toEqual(
       commonsSelections.map(({ sourceRevision }) =>
         assetCreditAnchor(sourceRevision.id),
@@ -35,7 +33,7 @@ describe("central asset credits", () => {
     );
     expect(
       new Set(currentPhotoCredits.map(({ anchorId }) => anchorId)).size,
-    ).toBe(7);
+    ).toBe(21);
     expect(assetCreditHref(1235995897)).toBe(
       "/credits-notices/#photo-credit-1235995897",
     );
@@ -87,7 +85,7 @@ describe("central asset credits", () => {
       );
       expect(credit?.anchorId).toBe(fixture.anchorId);
       expect(credit?.selection.nonEventCaption).toBe(fixture.caption);
-      expect(credit?.selection.license.token).toBe("cc-by-sa-4.0");
+      expect(credit?.license.token).toBe("cc-by-sa-4.0");
       expect(credit?.selection.rightsAttribution.adapterLicense?.token).toBe(
         "cc-by-sa-4.0",
       );
@@ -127,10 +125,30 @@ describe("central asset credits", () => {
     expect(bySa.selection.rightsAttribution.adapterLicense).not.toBeNull();
   });
 
+  it("keeps Murray public domain separate from CC0 and preserves the Navy credit", () => {
+    const selection = commonsSelections.find(
+      ({ athleteName }) => athleteName === "Dejounte Murray",
+    )!;
+    expect(isDecision15PhotoSelectionV7(selection)).toBe(true);
+    const credit = photoCreditPresentation(selection);
+    expect(credit.bucketLabel).toBe("公有領域（美國政府作品標示）");
+    expect(credit.license).toEqual({
+      isPublicDomain: true,
+      name: "Public domain — PD-USGov-Military-Navy, a work of the United States Navy.",
+      token: "PD-USGov-Military-Navy",
+      url: "https://www.dvidshub.net/image/5148235/dejounte-murray-tours-metc",
+    });
+    expect(credit.creditText).toBe(
+      "U.S. Navy photo by Mass Communication Specialist 2nd Class Shayla D. Hamilton/Released",
+    );
+    expect(credit.selection.license).toBeNull();
+    expect(credit.license.name).not.toContain("CC0");
+  });
+
   it("uses a distinct CC0 template without an Adapter's License", () => {
     const base = commonsSelections.find(
       ({ athleteName }) => athleteName === "Kyrie Irving",
-    )!;
+    )! as PlayerPhotoCommonsSelectionV6;
     const cc0Fixture: PlayerPhotoCommonsSelectionV6 = {
       ...base,
       athleteName: "CC0 Template Fixture",
@@ -148,7 +166,7 @@ describe("central asset credits", () => {
     };
 
     const credit = photoCreditPresentation(cc0Fixture);
-    expect(credit.creatorLabel).toBe("創作者");
+    expect(credit.creatorLabel).toBe("署名");
     expect(credit.bucketLabel).toBe("公眾領域貢獻（CC0）");
     expect(credit.selection.rightsAttribution.adapterLicense).toBeNull();
   });
@@ -156,7 +174,7 @@ describe("central asset credits", () => {
   it("fails closed when an adapter license disagrees with its bucket", () => {
     const base = commonsSelections.find(
       ({ athleteName }) => athleteName === "CJ McCollum",
-    )!;
+    )! as PlayerPhotoCommonsSelectionV6;
     expect(() =>
       photoCreditPresentation({
         ...base,

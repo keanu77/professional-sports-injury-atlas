@@ -15,6 +15,10 @@ import {
   PLAYER_PHOTO_SOURCE_RISK_DISCLAIMER,
   type PlayerPhotoRegistryV3,
 } from "../../src/lib/contracts/player-photo";
+import {
+  isDecision15PhotoSelectionV7,
+  type PlayerPhotoDecision15SelectionV7,
+} from "../../src/lib/contracts/player-photo-registry-v7";
 
 const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -88,40 +92,74 @@ describe("governed Commons player-photo assets", () => {
     }
   });
 
-  it("accepts the exact real 21-photo registry covering all 26 cases", () => {
+  it("accepts registry v7 with 21 current photos, no SVGs, and exact rollback inventory", () => {
     const result = loadPlayerPhotoAssets(REPO_ROOT);
     expect(result.issues).toEqual([]);
+    // The unversioned registry remains an immutable historical Decision 11
+    // input; v7 is the sole current rendering registry.
     expect(result.registry?.assets).toHaveLength(21);
     expect(
       result.registry?.assets.flatMap((asset) => asset.caseIds),
     ).toHaveLength(26);
-    expect(result.allowedPaths).toHaveLength(44);
+    expect(result.allowedPaths).toHaveLength(58);
+    expect(
+      result.allowedPaths.filter((path) =>
+        path.startsWith("src/assets/players/decision-15/"),
+      ),
+    ).toHaveLength(14);
     expect(result.currentRegistry?.selections).toHaveLength(21);
     expect(
       result.currentRegistry?.selections.filter(
         (selection) => selection.coverKind === "commons-photo",
       ),
-    ).toHaveLength(7);
+    ).toHaveLength(21);
+    expect(
+      new Set(
+        result.currentRegistry?.selections.map(
+          (selection) => selection.coverKind,
+        ),
+      ),
+    ).toEqual(new Set(["commons-photo"]));
     expect(
       result.currentRegistry?.selections.filter(
-        (selection) => selection.coverKind === "original-svg-fallback",
-      ),
-    ).toHaveLength(14);
-    expect(
-      result.registry?.assets.filter(
         (asset) => asset.rightsAttribution.licenseBucket === "cc-by",
       ),
-    ).toHaveLength(9);
+    ).toHaveLength(8);
     expect(
-      result.registry?.assets.filter(
+      result.currentRegistry?.selections.filter(
         (asset) => asset.rightsAttribution.licenseBucket === "cc-by-sa",
       ),
     ).toHaveLength(12);
     expect(
-      result.registry?.assets.filter(
-        (asset) => asset.rightsAttribution.licenseBucket === "cc0",
+      result.currentRegistry?.selections.filter(
+        (asset) => asset.rightsAttribution.licenseBucket === "public-domain",
       ),
-    ).toHaveLength(0);
+    ).toHaveLength(1);
+    const promoted =
+      result.currentRegistry?.selections.filter(isDecision15PhotoSelectionV7) ??
+      [];
+    expect(promoted).toHaveLength(14);
+    expect(
+      promoted.filter(
+        (selection) =>
+          selection.rightsAttribution.licenseBucket === "cc-by-sa" &&
+          selection.usePolicy.mode === "placement-rendition-only",
+      ),
+    ).toHaveLength(7);
+    expect(
+      promoted.filter(
+        (selection) => selection.usePolicy.mode === "public-domain-placement",
+      ),
+    ).toHaveLength(1);
+    const murray = promoted.find(
+      (selection) => selection.athleteName === "Dejounte Murray",
+    ) as PlayerPhotoDecision15SelectionV7;
+    expect(murray.license).toBeNull();
+    expect(murray.rightsAttribution.licenseBucket).toBe("public-domain");
+    expect(murray.decision15Evidence.rightsMarker.token).toBe(
+      "PD-USGov-Military-Navy",
+    );
+    expect(murray.decision15Evidence.rightsMarker.licenseVersion).toBeNull();
     expect(
       result.registry?.assets.every(
         (asset) =>

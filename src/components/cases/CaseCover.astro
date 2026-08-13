@@ -1,11 +1,10 @@
 ---
 /**
  * Governed case cover shared by heroes, cards, and privacy-preserving video
- * facades. Registered cases use either a local, hash-bound Commons photo with
- * visible attribution or a site-owned SVG illustration; unknown fixture IDs
- * retain the injury-theme fallback.
+ * facades. Every registered case uses a local, hash-bound governed photo with
+ * visible attribution; unknown fixture IDs retain the injury-theme fallback.
  */
-import { Image, Picture } from "astro:assets";
+import { Picture } from "astro:assets";
 import {
   caseImageFor,
   type CaseImageSelection,
@@ -52,7 +51,6 @@ if (
 
 const isHero = presentation === "hero";
 const isThumb = presentation === "thumb";
-const isOriginalSvgFallback = selection.kind === "original-svg-fallback";
 const renditionWidths = isThumb
   ? caseThumbWidthsFor(selection.image.width)
   : caseHeroWidthsFor(selection.image.width);
@@ -64,10 +62,8 @@ const photoSizes = isHero
 const photoAlt =
   selection.kind === "licensed-player-photo"
     ? `${selection.nonEventCaption}。`
-    : selection.kind === "original-svg-fallback"
-      ? `${selection.athleteName} 案例：${selection.nonEventCaption}。`
-      : (imageAlt ??
-        `${injuryLabel}原創 AI 生成運動醫學攝影意象；匿名運動員面孔不可見，不代表任何特定球員或真實受傷事件。`);
+    : (imageAlt ??
+      `${injuryLabel}原創 AI 生成運動醫學攝影意象；匿名運動員面孔不可見，不代表任何特定球員或真實受傷事件。`);
 const showFallbackCaption = isHero || presentation === "standalone";
 const assetCreditsHref =
   selection.kind === "licensed-player-photo"
@@ -93,28 +89,13 @@ const assetCreditsHref =
   data-player-photo={selection.kind === "licensed-player-photo"
     ? selection.athleteName
     : undefined}
-  data-original-svg-fallback={isOriginalSvgFallback
-    ? selection.athleteName
-    : undefined}
   data-focal-x={String(selection.focalPosition.xPercent)}
   data-focal-y={String(selection.focalPosition.yPercent)}
   style={`--cover-focal-x: ${selection.focalPosition.xPercent}%; --cover-focal-y: ${selection.focalPosition.yPercent}%;`}
 >
   <div class="case-cover-media">
     {
-      isOriginalSvgFallback ? (
-        <Image
-          src={selection.image}
-          width={selection.image.width}
-          height={selection.image.height}
-          loading={isHero ? "eager" : "lazy"}
-          decoding="async"
-          fetchpriority={isHero ? "high" : undefined}
-          alt={photoAlt}
-          class="case-cover-photo case-cover-original-svg"
-          data-local-original-svg
-        />
-      ) : (
+      (
         <Picture
           src={selection.image}
           formats={["avif", "webp"]}
@@ -146,12 +127,14 @@ const assetCreditsHref =
           selection.attribution.sourceRevision.id,
         )}
         data-source-risk-category={
-          selection.attribution.sourceRiskClassification.category
+          selection.attribution.sourceRiskCategory ?? undefined
         }
+        data-policy-version={selection.attribution.policyVersion}
+        data-use-policy={selection.attribution.usePolicyMode}
       >
         <span>{selection.nonEventCaption}</span>
         <span aria-hidden="true"> · </span>
-        <span>攝影：{selection.attribution.photographer}</span>
+        <span>署名：{selection.attribution.photographer}</span>
         <span aria-hidden="true"> · </span>
         <a
           href={assetCreditsHref!}
@@ -160,10 +143,6 @@ const assetCreditsHref =
         >
           完整授權與逐檔說明
         </a>
-      </figcaption>
-    ) : selection.kind === "original-svg-fallback" ? (
-      <figcaption data-original-svg-label>
-        {selection.nonEventCaption}。
       </figcaption>
     ) : (
       showFallbackCaption && (

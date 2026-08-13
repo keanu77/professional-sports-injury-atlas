@@ -314,16 +314,14 @@ describe("governed case cover", () => {
     );
     expect(videoComponent).toMatch(/<CaseCover\s/);
     expect(component).toMatch(/<Picture\s/);
-    expect(component).toMatch(/<Image\s/);
-    expect(component).toContain("data-local-original-svg");
+    expect(component).not.toMatch(/<Image\s/);
+    expect(component).not.toContain("data-local-original-svg");
     expect(component).toContain("data-cover-illustration={injuryCode}");
     expect(component).not.toMatch(/<svg\b/i);
   });
 
   it("uses the local Astro image pipeline without vector drawing primitives", () => {
-    expect(component).toContain(
-      'import { Image, Picture } from "astro:assets"',
-    );
+    expect(component).toContain('import { Picture } from "astro:assets"');
     expect(component).toContain(
       "caseImageFor(injuryCode, recordId, athleteName)",
     );
@@ -342,14 +340,13 @@ describe("governed case cover", () => {
   it("moves complete bucket-independent notices to the central renderer without licensing the host page", () => {
     expect(component).not.toContain("data-attribution-notices");
     expect(
-      photoCreditComponent.match(/rightsAttribution\.copyrightNotice/g) ?? [],
+      photoCreditComponent.match(/credit\.notices\.copyright/g) ?? [],
     ).toHaveLength(1);
     expect(
-      photoCreditComponent.match(/rightsAttribution\.disclaimerNotice/g) ?? [],
+      photoCreditComponent.match(/credit\.notices\.disclaimer/g) ?? [],
     ).toHaveLength(1);
     expect(
-      photoCreditComponent.match(/rightsAttribution\.otherPerFileNotice/g) ??
-        [],
+      photoCreditComponent.match(/credit\.notices\.other/g) ?? [],
     ).toHaveLength(1);
     expect(photoCreditComponent).toContain("data-notice-status");
     expect(component).not.toContain('rel="license');
@@ -372,7 +369,7 @@ describe("governed case cover", () => {
     expect(component).toContain("匿名運動員面孔不可見");
     expect(component).toContain("不代表任何特定球員或真實受傷事件");
     expect(component).toContain("selection.nonEventCaption");
-    expect(component).toContain("data-original-svg-label");
+    expect(component).not.toContain("data-original-svg-label");
     expect(component).toContain("data-asset-credit-link");
     expect(component).toContain("assetCreditHref");
     expect(photoCreditComponent).toContain("Wikimedia Commons 永久說明頁");

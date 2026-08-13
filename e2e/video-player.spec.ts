@@ -13,10 +13,7 @@
 
 import { readFileSync } from "node:fs";
 import { expect, test, type Locator, type Page } from "@playwright/test";
-import type {
-  PlayerPhotoSelectionV6,
-  PlayerPhotoSvgFallbackSelectionV6,
-} from "../src/lib/contracts/player-photo-registry-v6";
+import type { PlayerPhotoSelectionV7 } from "../src/lib/contracts/player-photo-registry-v7";
 import { expectNoAxeViolations } from "./helpers/a11y";
 
 const LAB_PATH = "/review/component-lab/";
@@ -129,12 +126,12 @@ const GOVERNED_NBA_CASE = {
 const playerPhotoRegistry = JSON.parse(
   readFileSync(
     new URL(
-      "../src/assets/players/player-photo-registry.v6.json",
+      "../src/assets/players/player-photo-registry.v7.json",
       import.meta.url,
     ),
     "utf8",
   ),
-) as { selections: PlayerPhotoSelectionV6[] };
+) as { selections: PlayerPhotoSelectionV7[] };
 const registrySelections = playerPhotoRegistry.selections;
 const selectionByCaseId = new Map(
   registrySelections.flatMap((selection) =>
@@ -255,15 +252,12 @@ async function expectLocalResponsiveCover(
   expected: {
     athleteName?: string;
     injuryLabel?: string;
-    selection?: PlayerPhotoSelectionV6;
+    selection?: PlayerPhotoSelectionV7;
   } = {},
 ): Promise<void> {
   const selection = expected.selection;
   const picture = cover.locator("picture");
-  const image =
-    selection?.coverKind === "original-svg-fallback"
-      ? cover.locator("img[data-local-original-svg]")
-      : picture.locator("img");
+  const image = picture.locator("img");
   await expect(image).toBeVisible();
   if (selection === undefined) {
     await expect(picture).toHaveCount(1);
@@ -274,7 +268,8 @@ async function expectLocalResponsiveCover(
         `${expected.injuryLabel ?? "原創"}.*匿名運動員面孔不可見.*不代表任何特定球員`,
       ),
     );
-  } else if (selection.coverKind === "commons-photo") {
+  } else {
+    expect(selection.coverKind).toBe("commons-photo");
     await expect(picture).toHaveCount(1);
     expect(expected.athleteName).toBe(selection.athleteName);
     await expect(cover).toHaveAttribute(
@@ -290,7 +285,7 @@ async function expectLocalResponsiveCover(
       `${selection.nonEventCaption}。`,
     );
     const attribution = cover.locator("figcaption.case-cover-attribution");
-    await expect(attribution).toContainText("攝影：");
+    await expect(attribution).toContainText("署名：");
     await expect(attribution).toContainText(selection.nonEventCaption);
     const licenseBucket = selection.rightsAttribution.licenseBucket;
     await expect(attribution).toHaveAttribute(
@@ -301,13 +296,15 @@ async function expectLocalResponsiveCover(
       "data-source-revision-id",
       String(selection.sourceRevision.id),
     );
-    await expect(attribution).toHaveAttribute(
-      "data-source-risk-category",
-      "non-event-low-risk",
-    );
+    if (!("decision15Evidence" in selection)) {
+      await expect(attribution).toHaveAttribute(
+        "data-source-risk-category",
+        "non-event-low-risk",
+      );
+    }
     await expect(attribution).toContainText(selection.nonEventCaption);
     await expect(attribution).toContainText(
-      `攝影：${selection.photographerIdentity.name}`,
+      `署名：${selection.photographerIdentity.name}`,
     );
     const creditLink = attribution.locator("[data-asset-credit-link]");
     await expect(creditLink).toHaveCount(1);
@@ -316,62 +313,36 @@ async function expectLocalResponsiveCover(
       `/credits-notices/#photo-credit-${selection.sourceRevision.id}`,
     );
     await expect(attribution.locator("a")).toHaveCount(1);
-  } else {
-    const fallback = selection as PlayerPhotoSvgFallbackSelectionV6;
-    expect(expected.athleteName).toBe(fallback.athleteName);
-    await expect(picture).toHaveCount(0);
-    await expect(cover).toHaveAttribute(
-      "data-cover-kind",
-      "original-svg-fallback",
-    );
-    await expect(cover).toHaveAttribute(
-      "data-original-svg-fallback",
-      fallback.athleteName,
-    );
-    await expect(cover).not.toHaveAttribute("data-player-photo", /.+/u);
-    await expect(image).toHaveAttribute(
-      "alt",
-      `${fallback.athleteName} 案例：${fallback.nonEventCaption}。`,
-    );
-    await expect(image).toHaveAttribute("src", /\.svg$/u);
-    await expect(
-      cover.locator("figcaption.case-cover-attribution"),
-    ).toHaveCount(0);
-    await expect(
-      cover.locator('a[href^="https://creativecommons.org/"]'),
-    ).toHaveCount(0);
   }
 
   await expect(cover).toHaveAttribute("data-focal-x", /^(?:0|[1-9]\d?|100)$/u);
   await expect(cover).toHaveAttribute("data-focal-y", /^(?:0|[1-9]\d?|100)$/u);
 
-  if (selection?.coverKind !== "original-svg-fallback") {
-    const sources = picture.locator("source");
-    await expect(sources).toHaveCount(2);
-    const sourceData = await sources.evaluateAll((elements) =>
-      elements.map((element) => ({
-        type: element.getAttribute("type"),
-        srcset: element.getAttribute("srcset") ?? "",
-      })),
-    );
-    expect(sourceData.map(({ type }) => type)).toEqual([
-      "image/avif",
-      "image/webp",
-    ]);
-    let expectedWidths: number[] | null = null;
-    for (const source of sourceData) {
-      expect(source.srcset).toContain(" 480w");
-      const widths: number[] = [];
-      for (const candidate of source.srcset.split(",")) {
-        const [url, widthDescriptor] = candidate.trim().split(/\s+/);
-        expect(new URL(url, PAGE_ORIGIN).origin).toBe(PAGE_ORIGIN);
-        widths.push(Number.parseInt(widthDescriptor!, 10));
-      }
-      expect(widths).toEqual([...widths].sort((a, b) => a - b));
-      expect(widths.length).toBeGreaterThanOrEqual(3);
-      if (expectedWidths === null) expectedWidths = widths;
-      else expect(widths).toEqual(expectedWidths);
+  const sources = picture.locator("source");
+  await expect(sources).toHaveCount(2);
+  const sourceData = await sources.evaluateAll((elements) =>
+    elements.map((element) => ({
+      type: element.getAttribute("type"),
+      srcset: element.getAttribute("srcset") ?? "",
+    })),
+  );
+  expect(sourceData.map(({ type }) => type)).toEqual([
+    "image/avif",
+    "image/webp",
+  ]);
+  let expectedWidths: number[] | null = null;
+  for (const source of sourceData) {
+    expect(source.srcset).toContain(" 480w");
+    const widths: number[] = [];
+    for (const candidate of source.srcset.split(",")) {
+      const [url, widthDescriptor] = candidate.trim().split(/\s+/);
+      expect(new URL(url, PAGE_ORIGIN).origin).toBe(PAGE_ORIGIN);
+      widths.push(Number.parseInt(widthDescriptor!, 10));
     }
+    expect(widths).toEqual([...widths].sort((a, b) => a - b));
+    expect(widths.length).toBeGreaterThanOrEqual(3);
+    if (expectedWidths === null) expectedWidths = widths;
+    else expect(widths).toEqual(expectedWidths);
   }
   const currentSrc = await image.evaluate(
     (element) => (element as HTMLImageElement).currentSrc,
@@ -471,7 +442,7 @@ test.describe("component lab before enhancement", () => {
 });
 
 test.describe("governed case facades", () => {
-  test("all seven embeddable YouTube cases use their registry v6 local facade and make zero pre-click requests", async ({
+  test("all seven embeddable YouTube cases use their registry v7 local photo facade and make zero pre-click requests", async ({
     page,
   }) => {
     const log = await stubYouTubeRoutes(page);
@@ -527,7 +498,7 @@ test.describe("governed case facades", () => {
       const selection = selectionByCaseId.get(entry.caseId);
       expect(
         selection,
-        `missing registry v6 selection for ${entry.caseId}`,
+        `missing registry v7 photo selection for ${entry.caseId}`,
       ).toBeDefined();
       await expectLocalResponsiveCover(cover, {
         athleteName: entry.athleteName,
@@ -661,7 +632,7 @@ test.describe("governed case facades", () => {
     expect(thirdPartyRequests).toEqual([]);
   });
 
-  test("a real NBA case uses its registry v6 photo facade and complete plain-text citation", async ({
+  test("a real NBA case uses its registry v7 photo facade and complete plain-text citation", async ({
     page,
   }) => {
     const log = await stubYouTubeRoutes(page);

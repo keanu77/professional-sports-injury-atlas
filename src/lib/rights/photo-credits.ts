@@ -1,19 +1,14 @@
-import registryJson from "../../assets/players/player-photo-registry.v6.json";
-import type {
-  PlayerPhotoCommonsSelectionV6,
-  PlayerPhotoRegistryV6,
-  PlayerPhotoSelectionV6,
-} from "../contracts/player-photo-registry-v6";
+import registryJson from "../../assets/players/player-photo-registry.v7.json";
+import {
+  isDecision15PhotoSelectionV7,
+  type PlayerPhotoNoticeV7,
+  type PlayerPhotoRegistryV7,
+  type PlayerPhotoSelectionV7,
+} from "../contracts/player-photo-registry-v7";
 
 export const ASSET_CREDITS_ROUTE = "/credits-notices/" as const;
 
-const registry = registryJson as unknown as PlayerPhotoRegistryV6;
-
-function isCommonsPhoto(
-  selection: PlayerPhotoSelectionV6,
-): selection is PlayerPhotoCommonsSelectionV6 {
-  return selection.coverKind === "commons-photo";
-}
+const registry = registryJson as unknown as PlayerPhotoRegistryV7;
 
 export function assetCreditAnchor(sourceRevisionId: number): string {
   if (!Number.isSafeInteger(sourceRevisionId) || sourceRevisionId <= 0) {
@@ -26,21 +21,69 @@ export function assetCreditHref(sourceRevisionId: number): string {
   return `${ASSET_CREDITS_ROUTE}#${assetCreditAnchor(sourceRevisionId)}`;
 }
 
+export interface PhotoCreditNoticePresentation {
+  sourceUrl: string | null;
+  status: "not-supplied" | "supplied";
+  text: string | null;
+}
+
 export interface PhotoCreditPresentation {
   anchorId: string;
   bucketLabel: string;
-  creatorLabel: "創作者" | "攝影";
-  selection: PlayerPhotoCommonsSelectionV6;
+  creatorLabel: "署名";
+  creditText: string;
+  injuryRelationshipEvidence: string[];
+  license: {
+    isPublicDomain: boolean;
+    name: string;
+    token: string;
+    url: string;
+  };
+  nonClearanceStatement: string;
+  notices: {
+    copyright: PhotoCreditNoticePresentation;
+    disclaimer: PhotoCreditNoticePresentation;
+    other: PhotoCreditNoticePresentation;
+  };
+  policyVersion: "nba-v7" | "nba-v8";
+  selection: PlayerPhotoSelectionV7;
+  sourceRiskCategory: "non-event-low-risk" | null;
+  uploaderText: string | null;
+  workTitleEvidenceUrl: string;
   workTitleText: string | null;
 }
 
+function legacyNotice(
+  notice: Exclude<
+    PlayerPhotoSelectionV7,
+    { decision15Evidence: unknown }
+  >["rightsAttribution"][
+    "copyrightNotice" | "disclaimerNotice" | "otherPerFileNotice"],
+): PhotoCreditNoticePresentation {
+  return {
+    sourceUrl: notice.url,
+    status: notice.status,
+    text: notice.text,
+  };
+}
+
+function decision15Notice(
+  notice: PlayerPhotoNoticeV7,
+): PhotoCreditNoticePresentation {
+  return {
+    sourceUrl: notice.sourceUrl,
+    status: notice.status,
+    text: notice.text,
+  };
+}
+
 /**
- * Normalizes a governed Commons selection for both the central renderer and
- * unit tests. The adapter-license rules fail closed so BY, BY-SA, and CC0 can
- * never silently share the wrong attribution template.
+ * Normalizes v7's protected legacy selections and Decision 15 selections for
+ * one central, no-JavaScript attribution surface. Public domain is deliberately
+ * separate from CC0 and never receives a fabricated license name or version.
  */
 export function photoCreditPresentation(
-  selection: PlayerPhotoCommonsSelectionV6,
+  selection: PlayerPhotoSelectionV7,
 ): PhotoCreditPresentation {
   const bucket = selection.rightsAttribution.licenseBucket;
   const adapterLicense = selection.rightsAttribution.adapterLicense;
@@ -55,6 +98,92 @@ export function photoCreditPresentation(
     );
   }
 
+  if (isDecision15PhotoSelectionV7(selection)) {
+    const workTitle = selection.rightsAttribution.workTitle;
+    if (
+      (workTitle.status === "supplied" && workTitle.text === null) ||
+      (workTitle.status === "not-supplied" && workTitle.text !== null)
+    ) {
+      throw new Error(
+        `inconsistent work-title state for ${selection.athleteName}`,
+      );
+    }
+    const marker = selection.decision15Evidence.rightsMarker;
+    const displayedCredit = marker.displayedCredit;
+    if (
+      displayedCredit.status !== "supplied" ||
+      displayedCredit.text === null
+    ) {
+      throw new Error(
+        `Decision 15 photo ${selection.athleteName} is missing its displayed credit`,
+      );
+    }
+    if (marker.rightsBucket === "public-domain") {
+      if (
+        selection.license !== null ||
+        marker.token === null ||
+        marker.statement === null ||
+        marker.rightsLinkOrStatementSource === null ||
+        marker.licenseName !== null ||
+        marker.licenseVersion !== null
+      ) {
+        throw new Error(
+          `public-domain photo ${selection.athleteName} must retain an exact status marker without CC fields`,
+        );
+      }
+    } else if (
+      selection.license === null ||
+      marker.token === null ||
+      marker.licenseName === null ||
+      marker.rightsLinkOrStatementSource === null
+    ) {
+      throw new Error(
+        `CC photo ${selection.athleteName} is missing exact license facts`,
+      );
+    }
+
+    return {
+      anchorId: assetCreditAnchor(selection.sourceRevision.id),
+      bucketLabel:
+        bucket === "cc-by"
+          ? "姓名標示（CC BY）"
+          : bucket === "cc-by-sa"
+            ? "姓名標示—相同方式分享（CC BY-SA）"
+            : "公有領域（美國政府作品標示）",
+      creatorLabel: "署名",
+      creditText: displayedCredit.text,
+      injuryRelationshipEvidence:
+        selection.decision15Evidence.injuryEventRelationships.map(
+          ({ evidence }) => evidence,
+        ),
+      license: {
+        isPublicDomain: bucket === "public-domain",
+        name:
+          bucket === "public-domain"
+            ? marker.statement!
+            : selection.license!.name!,
+        token: marker.token!,
+        url: marker.rightsLinkOrStatementSource!,
+      },
+      nonClearanceStatement: selection.decision15Evidence.nonClearanceStatement,
+      notices: {
+        copyright: decision15Notice(
+          selection.rightsAttribution.copyrightNotice,
+        ),
+        disclaimer: decision15Notice(
+          selection.rightsAttribution.disclaimerNotice,
+        ),
+        other: decision15Notice(selection.rightsAttribution.otherPerFileNotice),
+      },
+      policyVersion: "nba-v8",
+      selection,
+      sourceRiskCategory: null,
+      uploaderText: null,
+      workTitleEvidenceUrl: workTitle.sourceUrl,
+      workTitleText: workTitle.text,
+    };
+  }
+
   const workTitle = selection.rightsAttribution.workTitle;
   if (
     (workTitle.status === "supplied" && workTitle.text === null) ||
@@ -64,7 +193,7 @@ export function photoCreditPresentation(
       `inconsistent work-title state for ${selection.athleteName}`,
     );
   }
-
+  const legacyBucket = selection.rightsAttribution.licenseBucket;
   const bucketLabels = {
     "cc-by": "姓名標示（CC BY）",
     "cc-by-sa": "姓名標示—相同方式分享（CC BY-SA）",
@@ -73,13 +202,32 @@ export function photoCreditPresentation(
 
   return {
     anchorId: assetCreditAnchor(selection.sourceRevision.id),
-    bucketLabel: bucketLabels[bucket],
-    creatorLabel: bucket === "cc0" ? "創作者" : "攝影",
+    bucketLabel: bucketLabels[legacyBucket],
+    creatorLabel: "署名",
+    creditText: selection.photographerIdentity.name,
+    injuryRelationshipEvidence: [selection.occasionEvidence.basis],
+    license: {
+      isPublicDomain: false,
+      name: selection.license.name,
+      token: selection.license.token,
+      url: selection.license.url,
+    },
+    nonClearanceStatement:
+      selection.sourceRiskClassification.nonClearanceStatement,
+    notices: {
+      copyright: legacyNotice(selection.rightsAttribution.copyrightNotice),
+      disclaimer: legacyNotice(selection.rightsAttribution.disclaimerNotice),
+      other: legacyNotice(selection.rightsAttribution.otherPerFileNotice),
+    },
+    policyVersion: "nba-v7",
     selection,
+    sourceRiskCategory: selection.sourceRiskClassification.category,
+    uploaderText: `${selection.uploaderIdentity.name}；${selection.uploaderIdentity.relationshipToPhotographer}`,
+    workTitleEvidenceUrl: workTitle.evidenceUrl,
     workTitleText: workTitle.text,
   };
 }
 
-export const currentPhotoCredits = registry.selections
-  .filter(isCommonsPhoto)
-  .map(photoCreditPresentation);
+export const currentPhotoCredits = registry.selections.map(
+  photoCreditPresentation,
+);

@@ -270,7 +270,7 @@ describe("ShareAlike composite guard", () => {
     writeInto(
       root,
       "src/lib/ui/editorial-images.ts",
-      'import registry from "../../assets/players/player-photo-registry.v6.json";\nconst photos = import.meta.glob(["../../assets/players/decision-13/*.jpg", "../../assets/players/decision-14/*.jpg"]);\nexport const covers = [registry.selections, photos];\n',
+      'import registry from "../../assets/players/player-photo-registry.v7.json";\nconst photos = import.meta.glob(["../../assets/players/decision-13/*.jpg", "../../assets/players/decision-14/*.jpg", "../../assets/players/decision-15/*.jpg"]);\nexport const covers = [registry.selections, photos];\n',
     );
     writeInto(
       root,
@@ -280,20 +280,20 @@ describe("ShareAlike composite guard", () => {
     expect(scanShareAlikeCompositeRisks(root)).toEqual([]);
   });
 
-  it("accepts the reviewed Decision 14 pure registry contract but still rejects composition added to it", () => {
+  it("accepts the reviewed Decision 15 pure registry contract but still rejects composition added to it", () => {
     const root = makeRoot();
-    const path = "src/lib/contracts/player-photo-registry-v6.ts";
+    const path = "src/lib/contracts/player-photo-registry-v7.ts";
     writeInto(
       root,
       path,
-      'export const registryPath = "src/assets/players/player-photo-registry.v6.json";\n',
+      'export const registryPath = "src/assets/players/player-photo-registry.v7.json";\n',
     );
     expect(scanShareAlikeCompositeRisks(root)).toEqual([]);
 
     writeInto(
       root,
       path,
-      'export const registryPath = "src/assets/players/player-photo-registry.v6.json";\ncanvas.drawImage(registryPath);\n',
+      'export const registryPath = "src/assets/players/player-photo-registry.v7.json";\ncanvas.drawImage(registryPath);\n',
     );
     expect(
       scanShareAlikeCompositeRisks(root).map((entry) => entry.code),
@@ -334,7 +334,7 @@ describe("ShareAlike composite guard", () => {
     writeInto(
       root,
       "src/components/cases/CaseCover.astro",
-      '---\nimport oldRegistry from "../../assets/players/player-photo-registry.v3.json";\nconst oldPhotos = import.meta.glob("../../assets/players/*.jpg");\n---\n<div>{oldRegistry.schemaVersion}{Object.keys(oldPhotos).length}</div>\n',
+      '---\nimport oldRegistry from "../../assets/players/player-photo-registry.v6.json";\nconst oldPhotos = import.meta.glob("../../assets/players/*.jpg");\n---\n<div>{oldRegistry.schemaVersion}{Object.keys(oldPhotos).length}</div>\n',
     );
     expect(
       scanShareAlikeCompositeRisks(root).map((entry) => entry.code),

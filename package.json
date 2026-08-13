@@ -43,6 +43,8 @@
     "player-photos:v5:check": "tsx scripts/generate-player-photo-registry-v5.ts --check",
     "player-photos:v6:generate": "tsx scripts/generate-player-photo-registry-v6.ts",
     "player-photos:v6:check": "tsx scripts/generate-player-photo-registry-v6.ts --check",
+    "player-photos:v7:generate": "tsx scripts/generate-player-photo-registry-v7.ts",
+    "player-photos:v7:check": "tsx scripts/generate-player-photo-registry-v7.ts --check",
     "source-policy:v6:generate": "tsx scripts/research/generate-source-policy-v6.ts",
     "source-policy:v6:check": "tsx scripts/research/generate-source-policy-v6.ts --check",
     "source-policy:v7:generate": "tsx scripts/research/generate-source-policy-v7.ts",

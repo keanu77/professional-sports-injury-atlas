@@ -157,7 +157,7 @@ test.describe("no-javascript readability", () => {
     await expect(
       target.locator('[data-credit-field="work-title"]'),
     ).toHaveAttribute("data-work-title-status", "not-supplied");
-    await expect(page.locator("[data-asset-credit-row]")).toHaveCount(7);
+    await expect(page.locator("[data-asset-credit-row]")).toHaveCount(21);
 
     await page.goto("/cases/damian-lillard-achilles-rupture-2025/");
     const newCreditLink = page
@@ -181,6 +181,41 @@ test.describe("no-javascript readability", () => {
     await expect(newTarget).toContainText(
       "Damian Lillard 於 2014 年芝加哥 63rd Street Beach 世界籃球節公開舞台；非本案例受傷當下影像",
     );
+
+    await page.goto("/cases/dejounte-murray-achilles-rupture-2025/");
+    const publicDomainCreditLink = page
+      .locator(
+        '[data-editorial-case-cover][data-player-photo="Dejounte Murray"]',
+      )
+      .locator("[data-asset-credit-link]");
+    await expect(publicDomainCreditLink).toHaveAttribute(
+      "href",
+      "/credits-notices/#photo-credit-1199576196",
+    );
+    await publicDomainCreditLink.click();
+    await expect(page).toHaveURL(
+      /\/credits-notices\/#photo-credit-1199576196$/u,
+    );
+    const publicDomainTarget = page.locator("#photo-credit-1199576196");
+    await expect(publicDomainTarget).toHaveAttribute(
+      "data-athlete-name",
+      "Dejounte Murray",
+    );
+    await expect(publicDomainTarget).toHaveAttribute(
+      "data-license-bucket",
+      "public-domain",
+    );
+    await expect(
+      publicDomainTarget.locator('[data-credit-field="license"]'),
+    ).toContainText("PD-USGov-Military-Navy");
+    await expect(publicDomainTarget).toContainText(
+      "U.S. Navy photo by Mass Communication Specialist 2nd Class Shayla D. Hamilton/Released",
+    );
+    await expect(
+      publicDomainTarget.locator(
+        'a[href^="https://creativecommons.org/licenses/"], a[href*="creativecommons.org/publicdomain/zero"]',
+      ),
+    ).toHaveCount(0);
   });
 
   test("video states degrade to a source link or governed plain-text citation", async ({

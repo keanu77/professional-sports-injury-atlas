@@ -3,8 +3,8 @@
  * inventory. It validates canonical provenance, the exact 26-case athlete
  * partition, free-license pairs, Commons-only URLs, original JPEG bytes,
  * human crop declarations, Decision 11 attribution/source-risk facts,
- * append-only v1→v2→v3 registry lineage, and both immutable nba-v4 policy
- * digests.
+ * append-only v1→v7 registry lineage, immutable source-policy bindings, the
+ * current Decision 15 inventory, and retained v6/v5 rollback assets.
  */
 
 import { createHash } from "node:crypto";
@@ -56,8 +56,15 @@ import {
   PLAYER_PHOTO_REGISTRY_V6_PATH,
   PLAYER_PHOTO_REGISTRY_V6_SHA256,
   validatePlayerPhotoRegistryV6,
-  type PlayerPhotoRegistryV6,
 } from "../src/lib/contracts/player-photo-registry-v6";
+import {
+  PLAYER_PHOTO_POLICY_V8_BINDING,
+  PLAYER_PHOTO_REGISTRY_V7_PATH,
+  PLAYER_PHOTO_REGISTRY_V7_PHASE_EVIDENCE,
+  PLAYER_PHOTO_REGISTRY_V7_SHA256,
+  validatePlayerPhotoRegistryV7,
+  type PlayerPhotoRegistryV7,
+} from "../src/lib/contracts/player-photo-registry-v7";
 
 const EXPECTED_ATHLETE_COUNT = 21;
 const EXPECTED_CASE_COUNT = 26;
@@ -102,7 +109,7 @@ export interface PlayerPhotoAssetLoadResult {
   allowedPaths: string[];
   issues: ValidationIssue[];
   registry: PlayerPhotoRegistryV3 | null;
-  currentRegistry?: PlayerPhotoRegistryV6 | null;
+  currentRegistry?: PlayerPhotoRegistryV7 | null;
 }
 
 function asRecord(value: unknown): Record<string, unknown> | null {
@@ -1493,7 +1500,8 @@ export function loadPlayerPhotoAssets(
   historicalInput.actualImagePaths = historicalInput.actualImagePaths.filter(
     (path) =>
       !path.startsWith("src/assets/players/decision-13/") &&
-      !path.startsWith("src/assets/players/decision-14/"),
+      !path.startsWith("src/assets/players/decision-14/") &&
+      !path.startsWith("src/assets/players/decision-15/"),
   );
   const historical = validatePlayerPhotoAssets(historicalInput);
   const registryV4Path = join(root, PLAYER_PHOTO_REGISTRY_V4_PATH);
@@ -1529,7 +1537,7 @@ export function loadPlayerPhotoAssets(
   for (const ids of expectedAthleteCases.values()) ids.sort(compareCodePoints);
 
   const localAssetBytesByPath = new Map<string, Uint8Array>();
-  for (const directory of ["decision-13", "decision-14"]) {
+  for (const directory of ["decision-13", "decision-14", "decision-15"]) {
     for (const path of walkFiles(join(root, "src/assets/players", directory))) {
       localAssetBytesByPath.set(relative(root, path), readFileSync(path));
     }
@@ -1629,33 +1637,82 @@ export function loadPlayerPhotoAssets(
     predecessorRegistryV5Bytes: readFileSync(registryV5Path, "utf8"),
     registryBytes: readFileSync(registryV6Path, "utf8"),
   });
+  const registryV7Path = join(root, PLAYER_PHOTO_REGISTRY_V7_PATH);
+  if (!existsSync(registryV7Path)) {
+    return {
+      ...historical,
+      issues: [
+        ...historical.issues,
+        ...currentV4.issues,
+        ...currentV5.issues,
+        ...currentV6.issues,
+        issue(
+          "player-photo-v7-missing-registry",
+          PLAYER_PHOTO_REGISTRY_V7_PATH,
+          "current Decision 15 registry v7 is missing",
+        ),
+      ],
+      currentRegistry: null,
+    };
+  }
+  const currentV7 = validatePlayerPhotoRegistryV7({
+    expectedAthleteCases,
+    expectedRegistrySha256: PLAYER_PHOTO_REGISTRY_V7_SHA256,
+    localAssetBytesByPath,
+    phase1EvidenceBytes: readFileSync(
+      join(root, PLAYER_PHOTO_REGISTRY_V7_PHASE_EVIDENCE.phase1.path),
+      "utf8",
+    ),
+    phase2EvidenceBytes: readFileSync(
+      join(root, PLAYER_PHOTO_REGISTRY_V7_PHASE_EVIDENCE.phase2.path),
+      "utf8",
+    ),
+    policyJsonBytes: readFileSync(
+      join(root, PLAYER_PHOTO_POLICY_V8_BINDING.jsonPath),
+      "utf8",
+    ),
+    policyMarkdownBytes: readFileSync(
+      join(root, PLAYER_PHOTO_POLICY_V8_BINDING.markdownPath),
+      "utf8",
+    ),
+    predecessorRegistryBytes: readFileSync(registryV6Path, "utf8"),
+    registryBytes: readFileSync(registryV7Path, "utf8"),
+  });
   const currentPaths =
+    currentV7.registry?.selections.map(
+      (selection) => selection.localFile.path,
+    ) ?? [];
+  const rollbackV6Paths =
     currentV6.registry?.selections.map(
       (selection) => selection.localFile.path,
     ) ?? [];
-  const rollbackPaths =
+  const rollbackV5Paths =
     currentV5.registry?.selections.map(
       (selection) => selection.localFile.path,
     ) ?? [];
-  const governedPaths = new Set([...currentPaths, ...rollbackPaths]);
+  const governedPaths = new Set([
+    ...currentPaths,
+    ...rollbackV6Paths,
+    ...rollbackV5Paths,
+  ]);
   const trackedCurrentPaths = new Set(localAssetBytesByPath.keys());
   const inventoryIssues = [
     ...[...trackedCurrentPaths]
       .filter((path) => !governedPaths.has(path))
       .map((path) =>
         issue(
-          "player-photo-v6-extra-image",
+          "player-photo-v7-extra-image",
           path,
-          "Decision 13/14 asset is neither a current v6 selection nor an exact v5 rollback asset",
+          "Decision 13/14/15 asset is neither a current v7 selection nor an exact v6/v5 rollback asset",
         ),
       ),
     ...[...governedPaths]
       .filter((path) => !trackedCurrentPaths.has(path))
       .map((path) =>
         issue(
-          "player-photo-v6-missing-image",
+          "player-photo-v7-missing-image",
           path,
-          "current v6 selection or immutable v5 rollback asset is missing",
+          "current v7 selection or immutable v6/v5 rollback asset is missing",
         ),
       ),
   ];
@@ -1668,10 +1725,11 @@ export function loadPlayerPhotoAssets(
       ...currentV4.issues,
       ...currentV5.issues,
       ...currentV6.issues,
+      ...currentV7.issues,
       ...inventoryIssues,
     ],
     registry: historical.registry,
-    currentRegistry: currentV6.registry,
+    currentRegistry: currentV7.registry,
   };
 }
 
@@ -1685,7 +1743,7 @@ function main(): void {
     process.exit(1);
   }
   console.log(
-    "player-photo assets OK — current registry v6 selects 7 Commons photos and 14 original SVG fallbacks covering 26 cases; exact v5 rollback assets and frozen v1-v5 registries remain historical-only",
+    "player-photo assets OK — current registry v7 selects 21 governed photos and 0 SVG fallbacks covering 26 cases; exact v6/v5 rollback assets and frozen v1-v6 registries remain historical-only",
   );
 }
 

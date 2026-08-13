@@ -7,6 +7,7 @@ import {
   caseImageFor,
   playerPhotoRegistry,
 } from "../../src/lib/ui/editorial-images";
+import { isDecision15PhotoSelectionV7 } from "../../src/lib/contracts/player-photo-registry-v7";
 import {
   caseHeroWidthsFor,
   caseThumbWidthsFor,
@@ -64,31 +65,28 @@ describe("case editorial image resolver", () => {
       playerPhotoRegistry.selections.filter(
         (selection) => selection.coverKind === "commons-photo",
       ),
-    ).toHaveLength(7);
+    ).toHaveLength(21);
     expect(
-      playerPhotoRegistry.selections.filter(
-        (selection) => selection.coverKind === "original-svg-fallback",
+      resolved.filter(
+        ({ selection }) => selection.kind === "licensed-player-photo",
       ),
-    ).toHaveLength(14);
+    ).toHaveLength(26);
     expect(
-      playerPhotoRegistry.selections
-        .filter((selection) => selection.coverKind === "commons-photo")
-        .every(
-          (selection) =>
-            selection.sourceRiskClassification.category ===
-              "non-event-low-risk" &&
+      playerPhotoRegistry.selections.every(
+        (selection) =>
+          isDecision15PhotoSelectionV7(selection) ||
+          (selection.sourceRiskClassification.category ===
+            "non-event-low-risk" &&
             selection.sourceRiskClassification.nonClearanceStatement ===
-              "Low risk is not rights clearance or public-release approval.",
-        ),
+              "Low risk is not rights clearance or public-release approval."),
+      ),
     ).toBe(true);
     expect(
       Object.fromEntries(
-        playerPhotoRegistry.selections
-          .filter((selection) => selection.coverKind === "commons-photo")
-          .map((selection) => [
-            selection.athleteName,
-            selection.nonEventCaption,
-          ]),
+        playerPhotoRegistry.selections.map((selection) => [
+          selection.athleteName,
+          selection.nonEventCaption,
+        ]),
       ),
     ).toMatchObject({
       "CJ McCollum":
@@ -102,17 +100,11 @@ describe("case editorial image resolver", () => {
         "LeBron James 於《More Than a Game》紐約公開活動；非本案例受傷當下影像",
     });
     expect(
-      playerPhotoRegistry.selections
-        .filter((selection) => selection.coverKind === "original-svg-fallback")
-        .every(
-          (selection) =>
-            selection.nonEventCaption ===
-            "本站原創抽象運動醫學封面；非球員照片，亦非本案例受傷當下影像",
-        ),
-    ).toBe(true);
+      playerPhotoRegistry.selections.filter(isDecision15PhotoSelectionV7),
+    ).toHaveLength(14);
   });
 
-  it("resolves both new inherited-v6 public-event photos with exact facts", () => {
+  it("preserves both Decision 14 public-event photos with exact facts", () => {
     const expected = [
       {
         athleteName: "Damian Lillard",
@@ -137,7 +129,12 @@ describe("case editorial image resolver", () => {
         ({ athleteName }) => athleteName === fixture.athleteName,
       );
       expect(registrySelection?.coverKind).toBe("commons-photo");
-      if (registrySelection?.coverKind !== "commons-photo") continue;
+      if (
+        registrySelection === undefined ||
+        isDecision15PhotoSelectionV7(registrySelection)
+      ) {
+        continue;
+      }
       expect(registrySelection.nonEventCaption).toBe(fixture.caption);
       expect(registrySelection.focalPosition).toEqual(fixture.focalPosition);
       expect(registrySelection.sourceRevision.id).toBe(fixture.revisionId);
@@ -159,10 +156,50 @@ describe("case editorial image resolver", () => {
       expect(resolved.nonEventCaption).toBe(fixture.caption);
       expect(resolved.focalPosition).toEqual(fixture.focalPosition);
       expect(resolved.attribution.sourceRevision.id).toBe(fixture.revisionId);
-      expect(resolved.attribution.sourceRiskClassification.category).toBe(
+      expect(resolved.attribution.sourceRiskCategory).toBe(
         "non-event-low-risk",
       );
+      expect(resolved.attribution.policyVersion).toBe("nba-v7");
     }
+  });
+
+  it("resolves all fourteen Decision 15 photos with v8 and exact PD/ShareAlike modes", () => {
+    const promoted = playerPhotoRegistry.selections.filter(
+      isDecision15PhotoSelectionV7,
+    );
+    expect(promoted).toHaveLength(14);
+    expect(
+      promoted.filter(
+        (selection) =>
+          selection.rightsAttribution.licenseBucket === "cc-by-sa" &&
+          selection.usePolicy.mode === "placement-rendition-only",
+      ),
+    ).toHaveLength(7);
+
+    for (const registrySelection of promoted) {
+      const resolved = caseImageFor(
+        "acl",
+        registrySelection.caseIds[0]!,
+        registrySelection.athleteName,
+      );
+      expect(resolved.kind).toBe("licensed-player-photo");
+      if (resolved.kind !== "licensed-player-photo") continue;
+      expect(resolved.attribution.policyVersion).toBe("nba-v8");
+      expect(resolved.attribution.sourceRiskCategory).toBeNull();
+      expect(resolved.attribution.usePolicyMode).toBe(
+        registrySelection.usePolicy.mode,
+      );
+      expect(resolved.attribution.photographer).toBe(
+        registrySelection.photographerIdentity.name,
+      );
+    }
+
+    const murray = promoted.find(
+      ({ athleteName }) => athleteName === "Dejounte Murray",
+    )!;
+    expect(murray.license).toBeNull();
+    expect(murray.rightsAttribution.licenseBucket).toBe("public-domain");
+    expect(murray.usePolicy.mode).toBe("public-domain-placement");
   });
 
   it("fails closed when a registered case omits or mismatches its athlete", () => {

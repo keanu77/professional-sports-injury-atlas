@@ -1,13 +1,11 @@
 import type { ImageMetadata } from "astro";
-import type { SvgComponent } from "astro/types";
 
-import playerPhotoRegistryJson from "../../assets/players/player-photo-registry.v6.json";
-import type {
-  PlayerPhotoCommonsSelectionV6,
-  PlayerPhotoRegistryV6,
-  PlayerPhotoSelectionV6,
-  PlayerPhotoSvgFallbackSelectionV6,
-} from "../contracts/player-photo-registry-v6";
+import playerPhotoRegistryJson from "../../assets/players/player-photo-registry.v7.json";
+import {
+  isDecision15PhotoSelectionV7,
+  type PlayerPhotoRegistryV7,
+  type PlayerPhotoSelectionV7,
+} from "../contracts/player-photo-registry-v7";
 
 import achillesCase01 from "../../assets/heroes/achilles-rupture-case-01.png";
 import achillesCase02 from "../../assets/heroes/achilles-rupture-case-02.png";
@@ -58,21 +56,22 @@ const overviewImages: Record<EditorialInjuryCode, ImageMetadata> = {
   "achilles-rupture": achillesOverview,
 };
 
-type NamedCoverImage = ImageMetadata | (SvgComponent & ImageMetadata);
+type NamedCoverImage = ImageMetadata;
 
 const playerPhotoModules = import.meta.glob<{ default: NamedCoverImage }>(
   [
-    "../../assets/players/decision-13/*.{jpg,jpeg,png,svg}",
-    "../../assets/players/decision-14/*.{jpg,jpeg,png,svg}",
+    "../../assets/players/decision-13/*.{jpg,jpeg,png}",
+    "../../assets/players/decision-14/*.{jpg,jpeg,png}",
+    "../../assets/players/decision-15/*.{jpg,jpeg,png}",
   ],
   { eager: true },
 );
 
 export const playerPhotoRegistry =
-  playerPhotoRegistryJson as PlayerPhotoRegistryV6;
+  playerPhotoRegistryJson as PlayerPhotoRegistryV7;
 
 interface RegisteredPlayerCover {
-  asset: PlayerPhotoSelectionV6;
+  asset: PlayerPhotoSelectionV7;
   image: NamedCoverImage;
 }
 
@@ -137,27 +136,24 @@ export interface LicensedPlayerPhotoSelection {
   image: ImageMetadata;
   variant: null;
   athleteName: string;
-  focalPosition: PlayerPhotoCommonsSelectionV6["focalPosition"];
-  nonEventCaption: PlayerPhotoCommonsSelectionV6["nonEventCaption"];
+  focalPosition: PlayerPhotoSelectionV7["focalPosition"];
+  nonEventCaption: PlayerPhotoSelectionV7["nonEventCaption"];
   attribution: {
     alterationDisclosure: string;
     commonsDescriptionUrl: string;
-    license: PlayerPhotoCommonsSelectionV6["license"];
-    occasionEvidence: PlayerPhotoCommonsSelectionV6["occasionEvidence"];
+    license: PlayerPhotoSelectionV7["license"];
+    nonClearanceStatement: string;
+    policyVersion: "nba-v7" | "nba-v8";
     photographer: string;
-    rightsAttribution: PlayerPhotoCommonsSelectionV6["rightsAttribution"];
-    sourceRevision: PlayerPhotoCommonsSelectionV6["sourceRevision"];
-    sourceRiskClassification: PlayerPhotoCommonsSelectionV6["sourceRiskClassification"];
+    rightsAttribution: PlayerPhotoSelectionV7["rightsAttribution"];
+    sourceRevision: PlayerPhotoSelectionV7["sourceRevision"];
+    sourceRiskCategory: "non-event-low-risk" | null;
+    usePolicyMode:
+      | "legacy-v7-placement"
+      | "ordinary-attributed-placement"
+      | "placement-rendition-only"
+      | "public-domain-placement";
   };
-}
-
-export interface OriginalSvgFallbackSelection {
-  kind: "original-svg-fallback";
-  image: SvgComponent & ImageMetadata;
-  variant: null;
-  athleteName: string;
-  focalPosition: PlayerPhotoSvgFallbackSelectionV6["focalPosition"];
-  nonEventCaption: PlayerPhotoSvgFallbackSelectionV6["nonEventCaption"];
 }
 
 export interface InjuryThemeImageSelection {
@@ -168,9 +164,7 @@ export interface InjuryThemeImageSelection {
 }
 
 export type CaseImageSelection =
-  | LicensedPlayerPhotoSelection
-  | OriginalSvgFallbackSelection
-  | InjuryThemeImageSelection;
+  LicensedPlayerPhotoSelection | InjuryThemeImageSelection;
 
 /**
  * Resolves an immutable case ID to its governed local named cover. Unknown
@@ -190,15 +184,22 @@ export function caseImageFor(
         `Named-cover athlete mismatch for ${recordId}: expected ${registered.asset.athleteName}, received ${athleteName ?? "missing athlete"}`,
       );
     }
-    if (registered.asset.coverKind === "original-svg-fallback") {
-      return {
-        kind: "original-svg-fallback",
-        image: registered.image as SvgComponent & ImageMetadata,
-        variant: null,
-        athleteName: registered.asset.athleteName,
-        focalPosition: registered.asset.focalPosition,
-        nonEventCaption: registered.asset.nonEventCaption,
-      };
+    let nonClearanceStatement: string;
+    let policyVersion: "nba-v7" | "nba-v8";
+    let sourceRiskCategory: "non-event-low-risk" | null;
+    let usePolicyMode: LicensedPlayerPhotoSelection["attribution"]["usePolicyMode"];
+    if (isDecision15PhotoSelectionV7(registered.asset)) {
+      nonClearanceStatement =
+        registered.asset.decision15Evidence.nonClearanceStatement;
+      policyVersion = "nba-v8";
+      sourceRiskCategory = null;
+      usePolicyMode = registered.asset.usePolicy.mode;
+    } else {
+      nonClearanceStatement =
+        registered.asset.sourceRiskClassification.nonClearanceStatement;
+      policyVersion = "nba-v7";
+      sourceRiskCategory = registered.asset.sourceRiskClassification.category;
+      usePolicyMode = "legacy-v7-placement";
     }
     return {
       kind: "licensed-player-photo",
@@ -212,11 +213,13 @@ export function caseImageFor(
           registered.asset.rightsAttribution.alterationState.disclosure,
         commonsDescriptionUrl: registered.asset.commonsDescriptionUrl,
         license: registered.asset.license,
-        occasionEvidence: registered.asset.occasionEvidence,
+        nonClearanceStatement,
+        policyVersion,
         photographer: registered.asset.photographerIdentity.name,
         rightsAttribution: registered.asset.rightsAttribution,
         sourceRevision: registered.asset.sourceRevision,
-        sourceRiskClassification: registered.asset.sourceRiskClassification,
+        sourceRiskCategory,
+        usePolicyMode,
       },
     };
   }

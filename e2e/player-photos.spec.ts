@@ -1,10 +1,9 @@
 import { readFileSync } from "node:fs";
 import { expect, test, type Locator, type Page } from "@playwright/test";
-import type {
-  PlayerPhotoCommonsSelectionV6,
-  PlayerPhotoSelectionV6,
-  PlayerPhotoSvgFallbackSelectionV6,
-} from "../src/lib/contracts/player-photo-registry-v6";
+import {
+  isDecision15PhotoSelectionV7,
+  type PlayerPhotoSelectionV7,
+} from "../src/lib/contracts/player-photo-registry-v7";
 import { expectNoAxeViolations } from "./helpers/a11y";
 
 const PAGE_ORIGIN = "http://127.0.0.1:4321";
@@ -17,23 +16,19 @@ const LISTING_PATHS = [
 const playerPhotoRegistry = JSON.parse(
   readFileSync(
     new URL(
-      "../src/assets/players/player-photo-registry.v6.json",
+      "../src/assets/players/player-photo-registry.v7.json",
       import.meta.url,
     ),
     "utf8",
   ),
-) as { selections: PlayerPhotoSelectionV6[] };
+) as { selections: PlayerPhotoSelectionV7[] };
 const registrySelections = playerPhotoRegistry.selections;
-const commonsSelections = registrySelections.filter(
-  (selection): selection is PlayerPhotoCommonsSelectionV6 =>
-    selection.coverKind === "commons-photo",
-);
 const selectionByCaseId = new Map(
   registrySelections.flatMap((selection) =>
     selection.caseIds.map((caseId) => [caseId, selection] as const),
   ),
 );
-const NEW_V6_PHOTOS = [
+const PROTECTED_PUBLIC_EVENT_PHOTOS = [
   {
     athleteName: "Damian Lillard",
     caption:
@@ -60,7 +55,7 @@ const INTERNAL_OWNER_RISK_MARKERS = [
 
 async function expectLicensedCover(
   cover: Locator,
-  selection: PlayerPhotoCommonsSelectionV6,
+  selection: PlayerPhotoSelectionV7,
 ): Promise<void> {
   await expect(cover).toHaveAttribute(
     "data-cover-kind",
@@ -97,14 +92,26 @@ async function expectLicensedCover(
     "data-source-revision-id",
     String(selection.sourceRevision.id),
   );
-  await expect(attribution).toHaveAttribute(
-    "data-source-risk-category",
-    "non-event-low-risk",
-  );
+  if (!isDecision15PhotoSelectionV7(selection)) {
+    await expect(attribution).toHaveAttribute(
+      "data-source-risk-category",
+      "non-event-low-risk",
+    );
+  }
   await expect(attribution).toContainText(selection.nonEventCaption);
   await expect(attribution).toContainText(
-    `攝影：${selection.photographerIdentity.name}`,
+    `署名：${selection.photographerIdentity.name}`,
   );
+  await expect(attribution).toHaveAttribute(
+    "data-policy-version",
+    isDecision15PhotoSelectionV7(selection) ? "nba-v8" : "nba-v7",
+  );
+  if (isDecision15PhotoSelectionV7(selection)) {
+    await expect(attribution).toHaveAttribute(
+      "data-use-policy",
+      selection.usePolicy.mode,
+    );
+  }
   const creditLink = attribution.locator("[data-asset-credit-link]");
   await expect(creditLink).toHaveCount(1);
   await expect(creditLink).toHaveAttribute(
@@ -123,52 +130,11 @@ async function expectLicensedCover(
   );
 }
 
-async function expectOriginalSvgCover(
-  cover: Locator,
-  selection: PlayerPhotoSvgFallbackSelectionV6,
-): Promise<void> {
-  await expect(cover).toHaveAttribute(
-    "data-cover-kind",
-    "original-svg-fallback",
-  );
-  await expect(cover).toHaveAttribute(
-    "data-original-svg-fallback",
-    selection.athleteName,
-  );
-  await expect(cover).not.toHaveAttribute("data-player-photo", /.+/u);
-  await expect(cover).toHaveAttribute(
-    "data-focal-x",
-    String(selection.focalPosition.xPercent),
-  );
-  await expect(cover).toHaveAttribute(
-    "data-focal-y",
-    String(selection.focalPosition.yPercent),
-  );
-
-  const image = cover.locator("img[data-local-original-svg]");
-  await expect(image).toBeVisible();
-  await expect(image).toHaveAttribute(
-    "alt",
-    `${selection.athleteName} 案例：${selection.nonEventCaption}。`,
-  );
-  await expect(image).toHaveAttribute("src", /\.svg$/u);
-  await expect(cover.locator("picture")).toHaveCount(0);
-  await expect(cover.locator("figcaption.case-cover-attribution")).toHaveCount(
-    0,
-  );
-  const fallbackLabel = cover.locator("figcaption[data-original-svg-label]");
-  await expect(fallbackLabel).toHaveText(`${selection.nonEventCaption}。`);
-}
-
 async function expectRegisteredCover(
   cover: Locator,
-  selection: PlayerPhotoSelectionV6,
+  selection: PlayerPhotoSelectionV7,
 ): Promise<void> {
-  if (selection.coverKind === "commons-photo") {
-    await expectLicensedCover(cover, selection);
-  } else {
-    await expectOriginalSvgCover(cover, selection);
-  }
+  await expectLicensedCover(cover, selection);
 }
 
 async function remoteImageUrls(page: Page): Promise<string[]> {
@@ -207,8 +173,8 @@ async function remoteImageUrls(page: Page): Promise<string[]> {
   });
 }
 
-test.describe("Decision 14 registered player covers", () => {
-  test("the three NBA listing pages render the exact registry v6 26-case partition", async ({
+test.describe("Decision 15 registered player covers", () => {
+  test("the three NBA listing pages render the exact registry v7 26-case all-photo partition", async ({
     page,
   }) => {
     const caseIds = new Set<string>();
@@ -233,7 +199,7 @@ test.describe("Decision 14 registered player covers", () => {
         const selection = selectionByCaseId.get(caseId);
         expect(
           selection,
-          `missing registry v6 selection for ${caseId}`,
+          `missing registry v7 selection for ${caseId}`,
         ).toBeDefined();
         caseIds.add(caseId);
         const cover = card.locator("[data-case-thumb]");
@@ -271,20 +237,20 @@ test.describe("Decision 14 registered player covers", () => {
       [...coverKindsByAthlete.values()].filter(
         (kind) => kind === "commons-photo",
       ),
-    ).toHaveLength(7);
+    ).toHaveLength(21);
     expect(
       [...coverKindsByAthlete.entries()]
         .filter(([, kind]) => kind === "original-svg-fallback")
         .map(([athleteName]) => athleteName),
-    ).toHaveLength(14);
+    ).toHaveLength(0);
     expect(
       [...coverKindsByCase.values()].filter((kind) => kind === "commons-photo"),
-    ).toHaveLength(9);
+    ).toHaveLength(26);
     expect(
       [...coverKindsByCase.values()].filter(
         (kind) => kind === "original-svg-fallback",
       ),
-    ).toHaveLength(17);
+    ).toHaveLength(0);
     expect(thirdPartyRequests).toEqual([]);
   });
 
@@ -297,9 +263,7 @@ test.describe("Decision 14 registered player covers", () => {
         thirdPartyRequests.push(request.url());
       }
     });
-    const selection = selectionByCaseId.get(
-      "CASE-NBAACHILLES-2019-005",
-    )! as PlayerPhotoCommonsSelectionV6;
+    const selection = selectionByCaseId.get("CASE-NBAACHILLES-2019-005")!;
     await page.goto("/cases/kevin-durant-achilles-rupture-2019/");
 
     const hero = page.locator(
@@ -352,10 +316,8 @@ test.describe("Decision 14 registered player covers", () => {
       }
     });
 
-    for (const fixture of NEW_V6_PHOTOS) {
-      const selection = selectionByCaseId.get(
-        fixture.caseId,
-      ) as PlayerPhotoCommonsSelectionV6;
+    for (const fixture of PROTECTED_PUBLIC_EVENT_PHOTOS) {
+      const selection = selectionByCaseId.get(fixture.caseId)!;
       expect(selection.coverKind).toBe("commons-photo");
       expect(selection.nonEventCaption).toBe(fixture.caption);
 
@@ -379,22 +341,18 @@ test.describe("Decision 14 registered player covers", () => {
     expect(thirdPartyRequests).toEqual([]);
   });
 
-  test("an original SVG fallback remains local and carries no Creative Commons attribution", async ({
+  test("a Decision 15 former SVG slot is now a local governed photo", async ({
     page,
   }) => {
     await page.goto("/cases/anfernee-simons-ankle-sprain-2023/");
     const hero = page.locator(
-      '[data-editorial-case-cover][data-original-svg-fallback="Anfernee Simons"]',
+      '[data-editorial-case-cover][data-player-photo="Anfernee Simons"]',
     );
-    await expectOriginalSvgCover(
-      hero,
-      selectionByCaseId.get(
-        "CASE-NBAANKLE-2023-004",
-      )! as PlayerPhotoSvgFallbackSelectionV6,
-    );
-    await expect(
-      hero.locator('a[href^="https://creativecommons.org/"]'),
-    ).toHaveCount(0);
+    const selection = selectionByCaseId.get("CASE-NBAANKLE-2023-004")!;
+    await expectLicensedCover(hero, selection);
+    expect(isDecision15PhotoSelectionV7(selection)).toBe(true);
+    await expect(hero.locator("img[data-local-original-svg]")).toHaveCount(0);
+    await expect(hero.locator("picture img")).toBeVisible();
   });
 
   test("the central route renders all current photo titles, notices, exact links, changes, and license buckets", async ({
@@ -402,9 +360,9 @@ test.describe("Decision 14 registered player covers", () => {
   }) => {
     await page.goto("/credits-notices/");
     const rows = page.locator("[data-asset-credit-row][id]");
-    await expect(rows).toHaveCount(7);
+    await expect(rows).toHaveCount(21);
 
-    for (const selection of commonsSelections) {
+    for (const selection of registrySelections) {
       const row = page.locator(
         `#photo-credit-${selection.sourceRevision.id}[data-asset-credit-row]`,
       );
@@ -434,11 +392,23 @@ test.describe("Decision 14 registered player covers", () => {
       );
 
       const license = row.locator('[data-credit-field="license"]');
-      await expect(license).toContainText(selection.license.name);
-      await expect(license.locator("a")).toHaveAttribute(
-        "href",
-        selection.license.url,
-      );
+      if (selection.license === null) {
+        expect(isDecision15PhotoSelectionV7(selection)).toBe(true);
+        if (isDecision15PhotoSelectionV7(selection)) {
+          await expect(license).toContainText(
+            selection.decision15Evidence.rightsMarker.token!,
+          );
+        }
+        await expect(
+          license.locator('a[href^="https://creativecommons.org/"]'),
+        ).toHaveCount(0);
+      } else {
+        await expect(license).toContainText(selection.license.name!);
+        await expect(license.locator("a")).toHaveAttribute(
+          "href",
+          selection.license.url!,
+        );
+      }
       await expect(
         row.locator('[data-credit-field="source"] a'),
       ).toHaveAttribute("href", selection.sourceRevision.permalink);
@@ -458,10 +428,11 @@ test.describe("Decision 14 registered player covers", () => {
         );
         if (notice.status === "supplied") {
           await expect(renderedNotice).toContainText(notice.text!);
-          if (notice.url !== null) {
+          const noticeUrl = "url" in notice ? notice.url : notice.sourceUrl;
+          if (noticeUrl !== null) {
             await expect(renderedNotice.locator("a")).toHaveAttribute(
               "href",
-              notice.url,
+              noticeUrl,
             );
           }
         } else {
@@ -483,10 +454,20 @@ test.describe("Decision 14 registered player covers", () => {
 
       const risk = row.locator('[data-credit-field="occasion-risk"]');
       await expect(risk).toContainText(selection.nonEventCaption);
-      await expect(risk).toContainText(selection.occasionEvidence.basis);
-      await expect(risk).toContainText(
-        selection.sourceRiskClassification.nonClearanceStatement,
-      );
+      if (isDecision15PhotoSelectionV7(selection)) {
+        for (const relationship of selection.decision15Evidence
+          .injuryEventRelationships) {
+          await expect(risk).toContainText(relationship.evidence);
+        }
+        await expect(risk).toContainText(
+          selection.decision15Evidence.nonClearanceStatement,
+        );
+      } else {
+        await expect(risk).toContainText(selection.occasionEvidence.basis);
+        await expect(risk).toContainText(
+          selection.sourceRiskClassification.nonClearanceStatement,
+        );
+      }
     }
 
     await expect(
@@ -499,7 +480,7 @@ test.describe("Decision 14 registered player covers", () => {
         '[data-athlete-name="LeBron James"] [data-credit-field="work-title"]',
       ),
     ).toContainText("目前來源未提供");
-    for (const fixture of NEW_V6_PHOTOS) {
+    for (const fixture of PROTECTED_PUBLIC_EVENT_PHOTOS) {
       const row = page.locator(`#${fixture.creditAnchor}`);
       await expect(row).toHaveAttribute(
         "data-athlete-name",
@@ -514,7 +495,7 @@ test.describe("Decision 14 registered player covers", () => {
       );
     }
     await expect(page.locator("main")).toContainText(
-      "每張照片均依逐檔證據標示實際場合",
+      "每張照片均依逐檔證據標示實際來源事件",
     );
     for (const marker of INTERNAL_OWNER_RISK_MARKERS) {
       await expect(page.locator("main")).not.toContainText(marker);
@@ -522,14 +503,17 @@ test.describe("Decision 14 registered player covers", () => {
     await expectNoAxeViolations(page);
   });
 
-  test("the reader-facing photo policy is conditional and omits the internal owner-risk statement", async ({
+  test("the reader-facing photo policy states v8 eligibility and retained rights limits", async ({
     page,
   }) => {
     await page.goto("/source-policy/");
     const photoPolicy = page.locator('[aria-labelledby="photo-heading"]');
-    await expect(photoPolicy).toContainText("非賽事候選必須符合受控場合");
-    await expect(photoPolicy).toContainText("賽事候選另須同時符合有限場合");
-    await expect(photoPolicy).toContainText("每筆照片均依逐檔證據標示實際場合");
+    await expect(photoPolicy).toContainText("明示 CC BY、CC BY-SA、CC0");
+    await expect(photoPolicy).toContainText("公有領域／美國政府作品標示");
+    await expect(photoPolicy).toContainText("授權不明");
+    await expect(photoPolicy).toContainText("照片事件不同於案例的受傷事件");
+    await expect(photoPolicy).toContainText("不得合進 OG、社群圖、案例卡");
+    await expect(photoPolicy).toContainText("不以拍攝場合、攝影者身分");
     for (const marker of INTERNAL_OWNER_RISK_MARKERS) {
       await expect(photoPolicy).not.toContainText(marker);
     }
