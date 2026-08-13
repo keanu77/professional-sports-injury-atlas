@@ -3299,6 +3299,7 @@ interface MobileYoutubeVisibilityRow {
   bbox: EvidenceBox;
   cssVisible: boolean;
   fullyInsideViewportAfterScroll: boolean;
+  index: number;
   normalizedText: string;
   route: string;
 }
@@ -3320,50 +3321,53 @@ async function captureMobileYoutubeVisibility(
   for (const route of routes) {
     await gotoLocal(page, baseUrl, route);
     const locator = page.locator("[data-video-load] .video-load-copy > small");
-    if ((await locator.count()) !== 1) continue;
-    await locator.scrollIntoViewIfNeeded();
-    const row = await locator.evaluate((element) => {
-      const normalize = (value: string): string =>
-        value.normalize("NFC").replace(/\s+/gu, " ").trim();
-      let cssVisible = true;
-      let current: Element | null = element;
-      while (current !== null) {
-        const style = getComputedStyle(current);
-        if (
-          current.hasAttribute("hidden") ||
-          current.getAttribute("aria-hidden") === "true" ||
-          (current instanceof HTMLElement && current.inert) ||
-          style.display === "none" ||
-          style.visibility === "hidden" ||
-          style.visibility === "collapse" ||
-          Number.parseFloat(style.opacity || "1") <= 0
-        ) {
-          cssVisible = false;
+    const count = await locator.count();
+    for (let index = 0; index < count; index += 1) {
+      const disclosure = locator.nth(index);
+      await disclosure.scrollIntoViewIfNeeded();
+      const row = await disclosure.evaluate((element) => {
+        const normalize = (value: string): string =>
+          value.normalize("NFC").replace(/\s+/gu, " ").trim();
+        let cssVisible = true;
+        let current: Element | null = element;
+        while (current !== null) {
+          const style = getComputedStyle(current);
+          if (
+            current.hasAttribute("hidden") ||
+            current.getAttribute("aria-hidden") === "true" ||
+            (current instanceof HTMLElement && current.inert) ||
+            style.display === "none" ||
+            style.visibility === "hidden" ||
+            style.visibility === "collapse" ||
+            Number.parseFloat(style.opacity || "1") <= 0
+          ) {
+            cssVisible = false;
+          }
+          current = current.parentElement;
         }
-        current = current.parentElement;
-      }
-      const box = element.getBoundingClientRect();
-      const tolerance = 0.5;
-      return {
-        bbox: {
-          height: Number(box.height.toFixed(3)),
-          width: Number(box.width.toFixed(3)),
-          x: Number(box.x.toFixed(3)),
-          y: Number(box.y.toFixed(3)),
-        },
-        cssVisible,
-        fullyInsideViewportAfterScroll:
-          cssVisible &&
-          box.width > 0 &&
-          box.height > 0 &&
-          box.left >= -tolerance &&
-          box.top >= -tolerance &&
-          box.right <= innerWidth + tolerance &&
-          box.bottom <= innerHeight + tolerance,
-        normalizedText: normalize(element.textContent ?? ""),
-      };
-    });
-    rows.push({ ...row, route });
+        const box = element.getBoundingClientRect();
+        const tolerance = 0.5;
+        return {
+          bbox: {
+            height: Number(box.height.toFixed(3)),
+            width: Number(box.width.toFixed(3)),
+            x: Number(box.x.toFixed(3)),
+            y: Number(box.y.toFixed(3)),
+          },
+          cssVisible,
+          fullyInsideViewportAfterScroll:
+            cssVisible &&
+            box.width > 0 &&
+            box.height > 0 &&
+            box.left >= -tolerance &&
+            box.top >= -tolerance &&
+            box.right <= innerWidth + tolerance &&
+            box.bottom <= innerHeight + tolerance,
+          normalizedText: normalize(element.textContent ?? ""),
+        };
+      });
+      rows.push({ ...row, index, route });
+    }
   }
   assertNoCompletedExternalRequests(audit, "mobile YouTube visibility");
   await context.close();
