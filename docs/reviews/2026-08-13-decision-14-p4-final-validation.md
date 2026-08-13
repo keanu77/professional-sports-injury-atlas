@@ -179,8 +179,9 @@ without a rebuild between the committed private manifest and restart:
 3. From clean commit `90e9099`, `build:review` and
    `verify:review-artifact` passed for 42 pages and 413 optimized image
    outputs. Every page retained the exact review noindex meta contract. The
-   verifier also checked the registry-selected new photos, retained photos,
-   retained SVGs, and their central credit anchors on the applicable routes.
+   Phase 4 Playwright checks also verified the registry-selected new photos,
+   retained photos, retained SVGs, and their central credit anchors on the
+   applicable routes.
 4. `private:manifest` changed only
    `review/private-dist-manifest.v1.json`. All **511/511** dist paths matched
    the manifest exactly, and every listed byte length and SHA-256 was
