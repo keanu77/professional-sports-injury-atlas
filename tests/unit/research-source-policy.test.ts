@@ -43,8 +43,13 @@ const V6_MARKDOWN_POLICY_PATH = "research/source-policy/nba.v6.md" as const;
 const V7_JSON_POLICY_PATH =
   "research/source-policy/source-policy.v7.json" as const;
 const V7_MARKDOWN_POLICY_PATH = "research/source-policy/nba.v7.md" as const;
+const V8_JSON_POLICY_PATH =
+  "research/source-policy/source-policy.v8.json" as const;
+const V8_MARKDOWN_POLICY_PATH = "research/source-policy/nba.v8.md" as const;
 const DECISION_14_P1_EVIDENCE_PATH =
   "docs/reviews/2026-08-13-decision-14-p1-photographer-allowlist-evidence.md" as const;
+const DECISION_14_P2_EVIDENCE_PATH =
+  "docs/reviews/2026-08-13-decision-14-p2-photo-candidate-evidence.md" as const;
 const V2_DATE_RULE_PARAGRAPH =
   "For the primary video's event-date identity check, `video_published_at` must fall within the inclusive window from `event_date` through `event_date + 3 days`, or the video title must contain `event_date`. This window is asymmetric: publication before `event_date` is ineligible.";
 
@@ -286,6 +291,10 @@ const EXPECTED_V7_JSON_SHA256 =
   "d1062c1ffa045397d13489319534acbfe24653615df5ce83aac40e40539a8b15";
 const EXPECTED_V7_MARKDOWN_SHA256 =
   "61ed88f92d80b77cd2c1410d03305215eedbb391356c073fb19fac944dea2fd1";
+const EXPECTED_V8_JSON_SHA256 =
+  "30a27633e7923f5331d7098226d5773faf2fe5d203e01e41705e03fe47ee318e";
+const EXPECTED_V8_MARKDOWN_SHA256 =
+  "20a9209bd523604efe3251f6ef159e6432fa9280951ea16d630ee02cc347557d";
 
 const FROZEN_POLICY_BY_VERSION = Object.freeze({
   "nba-v1": Object.freeze({
@@ -330,6 +339,12 @@ const FROZEN_POLICY_BY_VERSION = Object.freeze({
     markdownPath: V7_MARKDOWN_POLICY_PATH,
     markdownSha256: EXPECTED_V7_MARKDOWN_SHA256,
   }),
+  "nba-v8": Object.freeze({
+    jsonPath: V8_JSON_POLICY_PATH,
+    jsonSha256: EXPECTED_V8_JSON_SHA256,
+    markdownPath: V8_MARKDOWN_POLICY_PATH,
+    markdownSha256: EXPECTED_V8_MARKDOWN_SHA256,
+  }),
 });
 
 type FrozenPolicyVersion = keyof typeof FROZEN_POLICY_BY_VERSION;
@@ -350,7 +365,10 @@ function readPolicyFile(
     | typeof V6_MARKDOWN_POLICY_PATH
     | typeof V7_JSON_POLICY_PATH
     | typeof V7_MARKDOWN_POLICY_PATH
-    | typeof DECISION_14_P1_EVIDENCE_PATH,
+    | typeof V8_JSON_POLICY_PATH
+    | typeof V8_MARKDOWN_POLICY_PATH
+    | typeof DECISION_14_P1_EVIDENCE_PATH
+    | typeof DECISION_14_P2_EVIDENCE_PATH,
 ): string {
   return readFileSync(new URL(`../../${path}`, import.meta.url), "utf8");
 }
@@ -924,6 +942,7 @@ describe("NBA source-policy nba-v2 contract", () => {
       "nba-v5",
       "nba-v6",
       "nba-v7",
+      "nba-v8",
     ]);
     const pairs = Object.values(FROZEN_POLICY_BY_VERSION).map(
       ({ jsonSha256, markdownSha256 }) => `${jsonSha256}:${markdownSha256}`,
@@ -970,10 +989,10 @@ describe("NBA source-policy nba-v2 contract", () => {
     const policy = parseCanonicalPolicy(jsonBytes);
     expect(() =>
       verifyFrozenPolicyBytes(
-        canonicalJson({ ...policy, sourcePolicyVersion: "nba-v8" }),
+        canonicalJson({ ...policy, sourcePolicyVersion: "nba-v9" }),
         markdownBytes,
       ),
-    ).toThrow(/unregistered source-policy version nba-v8/);
+    ).toThrow(/unregistered source-policy version nba-v9/);
   });
 });
 
@@ -1838,5 +1857,98 @@ describe("NBA source-policy nba-v7 Decision 14 named-photographer exception", ()
       "Decision 14 accepts a bounded\ncredentialed-access residual risk; no copyright, personality-rights, or\npublic-release approval is created.",
     );
     expect(markdown).toContain("same-injury-event");
+  });
+});
+
+describe("NBA source-policy nba-v8 Decision 15 photo-first policy", () => {
+  it("is canonical and binds the exact immutable v7, Markdown, and frozen candidate ledger bytes", () => {
+    const bytes = readPolicyFile(V8_JSON_POLICY_PATH);
+    const policy = parseCanonicalPolicy(bytes);
+    const v7Bytes = readPolicyFile(V7_JSON_POLICY_PATH);
+    const v7MarkdownBytes = readPolicyFile(V7_MARKDOWN_POLICY_PATH);
+    const v8MarkdownBytes = readPolicyFile(V8_MARKDOWN_POLICY_PATH);
+    const candidateLedgerBytes = readPolicyFile(DECISION_14_P2_EVIDENCE_PATH);
+
+    expect(bytes.endsWith("\n")).toBe(false);
+    expect(policy.sourcePolicyVersion).toBe("nba-v8");
+    expect(policy.playerStaticPhotoPolicyInheritance).toEqual({
+      jsonPath: V7_JSON_POLICY_PATH,
+      jsonSha256: sha256Hex(v7Bytes),
+      markdownPath: V7_MARKDOWN_POLICY_PATH,
+      markdownSha256: sha256Hex(v7MarkdownBytes),
+      sourcePolicyVersion: "nba-v7",
+    });
+    expect(policy.humanPolicyDocument).toEqual({
+      path: V8_MARKDOWN_POLICY_PATH,
+      sha256: sha256Hex(v8MarkdownBytes),
+    });
+    expect(verifyFrozenPolicyBytes(bytes, v8MarkdownBytes)).toEqual({
+      sourcePolicyVersion: "nba-v8",
+      jsonSha256: EXPECTED_V8_JSON_SHA256,
+      markdownSha256: EXPECTED_V8_MARKDOWN_SHA256,
+    });
+
+    const annex = asRecord(policy.playerStaticPhotoRules);
+    const decision15 = asRecord(annex.decision15PhotoFirstPolicy);
+    expect(decision15.frozenDecision14CandidateLedger).toEqual({
+      path: DECISION_14_P2_EVIDENCE_PATH,
+      reAdjudicateBeforeSupplementalSearch: true,
+      sha256: sha256Hex(candidateLedgerBytes),
+    });
+  });
+
+  it("preserves root policy bytes while removing v7 gates and retaining rights, injury, and BY-SA controls", () => {
+    const v7 = parseCanonicalPolicy(readPolicyFile(V7_JSON_POLICY_PATH));
+    const v8 = parseCanonicalPolicy(readPolicyFile(V8_JSON_POLICY_PATH));
+    const {
+      humanPolicyDocument: _v7Human,
+      playerStaticPhotoPolicyInheritance: _v7Inheritance,
+      playerStaticPhotoRules: _v7PhotoRules,
+      sourcePolicyVersion: _v7Version,
+      ...v7RootUnchanged
+    } = v7;
+    const {
+      humanPolicyDocument: _v8Human,
+      playerStaticPhotoPolicyInheritance: _v8Inheritance,
+      playerStaticPhotoRules: _v8PhotoRules,
+      sourcePolicyVersion: _v8Version,
+      ...v8RootUnchanged
+    } = v8;
+    expect(v8RootUnchanged).toEqual(v7RootUnchanged);
+
+    const annex = asRecord(v8.playerStaticPhotoRules);
+    for (const removedGate of [
+      "acceptedNonEventOccasions",
+      "conditionallyAllowedSourceClassifications",
+      "decision14NamedPhotographerEventException",
+      "ineligibleOccasions",
+      "photographerProvenanceRules",
+    ]) {
+      expect(annex).not.toHaveProperty(removedGate);
+    }
+    expect(asRecord(annex.occasionRules).eligibilityGate).toBe(false);
+    expect(asRecord(annex.rightsMarkerRules)).toMatchObject({
+      allRightsReservedEligible: false,
+      explicitMarkerRequired: true,
+      markerMustIdentifyExactWork: true,
+      missingMarkerEligible: false,
+      unknownOrAmbiguousMarkerEligible: false,
+    });
+    expect(asRecord(annex.publicDomainRules)).toMatchObject({
+      acceptedUnitedStatesGovernmentTokenPattern: "^PD-USGov(?:-.+)?$",
+      bucket: "public-domain",
+      licenseNameOrVersionMayBeInvented: false,
+    });
+    expect(asRecord(annex.injuryEventRelationshipRules)).toEqual({
+      eligibleStatus: "different-from-governed-injury-event-verified",
+      evidenceRequired: true,
+      sameOrUnresolvedOutcome: "original-svg-fallback",
+    });
+    expect(asRecord(annex.compositeUseRules)).toEqual(
+      asRecord(asRecord(v7.playerStaticPhotoRules).compositeUseRules),
+    );
+    expect(
+      asRecord(annex.compositeUseRules).ccBySaForbiddenAsSiteComposedInput,
+    ).toBe(true);
   });
 });

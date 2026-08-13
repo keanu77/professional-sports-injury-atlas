@@ -2,6 +2,7 @@ docs/superpowers/**
 docs/decisions/**
 docs/reviews/evidence/decision-13/**/*.json
 docs/reviews/evidence/decision-14/**/*.json
+docs/reviews/evidence/decision-15/**/*.json
 docs/reviews/evidence/decision-13/notices-after/**
 docs/reviews/evidence/decision-13/notices-comparison/**
 src/data/generated/*.json
@@ -24,6 +25,7 @@ src/assets/players/player-photo-registry.v3.json
 src/assets/players/player-photo-registry.v4.json
 src/assets/players/player-photo-registry.v5.json
 src/assets/players/player-photo-registry.v6.json
+src/assets/players/player-photo-registry.v7.json
 research/reviews/source-batches/*.json
 research/reviews/root-source-audit.v1.json
 research/verification/*.json
