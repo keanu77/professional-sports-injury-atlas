@@ -42,8 +42,15 @@ import {
   PLAYER_PHOTO_REGISTRY_V4_PATH,
   PLAYER_PHOTO_REGISTRY_V4_SHA256,
   validatePlayerPhotoRegistryV4,
-  type PlayerPhotoRegistryV4,
 } from "../src/lib/contracts/player-photo-registry-v4";
+import {
+  PLAYER_PHOTO_POLICY_V6_JSON_PATH,
+  PLAYER_PHOTO_POLICY_V6_MARKDOWN_PATH,
+  PLAYER_PHOTO_REGISTRY_V5_PATH,
+  PLAYER_PHOTO_REGISTRY_V5_SHA256,
+  validatePlayerPhotoRegistryV5,
+  type PlayerPhotoRegistryV5,
+} from "../src/lib/contracts/player-photo-registry-v5";
 
 const EXPECTED_ATHLETE_COUNT = 21;
 const EXPECTED_CASE_COUNT = 26;
@@ -88,7 +95,7 @@ export interface PlayerPhotoAssetLoadResult {
   allowedPaths: string[];
   issues: ValidationIssue[];
   registry: PlayerPhotoRegistryV3 | null;
-  currentRegistry?: PlayerPhotoRegistryV4 | null;
+  currentRegistry?: PlayerPhotoRegistryV5 | null;
 }
 
 function asRecord(value: unknown): Record<string, unknown> | null {
@@ -1516,7 +1523,7 @@ export function loadPlayerPhotoAssets(
   for (const path of walkFiles(join(root, "src/assets/players/decision-13"))) {
     localAssetBytesByPath.set(relative(root, path), readFileSync(path));
   }
-  const current = validatePlayerPhotoRegistryV4({
+  const currentV4 = validatePlayerPhotoRegistryV4({
     expectedAthleteCases,
     expectedRegistrySha256: PLAYER_PHOTO_REGISTRY_V4_SHA256,
     localAssetBytesByPath,
@@ -1536,9 +1543,39 @@ export function loadPlayerPhotoAssets(
     ),
     registryBytes: readFileSync(registryV4Path, "utf8"),
   });
+  const registryV5Path = join(root, PLAYER_PHOTO_REGISTRY_V5_PATH);
+  if (!existsSync(registryV5Path)) {
+    return {
+      ...historical,
+      issues: [
+        ...historical.issues,
+        ...currentV4.issues,
+        issue(
+          "player-photo-v5-missing-registry",
+          PLAYER_PHOTO_REGISTRY_V5_PATH,
+          "current Decision 13 corrective registry v5 is missing",
+        ),
+      ],
+      currentRegistry: null,
+    };
+  }
+  const currentV5 = validatePlayerPhotoRegistryV5({
+    expectedRegistrySha256: PLAYER_PHOTO_REGISTRY_V5_SHA256,
+    policyJsonBytes: readFileSync(
+      join(root, PLAYER_PHOTO_POLICY_V6_JSON_PATH),
+      "utf8",
+    ),
+    policyMarkdownBytes: readFileSync(
+      join(root, PLAYER_PHOTO_POLICY_V6_MARKDOWN_PATH),
+      "utf8",
+    ),
+    predecessorRegistryV4Bytes: readFileSync(registryV4Path, "utf8"),
+    registryBytes: readFileSync(registryV5Path, "utf8"),
+  });
   const currentPaths =
-    current.registry?.selections.map((selection) => selection.localFile.path) ??
-    [];
+    currentV5.registry?.selections.map(
+      (selection) => selection.localFile.path,
+    ) ?? [];
   const trackedCurrentPaths = new Set(localAssetBytesByPath.keys());
   const currentPathSet = new Set(currentPaths);
   const inventoryIssues = [
@@ -1546,18 +1583,18 @@ export function loadPlayerPhotoAssets(
       .filter((path) => !currentPathSet.has(path))
       .map((path) =>
         issue(
-          "player-photo-v4-extra-image",
+          "player-photo-v5-extra-image",
           path,
-          "Decision 13 asset is not a current registry v4 selection",
+          "Decision 13 asset is not a current registry v5 selection",
         ),
       ),
     ...currentPaths
       .filter((path) => !trackedCurrentPaths.has(path))
       .map((path) =>
         issue(
-          "player-photo-v4-missing-image",
+          "player-photo-v5-missing-image",
           path,
-          "current registry v4 selection is missing its local asset",
+          "current registry v5 selection is missing its local asset",
         ),
       ),
   ];
@@ -1565,9 +1602,14 @@ export function loadPlayerPhotoAssets(
     allowedPaths: [
       ...new Set([...historical.allowedPaths, ...currentPaths]),
     ].sort(compareCodePoints),
-    issues: [...historical.issues, ...current.issues, ...inventoryIssues],
+    issues: [
+      ...historical.issues,
+      ...currentV4.issues,
+      ...currentV5.issues,
+      ...inventoryIssues,
+    ],
     registry: historical.registry,
-    currentRegistry: current.registry,
+    currentRegistry: currentV5.registry,
   };
 }
 
@@ -1581,7 +1623,7 @@ function main(): void {
     process.exit(1);
   }
   console.log(
-    "player-photo assets OK — current registry v4 selects 5 Commons photos and 16 original SVG fallbacks covering 26 cases; frozen v3 assets remain historical-only",
+    "player-photo assets OK — current registry v5 selects 5 Commons photos and 16 original SVG fallbacks covering 26 cases; frozen v4 and earlier registries remain historical-only",
   );
 }
 

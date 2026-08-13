@@ -37,6 +37,9 @@ const V4_MARKDOWN_POLICY_PATH = "research/source-policy/nba.v4.md" as const;
 const V5_JSON_POLICY_PATH =
   "research/source-policy/source-policy.v5.json" as const;
 const V5_MARKDOWN_POLICY_PATH = "research/source-policy/nba.v5.md" as const;
+const V6_JSON_POLICY_PATH =
+  "research/source-policy/source-policy.v6.json" as const;
+const V6_MARKDOWN_POLICY_PATH = "research/source-policy/nba.v6.md" as const;
 const V2_DATE_RULE_PARAGRAPH =
   "For the primary video's event-date identity check, `video_published_at` must fall within the inclusive window from `event_date` through `event_date + 3 days`, or the video title must contain `event_date`. This window is asymmetric: publication before `event_date` is ineligible.";
 
@@ -270,6 +273,10 @@ const EXPECTED_V5_JSON_SHA256 =
   "5f38066ce0ef0c10f0494856f90114dc403c068986b4c323cbb2ef3ebbda56ac";
 const EXPECTED_V5_MARKDOWN_SHA256 =
   "a59111d915caeb7f1e8f730492e826be63ff95fb5b1feeb1576eeb75a95e6aae";
+const EXPECTED_V6_JSON_SHA256 =
+  "1e27041de184b7b6397b2cfdde225706b40696f1d4456757193baa340f4cc93c";
+const EXPECTED_V6_MARKDOWN_SHA256 =
+  "b9a469344ff5061546619ea0ecbb5b7320965af40cde254d4939cf2e8835b0c1";
 
 const FROZEN_POLICY_BY_VERSION = Object.freeze({
   "nba-v1": Object.freeze({
@@ -302,6 +309,12 @@ const FROZEN_POLICY_BY_VERSION = Object.freeze({
     markdownPath: V5_MARKDOWN_POLICY_PATH,
     markdownSha256: EXPECTED_V5_MARKDOWN_SHA256,
   }),
+  "nba-v6": Object.freeze({
+    jsonPath: V6_JSON_POLICY_PATH,
+    jsonSha256: EXPECTED_V6_JSON_SHA256,
+    markdownPath: V6_MARKDOWN_POLICY_PATH,
+    markdownSha256: EXPECTED_V6_MARKDOWN_SHA256,
+  }),
 });
 
 type FrozenPolicyVersion = keyof typeof FROZEN_POLICY_BY_VERSION;
@@ -317,7 +330,9 @@ function readPolicyFile(
     | typeof V4_JSON_POLICY_PATH
     | typeof V4_MARKDOWN_POLICY_PATH
     | typeof V5_JSON_POLICY_PATH
-    | typeof V5_MARKDOWN_POLICY_PATH,
+    | typeof V5_MARKDOWN_POLICY_PATH
+    | typeof V6_JSON_POLICY_PATH
+    | typeof V6_MARKDOWN_POLICY_PATH,
 ): string {
   return readFileSync(new URL(`../../${path}`, import.meta.url), "utf8");
 }
@@ -889,6 +904,7 @@ describe("NBA source-policy nba-v2 contract", () => {
       "nba-v3",
       "nba-v4",
       "nba-v5",
+      "nba-v6",
     ]);
     const pairs = Object.values(FROZEN_POLICY_BY_VERSION).map(
       ({ jsonSha256, markdownSha256 }) => `${jsonSha256}:${markdownSha256}`,
@@ -935,10 +951,10 @@ describe("NBA source-policy nba-v2 contract", () => {
     const policy = parseCanonicalPolicy(jsonBytes);
     expect(() =>
       verifyFrozenPolicyBytes(
-        canonicalJson({ ...policy, sourcePolicyVersion: "nba-v6" }),
+        canonicalJson({ ...policy, sourcePolicyVersion: "nba-v7" }),
         markdownBytes,
       ),
-    ).toThrow(/unregistered source-policy version nba-v6/);
+    ).toThrow(/unregistered source-policy version nba-v7/);
   });
 });
 
@@ -1420,5 +1436,85 @@ describe("NBA source-policy nba-v5 Decision 13 named-cover addendum", () => {
     expect(markdown).toContain("official team or league headshot");
     expect(markdown).toContain("must never be inputs to site-composed OG");
     expect(markdown).toContain("without inventing a Creative Commons license");
+  });
+});
+
+describe("NBA source-policy nba-v6 Decision 13 consistency correction", () => {
+  it("is canonical, immutable, and binds the exact immutable nba-v5 pair", () => {
+    const bytes = readPolicyFile(V6_JSON_POLICY_PATH);
+    const policy = parseCanonicalPolicy(bytes);
+
+    expect(bytes.endsWith("\n")).toBe(false);
+    expect(policy.sourcePolicyVersion).toBe("nba-v6");
+    expect(policy.playerStaticPhotoPolicyInheritance).toEqual({
+      jsonPath: V5_JSON_POLICY_PATH,
+      jsonSha256: EXPECTED_V5_JSON_SHA256,
+      markdownPath: V5_MARKDOWN_POLICY_PATH,
+      markdownSha256: EXPECTED_V5_MARKDOWN_SHA256,
+      sourcePolicyVersion: "nba-v5",
+    });
+    expect(policy.humanPolicyDocument).toEqual({
+      path: V6_MARKDOWN_POLICY_PATH,
+      sha256: EXPECTED_V6_MARKDOWN_SHA256,
+    });
+    expect(
+      verifyFrozenPolicyBytes(bytes, readPolicyFile(V6_MARKDOWN_POLICY_PATH)),
+    ).toEqual({
+      sourcePolicyVersion: "nba-v6",
+      jsonSha256: EXPECTED_V6_JSON_SHA256,
+      markdownSha256: EXPECTED_V6_MARKDOWN_SHA256,
+    });
+  });
+
+  it("removes every inherited contradiction while preserving other v5 rules", () => {
+    const v5 = parseCanonicalPolicy(readPolicyFile(V5_JSON_POLICY_PATH));
+    const v6 = parseCanonicalPolicy(readPolicyFile(V6_JSON_POLICY_PATH));
+    const v5Annex = asRecord(v5.playerStaticPhotoRules);
+    const v6Annex = asRecord(v6.playerStaticPhotoRules);
+    const v6Attribution = asRecord(v6Annex.attributionRequirements);
+
+    expect(v6Annex.explicitNegativeFiles).toEqual([
+      {
+        filename: "Dwight_Powell.jpg",
+        reason: "official-team-photo-shoot",
+      },
+    ]);
+    expect(v6Annex.prohibitedClassifications).not.toContain(
+      "non-basketball-court",
+    );
+    expect(v6Attribution.nonEventText).toBe(
+      "非賽事場合資料照片；非本案例受傷當下影像",
+    );
+
+    const {
+      attributionRequirements: _v5Attribution,
+      explicitNegativeFiles: _v5Negative,
+      prohibitedClassifications: _v5Prohibited,
+      ...v5Unchanged
+    } = v5Annex;
+    const {
+      attributionRequirements: _v6Attribution,
+      explicitNegativeFiles: _v6Negative,
+      prohibitedClassifications: _v6Prohibited,
+      ...v6Unchanged
+    } = v6Annex;
+    expect(v6Unchanged).toEqual(v5Unchanged);
+
+    const { nonEventText: _v5NonEventText, ...v5AttributionUnchanged } =
+      asRecord(v5Annex.attributionRequirements);
+    const { nonEventText: _v6NonEventText, ...v6AttributionUnchanged } =
+      v6Attribution;
+    expect(v6AttributionUnchanged).toEqual(v5AttributionUnchanged);
+  });
+
+  it("documents the narrow forward correction and keeps release boundaries closed", () => {
+    const markdown = readPolicyFile(V6_MARKDOWN_POLICY_PATH);
+    expect(markdown).toContain("2025_C.J._McCollum_(cropped).jpg");
+    expect(markdown).toContain("`non-basketball-court`");
+    expect(markdown).toContain("非賽事場合資料照片；非本案例受傷當下影像");
+    expect(markdown).toContain("does not authorize medical-content changes");
+    expect(markdown).toContain(
+      "CC BY-SA material remains forbidden as an input",
+    );
   });
 });

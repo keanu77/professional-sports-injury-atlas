@@ -55,9 +55,9 @@ const PLAYER_SOCIAL_META_RE =
   /(?:og:image|twitter:image)[\s\S]{0,400}(?:player-photo|assets\/players)|(?:player-photo|assets\/players)[\s\S]{0,400}(?:og:image|twitter:image)/i;
 const CURRENT_RENDER_SOURCE_RE = /^src\/(?:components|layouts|lib\/ui|pages)\//;
 const HISTORICAL_PLAYER_REGISTRY_REFERENCE_RE =
-  /player-photo-registry\.v[123]\.json/;
+  /player-photo-registry\.v[1-4]\.json/;
 const HISTORICAL_PLAYER_ASSET_REFERENCE_RE =
-  /assets\/players\/(?!decision-13\/|player-photo-registry\.v4\.json)/;
+  /assets\/players\/(?!decision-13\/|player-photo-registry\.v5\.json)/;
 const DIRECT_COMPOSITION_PACKAGES = new Set([
   "@resvg/resvg-js",
   "@vercel/og",
@@ -75,6 +75,7 @@ const APPROVED_PLAYER_PHOTO_PRODUCTION_CONSUMERS = new Set([
   // Decision 13 Phase 0 reviewed this pure schema/verifier module. The
   // composition checks below still apply if it ever gains rendering code.
   "src/lib/contracts/player-photo-registry-v4.ts",
+  "src/lib/contracts/player-photo-registry-v5.ts",
   "src/lib/contracts/player-photo.ts",
   "src/lib/governance/site-digest.ts",
   "src/lib/ui/editorial-images.ts",
@@ -486,7 +487,7 @@ export function scanShareAlikeCompositeRisks(root: string): ValidationIssue[] {
           issue(
             "brand-current-cover-historical-reference",
             relPath,
-            "current render code must consume only registry v4 and Decision 13 named-cover assets",
+            "current render code must consume only registry v5 and Decision 13 named-cover assets",
           ),
         );
       }

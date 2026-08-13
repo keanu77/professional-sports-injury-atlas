@@ -1,13 +1,13 @@
 import type { ImageMetadata } from "astro";
 import type { SvgComponent } from "astro/types";
 
-import playerPhotoRegistryJson from "../../assets/players/player-photo-registry.v4.json";
+import playerPhotoRegistryJson from "../../assets/players/player-photo-registry.v5.json";
 import type {
-  PlayerPhotoCommonsSelectionV4,
-  PlayerPhotoRegistryV4,
-  PlayerPhotoSelectionV4,
-  PlayerPhotoSvgFallbackSelectionV4,
-} from "../contracts/player-photo-registry-v4";
+  PlayerPhotoCommonsSelectionV5,
+  PlayerPhotoRegistryV5,
+  PlayerPhotoSelectionV5,
+  PlayerPhotoSvgFallbackSelectionV5,
+} from "../contracts/player-photo-registry-v5";
 
 import achillesCase01 from "../../assets/heroes/achilles-rupture-case-01.png";
 import achillesCase02 from "../../assets/heroes/achilles-rupture-case-02.png";
@@ -66,10 +66,10 @@ const playerPhotoModules = import.meta.glob<{ default: NamedCoverImage }>(
 );
 
 export const playerPhotoRegistry =
-  playerPhotoRegistryJson as PlayerPhotoRegistryV4;
+  playerPhotoRegistryJson as PlayerPhotoRegistryV5;
 
 interface RegisteredPlayerCover {
-  asset: PlayerPhotoSelectionV4;
+  asset: PlayerPhotoSelectionV5;
   image: NamedCoverImage;
 }
 
@@ -134,17 +134,17 @@ export interface LicensedPlayerPhotoSelection {
   image: ImageMetadata;
   variant: null;
   athleteName: string;
-  focalPosition: PlayerPhotoCommonsSelectionV4["focalPosition"];
-  nonEventCaption: PlayerPhotoCommonsSelectionV4["nonEventCaption"];
+  focalPosition: PlayerPhotoCommonsSelectionV5["focalPosition"];
+  nonEventCaption: PlayerPhotoCommonsSelectionV5["nonEventCaption"];
   attribution: {
     alterationDisclosure: string;
     commonsDescriptionUrl: string;
-    license: PlayerPhotoCommonsSelectionV4["license"];
-    occasionEvidence: PlayerPhotoCommonsSelectionV4["occasionEvidence"];
+    license: PlayerPhotoCommonsSelectionV5["license"];
+    occasionEvidence: PlayerPhotoCommonsSelectionV5["occasionEvidence"];
     photographer: string;
-    rightsAttribution: PlayerPhotoCommonsSelectionV4["rightsAttribution"];
-    sourceRevision: PlayerPhotoCommonsSelectionV4["sourceRevision"];
-    sourceRiskClassification: PlayerPhotoCommonsSelectionV4["sourceRiskClassification"];
+    rightsAttribution: PlayerPhotoCommonsSelectionV5["rightsAttribution"];
+    sourceRevision: PlayerPhotoCommonsSelectionV5["sourceRevision"];
+    sourceRiskClassification: PlayerPhotoCommonsSelectionV5["sourceRiskClassification"];
   };
 }
 
@@ -153,8 +153,8 @@ export interface OriginalSvgFallbackSelection {
   image: SvgComponent & ImageMetadata;
   variant: null;
   athleteName: string;
-  focalPosition: PlayerPhotoSvgFallbackSelectionV4["focalPosition"];
-  nonEventCaption: PlayerPhotoSvgFallbackSelectionV4["nonEventCaption"];
+  focalPosition: PlayerPhotoSvgFallbackSelectionV5["focalPosition"];
+  nonEventCaption: PlayerPhotoSvgFallbackSelectionV5["nonEventCaption"];
 }
 
 export interface InjuryThemeImageSelection {
