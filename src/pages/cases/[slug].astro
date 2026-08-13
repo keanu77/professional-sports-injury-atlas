@@ -15,6 +15,7 @@ import CaseTimeline from "../../components/cases/CaseTimeline.astro";
 import CaseVideo from "../../components/cases/CaseVideo.astro";
 import ExternalSourceCitation from "../../components/citations/ExternalSourceCitation.astro";
 import LayeredNotes from "../../components/cases/LayeredNotes.astro";
+import MedicalNotice from "../../components/notices/MedicalNotice.astro";
 import ReviewBadge from "../../components/cases/ReviewBadge.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { computeCaseContentDigest } from "../../lib/cases/digest";
@@ -89,6 +90,7 @@ if (videoSource === undefined) {
     data-case-id={record.id}
     data-injury-theme={record.injury.code}
   >
+    <MedicalNotice variant="compact" />
     <EditorialHero
       variant="case"
       injuryCode={record.injury.code}

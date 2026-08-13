@@ -183,6 +183,7 @@ function writeHtmlFixtureRoutes(
   writeRoute("index.html", identity("/", caseIds, homeDigestFor(reviewSet)));
   for (const [path, pageId] of [
     ["about/index.html", "/about/"],
+    ["credits-notices/index.html", "/credits-notices/"],
     ["source-policy/index.html", "/source-policy/"],
     ["review/component-lab/index.html", "/review/component-lab/"],
   ] as const) {

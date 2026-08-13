@@ -16,6 +16,7 @@ import {
   caseHeroWidthsFor,
   caseThumbWidthsFor,
 } from "../../lib/ui/image-renditions";
+import { assetCreditHref } from "../../lib/rights/photo-credits";
 
 interface Props {
   athleteName?: string;
@@ -68,17 +69,10 @@ const photoAlt =
       : (imageAlt ??
         `${injuryLabel}原創 AI 生成運動醫學攝影意象；匿名運動員面孔不可見，不代表任何特定球員或真實受傷事件。`);
 const showFallbackCaption = isHero || presentation === "standalone";
-let sourceRiskLabel: string | null = null;
-if (selection.kind === "licensed-player-photo") {
-  const category: string =
-    selection.attribution.sourceRiskClassification.category;
-  if (category !== "non-event-low-risk") {
-    throw new Error(
-      `Unsupported current player-photo source-risk category for ${recordId}: ${category}`,
-    );
-  }
-  sourceRiskLabel = "非賽事場合（non-event-low-risk；低風險分類）";
-}
+const assetCreditsHref =
+  selection.kind === "licensed-player-photo"
+    ? assetCreditHref(selection.attribution.sourceRevision.id)
+    : null;
 ---
 
 <figure
@@ -155,192 +149,17 @@ if (selection.kind === "licensed-player-photo") {
           selection.attribution.sourceRiskClassification.category
         }
       >
-        {selection.attribution.rightsAttribution.licenseBucket === "cc-by" ? (
-          <>
-            {selection.attribution.rightsAttribution.workTitle.status ===
-            "supplied" ? (
-              <>
-                <span>
-                  作品：〈
-                  {selection.attribution.rightsAttribution.workTitle.text}〉
-                </span>
-                <span aria-hidden="true"> · </span>
-              </>
-            ) : (
-              selection.attribution.license.token.endsWith("-2.0") && (
-                <>
-                  <span>作品標題：目前來源未提供</span>
-                  <span aria-hidden="true"> · </span>
-                </>
-              )
-            )}
-            <span>攝影：{selection.attribution.photographer}</span>
-            <span aria-hidden="true"> · </span>
-            <a
-              href={selection.attribution.license.url}
-              rel="noopener noreferrer"
-            >
-              原作 {selection.attribution.license.name}
-            </a>
-            <span aria-hidden="true"> · </span>
-            <a
-              href={selection.attribution.sourceRevision.permalink}
-              rel="noopener noreferrer"
-            >
-              Wikimedia Commons 永久說明頁
-            </a>
-            <span aria-hidden="true"> · </span>
-            <span>{selection.nonEventCaption}</span>
-            <span aria-hidden="true"> · </span>
-            <span>{selection.attribution.alterationDisclosure}</span>
-          </>
-        ) : selection.attribution.rightsAttribution.licenseBucket ===
-          "cc-by-sa" ? (
-          <>
-            {selection.attribution.rightsAttribution.workTitle.status ===
-            "supplied" ? (
-              <>
-                <span>
-                  作品：〈
-                  {selection.attribution.rightsAttribution.workTitle.text}〉
-                </span>
-                <span aria-hidden="true"> · </span>
-              </>
-            ) : (
-              selection.attribution.license.token.endsWith("-2.0") && (
-                <>
-                  <span>作品標題：目前來源未提供</span>
-                  <span aria-hidden="true"> · </span>
-                </>
-              )
-            )}
-            <span>攝影：{selection.attribution.photographer}</span>
-            <span aria-hidden="true"> · </span>
-            <a
-              href={selection.attribution.license.url}
-              rel="noopener noreferrer"
-            >
-              原作 {selection.attribution.license.name}
-            </a>
-            <span aria-hidden="true"> · </span>
-            <a
-              href={selection.attribution.sourceRevision.permalink}
-              rel="noopener noreferrer"
-            >
-              Wikimedia Commons 永久說明頁
-            </a>
-            <span aria-hidden="true"> · </span>
-            <span>{selection.nonEventCaption}</span>
-            <span aria-hidden="true"> · </span>
-            <span>{selection.attribution.alterationDisclosure}</span>
-            <span aria-hidden="true"> · </span>
-            <a
-              href={selection.attribution.rightsAttribution.adapterLicense!.url}
-              rel="noopener noreferrer"
-            >
-              本站裁切改作貢獻之 Adapter&apos;s License：
-              {selection.attribution.rightsAttribution.adapterLicense!.name}
-            </a>
-            <span>（不及於頁面其他內容）</span>
-          </>
-        ) : (
-          <>
-            {selection.attribution.rightsAttribution.workTitle.status ===
-              "supplied" && (
-              <>
-                <span>
-                  作品：〈
-                  {selection.attribution.rightsAttribution.workTitle.text}〉
-                </span>
-                <span aria-hidden="true"> · </span>
-              </>
-            )}
-            <span>創作者：{selection.attribution.photographer}</span>
-            <span aria-hidden="true"> · </span>
-            <a
-              href={selection.attribution.license.url}
-              rel="noopener noreferrer"
-            >
-              {selection.attribution.license.name}
-            </a>
-            <span aria-hidden="true"> · </span>
-            <a
-              href={selection.attribution.sourceRevision.permalink}
-              rel="noopener noreferrer"
-            >
-              Wikimedia Commons 永久說明頁
-            </a>
-            <span aria-hidden="true"> · </span>
-            <span>{selection.nonEventCaption}</span>
-            <span aria-hidden="true"> · </span>
-            <span>{selection.attribution.alterationDisclosure}</span>
-          </>
-        )}
-        <span data-attribution-notices>
-          {selection.attribution.rightsAttribution.copyrightNotice.status ===
-            "supplied" && (
-            <>
-              <span aria-hidden="true"> · </span>
-              <span>
-                著作權聲明：
-                {selection.attribution.rightsAttribution.copyrightNotice.text}
-              </span>
-            </>
-          )}
-          {selection.attribution.rightsAttribution.disclaimerNotice.status ===
-            "supplied" && (
-            <>
-              <span aria-hidden="true"> · </span>
-              <span>
-                來源免責通知：
-                {selection.attribution.rightsAttribution.disclaimerNotice.text}
-              </span>
-            </>
-          )}
-          {selection.attribution.rightsAttribution.otherPerFileNotice.status ===
-            "supplied" && (
-            <>
-              <span aria-hidden="true"> · </span>
-              <a
-                href={
-                  selection.attribution.rightsAttribution.otherPerFileNotice
-                    .url!
-                }
-                rel="noopener noreferrer"
-              >
-                {
-                  selection.attribution.rightsAttribution.otherPerFileNotice
-                    .text
-                }
-              </a>
-            </>
-          )}
-        </span>
+        <span>{selection.nonEventCaption}</span>
         <span aria-hidden="true"> · </span>
-        <span
-          data-source-risk-classification
-          data-source-risk-checked-at={
-            selection.attribution.occasionEvidence.checkedAt
-          }
-          data-source-risk-revision-permalink={
-            selection.attribution.sourceRevision.permalink
-          }
+        <span>攝影：{selection.attribution.photographer}</span>
+        <span aria-hidden="true"> · </span>
+        <a
+          href={assetCreditsHref!}
+          data-asset-credit-link
+          aria-label={`${selection.athleteName} 資料照片的完整授權與逐檔說明`}
         >
-          <span>來源風險分類：{sourceRiskLabel}</span>
-          <span aria-hidden="true"> · </span>
-          <span>
-            查核日：
-            {selection.attribution.occasionEvidence.checkedAt}
-          </span>
-          <span aria-hidden="true"> · </span>
-          <span data-source-risk-basis>
-            分類依據：{selection.attribution.occasionEvidence.basis}
-          </span>
-          <span aria-hidden="true"> · </span>
-          <span data-source-risk-no-clearance>
-            此分類不代表著作權、肖像權或公開使用已獲放行。
-          </span>
-        </span>
+          完整授權與逐檔說明
+        </a>
       </figcaption>
     ) : selection.kind === "original-svg-fallback" ? (
       <figcaption data-original-svg-label>

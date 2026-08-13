@@ -14,6 +14,7 @@ import EmptyState from "../../components/atlas/EmptyState.astro";
 import ListingPagination from "../../components/atlas/ListingPagination.astro";
 import RtpCourseLink from "../../components/cases/RtpCourseLink.astro";
 import InjuryOverviewView from "../../components/injuries/InjuryOverview.astro";
+import MedicalNotice from "../../components/notices/MedicalNotice.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { computeInjuryOverviewDigest } from "../../lib/cases/injury-overview-digest";
 import courseLinksData from "../../data/professional-course-links.v1.json";
@@ -81,6 +82,7 @@ const courseBySlug = new Map(
   heroImageSizes="(min-width: 72rem) 72rem, calc(100vw - 2rem)"
 >
   <div class="injury-page" data-injury-theme={injuryCode}>
+    <MedicalNotice variant="compact" />
     <EditorialHero
       variant="injury"
       injuryCode={injuryCode}

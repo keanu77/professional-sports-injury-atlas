@@ -1,0 +1,206 @@
+---
+/** Complete, registry-derived credit row for one governed Commons asset. */
+import type { PlayerPhotoCommonsSelectionV5 } from "../../lib/contracts/player-photo-registry-v5";
+import { photoCreditPresentation } from "../../lib/rights/photo-credits";
+
+interface Props {
+  selection: PlayerPhotoCommonsSelectionV5;
+}
+
+const credit = photoCreditPresentation(Astro.props.selection);
+const { selection } = credit;
+const { rightsAttribution } = selection;
+const noticeFields = [
+  {
+    field: "copyright-notice",
+    label: "著作權聲明",
+    notice: rightsAttribution.copyrightNotice,
+  },
+  {
+    field: "disclaimer-notice",
+    label: "來源免責通知",
+    notice: rightsAttribution.disclaimerNotice,
+  },
+  {
+    field: "other-notice",
+    label: "其他逐檔通知",
+    notice: rightsAttribution.otherPerFileNotice,
+  },
+] as const;
+---
+
+<article
+  id={credit.anchorId}
+  class="photo-credit"
+  data-asset-credit-row
+  data-athlete-name={selection.athleteName}
+  data-license-bucket={rightsAttribution.licenseBucket}
+  data-source-revision-id={String(selection.sourceRevision.id)}
+>
+  <h2>{selection.athleteName}</h2>
+  <dl>
+    <div data-credit-field="creator">
+      <dt>{credit.creatorLabel}</dt>
+      <dd>{selection.photographerIdentity.name}</dd>
+    </div>
+    <div
+      data-credit-field="work-title"
+      data-work-title-status={rightsAttribution.workTitle.status}
+    >
+      <dt>作品標題</dt>
+      <dd>
+        {
+          credit.workTitleText === null
+            ? "目前來源未提供"
+            : `〈${credit.workTitleText}〉`
+        }
+        （<a
+          href={rightsAttribution.workTitle.evidenceUrl}
+          rel="noopener noreferrer">標題狀態依據</a
+        >）
+      </dd>
+    </div>
+    <div data-credit-field="license">
+      <dt>原作授權</dt>
+      <dd>
+        <a href={selection.license.url} rel="noopener noreferrer">
+          {selection.license.name}
+        </a>
+        <span>；類別：{credit.bucketLabel}</span>
+      </dd>
+    </div>
+    <div data-credit-field="source">
+      <dt>固定來源</dt>
+      <dd>
+        <a href={selection.sourceRevision.permalink} rel="noopener noreferrer">
+          Wikimedia Commons 永久說明頁（revision {selection.sourceRevision.id}）
+        </a>
+      </dd>
+    </div>
+    <div data-credit-field="alteration">
+      <dt>變更說明</dt>
+      <dd>{rightsAttribution.alterationState.disclosure}</dd>
+    </div>
+    <div data-credit-field="uploader">
+      <dt>上傳者溯源</dt>
+      <dd>
+        {selection.uploaderIdentity.name}；{
+          selection.uploaderIdentity.relationshipToPhotographer
+        }
+      </dd>
+    </div>
+    {
+      noticeFields.map(({ field, label, notice }) => (
+        <div data-credit-field={field} data-notice-status={notice.status}>
+          <dt>{label}</dt>
+          <dd>
+            {notice.status === "supplied" ? (
+              notice.url === null ? (
+                notice.text
+              ) : (
+                <a href={notice.url} rel="noopener noreferrer">
+                  {notice.text}
+                </a>
+              )
+            ) : (
+              "目前來源未另行提供"
+            )}
+          </dd>
+        </div>
+      ))
+    }
+    {
+      rightsAttribution.licenseBucket === "cc-by-sa" && (
+        <div data-credit-field="adapter-license">
+          <dt>本站裁切改作貢獻之 Adapter&apos;s License</dt>
+          <dd>
+            <a
+              href={rightsAttribution.adapterLicense!.url}
+              rel="noopener noreferrer"
+            >
+              {rightsAttribution.adapterLicense!.name}
+            </a>
+            <span>（只及於本站裁切改作貢獻，不及於頁面其他內容）</span>
+          </dd>
+        </div>
+      )
+    }
+    <div
+      data-credit-field="occasion-risk"
+      data-source-risk-category={selection.sourceRiskClassification.category}
+    >
+      <dt>資料照片脈絡與風險分類</dt>
+      <dd>
+        <span>{selection.nonEventCaption}。</span>
+        <span> 場合分類：{selection.occasionEvidence.category}；</span>
+        <span>查核日：{selection.occasionEvidence.checkedAt}；</span>
+        <span>分類依據：{selection.occasionEvidence.basis}</span>
+        <span>
+          {selection.sourceRiskClassification.nonClearanceStatement}
+          此分類不代表著作權、肖像權或公開使用已獲放行。
+        </span>
+      </dd>
+    </div>
+  </dl>
+  <a class="back-link" href="#photo-credits-heading">回到照片授權列表</a>
+</article>
+
+<style>
+  .photo-credit {
+    scroll-margin-block-start: 8rem;
+    padding-block: 1.25rem;
+    border-block-start: 1px solid var(--hairline);
+  }
+
+  .photo-credit:target {
+    border-radius: 0.4rem;
+    outline: 3px solid var(--color-brand-primary-hover);
+    outline-offset: 0.35rem;
+  }
+
+  h2 {
+    margin-block: 0 0.75rem;
+  }
+
+  dl {
+    display: grid;
+    gap: 0.65rem;
+    margin: 0;
+  }
+
+  dl > div {
+    display: grid;
+    grid-template-columns: minmax(8rem, 0.28fr) minmax(0, 1fr);
+    gap: 0.25rem 1rem;
+  }
+
+  dt {
+    font-weight: 600;
+  }
+
+  dd {
+    min-width: 0;
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+
+  dd span {
+    display: block;
+  }
+
+  a {
+    text-underline-offset: 0.15em;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-block-start: 0.9rem;
+    font-size: var(--text-meta);
+  }
+
+  @media (max-width: 34rem) {
+    dl > div {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

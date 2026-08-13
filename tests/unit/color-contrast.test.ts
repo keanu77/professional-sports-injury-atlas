@@ -297,6 +297,10 @@ describe("governed case cover", () => {
     new URL("../../src/components/cases/CaseVideo.astro", import.meta.url),
     "utf8",
   );
+  const photoCreditComponent = readFileSync(
+    new URL("../../src/components/credits/PhotoCredit.astro", import.meta.url),
+    "utf8",
+  );
   const caseRoute = readFileSync(
     new URL("../../src/pages/cases/[slug].astro", import.meta.url),
     "utf8",
@@ -335,18 +339,21 @@ describe("governed case cover", () => {
     );
   });
 
-  it("renders one bucket-independent notice block without licensing the host page", () => {
-    expect(component.match(/data-attribution-notices/g) ?? []).toHaveLength(1);
+  it("moves complete bucket-independent notices to the central renderer without licensing the host page", () => {
+    expect(component).not.toContain("data-attribution-notices");
     expect(
-      component.match(/rightsAttribution\.copyrightNotice\.status/g) ?? [],
+      photoCreditComponent.match(/rightsAttribution\.copyrightNotice/g) ?? [],
     ).toHaveLength(1);
     expect(
-      component.match(/rightsAttribution\.disclaimerNotice\.status/g) ?? [],
+      photoCreditComponent.match(/rightsAttribution\.disclaimerNotice/g) ?? [],
     ).toHaveLength(1);
     expect(
-      component.match(/rightsAttribution\.otherPerFileNotice\.status/g) ?? [],
+      photoCreditComponent.match(/rightsAttribution\.otherPerFileNotice/g) ??
+        [],
     ).toHaveLength(1);
+    expect(photoCreditComponent).toContain("data-notice-status");
     expect(component).not.toContain('rel="license');
+    expect(photoCreditComponent).not.toContain('rel="license');
   });
 
   it("binds every cover to stable responsive case-photo renditions", () => {
@@ -366,6 +373,8 @@ describe("governed case cover", () => {
     expect(component).toContain("不代表任何特定球員或真實受傷事件");
     expect(component).toContain("selection.nonEventCaption");
     expect(component).toContain("data-original-svg-label");
-    expect(component).toContain("Wikimedia Commons 永久說明頁");
+    expect(component).toContain("data-asset-credit-link");
+    expect(component).toContain("assetCreditHref");
+    expect(photoCreditComponent).toContain("Wikimedia Commons 永久說明頁");
   });
 });

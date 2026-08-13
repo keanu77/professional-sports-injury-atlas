@@ -127,6 +127,39 @@ test.describe("no-javascript readability", () => {
     }
   });
 
+  test("photo-use deep links and complete central credits work without JavaScript", async ({
+    page,
+  }) => {
+    await page.goto("/cases/kevin-durant-achilles-rupture-2019/");
+    const creditLink = page.locator("[data-asset-credit-link]").first();
+    await expect(creditLink).toBeVisible();
+    await expect(creditLink).toHaveAttribute(
+      "href",
+      "/credits-notices/#photo-credit-1235995897",
+    );
+
+    await creditLink.click();
+    await expect(page).toHaveURL(
+      /\/credits-notices\/#photo-credit-1235995897$/u,
+    );
+    const target = page.locator("#photo-credit-1235995897");
+    await expect(target).toBeVisible();
+    await expect(target).toHaveAttribute("data-athlete-name", "Kevin Durant");
+    const [headerBox, targetBox] = await Promise.all([
+      page.locator(".site-header").boundingBox(),
+      target.boundingBox(),
+    ]);
+    expect(headerBox).not.toBeNull();
+    expect(targetBox).not.toBeNull();
+    expect(targetBox!.y).toBeGreaterThanOrEqual(
+      headerBox!.y + headerBox!.height,
+    );
+    await expect(
+      target.locator('[data-credit-field="work-title"]'),
+    ).toHaveAttribute("data-work-title-status", "not-supplied");
+    await expect(page.locator("[data-asset-credit-row]")).toHaveCount(5);
+  });
+
   test("video states degrade to a source link or governed plain-text citation", async ({
     page,
   }) => {

@@ -305,23 +305,17 @@ async function expectLocalResponsiveCover(
       "data-source-risk-category",
       "non-event-low-risk",
     );
-    await expect(
-      attribution.locator('a[href^="https://creativecommons.org/"]'),
-    ).toHaveCount(licenseBucket === "cc-by-sa" ? 2 : 1);
-    const revisionLink = attribution.locator("a", {
-      hasText: "Wikimedia Commons 永久說明頁",
-    });
-    await expect(revisionLink).toHaveCount(1);
-    await expect(revisionLink).toHaveAttribute(
-      "href",
-      /^https:\/\/commons\.wikimedia\.org\/w\/index\.php\?.*oldid=\d+/u,
+    await expect(attribution).toContainText(selection.nonEventCaption);
+    await expect(attribution).toContainText(
+      `攝影：${selection.photographerIdentity.name}`,
     );
-    if (licenseBucket === "cc-by-sa") {
-      await expect(attribution).toContainText("Adapter's License");
-      await expect(attribution).toContainText("不及於頁面其他內容");
-    } else {
-      await expect(attribution).not.toContainText("Adapter's License：");
-    }
+    const creditLink = attribution.locator("[data-asset-credit-link]");
+    await expect(creditLink).toHaveCount(1);
+    await expect(creditLink).toHaveAttribute(
+      "href",
+      `/credits-notices/#photo-credit-${selection.sourceRevision.id}`,
+    );
+    await expect(attribution.locator("a")).toHaveCount(1);
   } else {
     const fallback = selection as PlayerPhotoSvgFallbackSelectionV5;
     expect(expected.athleteName).toBe(fallback.athleteName);
@@ -459,6 +453,20 @@ test.describe("component lab before enhancement", () => {
     for (let index = 0; index < count; index += 1) {
       await expectLocalResponsiveCover(covers.nth(index));
     }
+  });
+
+  test("the YouTube connection disclosure remains visible at 390px", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await stubYouTubeRoutes(page);
+    await page.goto(LAB_PATH);
+
+    const disclosure = reviewCard(page).locator(
+      "[data-video-load] .video-load-copy small",
+    );
+    await expect(disclosure).toBeVisible();
+    await expect(disclosure).toHaveText("點擊後才會連線至 YouTube");
   });
 });
 

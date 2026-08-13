@@ -4,6 +4,7 @@
  * with or endorsement by the NBA, teams, leagues, or broadcasters, and no
  * claim of clearance beyond the recorded per-source review.
  */
+import MedicalNotice from "../notices/MedicalNotice.astro";
 ---
 
 <footer class="site-footer">
@@ -21,6 +22,7 @@
         <p class="footer-heading">政策</p>
         <ul>
           <li><a href="/source-policy/">來源與證據政策</a></li>
+          <li><a href="/credits-notices/">授權與說明</a></li>
           <li><a href="/about/">審查流程</a></li>
         </ul>
       </nav>
@@ -45,9 +47,8 @@
     <div class="site-footer-inner footer-legal-inner">
       <div>
         <p>© 2026 職業運動傷害影片圖鑑</p>
-        <p>本站內容僅供教育參考，不構成醫療建議。</p>
       </div>
-      <p>本站為教學用途之衛教內容，不構成醫療建議，亦不能取代醫師診察</p>
+      <MedicalNotice variant="footer" />
     </div>
   </div>
 </footer>

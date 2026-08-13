@@ -72,12 +72,17 @@ const APPROVED_PLAYER_PHOTO_PRODUCTION_CONSUMERS = new Set([
   "src/components/atlas/InjuryCard.astro",
   "src/components/cases/CaseCover.astro",
   "src/components/cases/CaseVideo.astro",
+  // Decision 13 Phase 4 approved a text-only, registry-derived central
+  // attribution surface. These consumers expose rights metadata and never
+  // compose, export, or select player-photo pixels.
+  "src/components/credits/PhotoCredit.astro",
   // Decision 13 Phase 0 reviewed this pure schema/verifier module. The
   // composition checks below still apply if it ever gains rendering code.
   "src/lib/contracts/player-photo-registry-v4.ts",
   "src/lib/contracts/player-photo-registry-v5.ts",
   "src/lib/contracts/player-photo.ts",
   "src/lib/governance/site-digest.ts",
+  "src/lib/rights/photo-credits.ts",
   "src/lib/ui/editorial-images.ts",
   "src/pages/cases/[slug].astro",
   "src/pages/index.astro",

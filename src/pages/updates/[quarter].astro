@@ -6,6 +6,7 @@
  * while retired/unavailable entries render non-clinical facts only.
  */
 import { getCollection } from "astro:content";
+import MedicalNotice from "../../components/notices/MedicalNotice.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { computeQuarterlyUpdateDigest } from "../../lib/cases/update-digest";
 import { resolveBuildMode } from "../../lib/governance/build-mode";
@@ -54,6 +55,7 @@ const STATUS_LABELS: Record<string, string> = {
   artifactDigest={updateDigest}
 >
   <article data-atlas-view="quarterly-update" data-update-id={update.id}>
+    <MedicalNotice variant="compact" />
     <h1>季度更新 {update.id}</h1>
     <p>
       期間：{update.period.startDate} 至 {update.period.endDate}｜狀態：

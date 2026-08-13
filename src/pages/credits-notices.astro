@@ -1,0 +1,63 @@
+---
+/** Central, no-JavaScript credits and per-asset notice surface. */
+import PhotoCredit from "../components/credits/PhotoCredit.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { CANONICAL_MEDICAL_NOTICE_ZH_HANT } from "../lib/medical-notice";
+import { currentPhotoCredits } from "../lib/rights/photo-credits";
+---
+
+<BaseLayout
+  title="授權與說明｜職業運動傷害影片圖鑑"
+  description="本站目前使用之 Wikimedia Commons 球員資料照片的完整逐檔授權、來源、變更與通知。"
+>
+  <h1>授權與說明</h1>
+  <p>
+    本頁集中列出目前採用的 Wikimedia Commons 球員資料照片。每筆資料均由受控
+    registry
+    產生，並保留固定來源版本、作品標題供應狀態、精確授權、變更與逐檔通知。
+  </p>
+  <p>
+    照片皆為非賽事場合資料照片，不是案例受傷當下影像；照片中的球衣、場館或其他附帶標記不代表聯盟、球隊或第三方與本站合作或背書。來源風險分類亦不等於任何權利放行。
+  </p>
+
+  <section
+    id="medical-notice"
+    class="anchored-notice-section"
+    aria-labelledby="medical-notice-heading"
+  >
+    <h2 id="medical-notice-heading">醫療內容聲明與法規脈絡</h2>
+    <p data-canonical-medical-notice>
+      {CANONICAL_MEDICAL_NOTICE_ZH_HANT}
+    </p>
+    <p>
+      醫師法第 25
+      條適用為風險脈絡。本站維持教學觀察定位，不對未親自診察之個人作診斷或處置建議；醫療聲明於內容消費點可見，明示教學用途與不取代醫師診察。
+    </p>
+    <p>
+      醫師法第 11
+      條：本站不對個人提供診療，不直接適用；其親自診察原則支持本站不做遠距個別診斷之立場。
+    </p>
+    <p>
+      醫療法第 85、86
+      條（醫療廣告規範）列為備註；本站為非商業教學衛教內容，不涉醫療業務招徠。此外無其他適用法源。
+    </p>
+  </section>
+
+  <section aria-labelledby="photo-credits-heading">
+    <h2 id="photo-credits-heading">目前使用的照片授權</h2>
+    <p>
+      共 {currentPhotoCredits.length} 筆；案例封面旁的連結會直接指向對應項目。
+    </p>
+    {
+      currentPhotoCredits.map(({ selection }) => (
+        <PhotoCredit selection={selection} />
+      ))
+    }
+  </section>
+</BaseLayout>
+
+<style>
+  .anchored-notice-section {
+    scroll-margin-block-start: 8rem;
+  }
+</style>

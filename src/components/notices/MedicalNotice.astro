@@ -1,0 +1,66 @@
+---
+/**
+ * Canonical Decision 13 medical notice. The approved sentence is always a
+ * directly visible text node; the central explanation is a separate line and
+ * never substitutes for any required clause.
+ */
+import {
+  CANONICAL_MEDICAL_NOTICE_ZH_HANT,
+  CENTRAL_NOTICES_MEDICAL_HREF,
+} from "../../lib/medical-notice";
+
+interface Props {
+  variant: "compact" | "footer";
+}
+
+const { variant } = Astro.props;
+---
+
+<div
+  class:list={["medical-notice", `medical-notice--${variant}`]}
+  data-medical-notice-block={variant}
+  role="note"
+>
+  <p data-medical-notice={variant}>{CANONICAL_MEDICAL_NOTICE_ZH_HANT}</p>
+  <p class="medical-notice-link">
+    <a href={CENTRAL_NOTICES_MEDICAL_HREF} data-central-notices-link>
+      查看完整授權與說明
+    </a>
+  </p>
+</div>
+
+<style>
+  .medical-notice p {
+    margin: 0;
+  }
+
+  .medical-notice-link {
+    margin-block-start: 0.25rem;
+    font: 400 var(--text-meta) / 1.5 var(--font-meta);
+  }
+
+  .medical-notice--compact {
+    margin-block-end: 1rem;
+    border-inline-start: 3px solid var(--color-brand-primary);
+    padding: 0.625rem 0.75rem;
+    background: var(--color-surface-muted);
+    color: var(--color-ink);
+    font: 600 var(--text-meta) / 1.5 var(--font-meta);
+  }
+
+  .medical-notice--footer {
+    max-width: 40rem;
+    text-align: end;
+  }
+
+  .medical-notice--footer a {
+    color: var(--color-on-brand);
+  }
+
+  @media (max-width: 47.999rem) {
+    .medical-notice--footer {
+      margin-block-start: 1rem;
+      text-align: start;
+    }
+  }
+</style>

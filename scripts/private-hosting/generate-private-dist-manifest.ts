@@ -1183,7 +1183,7 @@ function buildExpectedHtmlRoutes(
     recordIds: allCaseIds,
     digest: renderedSubsetDigest(allCaseIds, clinicalDigestById),
   });
-  for (const path of ["/about/", "/source-policy/"]) {
+  for (const path of ["/about/", "/credits-notices/", "/source-policy/"]) {
     add(path, { kind: "static", recordIds: [], digest: null });
   }
   for (const { lab } of componentLabStaticParams("review")) {

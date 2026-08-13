@@ -204,11 +204,6 @@ main {
   gap: 2rem;
 }
 
-.footer-legal-inner > p {
-  max-width: 36rem;
-  text-align: end;
-}
-
 @media (max-width: 47.999rem) {
   .footer-grid {
     grid-template-columns: minmax(0, 1fr);
@@ -220,10 +215,5 @@ main {
 
   .footer-legal-inner {
     display: block;
-  }
-
-  .footer-legal-inner > p {
-    margin-block-start: 1rem;
-    text-align: start;
   }
 }

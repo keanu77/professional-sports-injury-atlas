@@ -24,6 +24,10 @@ const playerPhotoRegistry = JSON.parse(
   ),
 ) as { selections: PlayerPhotoSelectionV5[] };
 const registrySelections = playerPhotoRegistry.selections;
+const commonsSelections = registrySelections.filter(
+  (selection): selection is PlayerPhotoCommonsSelectionV5 =>
+    selection.coverKind === "commons-photo",
+);
 const selectionByCaseId = new Map(
   registrySelections.flatMap((selection) =>
     selection.caseIds.map((caseId) => [caseId, selection] as const),
@@ -73,59 +77,26 @@ async function expectLicensedCover(
     "data-source-risk-category",
     "non-event-low-risk",
   );
-  await expect(attribution.locator("[data-attribution-notices]")).toHaveCount(
-    1,
-  );
   await expect(attribution).toContainText(selection.nonEventCaption);
-  const licenseLinks = attribution.locator(
-    'a[href^="https://creativecommons.org/"]',
+  await expect(attribution).toContainText(
+    `攝影：${selection.photographerIdentity.name}`,
   );
-  await expect(licenseLinks).toHaveCount(licenseBucket === "cc-by-sa" ? 2 : 1);
-  expect(
-    await licenseLinks.evaluateAll((links) =>
-      links.every(
-        (link) =>
-          !(link.getAttribute("rel") ?? "").split(/\s+/u).includes("license"),
-      ),
-    ),
-  ).toBe(true);
-  const revisionLink = attribution.locator("a", {
-    hasText: "Wikimedia Commons 永久說明頁",
-  });
-  await expect(revisionLink).toHaveCount(1);
-  await expect(revisionLink).toHaveAttribute(
+  const creditLink = attribution.locator("[data-asset-credit-link]");
+  await expect(creditLink).toHaveCount(1);
+  await expect(creditLink).toHaveAttribute(
     "href",
-    /^https:\/\/commons\.wikimedia\.org\/w\/index\.php\?.*oldid=\d+/u,
+    `/credits-notices/#photo-credit-${selection.sourceRevision.id}`,
   );
-  const riskClassification = attribution.locator(
-    "[data-source-risk-classification]",
-  );
-  await expect(riskClassification).toHaveCount(1);
-  await expect(riskClassification).toHaveAttribute(
-    "data-source-risk-checked-at",
-    selection.occasionEvidence.checkedAt,
-  );
-  await expect(riskClassification).toContainText("來源風險分類：");
-  await expect(riskClassification).toContainText(
-    "非賽事場合（non-event-low-risk；低風險分類）",
+  await expect(creditLink).toHaveAttribute(
+    "aria-label",
+    `${selection.athleteName} 資料照片的完整授權與逐檔說明`,
   );
   await expect(
-    riskClassification.locator("[data-source-risk-basis]"),
-  ).toContainText(selection.occasionEvidence.basis);
-  await expect(
-    riskClassification.locator("[data-source-risk-no-clearance]"),
-  ).toHaveText("此分類不代表著作權、肖像權或公開使用已獲放行。");
-  expect(
-    await riskClassification.getAttribute(
-      "data-source-risk-revision-permalink",
-    ),
-  ).toBe(await revisionLink.getAttribute("href"));
-  if (licenseBucket === "cc-by-sa") {
-    await expect(attribution).toContainText("Adapter's License");
-    await expect(attribution).toContainText("不及於頁面其他內容");
-  } else {
-    await expect(attribution).not.toContainText("Adapter's License：");
-  }
+    attribution.locator('a[href^="https://creativecommons.org/"]'),
+  ).toHaveCount(0);
+  await expect(attribution.locator('a[href^="https://commons."]')).toHaveCount(
+    0,
+  );
 }
 
 async function expectOriginalSvgCover(
@@ -314,9 +285,6 @@ test.describe("Decision 13 registered player covers", () => {
     const heroImage = hero.locator("img");
     await expect(heroImage).toHaveAttribute("loading", "eager");
     await expect(heroImage).toHaveAttribute("fetchpriority", "high");
-    await expect(hero.locator("figcaption")).toContainText(
-      selection.rightsAttribution.alterationState.disclosure,
-    );
 
     const preload = page.locator('link[rel="preload"][as="image"]');
     await expect(preload).toHaveCount(1);
@@ -336,7 +304,7 @@ test.describe("Decision 13 registered player covers", () => {
     const videoAction = video.locator("[data-video-load]");
     await expect(videoAction).toContainText("載入 YouTube 播放器");
     await expect(videoAction.locator("a, button, figcaption")).toHaveCount(0);
-    await expect(facade.locator("figcaption a")).toHaveCount(3);
+    await expect(facade.locator("figcaption a")).toHaveCount(1);
     expect(
       await facade
         .locator("figcaption a")
@@ -368,57 +336,108 @@ test.describe("Decision 13 registered player covers", () => {
     ).toHaveCount(0);
   });
 
-  test("current photo titles, source notices, captions, and license buckets remain visible", async ({
+  test("the central route renders all current photo titles, notices, exact links, changes, and license buckets", async ({
     page,
   }) => {
-    await page.goto("/cases/kyrie-irving-ankle-sprain-2021/");
-    const kyrie = page.locator(
-      '[data-editorial-case-cover][data-player-photo="Kyrie Irving"] figcaption',
-    );
-    await expect(kyrie).toContainText("作品：〈Kyrie Irving〉");
-    await expect(kyrie).toHaveAttribute("data-license-bucket", "cc-by");
-    await expect(kyrie).toContainText("原作 CC BY 2.0");
-    await expect(kyrie).toContainText(
-      "Kyrie Irving 於 2016 冠軍遊行；非本案例受傷當下影像",
-    );
-    await expect(kyrie).not.toContainText("Adapter's License：");
+    await page.goto("/credits-notices/");
+    const rows = page.locator("[data-asset-credit-row][id]");
+    await expect(rows).toHaveCount(5);
 
-    await page.goto("/cases/cj-mccollum-ankle-sprain-2020/");
-    const cj = page.locator(
-      '[data-editorial-case-cover][data-player-photo="CJ McCollum"] figcaption',
-    );
-    await expect(cj).toContainText("作品：〈JG9_0113〉");
-    await expect(cj).toHaveAttribute("data-license-bucket", "cc-by-sa");
-    await expect(cj).toContainText("Adapter's License：CC BY-SA 4.0");
-    await expect(cj).toContainText(
-      "C.J. McCollum 於 2025–26 華盛頓巫師媒體日；非本案例受傷當下影像",
-    );
+    for (const selection of commonsSelections) {
+      const row = page.locator(
+        `#photo-credit-${selection.sourceRevision.id}[data-asset-credit-row]`,
+      );
+      await expect(row).toHaveAttribute(
+        "data-athlete-name",
+        selection.athleteName,
+      );
+      await expect(row).toHaveAttribute(
+        "data-source-revision-id",
+        String(selection.sourceRevision.id),
+      );
+      await expect(row).toHaveAttribute(
+        "data-license-bucket",
+        selection.rightsAttribution.licenseBucket,
+      );
+      await expect(row.locator('[data-credit-field="creator"]')).toContainText(
+        selection.photographerIdentity.name,
+      );
 
-    await page.goto("/cases/lebron-james-ankle-sprain-2021/");
-    const lebron = page.locator(
-      '[data-editorial-case-cover][data-player-photo="LeBron James"] figcaption',
-    );
-    await expect(lebron).toHaveAttribute("data-license-bucket", "cc-by");
-    await expect(lebron).toContainText("原作 CC BY 3.0");
-    await expect(lebron).toContainText(
-      "LeBron James 於《More Than a Game》紐約公開活動；非本案例受傷當下影像",
-    );
+      const title = row.locator('[data-credit-field="work-title"]');
+      await expect(title).toHaveAttribute(
+        "data-work-title-status",
+        selection.rightsAttribution.workTitle.status,
+      );
+      await expect(title).toContainText(
+        selection.rightsAttribution.workTitle.text ?? "目前來源未提供",
+      );
+
+      const license = row.locator('[data-credit-field="license"]');
+      await expect(license).toContainText(selection.license.name);
+      await expect(license.locator("a")).toHaveAttribute(
+        "href",
+        selection.license.url,
+      );
+      await expect(
+        row.locator('[data-credit-field="source"] a'),
+      ).toHaveAttribute("href", selection.sourceRevision.permalink);
+      await expect(
+        row.locator('[data-credit-field="alteration"]'),
+      ).toContainText(selection.rightsAttribution.alterationState.disclosure);
+
+      for (const [field, notice] of [
+        ["copyright-notice", selection.rightsAttribution.copyrightNotice],
+        ["disclaimer-notice", selection.rightsAttribution.disclaimerNotice],
+        ["other-notice", selection.rightsAttribution.otherPerFileNotice],
+      ] as const) {
+        const renderedNotice = row.locator(`[data-credit-field="${field}"]`);
+        await expect(renderedNotice).toHaveAttribute(
+          "data-notice-status",
+          notice.status,
+        );
+        if (notice.status === "supplied") {
+          await expect(renderedNotice).toContainText(notice.text!);
+          if (notice.url !== null) {
+            await expect(renderedNotice.locator("a")).toHaveAttribute(
+              "href",
+              notice.url,
+            );
+          }
+        } else {
+          await expect(renderedNotice).toContainText("目前來源未另行提供");
+        }
+      }
+
+      const adapter = row.locator('[data-credit-field="adapter-license"]');
+      if (selection.rightsAttribution.licenseBucket === "cc-by-sa") {
+        await expect(adapter).toHaveCount(1);
+        await expect(adapter.locator("a")).toHaveAttribute(
+          "href",
+          selection.rightsAttribution.adapterLicense!.url,
+        );
+        await expect(adapter).toContainText("不及於頁面其他內容");
+      } else {
+        await expect(adapter).toHaveCount(0);
+      }
+
+      const risk = row.locator('[data-credit-field="occasion-risk"]');
+      await expect(risk).toContainText(selection.nonEventCaption);
+      await expect(risk).toContainText(selection.occasionEvidence.basis);
+      await expect(risk).toContainText(
+        selection.sourceRiskClassification.nonClearanceStatement,
+      );
+    }
+
     await expect(
-      lebron.locator("a", { hasText: "Personality rights warning" }),
-    ).toHaveCount(1);
-
-    await page.goto("/cases/dwight-powell-achilles-rupture-2020/");
-    const dwight = page.locator(
-      '[data-editorial-case-cover][data-player-photo="Dwight Powell"] figcaption',
-    );
-    await expect(dwight).toContainText(
-      "作品：〈Basketball-Länderspiel: Deutschland gegen Kanada〉",
-    );
-    await expect(dwight).toContainText(
-      "著作權聲明：Sandro Halank, Wikimedia Commons, CC BY-SA 4.0",
-    );
+      page.locator(
+        '[data-athlete-name="Kevin Durant"] [data-credit-field="work-title"]',
+      ),
+    ).toHaveAttribute("data-work-title-status", "not-supplied");
     await expect(
-      dwight.locator("a", { hasText: "Personality rights warning" }),
-    ).toHaveCount(1);
+      page.locator(
+        '[data-athlete-name="LeBron James"] [data-credit-field="work-title"]',
+      ),
+    ).toContainText("目前來源未提供");
+    await expectNoAxeViolations(page);
   });
 });
