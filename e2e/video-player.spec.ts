@@ -11,7 +11,12 @@
  * real-case requests are intercepted and never replay remote media.
  */
 
+import { readFileSync } from "node:fs";
 import { expect, test, type Locator, type Page } from "@playwright/test";
+import type {
+  PlayerPhotoSelectionV5,
+  PlayerPhotoSvgFallbackSelectionV5,
+} from "../src/lib/contracts/player-photo-registry-v5";
 import { expectNoAxeViolations } from "./helpers/a11y";
 
 const LAB_PATH = "/review/component-lab/";
@@ -21,6 +26,7 @@ const IFRAME_API_URL = "https://www.youtube.com/iframe_api";
 const PAGE_ORIGIN = "http://127.0.0.1:4321";
 const GOVERNED_YOUTUBE_CASES = [
   {
+    caseId: "CASE-NBAANKLE-2023-001",
     slug: "anthony-edwards-ankle-sprain-2023",
     videoId: "V9mtX4mE8wQ",
     orientation: "landscape",
@@ -30,6 +36,7 @@ const GOVERNED_YOUTUBE_CASES = [
     captionStatus: "unavailable",
   },
   {
+    caseId: "CASE-NBAACHILLES-2019-005",
     slug: "kevin-durant-achilles-rupture-2019",
     videoId: "YcSOLHMsJYw",
     orientation: "landscape",
@@ -39,6 +46,7 @@ const GOVERNED_YOUTUBE_CASES = [
     captionStatus: "available",
   },
   {
+    caseId: "CASE-NBAANKLE-2021-002",
     slug: "kyrie-irving-ankle-sprain-2021",
     videoId: "FQAPZASQyX0",
     orientation: "portrait",
@@ -48,6 +56,7 @@ const GOVERNED_YOUTUBE_CASES = [
     captionStatus: "available",
   },
   {
+    caseId: "CASE-NBAANKLE-2023-008",
     slug: "lamelo-ball-ankle-sprain-2023",
     videoId: "RDDGpqOvSdg",
     orientation: "portrait",
@@ -57,6 +66,7 @@ const GOVERNED_YOUTUBE_CASES = [
     captionStatus: "available",
   },
   {
+    caseId: "CASE-NBAANKLE-2023-004",
     slug: "anfernee-simons-ankle-sprain-2023",
     videoId: "8TIJGIRP634",
     orientation: "landscape",
@@ -66,6 +76,7 @@ const GOVERNED_YOUTUBE_CASES = [
     captionStatus: "available",
   },
   {
+    caseId: "CASE-NBAACHILLES-2025-016",
     slug: "jayson-tatum-achilles-rupture-2025",
     videoId: "xSUKd03LJwE",
     orientation: "portrait",
@@ -75,6 +86,7 @@ const GOVERNED_YOUTUBE_CASES = [
     captionStatus: "unavailable",
   },
   {
+    caseId: "CASE-NBAANKLE-2025-002",
     slug: "lamelo-ball-ankle-sprain-2025",
     videoId: "zZdndTqOexc",
     orientation: "portrait",
@@ -84,6 +96,7 @@ const GOVERNED_YOUTUBE_CASES = [
     captionStatus: "available",
   },
   {
+    caseId: "CASE-NBAACHILLES-2025-017",
     slug: "tyrese-haliburton-achilles-rupture-2025",
     videoId: "azQpbyDBktk",
     orientation: "portrait",
@@ -100,6 +113,7 @@ const EMBEDDABLE_GOVERNED_YOUTUBE_CASES = GOVERNED_YOUTUBE_CASES.filter(
   (entry) => entry.videoId !== REGION_BLOCKED_YOUTUBE_CASE.videoId,
 );
 const GOVERNED_NBA_CASE = {
+  caseId: "CASE-NBAACHILLES-2025-015",
   slug: "damian-lillard-achilles-rupture-2025",
   canonicalUrl:
     "https://www.nba.com/watch/video/damian-lillard-lower-left-leg-injury-exits-1st-quarter-game-4-pacers",
@@ -111,6 +125,22 @@ const GOVERNED_NBA_CASE = {
   sourcePublisher: "NBA Organization",
   sourcePublishedAt: "2025-04-27",
 } as const;
+
+const playerPhotoRegistry = JSON.parse(
+  readFileSync(
+    new URL(
+      "../src/assets/players/player-photo-registry.v5.json",
+      import.meta.url,
+    ),
+    "utf8",
+  ),
+) as { selections: PlayerPhotoSelectionV5[] };
+const registrySelections = playerPhotoRegistry.selections;
+const selectionByCaseId = new Map(
+  registrySelections.flatMap((selection) =>
+    selection.caseIds.map((caseId) => [caseId, selection] as const),
+  ),
+);
 
 const YOUTUBE_FAMILY_RE =
   /(^|\.)(youtube\.com|youtube-nocookie\.com|youtu\.be|ytimg\.com|ggpht\.com|googlevideo\.com|doubleclick\.net|google-analytics\.com|googletagmanager\.com|googlesyndication\.com)$/;
@@ -222,13 +252,21 @@ function reviewCard(page: Page) {
 
 async function expectLocalResponsiveCover(
   cover: Locator,
-  expected: { athleteName?: string; injuryLabel?: string } = {},
+  expected: {
+    athleteName?: string;
+    injuryLabel?: string;
+    selection?: PlayerPhotoSelectionV5;
+  } = {},
 ): Promise<void> {
+  const selection = expected.selection;
   const picture = cover.locator("picture");
-  const image = picture.locator("img");
-  await expect(picture).toHaveCount(1);
+  const image =
+    selection?.coverKind === "original-svg-fallback"
+      ? cover.locator("img[data-local-original-svg]")
+      : picture.locator("img");
   await expect(image).toBeVisible();
-  if (expected.athleteName === undefined) {
+  if (selection === undefined) {
+    await expect(picture).toHaveCount(1);
     await expect(cover).toHaveAttribute("data-cover-kind", "injury-theme");
     await expect(image).toHaveAttribute(
       "alt",
@@ -236,31 +274,36 @@ async function expectLocalResponsiveCover(
         `${expected.injuryLabel ?? "原創"}.*匿名運動員面孔不可見.*不代表任何特定球員`,
       ),
     );
-  } else {
+  } else if (selection.coverKind === "commons-photo") {
+    await expect(picture).toHaveCount(1);
+    expect(expected.athleteName).toBe(selection.athleteName);
     await expect(cover).toHaveAttribute(
       "data-cover-kind",
       "licensed-player-photo",
     );
     await expect(cover).toHaveAttribute(
       "data-player-photo",
-      expected.athleteName,
+      selection.athleteName,
     );
     await expect(image).toHaveAttribute(
       "alt",
-      new RegExp(
-        `${expected.athleteName}.*球員球場資料照片.*非本案例受傷當下影像`,
-      ),
+      `${selection.nonEventCaption}。`,
     );
     const attribution = cover.locator("figcaption.case-cover-attribution");
     await expect(attribution).toContainText("攝影：");
-    await expect(attribution).toContainText(
-      "球員球場資料照片；非本案例受傷當下影像",
+    await expect(attribution).toContainText(selection.nonEventCaption);
+    const licenseBucket = selection.rightsAttribution.licenseBucket;
+    await expect(attribution).toHaveAttribute(
+      "data-license-bucket",
+      licenseBucket,
     );
-    const licenseBucket = await attribution.getAttribute("data-license-bucket");
-    expect(["cc-by", "cc-by-sa", "cc0"]).toContain(licenseBucket);
     await expect(attribution).toHaveAttribute(
       "data-source-revision-id",
-      /^\d+$/u,
+      String(selection.sourceRevision.id),
+    );
+    await expect(attribution).toHaveAttribute(
+      "data-source-risk-category",
+      "non-event-low-risk",
     );
     await expect(
       attribution.locator('a[href^="https://creativecommons.org/"]'),
@@ -279,36 +322,62 @@ async function expectLocalResponsiveCover(
     } else {
       await expect(attribution).not.toContainText("Adapter's License：");
     }
+  } else {
+    const fallback = selection as PlayerPhotoSvgFallbackSelectionV5;
+    expect(expected.athleteName).toBe(fallback.athleteName);
+    await expect(picture).toHaveCount(0);
+    await expect(cover).toHaveAttribute(
+      "data-cover-kind",
+      "original-svg-fallback",
+    );
+    await expect(cover).toHaveAttribute(
+      "data-original-svg-fallback",
+      fallback.athleteName,
+    );
+    await expect(cover).not.toHaveAttribute("data-player-photo", /.+/u);
+    await expect(image).toHaveAttribute(
+      "alt",
+      `${fallback.athleteName} 案例：${fallback.nonEventCaption}。`,
+    );
+    await expect(image).toHaveAttribute("src", /\.svg$/u);
+    await expect(
+      cover.locator("figcaption.case-cover-attribution"),
+    ).toHaveCount(0);
+    await expect(
+      cover.locator('a[href^="https://creativecommons.org/"]'),
+    ).toHaveCount(0);
   }
 
   await expect(cover).toHaveAttribute("data-focal-x", /^(?:0|[1-9]\d?|100)$/u);
   await expect(cover).toHaveAttribute("data-focal-y", /^(?:0|[1-9]\d?|100)$/u);
 
-  const sources = picture.locator("source");
-  await expect(sources).toHaveCount(2);
-  const sourceData = await sources.evaluateAll((elements) =>
-    elements.map((element) => ({
-      type: element.getAttribute("type"),
-      srcset: element.getAttribute("srcset") ?? "",
-    })),
-  );
-  expect(sourceData.map(({ type }) => type)).toEqual([
-    "image/avif",
-    "image/webp",
-  ]);
-  let expectedWidths: number[] | null = null;
-  for (const source of sourceData) {
-    expect(source.srcset).toContain(" 480w");
-    const widths: number[] = [];
-    for (const candidate of source.srcset.split(",")) {
-      const [url, widthDescriptor] = candidate.trim().split(/\s+/);
-      expect(new URL(url, PAGE_ORIGIN).origin).toBe(PAGE_ORIGIN);
-      widths.push(Number.parseInt(widthDescriptor!, 10));
+  if (selection?.coverKind !== "original-svg-fallback") {
+    const sources = picture.locator("source");
+    await expect(sources).toHaveCount(2);
+    const sourceData = await sources.evaluateAll((elements) =>
+      elements.map((element) => ({
+        type: element.getAttribute("type"),
+        srcset: element.getAttribute("srcset") ?? "",
+      })),
+    );
+    expect(sourceData.map(({ type }) => type)).toEqual([
+      "image/avif",
+      "image/webp",
+    ]);
+    let expectedWidths: number[] | null = null;
+    for (const source of sourceData) {
+      expect(source.srcset).toContain(" 480w");
+      const widths: number[] = [];
+      for (const candidate of source.srcset.split(",")) {
+        const [url, widthDescriptor] = candidate.trim().split(/\s+/);
+        expect(new URL(url, PAGE_ORIGIN).origin).toBe(PAGE_ORIGIN);
+        widths.push(Number.parseInt(widthDescriptor!, 10));
+      }
+      expect(widths).toEqual([...widths].sort((a, b) => a - b));
+      expect(widths.length).toBeGreaterThanOrEqual(3);
+      if (expectedWidths === null) expectedWidths = widths;
+      else expect(widths).toEqual(expectedWidths);
     }
-    expect(widths).toEqual([...widths].sort((a, b) => a - b));
-    expect(widths.length).toBeGreaterThanOrEqual(3);
-    if (expectedWidths === null) expectedWidths = widths;
-    else expect(widths).toEqual(expectedWidths);
   }
   const currentSrc = await image.evaluate(
     (element) => (element as HTMLImageElement).currentSrc,
@@ -394,7 +463,7 @@ test.describe("component lab before enhancement", () => {
 });
 
 test.describe("governed case facades", () => {
-  test("all seven embeddable YouTube cases use one local photo facade and make zero pre-click requests", async ({
+  test("all seven embeddable YouTube cases use their registry v5 local facade and make zero pre-click requests", async ({
     page,
   }) => {
     const log = await stubYouTubeRoutes(page);
@@ -447,9 +516,15 @@ test.describe("governed case facades", () => {
       );
       const cover = card.locator("[data-video-facade] [data-case-cover]");
       await expect(cover).toHaveAttribute("data-case-cover", entry.injuryCode);
+      const selection = selectionByCaseId.get(entry.caseId);
+      expect(
+        selection,
+        `missing registry v5 selection for ${entry.caseId}`,
+      ).toBeDefined();
       await expectLocalResponsiveCover(cover, {
         athleteName: entry.athleteName,
         injuryLabel: entry.injuryLabel,
+        selection,
       });
       await expect(
         cover.locator(`[data-cover-illustration="${entry.injuryCode}"]`),
@@ -578,7 +653,7 @@ test.describe("governed case facades", () => {
     expect(thirdPartyRequests).toEqual([]);
   });
 
-  test("a real NBA case uses a governed local-photo facade and complete plain-text citation", async ({
+  test("a real NBA case uses its registry v5 SVG facade and complete plain-text citation", async ({
     page,
   }) => {
     const log = await stubYouTubeRoutes(page);
@@ -610,6 +685,7 @@ test.describe("governed case facades", () => {
     await expectLocalResponsiveCover(cover, {
       athleteName: GOVERNED_NBA_CASE.athleteName,
       injuryLabel: GOVERNED_NBA_CASE.injuryLabel,
+      selection: selectionByCaseId.get(GOVERNED_NBA_CASE.caseId),
     });
     await expect(
       cover.locator(
