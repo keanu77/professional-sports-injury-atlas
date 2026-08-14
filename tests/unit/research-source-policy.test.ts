@@ -46,6 +46,9 @@ const V7_MARKDOWN_POLICY_PATH = "research/source-policy/nba.v7.md" as const;
 const V8_JSON_POLICY_PATH =
   "research/source-policy/source-policy.v8.json" as const;
 const V8_MARKDOWN_POLICY_PATH = "research/source-policy/nba.v8.md" as const;
+const V9_JSON_POLICY_PATH =
+  "research/source-policy/source-policy.v9.json" as const;
+const V9_MARKDOWN_POLICY_PATH = "research/source-policy/nba.v9.md" as const;
 const DECISION_14_P1_EVIDENCE_PATH =
   "docs/reviews/2026-08-13-decision-14-p1-photographer-allowlist-evidence.md" as const;
 const DECISION_14_P2_EVIDENCE_PATH =
@@ -295,6 +298,10 @@ const EXPECTED_V8_JSON_SHA256 =
   "30a27633e7923f5331d7098226d5773faf2fe5d203e01e41705e03fe47ee318e";
 const EXPECTED_V8_MARKDOWN_SHA256 =
   "20a9209bd523604efe3251f6ef159e6432fa9280951ea16d630ee02cc347557d";
+const EXPECTED_V9_JSON_SHA256 =
+  "0ac3fecc04e12b88134ce97d11fbe1c742af1f21664a9c80eaf0d76ab7cfcfba";
+const EXPECTED_V9_MARKDOWN_SHA256 =
+  "03f6a61ee6ef958cae2ae9b918d7b6a115ff0d346f63202efce8780744fbadf2";
 
 const FROZEN_POLICY_BY_VERSION = Object.freeze({
   "nba-v1": Object.freeze({
@@ -345,6 +352,12 @@ const FROZEN_POLICY_BY_VERSION = Object.freeze({
     markdownPath: V8_MARKDOWN_POLICY_PATH,
     markdownSha256: EXPECTED_V8_MARKDOWN_SHA256,
   }),
+  "nba-v9": Object.freeze({
+    jsonPath: V9_JSON_POLICY_PATH,
+    jsonSha256: EXPECTED_V9_JSON_SHA256,
+    markdownPath: V9_MARKDOWN_POLICY_PATH,
+    markdownSha256: EXPECTED_V9_MARKDOWN_SHA256,
+  }),
 });
 
 type FrozenPolicyVersion = keyof typeof FROZEN_POLICY_BY_VERSION;
@@ -367,6 +380,8 @@ function readPolicyFile(
     | typeof V7_MARKDOWN_POLICY_PATH
     | typeof V8_JSON_POLICY_PATH
     | typeof V8_MARKDOWN_POLICY_PATH
+    | typeof V9_JSON_POLICY_PATH
+    | typeof V9_MARKDOWN_POLICY_PATH
     | typeof DECISION_14_P1_EVIDENCE_PATH
     | typeof DECISION_14_P2_EVIDENCE_PATH,
 ): string {
@@ -943,6 +958,7 @@ describe("NBA source-policy nba-v2 contract", () => {
       "nba-v6",
       "nba-v7",
       "nba-v8",
+      "nba-v9",
     ]);
     const pairs = Object.values(FROZEN_POLICY_BY_VERSION).map(
       ({ jsonSha256, markdownSha256 }) => `${jsonSha256}:${markdownSha256}`,
@@ -989,10 +1005,10 @@ describe("NBA source-policy nba-v2 contract", () => {
     const policy = parseCanonicalPolicy(jsonBytes);
     expect(() =>
       verifyFrozenPolicyBytes(
-        canonicalJson({ ...policy, sourcePolicyVersion: "nba-v9" }),
+        canonicalJson({ ...policy, sourcePolicyVersion: "nba-v10" }),
         markdownBytes,
       ),
-    ).toThrow(/unregistered source-policy version nba-v9/);
+    ).toThrow(/unregistered source-policy version nba-v10/);
   });
 });
 
@@ -1950,5 +1966,121 @@ describe("NBA source-policy nba-v8 Decision 15 photo-first policy", () => {
     expect(
       asRecord(annex.compositeUseRules).ccBySaForbiddenAsSiteComposedInput,
     ).toBe(true);
+  });
+});
+
+describe("NBA source-policy nba-v9 Decision 16 governed rendition", () => {
+  it("is canonical and binds the exact immutable v8 and v9 Markdown bytes", () => {
+    const bytes = readPolicyFile(V9_JSON_POLICY_PATH);
+    const policy = parseCanonicalPolicy(bytes);
+    const v8Bytes = readPolicyFile(V8_JSON_POLICY_PATH);
+    const v8MarkdownBytes = readPolicyFile(V8_MARKDOWN_POLICY_PATH);
+    const v9MarkdownBytes = readPolicyFile(V9_MARKDOWN_POLICY_PATH);
+
+    expect(bytes.endsWith("\n")).toBe(false);
+    expect(policy.sourcePolicyVersion).toBe("nba-v9");
+    expect(policy.playerStaticPhotoPolicyInheritance).toEqual({
+      jsonPath: V8_JSON_POLICY_PATH,
+      jsonSha256: sha256Hex(v8Bytes),
+      markdownPath: V8_MARKDOWN_POLICY_PATH,
+      markdownSha256: sha256Hex(v8MarkdownBytes),
+      sourcePolicyVersion: "nba-v8",
+    });
+    expect(policy.humanPolicyDocument).toEqual({
+      path: V9_MARKDOWN_POLICY_PATH,
+      sha256: sha256Hex(v9MarkdownBytes),
+    });
+    expect(verifyFrozenPolicyBytes(bytes, v9MarkdownBytes)).toEqual({
+      sourcePolicyVersion: "nba-v9",
+      jsonSha256: EXPECTED_V9_JSON_SHA256,
+      markdownSha256: EXPECTED_V9_MARKDOWN_SHA256,
+    });
+  });
+
+  it("changes only the narrow dual-fact rendition annex and retains every v8 gate", () => {
+    const v8 = parseCanonicalPolicy(readPolicyFile(V8_JSON_POLICY_PATH));
+    const v9 = parseCanonicalPolicy(readPolicyFile(V9_JSON_POLICY_PATH));
+    const {
+      humanPolicyDocument: _v8Human,
+      playerStaticPhotoPolicyInheritance: _v8Inheritance,
+      playerStaticPhotoRules: _v8PhotoRules,
+      sourcePolicyVersion: _v8Version,
+      ...v8RootUnchanged
+    } = v8;
+    const {
+      humanPolicyDocument: _v9Human,
+      playerStaticPhotoPolicyInheritance: _v9Inheritance,
+      playerStaticPhotoRules: _v9PhotoRules,
+      sourcePolicyVersion: _v9Version,
+      ...v9RootUnchanged
+    } = v9;
+    expect(v9RootUnchanged).toEqual(v8RootUnchanged);
+
+    const v8Rules = asRecord(v8.playerStaticPhotoRules);
+    const v9Rules = asRecord(v9.playerStaticPhotoRules);
+    const { governedLocalRenditionRules: governedValue, ...v9InheritedRules } =
+      v9Rules;
+    expect(v9InheritedRules).toEqual(v8Rules);
+    expect(asRecord(v9Rules.cropRules)).toEqual({
+      focalPositionRequired: true,
+      presentationCropRatios: ["5:2", "16:9"],
+      storedJpegModificationAllowed: false,
+    });
+    expect(v9Rules.compositeUseRules).toEqual(v8Rules.compositeUseRules);
+    expect(v9Rules.attributionRequirements).toEqual(
+      v8Rules.attributionRequirements,
+    );
+    expect(v9Rules.injuryEventRelationshipRules).toEqual(
+      v8Rules.injuryEventRelationshipRules,
+    );
+    expect(v9Rules.nonClearanceInterpretation).toEqual(
+      v8Rules.nonClearanceInterpretation,
+    );
+    expect(v9Rules.decision15PhotoFirstPolicy).toEqual(
+      v8Rules.decision15PhotoFirstPolicy,
+    );
+
+    const governed = asRecord(governedValue);
+    expect(governed.generalStoredJpegModificationAllowed).toBe(false);
+    expect(asRecord(governed.scope)).toEqual({
+      athleteName: "Trae Young",
+      caseIds: ["CASE-NBAANKLE-2021-001"],
+      scopeId: "decision-16-trae-young-rendition-only",
+    });
+    expect(asRecord(governed.sourceOriginal)).toMatchObject({
+      byteLength: 39_619_306,
+      height: 5504,
+      mediaWikiSha1: "193bb8a75e73f878359d136f0769205a4a8693ba",
+      repositoryPath: "src/assets/players/decision-15/trae-young.jpg",
+      repositorySha256:
+        "b489695d343b4e072708b242d6cdbbe4a22df84133e0aef5397f4a3bad46b1b0",
+      width: 6351,
+    });
+    expect(asRecord(governed.localRendition)).toEqual({
+      exactHeight: 2080,
+      exactLongestEdge: 2400,
+      exactMimeType: "image/jpeg",
+      exactPath: "src/assets/players/decision-16/trae-young.jpg",
+      exactWidth: 2400,
+      maximumByteLength: 5_000_000,
+    });
+    expect(asRecord(governed.attributionAndChangeRules)).toMatchObject({
+      adapterLicenseForCcByForbidden: true,
+      exactCopyrightNotice: "Erik Drost",
+      exactCreditedName: "Erik Drost",
+      exactWorkTitle: "Trae Young",
+      renditionChangeDisclosureVisible: true,
+      upstreamAndRenditionAlterationsSeparatelyVisible: true,
+    });
+
+    const markdown = readPolicyFile(V9_MARKDOWN_POLICY_PATH);
+    expect(markdown).toContain(
+      "`cropRules.storedJpegModificationAllowed=false`",
+    );
+    expect(markdown).toContain("No Adapter's License is declared");
+    expect(markdown).toContain("2400×2080");
+    expect(markdown).toContain(
+      "CC BY-SA composition firewall remains unchanged",
+    );
   });
 });

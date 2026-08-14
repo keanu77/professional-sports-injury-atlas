@@ -79,6 +79,9 @@ const APPROVED_PLAYER_PHOTO_PRODUCTION_CONSUMERS = new Set([
   // Decision 13 Phase 0 reviewed this pure schema/verifier module. The
   // composition checks below still apply if it ever gains rendering code.
   "src/lib/contracts/decision-15-photo-contract.ts",
+  // Decision 16 Phase 0 reviewed this pure dual-fact rendition contract. It
+  // validates provenance/attribution bytes and cannot render or compose pixels.
+  "src/lib/contracts/decision-16-rendition-contract.ts",
   "src/lib/contracts/player-photo-registry-v4.ts",
   "src/lib/contracts/player-photo-registry-v5.ts",
   "src/lib/contracts/player-photo-registry-v6.ts",

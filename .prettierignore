@@ -3,6 +3,7 @@ docs/decisions/**
 docs/reviews/evidence/decision-13/**/*.json
 docs/reviews/evidence/decision-14/**/*.json
 docs/reviews/evidence/decision-15/**/*.json
+docs/reviews/evidence/decision-16/**/*.json
 docs/reviews/evidence/decision-13/notices-after/**
 docs/reviews/evidence/decision-13/notices-comparison/**
 src/data/generated/*.json
@@ -19,6 +20,7 @@ research/source-policy/source-policy.v5.json
 research/source-policy/source-policy.v6.json
 research/source-policy/source-policy.v7.json
 research/source-policy/source-policy.v8.json
+research/source-policy/source-policy.v9.json
 src/assets/players/player-photo-registry.v1.json
 src/assets/players/player-photo-registry.v2.json
 src/assets/players/player-photo-registry.v3.json
