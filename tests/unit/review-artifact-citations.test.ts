@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import {
   checkNbaPlainTextCitations,
   nbaUrlsInRedirectArtifact,
+  youtubeEmbedUrlDomSinks,
 } from "../../scripts/verify-review-artifact";
 import type { InjuryCase } from "../../src/lib/contracts/case";
 
@@ -87,6 +88,51 @@ describe("Decision 11 redirect artifact scanning", () => {
       nbaUrlsInRedirectArtifact(
         "https://nba.com.example.org/x https://www.youtube.com/watch?v=x",
       ),
+    ).toEqual([]);
+  });
+});
+
+describe("review artifact YouTube embed sinks", () => {
+  it("allows the inert URL constructor used by the click-to-load script", () => {
+    expect(
+      youtubeEmbedUrlDomSinks(`
+        <script>
+          const base = "https://www.youtube-nocookie.com/embed/";
+        </script>
+        <script type="module">
+          const fallback = "https://www.youtube.com/embed/example";
+        </script>
+      `),
+    ).toEqual([]);
+  });
+
+  it.each([
+    '<iframe src="https://www.youtube-nocookie.com/embed/example"></iframe>',
+    '<a href="//www.youtube.com/embed/example">embed</a>',
+    '<meta http-equiv="refresh" content="0;url=https://youtube.com/embed/example">',
+    '<div data-redirect="https:\\/\\/youtube-nocookie.com\\/embed\\/example"></div>',
+  ])("rejects a serialized DOM URL sink: %s", (markup) => {
+    expect(youtubeEmbedUrlDomSinks(markup)).toHaveLength(1);
+  });
+
+  it("rejects a YouTube embed URL serialized in JSON-LD", () => {
+    expect(
+      youtubeEmbedUrlDomSinks(`
+        <script type="application/ld+json">
+          {"embedUrl":"https:\\/\\/www.youtube.com\\/embed\\/example"}
+        </script>
+      `),
+    ).toEqual([
+      "script[type=application/ld+json]=https://www.youtube.com/embed/example",
+    ]);
+  });
+
+  it("does not overmatch a spoofed YouTube hostname or visible text", () => {
+    expect(
+      youtubeEmbedUrlDomSinks(`
+        <a href="https://youtube.com.attacker.example/embed/example">spoof</a>
+        <p>https://www.youtube.com/embed/plain-text-only</p>
+      `),
     ).toEqual([]);
   });
 });

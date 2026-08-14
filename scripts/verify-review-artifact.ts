@@ -530,6 +530,67 @@ function htmlNodeText(node: HtmlNode): string {
   return node.childNodes.map((child) => htmlNodeText(child)).join("");
 }
 
+const YOUTUBE_EMBED_HOSTS = new Set([
+  "youtube.com",
+  "www.youtube.com",
+  "youtube-nocookie.com",
+  "www.youtube-nocookie.com",
+]);
+
+function absoluteUrlCandidates(value: string): string[] {
+  const normalized = value
+    .replaceAll("\\/", "/")
+    .replace(/\\u002f/giu, "/")
+    .replace(/\\x2f/giu, "/");
+  return (normalized.match(/(?:https?:)?\/\/[^\s"'<>\\]+/giu) ?? []).map(
+    (candidate) =>
+      candidate.startsWith("//") ? `https:${candidate}` : candidate,
+  );
+}
+
+function youtubeEmbedUrls(value: string): string[] {
+  return absoluteUrlCandidates(value).filter((candidate) => {
+    try {
+      const url = new URL(candidate);
+      return (
+        YOUTUBE_EMBED_HOSTS.has(url.hostname.toLowerCase()) &&
+        (url.pathname === "/embed" || url.pathname.startsWith("/embed/"))
+      );
+    } catch {
+      return false;
+    }
+  });
+}
+
+/**
+ * Finds serialized YouTube embed URLs in DOM attributes and JSON-LD. An
+ * executable script may contain the click-to-load URL constructor without
+ * creating a network-capable DOM sink; runtime tests separately prove that no
+ * iframe or request exists before explicit activation.
+ */
+export function youtubeEmbedUrlDomSinks(html: string): string[] {
+  const sinks: string[] = [];
+  for (const element of descendantElements(parse(html))) {
+    for (const attribute of element.attrs) {
+      for (const target of youtubeEmbedUrls(attribute.value)) {
+        sinks.push(`${element.tagName}[${attribute.name}]=${target}`);
+      }
+    }
+    if (
+      element.tagName === "script" &&
+      (htmlAttribute(element, "type") ?? "")
+        .split(";", 1)[0]
+        ?.trim()
+        .toLowerCase() === "application/ld+json"
+    ) {
+      for (const target of youtubeEmbedUrls(htmlNodeText(element))) {
+        sinks.push(`script[type=application/ld+json]=${target}`);
+      }
+    }
+  }
+  return sinks;
+}
+
 function normalizedText(node: HtmlNode): string {
   return htmlNodeText(node).replace(/\s+/gu, " ").trim();
 }
@@ -845,12 +906,12 @@ export function runReviewArtifactVerification(
   issues.push(...checkNbaDeepLinkRedirectArtifacts(distDir, artifactFileFacts));
 
   for (const page of pages) {
-    if (/youtube(-nocookie)?\.com\/embed/i.test(page.html)) {
+    for (const sink of youtubeEmbedUrlDomSinks(page.html)) {
       issues.push(
         issue(
           "review-output-youtube-embed",
           page.path,
-          "review output must not contain a YouTube embed URL",
+          `review output must not contain an active YouTube embed URL sink: ${sink}`,
         ),
       );
     }
