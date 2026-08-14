@@ -374,6 +374,206 @@ describe("case-follow-up.v1 contract", () => {
     ).toContain("follow-up-research-schema");
   });
 
+  it("reports independent research and sidecar semantic drift", () => {
+    expect(
+      codes(
+        validateFollowUpResearchRecord(researchFixture(), {
+          expectedPolicyBinding: {
+            ...policy,
+            jsonSha256: "0".repeat(64),
+          } as FollowUpSourcePolicyBinding,
+        }),
+      ),
+    ).toContain("follow-up-expected-policy");
+    expect(
+      codes(
+        validateFollowUpResearchRecord(researchFixture(), {
+          expectedPolicyBinding: policy,
+          maximumFactDate: "2026-02-31",
+        }),
+      ),
+    ).toContain("follow-up-invalid-date");
+
+    const datedResearch = researchFixture();
+    const datedFact = datedResearch.categories["actual-return"].facts[0]!;
+    datedResearch.categories.treatment.queryBoundaries[0]!.performedAt =
+      "2026-02-31";
+    datedFact.source.publishedAt = "2026-09-01";
+    datedFact.source.accessedAt = "2026-08-14";
+    datedFact.factDate = "2026-09-02";
+    expect(
+      codes(
+        validateFollowUpResearchRecord(datedResearch, {
+          expectedPolicyBinding: policy,
+        }),
+      ),
+    ).toEqual(
+      expect.arrayContaining([
+        "follow-up-invalid-date",
+        "follow-up-source-date-order",
+        "follow-up-fact-date-future",
+      ]),
+    );
+
+    const duplicateResearch = researchFixture();
+    duplicateResearch.categories.treatment = {
+      queryBoundaries: duplicateResearch.categories.treatment.queryBoundaries,
+      outcome: "source-ready",
+      notFoundReason: null,
+      facts: [
+        structuredClone(
+          duplicateResearch.categories["actual-return"].facts[0]!,
+        ),
+      ],
+    };
+    expect(
+      codes(
+        validateFollowUpResearchRecord(duplicateResearch, {
+          expectedPolicyBinding: policy,
+        }),
+      ),
+    ).toEqual(
+      expect.arrayContaining([
+        "follow-up-kind-category",
+        "follow-up-research-evidence-duplicate",
+        "follow-up-item-duplicate",
+      ]),
+    );
+
+    const record = fixtureCase();
+    const research = researchFixture(record);
+    const duplicated = sidecarFixture(record, research);
+    duplicated.caseId = "CASE-FIC-2014-902";
+    const misplaced = structuredClone(
+      duplicated.categories["actual-return"][0]!,
+    );
+    duplicated.categories.treatment = [
+      structuredClone(misplaced),
+      structuredClone(misplaced),
+    ];
+    expect(
+      codes(
+        validateCaseFollowUpRecord(duplicated, {
+          caseRecord: record,
+          research,
+          expectedPolicyBinding: policy,
+        }),
+      ),
+    ).toEqual(
+      expect.arrayContaining([
+        "follow-up-case-binding",
+        "follow-up-item-order",
+        "follow-up-kind-category",
+        "follow-up-item-duplicate",
+        "follow-up-item-evidence-duplicate",
+      ]),
+    );
+
+    const missingEvidence = sidecarFixture(record, research);
+    missingEvidence.categories["actual-return"][0]!.researchEvidenceId =
+      "evidence-not-in-ledger";
+    rebuildItemDigest(missingEvidence);
+    expect(
+      codes(
+        validateCaseFollowUpRecord(missingEvidence, {
+          caseRecord: record,
+          research,
+          expectedPolicyBinding: policy,
+        }),
+      ),
+    ).toEqual(
+      expect.arrayContaining([
+        "follow-up-research-evidence-missing",
+        "follow-up-research-fact-undrafted",
+      ]),
+    );
+
+    const noLegacySource = fixtureCase();
+    const noLegacyResearch = researchFixture(noLegacySource);
+    const noLegacySidecar = sidecarFixture(noLegacySource, noLegacyResearch);
+    noLegacySource.sources = noLegacySource.sources.map((source) => ({
+      ...source,
+      supports: source.supports.filter(
+        (field) => field !== "general.confirmedUpdate",
+      ),
+    }));
+    expect(
+      codes(
+        validateCaseFollowUpRecord(noLegacySidecar, {
+          caseRecord: noLegacySource,
+          research: noLegacyResearch,
+          expectedPolicyBinding: policy,
+        }),
+      ),
+    ).toContain("follow-up-legacy-source-cardinality");
+  });
+
+  it("rejects malformed, orphaned, and duplicate corpus paths", () => {
+    const root = mkdtempSync(join(tmpdir(), "atlas-follow-up-paths-"));
+    temporaryRoots.push(root);
+    const record = fixtureCase();
+    const research = researchFixture(record);
+    const sidecar = sidecarFixture(record, research);
+    const sidecarDirectory = join(root, FOLLOW_UP_CONTENT_DIRECTORY);
+    const researchDirectory = join(root, FOLLOW_UP_RESEARCH_DIRECTORY);
+    const nestedSidecars = join(sidecarDirectory, "nested");
+    const nestedResearch = join(researchDirectory, "nested");
+    mkdirSync(nestedSidecars, { recursive: true });
+    mkdirSync(nestedResearch, { recursive: true });
+
+    for (const path of [
+      join(sidecarDirectory, `${record.slug}.json`),
+      join(nestedSidecars, `${record.slug}.json`),
+      join(sidecarDirectory, "orphan.json"),
+    ]) {
+      writeFileSync(path, canonicalJson(sidecar));
+    }
+    for (const path of [
+      join(researchDirectory, `${record.slug}.json`),
+      join(nestedResearch, `${record.slug}.json`),
+      join(researchDirectory, "orphan.json"),
+    ]) {
+      writeFileSync(path, canonicalJson(research));
+    }
+    writeFileSync(join(sidecarDirectory, "broken.json"), "{}");
+    writeFileSync(join(researchDirectory, "broken.json"), "{}");
+    writeFileSync(join(sidecarDirectory, ".ignored.json"), "{}");
+    writeFileSync(join(researchDirectory, "ignored.txt"), "ignored");
+
+    const result = codes(
+      loadFollowUpCorpus(root, [record], {
+        expectedPolicyBinding: policy,
+      }).issues,
+    );
+    expect(result).toEqual(
+      expect.arrayContaining([
+        "follow-up-case-count",
+        "follow-up-schema",
+        "follow-up-research-schema",
+        "follow-up-orphan-sidecar",
+        "follow-up-orphan-research",
+        "follow-up-duplicate-sidecar",
+        "follow-up-duplicate-research",
+      ]),
+    );
+
+    const emptyRoot = mkdtempSync(join(tmpdir(), "atlas-follow-up-empty-"));
+    temporaryRoots.push(emptyRoot);
+    expect(
+      codes(
+        loadFollowUpCorpus(emptyRoot, [record], {
+          expectedPolicyBinding: policy,
+          expectedCaseCount: 1,
+        }).issues,
+      ),
+    ).toEqual(
+      expect.arrayContaining([
+        "follow-up-sidecar-missing",
+        "follow-up-research-missing",
+      ]),
+    );
+  });
+
   it("loads exact one-to-one canonical sidecar and research files", () => {
     const root = mkdtempSync(join(tmpdir(), "atlas-follow-up-contract-"));
     temporaryRoots.push(root);
