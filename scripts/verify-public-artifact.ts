@@ -6,7 +6,7 @@
  * a hosting plan sends a real request.
  */
 
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { issue, type ValidationIssue } from "../src/lib/contracts/canonical";
@@ -18,6 +18,7 @@ import {
   checkNbaDeepLinkRedirectArtifacts,
   checkNbaPlainTextCitations,
   loadBuiltOutput,
+  readBoundedArtifactText,
 } from "./verify-review-artifact";
 
 function main(): void {
@@ -36,31 +37,38 @@ function main(): void {
     );
     process.exit(1);
   }
-  const { pages, files } = loadBuiltOutput(distDir);
+  const { pages, files, artifactFileFacts, artifactFileIssues } =
+    loadBuiltOutput(distDir);
   const loaded = loadContentCollections(root);
-  const issues: ValidationIssue[] = [...loaded.issues];
+  const issues: ValidationIssue[] = [...loaded.issues, ...artifactFileIssues];
   const publicCases = selectPublicCases(
     loaded.cases.map((entry) => entry.record),
   );
 
   issues.push(...validatePublicOutput(pages, files, publicCases));
-  issues.push(...checkNbaDeepLinkRedirectArtifacts(distDir, files));
+  issues.push(...checkNbaDeepLinkRedirectArtifacts(distDir, artifactFileFacts));
   const nbaCitations = checkNbaPlainTextCitations(root, pages, publicCases);
   issues.push(...nbaCitations.issues);
 
-  const robotsPath = join(distDir, "robots.txt");
-  if (!existsSync(robotsPath)) {
+  const robotsFile = artifactFileFacts.find(
+    (file) => file.path === "robots.txt",
+  );
+  if (robotsFile === undefined) {
     issues.push(
       issue("public-robots-missing", "robots.txt", "robots.txt is missing"),
     );
-  } else if (!readFileSync(robotsPath, "utf8").startsWith("User-agent: *")) {
-    issues.push(
-      issue(
-        "public-robots-body",
-        "robots.txt",
-        "public robots.txt must declare an explicit User-agent policy",
-      ),
-    );
+  } else {
+    const read = readBoundedArtifactText(distDir, robotsFile);
+    issues.push(...read.issues);
+    if (read.text !== null && !read.text.startsWith("User-agent: *")) {
+      issues.push(
+        issue(
+          "public-robots-body",
+          "robots.txt",
+          "public robots.txt must declare an explicit User-agent policy",
+        ),
+      );
+    }
   }
 
   console.log(

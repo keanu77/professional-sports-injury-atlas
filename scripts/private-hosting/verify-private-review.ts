@@ -48,6 +48,7 @@ import {
   PRIVATE_HTTP_HEADER_CONTRACT_ID,
   type ArtifactFile,
 } from "../../src/lib/governance/artifact-manifest.ts";
+import { PRIVATE_REVIEW_MAX_FILE_BYTES } from "../../src/lib/governance/private-review-limits.ts";
 import {
   DISALLOW_ALL_ROBOTS_TXT,
   NOINDEX_ROBOTS_META,
@@ -95,7 +96,6 @@ const STTY_PATH = "/bin/stty";
 const GIT_PATH = "/usr/bin/git";
 const REQUEST_TIMEOUT_MS = 8_000;
 const COMPLETE_RUN_TIMEOUT_MS = 180_000;
-const MAX_RESPONSE_BYTES = 32 * 1024 * 1024;
 const SECONDARY_LOOPBACK_ADDRESSES = Object.freeze(["127.0.0.1", "::1"]);
 const WWW_AUTHENTICATE = 'Basic realm="Private review", charset="UTF-8"';
 const REQUIRED_HEADERS = Object.freeze({
@@ -841,7 +841,7 @@ function requestContext(
     clientId,
     reuseConnection,
     maxBodyBytes: Math.min(
-      MAX_RESPONSE_BYTES,
+      PRIVATE_REVIEW_MAX_FILE_BYTES,
       Math.max(file.byteLength + 1, 64 * 1024),
     ),
   };
@@ -1196,7 +1196,7 @@ export function createNodeHttpTransport(): NodeHttpTransport {
       request.redirect !== "manual" ||
       !Number.isSafeInteger(request.maxBodyBytes) ||
       request.maxBodyBytes < 0 ||
-      request.maxBodyBytes > MAX_RESPONSE_BYTES
+      request.maxBodyBytes > PRIVATE_REVIEW_MAX_FILE_BYTES
     ) {
       return fail("transport-failed", { path: request.requestPath });
     }

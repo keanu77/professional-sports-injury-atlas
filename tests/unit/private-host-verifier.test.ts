@@ -41,6 +41,7 @@ import {
   DISALLOW_ALL_ROBOTS_TXT,
   NOINDEX_ROBOTS_META,
 } from "../../src/lib/governance/build-mode";
+import { PRIVATE_REVIEW_MAX_FILE_BYTES } from "../../src/lib/governance/private-review-limits";
 import {
   parseServedArtifactReceiptBytes,
   UNAUTHORIZED_SCENARIOS,
@@ -869,6 +870,76 @@ describe("private live host verifier", () => {
           headerIndex(observation.rawHeaders, "Location"),
         ).toBeGreaterThanOrEqual(0);
       }
+    } finally {
+      transport.close();
+      await new Promise<void>((resolveClose, rejectClose) => {
+        server.close((error) =>
+          error === undefined ? resolveClose() : rejectClose(error),
+        );
+      });
+    }
+  });
+
+  it("keeps the production transport ceiling at the shared 32 MiB boundary", async () => {
+    const bodyBoundary = 64 * 1024;
+    const requestPaths: string[] = [];
+    const server = createServer((request, response) => {
+      requestPaths.push(request.url ?? "");
+      const body =
+        request.url === "/body-exact"
+          ? Buffer.alloc(bodyBoundary, 0x61)
+          : request.url === "/body-over"
+            ? Buffer.alloc(bodyBoundary + 1, 0x62)
+            : Buffer.alloc(0);
+      response.statusCode = 200;
+      response.setHeader("Content-Length", String(body.byteLength));
+      response.end(body);
+    });
+    await new Promise<void>((resolveListen, rejectListen) => {
+      const failListen = (error: Error): void => rejectListen(error);
+      server.once("error", failListen);
+      server.listen(0, "127.0.0.1", () => {
+        server.off("error", failListen);
+        resolveListen();
+      });
+    });
+    const address = server.address() as AddressInfo;
+    const transport = createNodeHttpTransport();
+    const baseRequest: Omit<PrivateVerifierRequest, "maxBodyBytes"> = {
+      origin: `http://127.0.0.1:${address.port}`,
+      requestPath: "/boundary",
+      method: "GET",
+      acceptEncoding: "identity",
+      redirect: "manual",
+      clientId: "boundary",
+      reuseConnection: false,
+    };
+    try {
+      const accepted = await transport.request({
+        ...baseRequest,
+        maxBodyBytes: PRIVATE_REVIEW_MAX_FILE_BYTES,
+      });
+      expect(accepted.status).toBe(200);
+      await expect(
+        transport.request({
+          ...baseRequest,
+          maxBodyBytes: PRIVATE_REVIEW_MAX_FILE_BYTES + 1,
+        }),
+      ).rejects.toMatchObject({ code: "transport-failed" });
+      const exactBody = await transport.request({
+        ...baseRequest,
+        requestPath: "/body-exact",
+        maxBodyBytes: bodyBoundary,
+      });
+      expect(exactBody.body.byteLength).toBe(bodyBoundary);
+      await expect(
+        transport.request({
+          ...baseRequest,
+          requestPath: "/body-over",
+          maxBodyBytes: bodyBoundary,
+        }),
+      ).rejects.toMatchObject({ code: "transport-failed" });
+      expect(requestPaths).toEqual(["/boundary", "/body-exact", "/body-over"]);
     } finally {
       transport.close();
       await new Promise<void>((resolveClose, rejectClose) => {

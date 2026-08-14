@@ -10,6 +10,7 @@ import {
   validateArtifactManifestCoverage,
   type ArtifactManifest,
 } from "../../src/lib/governance/artifact-manifest";
+import { PRIVATE_REVIEW_MAX_FILE_BYTES } from "../../src/lib/governance/private-review-limits";
 import {
   computeAuthorizedMetadataDigest,
   computeUnauthorizedMetadataDigest,
@@ -213,6 +214,64 @@ describe("private-dist manifest", () => {
     const parsed = parseArtifactManifestBytes(canonicalJson(manifest));
     expect(parsed.manifest).toEqual(manifest);
     expect(parsed.manifestDigest).toBe(computeArtifactManifestDigest(manifest));
+  });
+
+  it("accepts the exact private-review byte ceiling and rejects unsafe or oversized declarations", () => {
+    const boundary = structuredClone(baseManifest()) as any;
+    boundary.files[0].byteLength = PRIVATE_REVIEW_MAX_FILE_BYTES;
+    expect(validateArtifactManifest(boundary)).toEqual([]);
+
+    const oversized = structuredClone(boundary) as any;
+    oversized.files[0].byteLength = PRIVATE_REVIEW_MAX_FILE_BYTES + 1;
+    const oversizedIssues = validateArtifactManifest(oversized);
+    expect(oversizedIssues).toContainEqual({
+      code: "artifact-manifest-schema",
+      path: "files.0.byteLength",
+      message: `must be at most ${PRIVATE_REVIEW_MAX_FILE_BYTES} bytes`,
+    });
+    expect(parseArtifactManifestBytes(canonicalJson(oversized))).toMatchObject({
+      manifest: null,
+      issues: [
+        {
+          code: "artifact-manifest-schema",
+          path: "files.0.byteLength",
+          message: `must be at most ${PRIVATE_REVIEW_MAX_FILE_BYTES} bytes`,
+        },
+      ],
+    });
+
+    for (const invalidByteLength of [1.5, Number.MAX_SAFE_INTEGER + 1]) {
+      const invalid = structuredClone(boundary) as any;
+      invalid.files[0].byteLength = invalidByteLength;
+      expect(validateArtifactManifest(invalid).length).toBeGreaterThan(0);
+    }
+
+    const fakeOversizedBytes = {
+      byteLength: PRIVATE_REVIEW_MAX_FILE_BYTES + 1,
+    } as unknown as Uint8Array;
+    const metadata = baseManifest();
+    expect(() =>
+      buildArtifactManifest(
+        "review",
+        [
+          {
+            path: "_astro/oversized.jpg",
+            bytes: fakeOversizedBytes,
+            contentType: "image/jpeg",
+          },
+        ],
+        {
+          buildCommit: metadata.buildCommit,
+          reviewSetDigest: metadata.reviewSetDigest,
+          reviewSetResponseSha256: metadata.reviewSetResponseSha256,
+          rendererTreeDigest: metadata.rendererTreeDigest,
+          headerPolicyDigest: metadata.headerPolicyDigest,
+          generatedAt: metadata.generatedAt,
+        },
+      ),
+    ).toThrow(
+      `built file _astro/oversized.jpg exceeds the ${PRIVATE_REVIEW_MAX_FILE_BYTES}-byte private-review limit`,
+    );
   });
 
   it("rejects noncanonical and duplicate-key manifest bytes", () => {

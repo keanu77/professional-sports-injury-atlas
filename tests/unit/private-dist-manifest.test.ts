@@ -5,6 +5,7 @@ import {
   readFileSync,
   rmSync,
   symlinkSync,
+  truncateSync,
   writeFileSync,
 } from "node:fs";
 import { execFileSync } from "node:child_process";
@@ -39,6 +40,7 @@ import {
   NOINDEX_ROBOTS_META,
   DISALLOW_ALL_ROBOTS_TXT,
 } from "../../src/lib/governance/build-mode";
+import { PRIVATE_REVIEW_MAX_FILE_BYTES } from "../../src/lib/governance/private-review-limits";
 import {
   parseReviewSetManifestBytes,
   type ReviewSetManifest,
@@ -519,6 +521,25 @@ describe("private dist manifest generation", () => {
     const bytes = canonicalJson(first);
     expect(canonicalJson(parseStrictJson(bytes))).toBe(bytes);
     expect(parseArtifactManifestBytes(bytes).manifest).toEqual(first);
+  });
+
+  it("accepts an exact 32 MiB sparse asset and rejects one byte more before snapshot reading", () => {
+    const fx = fixture();
+    const buildPath = "_astro/private-review-boundary.jpg";
+    const target = join(fx.root, "dist", buildPath);
+    writeFileSync(target, "");
+    truncateSync(target, PRIVATE_REVIEW_MAX_FILE_BYTES);
+
+    const manifest = generate(fx);
+    expect(
+      manifest.files.find((file) => file.buildPath === buildPath)?.byteLength,
+    ).toBe(PRIVATE_REVIEW_MAX_FILE_BYTES);
+
+    truncateSync(target, PRIVATE_REVIEW_MAX_FILE_BYTES + 1);
+    const stableError = `private-review file ${buildPath} exceeds the ${PRIVATE_REVIEW_MAX_FILE_BYTES}-byte limit`;
+    expect(() => walkPrivateDist(join(fx.root, "dist"))).toThrow(stableError);
+    expect(() => generate(fx)).toThrow(stableError);
+    expect(lstatSync(target).size).toBe(PRIVATE_REVIEW_MAX_FILE_BYTES + 1);
   });
 
   it("maps the complete supported content-type set and refuses unknown/precompressed output", () => {

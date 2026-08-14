@@ -17,6 +17,7 @@ import {
   sha256Hex,
   type ValidationIssue,
 } from "../contracts/canonical";
+import { PRIVATE_REVIEW_MAX_FILE_BYTES } from "./private-review-limits";
 
 export const PRIVATE_HTTP_HEADER_CONTRACT_ID =
   "atlas-private-review-http-headers-v1";
@@ -35,6 +36,13 @@ const sha256Lower = z.string().regex(SHA256_RE);
 const gitCommit = z.string().regex(/^[0-9a-f]{40}$/);
 const nonEmpty = z.string().min(1);
 const sortedIdArray = z.array(nonEmpty);
+const artifactByteLength = z
+  .number()
+  .int({ message: "must be a safe integer byte length" })
+  .min(0, { message: "must be a nonnegative safe integer byte length" })
+  .max(PRIVATE_REVIEW_MAX_FILE_BYTES, {
+    message: `must be at most ${PRIVATE_REVIEW_MAX_FILE_BYTES} bytes`,
+  });
 
 export const artifactIdentityKinds = [
   "html-page",
@@ -136,7 +144,7 @@ export const artifactFileSchema = z.strictObject({
   buildPath: nonEmpty,
   requestPath: nonEmpty,
   sha256: sha256Lower,
-  byteLength: z.number().int().min(0),
+  byteLength: artifactByteLength,
   contentType: nonEmpty,
   dataBearing: z.boolean(),
   identity: artifactIdentitySchema,
@@ -628,6 +636,23 @@ export interface BuiltFileInput {
 
 export class ArtifactManifestError extends Error {}
 
+function builtFileByteLength(file: BuiltFileInput): number {
+  const byteLength =
+    typeof file.bytes === "string"
+      ? Buffer.byteLength(file.bytes, "utf8")
+      : file.bytes.byteLength;
+  if (
+    !Number.isSafeInteger(byteLength) ||
+    byteLength < 0 ||
+    byteLength > PRIVATE_REVIEW_MAX_FILE_BYTES
+  ) {
+    throw new ArtifactManifestError(
+      `built file ${file.path} exceeds the ${PRIVATE_REVIEW_MAX_FILE_BYTES}-byte private-review limit`,
+    );
+  }
+  return byteLength;
+}
+
 export function canonicalRequestPathForBuildPath(path: string): string {
   if (path === "index.html") return "/";
   if (path.endsWith("/index.html"))
@@ -694,6 +719,7 @@ export function buildArtifactManifest(
 ): ArtifactManifest {
   const entries = files
     .map((file): ArtifactFile => {
+      const byteLength = builtFileByteLength(file);
       const digest = sha256Hex(file.bytes);
       const requestPath =
         file.requestPath ?? canonicalRequestPathForBuildPath(file.path);
@@ -704,10 +730,7 @@ export function buildArtifactManifest(
         buildPath: file.path,
         requestPath,
         sha256: digest,
-        byteLength:
-          typeof file.bytes === "string"
-            ? Buffer.byteLength(file.bytes, "utf8")
-            : file.bytes.byteLength,
+        byteLength,
         contentType: file.contentType,
         dataBearing:
           file.dataBearing ??

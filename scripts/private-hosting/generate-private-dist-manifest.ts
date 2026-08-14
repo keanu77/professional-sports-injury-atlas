@@ -7,6 +7,7 @@ import {
   lstatSync,
   openSync,
   readFileSync,
+  readSync,
   readdirSync,
   realpathSync,
   renameSync,
@@ -60,6 +61,7 @@ import {
   DISALLOW_ALL_ROBOTS_TXT,
   NOINDEX_ROBOTS_META,
 } from "../../src/lib/governance/build-mode";
+import { PRIVATE_REVIEW_MAX_FILE_BYTES } from "../../src/lib/governance/private-review-limits";
 import {
   parseReviewSetManifestBytes,
   type ReviewSetManifest,
@@ -84,6 +86,21 @@ export const PRIVATE_DIST_MANIFEST_PATH =
   "review/private-dist-manifest.v1.json";
 
 export class PrivateDistManifestError extends Error {}
+
+const PRIVATE_REVIEW_MAX_FILE_BYTES_BIGINT = BigInt(
+  PRIVATE_REVIEW_MAX_FILE_BYTES,
+);
+
+function assertPrivateReviewFileByteLength(
+  relativePath: string,
+  byteLength: bigint,
+): void {
+  if (byteLength < 0n || byteLength > PRIVATE_REVIEW_MAX_FILE_BYTES_BIGINT) {
+    throw new PrivateDistManifestError(
+      `private-review file ${relativePath} exceeds the ${PRIVATE_REVIEW_MAX_FILE_BYTES}-byte limit`,
+    );
+  }
+}
 
 export interface PrivateDistSourceState {
   commit: string;
@@ -175,14 +192,16 @@ export function walkPrivateDist(distDir: string): string[] {
         );
       }
       const target = join(directory, name);
-      const stat = lstatSync(target);
+      const stat = lstatSync(target, { bigint: true });
       if (stat.isSymbolicLink()) {
         throw new PrivateDistManifestError(`symlink is forbidden: ${target}`);
       }
       if (stat.isDirectory()) {
         visit(target);
       } else if (stat.isFile()) {
-        files.push(safeRelativePath(root, target));
+        const relativePath = safeRelativePath(root, target);
+        assertPrivateReviewFileByteLength(relativePath, stat.size);
+        files.push(relativePath);
       } else {
         throw new PrivateDistManifestError(
           `special dist file is forbidden: ${target}`,
@@ -220,6 +239,39 @@ function sameFileIdentity(left: FileIdentity, right: FileIdentity): boolean {
     left.mtimeNs === right.mtimeNs &&
     left.ctimeNs === right.ctimeNs
   );
+}
+
+function readBoundedOpenedFile(
+  descriptor: number,
+  expectedSize: bigint,
+  relativePath: string,
+): Buffer {
+  assertPrivateReviewFileByteLength(relativePath, expectedSize);
+  const byteLength = Number(expectedSize);
+  const bytes = Buffer.allocUnsafe(byteLength);
+  let offset = 0;
+  while (offset < byteLength) {
+    const read = readSync(
+      descriptor,
+      bytes,
+      offset,
+      byteLength - offset,
+      offset,
+    );
+    if (read === 0) {
+      throw new PrivateDistManifestError(
+        `snapshot target changed during bounded read: ${relativePath}`,
+      );
+    }
+    offset += read;
+  }
+  const extra = Buffer.allocUnsafe(1);
+  if (readSync(descriptor, extra, 0, 1, byteLength) !== 0) {
+    throw new PrivateDistManifestError(
+      `snapshot target exceeded its opened size during bounded read: ${relativePath}`,
+    );
+  }
+  return bytes;
 }
 
 /**
@@ -264,6 +316,7 @@ function readStableRegularFile(baseDir: string, relativePath: string): Buffer {
       `snapshot target is not a regular file: ${relativePath}`,
     );
   }
+  assertPrivateReviewFileByteLength(relativePath, pre.size);
   const rootRealPath = realpathSync.native(root);
   const beforeRealPath = realpathSync.native(target);
   if (
@@ -287,6 +340,7 @@ function readStableRegularFile(baseDir: string, relativePath: string): Buffer {
         `snapshot descriptor is not a regular file: ${relativePath}`,
       );
     }
+    assertPrivateReviewFileByteLength(relativePath, opened.size);
     const preIdentity = fileIdentity(pre);
     const openedIdentity = fileIdentity(opened);
     if (!sameFileIdentity(preIdentity, openedIdentity)) {
@@ -294,7 +348,7 @@ function readStableRegularFile(baseDir: string, relativePath: string): Buffer {
         `snapshot target changed before read: ${relativePath}`,
       );
     }
-    const bytes = readFileSync(descriptor);
+    const bytes = readBoundedOpenedFile(descriptor, opened.size, relativePath);
     const afterFd = fstatSync(descriptor, { bigint: true });
     const post = lstatSync(target, { bigint: true });
     if (post.isSymbolicLink() || !post.isFile()) {
