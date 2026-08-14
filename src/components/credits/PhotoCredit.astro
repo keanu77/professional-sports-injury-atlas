@@ -1,10 +1,10 @@
 ---
 /** Complete, registry-derived credit row for one governed Commons asset. */
-import type { PlayerPhotoSelectionV7 } from "../../lib/contracts/player-photo-registry-v7";
+import type { PlayerPhotoSelectionV8 } from "../../lib/contracts/player-photo-registry-v8";
 import { photoCreditPresentation } from "../../lib/rights/photo-credits";
 
 interface Props {
-  selection: PlayerPhotoSelectionV7;
+  selection: PlayerPhotoSelectionV8;
 }
 
 const credit = photoCreditPresentation(Astro.props.selection);
@@ -82,10 +82,32 @@ const noticeFields = [
         </a>
       </dd>
     </div>
-    <div data-credit-field="alteration">
-      <dt>變更說明</dt>
-      <dd>{rightsAttribution.alterationState.disclosure}</dd>
+    <div
+      data-credit-field="alteration"
+      data-alteration-scope={credit.localRenditionChangeDisclosure !== null
+        ? "upstream-source-original"
+        : undefined}
+    >
+      <dt>
+        {
+          credit.localRenditionChangeDisclosure !== null
+            ? "上游原作變更說明"
+            : "變更說明"
+        }
+      </dt>
+      <dd>{credit.upstreamAlterationDisclosure}</dd>
     </div>
+    {
+      credit.localRenditionChangeDisclosure !== null && (
+        <div
+          data-credit-field="local-rendition-change"
+          data-alteration-scope="local-rendition"
+        >
+          <dt>本地衍生版本變更說明</dt>
+          <dd>{credit.localRenditionChangeDisclosure}</dd>
+        </div>
+      )
+    }
     {
       credit.uploaderText !== null && (
         <div data-credit-field="uploader">

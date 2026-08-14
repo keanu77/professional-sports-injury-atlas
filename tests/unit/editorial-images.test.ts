@@ -5,9 +5,17 @@ import { describe, expect, it } from "vitest";
 
 import {
   caseImageFor,
+  currentPlayerPhotoAssetProjection,
   playerPhotoRegistry,
 } from "../../src/lib/ui/editorial-images";
-import { isDecision15PhotoSelectionV7 } from "../../src/lib/contracts/player-photo-registry-v7";
+import {
+  isDecision15PhotoSelectionV7,
+  type PlayerPhotoDecision15SelectionV7,
+} from "../../src/lib/contracts/player-photo-registry-v7";
+import {
+  isDecision16RenditionSelectionV8,
+  type PlayerPhotoSelectionV8,
+} from "../../src/lib/contracts/player-photo-registry-v8";
 import {
   caseHeroWidthsFor,
   caseThumbWidthsFor,
@@ -19,6 +27,13 @@ interface CaseIdentity {
   athlete: { name: string };
   id: string;
   injury: { code: string };
+}
+
+function isUnchangedDecision15Selection(
+  selection: PlayerPhotoSelectionV8,
+): selection is PlayerPhotoDecision15SelectionV7 {
+  if (isDecision16RenditionSelectionV8(selection)) return false;
+  return isDecision15PhotoSelectionV7(selection);
 }
 
 const cases = readdirSync(join(REPO_ROOT, "src/content/cases"))
@@ -74,6 +89,7 @@ describe("case editorial image resolver", () => {
     expect(
       playerPhotoRegistry.selections.every(
         (selection) =>
+          isDecision16RenditionSelectionV8(selection) ||
           isDecision15PhotoSelectionV7(selection) ||
           (selection.sourceRiskClassification.category ===
             "non-event-low-risk" &&
@@ -100,8 +116,15 @@ describe("case editorial image resolver", () => {
         "LeBron James 於《More Than a Game》紐約公開活動；非本案例受傷當下影像",
     });
     expect(
-      playerPhotoRegistry.selections.filter(isDecision15PhotoSelectionV7),
+      playerPhotoRegistry.selections.filter(
+        (selection) =>
+          isDecision16RenditionSelectionV8(selection) ||
+          isDecision15PhotoSelectionV7(selection),
+      ),
     ).toHaveLength(14);
+    expect(
+      playerPhotoRegistry.selections.filter(isDecision16RenditionSelectionV8),
+    ).toHaveLength(1);
   });
 
   it("preserves both Decision 14 public-event photos with exact facts", () => {
@@ -131,6 +154,7 @@ describe("case editorial image resolver", () => {
       expect(registrySelection?.coverKind).toBe("commons-photo");
       if (
         registrySelection === undefined ||
+        isDecision16RenditionSelectionV8(registrySelection) ||
         isDecision15PhotoSelectionV7(registrySelection)
       ) {
         continue;
@@ -163,11 +187,11 @@ describe("case editorial image resolver", () => {
     }
   });
 
-  it("resolves all fourteen Decision 15 photos with v8 and exact PD/ShareAlike modes", () => {
+  it("resolves the thirteen unchanged Decision 15 photos with v8 and exact PD/ShareAlike modes", () => {
     const promoted = playerPhotoRegistry.selections.filter(
-      isDecision15PhotoSelectionV7,
+      isUnchangedDecision15Selection,
     );
-    expect(promoted).toHaveLength(14);
+    expect(promoted).toHaveLength(13);
     expect(
       promoted.filter(
         (selection) =>
@@ -200,6 +224,111 @@ describe("case editorial image resolver", () => {
     expect(murray.license).toBeNull();
     expect(murray.rightsAttribution.licenseBucket).toBe("public-domain");
     expect(murray.usePolicy.mode).toBe("public-domain-placement");
+  });
+
+  it("resolves Trae through the Decision 16 rendition before the compatible Decision 15 guard", () => {
+    const trae = playerPhotoRegistry.selections.find(
+      ({ athleteName }) => athleteName === "Trae Young",
+    );
+    expect(trae).toBeDefined();
+    expect(isDecision16RenditionSelectionV8(trae!)).toBe(true);
+    expect(trae).toHaveProperty("decision15Evidence");
+    if (trae === undefined || !isDecision16RenditionSelectionV8(trae)) return;
+
+    expect(trae.localFile).toEqual({
+      byteLength: 2_390_278,
+      height: 2080,
+      mimeType: "image/jpeg",
+      path: "src/assets/players/decision-16/trae-young.jpg",
+      sha256:
+        "0c7a77e45d05648b8e52e6db692086e240e883639e8a8617f36d44f70061fcaf",
+      width: 2400,
+    });
+    expect(trae.license).toEqual({
+      name: "CC BY 2.0",
+      token: "cc-by-2.0",
+      url: "https://creativecommons.org/licenses/by/2.0",
+    });
+    expect(trae.photographerIdentity.name).toBe("Erik Drost");
+    expect(trae.rightsAttribution.adapterLicense).toBeNull();
+    expect(trae.rightsAttribution.alterationState.disclosure).toBe(
+      "Commons extraction and CropTool derivative; unmodified local original with site CSS presentation crop.",
+    );
+    expect(trae.decision16Rendition.localRendition.changeDisclosure).toBe(
+      "The 6351×5504 Commons original was downscaled without cropping and JPEG-re-encoded to 2400×2080 for this local rendition.",
+    );
+
+    const resolved = caseImageFor(
+      "ankle-sprain",
+      "CASE-NBAANKLE-2021-001",
+      "Trae Young",
+    );
+    expect(resolved.kind).toBe("licensed-player-photo");
+    if (resolved.kind !== "licensed-player-photo") return;
+    expect(String(resolved.image)).toBe(
+      "/src/assets/players/decision-16/trae-young.jpg",
+    );
+    expect(resolved.attribution).toMatchObject({
+      license: trae.license,
+      localRenditionChangeDisclosure:
+        trae.decision16Rendition.localRendition.changeDisclosure,
+      nonClearanceStatement: trae.decision16Rendition.nonClearanceStatement,
+      photographer: "Erik Drost",
+      policyVersion: "nba-v9",
+      sourceRiskCategory: null,
+      upstreamAlterationDisclosure:
+        trae.rightsAttribution.alterationState.disclosure,
+      usePolicyMode: "ordinary-attributed-placement",
+    });
+  });
+
+  it("projects all 21 registry assets one-to-one with no extra, swapped, or historical Trae import", () => {
+    const registryPaths = playerPhotoRegistry.selections
+      .map(({ localFile }) => localFile.path)
+      .sort();
+    const projectionPaths = Object.keys(
+      currentPlayerPhotoAssetProjection,
+    ).sort();
+    const importedPaths = Object.values(currentPlayerPhotoAssetProjection).map(
+      String,
+    );
+
+    expect(registryPaths).toHaveLength(21);
+    expect(new Set(registryPaths).size).toBe(21);
+    expect(projectionPaths).toEqual(registryPaths);
+    expect(new Set(importedPaths).size).toBe(21);
+    for (const localPath of registryPaths) {
+      expect(String(currentPlayerPhotoAssetProjection[localPath])).toBe(
+        `/${localPath}`,
+      );
+    }
+
+    const currentTraePath = "src/assets/players/decision-16/trae-young.jpg";
+    const historicalTraePaths = [
+      "src/assets/players/trae-young.jpg",
+      "src/assets/players/decision-15/trae-young.jpg",
+    ] as const;
+    expect(String(currentPlayerPhotoAssetProjection[currentTraePath])).toBe(
+      `/${currentTraePath}`,
+    );
+    for (const historicalPath of historicalTraePaths) {
+      expect(currentPlayerPhotoAssetProjection).not.toHaveProperty(
+        historicalPath,
+      );
+      expect(importedPaths).not.toContain(`/${historicalPath}`);
+    }
+
+    const resolverSource = readFileSync(
+      join(REPO_ROOT, "src/lib/ui/editorial-images.ts"),
+      "utf8",
+    );
+    expect(resolverSource).toContain(
+      'import traeYoungCover from "../../assets/players/decision-16/trae-young.jpg";',
+    );
+    expect(resolverSource).not.toMatch(
+      /from "\.\.\/\.\.\/assets\/players\/(?:decision-15\/)?trae-young\.jpg"/u,
+    );
+    expect(resolverSource).not.toContain("import.meta.glob");
   });
 
   it("fails closed when a registered case omits or mismatches its athlete", () => {

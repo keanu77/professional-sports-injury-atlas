@@ -1,9 +1,10 @@
 import { readFileSync } from "node:fs";
 import { expect, test, type Locator, type Page } from "@playwright/test";
+import { isDecision15PhotoSelectionV7 } from "../src/lib/contracts/player-photo-registry-v7";
 import {
-  isDecision15PhotoSelectionV7,
-  type PlayerPhotoSelectionV7,
-} from "../src/lib/contracts/player-photo-registry-v7";
+  isDecision16RenditionSelectionV8,
+  type PlayerPhotoSelectionV8,
+} from "../src/lib/contracts/player-photo-registry-v8";
 import { expectNoAxeViolations } from "./helpers/a11y";
 
 const PAGE_ORIGIN = "http://127.0.0.1:4321";
@@ -16,12 +17,12 @@ const LISTING_PATHS = [
 const playerPhotoRegistry = JSON.parse(
   readFileSync(
     new URL(
-      "../src/assets/players/player-photo-registry.v7.json",
+      "../src/assets/players/player-photo-registry.v8.json",
       import.meta.url,
     ),
     "utf8",
   ),
-) as { selections: PlayerPhotoSelectionV7[] };
+) as { selections: PlayerPhotoSelectionV8[] };
 const registrySelections = playerPhotoRegistry.selections;
 const selectionByCaseId = new Map(
   registrySelections.flatMap((selection) =>
@@ -55,7 +56,7 @@ const INTERNAL_OWNER_RISK_MARKERS = [
 
 async function expectLicensedCover(
   cover: Locator,
-  selection: PlayerPhotoSelectionV7,
+  selection: PlayerPhotoSelectionV8,
 ): Promise<void> {
   await expect(cover).toHaveAttribute(
     "data-cover-kind",
@@ -92,26 +93,29 @@ async function expectLicensedCover(
     "data-source-revision-id",
     String(selection.sourceRevision.id),
   );
-  if (!isDecision15PhotoSelectionV7(selection)) {
+  if (isDecision16RenditionSelectionV8(selection)) {
+    await expect(attribution).toHaveAttribute("data-policy-version", "nba-v9");
+    await expect(attribution).toHaveAttribute(
+      "data-use-policy",
+      selection.usePolicy.mode,
+    );
+  } else if (isDecision15PhotoSelectionV7(selection)) {
+    await expect(attribution).toHaveAttribute("data-policy-version", "nba-v8");
+    await expect(attribution).toHaveAttribute(
+      "data-use-policy",
+      selection.usePolicy.mode,
+    );
+  } else {
     await expect(attribution).toHaveAttribute(
       "data-source-risk-category",
       "non-event-low-risk",
     );
+    await expect(attribution).toHaveAttribute("data-policy-version", "nba-v7");
   }
   await expect(attribution).toContainText(selection.nonEventCaption);
   await expect(attribution).toContainText(
     `署名：${selection.photographerIdentity.name}`,
   );
-  await expect(attribution).toHaveAttribute(
-    "data-policy-version",
-    isDecision15PhotoSelectionV7(selection) ? "nba-v8" : "nba-v7",
-  );
-  if (isDecision15PhotoSelectionV7(selection)) {
-    await expect(attribution).toHaveAttribute(
-      "data-use-policy",
-      selection.usePolicy.mode,
-    );
-  }
   const creditLink = attribution.locator("[data-asset-credit-link]");
   await expect(creditLink).toHaveCount(1);
   await expect(creditLink).toHaveAttribute(
@@ -132,7 +136,7 @@ async function expectLicensedCover(
 
 async function expectRegisteredCover(
   cover: Locator,
-  selection: PlayerPhotoSelectionV7,
+  selection: PlayerPhotoSelectionV8,
 ): Promise<void> {
   await expectLicensedCover(cover, selection);
 }
@@ -173,8 +177,8 @@ async function remoteImageUrls(page: Page): Promise<string[]> {
   });
 }
 
-test.describe("Decision 15 registered player covers", () => {
-  test("the three NBA listing pages render the exact registry v7 26-case all-photo partition", async ({
+test.describe("registered player covers", () => {
+  test("the three NBA listing pages render the exact registry v8 26-case all-photo partition", async ({
     page,
   }) => {
     const caseIds = new Set<string>();
@@ -199,7 +203,7 @@ test.describe("Decision 15 registered player covers", () => {
         const selection = selectionByCaseId.get(caseId);
         expect(
           selection,
-          `missing registry v7 selection for ${caseId}`,
+          `missing registry v8 selection for ${caseId}`,
         ).toBeDefined();
         caseIds.add(caseId);
         const cover = card.locator("[data-case-thumb]");
@@ -350,6 +354,8 @@ test.describe("Decision 15 registered player covers", () => {
     );
     const selection = selectionByCaseId.get("CASE-NBAANKLE-2023-004")!;
     await expectLicensedCover(hero, selection);
+    expect(isDecision16RenditionSelectionV8(selection)).toBe(false);
+    if (isDecision16RenditionSelectionV8(selection)) return;
     expect(isDecision15PhotoSelectionV7(selection)).toBe(true);
     await expect(hero.locator("img[data-local-original-svg]")).toHaveCount(0);
     await expect(hero.locator("picture img")).toBeVisible();
@@ -365,6 +371,14 @@ test.describe("Decision 15 registered player covers", () => {
     for (const selection of registrySelections) {
       const row = page.locator(
         `#photo-credit-${selection.sourceRevision.id}[data-asset-credit-row]`,
+      );
+      await expect(row).toHaveAttribute(
+        "data-policy-version",
+        isDecision16RenditionSelectionV8(selection)
+          ? "nba-v9"
+          : isDecision15PhotoSelectionV7(selection)
+            ? "nba-v8"
+            : "nba-v7",
       );
       await expect(row).toHaveAttribute(
         "data-athlete-name",
@@ -393,6 +407,8 @@ test.describe("Decision 15 registered player covers", () => {
 
       const license = row.locator('[data-credit-field="license"]');
       if (selection.license === null) {
+        expect(isDecision16RenditionSelectionV8(selection)).toBe(false);
+        if (isDecision16RenditionSelectionV8(selection)) continue;
         expect(isDecision15PhotoSelectionV7(selection)).toBe(true);
         if (isDecision15PhotoSelectionV7(selection)) {
           await expect(license).toContainText(
@@ -415,6 +431,32 @@ test.describe("Decision 15 registered player covers", () => {
       await expect(
         row.locator('[data-credit-field="alteration"]'),
       ).toContainText(selection.rightsAttribution.alterationState.disclosure);
+      const localRenditionChange = row.locator(
+        '[data-credit-field="local-rendition-change"]',
+      );
+      if (isDecision16RenditionSelectionV8(selection)) {
+        const upstreamAlteration = row.locator(
+          '[data-credit-field="alteration"]',
+        );
+        await expect(upstreamAlteration).toHaveAttribute(
+          "data-alteration-scope",
+          "upstream-source-original",
+        );
+        await expect(upstreamAlteration).toContainText("上游原作變更說明");
+        await expect(localRenditionChange).toHaveCount(1);
+        await expect(localRenditionChange).toHaveAttribute(
+          "data-alteration-scope",
+          "local-rendition",
+        );
+        await expect(localRenditionChange).toContainText(
+          selection.decision16Rendition.localRendition.changeDisclosure,
+        );
+      } else {
+        await expect(localRenditionChange).toHaveCount(0);
+        await expect(
+          row.locator('[data-credit-field="alteration"]'),
+        ).not.toHaveAttribute("data-alteration-scope", /.+/u);
+      }
 
       for (const [field, notice] of [
         ["copyright-notice", selection.rightsAttribution.copyrightNotice],
@@ -454,7 +496,15 @@ test.describe("Decision 15 registered player covers", () => {
 
       const risk = row.locator('[data-credit-field="occasion-risk"]');
       await expect(risk).toContainText(selection.nonEventCaption);
-      if (isDecision15PhotoSelectionV7(selection)) {
+      if (isDecision16RenditionSelectionV8(selection)) {
+        for (const relationship of selection.decision15Evidence
+          .injuryEventRelationships) {
+          await expect(risk).toContainText(relationship.evidence);
+        }
+        await expect(risk).toContainText(
+          selection.decision16Rendition.nonClearanceStatement,
+        );
+      } else if (isDecision15PhotoSelectionV7(selection)) {
         for (const relationship of selection.decision15Evidence
           .injuryEventRelationships) {
           await expect(risk).toContainText(relationship.evidence);

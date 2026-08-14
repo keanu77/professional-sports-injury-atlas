@@ -1,10 +1,11 @@
-import { mkdtempSync, rmSync } from "node:fs";
+import { mkdtempSync, readFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 
 import {
+  decodeDecision16ImageWithSharpSync,
   loadPlayerPhotoAssets,
   readPlayerPhotoValidationInput,
   validatePlayerPhotoAssets,
@@ -16,9 +17,18 @@ import {
   type PlayerPhotoRegistryV3,
 } from "../../src/lib/contracts/player-photo";
 import {
-  isDecision15PhotoSelectionV7,
   type PlayerPhotoDecision15SelectionV7,
+  type PlayerPhotoRegistryV7,
 } from "../../src/lib/contracts/player-photo-registry-v7";
+import {
+  isDecision16RenditionSelectionV8,
+  type PlayerPhotoDecision16SelectionV8,
+} from "../../src/lib/contracts/player-photo-registry-v8";
+import {
+  DECISION_16_CHANGE_DISCLOSURE,
+  DECISION_16_RENDITION_REQUIREMENTS,
+  DECISION_16_SOURCE_ORIGINAL,
+} from "../../src/lib/contracts/decision-16-rendition-contract";
 
 const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -92,21 +102,26 @@ describe("governed Commons player-photo assets", () => {
     }
   });
 
-  it("accepts registry v7 with 21 current photos, no SVGs, and exact rollback inventory", () => {
+  it("accepts registry v8 with one governed Trae rendition and historical assets kept out of the current set", () => {
     const result = loadPlayerPhotoAssets(REPO_ROOT);
     expect(result.issues).toEqual([]);
     // The unversioned registry remains an immutable historical Decision 11
-    // input; v7 is the sole current rendering registry.
+    // input; v8 is the sole current rendering registry.
     expect(result.registry?.assets).toHaveLength(21);
     expect(
       result.registry?.assets.flatMap((asset) => asset.caseIds),
     ).toHaveLength(26);
-    expect(result.allowedPaths).toHaveLength(58);
+    expect(result.allowedPaths).toHaveLength(59);
     expect(
       result.allowedPaths.filter((path) =>
         path.startsWith("src/assets/players/decision-15/"),
       ),
     ).toHaveLength(14);
+    expect(
+      result.allowedPaths.filter((path) =>
+        path.startsWith("src/assets/players/decision-16/"),
+      ),
+    ).toEqual([DECISION_16_RENDITION_REQUIREMENTS.exactPath]);
     expect(result.currentRegistry?.selections).toHaveLength(21);
     expect(
       result.currentRegistry?.selections.filter(
@@ -136,8 +151,9 @@ describe("governed Commons player-photo assets", () => {
       ),
     ).toHaveLength(1);
     const promoted =
-      result.currentRegistry?.selections.filter(isDecision15PhotoSelectionV7) ??
-      [];
+      result.currentRegistry?.selections.filter(
+        (selection) => "decision15Evidence" in selection,
+      ) ?? [];
     expect(promoted).toHaveLength(14);
     expect(
       promoted.filter(
@@ -160,6 +176,97 @@ describe("governed Commons player-photo assets", () => {
       "PD-USGov-Military-Navy",
     );
     expect(murray.decision15Evidence.rightsMarker.licenseVersion).toBeNull();
+    const decision16Selections =
+      result.currentRegistry?.selections.filter(
+        isDecision16RenditionSelectionV8,
+      ) ?? [];
+    expect(decision16Selections).toHaveLength(1);
+    const trae = decision16Selections[0] as PlayerPhotoDecision16SelectionV8;
+    expect(trae.athleteName).toBe("Trae Young");
+    expect(trae.localFile).toEqual(
+      trae.decision16Rendition.localRendition.repositoryFile,
+    );
+    expect(trae.localFile).toMatchObject({
+      height: DECISION_16_RENDITION_REQUIREMENTS.exactHeight,
+      mimeType: DECISION_16_RENDITION_REQUIREMENTS.exactMimeType,
+      path: DECISION_16_RENDITION_REQUIREMENTS.exactPath,
+      width: DECISION_16_RENDITION_REQUIREMENTS.exactWidth,
+    });
+    expect(trae.localFile.byteLength).toBeLessThanOrEqual(
+      DECISION_16_RENDITION_REQUIREMENTS.maximumByteLength,
+    );
+    expect(trae.decision16Rendition.sourceOriginal).toEqual(
+      DECISION_16_SOURCE_ORIGINAL,
+    );
+    expect(trae.decision16Rendition.localRendition.derivedFrom).toEqual({
+      relationship: "exact-source-bytes",
+      sourcePath: DECISION_16_SOURCE_ORIGINAL.repositoryFile.path,
+      sourceSha256: DECISION_16_SOURCE_ORIGINAL.repositoryFile.sha256,
+    });
+    expect(trae.decision15Evidence.originalBinary.localFile).toEqual(
+      DECISION_16_SOURCE_ORIGINAL.repositoryFile,
+    );
+    expect(trae.decision16Rendition.localRendition.changeDisclosure).toBe(
+      DECISION_16_CHANGE_DISCLOSURE,
+    );
+    expect(trae.decision16Rendition.attribution.adapterLicense).toBeNull();
+    expect(trae.cropValidation).toMatchObject({
+      adapterLicense: null,
+      localFileIsGovernedRendition: true,
+      localFileIsUnmodifiedOriginal: false,
+      sourceOriginalRetained: true,
+    });
+    expect(trae.localFile.path).not.toBe(
+      trae.decision16Rendition.sourceOriginal.repositoryFile.path,
+    );
+    expect(trae.localFile.sha256).not.toBe(
+      trae.decision16Rendition.sourceOriginal.repositoryFile.sha256,
+    );
+
+    const currentPaths = new Set(
+      result.currentRegistry?.selections.map(
+        (selection) => selection.localFile.path,
+      ),
+    );
+    expect(currentPaths.has(DECISION_16_RENDITION_REQUIREMENTS.exactPath)).toBe(
+      true,
+    );
+    expect(
+      currentPaths.has(DECISION_16_SOURCE_ORIGINAL.repositoryFile.path),
+    ).toBe(false);
+    expect(currentPaths.has("src/assets/players/trae-young.jpg")).toBe(false);
+    expect(
+      currentPaths.has("src/assets/players/decision-13/trae-young.svg"),
+    ).toBe(false);
+    expect(result.allowedPaths).toEqual(
+      expect.arrayContaining([
+        DECISION_16_SOURCE_ORIGINAL.repositoryFile.path,
+        "src/assets/players/trae-young.jpg",
+        "src/assets/players/decision-13/trae-young.svg",
+      ]),
+    );
+
+    const predecessor = JSON.parse(
+      readFileSync(
+        join(REPO_ROOT, "src/assets/players/player-photo-registry.v7.json"),
+        "utf8",
+      ),
+    ) as PlayerPhotoRegistryV7;
+    const predecessorByAthlete = new Map(
+      predecessor.selections.map((selection) => [
+        selection.athleteName,
+        selection,
+      ]),
+    );
+    expect(
+      result.currentRegistry?.selections
+        .filter((selection) => selection.athleteName !== "Trae Young")
+        .every(
+          (selection) =>
+            canonicalJson(selection) ===
+            canonicalJson(predecessorByAthlete.get(selection.athleteName)),
+        ),
+    ).toBe(true);
     expect(
       result.registry?.assets.every(
         (asset) =>
@@ -196,6 +303,39 @@ describe("governed Commons player-photo assets", () => {
             asset.rightsAttribution.sourceRevision.permalink,
       ),
     ).toBe(true);
+  });
+
+  it("binds the synchronous Sharp decode proof and rejects a scan-less JPEG", () => {
+    const renditionBytes = readFileSync(
+      join(REPO_ROOT, DECISION_16_RENDITION_REQUIREMENTS.exactPath),
+    );
+    expect(decodeDecision16ImageWithSharpSync(renditionBytes)).toMatchObject({
+      decoded: {
+        channels: 3,
+        height: DECISION_16_RENDITION_REQUIREMENTS.exactHeight,
+        pixelByteLength:
+          DECISION_16_RENDITION_REQUIREMENTS.exactWidth *
+          DECISION_16_RENDITION_REQUIREMENTS.exactHeight *
+          3,
+        width: DECISION_16_RENDITION_REQUIREMENTS.exactWidth,
+      },
+      input: {
+        byteLength: renditionBytes.byteLength,
+      },
+    });
+
+    const frozenStartOfScanOffset = 42_841;
+    expect(
+      renditionBytes.subarray(
+        frozenStartOfScanOffset,
+        frozenStartOfScanOffset + 2,
+      ),
+    ).toEqual(Buffer.from([0xff, 0xda]));
+    const scanless = Buffer.concat([
+      renditionBytes.subarray(0, frozenStartOfScanOffset),
+      Buffer.from([0xff, 0xd9]),
+    ]);
+    expect(decodeDecision16ImageWithSharpSync(scanless)).toBeNull();
   });
 
   it("rejects unversioned fallback drift from the immutable v2 projection", () => {

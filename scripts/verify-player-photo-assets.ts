@@ -3,10 +3,11 @@
  * inventory. It validates canonical provenance, the exact 26-case athlete
  * partition, free-license pairs, Commons-only URLs, original JPEG bytes,
  * human crop declarations, Decision 11 attribution/source-risk facts,
- * append-only v1→v7 registry lineage, immutable source-policy bindings, the
- * current Decision 15 inventory, and retained v6/v5 rollback assets.
+ * append-only v1→v8 registry lineage, immutable source-policy bindings, the
+ * current Decision 16 rendition inventory, and retained historical assets.
  */
 
+import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { basename, join, relative, resolve, sep } from "node:path";
@@ -63,8 +64,21 @@ import {
   PLAYER_PHOTO_REGISTRY_V7_PHASE_EVIDENCE,
   PLAYER_PHOTO_REGISTRY_V7_SHA256,
   validatePlayerPhotoRegistryV7,
-  type PlayerPhotoRegistryV7,
 } from "../src/lib/contracts/player-photo-registry-v7";
+import {
+  PLAYER_PHOTO_POLICY_V9_BINDING,
+  PLAYER_PHOTO_REGISTRY_V8_PATH,
+  PLAYER_PHOTO_REGISTRY_V8_SHA256,
+  validatePlayerPhotoRegistryV8,
+  type PlayerPhotoRegistryV8,
+} from "../src/lib/contracts/player-photo-registry-v8";
+import {
+  DECISION_16_RENDITION_REQUIREMENTS,
+  DECISION_16_SHARP_DECODE_CONTRACT,
+  DECISION_16_SOURCE_ORIGINAL,
+  isDecision16ImageDecodeFacts,
+  type Decision16ImageDecodeFacts,
+} from "../src/lib/contracts/decision-16-rendition-contract";
 
 const EXPECTED_ATHLETE_COUNT = 21;
 const EXPECTED_CASE_COUNT = 26;
@@ -88,6 +102,44 @@ const ALLOWED_RESTRICTIONS = new Set(["personality"]);
 const EXPECTED_LOW_RISK_ATHLETES = new Set(["Dwight Powell", "Trae Young"]);
 const CLEARANCE_CLAIM_RE =
   /\b(?:cleared|clearance granted|approved for publication|safe to publish|licensed for publication|publication permission confirmed|permission (?:is )?(?:confirmed|granted)|authorized for (?:publication|public use))\b|(?:已放行|授權完成|核准發布|可安全發布|已獲授權|允許公開使用)/iu;
+const DECISION_16_DECODER_CWD = resolve(
+  fileURLToPath(new URL("..", import.meta.url)),
+);
+const DECISION_16_SHARP_DECODE_EVAL = String.raw`
+import { createHash } from "node:crypto";
+import sharp from "sharp";
+try {
+  if (sharp.versions.sharp !== "0.35.3") process.exit(2);
+  const chunks = [];
+  for await (const chunk of process.stdin) chunks.push(chunk);
+  const inputBytes = Buffer.concat(chunks);
+  const { data, info } = await sharp(inputBytes, { failOn: "warning" })
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+  if (info.format !== "raw" || info.size !== data.byteLength) process.exit(3);
+  process.stdout.write(JSON.stringify({
+    decoded: {
+      channels: info.channels,
+      height: info.height,
+      pixelByteLength: data.byteLength,
+      pixelSha256: createHash("sha256").update(data).digest("hex"),
+      width: info.width,
+    },
+    decoder: {
+      failOn: "warning",
+      name: "sharp",
+      output: "raw-pixels",
+      version: sharp.versions.sharp,
+    },
+    input: {
+      byteLength: inputBytes.byteLength,
+      sha256: createHash("sha256").update(inputBytes).digest("hex"),
+    },
+  }));
+} catch {
+  process.exit(4);
+}
+`;
 
 interface CaseIdentity {
   athleteName: string;
@@ -109,7 +161,7 @@ export interface PlayerPhotoAssetLoadResult {
   allowedPaths: string[];
   issues: ValidationIssue[];
   registry: PlayerPhotoRegistryV3 | null;
-  currentRegistry?: PlayerPhotoRegistryV7 | null;
+  currentRegistry?: PlayerPhotoRegistryV8 | null;
 }
 
 function asRecord(value: unknown): Record<string, unknown> | null {
@@ -185,6 +237,62 @@ function readJpegDimensions(bytes: Buffer): {
     offset += segmentLength;
   }
   return null;
+}
+
+/**
+ * Keeps the historical synchronous verifier API while obtaining a real,
+ * warning-strict Sharp pixel decode in an isolated process. Exact input bytes
+ * are sent over stdin; decoder failures and stderr never escape as asset data.
+ */
+export function decodeDecision16ImageWithSharpSync(
+  bytes: Uint8Array,
+): Decision16ImageDecodeFacts | null {
+  let stdout: string;
+  try {
+    stdout = execFileSync(
+      process.execPath,
+      ["--input-type=module", "--eval", DECISION_16_SHARP_DECODE_EVAL],
+      {
+        cwd: DECISION_16_DECODER_CWD,
+        encoding: "utf8",
+        input: Buffer.from(bytes),
+        killSignal: "SIGKILL",
+        maxBuffer: 64 * 1024,
+        shell: false,
+        timeout: 30_000,
+        windowsHide: true,
+      },
+    );
+  } catch {
+    return null;
+  }
+
+  let parsed: unknown;
+  try {
+    parsed = parseStrictJson(stdout);
+  } catch {
+    return null;
+  }
+  if (!isDecision16ImageDecodeFacts(parsed)) return null;
+  const facts = parsed;
+  if (
+    canonicalJson(facts.decoder) !==
+      canonicalJson(DECISION_16_SHARP_DECODE_CONTRACT) ||
+    facts.input.byteLength !== bytes.byteLength ||
+    facts.input.sha256 !== sha256Hex(bytes) ||
+    !Number.isSafeInteger(facts.decoded.width) ||
+    facts.decoded.width <= 0 ||
+    !Number.isSafeInteger(facts.decoded.height) ||
+    facts.decoded.height <= 0 ||
+    !Number.isSafeInteger(facts.decoded.channels) ||
+    facts.decoded.channels <= 0 ||
+    facts.decoded.pixelByteLength !==
+      facts.decoded.width * facts.decoded.height * facts.decoded.channels ||
+    !SHA256_RE.test(facts.decoded.pixelSha256)
+  ) {
+    return null;
+  }
+  return facts;
 }
 
 function walkFiles(directory: string): string[] {
@@ -1501,7 +1609,8 @@ export function loadPlayerPhotoAssets(
     (path) =>
       !path.startsWith("src/assets/players/decision-13/") &&
       !path.startsWith("src/assets/players/decision-14/") &&
-      !path.startsWith("src/assets/players/decision-15/"),
+      !path.startsWith("src/assets/players/decision-15/") &&
+      !path.startsWith("src/assets/players/decision-16/"),
   );
   const historical = validatePlayerPhotoAssets(historicalInput);
   const registryV4Path = join(root, PLAYER_PHOTO_REGISTRY_V4_PATH);
@@ -1537,7 +1646,12 @@ export function loadPlayerPhotoAssets(
   for (const ids of expectedAthleteCases.values()) ids.sort(compareCodePoints);
 
   const localAssetBytesByPath = new Map<string, Uint8Array>();
-  for (const directory of ["decision-13", "decision-14", "decision-15"]) {
+  for (const directory of [
+    "decision-13",
+    "decision-14",
+    "decision-15",
+    "decision-16",
+  ]) {
     for (const path of walkFiles(join(root, "src/assets/players", directory))) {
       localAssetBytesByPath.set(relative(root, path), readFileSync(path));
     }
@@ -1678,7 +1792,66 @@ export function loadPlayerPhotoAssets(
     predecessorRegistryBytes: readFileSync(registryV6Path, "utf8"),
     registryBytes: readFileSync(registryV7Path, "utf8"),
   });
+  const registryV8Path = join(root, PLAYER_PHOTO_REGISTRY_V8_PATH);
+  if (!existsSync(registryV8Path)) {
+    return {
+      ...historical,
+      issues: [
+        ...historical.issues,
+        ...currentV4.issues,
+        ...currentV5.issues,
+        ...currentV6.issues,
+        ...currentV7.issues,
+        issue(
+          "player-photo-v8-missing-registry",
+          PLAYER_PHOTO_REGISTRY_V8_PATH,
+          "current Decision 16 registry v8 is missing",
+        ),
+      ],
+      currentRegistry: null,
+    };
+  }
+  const sourceOriginalBytes =
+    localAssetBytesByPath.get(
+      DECISION_16_SOURCE_ORIGINAL.repositoryFile.path,
+    ) ?? new Uint8Array();
+  const renditionBytes = localAssetBytesByPath.get(
+    DECISION_16_RENDITION_REQUIREMENTS.exactPath,
+  );
+  const currentV8 = validatePlayerPhotoRegistryV8({
+    expectedAthleteCases,
+    expectedRegistrySha256: PLAYER_PHOTO_REGISTRY_V8_SHA256,
+    localAssetBytesByPath,
+    phase1EvidenceBytes: readFileSync(
+      join(root, PLAYER_PHOTO_REGISTRY_V7_PHASE_EVIDENCE.phase1.path),
+      "utf8",
+    ),
+    phase2EvidenceBytes: readFileSync(
+      join(root, PLAYER_PHOTO_REGISTRY_V7_PHASE_EVIDENCE.phase2.path),
+      "utf8",
+    ),
+    policyJsonBytes: readFileSync(
+      join(root, PLAYER_PHOTO_POLICY_V9_BINDING.jsonPath),
+      "utf8",
+    ),
+    policyMarkdownBytes: readFileSync(
+      join(root, PLAYER_PHOTO_POLICY_V9_BINDING.markdownPath),
+      "utf8",
+    ),
+    predecessorRegistryBytes: readFileSync(registryV7Path, "utf8"),
+    renditionDecodeFacts:
+      renditionBytes === undefined
+        ? null
+        : decodeDecision16ImageWithSharpSync(renditionBytes),
+    registryBytes: readFileSync(registryV8Path, "utf8"),
+    sourceDecodeFacts: decodeDecision16ImageWithSharpSync(sourceOriginalBytes),
+    sourceOriginalBytes,
+  });
   const currentPaths =
+    currentV8.registry?.selections.map(
+      (selection) => selection.localFile.path,
+    ) ?? [];
+  const historicalV7Paths =
     currentV7.registry?.selections.map(
       (selection) => selection.localFile.path,
     ) ?? [];
@@ -1692,6 +1865,7 @@ export function loadPlayerPhotoAssets(
     ) ?? [];
   const governedPaths = new Set([
     ...currentPaths,
+    ...historicalV7Paths,
     ...rollbackV6Paths,
     ...rollbackV5Paths,
   ]);
@@ -1701,18 +1875,18 @@ export function loadPlayerPhotoAssets(
       .filter((path) => !governedPaths.has(path))
       .map((path) =>
         issue(
-          "player-photo-v7-extra-image",
+          "player-photo-v8-extra-image",
           path,
-          "Decision 13/14/15 asset is neither a current v7 selection nor an exact v6/v5 rollback asset",
+          "Decision 13/14/15/16 asset is neither a current v8 selection nor an exact historical v7/v6/v5 asset",
         ),
       ),
     ...[...governedPaths]
       .filter((path) => !trackedCurrentPaths.has(path))
       .map((path) =>
         issue(
-          "player-photo-v7-missing-image",
+          "player-photo-v8-missing-image",
           path,
-          "current v7 selection or immutable v6/v5 rollback asset is missing",
+          "current v8 selection or immutable historical v7/v6/v5 asset is missing",
         ),
       ),
   ];
@@ -1726,10 +1900,11 @@ export function loadPlayerPhotoAssets(
       ...currentV5.issues,
       ...currentV6.issues,
       ...currentV7.issues,
+      ...currentV8.issues,
       ...inventoryIssues,
     ],
     registry: historical.registry,
-    currentRegistry: currentV7.registry,
+    currentRegistry: currentV8.registry,
   };
 }
 
@@ -1743,7 +1918,7 @@ function main(): void {
     process.exit(1);
   }
   console.log(
-    "player-photo assets OK — current registry v7 selects 21 governed photos and 0 SVG fallbacks covering 26 cases; exact v6/v5 rollback assets and frozen v1-v6 registries remain historical-only",
+    "player-photo assets OK — current registry v8 selects 21 governed photos and 0 SVG fallbacks covering 26 cases; exact v7/v6/v5 assets and frozen v1-v7 registries remain historical-only",
   );
 }
 

@@ -55,9 +55,33 @@ const PLAYER_SOCIAL_META_RE =
   /(?:og:image|twitter:image)[\s\S]{0,400}(?:player-photo|assets\/players)|(?:player-photo|assets\/players)[\s\S]{0,400}(?:og:image|twitter:image)/i;
 const CURRENT_RENDER_SOURCE_RE = /^src\/(?:components|layouts|lib\/ui|pages)\//;
 const HISTORICAL_PLAYER_REGISTRY_REFERENCE_RE =
-  /player-photo-registry\.v[1-6]\.json/;
+  /player-photo-registry\.v[1-7]\.json/;
 const HISTORICAL_PLAYER_ASSET_REFERENCE_RE =
-  /assets\/players\/(?!decision-(?:13|14|15)\/|player-photo-registry\.v7\.json)/;
+  /assets\/players\/(?!decision-(?:13|14|15|16)\/|player-photo-registry\.v8\.json)/;
+const PLAYER_ASSET_STRING_LITERAL_RE =
+  /(["'`])([^"'`\r\n]*assets\/players\/[^"'`\r\n]*)\1/gu;
+const CURRENT_DECISION_15_PLAYER_ASSET_REFERENCES = new Set([
+  "assets/players/decision-15/anfernee-simons.jpg",
+  "assets/players/decision-15/anthony-edwards.jpg",
+  "assets/players/decision-15/brandon-clarke.jpg",
+  "assets/players/decision-15/danny-green.jpg",
+  "assets/players/decision-15/dejounte-murray.jpg",
+  "assets/players/decision-15/ja-morant.jpg",
+  "assets/players/decision-15/joe-ingles.jpg",
+  "assets/players/decision-15/lamelo-ball.jpg",
+  "assets/players/decision-15/markelle-fultz.jpg",
+  "assets/players/decision-15/moritz-wagner.jpg",
+  "assets/players/decision-15/ricky-rubio.jpg",
+  "assets/players/decision-15/thomas-bryant.jpg",
+  "assets/players/decision-15/tyrese-haliburton.jpg",
+]);
+const CURRENT_DECISION_16_TRAE_ASSET_REFERENCE =
+  "assets/players/decision-16/trae-young.jpg";
+const SUPERSEDED_TRAE_ASSET_REFERENCE_FRAGMENTS = [
+  "assets/players/trae-young.jpg",
+  "assets/players/decision-13/trae-young.svg",
+  "assets/players/decision-15/trae-young.jpg",
+] as const;
 const DIRECT_COMPOSITION_PACKAGES = new Set([
   "@resvg/resvg-js",
   "@vercel/og",
@@ -86,6 +110,7 @@ const APPROVED_PLAYER_PHOTO_PRODUCTION_CONSUMERS = new Set([
   "src/lib/contracts/player-photo-registry-v5.ts",
   "src/lib/contracts/player-photo-registry-v6.ts",
   "src/lib/contracts/player-photo-registry-v7.ts",
+  "src/lib/contracts/player-photo-registry-v8.ts",
   "src/lib/contracts/player-photo.ts",
   "src/lib/governance/site-digest.ts",
   "src/lib/rights/photo-credits.ts",
@@ -94,6 +119,34 @@ const APPROVED_PLAYER_PHOTO_PRODUCTION_CONSUMERS = new Set([
   "src/pages/index.astro",
   "src/pages/injuries/[injury].astro",
 ]);
+
+function referencesHistoricalCurrentCover(text: string): boolean {
+  if (
+    HISTORICAL_PLAYER_REGISTRY_REFERENCE_RE.test(text) ||
+    HISTORICAL_PLAYER_ASSET_REFERENCE_RE.test(text) ||
+    SUPERSEDED_TRAE_ASSET_REFERENCE_FRAGMENTS.some((reference) =>
+      text.includes(reference),
+    )
+  ) {
+    return true;
+  }
+
+  for (const match of text.matchAll(PLAYER_ASSET_STRING_LITERAL_RE)) {
+    const literal = match[2]!;
+    const assetStart = literal.indexOf("assets/players/");
+    const reference = literal.slice(assetStart);
+    if (
+      (reference.startsWith("assets/players/decision-15/") &&
+        !CURRENT_DECISION_15_PLAYER_ASSET_REFERENCES.has(reference)) ||
+      (reference.startsWith("assets/players/decision-16/") &&
+        reference !== CURRENT_DECISION_16_TRAE_ASSET_REFERENCE)
+    ) {
+      return true;
+    }
+  }
+
+  return false;
+}
 
 function walkFiles(directory: string): string[] {
   if (!existsSync(directory)) return [];
@@ -491,14 +544,13 @@ export function scanShareAlikeCompositeRisks(root: string): ValidationIssue[] {
       const text = readFileSync(filePath, "utf8");
       if (
         CURRENT_RENDER_SOURCE_RE.test(relPath) &&
-        (HISTORICAL_PLAYER_REGISTRY_REFERENCE_RE.test(text) ||
-          HISTORICAL_PLAYER_ASSET_REFERENCE_RE.test(text))
+        referencesHistoricalCurrentCover(text)
       ) {
         issues.push(
           issue(
             "brand-current-cover-historical-reference",
             relPath,
-            "current render code must consume only registry v7 and Decision 13/14/15 named-cover assets",
+            "current render code must consume only registry v8 and its exact current named-cover assets; v1-v7 registries and superseded Trae assets are historical-only",
           ),
         );
       }

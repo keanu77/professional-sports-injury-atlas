@@ -56,6 +56,21 @@ export const DECISION_16_QUALITY_LADDER = [95, 92, 90, 88, 85, 82, 80] as const;
 export const DECISION_16_CHANGE_DISCLOSURE =
   "The 6351×5504 Commons original was downscaled without cropping and JPEG-re-encoded to 2400×2080 for this local rendition." as const;
 
+export const DECISION_16_RENDITION_CREATED_AT = "2026-08-14" as const;
+export const DECISION_16_RENDITION_COLOR_TREATMENT =
+  "Embedded ICC profile retained byte-for-byte (SHA-256 2b3aa1645779a9e634744faf9b01e9102b0c9b88fd6deced7934df86b949af7e); source and rendition decode as sRGB." as const;
+export const DECISION_16_RENDITION_METADATA_TREATMENT =
+  "Sharp keepMetadata() retained embedded creator/rights metadata; EXIF 1a1c9581fce6d236b0d359f489fd9ba8649799c4fb6bade36b3d9801b81101e2 -> 7c4a8267208eeec90cca7f163df33bd25501085e01cb595a8b33555fdb566e57, IPTC b89f09d74b9e0d8debd12bcb62be504b717f32239f32cb2c9d37e587fe6760b9 -> b89f09d74b9e0d8debd12bcb62be504b717f32239f32cb2c9d37e587fe6760b9, XMP 390cde215fe9be8639048f70665c13480de5e140cc084650f5fae810f3751ed9 -> 390cde215fe9be8639048f70665c13480de5e140cc084650f5fae810f3751ed9." as const;
+export const DECISION_16_RENDITION_ORIENTATION_TREATMENT =
+  "The source has no EXIF orientation tag; no rotation or auto-orientation was applied, and Sharp keepMetadata() wrote the equivalent top-left orientation value 1 to the rendition." as const;
+
+export const DECISION_16_SHARP_DECODE_CONTRACT = Object.freeze({
+  failOn: "warning",
+  name: "sharp",
+  output: "raw-pixels",
+  version: "0.35.3",
+});
+
 export const DECISION_16_ATTRIBUTION = Object.freeze({
   adapterLicense: null,
   changeDisclosureVisible: true,
@@ -89,6 +104,21 @@ export interface Decision16QualityCandidate {
   byteLength: number;
   quality: number;
   sha256: string;
+}
+
+export interface Decision16ImageDecodeFacts {
+  decoded: {
+    channels: number;
+    height: number;
+    pixelByteLength: number;
+    pixelSha256: string;
+    width: number;
+  };
+  decoder: typeof DECISION_16_SHARP_DECODE_CONTRACT;
+  input: {
+    byteLength: number;
+    sha256: string;
+  };
 }
 
 export interface Decision16RenditionRecord {
@@ -163,7 +193,9 @@ export interface Decision16RenditionRecord {
 
 export interface Decision16RenditionValidationInput {
   record: Decision16RenditionRecord;
+  renditionDecodeFacts: Decision16ImageDecodeFacts | null;
   renditionBytes: Uint8Array;
+  sourceDecodeFacts: Decision16ImageDecodeFacts | null;
   sourceBytes: Uint8Array;
 }
 
@@ -174,7 +206,6 @@ export interface Decision16RenditionValidationResult {
 }
 
 const SHA256_RE = /^[a-f0-9]{64}$/u;
-const ISO_DATE_RE = /^\d{4}-\d{2}-\d{2}$/u;
 
 function contractIssue(
   code: string,
@@ -185,18 +216,62 @@ function contractIssue(
 }
 
 function exact(actual: unknown, expected: unknown): boolean {
-  return canonicalJson(actual) === canonicalJson(expected);
+  try {
+    return canonicalJson(actual) === canonicalJson(expected);
+  } catch {
+    return false;
+  }
 }
 
-function nonEmpty(value: unknown): value is string {
-  return typeof value === "string" && value.trim() === value && value !== "";
+function isObject(value: unknown): value is Record<string, unknown> {
+  return value !== null && typeof value === "object" && !Array.isArray(value);
 }
 
-function validDate(value: string): boolean {
-  if (!ISO_DATE_RE.test(value)) return false;
-  const date = new Date(`${value}T00:00:00Z`);
+export function isDecision16ImageDecodeFacts(
+  value: unknown,
+): value is Decision16ImageDecodeFacts {
+  if (!isObject(value) || !isObject(value.decoder) || !isObject(value.input)) {
+    return false;
+  }
+  const decoded = value.decoded;
   return (
-    Number.isFinite(date.valueOf()) && date.toISOString().slice(0, 10) === value
+    isObject(decoded) &&
+    typeof decoded.channels === "number" &&
+    typeof decoded.height === "number" &&
+    typeof decoded.pixelByteLength === "number" &&
+    typeof decoded.pixelSha256 === "string" &&
+    typeof decoded.width === "number" &&
+    typeof value.input.byteLength === "number" &&
+    typeof value.input.sha256 === "string"
+  );
+}
+
+export function hasDecision16RenditionRecordShape(
+  value: unknown,
+): value is Decision16RenditionRecord {
+  if (!isObject(value)) return false;
+  const localRendition = value.localRendition;
+  const sourceOriginal = value.sourceOriginal;
+  const attribution = value.attribution;
+  if (
+    !isObject(localRendition) ||
+    !isObject(sourceOriginal) ||
+    !isObject(sourceOriginal.repositoryFile) ||
+    !isObject(attribution)
+  ) {
+    return false;
+  }
+  const transformation = localRendition.transformation;
+  return (
+    isObject(localRendition.derivedFrom) &&
+    isObject(localRendition.repositoryFile) &&
+    isObject(transformation) &&
+    isObject(transformation.jpegOptions) &&
+    isObject(transformation.resizeOptions) &&
+    isObject(transformation.tool) &&
+    Array.isArray(transformation.qualityCandidates) &&
+    transformation.qualityCandidates.every(isObject) &&
+    Array.isArray(transformation.qualityLadder)
   );
 }
 
@@ -212,6 +287,38 @@ function isCompleteJpeg(bytes: Uint8Array): boolean {
 
 function sha1Hex(bytes: Uint8Array): string {
   return createHash("sha1").update(bytes).digest("hex");
+}
+
+function validateDecodedImageFacts(
+  facts: Decision16ImageDecodeFacts | null,
+  bytes: Uint8Array,
+  expected: { height: number; width: number },
+  label: "rendition" | "source-original",
+): ValidationIssue[] {
+  const path = `${label}DecodeFacts`;
+  if (
+    !isDecision16ImageDecodeFacts(facts) ||
+    !exact(facts.decoder, DECISION_16_SHARP_DECODE_CONTRACT) ||
+    facts.input.byteLength !== bytes.byteLength ||
+    facts.input.sha256 !== sha256Hex(bytes) ||
+    !Number.isSafeInteger(facts.decoded.width) ||
+    !Number.isSafeInteger(facts.decoded.height) ||
+    facts.decoded.width !== expected.width ||
+    facts.decoded.height !== expected.height ||
+    facts.decoded.channels !== 3 ||
+    facts.decoded.pixelByteLength !==
+      expected.width * expected.height * facts.decoded.channels ||
+    !SHA256_RE.test(facts.decoded.pixelSha256)
+  ) {
+    return [
+      contractIssue(
+        `decision16-${label}-decoded-image`,
+        path,
+        `${label} bytes must successfully complete the exact Sharp warning-strict raw-pixel decode bound to their SHA-256, byte length, dimensions, channels, and decoded-pixel digest`,
+      ),
+    ];
+  }
+  return [];
 }
 
 function validateSourceOriginal(
@@ -315,7 +422,7 @@ function validateTransformation(
   const transformation = record.localRendition.transformation;
   if (
     transformation.actor !== "decision-16-rendition-generator" ||
-    !validDate(transformation.createdAt) ||
+    transformation.createdAt !== DECISION_16_RENDITION_CREATED_AT ||
     !exact(transformation.tool, { name: "sharp", version: "0.35.3" }) ||
     !exact(transformation.resizeOptions, {
       fit: "inside",
@@ -332,9 +439,11 @@ function validateTransformation(
     transformation.cropApplied !== false ||
     transformation.enlarged !== false ||
     transformation.fullFrame !== true ||
-    !nonEmpty(transformation.colorTreatment) ||
-    !nonEmpty(transformation.metadataTreatment) ||
-    !nonEmpty(transformation.orientationTreatment)
+    transformation.colorTreatment !== DECISION_16_RENDITION_COLOR_TREATMENT ||
+    transformation.metadataTreatment !==
+      DECISION_16_RENDITION_METADATA_TREATMENT ||
+    transformation.orientationTreatment !==
+      DECISION_16_RENDITION_ORIENTATION_TREATMENT
   ) {
     issues.push(
       contractIssue(
@@ -426,6 +535,18 @@ export function validateDecision16Rendition(
   input: Decision16RenditionValidationInput,
 ): Decision16RenditionValidationResult {
   const { record } = input;
+  if (!hasDecision16RenditionRecordShape(record)) {
+    const schemaIssue = contractIssue(
+      "decision16-schema",
+      "record",
+      "Decision 16 requires a complete nested rendition record before validation",
+    );
+    return {
+      issues: [schemaIssue],
+      outcome: "reject-rendition",
+      reasons: [schemaIssue.code],
+    };
+  }
   const issues: ValidationIssue[] = [];
   if (
     record.scopeId !== DECISION_16_SCOPE_ID ||
@@ -453,7 +574,22 @@ export function validateDecision16Rendition(
   }
   issues.push(
     ...validateSourceOriginal(record, input.sourceBytes),
+    ...validateDecodedImageFacts(
+      input.sourceDecodeFacts,
+      input.sourceBytes,
+      DECISION_16_SOURCE_ORIGINAL.repositoryFile,
+      "source-original",
+    ),
     ...validateRenditionFacts(record, input.renditionBytes),
+    ...validateDecodedImageFacts(
+      input.renditionDecodeFacts,
+      input.renditionBytes,
+      {
+        height: DECISION_16_RENDITION_REQUIREMENTS.exactHeight,
+        width: DECISION_16_RENDITION_REQUIREMENTS.exactWidth,
+      },
+      "rendition",
+    ),
     ...validateTransformation(record),
     ...validateAttribution(record),
   );

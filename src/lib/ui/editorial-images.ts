@@ -1,11 +1,12 @@
 import type { ImageMetadata } from "astro";
 
-import playerPhotoRegistryJson from "../../assets/players/player-photo-registry.v7.json";
+import playerPhotoRegistryJson from "../../assets/players/player-photo-registry.v8.json";
 import {
-  isDecision15PhotoSelectionV7,
-  type PlayerPhotoRegistryV7,
-  type PlayerPhotoSelectionV7,
-} from "../contracts/player-photo-registry-v7";
+  isDecision16RenditionSelectionV8,
+  type PlayerPhotoRegistryV8,
+  type PlayerPhotoSelectionV8,
+} from "../contracts/player-photo-registry-v8";
+import { isDecision15PhotoSelectionV7 } from "../contracts/player-photo-registry-v7";
 
 import achillesCase01 from "../../assets/heroes/achilles-rupture-case-01.png";
 import achillesCase02 from "../../assets/heroes/achilles-rupture-case-02.png";
@@ -23,6 +24,27 @@ import ankleCase03 from "../../assets/heroes/ankle-sprain-case-03.png";
 import ankleCase04 from "../../assets/heroes/ankle-sprain-case-04.png";
 import ankleOverview from "../../assets/heroes/ankle-sprain-overview.png";
 import homeAtlas from "../../assets/heroes/home-atlas.png";
+import cjMcCollumCover from "../../assets/players/decision-13/cj-mccollum.jpg";
+import dwightPowellCover from "../../assets/players/decision-13/dwight-powell.jpg";
+import kevinDurantCover from "../../assets/players/decision-13/kevin-durant.jpg";
+import kyrieIrvingCover from "../../assets/players/decision-13/kyrie-irving.jpg";
+import leBronJamesCover from "../../assets/players/decision-13/lebron-james.jpg";
+import damianLillardCover from "../../assets/players/decision-14/damian-lillard.jpg";
+import jaysonTatumCover from "../../assets/players/decision-14/jayson-tatum.jpg";
+import anferneeSimonsCover from "../../assets/players/decision-15/anfernee-simons.jpg";
+import anthonyEdwardsCover from "../../assets/players/decision-15/anthony-edwards.jpg";
+import brandonClarkeCover from "../../assets/players/decision-15/brandon-clarke.jpg";
+import dannyGreenCover from "../../assets/players/decision-15/danny-green.jpg";
+import dejounteMurrayCover from "../../assets/players/decision-15/dejounte-murray.jpg";
+import jaMorantCover from "../../assets/players/decision-15/ja-morant.jpg";
+import joeInglesCover from "../../assets/players/decision-15/joe-ingles.jpg";
+import lameloBallCover from "../../assets/players/decision-15/lamelo-ball.jpg";
+import markelleFultzCover from "../../assets/players/decision-15/markelle-fultz.jpg";
+import moritzWagnerCover from "../../assets/players/decision-15/moritz-wagner.jpg";
+import rickyRubioCover from "../../assets/players/decision-15/ricky-rubio.jpg";
+import thomasBryantCover from "../../assets/players/decision-15/thomas-bryant.jpg";
+import tyreseHaliburtonCover from "../../assets/players/decision-15/tyrese-haliburton.jpg";
+import traeYoungCover from "../../assets/players/decision-16/trae-young.jpg";
 
 export const EDITORIAL_INJURY_CODES = [
   "acl",
@@ -58,27 +80,44 @@ const overviewImages: Record<EditorialInjuryCode, ImageMetadata> = {
 
 type NamedCoverImage = ImageMetadata;
 
-const playerPhotoModules = import.meta.glob<{ default: NamedCoverImage }>(
-  [
-    "../../assets/players/decision-13/*.{jpg,jpeg,png}",
-    "../../assets/players/decision-14/*.{jpg,jpeg,png}",
-    "../../assets/players/decision-15/*.{jpg,jpeg,png}",
-  ],
-  { eager: true },
-);
+/** Exact current-cover projection: historical Trae originals are evidence, not build inputs. */
+export const currentPlayerPhotoAssetProjection: Readonly<
+  Record<string, NamedCoverImage>
+> = Object.freeze({
+  "src/assets/players/decision-13/cj-mccollum.jpg": cjMcCollumCover,
+  "src/assets/players/decision-13/dwight-powell.jpg": dwightPowellCover,
+  "src/assets/players/decision-13/kevin-durant.jpg": kevinDurantCover,
+  "src/assets/players/decision-13/kyrie-irving.jpg": kyrieIrvingCover,
+  "src/assets/players/decision-13/lebron-james.jpg": leBronJamesCover,
+  "src/assets/players/decision-14/damian-lillard.jpg": damianLillardCover,
+  "src/assets/players/decision-14/jayson-tatum.jpg": jaysonTatumCover,
+  "src/assets/players/decision-15/anfernee-simons.jpg": anferneeSimonsCover,
+  "src/assets/players/decision-15/anthony-edwards.jpg": anthonyEdwardsCover,
+  "src/assets/players/decision-15/brandon-clarke.jpg": brandonClarkeCover,
+  "src/assets/players/decision-15/danny-green.jpg": dannyGreenCover,
+  "src/assets/players/decision-15/dejounte-murray.jpg": dejounteMurrayCover,
+  "src/assets/players/decision-15/ja-morant.jpg": jaMorantCover,
+  "src/assets/players/decision-15/joe-ingles.jpg": joeInglesCover,
+  "src/assets/players/decision-15/lamelo-ball.jpg": lameloBallCover,
+  "src/assets/players/decision-15/markelle-fultz.jpg": markelleFultzCover,
+  "src/assets/players/decision-15/moritz-wagner.jpg": moritzWagnerCover,
+  "src/assets/players/decision-15/ricky-rubio.jpg": rickyRubioCover,
+  "src/assets/players/decision-15/thomas-bryant.jpg": thomasBryantCover,
+  "src/assets/players/decision-15/tyrese-haliburton.jpg": tyreseHaliburtonCover,
+  "src/assets/players/decision-16/trae-young.jpg": traeYoungCover,
+});
 
 export const playerPhotoRegistry =
-  playerPhotoRegistryJson as PlayerPhotoRegistryV7;
+  playerPhotoRegistryJson as PlayerPhotoRegistryV8;
 
 interface RegisteredPlayerCover {
-  asset: PlayerPhotoSelectionV7;
+  asset: PlayerPhotoSelectionV8;
   image: NamedCoverImage;
 }
 
 const registeredCoverByCaseId = new Map<string, RegisteredPlayerCover>();
 for (const asset of playerPhotoRegistry.selections) {
-  const importPath = asset.localFile.path.replace(/^src\//u, "../../");
-  const image = playerPhotoModules[importPath]?.default;
+  const image = currentPlayerPhotoAssetProjection[asset.localFile.path];
   if (image === undefined) {
     throw new Error(
       `Named-cover registry asset is not importable through Astro: ${asset.localFile.path}`,
@@ -136,18 +175,19 @@ export interface LicensedPlayerPhotoSelection {
   image: ImageMetadata;
   variant: null;
   athleteName: string;
-  focalPosition: PlayerPhotoSelectionV7["focalPosition"];
-  nonEventCaption: PlayerPhotoSelectionV7["nonEventCaption"];
+  focalPosition: PlayerPhotoSelectionV8["focalPosition"];
+  nonEventCaption: PlayerPhotoSelectionV8["nonEventCaption"];
   attribution: {
-    alterationDisclosure: string;
     commonsDescriptionUrl: string;
-    license: PlayerPhotoSelectionV7["license"];
+    license: PlayerPhotoSelectionV8["license"];
+    localRenditionChangeDisclosure: string | null;
     nonClearanceStatement: string;
-    policyVersion: "nba-v7" | "nba-v8";
+    policyVersion: "nba-v7" | "nba-v8" | "nba-v9";
     photographer: string;
-    rightsAttribution: PlayerPhotoSelectionV7["rightsAttribution"];
-    sourceRevision: PlayerPhotoSelectionV7["sourceRevision"];
+    rightsAttribution: PlayerPhotoSelectionV8["rightsAttribution"];
+    sourceRevision: PlayerPhotoSelectionV8["sourceRevision"];
     sourceRiskCategory: "non-event-low-risk" | null;
+    upstreamAlterationDisclosure: string;
     usePolicyMode:
       | "legacy-v7-placement"
       | "ordinary-attributed-placement"
@@ -184,11 +224,20 @@ export function caseImageFor(
         `Named-cover athlete mismatch for ${recordId}: expected ${registered.asset.athleteName}, received ${athleteName ?? "missing athlete"}`,
       );
     }
+    let localRenditionChangeDisclosure: string | null = null;
     let nonClearanceStatement: string;
-    let policyVersion: "nba-v7" | "nba-v8";
+    let policyVersion: "nba-v7" | "nba-v8" | "nba-v9";
     let sourceRiskCategory: "non-event-low-risk" | null;
     let usePolicyMode: LicensedPlayerPhotoSelection["attribution"]["usePolicyMode"];
-    if (isDecision15PhotoSelectionV7(registered.asset)) {
+    if (isDecision16RenditionSelectionV8(registered.asset)) {
+      localRenditionChangeDisclosure =
+        registered.asset.decision16Rendition.localRendition.changeDisclosure;
+      nonClearanceStatement =
+        registered.asset.decision16Rendition.nonClearanceStatement;
+      policyVersion = "nba-v9";
+      sourceRiskCategory = null;
+      usePolicyMode = registered.asset.usePolicy.mode;
+    } else if (isDecision15PhotoSelectionV7(registered.asset)) {
       nonClearanceStatement =
         registered.asset.decision15Evidence.nonClearanceStatement;
       policyVersion = "nba-v8";
@@ -209,16 +258,17 @@ export function caseImageFor(
       focalPosition: registered.asset.focalPosition,
       nonEventCaption: registered.asset.nonEventCaption,
       attribution: {
-        alterationDisclosure:
-          registered.asset.rightsAttribution.alterationState.disclosure,
         commonsDescriptionUrl: registered.asset.commonsDescriptionUrl,
         license: registered.asset.license,
+        localRenditionChangeDisclosure,
         nonClearanceStatement,
         policyVersion,
         photographer: registered.asset.photographerIdentity.name,
         rightsAttribution: registered.asset.rightsAttribution,
         sourceRevision: registered.asset.sourceRevision,
         sourceRiskCategory,
+        upstreamAlterationDisclosure:
+          registered.asset.rightsAttribution.alterationState.disclosure,
         usePolicyMode,
       },
     };

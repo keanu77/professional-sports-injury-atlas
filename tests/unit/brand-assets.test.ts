@@ -265,12 +265,28 @@ describe("brand-asset scan", () => {
 });
 
 describe("ShareAlike composite guard", () => {
-  it("accepts ordinary responsive photo selection without a raster compositor", () => {
+  it("accepts every exact current Decision 15 non-Trae asset and the exact Decision 16 Trae rendition", () => {
     const root = makeRoot();
+    const exactCurrentAssets = [
+      "../../assets/players/decision-15/anfernee-simons.jpg",
+      "../../assets/players/decision-15/anthony-edwards.jpg",
+      "../../assets/players/decision-15/brandon-clarke.jpg",
+      "../../assets/players/decision-15/danny-green.jpg",
+      "../../assets/players/decision-15/dejounte-murray.jpg",
+      "../../assets/players/decision-15/ja-morant.jpg",
+      "../../assets/players/decision-15/joe-ingles.jpg",
+      "../../assets/players/decision-15/lamelo-ball.jpg",
+      "../../assets/players/decision-15/markelle-fultz.jpg",
+      "../../assets/players/decision-15/moritz-wagner.jpg",
+      "../../assets/players/decision-15/ricky-rubio.jpg",
+      "../../assets/players/decision-15/thomas-bryant.jpg",
+      "../../assets/players/decision-15/tyrese-haliburton.jpg",
+      "../../assets/players/decision-16/trae-young.jpg",
+    ];
     writeInto(
       root,
       "src/lib/ui/editorial-images.ts",
-      'import registry from "../../assets/players/player-photo-registry.v7.json";\nconst photos = import.meta.glob(["../../assets/players/decision-13/*.jpg", "../../assets/players/decision-14/*.jpg", "../../assets/players/decision-15/*.jpg"]);\nexport const covers = [registry.selections, photos];\n',
+      `import registry from "../../assets/players/player-photo-registry.v8.json";\nconst photos = import.meta.glob([${exactCurrentAssets.map((path) => JSON.stringify(path)).join(", ")}]);\nexport const covers = [registry.selections, photos];\n`,
     );
     writeInto(
       root,
@@ -280,20 +296,25 @@ describe("ShareAlike composite guard", () => {
     expect(scanShareAlikeCompositeRisks(root)).toEqual([]);
   });
 
-  it("accepts the reviewed Decision 15 pure registry contract but still rejects composition added to it", () => {
+  it("accepts the reviewed Decision 16 pure registry contract but still rejects composition added to it", () => {
     const root = makeRoot();
-    const path = "src/lib/contracts/player-photo-registry-v7.ts";
+    const path = "src/lib/contracts/player-photo-registry-v8.ts";
     writeInto(
       root,
       path,
-      'export const registryPath = "src/assets/players/player-photo-registry.v7.json";\n',
+      'export const registryPath = "src/assets/players/player-photo-registry.v8.json";\nexport const renditionPath = "src/assets/players/decision-16/trae-young.jpg";\n',
+    );
+    writeInto(
+      root,
+      "src/lib/contracts/decision-16-rendition-contract.ts",
+      'export const source = "src/assets/players/decision-15/trae-young.jpg";\nexport const rendition = "src/assets/players/decision-16/trae-young.jpg";\n',
     );
     expect(scanShareAlikeCompositeRisks(root)).toEqual([]);
 
     writeInto(
       root,
       path,
-      'export const registryPath = "src/assets/players/player-photo-registry.v7.json";\ncanvas.drawImage(registryPath);\n',
+      'export const registryPath = "src/assets/players/player-photo-registry.v8.json";\nexport const renditionPath = "src/assets/players/decision-16/trae-young.jpg";\ncanvas.drawImage(registryPath);\n',
     );
     expect(
       scanShareAlikeCompositeRisks(root).map((entry) => entry.code),
@@ -329,13 +350,43 @@ describe("ShareAlike composite guard", () => {
     ).toContain("brand-sharealike-new-consumer");
   });
 
-  it("rejects historical registries, photos, and broad player globs from current render code", () => {
+  it.each([
+    [
+      "registry v7",
+      'import oldRegistry from "../../assets/players/player-photo-registry.v7.json";\nexport const value = oldRegistry.schemaVersion;\n',
+    ],
+    [
+      "the unversioned superseded Trae original",
+      'import oldTrae from "../../assets/players/trae-young.jpg";\nexport const value = oldTrae;\n',
+    ],
+    [
+      "the Decision 15 superseded Trae original",
+      'import oldTrae from "../../assets/players/decision-15/trae-young.jpg";\nexport const value = oldTrae;\n',
+    ],
+    [
+      "the historical Decision 13 Trae SVG",
+      'import oldTrae from "../../assets/players/decision-13/trae-young.svg";\nexport const value = oldTrae;\n',
+    ],
+    [
+      "a trae-*.jpg Decision 15 glob",
+      'export const value = import.meta.glob("../../assets/players/decision-15/trae-*.jpg");\n',
+    ],
+    [
+      "a trae-young.{jpg,png} Decision 15 glob",
+      'export const value = import.meta.glob("../../assets/players/decision-15/trae-young.{jpg,png}");\n',
+    ],
+    [
+      "an [a-z]*.jpg Decision 15 glob",
+      'export const value = import.meta.glob("../../assets/players/decision-15/[a-z]*.jpg");\n',
+    ],
+    [
+      "a broad Decision 15 glob",
+      'export const value = import.meta.glob("../../assets/players/decision-15/*.jpg");\n',
+    ],
+  ])("rejects %s independently in current render code", (_label, source) => {
     const root = makeRoot();
-    writeInto(
-      root,
-      "src/components/cases/CaseCover.astro",
-      '---\nimport oldRegistry from "../../assets/players/player-photo-registry.v6.json";\nconst oldPhotos = import.meta.glob("../../assets/players/*.jpg");\n---\n<div>{oldRegistry.schemaVersion}{Object.keys(oldPhotos).length}</div>\n',
-    );
+    writeInto(root, "src/components/cases/CaseCover.astro", source);
+
     expect(
       scanShareAlikeCompositeRisks(root).map((entry) => entry.code),
     ).toContain("brand-current-cover-historical-reference");

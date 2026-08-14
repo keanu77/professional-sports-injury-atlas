@@ -8,11 +8,17 @@ import {
   DECISION_16_CHANGE_DISCLOSURE,
   DECISION_16_POLICY_BINDING,
   DECISION_16_QUALITY_LADDER,
+  DECISION_16_RENDITION_COLOR_TREATMENT,
+  DECISION_16_RENDITION_CREATED_AT,
+  DECISION_16_RENDITION_METADATA_TREATMENT,
+  DECISION_16_RENDITION_ORIENTATION_TREATMENT,
   DECISION_16_SCOPE_ID,
   DECISION_16_SOURCE_ORIGINAL,
   validateDecision16Rendition,
+  type Decision16ImageDecodeFacts,
   type Decision16RenditionRecord,
 } from "../../src/lib/contracts/decision-16-rendition-contract";
+import { decodeDecision16ImageWithSharp } from "../../scripts/generate-decision-16-rendition";
 
 const SOURCE_BYTES = readFileSync(
   new URL(
@@ -20,9 +26,15 @@ const SOURCE_BYTES = readFileSync(
     import.meta.url,
   ),
 );
-const RENDITION_BYTES = Buffer.from([
-  0xff, 0xd8, 0xff, 0xe0, 0x00, 0x08, 0x44, 0x31, 0x36, 0x00, 0xff, 0xd9,
-]);
+const RENDITION_BYTES = readFileSync(
+  new URL(
+    "../../src/assets/players/decision-16/trae-young.jpg",
+    import.meta.url,
+  ),
+);
+const SOURCE_DECODE_FACTS = await decodeDecision16ImageWithSharp(SOURCE_BYTES);
+const RENDITION_DECODE_FACTS =
+  await decodeDecision16ImageWithSharp(RENDITION_BYTES);
 
 function validRecord(): Decision16RenditionRecord {
   const renditionSha256 = sha256Hex(RENDITION_BYTES);
@@ -49,8 +61,8 @@ function validRecord(): Decision16RenditionRecord {
       transformation: {
         actor: "decision-16-rendition-generator",
         aspectRatioPreserved: true,
-        colorTreatment: "source sRGB profile retained",
-        createdAt: "2026-08-14",
+        colorTreatment: DECISION_16_RENDITION_COLOR_TREATMENT,
+        createdAt: DECISION_16_RENDITION_CREATED_AT,
         cropApplied: false,
         enlarged: false,
         fullFrame: true,
@@ -59,9 +71,8 @@ function validRecord(): Decision16RenditionRecord {
           mozjpeg: false,
           progressive: false,
         },
-        metadataTreatment:
-          "source metadata retained except unavoidable geometry/encoding fields",
-        orientationTreatment: "source has no orientation tag; no rotation",
+        metadataTreatment: DECISION_16_RENDITION_METADATA_TREATMENT,
+        orientationTreatment: DECISION_16_RENDITION_ORIENTATION_TREATMENT,
         qualityCandidates: [
           {
             byteLength: RENDITION_BYTES.byteLength,
@@ -88,10 +99,16 @@ function validRecord(): Decision16RenditionRecord {
   };
 }
 
-function validate(record = validRecord(), renditionBytes = RENDITION_BYTES) {
+function validate(
+  record = validRecord(),
+  renditionBytes = RENDITION_BYTES,
+  renditionDecodeFacts: Decision16ImageDecodeFacts | null = RENDITION_DECODE_FACTS,
+) {
   return validateDecision16Rendition({
     record,
+    renditionDecodeFacts,
     renditionBytes,
+    sourceDecodeFacts: SOURCE_DECODE_FACTS,
     sourceBytes: SOURCE_BYTES,
   });
 }
@@ -194,6 +211,30 @@ describe("Decision 16 Trae Young governed rendition", () => {
     expect(codes(record)).toContain("decision16-transformation");
   });
 
+  it("freezes exact color, metadata, orientation, and creation facts", () => {
+    const record = validRecord();
+    record.localRendition.transformation.colorTreatment =
+      "ICC discarded; CMYK output.";
+    record.localRendition.transformation.metadataTreatment =
+      "Copyright, creator, and rights metadata removed.";
+    record.localRendition.transformation.orientationTreatment =
+      "Rotated 180 degrees.";
+    record.localRendition.transformation.createdAt = "2026-08-13";
+    expect(codes(record)).toContain("decision16-transformation");
+  });
+
+  it("rejects missing, malformed, or byte-unbound decoder facts", () => {
+    expect(validate(validRecord(), RENDITION_BYTES, null).reasons).toContain(
+      "decision16-rendition-decoded-image",
+    );
+
+    const malformed = structuredClone(RENDITION_DECODE_FACTS);
+    malformed.input.sha256 = "0".repeat(64);
+    expect(
+      validate(validRecord(), RENDITION_BYTES, malformed).reasons,
+    ).toContain("decision16-rendition-decoded-image");
+  });
+
   it("requires the exact quality ladder and highest passing candidate", () => {
     const record = validRecord();
     const selected = record.localRendition.transformation.qualityCandidates[0]!;
@@ -219,7 +260,7 @@ describe("Decision 16 Trae Young governed rendition", () => {
       quality: 95,
       sha256: sha256Hex(invalidBytes),
     };
-    expect(validate(record, invalidBytes).reasons).toContain(
+    expect(validate(record, invalidBytes, null).reasons).toContain(
       "decision16-rendition-bytes",
     );
   });
