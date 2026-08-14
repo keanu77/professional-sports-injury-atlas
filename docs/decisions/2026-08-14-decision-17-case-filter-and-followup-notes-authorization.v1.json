@@ -1,0 +1,20 @@
+{
+  "authorizedAt": "2026-08-14T15:33:38Z",
+  "authorizedBy": "吳易澄醫師",
+  "closedScopeIds": [
+    "deployment",
+    "external-account-mutation",
+    "hosting-service-mutation",
+    "indexing",
+    "medical-review-decision",
+    "public-release",
+    "remote-repository-mutation"
+  ],
+  "decisionType": "plan-execution",
+  "executionScopeId": "decision-17-case-filter-and-followup-notes-only",
+  "executionStatus": "authorized",
+  "planPath": "docs/superpowers/plans/2026-08-14-decision-17-case-filter-and-followup-notes.md",
+  "planSha256": "845f2b6b694ace14fc65cf086c7fce95985acfb4d0f562dfaaab1f357e84078e",
+  "role": "decision-17-case-filter-and-followup-notes",
+  "schemaVersion": 1
+}
