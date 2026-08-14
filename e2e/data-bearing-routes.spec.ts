@@ -159,21 +159,77 @@ test.describe("data-bearing fixture routes", () => {
     await expectNoAxeViolations(page);
   });
 
-  test("review pages expose IDs and copyable digests", async ({ page }) => {
+  test("review digests stay in the DOM inside a native closed disclosure", async ({
+    page,
+  }) => {
     await page.goto("/review/fixtures/case-detail/");
-    await expect(page.locator("[data-review-digests]")).toBeVisible();
-    await expect(page.locator("[data-record-id]")).toContainText(
-      "CASE-FIC-2014-901",
-    );
-    const digestValues = await page
-      .locator(".digest-field")
-      .evaluateAll((fields) =>
-        fields.map((field) => (field as HTMLInputElement).value),
-      );
-    expect(digestValues.length).toBeGreaterThanOrEqual(2);
-    for (const value of digestValues) {
-      expect(value).toMatch(/^[0-9a-f]{64}$/);
+    const disclosure = page.locator("details[data-review-digests]");
+    const summary = disclosure.locator("summary");
+    const recordId = disclosure.locator("[data-record-id]");
+    const digestFields = disclosure.locator("input[data-review-digest-kind]");
+
+    await expect(disclosure).toBeVisible();
+    await expect(disclosure).not.toHaveAttribute("open", "");
+    await expect(summary).toHaveText("審查識別與 digest");
+    expect((await summary.boundingBox())?.height).toBeGreaterThanOrEqual(44);
+    await expect(recordId).toBeAttached();
+    await expect(recordId).toContainText("CASE-FIC-2014-901");
+    await expect(digestFields).toHaveCount(3);
+    for (let index = 0; index < 3; index += 1) {
+      await expect(digestFields.nth(index)).toHaveAttribute("readonly", "");
+      await expect(digestFields.nth(index)).not.toBeVisible();
     }
+
+    const before = await digestFields.evaluateAll((fields) =>
+      fields.map((field) => ({
+        id: field.id,
+        kind: field.getAttribute("data-review-digest-kind"),
+        value: (field as HTMLInputElement).value,
+      })),
+    );
+    expect(new Set(before.map(({ id }) => id)).size).toBe(3);
+    expect(before.map(({ kind }) => kind)).toEqual([
+      "case-content",
+      "rendered-set",
+      "pending-follow-up",
+    ]);
+    for (const { id, value } of before) {
+      expect(value).toMatch(/^[0-9a-f]{64}$/);
+      await expect(disclosure.locator(`label[for="${id}"]`)).toHaveCount(1);
+    }
+
+    await summary.focus();
+    await page.keyboard.press("Enter");
+    await expect(disclosure).toHaveAttribute("open", "");
+    for (let index = 0; index < 3; index += 1) {
+      await expect(digestFields.nth(index)).toBeVisible();
+    }
+    await digestFields.first().selectText();
+    const overflow = await page.evaluate(() => {
+      const root = document.documentElement;
+      const main = document.querySelector("main");
+      return {
+        document: root.scrollWidth - root.clientWidth,
+        main: main === null ? Number.NaN : main.scrollWidth - main.clientWidth,
+      };
+    });
+    expect(overflow.document).toBeLessThanOrEqual(1);
+    expect(overflow.main).toBeLessThanOrEqual(1);
+    expect(
+      await digestFields.evaluateAll((fields) =>
+        fields.map((field) => (field as HTMLInputElement).value),
+      ),
+    ).toEqual(before.map(({ value }) => value));
+    await expectNoAxeViolations(page);
+
+    await summary.focus();
+    await page.keyboard.press("Space");
+    await expect(disclosure).not.toHaveAttribute("open", "");
+    expect(
+      await digestFields.evaluateAll((fields) =>
+        fields.map((field) => (field as HTMLInputElement).value),
+      ),
+    ).toEqual(before.map(({ value }) => value));
   });
 
   test("all 26 governed cases and the fixture render only the retained reader guardrail while preserving professional notes", async ({
@@ -275,6 +331,7 @@ test.describe("data-bearing fixture routes", () => {
   test("stays accessible at 200% zoom reflow", async ({ page }) => {
     await page.setViewportSize({ width: 320, height: 480 });
     await page.goto("/review/fixtures/case-detail/");
+    await page.locator("details[data-review-digests] summary").click();
     const overflow = await page.evaluate(() => {
       const root = document.documentElement;
       const main = document.querySelector("main");

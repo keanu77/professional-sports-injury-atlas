@@ -10,6 +10,7 @@
 import CaseCard from "../../../components/atlas/CaseCard.astro";
 import CaseVideo from "../../../components/cases/CaseVideo.astro";
 import FollowUpReports from "../../../components/cases/FollowUpReports.astro";
+import ReviewDigestDisclosure from "../../../components/cases/ReviewDigestDisclosure.astro";
 import ExternalSourceCitation from "../../../components/citations/ExternalSourceCitation.astro";
 import LayeredNotes from "../../../components/cases/LayeredNotes.astro";
 import ReviewBadge from "../../../components/cases/ReviewBadge.astro";
@@ -286,33 +287,15 @@ const fixtureArtifactDigest =
           buildMode={buildMode}
           record={record}
           followUp={fixtureFollowUp}
-          draftDigest={fixtureFollowUpDigest}
         />
 
-        <section aria-labelledby="fixture-digest-heading" data-review-digests>
-          <h2 id="fixture-digest-heading">審查識別與 digest</h2>
-          <p>
-            記錄 ID：<code data-record-id>{record.id}</code>
-          </p>
-          <label class="digest-label">
-            案例內容 digest（可複製）
-            <input
-              class="digest-field"
-              type="text"
-              readonly
-              value={contentDigest}
-            />
-          </label>
-          <label class="digest-label">
-            本次建置審查集合 digest（可複製）
-            <input
-              class="digest-field"
-              type="text"
-              readonly
-              value={renderedSetDigest}
-            />
-          </label>
-        </section>
+        <ReviewDigestDisclosure
+          scopeId={record.slug}
+          recordId={record.id}
+          contentDigest={contentDigest}
+          renderedSetDigest={renderedSetDigest}
+          followUpDigest={fixtureFollowUpDigest}
+        />
 
         <section aria-labelledby="fixture-related-heading">
           <h2 id="fixture-related-heading">其他案例（最多 3 筆）</h2>

@@ -83,6 +83,7 @@
     "decision17:follow-ups:generate": "tsx scripts/generate-decision-17-follow-ups.ts",
     "decision17:follow-ups:check": "tsx scripts/generate-decision-17-follow-ups.ts --check",
     "decision17:follow-ups:dom": "tsx scripts/verify-decision-17-follow-up-dom.ts",
+    "decision17:digests:dom": "tsx scripts/verify-decision-17-c-digests.ts",
     "brand:verify": "tsx scripts/verify-brand-assets.ts",
     "review-set:generate": "tsx scripts/generate-review-set.ts",
     "private:credential": "tsx scripts/private-hosting/provision-review-credential.ts",

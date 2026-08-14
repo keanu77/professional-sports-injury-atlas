@@ -278,13 +278,22 @@ function main(): void {
     coverByteMismatches.push("cover-asset-ledger");
   }
 
-  const casePageSource = bytes("src/pages/cases/[slug].astro").toString("utf8");
+  // Phase C may move the existing review-digest DOM into a server-rendered
+  // component. Preserve the baseline's value-presence guard across the route
+  // and that presentation component without binding their authorized layout.
+  const digestDomSource = [
+    "src/pages/cases/[slug].astro",
+    "src/components/cases/ReviewDigestDisclosure.astro",
+  ]
+    .filter((path) => existsSync(resolve(ROOT, path)))
+    .map((path) => bytes(path).toString("utf8"))
+    .join("\n");
   const digestDomMissingValues = [
     "data-review-digests",
     "data-record-id",
     "contentDigest",
     "renderedSetDigest",
-  ].filter((token) => !casePageSource.includes(token));
+  ].filter((token) => !digestDomSource.includes(token));
   const brandGuardSource = bytes("scripts/verify-brand-assets.ts").toString(
     "utf8",
   );

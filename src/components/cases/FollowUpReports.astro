@@ -25,10 +25,9 @@ interface Props {
   buildMode: BuildMode;
   record: InjuryCase;
   followUp: CaseFollowUp;
-  draftDigest: string;
 }
 
-const { buildMode, record, followUp, draftDigest } = Astro.props;
+const { buildMode, record, followUp } = Astro.props;
 const visibleFollowUp = pendingFollowUpForBuildMode(buildMode, followUp);
 
 let legacySource: InjuryCase["sources"][number] | undefined;
@@ -38,9 +37,6 @@ if (visibleFollowUp !== null) {
     visibleFollowUp.caseClinicalDigest !== computeCaseContentDigest(record)
   ) {
     throw new Error(`follow-up binding mismatch for ${record.id}`);
-  }
-  if (!/^[0-9a-f]{64}$/u.test(draftDigest)) {
-    throw new Error(`invalid follow-up draft digest for ${record.id}`);
   }
   legacySource = record.sources.find(
     (source) =>
@@ -126,10 +122,6 @@ const headingId = `${record.slug}-follow-up-heading`;
         data-follow-up-pending
       >
         <h3 id={`${headingId}-pending`}>新增後續消息：待醫師簽核</h3>
-        <p class="draft-digest">
-          後續消息草稿 digest：
-          <code data-follow-up-draft-digest>{draftDigest}</code>
-        </p>
 
         <div class="follow-up-categories">
           {FOLLOW_UP_KINDS.map((kind) => {
@@ -294,12 +286,7 @@ const headingId = `${record.slug}-follow-up-heading`;
     color: var(--color-warning);
   }
 
-  .follow-up-empty,
-  .draft-digest {
+  .follow-up-empty {
     color: var(--color-ink-muted);
-  }
-
-  .draft-digest code {
-    overflow-wrap: anywhere;
   }
 </style>

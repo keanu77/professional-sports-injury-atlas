@@ -13,6 +13,7 @@ import CaseCard from "../../components/atlas/CaseCard.astro";
 import EditorialHero from "../../components/atlas/EditorialHero.astro";
 import CaseVideo from "../../components/cases/CaseVideo.astro";
 import FollowUpReports from "../../components/cases/FollowUpReports.astro";
+import ReviewDigestDisclosure from "../../components/cases/ReviewDigestDisclosure.astro";
 import ExternalSourceCitation from "../../components/citations/ExternalSourceCitation.astro";
 import LayeredNotes from "../../components/cases/LayeredNotes.astro";
 import MedicalNotice from "../../components/notices/MedicalNotice.astro";
@@ -204,7 +205,6 @@ if (videoSource === undefined) {
           buildMode={buildMode}
           record={record}
           followUp={followUpEntry.sidecar}
-          draftDigest={followUpEntry.draftDigest}
         />
       )
     }
@@ -228,36 +228,13 @@ if (videoSource === undefined) {
 
     {
       buildMode === "review" && (
-        <section
-          class="case-section"
-          aria-labelledby="digest-heading"
-          data-review-digests
-        >
-          <h2 class="section-title" id="digest-heading">
-            審查識別與 digest
-          </h2>
-          <p>
-            記錄 ID：<code data-record-id>{record.id}</code>
-          </p>
-          <label class="digest-label">
-            案例內容 digest（可複製）
-            <input
-              class="digest-field"
-              type="text"
-              readonly
-              value={contentDigest}
-            />
-          </label>
-          <label class="digest-label">
-            本次建置審查集合 digest（可複製）
-            <input
-              class="digest-field"
-              type="text"
-              readonly
-              value={renderedSetDigest}
-            />
-          </label>
-        </section>
+        <ReviewDigestDisclosure
+          scopeId={record.slug}
+          recordId={record.id}
+          contentDigest={contentDigest}
+          renderedSetDigest={renderedSetDigest}
+          followUpDigest={followUpEntry?.draftDigest}
+        />
       )
     }
 
@@ -339,24 +316,5 @@ if (videoSource === undefined) {
 
   .source-list li {
     margin-bottom: 0.5rem;
-  }
-
-  .digest-label {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-  }
-
-  .digest-field {
-    min-height: 44px;
-    width: min(100%, 36rem);
-    padding: 0.375rem 0.5rem;
-    border: 1px solid var(--hairline-strong);
-    border-radius: 0;
-    background: var(--color-surface-raised);
-    color: var(--color-ink);
-    font-family: ui-monospace, monospace;
   }
 </style>

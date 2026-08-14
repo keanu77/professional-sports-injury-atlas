@@ -151,7 +151,11 @@ function assertCasePage(
     htmlPath,
     "follow-up draft digest",
   );
-  if (normalizedText(digest) !== draftDigest) {
+  if (
+    attr(digest, "value") !== draftDigest ||
+    attr(digest, "readonly") === null ||
+    attr(digest, "data-review-status") !== "pending-owner-signoff"
+  ) {
     throw new Error(`${htmlPath}: follow-up draft digest changed`);
   }
 

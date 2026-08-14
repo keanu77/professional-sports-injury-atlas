@@ -94,6 +94,14 @@ test.describe("no-javascript readability", () => {
 
     await expect(page.locator("[data-video-timeline]")).toHaveCount(0);
 
+    // The native disclosure starts closed and opens without JavaScript.
+    const disclosure = page.locator("details[data-review-digests]");
+    const summary = disclosure.locator("summary");
+    await expect(disclosure).not.toHaveAttribute("open", "");
+    await summary.focus();
+    await page.keyboard.press("Enter");
+    await expect(disclosure).toHaveAttribute("open", "");
+
     // Record ID and copyable 64-hex digests are server-rendered.
     await expect(page.locator("[data-record-id]")).toContainText(
       "CASE-FIC-2014-901",
@@ -107,6 +115,7 @@ test.describe("no-javascript readability", () => {
     for (const value of digestValues) {
       expect(value).toMatch(/^[0-9a-f]{64}$/);
     }
+    await expect(page.locator(".digest-field").first()).toBeVisible();
   });
 
   test("a real NBA source list keeps complete literal citations without NBA anchors", async ({
