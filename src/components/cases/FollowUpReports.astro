@@ -1,0 +1,302 @@
+---
+/**
+ * Review-only Decision 17 follow-up renderer. The approved historical
+ * confirmed-update projection remains visibly separate from every additive
+ * pending draft. This component has no client script or hydration boundary.
+ */
+import ExternalSourceCitation from "../citations/ExternalSourceCitation.astro";
+import { computeCaseContentDigest } from "../../lib/cases/digest";
+import {
+  ACTUAL_RETURN_RETROSPECTIVE_COPY,
+  FOLLOW_UP_BLOCK_ATTRIBUTION,
+  FOLLOW_UP_EMPTY_COPY,
+  FOLLOW_UP_KIND_LABELS,
+  FOLLOW_UP_SOURCE_TIER_LABELS,
+  pendingFollowUpForBuildMode,
+} from "../../lib/cases/follow-up-presentation";
+import {
+  FOLLOW_UP_KINDS,
+  type CaseFollowUp,
+} from "../../lib/contracts/case-follow-up";
+import type { InjuryCase } from "../../lib/contracts/case";
+import type { BuildMode } from "../../lib/governance/build-mode";
+
+interface Props {
+  buildMode: BuildMode;
+  record: InjuryCase;
+  followUp: CaseFollowUp;
+  draftDigest: string;
+}
+
+const { buildMode, record, followUp, draftDigest } = Astro.props;
+const visibleFollowUp = pendingFollowUpForBuildMode(buildMode, followUp);
+
+let legacySource: InjuryCase["sources"][number] | undefined;
+if (visibleFollowUp !== null) {
+  if (
+    visibleFollowUp.caseId !== record.id ||
+    visibleFollowUp.caseClinicalDigest !== computeCaseContentDigest(record)
+  ) {
+    throw new Error(`follow-up binding mismatch for ${record.id}`);
+  }
+  if (!/^[0-9a-f]{64}$/u.test(draftDigest)) {
+    throw new Error(`invalid follow-up draft digest for ${record.id}`);
+  }
+  legacySource = record.sources.find(
+    (source) =>
+      source.id === visibleFollowUp.legacyDiagnosisProjection.sourceId &&
+      source.supports.includes("general.confirmedUpdate"),
+  );
+  if (legacySource === undefined) {
+    throw new Error(`missing legacy confirmed-update source for ${record.id}`);
+  }
+  for (const kind of FOLLOW_UP_KINDS) {
+    for (const item of visibleFollowUp.categories[kind]) {
+      if (
+        item.kind !== kind ||
+        item.review.status !== "pending-owner-signoff"
+      ) {
+        throw new Error(`invalid pending follow-up item ${item.id}`);
+      }
+      if (
+        kind === "actual-return" &&
+        item.sourceTier !== "team-or-league-official"
+      ) {
+        throw new Error(
+          `actual-return item ${item.id} lacks an official source`,
+        );
+      }
+    }
+  }
+}
+
+const headingId = `${record.slug}-follow-up-heading`;
+---
+
+{
+  visibleFollowUp !== null && legacySource !== undefined && (
+    <section
+      class="follow-up-block"
+      aria-labelledby={headingId}
+      data-follow-up-block
+      data-follow-up-case-id={record.id}
+    >
+      <h2 class="section-title" id={headingId}>
+        後續消息
+      </h2>
+      <p class="follow-up-attribution" data-follow-up-attribution>
+        {FOLLOW_UP_BLOCK_ATTRIBUTION}
+      </p>
+
+      <section
+        class="follow-up-legacy"
+        aria-labelledby={`${headingId}-legacy`}
+        data-follow-up-lineage="approved-core"
+      >
+        <h3 id={`${headingId}-legacy`}>既有 owner 核准內容</h3>
+        <p data-follow-up-legacy-statement>{record.general.confirmedUpdate}</p>
+        <p>
+          <span
+            class="source-tier"
+            data-source-tier={
+              visibleFollowUp.legacyDiagnosisProjection.sourceTier
+            }
+          >
+            來源等級：
+            {
+              FOLLOW_UP_SOURCE_TIER_LABELS[
+                visibleFollowUp.legacyDiagnosisProjection.sourceTier
+              ]
+            }
+          </span>
+        </p>
+        <p>
+          逐條來源：
+          <ExternalSourceCitation
+            context="follow-up"
+            sourceId={legacySource.id}
+            {...legacySource}
+          />
+        </p>
+      </section>
+
+      <section
+        class="follow-up-pending"
+        aria-labelledby={`${headingId}-pending`}
+        data-follow-up-pending
+      >
+        <h3 id={`${headingId}-pending`}>新增後續消息：待醫師簽核</h3>
+        <p class="draft-digest">
+          後續消息草稿 digest：
+          <code data-follow-up-draft-digest>{draftDigest}</code>
+        </p>
+
+        <div class="follow-up-categories">
+          {FOLLOW_UP_KINDS.map((kind) => {
+            const items = visibleFollowUp.categories[kind];
+            const categoryHeadingId = `${headingId}-${kind}`;
+            return (
+              <section
+                class="follow-up-category"
+                aria-labelledby={categoryHeadingId}
+                data-follow-up-category={kind}
+              >
+                <h4 id={categoryHeadingId}>{FOLLOW_UP_KIND_LABELS[kind]}</h4>
+                {kind === "actual-return" && (
+                  <p
+                    class="actual-return-disclaimer"
+                    data-actual-return-disclaimer
+                  >
+                    {ACTUAL_RETURN_RETROSPECTIVE_COPY}
+                  </p>
+                )}
+                {items.length === 0 ? (
+                  <p class="follow-up-empty" data-follow-up-empty>
+                    {FOLLOW_UP_EMPTY_COPY}
+                  </p>
+                ) : (
+                  <ol class="follow-up-items">
+                    {items.map((item) => (
+                      <li>
+                        <article
+                          class="follow-up-item"
+                          data-follow-up-item={item.id}
+                          data-fact-kind={item.kind}
+                          data-source-tier={item.sourceTier}
+                          data-review-status="pending-owner-signoff"
+                        >
+                          <p class="follow-up-item-meta">
+                            <span
+                              class="source-tier"
+                              data-follow-up-tier-label
+                              data-source-tier={item.sourceTier}
+                            >
+                              來源等級：
+                              {FOLLOW_UP_SOURCE_TIER_LABELS[item.sourceTier]}
+                            </span>
+                            <strong
+                              class="pending-state"
+                              data-follow-up-review-state="pending-owner-signoff"
+                            >
+                              待醫師簽核
+                            </strong>
+                          </p>
+                          <p data-follow-up-statement>
+                            <span data-follow-up-reporting-party>
+                              {item.source.account ?? item.source.publisher}
+                            </span>
+                            報導：{item.attributedStatement}
+                          </p>
+                          {item.factDate !== null && (
+                            <p>
+                              事實發生日：
+                              <time
+                                datetime={item.factDate}
+                                data-follow-up-fact-date
+                              >
+                                {item.factDate}
+                              </time>
+                            </p>
+                          )}
+                          <p>
+                            逐條來源：
+                            <ExternalSourceCitation
+                              context="follow-up"
+                              sourceId={item.id}
+                              title={item.source.title}
+                              publisher={item.source.publisher}
+                              publishedAt={item.source.publishedAt}
+                              url={item.source.canonicalUrl}
+                              type={item.source.medium}
+                            />
+                          </p>
+                        </article>
+                      </li>
+                    ))}
+                  </ol>
+                )}
+              </section>
+            );
+          })}
+        </div>
+      </section>
+    </section>
+  )
+}
+
+<style>
+  .follow-up-block {
+    margin-block-start: var(--space-section);
+  }
+
+  .follow-up-attribution,
+  .actual-return-disclaimer {
+    border-inline-start: 3px solid var(--color-warning-border);
+    padding: 0.75rem 1rem;
+    background: var(--color-warning-surface);
+  }
+
+  .follow-up-legacy,
+  .follow-up-pending,
+  .follow-up-category {
+    margin-block-start: 1.5rem;
+  }
+
+  .follow-up-legacy,
+  .follow-up-item {
+    border: 1px solid var(--hairline);
+    padding: 1rem;
+    background: var(--color-surface-raised);
+  }
+
+  .follow-up-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+    gap: 1rem 1.5rem;
+  }
+
+  .follow-up-items {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .follow-up-item-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.75rem;
+  }
+
+  .source-tier,
+  .pending-state {
+    display: inline-block;
+    padding: 0.2rem 0.45rem;
+    border: 1px solid var(--hairline-strong);
+    background: var(--color-surface-muted);
+  }
+
+  .source-tier[data-source-tier="unverified-report"] {
+    border-style: dashed;
+    border-color: var(--color-warning-border);
+    background: var(--color-warning-surface);
+    color: var(--color-warning);
+  }
+
+  .pending-state {
+    border-color: var(--color-warning-border);
+    background: var(--color-warning-surface);
+    color: var(--color-warning);
+  }
+
+  .follow-up-empty,
+  .draft-digest {
+    color: var(--color-ink-muted);
+  }
+
+  .draft-digest code {
+    overflow-wrap: anywhere;
+  }
+</style>

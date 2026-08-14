@@ -9,6 +9,7 @@
  */
 import CaseCard from "../../../components/atlas/CaseCard.astro";
 import CaseVideo from "../../../components/cases/CaseVideo.astro";
+import FollowUpReports from "../../../components/cases/FollowUpReports.astro";
 import ExternalSourceCitation from "../../../components/citations/ExternalSourceCitation.astro";
 import LayeredNotes from "../../../components/cases/LayeredNotes.astro";
 import ReviewBadge from "../../../components/cases/ReviewBadge.astro";
@@ -23,9 +24,14 @@ import {
   selectReviewFixtureCases,
 } from "../../../data/review-fixtures";
 import { computeCaseContentDigest } from "../../../lib/cases/digest";
+import { computeFollowUpDraftDigest } from "../../../lib/cases/follow-up-digest";
 import { computeInjuryOverviewDigest } from "../../../lib/cases/injury-overview-digest";
 import { computeQuarterlyUpdateDigest } from "../../../lib/cases/update-digest";
 import { findInjury, findLeague } from "../../../lib/contracts/taxonomy";
+import {
+  FOLLOW_UP_SOURCE_POLICY_V10_BINDING,
+  type CaseFollowUp,
+} from "../../../lib/contracts/case-follow-up";
 import { resolveBuildMode } from "../../../lib/governance/build-mode";
 import {
   CLASSIC_CASE_LABEL,
@@ -76,6 +82,78 @@ const TITLES: Record<string, string> = {
 };
 
 const contentDigest = computeCaseContentDigest(record);
+const fixtureFollowUpPolicyBinding = FOLLOW_UP_SOURCE_POLICY_V10_BINDING;
+const fixtureFollowUp: CaseFollowUp = {
+  schemaVersion: "case-follow-up.v1",
+  caseId: record.id,
+  caseClinicalDigest: contentDigest,
+  sourcePolicyBinding: fixtureFollowUpPolicyBinding,
+  legacyDiagnosisProjection: {
+    field: "general.confirmedUpdate",
+    sourceId: "src-fic-901-first-party",
+    sourceTier: "team-or-league-official",
+  },
+  categories: {
+    treatment: [
+      {
+        id: "fictional-treatment-unverified-001",
+        kind: "treatment",
+        attributedStatement:
+          "虛構報導聲稱球員使用虛構護具；此項沒有官方確認，僅供呈現未證實層級。",
+        factDate: "2014-03-03",
+        sourceTier: "unverified-report",
+        source: {
+          title: "虛構未證實護具消息（Fictional unverified treatment report）",
+          publisher: "虛構場邊消息網（Fictional Sideline Reports）",
+          account: "虛構記者帳號（Fictional Reporter Account）",
+          canonicalUrl:
+            "https://www.nba.com/news/fictional-unverified-treatment-901",
+          publishedAt: "2014-03-03",
+          accessedAt: "2026-08-14",
+          medium: "web-article",
+        },
+        tierBasis: "虛構來源沒有球隊或聯盟的獨立確認。",
+        researchEvidenceId: "fictional-unverified-treatment-evidence-001",
+        sourcePolicyBinding: fixtureFollowUpPolicyBinding,
+        itemPayloadDigest: "3".repeat(64),
+        review: {
+          status: "pending-owner-signoff",
+          reviewedPayloadDigest: "3".repeat(64),
+        },
+      },
+    ],
+    surgery: [],
+    injection: [],
+    "actual-return": [
+      {
+        id: "fictional-actual-return-official-001",
+        kind: "actual-return",
+        attributedStatement: "虛構聯盟比賽紀錄記載球員已在該日實際出賽。",
+        factDate: "2015-01-05",
+        sourceTier: "team-or-league-official",
+        source: {
+          title: "虛構聯盟官方出賽紀錄（Fictional official participation log）",
+          publisher: "虛構聯盟資料庫（Fictional League Data）",
+          account: null,
+          canonicalUrl:
+            "https://data.fictional-league.example/games/fic-2015-01-05",
+          publishedAt: "2015-01-05",
+          accessedAt: "2026-08-14",
+          medium: "game-or-participation-record",
+        },
+        tierBasis: "虛構聯盟直接控制的官方出賽紀錄。",
+        researchEvidenceId: "fictional-actual-return-evidence-001",
+        sourcePolicyBinding: fixtureFollowUpPolicyBinding,
+        itemPayloadDigest: "4".repeat(64),
+        review: {
+          status: "pending-owner-signoff",
+          reviewedPayloadDigest: "4".repeat(64),
+        },
+      },
+    ],
+  },
+};
+const fixtureFollowUpDigest = computeFollowUpDraftDigest(fixtureFollowUp);
 const renderedSetDigest = computeRenderedSetDigest(fixtureCases);
 const updateDigest = computeQuarterlyUpdateDigest(reviewFixtureUpdate);
 const overviewDigest = computeInjuryOverviewDigest(reviewFixtureOverview);
@@ -203,6 +281,13 @@ const fixtureArtifactDigest =
             ))}
           </ul>
         </section>
+
+        <FollowUpReports
+          buildMode={buildMode}
+          record={record}
+          followUp={fixtureFollowUp}
+          draftDigest={fixtureFollowUpDigest}
+        />
 
         <section aria-labelledby="fixture-digest-heading" data-review-digests>
           <h2 id="fixture-digest-heading">審查識別與 digest</h2>

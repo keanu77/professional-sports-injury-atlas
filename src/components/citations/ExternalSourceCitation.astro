@@ -6,7 +6,7 @@
 import { externalUrlPresentationFor } from "../../lib/rights/nba-link-policy";
 
 interface Props {
-  context: "source-list" | "video";
+  context: "follow-up" | "source-list" | "video";
   sourceId?: string;
   title: string;
   publisher: string;
@@ -46,11 +46,15 @@ const presentation = externalUrlPresentationFor(url);
       data-source-citation
       data-citation-context={context}
       data-citation-source-id={sourceId}
+      data-link-policy={presentation}
     >
-      <a href={url} rel="noopener noreferrer">
+      <a href={url} rel="noopener noreferrer" data-citation-title>
         {title}
       </a>
-      ｜{publisher}｜<time datetime={publishedAt}>{publishedAt}</time>
+      ｜<span data-citation-publisher>{publisher}</span>｜
+      <time datetime={publishedAt} data-citation-date>
+        {publishedAt}
+      </time>
       {type !== undefined && <>（{type}）</>}
     </span>
   )
