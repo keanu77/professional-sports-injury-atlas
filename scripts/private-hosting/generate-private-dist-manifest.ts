@@ -6,7 +6,6 @@ import {
   fsyncSync,
   lstatSync,
   openSync,
-  readFileSync,
   readSync,
   readdirSync,
   realpathSync,
