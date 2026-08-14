@@ -1,24 +1,20 @@
 /**
  * Progressive click-to-load enhancement for case videos. Before any click the
  * page contains no YouTube iframe, request, thumbnail, preconnect, autoplay,
- * or tracker: only the governed inline SVG facade, a normal canonical source
- * anchor, and real timestamp anchors that work without JavaScript. The first
+ * or tracker: only the governed inline SVG facade and a normal canonical
+ * source anchor. The first
  * click (and only then) hides that local facade, builds the validated
  * `youtube-nocookie.com` embed URL with the runtime page origin, inserts
  * exactly one iframe (accessible title,
  * `loading='lazy'`, `referrerpolicy='strict-origin-when-cross-origin'`, allow
  * list without autoplay), loads the official IFrame API, and hands that same
- * iframe to one `YT.Player`. Timeline anchors are intercepted only while the
- * player is ready and call the typed adapter's `seekTo()`; on API load or
- * readiness failure the iframe is removed, the SVG facade is restored, focus
- * returns to the load button, and the browser follows the original timestamp
- * URLs.
+ * iframe to one `YT.Player`. On API load or readiness failure the iframe is
+ * removed, the SVG facade is restored, and focus returns to the load button.
  */
 
 import {
   createPlayer,
   loadIframeApi,
-  seekTo,
   type YouTubePlayerInstance,
 } from "../lib/video/youtube-api-adapter";
 import { buildPrivacyEnhancedEmbedUrl } from "../lib/video/youtube";
@@ -31,13 +27,6 @@ interface VideoController {
 }
 
 const READY_TIMEOUT_MS = 8000;
-
-/**
- * Shared across every `initCaseVideos()` caller on the page (Vite gives all
- * component entry scripts the same module instance), so a card and its
- * timeline always resolve the same controller and wiring stays idempotent.
- */
-const controllersByScope = new Map<string, VideoController>();
 
 function awaitReady(
   controller: VideoController,
@@ -61,10 +50,7 @@ function awaitReady(
   });
 }
 
-function setupEmbed(
-  root: HTMLElement,
-  controllers: Map<string, VideoController>,
-): void {
+function setupEmbed(root: HTMLElement): void {
   const scope = root.dataset.videoScope ?? "";
   const button = root.querySelector<HTMLButtonElement>("[data-video-load]");
   const stage = root.querySelector<HTMLElement>("[data-video-stage]");
@@ -76,7 +62,6 @@ function setupEmbed(
   root.dataset.videoWired = "true";
 
   const controller: VideoController = { state: "idle", player: null };
-  controllers.set(scope, controller);
   root.dataset.videoState = "idle";
 
   const fail = (iframe: HTMLIFrameElement): void => {
@@ -132,46 +117,11 @@ function setupEmbed(
   });
 }
 
-function setupTimeline(
-  timeline: HTMLElement,
-  controllers: Map<string, VideoController>,
-): void {
-  const scope = timeline.dataset.videoScope ?? "";
-  if (scope === "") return;
-  if (timeline.dataset.videoWired === "true") return;
-  timeline.dataset.videoWired = "true";
-  timeline.addEventListener("click", (event) => {
-    const target = event.target;
-    if (!(target instanceof Element)) return;
-    const anchor = target.closest<HTMLAnchorElement>("a[data-timecode]");
-    if (anchor === null || !timeline.contains(anchor)) return;
-    const controller = controllers.get(scope);
-    // Without a ready player the anchor stays a real source link and the
-    // browser follows the original timestamp URL.
-    if (
-      controller === undefined ||
-      controller.state !== "ready" ||
-      controller.player === null
-    ) {
-      return;
-    }
-    const seconds = Number.parseInt(anchor.dataset.timecode ?? "", 10);
-    if (!Number.isInteger(seconds) || seconds < 0) return;
-    event.preventDefault();
-    seekTo(controller.player, seconds);
-  });
-}
-
-/** Wires every click-to-load card and timeline on the page. Idempotent. */
+/** Wires every click-to-load card on the page. Idempotent. */
 export function initCaseVideos(root: Document = document): void {
   for (const embed of root.querySelectorAll<HTMLElement>(
     "[data-video-embed]",
   )) {
-    setupEmbed(embed, controllersByScope);
-  }
-  for (const timeline of root.querySelectorAll<HTMLElement>(
-    "[data-video-timeline]",
-  )) {
-    setupTimeline(timeline, controllersByScope);
+    setupEmbed(embed);
   }
 }

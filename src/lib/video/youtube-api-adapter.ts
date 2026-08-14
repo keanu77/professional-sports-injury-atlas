@@ -4,17 +4,14 @@
  * click, hands the existing privacy-enhanced iframe element to one
  * `YT.Player` instance using only the documented `events.onReady` /
  * `events.onError` options (never the undocumented `host` option, never a
- * replacement iframe, never a raw postMessage protocol), and exposes the one
- * `seekTo()` call the timeline enhancement needs. Load or readiness failure
- * rejects so the caller can remove the iframe and fall back to the real
- * source links.
+ * replacement iframe, and never a raw postMessage protocol). Load or
+ * readiness failure rejects so the caller can remove the iframe and restore
+ * its local facade.
  */
 
 import { YOUTUBE_IFRAME_API_URL } from "./youtube";
 
-export interface YouTubePlayerInstance {
-  seekTo(seconds: number, allowSeekAhead: boolean): void;
-}
+export type YouTubePlayerInstance = object;
 
 export interface YouTubeNamespace {
   Player: new (
@@ -124,9 +121,4 @@ export function createPlayer(
       },
     },
   });
-}
-
-/** The documented timeline seek: always `allowSeekAhead=true`. */
-export function seekTo(player: YouTubePlayerInstance, seconds: number): void {
-  player.seekTo(seconds, true);
 }

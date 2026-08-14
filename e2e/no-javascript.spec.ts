@@ -1,8 +1,8 @@
 /**
  * No-JavaScript spec. With scripts disabled, the static pages and the
  * data-bearing fixture routes stay completely readable: both note layers in
- * normal order, real source and timestamp anchors, the video external/failure
- * states, record IDs and digests, static listing pagination, and the
+ * normal order, real source anchors, the video external/failure states,
+ * record IDs and digests, static listing pagination, and the
  * documented degradation notice for advanced filtering.
  */
 
@@ -31,7 +31,7 @@ test.describe("no-javascript readability", () => {
     expect(noscriptText).toContain("進階複合篩選需要 JavaScript");
   });
 
-  test("fixture case detail keeps both note layers readable in order", async ({
+  test("fixture case detail keeps the narrowed reader layer and full professional layer readable in order", async ({
     page,
   }) => {
     await page.goto("/review/fixtures/case-detail/");
@@ -40,9 +40,28 @@ test.describe("no-javascript readability", () => {
     const professional = page.locator('[data-layer="professional"]');
     await expect(general).toBeVisible();
     await expect(professional).toBeVisible();
-    await expect(general).toContainText("發生了什麼");
-    await expect(general).toContainText("畫面不能證明什麼");
+    await expect(general.locator("h4")).toHaveText("畫面不能證明什麼");
+    await expect(general.locator(":scope > p")).toHaveText(
+      "影片無法證明韌帶撕裂、合併半月板損傷或嚴重度；這些需要臨床檢查與影像學檢查。",
+    );
+    await expect(general.locator("h4")).toHaveCount(1);
+    await expect(professional.locator("h4")).toHaveText([
+      "機轉分析（觀察性）",
+      "臨床限制",
+      "鑑別脈絡",
+      "治療與回場意涵",
+    ]);
     await expect(professional).toContainText("機轉分析（觀察性）");
+    await expect(page.locator("[data-layered-notes]")).not.toContainText(
+      "發生了什麼",
+    );
+    await expect(page.locator("[data-layered-notes]")).not.toContainText(
+      "畫面看得到什麼",
+    );
+    await expect(page.locator("[data-layered-notes]")).not.toContainText(
+      "影片段落觀察",
+    );
+    await expect(page.locator("[data-video-timeline]")).toHaveCount(0);
 
     // Normal DOM order: general notes precede professional notes.
     const order = await page.evaluate(() => {
@@ -59,7 +78,7 @@ test.describe("no-javascript readability", () => {
     expect(order).toBe(true);
   });
 
-  test("source links, timestamps, IDs, and digests render without JavaScript", async ({
+  test("source links, IDs, and digests render without JavaScript", async ({
     page,
   }) => {
     await page.goto("/review/fixtures/case-detail/");
@@ -73,17 +92,7 @@ test.describe("no-javascript readability", () => {
       expect(href).toMatch(/^https:\/\//);
     }
 
-    // Timeline entries are real timestamp anchors on the canonical URL.
-    const timestampLinks = page.locator(
-      "[data-video-timeline] a[data-timecode]",
-    );
-    expect(await timestampLinks.count()).toBeGreaterThan(0);
-    for (const href of await timestampLinks.evaluateAll((anchors) =>
-      anchors.map((anchor) => anchor.getAttribute("href")),
-    )) {
-      expect(href).toMatch(/^https:\/\/www\.youtube\.com\/watch\?v=/);
-      expect(href).toMatch(/[?&]t=\d+s?$/);
-    }
+    await expect(page.locator("[data-video-timeline]")).toHaveCount(0);
 
     // Record ID and copyable 64-hex digests are server-rendered.
     await expect(page.locator("[data-record-id]")).toContainText(

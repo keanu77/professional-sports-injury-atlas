@@ -2,7 +2,7 @@
 /**
  * Source and evidence policy page. Documents the controlled source types,
  * independence rules, video rights posture, licensed static-photo posture,
- * and the timecode rule in reader-facing language. Text only.
+ * and the retained observation-data rule in reader-facing language. Text only.
  */
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
@@ -16,7 +16,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section aria-labelledby="types-heading">
     <h2 id="types-heading">受控的來源類型</h2>
     <ul>
-      <li>原始影片來源：只用於描述可見過程與段落觀察，永遠不支持診斷。</li>
+      <li>原始影片來源：只用於描述可見過程與審查追溯，永遠不支持診斷。</li>
       <li>第一方診斷來源：球團或球員方的正式聲明，支持確認診斷與後續更新。</li>
       <li>
         二手診斷報導：具名媒體報導；經典案例在缺乏第一方來源時需要至少兩個獨立來源。
@@ -65,11 +65,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </p>
   </section>
 
-  <section aria-labelledby="timecode-heading">
-    <h2 id="timecode-heading">時間碼規則</h2>
+  <section aria-labelledby="observation-data-heading">
+    <h2 id="observation-data-heading">影片觀察資料</h2>
     <p>
-      時間軸的每個段落都指向原始平台的真實時間戳連結，並附上觀察性描述；
-      段落描述只說明畫面可見的內容，不做診斷推論。
+      案例資料中既有的時間碼與觀察文字保留在受控資料與臨床核心 digest
+      中，作為歷史審查追溯；案例頁不再呈現這些資料。這些文字仍只描述可見內容，不做診斷推論。
     </p>
   </section>
 

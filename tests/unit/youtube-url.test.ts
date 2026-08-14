@@ -9,7 +9,6 @@
 import { describe, expect, it } from "vitest";
 import {
   buildPrivacyEnhancedEmbedUrl,
-  buildTimestampUrl,
   parseYouTubeVideoId,
   YOUTUBE_VIDEO_ID_RE,
 } from "../../src/lib/video/youtube";
@@ -217,28 +216,5 @@ describe("buildPrivacyEnhancedEmbedUrl", () => {
     expect(() =>
       buildPrivacyEnhancedEmbedUrl("youtube", FICTIONAL_ID, ""),
     ).toThrow(/origin/i);
-  });
-});
-
-describe("buildTimestampUrl", () => {
-  it("builds a real canonical watch URL with a t parameter", () => {
-    expect(
-      buildTimestampUrl(`https://www.youtube.com/watch?v=${FICTIONAL_ID}`, 75),
-    ).toBe(`https://www.youtube.com/watch?v=${FICTIONAL_ID}&t=75s`);
-    expect(buildTimestampUrl(`https://youtu.be/${FICTIONAL_ID}`, 0)).toBe(
-      `https://www.youtube.com/watch?v=${FICTIONAL_ID}&t=0s`,
-    );
-  });
-
-  it("rejects invalid canonical URLs and invalid seconds", () => {
-    expect(() =>
-      buildTimestampUrl("https://www.youtube.com/playlist?list=PLx", 10),
-    ).toThrow(/canonical/i);
-    expect(() =>
-      buildTimestampUrl(`https://www.youtube.com/watch?v=${FICTIONAL_ID}`, -1),
-    ).toThrow(/seconds/i);
-    expect(() =>
-      buildTimestampUrl(`https://www.youtube.com/watch?v=${FICTIONAL_ID}`, 1.5),
-    ).toThrow(/seconds/i);
   });
 });

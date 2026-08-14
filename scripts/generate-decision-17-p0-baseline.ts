@@ -73,6 +73,17 @@ const immutablePaths = [
   "scripts/verify-brand-assets.ts",
 ] as const;
 
+const immutableGovernancePaths = new Set<string>([
+  "docs/superpowers/plans/2026-08-14-decision-17-case-filter-and-followup-notes.md",
+  "docs/decisions/2026-08-14-decision-17-case-filter-and-followup-notes-authorization.v1.json",
+  "docs/decisions/plan-binding.v1.json",
+  "docs/reviews/2026-08-14-decision-16-p3-final-validation.md",
+  "review/review-set.v1.json",
+  "review/served-review-receipt.v1.json",
+  "src/data/site-governance.v1.json",
+  "src/lib/cases/digest.ts",
+]);
+
 interface RegistrySelection {
   athleteName: string;
   caseIds: string[];
@@ -325,10 +336,16 @@ function main(): void {
     const path = `src/assets/players/player-photo-registry.v${schemaVersion}.json`;
     return { path, schemaVersion, sha256: sha256Hex(bytes(path)) };
   });
-  const immutableFileBindings = immutablePaths.map((path) => ({
-    path,
-    sha256: sha256Hex(bytes(path)),
-  }));
+  // Phase 0 records the broad starting inventory once. Later phase checks
+  // read only the protected governance subset so authorized presentation
+  // work may delete or replace a baseline UI file without weakening the
+  // immutable projection.
+  const immutableFileBindings = immutablePaths
+    .filter((path) => !checking || immutableGovernancePaths.has(path))
+    .map((path) => ({
+      path,
+      sha256: sha256Hex(bytes(path)),
+    }));
   const manifestBytes = bytes("review/private-dist-manifest.v1.json");
   const manifest = parseStrictJson(
     manifestBytes.toString("utf8"),
@@ -409,16 +426,6 @@ function main(): void {
   if (checking) {
     const committedBytes = readFileSync(output, "utf8");
     const committed = parseStrictJson(committedBytes) as typeof baseline;
-    const immutableGovernancePaths = new Set([
-      "docs/superpowers/plans/2026-08-14-decision-17-case-filter-and-followup-notes.md",
-      "docs/decisions/2026-08-14-decision-17-case-filter-and-followup-notes-authorization.v1.json",
-      "docs/decisions/plan-binding.v1.json",
-      "docs/reviews/2026-08-14-decision-16-p3-final-validation.md",
-      "review/review-set.v1.json",
-      "review/served-review-receipt.v1.json",
-      "src/data/site-governance.v1.json",
-      "src/lib/cases/digest.ts",
-    ]);
     const protectedProjection = (value: typeof baseline) => ({
       authorizedStart: value.authorizedStart,
       caseRows: value.caseRows,

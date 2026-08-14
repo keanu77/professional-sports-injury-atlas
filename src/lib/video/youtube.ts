@@ -100,24 +100,3 @@ export function buildPrivacyEnhancedEmbedUrl(
     `?enablejsapi=1&origin=${encodeURIComponent(pageOrigin)}`
   );
 }
-
-/**
- * Builds the real source timestamp URL for a canonical YouTube URL. Timeline
- * anchors keep these URLs so they work without JavaScript and whenever the
- * in-site player is absent or failed.
- */
-export function buildTimestampUrl(
-  canonicalUrl: string,
-  startSeconds: number,
-): string {
-  const videoId = parseYouTubeVideoId(canonicalUrl);
-  if (videoId === null) {
-    throw new Error(
-      `not a canonical YouTube URL: ${JSON.stringify(canonicalUrl)}`,
-    );
-  }
-  if (!Number.isInteger(startSeconds) || startSeconds < 0) {
-    throw new Error(`invalid start seconds ${String(startSeconds)}`);
-  }
-  return `https://www.youtube.com/watch?v=${videoId}&t=${startSeconds}s`;
-}

@@ -3,12 +3,11 @@
  * Review-only, data-bearing fixture routes. `getStaticPaths()` returns the
  * four fixture paths in review mode and zero paths in public mode. Every
  * fixture renders the same production view components (CaseVideo,
- * CaseTimeline, LayeredNotes, ReviewBadge, CaseCard, InjuryOverview) with
+ * LayeredNotes, ReviewBadge, CaseCard, InjuryOverview) with
  * the visibly fictional in-memory records from `src/data/review-fixtures.ts`,
  * proving the data-bearing templates before any real content exists.
  */
 import CaseCard from "../../../components/atlas/CaseCard.astro";
-import CaseTimeline from "../../../components/cases/CaseTimeline.astro";
 import CaseVideo from "../../../components/cases/CaseVideo.astro";
 import ExternalSourceCitation from "../../../components/citations/ExternalSourceCitation.astro";
 import LayeredNotes from "../../../components/cases/LayeredNotes.astro";
@@ -162,15 +161,9 @@ const fixtureArtifactDigest =
           <div class="case-notes-column">
             <LayeredNotes
               scopeId={record.slug}
-              general={record.general}
+              whatVideoCannotProve={record.general.whatVideoCannotProve}
               professional={record.professional}
-            >
-              <CaseTimeline
-                scopeId={record.slug}
-                canonicalUrl={record.video.canonicalUrl}
-                segments={record.video.segments}
-              />
-            </LayeredNotes>
+            />
           </div>
         </div>
 

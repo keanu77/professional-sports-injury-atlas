@@ -4,19 +4,18 @@
  * always present in server HTML and remain readable in every state; the
  * labeled native button group only toggles visual emphasis via
  * `aria-pressed` and the container's `data-emphasis`, without hiding either
- * controlled section or moving focus. The default slot renders between the
- * two layers so the mobile reading order stays
- * video → general notes → timeline → professional notes.
+ * controlled section or moving focus. The reader layer intentionally retains
+ * only the safety guard describing what the video cannot establish.
  */
-import type { CaseGeneral, CaseProfessional } from "../../lib/contracts/case";
+import type { CaseProfessional } from "../../lib/contracts/case";
 
 interface Props {
   scopeId: string;
-  general: CaseGeneral;
+  whatVideoCannotProve: string;
   professional: CaseProfessional;
 }
 
-const { scopeId, general, professional } = Astro.props;
+const { scopeId, whatVideoCannotProve, professional } = Astro.props;
 const generalId = `${scopeId}-general-notes`;
 const professionalId = `${scopeId}-professional-notes`;
 ---
@@ -53,17 +52,9 @@ const professionalId = `${scopeId}-professional-notes`;
 
   <section id={generalId} class="notes-layer" data-layer="general">
     <h3>一般讀者筆記</h3>
-    <h4>發生了什麼</h4>
-    <p>{general.whatHappened}</p>
-    <h4>畫面看得到什麼</h4>
-    <p>{general.whatIsVisible}</p>
     <h4>畫面不能證明什麼</h4>
-    <p>{general.whatVideoCannotProve}</p>
-    <h4>已確認的後續更新</h4>
-    <p>{general.confirmedUpdate}</p>
+    <p>{whatVideoCannotProve}</p>
   </section>
-
-  <slot />
 
   <section id={professionalId} class="notes-layer" data-layer="professional">
     <h3>專業筆記</h3>

@@ -2,8 +2,8 @@
 /**
  * Case detail route, generated only from actual selector-permitted entries.
  * Desktop places the video left and the dual-layer notes right; the DOM
- * order stays video → general notes → timeline → professional notes →
- * related cases so the mobile reading order is correct without JavaScript.
+ * order stays video → general notes → professional notes → related
+ * cases so the mobile reading order is correct without JavaScript.
  * Review builds additionally expose the record ID, content digest, and the
  * rendered-set digest as copyable text, plus the private workflow badge that
  * never masquerades as a diagnosis.
@@ -11,7 +11,6 @@
 import { getCollection } from "astro:content";
 import CaseCard from "../../components/atlas/CaseCard.astro";
 import EditorialHero from "../../components/atlas/EditorialHero.astro";
-import CaseTimeline from "../../components/cases/CaseTimeline.astro";
 import CaseVideo from "../../components/cases/CaseVideo.astro";
 import ExternalSourceCitation from "../../components/citations/ExternalSourceCitation.astro";
 import LayeredNotes from "../../components/cases/LayeredNotes.astro";
@@ -32,7 +31,6 @@ import {
   confirmationStatusLabel,
 } from "../../lib/routes/static-paths";
 import { caseImageFor } from "../../lib/ui/editorial-images";
-import { parseYouTubeVideoId } from "../../lib/video/youtube";
 
 export async function getStaticPaths(): Promise<
   Array<{ params: { slug: string } }>
@@ -56,9 +54,6 @@ const injuryLabel =
 const leagueLabel =
   findLeague(record.league.code)?.labelZh ?? record.league.code;
 const related = relatedCases(record, permitted);
-const hasYouTubeTimeline =
-  parseYouTubeVideoId(record.video.canonicalUrl) !== null &&
-  record.video.segments.length > 0;
 const contentDigest = computeCaseContentDigest(record);
 const renderedSetDigest = computeRenderedSetDigest(permitted);
 const heroSelection = caseImageFor(
@@ -164,36 +159,9 @@ if (videoSource === undefined) {
         <div class="case-notes-column">
           <LayeredNotes
             scopeId={record.slug}
-            general={record.general}
+            whatVideoCannotProve={record.general.whatVideoCannotProve}
             professional={record.professional}
-          >
-            {
-              hasYouTubeTimeline ? (
-                <CaseTimeline
-                  scopeId={record.slug}
-                  canonicalUrl={record.video.canonicalUrl}
-                  segments={record.video.segments}
-                />
-              ) : (
-                record.video.segments.length > 0 && (
-                  <section
-                    class="segment-observations"
-                    aria-label="影片段落觀察"
-                  >
-                    <h3>影片段落觀察</h3>
-                    <ol>
-                      {record.video.segments.map((segment) => (
-                        <li>
-                          {segment.startSeconds}–{segment.endSeconds} 秒：
-                          {segment.observation}
-                        </li>
-                      ))}
-                    </ol>
-                  </section>
-                )
-              )
-            }
-          </LayeredNotes>
+          />
         </div>
       </div>
     </section>
@@ -347,9 +315,5 @@ if (videoSource === undefined) {
     background: var(--color-surface-raised);
     color: var(--color-ink);
     font-family: ui-monospace, monospace;
-  }
-
-  .segment-observations h3 {
-    font-family: var(--font-heading);
   }
 </style>

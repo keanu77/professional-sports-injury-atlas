@@ -2,11 +2,11 @@
  * Browser tests for the privacy-enhanced click-to-load video on the
  * review-only component lab. All YouTube/Google routes are intercepted with a
  * deterministic local stub; any unmocked YouTube-family request fails the
- * test. Covers: zero YouTube artifacts before the click, JS-disabled source
- * and timestamp anchors, the single validated `youtube-nocookie.com` iframe
- * with one official `YT.Player` over the same element, `seekTo()` timeline
- * enhancement, API-failure fallback to the real timestamp URLs with focus
- * return, external-link-only and unavailable states, caption-state labeling,
+ * test. Covers: zero YouTube artifacts before the click, the JS-disabled
+ * source anchor, the single validated `youtube-nocookie.com` iframe with one
+ * official `YT.Player` over the same element, API-failure fallback with focus
+ * return and a source link, external-link-only and unavailable states,
+ * caption-state labeling,
  * and the public caption gate. Component-lab fixtures are fictional; governed
  * real-case requests are intercepted and never replay remote media.
  */
@@ -150,11 +150,10 @@ interface StubState {
     eventKeys: string[];
     sameElement: boolean;
   }>;
-  seeks: Array<[number, boolean]>;
 }
 
 const STUB_API_JS = `(() => {
-  window.__stub = { players: [], seeks: [] };
+  window.__stub = { players: [] };
   window.YT = {
     Player: function (element, options) {
       const stub = window.__stub;
@@ -166,9 +165,6 @@ const STUB_API_JS = `(() => {
         eventKeys: Object.keys(events),
         sameElement: element === document.querySelector("iframe"),
       });
-      this.seekTo = (seconds, allowSeekAhead) => {
-        stub.seeks.push([seconds, allowSeekAhead]);
-      };
       if (typeof events.onReady === "function") {
         const self = this;
         setTimeout(() => events.onReady({ target: self }), 0);
@@ -185,11 +181,6 @@ const STUB_EMBED_HTML = `<!doctype html>
 <title>本機測試用替身播放器（stub embed）</title></head>
 <body><p>deterministic local stub embed</p></body></html>`;
 
-const STUB_WATCH_HTML = `<!doctype html>
-<html lang="zh-Hant"><head><meta charset="utf-8" />
-<title>本機測試用替身原始頁（stub watch page）</title></head>
-<body><p>deterministic local stub watch page</p></body></html>`;
-
 interface StubLog {
   /** Every YouTube-family request URL, mocked or not. */
   youtubeRequests: string[];
@@ -199,7 +190,7 @@ interface StubLog {
 
 async function stubYouTubeRoutes(
   page: Page,
-  options: { failApi?: boolean; serveWatchPages?: boolean } = {},
+  options: { failApi?: boolean } = {},
 ): Promise<StubLog> {
   const log: StubLog = { youtubeRequests: [], unmocked: [] };
   await page.route("**/*", async (route) => {
@@ -225,14 +216,6 @@ async function stubYouTubeRoutes(
       url.pathname.startsWith("/embed/")
     ) {
       await route.fulfill({ contentType: "text/html", body: STUB_EMBED_HTML });
-      return;
-    }
-    if (
-      options.serveWatchPages === true &&
-      url.hostname === "www.youtube.com" &&
-      url.pathname === "/watch"
-    ) {
-      await route.fulfill({ contentType: "text/html", body: STUB_WATCH_HTML });
       return;
     }
     log.unmocked.push(url.href);
@@ -358,11 +341,6 @@ async function readStub(page: Page): Promise<StubState> {
   return state as StubState;
 }
 
-async function loadReviewPlayer(page: Page): Promise<void> {
-  await reviewCard(page).locator("[data-video-load]").click();
-  await expect(reviewCard(page)).toHaveAttribute("data-video-state", "ready");
-}
-
 test.describe("component lab before enhancement", () => {
   test("initial DOM and network log contain no YouTube artifacts", async ({
     page,
@@ -383,7 +361,9 @@ test.describe("component lab before enhancement", () => {
     await expect(page.locator("[autoplay]")).toHaveCount(0);
     const html = await page.content();
     expect(html).not.toContain("ytimg");
-    expect(html).not.toContain("youtube-nocookie");
+    await expect(
+      page.locator('[src*="youtube-nocookie"], [href*="youtube-nocookie"]'),
+    ).toHaveCount(0);
     expect(html).not.toContain("autoplay");
 
     const facade = reviewCard(page).locator("[data-video-facade]");
@@ -395,14 +375,7 @@ test.describe("component lab before enhancement", () => {
 
     const sourceLink = reviewCard(page).locator("[data-video-source-link]");
     await expect(sourceLink).toHaveAttribute("href", WATCH_URL);
-    const timeline = page.locator(
-      '[data-video-timeline][data-video-scope="lab-embed-review"]',
-    );
-    await expect(timeline.locator("a[data-timecode]")).toHaveCount(2);
-    await expect(timeline.locator("a[data-timecode]").first()).toHaveAttribute(
-      "href",
-      `${WATCH_URL}&t=12s`,
-    );
+    await expect(page.locator("[data-video-timeline]")).toHaveCount(0);
 
     await expectNoAxeViolations(page);
 
@@ -519,19 +492,7 @@ test.describe("governed case facades", () => {
         "href",
         `https://www.youtube.com/watch?v=${entry.videoId}`,
       );
-      const timestampLinks = page.locator(
-        `[data-video-timeline][data-video-scope="${entry.slug}"] a[data-timecode]`,
-      );
-      expect(await timestampLinks.count()).toBeGreaterThan(0);
-      for (const href of await timestampLinks.evaluateAll((anchors) =>
-        anchors.map((anchor) => anchor.getAttribute("href") ?? ""),
-      )) {
-        expect(href).toMatch(
-          new RegExp(
-            `^https://www\\.youtube\\.com/watch\\?v=${entry.videoId}&t=\\d+s$`,
-          ),
-        );
-      }
+      await expect(page.locator("[data-video-timeline]")).toHaveCount(0);
       await expect(card.locator("[data-caption-status]")).toHaveAttribute(
         "data-caption-status",
         entry.captionStatus,
@@ -553,7 +514,9 @@ test.describe("governed case facades", () => {
       await expect(page.locator("[autoplay]")).toHaveCount(0);
       expect(await page.locator("img").count()).toBeGreaterThanOrEqual(2);
       expect(await page.content()).not.toContain("ytimg");
-      expect(await page.content()).not.toContain("youtube-nocookie");
+      await expect(
+        page.locator('[src*="youtube-nocookie"], [href*="youtube-nocookie"]'),
+      ).toHaveCount(0);
       expect(log.youtubeRequests).toEqual([]);
       expect(thirdPartyRequests).toEqual([]);
     }
@@ -698,10 +661,10 @@ test.describe("governed case facades", () => {
 test.describe("component lab without JavaScript", () => {
   test.use({ javaScriptEnabled: false });
 
-  test("source and timestamp anchors still work as normal links", async ({
+  test("the source anchor remains a normal link and the removed timeline stays absent", async ({
     page,
   }) => {
-    await stubYouTubeRoutes(page, { serveWatchPages: true });
+    await stubYouTubeRoutes(page);
     await page.goto(LAB_PATH);
 
     await expect(page.locator("iframe")).toHaveCount(0);
@@ -709,13 +672,7 @@ test.describe("component lab without JavaScript", () => {
       reviewCard(page).locator("[data-video-source-link]"),
     ).toHaveAttribute("href", WATCH_URL);
 
-    const anchor = page
-      .locator('[data-video-timeline][data-video-scope="lab-embed-review"]')
-      .locator("a[data-timecode]")
-      .first();
-    await expect(anchor).toHaveAttribute("href", `${WATCH_URL}&t=12s`);
-    await anchor.click();
-    await expect(page).toHaveURL(`${WATCH_URL}&t=12s`);
+    await expect(page.locator("[data-video-timeline]")).toHaveCount(0);
   });
 });
 
@@ -795,45 +752,10 @@ test.describe("click-to-load player", () => {
     await expectNoAxeViolations(page);
   });
 
-  test("timeline seeks through the same ready player without navigation", async ({
+  test("API load failure removes the iframe, returns focus, and keeps the source link", async ({
     page,
   }) => {
-    const log = await stubYouTubeRoutes(page);
-    await page.goto(LAB_PATH);
-    await loadReviewPlayer(page);
-    const iframeHandle = await page.locator("iframe").elementHandle();
-
-    const timeline = page.locator(
-      '[data-video-timeline][data-video-scope="lab-embed-review"]',
-    );
-    await timeline.locator("a[data-timecode]").first().click();
-    await expect(page).toHaveURL(new RegExp(`${LAB_PATH}$`));
-    await expect
-      .poll(async () => (await readStub(page)).seeks)
-      .toEqual([[12, true]]);
-
-    await timeline.locator("a[data-timecode]").nth(1).click();
-    await expect
-      .poll(async () => (await readStub(page)).seeks)
-      .toEqual([
-        [12, true],
-        [45, true],
-      ]);
-
-    const stub = await readStub(page);
-    expect(stub.players).toHaveLength(1);
-    const stillSame = await page.evaluate(
-      (el) => el.isConnected && el === document.querySelector("iframe"),
-      iframeHandle!,
-    );
-    expect(stillSame).toBe(true);
-    expect(log.unmocked).toEqual([]);
-  });
-
-  test("API load failure removes the iframe, returns focus, and keeps real links", async ({
-    page,
-  }) => {
-    await stubYouTubeRoutes(page, { failApi: true, serveWatchPages: true });
+    await stubYouTubeRoutes(page, { failApi: true });
     await page.goto(LAB_PATH);
 
     const card = reviewCard(page);
@@ -845,15 +767,12 @@ test.describe("click-to-load player", () => {
     await expect(button).toBeVisible();
     await expect(button).toBeFocused();
     await expect(card.locator("[data-video-failure]")).toBeVisible();
+    await expect(card.locator("[data-video-source-link]")).toHaveAttribute(
+      "href",
+      WATCH_URL,
+    );
+    await expect(page.locator("[data-video-timeline]")).toHaveCount(0);
     await expectNoAxeViolations(page);
-
-    // The browser follows the original timestamp URL.
-    await page
-      .locator('[data-video-timeline][data-video-scope="lab-embed-review"]')
-      .locator("a[data-timecode]")
-      .first()
-      .click();
-    await expect(page).toHaveURL(`${WATCH_URL}&t=12s`);
   });
 });
 

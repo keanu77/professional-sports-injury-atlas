@@ -7,7 +7,6 @@
  * video ID); no real player, team, diagnosis, or media ID appears, and the
  * NBA-host fixture is a non-clickable citation that no reader flow requests.
  */
-import CaseTimeline from "../../components/cases/CaseTimeline.astro";
 import CaseVideo from "../../components/cases/CaseVideo.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { resolveBuildMode } from "../../lib/governance/build-mode";
@@ -33,11 +32,6 @@ const fictionalYouTubeVideo = {
   captionStatus: "not-verified",
 } as const;
 
-const fictionalSegments = [
-  { startSeconds: 12, endSeconds: 18, observation: "虛構示範：起跳與落地瞬間" },
-  { startSeconds: 45, endSeconds: 52, observation: "虛構示範：受扶離場畫面" },
-];
-
 const fictionalNbaVideo = {
   provider: "nba",
   canonicalUrl: "https://www.nba.com/watch/fictional-demo-clip",
@@ -62,7 +56,7 @@ const fictionalNbaCitation = {
 
 <BaseLayout
   title="元件實驗室（審查專用）"
-  description="Review-only 元件實驗室：虛構資料示範 click-to-load 影片、時間軸與失敗狀態。"
+  description="Review-only 元件實驗室：虛構資料示範 click-to-load 影片與失敗狀態。"
 >
   <h1>元件實驗室（審查專用）</h1>
   <p>
@@ -82,11 +76,6 @@ const fictionalNbaCitation = {
       injuryCode={FICTIONAL_INJURY_CODE}
       injuryLabel={FICTIONAL_INJURY_LABEL}
       video={fictionalYouTubeVideo}
-    />
-    <CaseTimeline
-      scopeId="lab-embed-review"
-      canonicalUrl={FICTIONAL_WATCH_URL}
-      segments={fictionalSegments}
     />
   </section>
 
