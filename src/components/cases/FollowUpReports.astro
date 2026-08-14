@@ -181,11 +181,14 @@ const headingId = `${record.slug}-follow-up-heading`;
                               待醫師簽核
                             </strong>
                           </p>
-                          <p data-follow-up-statement>
+                          <p class="follow-up-source-party">
+                            來源方：
                             <span data-follow-up-reporting-party>
                               {item.source.account ?? item.source.publisher}
                             </span>
-                            報導：{item.attributedStatement}
+                          </p>
+                          <p data-follow-up-statement>
+                            {item.attributedStatement}
                           </p>
                           {item.factDate !== null && (
                             <p>

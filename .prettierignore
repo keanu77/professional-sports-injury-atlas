@@ -23,6 +23,8 @@ research/source-policy/source-policy.v7.json
 research/source-policy/source-policy.v8.json
 research/source-policy/source-policy.v9.json
 research/source-policy/source-policy.v10.json
+research/follow-ups/decision-17/*.json
+src/content/follow-ups/*.json
 src/assets/players/player-photo-registry.v1.json
 src/assets/players/player-photo-registry.v2.json
 src/assets/players/player-photo-registry.v3.json

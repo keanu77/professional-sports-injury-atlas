@@ -1,19 +1,23 @@
 /**
- * Astro content collections for cases, injury overviews, and quarterly
- * updates. Routes use `entry.id`, `getCollection()`, and `getEntry()`. The
- * three content directories stay empty (`.gitkeep` only) until real content
- * gates are authorized.
+ * Astro content collections for cases, additive pending follow-up sidecars,
+ * injury overviews, and quarterly updates.
  */
 
 import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { caseSchema } from "./lib/contracts/case";
+import { caseFollowUpSchema } from "./lib/contracts/case-follow-up";
 import { injuryOverviewSchema } from "./lib/contracts/injury-overview";
 import { updateSchema } from "./lib/contracts/update";
 
 const cases = defineCollection({
   loader: glob({ pattern: "**/*.json", base: "./src/content/cases" }),
   schema: caseSchema,
+});
+
+const followUps = defineCollection({
+  loader: glob({ pattern: "**/*.json", base: "./src/content/follow-ups" }),
+  schema: caseFollowUpSchema,
 });
 
 const injuries = defineCollection({
@@ -26,4 +30,4 @@ const updates = defineCollection({
   schema: updateSchema,
 });
 
-export const collections = { cases, injuries, updates };
+export const collections = { cases, followUps, injuries, updates };
