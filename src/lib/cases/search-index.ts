@@ -4,6 +4,7 @@
  */
 
 import { effectiveVideoRendering, selectPublicCases } from "./selectors";
+import { deriveVideoSourceToken, type VideoSourceToken } from "./video-source";
 import type { InjuryCase } from "../contracts/case";
 
 export interface ClientCaseIndexEntry {
@@ -21,6 +22,7 @@ export interface ClientCaseIndexEntry {
   isClassic: boolean;
   mechanismTags: string[];
   captionStatus: string;
+  videoSource: VideoSourceToken;
   rendering: "embed" | "external-link";
 }
 
@@ -42,6 +44,7 @@ export function buildClientSearchIndex(
     isClassic: record.isClassic,
     mechanismTags: [...record.observedMechanismTags],
     captionStatus: record.video.captionStatus,
+    videoSource: deriveVideoSourceToken(record.video),
     rendering: effectiveVideoRendering(record),
   }));
 }

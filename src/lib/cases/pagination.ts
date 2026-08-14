@@ -15,6 +15,7 @@ import {
 } from "./selectors";
 import type { InjuryCase } from "../contracts/case";
 import type { BuildMode } from "../governance/build-mode";
+import { deriveVideoSourceToken, type VideoSourceToken } from "./video-source";
 
 export const LISTING_PAGE_SIZE = 12;
 export const INDEX_SHARD_SIZE = 100;
@@ -42,6 +43,7 @@ export interface CaseIndexEntry {
   isClassic: boolean;
   classicReason: string | null;
   mechanismTags: string[];
+  videoSource: VideoSourceToken;
   confirmationStatus: string;
   workflowStatus?: string;
 }
@@ -101,6 +103,7 @@ export function buildCaseIndexEntry(
     isClassic: record.isClassic,
     classicReason: record.classicReason,
     mechanismTags: [...record.observedMechanismTags],
+    videoSource: deriveVideoSourceToken(record.video),
     confirmationStatus: record.injury.confirmationStatus,
   };
   if (mode === "review") {

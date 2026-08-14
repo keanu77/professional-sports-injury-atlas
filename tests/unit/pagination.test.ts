@@ -202,12 +202,14 @@ describe("index entry fields", () => {
         "slug",
         "sportCode",
         "teamName",
+        "videoSource",
         "workflowStatus",
       ].sort(),
     );
     expect(entry.eventYear).toBe(2026);
     expect(entry.season).toBe("2025-26");
     expect(entry.confirmationStatus).toBe("confirmed");
+    expect(entry.videoSource).toBe("youtube-embed");
     expect(entry.workflowStatus).toBe("medical-review");
     expect(entry.confirmationStatus).not.toBe(entry.workflowStatus);
   });

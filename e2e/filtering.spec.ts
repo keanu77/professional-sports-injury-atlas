@@ -78,9 +78,46 @@ test.describe("progressive case filtering", () => {
   });
 
   test("prefills the form from an existing query string", async ({ page }) => {
-    await page.goto("/injuries/acl/?keyword=%E8%99%9B%E6%A7%8B&classic=1");
+    await page.goto(
+      "/injuries/acl/?keyword=%E8%99%9B%E6%A7%8B&videoSource=external-link&classic=1",
+    );
     await expect(page.getByLabel("球員或球隊關鍵字")).toHaveValue("虛構");
+    await expect(page.getByLabel("影片來源")).toHaveValue("external-link");
     await expect(page.getByLabel("只看經典案例")).toBeChecked();
+  });
+
+  test("reproduces the exact 7/18/1 video-source partition", async ({
+    page,
+  }) => {
+    await page.goto("/injuries/acl/");
+    const source = page.getByLabel("影片來源");
+    const status = page.locator("[data-filter-status]");
+
+    await source.selectOption("youtube-embed");
+    await expect(status).toHaveText(/符合條件的案例共 7 筆/);
+
+    await source.selectOption("nba-plain-text-citation");
+    await expect(status).toHaveText(/符合條件的案例共 18 筆/);
+
+    await source.selectOption("external-link");
+    await expect(status).toHaveText(/符合條件的案例共 1 筆/);
+    await expect(
+      page.locator("[data-filter-results] a", {
+        hasText: "Anthony Edwards",
+      }),
+    ).toHaveCount(1);
+    await expect(page).toHaveURL(/videoSource=external-link/);
+  });
+
+  test("composes video source with the existing injury dimension", async ({
+    page,
+  }) => {
+    await page.goto("/injuries/acl/");
+    await page.getByLabel("傷種").selectOption("acl");
+    await page.getByLabel("影片來源").selectOption("nba-plain-text-citation");
+    await expect(page.locator("[data-filter-status]")).toHaveText(
+      /符合條件的案例共 7 筆/,
+    );
   });
 
   test("one reset action restores the static listing and clears the query", async ({

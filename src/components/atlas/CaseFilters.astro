@@ -12,6 +12,10 @@ import { LEAGUES } from "../../data/taxonomy/leagues";
 import { MECHANISMS } from "../../data/taxonomy/mechanisms";
 import { SPORTS } from "../../data/taxonomy/sports";
 import { CASE_STATUSES, CONFIRMATION_STATUSES } from "../../lib/contracts/case";
+import {
+  VIDEO_SOURCE_LABELS,
+  VIDEO_SOURCE_TOKENS,
+} from "../../lib/cases/video-source";
 import { confirmationStatusLabel } from "../../lib/routes/static-paths";
 import type { BuildMode } from "../../lib/governance/build-mode";
 
@@ -106,6 +110,17 @@ const WORKFLOW_LABELS: Record<string, string> = {
             {
               MECHANISMS.map((mechanism) => (
                 <option value={mechanism.code}>{mechanism.labelZh}</option>
+              ))
+            }
+          </select>
+        </label>
+        <label>
+          影片來源
+          <select name="videoSource">
+            <option value="">全部影片來源</option>
+            {
+              VIDEO_SOURCE_TOKENS.map((token) => (
+                <option value={token}>{VIDEO_SOURCE_LABELS[token]}</option>
               ))
             }
           </select>

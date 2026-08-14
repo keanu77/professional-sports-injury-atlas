@@ -210,6 +210,7 @@ function verifierFixture(): VerifierFixture {
       classicReason: null,
       mechanismTags: ["unclear"],
       confirmationStatus: "confirmed",
+      videoSource: "youtube-embed",
       workflowStatus: "approved",
     },
   ]);

@@ -28,6 +28,7 @@ export interface CaseFilterState {
   league: string | null;
   injury: string | null;
   mechanism: string | null;
+  videoSource: string | null;
   classicOnly: boolean;
   /** External diagnosis confirmation status; never a workflow state. */
   confirmationStatus: string | null;
@@ -44,6 +45,7 @@ export function emptyFilterState(): CaseFilterState {
     league: null,
     injury: null,
     mechanism: null,
+    videoSource: null,
     classicOnly: false,
     confirmationStatus: null,
     workflowStatus: null,
@@ -59,6 +61,7 @@ export function isEmptyFilterState(state: CaseFilterState): boolean {
     state.league === null &&
     state.injury === null &&
     state.mechanism === null &&
+    state.videoSource === null &&
     !state.classicOnly &&
     state.confirmationStatus === null &&
     state.workflowStatus === null
@@ -126,6 +129,9 @@ export function applyCaseFilters(
         return false;
       }
     }
+    if (state.videoSource !== null && entry.videoSource !== state.videoSource) {
+      return false;
+    }
     if (state.classicOnly && !entry.isClassic) return false;
     if (
       state.confirmationStatus !== null &&
@@ -151,6 +157,7 @@ const QUERY_KEYS: Array<[keyof CaseFilterState, string]> = [
   ["league", "league"],
   ["injury", "injury"],
   ["mechanism", "mechanism"],
+  ["videoSource", "videoSource"],
   ["classicOnly", "classic"],
   ["confirmationStatus", "confirmation"],
   ["workflowStatus", "workflow"],
@@ -191,6 +198,7 @@ export function parseFilterQuery(search: string): CaseFilterState {
   state.league = text("league");
   state.injury = text("injury");
   state.mechanism = text("mechanism");
+  state.videoSource = text("videoSource");
   state.classicOnly = params.get("classic") === "1";
   state.confirmationStatus = text("confirmation");
   state.workflowStatus = text("workflow");
@@ -233,6 +241,7 @@ function readFormState(form: HTMLFormElement): CaseFilterState {
   state.league = text("league");
   state.injury = text("injury");
   state.mechanism = text("mechanism");
+  state.videoSource = text("videoSource");
   state.classicOnly = data.get("classicOnly") === "1";
   state.confirmationStatus = text("confirmationStatus");
   state.workflowStatus = text("workflowStatus");
@@ -256,6 +265,7 @@ function prefillForm(form: HTMLFormElement, state: CaseFilterState): void {
   set("league", state.league ?? "");
   set("injury", state.injury ?? "");
   set("mechanism", state.mechanism ?? "");
+  set("videoSource", state.videoSource ?? "");
   set("confirmationStatus", state.confirmationStatus ?? "");
   set("workflowStatus", state.workflowStatus ?? "");
   const classic = form.elements.namedItem("classicOnly");

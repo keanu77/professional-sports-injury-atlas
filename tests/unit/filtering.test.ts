@@ -38,6 +38,7 @@ function makeEntry(overrides: Partial<CaseIndexEntry>): CaseIndexEntry {
     isClassic: false,
     classicReason: null,
     mechanismTags: ["inversion-landing"],
+    videoSource: "youtube-embed",
     confirmationStatus: "confirmed",
     workflowStatus: "medical-review",
     ...overrides,
@@ -58,6 +59,7 @@ const betaClassicAcl = makeEntry({
   isClassic: true,
   classicReason: "Fictional classic teaching example.",
   mechanismTags: ["non-contact-cut"],
+  videoSource: "nba-plain-text-citation",
   confirmationStatus: "confirmed",
   workflowStatus: "approved",
 });
@@ -72,6 +74,7 @@ const gammaUnconfirmed = makeEntry({
   teamName: "Fictional Coast Sharks",
   opponentName: "Fictional Valley Hawks",
   mechanismTags: ["push-off-acceleration"],
+  videoSource: "external-link",
   confirmationStatus: "unconfirmed",
   workflowStatus: "draft",
 });
@@ -156,6 +159,24 @@ describe("applyCaseFilters", () => {
     );
   });
 
+  it("filters by the controlled video-source token", () => {
+    expect(
+      applyCaseFilters(entries, withState({ videoSource: "youtube-embed" })),
+    ).toEqual([alphaAnkle]);
+    expect(
+      applyCaseFilters(
+        entries,
+        withState({ videoSource: "nba-plain-text-citation" }),
+      ),
+    ).toEqual([betaClassicAcl]);
+    expect(
+      applyCaseFilters(entries, withState({ videoSource: "external-link" })),
+    ).toEqual([gammaUnconfirmed]);
+    expect(
+      applyCaseFilters(entries, withState({ videoSource: "not-a-source" })),
+    ).toEqual([]);
+  });
+
   it("filters the two status dimensions independently and together", () => {
     expect(
       applyCaseFilters(
@@ -204,6 +225,7 @@ describe("applyCaseFilters", () => {
       league: "nba",
       injury: "acl",
       mechanism: "cutting",
+      videoSource: "nba-plain-text-citation",
       classicOnly: true,
       confirmationStatus: "confirmed",
       workflowStatus: "approved",
@@ -258,12 +280,15 @@ describe("filter query serialization", () => {
       league: "nba",
       injury: "acl",
       mechanism: "non-contact-cut",
+      videoSource: "nba-plain-text-citation",
       classicOnly: true,
       confirmationStatus: "confirmed",
       workflowStatus: "approved",
     });
     const query = serializeFilterQuery(state);
-    expect(query.startsWith("?")).toBe(true);
+    expect(query).toBe(
+      "?keyword=beta&year=2014&season=2013-14&sport=basketball&league=nba&injury=acl&mechanism=non-contact-cut&videoSource=nba-plain-text-citation&classic=1&confirmation=confirmed&workflow=approved",
+    );
     expect(parseFilterQuery(query)).toEqual(state);
   });
 

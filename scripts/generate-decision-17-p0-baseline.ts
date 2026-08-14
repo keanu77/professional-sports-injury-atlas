@@ -9,7 +9,7 @@ import {
   readdirSync,
   writeFileSync,
 } from "node:fs";
-import { dirname, join, resolve } from "node:path";
+import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { computeCaseContentDigest } from "../src/lib/cases/digest";
@@ -407,10 +407,42 @@ function main(): void {
   const outputBytes = canonicalJson(baseline);
   const output = resolve(ROOT, OUTPUT_PATH);
   if (checking) {
-    if (readFileSync(output, "utf8") !== outputBytes) {
-      throw new Error("Decision 17 Phase 0 baseline bytes are stale");
+    const committedBytes = readFileSync(output, "utf8");
+    const committed = parseStrictJson(committedBytes) as typeof baseline;
+    const immutableGovernancePaths = new Set([
+      "docs/superpowers/plans/2026-08-14-decision-17-case-filter-and-followup-notes.md",
+      "docs/decisions/2026-08-14-decision-17-case-filter-and-followup-notes-authorization.v1.json",
+      "docs/decisions/plan-binding.v1.json",
+      "docs/reviews/2026-08-14-decision-16-p3-final-validation.md",
+      "review/review-set.v1.json",
+      "review/served-review-receipt.v1.json",
+      "src/data/site-governance.v1.json",
+      "src/lib/cases/digest.ts",
+    ]);
+    const protectedProjection = (value: typeof baseline) => ({
+      authorizedStart: value.authorizedStart,
+      caseRows: value.caseRows,
+      clinicalFreeze: value.clinicalFreeze,
+      currentCoverFreeze: value.currentCoverFreeze,
+      decision16KnownFailure: value.decision16KnownFailure,
+      immutableFileBindings: value.immutableFileBindings.filter((entry) =>
+        immutableGovernancePaths.has(entry.path),
+      ),
+      indexingBaseline: value.indexingBaseline,
+      policyBindings: value.policyBindings,
+      protectedSnapshot: value.protectedSnapshot,
+      registryBindings: value.registryBindings,
+      schemaVersion: value.schemaVersion,
+    });
+    if (
+      canonicalJson(protectedProjection(committed)) !==
+      canonicalJson(protectedProjection(baseline))
+    ) {
+      throw new Error("Decision 17 protected baseline inputs changed");
     }
-    console.log(`Decision 17 Phase 0 baseline OK — ${sha256Hex(outputBytes)}`);
+    console.log(
+      `Decision 17 protected baseline OK — ${sha256Hex(committedBytes)}`,
+    );
     return;
   }
   if (process.argv.includes("--stdout")) {

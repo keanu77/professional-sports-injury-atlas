@@ -72,6 +72,7 @@ describe("client search index", () => {
       teamName: "Riverport Foxes",
       opponentName: "Summit Ridge Owls",
       isClassic: true,
+      videoSource: "youtube-embed",
       rendering: "embed",
     });
     expect(entry!.mechanismTags).toEqual(["non-contact-cut"]);

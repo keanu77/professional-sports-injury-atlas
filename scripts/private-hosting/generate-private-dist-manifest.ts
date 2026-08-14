@@ -36,6 +36,7 @@ import {
 } from "../../src/lib/cases/pagination";
 import { selectMedicallyApprovedCases } from "../../src/lib/cases/selectors";
 import { computeQuarterlyUpdateDigest } from "../../src/lib/cases/update-digest";
+import { VIDEO_SOURCE_TOKENS } from "../../src/lib/cases/video-source";
 import { validateCaseSourceBinding } from "../../src/lib/contracts/cross-validation";
 import type { QuarterlyUpdate } from "../../src/lib/contracts/update";
 import { defaultTaxonomyRegistries } from "../../src/lib/contracts/taxonomy";
@@ -815,6 +816,7 @@ const CASE_INDEX_RECORD_KEYS = [
   "slug",
   "sportCode",
   "teamName",
+  "videoSource",
   "workflowStatus",
 ] as const;
 
@@ -1033,6 +1035,7 @@ function extractCaseIndexIdentities(
         "slug",
         "sportCode",
         "teamName",
+        "videoSource",
         "workflowStatus",
       ] as const;
       if (
@@ -1058,7 +1061,12 @@ function extractCaseIndexIdentities(
         ) ||
         (
           (rawRecord as Record<string, unknown>)["mechanismTags"] as unknown[]
-        ).some((tag) => typeof tag !== "string" || tag === "")
+        ).some((tag) => typeof tag !== "string" || tag === "") ||
+        !VIDEO_SOURCE_TOKENS.includes(
+          (rawRecord as Record<string, unknown>)[
+            "videoSource"
+          ] as (typeof VIDEO_SOURCE_TOKENS)[number],
+        )
       ) {
         throw new PrivateDistManifestError(
           `case-index record ${id} has invalid route fields`,

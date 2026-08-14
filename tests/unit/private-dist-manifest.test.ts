@@ -22,6 +22,7 @@ import { computeCaseContentDigest } from "../../src/lib/cases/digest";
 import { computeInjuryOverviewDigest } from "../../src/lib/cases/injury-overview-digest";
 import { LISTING_PAGE_SIZE } from "../../src/lib/cases/pagination";
 import { computeQuarterlyUpdateDigest } from "../../src/lib/cases/update-digest";
+import type { VideoSourceToken } from "../../src/lib/cases/video-source";
 import {
   ARTIFACT_IDENTITY_META_NAME,
   canonicalRequestPathForBuildPath,
@@ -93,6 +94,7 @@ interface FixtureRecord {
   classicReason: string | null;
   mechanismTags: string[];
   confirmationStatus: string;
+  videoSource: VideoSourceToken;
   workflowStatus: string;
 }
 
@@ -366,6 +368,7 @@ function fixture(): Fixture {
     classicReason: null,
     mechanismTags: ["unclear"],
     confirmationStatus: "confirmed",
+    videoSource: "youtube-embed",
     workflowStatus: "approved",
   }));
 
