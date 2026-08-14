@@ -49,6 +49,9 @@ const V8_MARKDOWN_POLICY_PATH = "research/source-policy/nba.v8.md" as const;
 const V9_JSON_POLICY_PATH =
   "research/source-policy/source-policy.v9.json" as const;
 const V9_MARKDOWN_POLICY_PATH = "research/source-policy/nba.v9.md" as const;
+const V10_JSON_POLICY_PATH =
+  "research/source-policy/source-policy.v10.json" as const;
+const V10_MARKDOWN_POLICY_PATH = "research/source-policy/nba.v10.md" as const;
 const DECISION_14_P1_EVIDENCE_PATH =
   "docs/reviews/2026-08-13-decision-14-p1-photographer-allowlist-evidence.md" as const;
 const DECISION_14_P2_EVIDENCE_PATH =
@@ -302,6 +305,10 @@ const EXPECTED_V9_JSON_SHA256 =
   "0ac3fecc04e12b88134ce97d11fbe1c742af1f21664a9c80eaf0d76ab7cfcfba";
 const EXPECTED_V9_MARKDOWN_SHA256 =
   "03f6a61ee6ef958cae2ae9b918d7b6a115ff0d346f63202efce8780744fbadf2";
+const EXPECTED_V10_JSON_SHA256 =
+  "9203384e5d8b551834e3de5c17a3cc2bff60f8e27416a3074897db861df9a4b3";
+const EXPECTED_V10_MARKDOWN_SHA256 =
+  "34e05ef2b6c1f7fbfbafe9dbf5ae469394bcd3a7c6dc49b07f0468a566a5604c";
 
 const FROZEN_POLICY_BY_VERSION = Object.freeze({
   "nba-v1": Object.freeze({
@@ -358,6 +365,12 @@ const FROZEN_POLICY_BY_VERSION = Object.freeze({
     markdownPath: V9_MARKDOWN_POLICY_PATH,
     markdownSha256: EXPECTED_V9_MARKDOWN_SHA256,
   }),
+  "nba-v10": Object.freeze({
+    jsonPath: V10_JSON_POLICY_PATH,
+    jsonSha256: EXPECTED_V10_JSON_SHA256,
+    markdownPath: V10_MARKDOWN_POLICY_PATH,
+    markdownSha256: EXPECTED_V10_MARKDOWN_SHA256,
+  }),
 });
 
 type FrozenPolicyVersion = keyof typeof FROZEN_POLICY_BY_VERSION;
@@ -382,6 +395,8 @@ function readPolicyFile(
     | typeof V8_MARKDOWN_POLICY_PATH
     | typeof V9_JSON_POLICY_PATH
     | typeof V9_MARKDOWN_POLICY_PATH
+    | typeof V10_JSON_POLICY_PATH
+    | typeof V10_MARKDOWN_POLICY_PATH
     | typeof DECISION_14_P1_EVIDENCE_PATH
     | typeof DECISION_14_P2_EVIDENCE_PATH,
 ): string {
@@ -959,6 +974,7 @@ describe("NBA source-policy nba-v2 contract", () => {
       "nba-v7",
       "nba-v8",
       "nba-v9",
+      "nba-v10",
     ]);
     const pairs = Object.values(FROZEN_POLICY_BY_VERSION).map(
       ({ jsonSha256, markdownSha256 }) => `${jsonSha256}:${markdownSha256}`,
@@ -1005,10 +1021,10 @@ describe("NBA source-policy nba-v2 contract", () => {
     const policy = parseCanonicalPolicy(jsonBytes);
     expect(() =>
       verifyFrozenPolicyBytes(
-        canonicalJson({ ...policy, sourcePolicyVersion: "nba-v10" }),
+        canonicalJson({ ...policy, sourcePolicyVersion: "nba-v11" }),
         markdownBytes,
       ),
-    ).toThrow(/unregistered source-policy version nba-v10/);
+    ).toThrow(/unregistered source-policy version nba-v11/);
   });
 });
 
@@ -2082,5 +2098,230 @@ describe("NBA source-policy nba-v9 Decision 16 governed rendition", () => {
     expect(markdown).toContain(
       "CC BY-SA composition firewall remains unchanged",
     );
+  });
+});
+
+describe("NBA source-policy nba-v10 Decision 17 follow-up reporting", () => {
+  it("is canonical, immutable, and binds the exact v9 JSON and Markdown bytes", () => {
+    const bytes = readPolicyFile(V10_JSON_POLICY_PATH);
+    const policy = parseCanonicalPolicy(bytes);
+    const v9Bytes = readPolicyFile(V9_JSON_POLICY_PATH);
+    const v9MarkdownBytes = readPolicyFile(V9_MARKDOWN_POLICY_PATH);
+    const v10MarkdownBytes = readPolicyFile(V10_MARKDOWN_POLICY_PATH);
+
+    expect(bytes.endsWith("\n")).toBe(false);
+    expect(policy.sourcePolicyVersion).toBe("nba-v10");
+    expect(policy.followUpReportingPolicyInheritance).toEqual({
+      jsonPath: V9_JSON_POLICY_PATH,
+      jsonSha256: sha256Hex(v9Bytes),
+      markdownPath: V9_MARKDOWN_POLICY_PATH,
+      markdownSha256: sha256Hex(v9MarkdownBytes),
+      sourcePolicyVersion: "nba-v9",
+    });
+    expect(policy.humanPolicyDocument).toEqual({
+      path: V10_MARKDOWN_POLICY_PATH,
+      sha256: sha256Hex(v10MarkdownBytes),
+    });
+    expect(verifyFrozenPolicyBytes(bytes, v10MarkdownBytes)).toEqual({
+      sourcePolicyVersion: "nba-v10",
+      jsonSha256: EXPECTED_V10_JSON_SHA256,
+      markdownSha256: EXPECTED_V10_MARKDOWN_SHA256,
+    });
+  });
+
+  it("changes only the follow-up annex and exact inherited medical-content-authoring closure", () => {
+    const v9 = parseCanonicalPolicy(readPolicyFile(V9_JSON_POLICY_PATH));
+    const v10 = parseCanonicalPolicy(readPolicyFile(V10_JSON_POLICY_PATH));
+    const {
+      humanPolicyDocument: _v9Human,
+      privacyAccessRules: _v9Privacy,
+      sourcePolicyVersion: _v9Version,
+      ...v9Unchanged
+    } = v9;
+    const {
+      followUpReportingPolicyInheritance: _v10Inheritance,
+      followUpReportingRules: _v10Annex,
+      humanPolicyDocument: _v10Human,
+      privacyAccessRules: _v10Privacy,
+      sourcePolicyVersion: _v10Version,
+      ...v10Unchanged
+    } = v10;
+    expect(v10Unchanged).toEqual(v9Unchanged);
+
+    const v9Privacy = asRecord(v9.privacyAccessRules);
+    const v10Privacy = asRecord(v10.privacyAccessRules);
+    const { closedScopes: _v9Closed, ...v9PrivacyUnchanged } = v9Privacy;
+    const { closedScopes: _v10Closed, ...v10PrivacyUnchanged } = v10Privacy;
+    expect(v10PrivacyUnchanged).toEqual(v9PrivacyUnchanged);
+    expect(v9Privacy.closedScopes).toEqual([
+      "medical-content-authoring",
+      "private-hosting",
+      "public-release",
+      "deployment",
+      "indexing",
+    ]);
+    expect(v10Privacy.closedScopes).toEqual([
+      "private-hosting",
+      "public-release",
+      "deployment",
+      "indexing",
+    ]);
+    expect(v10.playerStaticPhotoRules).toEqual(v9.playerStaticPhotoRules);
+    expect(v10.clinicalVideoPolicyInheritance).toEqual(
+      v9.clinicalVideoPolicyInheritance,
+    );
+  });
+
+  it("opens only pending follow-up authoring while retaining all seven closed scopes and no execution authority", () => {
+    const policy = parseCanonicalPolicy(readPolicyFile(V10_JSON_POLICY_PATH));
+    const annex = asRecord(policy.followUpReportingRules);
+    const boundary = asRecord(annex.executionBoundary);
+    const limits = asRecord(annex.reviewAndResearchLimits);
+
+    expect(annex.createsExecutionAuthorization).toBe(false);
+    expect(annex.existingVideoAndSourceManifestPolicyVersion).toBe("nba-v2");
+    expect(boundary).toEqual({
+      authoringScope: "pending-follow-up-authoring-only",
+      closedScopeIds: [
+        "deployment",
+        "external-account-mutation",
+        "hosting-service-mutation",
+        "indexing",
+        "medical-review-decision",
+        "public-release",
+        "remote-repository-mutation",
+      ],
+      existingOwnerApprovalExtendsToNewItems: false,
+      medicalContentAuthoringSupersession:
+        "exact-decision-17-pending-follow-up-authoring-only",
+      medicalReviewDecisionOpen: false,
+      scopeId: "decision-17-case-filter-and-followup-notes-only",
+    });
+    expect(limits).toEqual({
+      itemMaximumStatus: "pending-owner-signoff",
+      medicalApprovalCreated: false,
+      publicProjectionOfPendingItems: "omit-or-reject",
+      researcherMaximumStatus: "source-ready",
+      sourceApprovalCreated: false,
+    });
+
+    const photoExecution = asRecord(
+      asRecord(
+        asRecord(policy.playerStaticPhotoRules).decision15PhotoFirstPolicy,
+      ).executionBoundary,
+    );
+    expect(photoExecution.closedScopeIds).toContain(
+      "medical-content-authoring",
+    );
+  });
+
+  it("defines the exact visible three-tier hierarchy without promoting unverified reports", () => {
+    const policy = parseCanonicalPolicy(readPolicyFile(V10_JSON_POLICY_PATH));
+    const annex = asRecord(policy.followUpReportingRules);
+    expect(asRecordArray(annex.sourceTiers, "sourceTiers")).toEqual([
+      {
+        classificationRule:
+          "directly controlled team or league release/report; domain alone is insufficient without publisher identity",
+        label: "球隊／聯盟官方公告",
+        token: "team-or-league-official",
+      },
+      {
+        classificationRule:
+          "named mainstream outlet article or identifiable affiliated reporter article/post with preserved account and publisher facts",
+        label: "主流媒體報導",
+        token: "mainstream-media-report",
+      },
+      {
+        classificationRule:
+          "another report, social post, anonymous claim, or claim not independently confirmed",
+        label: "未證實報導",
+        token: "unverified-report",
+        visuallyPromotedToConfirmed: false,
+      },
+    ]);
+  });
+
+  it("requires atomic individually sourced pending items and explicit non-inferential empty states", () => {
+    const policy = parseCanonicalPolicy(readPolicyFile(V10_JSON_POLICY_PATH));
+    const annex = asRecord(policy.followUpReportingRules);
+    const atomic = asRecord(annex.atomicItemContract);
+    const attribution = asRecord(annex.attributionRules);
+    const empty = asRecord(annex.emptyStateRules);
+    const review = asRecord(atomic.reviewBinding);
+
+    expect(atomic.factKinds).toEqual([
+      "treatment",
+      "surgery",
+      "injection",
+      "actual-return",
+    ]);
+    expect(atomic.oneFactPerItem).toBe(true);
+    expect(atomic.sharedSourceListMaySatisfyItems).toBe(false);
+    expect(atomic.paragraphLevelCitationAllowed).toBe(false);
+    expect(atomic.aggregateDraftDigestStoredInSidecar).toBe(false);
+    expect(atomic.itemPayloadDigestExcludes).toEqual([
+      "itemPayloadDigest",
+      "review",
+    ]);
+    expect(atomic.optionalFields).toEqual(["factDate"]);
+    expect(review).toEqual({
+      allowedKeys: ["status", "reviewedPayloadDigest"],
+      reviewedPayloadDigestMustEqualItemPayloadDigest: true,
+      status: "pending-owner-signoff",
+    });
+    expect(attribution.blockStatement).toBe(
+      "以下內容是第三方報導的整理，不是本站醫師的診斷、評估或建議。",
+    );
+    expect(attribution.eachItemOwnSourceRequired).toBe(true);
+    expect(empty).toEqual({
+      allFactKindArraysExplicitlyPresent: true,
+      emptyArrayRequiredWhenNoQualifyingFact: true,
+      emptyDoesNotProveNonOccurrence: true,
+      exactVisibleText:
+        "查無符合本政策且可逐條引用的紀錄；未據此推定未曾發生。",
+      inferredOrTypicalCompletionAllowed: false,
+    });
+  });
+
+  it("allows actual-return only from official sources and preserves NBA zero-link presentation", () => {
+    const policy = parseCanonicalPolicy(readPolicyFile(V10_JSON_POLICY_PATH));
+    const annex = asRecord(policy.followUpReportingRules);
+    const actualReturn = asRecord(annex.actualReturnRules);
+    const presentation = asRecord(annex.sourcePresentationRules);
+
+    expect(actualReturn.allowedSourceTiers).toEqual([
+      "team-or-league-official",
+    ]);
+    expect(actualReturn.historicalParticipationOnly).toBe(true);
+    expect(actualReturn.occurrenceDateRequired).toBe(true);
+    expect(actualReturn.occurrenceDateMustNotBeFuture).toBe(true);
+    expect(actualReturn.participationEvidenceRequired).toBe(
+      "official-team-or-league-participation-record",
+    );
+    expect(actualReturn.unverifiedReportAllowed).toBe(false);
+    expect(actualReturn.retrospectiveStatement).toBe(
+      "實際回場紀錄只描述已發生的參賽事實，不是治療時長、預後、建議或可套用的回場時間表。",
+    );
+    expect(presentation).toEqual({
+      nbaCanonicalHosts: ["nba.com", "*.nba.com"],
+      nbaFullUrlVisibleAsLiteralText: true,
+      nbaNavigationSinksForbidden: [
+        "anchor",
+        "redirect",
+        "iframe",
+        "metadata-url",
+        "json-ld-url",
+        "script-target",
+        "client-side-reconstruction",
+      ],
+      nonNbaHttpsDirectExternalLinkAllowed: true,
+    });
+
+    const markdown = readPolicyFile(V10_MARKDOWN_POLICY_PATH);
+    expect(markdown).toContain(
+      "Neither\n`mainstream-media-report` nor `unverified-report` can support\n`actual-return`.",
+    );
+    expect(markdown).toContain("不是治療時長、預後、建議或可套用的回場時間表");
+    expect(markdown).toContain("must never become an anchor, redirect, iframe");
   });
 });

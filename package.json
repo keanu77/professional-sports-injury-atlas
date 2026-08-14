@@ -55,6 +55,8 @@
     "source-policy:v8:check": "tsx scripts/research/generate-source-policy-v8.ts --check",
     "source-policy:v9:generate": "tsx scripts/research/generate-source-policy-v9.ts",
     "source-policy:v9:check": "tsx scripts/research/generate-source-policy-v9.ts --check",
+    "source-policy:v10:generate": "tsx scripts/research/generate-source-policy-v10.ts",
+    "source-policy:v10:check": "tsx scripts/research/generate-source-policy-v10.ts --check",
     "decision13:clinical-freeze": "tsx scripts/verify-decision-13-clinical-freeze.ts",
     "decision13:cover-baseline": "tsx scripts/generate-decision-13-cover-baseline.ts",
     "decision14:baseline": "tsx scripts/generate-decision-14-p0-baseline.ts",
