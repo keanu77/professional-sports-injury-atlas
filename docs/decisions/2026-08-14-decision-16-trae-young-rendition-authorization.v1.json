@@ -1,0 +1,21 @@
+{
+  "authorizedAt": "2026-08-14T11:01:20Z",
+  "authorizedBy": "吳易澄醫師",
+  "closedScopeIds": [
+    "deployment",
+    "external-account-mutation",
+    "hosting-service-mutation",
+    "indexing",
+    "medical-content-authoring",
+    "medical-review-decision",
+    "public-release",
+    "remote-repository-mutation"
+  ],
+  "decisionType": "plan-execution",
+  "executionScopeId": "decision-16-trae-young-rendition-only",
+  "executionStatus": "authorized",
+  "planPath": "docs/superpowers/plans/2026-08-14-decision-16-trae-young-rendition.md",
+  "planSha256": "963b27387c4d3232ef5e3aa7a892907e3594231ca8bd09ffec00d45a4ee8d4db",
+  "role": "decision-16-trae-young-rendition",
+  "schemaVersion": 1
+}
