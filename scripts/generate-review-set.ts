@@ -10,14 +10,27 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { parseStrictJson, sha256Hex } from "../src/lib/contracts/canonical";
+import { FOLLOW_UP_SOURCE_POLICY_V10_BINDING } from "../src/lib/contracts/case-follow-up";
+import { loadFollowUpCorpus } from "../src/lib/cases/follow-up-loader";
 import { defaultTaxonomyRegistries } from "../src/lib/contracts/taxonomy";
 import {
-  buildReviewSetManifest,
+  buildReviewSetManifestV2,
   canonicalReviewSetBytes,
   computeContentAuthoritySnapshotDigest,
+  computeReviewSetV2ContentAuthoritySnapshotDigest,
   computeReviewSetDigest,
+  DECISION_17_AUTHORIZATION_PATH,
+  DECISION_17_AUTHORIZATION_SHA256,
+  DECISION_17_AUTHORING_AUTHORITY,
+  DECISION_17_CLOSED_SCOPE_IDS,
+  DECISION_17_EXECUTION_ROLE,
+  DECISION_17_EXECUTION_SCOPE_ID,
+  DECISION_17_PLAN_PATH,
+  DECISION_17_PLAN_SHA256,
   REVIEW_SET_MANIFEST_PATH,
+  REVIEW_SET_V1_MANIFEST_PATH,
   type ContentAuthorityDocument,
+  type Decision17AuthoringAuthority,
 } from "../src/lib/governance/review-set";
 import {
   computeRendererTreeDigest,
@@ -45,6 +58,142 @@ import {
 
 function git(root: string, args: string[]): string {
   return execFileSync("git", args, { cwd: root, encoding: "utf8" }).trim();
+}
+
+export const EXPECTED_REVIEW_SET_V1_SHA256 =
+  "99f637a0f2195614ff84b9afbdafb236039efcadb4eb7510e66af43f855f58da" as const;
+const EXPECTED_CASE_COUNT = 26;
+
+/** Historical v1 is immutable evidence and is never rewritten by this tool. */
+export function assertHistoricalReviewSetV1Unchanged(
+  root: string = REPO_ROOT,
+): void {
+  const path = join(root, REVIEW_SET_V1_MANIFEST_PATH);
+  if (!existsSync(path)) {
+    throw new Error(
+      `historical review set is missing: ${REVIEW_SET_V1_MANIFEST_PATH}`,
+    );
+  }
+  const digest = sha256Hex(readFileSync(path));
+  if (digest !== EXPECTED_REVIEW_SET_V1_SHA256) {
+    throw new Error(
+      `historical ${REVIEW_SET_V1_MANIFEST_PATH} changed: expected ${EXPECTED_REVIEW_SET_V1_SHA256}, found ${digest}`,
+    );
+  }
+}
+
+/**
+ * Reloads the bound plan and strict authorization bytes before v2 generation.
+ * The opened authoring scope is an explicit D17 projection; the seven closed
+ * scopes, including medical-review-decision, must match the owner decision.
+ */
+export function currentDecision17AuthoringAuthority(
+  root: string = REPO_ROOT,
+): Decision17AuthoringAuthority {
+  const planDigest = sha256Hex(readFileSync(join(root, DECISION_17_PLAN_PATH)));
+  const authorizationBytes = readFileSync(
+    join(root, DECISION_17_AUTHORIZATION_PATH),
+  );
+  const authorizationDigest = sha256Hex(authorizationBytes);
+  if (planDigest !== DECISION_17_PLAN_SHA256) {
+    throw new Error(
+      `Decision 17 plan digest mismatch: expected ${DECISION_17_PLAN_SHA256}, found ${planDigest}`,
+    );
+  }
+  if (authorizationDigest !== DECISION_17_AUTHORIZATION_SHA256) {
+    throw new Error(
+      `Decision 17 authorization digest mismatch: expected ${DECISION_17_AUTHORIZATION_SHA256}, found ${authorizationDigest}`,
+    );
+  }
+  const authorization = parseStrictJson(
+    authorizationBytes.toString("utf8"),
+  ) as {
+    executionStatus?: unknown;
+    planPath?: unknown;
+    planSha256?: unknown;
+    role?: unknown;
+    executionScopeId?: unknown;
+    closedScopeIds?: unknown;
+  };
+  if (
+    authorization.executionStatus !== "authorized" ||
+    authorization.planPath !== DECISION_17_PLAN_PATH ||
+    authorization.planSha256 !== DECISION_17_PLAN_SHA256 ||
+    authorization.role !== DECISION_17_EXECUTION_ROLE ||
+    authorization.executionScopeId !== DECISION_17_EXECUTION_SCOPE_ID ||
+    JSON.stringify(authorization.closedScopeIds) !==
+      JSON.stringify(DECISION_17_CLOSED_SCOPE_IDS)
+  ) {
+    throw new Error(
+      "Decision 17 authorization does not match the exact authorized role, execution scope, plan, and seven closed scopes",
+    );
+  }
+  const binding = parseStrictJson(
+    readFileSync(join(root, "docs/decisions/plan-binding.v1.json"), "utf8"),
+  ) as {
+    documents?: Array<{
+      documentType?: unknown;
+      lifecycle?: unknown;
+      path?: unknown;
+      sha256?: unknown;
+      executionAuthorization?: {
+        status?: unknown;
+        role?: unknown;
+        executionScopeId?: unknown;
+        decisionPath?: unknown;
+        decisionSha256?: unknown;
+        closedScopeIds?: unknown;
+      } | null;
+    }>;
+  };
+  const documents = Array.isArray(binding.documents) ? binding.documents : [];
+  const planBindings = documents.filter(
+    (document) => document.path === DECISION_17_PLAN_PATH,
+  );
+  const decisionBindings = documents.filter(
+    (document) => document.path === DECISION_17_AUTHORIZATION_PATH,
+  );
+  const boundPlan = planBindings[0];
+  const boundDecision = decisionBindings[0];
+  const execution = boundPlan?.executionAuthorization;
+  if (
+    planBindings.length !== 1 ||
+    decisionBindings.length !== 1 ||
+    boundPlan?.documentType !== "plan" ||
+    boundPlan.lifecycle !== "active" ||
+    boundPlan.sha256 !== DECISION_17_PLAN_SHA256 ||
+    execution === null ||
+    execution === undefined ||
+    execution.status !== "authorized" ||
+    execution.role !== DECISION_17_EXECUTION_ROLE ||
+    execution.executionScopeId !== DECISION_17_EXECUTION_SCOPE_ID ||
+    execution.decisionPath !== DECISION_17_AUTHORIZATION_PATH ||
+    execution.decisionSha256 !== DECISION_17_AUTHORIZATION_SHA256 ||
+    JSON.stringify(execution.closedScopeIds) !==
+      JSON.stringify(DECISION_17_CLOSED_SCOPE_IDS) ||
+    boundDecision?.documentType !== "decision" ||
+    boundDecision.lifecycle !== "active" ||
+    boundDecision.sha256 !== DECISION_17_AUTHORIZATION_SHA256
+  ) {
+    throw new Error(
+      "Decision 17 plan-binding entry is not the exact active authorized plan/decision pair",
+    );
+  }
+  return {
+    ...DECISION_17_AUTHORING_AUTHORITY,
+    openedScopeIds: [...DECISION_17_AUTHORING_AUTHORITY.openedScopeIds],
+    closedScopeIds: [...DECISION_17_AUTHORING_AUTHORITY.closedScopeIds],
+  };
+}
+
+/** Full v2 authority digest recomputed from current bound repository bytes. */
+export function currentReviewSetV2ContentAuthoritySnapshotDigest(
+  root: string = REPO_ROOT,
+): string {
+  return computeReviewSetV2ContentAuthoritySnapshotDigest(
+    currentContentAuthoritySnapshotDigest(root),
+    currentDecision17AuthoringAuthority(root),
+  );
 }
 
 /** Current HEAD commit plus dirty state. */
@@ -225,6 +374,12 @@ function main(): void {
     );
     process.exit(1);
   }
+  try {
+    assertHistoricalReviewSetV1Unchanged(root);
+  } catch (error) {
+    console.error(`review-set:generate FAILED — ${String(error)}`);
+    process.exit(1);
+  }
   const loaded = loadContentCollections(root);
   if (loaded.issues.length > 0) {
     for (const entry of loaded.issues) {
@@ -246,8 +401,17 @@ function main(): void {
     process.exit(1);
   }
   const cases = loaded.cases.map((entry) => entry.record);
+  if (cases.length !== EXPECTED_CASE_COUNT) {
+    console.error(
+      `review-set:generate FAILED — expected exactly ${EXPECTED_CASE_COUNT} governed cases, found ${cases.length}`,
+    );
+    process.exit(1);
+  }
   const medicallyApprovedCases = selectMedicallyApprovedCases(cases);
-  if (medicallyApprovedCases.length !== cases.length) {
+  if (
+    medicallyApprovedCases.length !== EXPECTED_CASE_COUNT ||
+    medicallyApprovedCases.length !== cases.length
+  ) {
     const selectedIds = new Set(
       medicallyApprovedCases.map((record) => record.id),
     );
@@ -257,6 +421,24 @@ function main(): void {
           `review-set:generate FAILED — ${record.id} is outside the current medically approved projection`,
         );
       }
+    }
+    process.exit(1);
+  }
+  const followUpCorpus = loadFollowUpCorpus(root, medicallyApprovedCases, {
+    expectedPolicyBinding: FOLLOW_UP_SOURCE_POLICY_V10_BINDING,
+    expectedCaseCount: EXPECTED_CASE_COUNT,
+  });
+  if (
+    followUpCorpus.issues.length > 0 ||
+    followUpCorpus.entries.length !== EXPECTED_CASE_COUNT
+  ) {
+    for (const entry of followUpCorpus.issues) {
+      console.error(`[${entry.code}] ${entry.path}: ${entry.message}`);
+    }
+    if (followUpCorpus.entries.length !== EXPECTED_CASE_COUNT) {
+      console.error(
+        `review-set:generate FAILED — expected ${EXPECTED_CASE_COUNT} validated follow-up sidecars, found ${followUpCorpus.entries.length}`,
+      );
     }
     process.exit(1);
   }
@@ -277,7 +459,14 @@ function main(): void {
     process.exit(1);
   }
   const updates = loaded.updates.map((entry) => entry.record);
-  const manifest = buildReviewSetManifest({
+  let authoringAuthority: Decision17AuthoringAuthority;
+  try {
+    authoringAuthority = currentDecision17AuthoringAuthority(root);
+  } catch (error) {
+    console.error(`review-set:generate FAILED — ${String(error)}`);
+    process.exit(1);
+  }
+  const manifest = buildReviewSetManifestV2({
     contentCommit: build.commit,
     cases: medicallyApprovedCases,
     overviews: loaded.overviews.map((entry) => entry.record),
@@ -290,6 +479,12 @@ function main(): void {
       registryResult.registry,
       medicallyApprovedCases,
     ),
+    followUps: followUpCorpus.entries.map((entry) => ({
+      caseId: entry.sidecar.caseId,
+      sidecarPath: entry.sidecarPath,
+      draftDigest: entry.draftDigest,
+    })),
+    authoringAuthority,
   });
   const bytes = canonicalReviewSetBytes(manifest);
   const target = join(root, REVIEW_SET_MANIFEST_PATH);

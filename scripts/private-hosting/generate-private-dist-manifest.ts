@@ -25,6 +25,7 @@ import {
   selectReviewFixtureCases,
 } from "../../src/data/review-fixtures";
 import { computeCaseContentDigest } from "../../src/lib/cases/digest";
+import { loadFollowUpCorpus } from "../../src/lib/cases/follow-up-loader";
 import { computeInjuryOverviewDigest } from "../../src/lib/cases/injury-overview-digest";
 import {
   buildCaseIndexManifest,
@@ -38,6 +39,7 @@ import { selectMedicallyApprovedCases } from "../../src/lib/cases/selectors";
 import { computeQuarterlyUpdateDigest } from "../../src/lib/cases/update-digest";
 import { VIDEO_SOURCE_TOKENS } from "../../src/lib/cases/video-source";
 import { validateCaseSourceBinding } from "../../src/lib/contracts/cross-validation";
+import { FOLLOW_UP_SOURCE_POLICY_V10_BINDING } from "../../src/lib/contracts/case-follow-up";
 import type { QuarterlyUpdate } from "../../src/lib/contracts/update";
 import { defaultTaxonomyRegistries } from "../../src/lib/contracts/taxonomy";
 import {
@@ -63,8 +65,9 @@ import {
 } from "../../src/lib/governance/build-mode";
 import { PRIVATE_REVIEW_MAX_FILE_BYTES } from "../../src/lib/governance/private-review-limits";
 import {
-  parseReviewSetManifestBytes,
-  type ReviewSetManifest,
+  parseReviewSetManifestV2Bytes,
+  REVIEW_SET_V2_MANIFEST_PATH,
+  type ReviewSetManifestV2,
 } from "../../src/lib/governance/review-set";
 import {
   computeRenderedSetDigest,
@@ -79,6 +82,7 @@ import {
 import {
   currentContentAuthoritySnapshotDigest,
   currentRendererTreeDigest,
+  currentReviewSetV2ContentAuthoritySnapshotDigest,
   currentSupportingDataDigest,
 } from "../generate-review-set";
 
@@ -107,7 +111,15 @@ export interface PrivateDistSourceState {
   dirty: boolean;
   rendererTreeDigest: string;
   supportingDataDigest: string;
+  approvedCoreContentAuthoritySnapshotDigest: string;
   contentAuthoritySnapshotDigest: string;
+  followUps: Array<{
+    caseId: string;
+    sidecarPath: string;
+    draftDigest: string;
+    status: "pending-owner-signoff";
+    sourcePolicyVersion: "nba-v10";
+  }>;
   updates: Array<{
     updateId: string;
     updateDigest: string;
@@ -695,7 +707,7 @@ function validateBodyIdentity(
 function extractHtmlIdentity(
   html: string,
   requestPath: string,
-  reviewSet: ReviewSetManifest,
+  reviewSet: ReviewSetManifestV2,
   expected: ExpectedHtmlRoute,
 ): ArtifactIdentity {
   const parsedHtml = parseHtmlDocument(html, requestPath);
@@ -829,7 +841,7 @@ interface CaseIndexShardDescriptor {
 
 function extractCaseIndexIdentities(
   bytesByPath: Map<string, Uint8Array>,
-  reviewSet: ReviewSetManifest,
+  reviewSet: ReviewSetManifestV2,
   expectedCaseIndex: PrivateDistSourceState["caseIndex"],
 ): CaseIndexIdentityResult {
   const manifestPath = "case-index/manifest.json";
@@ -1219,7 +1231,7 @@ function fixtureUpdateRecordIds(): string[] {
 }
 
 function buildExpectedHtmlRoutes(
-  reviewSet: ReviewSetManifest,
+  reviewSet: ReviewSetManifestV2,
   caseIndexRecords: readonly CaseIndexRouteRecord[],
   updates: PrivateDistSourceState["updates"],
 ): Map<string, ExpectedHtmlRoute> {
@@ -1460,13 +1472,13 @@ function readExactReviewSet(
   root: string,
   distDir: string,
 ): {
-  manifest: ReviewSetManifest;
+  manifest: ReviewSetManifestV2;
   bytes: string;
   digest: string;
 } {
   const localBytes = readStableRegularFile(
     root,
-    "review/review-set.v1.json",
+    REVIEW_SET_V2_MANIFEST_PATH,
   ).toString("utf8");
   const builtBytes = readStableRegularFile(
     distDir,
@@ -1477,7 +1489,7 @@ function readExactReviewSet(
       "built review-set response differs from the canonical local bytes",
     );
   }
-  const parsed = parseReviewSetManifestBytes(localBytes);
+  const parsed = parseReviewSetManifestV2Bytes(localBytes);
   if (parsed.manifest === null) {
     throw new PrivateDistManifestError(
       "canonical review-set bytes are invalid",
@@ -1488,6 +1500,37 @@ function readExactReviewSet(
     bytes: localBytes,
     digest: parsed.reviewSetDigest,
   };
+}
+
+function assertExactFollowUpBindings(
+  reviewSet: ReviewSetManifestV2,
+  sourceFollowUps: PrivateDistSourceState["followUps"],
+): void {
+  const expected = [...sourceFollowUps].sort((left, right) =>
+    compareCodePoints(left.caseId, right.caseId),
+  );
+  for (let index = 1; index < expected.length; index += 1) {
+    if (expected[index - 1]!.caseId === expected[index]!.caseId) {
+      throw new PrivateDistManifestError(
+        `duplicate source follow-up binding for ${expected[index]!.caseId}`,
+      );
+    }
+  }
+  const actual = reviewSet.cases.map((entry) => ({
+    caseId: entry.caseId,
+    sidecarPath: entry.followUp.sidecarPath,
+    draftDigest: entry.followUp.draftDigest,
+    status: entry.followUp.status,
+    sourcePolicyVersion: entry.followUp.sourcePolicyVersion,
+  }));
+  if (
+    expected.length !== reviewSet.cases.length ||
+    canonicalJson(actual) !== canonicalJson(expected)
+  ) {
+    throw new PrivateDistManifestError(
+      "review-set follow-up bindings do not match the validated source sidecars",
+    );
+  }
 }
 
 export function buildPrivateDistManifestFromDisk(
@@ -1526,6 +1569,14 @@ export function buildPrivateDistManifestFromDisk(
     );
   }
   if (
+    options.sourceState.approvedCoreContentAuthoritySnapshotDigest !==
+    reviewSet.manifest.approvedCoreContentAuthoritySnapshotDigest
+  ) {
+    throw new PrivateDistManifestError(
+      "approved-core content-authority digest does not match the review set",
+    );
+  }
+  if (
     options.sourceState.contentAuthoritySnapshotDigest !==
     reviewSet.manifest.contentAuthoritySnapshotDigest
   ) {
@@ -1533,6 +1584,10 @@ export function buildPrivateDistManifestFromDisk(
       "content-authority digest does not match the review set",
     );
   }
+  assertExactFollowUpBindings(
+    reviewSet.manifest,
+    options.sourceState.followUps,
+  );
   const headerPolicyBytes = readStableRegularFile(
     root,
     "ops/http-header-policy.v1.json",
@@ -1661,6 +1716,31 @@ export function currentPrivateDistSourceState(
       `strict source bindings are invalid: ${sourceBindingIssues.join("; ")}`,
     );
   }
+  const followUpCorpus = loadFollowUpCorpus(root, medicallyApprovedCases, {
+    expectedPolicyBinding: FOLLOW_UP_SOURCE_POLICY_V10_BINDING,
+    expectedCaseCount: 26,
+  });
+  if (
+    followUpCorpus.issues.length > 0 ||
+    followUpCorpus.entries.length !== medicallyApprovedCases.length
+  ) {
+    throw new PrivateDistManifestError(
+      `strict follow-up source corpus is invalid: ${[
+        ...followUpCorpus.issues.map(
+          (entry) => `${entry.path}: ${entry.message}`,
+        ),
+        ...(followUpCorpus.entries.length === medicallyApprovedCases.length
+          ? []
+          : [
+              `expected ${medicallyApprovedCases.length} validated sidecars, found ${followUpCorpus.entries.length}`,
+            ]),
+      ].join("; ")}`,
+    );
+  }
+  const approvedCoreContentAuthoritySnapshotDigest =
+    currentContentAuthoritySnapshotDigest(root);
+  const contentAuthoritySnapshotDigest =
+    currentReviewSetV2ContentAuthoritySnapshotDigest(root);
   const sourceCaseIndexShards = buildCaseIndexShards(
     "review",
     medicallyApprovedCases,
@@ -1674,7 +1754,17 @@ export function currentPrivateDistSourceState(
       registryResult.registry,
       medicallyApprovedCases,
     ),
-    contentAuthoritySnapshotDigest: currentContentAuthoritySnapshotDigest(root),
+    approvedCoreContentAuthoritySnapshotDigest,
+    contentAuthoritySnapshotDigest,
+    followUps: followUpCorpus.entries
+      .map((entry) => ({
+        caseId: entry.sidecar.caseId,
+        sidecarPath: entry.sidecarPath,
+        draftDigest: entry.draftDigest,
+        status: "pending-owner-signoff" as const,
+        sourcePolicyVersion: "nba-v10" as const,
+      }))
+      .sort((left, right) => compareCodePoints(left.caseId, right.caseId)),
     updates: loaded.updates
       .map(({ record }) => ({
         updateId: record.id,

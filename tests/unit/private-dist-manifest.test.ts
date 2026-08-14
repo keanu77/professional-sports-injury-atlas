@@ -43,8 +43,16 @@ import {
 } from "../../src/lib/governance/build-mode";
 import { PRIVATE_REVIEW_MAX_FILE_BYTES } from "../../src/lib/governance/private-review-limits";
 import {
-  parseReviewSetManifestBytes,
-  type ReviewSetManifest,
+  computeDecision17AuthoringAuthoritySnapshotDigest,
+  computeReviewSetV2ContentAuthoritySnapshotDigest,
+  DECISION_17_AUTHORING_AUTHORITY,
+  decision17AuthoringAuthoritySchema,
+  parseReviewSetManifestV1Bytes,
+  parseReviewSetManifestV2Bytes,
+  REVIEW_SET_V1_MANIFEST_PATH,
+  REVIEW_SET_V2_MANIFEST_PATH,
+  type ReviewSetManifestV1,
+  type ReviewSetManifestV2,
 } from "../../src/lib/governance/review-set";
 import { computeRenderedSetDigest } from "../../src/lib/routes/static-paths";
 import {
@@ -100,7 +108,7 @@ interface FixtureRecord {
 
 interface Fixture {
   root: string;
-  reviewSet: ReviewSetManifest;
+  reviewSet: ReviewSetManifestV2;
   reviewSetBytes: string;
   caseIds: string[];
   records: FixtureRecord[];
@@ -110,7 +118,7 @@ interface Fixture {
   };
 }
 
-function homeDigestFor(reviewSet: ReviewSetManifest): string {
+function homeDigestFor(reviewSet: ReviewSetManifestV2): string {
   const cases = reviewSet.cases
     .map((entry) => ({
       caseId: entry.caseId,
@@ -121,7 +129,7 @@ function homeDigestFor(reviewSet: ReviewSetManifest): string {
 }
 
 function subsetDigestFor(
-  reviewSet: ReviewSetManifest,
+  reviewSet: ReviewSetManifestV2,
   recordIds: readonly string[],
 ): string {
   const digestById = new Map(
@@ -161,7 +169,7 @@ function fixtureUpdateIds(): string[] {
 
 function writeHtmlFixtureRoutes(
   root: string,
-  reviewSet: ReviewSetManifest,
+  reviewSet: ReviewSetManifestV2,
   records: readonly FixtureRecord[],
 ): void {
   const writeRoute = (
@@ -335,16 +343,68 @@ function writeHtmlFixtureRoutes(
   );
 }
 
+function activeReviewSetFixture(
+  historical: ReviewSetManifestV1,
+): ReviewSetManifestV2 {
+  const authoringAuthority = decision17AuthoringAuthoritySchema.parse(
+    DECISION_17_AUTHORING_AUTHORITY,
+  );
+  const manifest: ReviewSetManifestV2 = {
+    ...historical,
+    schemaVersion: 2,
+    cases: historical.cases.map((entry, index) => ({
+      ...entry,
+      approvedReview: {
+        status: "approved",
+        reviewerName: "Dr. Private Review Fixture",
+        reviewerQualification: "Fixture physician",
+        reviewedAt: "2026-08-08T00:00:00Z",
+        reviewedContentDigest: entry.clinicalDigest,
+      },
+      followUp: {
+        sidecarPath: `src/content/follow-ups/fixture-follow-up-${String(index + 1).padStart(2, "0")}.json`,
+        draftDigest: sha256Hex(
+          canonicalJson({
+            schemaVersion: 1,
+            digestType: "private-review-follow-up-fixture",
+            caseId: entry.caseId,
+          }),
+        ),
+        status: "pending-owner-signoff",
+        sourcePolicyVersion: "nba-v10",
+      },
+    })),
+    approvedCoreContentAuthoritySnapshotDigest:
+      historical.contentAuthoritySnapshotDigest,
+    contentAuthoritySnapshotDigest:
+      computeReviewSetV2ContentAuthoritySnapshotDigest(
+        historical.contentAuthoritySnapshotDigest,
+        authoringAuthority,
+      ),
+    authoringAuthority,
+    authoringAuthoritySnapshotDigest:
+      computeDecision17AuthoringAuthoritySnapshotDigest(authoringAuthority),
+  };
+  const parsed = parseReviewSetManifestV2Bytes(canonicalJson(manifest));
+  if (parsed.manifest === null) {
+    throw new Error("active review-set v2 fixture is invalid");
+  }
+  return parsed.manifest;
+}
+
 function fixture(): Fixture {
   const root = mkdtempSync(join(tmpdir(), "atlas-private-dist-"));
   roots.push(root);
-  const reviewSetBytes = readFileSync(
-    new URL("../../review/review-set.v1.json", import.meta.url),
+  const historicalReviewSetBytes = readFileSync(
+    new URL(`../../${REVIEW_SET_V1_MANIFEST_PATH}`, import.meta.url),
     "utf8",
   );
-  const parsed = parseReviewSetManifestBytes(reviewSetBytes);
-  if (parsed.manifest === null) throw new Error("real review set is invalid");
-  const reviewSet = parsed.manifest;
+  const historical = parseReviewSetManifestV1Bytes(historicalReviewSetBytes);
+  if (historical.manifest === null) {
+    throw new Error("historical review set is invalid");
+  }
+  const reviewSet = activeReviewSetFixture(historical.manifest);
+  const reviewSetBytes = canonicalJson(reviewSet);
   const caseIds = reviewSet.cases
     .map((entry) => entry.caseId)
     .sort(compareCodePoints);
@@ -372,7 +432,7 @@ function fixture(): Fixture {
     workflowStatus: "approved",
   }));
 
-  write(root, "review/review-set.v1.json", reviewSetBytes);
+  write(root, REVIEW_SET_V2_MANIFEST_PATH, reviewSetBytes);
   write(
     root,
     "ops/http-header-policy.v1.json",
@@ -444,7 +504,13 @@ function fixtureSourceState(fx: Fixture) {
     dirty: false,
     rendererTreeDigest: fx.reviewSet.rendererTreeDigest,
     supportingDataDigest: fx.reviewSet.supportingDataDigest,
+    approvedCoreContentAuthoritySnapshotDigest:
+      fx.reviewSet.approvedCoreContentAuthoritySnapshotDigest,
     contentAuthoritySnapshotDigest: fx.reviewSet.contentAuthoritySnapshotDigest,
+    followUps: fx.reviewSet.cases.map((entry) => ({
+      caseId: entry.caseId,
+      ...entry.followUp,
+    })),
     updates:
       fx.reviewSet.currentUpdate === null
         ? []
@@ -896,10 +962,30 @@ describe("private dist manifest generation", () => {
       generate(fx, {
         sourceState: {
           ...fixtureSourceState(fx),
+          approvedCoreContentAuthoritySnapshotDigest: "f".repeat(64),
+        },
+      }),
+    ).toThrow(/approved-core content-authority/i);
+
+    expect(() =>
+      generate(fx, {
+        sourceState: {
+          ...fixtureSourceState(fx),
           contentAuthoritySnapshotDigest: "f".repeat(64),
         },
       }),
     ).toThrow(/content-authority/i);
+
+    expect(() =>
+      generate(fx, {
+        sourceState: {
+          ...fixtureSourceState(fx),
+          followUps: fixtureSourceState(fx).followUps.map((entry, index) =>
+            index === 0 ? { ...entry, draftDigest: "f".repeat(64) } : entry,
+          ),
+        },
+      }),
+    ).toThrow(/follow-up bindings/i);
 
     write(fx.root, "ops/http-header-policy.v1.json", "{}\n");
     expect(() => generate(fx)).toThrow(/header policy/i);
@@ -913,6 +999,18 @@ describe("private dist manifest generation", () => {
     );
     write(fx.root, "dist/review/review-set.json", `${fx.reviewSetBytes}\n`);
     expect(() => generate(fx)).toThrow(/review-set response/i);
+  });
+
+  it("rejects historical v1 bytes at the active v2 manifest path", () => {
+    const fx = fixture();
+    const v1Bytes = readFileSync(
+      new URL(`../../${REVIEW_SET_V1_MANIFEST_PATH}`, import.meta.url),
+    );
+    write(fx.root, REVIEW_SET_V2_MANIFEST_PATH, v1Bytes);
+    write(fx.root, "dist/review/review-set.json", v1Bytes);
+    expect(() => generate(fx)).toThrow(
+      /canonical review-set bytes are invalid/i,
+    );
   });
 
   it("writes only canonical bytes atomically and refuses a symlink target", () => {

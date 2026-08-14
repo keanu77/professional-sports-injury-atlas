@@ -30,7 +30,7 @@ import {
   REVIEW_SET_REQUEST_PATH,
   type ArtifactManifest,
 } from "./artifact-manifest";
-import type { ReviewSetManifest } from "./review-set";
+import type { AnyReviewSetManifest } from "./review-set";
 import {
   validateServedArtifactReceipt,
   type ServedArtifactReceipt,
@@ -146,7 +146,7 @@ export function parseMedicalReviewDecisionBytes(
 }
 
 export interface MedicalReviewArtifactContext {
-  reviewSetManifest: ReviewSetManifest;
+  reviewSetManifest: AnyReviewSetManifest;
   reviewSetDigest: string;
   /** Exact canonical review-set bytes served at the review-only route. */
   reviewSetBytes: Uint8Array | string;
@@ -154,6 +154,25 @@ export interface MedicalReviewArtifactContext {
   artifactManifestDigest: string;
   servedReceipt: unknown;
   servedReceiptDigest: string;
+}
+
+/**
+ * medical-review-decision.v1 predates pending follow-up drafts. It may only
+ * consume historical review-set v1 and must never treat a v2 pending set as
+ * physician approval.
+ */
+export function validateMedicalReviewDecisionV1ReviewSet(
+  reviewSet: AnyReviewSetManifest,
+): ValidationIssue[] {
+  return reviewSet.schemaVersion === 1
+    ? []
+    : [
+        issue(
+          "medical-decision-review-set-version",
+          "schemaVersion",
+          "medical-review-decision.v1 cannot consume review-set v2 pending follow-ups",
+        ),
+      ];
 }
 
 /**
@@ -166,7 +185,10 @@ export function validateMedicalReviewDecisionArtifacts(
   decision: MedicalReviewDecisionV1,
   context: MedicalReviewArtifactContext,
 ): ValidationIssue[] {
-  const issues: ValidationIssue[] = [];
+  const issues = validateMedicalReviewDecisionV1ReviewSet(
+    context.reviewSetManifest,
+  );
+  if (context.reviewSetManifest.schemaVersion !== 1) return issues;
   if (decision.reviewSetDigest !== context.reviewSetDigest) {
     issues.push(
       issue(
@@ -282,12 +304,13 @@ export function validateMedicalReviewDecisionArtifacts(
  */
 export function validateAppliedMedicalReviewDecision(
   decision: MedicalReviewDecisionV1,
-  reviewSet: ReviewSetManifest,
+  reviewSet: AnyReviewSetManifest,
   cases: readonly InjuryCase[],
   overviews: readonly InjuryOverview[],
   currentUpdate: QuarterlyUpdate | null,
 ): ValidationIssue[] {
-  const issues: ValidationIssue[] = [];
+  const issues = validateMedicalReviewDecisionV1ReviewSet(reviewSet);
+  if (reviewSet.schemaVersion !== 1) return issues;
 
   const decisionCaseIds = decision.caseDecisions
     .map((entry) => entry.caseId)

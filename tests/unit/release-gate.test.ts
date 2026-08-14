@@ -37,8 +37,10 @@ import {
 } from "../../src/lib/governance/release-gate";
 import {
   buildReviewSetManifest,
+  buildReviewSetManifestV2,
   canonicalReviewSetBytes,
   computeContentAuthoritySnapshotDigest,
+  DECISION_17_AUTHORING_AUTHORITY,
 } from "../../src/lib/governance/review-set";
 import {
   computeAuthorizedMetadataDigest,
@@ -420,8 +422,10 @@ function resignUpdate(update: any): void {
 }
 
 /**
- * Builds a fully authorized synthetic fixture proving the gate is
- * achievable. All names and events are visibly fictional.
+ * Builds a complete synthetic active-v2 fixture. Its historical clinical
+ * core is approved, while each Decision 17 follow-up remains pending and the
+ * active authority deliberately keeps medical-review-decision/public-release
+ * closed. All names and events are visibly fictional.
  */
 export function buildAuthorizedFixture(): Fixture {
   const cases = Array.from({ length: 30 }, (_, index) => syntheticCase(index));
@@ -635,7 +639,7 @@ export function buildAuthorizedFixture(): Fixture {
     },
   ]);
 
-  const reviewSet = buildReviewSetManifest({
+  const reviewSet = buildReviewSetManifestV2({
     contentCommit: CONTENT_COMMIT,
     cases,
     overviews,
@@ -644,6 +648,12 @@ export function buildAuthorizedFixture(): Fixture {
     contentAuthoritySnapshotDigest: authorityDigest,
     rendererTreeDigest,
     supportingDataDigest,
+    followUps: cases.map((record) => ({
+      caseId: record.id,
+      sidecarPath: `src/content/follow-ups/${record.slug}.json`,
+      draftDigest: sha256Hex(`synthetic-pending-follow-up-${record.id}`),
+    })),
+    authoringAuthority: DECISION_17_AUTHORING_AUTHORITY,
   });
   const reviewSetBytes = canonicalReviewSetBytes(reviewSet);
   const reviewSetDigest = sha256Hex(reviewSetBytes);
@@ -809,19 +819,6 @@ function codes(issues: Array<{ code: string }>): Set<string> {
   return new Set(issues.map((entry) => entry.code));
 }
 
-/** Rebuild the medical decision + governance digest after a mutation. */
-function resignMedicalDecision(
-  fx: Fixture,
-  mutate: (decision: any) => void,
-): void {
-  const decision = parseStrictJson(fx.medicalDecisionBytes as string) as any;
-  mutate(decision);
-  fx.medicalDecisionBytes = canonicalJson(decision);
-  fx.governance.medicalReviewDecisionDigest = sha256Hex(
-    fx.medicalDecisionBytes,
-  );
-}
-
 /** Rebuild the publication decision + bound authorization after a mutation. */
 function resignPublicationDecision(
   fx: Fixture,
@@ -839,9 +836,13 @@ function resignPublicationDecision(
 }
 
 describe("public release gate: achievable authorization", () => {
-  it("passes for a fully authorized synthetic fixture", () => {
+  it("fails closed for active pending v2 despite otherwise complete authorization", () => {
     const fx = buildAuthorizedFixture();
-    expect(evaluatePublicReleaseGate(gateInput(fx))).toEqual([]);
+    const observed = codes(evaluatePublicReleaseGate(gateInput(fx)));
+    expect([...observed].sort()).toEqual([
+      "gate-review-set-public-release-closed",
+      "medical-decision-review-set-version",
+    ]);
   });
 
   it("fails on the real empty content with deterministic messages", () => {
@@ -904,15 +905,17 @@ describe("public release gate: negative conditions", () => {
     const fx = buildAuthorizedFixture();
     fx.governance.siteStatus = "private-approved";
     fx.governance.allowIndexing = false;
-    const issues = evaluatePublicReleaseGate(gateInput(fx));
-    expect(issues.length).toBeGreaterThan(0);
+    const observed = codes(evaluatePublicReleaseGate(gateInput(fx)));
+    expect(observed).toContain("gate-site-status");
+    expect(observed).toContain("gate-allow-indexing");
   });
 
   it("1b. rejects allowIndexing=false even when public-approved", () => {
     const fx = buildAuthorizedFixture();
     fx.governance.allowIndexing = false;
-    const issues = evaluatePublicReleaseGate(gateInput(fx));
-    expect(issues.length).toBeGreaterThan(0);
+    expect(codes(evaluatePublicReleaseGate(gateInput(fx)))).toContain(
+      "gate-allow-indexing",
+    );
   });
 
   it("2a. rejects a missing publication decision", () => {
@@ -1066,7 +1069,7 @@ describe("public release gate: negative conditions", () => {
     );
   });
 
-  it("6a. rejects a missing or tampered review-set manifest", () => {
+  it("6a. rejects a missing, legacy-v1, or tampered review-set manifest", () => {
     const fx = buildAuthorizedFixture();
     fx.reviewSetBytes = null;
     expect(codes(evaluatePublicReleaseGate(gateInput(fx)))).toContain(
@@ -1074,13 +1077,30 @@ describe("public release gate: negative conditions", () => {
     );
 
     const fx2 = buildAuthorizedFixture();
-    const digest = computeCaseContentDigest(fx2.cases[0]);
-    fx2.reviewSetBytes = (fx2.reviewSetBytes as string).replace(
-      digest,
-      "f".repeat(64),
-    );
+    const tampered = parseStrictJson(fx2.reviewSetBytes as string) as any;
+    tampered.cases[0].clinicalDigest = "f".repeat(64);
+    tampered.cases[0].approvedReview.reviewedContentDigest = "f".repeat(64);
+    fx2.reviewSetBytes = canonicalJson(tampered);
     expect(codes(evaluatePublicReleaseGate(gateInput(fx2)))).toContain(
       "gate-review-set-digest",
+    );
+
+    const fx3 = buildAuthorizedFixture();
+    const activeV2 = parseStrictJson(fx3.reviewSetBytes as string) as any;
+    const legacyV1 = buildReviewSetManifest({
+      contentCommit: activeV2.contentCommit,
+      cases: fx3.cases,
+      overviews: fx3.overviews,
+      currentUpdate: fx3.update,
+      registry: fx3.registry,
+      contentAuthoritySnapshotDigest:
+        activeV2.approvedCoreContentAuthoritySnapshotDigest,
+      rendererTreeDigest: activeV2.rendererTreeDigest,
+      supportingDataDigest: activeV2.supportingDataDigest,
+    });
+    fx3.reviewSetBytes = canonicalJson(legacyV1);
+    expect(codes(evaluatePublicReleaseGate(gateInput(fx3)))).toContain(
+      "review-set-v2-schema",
     );
   });
 
@@ -1092,74 +1112,30 @@ describe("public release gate: negative conditions", () => {
     );
   });
 
-  it("6c. rejects a decision list that differs from the current cases", () => {
+  it("6c. refuses to apply medical-review-decision.v1 to pending v2", () => {
     const fx = buildAuthorizedFixture();
-    resignMedicalDecision(fx, (decision) => {
-      decision.caseDecisions.pop();
-    });
     expect(codes(evaluatePublicReleaseGate(gateInput(fx)))).toContain(
-      "medical-decision-case-coverage",
+      "medical-decision-review-set-version",
     );
-  });
-
-  it("6d. rejects an applied reviewer field that differs from the decision", () => {
-    const fx = buildAuthorizedFixture();
-    fx.cases[0].review.reviewerName = "Dr. Someone Else";
-    expect(codes(evaluatePublicReleaseGate(gateInput(fx)))).toContain(
-      "medical-decision-applied-mismatch",
-    );
-  });
-
-  it("6e. rejects a served artifact whose case HTML page changed", () => {
-    const fx = buildAuthorizedFixture();
-    const receipt = parseStrictJson(fx.receiptBytes as string) as any;
-    const caseResponse = receipt.authorizedResponses.find((response: any) =>
-      response.requestPath.startsWith("/cases/"),
-    );
-    caseResponse.decodedSha256 = sha256Hex("tampered case page bytes");
-    receipt.authorizedMetadataDigest = computeAuthorizedMetadataDigest(
-      receipt.authorizedResponses,
-    );
-    fx.receiptBytes = canonicalJson(receipt);
-    resignMedicalDecision(fx, (decision) => {
-      decision.servedReviewArtifactReceiptDigest = sha256Hex(
-        fx.receiptBytes as string,
-      );
-    });
-    expect(codes(evaluatePublicReleaseGate(gateInput(fx)))).toContain(
-      "receipt-byte-mismatch",
-    );
-  });
-
-  it("6f. rejects a re-signed receipt with a partial unauthorized matrix", () => {
-    const fx = buildAuthorizedFixture();
-    const receipt = parseStrictJson(fx.receiptBytes as string) as any;
-    receipt.unauthorizedResponses.pop();
-    receipt.unauthorizedCheckCount -= 1;
-    receipt.unauthorizedMetadataDigest = computeUnauthorizedMetadataDigest(
-      receipt.unauthorizedResponses,
-    );
-    fx.receiptBytes = canonicalJson(receipt);
-    resignMedicalDecision(fx, (decision) => {
-      decision.servedReviewArtifactReceiptDigest = sha256Hex(
-        fx.receiptBytes as string,
-      );
-    });
-    const observed = codes(evaluatePublicReleaseGate(gateInput(fx)));
-    expect(observed).toContain("receipt-unauthorized-count");
-    expect(observed).toContain("receipt-unauthorized-coverage");
   });
 
   it("7a. rejects an origin manifest binding digest mismatch", () => {
     const fx = buildAuthorizedFixture();
     fx.cases[0].sourceManifestBinding.entryDigest = "e".repeat(64);
-    expect(evaluatePublicReleaseGate(gateInput(fx)).length).toBeGreaterThan(0);
+    fx.cases[0].review.reviewedContentDigest = computeCaseContentDigest(
+      fx.cases[0],
+    );
+    expect(codes(evaluatePublicReleaseGate(gateInput(fx)))).toContain(
+      "binding-entry-digest",
+    );
   });
 
   it("7b. rejects a modified old registry prefix", () => {
     const fx = buildAuthorizedFixture();
     fx.registry.entries[0].manifestDigest = "d".repeat(64);
-    expect(evaluatePublicReleaseGate(gateInput(fx)).length).toBeGreaterThan(0);
+    const observed = codes(evaluatePublicReleaseGate(gateInput(fx)));
+    expect(observed).toContain("artifact-digest");
+    expect(observed).toContain("binding-unresolved");
   });
 
   it("7c. rejects an untracked superseding correction", () => {
@@ -1236,7 +1212,9 @@ describe("public release gate: negative conditions", () => {
     const fx = buildAuthorizedFixture();
     fx.cases[0].video.sourceProvenanceVerification.verifiedPolicyVersion =
       "source-policy-v0";
-    expect(evaluatePublicReleaseGate(gateInput(fx)).length).toBeGreaterThan(0);
+    const observed = codes(evaluatePublicReleaseGate(gateInput(fx)));
+    expect(observed).toContain("gate-count-per-injury");
+    expect(observed).toContain("gate-count-total");
   });
 
   it("8b. rejects stale/failed/mismatched external verification", () => {
@@ -1334,7 +1312,9 @@ describe("public release gate: negative conditions", () => {
 
     const fx3 = buildAuthorizedFixture();
     fx3.historyBytes = '{"releases":[{"bogus":true}],"schemaVersion":1}';
-    expect(evaluatePublicReleaseGate(gateInput(fx3)).length).toBeGreaterThan(0);
+    expect(codes(evaluatePublicReleaseGate(gateInput(fx3)))).toContain(
+      "history-schema",
+    );
   });
 
   it("10b. rejects a dirty build commit or renderer digest drift", () => {

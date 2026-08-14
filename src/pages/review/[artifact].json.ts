@@ -9,7 +9,7 @@ import { existsSync, readFileSync } from "node:fs";
 import type { APIRoute } from "astro";
 import { resolveBuildMode } from "../../lib/governance/build-mode";
 import {
-  parseReviewSetManifestBytes,
+  parseReviewSetManifestV2Bytes,
   REVIEW_SET_MANIFEST_PATH,
 } from "../../lib/governance/review-set";
 
@@ -24,9 +24,13 @@ export function getStaticPaths(): Array<{
   if (resolveBuildMode(process.env.ATLAS_BUILD_MODE) !== "review") return [];
   const manifestPath =
     process.env.ATLAS_REVIEW_SET_MANIFEST ?? REVIEW_SET_MANIFEST_PATH;
-  if (!existsSync(manifestPath)) return [];
+  if (!existsSync(manifestPath)) {
+    throw new Error(
+      `active review-set v2 manifest is missing: ${manifestPath}`,
+    );
+  }
   const bytes = readFileSync(manifestPath);
-  const parsed = parseReviewSetManifestBytes(bytes);
+  const parsed = parseReviewSetManifestV2Bytes(bytes);
   if (parsed.manifest === null) {
     throw new Error(
       `supplied review-set manifest ${manifestPath} is invalid: ${parsed.issues

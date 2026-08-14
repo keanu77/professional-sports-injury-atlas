@@ -21,7 +21,16 @@ import {
   type ArtifactManifest,
 } from "../../src/lib/governance/artifact-manifest";
 import { DISALLOW_ALL_ROBOTS_TXT } from "../../src/lib/governance/build-mode";
-import type { ReviewSetManifest } from "../../src/lib/governance/review-set";
+import {
+  computeDecision17AuthoringAuthoritySnapshotDigest,
+  computeReviewSetV2ContentAuthoritySnapshotDigest,
+  DECISION_17_AUTHORING_AUTHORITY,
+  decision17AuthoringAuthoritySchema,
+  REVIEW_SET_V1_MANIFEST_PATH,
+  REVIEW_SET_V2_MANIFEST_PATH,
+  type ReviewSetManifestV1,
+  type ReviewSetManifestV2,
+} from "../../src/lib/governance/review-set";
 import {
   assertExactTailscaleBindAddress,
   createScryptVerifierToken,
@@ -66,7 +75,7 @@ interface TestFixture {
   root: string;
   token: string;
   manifest: ArtifactManifest;
-  reviewSet: ReviewSetManifest;
+  reviewSet: ReviewSetManifestV2;
   indexBytes: Buffer;
 }
 
@@ -105,7 +114,7 @@ function fixedConfig(): Record<string, unknown> {
     artifact: {
       distDirectory: "dist",
       manifestPath: "review/private-dist-manifest.v1.json",
-      reviewSetPath: "review/review-set.v1.json",
+      reviewSetPath: REVIEW_SET_V2_MANIFEST_PATH,
       headerPolicyPath: "ops/http-header-policy.v1.json",
     },
     launchd: {
@@ -120,9 +129,9 @@ function fixedConfig(): Record<string, unknown> {
   };
 }
 
-function reviewSetFixture(
+function reviewSetV1Fixture(
   supportingDataDigest = "d".repeat(64),
-): ReviewSetManifest {
+): ReviewSetManifestV1 {
   return {
     schemaVersion: 1,
     manifestType: "review-set",
@@ -134,6 +143,29 @@ function reviewSetFixture(
     contentAuthoritySnapshotDigest: "c".repeat(64),
     rendererTreeDigest: "b".repeat(64),
     supportingDataDigest,
+  };
+}
+
+function reviewSetFixture(
+  supportingDataDigest = "d".repeat(64),
+): ReviewSetManifestV2 {
+  const authoringAuthority = decision17AuthoringAuthoritySchema.parse(
+    DECISION_17_AUTHORING_AUTHORITY,
+  );
+  return {
+    ...reviewSetV1Fixture(supportingDataDigest),
+    schemaVersion: 2,
+    cases: [],
+    approvedCoreContentAuthoritySnapshotDigest:
+      reviewSetV1Fixture(supportingDataDigest).contentAuthoritySnapshotDigest,
+    contentAuthoritySnapshotDigest:
+      computeReviewSetV2ContentAuthoritySnapshotDigest(
+        reviewSetV1Fixture(supportingDataDigest).contentAuthoritySnapshotDigest,
+        authoringAuthority,
+      ),
+    authoringAuthority,
+    authoringAuthoritySnapshotDigest:
+      computeDecision17AuthoringAuthoritySnapshotDigest(authoringAuthority),
   };
 }
 
@@ -160,7 +192,7 @@ async function createFixture(): Promise<TestFixture> {
 
   const reviewSet = reviewSetFixture();
   const reviewSetBytes = Buffer.from(canonicalJson(reviewSet));
-  writeFileSync(join(root, "review/review-set.v1.json"), reviewSetBytes);
+  writeFileSync(join(root, REVIEW_SET_V2_MANIFEST_PATH), reviewSetBytes);
   writeFileSync(join(root, "dist/review/review-set.json"), reviewSetBytes);
   const indexBytes = Buffer.from(
     '<!doctype html><html><head><meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex"></head><body>private atlas fixture</body></html>',
@@ -719,7 +751,7 @@ describe("private-review authentication gateway", () => {
         ),
       (fixture) =>
         writeFileSync(
-          join(fixture.root, "review/review-set.v1.json"),
+          join(fixture.root, REVIEW_SET_V2_MANIFEST_PATH),
           canonicalJson(reviewSetFixture("e".repeat(64))),
         ),
       (fixture) =>
@@ -742,6 +774,54 @@ describe("private-review authentication gateway", () => {
       });
       expect(listener).not.toHaveBeenCalled();
     }
+  });
+
+  it("rejects v1 review-set bytes at the configured v2 path even when artifact hashes align", async () => {
+    const fixture = await createFixture();
+    const v1Bytes = Buffer.from(canonicalJson(reviewSetV1Fixture()));
+    writeFileSync(join(fixture.root, REVIEW_SET_V2_MANIFEST_PATH), v1Bytes);
+    writeFileSync(join(fixture.root, "dist/review/review-set.json"), v1Bytes);
+    const digest = sha256Hex(v1Bytes);
+    fixture.manifest.reviewSetDigest = digest;
+    fixture.manifest.reviewSetResponseSha256 = digest;
+    const reviewSetFile = fixture.manifest.files.find(
+      (file) => file.buildPath === "review/review-set.json",
+    );
+    expect(reviewSetFile).toBeDefined();
+    reviewSetFile!.byteLength = v1Bytes.byteLength;
+    reviewSetFile!.sha256 = digest;
+    reviewSetFile!.identity.digest = digest;
+    writeFileSync(
+      join(fixture.root, "review/private-dist-manifest.v1.json"),
+      canonicalJson(fixture.manifest),
+    );
+
+    const listener = vi.fn(ephemeralListener());
+    await expect(
+      startPrivateReviewServer({
+        root: fixture.root,
+        dependencies: dependencies(fixture.token, { listenServer: listener }),
+      }),
+    ).rejects.toMatchObject({ code: "artifact-invalid" });
+    expect(listener).not.toHaveBeenCalled();
+  });
+
+  it("never falls back to a historical v1 file when the active v2 file is missing", async () => {
+    const fixture = await createFixture();
+    writeFileSync(
+      join(fixture.root, REVIEW_SET_V1_MANIFEST_PATH),
+      canonicalJson(reviewSetV1Fixture()),
+    );
+    rmSync(join(fixture.root, REVIEW_SET_V2_MANIFEST_PATH));
+
+    const listener = vi.fn(ephemeralListener());
+    await expect(
+      startPrivateReviewServer({
+        root: fixture.root,
+        dependencies: dependencies(fixture.token, { listenServer: listener }),
+      }),
+    ).rejects.toMatchObject({ code: "artifact-invalid" });
+    expect(listener).not.toHaveBeenCalled();
   });
 
   it("rejects a canonical manifest whose declared MIME differs from its build path", async () => {

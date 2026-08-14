@@ -78,7 +78,7 @@ import {
 } from "./medical-review-decision";
 import { parseArtifactManifestBytes } from "./artifact-manifest";
 import { parseServedArtifactReceiptBytes } from "./served-artifact-receipt";
-import { parseReviewSetManifestBytes } from "./review-set";
+import { parseReviewSetManifestV2Bytes } from "./review-set";
 import {
   computeSiteDigest,
   validateSiteGovernanceRecord,
@@ -1365,12 +1365,21 @@ function checkReviewSetAndMedicalDecision(
     );
     return;
   }
-  const parsedReviewSet = parseReviewSetManifestBytes(input.reviewSetBytes);
+  const parsedReviewSet = parseReviewSetManifestV2Bytes(input.reviewSetBytes);
   if (parsedReviewSet.manifest === null) {
     issues.push(...parsedReviewSet.issues);
     return;
   }
   const reviewSet = parsedReviewSet.manifest;
+  if (reviewSet.authoringAuthority.closedScopeIds.includes("public-release")) {
+    issues.push(
+      issue(
+        "gate-review-set-public-release-closed",
+        "reviewSet.authoringAuthority.closedScopeIds",
+        "the active Decision 17 authority explicitly keeps public-release closed",
+      ),
+    );
+  }
   if (governance.currentReviewSetDigest !== parsedReviewSet.reviewSetDigest) {
     issues.push(
       issue(
@@ -1512,15 +1521,26 @@ function checkReviewSetAndMedicalDecision(
       );
     }
   }
-  issues.push(
-    ...validateAppliedMedicalReviewDecision(
-      parsedDecision.decision,
-      reviewSet,
-      input.cases,
-      input.overviews,
-      resolved.currentUpdate,
-    ),
+  const appliedDecisionIssues = validateAppliedMedicalReviewDecision(
+    parsedDecision.decision,
+    reviewSet,
+    input.cases,
+    input.overviews,
+    resolved.currentUpdate,
   );
+  for (const entry of appliedDecisionIssues) {
+    if (
+      issues.some(
+        (existing) =>
+          existing.code === entry.code &&
+          existing.path === entry.path &&
+          existing.message === entry.message,
+      )
+    ) {
+      continue;
+    }
+    issues.push(entry);
+  }
 }
 
 function buildSiteDigestInput(

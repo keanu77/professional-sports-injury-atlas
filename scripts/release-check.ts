@@ -22,7 +22,7 @@ import {
 } from "../src/lib/governance/release-gate";
 import { SITE_GOVERNANCE_DATA_PATH } from "../src/lib/governance/site-digest";
 import { videoRightsDecisionPathFor } from "../src/lib/governance/video-rights-decision";
-import { REVIEW_SET_MANIFEST_PATH } from "../src/lib/governance/review-set";
+import { REVIEW_SET_V2_MANIFEST_PATH } from "../src/lib/governance/review-set";
 import { courseLinkDecisionPathFor } from "../src/lib/rtp/course-link-decision";
 import {
   COURSE_LINKS_DATA_PATH,
@@ -115,7 +115,9 @@ export function buildGateInput(
     loadRegistryArtifact: registryArtifactLoader(root),
     releaseHistoryBytes: readFileSync(join(root, RELEASE_HISTORY_PATH)),
     loadReleaseArtifact: releaseCommitLoader(root),
-    reviewSetBytes: readOptional(root, REVIEW_SET_MANIFEST_PATH),
+    // The public gate consumes only the active strict v2 contract. Historical
+    // v1 bytes remain archived but are never used as an active fallback.
+    reviewSetBytes: readOptional(root, REVIEW_SET_V2_MANIFEST_PATH),
     medicalReviewDecisionBytes: readOptional(
       root,
       MEDICAL_REVIEW_DECISION_PATH,

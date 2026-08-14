@@ -564,13 +564,13 @@ describe("served-review receipt", () => {
     partial.unauthorizedMetadataDigest = computeUnauthorizedMetadataDigest(
       partial.unauthorizedResponses,
     );
-    expect(
-      validateServedArtifactReceipt(
-        partial,
-        manifest,
-        computeArtifactManifestDigest(manifest),
-      ).map((entry) => entry.code),
-    ).toContain("receipt-unauthorized-count");
+    const partialCodes = validateServedArtifactReceipt(
+      partial,
+      manifest,
+      computeArtifactManifestDigest(manifest),
+    ).map((entry) => entry.code);
+    expect(partialCodes).toContain("receipt-unauthorized-count");
+    expect(partialCodes).toContain("receipt-unauthorized-coverage");
 
     const duplicated = structuredClone(receipt) as any;
     duplicated.authorizedResponses[1] = structuredClone(

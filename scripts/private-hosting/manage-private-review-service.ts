@@ -32,6 +32,7 @@ import {
   parseStrictJson,
   sha256Hex,
 } from "../../src/lib/contracts/canonical.ts";
+import { REVIEW_SET_V2_MANIFEST_PATH } from "../../src/lib/governance/review-set.ts";
 
 export const PRIVATE_HOSTING_CONFIG_PATH = "ops/private-hosting.v1.json";
 export const PRIVATE_REVIEW_LAUNCHD_LABEL =
@@ -74,7 +75,7 @@ export interface PrivateHostingConfigV1 {
   artifact: {
     distDirectory: "dist";
     manifestPath: "review/private-dist-manifest.v1.json";
-    reviewSetPath: "review/review-set.v1.json";
+    reviewSetPath: typeof REVIEW_SET_V2_MANIFEST_PATH;
     headerPolicyPath: "ops/http-header-policy.v1.json";
   };
   launchd: {
@@ -271,7 +272,7 @@ function parseConfigValue(value: unknown): PrivateHostingConfigV1 {
   );
   expectLiteral(
     artifact.reviewSetPath,
-    "review/review-set.v1.json",
+    REVIEW_SET_V2_MANIFEST_PATH,
     "artifact.reviewSetPath",
   );
   expectLiteral(

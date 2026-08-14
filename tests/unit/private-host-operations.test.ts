@@ -18,6 +18,7 @@ import { dirname, join, resolve } from "node:path";
 import { afterEach, describe, expect, it } from "vitest";
 
 import { canonicalJson, sha256Hex } from "../../src/lib/contracts/canonical";
+import { REVIEW_SET_V2_MANIFEST_PATH } from "../../src/lib/governance/review-set";
 import {
   LAUNCHCTL_PATH,
   loadPrivateHostingConfigDocument,
@@ -307,6 +308,7 @@ describe("private-hosting operations", () => {
     const fixture = operationsFixture();
     expect(parsePrivateHostingConfigBytes(CONFIG_BYTES)).toMatchObject({
       nodeVersion: "24.14.0",
+      artifact: { reviewSetPath: REVIEW_SET_V2_MANIFEST_PATH },
       launchd: { label: PRIVATE_REVIEW_LAUNCHD_LABEL },
     });
     const loaded = loadPrivateHostingConfigDocument(fixture.root);
@@ -333,6 +335,14 @@ describe("private-hosting operations", () => {
         CONFIG_BYTES.toString("utf8").replace(
           PRIVATE_REVIEW_LAUNCHD_LABEL,
           "tw.sportsmedicine.atlas.private-review.other",
+        ),
+      ),
+    ).toThrow(/fixed contract value/u);
+    expect(() =>
+      parsePrivateHostingConfigBytes(
+        CONFIG_BYTES.toString("utf8").replace(
+          REVIEW_SET_V2_MANIFEST_PATH,
+          "review/review-set.v1.json",
         ),
       ),
     ).toThrow(/fixed contract value/u);

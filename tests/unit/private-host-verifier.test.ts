@@ -43,6 +43,18 @@ import {
 } from "../../src/lib/governance/build-mode";
 import { PRIVATE_REVIEW_MAX_FILE_BYTES } from "../../src/lib/governance/private-review-limits";
 import {
+  computeDecision17AuthoringAuthoritySnapshotDigest,
+  computeReviewSetV2ContentAuthoritySnapshotDigest,
+  DECISION_17_AUTHORING_AUTHORITY,
+  decision17AuthoringAuthoritySchema,
+  parseReviewSetManifestV1Bytes,
+  parseReviewSetManifestV2Bytes,
+  REVIEW_SET_V1_MANIFEST_PATH,
+  REVIEW_SET_V2_MANIFEST_PATH,
+  type ReviewSetManifestV1,
+  type ReviewSetManifestV2,
+} from "../../src/lib/governance/review-set";
+import {
   parseServedArtifactReceiptBytes,
   UNAUTHORIZED_SCENARIOS,
   validateServedArtifactReceipt,
@@ -77,8 +89,63 @@ const CONFIG_BYTES = readFileSync(
 const HEADER_POLICY_BYTES = readFileSync(
   join(PROJECT_ROOT, "ops/http-header-policy.v1.json"),
 );
-const REVIEW_SET_BYTES = readFileSync(
-  join(PROJECT_ROOT, "review/review-set.v1.json"),
+function activeReviewSetFixture(
+  historical: ReviewSetManifestV1,
+): ReviewSetManifestV2 {
+  const authoringAuthority = decision17AuthoringAuthoritySchema.parse(
+    DECISION_17_AUTHORING_AUTHORITY,
+  );
+  const manifest: ReviewSetManifestV2 = {
+    ...historical,
+    schemaVersion: 2,
+    cases: historical.cases.map((entry, index) => ({
+      ...entry,
+      approvedReview: {
+        status: "approved",
+        reviewerName: "Dr. Private Verifier Fixture",
+        reviewerQualification: "Fixture physician",
+        reviewedAt: "2026-08-08T00:00:00Z",
+        reviewedContentDigest: entry.clinicalDigest,
+      },
+      followUp: {
+        sidecarPath: `src/content/follow-ups/verifier-follow-up-${String(index + 1).padStart(2, "0")}.json`,
+        draftDigest: sha256Hex(
+          canonicalJson({
+            schemaVersion: 1,
+            digestType: "private-verifier-follow-up-fixture",
+            caseId: entry.caseId,
+          }),
+        ),
+        status: "pending-owner-signoff",
+        sourcePolicyVersion: "nba-v10",
+      },
+    })),
+    approvedCoreContentAuthoritySnapshotDigest:
+      historical.contentAuthoritySnapshotDigest,
+    contentAuthoritySnapshotDigest:
+      computeReviewSetV2ContentAuthoritySnapshotDigest(
+        historical.contentAuthoritySnapshotDigest,
+        authoringAuthority,
+      ),
+    authoringAuthority,
+    authoringAuthoritySnapshotDigest:
+      computeDecision17AuthoringAuthoritySnapshotDigest(authoringAuthority),
+  };
+  const parsed = parseReviewSetManifestV2Bytes(canonicalJson(manifest));
+  if (parsed.manifest === null) {
+    throw new Error("active verifier review-set v2 fixture is invalid");
+  }
+  return parsed.manifest;
+}
+
+const historicalReviewSet = parseReviewSetManifestV1Bytes(
+  readFileSync(join(PROJECT_ROOT, REVIEW_SET_V1_MANIFEST_PATH)),
+);
+if (historicalReviewSet.manifest === null) {
+  throw new Error("historical review-set v1 fixture is invalid");
+}
+const REVIEW_SET_BYTES = Buffer.from(
+  canonicalJson(activeReviewSetFixture(historicalReviewSet.manifest)),
 );
 const PASSWORD = "jCuJoA3rI4nXhCTpKnDdlSN_w9zWW91TAudloOOwTeM";
 const ORIGIN = "http://100.114.3.93:8140";
@@ -289,7 +356,7 @@ function verifierFixture(): VerifierFixture {
     "scripts/private-hosting/serve-private-review.ts",
     "export {};\n",
   );
-  write(root, "review/review-set.v1.json", REVIEW_SET_BYTES);
+  write(root, REVIEW_SET_V2_MANIFEST_PATH, REVIEW_SET_BYTES);
   write(root, "review/private-dist-manifest.v1.json", canonicalJson(manifest));
   for (const input of files) write(root, `dist/${input.path}`, input.bytes);
   const inputByBuildPath = new Map(files.map((file) => [file.path, file]));

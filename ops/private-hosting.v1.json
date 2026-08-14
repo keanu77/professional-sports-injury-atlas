@@ -26,7 +26,7 @@
   "artifact": {
     "distDirectory": "dist",
     "manifestPath": "review/private-dist-manifest.v1.json",
-    "reviewSetPath": "review/review-set.v1.json",
+    "reviewSetPath": "review/review-set.v2.json",
     "headerPolicyPath": "ops/http-header-policy.v1.json"
   },
   "launchd": {
