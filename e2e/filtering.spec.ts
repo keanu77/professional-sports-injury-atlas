@@ -113,7 +113,9 @@ test.describe("progressive case filtering", () => {
     page,
   }) => {
     await page.goto("/injuries/acl/");
-    await page.getByLabel("傷種").selectOption("acl");
+    await page
+      .getByRole("combobox", { name: "傷種", exact: true })
+      .selectOption("acl");
     await page.getByLabel("影片來源").selectOption("nba-plain-text-citation");
     await expect(page.locator("[data-filter-status]")).toHaveText(
       /符合條件的案例共 7 筆/,
