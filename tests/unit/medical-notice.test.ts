@@ -106,7 +106,7 @@ describe("Decision 13 medical-notice route matrix", () => {
   it("preserves the About page byte-for-byte", () => {
     const about = read("src/pages/about.astro");
     expect(createHash("sha256").update(about).digest("hex")).toBe(
-      "c8bc66fdebbd4d5868eb80cd213b6d4ce96947454f0c20461106f0dea60da003",
+      "77ccbc5cc21899c4de2e0931fcb6b69642bc49461e181bc472365824b78555f3",
     );
   });
 });

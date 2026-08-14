@@ -398,7 +398,9 @@ describe("candidate-manifest registry transaction", () => {
 
     expect(checkCandidateManifest(root, VALIDATION_NOW).issues).toEqual([]);
     expect(checkSourceManifestRegistry(root).issues).toEqual([]);
-    expect(digestCandidateManifestFile(root)).toMatch(/^[0-9a-f]{64}$/);
+    expect(digestCandidateManifestFile(root, VALIDATION_NOW)).toMatch(
+      /^[0-9a-f]{64}$/,
+    );
 
     expect(readFileSync(join(root, MANIFEST_PATH))).toEqual(manifestBefore);
     expect(readFileSync(join(root, REGISTRY_PATH))).toEqual(registryBefore);

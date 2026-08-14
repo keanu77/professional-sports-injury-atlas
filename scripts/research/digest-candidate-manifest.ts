@@ -6,8 +6,9 @@ import { checkCandidateManifest } from "./check-candidate-manifest";
 
 export function digestCandidateManifestFile(
   root: string = process.cwd(),
+  validationNow?: string,
 ): string {
-  const result = checkCandidateManifest(root);
+  const result = checkCandidateManifest(root, validationNow);
   if (
     result.issues.length > 0 ||
     result.manifest === null ||
