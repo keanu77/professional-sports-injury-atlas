@@ -14,6 +14,7 @@ import { tmpdir } from "node:os";
 import { afterEach, describe, expect, it } from "vitest";
 
 import {
+  buildDecision18ProjectedSidecar,
   buildDecision18ResearchRecordScaffold,
   generateDecision18CaseArtifacts,
 } from "../../src/lib/cases/decision-18-follow-up-generation";
@@ -24,7 +25,11 @@ import {
   FOLLOW_UP_SOURCE_POLICY_V10_BINDING,
 } from "../../src/lib/contracts/case-follow-up";
 import { caseSchema } from "../../src/lib/contracts/case";
-import { parseStrictJson, sha256Hex } from "../../src/lib/contracts/canonical";
+import {
+  canonicalJson,
+  parseStrictJson,
+  sha256Hex,
+} from "../../src/lib/contracts/canonical";
 import type { Decision18FollowUpResearchRecord } from "../../src/lib/contracts/decision-18-follow-up-research-record";
 import {
   DECISION_18_FOLLOW_UP_BATCH_DEFINITIONS,
@@ -158,9 +163,23 @@ function terminalEmptyRecord(): {
   const decision17Research = parseFollowUpResearchBytes(
     read(`research/follow-ups/decision-17/${slug}.json`),
   ).research!;
-  const decision17Sidecar = parseCaseFollowUpBytes(
+  const currentSidecar = parseCaseFollowUpBytes(
     read(`src/content/follow-ups/${slug}.json`),
   ).sidecar!;
+  const decision17Sidecar = buildDecision18ProjectedSidecar(
+    caseRecord,
+    currentSidecar,
+    Object.fromEntries(
+      FOLLOW_UP_KINDS.map((kind) => [
+        kind,
+        decision17Research.categories[kind].facts,
+      ]),
+    ) as Record<
+      (typeof FOLLOW_UP_KINDS)[number],
+      (typeof decision17Research.categories)[(typeof FOLLOW_UP_KINDS)[number]]["facts"]
+    >,
+    FOLLOW_UP_SOURCE_POLICY_V10_BINDING,
+  );
   const record = structuredClone(
     buildDecision18ResearchRecordScaffold({
       auditCutoffDate: "2026-08-15",
@@ -227,7 +246,7 @@ describe("Decision 18 per-case research generation", () => {
       terminalEmptyRecord();
     const slug = caseRecord.slug;
     const d17Bytes = read(`research/follow-ups/decision-17/${slug}.json`);
-    const sidecarBytes = read(`src/content/follow-ups/${slug}.json`);
+    const sidecarBytes = Buffer.from(canonicalJson(decision17Sidecar));
     const generated = generateDecision18CaseArtifacts({
       auditCutoffDate: "2026-08-15",
       batchId: "ankle",
