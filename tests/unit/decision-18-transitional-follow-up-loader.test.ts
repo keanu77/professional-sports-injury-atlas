@@ -413,23 +413,30 @@ describe("Decision 18 transitional follow-up loader", () => {
     );
   });
 
-  it("concretely resolves the unchanged 26-case repository as D17 before the first receipt", () => {
+  it("concretely resolves the repository through its valid committed receipt chain", () => {
     const cases = loadRepositoryCases(ROOT);
     const result = loadDecision18TransitionalFollowUpCorpus(ROOT, cases, {
       expectedPolicyBinding: FOLLOW_UP_SOURCE_POLICY_V10_BINDING,
-      now: new Date("2026-08-15T12:00:00Z"),
+      now: new Date("2026-08-15T23:59:59Z"),
     });
+    const completedSlugs = new Set(
+      result.completedBatchIds.flatMap(
+        (batchId) =>
+          DECISION_18_FOLLOW_UP_BATCH_DEFINITIONS[batchId].membership,
+      ),
+    );
 
     expect(result.issues).toEqual([]);
     expect(result.entries).toHaveLength(26);
-    expect(result.completedBatchIds).toEqual([]);
-    expect(
-      result.entries.every(
-        (entry) =>
-          entry.provenance === "decision-17-v1" &&
-          entry.auditCutoffDate === "2026-08-14",
-      ),
-    ).toBe(true);
+    for (const entry of result.entries) {
+      if (completedSlugs.has(entry.caseSlug)) {
+        expect(entry.provenance).toBe("decision-18-v2");
+        expect(entry.auditCutoffDate).toBe("2026-08-15");
+      } else {
+        expect(entry.provenance).toBe("decision-17-v1");
+        expect(entry.auditCutoffDate).toBe("2026-08-14");
+      }
+    }
   });
 
   it("concretely treats a malformed present batch receipt as fatal instead of using D17", () => {

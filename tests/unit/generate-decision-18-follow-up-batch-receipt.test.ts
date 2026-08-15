@@ -15,6 +15,7 @@ import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 
 import { computeCaseContentDigest } from "../../src/lib/cases/digest";
+import { buildDecision18ProjectedSidecar } from "../../src/lib/cases/decision-18-follow-up-generation";
 import {
   computeResearchV2AngleId,
   computeResearchV2FactIdentityDigest,
@@ -25,7 +26,9 @@ import {
   FOLLOW_UP_KINDS,
   FOLLOW_UP_SOURCE_POLICY_V10_BINDING,
   followUpResearchSchema,
+  type CaseFollowUp,
   type FollowUpKind,
+  type FollowUpResearchFact,
 } from "../../src/lib/contracts/case-follow-up";
 import {
   FOLLOW_UP_RESEARCH_V2_AUTHORITY_BINDING,
@@ -347,6 +350,59 @@ function writeTerminalLedger(
   writeFileSync(target, canonicalJson(ledger), "utf8");
 }
 
+function writeP0Sidecar(
+  root: string,
+  caseSlug: string,
+  expectedSha256: string,
+): void {
+  const casePath = `src/content/cases/${caseSlug}.json`;
+  const d17Path = `research/follow-ups/decision-17/${caseSlug}.json`;
+  const sidecarPath = `src/content/follow-ups/${caseSlug}.json`;
+  const caseRecord = caseSchema.parse(
+    parseStrictJson(readFileSync(join(root, casePath), "utf8")),
+  );
+  const d17 = followUpResearchSchema.parse(
+    parseStrictJson(readFileSync(join(root, d17Path), "utf8")),
+  );
+  const diagnosisSources = caseRecord.sources.filter((source) =>
+    source.supports.includes("general.confirmedUpdate"),
+  );
+  expect(diagnosisSources).toHaveLength(1);
+  expect(diagnosisSources[0]!.type).toBe("diagnosis-first-party");
+  const shell: CaseFollowUp = {
+    schemaVersion: "case-follow-up.v1",
+    caseId: caseRecord.id,
+    caseClinicalDigest: "0".repeat(64),
+    sourcePolicyBinding: { ...FOLLOW_UP_SOURCE_POLICY_V10_BINDING },
+    legacyDiagnosisProjection: {
+      field: "general.confirmedUpdate",
+      sourceId: diagnosisSources[0]!.id,
+      sourceTier: "team-or-league-official",
+    },
+    categories: {
+      treatment: [],
+      surgery: [],
+      injection: [],
+      "actual-return": [],
+    },
+  };
+  const facts = Object.fromEntries(
+    FOLLOW_UP_KINDS.map((kind) => [kind, d17.categories[kind].facts]),
+  ) as Record<FollowUpKind, FollowUpResearchFact[]>;
+  const sidecarText = canonicalJson(
+    buildDecision18ProjectedSidecar(
+      caseRecord,
+      shell,
+      facts,
+      FOLLOW_UP_SOURCE_POLICY_V10_BINDING,
+    ),
+  );
+  expect(sha256Hex(sidecarText)).toBe(expectedSha256);
+  const target = join(root, sidecarPath);
+  mkdirSync(dirname(target), { recursive: true });
+  writeFileSync(target, sidecarText, "utf8");
+}
+
 function initializeAclFixture(): string {
   const root = mkdtempSync(join(tmpdir(), "atlas-d18-receipt-"));
   for (const path of [
@@ -362,14 +418,7 @@ function initializeAclFixture(): string {
     .membership) {
     copyIntoRoot(root, `src/content/cases/${caseSlug}.json`);
     copyIntoRoot(root, `research/follow-ups/decision-17/${caseSlug}.json`);
-    copyIntoRoot(root, `src/content/follow-ups/${caseSlug}.json`);
   }
-  git(root, ["init", "-q"]);
-  git(root, ["config", "user.name", "Decision 18 Test"]);
-  git(root, ["config", "user.email", "decision18@example.invalid"]);
-  git(root, ["add", "."]);
-  git(root, ["commit", "-q", "-m", "chore(test): seed P0 inputs"]);
-
   const p0 = parseStrictJson(
     readFileSync(join(root, DECISION_18_P0_BASELINE_PATH), "utf8"),
   ) as P0BaselineShape;
@@ -379,6 +428,20 @@ function initializeAclFixture(): string {
       entry.sha256,
     ]),
   );
+  for (const caseSlug of DECISION_18_FOLLOW_UP_BATCH_DEFINITIONS.acl
+    .membership) {
+    writeP0Sidecar(
+      root,
+      caseSlug,
+      p0Sidecars.get(`src/content/follow-ups/${caseSlug}.json`)!,
+    );
+  }
+  git(root, ["init", "-q"]);
+  git(root, ["config", "user.name", "Decision 18 Test"]);
+  git(root, ["config", "user.email", "decision18@example.invalid"]);
+  git(root, ["add", "."]);
+  git(root, ["commit", "-q", "-m", "chore(test): seed P0 inputs"]);
+
   for (const caseSlug of DECISION_18_FOLLOW_UP_BATCH_DEFINITIONS.acl
     .membership) {
     writeTerminalLedger(
