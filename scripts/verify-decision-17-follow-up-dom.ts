@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 
 import { parse } from "parse5";
 
-import { loadFollowUpCorpus } from "../src/lib/cases/follow-up-loader";
+import { loadDecision18TransitionalFollowUpCorpus } from "../src/lib/cases/decision-18-follow-up-corpus";
 import {
   ACTUAL_RETURN_RETROSPECTIVE_COPY,
   FOLLOW_UP_BLOCK_ATTRIBUTION,
@@ -336,7 +336,7 @@ function main(): void {
   }
   const buildRoot = resolve(argumentValue("--root") ?? DEFAULT_BUILD_ROOT);
   const cases = loadCases();
-  const corpus = loadFollowUpCorpus(ROOT, cases, {
+  const corpus = loadDecision18TransitionalFollowUpCorpus(ROOT, cases, {
     expectedCaseCount: 26,
     expectedPolicyBinding: FOLLOW_UP_SOURCE_POLICY_V10_BINDING,
   });

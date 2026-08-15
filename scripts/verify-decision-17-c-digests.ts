@@ -9,7 +9,7 @@ import { parse } from "parse5";
 import { loadContentCollections } from "./check-content";
 import { computeCaseContentDigest } from "../src/lib/cases/digest";
 import { computeFollowUpDraftDigest } from "../src/lib/cases/follow-up-digest";
-import { loadFollowUpCorpus } from "../src/lib/cases/follow-up-loader";
+import { loadDecision18TransitionalFollowUpCorpus } from "../src/lib/cases/decision-18-follow-up-corpus";
 import { permittedCasesForMode } from "../src/lib/cases/pagination";
 import {
   reviewFixtureClassicCase,
@@ -328,7 +328,7 @@ function main(): void {
     );
   }
 
-  const corpus = loadFollowUpCorpus(ROOT, cases, {
+  const corpus = loadDecision18TransitionalFollowUpCorpus(ROOT, cases, {
     expectedCaseCount: EXPECTED_REAL_CASES,
     expectedPolicyBinding: FOLLOW_UP_SOURCE_POLICY_V10_BINDING,
   });

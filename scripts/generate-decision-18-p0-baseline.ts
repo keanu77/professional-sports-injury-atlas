@@ -49,6 +49,8 @@ import {
 const ROOT = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const OUTPUT_PATH =
   "docs/reviews/evidence/decision-18/p0/authorized-start-baseline.v1.json";
+const EXPECTED_OUTPUT_SHA256 =
+  "fa541c8a2c1fd476e41f0820fc40440f6d16fb2b1990cd14dc25053fef32c992";
 const PLAN_PATH =
   "docs/superpowers/plans/2026-08-15-decision-18-professional-notes-and-exhaustive-followups.md";
 const AUTHORIZATION_PATH =
@@ -342,8 +344,9 @@ function main(): void {
     "ShareAlike composites",
   ].every((token) => brandGuardSource.includes(token));
 
-  const committedBaseline = checking
-    ? (parseStrictJson(bytes(OUTPUT_PATH).toString("utf8")) as {
+  const committedBaselineBytes = checking ? bytes(OUTPUT_PATH) : null;
+  const committedBaseline = committedBaselineBytes
+    ? (parseStrictJson(committedBaselineBytes.toString("utf8")) as {
         protectedFileBindings: FileBinding[];
       })
     : null;
@@ -474,8 +477,17 @@ function main(): void {
   };
   const outputBytes = canonicalJson(baseline);
   if (checking) {
+    if (
+      committedBaselineBytes === null ||
+      sha256Hex(committedBaselineBytes) !== EXPECTED_OUTPUT_SHA256 ||
+      committedBaselineBytes.toString("utf8") !== outputBytes
+    ) {
+      throw new Error(
+        "Decision 18 Phase 0 baseline bytes differ from the exact frozen artifact",
+      );
+    }
     console.log(
-      `Decision 18 protected baseline OK — 30/30 clinical, 21/21 covers, 26 D17 ledgers, 104 queries, 44 pending items; ${sha256Hex(bytes(OUTPUT_PATH))}`,
+      `Decision 18 protected baseline OK — 30/30 clinical, 21/21 covers, 26 D17 ledgers, 104 queries, 44 pending items; ${sha256Hex(committedBaselineBytes)}`,
     );
     return;
   }

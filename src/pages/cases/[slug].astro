@@ -33,20 +33,20 @@ import {
   confirmationStatusLabel,
 } from "../../lib/routes/static-paths";
 import { caseImageFor } from "../../lib/ui/editorial-images";
-import { loadFollowUpCorpus } from "../../lib/cases/follow-up-loader";
+import { loadDecision18TransitionalFollowUpCorpus } from "../../lib/cases/decision-18-follow-up-corpus";
 import { FOLLOW_UP_SOURCE_POLICY_V10_BINDING } from "../../lib/contracts/case-follow-up";
 
 export function validatedFollowUps(
   caseRecords: readonly CollectionEntry<"cases">[],
 ) {
-  const corpus = loadFollowUpCorpus(
+  const corpus = loadDecision18TransitionalFollowUpCorpus(
     process.cwd(),
     caseRecords.map((entry) => entry.data),
     { expectedPolicyBinding: FOLLOW_UP_SOURCE_POLICY_V10_BINDING },
   );
   if (corpus.issues.length > 0) {
     throw new Error(
-      `invalid Decision 17 follow-up corpus: ${corpus.issues
+      `invalid Decision 18 transitional follow-up corpus: ${corpus.issues
         .map((entry) => `${entry.code}:${entry.path}`)
         .join(", ")}`,
     );
@@ -87,7 +87,7 @@ const followUpEntry =
       )
     : undefined;
 if (buildMode === "review" && followUpEntry === undefined) {
-  throw new Error(`missing Decision 17 follow-up sidecar for ${record.id}`);
+  throw new Error(`missing transitional follow-up sidecar for ${record.id}`);
 }
 const heroSelection = caseImageFor(
   record.injury.code,
