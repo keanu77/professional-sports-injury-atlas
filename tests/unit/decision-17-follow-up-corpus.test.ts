@@ -2,7 +2,7 @@ import { readFileSync, readdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
-import { loadFollowUpCorpus } from "../../src/lib/cases/follow-up-loader";
+import { loadDecision18TransitionalFollowUpCorpus } from "../../src/lib/cases/decision-18-follow-up-corpus";
 import {
   FOLLOW_UP_KINDS,
   FOLLOW_UP_SOURCE_POLICY_V10_BINDING,
@@ -24,18 +24,30 @@ function loadCases() {
     );
 }
 
-describe("Decision 17 real follow-up corpus", () => {
-  it("binds all 26 cases to source-ready ledgers and pending sidecars", () => {
-    const corpus = loadFollowUpCorpus(ROOT, loadCases(), {
-      expectedPolicyBinding: FOLLOW_UP_SOURCE_POLICY_V10_BINDING,
-    });
+function loadCorpus() {
+  return loadDecision18TransitionalFollowUpCorpus(ROOT, loadCases(), {
+    expectedPolicyBinding: FOLLOW_UP_SOURCE_POLICY_V10_BINDING,
+  });
+}
+
+// Decision 18 superseded the Decision 17 corpus: every case now resolves through
+// a completed Decision 18 batch receipt, so the Decision 17 v1 ledgers are only
+// retained as historical baselines. The composition numbers below are the
+// post-exhaustive-audit corpus, not the Decision 17 ones.
+describe("Decision 18 real follow-up corpus", () => {
+  it("binds all 26 cases to completed Decision 18 ledgers and pending sidecars", () => {
+    const corpus = loadCorpus();
     expect(corpus.issues).toEqual([]);
     expect(corpus.entries).toHaveLength(26);
+    expect(corpus.completedBatchIds).toEqual(["acl", "ankle", "achilles"]);
+    expect(
+      corpus.entries.every((entry) => entry.provenance === "decision-18-v2"),
+    ).toBe(true);
 
     const items = corpus.entries.flatMap((entry) =>
       FOLLOW_UP_KINDS.flatMap((kind) => entry.sidecar.categories[kind]),
     );
-    expect(items).toHaveLength(44);
+    expect(items).toHaveLength(148);
     expect(
       Object.fromEntries(
         [
@@ -48,9 +60,9 @@ describe("Decision 17 real follow-up corpus", () => {
         ]),
       ),
     ).toEqual({
-      "team-or-league-official": 29,
-      "mainstream-media-report": 14,
-      "unverified-report": 1,
+      "team-or-league-official": 63,
+      "mainstream-media-report": 81,
+      "unverified-report": 4,
     });
     expect(
       Object.fromEntries(
@@ -60,12 +72,14 @@ describe("Decision 17 real follow-up corpus", () => {
         ]),
       ),
     ).toEqual({
-      treatment: 16,
-      surgery: 13,
+      treatment: 96,
+      surgery: 28,
       injection: 0,
-      "actual-return": 15,
+      "actual-return": 24,
     });
 
+    // The exhaustive audit left no case without at least one qualifying fact;
+    // Decision 17 still had three empty cases.
     expect(
       corpus.entries
         .filter(
@@ -73,43 +87,34 @@ describe("Decision 17 real follow-up corpus", () => {
             FOLLOW_UP_KINDS.flatMap((kind) => entry.sidecar.categories[kind])
               .length === 0,
         )
-        .map((entry) => entry.research.caseSlug),
-    ).toEqual([
-      "anfernee-simons-ankle-sprain-2023",
-      "cj-mccollum-ankle-sprain-2020",
-      "lamelo-ball-ankle-sprain-2023",
-    ]);
+        .map((entry) => entry.caseSlug),
+    ).toEqual([]);
   });
 
-  it("keeps every retained fact atomic, opened, individually sourced, and pending", () => {
-    const corpus = loadFollowUpCorpus(ROOT, loadCases(), {
-      expectedPolicyBinding: FOLLOW_UP_SOURCE_POLICY_V10_BINDING,
-    });
-    const researchFacts = corpus.entries.flatMap((entry) =>
-      FOLLOW_UP_KINDS.flatMap((kind) => entry.research.categories[kind].facts),
-    );
+  it("keeps every retained item atomic, opened, individually sourced, and pending", () => {
+    const corpus = loadCorpus();
     const items = corpus.entries.flatMap((entry) =>
       FOLLOW_UP_KINDS.flatMap((kind) => entry.sidecar.categories[kind]),
     );
 
-    expect(researchFacts).toHaveLength(44);
     expect(
-      corpus.entries.flatMap((entry) =>
-        FOLLOW_UP_KINDS.map((kind) => entry.research.categories[kind]),
-      ),
-    ).toHaveLength(104);
-    expect(
-      researchFacts.every(
-        (fact) =>
-          fact.evidenceUse === "opened-original-page" &&
-          fact.searchSnippetUsedAsEvidence === false &&
-          fact.source.canonicalUrl.startsWith("https://") &&
-          fact.source.title.length > 0 &&
-          fact.source.publisher.length > 0 &&
-          fact.source.publishedAt.length === 10 &&
-          fact.source.accessedAt === "2026-08-14",
+      items.every(
+        (item) =>
+          item.source.canonicalUrl.startsWith("https://") &&
+          item.source.title.length > 0 &&
+          item.source.publisher.length > 0 &&
+          item.source.publishedAt.length === 10,
       ),
     ).toBe(true);
+
+    // Decision 17 items keep their historical 2026-08-14 access date; every
+    // Decision 18 addition carries its own receipt-derived 2026-08-15 date.
+    expect(
+      items.every((item) =>
+        ["2026-08-14", "2026-08-15"].includes(item.source.accessedAt),
+      ),
+    ).toBe(true);
+
     expect(
       items.every(
         (item) =>
@@ -118,6 +123,9 @@ describe("Decision 17 real follow-up corpus", () => {
             "reviewedPayloadDigest,status",
       ),
     ).toBe(true);
+
+    // actual-return stayed official-only and retrospective through the
+    // exhaustive audit; broader sourcing never relaxed this kind.
     expect(
       items
         .filter((item) => item.kind === "actual-return")
@@ -125,7 +133,7 @@ describe("Decision 17 real follow-up corpus", () => {
           (item) =>
             item.sourceTier === "team-or-league-official" &&
             item.factDate !== null &&
-            item.factDate <= "2026-08-14",
+            item.factDate <= item.source.accessedAt,
         ),
     ).toBe(true);
   });
