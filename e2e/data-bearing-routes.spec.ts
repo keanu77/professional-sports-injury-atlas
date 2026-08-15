@@ -3,9 +3,8 @@
  * production view templates: case detail with the classic label and the
  * separated diagnosis-confirmation/workflow states, the injury teaching
  * overview, the league listing, the quarterly update with the latest-update
- * link, and the LayeredNotes native button group (aria-pressed emphasis,
- * both sections always readable, stable focus, Enter/Space activation).
- * Axe runs before and after each state change and at 200% zoom reflow.
+ * link, and the complete single professional-note view. Axe also runs at
+ * 200% zoom reflow.
  */
 
 import { readdirSync, readFileSync } from "node:fs";
@@ -14,13 +13,11 @@ import { expectNoAxeViolations } from "./helpers/a11y";
 
 interface ExpectedCaseNotes {
   route: string;
-  general: string;
   professional: [string, string, string, string];
 }
 
 interface CaseFile {
   slug: string;
-  general: { whatVideoCannotProve: string };
   professional: {
     mechanismAnalysis: string;
     clinicalLimitations: string;
@@ -39,7 +36,6 @@ const GOVERNED_CASE_NOTES: ExpectedCaseNotes[] = readdirSync(caseDirectory)
     ) as CaseFile;
     return {
       route: `/cases/${record.slug}/`,
-      general: record.general.whatVideoCannotProve,
       professional: [
         record.professional.mechanismAnalysis,
         record.professional.clinicalLimitations,
@@ -51,8 +47,6 @@ const GOVERNED_CASE_NOTES: ExpectedCaseNotes[] = readdirSync(caseDirectory)
 
 const FIXTURE_CASE_NOTES: ExpectedCaseNotes = {
   route: "/review/fixtures/case-detail/",
-  general:
-    "影片無法證明韌帶撕裂、合併半月板損傷或嚴重度；這些需要臨床檢查與影像學檢查。",
   professional: [
     "虛構分析：球員急減速並切入變向，膝關節在沒有外力接觸下向內塌陷。\n\n膝關節接近伸直位的非接觸切入，是文獻中討論前十字韌帶受傷時經典的可見負荷模式。",
     "影片觀察無法確認前十字韌帶撕裂，也無法分級任何合併損傷。",
@@ -67,35 +61,33 @@ const PROFESSIONAL_HEADINGS = [
   "鑑別脈絡",
   "治療與回場意涵",
 ] as const;
+const REMOVED_READER_LABEL = ["一般讀者", "筆記"].join("");
+const REMOVED_LAYER_BLOCK = `[${["data", "layered", "notes"].join("-")}]`;
+const REMOVED_LAYER_ATTRIBUTE = `[${["data", "layer"].join("-")}]`;
+const REMOVED_LAYER_BUTTON = `[${["data", "layer", "button"].join("-")}]`;
 
-async function expectNarrowedLayeredNotes(
+async function expectProfessionalNotes(
   page: Page,
   expected: ExpectedCaseNotes,
 ): Promise<void> {
   await page.goto(expected.route);
-  const notes = page.locator("[data-layered-notes]");
-  const general = notes.locator('[data-layer="general"]');
-  const professional = notes.locator('[data-layer="professional"]');
+  const professional = page.locator("[data-professional-notes]");
 
-  await expect(general.locator(":scope > h4")).toHaveText(["畫面不能證明什麼"]);
-  await expect(general.locator(":scope > p")).toHaveText([expected.general]);
+  await expect(professional).toHaveCount(1);
+  await expect(professional.locator(":scope > h3")).toHaveText("專業筆記");
   await expect(professional.locator(":scope > h4")).toHaveText([
     ...PROFESSIONAL_HEADINGS,
   ]);
   await expect(professional.locator(":scope > p")).toHaveText(
     expected.professional,
   );
-  await expect(notes.getByText("發生了什麼", { exact: true })).toHaveCount(0);
-  await expect(notes.getByText("畫面看得到什麼", { exact: true })).toHaveCount(
-    0,
-  );
   await expect(
-    notes.getByText("已確認的後續更新", { exact: true }),
+    page.getByText(REMOVED_READER_LABEL, { exact: true }),
   ).toHaveCount(0);
-  await expect(
-    page.getByRole("heading", { name: "影片段落觀察", exact: true }),
-  ).toHaveCount(0);
-  await expect(page.locator("[data-video-timeline]")).toHaveCount(0);
+  await expect(page.locator(REMOVED_LAYER_BLOCK)).toHaveCount(0);
+  await expect(page.locator(REMOVED_LAYER_ATTRIBUTE)).toHaveCount(0);
+  await expect(page.locator(REMOVED_LAYER_BUTTON)).toHaveCount(0);
+  await expect(page.getByRole("button", { name: /筆記/u })).toHaveCount(0);
 }
 
 test.describe("data-bearing fixture routes", () => {
@@ -232,100 +224,13 @@ test.describe("data-bearing fixture routes", () => {
     ).toEqual(before.map(({ value }) => value));
   });
 
-  test("all 26 governed cases and the fixture render only the retained reader guardrail while preserving professional notes", async ({
+  test("all 26 governed cases and the fixture render exactly one complete professional-note view", async ({
     page,
   }) => {
     expect(GOVERNED_CASE_NOTES).toHaveLength(26);
     for (const expected of [...GOVERNED_CASE_NOTES, FIXTURE_CASE_NOTES]) {
-      await expectNarrowedLayeredNotes(page, expected);
+      await expectProfessionalNotes(page, expected);
     }
-  });
-
-  test("LayeredNotes is an emphasis toggle, not a fake tab interface", async ({
-    page,
-  }) => {
-    await page.goto("/review/fixtures/case-detail/");
-    const notes = page.locator("[data-layered-notes]");
-    const generalButton = page.getByRole("button", {
-      name: "一般讀者筆記",
-    });
-    const professionalButton = page.getByRole("button", {
-      name: "專業筆記",
-    });
-    const general = page.locator('[data-layer="general"]');
-    const professional = page.locator('[data-layer="professional"]');
-
-    // Native button group: two type=button controls with unique
-    // aria-controls and exactly one pressed state.
-    await expect(generalButton).toHaveAttribute("type", "button");
-    await expect(professionalButton).toHaveAttribute("type", "button");
-    const generalControls = await generalButton.getAttribute("aria-controls");
-    const professionalControls =
-      await professionalButton.getAttribute("aria-controls");
-    expect(generalControls).not.toBeNull();
-    expect(professionalControls).not.toBeNull();
-    expect(generalControls).not.toBe(professionalControls);
-    expect(generalControls).toBe(await general.getAttribute("id"));
-    expect(professionalControls).toBe(await professional.getAttribute("id"));
-    await expect(notes.locator("[data-layer-button]")).toHaveCount(2);
-    await expect(generalButton).toHaveAttribute("aria-pressed", "true");
-    await expect(professionalButton).toHaveAttribute("aria-pressed", "false");
-    await expect(notes).toHaveAttribute("data-emphasis", "general");
-    const generalAccent = await general.evaluate(
-      (element) => window.getComputedStyle(element).borderTopColor,
-    );
-    const professionalBase = await professional.evaluate(
-      (element) => window.getComputedStyle(element).borderTopColor,
-    );
-    expect(generalAccent).not.toBe(professionalBase);
-    await expectNoAxeViolations(page);
-
-    // Click moves emphasis only: aria-pressed swaps, both sections remain
-    // visible, and the handler never moves focus into either section.
-    await professionalButton.click();
-    await expect(professionalButton).toHaveAttribute("aria-pressed", "true");
-    await expect(generalButton).toHaveAttribute("aria-pressed", "false");
-    await expect(notes).toHaveAttribute("data-emphasis", "professional");
-    await expect(general).toBeVisible();
-    await expect(professional).toBeVisible();
-    await expect
-      .poll(() =>
-        general.evaluate(
-          (element) => window.getComputedStyle(element).borderTopColor,
-        ),
-      )
-      .toBe(professionalBase);
-    await expect
-      .poll(() =>
-        professional.evaluate(
-          (element) => window.getComputedStyle(element).borderTopColor,
-        ),
-      )
-      .toBe(generalAccent);
-    const focusInsideLayer = await page.evaluate(() => {
-      const active = document.activeElement;
-      if (active === null) return false;
-      return (
-        active.closest('[data-layer="general"]') !== null ||
-        active.closest('[data-layer="professional"]') !== null
-      );
-    });
-    expect(focusInsideLayer).toBe(false);
-    await expectNoAxeViolations(page);
-
-    // Normal keyboard activation with Enter and Space keeps focus stable.
-    await generalButton.focus();
-    await page.keyboard.press("Enter");
-    await expect(generalButton).toHaveAttribute("aria-pressed", "true");
-    await expect(notes).toHaveAttribute("data-emphasis", "general");
-    await expect(generalButton).toBeFocused();
-    await professionalButton.focus();
-    await page.keyboard.press("Space");
-    await expect(professionalButton).toHaveAttribute("aria-pressed", "true");
-    await expect(notes).toHaveAttribute("data-emphasis", "professional");
-    await expect(professionalButton).toBeFocused();
-    await expect(general).toBeVisible();
-    await expect(professional).toBeVisible();
   });
 
   test("stays accessible at 200% zoom reflow", async ({ page }) => {
@@ -342,9 +247,6 @@ test.describe("data-bearing fixture routes", () => {
     });
     expect(overflow.document).toBeLessThanOrEqual(1);
     expect(overflow.main).toBeLessThanOrEqual(1);
-    await expectNoAxeViolations(page);
-
-    await page.getByRole("button", { name: "專業筆記" }).click();
     await expectNoAxeViolations(page);
   });
 });

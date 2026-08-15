@@ -1,12 +1,17 @@
 /**
  * No-JavaScript spec. With scripts disabled, the static pages and the
- * data-bearing fixture routes stay completely readable: both note layers in
- * normal order, real source anchors, the video external/failure states,
- * record IDs and digests, static listing pagination, and the
- * documented degradation notice for advanced filtering.
+ * data-bearing fixture routes stay completely readable: the professional
+ * notes, real source anchors, video external/failure states, record IDs and
+ * digests, static listing pagination, and the documented degradation notice
+ * for advanced filtering.
  */
 
 import { expect, test } from "@playwright/test";
+
+const REMOVED_READER_LABEL = ["一般讀者", "筆記"].join("");
+const REMOVED_LAYER_BLOCK = `[${["data", "layered", "notes"].join("-")}]`;
+const REMOVED_LAYER_ATTRIBUTE = `[${["data", "layer"].join("-")}]`;
+const REMOVED_LAYER_BUTTON = `[${["data", "layer", "button"].join("-")}]`;
 
 test.use({ javaScriptEnabled: false });
 
@@ -31,20 +36,15 @@ test.describe("no-javascript readability", () => {
     expect(noscriptText).toContain("進階複合篩選需要 JavaScript");
   });
 
-  test("fixture case detail keeps the narrowed reader layer and full professional layer readable in order", async ({
+  test("fixture case detail keeps the single complete professional-note view readable", async ({
     page,
   }) => {
     await page.goto("/review/fixtures/case-detail/");
 
-    const general = page.locator('[data-layer="general"]');
-    const professional = page.locator('[data-layer="professional"]');
-    await expect(general).toBeVisible();
+    const professional = page.locator("[data-professional-notes]");
+    await expect(professional).toHaveCount(1);
     await expect(professional).toBeVisible();
-    await expect(general.locator("h4")).toHaveText("畫面不能證明什麼");
-    await expect(general.locator(":scope > p")).toHaveText(
-      "影片無法證明韌帶撕裂、合併半月板損傷或嚴重度；這些需要臨床檢查與影像學檢查。",
-    );
-    await expect(general.locator("h4")).toHaveCount(1);
+    await expect(professional.locator(":scope > h3")).toHaveText("專業筆記");
     await expect(professional.locator("h4")).toHaveText([
       "機轉分析（觀察性）",
       "臨床限制",
@@ -52,30 +52,13 @@ test.describe("no-javascript readability", () => {
       "治療與回場意涵",
     ]);
     await expect(professional).toContainText("機轉分析（觀察性）");
-    await expect(page.locator("[data-layered-notes]")).not.toContainText(
-      "發生了什麼",
-    );
-    await expect(page.locator("[data-layered-notes]")).not.toContainText(
-      "畫面看得到什麼",
-    );
-    await expect(page.locator("[data-layered-notes]")).not.toContainText(
-      "影片段落觀察",
-    );
-    await expect(page.locator("[data-video-timeline]")).toHaveCount(0);
-
-    // Normal DOM order: general notes precede professional notes.
-    const order = await page.evaluate(() => {
-      const generalEl = document.querySelector('[data-layer="general"]');
-      const professionalEl = document.querySelector(
-        '[data-layer="professional"]',
-      );
-      if (generalEl === null || professionalEl === null) return false;
-      return Boolean(
-        generalEl.compareDocumentPosition(professionalEl) &
-        Node.DOCUMENT_POSITION_FOLLOWING,
-      );
-    });
-    expect(order).toBe(true);
+    await expect(
+      page.getByText(REMOVED_READER_LABEL, { exact: true }),
+    ).toHaveCount(0);
+    await expect(page.locator(REMOVED_LAYER_BLOCK)).toHaveCount(0);
+    await expect(page.locator(REMOVED_LAYER_ATTRIBUTE)).toHaveCount(0);
+    await expect(page.locator(REMOVED_LAYER_BUTTON)).toHaveCount(0);
+    await expect(page.getByRole("button", { name: /筆記/u })).toHaveCount(0);
   });
 
   test("source links, IDs, and digests render without JavaScript", async ({

@@ -103,10 +103,10 @@ describe("Decision 13 medical-notice route matrix", () => {
     );
   });
 
-  it("preserves the About page byte-for-byte", () => {
+  it("pins the Decision 18 single-professional-note About copy", () => {
     const about = read("src/pages/about.astro");
     expect(createHash("sha256").update(about).digest("hex")).toBe(
-      "77ccbc5cc21899c4de2e0931fcb6b69642bc49461e181bc472365824b78555f3",
+      "58d464a49c1f93ceb3db8ee91376e89e17ab49213f32d037da2b5977f0374252",
     );
   });
 });

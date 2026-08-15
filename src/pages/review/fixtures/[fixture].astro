@@ -3,7 +3,7 @@
  * Review-only, data-bearing fixture routes. `getStaticPaths()` returns the
  * four fixture paths in review mode and zero paths in public mode. Every
  * fixture renders the same production view components (CaseVideo,
- * LayeredNotes, ReviewBadge, CaseCard, InjuryOverview) with
+ * ProfessionalNotes, ReviewBadge, CaseCard, InjuryOverview) with
  * the visibly fictional in-memory records from `src/data/review-fixtures.ts`,
  * proving the data-bearing templates before any real content exists.
  */
@@ -12,7 +12,7 @@ import CaseVideo from "../../../components/cases/CaseVideo.astro";
 import FollowUpReports from "../../../components/cases/FollowUpReports.astro";
 import ReviewDigestDisclosure from "../../../components/cases/ReviewDigestDisclosure.astro";
 import ExternalSourceCitation from "../../../components/citations/ExternalSourceCitation.astro";
-import LayeredNotes from "../../../components/cases/LayeredNotes.astro";
+import ProfessionalNotes from "../../../components/cases/ProfessionalNotes.astro";
 import ReviewBadge from "../../../components/cases/ReviewBadge.astro";
 import InjuryOverviewView from "../../../components/injuries/InjuryOverview.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
@@ -238,11 +238,7 @@ const fixtureArtifactDigest =
             />
           </div>
           <div class="case-notes-column">
-            <LayeredNotes
-              scopeId={record.slug}
-              whatVideoCannotProve={record.general.whatVideoCannotProve}
-              professional={record.professional}
-            />
+            <ProfessionalNotes professional={record.professional} />
           </div>
         </div>
 

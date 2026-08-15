@@ -1,9 +1,9 @@
 ---
 /**
  * Case detail route, generated only from actual selector-permitted entries.
- * Desktop places the video left and the dual-layer notes right; the DOM
- * order stays video → general notes → professional notes → related
- * cases so the mobile reading order is correct without JavaScript.
+ * Desktop places the video left and the professional notes right; the DOM
+ * order stays video → professional notes → related cases so the mobile
+ * reading order is correct without JavaScript.
  * Review builds additionally expose the record ID, content digest, and the
  * rendered-set digest as copyable text, plus the private workflow badge that
  * never masquerades as a diagnosis.
@@ -15,7 +15,7 @@ import CaseVideo from "../../components/cases/CaseVideo.astro";
 import FollowUpReports from "../../components/cases/FollowUpReports.astro";
 import ReviewDigestDisclosure from "../../components/cases/ReviewDigestDisclosure.astro";
 import ExternalSourceCitation from "../../components/citations/ExternalSourceCitation.astro";
-import LayeredNotes from "../../components/cases/LayeredNotes.astro";
+import ProfessionalNotes from "../../components/cases/ProfessionalNotes.astro";
 import MedicalNotice from "../../components/notices/MedicalNotice.astro";
 import ReviewBadge from "../../components/cases/ReviewBadge.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
@@ -166,7 +166,7 @@ if (videoSource === undefined) {
 
     <section aria-labelledby="case-analysis-heading">
       <h2 class="section-title" id="case-analysis-heading">
-        案例影片與雙層筆記
+        案例影片與專業筆記
       </h2>
       <div class="case-detail-grid">
         <div class="case-video-column">
@@ -190,11 +190,7 @@ if (videoSource === undefined) {
           />
         </div>
         <div class="case-notes-column">
-          <LayeredNotes
-            scopeId={record.slug}
-            whatVideoCannotProve={record.general.whatVideoCannotProve}
-            professional={record.professional}
-          />
+          <ProfessionalNotes professional={record.professional} />
         </div>
       </div>
     </section>

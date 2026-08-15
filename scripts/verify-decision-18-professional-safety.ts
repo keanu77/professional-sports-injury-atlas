@@ -1,6 +1,6 @@
 /** Verifies Decision 18's 26/26 professional clinical-limitations gate. */
 
-import { lstatSync, readFileSync, readdirSync } from "node:fs";
+import { existsSync, lstatSync, readFileSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -8,6 +8,7 @@ import { parse } from "parse5";
 
 import { parseStrictJson } from "../src/lib/contracts/canonical";
 import { caseSchema, type InjuryCase } from "../src/lib/contracts/case";
+import { reviewFixtureClassicCase } from "../src/data/review-fixtures";
 
 const ROOT = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const PROFESSIONAL_HEADINGS = [
@@ -16,8 +17,17 @@ const PROFESSIONAL_HEADINGS = [
   "鑑別脈絡",
   "治療與回場意涵",
 ] as const;
+const REMOVED_RUNTIME_TOKENS = [
+  ["data", "layered", "notes"].join("-"),
+  ["data", "layer", "button"].join("-"),
+  ["data", "emphasis"].join("-"),
+  ["init", "Layered", "Notes"].join(""),
+  ["layered", "notes"].join("-"),
+  ["一般讀者", "筆記"].join(""),
+] as const;
 
 interface HtmlNode {
+  attrs?: Array<{ name: string; value: string }>;
   childNodes?: HtmlNode[];
   nodeName: string;
   tagName?: string;
@@ -65,6 +75,10 @@ function normalizedText(node: HtmlNode): string {
 
 function directElements(node: HtmlNode, tagName: string): HtmlNode[] {
   return (node.childNodes ?? []).filter((child) => child.tagName === tagName);
+}
+
+function attr(node: HtmlNode, name: string): string | null {
+  return node.attrs?.find((entry) => entry.name === name)?.value ?? null;
 }
 
 function hasRequiredLimitationMeaning(record: InjuryCase): boolean {
@@ -122,14 +136,20 @@ function assertEvidenceBinding(record: InjuryCase): void {
 
 function assertRenderedProfessionalNotes(
   record: InjuryCase,
-  buildRoot: string,
+  htmlPath: string,
 ): void {
-  const htmlPath = resolve(buildRoot, "cases", record.slug, "index.html");
-  const document = parse(regularFile(htmlPath)) as unknown as HtmlNode;
+  const html = regularFile(htmlPath);
+  for (const token of REMOVED_RUNTIME_TOKENS) {
+    if (html.includes(token)) {
+      throw new Error(`${record.slug} contains removed runtime token ${token}`);
+    }
+  }
+  const document = parse(html) as unknown as HtmlNode;
   const professionalSections = descendants(
     document,
     (candidate) =>
       candidate.tagName === "section" &&
+      attr(candidate, "data-professional-notes") !== null &&
       directElements(candidate, "h3").some(
         (heading) => normalizedText(heading) === "專業筆記",
       ),
@@ -138,6 +158,14 @@ function assertRenderedProfessionalNotes(
     throw new Error(
       `${record.slug} must render exactly one professional-note section`,
     );
+  }
+  const legacyLayerAttributes = descendants(document, (candidate) =>
+    (candidate.attrs ?? []).some((entry) =>
+      entry.name.startsWith("data-layer"),
+    ),
+  );
+  if (legacyLayerAttributes.length > 0) {
+    throw new Error(`${record.slug} contains a legacy data-layer-* attribute`);
   }
   const section = professionalSections[0]!;
   const headings = directElements(section, "h4").map(normalizedText);
@@ -187,7 +215,10 @@ function main(): void {
       );
     }
     assertEvidenceBinding(record);
-    assertRenderedProfessionalNotes(record, resolve(buildRoot));
+    assertRenderedProfessionalNotes(
+      record,
+      resolve(buildRoot, "cases", record.slug, "index.html"),
+    );
     injuryCounts[record.injury.code] =
       (injuryCounts[record.injury.code] ?? 0) + 1;
   }
@@ -200,8 +231,29 @@ function main(): void {
       `unexpected injury distribution ${JSON.stringify(injuryCounts)}`,
     );
   }
+  assertRenderedProfessionalNotes(
+    reviewFixtureClassicCase,
+    resolve(buildRoot, "review/fixtures/case-detail/index.html"),
+  );
+
+  const removedScriptName = ["layered", "notes.ts"].join("-");
+  if (existsSync(resolve(ROOT, "src/scripts", removedScriptName))) {
+    throw new Error("obsolete note-switch client script still exists");
+  }
+  const assetDirectory = resolve(buildRoot, "_astro");
+  for (const name of readdirSync(assetDirectory)) {
+    if (!name.endsWith(".js") && !name.endsWith(".css")) continue;
+    const source = regularFile(resolve(assetDirectory, name));
+    for (const token of REMOVED_RUNTIME_TOKENS) {
+      if (source.includes(token)) {
+        throw new Error(
+          `built asset ${name} contains removed runtime token ${token}`,
+        );
+      }
+    }
+  }
   console.log(
-    "Decision 18 professional safety OK — 26/26 source-equal rendered clinical limitations; ACL 7, ankle 12, Achilles 7; teaching-evidence bindings 26/26",
+    "Decision 18 professional notes OK — 26/26 source-equal rendered clinical limitations + 1 fixture; professional views=27, reader layers=0, switches=0, data-layer attributes=0, obsolete bundles=0; teaching-evidence bindings=26/26",
   );
 }
 

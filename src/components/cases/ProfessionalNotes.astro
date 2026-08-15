@@ -1,0 +1,50 @@
+---
+/** Single professional case-note view with no client-side state or controls. */
+import type { CaseProfessional } from "../../lib/contracts/case";
+
+interface Props {
+  professional: CaseProfessional;
+}
+
+const { professional } = Astro.props;
+---
+
+<section
+  class="professional-notes"
+  data-professional-notes
+  aria-label="專業案例筆記"
+>
+  <h3>專業筆記</h3>
+  <h4>機轉分析（觀察性）</h4>
+  <p>{professional.mechanismAnalysis}</p>
+  <h4>臨床限制</h4>
+  <p>{professional.clinicalLimitations}</p>
+  <h4>鑑別脈絡</h4>
+  <p>{professional.differentialContext}</p>
+  <h4>治療與回場意涵</h4>
+  <p>{professional.treatmentAndRtpMeaning}</p>
+</section>
+
+<style>
+  .professional-notes {
+    padding: 1rem;
+    border: 1px solid var(--hairline);
+    border-radius: 0;
+    background: var(--color-surface-raised);
+  }
+
+  .professional-notes h3 {
+    margin-top: 0;
+    font-family: var(--font-heading);
+  }
+
+  .professional-notes h4 {
+    margin-bottom: 0.25rem;
+    font-family: var(--font-heading);
+  }
+
+  .professional-notes p {
+    margin-top: 0;
+    white-space: pre-line;
+  }
+</style>
