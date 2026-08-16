@@ -25,7 +25,7 @@ import {
   selectReviewFixtureCases,
 } from "../../src/data/review-fixtures";
 import { computeCaseContentDigest } from "../../src/lib/cases/digest";
-import { loadFollowUpCorpus } from "../../src/lib/cases/follow-up-loader";
+import { loadDecision18TransitionalFollowUpCorpus } from "../../src/lib/cases/decision-18-follow-up-corpus";
 import { computeInjuryOverviewDigest } from "../../src/lib/cases/injury-overview-digest";
 import {
   buildCaseIndexManifest,
@@ -1716,7 +1716,7 @@ export function currentPrivateDistSourceState(
       `strict source bindings are invalid: ${sourceBindingIssues.join("; ")}`,
     );
   }
-  const followUpCorpus = loadFollowUpCorpus(root, medicallyApprovedCases, {
+  const followUpCorpus = loadDecision18TransitionalFollowUpCorpus(root, medicallyApprovedCases, {
     expectedPolicyBinding: FOLLOW_UP_SOURCE_POLICY_V10_BINDING,
     expectedCaseCount: 26,
   });

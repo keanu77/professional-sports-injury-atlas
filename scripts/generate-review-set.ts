@@ -11,7 +11,7 @@ import { dirname, join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { parseStrictJson, sha256Hex } from "../src/lib/contracts/canonical";
 import { FOLLOW_UP_SOURCE_POLICY_V10_BINDING } from "../src/lib/contracts/case-follow-up";
-import { loadFollowUpCorpus } from "../src/lib/cases/follow-up-loader";
+import { loadDecision18TransitionalFollowUpCorpus } from "../src/lib/cases/decision-18-follow-up-corpus";
 import { defaultTaxonomyRegistries } from "../src/lib/contracts/taxonomy";
 import {
   buildReviewSetManifestV2,
@@ -424,7 +424,7 @@ function main(): void {
     }
     process.exit(1);
   }
-  const followUpCorpus = loadFollowUpCorpus(root, medicallyApprovedCases, {
+  const followUpCorpus = loadDecision18TransitionalFollowUpCorpus(root, medicallyApprovedCases, {
     expectedPolicyBinding: FOLLOW_UP_SOURCE_POLICY_V10_BINDING,
     expectedCaseCount: EXPECTED_CASE_COUNT,
   });
