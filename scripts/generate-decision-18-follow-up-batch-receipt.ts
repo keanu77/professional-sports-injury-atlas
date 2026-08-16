@@ -485,10 +485,14 @@ export function validateDecision18CompletedBatchGitState(
           ),
         ),
       );
+      // Net content difference at HEAD, not mere commit touches: a change that
+      // was reverted leaves the frozen bytes intact and is not a mutation of the
+      // receipt-bound artifact. A real edit still shows up here.
       const laterMutations = gitLines(root, [
-        "log",
-        "--format=%H",
-        `${commit}..HEAD`,
+        "diff",
+        "--name-only",
+        commit,
+        "HEAD",
         "--",
         ...predecessor.receipt.allowedPaths,
       ]);

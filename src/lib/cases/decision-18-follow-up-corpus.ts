@@ -166,8 +166,11 @@ const NODE_GIT_INSPECTION: Decision18CompletedReceiptGitInspection = {
       "-z",
       commit,
     ]),
+  // Net content difference at HEAD rather than commit touches: a change that
+  // was reverted leaves the receipt-bound bytes intact, so it is not a mutation.
+  // A real edit still surfaces here.
   laterCommitsTouchingPaths: (root, commit, paths) =>
-    gitLines(root, ["log", "--format=%H", `${commit}..HEAD`, "--", ...paths]),
+    gitLines(root, ["diff", "--name-only", commit, "HEAD", "--", ...paths]),
 };
 
 function prefixIssues(
