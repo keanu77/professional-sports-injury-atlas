@@ -97,6 +97,27 @@ export const pendingFollowUpReviewSchema = z.strictObject({
 });
 export type PendingFollowUpReview = z.infer<typeof pendingFollowUpReviewSchema>;
 
+/**
+ * Owner-approved review state. The approved digest is the same field the
+ * loader already pins to the recomputed payload digest, so editing any item
+ * field invalidates its approval instead of silently carrying it forward.
+ */
+export const ownerApprovedFollowUpReviewSchema = z.strictObject({
+  status: z.literal("owner-approved"),
+  reviewedPayloadDigest: sha256Lower,
+  approvedByDecision: lowerKebab,
+  approvedAt: isoDate,
+});
+export type OwnerApprovedFollowUpReview = z.infer<
+  typeof ownerApprovedFollowUpReviewSchema
+>;
+
+export const followUpReviewSchema = z.union([
+  pendingFollowUpReviewSchema,
+  ownerApprovedFollowUpReviewSchema,
+]);
+export type FollowUpReview = z.infer<typeof followUpReviewSchema>;
+
 export const followUpItemSchema = z.strictObject({
   id: lowerKebab,
   kind: z.enum(FOLLOW_UP_KINDS),
@@ -108,7 +129,7 @@ export const followUpItemSchema = z.strictObject({
   researchEvidenceId: lowerKebab,
   sourcePolicyBinding: followUpSourcePolicyBindingSchema,
   itemPayloadDigest: sha256Lower,
-  review: pendingFollowUpReviewSchema,
+  review: followUpReviewSchema,
 });
 export type FollowUpItem = z.infer<typeof followUpItemSchema>;
 
