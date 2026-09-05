@@ -8,7 +8,7 @@
 
 import { readdirSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 import { sha256Hex } from "../src/lib/contracts/canonical";
 
@@ -181,7 +181,10 @@ export function verifyDecision13ClinicalFreeze(): void {
   }
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (
+  process.argv[1] &&
+  import.meta.url === pathToFileURL(process.argv[1]).href
+) {
   verifyDecision13ClinicalFreeze();
   console.log(
     `Decision 13 clinical freeze verified: ${DECISION_13_CLINICAL_FREEZE.length}/30 files (${DECISION_13_CLINICAL_FREEZE_AGGREGATE_SHA256})`,

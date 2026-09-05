@@ -42,3 +42,8 @@ public-release-artifacts/**/*.json
 review/**/*.json
 docs/reviews/evidence/decision-20/**/*.json
 review/follow-up-approvals/*.json
+# D18 canonical receipts and research ledgers are frozen byte evidence.
+research/follow-ups/decision-18/batches/*.json
+research/follow-ups/decision-18/cases/*.json
+# Historical validation record: preserve the recorded evidence bytes.
+docs/reviews/2026-08-16-decision-19-p4-final-validation.md

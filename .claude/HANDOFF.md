@@ -35,6 +35,7 @@ Decision 15–19 完成，**Decision 20 未完成**，Decision 21 尚未開始�
 D20 目標是把 148 條從 `pending-owner-signoff` 翻成已核准。**owner 已於 2026-08-16 口頭核准全部 148 條**（含 4 條未證實報導），並決定**頁面不顯示核准徽章**，只記在稽核軌跡。
 
 已完成：
+
 - plan 登記 `19a0129`、授權 `53b2d8a`（SHA `a080f0dd…cc94`）
 - 契約已加 `owner-approved` 狀態 `d5ede8b`（目前沒有資料在用）
 
@@ -76,7 +77,7 @@ D20 目標是把 148 條從 `pending-owner-signoff` 翻成已核准。**owner �
    - 第一層：預設 `--credential-source tty`，headless 必回 `credential-invalid`
    - 第二層：加 `-- --credential-source local-file` 後變成
      `transport-failed path=/_astro/cj-mccollum.ngownTQ1_2isaYs.jpg
-      scenario=credential-removed-new-client`
+ scenario=credential-removed-new-client`
    - 該路徑單獨用 curl 無憑證新連線是 401／45ms 正常
    - **線索**：完整一輪 smoke 實測 216 秒，超過 `COMPLETE_RUN_TIMEOUT_MS = 180_000`
    - D16 已將此項移交專責 Decision，D19 與 D18 都未執行它
