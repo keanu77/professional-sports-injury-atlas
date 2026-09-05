@@ -20,7 +20,7 @@ const LAB_PATH = "/review/component-lab/";
 const FICTIONAL_ID = "fIcTiOnAl01";
 const WATCH_URL = `https://www.youtube.com/watch?v=${FICTIONAL_ID}`;
 const IFRAME_API_URL = "https://www.youtube.com/iframe_api";
-const PAGE_ORIGIN = "http://127.0.0.1:4321";
+const PAGE_ORIGIN = `http://127.0.0.1:${process.env.ATLAS_E2E_PORT ?? "4321"}`;
 const GOVERNED_YOUTUBE_CASES = [
   {
     caseId: "CASE-NBAANKLE-2023-001",

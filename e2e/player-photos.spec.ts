@@ -7,7 +7,7 @@ import {
 } from "../src/lib/contracts/player-photo-registry-v8";
 import { expectNoAxeViolations } from "./helpers/a11y";
 
-const PAGE_ORIGIN = "http://127.0.0.1:4321";
+const PAGE_ORIGIN = `http://127.0.0.1:${process.env.ATLAS_E2E_PORT ?? "4321"}`;
 const LISTING_PATHS = [
   "/leagues/nba/",
   "/leagues/nba/page/2/",

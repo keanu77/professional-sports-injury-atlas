@@ -1,5 +1,11 @@
 import { defineConfig, devices } from "@playwright/test";
 
+const port = Number(process.env.ATLAS_E2E_PORT ?? "4321");
+if (!Number.isInteger(port) || port < 1024 || port > 65535) {
+  throw new Error("ATLAS_E2E_PORT must be an integer between 1024 and 65535");
+}
+const origin = `http://127.0.0.1:${port}`;
+
 // The review artifact is built before preview so browser tests always run
 // against the exact static output, never a dev server.
 export default defineConfig({
@@ -8,14 +14,13 @@ export default defineConfig({
   forbidOnly: true,
   retries: 0,
   webServer: {
-    command:
-      "npm run build:review && npm run preview -- --host 127.0.0.1 --port 4321",
-    url: "http://127.0.0.1:4321/",
-    reuseExistingServer: true,
+    command: `npm run build:review && npm run preview -- --host 127.0.0.1 --port ${port}`,
+    url: `${origin}/`,
+    reuseExistingServer: false,
     timeout: 300000,
   },
   use: {
-    baseURL: "http://127.0.0.1:4321",
+    baseURL: origin,
   },
   projects: [
     { name: "chromium", use: { ...devices["Desktop Chrome"] } },
