@@ -7,6 +7,7 @@ import {
 } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { afterEach, describe, expect, it } from "vitest";
 import {
   EXPECTED_REVIEW_SET_V1_SHA256,
@@ -40,7 +41,7 @@ import {
 } from "../../src/lib/governance/review-set";
 import { getStaticPaths } from "../../src/pages/review/[artifact].json";
 
-const PROJECT_ROOT = new URL("../..", import.meta.url).pathname;
+const PROJECT_ROOT = fileURLToPath(new URL("../..", import.meta.url));
 const COMMIT = "a".repeat(40);
 const hex = (character: string): string => character.repeat(64);
 

@@ -40,3 +40,5 @@ research/verification/*.json
 public-release-history/*.json
 public-release-artifacts/**/*.json
 review/**/*.json
+docs/reviews/evidence/decision-20/**/*.json
+review/follow-up-approvals/*.json

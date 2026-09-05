@@ -7,7 +7,7 @@
  * `--check` reconstructs all three and rejects any byte drift.
  */
 
-import { readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { isAbsolute, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -53,6 +53,8 @@ const PLAYWRIGHT_RECORD_PATH =
   "docs/reviews/2026-08-10-nba-embed-batch2-playwright-stop.md";
 const LEAD_PACKAGE_PATH =
   "/Users/ethanai/co-work/online_sportsinjury/.claude/external-leads/embed-hunt-round2.json";
+export const ARCHIVED_LEAD_PACKAGE_PATH =
+  "docs/reviews/evidence/decision-20/migration/embed-hunt-round2.json";
 
 export const BATCH2_MANIFEST_ID = "NBA-SOURCE-2026-08-10-001";
 const BATCH2_REVIEW_SET_ID = "NBA-EMBED-2026-08-10-001";
@@ -348,7 +350,12 @@ export function parseBatch2ReviewSet(
       EXPECTED_PLAYWRIGHT_RECORD_DIGEST ||
     value.evidence.leadPackagePath !== LEAD_PACKAGE_PATH ||
     value.evidence.leadPackageDigest !== EXPECTED_LEAD_PACKAGE_DIGEST ||
-    fileDigest(root, LEAD_PACKAGE_PATH) !== EXPECTED_LEAD_PACKAGE_DIGEST
+    fileDigest(
+      root,
+      existsSync(LEAD_PACKAGE_PATH)
+        ? LEAD_PACKAGE_PATH
+        : ARCHIVED_LEAD_PACKAGE_PATH,
+    ) !== EXPECTED_LEAD_PACKAGE_DIGEST
   ) {
     throw new Error("frozen local evidence binding drift");
   }

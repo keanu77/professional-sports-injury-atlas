@@ -1,0 +1,540 @@
+{
+ "eventsWithVerifiedLeads": 11,
+ "totalEventsTargeted": 22,
+ "leads": [
+  {
+   "athlete": "Anfernee Simons",
+   "eventDate": "2023-02-14",
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=8TIJGIRP634",
+     "channelVerified": "NBA on ESPN",
+     "confidence": "high",
+     "titleSeen": "Anfernee Simons helped to locker room after suffering leg injury | NBA on ESPN",
+     "uploadDateSeen": "2023-02-14",
+     "notes": "BEST NON-BLOCKED FIND. Upload date == event date (day 0). Length 1:26. Title is an in-game 'helped to locker room' clip, exactly the qualifying category. Geo-check via YouTube playerMicroformatRenderer.availableCountries: 249 countries INCLUDING TW -> should play in Taiwan. Channel confirmed via oEmbed author_name='NBA on ESPN' (@nbaonespn)."
+    }
+   ]
+  },
+  {
+   "athlete": "Brandon Clarke",
+   "eventDate": "2023-03-03",
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=kmG_HO0IhFY",
+     "channelVerified": "ESPN",
+     "confidence": "high",
+     "titleSeen": "Brandon Clarke helped to locker room after non-contact injury | NBA on ESPN",
+     "uploadDateSeen": "2023-03-03",
+     "notes": "Upload date == event date (day 0). Length 0:40. 'helped to locker room after non-contact injury' = qualifying in-game clip. WARNING: availableCountries list (249 entries) does NOT include TW -> very likely region-blocked in Taiwan. oEmbed author_name='ESPN'. No non-ESPN alternative found on any official/team/regional channel."
+    }
+   ]
+  },
+  {
+   "athlete": "Damian Lillard",
+   "eventDate": "2025-04-27",
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=dmYCjHWlJms",
+     "channelVerified": "NBA on ESPN",
+     "confidence": "high",
+     "titleSeen": "Damian Lillard exits Game 4 after suffering an apparent injury | NBA on ESPN",
+     "uploadDateSeen": "2025-04-27",
+     "notes": "Upload date == event date (day 0). Length 1:35. 'exits Game 4 after suffering an apparent injury' = qualifying. WARNING: availableCountries does NOT include TW -> likely blocked in Taiwan. I swept @bucks, @pacers, @FanDuelSportsNetwork (Bally/FanDuel Wisconsin+Indiana successor) and @NBA for a non-ESPN alternative and found none — only reaction/analysis segments (Giannis reacts, Doc Rivers update, Shams report), which fail the in-game rule."
+    }
+   ]
+  },
+  {
+   "athlete": "Danny Green",
+   "eventDate": "2022-05-12",
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=A5BGIpDmeGk",
+     "channelVerified": "ESPN",
+     "confidence": "high",
+     "titleSeen": "Danny Green had to be helped off the floor after colliding with Joel Embiid 🙏",
+     "uploadDateSeen": "2022-05-12",
+     "notes": "Upload date == event date (day 0). Length 0:42. This is the exact ACL mechanism (Embiid falling onto his left leg) and a 'helped off the floor' clip = qualifying. WARNING: availableCountries does NOT include TW -> likely blocked in Taiwan. @sixers and @NBCSPhilly swept, no alternative."
+    }
+   ]
+  },
+  {
+   "athlete": "Jayson Tatum",
+   "eventDate": "2025-05-12",
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=xSUKd03LJwE",
+     "channelVerified": "NBA on ESPN",
+     "confidence": "high",
+     "titleSeen": "Jayson Tatum left Game 4 after suffering a non-contact injury",
+     "uploadDateSeen": "2025-05-12",
+     "notes": "BEST NON-BLOCKED FIND for this event. Upload date == event date (day 0). Length 0:22. availableCountries = 249 INCLUDING TW -> should play in Taiwan. Note canonical form is a YouTube Short, so plan for vertical aspect ratio when embedding. oEmbed author_name='NBA on ESPN'."
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=_hkttbPdMs8",
+     "channelVerified": "NBA on ESPN",
+     "confidence": "high",
+     "titleSeen": "Jayson Tatum exits Game 4 with a lower leg injury late in the 4th quarter | NBA on ESPN",
+     "uploadDateSeen": "2025-05-12",
+     "notes": "Upload date == event date (day 0). Length 1:41 — longer/more complete broadcast cut than xSUKd03LJwE. WARNING: availableCountries does NOT include TW -> likely blocked in Taiwan. Use as fallback only if the Short is unsuitable."
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=sCsQz1-oV8Y",
+     "channelVerified": "NBC Sports Boston",
+     "confidence": "high",
+     "titleSeen": "Jayson Tatum goes down with non-contact ankle injury in Game 4",
+     "uploadDateSeen": "2025-05-12",
+     "notes": "Non-ESPN regional rights-holder (NBC Sports Boston = Celtics RSN), which is on the allowed list. Upload date == event date (day 0), length 0:46, qualifying in-game content. WARNING: availableCountries does NOT include TW -> also likely blocked in Taiwan, so the RSN route does not solve the geo problem here. Title says 'ankle' but the injury was the Achilles — broadcast-time wording, content is still the correct moment."
+    },
+    {
+     "url": "https://www.youtube.com/shorts/sCsQz1-oV8Y",
+     "channelVerified": "NBC Sports Boston",
+     "confidence": "high",
+     "titleSeen": "Jayson Tatum goes down with non-contact ankle injury in Game 4",
+     "uploadDateSeen": "2025-05-12",
+     "notes": "BEST REGIONAL FIND. Rights-holder regional network (NBC Sports Boston), not ESPN, so good geo-availability odds for Taiwan. In-game non-contact injury moment. Upload date exactly matches event date. NOTE: this is a Shorts URL (youtube.com/shorts/...); for embedding convert to https://www.youtube.com/watch?v=sCsQz1-oV8Y. Caution: general web search conflated this title with watch?v=Pv6EmBBwXBw, which oEmbed proved is the fan channel 'Chaz NBA' — use the ID sCsQz1-oV8Y only."
+    },
+    {
+     "url": "https://www.youtube.com/shorts/xSUKd03LJwE",
+     "channelVerified": "NBA on ESPN",
+     "confidence": "high",
+     "titleSeen": "Jayson Tatum left Game 4 after suffering a non-contact injury",
+     "uploadDateSeen": "2025-05-12",
+     "notes": "TRUE SHORT: /shorts/xSUKd03LJwE returns HTTP 200, length 21s. oEmbed author_name = 'NBA on ESPN'. Upload 2025-05-12T19:24:54-07:00 = D+0. Exactly the non-contact injury moment. Best lead of this whole sweep for the Shorts angle. Watch-URL equivalent: https://www.youtube.com/watch?v=xSUKd03LJwE"
+    },
+    {
+     "url": "https://www.youtube.com/shorts/x80_SK9Grwk",
+     "channelVerified": "ESPN",
+     "confidence": "medium",
+     "titleSeen": "KAT and several Knicks players broke their huddle to clap for Jayson Tatum as he left the floor ❤️",
+     "uploadDateSeen": "2025-05-12",
+     "notes": "TRUE SHORT: /shorts/ returns 200, 9s. Upload 2025-05-12T19:43:05-07:00 = D+0. In-arena footage of Tatum being helped off the floor, but the framing is the Knicks' applause rather than the injury mechanism itself — usable as B-roll of the exit, not as the injury clip. ESPN main channel → high TW geo-block risk."
+    }
+   ]
+  },
+  {
+   "athlete": "Kevin Durant",
+   "eventDate": "2024-12-03",
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=rL0oKG7tgK0",
+     "channelVerified": "NBA on ESPN",
+     "confidence": "high",
+     "titleSeen": "Kevin Durant leaves game vs. Spurs with ankle sprain | NBA on ESPN",
+     "uploadDateSeen": "2024-12-03",
+     "notes": "Upload date == event date (day 0). Length 0:59. 'leaves game ... with ankle sprain' = qualifying. WARNING: availableCountries does NOT include TW -> likely blocked in Taiwan. @Suns and @spurs channels swept, no alternative (only season-highlight compilations)."
+    }
+   ]
+  },
+  {
+   "athlete": "Kyrie Irving",
+   "eventDate": "2025-03-03",
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=qZKTS532beA",
+     "channelVerified": "WFAA",
+     "confidence": "low",
+     "titleSeen": "Mavericks lose Kyrie Irving, Jaden Hardy to injury against Kings",
+     "uploadDateSeen": "2025-03-03",
+     "notes": "CHANNEL ELIGIBILITY IS DOUBTFUL — flagging rather than asserting. WFAA is the Dallas ABC-affiliate local news station (TEGNA-owned), not an NBA national broadcaster or team channel. The brief allows 'ABC', but WFAA is a local affiliate newsroom, so treat as borderline and have a human rule on it. Positives: upload date == event date (day 0), length 1:52, availableCountries INCLUDES TW (would actually play in Taiwan), oEmbed author_name='WFAA'. Also unverified whether the segment shows the injury moment or is a studio news report. I found NO qualifying clip on ESPN/NBA on ESPN/@Mavericks/@SacramentoKings — those channels only carry post-hoc reaction (First Take reaction jGDpVB9LjWo, Kyrie IG update JlxF_vAl4R4/zbvK7opAW1Y), all of which fail rule 1."
+    }
+   ]
+  },
+  {
+   "athlete": "LaMelo Ball",
+   "eventDate": "2022-11-16",
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=JOpERGK_bb8",
+     "channelVerified": "ESPN",
+     "confidence": "high",
+     "titleSeen": "LaMelo Ball rolls his ankle on a fan’s foot 😬",
+     "uploadDateSeen": "2022-11-16",
+     "notes": "Upload date == event date (day 0). Length 0:30. Exactly the 'rolls ankle' in-game mechanism clip. WARNING: availableCountries does NOT include TW -> likely blocked in Taiwan. @hornets and @pacers swept, no alternative. Careful not to confuse with ESPN sljgdxHHjEs ('LaMelo went down with a left ankle injury vs. the Wizards', uploaded 2022-10-10) — that is a DIFFERENT, earlier event."
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=rr00V4myefw",
+     "channelVerified": "NBA on ESPN",
+     "confidence": "low",
+     "titleSeen": "I had to step up BIG TIME - Terry Rozier on LaMelo going down with a fractured ankle | NBA on ESPN",
+     "uploadDateSeen": "unverified — search-result relative date only ('3 years ago'); I did NOT resolve an exact upload date for this one",
+     "notes": "LISTED ONLY AS A WEAK BACKUP AND IT PROBABLY FAILS THE RULES: it is a teammate postgame interview, which rule 1 disqualifies. Include only if the parent agent wants supplementary footage. Upload date NOT confirmed to be inside the 0..+3 window."
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=NM6J6bKKBFg",
+     "channelVerified": "NBA on ESPN",
+     "confidence": "medium",
+     "titleSeen": "Hope LaMelo is okay 🙏 | #shorts",
+     "uploadDateSeen": "2022-11-16 (JSON-LD uploadDate 2022-11-16T20:51:54-08:00)",
+     "notes": "Upload date matches the event date exactly and the channel is official (@NBAonESPN, distinct from @espn). Downgraded to medium because the title does not name the injury or the opponent — I could not fetch the video description (YouTube started rate-limiting my page fetches), so the exact clip content is inferred from the same-night upload timing plus the 'Hope LaMelo is okay' wording. Verify visually before embedding. It is a Short, so embed sizing needs checking."
+    }
+   ]
+  },
+  {
+   "athlete": "LaMelo Ball",
+   "eventDate": "2025-01-27",
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=zZdndTqOexc",
+     "channelVerified": "NBA on ESPN",
+     "confidence": "high",
+     "titleSeen": "LaMelo Ball would go into the locker room after noticeably limping on court.",
+     "uploadDateSeen": "2025-01-27",
+     "notes": "NON-BLOCKED FIND. Upload date == event date (day 0). Length 0:47. In-game limping/exit-to-locker-room footage = qualifying. availableCountries = 249 INCLUDING TW -> should play in Taiwan. oEmbed author_name='NBA on ESPN'."
+    }
+   ]
+  },
+  {
+   "athlete": "LeBron James",
+   "eventDate": "2021-03-20",
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=tJto_hyevFU",
+     "channelVerified": "ESPN",
+     "confidence": "low",
+     "titleSeen": "LeBron James leaves with ankle injury as Lakers fall to Hawks [FULL GAME HIGHLIGHTS] | NBA on ESPN",
+     "uploadDateSeen": "2021-03-20",
+     "notes": "LIKELY DISQUALIFIED — reporting transparently, not endorsing. Length 7:01 and the title says FULL GAME HIGHLIGHTS, which rule 1 explicitly excludes (集錦全場一律不合格), even though the package does contain the injury sequence. Also availableCountries does NOT include TW -> likely blocked in Taiwan. Upload date == event date (day 0)."
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=ceJdvaxH9k4",
+     "channelVerified": "ESPN",
+     "confidence": "low",
+     "titleSeen": "LeBron James out ‘indefinitely’ with high ankle sprain | SportsCenter",
+     "uploadDateSeen": "2021-03-20",
+     "notes": "ALSO LIKELY DISQUALIFIED: this is a SportsCenter news/analysis segment (3:32), not a clean in-game clip, so it fails rule 1 — but it does contain the injury footage and, unlike tJto_hyevFU, availableCountries INCLUDES TW (would play in Taiwan). Upload date == event date (day 0). Offered as the only TW-playable official option for this event. I swept @ESPN, @NBAonESPN, @Lakers, @ATLHawks and global search with 10+ phrasings and found NO clean standalone injury-moment clip from any official channel for 2021-03-20."
+    }
+   ]
+  },
+  {
+   "athlete": "Tyrese Haliburton",
+   "eventDate": "2025-06-22",
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=azQpbyDBktk",
+     "channelVerified": "ESPN",
+     "confidence": "high",
+     "titleSeen": "The moment Tyrese Haliburton suffered an injury in Game 7",
+     "uploadDateSeen": "2025-06-22",
+     "notes": "TOP PICK. Upload date == event date (day 0). Length 0:52. Literally the injury moment. availableCountries = 249 INCLUDING TW -> should play in Taiwan despite being the ESPN main channel, so the prior assumption that all ESPN uploads are TW-blocked does NOT hold for this one. Canonical form is a YouTube Short (vertical) — plan aspect ratio accordingly. oEmbed author_name='ESPN' (@espn)."
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=JNoDsgkZUbc",
+     "channelVerified": "NBA on ESPN",
+     "confidence": "high",
+     "titleSeen": "Dave McMenamin's angle of Tyrese Haliburton exiting Game 7 of the NBA Finals",
+     "uploadDateSeen": "2025-06-22",
+     "notes": "Second TW-playable option. Upload date == event date (day 0). Length 0:30. Courtside angle of Haliburton exiting after the injury — qualifying 'exits/helped off' content. availableCountries = 249 INCLUDING TW."
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=sooh3Zd_36s",
+     "channelVerified": "ESPN",
+     "confidence": "high",
+     "titleSeen": "Tyrese Haliburton helped off the court in first quarter of Game 7 | NBA Finals",
+     "uploadDateSeen": "2025-06-22",
+     "notes": "Most complete broadcast cut (2:10) and the cleanest title match, upload date == event date (day 0). WARNING: availableCountries does NOT include TW -> likely blocked in Taiwan, so prefer azQpbyDBktk or JNoDsgkZUbc for a Taiwanese audience."
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=X1AiuVg6mJs",
+     "channelVerified": "NBA on ESPN",
+     "confidence": "high",
+     "titleSeen": "Tyrese Haliburton leaves Game 7 in the first quarter",
+     "uploadDateSeen": "2025-06-22",
+     "notes": "TOP PICK for this event. In-game injury exit clip, upload date exactly matches event date. On NBA on ESPN rather than the ESPN main channel, so best geo-availability odds of the three."
+    },
+    {
+     "url": "https://www.youtube.com/shorts/JNoDsgkZUbc",
+     "channelVerified": "NBA on ESPN",
+     "confidence": "high",
+     "titleSeen": "Dave McMenamin's angle of Tyrese Haliburton exiting Game 7 of the NBA Finals",
+     "uploadDateSeen": "2025-06-22",
+     "notes": "TRUE SHORT: /shorts/ returns 200, 30s. oEmbed author_name = 'NBA on ESPN'. Upload 2025-06-22T17:49:30-07:00 = D+0. Reporter's floor-level angle of Haliburton being helped off after the Achilles rupture — 'exits game' footage, not analysis. Listed FIRST because it is NOT the ESPN main channel, so it is the best bet against the known TW geo-block. Watch URL: https://www.youtube.com/watch?v=JNoDsgkZUbc"
+    },
+    {
+     "url": "https://www.youtube.com/shorts/azQpbyDBktk",
+     "channelVerified": "ESPN",
+     "confidence": "high",
+     "titleSeen": "The moment Tyrese Haliburton suffered an injury in Game 7",
+     "uploadDateSeen": "2025-06-22",
+     "notes": "TRUE SHORT: /shorts/ returns 200, 52s. Upload 2025-06-22T17:44:58-07:00 = D+0. Cleanest capture of the injury mechanism itself. Caveat: ESPN main channel → matches the known TW-blocked pattern; verify playback before embedding."
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=awM_1pvt0Dg",
+     "channelVerified": "ESPN Deportes",
+     "confidence": "high",
+     "titleSeen": "TERRIBLE LESIÓN DE TYRESE HALIBURTON en el JUEGO 7 de las FINALES DE LA NBA entre THUNDER Y PACERS",
+     "uploadDateSeen": "2025-06-22 (JSON-LD uploadDate 2025-06-22T17:47:56-07:00)",
+     "notes": "BEST FIND OF THIS ANGLE. Spanish-language official ESPN regional channel (@espndeportes), a genuinely different channel/rights entity from @espn — most likely of all candidates to have a different Taiwan geo policy. Uploaded ~3 minutes after ESPN's own English clip of the same moment, same night as the event. Title names player + Game 7 + both teams, so event identity is unambiguous. Content is the injury moment."
+    }
+   ]
+  }
+ ],
+ "allLeadsIncludingUnverified": [
+  {
+   "athlete": "Anfernee Simons",
+   "eventDate": "2023-02-14",
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=8TIJGIRP634",
+     "channelVerified": "NBA on ESPN",
+     "confidence": "high",
+     "titleSeen": "Anfernee Simons helped to locker room after suffering leg injury | NBA on ESPN",
+     "uploadDateSeen": "2023-02-14",
+     "notes": "BEST NON-BLOCKED FIND. Upload date == event date (day 0). Length 1:26. Title is an in-game 'helped to locker room' clip, exactly the qualifying category. Geo-check via YouTube playerMicroformatRenderer.availableCountries: 249 countries INCLUDING TW -> should play in Taiwan. Channel confirmed via oEmbed author_name='NBA on ESPN' (@nbaonespn)."
+    }
+   ]
+  },
+  {
+   "athlete": "Brandon Clarke",
+   "eventDate": "2023-03-03",
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=kmG_HO0IhFY",
+     "channelVerified": "ESPN",
+     "confidence": "high",
+     "titleSeen": "Brandon Clarke helped to locker room after non-contact injury | NBA on ESPN",
+     "uploadDateSeen": "2023-03-03",
+     "notes": "Upload date == event date (day 0). Length 0:40. 'helped to locker room after non-contact injury' = qualifying in-game clip. WARNING: availableCountries list (249 entries) does NOT include TW -> very likely region-blocked in Taiwan. oEmbed author_name='ESPN'. No non-ESPN alternative found on any official/team/regional channel."
+    }
+   ]
+  },
+  {
+   "athlete": "Damian Lillard",
+   "eventDate": "2025-04-27",
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=dmYCjHWlJms",
+     "channelVerified": "NBA on ESPN",
+     "confidence": "high",
+     "titleSeen": "Damian Lillard exits Game 4 after suffering an apparent injury | NBA on ESPN",
+     "uploadDateSeen": "2025-04-27",
+     "notes": "Upload date == event date (day 0). Length 1:35. 'exits Game 4 after suffering an apparent injury' = qualifying. WARNING: availableCountries does NOT include TW -> likely blocked in Taiwan. I swept @bucks, @pacers, @FanDuelSportsNetwork (Bally/FanDuel Wisconsin+Indiana successor) and @NBA for a non-ESPN alternative and found none — only reaction/analysis segments (Giannis reacts, Doc Rivers update, Shams report), which fail the in-game rule."
+    }
+   ]
+  },
+  {
+   "athlete": "Danny Green",
+   "eventDate": "2022-05-12",
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=A5BGIpDmeGk",
+     "channelVerified": "ESPN",
+     "confidence": "high",
+     "titleSeen": "Danny Green had to be helped off the floor after colliding with Joel Embiid 🙏",
+     "uploadDateSeen": "2022-05-12",
+     "notes": "Upload date == event date (day 0). Length 0:42. This is the exact ACL mechanism (Embiid falling onto his left leg) and a 'helped off the floor' clip = qualifying. WARNING: availableCountries does NOT include TW -> likely blocked in Taiwan. @sixers and @NBCSPhilly swept, no alternative."
+    }
+   ]
+  },
+  {
+   "athlete": "Jayson Tatum",
+   "eventDate": "2025-05-12",
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=xSUKd03LJwE",
+     "channelVerified": "NBA on ESPN",
+     "confidence": "high",
+     "titleSeen": "Jayson Tatum left Game 4 after suffering a non-contact injury",
+     "uploadDateSeen": "2025-05-12",
+     "notes": "BEST NON-BLOCKED FIND for this event. Upload date == event date (day 0). Length 0:22. availableCountries = 249 INCLUDING TW -> should play in Taiwan. Note canonical form is a YouTube Short, so plan for vertical aspect ratio when embedding. oEmbed author_name='NBA on ESPN'."
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=_hkttbPdMs8",
+     "channelVerified": "NBA on ESPN",
+     "confidence": "high",
+     "titleSeen": "Jayson Tatum exits Game 4 with a lower leg injury late in the 4th quarter | NBA on ESPN",
+     "uploadDateSeen": "2025-05-12",
+     "notes": "Upload date == event date (day 0). Length 1:41 — longer/more complete broadcast cut than xSUKd03LJwE. WARNING: availableCountries does NOT include TW -> likely blocked in Taiwan. Use as fallback only if the Short is unsuitable."
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=sCsQz1-oV8Y",
+     "channelVerified": "NBC Sports Boston",
+     "confidence": "high",
+     "titleSeen": "Jayson Tatum goes down with non-contact ankle injury in Game 4",
+     "uploadDateSeen": "2025-05-12",
+     "notes": "Non-ESPN regional rights-holder (NBC Sports Boston = Celtics RSN), which is on the allowed list. Upload date == event date (day 0), length 0:46, qualifying in-game content. WARNING: availableCountries does NOT include TW -> also likely blocked in Taiwan, so the RSN route does not solve the geo problem here. Title says 'ankle' but the injury was the Achilles — broadcast-time wording, content is still the correct moment."
+    },
+    {
+     "url": "https://www.youtube.com/shorts/sCsQz1-oV8Y",
+     "channelVerified": "NBC Sports Boston",
+     "confidence": "high",
+     "titleSeen": "Jayson Tatum goes down with non-contact ankle injury in Game 4",
+     "uploadDateSeen": "2025-05-12",
+     "notes": "BEST REGIONAL FIND. Rights-holder regional network (NBC Sports Boston), not ESPN, so good geo-availability odds for Taiwan. In-game non-contact injury moment. Upload date exactly matches event date. NOTE: this is a Shorts URL (youtube.com/shorts/...); for embedding convert to https://www.youtube.com/watch?v=sCsQz1-oV8Y. Caution: general web search conflated this title with watch?v=Pv6EmBBwXBw, which oEmbed proved is the fan channel 'Chaz NBA' — use the ID sCsQz1-oV8Y only."
+    },
+    {
+     "url": "https://www.youtube.com/shorts/xSUKd03LJwE",
+     "channelVerified": "NBA on ESPN",
+     "confidence": "high",
+     "titleSeen": "Jayson Tatum left Game 4 after suffering a non-contact injury",
+     "uploadDateSeen": "2025-05-12",
+     "notes": "TRUE SHORT: /shorts/xSUKd03LJwE returns HTTP 200, length 21s. oEmbed author_name = 'NBA on ESPN'. Upload 2025-05-12T19:24:54-07:00 = D+0. Exactly the non-contact injury moment. Best lead of this whole sweep for the Shorts angle. Watch-URL equivalent: https://www.youtube.com/watch?v=xSUKd03LJwE"
+    },
+    {
+     "url": "https://www.youtube.com/shorts/x80_SK9Grwk",
+     "channelVerified": "ESPN",
+     "confidence": "medium",
+     "titleSeen": "KAT and several Knicks players broke their huddle to clap for Jayson Tatum as he left the floor ❤️",
+     "uploadDateSeen": "2025-05-12",
+     "notes": "TRUE SHORT: /shorts/ returns 200, 9s. Upload 2025-05-12T19:43:05-07:00 = D+0. In-arena footage of Tatum being helped off the floor, but the framing is the Knicks' applause rather than the injury mechanism itself — usable as B-roll of the exit, not as the injury clip. ESPN main channel → high TW geo-block risk."
+    }
+   ]
+  },
+  {
+   "athlete": "Kevin Durant",
+   "eventDate": "2024-12-03",
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=rL0oKG7tgK0",
+     "channelVerified": "NBA on ESPN",
+     "confidence": "high",
+     "titleSeen": "Kevin Durant leaves game vs. Spurs with ankle sprain | NBA on ESPN",
+     "uploadDateSeen": "2024-12-03",
+     "notes": "Upload date == event date (day 0). Length 0:59. 'leaves game ... with ankle sprain' = qualifying. WARNING: availableCountries does NOT include TW -> likely blocked in Taiwan. @Suns and @spurs channels swept, no alternative (only season-highlight compilations)."
+    }
+   ]
+  },
+  {
+   "athlete": "Kyrie Irving",
+   "eventDate": "2025-03-03",
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=qZKTS532beA",
+     "channelVerified": "WFAA",
+     "confidence": "low",
+     "titleSeen": "Mavericks lose Kyrie Irving, Jaden Hardy to injury against Kings",
+     "uploadDateSeen": "2025-03-03",
+     "notes": "CHANNEL ELIGIBILITY IS DOUBTFUL — flagging rather than asserting. WFAA is the Dallas ABC-affiliate local news station (TEGNA-owned), not an NBA national broadcaster or team channel. The brief allows 'ABC', but WFAA is a local affiliate newsroom, so treat as borderline and have a human rule on it. Positives: upload date == event date (day 0), length 1:52, availableCountries INCLUDES TW (would actually play in Taiwan), oEmbed author_name='WFAA'. Also unverified whether the segment shows the injury moment or is a studio news report. I found NO qualifying clip on ESPN/NBA on ESPN/@Mavericks/@SacramentoKings — those channels only carry post-hoc reaction (First Take reaction jGDpVB9LjWo, Kyrie IG update JlxF_vAl4R4/zbvK7opAW1Y), all of which fail rule 1."
+    }
+   ]
+  },
+  {
+   "athlete": "LaMelo Ball",
+   "eventDate": "2022-11-16",
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=JOpERGK_bb8",
+     "channelVerified": "ESPN",
+     "confidence": "high",
+     "titleSeen": "LaMelo Ball rolls his ankle on a fan’s foot 😬",
+     "uploadDateSeen": "2022-11-16",
+     "notes": "Upload date == event date (day 0). Length 0:30. Exactly the 'rolls ankle' in-game mechanism clip. WARNING: availableCountries does NOT include TW -> likely blocked in Taiwan. @hornets and @pacers swept, no alternative. Careful not to confuse with ESPN sljgdxHHjEs ('LaMelo went down with a left ankle injury vs. the Wizards', uploaded 2022-10-10) — that is a DIFFERENT, earlier event."
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=rr00V4myefw",
+     "channelVerified": "NBA on ESPN",
+     "confidence": "low",
+     "titleSeen": "I had to step up BIG TIME - Terry Rozier on LaMelo going down with a fractured ankle | NBA on ESPN",
+     "uploadDateSeen": "unverified — search-result relative date only ('3 years ago'); I did NOT resolve an exact upload date for this one",
+     "notes": "LISTED ONLY AS A WEAK BACKUP AND IT PROBABLY FAILS THE RULES: it is a teammate postgame interview, which rule 1 disqualifies. Include only if the parent agent wants supplementary footage. Upload date NOT confirmed to be inside the 0..+3 window."
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=NM6J6bKKBFg",
+     "channelVerified": "NBA on ESPN",
+     "confidence": "medium",
+     "titleSeen": "Hope LaMelo is okay 🙏 | #shorts",
+     "uploadDateSeen": "2022-11-16 (JSON-LD uploadDate 2022-11-16T20:51:54-08:00)",
+     "notes": "Upload date matches the event date exactly and the channel is official (@NBAonESPN, distinct from @espn). Downgraded to medium because the title does not name the injury or the opponent — I could not fetch the video description (YouTube started rate-limiting my page fetches), so the exact clip content is inferred from the same-night upload timing plus the 'Hope LaMelo is okay' wording. Verify visually before embedding. It is a Short, so embed sizing needs checking."
+    }
+   ]
+  },
+  {
+   "athlete": "LaMelo Ball",
+   "eventDate": "2025-01-27",
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=zZdndTqOexc",
+     "channelVerified": "NBA on ESPN",
+     "confidence": "high",
+     "titleSeen": "LaMelo Ball would go into the locker room after noticeably limping on court.",
+     "uploadDateSeen": "2025-01-27",
+     "notes": "NON-BLOCKED FIND. Upload date == event date (day 0). Length 0:47. In-game limping/exit-to-locker-room footage = qualifying. availableCountries = 249 INCLUDING TW -> should play in Taiwan. oEmbed author_name='NBA on ESPN'."
+    }
+   ]
+  },
+  {
+   "athlete": "LeBron James",
+   "eventDate": "2021-03-20",
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=tJto_hyevFU",
+     "channelVerified": "ESPN",
+     "confidence": "low",
+     "titleSeen": "LeBron James leaves with ankle injury as Lakers fall to Hawks [FULL GAME HIGHLIGHTS] | NBA on ESPN",
+     "uploadDateSeen": "2021-03-20",
+     "notes": "LIKELY DISQUALIFIED — reporting transparently, not endorsing. Length 7:01 and the title says FULL GAME HIGHLIGHTS, which rule 1 explicitly excludes (集錦全場一律不合格), even though the package does contain the injury sequence. Also availableCountries does NOT include TW -> likely blocked in Taiwan. Upload date == event date (day 0)."
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=ceJdvaxH9k4",
+     "channelVerified": "ESPN",
+     "confidence": "low",
+     "titleSeen": "LeBron James out ‘indefinitely’ with high ankle sprain | SportsCenter",
+     "uploadDateSeen": "2021-03-20",
+     "notes": "ALSO LIKELY DISQUALIFIED: this is a SportsCenter news/analysis segment (3:32), not a clean in-game clip, so it fails rule 1 — but it does contain the injury footage and, unlike tJto_hyevFU, availableCountries INCLUDES TW (would play in Taiwan). Upload date == event date (day 0). Offered as the only TW-playable official option for this event. I swept @ESPN, @NBAonESPN, @Lakers, @ATLHawks and global search with 10+ phrasings and found NO clean standalone injury-moment clip from any official channel for 2021-03-20."
+    }
+   ]
+  },
+  {
+   "athlete": "Tyrese Haliburton",
+   "eventDate": "2025-06-22",
+   "videos": [
+    {
+     "url": "https://www.youtube.com/watch?v=azQpbyDBktk",
+     "channelVerified": "ESPN",
+     "confidence": "high",
+     "titleSeen": "The moment Tyrese Haliburton suffered an injury in Game 7",
+     "uploadDateSeen": "2025-06-22",
+     "notes": "TOP PICK. Upload date == event date (day 0). Length 0:52. Literally the injury moment. availableCountries = 249 INCLUDING TW -> should play in Taiwan despite being the ESPN main channel, so the prior assumption that all ESPN uploads are TW-blocked does NOT hold for this one. Canonical form is a YouTube Short (vertical) — plan aspect ratio accordingly. oEmbed author_name='ESPN' (@espn)."
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=JNoDsgkZUbc",
+     "channelVerified": "NBA on ESPN",
+     "confidence": "high",
+     "titleSeen": "Dave McMenamin's angle of Tyrese Haliburton exiting Game 7 of the NBA Finals",
+     "uploadDateSeen": "2025-06-22",
+     "notes": "Second TW-playable option. Upload date == event date (day 0). Length 0:30. Courtside angle of Haliburton exiting after the injury — qualifying 'exits/helped off' content. availableCountries = 249 INCLUDING TW."
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=sooh3Zd_36s",
+     "channelVerified": "ESPN",
+     "confidence": "high",
+     "titleSeen": "Tyrese Haliburton helped off the court in first quarter of Game 7 | NBA Finals",
+     "uploadDateSeen": "2025-06-22",
+     "notes": "Most complete broadcast cut (2:10) and the cleanest title match, upload date == event date (day 0). WARNING: availableCountries does NOT include TW -> likely blocked in Taiwan, so prefer azQpbyDBktk or JNoDsgkZUbc for a Taiwanese audience."
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=X1AiuVg6mJs",
+     "channelVerified": "NBA on ESPN",
+     "confidence": "high",
+     "titleSeen": "Tyrese Haliburton leaves Game 7 in the first quarter",
+     "uploadDateSeen": "2025-06-22",
+     "notes": "TOP PICK for this event. In-game injury exit clip, upload date exactly matches event date. On NBA on ESPN rather than the ESPN main channel, so best geo-availability odds of the three."
+    },
+    {
+     "url": "https://www.youtube.com/shorts/JNoDsgkZUbc",
+     "channelVerified": "NBA on ESPN",
+     "confidence": "high",
+     "titleSeen": "Dave McMenamin's angle of Tyrese Haliburton exiting Game 7 of the NBA Finals",
+     "uploadDateSeen": "2025-06-22",
+     "notes": "TRUE SHORT: /shorts/ returns 200, 30s. oEmbed author_name = 'NBA on ESPN'. Upload 2025-06-22T17:49:30-07:00 = D+0. Reporter's floor-level angle of Haliburton being helped off after the Achilles rupture — 'exits game' footage, not analysis. Listed FIRST because it is NOT the ESPN main channel, so it is the best bet against the known TW geo-block. Watch URL: https://www.youtube.com/watch?v=JNoDsgkZUbc"
+    },
+    {
+     "url": "https://www.youtube.com/shorts/azQpbyDBktk",
+     "channelVerified": "ESPN",
+     "confidence": "high",
+     "titleSeen": "The moment Tyrese Haliburton suffered an injury in Game 7",
+     "uploadDateSeen": "2025-06-22",
+     "notes": "TRUE SHORT: /shorts/ returns 200, 52s. Upload 2025-06-22T17:44:58-07:00 = D+0. Cleanest capture of the injury mechanism itself. Caveat: ESPN main channel → matches the known TW-blocked pattern; verify playback before embedding."
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=awM_1pvt0Dg",
+     "channelVerified": "ESPN Deportes",
+     "confidence": "high",
+     "titleSeen": "TERRIBLE LESIÓN DE TYRESE HALIBURTON en el JUEGO 7 de las FINALES DE LA NBA entre THUNDER Y PACERS",
+     "uploadDateSeen": "2025-06-22 (JSON-LD uploadDate 2025-06-22T17:47:56-07:00)",
+     "notes": "BEST FIND OF THIS ANGLE. Spanish-language official ESPN regional channel (@espndeportes), a genuinely different channel/rights entity from @espn — most likely of all candidates to have a different Taiwan geo policy. Uploaded ~3 minutes after ESPN's own English clip of the same moment, same night as the event. Title names player + Game 7 + both teams, so event identity is unambiguous. Content is the injury moment."
+    }
+   ]
+  }
+ ]
+}

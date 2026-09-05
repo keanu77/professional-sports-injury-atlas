@@ -13,6 +13,7 @@ import { fileURLToPath } from "node:url";
 import { afterEach, describe, expect, it } from "vitest";
 
 import {
+  ARCHIVED_LEAD_PACKAGE_PATH,
   BATCH2_CORRECTION_MANIFEST_PATH,
   BATCH2_DECISION_PATH,
   BATCH2_ORIGIN_MANIFEST_PATH,
@@ -28,6 +29,7 @@ import {
 
 const REAL_ROOT = fileURLToPath(new URL("../..", import.meta.url));
 const FIXTURE_PATHS = [
+  ARCHIVED_LEAD_PACKAGE_PATH,
   BATCH2_REVIEW_SET_PATH,
   BATCH2_ORIGIN_MANIFEST_PATH,
   BATCH2_CORRECTION_MANIFEST_PATH,
