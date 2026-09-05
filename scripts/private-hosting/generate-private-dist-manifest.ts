@@ -25,7 +25,10 @@ import {
   selectReviewFixtureCases,
 } from "../../src/data/review-fixtures";
 import { computeCaseContentDigest } from "../../src/lib/cases/digest";
-import { loadDecision18TransitionalFollowUpCorpus } from "../../src/lib/cases/decision-18-follow-up-corpus";
+import {
+  loadReviewFollowUpCorpus,
+  followUpReviewStatus,
+} from "../../src/lib/cases/follow-up-approval-ledger";
 import { computeInjuryOverviewDigest } from "../../src/lib/cases/injury-overview-digest";
 import {
   buildCaseIndexManifest,
@@ -117,7 +120,7 @@ export interface PrivateDistSourceState {
     caseId: string;
     sidecarPath: string;
     draftDigest: string;
-    status: "pending-owner-signoff";
+    status: "pending-owner-signoff" | "owner-approved";
     sourcePolicyVersion: "nba-v10";
   }>;
   updates: Array<{
@@ -1716,10 +1719,14 @@ export function currentPrivateDistSourceState(
       `strict source bindings are invalid: ${sourceBindingIssues.join("; ")}`,
     );
   }
-  const followUpCorpus = loadDecision18TransitionalFollowUpCorpus(root, medicallyApprovedCases, {
-    expectedPolicyBinding: FOLLOW_UP_SOURCE_POLICY_V10_BINDING,
-    expectedCaseCount: 26,
-  });
+  const followUpCorpus = loadReviewFollowUpCorpus(
+    root,
+    medicallyApprovedCases,
+    {
+      expectedPolicyBinding: FOLLOW_UP_SOURCE_POLICY_V10_BINDING,
+      expectedCaseCount: 26,
+    },
+  );
   if (
     followUpCorpus.issues.length > 0 ||
     followUpCorpus.entries.length !== medicallyApprovedCases.length
@@ -1761,7 +1768,7 @@ export function currentPrivateDistSourceState(
         caseId: entry.sidecar.caseId,
         sidecarPath: entry.sidecarPath,
         draftDigest: entry.draftDigest,
-        status: "pending-owner-signoff" as const,
+        status: followUpReviewStatus(entry.sidecar),
         sourcePolicyVersion: "nba-v10" as const,
       }))
       .sort((left, right) => compareCodePoints(left.caseId, right.caseId)),

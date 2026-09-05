@@ -33,13 +33,13 @@ import {
   confirmationStatusLabel,
 } from "../../lib/routes/static-paths";
 import { caseImageFor } from "../../lib/ui/editorial-images";
-import { loadDecision18TransitionalFollowUpCorpus } from "../../lib/cases/decision-18-follow-up-corpus";
+import { loadReviewFollowUpCorpus } from "../../lib/cases/follow-up-approval-ledger";
 import { FOLLOW_UP_SOURCE_POLICY_V10_BINDING } from "../../lib/contracts/case-follow-up";
 
 export function validatedFollowUps(
   caseRecords: readonly CollectionEntry<"cases">[],
 ) {
-  const corpus = loadDecision18TransitionalFollowUpCorpus(
+  const corpus = loadReviewFollowUpCorpus(
     process.cwd(),
     caseRecords.map((entry) => entry.data),
     { expectedPolicyBinding: FOLLOW_UP_SOURCE_POLICY_V10_BINDING },

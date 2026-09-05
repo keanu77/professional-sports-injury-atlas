@@ -183,7 +183,7 @@ test.describe("data-bearing fixture routes", () => {
     expect(before.map(({ kind }) => kind)).toEqual([
       "case-content",
       "rendered-set",
-      "pending-follow-up",
+      "follow-up",
     ]);
     for (const { id, value } of before) {
       expect(value).toMatch(/^[0-9a-f]{64}$/);

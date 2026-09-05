@@ -55,7 +55,7 @@ import {
   validateSiteGovernanceRecord,
 } from "../src/lib/governance/site-digest";
 import { checkNbaEmbedBatch2ContentCorrection } from "./check-nba-embed-batch2-content-correction";
-import { loadDecision18TransitionalFollowUpCorpus } from "../src/lib/cases/decision-18-follow-up-corpus";
+import { loadReviewFollowUpCorpus } from "../src/lib/cases/follow-up-approval-ledger";
 import { FOLLOW_UP_SOURCE_POLICY_V10_BINDING } from "../src/lib/contracts/case-follow-up";
 
 export const REPO_ROOT = process.cwd();
@@ -255,7 +255,7 @@ export function runContentCheck(root: string = REPO_ROOT): ValidationIssue[] {
     ...validateCaseCollection(loaded.cases.map((entry) => entry.record)),
   );
   issues.push(
-    ...loadDecision18TransitionalFollowUpCorpus(
+    ...loadReviewFollowUpCorpus(
       root,
       loaded.cases.map((entry) => entry.record),
       {

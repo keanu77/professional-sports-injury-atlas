@@ -4,6 +4,7 @@
  * confirmed-update projection remains visibly separate from every additive
  * pending draft. This component has no client script or hydration boundary.
  */
+import { computeFollowUpItemPayloadDigest } from "../../lib/cases/follow-up-digest";
 import ExternalSourceCitation from "../citations/ExternalSourceCitation.astro";
 import { computeCaseContentDigest } from "../../lib/cases/digest";
 import {
@@ -50,7 +51,12 @@ if (visibleFollowUp !== null) {
     for (const item of visibleFollowUp.categories[kind]) {
       if (
         item.kind !== kind ||
-        item.review.status !== "pending-owner-signoff"
+        !["pending-owner-signoff", "owner-approved"].includes(
+          item.review.status,
+        ) ||
+        (item.review.status === "owner-approved" &&
+          item.review.reviewedPayloadDigest !==
+            computeFollowUpItemPayloadDigest(item))
       ) {
         throw new Error(`invalid pending follow-up item ${item.id}`);
       }
@@ -66,6 +72,13 @@ if (visibleFollowUp !== null) {
   }
 }
 
+const hasPending =
+  visibleFollowUp !== null &&
+  FOLLOW_UP_KINDS.some((kind) =>
+    visibleFollowUp.categories[kind].some(
+      (item) => item.review.status === "pending-owner-signoff",
+    ),
+  );
 const headingId = `${record.slug}-follow-up-heading`;
 ---
 
@@ -117,11 +130,14 @@ const headingId = `${record.slug}-follow-up-heading`;
       </section>
 
       <section
-        class="follow-up-pending"
-        aria-labelledby={`${headingId}-pending`}
-        data-follow-up-pending
+        class="follow-up-additions"
+        aria-labelledby={`${headingId}-additions`}
+        data-follow-up-additions
+        data-follow-up-pending={hasPending || undefined}
       >
-        <h3 id={`${headingId}-pending`}>新增後續消息：待醫師簽核</h3>
+        <h3 id={`${headingId}-additions`}>
+          {hasPending ? "新增後續消息：待醫師簽核" : "新增後續消息"}
+        </h3>
 
         <div class="follow-up-categories">
           {FOLLOW_UP_KINDS.map((kind) => {
@@ -155,7 +171,7 @@ const headingId = `${record.slug}-follow-up-heading`;
                           data-follow-up-item={item.id}
                           data-fact-kind={item.kind}
                           data-source-tier={item.sourceTier}
-                          data-review-status="pending-owner-signoff"
+                          data-review-status={item.review.status}
                         >
                           <p class="follow-up-item-meta">
                             <span
@@ -166,12 +182,14 @@ const headingId = `${record.slug}-follow-up-heading`;
                               來源等級：
                               {FOLLOW_UP_SOURCE_TIER_LABELS[item.sourceTier]}
                             </span>
-                            <strong
-                              class="pending-state"
-                              data-follow-up-review-state="pending-owner-signoff"
-                            >
-                              待醫師簽核
-                            </strong>
+                            {item.review.status === "pending-owner-signoff" && (
+                              <strong
+                                class="pending-state"
+                                data-follow-up-review-state="pending-owner-signoff"
+                              >
+                                待醫師簽核
+                              </strong>
+                            )}
                           </p>
                           <p class="follow-up-source-party">
                             來源方：
@@ -232,7 +250,7 @@ const headingId = `${record.slug}-follow-up-heading`;
   }
 
   .follow-up-legacy,
-  .follow-up-pending,
+  .follow-up-additions,
   .follow-up-category {
     margin-block-start: 1.5rem;
   }

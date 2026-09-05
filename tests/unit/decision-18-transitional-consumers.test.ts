@@ -12,7 +12,7 @@ describe("Decision 18 transitional follow-up consumers", () => {
     "scripts/verify-decision-17-c-digests.ts",
   ])("uses the fail-closed transitional corpus in %s", (path) => {
     const source = read(path);
-    expect(source).toContain("loadDecision18TransitionalFollowUpCorpus");
+    expect(source).toContain("loadReviewFollowUpCorpus");
     expect(source).not.toMatch(/\bloadFollowUpCorpus\b/u);
   });
 });

@@ -153,7 +153,7 @@ export const reviewSetV2CaseSchema = reviewSetCaseSchema.extend({
       .string()
       .regex(/^src\/content\/follow-ups\/[a-z0-9]+(?:-[a-z0-9]+)*\.json$/),
     draftDigest: sha256Lower,
-    status: z.literal("pending-owner-signoff"),
+    status: z.enum(["pending-owner-signoff", "owner-approved"]),
     sourcePolicyVersion: z.literal("nba-v10"),
   }),
 });
@@ -371,6 +371,7 @@ export function buildReviewSetManifest(
 export const buildReviewSetManifestV1 = buildReviewSetManifest;
 
 export interface ReviewSetV2FollowUpBinding {
+  status?: "pending-owner-signoff" | "owner-approved";
   caseId: string;
   sidecarPath: string;
   draftDigest: string;
@@ -440,7 +441,7 @@ export function buildReviewSetManifestV2(
       followUp: {
         sidecarPath: followUp.sidecarPath,
         draftDigest: followUp.draftDigest,
-        status: "pending-owner-signoff" as const,
+        status: followUp.status ?? "pending-owner-signoff",
         sourcePolicyVersion: "nba-v10" as const,
       },
     };

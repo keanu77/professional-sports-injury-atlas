@@ -44,7 +44,7 @@ describe("Decision 17 follow-up presentation", () => {
     const component = read("src/components/cases/FollowUpReports.astro");
     expect(component).toContain('data-follow-up-lineage="approved-core"');
     expect(component).toContain("data-follow-up-pending");
-    expect(component).toContain('data-review-status="pending-owner-signoff"');
+    expect(component).toContain("data-review-status={item.review.status}");
     expect(component).toContain("data-follow-up-empty");
     expect(component).toContain("data-actual-return-disclaimer");
     expect(component).toContain('context="follow-up"');

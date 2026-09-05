@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 
 import { parse } from "parse5";
 
-import { loadDecision18TransitionalFollowUpCorpus } from "../src/lib/cases/decision-18-follow-up-corpus";
+import { loadReviewFollowUpCorpus } from "../src/lib/cases/follow-up-approval-ledger";
 import {
   ACTUAL_RETURN_RETROSPECTIVE_COPY,
   FOLLOW_UP_BLOCK_ATTRIBUTION,
@@ -142,7 +142,7 @@ function assertCasePage(
     throw new Error(`${htmlPath}: approved-core source tier is not visible`);
   }
   assertOne(
-    elementsByAttribute(block, "data-follow-up-pending"),
+    elementsByAttribute(block, "data-follow-up-additions"),
     htmlPath,
     "pending section",
   );
@@ -153,8 +153,7 @@ function assertCasePage(
   );
   if (
     attr(digest, "value") !== draftDigest ||
-    attr(digest, "readonly") === null ||
-    attr(digest, "data-review-status") !== "pending-owner-signoff"
+    attr(digest, "readonly") === null
   ) {
     throw new Error(`${htmlPath}: follow-up draft digest changed`);
   }
@@ -204,21 +203,25 @@ function assertCasePage(
       if (
         attr(itemNode, "data-fact-kind") !== item.kind ||
         attr(itemNode, "data-source-tier") !== item.sourceTier ||
-        attr(itemNode, "data-review-status") !== "pending-owner-signoff"
+        attr(itemNode, "data-review-status") !== item.review.status
       ) {
         throw new Error(`${htmlPath}: item ${item.id} metadata changed`);
       }
-      const state = assertOne(
-        elementsByAttribute(
-          itemNode,
-          "data-follow-up-review-state",
-          "pending-owner-signoff",
-        ),
-        htmlPath,
-        `pending state ${item.id}`,
+      const states = elementsByAttribute(
+        itemNode,
+        "data-follow-up-review-state",
       );
-      if (normalizedText(state) !== "待醫師簽核") {
-        throw new Error(`${htmlPath}: item ${item.id} is not visibly pending`);
+      if (item.review.status === "pending-owner-signoff") {
+        const state = assertOne(states, htmlPath, `pending state ${item.id}`);
+        if (normalizedText(state) !== "待醫師簽核")
+          throw new Error(`${htmlPath}: missing pending label ${item.id}`);
+      } else if (
+        states.length !== 0 ||
+        normalizedText(itemNode).includes("待醫師簽核")
+      ) {
+        throw new Error(
+          `${htmlPath}: approved item has a review badge ${item.id}`,
+        );
       }
       const tier = assertOne(
         elementsByAttribute(itemNode, "data-follow-up-tier-label"),
@@ -336,7 +339,7 @@ function main(): void {
   }
   const buildRoot = resolve(argumentValue("--root") ?? DEFAULT_BUILD_ROOT);
   const cases = loadCases();
-  const corpus = loadDecision18TransitionalFollowUpCorpus(ROOT, cases, {
+  const corpus = loadReviewFollowUpCorpus(ROOT, cases, {
     expectedCaseCount: 26,
     expectedPolicyBinding: FOLLOW_UP_SOURCE_POLICY_V10_BINDING,
   });

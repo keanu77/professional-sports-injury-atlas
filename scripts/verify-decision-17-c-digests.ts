@@ -9,7 +9,7 @@ import { parse } from "parse5";
 import { loadContentCollections } from "./check-content";
 import { computeCaseContentDigest } from "../src/lib/cases/digest";
 import { computeFollowUpDraftDigest } from "../src/lib/cases/follow-up-digest";
-import { loadDecision18TransitionalFollowUpCorpus } from "../src/lib/cases/decision-18-follow-up-corpus";
+import { loadReviewFollowUpCorpus } from "../src/lib/cases/follow-up-approval-ledger";
 import { permittedCasesForMode } from "../src/lib/cases/pagination";
 import {
   reviewFixtureClassicCase,
@@ -26,11 +26,7 @@ const ROOT = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const DEFAULT_BUILD_ROOT = resolve(ROOT, "dist");
 const EXPECTED_REAL_CASES = 26;
 const SUMMARY_TEXT = "審查識別與 digest";
-const DIGEST_KINDS = [
-  "case-content",
-  "rendered-set",
-  "pending-follow-up",
-] as const;
+const DIGEST_KINDS = ["case-content", "rendered-set", "follow-up"] as const;
 type DigestKind = (typeof DIGEST_KINDS)[number];
 
 interface HtmlNode {
@@ -328,7 +324,7 @@ function main(): void {
     );
   }
 
-  const corpus = loadDecision18TransitionalFollowUpCorpus(ROOT, cases, {
+  const corpus = loadReviewFollowUpCorpus(ROOT, cases, {
     expectedCaseCount: EXPECTED_REAL_CASES,
     expectedPolicyBinding: FOLLOW_UP_SOURCE_POLICY_V10_BINDING,
   });
@@ -365,7 +361,7 @@ function main(): void {
         digests: {
           "case-content": computeCaseContentDigest(record),
           "rendered-set": renderedSetDigest,
-          "pending-follow-up": followUp.draftDigest,
+          "follow-up": followUp.draftDigest,
         },
       },
     );
@@ -383,7 +379,7 @@ function main(): void {
       digests: {
         "case-content": computeCaseContentDigest(reviewFixtureClassicCase),
         "rendered-set": computeRenderedSetDigest(fixtureCases),
-        "pending-follow-up": computeFollowUpDraftDigest(fixture),
+        "follow-up": computeFollowUpDraftDigest(fixture),
       },
     },
   );

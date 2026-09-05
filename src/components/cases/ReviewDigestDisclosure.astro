@@ -62,7 +62,7 @@ const followUpDigestId = `${scopeId}-follow-up-draft-digest`;
       followUpDigest !== undefined && (
         <>
           <label class="digest-label" for={followUpDigestId}>
-            後續消息草稿 digest（待醫師簽核，可複製）
+            後續消息 digest（可複製）
           </label>
           <input
             id={followUpDigestId}
@@ -70,9 +70,8 @@ const followUpDigestId = `${scopeId}-follow-up-draft-digest`;
             type="text"
             readonly
             value={followUpDigest}
-            data-review-digest-kind="pending-follow-up"
+            data-review-digest-kind="follow-up"
             data-follow-up-draft-digest
-            data-review-status="pending-owner-signoff"
           />
         </>
       )

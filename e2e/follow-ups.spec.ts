@@ -112,3 +112,27 @@ test.describe("Decision 17 follow-up reports", () => {
     );
   });
 });
+
+test("Decision 20 real reports have no pending or approval badge and retain source attribution", async ({
+  page,
+}) => {
+  await page.goto("/cases/kevin-durant-achilles-rupture-2019/");
+  const block = page.locator("[data-follow-up-block]");
+  await expect(block).toBeVisible();
+  await expect(block.locator("[data-follow-up-attribution]")).toHaveText(
+    ATTRIBUTION,
+  );
+  const items = block.locator("[data-follow-up-item]");
+  expect(await items.count()).toBeGreaterThan(0);
+  await expect(block.locator("[data-follow-up-review-state]")).toHaveCount(0);
+  await expect(block.locator("[data-follow-up-pending]")).toHaveCount(0);
+  await expect(page.getByText("待醫師簽核")).toHaveCount(0);
+  for (const item of await items.all()) {
+    await expect(item).toHaveAttribute("data-review-status", "owner-approved");
+    await expect(item.locator("[data-follow-up-tier-label]")).not.toBeEmpty();
+    await expect(
+      item.locator('[data-citation-context="follow-up"]'),
+    ).toHaveCount(1);
+  }
+  await expectNoAxeViolations(page);
+});
