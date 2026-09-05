@@ -355,7 +355,7 @@ export function validateDecision18CompletedReceiptProvenance(
           issue(
             "follow-up-transition-completed-later-mutation",
             validated.path,
-            "a later commit touched a completed receipt allowlisted path",
+            "HEAD differs from the receipt-introducing commit on a completed allowlisted path",
           ),
         );
       }

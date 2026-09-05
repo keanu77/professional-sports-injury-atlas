@@ -501,7 +501,7 @@ export function validateDecision18CompletedBatchGitState(
           issue(
             "decision18-batch-predecessor-later-mutation",
             predecessor.path,
-            "a later commit touched a completed predecessor batch path",
+            "HEAD differs from the receipt-introducing commit on a completed predecessor path",
           ),
         );
       }

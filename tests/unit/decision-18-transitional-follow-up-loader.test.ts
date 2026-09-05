@@ -1,3 +1,4 @@
+import { execFileSync } from "node:child_process";
 import {
   cpSync,
   mkdirSync,
@@ -346,6 +347,44 @@ function completedAclProvenanceFixture(root: string): {
 }
 
 describe("Decision 18 transitional follow-up loader", () => {
+  it("accepts a committed edit followed by an exact revert, but rejects net and dirty mutations", () => {
+    const root = mkdtempSync(join(tmpdir(), "atlas-d18-net-history-"));
+    temporaryRoots.push(root);
+    const fixture = completedAclProvenanceFixture(root);
+    const git = (...args: string[]) =>
+      execFileSync("git", ["-C", root, ...args], {
+        encoding: "utf8",
+        stdio: ["ignore", "pipe", "pipe"],
+      }).trim();
+    git("init", "-b", "main");
+    git("config", "user.name", "Fixture");
+    git("config", "user.email", "fixture@example.invalid");
+    git("config", "commit.gpgsign", "false");
+    git("add", ".");
+    git("commit", "-m", "feat(follow-ups): introduce frozen receipt");
+    const validate = () =>
+      validateDecision18CompletedReceiptProvenance(root, [fixture.receipt]);
+    expect(validate()).toEqual([]);
+    const path = join(root, fixture.receipt.receipt.evidenceFiles[0]!.path);
+    const frozen = readFileSync(path);
+    writeFileSync(path, "changed");
+    git("add", ".");
+    git("commit", "-m", "test: alter frozen evidence");
+    expect(codes(validate())).toContain(
+      "follow-up-transition-completed-later-mutation",
+    );
+    git("revert", "--no-edit", "HEAD");
+    expect(readFileSync(path)).toEqual(frozen);
+    expect(validate()).toEqual([]);
+    writeFileSync(path, "dirty");
+    expect(codes(validate())).toContain(
+      "decision18-batch-completed-path-mutation",
+    );
+    expect(codes(validate())).toContain(
+      "decision18-batch-completed-digest-drift",
+    );
+  });
+
   it("gates completed receipt adoption on exact bytes and immutable Git provenance", () => {
     const root = mkdtempSync(join(tmpdir(), "atlas-d18-provenance-"));
     temporaryRoots.push(root);
