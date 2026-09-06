@@ -11,6 +11,7 @@
  * centered 9:16 iframe after activation without changing the frozen case
  * contract.
  */
+import { captionsOptionalFor } from "../../lib/videos/expansion";
 import CaseCover from "./CaseCover.astro";
 import ExternalSourceCitation from "../citations/ExternalSourceCitation.astro";
 import {
@@ -70,6 +71,7 @@ const presentation = resolvePlayerPresentation({
   embedStatus: video.embedStatus,
   captionStatus: video.captionStatus,
   displayMode,
+  captionsOptional: captionsOptionalFor(video.canonicalUrl),
 });
 const regionRestriction = videoRegionRestrictionFor(
   video.provider,
@@ -108,7 +110,7 @@ const sourceAccessLabel =
     ? "原始頁純文字引註"
     : "原始平台連結";
 const captionWarning =
-  video.captionStatus === "available"
+  video.captionStatus === "available" || captionsOptionalFor(video.canonicalUrl)
     ? null
     : displayMode === "public"
       ? `依無障礙政策，字幕未確認可用的影片不在本站內嵌播放，僅提供${sourceAccessLabel}與文字說明。`

@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-09-06T02:05:51.512Z",
+  "origin": "http://127.0.0.1:14324",
+  "commit": "37bc853968cf4075d9f381cb90a1fb54c5ed8592",
+  "matchedPages": 28,
+  "noJavaScript": "passed",
+  "results": [
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pages": 15,
+      "accessibility": "passed",
+      "externalBeforeActivation": 0
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "pages": 15,
+      "accessibility": "passed",
+      "externalBeforeActivation": 0
+    }
+  ]
+}

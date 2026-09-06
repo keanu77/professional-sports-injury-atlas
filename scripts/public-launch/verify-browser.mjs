@@ -61,6 +61,7 @@ try {
     for (const path of [
       "/",
       ...receipt.cases.map((record) => `/cases/${record.slug}/`),
+      ...(receipt.clips ?? []).map((clip) => `/videos/${clip.slug}/`),
     ]) {
       await page.goto(origin + path, { waitUntil: "networkidle" });
       assert.equal(await page.locator("iframe").count(), 0);
@@ -82,7 +83,7 @@ try {
       if (path === "/") {
         assert.equal(
           await page.locator("[data-featured-card]:visible").count(),
-          receipt.cases.length,
+          receipt.cases.length + (receipt.clips ?? []).length,
         );
         await page.getByRole("searchbox").fill("Simons");
         assert.equal(
@@ -100,7 +101,7 @@ try {
     assert.deepEqual(external, [], "Third-party requests before activation");
     results.push({
       viewport,
-      pages: receipt.cases.length + 1,
+      pages: receipt.cases.length + (receipt.clips ?? []).length + 1,
       accessibility: "passed",
       externalBeforeActivation: 0,
     });

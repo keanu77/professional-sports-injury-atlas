@@ -1,0 +1,220 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import MedicalNotice from "../../components/notices/MedicalNotice.astro";
+import { observationClips } from "../../lib/videos/expansion";
+import { formatDurationLabel } from "../../lib/video/player-state";
+export function getStaticPaths() {
+  return observationClips().map((clip) => ({
+    params: { slug: clip.slug },
+    props: { clip },
+  }));
+}
+const { clip } = Astro.props;
+---
+
+<BaseLayout
+  title={`${clip.name}｜運動傷害影片圖鑑`}
+  description={clip.observation}
+>
+  <a href="/#videos-heading">← 回到影片圖鑑</a>
+  <header class="clip-header">
+    <p class="eyebrow">{clip.sport} / {clip.event}</p><h1>{clip.name}</h1><p>
+      {clip.bodyPart} · 受傷動作觀察
+    </p>
+  </header>
+  <div class="clip-layout">
+    <section
+      class="clip-player"
+      aria-label={`${clip.name}影片`}
+      data-video-embed
+      data-video-scope={clip.slug}
+      data-video-id={clip.videoId}
+      data-video-start={clip.startSeconds}
+      data-video-title={`${clip.name}：${clip.event}`}
+    >
+      <div data-video-stage>
+        <div class="clip-facade" data-video-facade>
+          <span aria-hidden="true">{clip.sport}</span><button
+            type="button"
+            data-video-load
+            ><span aria-hidden="true">▶</span> 載入 YouTube 播放器</button
+          ><small>點擊後才會連線至 YouTube</small>
+        </div>
+        <p data-video-failure hidden>
+          播放器載入失敗，請使用下方原始影片連結。
+        </p>
+      </div>
+      <p class="clip-source">
+        <a href={clip.videoUrl} rel="noopener noreferrer"
+          >{clip.publisher} · 觀看原始影片 ↗</a
+        >
+      </p>
+      <p class="clip-meta">
+        {
+          clip.startSeconds > 0
+            ? `從 ${formatDurationLabel(clip.startSeconds)} 附近開始 · `
+            : ""
+        }{
+          clip.captionStatus === "available"
+            ? "字幕可由播放器開啟"
+            : "原始影片未提供字幕"
+        }
+      </p>
+    </section>
+    <div class="clip-notes">
+      <section><h2>受傷當下看什麼</h2><p>{clip.observation}</p></section>
+      <section>
+        <h2>當下怎麼做</h2><p>
+          先停止運動、保護受傷部位。疼痛加重或無法承重時就醫；不要用忍痛完成動作來判斷能否繼續。
+        </p><a
+          class="clip-meta"
+          href="https://www.nhs.uk/conditions/sprains-and-strains/"
+          rel="noopener noreferrer">處理原則：NHS</a
+        >
+      </section>
+      <section data-actual-return>
+        <h2>後續回場</h2><p>{clip.returnText}</p>{
+          clip.eventDate && clip.returnDate && (
+            <p class="clip-meta">
+              受傷 {clip.eventDate} → 正式出賽 {clip.returnDate}
+            </p>
+          )
+        }
+      </section>
+    </div>
+  </div>
+  <details class="clip-references">
+    <summary>事件來源</summary><ul>
+      <li>
+        <a href={clip.videoUrl} rel="noopener noreferrer"
+          >{clip.publisher}：{clip.sourceTitle}</a
+        >
+      </li>{
+        clip.sources.map((s) => (
+          <li>
+            <a href={s.url} rel="noopener noreferrer">
+              {s.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul><p>本頁描述公開片段，不以畫面推定診斷、傷勢等級或個人恢復時間。</p>
+  </details>
+  <MedicalNotice variant="compact" />
+</BaseLayout>
+<script>
+  import { initCaseVideos } from "../../scripts/video-player";
+  initCaseVideos();
+</script>
+<style>
+  .clip-header {
+    margin: 2rem 0;
+  }
+  .clip-header h1 {
+    font: 800 clamp(2rem, 5vw, 3rem)/1.3 var(--font-display);
+    margin: 0.5rem 0;
+  }
+  .clip-header > p:last-child {
+    color: var(--color-ink-muted);
+  }
+  .clip-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  .clip-player {
+    padding: 1rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-card);
+    background: var(--color-surface-raised);
+  }
+  .clip-facade {
+    aspect-ratio: 16/9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 12px;
+    background: linear-gradient(
+      145deg,
+      var(--color-brand-50),
+      var(--color-surface),
+      var(--color-brand-accent-soft)
+    );
+  }
+  .clip-facade[hidden] {
+    display: none;
+  }
+  .clip-facade > span {
+    font: 700 2rem var(--font-display);
+  }
+  .clip-facade button {
+    font: 600 1rem var(--font-body);
+    padding: 1rem;
+    border: 0;
+    border-radius: 24px;
+    background: var(--color-brand-primary);
+    color: var(--color-on-brand);
+    cursor: pointer;
+    min-height: 44px;
+  }
+  .clip-facade small,
+  .clip-meta {
+    color: var(--color-ink-muted);
+    font-size: 0.8rem;
+  }
+  .clip-source {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+  .clip-player :global(iframe) {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: 0;
+    border-radius: 12px;
+  }
+  .clip-notes {
+    display: grid;
+    gap: 1rem;
+  }
+  .clip-notes section {
+    padding: 1.2rem;
+    background: var(--color-surface-raised);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-card);
+  }
+  .clip-notes h2 {
+    font: 700 1.2rem var(--font-display);
+    margin: 0 0 0.8rem;
+  }
+  .clip-notes p {
+    margin: 0.5rem 0;
+  }
+  .clip-references {
+    margin: 2rem 0;
+    font-size: 0.9rem;
+  }
+  .clip-references summary {
+    cursor: pointer;
+    padding: 0.75rem 0;
+  }
+  .clip-references li {
+    margin: 0.5rem 0;
+  }
+  @media (max-width: 55rem) {
+    .clip-layout {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+  @media (max-width: 25rem) {
+    .clip-player {
+      padding: 0.5rem;
+    }
+    .clip-facade button {
+      font-size: 0.85rem;
+    }
+  }
+</style>

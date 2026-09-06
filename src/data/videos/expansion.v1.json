@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "decision": "decision-23",
+  "authorizationQuote": "可以",
+  "authorizedAt": "2026-09-06T01:57:53.884280Z",
+  "scope": "nine-confirmed-videos-captions-optional",
+  "cases": [
+    {
+      "id": "CASE-NBAACHILLES-2025-016",
+      "slug": "jayson-tatum-achilles-rupture-2025",
+      "recordDigest": "162d8cfea28ba1718dfc105fd120d61ee4281004e88520058a7ca01c1c21232f",
+      "videoUrl": "https://www.youtube.com/watch?v=xSUKd03LJwE"
+    },
+    {
+      "id": "CASE-NBAACHILLES-2025-017",
+      "slug": "tyrese-haliburton-achilles-rupture-2025",
+      "recordDigest": "74850b17b47e4af4bf63cfe37964e697a579f8969dbe36da5079c967abd0a700",
+      "videoUrl": "https://www.youtube.com/watch?v=azQpbyDBktk"
+    }
+  ],
+  "clips": [
+    {
+      "slug": "zverev-roland-garros-2022",
+      "videoId": "7tpaxZTTi2w",
+      "name": "Alexander Zverev",
+      "sport": "網球",
+      "event": "2022 法網準決賽",
+      "bodyPart": "腳踝",
+      "observation": "側移回球時倒地，之後以輪椅離場，未能繼續比賽。",
+      "eventDate": "2022-06-03",
+      "returnDate": "2022-12-31",
+      "returnText": "相隔 211 天重返正式賽事（United Cup）；不是一般腳踝受傷的恢復標準。",
+      "videoUrl": "https://www.youtube.com/watch?v=7tpaxZTTi2w",
+      "publisher": "Roland-Garros",
+      "sourceTitle": "Nadal vs Zverev 2022 Men's semi-final | Roland-Garros Classic Match",
+      "captionStatus": "unavailable",
+      "startSeconds": 1340,
+      "durationSeconds": 1406,
+      "sources": [
+        {
+          "title": "Roland-Garros：受傷賽事報導",
+          "url": "https://www.rolandgarros.com/en-us/article/rg2022-semi-final-nadal-zverev-injury-report"
+        },
+        {
+          "title": "ATP：United Cup 實際出賽",
+          "url": "https://www.atptour.com/en/news/czech-republic-germany-united-cup-2023-saturday"
+        }
+      ]
+    },
+    {
+      "slug": "derek-redmond-barcelona-1992",
+      "videoId": "t2G8KVzTwfw",
+      "name": "Derek Redmond",
+      "sport": "田徑",
+      "event": "1992 巴塞隆納奧運",
+      "bodyPart": "大腿後側",
+      "observation": "衝刺途中停下並扶住大腿後側，後來由父親陪同走向終點。",
+      "eventDate": "1992-08-03",
+      "returnDate": null,
+      "returnText": "本頁未確認傷後首次正式回場日期；片中繼續走向終點不代表已恢復運動能力。",
+      "videoUrl": "https://www.youtube.com/watch?v=t2G8KVzTwfw",
+      "publisher": "Olympic Games",
+      "sourceTitle": "Derek Redmond's Emotional Olympic Story - Injury Mid-Race | Barcelona 1992 Olympics",
+      "captionStatus": "unavailable",
+      "startSeconds": 15,
+      "durationSeconds": 156,
+      "sources": []
+    },
+    {
+      "slug": "kerri-strug-atlanta-1996",
+      "videoId": "Bwa5Bf656As",
+      "name": "Kerri Strug",
+      "sport": "體操",
+      "event": "1996 亞特蘭大奧運",
+      "bodyPart": "腳踝",
+      "observation": "觀察跳馬落地後的支撐與離場；帶傷完成動作不代表可以安全續賽。",
+      "eventDate": "1996-07-23",
+      "returnDate": null,
+      "returnText": "本頁未確認傷後首次正式回場日期；同場再次跳馬不列為傷後回場。",
+      "videoUrl": "https://www.youtube.com/watch?v=Bwa5Bf656As",
+      "publisher": "Olympic Games",
+      "sourceTitle": "Kerri Strug Vaults at Atlanta 1996 | Epic Olympic Moments",
+      "captionStatus": "unavailable",
+      "startSeconds": 0,
+      "durationSeconds": 73,
+      "sources": [
+        {
+          "title": "USA Gymnastics：1996 奧運團隊回顧",
+          "url": "https://usagym.org/1996-olympic-team-celebration-planned-for-att-american-cup/"
+        }
+      ]
+    },
+    {
+      "slug": "carolina-marin-indonesia-2019",
+      "videoId": "nfpXC98FLuE",
+      "name": "Carolina Marín",
+      "sport": "羽球",
+      "event": "2019 印尼大師賽決賽",
+      "bodyPart": "膝部",
+      "observation": "注意跳躍落地後的支撐與停止比賽過程。",
+      "eventDate": "2019-01-27",
+      "returnDate": "2019-09-11",
+      "returnText": "相隔 227 天於越南公開賽重返比賽；這是選手紀錄，不是每個人的回場期限。",
+      "videoUrl": "https://www.youtube.com/watch?v=nfpXC98FLuE",
+      "publisher": "BWF TV",
+      "sourceTitle": "DAIHATSU Indonesia Masters 2019 | WS - F - HIGHLIGHTS | BWF 2019",
+      "captionStatus": "available",
+      "startSeconds": 35,
+      "durationSeconds": 177,
+      "sources": [
+        {
+          "title": "西班牙羽球協會：回歸越南公開賽",
+          "url": "https://www.badminton.es/news/130523/Carolina-Marin-vuelve-a-las-pistas-en-el-Vietnam-Open"
+        },
+        {
+          "title": "RTVE：9 月 11 日實際回歸賽事",
+          "url": "https://www.rtve.es/deportes/20190911/carolina-marin-partido-regreso-vietnam/1979042.shtml"
+        }
+      ]
+    },
+    {
+      "slug": "julie-foucher-box-jump-2015",
+      "videoId": "4y-1D7jTW_4",
+      "name": "Julie Foucher",
+      "sport": "CrossFit",
+      "event": "2015 Central Regional",
+      "bodyPart": "小腿／阿基里斯腱",
+      "observation": "觀察連續跳箱過程中，起跳與落地動作如何中斷。",
+      "eventDate": null,
+      "returnDate": null,
+      "returnText": "本頁未確認傷後首次正式回場日期。",
+      "videoUrl": "https://www.youtube.com/watch?v=4y-1D7jTW_4",
+      "publisher": "Andreas Bjerregaard",
+      "sourceTitle": "Julie Foucher achilles Tendon rupture",
+      "captionStatus": "unavailable",
+      "startSeconds": 35,
+      "durationSeconds": 344,
+      "sources": [
+        {
+          "title": "CrossFit：2015 跳箱受傷事件回顧",
+          "url": "https://medium.com/@CrossFit/mind-games-566b14576fa4"
+        }
+      ]
+    },
+    {
+      "slug": "volleyball-pov-135",
+      "videoId": "tEHP_6GA6ZA",
+      "name": "排球球友受傷紀錄",
+      "sport": "排球",
+      "event": "Volleyball POV · Episode 135",
+      "bodyPart": "腳踝",
+      "observation": "觀察網前動作後，球友如何停下並接受協助；影片標題不足以確認骨折。",
+      "eventDate": null,
+      "returnDate": null,
+      "returnText": "未有可核對的診斷與回場紀錄，不推估恢復天數。",
+      "videoUrl": "https://www.youtube.com/watch?v=tEHP_6GA6ZA",
+      "publisher": "DTvolleyball",
+      "sourceTitle": "I Can't Believe He BROKE His Ankle! Volleyball POV | Episode 135",
+      "captionStatus": "unavailable",
+      "startSeconds": 215,
+      "durationSeconds": 700,
+      "sources": []
+    },
+    {
+      "slug": "ankle-inversion-observation",
+      "videoId": "qwuEydc9qXQ",
+      "name": "腳踝翻轉動作",
+      "sport": "排球",
+      "event": "球友動作片段",
+      "bodyPart": "腳踝",
+      "observation": "注意腳掌接觸地面時，腳踝翻轉的方向；單靠畫面不能確定受傷組織或程度。",
+      "eventDate": null,
+      "returnDate": null,
+      "returnText": "選手身分、賽事與回場紀錄未確認；僅供動作觀察。",
+      "videoUrl": "https://www.youtube.com/watch?v=qwuEydc9qXQ",
+      "publisher": "Siwon Kim",
+      "sourceTitle": "Inversion Ankle Sprain",
+      "captionStatus": "unavailable",
+      "startSeconds": 0,
+      "durationSeconds": 18,
+      "sources": []
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import { expansion, expandedCaseAllowed } from "../../src/lib/videos/expansion";
 import assert from "node:assert/strict";
 import {
   scanBrandAssets,
@@ -68,10 +69,12 @@ const evidence = JSON.parse(
     "utf8",
   ),
 );
-for (const item of approval.cases) {
+process.env.ATLAS_PUBLIC_LAUNCH = "decision-21";
+for (const item of [...approval.cases, ...expansion.cases]) {
   const record = records.find((candidate) => candidate.id === item.id);
   assert.ok(
-    record && launchCaseAllowed(record, approval),
+    record &&
+      (launchCaseAllowed(record, approval) || expandedCaseAllowed(record)),
     `Case/video binding changed: ${item.id}`,
   );
   assert.deepEqual(
@@ -86,6 +89,7 @@ for (const item of approval.cases) {
     guide && isPatientGuideApproved(guide),
     `Missing reviewed guide: ${item.id}`,
   );
+  if (expansion.cases.some((c) => c.id === item.id)) continue;
   const proof = evidence.find(
     (entry: { caseId: string; url: string }) =>
       entry.caseId === item.id && entry.url === item.videoUrl,
@@ -107,4 +111,49 @@ for (const item of approval.cases) {
 }
 console.log(
   `Decision 21: ${approval.cases.length} approved native embeds; patient approval, source provenance, D20 facts, input hashes and playback passed.`,
+);
+
+const additional = JSON.parse(
+  readFileSync(
+    "docs/reviews/evidence/decision-23/playback.preview.v1.json",
+    "utf8",
+  ),
+);
+for (const item of [...expansion.cases, ...expansion.clips]) {
+  const proof = additional.find(
+    (p: { url: string }) => p.url === item.videoUrl,
+  );
+  assert.ok(
+    proof &&
+      proof.status === "played" &&
+      !proof.error &&
+      proof.after.time > proof.before.time &&
+      !proof.after.paused &&
+      proof.after.readyState >= 3,
+    `New playback missing: ${item.videoUrl}`,
+  );
+  const playbackOrigin = new URL(proof.origin);
+  assert.ok(
+    playbackOrigin.protocol === "https:" &&
+      (playbackOrigin.hostname === "sports-injury-atlas.pages.dev" ||
+        playbackOrigin.hostname.endsWith(".sports-injury-atlas.pages.dev")),
+    "New playback must be verified on the owned HTTPS site or preview",
+  );
+  assert.equal(
+    proof.path,
+    `${"startSeconds" in item ? "/videos/" : "/cases/"}${item.slug}/`,
+  );
+  const age = Date.now() - Date.parse(proof.checkedAt);
+  assert.ok(
+    age >= 0 && age < 7 * 86400000,
+    `Refresh new playback: ${item.videoUrl}`,
+  );
+  if ("startSeconds" in item)
+    assert.ok(
+      proof.after.time >= item.startSeconds,
+      `Playback before selected segment: ${item.videoUrl}`,
+    );
+}
+console.log(
+  `Decision 23: ${expansion.cases.length + expansion.clips.length} additional videos; captions optional, source records preserved.`,
 );

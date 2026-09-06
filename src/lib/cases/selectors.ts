@@ -1,3 +1,4 @@
+import { expandedCaseAllowed, captionsOptionalFor } from "../videos/expansion";
 /**
  * Deterministic case selectors. Astro components never duplicate approval
  * logic; G5 counts use only the medically approved selector and public gates
@@ -74,7 +75,7 @@ export function selectPublicCases(records: InjuryCase[]): InjuryCase[] {
       (record) =>
         validateCaseForApproval(record).length === 0 &&
         (isLaunchEnabled()
-          ? launchCaseAllowed(record)
+          ? launchCaseAllowed(record) || expandedCaseAllowed(record)
           : hasMatchingPublicRightsClearance(record)) &&
         (record.video.embedStatus === "verified" ||
           record.video.embedStatus === "external-link-only"),
@@ -96,7 +97,7 @@ export function groupCasesByInjury(
 
 /**
  * A public in-site embed requires an embed-capable provider, a verified embed,
- * and available captions; anything else degrades to the clearly labeled
+ * and available captions or a confirmed caption-optional exception; anything else degrades to the clearly labeled
  * canonical external link without excluding the case.
  */
 export function effectiveVideoRendering(
@@ -107,7 +108,8 @@ export function effectiveVideoRendering(
     provider !== undefined &&
     provider.canEmbed &&
     record.video.embedStatus === "verified" &&
-    record.video.captionStatus === "available"
+    (record.video.captionStatus === "available" ||
+      captionsOptionalFor(record.video.canonicalUrl))
   ) {
     return "embed";
   }

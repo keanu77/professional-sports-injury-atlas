@@ -1,3 +1,4 @@
+import { captionsOptionalFor } from "../videos/expansion";
 import type { InjuryCase } from "../contracts/case";
 import { resolvePlayerPresentation } from "../video/player-state";
 import { videoRegionRestrictionFor } from "../video/availability";
@@ -15,6 +16,7 @@ export function hasPublicEmbed(record: InjuryCase): boolean {
       embedStatus: record.video.embedStatus,
       captionStatus: record.video.captionStatus,
       displayMode: "public",
+      captionsOptional: captionsOptionalFor(record.video.canonicalUrl),
     }) === "click-to-load"
   );
 }

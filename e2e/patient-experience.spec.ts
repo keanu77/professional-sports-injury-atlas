@@ -13,9 +13,9 @@ test("playable-first discovery filters without navigation and recovers from no r
   await expect(page.locator("[data-featured-card]:visible")).toContainText(
     "Kevin Durant",
   );
-  await page.getByLabel("找球員", { exact: true }).fill("no matching player");
+  await page.getByLabel("找影片", { exact: true }).fill("no matching player");
   await expect(page.locator("[data-video-empty]")).toBeVisible();
-  await page.getByLabel("找球員", { exact: true }).fill("");
+  await page.getByLabel("找影片", { exact: true }).fill("");
   await page.getByLabel("傷害種類", { exact: true }).selectOption("");
   await expect(page.locator("[data-featured-card]:visible")).toHaveCount(5);
   await expectNoAxeViolations(page);

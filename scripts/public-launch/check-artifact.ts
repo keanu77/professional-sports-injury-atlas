@@ -1,3 +1,4 @@
+import { expansion } from "../../src/lib/videos/expansion";
 import assert from "node:assert/strict";
 import {
   existsSync,
@@ -25,8 +26,17 @@ assert.equal(
 );
 const selected = loadContentCollections()
   .cases.map((entry) => entry.record)
-  .filter((record) => approval.cases.some((item) => item.id === record.id));
-assert.equal(selected.length, approval.cases.length);
+  .filter((record) =>
+    [...approval.cases, ...expansion.cases].some(
+      (item) => item.id === record.id,
+    ),
+  );
+assert.equal(selected.length, approval.cases.length + expansion.cases.length);
+assert.deepEqual(
+  readdirSync("dist/videos").sort(),
+  expansion.clips.map((c) => c.slug).sort(),
+  "Observation route set mismatch",
+);
 assert.ok(!existsSync("dist/review"), "Private review routes leaked");
 assert.ok(!existsSync("dist/updates"), "Unapproved historical update leaked");
 const list = (path: string): string[] =>
@@ -125,6 +135,11 @@ const receipt = {
   approvalDigest: sha256Hex(canonicalJson(approval)),
   generatedAt: new Date().toISOString(),
   cases: selected.map(({ id, slug }) => ({ id, slug })),
+  clips: expansion.clips.map(({ slug, videoUrl, startSeconds }) => ({
+    slug,
+    videoUrl,
+    startSeconds,
+  })),
   htmlPages: htmlFiles.length,
   internalLinks: links,
   files: list("dist")

@@ -2,7 +2,8 @@
  * Server-side video presentation resolver. It enforces the registry
  * provider/host/embed cross-rules, maps the three embed states and every
  * caption outcome to exactly one presentation, and gates the public in-site
- * player on `captionStatus='available'` (review mode keeps click-to-load with
+ * player on available captions unless the confirmed expansion explicitly makes
+ * captions optional (review mode keeps click-to-load with
  * a visible caption warning). It also owns the review-only component-lab
  * static params. This module may use Node-only contract imports; the browser
  * bundle never imports it.
@@ -29,6 +30,7 @@ export interface VideoPresentationInput {
   embedStatus: EmbedStatus;
   captionStatus: CaptionStatus;
   displayMode: VideoDisplayMode;
+  captionsOptional?: boolean;
 }
 
 /** Registry cross-rules: provider exists, host allowed, embed status allowed. */
@@ -117,7 +119,11 @@ export function resolvePlayerPresentation(
   }
   if (input.embedStatus === "unavailable") return "unavailable-notice";
   if (input.embedStatus === "external-link-only") return "external-link-only";
-  if (input.displayMode === "public" && input.captionStatus !== "available") {
+  if (
+    input.displayMode === "public" &&
+    input.captionStatus !== "available" &&
+    !input.captionsOptional
+  ) {
     return "external-link-only";
   }
   return "click-to-load";

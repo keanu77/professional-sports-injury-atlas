@@ -93,6 +93,12 @@ function setupEmbed(root: HTMLElement): void {
     if (failureNote !== null) failureNote.hidden = true;
 
     const iframe = document.createElement("iframe");
+    const start = Number(root.dataset.videoStart ?? 0);
+    if (Number.isSafeInteger(start) && start > 0) {
+      const url = new URL(embedSrc);
+      url.searchParams.set("start", String(start));
+      embedSrc = url.href;
+    }
     iframe.src = embedSrc;
     iframe.title = root.dataset.videoTitle ?? "案例影片播放器";
     iframe.loading = "lazy";

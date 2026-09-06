@@ -1,0 +1,77 @@
+---
+import type { ObservationClip } from "../../lib/videos/expansion";
+interface Props {
+  clip: ObservationClip;
+}
+const { clip } = Astro.props;
+---
+
+<a class="observation-card" href={`/videos/${clip.slug}/`}>
+  <div class="observation-cover" aria-hidden="true">
+    <span>{clip.sport}</span><span class="play">▶</span>
+    <strong>{clip.bodyPart}</strong>
+  </div>
+  <div class="observation-copy">
+    <p>{clip.event}</p><h3>{clip.name}</h3><span>受傷動作觀察 →</span>
+  </div>
+</a>
+<style>
+  .observation-card {
+    display: block;
+    height: 100%;
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    background: var(--color-surface-raised);
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+  .observation-card:hover {
+    border-color: var(--color-brand-primary);
+  }
+  .observation-cover {
+    aspect-ratio: 16/9;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    background: linear-gradient(
+      145deg,
+      var(--color-brand-50),
+      var(--color-surface),
+      var(--color-brand-accent-soft)
+    );
+    color: var(--color-ink);
+  }
+  .observation-cover > span:first-child {
+    font-size: 0.8rem;
+  }
+  .observation-cover strong {
+    font-size: 1.6rem;
+    font-family: var(--font-display);
+  }
+  .play {
+    align-self: flex-end;
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--color-brand-primary);
+    color: var(--color-on-brand);
+  }
+  .observation-copy {
+    padding: 1.2rem;
+  }
+  .observation-copy h3 {
+    font: 700 1.2rem/1.5 var(--font-display);
+    margin: 0.4rem 0 0.75rem;
+  }
+  .observation-copy p,
+  .observation-copy > span {
+    margin: 0;
+    color: var(--color-ink-muted);
+    font-size: 0.8rem;
+  }
+</style>

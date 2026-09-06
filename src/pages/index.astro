@@ -1,6 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { observationClips } from "../lib/videos/expansion";
+import ObservationCard from "../components/atlas/ObservationCard.astro";
 import CaseCard from "../components/atlas/CaseCard.astro";
 import InjuryCard from "../components/atlas/InjuryCard.astro";
 import { INJURIES } from "../data/taxonomy/injuries";
@@ -16,12 +18,25 @@ const featured = videoFirstCases(permitted).filter(hasPublicEmbed);
 const availableInjuries = INJURIES.filter((injury) =>
   featured.some((record) => record.injury.code === injury.code),
 );
-const sports = [...new Set(featured.map((record) => record.sport.code))];
+const clips = observationClips();
+const videoCount = featured.length + clips.length;
+const sports = [
+  ...new Map([
+    ...featured.map(
+      (record) =>
+        [
+          record.sport.code,
+          findSport(record.sport.code)?.labelZh ?? record.sport.code,
+        ] as const,
+    ),
+    ...clips.map((c) => [c.sport, c.sport] as const),
+  ]).entries(),
+];
 ---
 
 <BaseLayout
   title="運動傷害影片圖鑑｜看懂受傷，了解回場"
-  description="從球員受傷影片，了解當下怎麼做、何時就醫與回場時間。"
+  description="從運動受傷影片，了解當下怎麼做、何時就醫與回場時間。"
   artifactRecordIds={permitted.map((record) => record.id)}
   artifactDigest={computeRenderedSetDigest(permitted)}
 >
@@ -36,12 +51,12 @@ const sports = [...new Set(featured.map((record) => record.sport.code))];
     <div class="intro-actions">
       <a class="hero-cta" href="#videos-heading"
         >觀看受傷影片 <span aria-hidden="true">↓</span></a
-      ><span class="intro-count">{featured.length} 支影片 · 點選後播放</span>
+      ><span class="intro-count">{videoCount} 支影片 · 點選後播放</span>
     </div>
   </header>
   <section aria-labelledby="videos-heading" data-featured-videos>
     <div class="section-top">
-      <h2 id="videos-heading">先看影片</h2><p>點選球員，進入案例播放</p>
+      <h2 id="videos-heading">先看影片</h2><p>選擇影片，了解受傷與回場</p>
     </div>
     <form class="video-filters" data-video-filters hidden>
       <label
@@ -50,28 +65,30 @@ const sports = [...new Set(featured.map((record) => record.sport.code))];
             availableInjuries.map((injury) => (
               <option value={injury.code}>{injury.labelZh}</option>
             ))
+          }{
+            clips.length > 0 && (
+              <option value="observation">受傷動作觀察（未分類診斷）</option>
+            )
           }</select
         ></label
       >
       <label
         >運動項目<select aria-label="運動項目" name="sport"
           ><option value="">全部運動</option>{
-            sports.map((code) => (
-              <option value={code}>{findSport(code)?.labelZh ?? code}</option>
-            ))
+            sports.map(([code, label]) => <option value={code}>{label}</option>)
           }</select
         ></label
       >
       <label class="keyword-label"
-        >找球員<input
+        >找影片<input
           name="keyword"
           type="search"
-          placeholder="球員或球隊"
+          placeholder="選手、運動或賽事"
         /></label
       >
     </form>
     <p class="filter-result" data-video-result aria-live="polite">
-      {featured.length} 支影片
+      {videoCount} 支影片
     </p>
     <ol class="video-grid">
       {
@@ -80,7 +97,7 @@ const sports = [...new Set(featured.map((record) => record.sport.code))];
             data-featured-card
             data-injury={record.injury.code}
             data-sport={record.sport.code}
-            data-search={`${record.athlete.name} ${record.teamAtEvent.name}`}
+            data-search={`${record.athlete.name} ${record.teamAtEvent.name} ${findSport(record.sport.code)?.labelZh ?? record.sport.code} ${record.eventDate} ${record.league.code} ${record.competition.code}`}
           >
             <CaseCard
               record={record}
@@ -88,6 +105,18 @@ const sports = [...new Set(featured.map((record) => record.sport.code))];
               compact
               priority={index === 0}
             />
+          </li>
+        ))
+      }
+      {
+        clips.map((clip) => (
+          <li
+            data-featured-card
+            data-injury="observation"
+            data-sport={clip.sport}
+            data-search={`${clip.name} ${clip.sport} ${clip.event} ${clip.bodyPart}`}
+          >
+            <ObservationCard clip={clip} />
           </li>
         ))
       }
