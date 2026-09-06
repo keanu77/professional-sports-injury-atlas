@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "decision": "decision-32",
+  "checkedAt": "2026-09-06",
+  "entries": [
+    {
+      "slug": "kyle-schwarber-2016-knee",
+      "eventDate": "2016-04-07",
+      "injury": "MLB 確認左膝前十字與外側副韌帶撕裂，並有左踝扭傷；之後接受膝部手術。",
+      "returnDate": "2016-10-22",
+      "context": "回場採秋季聯盟首場比賽，早於世界大賽復出；指定打擊出賽不等於已恢復外野守備。",
+      "videoUrl": "https://www.youtube.com/watch?v=9JoITljMoU0",
+      "sources": [
+        {
+          "title": "MLB：Schwarber 左膝韌帶傷勢",
+          "url": "https://www.mlb.com/news/cubs-kyle-schwarber-goes-on-disabled-list-c171161510",
+          "publishedAt": "2016-04-08"
+        },
+        {
+          "title": "MLB：Schwarber 手術紀錄",
+          "url": "https://www.mlb.com/news/cubs-kyle-scwarber-has-successful-surgery-c173239022",
+          "publishedAt": "2016-04-19"
+        },
+        {
+          "title": "MLB：Schwarber 秋季聯盟首場出賽",
+          "url": "https://www.mlb.com/news/kyle-schwarber-could-return-for-world-series-c206863450",
+          "publishedAt": "2016-10-22"
+        }
+      ],
+      "returnSummary": "2016-10-22 先在亞利桑那秋季聯盟擔任指定打擊。"
+    },
+    {
+      "slug": "bryce-harper-2017-knee",
+      "eventDate": "2017-08-12",
+      "injury": "MLB 報導左膝過度伸展、骨挫傷及小腿拉傷；MRI 未發現韌帶或肌腱損傷。",
+      "returnDate": "2017-09-26",
+      "context": "回場採實際對外比賽；復出首戰出賽後仍由球隊逐步增加比賽負荷。",
+      "videoUrl": "https://www.youtube.com/watch?v=5STUOgvQWgQ",
+      "sources": [
+        {
+          "title": "MLB：Harper 膝部 MRI 結果",
+          "url": "https://www.mlb.com/news/nationals-bryce-harper-has-bone-bruise-c248179458",
+          "publishedAt": "2017-08-13"
+        },
+        {
+          "title": "MLB：Harper 傷後首次復出賽報",
+          "url": "https://www.mlb.com/news/nationals-reinstate-bryce-harper-from-dl-c256195038",
+          "publishedAt": "2017-09-26"
+        }
+      ],
+      "returnSummary": "2017-09-26 對費城人恢復大聯盟出賽。"
+    },
+    {
+      "slug": "dustin-fowler-2017-patellar-tendon",
+      "eventDate": "2017-06-29",
+      "injury": "MLB 確認右膝髕腱開放性斷裂，需接受手術。",
+      "returnDate": "2018-02-25",
+      "context": "回場採春訓實際出賽，早於後來的小聯盟例行賽與大聯盟回歸。",
+      "videoUrl": "https://www.youtube.com/watch?v=GfnIhZIzIE8",
+      "sources": [
+        {
+          "title": "MLB：Fowler 大聯盟初登場傷勢",
+          "url": "https://www.mlb.com/news/dustin-fowler-injured-in-first-inning-of-debut-c239610036",
+          "publishedAt": "2017-06-30"
+        },
+        {
+          "title": "MLB：Fowler 傷後首場春訓賽報",
+          "url": "https://www.mlb.com/news/dustin-fowler-back-in-game-action-for-a-s-c267212032",
+          "publishedAt": "2018-02-25"
+        }
+      ],
+      "returnSummary": "2018-02-25 代表運動家於春訓對皇家恢復出賽。"
+    },
+    {
+      "slug": "adam-eaton-2017-knee",
+      "eventDate": "2017-04-28",
+      "injury": "國民確認左膝前十字韌帶與半月板撕裂，另有高位踝扭傷；之後接受膝部手術。",
+      "returnDate": null,
+      "returnSummary": "2018-03-17 重返大聯盟春訓；此前已參加小聯盟熱身賽，最早日期未確認。",
+      "context": "最早小聯盟熱身賽的確切日期未確認，因此不計算離場天數；3 月 17 日是之後的大聯盟春訓紀錄。",
+      "videoUrl": "https://www.youtube.com/watch?v=J1iIgGSiSFc",
+      "sources": [
+        {
+          "title": "MLB：Eaton 左膝與踝部傷勢",
+          "url": "https://www.mlb.com/news/nats-adam-eaton-talks-acl-injury-recovery-c227412888",
+          "publishedAt": "2017-04-30"
+        },
+        {
+          "title": "MLB：Eaton 手術與受傷日期",
+          "url": "https://www.mlb.com/news/adam-eaton-will-need-6-9-months-to-rehab-knee/c-229427320",
+          "publishedAt": "2017-05-10"
+        },
+        {
+          "title": "MLB：Eaton 先前已參加小聯盟熱身賽",
+          "url": "https://www.mlb.com/news/adam-eaton-near-return-from-left-knee-injury-c268433120",
+          "publishedAt": "2018-03-11"
+        },
+        {
+          "title": "MLB：Eaton 大聯盟春訓首場賽報",
+          "url": "https://www.mlb.com/news/nationals-adam-eaton-homers-in-2018-debut-c268948342",
+          "publishedAt": "2018-03-17"
+        }
+      ]
+    },
+    {
+      "slug": "chris-bassitt-2021-face",
+      "eventDate": "2021-08-17",
+      "injury": "球團確認右側顴骨區移位性骨折，並接受手術。",
+      "returnDate": "2021-09-23",
+      "returnSummary": "2021-09-23 對水手先發，完成三局投球。",
+      "context": "傷後先完成牛棚與模擬賽；回場日期採實際對戰比賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=8rQjyuPU_gM",
+      "sources": [
+        {
+          "title": "MLB：Bassitt 臉部骨折公告",
+          "url": "https://www.mlb.com/news/chris-bassitt-hit-in-face-with-line-drive",
+          "publishedAt": "2021-08-18"
+        },
+        {
+          "title": "MLB：Bassitt 傷後實際登板賽報",
+          "url": "https://www.mlb.com/news/chris-bassitt-sharp-in-return-but-a-s-wild-card-hopes-dim",
+          "publishedAt": "2021-09-24"
+        },
+        {
+          "title": "MLB：Bassitt 復出前模擬賽紀錄",
+          "url": "https://www.mlb.com/news/chris-bassitt-to-return-for-athletics-on-thursday",
+          "publishedAt": "2021-09-22"
+        }
+      ]
+    },
+    {
+      "slug": "alex-cobb-2013-concussion",
+      "eventDate": "2013-06-15",
+      "injury": "MLB 報導確認腦震盪。",
+      "returnDate": "2013-07-23",
+      "returnSummary": "2013-07-23 於 Class A Charlotte 開始復健賽登板。",
+      "context": "首場復健賽僅投兩球，便因手指水泡提前退場。",
+      "videoUrl": "https://www.youtube.com/watch?v=ggGrmIf-SQE",
+      "sources": [
+        {
+          "title": "MLB：Cobb 腦震盪診斷",
+          "url": "https://www.mlb.com/news/alex-cobb-hit-in-head-by-liner-has-mild-concussion/c-50727980",
+          "publishedAt": "2013-06-15"
+        },
+        {
+          "title": "MLB：Cobb 首場復健賽當日紀錄",
+          "url": "https://www.mlb.com/news/worth-noting/c-54499874",
+          "publishedAt": "2013-07-23"
+        },
+        {
+          "title": "MLB：Cobb 7 月 23 日復健賽紀錄",
+          "url": "https://www.mlb.com/news/rays-right-hander-alex-cobb-slated-to-pitch-simulated-game-tuesday/c-55178332",
+          "publishedAt": "2013-07-29"
+        },
+        {
+          "title": "MLB：Cobb 生涯與復健賽紀錄",
+          "url": "https://www.mlb.com/player/alex-cobb-502171",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "giancarlo-stanton-2014-face",
+      "eventDate": "2014-09-11",
+      "injury": "MLB 報導確認臉部多處骨折與牙齒損傷。",
+      "returnDate": "2015-03-05",
+      "returnSummary": "2015-03-05 於春訓對紅雀出賽。",
+      "context": "回場日期採對外春訓賽；2 月底隊內模擬賽不計入。",
+      "videoUrl": "https://www.youtube.com/watch?v=W5Bg3oaHI8I",
+      "sources": [
+        {
+          "title": "MLB：Stanton 臉部與牙齒傷勢",
+          "url": "https://www.mlb.com/news/improving-giancarlo-stanton-heads-home-major-surgery-unlikely-for-marlins-slugger/c-94340404",
+          "publishedAt": "2014-09-12"
+        },
+        {
+          "title": "CBS／AP：Stanton 春訓復出賽報",
+          "url": "https://www.cbsnews.com/miami/news/marlins-giancarlo-stanton-pleased-with-first-at-bats/",
+          "publishedAt": "2015-03-05"
+        },
+        {
+          "title": "MLB：Stanton 先前隊內模擬賽",
+          "url": "https://www.mlb.com/news/giancarlo-stanton-stays-in-after-hit-by-pitch-in-marlins-first-sim-game/c-110729650",
+          "publishedAt": "2015-02-28"
+        },
+        {
+          "title": "MLB：Stanton 未參加 3 月 3 日大學交流賽",
+          "url": "https://www.mlb.com/news/marlins-opt-to-hold-giancarlo-stanton-out-of-exhibition-against-university-of-miami/c-111007996",
+          "publishedAt": "2015-03-03"
+        },
+        {
+          "title": "MLB 官方資料：Stanton 2015 春訓逐場紀錄",
+          "url": "https://statsapi.mlb.com/api/v1/people/519317/stats?stats=gameLog&group=hitting&season=2015&gameType=S",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "charlie-morton-2021-fibula",
+      "eventDate": "2021-10-26",
+      "injury": "MLB 報導確認右側腓骨骨折。",
+      "returnDate": "2022-03-27",
+      "returnSummary": "2022-03-27 於春訓對光芒先發。",
+      "context": "回場日期採對外春訓賽，先前打擊練習與模擬賽不計入。",
+      "videoUrl": "https://www.youtube.com/watch?v=2UZJNvs7G_o",
+      "sources": [
+        {
+          "title": "MLB：Morton 世界大賽骨折傷勢",
+          "url": "https://www.mlb.com/news/charlie-morton-exits-world-series-game-1",
+          "publishedAt": "2021-10-28"
+        },
+        {
+          "title": "MLB：Morton 春訓首次登板賽報",
+          "url": "https://www.mlb.com/news/charlie-morton-max-fried-battle-for-braves-opening-day-start",
+          "publishedAt": "2022-03-27"
+        },
+        {
+          "title": "MLB 官方資料：Morton 2022 春訓逐場紀錄",
+          "url": "https://statsapi.mlb.com/api/v1/people/450203/stats?stats=gameLog&group=pitching&season=2022&gameType=S",
+          "publishedAt": null
+        }
+      ]
+    }
+  ]
+}

@@ -2,20 +2,54 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="隱私說明｜運動傷害影片圖鑑">
-  <h1>隱私說明</h1>
-  <p>本站提供運動傷害衛教，沒有會員註冊，也不要求填寫姓名或健康資料。</p>
-  <h2>影片播放</h2>
+<BaseLayout
+  title="隱私與播放設定｜運動傷害影片圖鑑"
+  description="瀏覽偏好、YouTube 影片播放與網站託管的資料處理說明。"
+>
+  <h1>隱私與播放設定</h1>
   <p>
-    點選載入播放器後，瀏覽器會連線至 YouTube。播放過程依 YouTube 與 Google
-    的隱私政策處理資料；未點選前，本站不載入 YouTube 播放器。
+    本站不提供會員註冊，也不要求填寫姓名或健康資料。網站本身未加入廣告追蹤或訪客分析程式。
   </p>
-  <h2>瀏覽偏好</h2>
-  <p>字體大小與深色模式儲存在你的瀏覽器。本站不使用廣告追蹤或網站分析工具。</p>
-  <h2>網站託管</h2>
-  <p>
-    公開網站由 Cloudflare
-    提供連線與靜態檔案服務。服務商可能為維運與安全處理連線資訊。
-  </p>
+  <section aria-labelledby="playback-heading">
+    <h2 id="playback-heading">點選後才連線到 YouTube</h2>
+    <p>
+      影片封面由本站提供。未點選「載入 YouTube 播放器」前，不載入 YouTube
+      播放器；點選後，瀏覽器才會連線到 YouTube 及其播放服務。
+    </p>
+    <p>
+      本站採用 YouTube
+      的隱私加強保護模式，但不代表播放時完全不傳送資料。YouTube／Google
+      仍可能處理 IP 位址、裝置與播放相關資訊，依其<a
+        href="https://policies.google.com/privacy?hl=zh-TW">隱私權政策</a
+      >辦理。模式說明可見<a
+        href="https://support.google.com/youtube/answer/171780?hl=zh-Hant"
+        >YouTube 官方說明</a
+      >。
+    </p>
+    <p>
+      你可以只閱讀文字而不載入影片。若選擇「觀看原始影片」，會離開本站，改由該平台的設定與政策適用。
+    </p>
+  </section>
+  <section aria-labelledby="preferences-heading">
+    <h2 id="preferences-heading">字體與深色模式</h2>
+    <p>
+      字體大小與深色模式只儲存在你使用的瀏覽器，不會因這些設定而傳送個人資料。清除本站的瀏覽器網站資料，即可移除已儲存的偏好。
+    </p>
+  </section>
+  <section aria-labelledby="hosting-heading">
+    <h2 id="hosting-heading">網站託管與外部連結</h2>
+    <p>
+      本站由 Cloudflare
+      提供網站託管與安全服務。為傳送頁面、維運及防護，服務商可能處理 IP
+      位址、裝置或連線資訊，詳見<a
+        href="https://www.cloudflare.com/privacypolicy/">Cloudflare 隱私政策</a
+      >。
+    </p>
+    <p>
+      前往新聞來源、原始影片或吳易澄醫師網站後，適用各網站的隱私說明。若透過主站聯絡表單提供資訊，也由主站的<a
+        href="https://sportsmedicine.tw/privacy/">隱私政策</a
+      >說明處理方式。
+    </p>
+  </section>
   <p>更新日期：2026 年 9 月 6 日。</p>
 </BaseLayout>

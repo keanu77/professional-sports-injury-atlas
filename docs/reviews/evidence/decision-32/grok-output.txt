@@ -1,0 +1,229 @@
+我會先讀取研究流程相關技能，再只做公開網頁查證，找出這六起 MLB 受傷影片與「第一次實際出賽」的原始報導。這是公開新聞查證，不是臨床文獻回顧。接下來會平行搜尋這六起事件的官方影片、診斷與第一次實際出賽。受傷診斷已有線索；接著要核對第一次實際出賽，並找出 MLB 官方或 YouTube 影片。還差官方影片與幾場「實際出賽」日期，接著會打開原始報導頁面核對。這是公開新聞查證，不是臨床文獻回顧。以下只列**已核對到「實際出賽」**的來源；「預計回歸／模擬賽／live BP」不計入首次出賽。
+
+---
+
+# MLB 六起頭部／臉部／下肢受傷：影片、診斷與第一次實際出賽
+
+**查證日期：** 2026-09-06  
+**規則：** 只採公開網站；不把預定回歸當成已出賽；小聯盟復健賽／春訓熱身賽若早於 MLB 正規賽，以較早那場為「第一次競技出賽」。
+
+**四則最完整：** Stanton、Cobb、Harper、Morton  
+**兩則備選：** Bassitt、Chapman
+
+---
+
+## 四則最完整個案
+
+### 1. Giancarlo Stanton｜2014-09-11 臉部遭觸身球
+
+| 項目 | 查證結果 |
+|---|---|
+| **受傷日期** | **2014-09-11**（週四），Miller Park，馬林魚 vs 釀酒人，約第 5 局 |
+| **確認傷勢** | 多處顏面骨折（含眼眶骨／orbital fracture）、牙齒損傷、臉部撕裂需縫合。球隊當時表示**預期不需手術**；2014 球季其餘賽事停賽。 |
+| **影片** | MLB 官方 YouTube（受傷當下、擔架離場）：https://www.youtube.com/watch?v=W5Bg3oaHI8I （上傳 2014-09-12；頻道 MLB） |
+| **第一次實際競技出賽** | **2015-03-05**，春訓熱身賽 vs 紅雀（Jupiter）。0-for-2，面對 Carlos Martínez；這是 2014-09-11 後**第一場有官方記分的比賽**。 |
+| **之後的 MLB 正規賽** | 2015 開季（本次未逐場核對 Opening Day 先發名單；春訓 3/5 已是更早的競技出賽）。 |
+
+**診斷來源**
+
+- CBS Sports，2014-09-11：「Per the Marlins, Stanton… was found to have facial lacerations (which required stitches), **multiple facial fractures and dental damage**.」  
+  https://www.cbssports.com/mlb/news/giancarlo-stanton-takes-pitch-to-face-suffers-cuts-fractures-dental-damage/
+- MLB.com，Adam McCalvy，2014-09-12：「suffered **multiple facial fractures, dental damage and a laceration that required stitches**」  
+  https://www.mlb.com/news/as-tempers-cool-marlins-brewers-show-concern-for-giancarlo-stanton/c-94315898
+- NBC Sports 轉述 Joe Frisaro，2014-09-18：「Stanton **did sustain an orbital fracture**. But his vision was never impaired.」  
+  https://www.nbcsports.com/mlb/news/giancarlo-stanton-gives-update-on-his-recovery
+
+**回歸來源（已完成出賽，非預定）**
+
+- AP／San Diego Union-Tribune，2015-03-05：「Stanton went **0 for 2 in his first game since being hit in the face** by Mike Fiers’ fastball in September.」  
+  https://www.sandiegouniontribune.com/2015/03/05/marlins-giancarlo-stanton-pleased-with-first-at-bats/
+- ESPN，2015-03-05：「**first game since** being hit in the face… after the **4-1 loss to the St. Louis Cardinals**.」  
+  https://www.espn.com/mlb/story/_/id/12429939/giancarlo-stanton-miami-marlins-pleased-first-bats
+
+**不確定：** SB Nation（2014-09-17）曾寫「maybe get in some instructional league time」，**未找到他實際打了教學聯盟比賽的獨立記分／賽後稿**。目前可核對的最早競技出賽仍是 **2015-03-05 春訓**。2 月底 live BP **不算比賽**。
+
+---
+
+### 2. Alex Cobb｜2013-06-15 頭部遭強襲球
+
+| 項目 | 查證結果 |
+|---|---|
+| **受傷日期** | **2013-06-15**（週六），Tropicana Field，光芒 vs 皇家，第 5 局。Eric Hosmer 強襲球，測得約 **102.4 mph**，打中右耳附近。 |
+| **確認傷勢** | 球隊：**輕度腦震盪（mild concussion）**；意識未喪失；其餘掃描正常。後續有噁心、頭痛、眩暈／內耳積液。 |
+| **影片** | MLB 官方 YouTube：https://www.youtube.com/watch?v=ggGrmIf-SQE （標題 *KC@TB: Cobb hit in head by liner, leaves on stretcher*；上傳 2013-06-17） |
+| **第一次實際競技出賽** | **2013-07-23**，1A Charlotte Stone Crabs **復健先發**；因右手食指水泡，**只投 2 球即退場**。這仍是正式比賽出賽，不是模擬賽。 |
+| **第二次復健** | **2013-08-03**，同隊 Stone Crabs，投 4 局。 |
+| **MLB 回歸（已完成）** | **2013-08-15** vs 水手，Tropicana Field，5 局 1 失分。 |
+
+**診斷來源**
+
+- MLB.com，Adam Berry，2013-06-15：「Cobb was only diagnosed with a **mild concussion**, didn’t lose consciousness and all his tests came back normal」  
+  https://www.mlb.com/news/alex-cobb-hit-in-head-by-liner-has-mild-concussion/c-50727980
+- MLB.com，2013-06-16：出院並進 7 日 concussions DL。  
+  https://www.mlb.com/news/cobb-leaves-hospital-placed-on-seven-day-dl/c-50802428
+
+**回歸來源**
+
+- DRaysBay，2013-07-24（引 Tampa Bay Times / Joe Smith）：「Alex Cobb was **pulled from his rehab start in Port Charlotte after just two pitches** with a blister」  
+  https://www.draysbay.com/2013/7/24/4550906/the-rays-tank-alex-cobb-pulled-from-rehab-start-with-blister
+- Herald-Tribune，2013-08-03：「A blister on his right index finger **cut short his first rehab start for the Stone Crabs on July 23 after just two pitches**.」  
+  https://www.heraldtribune.com/story/news/2013/08/04/cobb-goes-four-innings-in-rehab-start-for-stone-crabs/29191289007/
+- MLB.com，Sam Strong，2013-08-15：「**his first outing since** being struck in the head… on June 15」——此句指 **MLB 先發**，不是生涯第一次復出；第一次競技出賽仍是 7/23 小聯盟。  
+  https://www.mlb.com/news/myers-ensures-cobb-has-winning-return/c-57130472
+
+**不確定：** 7/23 對戰對手隊名，本次未打開當天 box score；「投了 2 球後退場」有兩家當代報導交叉支持。
+
+---
+
+### 3. Bryce Harper｜2022-06-25 左拇指骨折
+
+| 項目 | 查證結果 |
+|---|---|
+| **受傷日期** | **2022-06-25**（週六），Petco Park，費城人 vs 教士，第 4 局。Blake Snell 約 **97 mph** 快速球打中左手／左拇指。 |
+| **確認傷勢** | **左拇指骨折**；**2022-06-29** 手術，置入鋼針（Dr. Pedro Beredjiklian）。 |
+| **影片** | MLB.com 官方剪輯：https://www.mlb.com/video/harper-exits-after-hbp （2022-06-25）<br>YouTube 完整播報拆解（非 MLB 頻道，但畫面為比賽轉播）：https://www.youtube.com/watch?v=a_CvQxM5gQw （Jomboy Media）<br>**未找到 MLB 官方 YouTube 頻道同名上傳**（不確定是否已下架）。 |
+| **第一次實際競技出賽** | **2022-08-23**，3A Lehigh Valley IronPigs vs Gwinnett，DH，2 轟 2 保送。 |
+| **MLB 回歸（已完成）** | **2022-08-26** vs 海盜，Citizens Bank Park，DH，首打席兩分安打。原計畫復健打到週六，因 8/23–8/24 表現提前召回。 |
+
+**診斷來源**
+
+- AP，2022-06-26：「Harper will be sidelined indefinitely with a **broken left thumb** after he was hit by a pitch from Blake Snell」  
+  https://apnews.com/article/mlb-sports-san-diego-padres-philadelphia-phillies-92761e672b3db5c5e6ec97fec2549b1b
+- MLB.com，Todd Zolecki，2022-06-29：「Bryce Harper had surgery Wednesday morning to repair his **broken left thumb**.」  
+  https://www.mlb.com/news/bryce-harper-thumb-injury-update
+
+**回歸來源**
+
+- ESPN，2022-08-23：「Harper **homered to right-center field in his first at-bat**, then went opposite field for a three-run shot… **to begin his rehabilitation assignment**」  
+  https://www.espn.com/mlb/story/_/id/34449615/philadelphia-phillies-star-bryce-harper-homers-first-bat-rehabilitation-assignment
+- AP，2022-08-27：「Harper hit a two-run single in his first at-bat after a **52-game absence**… **Friday, Aug. 26, 2022**」  
+  https://apnews.com/article/mlb-sports-pittsburgh-philadelphia-baseball-c5b507d91d7531f1489b786b0ba74a6a
+- Baseball-Reference box：https://www.baseball-reference.com/boxes/PHI/PHI202208260.shtml
+
+**注意：** 8 月中 Dave Dombrowski 曾說「9/1 是合理目標」——那是**預定／預估**，實際復健是 **8/23**，MLB 是 **8/26**。
+
+---
+
+### 4. Charlie Morton｜2021-10-26 右腓骨骨折
+
+| 項目 | 查證結果 |
+|---|---|
+| **受傷日期** | **2021-10-26**（週二），世界大賽 G1，太空人主場。第 2 局 Yuli Gurriel 約 **102.4 mph** 強襲球打中右小腿；他續投後於第 3 局退場。 |
+| **確認傷勢** | 球隊 X 光：**右腓骨骨折（right fibula fracture）**；系列賽其餘場次報銷；後接受手術（鋼板／螺絲）。 |
+| **影片** | MLB 官方 YouTube：https://www.youtube.com/watch?v=2UZJNvs7G_o （*Braves' Charlie Morton gets 3 outs ON A BROKEN LEG…*）<br>MLB.com：https://www.mlb.com/video/morton-exits-with-ankle-injury |
+| **第一次實際競技出賽** | **2022-03-27**，春訓 Grapefruit League vs 光芒（Charlotte Sports Park）。**這是他的 Grapefruit League debut**；4.2 局無安打無失分。此前只有 live BP／模擬賽／後場，**不算正式比賽**。 |
+| **MLB 正規賽回歸** | **2022-04-08**（週五）vs 紅人，Truist Park，5.1 局。開幕戰 4/7 由 Max Fried 先發。 |
+
+**診斷來源**
+
+- ESPN，Alden Gonzalez，2021-10-26：「X-rays… revealed a **fractured right fibula**.」  
+  https://www.espn.com/mlb/story/_/id/32482284/atlanta-braves-charlie-morton-fractures-fibula-game-1-world-series-houston-astros
+- AP，2021-10-27：「Morton’s **right fibula was fractured** by Yuli Gurriel’s one-hop screamer」  
+  https://apnews.com/article/mlb-sports-atlanta-braves-houston-baseball-ca7f7fd95429a7d9402b6e95169631f2
+- MLB Trade Rumors，2021-10-29：「Morton **underwent surgery** to repair the fracture… expected to be ready for Spring Training 2022.」（引 Ken Rosenthal）  
+  https://www.mlbtraderumors.com/2021/10/charlie-morton-suffers-fibula-fracture.html
+
+**回歸來源**
+
+- MLB.com，Mark Bowman，2022-03-27：「As Morton pitched **4 2/3 hitless and scoreless innings** in a 4-1 loss to the Rays on Sunday… **which was his Grapefruit League debut**.」  
+  https://www.mlb.com/news/charlie-morton-max-fried-battle-for-braves-opening-day-start
+- MLB.com，2022-04-09（報導週五夜賽）：「A little more than five months after fracturing his right leg… Morton guided the Braves toward a **7-6 win over the Reds**」  
+  https://www.mlb.com/news/charlie-morton-sharp-first-start-since-broken-leg
+
+**不確定：** 骨折是發生在 Gurriel 那球，或是後來某球才完全裂開——紐約時報與 MLB.com 都標明**時間點有爭議**；診斷本身（右腓骨骨折、系列賽報銷）無爭議。2022 春訓因勞資停擺縮短，他只打了兩場正式熱身賽。
+
+---
+
+## 兩則備選
+
+### 備選 A. Chris Bassitt｜2021-08-17 臉部遭強襲球
+
+| 項目 | 查證結果 |
+|---|---|
+| **受傷日期** | **2021-08-17**（週二），Guaranteed Rate Field，運動家 vs 白襪，第 2 局。Brian Goodwin 強襲球約 **100.1 mph**。 |
+| **確認傷勢** | 球隊聲明：**右側頰骨移位性三腳架骨折（displaced tripod fracture）**，需手術；兩處臉部撕裂縫合；視力檢查正常、眼眶無額外損傷、頭部 CT 無進一步傷害。**2021-08-24** Rush Medical Center 手術成功。 |
+| **影片** | MLB.com 官方：https://www.mlb.com/video/bassitt-hit-in-head-by-comebacker<br>地方台 YouTube（KTVU FOX 2）：https://www.youtube.com/watch?v=yMiau1urRuU<br>**未找到 MLB 官方 YouTube 頻道上傳**（故列備選）。 |
+| **第一次實際競技出賽** | **2021-09-23** vs 水手，Coliseum，MLB 先發 **3 局無失分**（48 球、4 K）。回歸前只有牛棚與 **Angel Stadium 模擬賽**——模擬賽**不算**競技出賽。**沒有小聯盟復健出賽紀錄**。 |
+
+**診斷來源**
+
+- Reuters，2021-08-18：引用球隊「diagnosed with a **displaced tripod fracture in his right cheek that will require surgery**… head CT scan revealed no further injury.」  
+  https://www.reuters.com/lifestyle/sports/athletics-chris-bassitt-sustains-fractured-cheek-line-drive-2021-08-18/
+- MLB 官方新聞稿，2021-08-24：手術成功，固定 tripod fracture。  
+  https://www.mlb.com/press-release/press-release-chris-bassitt-medical-update-for-aug-24
+- MLB Trade Rumors，2021-08-18：即時彙整球隊聲明。  
+  https://www.mlbtraderumors.com/2021/08/chris-bassitt-carted-off-field-after-being-struck-by-line-drive.html
+
+**回歸來源（已完成，非 9/22「將於週四復出」預告）**
+
+- Mercury News，Shayna Rubin，2021-09-23：「**For the first time since Aug. 17**, Bassitt took the mound to start a baseball game… **three innings pitched**, he allowed no runs, one hit and collected four strikeouts.」  
+  https://www.mercurynews.com/2021/09/23/as-chris-bassitt-defies-all-odds-in-miraculous-return-to-mound/
+
+**為何列備選：** 診斷與回歸都很硬，但 **YouTube 官方頻道缺片**；且沒有更早的小聯盟復健可對照。
+
+---
+
+### 備選 B. Aroldis Chapman｜2014-03-19 頭部／臉部遭強襲球
+
+| 項目 | 查證結果 |
+|---|---|
+| **受傷日期** | **2014-03-19**（週三夜），Surprise Stadium，春訓紅人 vs 皇家，第 6 局。Salvador Pérez 打回 Chapman 約 **99 mph** 快速球。比賽喊停。 |
+| **確認傷勢** | 左眼上方與鼻部骨折；撕裂／挫傷；意識未喪失。**2014-03-20** 手術，左眼上方置入金屬板。後續復出前有多次牛棚。 |
+| **影片** | 完整轉播（非 MLB 頻道）：https://www.youtube.com/watch?v=tRnAXr_CLYk<br>MLB 官方 YouTube FastCast（手術更新，**不是撞擊當下完整鏡頭**）：https://www.youtube.com/watch?v=tzXV5JhG0Sg<br>**未找到 MLB 官方 YouTube 的撞擊原片**（畫面過於血腥，可能從未上架或已下架）。 |
+| **第一次實際競技出賽** | **2014-05-01**，1A Dayton Dragons vs Lansing Lugnuts，**完美 1 局**（18 球、2 K，球速 101 mph）。這是 3/19 後第一場正式比賽。 |
+| **MLB 回歸（已完成）** | **2014-05-11** vs 落磯，第 9 局三上三下、救援成功（球速達 101–102 mph）。 |
+
+**診斷來源**
+
+- MLB.com，Mark Sheldon，2014-03-20：「tests indicated **fractures above his left eye and nose**.」  
+  https://www.mlb.com/news/reds-pitcher-aroldis-chapman-carried-off-on-stretcher-after-getting-hit-in-head/c-69669716
+- MLB.com，2014-03-20（手術）：「**A metal plate was placed on the bone above Chapman’s eye**… also suffered a **nose fracture**.」  
+  https://www.mlb.com/news/cincinnati-reds-announce-aroldis-chapman-could-pitch-in-game-conditions-in-4-6-weeks/c-69700372
+- USA Today，C. Trent Rosecrans，2014-03-19／更新 2014-03-20。  
+  https://www.usatoday.com/story/sports/mlb/2014/03/19/aroldis-chapman-leaves-game-after-being-hit-in-head-by-line-drive-game-cancelled/6638029/
+
+**回歸來源**
+
+- MiLB.com，Danny Wild，2014-05-01：「Rehabbing Reds closer Aroldis Chapman hit 101 mph… **sidelined since March 19**… struck out Lansing’s D.J. Davis and Jason Leblebijian」  
+  https://www.milb.com/news/gcs-74005414
+- USA Today，2014-05-01：「**Pitching in his first game since** being hit in the face… perfect inning for the Dragons.」  
+  https://www.usatoday.com/story/sports/mlb/2014/05/01/aroldis-chapman-happy-with-first-rehab-start/8589759/
+- Sporting News／AP，2014-05-12：「**first major league appearance since** being hit above the eye… striking out the side… **4-1 victory over the Colorado Rockies**」——對應 **2014-05-11（週日）**。  
+  https://www.sportingnews.com/us/mlb/news/aroldis-chapman-return-reds-rockies-score-results-highlights-pitcher-cincinnati-colorado-line-drive-hit/iebzgf1z1jie1qvnjf17fl5xq
+
+**不確定：** FastCast 旁白提到 mild concussion；**當日 MLB.com 主稿以顏面骨折為主**，腦震盪細節不如 Cobb 那樣由球隊當日新聞稿寫死。5/11 是 MLB 第一場；5/1 Dayton 才是第一次競技出賽。MLB.com 5/8 稿寫「could be activated Friday」是**預定**，實際 MLB 出賽是週日 5/11。
+
+---
+
+## 對照總表
+
+| 球員 | 受傷日 | 確認傷勢 | 第一次實際出賽 | 層級 | MLB 回歸 |
+|---|---|---|---|---|---|
+| **Stanton** | 2014-09-11 | 多處顏面骨折（含眼眶）、牙齒、撕裂 | 2015-03-05 | 春訓熱身賽 vs 紅雀 | 2015 球季（春訓已更早） |
+| **Cobb** | 2013-06-15 | 輕度腦震盪 | **2013-07-23** | 1A Stone Crabs（僅 2 球） | 2013-08-15 vs 水手 |
+| **Harper** | 2022-06-25 | 左拇指骨折＋6/29 手術 | **2022-08-23** | 3A IronPigs | 2022-08-26 vs 海盜 |
+| **Morton** | 2021-10-26 | 右腓骨骨折＋手術 | **2022-03-27** | 春訓 vs 光芒 | 2022-04-08 vs 紅人 |
+| **Bassitt**（備選） | 2021-08-17 | 右頰 tripod 骨折＋8/24 手術 | **2021-09-23** | MLB vs 水手（無小聯盟復健） | 即 9/23 |
+| **Chapman**（備選） | 2014-03-19 | 左眼上方＋鼻骨折＋鋼板 | **2014-05-01** | 1A Dayton Dragons | 2014-05-11 vs 落磯 |
+
+---
+
+## 刻意排除、避免誤用
+
+- **模擬賽／live BP／牛棚**不算第一次出賽：Bassitt 在天使球場模擬賽、Morton 後場／live BP、Stanton 2 月底 live BP、Chapman 4 月牛棚。
+- **「將於某日復出」預告**不算：Bassitt 9/22 Melvin 宣布週四先發；Chapman 5/8「最快週五激活」；Harper 的 9/1 目標。
+- **Cobb 的 MLB.com 8/15 稿**寫 “first outing since June 15”——語境是 **大聯盟先發**，忽略了 7/23、8/03 小聯盟。
+- **Morton 世界大賽當夜「預期春訓歸隊」**只是預後，不是出賽。
+
+---
+
+## 影片完整度（由高到低）
+
+1. **Stanton** — MLB YouTube 原片，5.2M 觀看  
+2. **Cobb** — MLB YouTube 原片  
+3. **Morton** — MLB YouTube 原片  
+4. **Harper** — MLB.com 官方頁；YouTube 以轉播／Jomboy 為主  
+5. **Bassitt** — MLB.com 官方頁；YouTube 為地方台／球迷上傳  
+6. **Chapman** — 撞擊原片多為第三方轉播；MLB 官方頻道僅有手術 FastCast  
+
+若製作教材或簡報，**優先用 Stanton / Cobb / Morton 三則 MLB 頻道連結**；Harper、Bassitt 用 `mlb.com/video`；Chapman 需標明非官方頻道。

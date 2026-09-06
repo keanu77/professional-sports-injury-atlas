@@ -1,0 +1,90 @@
+{
+  "origin": "https://fd0194e6.sports-injury-atlas.pages.dev",
+  "checkedAt": "2026-09-06T10:13:36.612Z",
+  "results": [
+    {
+      "width": 390,
+      "path": "/source-policy/",
+      "h1": "影片來源與資料查核",
+      "overflow": false,
+      "cards": 0
+    },
+    {
+      "width": 390,
+      "path": "/credits-notices/",
+      "h1": "影片與圖片使用說明",
+      "overflow": false,
+      "cards": 0
+    },
+    {
+      "width": 390,
+      "path": "/privacy/",
+      "h1": "隱私與播放設定",
+      "overflow": false,
+      "cards": 0
+    },
+    {
+      "width": 390,
+      "path": "/about/",
+      "h1": "認識影片圖鑑",
+      "overflow": false,
+      "cards": 0
+    },
+    {
+      "width": 390,
+      "path": "/sports/baseball/",
+      "h1": "棒球受傷影片",
+      "overflow": false,
+      "cards": 15
+    },
+    {
+      "width": 390,
+      "path": "/videos/adam-eaton-2017-knee/",
+      "h1": "Adam Eaton",
+      "overflow": false,
+      "cards": 0
+    },
+    {
+      "width": 1440,
+      "path": "/source-policy/",
+      "h1": "影片來源與資料查核",
+      "overflow": false,
+      "cards": 0
+    },
+    {
+      "width": 1440,
+      "path": "/credits-notices/",
+      "h1": "影片與圖片使用說明",
+      "overflow": false,
+      "cards": 0
+    },
+    {
+      "width": 1440,
+      "path": "/privacy/",
+      "h1": "隱私與播放設定",
+      "overflow": false,
+      "cards": 0
+    },
+    {
+      "width": 1440,
+      "path": "/about/",
+      "h1": "認識影片圖鑑",
+      "overflow": false,
+      "cards": 0
+    },
+    {
+      "width": 1440,
+      "path": "/sports/baseball/",
+      "h1": "棒球受傷影片",
+      "overflow": false,
+      "cards": 15
+    },
+    {
+      "width": 1440,
+      "path": "/videos/adam-eaton-2017-knee/",
+      "h1": "Adam Eaton",
+      "overflow": false,
+      "cards": 0
+    }
+  ]
+}

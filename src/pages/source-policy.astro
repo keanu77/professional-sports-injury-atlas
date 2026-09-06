@@ -1,90 +1,57 @@
 ---
-/**
- * Source and evidence policy page. Documents the controlled source types,
- * independence rules, video rights posture, licensed static-photo posture,
- * and the retained observation-data rule in reader-facing language. Text only.
- */
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout
-  title="來源與證據政策｜運動傷害影片圖鑑"
-  description="本站的來源類型、獨立性規則、影片權利立場與時間碼規則。"
+  title="影片來源與資料查核｜運動傷害影片圖鑑"
+  description="如何挑選影片、確認傷勢，以及整理選手的實際回場紀錄。"
 >
-  <h1>來源與證據政策</h1>
-
-  <section aria-labelledby="types-heading">
-    <h2 id="types-heading">受控的來源類型</h2>
-    <ul>
-      <li>原始影片來源：只用於描述可見過程與審查追溯，永遠不支持診斷。</li>
-      <li>第一方診斷來源：球團或球員方的正式聲明，支持確認診斷與後續更新。</li>
-      <li>
-        二手診斷報導：具名媒體報導；經典案例在缺乏第一方來源時需要至少兩個獨立來源。
-      </li>
-      <li>賽事脈絡來源：比賽紀錄，確認球員、日期、對手與賽事。</li>
-      <li>教學文獻證據：專業筆記中每個主張的唯一允許證據類型。</li>
-    </ul>
-  </section>
-
-  <section aria-labelledby="independence-heading">
-    <h2 id="independence-heading">獨立性與可追溯性</h2>
+  <h1>影片來源與資料查核</h1>
+  <p>影片用來看受傷過程，公開資料用來了解傷勢與後續出賽。兩者會一起核對。</p>
+  <section aria-labelledby="selection-heading">
+    <h2 id="selection-heading">怎麼選影片</h2>
     <p>
-      每個來源都記錄發布者、獨立性群組與原始報導追溯欄位；轉載同一原始報導
-      的來源不能互相充當獨立佐證。每筆案例綁定不可變的來源批次 digest，內容
-      改變時必須重新驗證與重新審查。
+      不限運動項目或競賽等級，優先收錄能看見受傷過程、事件可辨認，且實際測試能在站內播放的
+      YouTube
+      影片。來源包括聯盟、媒體及其他上傳者；每頁保留發布者與原始影片連結。
+    </p>
+    <p>
+      部分長影片會從事件附近開始播放。影片與字幕由 YouTube
+      提供，字幕可能不完整或有誤，不能當作診斷依據。
     </p>
   </section>
-
-  <section aria-labelledby="video-heading">
-    <h2 id="video-heading">影片與權利立場</h2>
+  <section aria-labelledby="injury-heading">
+    <h2 id="injury-heading">傷勢怎麼確認</h2>
     <p>
-      本站不下載、不側錄、不備份任何比賽影片，只提供原始平台連結或保留 URL
-      的純文字引註。
-      站內播放器只在點擊後載入，並以實測可嵌入播放為收錄條件。字幕非必要，
-      每支影片會標示字幕狀態，並搭配文字說明。無法播放的來源則依來源政策
-      提供原始平台連結或純文字引註。影片封面使用對應 YouTube
-      影片的預設縮圖；點擊播放後才連線至
-      YouTube。本站不另擷取比賽畫面，也不使用獨立的球隊或聯盟標誌素材。
+      影片觀察只描述可辨認的動作。傷勢說明依球團或聯盟公告、選手公開說明及具名媒體報導整理，不從倒地姿勢或表情推定診斷。
+    </p>
+    <p>
+      同一新聞的轉載不算不同證據。初步報導與後續診斷不同時，會交代更新；資料不足或互有出入時，會標示尚未確認。
     </p>
   </section>
-
-  <section aria-labelledby="photo-heading">
-    <h2 id="photo-heading">歷史球員照片紀錄</h2>
+  <section aria-labelledby="return-heading">
+    <h2 id="return-heading">回場日期代表什麼</h2>
     <p>
-      目前影片封面使用 YouTube
-      預設縮圖，傷害分類配圖使用原創示意圖。以下保存過去人物照片的來源要求，供追溯。
+      回場紀錄以可確認的實際出賽為準，並標明復健賽、春訓、季前賽或正式賽事。恢復訓練、模擬賽與預計復出日期，會和實際出賽分開說明。
     </p>
     <p>
-      歷史版本曾使用 Wikimedia Commons 或 Flickr 來源頁對該作品明示 CC BY、CC
-      BY-SA、CC0，或公有領域／美國政府作品標示的靜態球員照片。每張照片仍須保留固定來源版本、原始檔事實、精確授權版本與連結、署名及逐檔通知，並證明照片事件不同於案例的受傷事件；保留全部權利、無授權標示、授權不明、NC／ND、錯誤作品，或傷害事件關係未解者一律不採用。
+      天數是受傷日至已確認回場日的日曆間隔，不是建議休養時間。若最早出賽日期無法確認，就不計算天數；已知的後續出賽仍可列作參考。
     </p>
     <p>
-      每次使用都在照片旁提供資產專屬連結，指向<a href="/credits-notices/"
-        >完整授權與說明</a
-      >；中央頁逐檔保留攝影者、作品標題供應狀態、精確授權與固定來源、變更說明、來源所附通知，以及適用時的
-      Adapter&apos;s License。CC BY-SA 照片只作一般 HTML／CSS 置放與 responsive
-      rendition，不得合進
-      OG、社群圖、案例卡、資訊圖或其他站方合成設計。每筆照片均明示非本案例受傷當下影像；照片中自然出現的球衣、場館或其他附帶標記不代表合作或背書。
-    </p>
-    <p>
-      現行照片政策不以拍攝場合、攝影者身分、帳號控制、自我發表或授權能力作為採用門檻。這項放寬不代表來源標示必然有效，也不構成著作權、肖像／人格權、場地、聯盟、球隊、契約、醫療、合法使用或公開發布的放行；持證攝影者可能無權授權、封閉練習可能受場地規範限制，且帳號持有者未必能追溯為拍攝者，這些殘餘風險仍明確保留。
+      選手恢復出賽不代表已完全康復。一般人的回場需要依傷勢、功能恢復及醫療評估決定，不能直接套用職業選手的天數。
     </p>
   </section>
-
-  <section aria-labelledby="observation-data-heading">
-    <h2 id="observation-data-heading">影片觀察資料</h2>
+  <section aria-labelledby="review-heading">
+    <h2 id="review-heading">查核與更新</h2>
     <p>
-      案例資料中既有的時間碼與觀察文字保留在受控資料與臨床核心 digest
-      中，作為歷史審查追溯；案例頁不再呈現這些資料。這些文字仍只描述可見內容，不做診斷推論。
+      本站使用 AI
+      輔助搜尋與整理，再核對原始報導、賽事紀錄及影片畫面；模型回答本身不作為證據。影片頁可展開查看資料來源與查核日期。
+    </p>
+    <p>
+      資料反映查核當時可取得的資訊，後續傷勢或播放設定仍可能改變。若發現錯誤或影片失效，請透過<a
+        href="https://sportsmedicine.tw/contact/">吳易澄醫師網站的聯絡頁</a
+      >提供本站頁面網址與相關來源。
     </p>
   </section>
-
-  <section aria-labelledby="evidence-heading">
-    <h2 id="evidence-heading">觀察與診斷的分界</h2>
-    <p>
-      可見機轉標籤是觀察分類，不是診斷。每筆案例都明確標示「畫面不能證明
-      什麼」，診斷確認狀態完全取決於外部具名來源，且與內部審查工作流程狀態
-      分開呈現。
-    </p>
-  </section>
+  <p>更新日期：2026 年 9 月 6 日。</p>
 </BaseLayout>

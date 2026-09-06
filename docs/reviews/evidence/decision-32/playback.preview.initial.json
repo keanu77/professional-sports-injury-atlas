@@ -1,0 +1,170 @@
+[
+  {
+    "url": "https://www.youtube.com/watch?v=9JoITljMoU0",
+    "path": "/videos/kyle-schwarber-2016-knee/",
+    "startSeconds": 0,
+    "origin": "https://fd0194e6.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T10:13:05.037Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.015767,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=5STUOgvQWgQ",
+    "path": "/videos/bryce-harper-2017-knee/",
+    "startSeconds": 0,
+    "origin": "https://fd0194e6.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T10:13:09.260Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.015154,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=GfnIhZIzIE8",
+    "path": "/videos/dustin-fowler-2017-patellar-tendon/",
+    "startSeconds": 0,
+    "origin": "https://fd0194e6.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T10:13:13.428Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.021586,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=J1iIgGSiSFc",
+    "path": "/videos/adam-eaton-2017-knee/",
+    "startSeconds": 0,
+    "origin": "https://fd0194e6.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T10:13:17.276Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.010701,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=8rQjyuPU_gM",
+    "path": "/videos/chris-bassitt-2021-face/",
+    "startSeconds": 0,
+    "origin": "https://fd0194e6.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T10:13:21.007Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.01845,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=ggGrmIf-SQE",
+    "path": "/videos/alex-cobb-2013-concussion/",
+    "startSeconds": 0,
+    "origin": "https://fd0194e6.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T10:13:25.925Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.013615,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "這部影片未提供字幕"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=W5Bg3oaHI8I",
+    "path": "/videos/giancarlo-stanton-2014-face/",
+    "startSeconds": 0,
+    "origin": "https://fd0194e6.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T10:13:29.069Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.007521,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=2UZJNvs7G_o",
+    "path": "/videos/charlie-morton-2021-fibula/",
+    "startSeconds": 24,
+    "origin": "https://fd0194e6.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T10:13:32.746Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 25.007562,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  }
+]

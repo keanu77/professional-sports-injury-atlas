@@ -1,0 +1,562 @@
+[
+  {
+    "id": "9JoITljMoU0",
+    "name": "Schwarber2016",
+    "start": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T09:57:37.457Z",
+    "status": "played",
+    "testedDocumentUrl": "https://sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.007058,
+      "duration": 336.181,
+      "paused": false,
+      "readyState": 4
+    },
+    "metadata": {
+      "title": "CHC@ARI: Schwarber exits the game after collision - YouTube",
+      "player": {
+        "video_id": "9JoITljMoU0",
+        "author": "MLB",
+        "title": "CHC@ARI: Schwarber exits the game after collision",
+        "isPlayable": true,
+        "errorCode": null,
+        "video_quality": "large",
+        "video_quality_features": [],
+        "backgroundable": false,
+        "eventId": "EjmdatbtFOeV1d8Pv4XpuAU",
+        "cpn": "EaZix9u49AUE8OC7",
+        "isLive": false,
+        "isWindowedLive": false,
+        "isManifestless": false,
+        "allowLiveDvr": false,
+        "isListed": true,
+        "isMultiChannelAudio": false,
+        "hasProgressBarBoundaries": false,
+        "isPremiere": false,
+        "itct": "CAAQu2kiEwjWvuDA2NmWAxXnSvUFHb9CGlfKAQRTCXch",
+        "playerResponseCpn": "",
+        "progressBarStartPositionUtcTimeMillis": null,
+        "progressBarEndPositionUtcTimeMillis": null,
+        "paidContentOverlayDurationMs": 0,
+        "isSeekable": null
+      },
+      "captions": [
+        "字幕/CC 已關閉"
+      ]
+    }
+  },
+  {
+    "id": "5STUOgvQWgQ",
+    "name": "Harper2017",
+    "start": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T09:57:42.819Z",
+    "status": "played",
+    "testedDocumentUrl": "https://sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.012198,
+      "duration": 30.341,
+      "paused": false,
+      "readyState": 4
+    },
+    "metadata": {
+      "title": "SF@WSH: Harper injures knee slipping on first base - YouTube",
+      "player": {
+        "video_id": "5STUOgvQWgQ",
+        "author": "MLB",
+        "title": "SF@WSH: Harper injures knee slipping on first base",
+        "isPlayable": true,
+        "errorCode": null,
+        "video_quality": "large",
+        "video_quality_features": [],
+        "backgroundable": false,
+        "eventId": "Fzmdas7vLJP1pt8PlrqpeQ",
+        "cpn": "HJR_T-3PJyOy1XC5",
+        "isLive": false,
+        "isWindowedLive": false,
+        "isManifestless": false,
+        "allowLiveDvr": false,
+        "isListed": true,
+        "isMultiChannelAudio": false,
+        "hasProgressBarBoundaries": false,
+        "isPremiere": false,
+        "itct": "CAAQu2kiEwiO16nD2NmWAxWTuukFHRZdKg_KAQQ4WVo7",
+        "playerResponseCpn": "",
+        "progressBarStartPositionUtcTimeMillis": null,
+        "progressBarEndPositionUtcTimeMillis": null,
+        "paidContentOverlayDurationMs": 0,
+        "isSeekable": null
+      },
+      "captions": [
+        "字幕/CC 已關閉"
+      ]
+    }
+  },
+  {
+    "id": "GfnIhZIzIE8",
+    "name": "Fowler2017",
+    "start": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T09:58:43.318Z",
+    "status": "played",
+    "testedDocumentUrl": "https://sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.009459,
+      "duration": 59.481,
+      "paused": false,
+      "readyState": 4
+    },
+    "metadata": {
+      "title": "NYY@CWS: Fowler leaves his MLB debut with an injury - YouTube",
+      "player": {
+        "video_id": "GfnIhZIzIE8",
+        "author": "MLB",
+        "title": "NYY@CWS: Fowler leaves his MLB debut with an injury",
+        "isPlayable": true,
+        "errorCode": null,
+        "video_quality": "large",
+        "video_quality_features": [],
+        "backgroundable": false,
+        "eventId": "VDmdav_ZD7Ts2roP87GvkQM",
+        "cpn": "EV5-q2Tqk9VMtLsT",
+        "isLive": false,
+        "isWindowedLive": false,
+        "isManifestless": false,
+        "allowLiveDvr": false,
+        "isListed": true,
+        "isMultiChannelAudio": false,
+        "hasProgressBarBoundaries": false,
+        "isPremiere": false,
+        "itct": "CAAQu2kiEwj_05fg2NmWAxU0tlYBHfPYKzLKAQQBDLtg",
+        "playerResponseCpn": "",
+        "progressBarStartPositionUtcTimeMillis": null,
+        "progressBarEndPositionUtcTimeMillis": null,
+        "paidContentOverlayDurationMs": 0,
+        "isSeekable": null
+      },
+      "captions": [
+        "字幕/CC 已關閉"
+      ]
+    }
+  },
+  {
+    "id": "ggGrmIf-SQE",
+    "name": "Cobb2013",
+    "start": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T09:58:47.953Z",
+    "status": "played",
+    "testedDocumentUrl": "https://sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.015022,
+      "duration": 33.441,
+      "paused": false,
+      "readyState": 4
+    },
+    "metadata": {
+      "title": "KC@TB: Cobb hit in head by liner, leaves on stretcher - YouTube",
+      "player": {
+        "video_id": "ggGrmIf-SQE",
+        "author": "MLB",
+        "title": "KC@TB: Cobb hit in head by liner, leaves on stretcher",
+        "isPlayable": true,
+        "errorCode": null,
+        "video_quality": "hd720",
+        "video_quality_features": [],
+        "backgroundable": false,
+        "eventId": "WDmdaprvO9SLvcAPldbOkAc",
+        "cpn": "KE6YYhB7z8dN3-Ni",
+        "isLive": false,
+        "isWindowedLive": false,
+        "isManifestless": false,
+        "allowLiveDvr": false,
+        "isListed": true,
+        "isMultiChannelAudio": false,
+        "hasProgressBarBoundaries": false,
+        "isPremiere": false,
+        "itct": "CAAQu2kiEwia-7fi2NmWAxXURQ8CHRWrE3LKAQTOY0tu",
+        "playerResponseCpn": "",
+        "progressBarStartPositionUtcTimeMillis": null,
+        "progressBarEndPositionUtcTimeMillis": null,
+        "paidContentOverlayDurationMs": 0,
+        "isSeekable": null
+      },
+      "captions": [
+        "這部影片未提供字幕"
+      ]
+    }
+  },
+  {
+    "id": "W5Bg3oaHI8I",
+    "name": "Stanton2014",
+    "start": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T09:58:52.327Z",
+    "status": "played",
+    "testedDocumentUrl": "https://sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.005795,
+      "duration": 320.981,
+      "paused": false,
+      "readyState": 4
+    },
+    "metadata": {
+      "title": "Giancarlo Stanton leaves game after hit during swing - YouTube",
+      "player": {
+        "video_id": "W5Bg3oaHI8I",
+        "author": "MLB",
+        "title": "Giancarlo Stanton leaves game after hit during swing",
+        "isPlayable": true,
+        "errorCode": null,
+        "video_quality": "medium",
+        "video_quality_features": [],
+        "backgroundable": false,
+        "eventId": "XTmdas6VC6-W1d8P2oPLgAg",
+        "cpn": "t1kZgGUngLUrgEF-",
+        "isLive": false,
+        "isWindowedLive": false,
+        "isManifestless": false,
+        "allowLiveDvr": false,
+        "isListed": true,
+        "isMultiChannelAudio": false,
+        "hasProgressBarBoundaries": false,
+        "isPremiere": false,
+        "itct": "CAAQu2kiEwiOuLjk2NmWAxUvS_UFHdrBEoDKAQQL7Y5b",
+        "playerResponseCpn": "",
+        "progressBarStartPositionUtcTimeMillis": null,
+        "progressBarEndPositionUtcTimeMillis": null,
+        "paidContentOverlayDurationMs": 0,
+        "isSeekable": null
+      },
+      "captions": [
+        "字幕/CC 已關閉"
+      ]
+    }
+  },
+  {
+    "id": "8rQjyuPU_gM",
+    "name": "Bassitt2021",
+    "start": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T09:58:56.580Z",
+    "status": "played",
+    "testedDocumentUrl": "https://sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.024085,
+      "duration": 86.061,
+      "paused": false,
+      "readyState": 4
+    },
+    "metadata": {
+      "title": "Chris Bassitt hit in head by line drive: 8/17/2021 - YouTube",
+      "player": {
+        "video_id": "8rQjyuPU_gM",
+        "author": "Mac VelJohnson",
+        "title": "Chris Bassitt hit in head by line drive: 8/17/2021",
+        "isPlayable": true,
+        "errorCode": null,
+        "video_quality": "large",
+        "video_quality_features": [],
+        "backgroundable": false,
+        "eventId": "YTmdatGPGJam2roPh4yusQk",
+        "cpn": "to0dnhYwA-lUzLN_",
+        "isLive": false,
+        "isWindowedLive": false,
+        "isManifestless": false,
+        "allowLiveDvr": false,
+        "isListed": true,
+        "isMultiChannelAudio": false,
+        "hasProgressBarBoundaries": false,
+        "isPremiere": false,
+        "itct": "CAAQu2kiEwiRxLnm2NmWAxUWk1YBHQeGK5bKAQQ-LMlz",
+        "playerResponseCpn": "",
+        "progressBarStartPositionUtcTimeMillis": null,
+        "progressBarEndPositionUtcTimeMillis": null,
+        "paidContentOverlayDurationMs": 0,
+        "isSeekable": null
+      },
+      "captions": [
+        "字幕/CC 已關閉"
+      ]
+    }
+  },
+  {
+    "id": "2UZJNvs7G_o",
+    "name": "Morton2021",
+    "start": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T09:59:16.828Z",
+    "status": "played",
+    "testedDocumentUrl": "https://sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.008906,
+      "duration": 554.321,
+      "paused": false,
+      "readyState": 4
+    },
+    "metadata": {
+      "title": "Braves' Charlie Morton gets 3 outs ON A BROKEN LEG in World Series Game 1!! - YouTube",
+      "player": {
+        "video_id": "2UZJNvs7G_o",
+        "author": "MLB",
+        "title": "Braves' Charlie Morton gets 3 outs ON A BROKEN LEG in World Series Game 1!!",
+        "isPlayable": true,
+        "errorCode": null,
+        "video_quality": "medium",
+        "video_quality_features": [],
+        "backgroundable": false,
+        "eventId": "dTmdauCSMcCB2roP0aK6oQ0",
+        "cpn": "KL_liy0KmRLS3Rdv",
+        "isLive": false,
+        "isWindowedLive": false,
+        "isManifestless": false,
+        "allowLiveDvr": false,
+        "isListed": true,
+        "isMultiChannelAudio": false,
+        "hasProgressBarBoundaries": false,
+        "isPremiere": false,
+        "itct": "CAAQu2kiEwigoZfw2NmWAxXAgFYBHVGRLtTKAQRF8FGu",
+        "playerResponseCpn": "",
+        "progressBarStartPositionUtcTimeMillis": null,
+        "progressBarEndPositionUtcTimeMillis": null,
+        "paidContentOverlayDurationMs": 0,
+        "isSeekable": null
+      },
+      "captions": [
+        "字幕/CC 已關閉"
+      ]
+    }
+  },
+  {
+    "id": "cvSpYbdfT9c",
+    "name": "Jeter2012",
+    "start": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T09:59:21.218Z",
+    "status": "unverified",
+    "testedDocumentUrl": "https://sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "error": "locator.click: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('iframe').contentFrame().getByRole('button', { name: '播放影片', exact: true })\u001b[22m\n"
+  },
+  {
+    "id": "T2s5QqxPyDA",
+    "name": "Jeter2012-alt",
+    "start": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T10:01:32.783Z",
+    "status": "played",
+    "testedDocumentUrl": "https://sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.016826,
+      "duration": 76.421,
+      "paused": false,
+      "readyState": 4
+    },
+    "metadata": {
+      "title": "BOS@NYY: FOX broadcasters discuss Jeter's ankle - YouTube",
+      "player": {
+        "video_id": "T2s5QqxPyDA",
+        "author": "MLB",
+        "title": "BOS@NYY: FOX broadcasters discuss Jeter's ankle",
+        "isPlayable": true,
+        "errorCode": null,
+        "video_quality": "medium",
+        "video_quality_features": [],
+        "backgroundable": false,
+        "eventId": "_TmdarXlJK_W1d8PlObD0QU",
+        "cpn": "rF79ExuqpPqoORKK",
+        "isLive": false,
+        "isWindowedLive": false,
+        "isManifestless": false,
+        "allowLiveDvr": false,
+        "isListed": true,
+        "isMultiChannelAudio": false,
+        "hasProgressBarBoundaries": false,
+        "isPremiere": false,
+        "itct": "CAAQu2kiEwj11_ew2dmWAxUva_UFHRTzMFrKAQQZ-Ag9",
+        "playerResponseCpn": "",
+        "progressBarStartPositionUtcTimeMillis": null,
+        "progressBarEndPositionUtcTimeMillis": null,
+        "paidContentOverlayDurationMs": 0,
+        "isSeekable": null
+      },
+      "captions": [
+        "字幕/CC 已關閉"
+      ]
+    }
+  },
+  {
+    "id": "xandwR3KVmk",
+    "name": "Jeter-short",
+    "start": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T10:02:35.926Z",
+    "status": "played",
+    "testedDocumentUrl": "https://sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.021411,
+      "duration": 7.961,
+      "paused": false,
+      "readyState": 4
+    },
+    "metadata": {
+      "title": "Deter Jeter Hurts Ankle and Undergoes Surgery - YouTube",
+      "player": {
+        "video_id": "xandwR3KVmk",
+        "author": "gabarit depasit",
+        "title": "Deter Jeter Hurts Ankle and Undergoes Surgery",
+        "isPlayable": true,
+        "errorCode": null,
+        "video_quality": "tiny",
+        "video_quality_features": [],
+        "backgroundable": false,
+        "eventId": "PDqdasXsM82Ypt8Pmb--uAo",
+        "cpn": "PgrQbtLtc6bWWGTL",
+        "isLive": false,
+        "isWindowedLive": false,
+        "isManifestless": false,
+        "allowLiveDvr": false,
+        "isListed": true,
+        "isMultiChannelAudio": false,
+        "hasProgressBarBoundaries": false,
+        "isPremiere": false,
+        "itct": "CAAQu2kiEwjF-ovP2dmWAxVNjOkFHZmfD6fKAQQGKm6U",
+        "playerResponseCpn": "",
+        "progressBarStartPositionUtcTimeMillis": null,
+        "progressBarEndPositionUtcTimeMillis": null,
+        "paidContentOverlayDurationMs": 0,
+        "isSeekable": null
+      },
+      "captions": [
+        "這部影片未提供字幕"
+      ]
+    }
+  },
+  {
+    "id": "J1iIgGSiSFc",
+    "name": "Eaton2017",
+    "start": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T10:03:47.245Z",
+    "status": "played",
+    "testedDocumentUrl": "https://sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.017739,
+      "duration": 30.341,
+      "paused": false,
+      "readyState": 4
+    },
+    "metadata": {
+      "title": "NYM@WSH: Eaton leaves game after a leg injury - YouTube",
+      "player": {
+        "video_id": "J1iIgGSiSFc",
+        "author": "MLB",
+        "title": "NYM@WSH: Eaton leaves game after a leg injury",
+        "isPlayable": true,
+        "errorCode": null,
+        "video_quality": "medium",
+        "video_quality_features": [],
+        "backgroundable": false,
+        "eventId": "hDqdaqWKB6j3pt8P1p_ykQg",
+        "cpn": "S4dxC_wj9k9xheJV",
+        "isLive": false,
+        "isWindowedLive": false,
+        "isManifestless": false,
+        "allowLiveDvr": false,
+        "isListed": true,
+        "isMultiChannelAudio": false,
+        "hasProgressBarBoundaries": false,
+        "isPremiere": false,
+        "itct": "CAAQu2kiEwil3Inx2dmWAxWou-kFHdaPPILKAQRN2z9-",
+        "playerResponseCpn": "",
+        "progressBarStartPositionUtcTimeMillis": null,
+        "progressBarEndPositionUtcTimeMillis": null,
+        "paidContentOverlayDurationMs": 0,
+        "isSeekable": null
+      },
+      "captions": [
+        "字幕/CC 已關閉"
+      ]
+    }
+  },
+  {
+    "id": "cvSpYbdfT9c",
+    "name": "Jeter2012",
+    "start": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T10:00:41.641Z",
+    "status": "unverified",
+    "testedDocumentUrl": "https://sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "error": "locator.click: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('iframe').contentFrame().getByRole('button', { name: '播放影片', exact: true })\u001b[22m\n",
+    "frames": [
+      {
+        "url": "https://sports-injury-atlas.pages.dev/",
+        "text": ""
+      },
+      {
+        "url": "https://www.youtube-nocookie.com/embed/cvSpYbdfT9c?enablejsapi=1&origin=https%3A%2F%2Fsports-injury-atlas.pages.dev&start=0",
+        "text": "無法播放影片\n無法播放影片\n影片擁有者已禁止在其他網站上播放這部影片\n在 YouTube 上觀看"
+      }
+    ]
+  }
+]

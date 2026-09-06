@@ -18,6 +18,9 @@ const records = (await getCollection("cases")).map((entry) => entry.data);
 const permitted = permittedCasesForMode(buildMode, records);
 const featured = videoFirstCases(permitted).filter(hasPublicEmbed);
 const clips = observationClips();
+const bodyParts = videosByBodyPart(featured, clips);
+const sports = videosBySport(featured, clips);
+const videoCount = featured.length + clips.length;
 ---
 
 <BaseLayout
@@ -33,14 +36,41 @@ const clips = observationClips();
       <span aria-current="page">影片圖鑑</span>
     </nav>
     <h1>運動傷害影片圖鑑</h1>
-    <p>從受傷當下到重返運動，用影片了解運動傷害。</p>
+    <p>
+      從落地不穩、急停轉向，到碰撞與球體撞擊，用真實影片認識運動傷害可能發生的過程。
+      依部位或運動項目選片，了解受傷當下的處理重點與選手實際回場紀錄。
+    </p>
+    <dl class="atlas-stats" aria-label="目前收錄內容">
+      <div>
+        <dt>受傷部位</dt>
+        <dd>
+          <strong data-atlas-stat="body-parts">{bodyParts.length}</strong><span
+            >個</span
+          >
+        </dd>
+      </div>
+      <div>
+        <dt>受傷影片</dt>
+        <dd>
+          <strong data-atlas-stat="videos">{videoCount}</strong><span>支</span>
+        </dd>
+      </div>
+      <div>
+        <dt>運動項目</dt>
+        <dd>
+          <strong data-atlas-stat="sports">{sports.length}</strong><span
+            >種</span
+          >
+        </dd>
+      </div>
+    </dl>
   </header>
   {
     isLaunchEnabled() && (
       <div id="body-parts">
-        <BodyPartNav parts={videosByBodyPart(featured, clips)} />
+        <BodyPartNav parts={bodyParts} />
         <div id="sports">
-          <SportNav sports={videosBySport(featured, clips)} />
+          <SportNav sports={sports} />
         </div>
       </div>
     )
@@ -114,6 +144,38 @@ const clips = observationClips();
     padding: 0;
     margin: 0;
     list-style: none;
+  }
+  .atlas-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    max-width: 32rem;
+    margin: 2rem 0 0;
+  }
+  .atlas-stats > div {
+    border-block-start: 2px solid var(--color-brand-primary);
+    padding-block-start: 0.75rem;
+  }
+  .atlas-stats dt {
+    font-size: 0.875rem;
+    color: var(--color-ink-muted);
+  }
+  .atlas-stats dd {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.3rem;
+    margin: 0.25rem 0 0;
+    color: var(--color-ink);
+  }
+  .atlas-stats strong {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    line-height: 1.2;
+    font-variant-numeric: tabular-nums;
+  }
+  .atlas-stats span {
+    font-size: 0.875rem;
+    color: var(--color-ink-muted);
   }
   .home-note {
     color: var(--color-ink-muted);

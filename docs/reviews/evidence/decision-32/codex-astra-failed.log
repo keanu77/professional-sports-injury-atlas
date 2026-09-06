@@ -1,0 +1,23 @@
+Reading additional input from stdin...
+OpenAI Codex v0.149.0
+--------
+workdir: /private/tmp/atlas32/fielding
+model: gpt-6-astra
+provider: openai
+approval: on-request
+sandbox: read-only
+reasoning effort: high
+reasoning summaries: none
+session id: 01a07626-6ad6-72c3-bf27-91de9f669859
+--------
+user
+You are an independent public sports research verifier. READ ONLY; do not modify files. Use live web search and open primary MLB sources. Find injury diagnosis/date and EARLIEST actual return to any competitive rehab/minor/spring game, not merely MLB return or planned date, for Kyle Schwarber April 2016 ACL, Adam Eaton April 2017 ACL, Bryce Harper August 2017 knee base slip, Dustin Fowler June 2017 patellar tendon. Suggest YouTube video URLs showing actual moving injury footage where available. For every date give primary source title, URL, article publication date separately from event date, and short supporting paraphrase. Flag unknowns and ambiguity; do not invent diagnosis from footage. No recommendation or prognosis. Limit to these four events. Output concise structured markdown, no introductory praise.
+warning: Configured service tier `priority` is not advertised as supported for model `gpt-6-astra` and will be omitted from requests.
+warning: Model metadata for `gpt-6-astra` not found. Defaulting to fallback metadata; this can degrade performance and cause issues.
+warning: Skill descriptions were shortened to fit the skills context budget. Codex can still see every skill, but some descriptions are shorter. Disable unused skills or plugins to leave more room for the rest.
+hook: SessionStart
+hook: SessionStart Completed
+hook: UserPromptSubmit
+hook: UserPromptSubmit Completed
+ERROR: {"type":"error","status":400,"error":{"type":"invalid_request_error","message":"The 'gpt-6-astra' model requires a newer version of Codex. Please upgrade to the latest app or CLI and try again."}}
+ERROR: {"type":"error","status":400,"error":{"type":"invalid_request_error","message":"The 'gpt-6-astra' model requires a newer version of Codex. Please upgrade to the latest app or CLI and try again."}}

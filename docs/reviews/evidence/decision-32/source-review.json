@@ -1,0 +1,101 @@
+{
+  "checkedAt": "2026-09-06",
+  "candidates": [
+    {
+      "slug": "kyle-schwarber-2016-knee",
+      "eventDate": "2016-04-07",
+      "returnDate": "2016-10-22",
+      "days": 198,
+      "sources": [
+        {
+          "title": "MLB：Schwarber 左膝韌帶傷勢",
+          "url": "https://www.mlb.com/news/cubs-kyle-schwarber-goes-on-disabled-list-c171161510",
+          "publishedAt": "2016-04-08"
+        },
+        {
+          "title": "MLB：Schwarber 手術紀錄",
+          "url": "https://www.mlb.com/news/cubs-kyle-scwarber-has-successful-surgery-c173239022",
+          "publishedAt": "2016-04-19"
+        },
+        {
+          "title": "MLB：Schwarber 秋季聯盟首場出賽",
+          "url": "https://www.mlb.com/news/kyle-schwarber-could-return-for-world-series-c206863450",
+          "publishedAt": "2016-10-22"
+        }
+      ],
+      "sourceReview": "Live search and direct article opens; visible publication dates separately verified",
+      "timingStatus": "Root native iframe playback and observation check pending"
+    },
+    {
+      "slug": "bryce-harper-2017-knee",
+      "eventDate": "2017-08-12",
+      "returnDate": "2017-09-26",
+      "days": 45,
+      "sources": [
+        {
+          "title": "MLB：Harper 膝部 MRI 結果",
+          "url": "https://www.mlb.com/news/nationals-bryce-harper-has-bone-bruise-c248179458",
+          "publishedAt": "2017-08-13"
+        },
+        {
+          "title": "MLB：Harper 傷後首次復出賽報",
+          "url": "https://www.mlb.com/news/nationals-reinstate-bryce-harper-from-dl-c256195038",
+          "publishedAt": "2017-09-26"
+        }
+      ],
+      "sourceReview": "Live search and direct article opens; visible publication dates separately verified",
+      "timingStatus": "Root native iframe playback and observation check pending"
+    },
+    {
+      "slug": "dustin-fowler-2017-patellar-tendon",
+      "eventDate": "2017-06-29",
+      "returnDate": "2018-02-25",
+      "days": 241,
+      "sources": [
+        {
+          "title": "MLB：Fowler 大聯盟初登場傷勢",
+          "url": "https://www.mlb.com/news/dustin-fowler-injured-in-first-inning-of-debut-c239610036",
+          "publishedAt": "2017-06-30"
+        },
+        {
+          "title": "MLB：Fowler 傷後首場春訓賽報",
+          "url": "https://www.mlb.com/news/dustin-fowler-back-in-game-action-for-a-s-c267212032",
+          "publishedAt": "2018-02-25"
+        }
+      ],
+      "sourceReview": "Live search and direct article opens; visible publication dates separately verified",
+      "timingStatus": "Root native iframe playback and observation check pending"
+    },
+    {
+      "slug": "derek-jeter-2012-ankle",
+      "eventDate": "2012-10-13",
+      "returnDate": "2013-03-09",
+      "days": 147,
+      "sources": [
+        {
+          "title": "MLB：Jeter 傷勢與受傷日期回顧",
+          "url": "https://www.mlb.com/news/yankees-shortstop-derek-jeter-works-out-on-field-for-first-time-since-injury/c-41218668",
+          "publishedAt": "2013-01-28"
+        },
+        {
+          "title": "MLB：Jeter 骨折後首場春訓賽報",
+          "url": "https://www.mlb.com/news/jeter-singles-in-first-game-since-fracturing-ankle/c-42519266",
+          "publishedAt": "2013-03-09"
+        },
+        {
+          "title": "MLB：Jeter 後續新骨折公告",
+          "url": "https://www.mlb.com/news/yankees-general-manager-brian-cashman-derek-jeter-out-until-after-break/c-45146236",
+          "publishedAt": "2013-04-18"
+        }
+      ],
+      "sourceReview": "Live search and direct article opens; visible publication dates separately verified",
+      "timingStatus": "Root native iframe playback and observation check pending"
+    }
+  ],
+  "flags": [
+    "Schwarber October22 activation press release labels second ligament MCL; April8 MRI and April19 surgical report both say LCL. Use surgical report and exclude inconsistent activation release.",
+    "Fowler injury non-AMP current page says June30 publication while AMP/search snippet says June29. Use current canonical page June30; injury was June29.",
+    "Jeter March8 simulated game excluded; March9 spring actual game selected. April18 new fracture prevents interpreting spring return as sustained full recovery.",
+    "Eaton not selected: March17 big-league spring preceded by unspecified minor-league backfield games by March11. Precise first date not established."
+  ]
+}

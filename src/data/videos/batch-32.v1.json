@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "decision": "decision-32",
+  "authorizationQuote": "我覺得棒球的影片可以多一些",
+  "authorizedAt": "2026-09-06T10:04:49.600096Z",
+  "clips": [
+    {
+      "slug": "kyle-schwarber-2016-knee",
+      "videoId": "9JoITljMoU0",
+      "name": "Kyle Schwarber",
+      "sport": "棒球",
+      "event": "MLB 小熊對響尾蛇",
+      "bodyPart": "膝部",
+      "eventDate": "2016-04-07",
+      "returnDate": "2016-10-22",
+      "observation": "追接左中外野飛球時與隊友相撞倒地，之後由人員協助離場。",
+      "returnText": "2016-10-22 先在亞利桑那秋季聯盟擔任指定打擊。",
+      "publisher": "MLB",
+      "sourceTitle": "CHC@ARI: Schwarber exits the game after collision",
+      "startSeconds": 0,
+      "durationSeconds": 337,
+      "sources": [
+        {
+          "title": "MLB：Schwarber 左膝韌帶傷勢",
+          "url": "https://www.mlb.com/news/cubs-kyle-schwarber-goes-on-disabled-list-c171161510"
+        },
+        {
+          "title": "MLB：Schwarber 手術紀錄",
+          "url": "https://www.mlb.com/news/cubs-kyle-scwarber-has-successful-surgery-c173239022"
+        },
+        {
+          "title": "MLB：Schwarber 秋季聯盟首場出賽",
+          "url": "https://www.mlb.com/news/kyle-schwarber-could-return-for-world-series-c206863450"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=9JoITljMoU0",
+      "captionStatus": "not-verified"
+    },
+    {
+      "slug": "bryce-harper-2017-knee",
+      "videoId": "5STUOgvQWgQ",
+      "name": "Bryce Harper",
+      "sport": "棒球",
+      "event": "MLB 國民對巨人",
+      "bodyPart": "膝部",
+      "eventDate": "2017-08-12",
+      "returnDate": "2017-09-26",
+      "observation": "衝過一壘時踩上壘包後滑倒，落地後抱住膝部，接受人員協助。",
+      "returnText": "2017-09-26 對費城人恢復大聯盟出賽。",
+      "publisher": "MLB",
+      "sourceTitle": "SF@WSH: Harper injures knee slipping on first base",
+      "startSeconds": 0,
+      "durationSeconds": 31,
+      "sources": [
+        {
+          "title": "MLB：Harper 膝部 MRI 結果",
+          "url": "https://www.mlb.com/news/nationals-bryce-harper-has-bone-bruise-c248179458"
+        },
+        {
+          "title": "MLB：Harper 傷後首次復出賽報",
+          "url": "https://www.mlb.com/news/nationals-reinstate-bryce-harper-from-dl-c256195038"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=5STUOgvQWgQ",
+      "captionStatus": "not-verified"
+    },
+    {
+      "slug": "dustin-fowler-2017-patellar-tendon",
+      "videoId": "GfnIhZIzIE8",
+      "name": "Dustin Fowler",
+      "sport": "棒球",
+      "event": "MLB 洋基對白襪",
+      "bodyPart": "膝部",
+      "eventDate": "2017-06-29",
+      "returnDate": "2018-02-25",
+      "observation": "追接右外野界外飛球時撞上場邊設施，隨後無法正常站立，被協助離場。",
+      "returnText": "2018-02-25 代表運動家於春訓對皇家恢復出賽。",
+      "publisher": "MLB",
+      "sourceTitle": "NYY@CWS: Fowler leaves his MLB debut with an injury",
+      "startSeconds": 0,
+      "durationSeconds": 60,
+      "sources": [
+        {
+          "title": "MLB：Fowler 大聯盟初登場傷勢",
+          "url": "https://www.mlb.com/news/dustin-fowler-injured-in-first-inning-of-debut-c239610036"
+        },
+        {
+          "title": "MLB：Fowler 傷後首場春訓賽報",
+          "url": "https://www.mlb.com/news/dustin-fowler-back-in-game-action-for-a-s-c267212032"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=GfnIhZIzIE8",
+      "captionStatus": "not-verified"
+    },
+    {
+      "slug": "adam-eaton-2017-knee",
+      "videoId": "J1iIgGSiSFc",
+      "name": "Adam Eaton",
+      "sport": "棒球",
+      "event": "MLB 國民對大都會",
+      "bodyPart": "膝部",
+      "eventDate": "2017-04-28",
+      "returnDate": null,
+      "observation": "衝向一壘踩上壘包後倒地，隨後由人員攙扶離場。",
+      "returnText": "2018-03-17 重返大聯盟春訓；此前已參加小聯盟熱身賽，最早日期未確認。",
+      "videoUrl": "https://www.youtube.com/watch?v=J1iIgGSiSFc",
+      "publisher": "MLB",
+      "sourceTitle": "NYM@WSH: Eaton leaves game after a leg injury",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 31,
+      "sources": [
+        {
+          "title": "MLB：Eaton 左膝與踝部傷勢",
+          "url": "https://www.mlb.com/news/nats-adam-eaton-talks-acl-injury-recovery-c227412888"
+        },
+        {
+          "title": "MLB：Eaton 手術與受傷日期",
+          "url": "https://www.mlb.com/news/adam-eaton-will-need-6-9-months-to-rehab-knee/c-229427320"
+        },
+        {
+          "title": "MLB：Eaton 先前已參加小聯盟熱身賽",
+          "url": "https://www.mlb.com/news/adam-eaton-near-return-from-left-knee-injury-c268433120"
+        },
+        {
+          "title": "MLB：Eaton 大聯盟春訓首場賽報",
+          "url": "https://www.mlb.com/news/nationals-adam-eaton-homers-in-2018-debut-c268948342"
+        }
+      ]
+    },
+    {
+      "slug": "chris-bassitt-2021-face",
+      "videoId": "8rQjyuPU_gM",
+      "name": "Chris Bassitt",
+      "sport": "棒球",
+      "event": "MLB 運動家對白襪",
+      "bodyPart": "頭頸部",
+      "eventDate": "2021-08-17",
+      "returnDate": "2021-09-23",
+      "observation": "投球後遭擊出的平飛球打中臉部，隨即倒地，由醫療人員進場協助。",
+      "returnText": "2021-09-23 對水手先發，完成三局投球。",
+      "videoUrl": "https://www.youtube.com/watch?v=8rQjyuPU_gM",
+      "publisher": "Mac VelJohnson",
+      "sourceTitle": "Chris Bassitt hit in head by line drive: 8/17/2021",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 87,
+      "sources": [
+        {
+          "title": "MLB：Bassitt 臉部骨折公告",
+          "url": "https://www.mlb.com/news/chris-bassitt-hit-in-face-with-line-drive"
+        },
+        {
+          "title": "MLB：Bassitt 傷後實際登板賽報",
+          "url": "https://www.mlb.com/news/chris-bassitt-sharp-in-return-but-a-s-wild-card-hopes-dim"
+        },
+        {
+          "title": "MLB：Bassitt 復出前模擬賽紀錄",
+          "url": "https://www.mlb.com/news/chris-bassitt-to-return-for-athletics-on-thursday"
+        }
+      ]
+    },
+    {
+      "slug": "alex-cobb-2013-concussion",
+      "videoId": "ggGrmIf-SQE",
+      "name": "Alex Cobb",
+      "sport": "棒球",
+      "event": "MLB 光芒對皇家",
+      "bodyPart": "頭頸部",
+      "eventDate": "2013-06-15",
+      "returnDate": "2013-07-23",
+      "observation": "投球後遭平飛球打中頭部右側，倒地後由工作人員協助，以擔架離場。",
+      "returnText": "2013-07-23 於 Class A Charlotte 開始復健賽登板。",
+      "videoUrl": "https://www.youtube.com/watch?v=ggGrmIf-SQE",
+      "publisher": "MLB",
+      "sourceTitle": "KC@TB: Cobb hit in head by liner, leaves on stretcher",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 34,
+      "sources": [
+        {
+          "title": "MLB：Cobb 腦震盪診斷",
+          "url": "https://www.mlb.com/news/alex-cobb-hit-in-head-by-liner-has-mild-concussion/c-50727980"
+        },
+        {
+          "title": "MLB：Cobb 首場復健賽當日紀錄",
+          "url": "https://www.mlb.com/news/worth-noting/c-54499874"
+        },
+        {
+          "title": "MLB：Cobb 7 月 23 日復健賽紀錄",
+          "url": "https://www.mlb.com/news/rays-right-hander-alex-cobb-slated-to-pitch-simulated-game-tuesday/c-55178332"
+        },
+        {
+          "title": "MLB：Cobb 生涯與復健賽紀錄",
+          "url": "https://www.mlb.com/player/alex-cobb-502171"
+        }
+      ]
+    },
+    {
+      "slug": "giancarlo-stanton-2014-face",
+      "videoId": "W5Bg3oaHI8I",
+      "name": "Giancarlo Stanton",
+      "sport": "棒球",
+      "event": "MLB 馬林魚對釀酒人",
+      "bodyPart": "頭頸部",
+      "eventDate": "2014-09-11",
+      "returnDate": "2015-03-05",
+      "observation": "打擊時遭投球打中臉部後倒地，醫療人員進場處理並協助離場。",
+      "returnText": "2015-03-05 於春訓對紅雀出賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=W5Bg3oaHI8I",
+      "publisher": "MLB",
+      "sourceTitle": "Giancarlo Stanton leaves game after hit during swing",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 321,
+      "sources": [
+        {
+          "title": "MLB：Stanton 臉部與牙齒傷勢",
+          "url": "https://www.mlb.com/news/improving-giancarlo-stanton-heads-home-major-surgery-unlikely-for-marlins-slugger/c-94340404"
+        },
+        {
+          "title": "CBS／AP：Stanton 春訓復出賽報",
+          "url": "https://www.cbsnews.com/miami/news/marlins-giancarlo-stanton-pleased-with-first-at-bats/"
+        },
+        {
+          "title": "MLB：Stanton 先前隊內模擬賽",
+          "url": "https://www.mlb.com/news/giancarlo-stanton-stays-in-after-hit-by-pitch-in-marlins-first-sim-game/c-110729650"
+        },
+        {
+          "title": "MLB：Stanton 未參加 3 月 3 日大學交流賽",
+          "url": "https://www.mlb.com/news/marlins-opt-to-hold-giancarlo-stanton-out-of-exhibition-against-university-of-miami/c-111007996"
+        },
+        {
+          "title": "MLB 官方資料：Stanton 2015 春訓逐場紀錄",
+          "url": "https://statsapi.mlb.com/api/v1/people/519317/stats?stats=gameLog&group=hitting&season=2015&gameType=S"
+        }
+      ]
+    },
+    {
+      "slug": "charlie-morton-2021-fibula",
+      "videoId": "2UZJNvs7G_o",
+      "name": "Charlie Morton",
+      "sport": "棒球",
+      "event": "MLB 世界大賽勇士對太空人第一戰",
+      "bodyPart": "小腿／阿基里斯腱",
+      "eventDate": "2021-10-26",
+      "returnDate": "2022-03-27",
+      "observation": "投球時遭回擊球打中小腿，片段也呈現他之後繼續投球的過程。",
+      "returnText": "2022-03-27 於春訓對光芒先發。",
+      "videoUrl": "https://www.youtube.com/watch?v=2UZJNvs7G_o",
+      "publisher": "MLB",
+      "sourceTitle": "Braves' Charlie Morton gets 3 outs ON A BROKEN LEG in World Series Game 1!!",
+      "captionStatus": "not-verified",
+      "startSeconds": 24,
+      "durationSeconds": 555,
+      "sources": [
+        {
+          "title": "MLB：Morton 世界大賽骨折傷勢",
+          "url": "https://www.mlb.com/news/charlie-morton-exits-world-series-game-1"
+        },
+        {
+          "title": "MLB：Morton 春訓首次登板賽報",
+          "url": "https://www.mlb.com/news/charlie-morton-max-fried-battle-for-braves-opening-day-start"
+        },
+        {
+          "title": "MLB 官方資料：Morton 2022 春訓逐場紀錄",
+          "url": "https://statsapi.mlb.com/api/v1/people/450203/stats?stats=gameLog&group=pitching&season=2022&gameType=S"
+        }
+      ]
+    }
+  ]
+}

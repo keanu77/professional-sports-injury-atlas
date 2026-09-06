@@ -1,0 +1,83 @@
+{
+  "reviewedAt": "2026-09-06T10:05:28.355227+00:00",
+  "checks": [
+    {
+      "slug": "kyle-schwarber-2016-knee",
+      "videoId": "9JoITljMoU0",
+      "days": 198,
+      "sourceCount": 3,
+      "bodyPart": "膝部",
+      "status": "binding-pass"
+    },
+    {
+      "slug": "bryce-harper-2017-knee",
+      "videoId": "5STUOgvQWgQ",
+      "days": 45,
+      "sourceCount": 2,
+      "bodyPart": "膝部",
+      "status": "binding-pass"
+    },
+    {
+      "slug": "dustin-fowler-2017-patellar-tendon",
+      "videoId": "GfnIhZIzIE8",
+      "days": 241,
+      "sourceCount": 2,
+      "bodyPart": "膝部",
+      "status": "binding-pass"
+    },
+    {
+      "slug": "adam-eaton-2017-knee",
+      "videoId": "J1iIgGSiSFc",
+      "days": null,
+      "sourceCount": 4,
+      "bodyPart": "膝部",
+      "status": "binding-pass"
+    },
+    {
+      "slug": "chris-bassitt-2021-face",
+      "videoId": "8rQjyuPU_gM",
+      "days": 37,
+      "sourceCount": 3,
+      "bodyPart": "頭頸部",
+      "status": "binding-pass"
+    },
+    {
+      "slug": "alex-cobb-2013-concussion",
+      "videoId": "ggGrmIf-SQE",
+      "days": 38,
+      "sourceCount": 4,
+      "bodyPart": "頭頸部",
+      "status": "binding-pass"
+    },
+    {
+      "slug": "giancarlo-stanton-2014-face",
+      "videoId": "W5Bg3oaHI8I",
+      "days": 175,
+      "sourceCount": 5,
+      "bodyPart": "頭頸部",
+      "status": "binding-pass"
+    },
+    {
+      "slug": "charlie-morton-2021-fibula",
+      "videoId": "2UZJNvs7G_o",
+      "days": 152,
+      "sourceCount": 3,
+      "bodyPart": "小腿／阿基里斯腱",
+      "status": "binding-pass"
+    }
+  ],
+  "sha256": {
+    "src/data/videos/batch-32.v1.json": "9b1a33a2d62f61275d3063a2d59ddfba77d1c3f4ef9c6e385f698a06bda91389",
+    "src/data/videos/event-batch-32.v1.json": "63c55a6b1a8ada4e51c61b99f91a9280f97412dcf40e110dab9583b5d8250bc5",
+    "src/lib/videos/expansion.ts": "2bd5bc8604307033da1ba47708b8c20cf656987a26921ae0e7b379b302bb78c5",
+    "src/lib/videos/event-updates.ts": "9b14564f137bafb858da0a108301c36f749bc7f71a503326f6d8c39daa83ce9c",
+    "scripts/public-launch/check-release.ts": "a4f9772340ecadf58c44897dc3132e734724120fca408442b628461384441828",
+    "scripts/public-launch/verify-browser.mjs": "3e4af4c1892fd1b766f847bb1aaa442c05cb8a5360a4b84cd00accddaf74cb70",
+    "scripts/public-launch/verify-expansion-playback.mjs": "9035b87ae16970a86cf6faa704e6d8db466e73ae361be465e0ba32c1cbfd87c6",
+    "scripts/verify-video-thumbnails.ts": "90f4668d12f3c5d9326d2c7ec1f333b5f30f0a111a657d1df1d4252f0760a46e",
+    "tests/unit/video-expansion.test.ts": "9c685f678ec9ee7ebcff84191ccff912087dc3d34f27d193ee280b668c18b832",
+    "tests/unit/video-thumbnails.test.ts": "eadc6272d076558d392f60da7d6595a6010c5e908971aa3a02301cc9e57b7ee9"
+  },
+  "runtimeTestsRun": false,
+  "notes": "Independent assertions check final source/event identity, dates, null handling, no prior clip identity duplication, head care labels, and timecode bounds. Actual YouTube content/playback checked by root."
+}

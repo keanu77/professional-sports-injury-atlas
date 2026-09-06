@@ -1,0 +1,36 @@
+{
+  "origin": "https://d2a560b0.sports-injury-atlas.pages.dev",
+  "checkedAt": "2026-09-06T10:19:56.033Z",
+  "results": [
+    {
+      "width": 320,
+      "fontSize": "150%",
+      "counts": [
+        "7",
+        "78",
+        "14"
+      ],
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "fontSize": "100%",
+      "counts": [
+        "7",
+        "78",
+        "14"
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "fontSize": "100%",
+      "counts": [
+        "7",
+        "78",
+        "14"
+      ],
+      "overflow": false
+    }
+  ]
+}

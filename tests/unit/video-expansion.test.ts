@@ -1,5 +1,6 @@
 import batch30Data from "../../src/data/videos/batch-30.v1.json";
 import batch31Data from "../../src/data/videos/batch-31.v1.json";
+import batch32Data from "../../src/data/videos/batch-32.v1.json";
 import { readFileSync } from "node:fs";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
@@ -7,6 +8,8 @@ import {
   batch30Schema,
   batch31,
   batch31Schema,
+  batch32,
+  batch32Schema,
   additions,
   curation,
   curationSchema,
@@ -48,7 +51,8 @@ describe("confirmed video expansion", () => {
       10 +
         curation.clips.length +
         batch30Data.clips.length +
-        batch31Data.clips.length,
+        batch31Data.clips.length +
+        batch32Data.clips.length,
     );
     expect(
       captionsOptionalFor("https://www.youtube.com/watch?v=unlisted000"),
@@ -149,14 +153,20 @@ it("rejects batch videos duplicated across past expansions", () => {
   expect(batch30Schema.safeParse(changed).success).toBe(false);
 });
 
-it("rejects a new batch that reuses a prior video through an alternate URL", () => {
-  const changed = structuredClone(batch31);
-  const clip = structuredClone(batch30.clips[0]!);
-  clip.slug += "-new-upload";
-  clip.videoUrl = `https://youtu.be/${clip.videoId}`;
-  changed.clips[0] = clip;
-  expect(batch31Schema.safeParse(changed).success).toBe(false);
-});
+it.each([
+  [batch31, batch31Schema, batch30],
+  [batch32, batch32Schema, batch31],
+])(
+  "rejects a new batch that reuses a prior video through an alternate URL",
+  (current, schema, prior) => {
+    const changed = structuredClone(current);
+    const clip = structuredClone(prior.clips[0]!);
+    clip.slug += "-new-upload";
+    clip.videoUrl = `https://youtu.be/${clip.videoId}`;
+    changed.clips[0] = clip;
+    expect(schema.safeParse(changed).success).toBe(false);
+  },
+);
 
 it.each(["youtube.com", "youtu.be"])(
   "rejects duplicate video IDs using %s URLs",

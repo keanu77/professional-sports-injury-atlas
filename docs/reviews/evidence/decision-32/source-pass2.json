@@ -1,0 +1,201 @@
+{
+  "decision": "decision-32",
+  "reviewedAt": "2026-09-06T10:04:51.920686+00:00",
+  "reviewer": "independent Pass 2 subagent",
+  "method": "Opened original public sources with web; directly fetched public MLB StatsAPI and contemporary Cobb report independently. Recomputed all intervals with Python date arithmetic. Not a CLI model assertion.",
+  "entries": [
+    {
+      "slug": "kyle-schwarber-2016-knee",
+      "eventDate": "2016-04-07",
+      "returnDate": "2016-10-22",
+      "recomputedDays": 198,
+      "injuryVerified": "left knee ACL/LCL and ankle sprain",
+      "returnLevel": "Arizona Fall League DH",
+      "status": "accept",
+      "confidence": 0.98,
+      "notes": "198 days uses AFL return; World Series is later. Surgery article directly dates injury April 7.",
+      "sourceUrls": [
+        "https://www.mlb.com/news/cubs-kyle-schwarber-goes-on-disabled-list-c171161510",
+        "https://www.mlb.com/news/cubs-kyle-scwarber-has-successful-surgery-c173239022",
+        "https://www.mlb.com/news/kyle-schwarber-could-return-for-world-series-c206863450"
+      ]
+    },
+    {
+      "slug": "bryce-harper-2017-knee",
+      "eventDate": "2017-08-12",
+      "returnDate": "2017-09-26",
+      "recomputedDays": 45,
+      "injuryVerified": "left knee hyperextension/bone bruise; calf strain",
+      "returnLevel": "MLB regular season",
+      "status": "accept",
+      "confidence": 0.98,
+      "notes": "45 days. Calf strain is supported by return article; initial MRI excludes ligament/tendon damage.",
+      "sourceUrls": [
+        "https://www.mlb.com/news/nationals-bryce-harper-has-bone-bruise-c248179458",
+        "https://www.mlb.com/news/nationals-reinstate-bryce-harper-from-dl-c256195038"
+      ]
+    },
+    {
+      "slug": "dustin-fowler-2017-patellar-tendon",
+      "eventDate": "2017-06-29",
+      "returnDate": "2018-02-25",
+      "recomputedDays": 241,
+      "injuryVerified": "right patellar tendon open rupture",
+      "returnLevel": "Cactus League spring training",
+      "status": "accept",
+      "confidence": 0.98,
+      "notes": "241 days. June 30 publication describes Thursday June 29 injury; February 25 actual three plate appearances.",
+      "sourceUrls": [
+        "https://www.mlb.com/news/dustin-fowler-injured-in-first-inning-of-debut-c239610036",
+        "https://www.mlb.com/news/dustin-fowler-back-in-game-action-for-a-s-c267212032"
+      ]
+    },
+    {
+      "slug": "chris-bassitt-2021-face",
+      "eventDate": "2021-08-17",
+      "returnDate": "2021-09-23",
+      "recomputedDays": 37,
+      "injuryVerified": "right cheek displaced tripod fracture; surgery",
+      "returnLevel": "MLB regular season",
+      "status": "accept",
+      "confidence": 0.98,
+      "notes": "37 days. September 24 article reports Thursday September 23 game. Earlier bullpen/simulated sessions excluded.",
+      "sourceUrls": [
+        "https://www.mlb.com/news/chris-bassitt-hit-in-face-with-line-drive",
+        "https://www.mlb.com/news/chris-bassitt-sharp-in-return-but-a-s-wild-card-hopes-dim",
+        "https://www.mlb.com/news/chris-bassitt-to-return-for-athletics-on-thursday"
+      ]
+    },
+    {
+      "slug": "alex-cobb-2013-concussion",
+      "eventDate": "2013-06-15",
+      "returnDate": "2013-07-23",
+      "recomputedDays": 38,
+      "injuryVerified": "concussion; impact right ear/head",
+      "returnLevel": "Class A Charlotte rehabilitation game",
+      "status": "accept",
+      "confidence": 0.97,
+      "notes": "38 days, only two pitches before unrelated blister. July 23 contemporaneous report independently retrieved HTTP 200.",
+      "sourceUrls": [
+        "https://www.mlb.com/news/alex-cobb-hit-in-head-by-liner-has-mild-concussion/c-50727980",
+        "https://www.mlb.com/news/worth-noting/c-54499874",
+        "https://www.mlb.com/news/rays-right-hander-alex-cobb-slated-to-pitch-simulated-game-tuesday/c-55178332",
+        "https://www.mlb.com/player/alex-cobb-502171"
+      ],
+      "additionalIndependentSource": "https://www.mlb.com/news/worth-noting/c-54499874"
+    },
+    {
+      "slug": "giancarlo-stanton-2014-face",
+      "eventDate": "2014-09-11",
+      "returnDate": "2015-03-05",
+      "recomputedDays": 175,
+      "injuryVerified": "multiple facial fractures and dental injury",
+      "returnLevel": "Grapefruit League spring training",
+      "status": "accept",
+      "confidence": 0.98,
+      "notes": "175 days. API first spring date March 5 and AP actual game agree; held out March 3 university exhibition; prior simulated sessions excluded.",
+      "sourceUrls": [
+        "https://www.mlb.com/news/improving-giancarlo-stanton-heads-home-major-surgery-unlikely-for-marlins-slugger/c-94340404",
+        "https://www.cbsnews.com/miami/news/marlins-giancarlo-stanton-pleased-with-first-at-bats/",
+        "https://www.mlb.com/news/giancarlo-stanton-stays-in-after-hit-by-pitch-in-marlins-first-sim-game/c-110729650",
+        "https://www.mlb.com/news/marlins-opt-to-hold-giancarlo-stanton-out-of-exhibition-against-university-of-miami/c-111007996",
+        "https://statsapi.mlb.com/api/v1/people/519317/stats?stats=gameLog&group=hitting&season=2015&gameType=S"
+      ]
+    },
+    {
+      "slug": "charlie-morton-2021-fibula",
+      "eventDate": "2021-10-26",
+      "returnDate": "2022-03-27",
+      "recomputedDays": 152,
+      "injuryVerified": "right fibula fracture",
+      "returnLevel": "Grapefruit League spring training",
+      "status": "accept",
+      "confidence": 0.98,
+      "notes": "152 days. October 28 article reports Tuesday October 26 injury. March 27 actual debut plus API agree; prior live BP/sims excluded.",
+      "sourceUrls": [
+        "https://www.mlb.com/news/charlie-morton-exits-world-series-game-1",
+        "https://www.mlb.com/news/charlie-morton-max-fried-battle-for-braves-opening-day-start",
+        "https://statsapi.mlb.com/api/v1/people/450203/stats?stats=gameLog&group=pitching&season=2022&gameType=S"
+      ]
+    },
+    {
+      "slug": "adam-eaton-2017-knee",
+      "eventDate": "2017-04-28",
+      "returnDate": null,
+      "recomputedDays": null,
+      "injuryVerified": "left ACL and meniscus tears; left high ankle sprain; knee surgery",
+      "returnLevel": "earlier Minor League backfield games, exact first date unconfirmed",
+      "status": "accept-null-earliest-return",
+      "confidence": 0.99,
+      "notes": "All four original sources independently read. March 11 already reports prior Minor League games. March 17 is later Grapefruit League debut, not first actual return. May 10 surgery report explicitly dates April 28 injury.",
+      "sourceUrls": [
+        "https://www.mlb.com/news/nats-adam-eaton-talks-acl-injury-recovery-c227412888",
+        "https://www.mlb.com/news/adam-eaton-will-need-6-9-months-to-rehab-knee/c-229427320",
+        "https://www.mlb.com/news/adam-eaton-near-return-from-left-knee-injury-c268433120",
+        "https://www.mlb.com/news/nationals-adam-eaton-homers-in-2018-debut-c268948342"
+      ]
+    }
+  ],
+  "correctionsRequired": [],
+  "improvements": [
+    {
+      "confidence": 0.99,
+      "action": "optional-source-strengthening",
+      "slug": "alex-cobb-2013-concussion",
+      "url": "https://www.mlb.com/news/worth-noting/c-54499874",
+      "publishedAt": "2013-07-23",
+      "reason": "Contemporaneous actual-game report directly supports first rehab outing and two-pitch interruption.",
+      "status": "incorporated in final clip and event sources"
+    }
+  ],
+  "rejectedInferences": [
+    {
+      "claim": "Return must use MLB regular season only",
+      "confidence": 0.1,
+      "reason": "Existing atlas explicitly includes first actual external rehab, AFL, and exhibition competition; preserve level labels."
+    },
+    {
+      "claim": "All head impacts establish concussion",
+      "confidence": 0,
+      "reason": "Only Cobb has concussion diagnosis among these head/face cases. Bassitt and Stanton remain facial fractures."
+    },
+    {
+      "claim": "First return establishes full recovery",
+      "confidence": 0,
+      "reason": "Jeter subsequent fracture and Cobb blister demonstrate limits; narratives preserve these distinctions."
+    }
+  ],
+  "limitations": [
+    "Actual YouTube video content and playback, browser UI, build and release tests belong to root agent; this reviewer performed source browsing and static/data binding checks."
+  ],
+  "draftSha256": {
+    "/tmp/atlas32/fielding/events.draft.json": "5fa7d5f86515b2ddacd27ab644ef5d5ead306bc31edfe871ae1def075971ae92",
+    "/tmp/atlas32/pitching/events-draft.json": "1aa6e1741909086c5ddf2fae9285a7f2958679eb918c9a402625a61ee259069a",
+    "/tmp/atlas32/fielding/eaton.event.json": "fccd7038da0f9edc567e00ecf271866cc350b3d509392fec5b6d73aefd401970"
+  },
+  "excludedResearch": [
+    {
+      "slug": "derek-jeter-2012-ankle",
+      "eventDate": "2012-10-13",
+      "returnDate": "2013-03-09",
+      "recomputedDays": 147,
+      "injuryVerified": "left ankle fracture",
+      "returnLevel": "Grapefruit League DH",
+      "status": "accept",
+      "confidence": 0.98,
+      "notes": "147 days to first spring game; April 2013 new fracture prevents interpreting first return as sustained recovery.",
+      "sourceUrls": [
+        "https://www.mlb.com/news/yankees-shortstop-derek-jeter-works-out-on-field-for-first-time-since-injury/c-41218668",
+        "https://www.mlb.com/news/jeter-singles-in-first-game-since-fracturing-ankle/c-42519266",
+        "https://www.mlb.com/news/yankees-general-manager-brian-cashman-derek-jeter-out-until-after-break/c-45146236"
+      ],
+      "selectionStatus": "excluded",
+      "reason": "Root actual-video review rejected candidate uploads; source date research remains valid but not selected."
+    }
+  ],
+  "finalDataCheck": "final-data-check.json",
+  "finalSourceHashes": {
+    "src/data/videos/batch-32.v1.json": "9b1a33a2d62f61275d3063a2d59ddfba77d1c3f4ef9c6e385f698a06bda91389",
+    "src/data/videos/event-batch-32.v1.json": "63c55a6b1a8ada4e51c61b99f91a9280f97412dcf40e110dab9583b5d8250bc5"
+  }
+}

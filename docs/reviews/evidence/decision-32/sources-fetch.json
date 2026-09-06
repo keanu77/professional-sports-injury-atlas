@@ -1,0 +1,109 @@
+[
+  {
+    "key": "bassitt-injury",
+    "url": "https://www.mlb.com/news/chris-bassitt-hit-in-face-with-line-drive",
+    "status": 200,
+    "datePublished": [
+      "2021-08-18T20:23:00Z"
+    ]
+  },
+  {
+    "key": "bassitt-return",
+    "url": "https://www.mlb.com/news/chris-bassitt-sharp-in-return-but-a-s-wild-card-hopes-dim",
+    "status": 200,
+    "datePublished": [
+      "2021-09-24T01:50:00Z"
+    ]
+  },
+  {
+    "key": "bassitt-sim",
+    "url": "https://www.mlb.com/news/chris-bassitt-to-return-for-athletics-on-thursday",
+    "status": 200,
+    "datePublished": [
+      "2021-09-22T01:31:00Z"
+    ]
+  },
+  {
+    "key": "cobb-injury",
+    "url": "https://www.mlb.com/news/alex-cobb-hit-in-head-by-liner-has-mild-concussion/c-50727980",
+    "status": 200,
+    "datePublished": []
+  },
+  {
+    "key": "cobb-return",
+    "url": "https://www.mlb.com/news/rays-right-hander-alex-cobb-slated-to-pitch-simulated-game-tuesday/c-55178332",
+    "status": 200,
+    "datePublished": []
+  },
+  {
+    "key": "cobb-bio",
+    "url": "https://www.mlb.com/player/alex-cobb-502171",
+    "status": 200,
+    "datePublished": []
+  },
+  {
+    "key": "stanton-injury",
+    "url": "https://www.mlb.com/news/improving-giancarlo-stanton-heads-home-major-surgery-unlikely-for-marlins-slugger/c-94340404",
+    "status": 200,
+    "datePublished": []
+  },
+  {
+    "key": "stanton-return",
+    "url": "https://www.cbsnews.com/miami/news/marlins-giancarlo-stanton-pleased-with-first-at-bats/",
+    "status": 200,
+    "datePublished": [
+      "2015-03-05T18:01:14-0500"
+    ]
+  },
+  {
+    "key": "stanton-sim",
+    "url": "https://www.mlb.com/news/giancarlo-stanton-stays-in-after-hit-by-pitch-in-marlins-first-sim-game/c-110729650",
+    "status": 200,
+    "datePublished": []
+  },
+  {
+    "key": "stanton-um",
+    "url": "https://www.mlb.com/news/marlins-opt-to-hold-giancarlo-stanton-out-of-exhibition-against-university-of-miami/c-111007996",
+    "status": 200,
+    "datePublished": []
+  },
+  {
+    "key": "morton-injury",
+    "url": "https://www.mlb.com/news/charlie-morton-exits-world-series-game-1",
+    "status": 200,
+    "datePublished": [
+      "2021-10-28T00:00:00Z"
+    ]
+  },
+  {
+    "key": "morton-return",
+    "url": "https://www.mlb.com/news/charlie-morton-max-fried-battle-for-braves-opening-day-start",
+    "status": 200,
+    "datePublished": [
+      "2022-03-27T21:17:21.042Z"
+    ]
+  },
+  {
+    "key": "harper-injury",
+    "url": "https://www.mlb.com/news/bryce-harper-thumb-injury-update",
+    "status": 200,
+    "datePublished": [
+      "2022-06-29T21:19:00Z"
+    ]
+  },
+  {
+    "key": "harper-return",
+    "url": "https://www.mlb.com/phillies/news/bryce-harper-homers-twice-in-rehab-game",
+    "status": 200,
+    "datePublished": [
+      "2022-08-24T03:41:00.656Z"
+    ]
+  },
+  {
+    "key": "cobb-rehab-recap",
+    "url": "https://www.mlb.com/news/worth-noting/c-54499874",
+    "status": 200,
+    "datePublished": [],
+    "visiblePublishedAt": "2013-07-23"
+  }
+]

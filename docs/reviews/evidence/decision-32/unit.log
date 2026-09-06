@@ -1,0 +1,13 @@
+
+> professional-sports-injury-atlas@0.1.0 test:unit
+> vitest run
+
+
+ RUN  v4.1.10 /private/tmp/atlas32-checkout
+
+
+ Test Files  82 passed (82)
+      Tests  1322 passed (1322)
+   Start at  18:20:10
+   Duration  7.91s (transform 10.58s, setup 0ms, import 20.58s, tests 53.31s, environment 6ms)
+

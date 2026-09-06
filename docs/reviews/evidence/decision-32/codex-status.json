@@ -1,0 +1,16 @@
+{
+  "tool": "codex exec",
+  "model": "gpt-5.5",
+  "sandbox": "read-only",
+  "skipGitRepoCheck": true,
+  "stdin": "/dev/null",
+  "exitCode": 0,
+  "networkResearch": "Live web tools present in stderr; final includes independently located primary sources",
+  "completedAt": "2026-09-06T10:01:24.059251+00:00",
+  "initialAttempt": {
+    "model": "gpt-6-astra",
+    "exitCode": 1,
+    "error": "Configured model requires newer Codex CLI; no successful model output",
+    "log": "codex-astra-failed.log"
+  }
+}

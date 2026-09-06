@@ -44,6 +44,14 @@ updates.entries.push(
 const batch31 = JSON.parse(
   fs.readFileSync("src/data/videos/batch-31.v1.json", "utf8"),
 );
+updates.entries.push(
+  ...JSON.parse(
+    fs.readFileSync("src/data/videos/event-batch-32.v1.json", "utf8"),
+  ).entries,
+);
+const batch32 = JSON.parse(
+  fs.readFileSync("src/data/videos/batch-32.v1.json", "utf8"),
+);
 const curation = JSON.parse(
   fs.readFileSync("src/data/videos/curation.v1.json", "utf8"),
 );
@@ -53,6 +61,12 @@ for (const slug of curation.removedSlugs)
     404,
     `Removed video still served: ${slug}`,
   );
+const policyPages = {
+  "/source-policy/": "影片來源與資料查核",
+  "/credits-notices/": "影片與圖片使用說明",
+  "/privacy/": "隱私與播放設定",
+  "/about/": "認識影片圖鑑",
+};
 const live = origin.startsWith("https:");
 let matchedPages = 0;
 for (const file of receipt.files.filter(
@@ -109,6 +123,7 @@ try {
       ...receipt.bodyParts.map((part) => `/body-parts/${part.code}/`),
       ...receipt.sports.map((sport) => `/sports/${sport.code}/`),
       ...videoPaths,
+      ...Object.keys(policyPages),
     ]) {
       await page.goto(origin + path, { waitUntil: "networkidle" });
       if (viewport.width === 320)
@@ -126,6 +141,16 @@ try {
       assert.equal(
         await page.locator('.site-nav a[href^="/injuries/"]').count(),
         0,
+      );
+      for (const [href, title] of Object.entries(policyPages))
+        assert.ok(
+          await page
+            .locator(`footer a[href="${href}"]`)
+            .filter({ hasText: title })
+            .isVisible(),
+        );
+      assert.ok(
+        !(await page.locator("footer").innerText()).includes("照片署名"),
       );
       const covers = page.locator("[data-video-thumbnail]");
       const part = receipt.bodyParts.find(
@@ -190,6 +215,14 @@ try {
           [...(group ? group.paths : videoPaths)].sort(),
           `Classification video membership: ${path}`,
         );
+      } else if (policyPages[path]) {
+        assert.equal(await page.locator("h1").innerText(), policyPages[path]);
+        if (path === "/credits-notices/") {
+          const historical = page.locator("details.historical-credits");
+          assert.equal(await historical.count(), 1);
+          await historical.locator("summary").click();
+          assert.ok(await page.locator("#photo-credits-heading").isVisible());
+        }
       } else {
         assert.equal(
           await page
@@ -210,6 +243,7 @@ try {
           ...curation.clips,
           ...batch30.clips,
           ...batch31.clips,
+          ...batch32.clips,
         ].find((c) => c.slug === update.slug && c.bodyPart === "頭頸部");
         if (headClip) {
           const care = page.locator("[data-head-injury-care]");
@@ -260,6 +294,15 @@ try {
         `Accessibility: ${path}`,
       );
       if (path === "/") {
+        for (const [key, count] of Object.entries({
+          "body-parts": receipt.bodyParts.length,
+          videos: videoPaths.length,
+          sports: receipt.sports.length,
+        }))
+          assert.equal(
+            await page.locator(`[data-atlas-stat="${key}"]`).innerText(),
+            String(count),
+          );
         assert.equal(await page.locator(".more-cases").count(), 0);
         assert.equal(
           await page.locator("[data-featured-card]:visible").count(),
@@ -289,7 +332,8 @@ try {
         (receipt.clips ?? []).length +
         receipt.bodyParts.length +
         receipt.sports.length +
-        1,
+        1 +
+        Object.keys(policyPages).length,
       accessibility: "passed",
       externalBeforeActivation: 0,
     });
@@ -306,6 +350,10 @@ try {
   assert.equal(await page.locator("[data-video-load]:visible").count(), 0);
   assert.ok(await page.locator("[data-video-source-link]").isVisible());
   await page.goto(origin + "/");
+  assert.equal(
+    await page.locator('[data-atlas-stat="videos"]').innerText(),
+    String(videoPaths.length),
+  );
   await page.locator("[data-body-part-nav] a").first().click();
   assert.ok(await page.locator("[data-body-part-videos]").isVisible());
   for (const sport of receipt.sports) {
@@ -320,6 +368,11 @@ try {
     await page.locator('a[href="/#sports"]').click();
     assert.equal(new URL(page.url()).hash, "#sports");
     assert.ok(await page.locator("[data-sport-nav]").isVisible());
+  }
+  for (const [path, title] of Object.entries(policyPages)) {
+    await page.goto(origin + "/");
+    await page.locator(`footer a[href="${path}"]`).click();
+    assert.equal(await page.locator("h1").innerText(), title);
   }
   await context.close();
   const result = {

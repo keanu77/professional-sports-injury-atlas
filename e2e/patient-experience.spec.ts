@@ -6,6 +6,9 @@ test("video collection is directly browsable without search or filters", async (
 }) => {
   await page.goto("/");
   await expect(page.locator("[data-featured-card]:visible")).toHaveCount(5);
+  await expect(page.locator('[data-atlas-stat="videos"]')).toHaveText(
+    String(await page.locator("[data-featured-card]:visible").count()),
+  );
   await expect(page.getByRole("searchbox")).toHaveCount(0);
   await expect(page.getByRole("combobox")).toHaveCount(0);
   await expectNoAxeViolations(page);

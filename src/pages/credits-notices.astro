@@ -7,18 +7,22 @@ import { currentPhotoCredits } from "../lib/rights/photo-credits";
 ---
 
 <BaseLayout
-  title="授權與說明｜運動傷害影片圖鑑"
+  title="影片與圖片使用說明｜運動傷害影片圖鑑"
   description="影片、縮圖與歷史照片的來源及使用說明。"
 >
-  <h1>授權與說明</h1>
-  <p>影片封面使用各支 YouTube 影片的預設縮圖，來源連結列於影片頁。</p>
+  <h1>影片與圖片使用說明</h1>
+  <p>
+    本站整理影片與衛教資訊。影片、縮圖及其他第三方素材的權利，仍屬原權利人。
+  </p>
   <section aria-labelledby="video-rights-heading">
-    <h2 id="video-rights-heading">影片來源</h2>
+    <h2 id="video-rights-heading">影片如何提供</h2>
     <p>
-      本站使用來源平台提供的內嵌播放器，不下載、重製或重新上傳影片。影片權利屬原權利人，能播放不代表本站取得著作權授權；播放器可能因來源設定、地區或平台政策而停止提供。
+      影片透過 YouTube
+      原生播放器提供，本站不提供影片檔案下載或重新上傳。收錄時會測試能否內嵌播放；能播放不代表本站持有影片著作權，也不代表可以另行下載、剪輯或轉用。
     </p>
     <p>
-      若來源停止允許內嵌，請使用案例中的原始影片連結。影片播放與字幕由來源平台提供。
+      上傳者可能關閉內嵌或移除影片，平台也可能依地區、年齡或帳號限制播放。若無法播放，可嘗試頁面的原始影片連結；原始頁面也可能已失效。廣告、推薦影片與字幕由
+      YouTube 提供。
     </p>
   </section>
 
@@ -27,9 +31,35 @@ import { currentPhotoCredits } from "../lib/rights/photo-credits";
     class="anchored-notice-section"
     aria-labelledby="medical-notice-heading"
   >
-    <h2 id="medical-notice-heading">醫療內容聲明與法規脈絡</h2>
+    <h2 id="medical-notice-heading">衛教內容使用提醒</h2>
     <p data-canonical-medical-notice>
       {CANONICAL_MEDICAL_NOTICE_ZH_HANT}
+    </p>
+  </section>
+
+  <section aria-labelledby="recovery-heading">
+    <h2 id="recovery-heading">回場紀錄的用途</h2>
+    <p>
+      本站不是線上診療服務。案例中的回場天數僅描述該名選手的經過，不是個人的休養期限或回場許可。
+    </p>
+  </section>
+  <section aria-labelledby="covers-heading">
+    <h2 id="covers-heading">封面與示意圖片</h2>
+    <p>
+      影片封面使用該支 YouTube
+      影片的預設縮圖，並由本站提供封面檔案，讓瀏覽列表時不必先連線到
+      YouTube。縮圖由原上傳者選用，未必是受傷瞬間，也不一定是影片第一個畫格。
+    </p>
+    <p>
+      傷害介紹中的原創示意圖會另外標示，不能當作選手實際受傷影像。本站不以圖片或影片中的隊徽、商標表示合作關係。
+    </p>
+  </section>
+  <section aria-labelledby="corrections-heading">
+    <h2 id="corrections-heading">更正與權利問題</h2>
+    <p>
+      若你是權利人，或發現影片來源、傷勢資料有誤，請透過<a
+        href="https://sportsmedicine.tw/contact/">主站聯絡頁</a
+      >提供本站頁面網址、原始來源與問題說明，供核對、更正或移除。
     </p>
   </section>
 
@@ -48,6 +78,7 @@ import { currentPhotoCredits } from "../lib/rights/photo-credits";
       }
     </section>
   </details>
+  <p>更新日期：2026 年 9 月 6 日。</p>
 </BaseLayout>
 
 <style>
