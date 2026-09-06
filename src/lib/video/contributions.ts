@@ -1,29 +1,11 @@
 import { createRequestLimiter } from "./play-rate-limit";
 import type { ContributionGuard, Reservation } from "./contribution-limits";
+import { publicContributionUrl as publicUrl } from "./contribution-content";
 
 const allowRequest = createRequestLimiter(3);
 const CONTACT_ENDPOINT = "https://sportsmedicine.tw/api/contact";
 export const CONTRIBUTION_SUCCESS =
   "謝謝你協助完善運動傷害影片圖鑑！你的訊息已送出，我們會查核後評估更新。";
-const publicUrl = (value: unknown): string | null => {
-  if (typeof value !== "string" || value.length > 2048) return null;
-  try {
-    const url = new URL(value.trim());
-    if (
-      !["https:", "http:"].includes(url.protocol) ||
-      url.username ||
-      url.password ||
-      !url.hostname.includes(".") ||
-      url.hostname.endsWith(".local") ||
-      url.hostname.endsWith(".localhost") ||
-      /^[\d.]+$/.test(url.hostname)
-    )
-      return null;
-    return url.href;
-  } catch {
-    return null;
-  }
-};
 const respond = (status: number, body: object, extraHeaders = {}) =>
   Response.json(body, {
     status,
@@ -110,7 +92,7 @@ export async function submitContribution(
   const token =
     typeof data.turnstileToken === "string" ? data.turnstileToken : "";
   if (
-    !["video", "correction"].includes(String(data.type)) ||
+    (data.type !== "video" && data.type !== "correction") ||
     (!url && (data.type === "correction" || !urlMissing)) ||
     note.length > 2000 ||
     /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/.test(note) ||
@@ -125,6 +107,8 @@ export async function submitContribution(
     : [];
   if (sourceUrls.length > 3 || sourceUrls.some((u) => u === null))
     return respond(400, { error: "sources" });
+  if (data.type === "video" && !url && !note && sourceUrls.length === 0)
+    return respond(400, { error: "empty-content" });
   const label = data.type === "video" ? "提供公開影片" : "回報資料修正";
   const message = [
     `類型：${label}`,

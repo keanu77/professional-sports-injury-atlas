@@ -20,6 +20,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           ><input type="radio" name="type" value="correction" /> 資料修正</label
         >
       </fieldset>
+      <p id="contribution-content-help">
+        提供公開影片時，至少填寫公開影片網址、補充說明或有效參考來源其中一項。
+      </p>
       <label for="contribution-url" data-url-label>公開影片網址（選填）</label>
       <input
         id="contribution-url"
@@ -28,6 +31,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         maxlength="2048"
         placeholder="https://"
         autocomplete="off"
+        aria-describedby="contribution-content-help"
       />
       <label for="contribution-note" data-note-label>補充說明（選填）</label>
       <textarea
@@ -35,6 +39,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         name="note"
         rows="4"
         maxlength="2000"
+        aria-describedby="contribution-content-help"
         placeholder="例如：選手、運動項目，或需要修正的內容"></textarea>
       <label for="contribution-sources">參考來源（選填）</label>
       <textarea
@@ -42,6 +47,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         name="sources"
         rows="2"
         maxlength="3000"
+        aria-describedby="contribution-content-help"
         placeholder="每行一個公開網址，最多 3 個"></textarea>
       <div class="contribution-trap" aria-hidden="true">
         <label
@@ -62,7 +68,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         >送出</button
       >
       <p data-contribution-status role="status" aria-live="polite">
-        正在準備安全驗證…
+        至少提供公開影片網址、補充說明或有效參考來源其中一項。
       </p>
       <noscript
         ><p>

@@ -109,6 +109,48 @@ test("allows an empty video URL after switching back from correction", async ({
     "required",
   );
   await expect(page.getByLabel("公開影片網址（選填）")).toHaveValue("");
+  await page.getByLabel("補充說明（選填）").fill("請協助尋找相關公開影片");
+  await page.getByRole("button", { name: "送出", exact: true }).click();
+  await expect(page.locator("[data-contribution-thanks]")).toBeVisible();
+});
+test("empty and whitespace-only submissions never load Turnstile or contact the API", async ({
+  page,
+}) => {
+  let challenges = 0;
+  let submissions = 0;
+  page.on("request", (request) => {
+    if (request.url().includes("challenges.cloudflare.com")) challenges++;
+    if (request.url().endsWith("/api/contributions")) submissions++;
+  });
+  await page.goto("/contribute/");
+  for (const blank of ["", " \n　"]) {
+    await page.getByLabel("補充說明（選填）").fill(blank);
+    await page.getByLabel("參考來源（選填）").fill(blank);
+    await page
+      .locator("[data-contribution-form]")
+      .evaluate((form: HTMLFormElement) => form.requestSubmit());
+    await expect(page.getByRole("status")).toContainText(
+      "至少提供公開影片網址、補充說明或有效參考來源其中一項",
+    );
+    expect(challenges).toBe(0);
+    expect(submissions).toBe(0);
+    await expect(
+      page.getByRole("button", { name: "送出", exact: true }),
+    ).toBeDisabled();
+  }
+});
+test("legal source alone unlocks verification and sending", async ({
+  page,
+}) => {
+  await page.route("**/api/contributions", (route) =>
+    route.fulfill({ json: { ok: true } }),
+  );
+  await page.goto("/contribute/");
+  await page.getByLabel("參考來源（選填）").fill("not a URL");
+  await expect(
+    page.getByRole("button", { name: "送出", exact: true }),
+  ).toBeDisabled();
+  await page.getByLabel("參考來源（選填）").fill("https://example.org/report");
   await page.getByRole("button", { name: "送出", exact: true }).click();
   await expect(page.locator("[data-contribution-thanks]")).toBeVisible();
 });
@@ -121,7 +163,13 @@ test("header and form reflow with large text and pass accessibility in both them
     "href",
     "https://sportsmedicine.tw/",
   );
-  await expect(page.locator(".site-contribute-link")).toBeVisible();
+  await page.getByRole("button", { name: "主選單", exact: true }).click();
+  await expect(
+    page
+      .getByRole("navigation", { name: "主導覽" })
+      .getByRole("link", { name: "提供影片／資料修正" }),
+  ).toBeVisible();
+  await page.keyboard.press("Escape");
   for (const theme of ["light", "dark"]) {
     if (theme === "dark")
       await page.getByRole("button", { name: "深色模式" }).click();

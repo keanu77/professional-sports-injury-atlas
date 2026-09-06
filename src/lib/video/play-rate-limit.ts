@@ -16,5 +16,4 @@ export function createRequestLimiter(maximum: number) {
     return count <= maximum;
   };
 }
-export const allowPlayRequest = createRequestLimiter(30);
 export const allowPopularRequest = createRequestLimiter(60);

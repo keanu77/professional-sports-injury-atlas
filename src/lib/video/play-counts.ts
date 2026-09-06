@@ -1,13 +1,11 @@
 import { publicVideoIds } from "../videos/public-video-ids";
-import { allowPlayRequest, allowPopularRequest } from "./play-rate-limit";
+import { allowPopularRequest } from "./play-rate-limit";
+import { guardAndRecordPlay, type PlayOutcome } from "./play-guard";
 
 export const WINDOW_SECONDS = 30 * 24 * 60 * 60;
 export const POPULAR_INTERVAL_SECONDS = 60 * 60;
 const hourStart = (time: number) =>
   Math.floor(time / POPULAR_INTERVAL_SECONDS) * POPULAR_INTERVAL_SECONDS;
-export const INSERT_PLAY =
-  "INSERT OR IGNORE INTO play_events (event_id, video_id, played_at) VALUES (?, ?, ?)";
-export const REMOVE_EXPIRED = "DELETE FROM play_events WHERE played_at <= ?";
 export const POPULAR_PLAYS =
   "SELECT video_id AS videoId, COUNT(*) AS count FROM play_events WHERE played_at >= ? AND played_at < ? GROUP BY video_id ORDER BY count DESC, video_id ASC";
 
@@ -18,7 +16,7 @@ export interface PlaybackStatement {
 }
 export interface PlaybackDatabase {
   prepare(sql: string): PlaybackStatement;
-  batch(statements: PlaybackStatement[]): Promise<unknown>;
+  batch(statements: PlaybackStatement[]): Promise<{ results: unknown[] }[]>;
 }
 export interface PlaybackContext {
   request: Request;
@@ -99,28 +97,26 @@ export async function recordPlay(
     request.headers.get("Sec-GPC") === "1"
   )
     return json({ accepted: false });
-  if (
-    !allowPlayRequest(
-      request.headers.get("CF-Connecting-IP") ?? "unknown",
-      now * 1000,
-    )
-  )
-    return json({ error: "rate-limited" }, 429);
-  if (!env.PLAYBACK_DB) return json({ error: "unavailable" }, 503);
+  const observe = (reason: PlayOutcome | "unavailable") => {
+    // Bounded labels only: no addresses, hashes, event/video IDs or exceptions.
+    console.info(JSON.stringify({ event: "play-guard", reason }));
+  };
   try {
-    await env.PLAYBACK_DB.batch([
+    const reason = await guardAndRecordPlay(
+      env.PLAYBACK_DB,
+      request.headers.get("CF-Connecting-IP") ?? "",
+      event.eventId,
+      event.videoId,
+      now,
       // Keep the entire current hourly window; cleanup must not change its rank.
-      env.PLAYBACK_DB.prepare(REMOVE_EXPIRED).bind(
-        hourStart(now) - WINDOW_SECONDS - 1,
-      ),
-      env.PLAYBACK_DB.prepare(INSERT_PLAY).bind(
-        event.eventId,
-        event.videoId,
-        now,
-      ),
-    ]);
-    return json({ accepted: true });
+      hourStart(now) - WINDOW_SECONDS - 1,
+    );
+    observe(reason);
+    return json(
+      reason === "accepted" ? { accepted: true } : { accepted: false, reason },
+    );
   } catch {
+    observe("unavailable");
     return json({ error: "unavailable" }, 503);
   }
 }

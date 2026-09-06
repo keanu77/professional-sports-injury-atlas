@@ -12,6 +12,7 @@ import {
 import { createPlaybackTracker } from "../../src/lib/video/playback-tracking";
 import { createPlayer } from "../../src/lib/video/youtube-api-adapter";
 import { createRequestLimiter } from "../../src/lib/video/play-rate-limit";
+import { publicVideoIds } from "../../src/lib/videos/public-video-ids";
 
 const videoId = "9JoITljMoU0";
 const otherVideo = "5STUOgvQWgQ";
@@ -19,6 +20,7 @@ const now = 1788717600;
 function database() {
   const sqlite = new DatabaseSync(":memory:");
   sqlite.exec(readFileSync("migrations/0001_play_events.sql", "utf8"));
+  sqlite.exec(readFileSync("migrations/0003_play_guards.sql", "utf8"));
   class Statement implements PlaybackStatement {
     values: (string | number)[] = [];
     constructor(readonly sql: string) {}
@@ -35,9 +37,11 @@ function database() {
     async batch(statements) {
       sqlite.exec("BEGIN");
       try {
-        for (const s of statements as Statement[])
-          sqlite.prepare(s.sql).run(...s.values);
+        const results = (statements as Statement[]).map((s) => ({
+          results: sqlite.prepare(s.sql).all(...s.values),
+        }));
         sqlite.exec("COMMIT");
+        return results;
       } catch (error) {
         sqlite.exec("ROLLBACK");
         throw error;
@@ -56,6 +60,7 @@ function request(
     headers: {
       Origin: "https://atlas.example",
       "Content-Type": "application/json",
+      "CF-Connecting-IP": "192.0.2.1",
       ...headers,
     },
     ...(method === "POST" ? { body: JSON.stringify(body) } : {}),
@@ -94,12 +99,12 @@ describe("actual-playback statistics with real SQLite queries", () => {
     const result = await (await popularPlays(ctx, now)).json();
     expect(result.windowDays).toBe(30);
     expect(result.items).toEqual([
-      { videoId, count: 2 },
       { videoId: otherVideo, count: 1 },
+      { videoId, count: 1 },
     ]);
     expect(
       sqlite.prepare("SELECT COUNT(*) AS n FROM play_events").get()?.n,
-    ).toBe(3);
+    ).toBe(2);
     sqlite.close();
   });
   it("uses the completed-hour 30-day window, server time, and valid IDs", async () => {
@@ -237,6 +242,193 @@ describe("actual-playback statistics with real SQLite queries", () => {
           )
         ).json(),
       ).toEqual({ accepted: false });
+  });
+});
+
+describe("shared playback abuse guard", () => {
+  it("deduplicates competing new UUIDs across independent edge handlers", async () => {
+    const { db, sqlite } = database();
+    vi.resetModules();
+    const edgeA = (await import("../../src/lib/video/play-counts")).recordPlay;
+    vi.resetModules();
+    const edgeB = (await import("../../src/lib/video/play-counts")).recordPlay;
+    const results = await Promise.all(
+      Array.from({ length: 20 }, (_, i) =>
+        (i % 2 ? edgeA : edgeB)(
+          { request: request(event()), env: { PLAYBACK_DB: db } },
+          now,
+        ).then((r) => r.json()),
+      ),
+    );
+    expect(results.filter((r) => r.accepted)).toHaveLength(1);
+    expect(results.filter((r) => r.reason === "duplicate")).toHaveLength(19);
+    expect(
+      sqlite.prepare("SELECT COUNT(*) AS n FROM play_events").get()?.n,
+    ).toBe(1);
+    sqlite.close();
+  });
+  it("admits at the exact ten-minute boundary and allows different IPs", async () => {
+    const { db, sqlite } = database();
+    const play = (time: number, ip = "192.0.2.1") =>
+      recordPlay(
+        {
+          request: request(event(), { "CF-Connecting-IP": ip }),
+          env: { PLAYBACK_DB: db },
+        },
+        time,
+      ).then((r) => r.json());
+    expect(await play(now)).toMatchObject({ accepted: true });
+    expect(await play(now + 599)).toEqual({
+      accepted: false,
+      reason: "duplicate",
+    });
+    expect(await play(now + 599, "192.0.2.2")).toMatchObject({
+      accepted: true,
+    });
+    expect(await play(now + 600)).toMatchObject({ accepted: true });
+    sqlite.close();
+  });
+  it("globally caps all attempts including duplicates at 30 per minute", async () => {
+    const { db, sqlite } = database();
+    const ids = [...publicVideoIds];
+    const results = await Promise.all(
+      Array.from({ length: 60 }, (_, i) =>
+        recordPlay(
+          {
+            request: request(event(crypto.randomUUID(), ids[i % ids.length]!)),
+            env: { PLAYBACK_DB: { ...db } },
+          },
+          now,
+        ).then(async (r) => ({ status: r.status, ...(await r.json()) })),
+      ),
+    );
+    expect(results.every((r) => r.status === 200)).toBe(true);
+    expect(results.filter((r) => r.accepted)).toHaveLength(30);
+    expect(results.filter((r) => r.reason === "rate-limit")).toHaveLength(30);
+    const retry = await recordPlay(
+      {
+        request: request(event(crypto.randomUUID(), ids[31]!)),
+        env: { PLAYBACK_DB: db },
+      },
+      now + 60,
+    );
+    expect(await retry.json()).toMatchObject({ accepted: true });
+    sqlite.close();
+  });
+  it("charges repeated UUIDs to the shared request allowance", async () => {
+    const { db, sqlite } = database();
+    const repeated = event();
+    for (let i = 0; i < 30; i++) {
+      const response = await recordPlay(
+        { request: request(repeated), env: { PLAYBACK_DB: db } },
+        now,
+      );
+      expect(await response.json()).toMatchObject(
+        i ? { accepted: false, reason: "duplicate" } : { accepted: true },
+      );
+    }
+    const limited = await recordPlay(
+      {
+        request: request(event(crypto.randomUUID(), otherVideo)),
+        env: { PLAYBACK_DB: db },
+      },
+      now,
+    );
+    expect(limited.status).toBe(200);
+    expect(await limited.json()).toEqual({
+      accepted: false,
+      reason: "rate-limit",
+    });
+    sqlite.close();
+  });
+  it("rotates domain-separated keys each Taiwan day and clears rows at 48 hours", async () => {
+    const { db, sqlite } = database();
+    const midnight = Date.parse("2026-09-07T00:00:00+08:00") / 1000;
+    const play = (time: number) =>
+      recordPlay({ request: request(event()), env: { PLAYBACK_DB: db } }, time);
+    expect(await (await play(midnight - 1)).json()).toMatchObject({
+      accepted: true,
+    });
+    expect(await (await play(midnight)).json()).toMatchObject({
+      accepted: true,
+    });
+    const rows = sqlite
+      .prepare("SELECT * FROM play_attempts ORDER BY created_at")
+      .all();
+    expect(rows).toHaveLength(2);
+    expect(rows[0]!.ip_key).not.toBe(rows[1]!.ip_key);
+    expect(rows[0]!.video_key).not.toBe(rows[1]!.video_key);
+    expect(rows[0]!.ip_key).not.toBe(rows[0]!.video_key);
+    expect(JSON.stringify(rows)).not.toContain("192.0.2.1");
+    expect(JSON.stringify(rows)).not.toContain(videoId);
+    await play(midnight - 1 + 172800);
+    expect(
+      sqlite
+        .prepare(
+          "SELECT COUNT(*) AS n FROM play_attempts WHERE created_at <= ?",
+        )
+        .get(midnight - 1)?.n,
+    ).toBe(0);
+    expect(
+      sqlite.prepare("SELECT COUNT(*) AS n FROM play_events").get()?.n,
+    ).toBe(3);
+    sqlite.close();
+  });
+  it("never queries storage for DNT/GPC, and logs only bounded outcomes", async () => {
+    const { db, sqlite } = database();
+    const prepare = vi.spyOn(db, "prepare");
+    const log = vi.spyOn(console, "info").mockImplementation(() => {});
+    for (const header of ["DNT", "Sec-GPC"]) {
+      expect(
+        await (
+          await recordPlay(
+            {
+              request: request(event(), { [header]: "1" }),
+              env: { PLAYBACK_DB: db },
+            },
+            now,
+          )
+        ).json(),
+      ).toEqual({ accepted: false });
+    }
+    expect(prepare).not.toHaveBeenCalled();
+    for (let i = 0; i < 31; i++)
+      await recordPlay(
+        { request: request(event()), env: { PLAYBACK_DB: db } },
+        now,
+      );
+    await recordPlay({ request: request(event()), env: {} }, now);
+    expect(
+      new Set(log.mock.calls.map((call) => JSON.parse(call[0]).reason)),
+    ).toEqual(new Set(["accepted", "duplicate", "rate-limit", "unavailable"]));
+    for (const call of log.mock.calls)
+      expect(Object.keys(JSON.parse(call[0])).sort()).toEqual([
+        "event",
+        "reason",
+      ]);
+    expect(JSON.stringify(log.mock.calls)).not.toContain(videoId);
+    expect(JSON.stringify(log.mock.calls)).not.toContain("192.0.2.1");
+    sqlite.close();
+  });
+  it("migration preserves existing play events and its generated secret on rerun", () => {
+    const sqlite = new DatabaseSync(":memory:");
+    sqlite.exec(readFileSync("migrations/0001_play_events.sql", "utf8"));
+    sqlite
+      .prepare("INSERT INTO play_events VALUES (?, ?, ?)")
+      .run("old-event", videoId, now);
+    const migration = readFileSync("migrations/0003_play_guards.sql", "utf8");
+    sqlite.exec(migration);
+    const key = sqlite
+      .prepare("SELECT secret FROM play_guard_key")
+      .get()?.secret;
+    sqlite.exec(migration);
+    expect(
+      sqlite.prepare("SELECT secret FROM play_guard_key").get()?.secret,
+    ).toBe(key);
+    expect(sqlite.prepare("SELECT * FROM play_events").all()).toEqual([
+      { event_id: "old-event", video_id: videoId, played_at: now },
+    ]);
+    sqlite.close();
   });
 });
 

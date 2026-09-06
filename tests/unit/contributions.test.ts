@@ -98,12 +98,69 @@ describe("anonymous contributions", () => {
     async (url) => {
       const send = successfulMail();
       expect(
-        (await submitContribution(request({ ...valid, url }), send)).status,
+        (
+          await submitContribution(
+            request({ ...valid, url, note: "影片線索" }),
+            send,
+          )
+        ).status,
       ).toBe(200);
       const body = JSON.parse(send.mock.calls[0]![1]!.body as string);
       expect(body.message).toContain("網址：未提供");
     },
   );
+  it.each([
+    { url: "", note: "", sources: "" },
+    { url: " \t", note: " \n　", sources: " \r\n　" },
+    { url: undefined, note: undefined, sources: undefined },
+    { url: "", note: "", sources: "not a URL" },
+  ])(
+    "rejects empty or invalid video content before guard and upstream (%#)",
+    async (fields) => {
+      const send = successfulMail();
+      const guard = successfulGuard();
+      const response = await handleContribution(
+        request({ ...valid, ...fields }),
+        send,
+        guard,
+      );
+      expect(response.status).toBe(400);
+      expect(guard.reserve).not.toHaveBeenCalled();
+      expect(guard.settle).not.toHaveBeenCalled();
+      expect(send).not.toHaveBeenCalled();
+    },
+  );
+  it.each(["video", "correction"])(
+    "rejects array-valued %s type before guard and upstream",
+    async (type) => {
+      const send = successfulMail();
+      const guard = successfulGuard();
+      const response = await handleContribution(
+        request({ ...valid, type: [type], url: "", note: "", sources: "" }),
+        send,
+        guard,
+      );
+      expect(response.status).toBe(400);
+      expect(guard.reserve).not.toHaveBeenCalled();
+      expect(guard.settle).not.toHaveBeenCalled();
+      expect(send).not.toHaveBeenCalled();
+    },
+  );
+  it("accepts a legal source alone without requiring a video URL", async () => {
+    const send = successfulMail();
+    const guard = successfulGuard();
+    expect(
+      (
+        await handleContribution(
+          request({ ...valid, url: "", sources: "https://example.org/report" }),
+          send,
+          guard,
+        )
+      ).status,
+    ).toBe(200);
+    expect(guard.reserve).toHaveBeenCalledOnce();
+    expect(send).toHaveBeenCalledOnce();
+  });
   it("routes the deployed form endpoint through Cloudflare Functions", () => {
     const routes = JSON.parse(readFileSync("public/_routes.json", "utf8"));
     expect(routes.include).toContain("/api/contributions");
