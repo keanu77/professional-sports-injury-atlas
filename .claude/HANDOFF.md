@@ -1,3 +1,29 @@
+# 最新交接 — Decision 33，2026-09-06
+
+依使用者明確要求加入受傷情境、精選影片與本站近 30 天實際播放熱門。78 影片、7 部位、14 運動不變；7 情境（18/17/22/6/5/1/9）各影片一個主要分類，未明不推論。精選 6 支跨 5 運動。首頁只有一份 78 卡 DOM，全部／精選／熱門按鈕切換；無 JS 保留全片及靜態情境頁。
+
+來源 cbee90004662d18822302b8d2205985422b59859 已 commit/push；正式 Production/main 部署 883cbce1-1037-4ea0-a206-33e8e9df09d4，https://sports-injury-atlas.pages.dev/。
+
+熱門依 YouTube IFrame API PLAYING 首次事件計入；同頁暫停／續播與重送不重算。兩個 Pages Functions：POST /api/plays、GET /api/popular；精確 30 天、伺服器時間、固定公開影片 allowlist、body/UUID/Origin 驗證、參數 SQL。D1 只存隨機事件 ID、影片 ID、時間。DNT/GPC 不送統計；排行榜快取 60 秒。新 functions/migrations/wrangler 設定均納入輸入 digest。
+
+Cloudflare Pages 現行設定已下載比對後加入 wrangler.jsonc；Preview/local D1 atlas-playback-preview（14ebcfe3-b040-4726-b7e6-84c6c8c03f3d），Production atlas-playback-production（d7fae228-d624-4746-bfad-a00bc9ed7800）。新建資料表及索引 migration 已各套用。正式資料庫發布前 count=0，所有預覽播放測試獨立。原 4321 參考與原醫療來源核准不動。
+
+獨立 reviewer 複核程式、分類及精選。P2 大量請求已部分緩解：每 isolate/IP 每分鐘 POST 30／GET 60、最多 4096 keys，記憶體資料於下一分鐘請求或 isolate 回收清除；沒有全域限流及防灌榜保證。Pages 官方／CLI 不支援 rate-limit binding。此限制已留內部報告；不建立跨頁訪客識別或持久 IP。隱私說明更新，不再聲稱完全沒有本站播放統計。
+
+84 檔 1,348 單元、四瀏覽器 100 回歸、Astro 0 errors/0 warnings（16 既有 hints）、格式通過。root dirty 首輪三個治理測試拒絕，隔離 committed tree 全數通過。隔離及 root release:public 通過：116 HTML、1,722 內部連結、332 產物，與預覽逐檔相同。
+
+預覽 https://49b4fe97.sports-injury-atlas.pages.dev/ 實際播放後記一筆、ready 不記、pause/resume／同 UUID 重送不重算、未知影片／跨來源拒絕，首頁排行連動通過。初版測試 harness 卡在 Playwright keepalive response.body，改以 status 與獨立 DB 查詢驗證後通過；未改播放器規則。UI 的精選／排序／空值／錯誤／競態、無 JS 與三尺寸／light-dark Axe 通過。正常手機桌面截圖已看過。
+
+報告 docs/reviews/2026-09-06-decision-33-discovery-and-popularity.md；證據 docs/reviews/evidence/decision-33/。Node24.14.0／Wrangler4.129.0。未增加新影片，距100仍22。下次增加影片需同步查核情境與來源，未指定情境保守歸其他；播放白名單由公開 JSON 推導且建置會比對。跨日來源查核需求同 D32：不可重標舊 checkedAt。
+
+完整預覽 120 回應 hash、111 頁 × 3 尺寸 = 333 組與無 JS 通過。正式唯讀驗證於 2026-09-06T11:00:25.987Z 通過：120 回應 hash 全部相符；首頁、七情境頁與隱私頁共 9 頁 × 3 尺寸 = 27 組，Axe、無溢位、精選／全部切換、零第三方預先連線及無 JS 分類導覽通過。
+
+正式寫入測試被自動核准審查拒絕（未明確授權正式測試資料，清除不含於同一動作）；沒有繞過。已以正式 GET、部署設定與唯讀瀏覽驗證替代。真正播放寫入／去重只宣稱 preview 已驗證，正式資料庫沒有測試紀錄。正式 GET 空榜與 preview GET 3 筆不同，下載設定亦證明 DB 分離。
+
+本輪使用者要求已上線。收尾證據／文件另 commit/push，不需再部署；不存在等候使用者才能實作的功能。
+
+---
+
 # 最新交接 — Decision 32，2026-09-06
 
 已完成本輪三項指示：棒球再增 8 支、頁尾與四份使用說明重寫、首頁加入清楚介紹與動態收錄數字。全站 78 支 = 7 病例 + 71 動作觀察；棒球 7 → 15，仍為 14 運動、7 部位。首頁數字以實際可見影片與非空分類共用陣列計算，隨內容重新建置部署同步，無 JS 也能閱讀；不是遠端播放可用性即時探測。

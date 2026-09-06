@@ -1,0 +1,34 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {chromium} from '/Users/ethanstudio/Documents/Vibe coding/professional-sports injury/node_modules/@playwright/test/index.mjs';
+const origin=process.argv[2],output=process.argv[3];
+const timedFetch=(url,options={})=>fetch(url,{...options,signal:AbortSignal.timeout(15000)});
+const id='9JoITljMoU0';
+const rankings=async()=>{const r=await timedFetch(origin+'/api/popular?verification='+crypto.randomUUID(),{signal:AbortSignal.timeout(15000)});assert.equal(r.status,200);return await r.json();};
+const getCount=(data)=>data.items.find(x=>x.videoId===id)?.count??0;
+console.log('reading baseline');const before=await rankings();console.log('baseline',getCount(before));
+const browser=await chromium.launch({channel:'chrome',headless:true});
+try {
+const page=await browser.newPage({locale:'zh-TW'});page.setDefaultTimeout(15000);const posts=[];
+page.on('request',r=>{if(new URL(r.url()).pathname==='/api/plays')posts.push(r.postDataJSON());});
+await page.goto(origin+'/videos/kyle-schwarber-2016-knee/',{waitUntil:'networkidle'});
+assert.equal(await page.locator('iframe').count(),0);assert.equal(posts.length,0);
+await page.locator('[data-video-load]').click();
+await page.locator('[data-video-state="ready"]').waitFor({timeout:20000});
+await page.waitForTimeout(500);assert.equal(posts.length,0);assert.equal(getCount(await rankings()),getCount(before));console.log('ready-not-counted');
+const frame=page.frames().find(f=>f.url().includes('youtube-nocookie.com/embed/'));
+const recorded=page.waitForResponse(r=>new URL(r.url()).pathname==='/api/plays'&&r.request().method()==='POST');
+await page.frameLocator('iframe').getByRole('button',{name:'播放影片',exact:true}).click();
+const response=await recorded;console.log('recorded-response',response.status());assert.equal(response.status(),200);
+await frame.waitForFunction(()=>{const v=document.querySelector('video');return v&&!v.paused&&v.currentTime>1;},null,{timeout:15000});
+console.log('playing-confirmed');await frame.locator('video').evaluate(v=>v.pause());await page.waitForTimeout(400);
+await frame.locator('video').evaluate(v=>v.play());await page.waitForTimeout(500);assert.equal(posts.length,1);
+console.log('resumed-once');const after=await rankings();assert.equal(getCount(after),getCount(before)+1);
+const repeat=await timedFetch(origin+'/api/plays',{method:'POST',headers:{Origin:origin,'Content-Type':'application/json'},body:JSON.stringify(posts[0])});assert.equal(repeat.status,200);
+assert.equal(getCount(await rankings()),getCount(after));
+const wrong=await timedFetch(origin+'/api/plays',{method:'POST',headers:{Origin:'https://example.org','Content-Type':'application/json'},body:JSON.stringify(posts[0])});assert.equal(wrong.status,403);
+const unknown=await timedFetch(origin+'/api/plays',{method:'POST',headers:{Origin:origin,'Content-Type':'application/json'},body:JSON.stringify({videoId:'abcdefghijk',eventId:crypto.randomUUID()})});assert.equal(unknown.status,400);
+console.log('api-checks-passed');const home=await browser.newPage({locale:'zh-TW'});await home.goto(origin,{waitUntil:'networkidle'});await home.locator('[data-discovery-mode="popular"]').click();await home.locator('[data-popular-count]:visible').first().waitFor();
+const card=home.locator(`[data-discovery-slug][data-video-id="${id}"]`);assert.ok(await card.isVisible());assert.ok((await card.locator('[data-popular-count]').innerText()).includes(String(getCount(after))));
+const result={origin,checkedAt:new Date().toISOString(),before:getCount(before),after:getCount(after),event:posts[0],readyDoesNotCount:true,pauseResumeDoesNotCount:true,retryDoesNotCount:true,unknownRejected:true,crossOriginRejected:true,rankingReflectsPlayback:true};fs.writeFileSync(output,JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
+}finally{await browser.close();}

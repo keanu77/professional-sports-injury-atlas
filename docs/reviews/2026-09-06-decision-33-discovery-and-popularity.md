@@ -14,7 +14,7 @@ Preview/local：atlas-playback-preview，14ebcfe3-b040-4726-b7e6-84c6c8c03f3d；
 
 ## 獨立複核與限制
 
-獨立 reviewer 核對資料、API、UI及來源，重跑 26 項 focused tests。P2 無頻率限制已部分緩解：每 isolate/IP 每分鐘 POST 30、GET 60，上限 4096 keys；IP 只在記憶體，下一分鐘請求進來或 isolate 回收才清除，已如實寫入隱私。這不是跨 isolate 全域配額，也不能阻止刻意偽造客戶端播放事件，不宣稱防灌榜保證。Cloudflare Pages 官方綁定清單及已安装 Wrangler 4.129.0 validation 不支援 rate-limit binding，沒有為此另加 Worker。保留此匿名統計的限制。
+獨立 reviewer 核對資料、API、UI及來源，重跑 26 項 focused tests。P2 無頻率限制已部分緩解：每 isolate/IP 每分鐘 POST 30、GET 60，上限 4096 keys；IP 只在記憶體，下一分鐘請求進來或 isolate 回收才清除，已如實寫入隱私。這不是跨 isolate 全域配額，也不能阻止刻意偽造客戶端播放事件，不宣稱防灌榜保證。Cloudflare Pages 官方綁定清單及已安裝 Wrangler 4.129.0 validation 不支援 rate-limit binding，沒有為此另加 Worker。保留此匿名統計的限制。
 
 ## 驗證
 
@@ -22,6 +22,16 @@ Preview/local：atlas-playback-preview，14ebcfe3-b040-4726-b7e6-84c6c8c03f3d；
 
 最終預覽 https://49b4fe97.sports-injury-atlas.pages.dev/，實際 HTTPS iframe 已驗證 ready 不寫入、PLAYING 增一筆、pause/resume 不增、同 UUID 重送不增、跨站／未知影片拒絕、首頁熱門反映新次數。首次測試腳本卡在 Playwright 讀 keepalive response.body，保留中止紀錄；改以 HTTP 狀態與獨立 DB 查詢驗證後全部通過，沒有修改實際播放器或計次邏輯。這兩次中止所產生的真實測試播放都只在 preview。正式 DB 新建後確認為零，無預覽測試混入。
 
-UI 含精選／mock 熱門排序、空／503、競態、無 JS、三尺寸與新分類 light/dark Axe 通過；mock 值從未寫入 DB。正常字體手機／桌面畫面已人工檢視。完整預覽逐頁與正式驗證完成後補記。
+UI 含精選／mock 熱門排序、空／503、競態、無 JS、三尺寸與新分類 light/dark Axe 通過；mock 值從未寫入 DB。正常字體手機／桌面畫面已人工檢視。完整預覽於 2026-09-06T10:57:12.930Z 通過：120 回應 hash、111 頁 × 3 尺寸 = 333 組，Axe、無水平溢位、來源／分類／頁尾、零第三方預先請求、無 JS 均通過。
 
 參考：[YouTube 官方事件](https://developers.google.com/youtube/iframe_api_reference)、[Pages 綁定](https://developers.cloudflare.com/pages/functions/bindings/)、[Pages 設定](https://developers.cloudflare.com/pages/functions/wrangler-configuration/)、[D1 參數化查詢](https://developers.cloudflare.com/d1/worker-api/prepared-statements/)。
+
+## 正式發布
+
+來源 cbee90004662d18822302b8d2205985422b59859 已 commit/push；Production/main 883cbce1-1037-4ea0-a206-33e8e9df09d4。root 332 個產物與最終預覽位元組相同。正式部署下載的設定確認 PLAYBACK_DB 是 production D1，preview 是另一個 ID。正式 GET 回空榜、preview GET 有 3 個測試播放，沒有混用資料。
+
+自動核准審查在執行前拒絕正式站的測試播放寫入：未明確授權正式測試資料，且清除不包含於同一動作。未繞過拒絕，改以正式頁面／產物 hash、資料庫綁定與排行榜唯讀驗證。真正 write-through 與 pause/resume 去重已在 preview 實證；不宣稱正式寫入已測。正式資料沒有加入測試播放。
+
+正式 targeted browser 最初使用 browser.newPage 造成 Axe context 要求失敗，修正測試 harness 為 browser.newContext，不改網站。正式唯讀驗證於 2026-09-06T11:00:25.987Z 通過：120 回應 hash 全部相符；首頁、七情境頁與隱私頁共 9 頁 × 3 尺寸 = 27 組，Axe、無溢位、精選／全部切換、零第三方預先連線及無 JS 分類導覽通過。
+
+本輪功能已完成上線；保留自動審核拒絕正式測試寫入及 per-isolate 限流的實證限制。收尾文件提交不需重部署。

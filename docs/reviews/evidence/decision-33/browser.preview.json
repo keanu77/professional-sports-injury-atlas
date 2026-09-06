@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-09-06T10:57:12.930Z",
+  "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+  "commit": "bd70f92ddb5fd41ea5be6505cc12607880f593c1",
+  "matchedPages": 120,
+  "noJavaScript": "passed",
+  "results": [
+    {
+      "viewport": {
+        "width": 320,
+        "height": 780
+      },
+      "pages": 111,
+      "accessibility": "passed",
+      "externalBeforeActivation": 0
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pages": 111,
+      "accessibility": "passed",
+      "externalBeforeActivation": 0
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "pages": 111,
+      "accessibility": "passed",
+      "externalBeforeActivation": 0
+    }
+  ]
+}

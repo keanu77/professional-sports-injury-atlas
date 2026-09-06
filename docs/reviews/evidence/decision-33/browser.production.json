@@ -1,0 +1,144 @@
+{
+  "origin": "https://sports-injury-atlas.pages.dev",
+  "commit": "cbee90004662d18822302b8d2205985422b59859",
+  "checkedAt": "2026-09-06T11:00:25.987Z",
+  "matchedPages": 120,
+  "noJavaScript": "passed",
+  "results": [
+    {
+      "width": 320,
+      "path": "/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/situations/landing/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/situations/running-turning/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/situations/collision/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/situations/fall/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/situations/ball-impact/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/situations/racket-swing/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/situations/unclear/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/privacy/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/situations/landing/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/situations/running-turning/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/situations/collision/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/situations/fall/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/situations/ball-impact/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/situations/racket-swing/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/situations/unclear/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/privacy/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/situations/landing/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/situations/running-turning/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/situations/collision/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/situations/fall/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/situations/ball-impact/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/situations/racket-swing/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/situations/unclear/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/privacy/",
+      "accessibility": "passed"
+    }
+  ]
+}

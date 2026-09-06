@@ -1,0 +1,10 @@
+file:///Users/ethanstudio/Documents/Vibe%20coding/professional-sports%20injury/node_modules/@axe-core/playwright/dist/index.mjs:218
+      throw new Error(
+            ^
+
+Error: Please use browser.newContext()
+ Please check out https://github.com/dequelabs/axe-core-npm/blob/develop/packages/playwright/error-handling.md
+    at AxeBuilder.analyze (file:///Users/ethanstudio/Documents/Vibe%20coding/professional-sports%20injury/node_modules/@axe-core/playwright/dist/index.mjs:218:13)
+    at async file:///private/tmp/atlas33/verify-production.mjs:9:400
+
+Node.js v24.14.0
