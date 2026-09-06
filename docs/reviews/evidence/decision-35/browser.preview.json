@@ -1,0 +1,49 @@
+{
+  "origin": "https://313b9807.sports-injury-atlas.pages.dev",
+  "checkedAt": "2026-09-06T12:13:13.174Z",
+  "matchedPages": 148,
+  "canonicalOrigin": "https://injury.sportsmedicine.tw",
+  "popularGet": "passed",
+  "results": [
+    {
+      "width": 390,
+      "path": "/",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "path": "/videos/chien-ming-wang-2008-foot/",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "path": "/sports/baseball/",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "path": "/privacy/",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "path": "/",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "path": "/videos/chien-ming-wang-2008-foot/",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "path": "/sports/baseball/",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "path": "/privacy/",
+      "passed": true
+    }
+  ]
+}

@@ -23,7 +23,8 @@ import ReviewBanner from "../components/layout/ReviewBanner.astro";
 import SiteFooter from "../components/layout/SiteFooter.astro";
 import SiteHeader from "../components/layout/SiteHeader.astro";
 import governance from "../data/site-governance.v1.json";
-import { isLaunchEnabled, launchApproval } from "../lib/patient/public-launch";
+import { isLaunchEnabled } from "../lib/patient/public-launch";
+import { publicDomain } from "../lib/patient/public-domain";
 import {
   resolveBuildMode,
   robotsMetaContent,
@@ -80,7 +81,7 @@ const artifactIdentity =
     : null;
 
 const publicSiteUrl: string | null = isLaunchEnabled()
-  ? launchApproval.origin
+  ? publicDomain.origin
   : governance.publicSiteUrl;
 const canonicalUrl =
   publicSiteUrl !== null &&

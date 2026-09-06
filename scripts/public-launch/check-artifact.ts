@@ -19,6 +19,7 @@ import {
 import { join } from "node:path";
 import { execFileSync } from "node:child_process";
 import { parse } from "parse5";
+import { publicDomain } from "../../src/lib/patient/public-domain";
 import { launchApprovalSchema } from "../../src/lib/patient/public-launch";
 import { canonicalJson, sha256Hex } from "../../src/lib/contracts/canonical";
 import { loadContentCollections } from "../check-content";
@@ -166,7 +167,7 @@ for (const path of htmlFiles) {
       ]),
     );
     if (node.tagName === "link" && attrs.rel === "canonical")
-      assert.ok(attrs.href.startsWith(approval.origin + "/"));
+      assert.ok(attrs.href.startsWith(publicDomain.origin + "/"));
     if (["img", "script", "source"].includes(node.tagName))
       assert.ok(
         !/^https?:/.test(attrs.src ?? ""),
@@ -240,7 +241,7 @@ const receipt = {
   schemaVersion: 1,
   decision: "decision-21",
   mode: "public",
-  origin: approval.origin,
+  origin: publicDomain.origin,
   commit: execFileSync("git", ["rev-parse", "HEAD"], {
     encoding: "utf8",
   }).trim(),

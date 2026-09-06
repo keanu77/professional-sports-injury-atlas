@@ -1,0 +1,11 @@
+{
+  "zone": "sportsmedicine.tw",
+  "type": "CNAME",
+  "name": "injury",
+  "target": "sports-injury-atlas.pages.dev",
+  "proxied": true,
+  "ttl": "auto",
+  "pagesProject": "sports-injury-atlas",
+  "status": "required; not created by this session",
+  "reason": "Current Wrangler OAuth cannot read/edit zone DNS (403). Pages domain registered; validation reports CNAME record not set."
+}

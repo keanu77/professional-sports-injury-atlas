@@ -1,0 +1,21 @@
+[
+  {
+    "url": "https://www.youtube.com/watch?v=blRqsO9--38",
+    "path": "/videos/chien-ming-wang-2008-foot/",
+    "startSeconds": 0,
+    "origin": "https://313b9807.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T12:11:56.141Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.017775,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  }
+]

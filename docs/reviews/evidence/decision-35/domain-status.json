@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "result": {
+    "id": "e35880e7-8c5d-49d1-9fdc-3750770fe37a",
+    "domain_id": "e35880e7-8c5d-49d1-9fdc-3750770fe37a",
+    "name": "injury.sportsmedicine.tw",
+    "status": "pending",
+    "verification_data": {
+      "status": "pending",
+      "error_message": "CNAME record not set"
+    },
+    "validation_data": {
+      "status": "pending",
+      "method": "http"
+    },
+    "certificate_authority": "google",
+    "zone_tag": "200c8593fe22432d45cd3a33984600e9",
+    "created_on": "2026-09-06T12:08:32.327538Z"
+  }
+}

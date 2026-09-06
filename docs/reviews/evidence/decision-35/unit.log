@@ -1,0 +1,15 @@
+
+> professional-sports-injury-atlas@0.1.0 test:unit
+> vitest run
+
+
+ RUN  v4.1.10 /private/tmp/atlas35-checkout
+
+(node:44548) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+ Test Files  84 passed (84)
+      Tests  1349 passed (1349)
+   Start at  20:09:56
+   Duration  7.98s (transform 10.60s, setup 0ms, import 21.83s, tests 56.11s, environment 5ms)
+

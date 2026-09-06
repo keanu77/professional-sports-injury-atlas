@@ -1,3 +1,17 @@
+# 最新交接 — Decision 35，待 DNS（2026-09-06）
+
+使用者選擇 https://injury.sportsmedicine.tw。已將此域名加入 Cloudflare Pages sports-injury-atlas，domain ID e35880e7-8c5d-49d1-9fdc-3750770fe37a；目前 pending，verification error「CNAME record not set」。Wrangler OAuth 的 DNS API 403；本輪檢查的主站環境檔也沒有其他 Cloudflare 憑證，沒有修改主網域與其他路由。已請使用者在 sportsmedicine.tw DNS 新增 CNAME injury → sports-injury-atlas.pages.dev（橘雲／TTL 自動）；問題尚待回覆。這不是自動核准審查拒絕，是 Cloudflare 權限限制。
+
+D35 程式已準備：獨立 src/data/public-domain.v1.json 與 loader，canonical／OG URL 和產物 receipt 用新 origin；原 D21 醫療 origin／核准不動，僅重綁 inputTreeDigest。預覽 https://313b9807.sports-injury-atlas.pages.dev/。84 檔 1,349 單元、Astro 0／0（16 hints）、格式、隔離 release:public 通過。148 hash／canonical、8 組手機桌面 Axe、熱門 GET與王建民實播通過。初版 Axe newPage harness 錯誤已改顯式 newContext 並通過。
+
+正式仍為 D34 b91377ba-4534-4442-98e0-c232a91cba86，root dist 保留正式 D34；D35 僅預覽發布。不可宣稱 injury.sportsmedicine.tw 已啟用。101 支、30 棒球、11 部位、15 運動保留。
+
+下一步：使用者完成 CNAME 後，查 DNS 與 Pages domain active／HTTPS，跑 root npm run release:public，部署 --project-name=sports-injury-atlas --branch=main，確認新網域每頁 canonical／API／內嵌。正式播放驗證必須禁止測試事件寫入（DNT 與攔截 /api/plays），保留真實熱門數據。主站 /content/ 新入口未實作，本輪指令先接子網域。
+
+證據與設定表在 docs/reviews/evidence/decision-35/，報告 docs/reviews/2026-09-06-decision-35-custom-domain.md。/tmp/atlas35/ 包含 API helper、隔離 checkout 建立與預覽驗證 scripts；token 只由既有 Wrangler 設定於記憶體讀取，不存入腳本／報告。所有上線剩餘步驟已獲授權，DNS 完成即可接續，勿重問網址或部署許可。
+
+---
+
 # 最新交接 — Decision 34，2026-09-06
 
 已完成 78 → 101 支影片（新增 23：棒球 15、其他 8）；棒球共 30。11 部位、15 運動、7 情境；新增手部、軀幹、骨盆、足部及花式滑冰分類，首頁數字由資料動態產生。王建民 2008 洋基跑壘傷片已加入 /videos/chien-ming-wang-2008-foot/。熱門卡片只列「近 30 天播放第一名、第二名……」，後端仍依真實次數排序。
