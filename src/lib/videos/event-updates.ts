@@ -3,6 +3,7 @@ import { z } from "astro/zod";
 import batchData from "../../data/videos/event-batch-30.v1.json";
 import batch31Data from "../../data/videos/event-batch-31.v1.json";
 import batch32Data from "../../data/videos/event-batch-32.v1.json";
+import batch34Data from "../../data/videos/event-batch-34.v1.json";
 import newData from "../../data/videos/event-additions.v1.json";
 import { curation } from "./expansion";
 import data from "../../data/videos/event-updates.v1.json";
@@ -100,13 +101,22 @@ const batch32 = z
     entries: z.array(eventUpdatesSchema.shape.entries.element),
   })
   .parse(batch32Data);
+const batch34 = z
+  .strictObject({
+    schemaVersion: z.literal(1),
+    decision: z.literal("decision-34"),
+    checkedAt: z.iso.date(),
+    entries: z.array(eventUpdatesSchema.shape.entries.element),
+  })
+  .parse(batch34Data);
 // The shared public check date is valid only when every batch was reviewed on it.
 // A later review must introduce per-entry dates rather than silently relabel older entries.
 if (
   additions.checkedAt !== data.checkedAt ||
   batch30.checkedAt !== data.checkedAt ||
   batch31.checkedAt !== data.checkedAt ||
-  batch32.checkedAt !== data.checkedAt
+  batch32.checkedAt !== data.checkedAt ||
+  batch34.checkedAt !== data.checkedAt
 )
   throw new Error("Mixed event review dates require per-entry check dates");
 export const eventUpdates = eventUpdatesSchema.parse({
@@ -117,6 +127,7 @@ export const eventUpdates = eventUpdatesSchema.parse({
     ...batch30.entries,
     ...batch31.entries,
     ...batch32.entries,
+    ...batch34.entries,
   ].filter((e) => !curation.removedSlugs.some((slug) => slug === e.slug)),
 });
 export type EventUpdate = (typeof eventUpdates.entries)[number];

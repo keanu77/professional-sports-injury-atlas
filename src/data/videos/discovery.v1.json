@@ -5,6 +5,10 @@
   "curationBasis": "優先選擇受傷過程清楚、具名傷勢與回場來源完整，並涵蓋不同運動與情境的影片。精選順序由本站編輯安排，不代表熱門程度。",
   "videos": [
     {
+      "slug": "aaron-judge-2023-toe",
+      "situation": "collision"
+    },
+    {
       "slug": "aaron-rodgers-2023-achilles",
       "situation": "collision"
     },
@@ -14,6 +18,10 @@
     },
     {
       "slug": "aksel-svindal-kitzbuhel-2016",
+      "situation": "fall"
+    },
+    {
+      "slug": "aleksander-kilde-2024-shoulder",
       "situation": "fall"
     },
     {
@@ -54,6 +62,10 @@
       "situation": "fall"
     },
     {
+      "slug": "bryce-harper-2022-thumb",
+      "situation": "ball-impact"
+    },
+    {
       "slug": "buster-posey-2011-ankle",
       "situation": "collision"
     },
@@ -71,6 +83,14 @@
       "situation": "ball-impact"
     },
     {
+      "slug": "chase-headley-2014-face",
+      "situation": "ball-impact"
+    },
+    {
+      "slug": "chien-ming-wang-2008-foot",
+      "situation": "running-turning"
+    },
+    {
       "slug": "chris-bassitt-2021-face",
       "situation": "ball-impact",
       "curatedRank": 4
@@ -82,6 +102,14 @@
     {
       "slug": "cristiano-ronaldo-2016",
       "situation": "collision"
+    },
+    {
+      "slug": "curtis-granderson-2013-hand",
+      "situation": "ball-impact"
+    },
+    {
+      "slug": "dan-jennings-2014-concussion",
+      "situation": "ball-impact"
     },
     {
       "slug": "david-beckham-2010",
@@ -112,8 +140,16 @@
       "situation": "collision"
     },
     {
+      "slug": "dustin-pedroia-2017-knee",
+      "situation": "collision"
+    },
+    {
       "slug": "edwin-diaz-2023-patellar-tendon",
       "situation": "landing"
+    },
+    {
+      "slug": "fabio-jakobsen-2020-concussion",
+      "situation": "collision"
     },
     {
       "slug": "george-north-2015-concussion",
@@ -144,6 +180,10 @@
       "situation": "running-turning"
     },
     {
+      "slug": "ja-happ-2013-head",
+      "situation": "ball-impact"
+    },
+    {
       "slug": "jamal-murray-acl-2021",
       "situation": "running-turning"
     },
@@ -164,6 +204,10 @@
       "situation": "landing"
     },
     {
+      "slug": "justin-turner-2023-face",
+      "situation": "ball-impact"
+    },
+    {
       "slug": "kawhi-leonard-acl-2021",
       "situation": "collision"
     },
@@ -178,6 +222,10 @@
     {
       "slug": "kevin-durant-achilles-rupture-2019",
       "situation": "unclear"
+    },
+    {
+      "slug": "kevin-pillar-2021-face",
+      "situation": "ball-impact"
     },
     {
       "slug": "klay-thompson-2019-acl",
@@ -221,6 +269,14 @@
       "curatedRank": 6
     },
     {
+      "slug": "liu-xiang-2012-achilles",
+      "situation": "running-turning"
+    },
+    {
+      "slug": "manny-machado-2013-knee",
+      "situation": "running-turning"
+    },
+    {
       "slug": "mark-cavendish-2023-clavicle",
       "situation": "fall"
     },
@@ -229,16 +285,32 @@
       "situation": "running-turning"
     },
     {
+      "slug": "matt-shoemaker-2016-head",
+      "situation": "ball-impact"
+    },
+    {
       "slug": "max-pacioretty-2011-concussion",
       "situation": "collision"
+    },
+    {
+      "slug": "mikaela-shiffrin-2024-abdomen",
+      "situation": "fall"
     },
     {
       "slug": "mikhail-sergachev-2024-leg",
       "situation": "collision"
     },
     {
+      "slug": "mitch-haniger-2017-face",
+      "situation": "ball-impact"
+    },
+    {
       "slug": "mohamed-salah-final-2018",
       "situation": "collision"
+    },
+    {
+      "slug": "mookie-betts-2024-hand",
+      "situation": "ball-impact"
     },
     {
       "slug": "neymar-2023-acl",
@@ -253,6 +325,10 @@
       "situation": "landing"
     },
     {
+      "slug": "remco-evenepoel-2020-pelvis",
+      "situation": "fall"
+    },
+    {
       "slug": "rhys-hoskins-2023-acl",
       "situation": "running-turning"
     },
@@ -260,6 +336,10 @@
       "slug": "ronald-acuna-miami-2021",
       "situation": "landing",
       "curatedRank": 1
+    },
+    {
+      "slug": "samir-ait-said-2016-leg",
+      "situation": "landing"
     },
     {
       "slug": "serena-williams-2021-hamstring",
@@ -275,6 +355,14 @@
     },
     {
       "slug": "sidney-crosby-concussion-2017",
+      "situation": "collision"
+    },
+    {
+      "slug": "sofia-goggia-2022-knee",
+      "situation": "fall"
+    },
+    {
+      "slug": "stephen-piscotty-2015-concussion",
       "situation": "collision"
     },
     {
@@ -307,6 +395,10 @@
     },
     {
       "slug": "wesley-fofana-2021-leg",
+      "situation": "collision"
+    },
+    {
+      "slug": "yuzuru-hanyu-2014-collision",
       "situation": "collision"
     },
     {

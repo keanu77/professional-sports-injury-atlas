@@ -1,0 +1,124 @@
+{
+  "reviewer": "baseball34_a (independent of author baseball34_b)",
+  "checkedAt": "2026-09-06T11:27:24.245088+00:00",
+  "inputPath": "/tmp/atlas34/baseball-b/events.json",
+  "inputSha256": "9593b73c73d7596406c88b21815c69b46efd4eb46aa34c87b9f8cf8ebcc20241",
+  "status": "pass-with-source-improvement",
+  "blockingFindings": 0,
+  "method": "Fresh independent original MLB article reads and MLB StatsAPI queries, original reports opened with web tool; article date versus event date and plans versus played competition checked separately. Native iframe playback owned by root.",
+  "evidenceFile": "pass2-b-http.json",
+  "httpEvidenceSummary": {
+    "originalUrls": 26,
+    "http200": 25,
+    "urllib403ButWebOriginalReadable": 1
+  },
+  "entries": [
+    {
+      "slug": "matt-shoemaker-2016-head",
+      "eventDate": "2016-09-04",
+      "returnDate": "2017-03-03",
+      "status": "verified",
+      "confidence": "high",
+      "notes": "官方春訓 gameLog 使用正確 ID 533167，首場 2017-03-03、2 局。LAT 現場賽報確認傷後首賽；原站 urllib 403，但 web 工具可讀全文，並非以 URL 可連線取代查證。",
+      "sourceUrls": [
+        "https://www.mlb.com/news/angels-matt-shoemaker-has-small-skull-fracture-c199525830",
+        "https://www.mlb.com/news/angels-matt-shoemaker-undergoes-surgery-c199691576",
+        "https://statsapi.mlb.com/api/v1/people/533167/stats?stats=gameLog&group=pitching&season=2017&gameType=S",
+        "https://www.latimes.com/sports/angels/la-sp-angels-20170303-story.html"
+      ]
+    },
+    {
+      "slug": "ja-happ-2013-head",
+      "eventDate": "2013-05-07",
+      "returnDate": "2013-07-13",
+      "status": "verified",
+      "confidence": "high",
+      "notes": "重新查詢官方 sportId=16 新人聯盟紀錄：2013-07-13、3 局；MLB 當日 Worth noting 明載 GCL 出賽。8/7 MLB 回歸為後續里程碑。",
+      "sourceUrls": [
+        "https://www.mlb.com/news/jahapp-preparing-for-worry-free-return-to-mound/c-49305248",
+        "https://www.mlb.com/news/worth-noting/c-53642180",
+        "https://statsapi.mlb.com/api/v1/people/457918/stats?stats=gameLog&group=pitching&season=2013&sportId=16",
+        "https://www.mlb.com/news/happ-only-a-few-rehab-starts-away-from-return/c-55320522"
+      ]
+    },
+    {
+      "slug": "dan-jennings-2014-concussion",
+      "eventDate": "2014-08-07",
+      "returnDate": "2014-08-19",
+      "status": "verified",
+      "confidence": "high",
+      "notes": "官方 sportId=16 第一筆 2014-08-19、GCL 1 局。9/1 啟用名單與 9/2 MLB 實際登板不同，草稿正確區分。",
+      "sourceUrls": [
+        "https://www.mlb.com/news/reflective-jennings-eyes-september-return/c-89642754",
+        "https://statsapi.mlb.com/api/v1/people/543359/stats?stats=gameLog&group=pitching&season=2014&sportId=16",
+        "https://statsapi.mlb.com/api/v1/people/543359/stats?stats=gameLog&group=pitching&season=2014&gameType=R",
+        "https://www.mlb.com/player/dan-jennings-543359"
+      ]
+    },
+    {
+      "slug": "stephen-piscotty-2015-concussion",
+      "eventDate": "2015-09-28",
+      "returnDate": "2015-10-04",
+      "status": "verified",
+      "confidence": "high",
+      "notes": "官方 2015-10-04 雙重賽第一場 gamePk416077、0-for-4；9/30 回休息室不算回賽。後續頸部疼痛並未誤寫為持續腦震盪。",
+      "sourceUrls": [
+        "https://www.mlb.com/cardinals/news/stephen-piscotty-returns-to-cardinals-dugout/c-152503132",
+        "https://www.mlb.com/news/stephen-piscotty-returns-from-concussion/c-153221672",
+        "https://www.mlb.com/news/stephen-piscotty-on-2015-collision-recovery-c162164478",
+        "https://statsapi.mlb.com/api/v1/people/572039/stats?stats=gameLog&group=hitting&season=2015&gameType=R"
+      ]
+    },
+    {
+      "slug": "dustin-pedroia-2017-knee",
+      "eventDate": "2017-04-21",
+      "returnDate": "2017-04-27",
+      "status": "verified",
+      "confidence": "high",
+      "notes": "官方 gameLog 在 4/21 後首筆為 4/27、0-for-4。4/26 的預計回歸不可替代實際日期；後續膝部手術僅作背景，未把所有後續病程歸因單次滑壘。",
+      "sourceUrls": [
+        "https://www.mlb.com/news/red-sox-dustin-pedroia-injures-left-leg-c225715198",
+        "https://www.mlb.com/news/dustin-pedroia-day-to-day-knee-ankle-c226238044",
+        "https://statsapi.mlb.com/api/v1/people/456030/stats?stats=gameLog&group=hitting&season=2017&gameType=R",
+        "https://www.mlb.com/news/dustin-pedroia-taking-break-from-injury-rehab"
+      ]
+    },
+    {
+      "slug": "aaron-judge-2023-toe",
+      "eventDate": "2023-06-03",
+      "returnDate": "2023-07-28",
+      "status": "verified",
+      "confidence": "high",
+      "notes": "官方 gameLog 2023-07-28 gamePk717237 與 7/29 刊登賽報一致。模擬賽不算首次回場；保留回歸時未完全恢復與 DH 角色限制。",
+      "sourceUrls": [
+        "https://www.mlb.com/news/aaron-judge-crashes-into-fence-to-make-catch-vs-dodgers",
+        "https://www.mlb.com/news/aaron-judge-toe-activated-off-injured-list",
+        "https://statsapi.mlb.com/api/v1/people/592450/stats?stats=gameLog&group=hitting&season=2023&gameType=R"
+      ]
+    },
+    {
+      "slug": "manny-machado-2013-knee",
+      "eventDate": "2013-09-23",
+      "returnDate": "2014-04-19",
+      "status": "verified",
+      "confidence": "high",
+      "notes": "4/19 官方實賽報導確認延長春訓首場 5 局、2-for-4；4/12 模擬賽不算。10/10 原報導刊期已核；另找到 10/14 已完成 MPFL 手術的官方報導補強。",
+      "sourceUrls": [
+        "https://www.mlb.com/news/mri-reveals-orioles-star-manny-machados-leg-injury-not-severe/c-61605412",
+        "https://www.mlb.com/news/baltimore-orioles-third-baseman-manny-machado-to-undergo-surgery-on-left-knee/c-62802324",
+        "https://www.mlb.com/news/machado-plays-first-extended-spring-game/c-72643480"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "slug": "manny-machado-2013-knee",
+      "severity": "source-improvement",
+      "status": "sent-to-author",
+      "detail": "Use completed surgery report alongside or instead of planned surgery report; neither injury nor return date changes.",
+      "sourceUrl": "https://www.mlb.com/news/machado-has-surgery-could-miss-six-months/c-62949116",
+      "publishedAt": "2013-10-14",
+      "independentlyOpened": true
+    }
+  ]
+}

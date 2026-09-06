@@ -49,8 +49,16 @@ updates.entries.push(
     fs.readFileSync("src/data/videos/event-batch-32.v1.json", "utf8"),
   ).entries,
 );
+updates.entries.push(
+  ...JSON.parse(
+    fs.readFileSync("src/data/videos/event-batch-34.v1.json", "utf8"),
+  ).entries,
+);
 const batch32 = JSON.parse(
   fs.readFileSync("src/data/videos/batch-32.v1.json", "utf8"),
+);
+const batch34 = JSON.parse(
+  fs.readFileSync("src/data/videos/batch-34.v1.json", "utf8"),
 );
 const curation = JSON.parse(
   fs.readFileSync("src/data/videos/curation.v1.json", "utf8"),
@@ -256,6 +264,7 @@ try {
           ...batch30.clips,
           ...batch31.clips,
           ...batch32.clips,
+          ...batch34.clips,
         ].find((c) => c.slug === update.slug && c.bodyPart === "頭頸部");
         if (headClip) {
           const care = page.locator("[data-head-injury-care]");

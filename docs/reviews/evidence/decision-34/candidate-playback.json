@@ -1,0 +1,667 @@
+[
+  {
+    "id": "a1Malj3Fqm8",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:19:01.068Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.007709,
+      "duration": 103.761,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "g1fZXmVr_oA",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:19:05.630Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.006841,
+      "duration": 471.481,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "Pi6Pku8QVXY",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:19:09.947Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.018919,
+      "duration": 29.481,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "Bt7EHTIivuA",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:19:14.895Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.021125,
+      "duration": 313.421,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "W4pJf4HI1XQ",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:19:19.345Z",
+    "status": "unverified",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "error": "locator.click: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('iframe').contentFrame().getByRole('button', { name: '播放影片', exact: true })\u001b[22m\n"
+  },
+  {
+    "id": "QDOJL9lwYdI",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:19:32.007Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.013291,
+      "duration": 46.201,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "szivDYWhjXM",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:19:37.398Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.005035,
+      "duration": 25.321,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "wVj6I9Q5IvE",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:19:43.543Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.016568,
+      "duration": 191.201,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "Ie8HfOoNvjw",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:19:47.929Z",
+    "status": "unverified",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "error": "locator.click: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('iframe').contentFrame().getByRole('button', { name: '播放影片', exact: true })\u001b[22m\n"
+  },
+  {
+    "id": "Jf84VzlzLhI",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:20:00.535Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.012382,
+      "duration": 116.081,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "r0MTsxj8hoI",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:20:04.389Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.017318,
+      "duration": 75.141,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "OymcZdTQfnM",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:20:08.910Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.010504,
+      "duration": 136.941,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "Pa50gXELqp0",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:20:17.114Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.011634,
+      "duration": 81.661,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "RvDqK9NnqyI",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:20:21.181Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.018675,
+      "duration": 62.041,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "5gPJ3r_BXL8",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:20:10.764Z",
+    "status": "unverified",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "error": "locator.click: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('iframe').contentFrame().getByRole('button', { name: '播放影片', exact: true })\u001b[22m\n"
+  },
+  {
+    "id": "qLR_C8wg68E",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:20:23.310Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.016535,
+      "duration": 480.341,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "rbAYcXPhIUE",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:20:27.940Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.015668,
+      "duration": 28.321,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "c_laCIZqsPM",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:20:31.989Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.005403,
+      "duration": 32.081,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "4ekUPuhJEYI",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:20:36.760Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.016225,
+      "duration": 66.161,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "zaWzB_SIkyU",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:20:41.540Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.006188,
+      "duration": 71.981,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "0iPz58nL0L8",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:20:46.630Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.020818,
+      "duration": 210.001,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "22U4bCbhtig",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:20:51.639Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.017046,
+      "duration": 115.201,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "jhBAzccW-Oc",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:21:01.834Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.006873,
+      "duration": 104.961,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "gQ0WzuOYh_A",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:21:08.208Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.012586,
+      "duration": 484.861,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "AHXAIi0qLrk",
+    "start": 150,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:21:28.635Z",
+    "status": "unverified",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "error": "locator.click: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('iframe').contentFrame().getByRole('button', { name: '播放影片', exact: true })\u001b[22m\n"
+  },
+  {
+    "id": "nFbLC6Dv6Xk",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:21:41.135Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.019799,
+      "duration": 258.621,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "Bt7EHTIivuA",
+    "start": 50,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:21:46.221Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 50,
+      "duration": 313.421,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "o8mXn1hwdtA",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:22:21.892Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.020486,
+      "duration": 57.601,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "wglRV7rAQ2Q",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:22:26.944Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.015347,
+      "duration": 69.221,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "nFbLC6Dv6Xk",
+    "start": 130,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:22:31.203Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 130,
+      "duration": 258.621,
+      "paused": false,
+      "readyState": 4
+    },
+    "error": "frame.waitForFunction: Timeout 15000ms exceeded."
+  },
+  {
+    "id": "nFbLC6Dv6Xk",
+    "start": 100,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:29:49.067Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 101.006875,
+      "duration": 258.621,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "bhX80S9-xMY",
+    "start": 140,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:29:52.124Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 141.017444,
+      "duration": 241.741,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "D0VibSVWwBA",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:29:58.551Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 1.006168,
+      "duration": 80.541,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "blRqsO9--38",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:25:20.294Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.012483,
+      "duration": 76.681,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "bhX80S9-xMY",
+    "start": 0,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:28:08.864Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 2.006987,
+      "duration": 241.741,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "id": "nFbLC6Dv6Xk",
+    "start": 44,
+    "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:28:31.901Z",
+    "status": "played",
+    "testedDocumentUrl": "https://49b4fe97.sports-injury-atlas.pages.dev/",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "playback": {
+      "time": 45.011288,
+      "duration": 258.621,
+      "paused": false,
+      "readyState": 4
+    }
+  }
+]

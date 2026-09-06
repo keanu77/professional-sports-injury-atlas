@@ -42,6 +42,18 @@ export function readPopularVideos(
   );
 }
 
+/** Render the most familiar ranks in Chinese; larger ranks stay compact. */
+function rankLabel(rank: number): string {
+  const digits = ["", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
+  const label =
+    rank < 10
+      ? digits[rank]
+      : rank < 100
+        ? `${rank < 20 ? "" : digits[Math.floor(rank / 10)]}十${digits[rank % 10]}`
+        : String(rank);
+  return `近 30 天播放第${label}名`;
+}
+
 export function initializeVideoDiscovery(root: HTMLElement): void {
   if (root.dataset.discoveryReady) return;
   const grid = root.querySelector<HTMLOListElement>("[data-discovery-grid]");
@@ -100,7 +112,7 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
         return;
       }
       display([]);
-      status.textContent = "正在讀取本站近 30 天的實際播放次數…";
+      status.textContent = "正在讀取本站近 30 天的熱門排行…";
       grid.setAttribute("aria-busy", "true");
       const controller = new AbortController();
       pending = controller;
@@ -123,7 +135,7 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
             .get(item.videoId)!
             .querySelector<HTMLElement>("[data-popular-count]");
           if (count) {
-            count.textContent = `第 ${index + 1} 名 · 近 30 天播放 ${item.count.toLocaleString("zh-TW")} 次`;
+            count.textContent = rankLabel(index + 1);
             count.hidden = false;
           }
         }

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "baseball34_b independent cross review",
+  "reviewedAt": "2026-09-06T11:25:17.373782+00:00",
+  "inputPath": "/tmp/atlas34/baseball-a/events.json",
+  "inputSha256": "a9c81c529a92380eed78530fbedff21656ea4fcac3040965d4e79e56c13f9815",
+  "method": "Read all 20 cited source responses, inspected relevant original article content, independently queried official MLB/MiLB game logs for all seven return dates; artifacts in pass2-a/. Native iframe playback remains main agent evidence.",
+  "sourceCount": 20,
+  "results": [
+    {
+      "slug": "mitch-haniger-2017-face",
+      "confidence": 0.98,
+      "verdict": "verified",
+      "eventDate": "2017-07-29",
+      "returnDate": "2017-08-12",
+      "finding": "Primary Mariners release explicitly starts Tacoma rehab August 12. Independent AAA game log confirms 2017-08-12 vs Reno. MLB return August 19 is a later milestone. Diagnosis all three components supported.",
+      "requiredCorrections": []
+    },
+    {
+      "slug": "justin-turner-2023-face",
+      "confidence": 0.98,
+      "verdict": "verified",
+      "eventDate": "2023-03-06",
+      "returnDate": "2023-03-20",
+      "finding": "MLB return report says March 6 incident and first return against Pirates Monday March 20. Independent spring log confirms 2023-03-20. Facial lacerations/no fracture supported; exact stitch count wisely omitted because reports differ.",
+      "requiredCorrections": []
+    },
+    {
+      "slug": "kevin-pillar-2021-face",
+      "confidence": 0.98,
+      "verdict": "verified",
+      "eventDate": "2021-05-17",
+      "returnDate": "2021-05-31",
+      "finding": "MLB report explicitly two weeks after May 17, entered left field seventh inning then batted eighth. Official log confirms May 31. No rehab and mask protection supported.",
+      "requiredCorrections": []
+    },
+    {
+      "slug": "bryce-harper-2022-thumb",
+      "confidence": 0.98,
+      "verdict": "verified",
+      "eventDate": "2022-06-25",
+      "returnDate": "2022-08-23",
+      "finding": "First rehab report explicitly first appearance Tuesday; independent AAA log dates it August 23, 2022. Surgery report Wednesday June 29. Left thumb distinct from concurrent right elbow UCL supported.",
+      "requiredCorrections": []
+    },
+    {
+      "slug": "mookie-betts-2024-hand",
+      "confidence": 0.98,
+      "verdict": "verified",
+      "eventDate": "2024-06-16",
+      "returnDate": "2024-08-12",
+      "finding": "MLB report confirms June 16 left hand fracture and no surgery; August report explicitly no rehab assignment, changed to right field. Official log confirms August 12 return.",
+      "requiredCorrections": []
+    },
+    {
+      "slug": "chase-headley-2014-face",
+      "confidence": 0.98,
+      "verdict": "verified",
+      "eventDate": "2014-09-11",
+      "returnDate": "2014-09-15",
+      "finding": "SI team-report supports jaw injury/stitches/no fractures. MLB September 16 article describes preceding night return; independent game log confirms September 15. No unsupported concussion-negative claim.",
+      "requiredCorrections": []
+    },
+    {
+      "slug": "curtis-granderson-2013-hand",
+      "confidence": 0.98,
+      "verdict": "verified",
+      "eventDate": "2013-05-24",
+      "returnDate": "2013-07-25",
+      "finding": "MLB explicitly fractured LEFT fifth metacarpal May 24, distinct from February RIGHT forearm. First rehab report Friday July 26 refers to Thursday; independent High-A log confirms July 25.",
+      "requiredCorrections": []
+    }
+  ],
+  "blockingFindings": []
+}

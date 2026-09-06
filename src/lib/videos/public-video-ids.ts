@@ -5,6 +5,7 @@ import curation from "../../data/videos/curation.v1.json";
 import batch30 from "../../data/videos/batch-30.v1.json";
 import batch31 from "../../data/videos/batch-31.v1.json";
 import batch32 from "../../data/videos/batch-32.v1.json";
+import batch34 from "../../data/videos/batch-34.v1.json";
 
 /** Shared public allowlist; no research candidates or removed videos. */
 export const publicVideoIds = new Set([
@@ -18,6 +19,7 @@ export const publicVideoIds = new Set([
     ...batch30.clips,
     ...batch31.clips,
     ...batch32.clips,
+    ...batch34.clips,
   ]
     .filter((entry) => !curation.removedSlugs.includes(entry.slug))
     .map((entry) => entry.videoId),

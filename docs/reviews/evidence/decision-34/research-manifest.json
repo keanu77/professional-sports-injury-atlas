@@ -1,0 +1,34 @@
+[
+  {
+    "path": "baseball-a/codex-status.json",
+    "sha256": "b63c18b5711ca94e47ecf51db6d2ff125a973ab0195d92e508a1b44a3471deb1"
+  },
+  {
+    "path": "baseball-a/pass2-b.json",
+    "sha256": "5b99fc320e28ce5b36464067588f22ebc380e11946d96eefe89cbde9b3622b25"
+  },
+  {
+    "path": "baseball-a/source-http-proof.json",
+    "sha256": "dd028549bac5b11ebb1b4f96fdae80b90b16abb47df327c3be3115c5763c89be"
+  },
+  {
+    "path": "baseball-b/grok-status.json",
+    "sha256": "a4e4519b6a2d6c67c35e983949c9fa39c9b2cff69e4a5fe213e4b3ffcce9c4a9"
+  },
+  {
+    "path": "baseball-b/pass2-a.json",
+    "sha256": "1f2e1b40191c3845a77702426ebaa5003146b29832e24ea2ce2350a4ef61d926"
+  },
+  {
+    "path": "other/source-fetch-manifest.json",
+    "sha256": "36a13ea30c8d13b4ad9957e8acba4f22da447b88ac655c380076eca6243cd400"
+  },
+  {
+    "path": "other/wang-source-manifest.json",
+    "sha256": "edeb0d83503b473b53511dfedd77630a3d8819a440485ec4e3ace967820f5706"
+  },
+  {
+    "path": "other/wang-spring-gamelog.json",
+    "sha256": "4a190a527235621cb35fd90fcc49e354bae622452044b985aedde270fb080993"
+  }
+]

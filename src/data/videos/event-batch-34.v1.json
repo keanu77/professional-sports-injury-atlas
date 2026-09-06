@@ -1,0 +1,600 @@
+{
+  "schemaVersion": 1,
+  "decision": "decision-34",
+  "checkedAt": "2026-09-06",
+  "entries": [
+    {
+      "slug": "mitch-haniger-2017-face",
+      "eventDate": "2017-07-29",
+      "injury": "球團公布腦震盪、鼻部骨折與上唇撕裂傷。",
+      "returnDate": "2017-08-12",
+      "returnSummary": "2017-08-12 於 3A Tacoma 開始復健賽。",
+      "context": "回場採小聯盟復健賽；8 月 19 日才重返大聯盟。",
+      "videoUrl": "https://www.youtube.com/watch?v=Pi6Pku8QVXY",
+      "sources": [
+        {
+          "title": "MLB：Haniger 臉部與腦震盪傷勢",
+          "url": "https://www.mlb.com/news/mariners-update-mitch-haniger-face-injury-c245636522",
+          "publishedAt": "2017-08-01"
+        },
+        {
+          "title": "水手官方：Haniger 復健賽與歸隊紀錄",
+          "url": "https://www.mlb.com/press-release/mariners-activate-of-mitch-haniger-from-the-10-day-disabled-list-recal-249407070",
+          "publishedAt": "2017-08-19"
+        },
+        {
+          "title": "MLB：Haniger 傷後實際比賽紀錄",
+          "url": "https://www.mlb.com/news/mariners-activate-outfielder-mitch-haniger-c249408366",
+          "publishedAt": "2017-08-19"
+        }
+      ]
+    },
+    {
+      "slug": "justin-turner-2023-face",
+      "eventDate": "2023-03-06",
+      "injury": "臉部撕裂傷接受縫合；公開報導未發現骨折。",
+      "returnDate": "2023-03-20",
+      "returnSummary": "2023-03-20 於春訓對海盜恢復出賽。",
+      "context": "回場採對外春訓賽，先前傳接球與打擊練習不計入。",
+      "videoUrl": "https://www.youtube.com/watch?v=szivDYWhjXM",
+      "sources": [
+        {
+          "title": "MLB：Turner 傷後縫合與恢復訓練",
+          "url": "https://www.mlb.com/redsox/news/justin-turner-resumes-light-baseball-activity-after-hit-by-pitch",
+          "publishedAt": "2023-03-12"
+        },
+        {
+          "title": "MLB：Turner 春訓復出賽報",
+          "url": "https://www.mlb.com/news/justin-turner-returns-to-red-sox-lineup-after-hbp",
+          "publishedAt": "2023-03-20"
+        }
+      ]
+    },
+    {
+      "slug": "kevin-pillar-2021-face",
+      "eventDate": "2021-05-17",
+      "injury": "球團確認多處鼻骨骨折，之後接受手術。",
+      "returnDate": "2021-05-31",
+      "returnSummary": "2021-05-31 對響尾蛇恢復出賽。",
+      "context": "未經小聯盟復健賽即回到大聯盟，先代守再打擊；回場時仍使用臉部防護。",
+      "videoUrl": "https://www.youtube.com/watch?v=c_laCIZqsPM",
+      "sources": [
+        {
+          "title": "MLB：Pillar 鼻骨骨折公告",
+          "url": "https://www.mlb.com/news/kevin-pillar-gets-hit-in-the-face-vs-braves",
+          "publishedAt": "2021-05-18"
+        },
+        {
+          "title": "MLB：Pillar 實際復出賽報",
+          "url": "https://www.mlb.com/amp/news/kevin-pillar-returns-after-getting-hit-in-face-by-pitch.html",
+          "publishedAt": "2021-06-01"
+        },
+        {
+          "title": "MLB 官方資料：Pillar 生涯與復出紀錄",
+          "url": "https://www.mlb.com/player/kevin-pillar-607680",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "bryce-harper-2022-thumb",
+      "eventDate": "2022-06-25",
+      "injury": "左拇指骨折，6 月 29 日接受手術。",
+      "returnDate": "2022-08-23",
+      "returnSummary": "2022-08-23 於 3A Lehigh Valley 開始復健賽。",
+      "context": "以指定打擊參加復健賽；這次記錄的是拇指傷勢，不把同時存在的手肘傷勢混為一談。",
+      "videoUrl": "https://www.youtube.com/watch?v=4ekUPuhJEYI",
+      "sources": [
+        {
+          "title": "MLB：Harper 拇指骨折",
+          "url": "https://www.mlb.com/phillies/news/bryce-harper-hand-injury-after-hbp",
+          "publishedAt": "2022-06-26"
+        },
+        {
+          "title": "MLB：Harper 拇指手術",
+          "url": "https://www.mlb.com/news/bryce-harper-thumb-injury-update",
+          "publishedAt": "2022-06-29"
+        },
+        {
+          "title": "MLB：Harper 首場復健賽",
+          "url": "https://www.mlb.com/phillies/news/bryce-harper-homers-twice-in-rehab-game",
+          "publishedAt": "2022-08-24"
+        }
+      ]
+    },
+    {
+      "slug": "mookie-betts-2024-hand",
+      "eventDate": "2024-06-16",
+      "injury": "球團確認左手骨折，採非手術治療。",
+      "returnDate": "2024-08-12",
+      "returnSummary": "2024-08-12 對釀酒人恢復出賽。",
+      "context": "沒有先參加小聯盟復健賽；回場時改守右外野。",
+      "videoUrl": "https://www.youtube.com/watch?v=wglRV7rAQ2Q",
+      "sources": [
+        {
+          "title": "MLB：Betts 左手骨折",
+          "url": "https://www.mlb.com/news/mookie-betts-exits-game-vs-royals-after-hit-by-pitch-to-hand",
+          "publishedAt": "2024-06-17"
+        },
+        {
+          "title": "MLB：Betts 復出首戰與回場方式",
+          "url": "https://www.mlb.com/dodgers/news/mookie-betts-returns-to-dodgers-playing-right-field",
+          "publishedAt": "2024-08-13"
+        },
+        {
+          "title": "MLB：Betts 8 月 12 日比賽紀錄",
+          "url": "https://www.mlb.com/video/mookie-betts-homers-11-on-a-fly-ball-to-left-field-enrique-hernandez-scor",
+          "publishedAt": "2024-08-12"
+        }
+      ]
+    },
+    {
+      "slug": "chase-headley-2014-face",
+      "eventDate": "2014-09-11",
+      "injury": "下巴受傷並接受縫合；球隊當時表示檢查未發現骨折。",
+      "returnDate": "2014-09-15",
+      "returnSummary": "2014-09-15 對光芒恢復出賽。",
+      "context": "依實際逐場紀錄確認；獲准出賽與實際回到場上分開記錄。",
+      "videoUrl": "https://www.youtube.com/watch?v=0iPz58nL0L8",
+      "sources": [
+        {
+          "title": "Sports Illustrated：Headley 傷勢與球隊說明",
+          "url": "https://www.si.com/mlb/2014/09/12/new-york-yankees-chase-headley-hit-pitch",
+          "publishedAt": "2014-09-12"
+        },
+        {
+          "title": "MLB：Headley 實際復出賽報",
+          "url": "https://www.mlb.com/news/yankees-third-baseman-chase-headley-ejected-for-arguing-strike-call/c-94851556",
+          "publishedAt": "2014-09-16"
+        },
+        {
+          "title": "MLB 官方資料：Headley 2014 逐場紀錄",
+          "url": "https://statsapi.mlb.com/api/v1/people/452104/stats?stats=gameLog&group=hitting&season=2014&gameType=R",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "curtis-granderson-2013-hand",
+      "eventDate": "2013-05-24",
+      "injury": "左手第五掌骨骨折。",
+      "returnDate": "2013-07-25",
+      "returnSummary": "2013-07-25 於高階 1A Tampa 開始復健賽。",
+      "context": "這是 5 月左手傷勢，與同年春訓右前臂骨折分開記錄；模擬賽不計入回場日期。",
+      "videoUrl": "https://www.youtube.com/watch?v=22U4bCbhtig",
+      "sources": [
+        {
+          "title": "MLB：Granderson 左手掌骨骨折",
+          "url": "https://www.mlb.com/news/yankees-outfielder-curtis-granderson-hit-by-pitch-on-hand-breaks-knuckle-out-at-least-four-weeks/c-48485278",
+          "publishedAt": "2013-05-24"
+        },
+        {
+          "title": "MLB：Granderson 首場復健賽",
+          "url": "https://www.mlb.com/news/curtis-granderson-plays-five-innings-in-first-rehab-game/c-54808854",
+          "publishedAt": "2013-07-26"
+        },
+        {
+          "title": "MLB 官方資料：Granderson 復健賽紀錄",
+          "url": "https://www.mlb.com/player/curtis-granderson-434158",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "matt-shoemaker-2016-head",
+      "eventDate": "2016-09-04",
+      "injury": "MLB 確認顱骨骨折與血腫，之後接受手術止血。",
+      "returnDate": "2017-03-03",
+      "returnSummary": "2017-03-03 於春訓對釀酒人先發。",
+      "context": "回場日期採正式春訓賽；先前牛棚與打擊練習不計入。",
+      "videoUrl": "https://www.youtube.com/watch?v=a1Malj3Fqm8",
+      "sources": [
+        {
+          "title": "MLB：Shoemaker 顱骨骨折與血腫",
+          "url": "https://www.mlb.com/news/angels-matt-shoemaker-has-small-skull-fracture-c199525830",
+          "publishedAt": "2016-09-04"
+        },
+        {
+          "title": "MLB：Shoemaker 手術後狀況",
+          "url": "https://www.mlb.com/news/angels-matt-shoemaker-undergoes-surgery-c199691576",
+          "publishedAt": "2016-09-05"
+        },
+        {
+          "title": "MLB 官方資料：Shoemaker 2017 春訓逐場紀錄",
+          "url": "https://statsapi.mlb.com/api/v1/people/533167/stats?stats=gameLog&group=pitching&season=2017&gameType=S",
+          "publishedAt": null
+        },
+        {
+          "title": "洛杉磯時報：Shoemaker 傷後首場春訓賽報",
+          "url": "https://www.latimes.com/sports/angels/la-sp-angels-20170303-story.html",
+          "publishedAt": "2017-03-03"
+        }
+      ]
+    },
+    {
+      "slug": "ja-happ-2013-head",
+      "eventDate": "2013-05-07",
+      "injury": "MLB 報導左耳後方顱骨小骨折及右膝韌帶扭傷；檢查未發現腦震盪。",
+      "returnDate": "2013-07-13",
+      "returnSummary": "2013-07-13 在新人聯盟 GCL Blue Jays 復健賽登板。",
+      "context": "右膝傷勢延長復健；回場採新人聯盟賽，早於 8 月 7 日大聯盟復出。",
+      "videoUrl": "https://www.youtube.com/watch?v=g1fZXmVr_oA",
+      "sources": [
+        {
+          "title": "MLB：Happ 頭部與膝部檢查結果",
+          "url": "https://www.mlb.com/news/jahapp-preparing-for-worry-free-return-to-mound/c-49305248",
+          "publishedAt": "2013-06-01"
+        },
+        {
+          "title": "MLB：Happ 復健賽當日紀錄",
+          "url": "https://www.mlb.com/news/worth-noting/c-53642180",
+          "publishedAt": "2013-07-13"
+        },
+        {
+          "title": "MLB 官方資料：Happ 2013 新人聯盟紀錄",
+          "url": "https://statsapi.mlb.com/api/v1/people/457918/stats?stats=gameLog&group=pitching&season=2013&sportId=16",
+          "publishedAt": null
+        },
+        {
+          "title": "MLB：Happ 復健起始日期",
+          "url": "https://www.mlb.com/news/happ-only-a-few-rehab-starts-away-from-return/c-55320522",
+          "publishedAt": "2013-07-30"
+        }
+      ]
+    },
+    {
+      "slug": "dan-jennings-2014-concussion",
+      "eventDate": "2014-08-07",
+      "injury": "MLB 報導確認腦震盪。",
+      "returnDate": "2014-08-19",
+      "returnSummary": "2014-08-19 在新人聯盟 GCL Marlins 復健賽登板。",
+      "context": "回場採新人聯盟賽；9 月 1 日移出傷兵名單，9 月 2 日才實際恢復大聯盟登板。",
+      "videoUrl": "https://www.youtube.com/watch?v=wVj6I9Q5IvE",
+      "sources": [
+        {
+          "title": "MLB：Jennings 腦震盪後狀況",
+          "url": "https://www.mlb.com/news/reflective-jennings-eyes-september-return/c-89642754",
+          "publishedAt": "2014-08-14"
+        },
+        {
+          "title": "MLB 官方資料：Jennings 2014 新人聯盟紀錄",
+          "url": "https://statsapi.mlb.com/api/v1/people/543359/stats?stats=gameLog&group=pitching&season=2014&sportId=16",
+          "publishedAt": null
+        },
+        {
+          "title": "MLB 官方資料：Jennings 2014 大聯盟紀錄",
+          "url": "https://statsapi.mlb.com/api/v1/people/543359/stats?stats=gameLog&group=pitching&season=2014&gameType=R",
+          "publishedAt": null
+        },
+        {
+          "title": "MLB：Jennings 生涯與復健紀錄",
+          "url": "https://www.mlb.com/player/dan-jennings-543359",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "stephen-piscotty-2015-concussion",
+      "eventDate": "2015-09-28",
+      "injury": "MLB 報導頭部挫傷與腦震盪。",
+      "returnDate": "2015-10-04",
+      "returnSummary": "2015-10-04 在對勇士雙重賽第一場恢復出賽。",
+      "context": "復出前完成腦震盪檢測；之後仍曾有頸部痠痛，出賽不代表所有症狀已完全消失。",
+      "videoUrl": "https://www.youtube.com/watch?v=qLR_C8wg68E",
+      "sources": [
+        {
+          "title": "MLB：Piscotty 傷後檢查",
+          "url": "https://www.mlb.com/cardinals/news/stephen-piscotty-returns-to-cardinals-dugout/c-152503132",
+          "publishedAt": "2015-09-30"
+        },
+        {
+          "title": "MLB：Piscotty 實際復出賽報",
+          "url": "https://www.mlb.com/news/stephen-piscotty-returns-from-concussion/c-153221672",
+          "publishedAt": "2015-10-04"
+        },
+        {
+          "title": "MLB：Piscotty 後續恢復狀況",
+          "url": "https://www.mlb.com/news/stephen-piscotty-on-2015-collision-recovery-c162164478",
+          "publishedAt": "2016-01-17"
+        },
+        {
+          "title": "MLB 官方資料：Piscotty 2015 逐場紀錄",
+          "url": "https://statsapi.mlb.com/api/v1/people/572039/stats?stats=gameLog&group=hitting&season=2015&gameType=R",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "dustin-pedroia-2017-knee",
+      "eventDate": "2017-04-21",
+      "injury": "球隊安排左膝及左踝檢查，當時以疼痛與逐日觀察處理。",
+      "returnDate": "2017-04-27",
+      "returnSummary": "2017-04-27 對洋基恢復大聯盟出賽。",
+      "context": "這次短期復出之後仍持續有膝部問題，2017 年球季後接受手術；不把後續所有問題歸因於單一畫面。",
+      "videoUrl": "https://www.youtube.com/watch?v=rbAYcXPhIUE",
+      "sources": [
+        {
+          "title": "MLB：Pedroia 左腿受傷經過",
+          "url": "https://www.mlb.com/news/red-sox-dustin-pedroia-injures-left-leg-c225715198",
+          "publishedAt": "2017-04-22"
+        },
+        {
+          "title": "MLB：Pedroia 左膝與踝部檢查",
+          "url": "https://www.mlb.com/news/dustin-pedroia-day-to-day-knee-ankle-c226238044",
+          "publishedAt": "2017-04-24"
+        },
+        {
+          "title": "MLB 官方資料：Pedroia 2017 逐場紀錄",
+          "url": "https://statsapi.mlb.com/api/v1/people/456030/stats?stats=gameLog&group=hitting&season=2017&gameType=R",
+          "publishedAt": null
+        },
+        {
+          "title": "MLB：Pedroia 後續膝部治療歷程",
+          "url": "https://www.mlb.com/news/dustin-pedroia-taking-break-from-injury-rehab",
+          "publishedAt": "2019-05-27"
+        }
+      ]
+    },
+    {
+      "slug": "aaron-judge-2023-toe",
+      "eventDate": "2023-06-03",
+      "injury": "MLB 報導右腳大拇趾韌帶撕裂。",
+      "returnDate": "2023-07-28",
+      "returnSummary": "2023-07-28 對金鶯擔任指定打擊恢復出賽。",
+      "context": "先完成模擬賽再直接回大聯盟；復出時仍未完全恢復，球隊逐步安排守備與指定打擊。",
+      "videoUrl": "https://www.youtube.com/watch?v=jhBAzccW-Oc",
+      "sources": [
+        {
+          "title": "MLB：Judge 受傷當場接球經過",
+          "url": "https://www.mlb.com/news/aaron-judge-crashes-into-fence-to-make-catch-vs-dodgers",
+          "publishedAt": "2023-06-04"
+        },
+        {
+          "title": "MLB：Judge 傷後首場出賽與恢復程度",
+          "url": "https://www.mlb.com/news/aaron-judge-toe-activated-off-injured-list",
+          "publishedAt": "2023-07-29"
+        },
+        {
+          "title": "MLB 官方資料：Judge 2023 逐場紀錄",
+          "url": "https://statsapi.mlb.com/api/v1/people/592450/stats?stats=gameLog&group=hitting&season=2023&gameType=R",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "manny-machado-2013-knee",
+      "eventDate": "2013-09-23",
+      "injury": "MRI 確認左膝內側髕股韌帶撕裂，之後接受重建手術。",
+      "returnDate": "2014-04-19",
+      "returnSummary": "2014-04-19 在延長春訓比賽恢復出賽。",
+      "context": "回場採第一場延長春訓賽，早於小聯盟復健賽與大聯盟回歸；前十字韌帶與內側副韌帶未撕裂。",
+      "videoUrl": "https://www.youtube.com/watch?v=gQ0WzuOYh_A",
+      "sources": [
+        {
+          "title": "MLB：Machado 左膝 MRI 結果",
+          "url": "https://www.mlb.com/news/mri-reveals-orioles-star-manny-machados-leg-injury-not-severe/c-61605412",
+          "publishedAt": "2013-09-24"
+        },
+        {
+          "title": "MLB：Machado 左膝重建手術安排",
+          "url": "https://www.mlb.com/news/baltimore-orioles-third-baseman-manny-machado-to-undergo-surgery-on-left-knee/c-62802324",
+          "publishedAt": "2013-10-10"
+        },
+        {
+          "title": "MLB：Machado 已完成左膝手術",
+          "url": "https://www.mlb.com/news/machado-has-surgery-could-miss-six-months/c-62949116",
+          "publishedAt": "2013-10-14"
+        },
+        {
+          "title": "MLB：Machado 首場延長春訓賽報",
+          "url": "https://www.mlb.com/news/machado-plays-first-extended-spring-game/c-72643480",
+          "publishedAt": "2014-04-19"
+        }
+      ]
+    },
+    {
+      "slug": "samir-ait-said-2016-leg",
+      "eventDate": "2016-08-06",
+      "injury": "國際體操總會記載左小腿脛骨及腓骨骨折，於里約接受手術。",
+      "returnDate": "2017-08-18",
+      "context": "回場採選手訪談確認的 INSEP 正式選拔，早於 9 月巴黎世界挑戰盃；國際賽以吊環出賽，不能視為所有器械皆已恢復。",
+      "videoUrl": "https://www.youtube.com/watch?v=Bt7EHTIivuA",
+      "sources": [
+        {
+          "title": "FIG：里約骨折手術及巴黎吊環復出",
+          "url": "https://www.gymnastics.sport/site/news/displaynews.php?urlNews=1893547",
+          "publishedAt": "2017-10-01"
+        },
+        {
+          "title": "Le Parisien：選手確認 INSEP 首次正式選拔",
+          "url": "https://www.leparisien.fr/sports/samir-ait-said-ma-blessure-est-oubliee-19-08-2017-7200957.php",
+          "publishedAt": "2017-08-19"
+        }
+      ],
+      "returnSummary": "2017-08-18 先參加法國隊選拔；9 月重返巴黎國際賽。"
+    },
+    {
+      "slug": "sofia-goggia-2022-knee",
+      "eventDate": "2022-01-23",
+      "injury": "義大利冬季運動總會公布左膝扭傷、曾手術的十字韌帶部分損傷、小範圍腓骨骨折及肌腱肌肉受損。",
+      "returnDate": "2022-02-15",
+      "context": "回場採奧運滑降正式比賽；這是個別選手帶傷參賽紀錄，不能當成韌帶或骨折已完全復原的時間。",
+      "videoUrl": "https://www.youtube.com/watch?v=QDOJL9lwYdI",
+      "sources": [
+        {
+          "title": "FISI：MRI 與電腦斷層傷勢公告",
+          "url": "https://www.fisi.org/conclusi-gli-accertamenti-clinici-le-condizioni-di-sofia-goggia/",
+          "publishedAt": "2022-01-23"
+        },
+        {
+          "title": "FISI：北京奧運滑降銀牌後訪談",
+          "url": "https://www.fisi.org/goggia-questa-medaglia-ha-un-valore-incredibile-avrei-firmato-per-largento/",
+          "publishedAt": "2022-02-15"
+        }
+      ],
+      "returnSummary": "2022-02-15 北京奧運滑降復出，獲銀牌。"
+    },
+    {
+      "slug": "yuzuru-hanyu-2014-collision",
+      "eventDate": "2014-11-08",
+      "injury": "報導記載頭、下巴及大腿挫傷，另有踝部扭傷；不能僅憑畫面判定腦震盪。",
+      "returnDate": null,
+      "context": "當天繼續比賽不代表傷勢復原，因此不換算為零天回場；11 月 28 日 NHK 盃是後續正式賽事紀錄。",
+      "videoUrl": "https://www.youtube.com/watch?v=Jf84VzlzLhI",
+      "sources": [
+        {
+          "title": "NBC：日本滑冰聯盟公布碰撞後傷勢",
+          "url": "https://www.nbcsports.com/olympics/news/yuzuru-hanyu-collision-cup-of-china-injury-figure-skating",
+          "publishedAt": "2014-11-10"
+        },
+        {
+          "title": "AFP／L’Équipe：NHK 盃短曲實際出賽",
+          "url": "https://www.lequipe.fr/Patinage-artistique/Actualites/Hanyu-nerveux-5e/518299",
+          "publishedAt": "2014-11-28"
+        }
+      ],
+      "returnSummary": "當天曾繼續自由滑；11 月 28 日再參加 NHK 盃。"
+    },
+    {
+      "slug": "aleksander-kilde-2024-shoulder",
+      "eventDate": "2024-01-13",
+      "injury": "挪威滑雪協會及隊醫公告肩關節脫臼與小腿割傷；傷勢使當季提前結束。",
+      "returnDate": "2025-11-27",
+      "context": "回場採 FIS 確認的世界盃正式比賽，早於此的復健、訓練不列入。重新出賽不等於已回到受傷前表現。",
+      "videoUrl": "https://www.youtube.com/watch?v=D0VibSVWwBA",
+      "sources": [
+        {
+          "title": "SRF：挪威協會及隊醫傷勢公告",
+          "url": "https://www.srf.ch/sport/ski-alpin/weltcup-maenner/nach-sturz-am-lauberhorn-norwegischer-teamarzt-bestaetigt-saisonaus-fuer-kilde",
+          "publishedAt": "2024-01-13"
+        },
+        {
+          "title": "FIS：Copper Mountain 復出賽報",
+          "url": "https://www.fis-ski.com/alpine-skiing/news/2025-26/odermatt-begins-super-g-title-defence-with-victory-at-copper-mountain",
+          "publishedAt": "2025-11-27"
+        }
+      ],
+      "returnSummary": "2025-11-27 在 Copper Mountain 超級大迴轉重返世界盃。"
+    },
+    {
+      "slug": "liu-xiang-2012-achilles",
+      "eventDate": "2012-08-07",
+      "injury": "世界田徑總會記載倫敦奧運預賽阿基里斯腱斷裂。",
+      "returnDate": null,
+      "context": "退役日期不是回場日期；雖曾嘗試恢復訓練，世界田徑總會確認他未再恢復比賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=Pa50gXELqp0",
+      "sources": [
+        {
+          "title": "World Athletics：倫敦預賽及初步傷勢",
+          "url": "https://worldathletics.org/news/report/london-2012-event-report-mens-110m-hurdle-2",
+          "publishedAt": "2012-08-07"
+        },
+        {
+          "title": "World Athletics：退役與未再參賽紀錄",
+          "url": "https://worldathletics.org/news/news/liu-xiang-retires",
+          "publishedAt": "2015-04-07"
+        }
+      ],
+      "returnSummary": "此後未再參賽，2015-04-07 宣布退役。"
+    },
+    {
+      "slug": "fabio-jakobsen-2020-concussion",
+      "eventDate": "2020-08-05",
+      "injury": "選手透過車隊公布曾有嚴重腦震盪，並需接受多次顏面傷勢手術。",
+      "returnDate": "2021-04-11",
+      "context": "早期報導對腦部傷勢說法不同，此處採 8 月 18 日選手經車隊發布的後續說明；復出首站完成比賽，不等於已恢復衝刺能力。",
+      "videoUrl": "https://www.youtube.com/watch?v=RvDqK9NnqyI",
+      "sources": [
+        {
+          "title": "Cyclingnews：轉述選手經車隊公布的傷後說明",
+          "url": "https://www.cyclingnews.com/news/fabio-jakobsen-the-doctors-at-the-finish-line-saved-my-life/",
+          "publishedAt": "2020-08-18"
+        },
+        {
+          "title": "Cyclingnews：環土耳其首站實際復出",
+          "url": "https://www.cyclingnews.com/news/fabio-jakobsen-makes-emotional-return-to-racing-at-tour-of-turkey/",
+          "publishedAt": "2021-04-11"
+        }
+      ],
+      "returnSummary": "2021-04-11 於環土耳其賽第一站恢復比賽。"
+    },
+    {
+      "slug": "mikaela-shiffrin-2024-abdomen",
+      "eventDate": "2024-11-30",
+      "injury": "美國滑雪隊確認右側腹部穿刺傷及嚴重肌肉創傷。",
+      "returnDate": "2025-01-30",
+      "context": "回場採 FIS 確認的首場正式比賽；先恢復曲道賽事，不表示大迴轉與所有項目已同時恢復。",
+      "videoUrl": "https://www.youtube.com/watch?v=nFbLC6Dv6Xk",
+      "sources": [
+        {
+          "title": "US Ski & Snowboard：Killington 傷勢公告",
+          "url": "https://www.usskiandsnowboard.org/news/first-weekend-american-2024-25-world-cups-wraps",
+          "publishedAt": "2024-12-01"
+        },
+        {
+          "title": "FIS：Courchevel 首場復出及名次",
+          "url": "https://www.fis-ski.com/alpine-skiing/news/2024-25/-the-sky-is-the-limit-now-ljutic-decimates-field-to-claim-third-slalom-win-in-four",
+          "publishedAt": "2025-01-30"
+        }
+      ],
+      "returnSummary": "2025-01-30 於 Courchevel 曲道復出，排名第 10。"
+    },
+    {
+      "slug": "remco-evenepoel-2020-pelvis",
+      "eventDate": "2020-08-15",
+      "injury": "車隊公布骨盆骨折及右肺挫傷，該季停止參賽。",
+      "returnDate": "2021-05-08",
+      "context": "回場採環義大利首站實際出賽；此前室內騎乘與道路訓練不列入比賽回場。",
+      "videoUrl": "https://www.youtube.com/watch?v=o8mXn1hwdtA",
+      "sources": [
+        {
+          "title": "RTVE：車隊公布骨盆骨折及肺挫傷",
+          "url": "https://www.rtve.es/deportes/20200815/remco-evenepoel-caida-puente-lombardia/2040291.shtml",
+          "publishedAt": "2020-08-15"
+        },
+        {
+          "title": "Cyclingnews：環義大利首站即時比賽紀錄",
+          "url": "https://www.cyclingnews.com/races/giro-d-italia-2021/stage-1/live-report/",
+          "publishedAt": "2021-05-08"
+        },
+        {
+          "title": "Giro d’Italia：環義大利首站官方賽報",
+          "url": "https://www.giroditalia.it/news/la-migliore-inaugurazione",
+          "publishedAt": "2021-05-08"
+        }
+      ],
+      "returnSummary": "2021-05-08 於環義大利賽第一站個人計時賽復出。"
+    },
+    {
+      "slug": "chien-ming-wang-2008-foot",
+      "eventDate": "2008-06-15",
+      "injury": "洋基影像檢查確認右足中段 Lisfranc 韌帶扭傷及腓骨長肌腱部分撕裂；當季未再出賽。",
+      "returnDate": "2009-03-02",
+      "context": "受傷日期採美國當地 2008-06-15，台灣為 6 月 16 日。回場採翌年春訓首次比賽登板，不能視為已恢復原有表現；2009 年肩傷與 2011 年復出是後續不同事件。",
+      "videoUrl": "https://www.youtube.com/watch?v=blRqsO9--38",
+      "sources": [
+        {
+          "title": "MLB：王建民官方生涯紀錄與 2008 年足傷診斷",
+          "url": "https://www.mlb.com/player/chien-ming-wang-425426",
+          "publishedAt": null
+        },
+        {
+          "title": "洋基醫療公告（Lone Star Ball 引用原文）",
+          "url": "https://www.lonestarball.com/2008/6/16/553075/on-chien-ming-wang-and-vic",
+          "publishedAt": "2008-06-16"
+        },
+        {
+          "title": "AP／SFGATE：足傷後首次春訓登板投兩局無失分",
+          "url": "https://www.sfgate.com/sports/article/Griffey-s-knee-better-3249204.php",
+          "publishedAt": "2009-03-03"
+        },
+        {
+          "title": "MLB StatsAPI：2009 年春訓逐場紀錄，首場為 3 月 2 日",
+          "url": "https://statsapi.mlb.com/api/v1/people/425426/stats?stats=gameLog&group=pitching&season=2009&gameType=S",
+          "publishedAt": null
+        }
+      ],
+      "returnSummary": "2009-03-02 春訓對太空人投兩局無失分，為足傷後首次比賽登板。"
+    }
+  ]
+}

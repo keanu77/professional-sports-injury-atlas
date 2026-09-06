@@ -10,6 +10,7 @@ export const SPORTS = [
   { code: "badminton", label: "羽球" },
   { code: "athletics", label: "田徑" },
   { code: "gymnastics", label: "體操" },
+  { code: "figure-skating", label: "花式滑冰" },
   { code: "ice-hockey", label: "冰球" },
   { code: "rugby", label: "橄欖球" },
   { code: "american-football", label: "美式足球" },

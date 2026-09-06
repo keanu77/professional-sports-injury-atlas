@@ -1,6 +1,7 @@
 import batch30Data from "../../src/data/videos/batch-30.v1.json";
 import batch31Data from "../../src/data/videos/batch-31.v1.json";
 import batch32Data from "../../src/data/videos/batch-32.v1.json";
+import batch34Data from "../../src/data/videos/batch-34.v1.json";
 import { readFileSync } from "node:fs";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
@@ -10,6 +11,8 @@ import {
   batch31Schema,
   batch32,
   batch32Schema,
+  batch34,
+  batch34Schema,
   additions,
   curation,
   curationSchema,
@@ -52,7 +55,8 @@ describe("confirmed video expansion", () => {
         curation.clips.length +
         batch30Data.clips.length +
         batch31Data.clips.length +
-        batch32Data.clips.length,
+        batch32Data.clips.length +
+        batch34Data.clips.length,
     );
     expect(
       captionsOptionalFor("https://www.youtube.com/watch?v=unlisted000"),
@@ -156,6 +160,7 @@ it("rejects batch videos duplicated across past expansions", () => {
 it.each([
   [batch31, batch31Schema, batch30],
   [batch32, batch32Schema, batch31],
+  [batch34, batch34Schema, batch32],
 ])(
   "rejects a new batch that reuses a prior video through an alternate URL",
   (current, schema, prior) => {

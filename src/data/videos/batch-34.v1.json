@@ -1,0 +1,740 @@
+{
+  "schemaVersion": 1,
+  "decision": "decision-34",
+  "authorizationQuote": "我們來把影片數量做到100個",
+  "authorizedAt": "2026-09-06T11:24:30.710701Z",
+  "clips": [
+    {
+      "slug": "mitch-haniger-2017-face",
+      "videoId": "Pi6Pku8QVXY",
+      "name": "Mitch Haniger",
+      "sport": "棒球",
+      "event": "MLB 水手對大都會",
+      "bodyPart": "頭頸部",
+      "eventDate": "2017-07-29",
+      "returnDate": "2017-08-12",
+      "observation": "打擊時遭投球打中臉部，隨後退出比賽。",
+      "returnText": "2017-08-12 於 3A Tacoma 開始復健賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=Pi6Pku8QVXY",
+      "publisher": "MLB",
+      "sourceTitle": "NYM@SEA: Haniger hit in the face by pitch, exits game",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 29,
+      "sources": [
+        {
+          "title": "MLB：Haniger 臉部與腦震盪傷勢",
+          "url": "https://www.mlb.com/news/mariners-update-mitch-haniger-face-injury-c245636522"
+        },
+        {
+          "title": "水手官方：Haniger 復健賽與歸隊紀錄",
+          "url": "https://www.mlb.com/press-release/mariners-activate-of-mitch-haniger-from-the-10-day-disabled-list-recal-249407070"
+        },
+        {
+          "title": "MLB：Haniger 傷後實際比賽紀錄",
+          "url": "https://www.mlb.com/news/mariners-activate-outfielder-mitch-haniger-c249408366"
+        }
+      ]
+    },
+    {
+      "slug": "justin-turner-2023-face",
+      "videoId": "szivDYWhjXM",
+      "name": "Justin Turner",
+      "sport": "棒球",
+      "event": "MLB 春訓紅襪對老虎",
+      "bodyPart": "頭頸部",
+      "eventDate": "2023-03-06",
+      "returnDate": "2023-03-20",
+      "observation": "站上打擊區時遭投球擊中臉部，倒地後由人員協助離場。",
+      "returnText": "2023-03-20 於春訓對海盜恢復出賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=szivDYWhjXM",
+      "publisher": "Mac VelJohnson",
+      "sourceTitle": "Justin Turner hit in face by pitch: 3/6/2023",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 25,
+      "sources": [
+        {
+          "title": "MLB：Turner 傷後縫合與恢復訓練",
+          "url": "https://www.mlb.com/redsox/news/justin-turner-resumes-light-baseball-activity-after-hit-by-pitch"
+        },
+        {
+          "title": "MLB：Turner 春訓復出賽報",
+          "url": "https://www.mlb.com/news/justin-turner-returns-to-red-sox-lineup-after-hbp"
+        }
+      ]
+    },
+    {
+      "slug": "kevin-pillar-2021-face",
+      "videoId": "c_laCIZqsPM",
+      "name": "Kevin Pillar",
+      "sport": "棒球",
+      "event": "MLB 大都會對勇士",
+      "bodyPart": "頭頸部",
+      "eventDate": "2021-05-17",
+      "returnDate": "2021-05-31",
+      "observation": "打擊時遭投球擊中臉部後倒地，醫療人員進場協助。",
+      "returnText": "2021-05-31 對響尾蛇恢復出賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=c_laCIZqsPM",
+      "publisher": "New York Mets",
+      "sourceTitle": "Pillar Plunked in Head",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 32,
+      "sources": [
+        {
+          "title": "MLB：Pillar 鼻骨骨折公告",
+          "url": "https://www.mlb.com/news/kevin-pillar-gets-hit-in-the-face-vs-braves"
+        },
+        {
+          "title": "MLB：Pillar 實際復出賽報",
+          "url": "https://www.mlb.com/amp/news/kevin-pillar-returns-after-getting-hit-in-face-by-pitch.html"
+        },
+        {
+          "title": "MLB 官方資料：Pillar 生涯與復出紀錄",
+          "url": "https://www.mlb.com/player/kevin-pillar-607680"
+        }
+      ]
+    },
+    {
+      "slug": "bryce-harper-2022-thumb",
+      "videoId": "4ekUPuhJEYI",
+      "name": "Bryce Harper",
+      "sport": "棒球",
+      "event": "MLB 費城人對教士",
+      "bodyPart": "手部",
+      "eventDate": "2022-06-25",
+      "returnDate": "2022-08-23",
+      "observation": "打擊時遭投球打中左手，隨即蹲下並握住手部。",
+      "returnText": "2022-08-23 於 3A Lehigh Valley 開始復健賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=4ekUPuhJEYI",
+      "publisher": "New York Post Sports",
+      "sourceTitle": "Phillies’ Bryce Harper exits with broken thumb after getting hit by pitch | New York Post Sports",
+      "captionStatus": "not-verified",
+      "startSeconds": 8,
+      "durationSeconds": 66,
+      "sources": [
+        {
+          "title": "MLB：Harper 拇指骨折",
+          "url": "https://www.mlb.com/phillies/news/bryce-harper-hand-injury-after-hbp"
+        },
+        {
+          "title": "MLB：Harper 拇指手術",
+          "url": "https://www.mlb.com/news/bryce-harper-thumb-injury-update"
+        },
+        {
+          "title": "MLB：Harper 首場復健賽",
+          "url": "https://www.mlb.com/phillies/news/bryce-harper-homers-twice-in-rehab-game"
+        }
+      ]
+    },
+    {
+      "slug": "mookie-betts-2024-hand",
+      "videoId": "wglRV7rAQ2Q",
+      "name": "Mookie Betts",
+      "sport": "棒球",
+      "event": "MLB 道奇對皇家",
+      "bodyPart": "手部",
+      "eventDate": "2024-06-16",
+      "returnDate": "2024-08-12",
+      "observation": "遭投球打中左手後倒地，隨後退出比賽。",
+      "returnText": "2024-08-12 對釀酒人恢復出賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=wglRV7rAQ2Q",
+      "publisher": "ESPN MLB",
+      "sourceTitle": "Mookie Betts exits game with hand injury after getting hit by pitch | ESPN MLB",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 70,
+      "sources": [
+        {
+          "title": "MLB：Betts 左手骨折",
+          "url": "https://www.mlb.com/news/mookie-betts-exits-game-vs-royals-after-hit-by-pitch-to-hand"
+        },
+        {
+          "title": "MLB：Betts 復出首戰與回場方式",
+          "url": "https://www.mlb.com/dodgers/news/mookie-betts-returns-to-dodgers-playing-right-field"
+        },
+        {
+          "title": "MLB：Betts 8 月 12 日比賽紀錄",
+          "url": "https://www.mlb.com/video/mookie-betts-homers-11-on-a-fly-ball-to-left-field-enrique-hernandez-scor"
+        }
+      ]
+    },
+    {
+      "slug": "chase-headley-2014-face",
+      "videoId": "0iPz58nL0L8",
+      "name": "Chase Headley",
+      "sport": "棒球",
+      "event": "MLB 洋基對光芒",
+      "bodyPart": "頭頸部",
+      "eventDate": "2014-09-11",
+      "returnDate": "2014-09-15",
+      "observation": "打擊時遭投球打中下巴，倒地後由醫療人員檢查。",
+      "returnText": "2014-09-15 對光芒恢復出賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=0iPz58nL0L8",
+      "publisher": "MLB",
+      "sourceTitle": "TB@NYY: Headley gets hit by a pitch, exits the game",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 210,
+      "sources": [
+        {
+          "title": "Sports Illustrated：Headley 傷勢與球隊說明",
+          "url": "https://www.si.com/mlb/2014/09/12/new-york-yankees-chase-headley-hit-pitch"
+        },
+        {
+          "title": "MLB：Headley 實際復出賽報",
+          "url": "https://www.mlb.com/news/yankees-third-baseman-chase-headley-ejected-for-arguing-strike-call/c-94851556"
+        },
+        {
+          "title": "MLB 官方資料：Headley 2014 逐場紀錄",
+          "url": "https://statsapi.mlb.com/api/v1/people/452104/stats?stats=gameLog&group=hitting&season=2014&gameType=R"
+        }
+      ]
+    },
+    {
+      "slug": "curtis-granderson-2013-hand",
+      "videoId": "22U4bCbhtig",
+      "name": "Curtis Granderson",
+      "sport": "棒球",
+      "event": "MLB 洋基對光芒",
+      "bodyPart": "手部",
+      "eventDate": "2013-05-24",
+      "returnDate": "2013-07-25",
+      "observation": "打擊時遭投球打中左手，先留在場上跑壘，之後接受檢查並退場。",
+      "returnText": "2013-07-25 於高階 1A Tampa 開始復健賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=22U4bCbhtig",
+      "publisher": "MLB",
+      "sourceTitle": "NYY@TB: Granderson exits after being hit by pitch",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 115,
+      "sources": [
+        {
+          "title": "MLB：Granderson 左手掌骨骨折",
+          "url": "https://www.mlb.com/news/yankees-outfielder-curtis-granderson-hit-by-pitch-on-hand-breaks-knuckle-out-at-least-four-weeks/c-48485278"
+        },
+        {
+          "title": "MLB：Granderson 首場復健賽",
+          "url": "https://www.mlb.com/news/curtis-granderson-plays-five-innings-in-first-rehab-game/c-54808854"
+        },
+        {
+          "title": "MLB 官方資料：Granderson 復健賽紀錄",
+          "url": "https://www.mlb.com/player/curtis-granderson-434158"
+        }
+      ]
+    },
+    {
+      "slug": "matt-shoemaker-2016-head",
+      "videoId": "a1Malj3Fqm8",
+      "name": "Matt Shoemaker",
+      "sport": "棒球",
+      "event": "MLB 天使對水手",
+      "bodyPart": "頭頸部",
+      "eventDate": "2016-09-04",
+      "returnDate": "2017-03-03",
+      "observation": "投球後遭回擊的平飛球打中頭部，隨後蹲跪在投手丘，由人員攙扶離場。",
+      "returnText": "2017-03-03 於春訓對釀酒人先發。",
+      "publisher": "MLB",
+      "sourceTitle": "LAA@SEA: Shoemaker hit on head with liner, exits game",
+      "startSeconds": 0,
+      "durationSeconds": 104,
+      "sources": [
+        {
+          "title": "MLB：Shoemaker 顱骨骨折與血腫",
+          "url": "https://www.mlb.com/news/angels-matt-shoemaker-has-small-skull-fracture-c199525830"
+        },
+        {
+          "title": "MLB：Shoemaker 手術後狀況",
+          "url": "https://www.mlb.com/news/angels-matt-shoemaker-undergoes-surgery-c199691576"
+        },
+        {
+          "title": "MLB 官方資料：Shoemaker 2017 春訓逐場紀錄",
+          "url": "https://statsapi.mlb.com/api/v1/people/533167/stats?stats=gameLog&group=pitching&season=2017&gameType=S"
+        },
+        {
+          "title": "洛杉磯時報：Shoemaker 傷後首場春訓賽報",
+          "url": "https://www.latimes.com/sports/angels/la-sp-angels-20170303-story.html"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=a1Malj3Fqm8",
+      "captionStatus": "not-verified"
+    },
+    {
+      "slug": "ja-happ-2013-head",
+      "videoId": "g1fZXmVr_oA",
+      "name": "J.A. Happ",
+      "sport": "棒球",
+      "event": "MLB 藍鳥對光芒",
+      "bodyPart": "頭頸部",
+      "eventDate": "2013-05-07",
+      "returnDate": "2013-07-13",
+      "observation": "投球後遭平飛球打中頭部側面，倒地後由醫療人員處理並以擔架離場。",
+      "returnText": "2013-07-13 在新人聯盟 GCL Blue Jays 復健賽登板。",
+      "publisher": "MLB",
+      "sourceTitle": "TOR@TB: Happ struck by line drive, forced to leave",
+      "startSeconds": 0,
+      "durationSeconds": 472,
+      "sources": [
+        {
+          "title": "MLB：Happ 頭部與膝部檢查結果",
+          "url": "https://www.mlb.com/news/jahapp-preparing-for-worry-free-return-to-mound/c-49305248"
+        },
+        {
+          "title": "MLB：Happ 復健賽當日紀錄",
+          "url": "https://www.mlb.com/news/worth-noting/c-53642180"
+        },
+        {
+          "title": "MLB 官方資料：Happ 2013 新人聯盟紀錄",
+          "url": "https://statsapi.mlb.com/api/v1/people/457918/stats?stats=gameLog&group=pitching&season=2013&sportId=16"
+        },
+        {
+          "title": "MLB：Happ 復健起始日期",
+          "url": "https://www.mlb.com/news/happ-only-a-few-rehab-starts-away-from-return/c-55320522"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=g1fZXmVr_oA",
+      "captionStatus": "not-verified"
+    },
+    {
+      "slug": "dan-jennings-2014-concussion",
+      "videoId": "wVj6I9Q5IvE",
+      "name": "Dan Jennings",
+      "sport": "棒球",
+      "event": "MLB 馬林魚對海盜",
+      "bodyPart": "頭頸部",
+      "eventDate": "2014-08-07",
+      "returnDate": "2014-08-19",
+      "observation": "投球後遭平飛球打中頭部側面，站立不穩，之後由醫療人員協助離場。",
+      "returnText": "2014-08-19 在新人聯盟 GCL Marlins 復健賽登板。",
+      "publisher": "MLB",
+      "sourceTitle": "MIA@PIT: Jennings exits game after liner to the head",
+      "startSeconds": 0,
+      "durationSeconds": 192,
+      "sources": [
+        {
+          "title": "MLB：Jennings 腦震盪後狀況",
+          "url": "https://www.mlb.com/news/reflective-jennings-eyes-september-return/c-89642754"
+        },
+        {
+          "title": "MLB 官方資料：Jennings 2014 新人聯盟紀錄",
+          "url": "https://statsapi.mlb.com/api/v1/people/543359/stats?stats=gameLog&group=pitching&season=2014&sportId=16"
+        },
+        {
+          "title": "MLB 官方資料：Jennings 2014 大聯盟紀錄",
+          "url": "https://statsapi.mlb.com/api/v1/people/543359/stats?stats=gameLog&group=pitching&season=2014&gameType=R"
+        },
+        {
+          "title": "MLB：Jennings 生涯與復健紀錄",
+          "url": "https://www.mlb.com/player/dan-jennings-543359"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=wVj6I9Q5IvE",
+      "captionStatus": "not-verified"
+    },
+    {
+      "slug": "stephen-piscotty-2015-concussion",
+      "videoId": "qLR_C8wg68E",
+      "name": "Stephen Piscotty",
+      "sport": "棒球",
+      "event": "MLB 紅雀對海盜",
+      "bodyPart": "頭頸部",
+      "eventDate": "2015-09-28",
+      "returnDate": "2015-10-04",
+      "observation": "追接外野飛球時與隊友相撞，頭部受到碰撞後倒地，工作人員進場處理。",
+      "returnText": "2015-10-04 在對勇士雙重賽第一場恢復出賽。",
+      "publisher": "MLB",
+      "sourceTitle": "STL@PIT: Piscotty injured on Bourjos' diving catch",
+      "startSeconds": 0,
+      "durationSeconds": 481,
+      "sources": [
+        {
+          "title": "MLB：Piscotty 傷後檢查",
+          "url": "https://www.mlb.com/cardinals/news/stephen-piscotty-returns-to-cardinals-dugout/c-152503132"
+        },
+        {
+          "title": "MLB：Piscotty 實際復出賽報",
+          "url": "https://www.mlb.com/news/stephen-piscotty-returns-from-concussion/c-153221672"
+        },
+        {
+          "title": "MLB：Piscotty 後續恢復狀況",
+          "url": "https://www.mlb.com/news/stephen-piscotty-on-2015-collision-recovery-c162164478"
+        },
+        {
+          "title": "MLB 官方資料：Piscotty 2015 逐場紀錄",
+          "url": "https://statsapi.mlb.com/api/v1/people/572039/stats?stats=gameLog&group=hitting&season=2015&gameType=R"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=qLR_C8wg68E",
+      "captionStatus": "not-verified"
+    },
+    {
+      "slug": "dustin-pedroia-2017-knee",
+      "videoId": "rbAYcXPhIUE",
+      "name": "Dustin Pedroia",
+      "sport": "棒球",
+      "event": "MLB 紅襪對金鶯",
+      "bodyPart": "膝部",
+      "eventDate": "2017-04-21",
+      "returnDate": "2017-04-27",
+      "observation": "在二壘接球時與滑壘跑者接觸，隨後跛行並接受人員協助。",
+      "returnText": "2017-04-27 對洋基恢復大聯盟出賽。",
+      "publisher": "MLB",
+      "sourceTitle": "BOS@BAL: Pedroia exits game after collision at second",
+      "startSeconds": 0,
+      "durationSeconds": 29,
+      "sources": [
+        {
+          "title": "MLB：Pedroia 左腿受傷經過",
+          "url": "https://www.mlb.com/news/red-sox-dustin-pedroia-injures-left-leg-c225715198"
+        },
+        {
+          "title": "MLB：Pedroia 左膝與踝部檢查",
+          "url": "https://www.mlb.com/news/dustin-pedroia-day-to-day-knee-ankle-c226238044"
+        },
+        {
+          "title": "MLB 官方資料：Pedroia 2017 逐場紀錄",
+          "url": "https://statsapi.mlb.com/api/v1/people/456030/stats?stats=gameLog&group=hitting&season=2017&gameType=R"
+        },
+        {
+          "title": "MLB：Pedroia 後續膝部治療歷程",
+          "url": "https://www.mlb.com/news/dustin-pedroia-taking-break-from-injury-rehab"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=rbAYcXPhIUE",
+      "captionStatus": "not-verified"
+    },
+    {
+      "slug": "aaron-judge-2023-toe",
+      "videoId": "jhBAzccW-Oc",
+      "name": "Aaron Judge",
+      "sport": "棒球",
+      "event": "MLB 洋基對道奇",
+      "bodyPart": "足部",
+      "eventDate": "2023-06-03",
+      "returnDate": "2023-07-28",
+      "observation": "追接右外野飛球後撞上牛棚圍欄，圍欄門被撞開，身體跨入牛棚區域。",
+      "returnText": "2023-07-28 對金鶯擔任指定打擊恢復出賽。",
+      "publisher": "MLB",
+      "sourceTitle": "Aaron Judge literally runs through a wall!",
+      "startSeconds": 0,
+      "durationSeconds": 105,
+      "sources": [
+        {
+          "title": "MLB：Judge 受傷當場接球經過",
+          "url": "https://www.mlb.com/news/aaron-judge-crashes-into-fence-to-make-catch-vs-dodgers"
+        },
+        {
+          "title": "MLB：Judge 傷後首場出賽與恢復程度",
+          "url": "https://www.mlb.com/news/aaron-judge-toe-activated-off-injured-list"
+        },
+        {
+          "title": "MLB 官方資料：Judge 2023 逐場紀錄",
+          "url": "https://statsapi.mlb.com/api/v1/people/592450/stats?stats=gameLog&group=hitting&season=2023&gameType=R"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=jhBAzccW-Oc",
+      "captionStatus": "not-verified"
+    },
+    {
+      "slug": "manny-machado-2013-knee",
+      "videoId": "gQ0WzuOYh_A",
+      "name": "Manny Machado",
+      "sport": "棒球",
+      "event": "MLB 金鶯對光芒",
+      "bodyPart": "膝部",
+      "eventDate": "2013-09-23",
+      "returnDate": "2014-04-19",
+      "observation": "跑向一壘踩上壘包後倒地，抱住左膝，之後由人員以擔架協助離場。",
+      "returnText": "2014-04-19 在延長春訓比賽恢復出賽。",
+      "publisher": "MLB",
+      "sourceTitle": "Machado injures knee, exits on stretcher",
+      "startSeconds": 0,
+      "durationSeconds": 485,
+      "sources": [
+        {
+          "title": "MLB：Machado 左膝 MRI 結果",
+          "url": "https://www.mlb.com/news/mri-reveals-orioles-star-manny-machados-leg-injury-not-severe/c-61605412"
+        },
+        {
+          "title": "MLB：Machado 左膝重建手術安排",
+          "url": "https://www.mlb.com/news/baltimore-orioles-third-baseman-manny-machado-to-undergo-surgery-on-left-knee/c-62802324"
+        },
+        {
+          "title": "MLB：Machado 已完成左膝手術",
+          "url": "https://www.mlb.com/news/machado-has-surgery-could-miss-six-months/c-62949116"
+        },
+        {
+          "title": "MLB：Machado 首場延長春訓賽報",
+          "url": "https://www.mlb.com/news/machado-plays-first-extended-spring-game/c-72643480"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=gQ0WzuOYh_A",
+      "captionStatus": "not-verified"
+    },
+    {
+      "slug": "samir-ait-said-2016-leg",
+      "videoId": "Bt7EHTIivuA",
+      "name": "Samir Aït Saïd",
+      "sport": "體操",
+      "event": "里約奧運男子體操資格賽",
+      "bodyPart": "小腿／阿基里斯腱",
+      "eventDate": "2016-08-06",
+      "returnDate": "2017-08-18",
+      "observation": "跳馬落地後倒在墊上，隨後由醫療人員處理；影片亦回顧傷後歷程。",
+      "returnText": "2017-08-18 先參加法國隊選拔；9 月重返巴黎國際賽。",
+      "publisher": "Olympic Games",
+      "sourceTitle": "From a broken leg in Rio to a Medal at the World Championships ft. Samir Ait Said | What Moves Me",
+      "startSeconds": 58,
+      "durationSeconds": 314,
+      "sources": [
+        {
+          "title": "FIG：里約骨折手術及巴黎吊環復出",
+          "url": "https://www.gymnastics.sport/site/news/displaynews.php?urlNews=1893547"
+        },
+        {
+          "title": "Le Parisien：選手確認 INSEP 首次正式選拔",
+          "url": "https://www.leparisien.fr/sports/samir-ait-said-ma-blessure-est-oubliee-19-08-2017-7200957.php"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=Bt7EHTIivuA",
+      "captionStatus": "not-verified"
+    },
+    {
+      "slug": "sofia-goggia-2022-knee",
+      "videoId": "QDOJL9lwYdI",
+      "name": "Sofia Goggia",
+      "sport": "高山滑雪",
+      "event": "世界盃 Cortina 超級大迴轉",
+      "bodyPart": "膝部",
+      "eventDate": "2022-01-23",
+      "returnDate": "2022-02-15",
+      "observation": "高速過彎後失去平衡，滑雪板與身體翻轉，滑出賽道。",
+      "returnText": "2022-02-15 北京奧運滑降復出，獲銀牌。",
+      "publisher": "Paweł Fish (Fishu)",
+      "sourceTitle": "Sofia Goggia Cortina D'ampezzo, S-Gigant Italy 2022.01.23 Fail Crash",
+      "startSeconds": 0,
+      "durationSeconds": 47,
+      "sources": [
+        {
+          "title": "FISI：MRI 與電腦斷層傷勢公告",
+          "url": "https://www.fisi.org/conclusi-gli-accertamenti-clinici-le-condizioni-di-sofia-goggia/"
+        },
+        {
+          "title": "FISI：北京奧運滑降銀牌後訪談",
+          "url": "https://www.fisi.org/goggia-questa-medaglia-ha-un-valore-incredibile-avrei-firmato-per-largento/"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=QDOJL9lwYdI",
+      "captionStatus": "not-verified"
+    },
+    {
+      "slug": "yuzuru-hanyu-2014-collision",
+      "videoId": "Jf84VzlzLhI",
+      "name": "羽生結弦 Yuzuru Hanyu",
+      "sport": "花式滑冰",
+      "event": "中國盃男子自由滑賽前熱身",
+      "bodyPart": "頭頸部",
+      "eventDate": "2014-11-08",
+      "returnDate": null,
+      "observation": "共用冰面的賽前熱身中，兩名選手滑行路線交會後相撞倒地。",
+      "returnText": "當天曾繼續自由滑；11 月 28 日再參加 NHK 盃。",
+      "publisher": "white silver charcoal",
+      "sourceTitle": "Hanyu scary crash Yan Han",
+      "startSeconds": 0,
+      "durationSeconds": 117,
+      "sources": [
+        {
+          "title": "NBC：日本滑冰聯盟公布碰撞後傷勢",
+          "url": "https://www.nbcsports.com/olympics/news/yuzuru-hanyu-collision-cup-of-china-injury-figure-skating"
+        },
+        {
+          "title": "AFP／L’Équipe：NHK 盃短曲實際出賽",
+          "url": "https://www.lequipe.fr/Patinage-artistique/Actualites/Hanyu-nerveux-5e/518299"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=Jf84VzlzLhI",
+      "captionStatus": "not-verified"
+    },
+    {
+      "slug": "aleksander-kilde-2024-shoulder",
+      "videoId": "D0VibSVWwBA",
+      "name": "Aleksander Aamodt Kilde",
+      "sport": "高山滑雪",
+      "event": "世界盃 Wengen 滑降",
+      "bodyPart": "肩部",
+      "eventDate": "2024-01-13",
+      "returnDate": "2025-11-27",
+      "observation": "接近終點時失去平衡，滑出賽道撞上防護網，之後接受救援。",
+      "returnText": "2025-11-27 在 Copper Mountain 超級大迴轉重返世界盃。",
+      "publisher": "WorldCup Skiing",
+      "sourceTitle": "Aleksander Aamodt Kilde ski crash Wengen at 145km/h⛷️🇨🇭",
+      "startSeconds": 0,
+      "durationSeconds": 81,
+      "sources": [
+        {
+          "title": "SRF：挪威協會及隊醫傷勢公告",
+          "url": "https://www.srf.ch/sport/ski-alpin/weltcup-maenner/nach-sturz-am-lauberhorn-norwegischer-teamarzt-bestaetigt-saisonaus-fuer-kilde"
+        },
+        {
+          "title": "FIS：Copper Mountain 復出賽報",
+          "url": "https://www.fis-ski.com/alpine-skiing/news/2025-26/odermatt-begins-super-g-title-defence-with-victory-at-copper-mountain"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=D0VibSVWwBA",
+      "captionStatus": "not-verified"
+    },
+    {
+      "slug": "liu-xiang-2012-achilles",
+      "videoId": "Pa50gXELqp0",
+      "name": "劉翔 Liu Xiang",
+      "sport": "田徑",
+      "event": "倫敦奧運男子 110 公尺跨欄預賽",
+      "bodyPart": "小腿／阿基里斯腱",
+      "eventDate": "2012-08-07",
+      "returnDate": null,
+      "observation": "起跑後在第一個欄架前後倒地，之後以單腳移動離開跑道。",
+      "returnText": "此後未再參賽，2015-04-07 宣布退役。",
+      "publisher": "elsanto26",
+      "sourceTitle": "London 2012 110m Hurdles - Liu Xiang falls, injures, limps and is helped by other athletes",
+      "startSeconds": 0,
+      "durationSeconds": 82,
+      "sources": [
+        {
+          "title": "World Athletics：倫敦預賽及初步傷勢",
+          "url": "https://worldathletics.org/news/report/london-2012-event-report-mens-110m-hurdle-2"
+        },
+        {
+          "title": "World Athletics：退役與未再參賽紀錄",
+          "url": "https://worldathletics.org/news/news/liu-xiang-retires"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=Pa50gXELqp0",
+      "captionStatus": "not-verified"
+    },
+    {
+      "slug": "fabio-jakobsen-2020-concussion",
+      "videoId": "RvDqK9NnqyI",
+      "name": "Fabio Jakobsen",
+      "sport": "自行車",
+      "event": "環波蘭賽第一站終點衝刺",
+      "bodyPart": "頭頸部",
+      "eventDate": "2020-08-05",
+      "returnDate": "2021-04-11",
+      "observation": "終點衝刺時與旁邊車手接近，撞入場邊護欄並翻落，波及後方車手。",
+      "returnText": "2021-04-11 於環土耳其賽第一站恢復比賽。",
+      "publisher": "Sports History Channel",
+      "sourceTitle": "Tour of Poland - Stage 1 2020 - Fabio Jakobsen crash - Horrific crash",
+      "startSeconds": 0,
+      "durationSeconds": 63,
+      "sources": [
+        {
+          "title": "Cyclingnews：轉述選手經車隊公布的傷後說明",
+          "url": "https://www.cyclingnews.com/news/fabio-jakobsen-the-doctors-at-the-finish-line-saved-my-life/"
+        },
+        {
+          "title": "Cyclingnews：環土耳其首站實際復出",
+          "url": "https://www.cyclingnews.com/news/fabio-jakobsen-makes-emotional-return-to-racing-at-tour-of-turkey/"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=RvDqK9NnqyI",
+      "captionStatus": "not-verified"
+    },
+    {
+      "slug": "mikaela-shiffrin-2024-abdomen",
+      "videoId": "nFbLC6Dv6Xk",
+      "name": "Mikaela Shiffrin",
+      "sport": "高山滑雪",
+      "event": "世界盃 Killington 大迴轉",
+      "bodyPart": "軀幹",
+      "eventDate": "2024-11-30",
+      "returnDate": "2025-01-30",
+      "observation": "接近終點時失去平衡，倒地後撞過旗門並滑向防護網。",
+      "returnText": "2025-01-30 於 Courchevel 曲道復出，排名第 10。",
+      "publisher": "TNT Sports",
+      "sourceTitle": "Shiffrin CRASHES in pursuit of 100th World Cup win 😭 | FIS Alpine Ski World Cup 2024/25 Highlights",
+      "startSeconds": 100,
+      "durationSeconds": 259,
+      "sources": [
+        {
+          "title": "US Ski & Snowboard：Killington 傷勢公告",
+          "url": "https://www.usskiandsnowboard.org/news/first-weekend-american-2024-25-world-cups-wraps"
+        },
+        {
+          "title": "FIS：Courchevel 首場復出及名次",
+          "url": "https://www.fis-ski.com/alpine-skiing/news/2024-25/-the-sky-is-the-limit-now-ljutic-decimates-field-to-claim-third-slalom-win-in-four"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=nFbLC6Dv6Xk",
+      "captionStatus": "not-verified"
+    },
+    {
+      "slug": "remco-evenepoel-2020-pelvis",
+      "videoId": "o8mXn1hwdtA",
+      "name": "Remco Evenepoel",
+      "sport": "自行車",
+      "event": "環倫巴底賽下坡路段",
+      "bodyPart": "骨盆",
+      "eventDate": "2020-08-15",
+      "returnDate": "2021-05-08",
+      "observation": "下坡過彎時撞上橋側矮牆，翻越護欄落到橋下。",
+      "returnText": "2021-05-08 於環義大利賽第一站個人計時賽復出。",
+      "publisher": "Andrew Block",
+      "sourceTitle": "Remco Evenepoel Crashes On Bridge At Il Lombardia",
+      "startSeconds": 0,
+      "durationSeconds": 58,
+      "sources": [
+        {
+          "title": "RTVE：車隊公布骨盆骨折及肺挫傷",
+          "url": "https://www.rtve.es/deportes/20200815/remco-evenepoel-caida-puente-lombardia/2040291.shtml"
+        },
+        {
+          "title": "Cyclingnews：環義大利首站即時比賽紀錄",
+          "url": "https://www.cyclingnews.com/races/giro-d-italia-2021/stage-1/live-report/"
+        },
+        {
+          "title": "Giro d’Italia：環義大利首站官方賽報",
+          "url": "https://www.giroditalia.it/news/la-migliore-inaugurazione"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=o8mXn1hwdtA",
+      "captionStatus": "not-verified"
+    },
+    {
+      "slug": "chien-ming-wang-2008-foot",
+      "videoId": "blRqsO9--38",
+      "name": "王建民 Chien-Ming Wang",
+      "sport": "棒球",
+      "event": "MLB 洋基對太空人",
+      "bodyPart": "足部",
+      "eventDate": "2008-06-15",
+      "returnDate": "2009-03-02",
+      "observation": "繞過三壘跑向本壘時步態改變，得分後由人員攙扶離場。",
+      "returnText": "2009-03-02 春訓對太空人投兩局無失分，為足傷後首次比賽登板。",
+      "publisher": "Eli lee",
+      "sourceTitle": "王建民對太空人6上跑壘受傷(2008-6-16)",
+      "startSeconds": 0,
+      "durationSeconds": 77,
+      "sources": [
+        {
+          "title": "MLB：王建民官方生涯紀錄與 2008 年足傷診斷",
+          "url": "https://www.mlb.com/player/chien-ming-wang-425426"
+        },
+        {
+          "title": "洋基醫療公告（Lone Star Ball 引用原文）",
+          "url": "https://www.lonestarball.com/2008/6/16/553075/on-chien-ming-wang-and-vic"
+        },
+        {
+          "title": "AP／SFGATE：足傷後首次春訓登板投兩局無失分",
+          "url": "https://www.sfgate.com/sports/article/Griffey-s-knee-better-3249204.php"
+        },
+        {
+          "title": "MLB StatsAPI：2009 年春訓逐場紀錄，首場為 3 月 2 日",
+          "url": "https://statsapi.mlb.com/api/v1/people/425426/stats?stats=gameLog&group=pitching&season=2009&gameType=S"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=blRqsO9--38",
+      "captionStatus": "not-verified"
+    }
+  ]
+}

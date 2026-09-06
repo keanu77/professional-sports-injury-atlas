@@ -19,6 +19,9 @@ const batch31 = JSON.parse(
 const batch32 = JSON.parse(
   fs.readFileSync("src/data/videos/batch-32.v1.json", "utf8"),
 );
+const batch34 = JSON.parse(
+  fs.readFileSync("src/data/videos/batch-34.v1.json", "utf8"),
+);
 const output = process.argv[3] ?? "/tmp/atlas23-playback.json";
 const allItems = [
   ...expansion.cases.map((c) => ({
@@ -33,6 +36,7 @@ const allItems = [
     ...batch30.clips,
     ...batch31.clips,
     ...batch32.clips,
+    ...batch34.clips,
   ]
     .filter((c) => !curation.removedSlugs.includes(c.slug))
     .map((c) => ({
@@ -42,17 +46,19 @@ const allItems = [
 ];
 const items = process.argv[4]
   ? allItems.filter((item) =>
-      process.argv[4] === "--batch-32"
-        ? batch32.clips.some((c) => c.slug === item.slug)
-        : process.argv[4] === "--batch-31"
-          ? batch31.clips.some((c) => c.slug === item.slug)
-          : process.argv[4] === "--batch-30"
-            ? batch30.clips.some((c) => c.slug === item.slug)
-            : process.argv[4] === "--curation"
-              ? curation.clips.some((c) => c.slug === item.slug)
-              : process.argv[4] === "--additions"
-                ? additions.clips.some((c) => c.slug === item.slug)
-                : item.slug === process.argv[4],
+      process.argv[4] === "--batch-34"
+        ? batch34.clips.some((c) => c.slug === item.slug)
+        : process.argv[4] === "--batch-32"
+          ? batch32.clips.some((c) => c.slug === item.slug)
+          : process.argv[4] === "--batch-31"
+            ? batch31.clips.some((c) => c.slug === item.slug)
+            : process.argv[4] === "--batch-30"
+              ? batch30.clips.some((c) => c.slug === item.slug)
+              : process.argv[4] === "--curation"
+                ? curation.clips.some((c) => c.slug === item.slug)
+                : process.argv[4] === "--additions"
+                  ? additions.clips.some((c) => c.slug === item.slug)
+                  : item.slug === process.argv[4],
     )
   : allItems;
 if (items.length === 0) throw new Error("Unknown video slug");

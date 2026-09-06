@@ -1,0 +1,202 @@
+[
+  {
+    "title": "MLB：Haniger 臉部與腦震盪傷勢",
+    "url": "https://www.mlb.com/news/mariners-update-mitch-haniger-face-injury-c245636522",
+    "publishedAt": "2017-08-01",
+    "status": 200,
+    "resolvedUrl": "https://www.mlb.com/news/mariners-update-mitch-haniger-face-injury-c245636522",
+    "bytes": 297864,
+    "sha256": "a66d36fa94bef6ea1171caf05b62db85c45495677bfc89dc1fa11d608d0ca28d",
+    "checkedAt": "2026-09-06T11:22:39.434384+00:00"
+  },
+  {
+    "title": "水手官方：Haniger 復健賽與歸隊紀錄",
+    "url": "https://www.mlb.com/press-release/mariners-activate-of-mitch-haniger-from-the-10-day-disabled-list-recal-249407070",
+    "publishedAt": "2017-08-19",
+    "status": 200,
+    "resolvedUrl": "https://www.mlb.com/press-release/mariners-activate-of-mitch-haniger-from-the-10-day-disabled-list-recal-249407070",
+    "bytes": 302867,
+    "sha256": "8686da1279f88412b036ff0492f47437054515963483699f8d760886e30a9aac",
+    "checkedAt": "2026-09-06T11:22:40.489263+00:00"
+  },
+  {
+    "title": "MLB：Haniger 傷後實際比賽紀錄",
+    "url": "https://www.mlb.com/news/mariners-activate-outfielder-mitch-haniger-c249408366",
+    "publishedAt": "2017-08-19",
+    "status": 200,
+    "resolvedUrl": "https://www.mlb.com/news/mariners-activate-outfielder-mitch-haniger-c249408366",
+    "bytes": 306792,
+    "sha256": "91d96b8fbe2873ed3a044cd1cfe05c0202a13f47a3ae22f7b51db94466ae5189",
+    "checkedAt": "2026-09-06T11:22:40.712993+00:00"
+  },
+  {
+    "title": "MLB：Turner 傷後縫合與恢復訓練",
+    "url": "https://www.mlb.com/redsox/news/justin-turner-resumes-light-baseball-activity-after-hit-by-pitch",
+    "publishedAt": "2023-03-12",
+    "status": 200,
+    "resolvedUrl": "https://www.mlb.com/redsox/news/justin-turner-resumes-light-baseball-activity-after-hit-by-pitch",
+    "bytes": 354159,
+    "sha256": "0872b6b2b09b7ad440bbfe90a00830a04c457f3e595de2df1f12da7bb2d3c1e3",
+    "checkedAt": "2026-09-06T11:22:39.435992+00:00"
+  },
+  {
+    "title": "MLB：Turner 春訓復出賽報",
+    "url": "https://www.mlb.com/news/justin-turner-returns-to-red-sox-lineup-after-hbp",
+    "publishedAt": "2023-03-20",
+    "status": 200,
+    "resolvedUrl": "https://www.mlb.com/news/justin-turner-returns-to-red-sox-lineup-after-hbp",
+    "bytes": 310017,
+    "sha256": "62bbdd6a082ad2a4d6d0644ff1ba63411c054bc9ee16dc149a54f191a30d3595",
+    "checkedAt": "2026-09-06T11:22:40.488645+00:00"
+  },
+  {
+    "title": "MLB：Pillar 鼻骨骨折公告",
+    "url": "https://www.mlb.com/news/kevin-pillar-gets-hit-in-the-face-vs-braves",
+    "publishedAt": "2021-05-18",
+    "status": 200,
+    "resolvedUrl": "https://www.mlb.com/news/kevin-pillar-gets-hit-in-the-face-vs-braves",
+    "bytes": 306769,
+    "sha256": "f66b4abda7630843c771857ce5aafead46c67a7fb21af9fe8a5cfe42959a8530",
+    "checkedAt": "2026-09-06T11:22:38.912392+00:00"
+  },
+  {
+    "title": "MLB：Pillar 實際復出賽報",
+    "url": "https://www.mlb.com/amp/news/kevin-pillar-returns-after-getting-hit-in-face-by-pitch.html",
+    "publishedAt": "2021-06-01",
+    "status": 200,
+    "resolvedUrl": "https://www.mlb.com/amp/news/kevin-pillar-returns-after-getting-hit-in-face-by-pitch.html",
+    "bytes": 41398,
+    "sha256": "ac6cfd01b7e5ca0d05d1ce73cf4bdb14e431a6ef3ee1100118d2def77574478c",
+    "checkedAt": "2026-09-06T11:22:39.957076+00:00"
+  },
+  {
+    "title": "MLB 官方資料：Pillar 生涯與復出紀錄",
+    "url": "https://www.mlb.com/player/kevin-pillar-607680",
+    "publishedAt": null,
+    "status": 200,
+    "resolvedUrl": "https://www.mlb.com/player/kevin-pillar-607680",
+    "bytes": 572581,
+    "sha256": "989259c78c3b8b9ade7f50e0ed88ee0e3f386fc68f9b06aab30dc8320f2dda42",
+    "checkedAt": "2026-09-06T11:22:41.010535+00:00"
+  },
+  {
+    "title": "MLB：Harper 拇指骨折",
+    "url": "https://www.mlb.com/phillies/news/bryce-harper-hand-injury-after-hbp",
+    "publishedAt": "2022-06-26",
+    "status": 200,
+    "resolvedUrl": "https://www.mlb.com/phillies/news/bryce-harper-hand-injury-after-hbp",
+    "bytes": 371439,
+    "sha256": "621ae6b47f6df45925c6ce5372fae0ca33b952d53649a9334ccb490e917e5d70",
+    "checkedAt": "2026-09-06T11:22:41.012854+00:00"
+  },
+  {
+    "title": "MLB：Harper 拇指手術",
+    "url": "https://www.mlb.com/news/bryce-harper-thumb-injury-update",
+    "publishedAt": "2022-06-29",
+    "status": 200,
+    "resolvedUrl": "https://www.mlb.com/news/bryce-harper-thumb-injury-update",
+    "bytes": 307143,
+    "sha256": "026b77666f086d7c80c4d8697a401935e012afc0b8a3a8248e65e1a827f99d33",
+    "checkedAt": "2026-09-06T11:22:41.306431+00:00"
+  },
+  {
+    "title": "MLB：Harper 首場復健賽",
+    "url": "https://www.mlb.com/phillies/news/bryce-harper-homers-twice-in-rehab-game",
+    "publishedAt": "2022-08-24",
+    "status": 200,
+    "resolvedUrl": "https://www.mlb.com/phillies/news/bryce-harper-homers-twice-in-rehab-game",
+    "bytes": 351221,
+    "sha256": "c9b5b254653f711fddf0cc127e1ce5005d55bf21bc475db0eb96d28fd529028d",
+    "checkedAt": "2026-09-06T11:22:42.078575+00:00"
+  },
+  {
+    "title": "MLB：Betts 左手骨折",
+    "url": "https://www.mlb.com/news/mookie-betts-exits-game-vs-royals-after-hit-by-pitch-to-hand",
+    "publishedAt": "2024-06-17",
+    "status": 200,
+    "resolvedUrl": "https://www.mlb.com/news/mookie-betts-exits-game-vs-royals-after-hit-by-pitch-to-hand",
+    "bytes": 311622,
+    "sha256": "c18f915991a0162229694e4f20016be22aecbcb7079907fa00844b375da42162",
+    "checkedAt": "2026-09-06T11:22:42.073815+00:00"
+  },
+  {
+    "title": "MLB：Betts 復出首戰與回場方式",
+    "url": "https://www.mlb.com/dodgers/news/mookie-betts-returns-to-dodgers-playing-right-field",
+    "publishedAt": "2024-08-13",
+    "status": 200,
+    "resolvedUrl": "https://www.mlb.com/dodgers/news/mookie-betts-returns-to-dodgers-playing-right-field",
+    "bytes": 368867,
+    "sha256": "d9f03e2139d76cfc9383c732e175b714cbd027d6000c0604a9f1d7a15e1f0cff",
+    "checkedAt": "2026-09-06T11:22:42.294727+00:00"
+  },
+  {
+    "title": "MLB：Betts 8 月 12 日比賽紀錄",
+    "url": "https://www.mlb.com/video/mookie-betts-homers-11-on-a-fly-ball-to-left-field-enrique-hernandez-scor",
+    "publishedAt": "2024-08-12",
+    "status": 200,
+    "resolvedUrl": "https://www.mlb.com/video/mookie-betts-homers-11-on-a-fly-ball-to-left-field-enrique-hernandez-scor",
+    "bytes": 491761,
+    "sha256": "640fca3e33ff076f8a85415f29273b0b40fa289ab5db6d60b2d08b7112afa350",
+    "checkedAt": "2026-09-06T11:22:42.583831+00:00"
+  },
+  {
+    "title": "Sports Illustrated：Headley 傷勢與球隊說明",
+    "url": "https://www.si.com/mlb/2014/09/12/new-york-yankees-chase-headley-hit-pitch",
+    "publishedAt": "2014-09-12",
+    "status": 200,
+    "resolvedUrl": "https://www.si.com/mlb/2014/09/12/new-york-yankees-chase-headley-hit-pitch",
+    "bytes": 277574,
+    "sha256": "4b0b48cc53bbb899f422002b4188ae25e22d75bd6638ab07aecfcb6d5df65f7f",
+    "checkedAt": "2026-09-06T11:22:42.087411+00:00"
+  },
+  {
+    "title": "MLB：Headley 實際復出賽報",
+    "url": "https://www.mlb.com/news/yankees-third-baseman-chase-headley-ejected-for-arguing-strike-call/c-94851556",
+    "publishedAt": "2014-09-16",
+    "status": 200,
+    "resolvedUrl": "https://www.mlb.com/news/yankees-third-baseman-chase-headley-ejected-for-arguing-strike-call/c-94851556",
+    "bytes": 364609,
+    "sha256": "1800dc320abf4f4fff8b4c2f768ce6ea1d56b92ca6dde5856c0f442ba1a3baa1",
+    "checkedAt": "2026-09-06T11:22:42.912658+00:00"
+  },
+  {
+    "title": "MLB 官方資料：Headley 2014 逐場紀錄",
+    "url": "https://statsapi.mlb.com/api/v1/people/452104/stats?stats=gameLog&group=hitting&season=2014&gameType=R",
+    "publishedAt": null,
+    "status": 200,
+    "resolvedUrl": "https://statsapi.mlb.com/api/v1/people/452104/stats?stats=gameLog&group=hitting&season=2014&gameType=R",
+    "bytes": 177135,
+    "sha256": "3535a8b52cb9c734bfc590e0af14f7aebc0faf56ea89c00a043cab8b926be28f",
+    "checkedAt": "2026-09-06T11:22:43.103916+00:00"
+  },
+  {
+    "title": "MLB：Granderson 左手掌骨骨折",
+    "url": "https://www.mlb.com/news/yankees-outfielder-curtis-granderson-hit-by-pitch-on-hand-breaks-knuckle-out-at-least-four-weeks/c-48485278",
+    "publishedAt": "2013-05-24",
+    "status": 200,
+    "resolvedUrl": "https://www.mlb.com/news/yankees-outfielder-curtis-granderson-hit-by-pitch-on-hand-breaks-knuckle-out-at-least-four-weeks/c-48485278",
+    "bytes": 357134,
+    "sha256": "2880c957651830e4c3b5ee0d321344062d6f626de718d3bb25563b831441573f",
+    "checkedAt": "2026-09-06T11:22:43.803627+00:00"
+  },
+  {
+    "title": "MLB：Granderson 首場復健賽",
+    "url": "https://www.mlb.com/news/curtis-granderson-plays-five-innings-in-first-rehab-game/c-54808854",
+    "publishedAt": "2013-07-26",
+    "status": 200,
+    "resolvedUrl": "https://www.mlb.com/news/curtis-granderson-plays-five-innings-in-first-rehab-game/c-54808854",
+    "bytes": 355576,
+    "sha256": "5109d9e574da1715e9a4d5f1f0c205dda1f9244a9de0fccf07bd0819f18f8b1f",
+    "checkedAt": "2026-09-06T11:22:43.638594+00:00"
+  },
+  {
+    "title": "MLB 官方資料：Granderson 復健賽紀錄",
+    "url": "https://www.mlb.com/player/curtis-granderson-434158",
+    "publishedAt": null,
+    "status": 200,
+    "resolvedUrl": "https://www.mlb.com/player/curtis-granderson-434158",
+    "bytes": 599058,
+    "sha256": "a9b8342e1ded69e3c6b2f2c27992ac3d5bc94615293eaa1c6b281b1e33639a94",
+    "checkedAt": "2026-09-06T11:22:45.201546+00:00"
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "url": "https://www.mlb.com/player/chien-ming-wang-425426",
+    "status": 200,
+    "path": "/tmp/atlas34/other/wang-source-0.html",
+    "sha256": "f4af1bfd189deb5ae5046e4f4f39c94e79acb5db338cfbcafbbd1eacb4db2de7"
+  },
+  {
+    "url": "https://www.sfgate.com/sports/article/Griffey-s-knee-better-3249204.php",
+    "status": 200,
+    "path": "/tmp/atlas34/other/wang-source-1.html",
+    "sha256": "5b640b58e0f2048e8e2807f5ed49db9aac47f1259a4d74f4f214a4e479dc3a8e"
+  },
+  {
+    "url": "https://www.nj.com/yankees/index.ssf/2008/06/news_on_wang_is_not_good.html",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://www.lonestarball.com/2008/6/16/553075/on-chien-ming-wang-and-vic",
+    "status": 200,
+    "path": "/tmp/atlas34/other/wang-source-3.html",
+    "sha256": "77912edde03cc9ab34ec49c8a50a47f8b36437cdf9db5fcf434f0d1ec1d73dda"
+  },
+  {
+    "url": "https://statsapi.mlb.com/api/v1/people/425426/stats?stats=gameLog&group=pitching&season=2009&gameType=S",
+    "status": 200,
+    "path": "/tmp/atlas34/other/wang-spring-gamelog.json",
+    "sha256": "4a190a527235621cb35fd90fcc49e354bae622452044b985aedde270fb080993",
+    "verified": "First split 2009-03-02 gamePk 257292, Houston Astros, 2.0 IP, 0 runs."
+  }
+]

@@ -1,0 +1,169 @@
+[
+  {
+    "title": "FIG：里約骨折手術及巴黎吊環復出",
+    "url": "https://www.gymnastics.sport/site/news/displaynews.php?urlNews=1893547",
+    "publishedAt": "2017-10-01",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>",
+    "checkedAt": "2026-09-06T11:23:47.392276+00:00"
+  },
+  {
+    "title": "Le Parisien：選手確認 INSEP 首次正式選拔",
+    "url": "https://www.leparisien.fr/sports/samir-ait-said-ma-blessure-est-oubliee-19-08-2017-7200957.php",
+    "publishedAt": "2017-08-19",
+    "error": "HTTP Error 403: Forbidden",
+    "checkedAt": "2026-09-06T11:23:47.590354+00:00"
+  },
+  {
+    "title": "FISI：MRI 與電腦斷層傷勢公告",
+    "url": "https://www.fisi.org/conclusi-gli-accertamenti-clinici-le-condizioni-di-sofia-goggia/",
+    "publishedAt": "2022-01-23",
+    "error": "HTTP Error 503: Service Unavailable",
+    "checkedAt": "2026-09-06T11:23:48.180674+00:00"
+  },
+  {
+    "title": "FISI：北京奧運滑降銀牌後訪談",
+    "url": "https://www.fisi.org/goggia-questa-medaglia-ha-un-valore-incredibile-avrei-firmato-per-largento/",
+    "publishedAt": "2022-02-15",
+    "error": "HTTP Error 503: Service Unavailable",
+    "checkedAt": "2026-09-06T11:23:48.184307+00:00"
+  },
+  {
+    "title": "NBC：日本滑冰聯盟公布碰撞後傷勢",
+    "url": "https://www.nbcsports.com/olympics/news/yuzuru-hanyu-collision-cup-of-china-injury-figure-skating",
+    "publishedAt": "2014-11-10",
+    "httpStatus": 200,
+    "finalUrl": "https://www.nbcsports.com/olympics/news/yuzuru-hanyu-collision-cup-of-china-injury-figure-skating",
+    "sha256": "c0816b6844ba70c98a128c4a4ab1522b08031f59bc8128ae58a7aaac581f4504",
+    "bytes": 506988,
+    "file": "/tmp/atlas34/other/sources/c0816b6844ba70c98a128c4a4ab1522b08031f59bc8128ae58a7aaac581f4504.html",
+    "checkedAt": "2026-09-06T11:23:48.742400+00:00"
+  },
+  {
+    "title": "AFP／L’Équipe：NHK 盃短曲實際出賽",
+    "url": "https://www.lequipe.fr/Patinage-artistique/Actualites/Hanyu-nerveux-5e/518299",
+    "publishedAt": "2014-11-28",
+    "httpStatus": 200,
+    "finalUrl": "https://www.lequipe.fr/Patinage-artistique/Actualites/Hanyu-nerveux-5e/518299",
+    "sha256": "ff00f249f087b50c58e31604dbe129ca7ae40b2081c6d3ad1df04cd5febc3dff",
+    "bytes": 731694,
+    "file": "/tmp/atlas34/other/sources/ff00f249f087b50c58e31604dbe129ca7ae40b2081c6d3ad1df04cd5febc3dff.html",
+    "checkedAt": "2026-09-06T11:23:49.172702+00:00"
+  },
+  {
+    "title": "SRF：挪威協會及隊醫傷勢公告",
+    "url": "https://www.srf.ch/sport/ski-alpin/weltcup-maenner/nach-sturz-am-lauberhorn-norwegischer-teamarzt-bestaetigt-saisonaus-fuer-kilde",
+    "publishedAt": "2024-01-13",
+    "httpStatus": 200,
+    "finalUrl": "https://www.srf.ch/sport/ski-alpin/weltcup-maenner/nach-sturz-am-lauberhorn-norwegischer-teamarzt-bestaetigt-saisonaus-fuer-kilde",
+    "sha256": "7817e6a352d2f22eeccf3f9e82a69f5cb83d43e87f6e0c96ee5b0b6d35882dbf",
+    "bytes": 116221,
+    "file": "/tmp/atlas34/other/sources/7817e6a352d2f22eeccf3f9e82a69f5cb83d43e87f6e0c96ee5b0b6d35882dbf.html",
+    "checkedAt": "2026-09-06T11:23:49.688976+00:00"
+  },
+  {
+    "title": "FIS：Copper Mountain 復出賽報",
+    "url": "https://www.fis-ski.com/alpine-skiing/news/2025-26/odermatt-begins-super-g-title-defence-with-victory-at-copper-mountain",
+    "publishedAt": "2025-11-27",
+    "httpStatus": 200,
+    "finalUrl": "https://www.fis-ski.com/alpine-skiing/news/2025-26/odermatt-begins-super-g-title-defence-with-victory-at-copper-mountain",
+    "sha256": "f8d151dada996f7d1f8a2a0f49501420a0ddd2941ee8614ede1580ebeb8660a3",
+    "bytes": 239415,
+    "file": "/tmp/atlas34/other/sources/f8d151dada996f7d1f8a2a0f49501420a0ddd2941ee8614ede1580ebeb8660a3.html",
+    "checkedAt": "2026-09-06T11:23:50.403724+00:00"
+  },
+  {
+    "title": "World Athletics：倫敦預賽及初步傷勢",
+    "url": "https://worldathletics.org/news/report/london-2012-event-report-mens-110m-hurdle-2",
+    "publishedAt": "2012-08-07",
+    "httpStatus": 200,
+    "finalUrl": "https://worldathletics.org/news/report/london-2012-event-report-mens-110m-hurdle-2",
+    "sha256": "f17bc2cff507119b4f73b785bb294b4d90af40a9148db91381df48f26d49400d",
+    "bytes": 64787,
+    "file": "/tmp/atlas34/other/sources/f17bc2cff507119b4f73b785bb294b4d90af40a9148db91381df48f26d49400d.html",
+    "checkedAt": "2026-09-06T11:23:49.402184+00:00"
+  },
+  {
+    "title": "World Athletics：退役與未再參賽紀錄",
+    "url": "https://worldathletics.org/news/news/liu-xiang-retires",
+    "publishedAt": "2015-04-07",
+    "httpStatus": 200,
+    "finalUrl": "https://worldathletics.org/news/news/liu-xiang-retires",
+    "sha256": "c7e146f0eeb162f923955fdb1a33e780ff9a206e99db367b027d0d9498249b6c",
+    "bytes": 62155,
+    "file": "/tmp/atlas34/other/sources/c7e146f0eeb162f923955fdb1a33e780ff9a206e99db367b027d0d9498249b6c.html",
+    "checkedAt": "2026-09-06T11:23:50.561919+00:00"
+  },
+  {
+    "title": "Cyclingnews：轉述選手經車隊公布的傷後說明",
+    "url": "https://www.cyclingnews.com/news/fabio-jakobsen-the-doctors-at-the-finish-line-saved-my-life/",
+    "publishedAt": "2020-08-18",
+    "httpStatus": 200,
+    "finalUrl": "https://www.cyclingnews.com/news/fabio-jakobsen-the-doctors-at-the-finish-line-saved-my-life/",
+    "sha256": "ff0f168db4a89569eba2be7d521a6dc042e298cb45f05b2de10564114354eaa5",
+    "bytes": 2008907,
+    "file": "/tmp/atlas34/other/sources/ff0f168db4a89569eba2be7d521a6dc042e298cb45f05b2de10564114354eaa5.html",
+    "checkedAt": "2026-09-06T11:23:51.582923+00:00"
+  },
+  {
+    "title": "Cyclingnews：環土耳其首站實際復出",
+    "url": "https://www.cyclingnews.com/news/fabio-jakobsen-makes-emotional-return-to-racing-at-tour-of-turkey/",
+    "publishedAt": "2021-04-11",
+    "httpStatus": 200,
+    "finalUrl": "https://www.cyclingnews.com/news/fabio-jakobsen-makes-emotional-return-to-racing-at-tour-of-turkey/",
+    "sha256": "249479333528b3e60a5e7a08b72573e3cc33c8fd6d2f1af870bd1b304c24fb44",
+    "bytes": 2020816,
+    "file": "/tmp/atlas34/other/sources/249479333528b3e60a5e7a08b72573e3cc33c8fd6d2f1af870bd1b304c24fb44.html",
+    "checkedAt": "2026-09-06T11:23:51.793041+00:00"
+  },
+  {
+    "title": "US Ski & Snowboard：Killington 傷勢公告",
+    "url": "https://www.usskiandsnowboard.org/news/first-weekend-american-2024-25-world-cups-wraps",
+    "publishedAt": "2024-12-01",
+    "error": "HTTP Error 403: Forbidden",
+    "checkedAt": "2026-09-06T11:23:49.827400+00:00"
+  },
+  {
+    "title": "FIS：Courchevel 首場復出及名次",
+    "url": "https://www.fis-ski.com/alpine-skiing/news/2024-25/-the-sky-is-the-limit-now-ljutic-decimates-field-to-claim-third-slalom-win-in-four",
+    "publishedAt": "2025-01-30",
+    "httpStatus": 200,
+    "finalUrl": "https://www.fis-ski.com/alpine-skiing/news/2024-25/-the-sky-is-the-limit-now-ljutic-decimates-field-to-claim-third-slalom-win-in-four",
+    "sha256": "82215c67419c40c581fd314a4b99ee880dbe6657cd78ebfa436d6ce6d5af7884",
+    "bytes": 255177,
+    "file": "/tmp/atlas34/other/sources/82215c67419c40c581fd314a4b99ee880dbe6657cd78ebfa436d6ce6d5af7884.html",
+    "checkedAt": "2026-09-06T11:23:51.844068+00:00"
+  },
+  {
+    "title": "RTVE：車隊公布骨盆骨折及肺挫傷",
+    "url": "https://www.rtve.es/deportes/20200815/remco-evenepoel-caida-puente-lombardia/2040291.shtml",
+    "publishedAt": "2020-08-15",
+    "httpStatus": 200,
+    "finalUrl": "https://www.rtve.es/deportes/20200815/remco-evenepoel-caida-puente-lombardia/2040291.shtml",
+    "sha256": "1ad9ec88dd2dacfde4b5cd7f8ffbef0b49823215e653db9dc979e53eb8cfc9ce",
+    "bytes": 59313,
+    "file": "/tmp/atlas34/other/sources/1ad9ec88dd2dacfde4b5cd7f8ffbef0b49823215e653db9dc979e53eb8cfc9ce.html",
+    "checkedAt": "2026-09-06T11:23:51.995949+00:00"
+  },
+  {
+    "title": "Cyclingnews：環義大利首站即時比賽紀錄",
+    "url": "https://www.cyclingnews.com/races/giro-d-italia-2021/stage-1/live-report/",
+    "publishedAt": "2021-05-08",
+    "httpStatus": 200,
+    "finalUrl": "https://www.cyclingnews.com/races/giro-d-italia-2021/stage-1/live-report/",
+    "sha256": "a739bb715105ea3dbb87d700c3030c79cf98c5558547c9cfe9e20258aba9ad1d",
+    "bytes": 2692017,
+    "file": "/tmp/atlas34/other/sources/a739bb715105ea3dbb87d700c3030c79cf98c5558547c9cfe9e20258aba9ad1d.html",
+    "checkedAt": "2026-09-06T11:23:52.472055+00:00"
+  },
+  {
+    "title": "Giro d’Italia：環義大利首站官方賽報",
+    "url": "https://www.giroditalia.it/news/la-migliore-inaugurazione",
+    "publishedAt": "2021-05-08",
+    "httpStatus": 200,
+    "finalUrl": "https://www.giroditalia.it/news/la-migliore-inaugurazione",
+    "sha256": "0b66598e1863163eceeffc517c928d842b5e1d901b1170ec7a9dc02e42828752",
+    "bytes": 162895,
+    "file": "/tmp/atlas34/other/sources/0b66598e1863163eceeffc517c928d842b5e1d901b1170ec7a9dc02e42828752.html",
+    "checkedAt": "2026-09-06T11:23:55.581741+00:00"
+  }
+]
