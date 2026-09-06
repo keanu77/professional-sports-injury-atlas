@@ -2,11 +2,14 @@ import { publicVideoIds } from "../videos/public-video-ids";
 import { allowPlayRequest, allowPopularRequest } from "./play-rate-limit";
 
 export const WINDOW_SECONDS = 30 * 24 * 60 * 60;
+export const POPULAR_INTERVAL_SECONDS = 60 * 60;
+const hourStart = (time: number) =>
+  Math.floor(time / POPULAR_INTERVAL_SECONDS) * POPULAR_INTERVAL_SECONDS;
 export const INSERT_PLAY =
   "INSERT OR IGNORE INTO play_events (event_id, video_id, played_at) VALUES (?, ?, ?)";
 export const REMOVE_EXPIRED = "DELETE FROM play_events WHERE played_at <= ?";
 export const POPULAR_PLAYS =
-  "SELECT video_id AS videoId, COUNT(*) AS count FROM play_events WHERE played_at > ? AND played_at <= ? GROUP BY video_id ORDER BY count DESC, video_id ASC";
+  "SELECT video_id AS videoId, COUNT(*) AS count FROM play_events WHERE played_at >= ? AND played_at < ? GROUP BY video_id ORDER BY count DESC, video_id ASC";
 
 // Minimal structural subset of the documented D1 binding, also usable in tests.
 export interface PlaybackStatement {
@@ -106,7 +109,10 @@ export async function recordPlay(
   if (!env.PLAYBACK_DB) return json({ error: "unavailable" }, 503);
   try {
     await env.PLAYBACK_DB.batch([
-      env.PLAYBACK_DB.prepare(REMOVE_EXPIRED).bind(now - WINDOW_SECONDS),
+      // Keep the entire current hourly window; cleanup must not change its rank.
+      env.PLAYBACK_DB.prepare(REMOVE_EXPIRED).bind(
+        hourStart(now) - WINDOW_SECONDS - 1,
+      ),
       env.PLAYBACK_DB.prepare(INSERT_PLAY).bind(
         event.eventId,
         event.videoId,
@@ -133,15 +139,20 @@ export async function popularPlays(
     return json({ error: "rate-limited" }, 429);
   if (!env.PLAYBACK_DB) return json({ error: "unavailable" }, 503);
   try {
+    // Every visitor sees the same completed-hour cutoff, including cache misses.
+    const cutoff = hourStart(now);
     const { results } = await env.PLAYBACK_DB.prepare(POPULAR_PLAYS)
-      .bind(now - WINDOW_SECONDS, now)
+      .bind(cutoff - WINDOW_SECONDS, cutoff)
       .all<{ videoId: string; count: number }>();
     const response = json({
       windowDays: 30,
-      generatedAt: new Date(now * 1000).toISOString(),
+      generatedAt: new Date(cutoff * 1000).toISOString(),
       items: results.filter((row) => publicVideoIds.has(row.videoId)),
     });
-    response.headers.set("Cache-Control", "public, max-age=60");
+    response.headers.set(
+      "Cache-Control",
+      `public, max-age=${cutoff + POPULAR_INTERVAL_SECONDS - now}`,
+    );
     return response;
   } catch {
     return json({ error: "unavailable" }, 503);

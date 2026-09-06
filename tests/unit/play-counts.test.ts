@@ -5,6 +5,7 @@ import {
   recordPlay,
   popularPlays,
   WINDOW_SECONDS,
+  POPULAR_INTERVAL_SECONDS,
   type PlaybackDatabase,
   type PlaybackStatement,
 } from "../../src/lib/video/play-counts";
@@ -87,7 +88,7 @@ describe("actual-playback statistics with real SQLite queries", () => {
       event(crypto.randomUUID(), otherVideo),
     ])
       expect(
-        (await recordPlay({ request: request(item), env: ctx.env }, now))
+        (await recordPlay({ request: request(item), env: ctx.env }, now - 1))
           .status,
       ).toBe(200);
     const result = await (await popularPlays(ctx, now)).json();
@@ -101,7 +102,7 @@ describe("actual-playback statistics with real SQLite queries", () => {
     ).toBe(3);
     sqlite.close();
   });
-  it("uses exact rolling 30 days, server time, ignores removed IDs and future rows", async () => {
+  it("uses the completed-hour 30-day window, server time, and valid IDs", async () => {
     const { db, sqlite } = database();
     const insert = sqlite.prepare("INSERT INTO play_events VALUES (?,?,?)");
     for (const time of [
@@ -130,7 +131,7 @@ describe("actual-playback statistics with real SQLite queries", () => {
     expect(
       sqlite
         .prepare("SELECT COUNT(*) AS n FROM play_events WHERE played_at <= ?")
-        .get(now - WINDOW_SECONDS)?.n,
+        .get(now - WINDOW_SECONDS - 1)?.n,
     ).toBe(0);
     expect(
       (
@@ -145,6 +146,52 @@ describe("actual-playback statistics with real SQLite queries", () => {
     ).toBe(400);
     sqlite.close();
   });
+  it.each(["2026-09-06T15:00:00+08:00", "2026-09-06T23:00:00+08:00"])(
+    "keeps ranks stable within %s and rolls forward at the next hour",
+    async (date) => {
+      const start = Date.parse(date) / 1000;
+      const { db, sqlite } = database();
+      const ctx = { request: popularRequest, env: { PLAYBACK_DB: db } };
+      const insert = sqlite.prepare("INSERT INTO play_events VALUES (?,?,?)");
+      insert.run(crypto.randomUUID(), videoId, start - WINDOW_SECONDS + 10);
+      insert.run(crypto.randomUUID(), videoId, start - 10);
+      for (const offset of [0, POPULAR_INTERVAL_SECONDS - 1]) {
+        await recordPlay(
+          {
+            request: request(event(crypto.randomUUID(), otherVideo)),
+            env: ctx.env,
+          },
+          start + offset,
+        );
+        const response = await popularPlays(ctx, start + offset);
+        expect(response.headers.get("Cache-Control")).toBe(
+          `public, max-age=${POPULAR_INTERVAL_SECONDS - offset}`,
+        );
+        expect(await response.json()).toEqual({
+          windowDays: 30,
+          generatedAt: new Date(start * 1000).toISOString(),
+          items: [{ videoId, count: 2 }],
+        });
+      }
+      // Cleanup triggered by a new play must not remove rows still in this hour's window.
+      expect(
+        sqlite.prepare("SELECT COUNT(*) AS n FROM play_events").get()?.n,
+      ).toBe(4);
+      const next = await popularPlays(ctx, start + POPULAR_INTERVAL_SECONDS);
+      expect(next.headers.get("Cache-Control")).toBe("public, max-age=3600");
+      expect(await next.json()).toEqual({
+        windowDays: 30,
+        generatedAt: new Date(
+          (start + POPULAR_INTERVAL_SECONDS) * 1000,
+        ).toISOString(),
+        items: [
+          { videoId: otherVideo, count: 2 },
+          { videoId, count: 1 },
+        ],
+      });
+      sqlite.close();
+    },
+  );
   it.each([
     [{}, {}, 400],
     [event(crypto.randomUUID(), "abcdefghijk"), {}, 400],
