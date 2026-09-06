@@ -7,11 +7,15 @@
   "outputDirectory": "dist",
   "expectedOrigin": "https://sports-injury-atlas.pages.dev",
   "nodeVersion": "24.14.0",
-  "releaseState": "approved-ready-to-deploy",
+  "releaseState": "deployed-and-verified",
   "selection": "verified-embeddable-first",
   "minimumTotalCases": 1,
   "perInjuryQuota": null,
   "sportOrCompetitionQuota": null,
   "projectCreatedAt": "2026-09-06",
-  "projectExists": true
+  "projectExists": true,
+  "productionCommit": "bce372132459ad2af5c658c26a36bbbb04b05f79",
+  "deploymentId": "0ed8d605-cc9a-4a51-9c21-2c05e054be91",
+  "deploymentUrl": "https://0ed8d605.sports-injury-atlas.pages.dev",
+  "verifiedAt": "2026-09-06T01:07:44.415Z"
 }
