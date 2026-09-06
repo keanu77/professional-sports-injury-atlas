@@ -1,0 +1,2936 @@
+{
+  "origin": "https://sports-injury-atlas.pages.dev",
+  "checkedAt": "2026-09-06T03:03:09.537Z",
+  "results": [
+    {
+      "path": "/404.html",
+      "width": 320,
+      "theme": "dark",
+      "scale": 1.5,
+      "status": 200,
+      "dom": {
+        "title": "找不到頁面｜運動傷害影片圖鑑",
+        "canonical": "https://sports-injury-atlas.pages.dev/404/",
+        "h1": [
+          "找不到這個頁面"
+        ],
+        "headings": [],
+        "width": 320,
+        "overflow": [],
+        "theme": "dark",
+        "fontScale": "1.5",
+        "resources": [
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 24752,
+            "decoded": 24452,
+            "duration": 1359,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 22608,
+            "decoded": 22308,
+            "duration": 1427,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 18512,
+            "decoded": 18212,
+            "duration": 1427,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 23964,
+            "decoded": 23664,
+            "duration": 1445,
+            "type": "css"
+          },
+          {
+            "name": "/favicon.ico",
+            "bytes": 6204,
+            "decoded": 18550,
+            "duration": 80,
+            "type": "other"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 180,
+            "size": 20790,
+            "tag": "P",
+            "source": ""
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 0,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "Fraunces, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-serif, Georgia, serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/about/",
+      "width": 320,
+      "theme": "dark",
+      "scale": 1.5,
+      "status": 200,
+      "dom": {
+        "title": "關於本站｜運動傷害影片圖鑑",
+        "description": "透過運動影片，了解受傷當下處理與回場。",
+        "canonical": "https://sports-injury-atlas.pages.dev/about/",
+        "h1": [
+          "關於本站"
+        ],
+        "headings": [],
+        "width": 320,
+        "overflow": [],
+        "theme": "dark",
+        "fontScale": "1.5",
+        "resources": [
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 272,
+            "size": 66150,
+            "tag": "P",
+            "source": ""
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 0,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "Fraunces, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-serif, Georgia, serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/cases/anfernee-simons-ankle-sprain-2023/",
+      "width": 320,
+      "theme": "dark",
+      "scale": 1.5,
+      "status": 200,
+      "dom": {
+        "title": "Anfernee Simons｜踝關節扭傷｜職業運動傷害影片圖鑑",
+        "description": "Anfernee Simons 的 踝關節扭傷 教學案例：可見過程觀察與外部確認診斷。",
+        "canonical": "https://sports-injury-atlas.pages.dev/cases/anfernee-simons-ankle-sprain-2023/",
+        "h1": [
+          "Anfernee Simons｜踝關節扭傷"
+        ],
+        "headings": [
+          "受傷當下的影片",
+          "先做這幾件事",
+          "這些狀況別等",
+          "大約多久能回場？",
+          "傷後多久再出賽？",
+          "來源與證據",
+          "其他 踝關節扭傷 案例（最多 3 筆）"
+        ],
+        "width": 320,
+        "overflow": [],
+        "theme": "dark",
+        "fontScale": "1.5",
+        "resources": [
+          {
+            "name": "/_astro/8TIJGIRP634.DLUgUBrO_ZDTDcM.webp",
+            "bytes": 17840,
+            "decoded": 17540,
+            "duration": 229,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/CaseVideo.astro_astro_type_script_index_0_lang.D3BSckb_.js",
+            "bytes": 355,
+            "decoded": 51,
+            "duration": 253,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/video-player.tjCucBQj.js",
+            "bytes": 1737,
+            "decoded": 3373,
+            "duration": 307,
+            "type": "script"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 616,
+            "size": 24640,
+            "tag": "P",
+            "source": ""
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 1,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "Fraunces, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-serif, Georgia, serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/cases/jayson-tatum-achilles-rupture-2025/",
+      "width": 320,
+      "theme": "dark",
+      "scale": 1.5,
+      "status": 200,
+      "dom": {
+        "title": "Jayson Tatum｜阿基里斯腱斷裂｜職業運動傷害影片圖鑑",
+        "description": "Jayson Tatum 的 阿基里斯腱斷裂 教學案例：可見過程觀察與外部確認診斷。",
+        "canonical": "https://sports-injury-atlas.pages.dev/cases/jayson-tatum-achilles-rupture-2025/",
+        "h1": [
+          "Jayson Tatum｜阿基里斯腱斷裂"
+        ],
+        "headings": [
+          "受傷當下的影片",
+          "先做這幾件事",
+          "這些狀況別等",
+          "大約多久能回場？",
+          "傷後多久再出賽？",
+          "來源與證據",
+          "其他 阿基里斯腱斷裂 案例（最多 3 筆）"
+        ],
+        "width": 320,
+        "overflow": [],
+        "theme": "dark",
+        "fontScale": "1.5",
+        "resources": [
+          {
+            "name": "/_astro/xSUKd03LJwE.D2ro18hU_1zYU66.webp",
+            "bytes": 21492,
+            "decoded": 21192,
+            "duration": 53,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/CaseVideo.astro_astro_type_script_index_0_lang.D3BSckb_.js",
+            "bytes": 0,
+            "decoded": 51,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/video-player.tjCucBQj.js",
+            "bytes": 0,
+            "decoded": 3373,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 244,
+            "size": 27690,
+            "tag": "H1",
+            "source": ""
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 1,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "Fraunces, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-serif, Georgia, serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/cases/kevin-durant-achilles-rupture-2019/",
+      "width": 320,
+      "theme": "dark",
+      "scale": 1.5,
+      "status": 200,
+      "dom": {
+        "title": "Kevin Durant｜阿基里斯腱斷裂｜職業運動傷害影片圖鑑",
+        "description": "Kevin Durant 的 阿基里斯腱斷裂 教學案例：可見過程觀察與外部確認診斷。",
+        "canonical": "https://sports-injury-atlas.pages.dev/cases/kevin-durant-achilles-rupture-2019/",
+        "h1": [
+          "Kevin Durant｜阿基里斯腱斷裂"
+        ],
+        "headings": [
+          "受傷當下的影片",
+          "先做這幾件事",
+          "這些狀況別等",
+          "大約多久能回場？",
+          "傷後多久再出賽？",
+          "來源與證據",
+          "其他 阿基里斯腱斷裂 案例（最多 3 筆）"
+        ],
+        "width": 320,
+        "overflow": [],
+        "theme": "dark",
+        "fontScale": "1.5",
+        "resources": [
+          {
+            "name": "/_astro/YcSOLHMsJYw.DDYpzeHY_ZvT5Ls.webp",
+            "bytes": 31068,
+            "decoded": 30768,
+            "duration": 249,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/CaseVideo.astro_astro_type_script_index_0_lang.D3BSckb_.js",
+            "bytes": 0,
+            "decoded": 51,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/xSUKd03LJwE.D2ro18hU_1zYU66.webp",
+            "bytes": 0,
+            "decoded": 21192,
+            "duration": 0,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/video-player.tjCucBQj.js",
+            "bytes": 0,
+            "decoded": 3373,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 184,
+            "size": 30940,
+            "tag": "H1",
+            "source": ""
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 1,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "Fraunces, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-serif, Georgia, serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/cases/kyrie-irving-ankle-sprain-2021/",
+      "width": 320,
+      "theme": "dark",
+      "scale": 1.5,
+      "status": 200,
+      "dom": {
+        "title": "Kyrie Irving｜踝關節扭傷｜職業運動傷害影片圖鑑",
+        "description": "Kyrie Irving 的 踝關節扭傷 教學案例：可見過程觀察與外部確認診斷。",
+        "canonical": "https://sports-injury-atlas.pages.dev/cases/kyrie-irving-ankle-sprain-2021/",
+        "h1": [
+          "Kyrie Irving｜踝關節扭傷"
+        ],
+        "headings": [
+          "受傷當下的影片",
+          "先做這幾件事",
+          "這些狀況別等",
+          "大約多久能回場？",
+          "傷後多久再出賽？",
+          "來源與證據",
+          "其他 踝關節扭傷 案例（最多 3 筆）"
+        ],
+        "width": 320,
+        "overflow": [],
+        "theme": "dark",
+        "fontScale": "1.5",
+        "resources": [
+          {
+            "name": "/_astro/FQAPZASQyX0.BNe-tdBg_29Gth7.webp",
+            "bytes": 12880,
+            "decoded": 12580,
+            "duration": 198,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/CaseVideo.astro_astro_type_script_index_0_lang.D3BSckb_.js",
+            "bytes": 0,
+            "decoded": 51,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/video-player.tjCucBQj.js",
+            "bytes": 0,
+            "decoded": 3373,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 84,
+            "size": 24640,
+            "tag": "P",
+            "source": ""
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 1,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "Fraunces, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-serif, Georgia, serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/cases/lamelo-ball-ankle-sprain-2023/",
+      "width": 320,
+      "theme": "dark",
+      "scale": 1.5,
+      "status": 200,
+      "dom": {
+        "title": "LaMelo Ball｜踝關節扭傷｜職業運動傷害影片圖鑑",
+        "description": "LaMelo Ball 的 踝關節扭傷 教學案例：可見過程觀察與外部確認診斷。",
+        "canonical": "https://sports-injury-atlas.pages.dev/cases/lamelo-ball-ankle-sprain-2023/",
+        "h1": [
+          "LaMelo Ball｜踝關節扭傷"
+        ],
+        "headings": [
+          "受傷當下的影片",
+          "先做這幾件事",
+          "這些狀況別等",
+          "大約多久能回場？",
+          "傷後多久再出賽？",
+          "來源與證據",
+          "其他 踝關節扭傷 案例（最多 3 筆）"
+        ],
+        "width": 320,
+        "overflow": [],
+        "theme": "dark",
+        "fontScale": "1.5",
+        "resources": [
+          {
+            "name": "/_astro/RDDGpqOvSdg.BBhQW5hD_ZLBJWS.webp",
+            "bytes": 14558,
+            "decoded": 14258,
+            "duration": 187,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/CaseVideo.astro_astro_type_script_index_0_lang.D3BSckb_.js",
+            "bytes": 0,
+            "decoded": 51,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/FQAPZASQyX0.BNe-tdBg_29Gth7.webp",
+            "bytes": 0,
+            "decoded": 12580,
+            "duration": 0,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/video-player.tjCucBQj.js",
+            "bytes": 0,
+            "decoded": 3373,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 344,
+            "size": 24640,
+            "tag": "P",
+            "source": ""
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 1,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "Fraunces, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-serif, Georgia, serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/cases/lamelo-ball-ankle-sprain-2025/",
+      "width": 320,
+      "theme": "dark",
+      "scale": 1.5,
+      "status": 200,
+      "dom": {
+        "title": "LaMelo Ball｜踝關節扭傷｜職業運動傷害影片圖鑑",
+        "description": "LaMelo Ball 的 踝關節扭傷 教學案例：可見過程觀察與外部確認診斷。",
+        "canonical": "https://sports-injury-atlas.pages.dev/cases/lamelo-ball-ankle-sprain-2025/",
+        "h1": [
+          "LaMelo Ball｜踝關節扭傷"
+        ],
+        "headings": [
+          "受傷當下的影片",
+          "先做這幾件事",
+          "這些狀況別等",
+          "大約多久能回場？",
+          "傷後多久再出賽？",
+          "來源與證據",
+          "其他 踝關節扭傷 案例（最多 3 筆）"
+        ],
+        "width": 320,
+        "overflow": [],
+        "theme": "dark",
+        "fontScale": "1.5",
+        "resources": [
+          {
+            "name": "/_astro/zZdndTqOexc.CL4ZJaoQ_1GkYh1.webp",
+            "bytes": 18686,
+            "decoded": 18386,
+            "duration": 28,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/CaseVideo.astro_astro_type_script_index_0_lang.D3BSckb_.js",
+            "bytes": 0,
+            "decoded": 51,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/RDDGpqOvSdg.BBhQW5hD_ZLBJWS.webp",
+            "bytes": 0,
+            "decoded": 14258,
+            "duration": 0,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/FQAPZASQyX0.BNe-tdBg_29Gth7.webp",
+            "bytes": 0,
+            "decoded": 12580,
+            "duration": 0,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/video-player.tjCucBQj.js",
+            "bytes": 0,
+            "decoded": 3373,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 240,
+            "size": 24640,
+            "tag": "P",
+            "source": ""
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 1,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "Fraunces, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-serif, Georgia, serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/cases/tyrese-haliburton-achilles-rupture-2025/",
+      "width": 320,
+      "theme": "dark",
+      "scale": 1.5,
+      "status": 200,
+      "dom": {
+        "title": "Tyrese Haliburton｜阿基里斯腱斷裂｜職業運動傷害影片圖鑑",
+        "description": "Tyrese Haliburton 的 阿基里斯腱斷裂 教學案例：可見過程觀察與外部確認診斷。",
+        "canonical": "https://sports-injury-atlas.pages.dev/cases/tyrese-haliburton-achilles-rupture-2025/",
+        "h1": [
+          "Tyrese Haliburton｜阿基里斯腱斷裂"
+        ],
+        "headings": [
+          "受傷當下的影片",
+          "先做這幾件事",
+          "這些狀況別等",
+          "大約多久能回場？",
+          "傷後多久再出賽？",
+          "來源與證據",
+          "其他 阿基里斯腱斷裂 案例（最多 3 筆）"
+        ],
+        "width": 320,
+        "overflow": [],
+        "theme": "dark",
+        "fontScale": "1.5",
+        "resources": [
+          {
+            "name": "/_astro/azQpbyDBktk.DJv0hOZw_ZMhqjA.webp",
+            "bytes": 25524,
+            "decoded": 25224,
+            "duration": 232,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/CaseVideo.astro_astro_type_script_index_0_lang.D3BSckb_.js",
+            "bytes": 0,
+            "decoded": 51,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/video-player.tjCucBQj.js",
+            "bytes": 0,
+            "decoded": 3373,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 64,
+            "size": 32370,
+            "tag": "H1",
+            "source": ""
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 1,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "Fraunces, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-serif, Georgia, serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/credits-notices/",
+      "width": 320,
+      "theme": "dark",
+      "scale": 1.5,
+      "status": 200,
+      "dom": {
+        "title": "授權與說明｜職業運動傷害影片圖鑑",
+        "description": "本站目前使用之球員資料照片的完整逐檔授權或公有領域狀態、來源、變更與通知。",
+        "canonical": "https://sports-injury-atlas.pages.dev/credits-notices/",
+        "h1": [
+          "授權與說明"
+        ],
+        "headings": [
+          "影片來源",
+          "醫療內容聲明與法規脈絡",
+          "目前使用的照片授權",
+          "Anfernee Simons",
+          "Anthony Edwards",
+          "Brandon Clarke",
+          "CJ McCollum",
+          "Damian Lillard",
+          "Danny Green",
+          "Dejounte Murray",
+          "Dwight Powell",
+          "Ja Morant",
+          "Jayson Tatum",
+          "Joe Ingles",
+          "Kevin Durant",
+          "Kyrie Irving",
+          "LaMelo Ball",
+          "LeBron James",
+          "Markelle Fultz",
+          "Moritz Wagner",
+          "Ricky Rubio",
+          "Thomas Bryant",
+          "Trae Young",
+          "Tyrese Haliburton"
+        ],
+        "width": 320,
+        "overflow": [],
+        "theme": "dark",
+        "fontScale": "1.5",
+        "resources": [
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 72,
+            "size": 89701,
+            "tag": "P",
+            "source": ""
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 0,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "Fraunces, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-serif, Georgia, serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/",
+      "width": 320,
+      "theme": "dark",
+      "scale": 1.5,
+      "status": 200,
+      "dom": {
+        "title": "運動傷害影片圖鑑｜看懂受傷，了解回場",
+        "description": "從運動受傷影片，了解當下怎麼做、何時就醫與回場時間。",
+        "canonical": "https://sports-injury-atlas.pages.dev/",
+        "h1": [
+          "運動傷害影片圖鑑"
+        ],
+        "headings": [],
+        "width": 320,
+        "overflow": [],
+        "theme": "dark",
+        "fontScale": "1.5",
+        "resources": [
+          {
+            "name": "/_astro/azQpbyDBktk.DJv0hOZw_ZMhqjA.webp",
+            "bytes": 0,
+            "decoded": 25224,
+            "duration": 0,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/xSUKd03LJwE.D2ro18hU_1zYU66.webp",
+            "bytes": 0,
+            "decoded": 21192,
+            "duration": 1,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/zZdndTqOexc.CL4ZJaoQ_1GkYh1.webp",
+            "bytes": 0,
+            "decoded": 18386,
+            "duration": 0,
+            "type": "img"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 204,
+            "size": 32240,
+            "tag": "P",
+            "source": ""
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 0,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "\"Barlow Condensed\", \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif"
+        },
+        "firstCard": {
+          "x": 24,
+          "y": 869.046875,
+          "width": 272,
+          "height": 569.359375,
+          "top": 869.046875,
+          "right": 296,
+          "bottom": 1438.40625,
+          "left": 24
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/injuries/achilles-rupture/",
+      "width": 320,
+      "theme": "dark",
+      "scale": 1.5,
+      "status": 200,
+      "dom": {
+        "title": "阿基里斯腱斷裂｜職業運動傷害影片圖鑑",
+        "description": "阿基里斯腱斷裂 的教學總覽、已審查案例與課程範圍資訊。",
+        "canonical": "https://sports-injury-atlas.pages.dev/injuries/achilles-rupture/",
+        "h1": [
+          "阿基里斯腱斷裂"
+        ],
+        "headings": [
+          "篩選案例",
+          "案例列表（第 1 頁）",
+          "先做這幾件事",
+          "這些狀況別等",
+          "大約多久能回場？"
+        ],
+        "width": 320,
+        "overflow": [],
+        "theme": "dark",
+        "fontScale": "1.5",
+        "resources": [
+          {
+            "name": "/_astro/CaseFilters.astro_astro_type_script_index_0_lang.DoPLBKUk.js",
+            "bytes": 3258,
+            "decoded": 7843,
+            "duration": 180,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/achilles-rupture-overview.xq-lZQGE_ajJj0.avif",
+            "bytes": 4083,
+            "decoded": 3783,
+            "duration": 399,
+            "type": "link"
+          },
+          {
+            "name": "/_astro/azQpbyDBktk.DJv0hOZw_ZMhqjA.webp",
+            "bytes": 0,
+            "decoded": 25224,
+            "duration": 0,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/xSUKd03LJwE.D2ro18hU_1zYU66.webp",
+            "bytes": 0,
+            "decoded": 21192,
+            "duration": 0,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 68,
+            "size": 24640,
+            "tag": "P",
+            "source": ""
+          },
+          {
+            "time": 448,
+            "size": 31552,
+            "tag": "IMG",
+            "source": "https://sports-injury-atlas.pages.dev/_astro/achilles-rupture-overview.xq-lZQGE_ajJj0.avif"
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 0,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "Fraunces, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-serif, Georgia, serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/injuries/acl/",
+      "width": 320,
+      "theme": "dark",
+      "scale": 1.5,
+      "status": 200,
+      "dom": {
+        "title": "前十字韌帶損傷｜職業運動傷害影片圖鑑",
+        "description": "前十字韌帶損傷 的教學總覽、已審查案例與課程範圍資訊。",
+        "canonical": "https://sports-injury-atlas.pages.dev/injuries/acl/",
+        "h1": [
+          "前十字韌帶損傷"
+        ],
+        "headings": [
+          "篩選案例",
+          "案例列表（第 1 頁）",
+          "先做這幾件事",
+          "這些狀況別等",
+          "大約多久能回場？"
+        ],
+        "width": 320,
+        "overflow": [],
+        "theme": "dark",
+        "fontScale": "1.5",
+        "resources": [
+          {
+            "name": "/_astro/acl-overview.CdsW2ZtA_SyDO2.avif",
+            "bytes": 4318,
+            "decoded": 4018,
+            "duration": 517,
+            "type": "link"
+          },
+          {
+            "name": "/_astro/CaseFilters.astro_astro_type_script_index_0_lang.DoPLBKUk.js",
+            "bytes": 0,
+            "decoded": 7843,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 128,
+            "size": 24640,
+            "tag": "P",
+            "source": ""
+          },
+          {
+            "time": 628,
+            "size": 31552,
+            "tag": "IMG",
+            "source": "https://sports-injury-atlas.pages.dev/_astro/acl-overview.CdsW2ZtA_SyDO2.avif"
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 0,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "Fraunces, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-serif, Georgia, serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/injuries/ankle-sprain/",
+      "width": 320,
+      "theme": "dark",
+      "scale": 1.5,
+      "status": 200,
+      "dom": {
+        "title": "踝關節扭傷｜職業運動傷害影片圖鑑",
+        "description": "踝關節扭傷 的教學總覽、已審查案例與課程範圍資訊。",
+        "canonical": "https://sports-injury-atlas.pages.dev/injuries/ankle-sprain/",
+        "h1": [
+          "踝關節扭傷"
+        ],
+        "headings": [
+          "篩選案例",
+          "案例列表（第 1 頁）",
+          "先做這幾件事",
+          "這些狀況別等",
+          "大約多久能回場？"
+        ],
+        "width": 320,
+        "overflow": [],
+        "theme": "dark",
+        "fontScale": "1.5",
+        "resources": [
+          {
+            "name": "/_astro/ankle-sprain-overview.CBcasoKL_WvdJN.avif",
+            "bytes": 4048,
+            "decoded": 3748,
+            "duration": 382,
+            "type": "link"
+          },
+          {
+            "name": "/_astro/CaseFilters.astro_astro_type_script_index_0_lang.DoPLBKUk.js",
+            "bytes": 0,
+            "decoded": 7843,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/zZdndTqOexc.CL4ZJaoQ_1GkYh1.webp",
+            "bytes": 0,
+            "decoded": 18386,
+            "duration": 0,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 112,
+            "size": 24640,
+            "tag": "P",
+            "source": ""
+          },
+          {
+            "time": 476,
+            "size": 31552,
+            "tag": "IMG",
+            "source": "https://sports-injury-atlas.pages.dev/_astro/ankle-sprain-overview.CBcasoKL_WvdJN.avif"
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 0,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "Fraunces, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-serif, Georgia, serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/leagues/nba/",
+      "width": 320,
+      "theme": "dark",
+      "scale": 1.5,
+      "status": 200,
+      "dom": {
+        "title": "NBA 案例列表｜職業運動傷害影片圖鑑",
+        "description": "NBA 的已審查傷害案例列表。",
+        "canonical": "https://sports-injury-atlas.pages.dev/leagues/nba/",
+        "h1": [
+          "NBA 案例列表"
+        ],
+        "headings": [
+          "篩選案例",
+          "案例列表（第 1 頁）"
+        ],
+        "width": 320,
+        "overflow": [],
+        "theme": "dark",
+        "fontScale": "1.5",
+        "resources": [
+          {
+            "name": "/_astro/CaseFilters.astro_astro_type_script_index_0_lang.DoPLBKUk.js",
+            "bytes": 0,
+            "decoded": 7843,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/azQpbyDBktk.DJv0hOZw_ZMhqjA.webp",
+            "bytes": 0,
+            "decoded": 25224,
+            "duration": 0,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/xSUKd03LJwE.D2ro18hU_1zYU66.webp",
+            "bytes": 0,
+            "decoded": 21192,
+            "duration": 0,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/zZdndTqOexc.CL4ZJaoQ_1GkYh1.webp",
+            "bytes": 0,
+            "decoded": 18386,
+            "duration": 0,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 228,
+            "size": 13936,
+            "tag": "H1",
+            "source": ""
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 0,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "Fraunces, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-serif, Georgia, serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/privacy/",
+      "width": 320,
+      "theme": "dark",
+      "scale": 1.5,
+      "status": 200,
+      "dom": {
+        "title": "隱私說明｜運動傷害影片圖鑑",
+        "canonical": "https://sports-injury-atlas.pages.dev/privacy/",
+        "h1": [
+          "隱私說明"
+        ],
+        "headings": [
+          "影片播放",
+          "瀏覽偏好",
+          "網站託管"
+        ],
+        "width": 320,
+        "overflow": [],
+        "theme": "dark",
+        "fontScale": "1.5",
+        "resources": [
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 140,
+            "size": 65880,
+            "tag": "P",
+            "source": ""
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 0,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "Fraunces, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-serif, Georgia, serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/source-policy/",
+      "width": 320,
+      "theme": "dark",
+      "scale": 1.5,
+      "status": 200,
+      "dom": {
+        "title": "來源與證據政策｜職業運動傷害影片圖鑑",
+        "description": "本站的來源類型、獨立性規則、影片權利立場與時間碼規則。",
+        "canonical": "https://sports-injury-atlas.pages.dev/source-policy/",
+        "h1": [
+          "來源與證據政策"
+        ],
+        "headings": [
+          "受控的來源類型",
+          "獨立性與可追溯性",
+          "影片與權利立場",
+          "球員資料照片",
+          "影片觀察資料",
+          "觀察與診斷的分界"
+        ],
+        "width": 320,
+        "overflow": [],
+        "theme": "dark",
+        "fontScale": "1.5",
+        "resources": [
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 76,
+            "size": 34918,
+            "tag": "LI",
+            "source": ""
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 0,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "Fraunces, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-serif, Georgia, serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/videos/ankle-inversion-observation/",
+      "width": 320,
+      "theme": "dark",
+      "scale": 1.5,
+      "status": 200,
+      "dom": {
+        "title": "腳踝翻轉動作｜運動傷害影片圖鑑",
+        "description": "注意腳掌接觸地面時，腳踝翻轉的方向；單靠畫面不能確定受傷組織或程度。",
+        "canonical": "https://sports-injury-atlas.pages.dev/videos/ankle-inversion-observation/",
+        "h1": [
+          "腳踝翻轉動作"
+        ],
+        "headings": [
+          "受傷當下看什麼",
+          "當下怎麼做",
+          "後續回場"
+        ],
+        "width": 320,
+        "overflow": [],
+        "theme": "dark",
+        "fontScale": "1.5",
+        "resources": [
+          {
+            "name": "/_astro/qwuEydc9qXQ.3iGMs2YR_Z7JD4x.webp",
+            "bytes": 9146,
+            "decoded": 8846,
+            "duration": 37,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/_slug_.astro_astro_type_script_index_0_lang.D3BSckb_.js",
+            "bytes": 355,
+            "decoded": 51,
+            "duration": 37,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/video-player.tjCucBQj.js",
+            "bytes": 0,
+            "decoded": 3373,
+            "duration": 0,
+            "type": "script"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 192,
+            "size": 17040,
+            "tag": "H1",
+            "source": ""
+          },
+          {
+            "time": 192,
+            "size": 33948,
+            "tag": "IMG",
+            "source": "https://sports-injury-atlas.pages.dev/_astro/qwuEydc9qXQ.3iGMs2YR_Z7JD4x.webp"
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 1,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "\"Barlow Condensed\", \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/videos/carolina-marin-indonesia-2019/",
+      "width": 320,
+      "theme": "dark",
+      "scale": 1.5,
+      "status": 200,
+      "dom": {
+        "title": "Carolina Marín｜運動傷害影片圖鑑",
+        "description": "注意跳躍落地後的支撐與停止比賽過程。",
+        "canonical": "https://sports-injury-atlas.pages.dev/videos/carolina-marin-indonesia-2019/",
+        "h1": [
+          "Carolina Marín"
+        ],
+        "headings": [
+          "受傷當下看什麼",
+          "當下怎麼做",
+          "後續回場"
+        ],
+        "width": 320,
+        "overflow": [],
+        "theme": "dark",
+        "fontScale": "1.5",
+        "resources": [
+          {
+            "name": "/_astro/nfpXC98FLuE.BNq7YCL8_2i958T.webp",
+            "bytes": 23456,
+            "decoded": 23156,
+            "duration": 35,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/_slug_.astro_astro_type_script_index_0_lang.D3BSckb_.js",
+            "bytes": 0,
+            "decoded": 51,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/video-player.tjCucBQj.js",
+            "bytes": 0,
+            "decoded": 3373,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 164,
+            "size": 15296,
+            "tag": "P",
+            "source": ""
+          },
+          {
+            "time": 196,
+            "size": 33924,
+            "tag": "IMG",
+            "source": "https://sports-injury-atlas.pages.dev/_astro/nfpXC98FLuE.BNq7YCL8_2i958T.webp"
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 1,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "\"Barlow Condensed\", \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/videos/derek-redmond-barcelona-1992/",
+      "width": 320,
+      "theme": "dark",
+      "scale": 1.5,
+      "status": 200,
+      "dom": {
+        "title": "Derek Redmond｜運動傷害影片圖鑑",
+        "description": "衝刺途中停下並扶住大腿後側，後來由父親陪同走向終點。",
+        "canonical": "https://sports-injury-atlas.pages.dev/videos/derek-redmond-barcelona-1992/",
+        "h1": [
+          "Derek Redmond"
+        ],
+        "headings": [
+          "受傷當下看什麼",
+          "當下怎麼做",
+          "後續回場"
+        ],
+        "width": 320,
+        "overflow": [],
+        "theme": "dark",
+        "fontScale": "1.5",
+        "resources": [
+          {
+            "name": "/_astro/t2G8KVzTwfw.DlQHL1ux_1I6JXD.webp",
+            "bytes": 12888,
+            "decoded": 12588,
+            "duration": 45,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/_slug_.astro_astro_type_script_index_0_lang.D3BSckb_.js",
+            "bytes": 0,
+            "decoded": 51,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/video-player.tjCucBQj.js",
+            "bytes": 0,
+            "decoded": 3373,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 968,
+            "size": 14964,
+            "tag": "H1",
+            "source": ""
+          },
+          {
+            "time": 980,
+            "size": 33924,
+            "tag": "IMG",
+            "source": "https://sports-injury-atlas.pages.dev/_astro/t2G8KVzTwfw.DlQHL1ux_1I6JXD.webp"
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 1,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "\"Barlow Condensed\", \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/videos/julie-foucher-box-jump-2015/",
+      "width": 320,
+      "theme": "dark",
+      "scale": 1.5,
+      "status": 200,
+      "dom": {
+        "title": "Julie Foucher｜運動傷害影片圖鑑",
+        "description": "觀察連續跳箱過程中，起跳與落地動作如何中斷。",
+        "canonical": "https://sports-injury-atlas.pages.dev/videos/julie-foucher-box-jump-2015/",
+        "h1": [
+          "Julie Foucher"
+        ],
+        "headings": [
+          "受傷當下看什麼",
+          "當下怎麼做",
+          "後續回場"
+        ],
+        "width": 320,
+        "overflow": [],
+        "theme": "dark",
+        "fontScale": "1.5",
+        "resources": [
+          {
+            "name": "/_astro/4y-1D7jTW_4.C6tvDIk1_FxTlJ.webp",
+            "bytes": 13354,
+            "decoded": 13054,
+            "duration": 67,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/_slug_.astro_astro_type_script_index_0_lang.D3BSckb_.js",
+            "bytes": 0,
+            "decoded": 51,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/video-player.tjCucBQj.js",
+            "bytes": 0,
+            "decoded": 3373,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 216,
+            "size": 19224,
+            "tag": "P",
+            "source": ""
+          },
+          {
+            "time": 268,
+            "size": 33921,
+            "tag": "IMG",
+            "source": "https://sports-injury-atlas.pages.dev/_astro/4y-1D7jTW_4.C6tvDIk1_FxTlJ.webp"
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 1,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "\"Barlow Condensed\", \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/videos/kerri-strug-atlanta-1996/",
+      "width": 320,
+      "theme": "dark",
+      "scale": 1.5,
+      "status": 200,
+      "dom": {
+        "title": "Kerri Strug｜運動傷害影片圖鑑",
+        "description": "觀察跳馬落地後的支撐與離場；帶傷完成動作不代表可以安全續賽。",
+        "canonical": "https://sports-injury-atlas.pages.dev/videos/kerri-strug-atlanta-1996/",
+        "h1": [
+          "Kerri Strug"
+        ],
+        "headings": [
+          "受傷當下看什麼",
+          "當下怎麼做",
+          "後續回場"
+        ],
+        "width": 320,
+        "overflow": [],
+        "theme": "dark",
+        "fontScale": "1.5",
+        "resources": [
+          {
+            "name": "/_astro/Bwa5Bf656As.CwEvgmaY_LPaWA.webp",
+            "bytes": 10994,
+            "decoded": 10694,
+            "duration": 33,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/_slug_.astro_astro_type_script_index_0_lang.D3BSckb_.js",
+            "bytes": 0,
+            "decoded": 51,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/video-player.tjCucBQj.js",
+            "bytes": 0,
+            "decoded": 3373,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 96,
+            "size": 14848,
+            "tag": "P",
+            "source": ""
+          },
+          {
+            "time": 112,
+            "size": 33924,
+            "tag": "IMG",
+            "source": "https://sports-injury-atlas.pages.dev/_astro/Bwa5Bf656As.CwEvgmaY_LPaWA.webp"
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 1,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "\"Barlow Condensed\", \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/videos/volleyball-pov-135/",
+      "width": 320,
+      "theme": "dark",
+      "scale": 1.5,
+      "status": 200,
+      "dom": {
+        "title": "排球球友受傷紀錄｜運動傷害影片圖鑑",
+        "description": "觀察網前動作後，球友如何停下並接受協助；影片標題不足以確認骨折。",
+        "canonical": "https://sports-injury-atlas.pages.dev/videos/volleyball-pov-135/",
+        "h1": [
+          "排球球友受傷紀錄"
+        ],
+        "headings": [
+          "受傷當下看什麼",
+          "當下怎麼做",
+          "後續回場"
+        ],
+        "width": 320,
+        "overflow": [],
+        "theme": "dark",
+        "fontScale": "1.5",
+        "resources": [
+          {
+            "name": "/_astro/tEHP_6GA6ZA.CTFwOaes_ZwVQMp.webp",
+            "bytes": 27934,
+            "decoded": 27634,
+            "duration": 40,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/_slug_.astro_astro_type_script_index_0_lang.D3BSckb_.js",
+            "bytes": 0,
+            "decoded": 51,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/video-player.tjCucBQj.js",
+            "bytes": 0,
+            "decoded": 3373,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 80,
+            "size": 22990,
+            "tag": "H1",
+            "source": ""
+          },
+          {
+            "time": 132,
+            "size": 34040,
+            "tag": "IMG",
+            "source": "https://sports-injury-atlas.pages.dev/_astro/tEHP_6GA6ZA.CTFwOaes_ZwVQMp.webp"
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 1,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "\"Barlow Condensed\", \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/videos/zverev-roland-garros-2022/",
+      "width": 320,
+      "theme": "dark",
+      "scale": 1.5,
+      "status": 200,
+      "dom": {
+        "title": "Alexander Zverev｜運動傷害影片圖鑑",
+        "description": "側移回球時倒地，之後以輪椅離場，未能繼續比賽。",
+        "canonical": "https://sports-injury-atlas.pages.dev/videos/zverev-roland-garros-2022/",
+        "h1": [
+          "Alexander Zverev"
+        ],
+        "headings": [
+          "受傷當下看什麼",
+          "當下怎麼做",
+          "後續回場"
+        ],
+        "width": 320,
+        "overflow": [],
+        "theme": "dark",
+        "fontScale": "1.5",
+        "resources": [
+          {
+            "name": "/_astro/7tpaxZTTi2w.BIwKmqQH_ZrsC8e.webp",
+            "bytes": 22220,
+            "decoded": 21920,
+            "duration": 71,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/_slug_.astro_astro_type_script_index_0_lang.D3BSckb_.js",
+            "bytes": 0,
+            "decoded": 51,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/video-player.tjCucBQj.js",
+            "bytes": 0,
+            "decoded": 3373,
+            "duration": 0,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 92,
+            "size": 19800,
+            "tag": "H1",
+            "source": ""
+          },
+          {
+            "time": 156,
+            "size": 33948,
+            "tag": "IMG",
+            "source": "https://sports-injury-atlas.pages.dev/_astro/7tpaxZTTi2w.BIwKmqQH_ZrsC8e.webp"
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 1,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "\"Barlow Condensed\", \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "theme": "light",
+      "scale": 1,
+      "status": 200,
+      "dom": {
+        "title": "運動傷害影片圖鑑｜看懂受傷，了解回場",
+        "description": "從運動受傷影片，了解當下怎麼做、何時就醫與回場時間。",
+        "canonical": "https://sports-injury-atlas.pages.dev/",
+        "h1": [
+          "運動傷害影片圖鑑"
+        ],
+        "headings": [],
+        "width": 390,
+        "overflow": [],
+        "theme": "light",
+        "fontScale": "1",
+        "resources": [
+          {
+            "name": "/_astro/azQpbyDBktk.DJv0hOZw_ZMhqjA.webp",
+            "bytes": 25524,
+            "decoded": 25224,
+            "duration": 83,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 24752,
+            "decoded": 24452,
+            "duration": 76,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 22608,
+            "decoded": 22308,
+            "duration": 82,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 23964,
+            "decoded": 23664,
+            "duration": 87,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 18512,
+            "decoded": 18212,
+            "duration": 91,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/xSUKd03LJwE.D2ro18hU_1zYU66.webp",
+            "bytes": 21492,
+            "decoded": 21192,
+            "duration": 63,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/zZdndTqOexc.CL4ZJaoQ_1GkYh1.webp",
+            "bytes": 18686,
+            "decoded": 18386,
+            "duration": 67,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/RDDGpqOvSdg.BBhQW5hD_ZLBJWS.webp",
+            "bytes": 14558,
+            "decoded": 14258,
+            "duration": 72,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/8TIJGIRP634.DLUgUBrO_ZDTDcM.webp",
+            "bytes": 17840,
+            "decoded": 17540,
+            "duration": 76,
+            "type": "img"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 1220,
+            "size": 19893,
+            "tag": "P",
+            "source": ""
+          },
+          {
+            "time": 1304,
+            "size": 71116,
+            "tag": "IMG",
+            "source": "https://sports-injury-atlas.pages.dev/_astro/azQpbyDBktk.DJv0hOZw_ZMhqjA.webp"
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 0,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "\"Barlow Condensed\", \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif"
+        },
+        "firstCard": {
+          "x": 16,
+          "y": 462.234375,
+          "width": 358,
+          "height": 414.90625,
+          "top": 462.234375,
+          "right": 374,
+          "bottom": 877.140625,
+          "left": 16
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/cases/anfernee-simons-ankle-sprain-2023/",
+      "width": 390,
+      "theme": "light",
+      "scale": 1,
+      "status": 200,
+      "dom": {
+        "title": "Anfernee Simons｜踝關節扭傷｜職業運動傷害影片圖鑑",
+        "description": "Anfernee Simons 的 踝關節扭傷 教學案例：可見過程觀察與外部確認診斷。",
+        "canonical": "https://sports-injury-atlas.pages.dev/cases/anfernee-simons-ankle-sprain-2023/",
+        "h1": [
+          "Anfernee Simons｜踝關節扭傷"
+        ],
+        "headings": [
+          "受傷當下的影片",
+          "先做這幾件事",
+          "這些狀況別等",
+          "大約多久能回場？",
+          "傷後多久再出賽？",
+          "來源與證據",
+          "其他 踝關節扭傷 案例（最多 3 筆）"
+        ],
+        "width": 390,
+        "overflow": [],
+        "theme": "light",
+        "fontScale": "1",
+        "resources": [
+          {
+            "name": "/_astro/8TIJGIRP634.DLUgUBrO_ZDTDcM.webp",
+            "bytes": 0,
+            "decoded": 17540,
+            "duration": 0,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/CaseVideo.astro_astro_type_script_index_0_lang.D3BSckb_.js",
+            "bytes": 355,
+            "decoded": 51,
+            "duration": 47,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/zZdndTqOexc.CL4ZJaoQ_1GkYh1.webp",
+            "bytes": 0,
+            "decoded": 18386,
+            "duration": 0,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/RDDGpqOvSdg.BBhQW5hD_ZLBJWS.webp",
+            "bytes": 0,
+            "decoded": 14258,
+            "duration": 0,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/video-player.tjCucBQj.js",
+            "bytes": 1737,
+            "decoded": 3373,
+            "duration": 67,
+            "type": "script"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 60,
+            "size": 58968,
+            "tag": "IMG",
+            "source": "https://sports-injury-atlas.pages.dev/_astro/8TIJGIRP634.DLUgUBrO_ZDTDcM.webp"
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 1,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "Fraunces, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-serif, Georgia, serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/videos/zverev-roland-garros-2022/",
+      "width": 390,
+      "theme": "light",
+      "scale": 1,
+      "status": 200,
+      "dom": {
+        "title": "Alexander Zverev｜運動傷害影片圖鑑",
+        "description": "側移回球時倒地，之後以輪椅離場，未能繼續比賽。",
+        "canonical": "https://sports-injury-atlas.pages.dev/videos/zverev-roland-garros-2022/",
+        "h1": [
+          "Alexander Zverev"
+        ],
+        "headings": [
+          "受傷當下看什麼",
+          "當下怎麼做",
+          "後續回場"
+        ],
+        "width": 390,
+        "overflow": [],
+        "theme": "light",
+        "fontScale": "1",
+        "resources": [
+          {
+            "name": "/_astro/7tpaxZTTi2w.BIwKmqQH_ZrsC8e.webp",
+            "bytes": 22220,
+            "decoded": 21920,
+            "duration": 30,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/_slug_.astro_astro_type_script_index_0_lang.D3BSckb_.js",
+            "bytes": 355,
+            "decoded": 51,
+            "duration": 25,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/video-player.tjCucBQj.js",
+            "bytes": 0,
+            "decoded": 3373,
+            "duration": 0,
+            "type": "script"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 136,
+            "size": 15239,
+            "tag": "P",
+            "source": ""
+          },
+          {
+            "time": 156,
+            "size": 64940,
+            "tag": "IMG",
+            "source": "https://sports-injury-atlas.pages.dev/_astro/7tpaxZTTi2w.BIwKmqQH_ZrsC8e.webp"
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 1,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "\"Barlow Condensed\", \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "theme": "light",
+      "scale": 1,
+      "status": 200,
+      "dom": {
+        "title": "運動傷害影片圖鑑｜看懂受傷，了解回場",
+        "description": "從運動受傷影片，了解當下怎麼做、何時就醫與回場時間。",
+        "canonical": "https://sports-injury-atlas.pages.dev/",
+        "h1": [
+          "運動傷害影片圖鑑"
+        ],
+        "headings": [],
+        "width": 1440,
+        "overflow": [],
+        "theme": "light",
+        "fontScale": "1",
+        "resources": [
+          {
+            "name": "/_astro/azQpbyDBktk.DJv0hOZw_ZMhqjA.webp",
+            "bytes": 25524,
+            "decoded": 25224,
+            "duration": 91,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 24752,
+            "decoded": 24452,
+            "duration": 85,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 23964,
+            "decoded": 23664,
+            "duration": 85,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 22608,
+            "decoded": 22308,
+            "duration": 98,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 18512,
+            "decoded": 18212,
+            "duration": 128,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/xSUKd03LJwE.D2ro18hU_1zYU66.webp",
+            "bytes": 21492,
+            "decoded": 21192,
+            "duration": 101,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/8TIJGIRP634.DLUgUBrO_ZDTDcM.webp",
+            "bytes": 17840,
+            "decoded": 17540,
+            "duration": 84,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/RDDGpqOvSdg.BBhQW5hD_ZLBJWS.webp",
+            "bytes": 14558,
+            "decoded": 14258,
+            "duration": 94,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/FQAPZASQyX0.BNe-tdBg_29Gth7.webp",
+            "bytes": 12880,
+            "decoded": 12580,
+            "duration": 100,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/zZdndTqOexc.CL4ZJaoQ_1GkYh1.webp",
+            "bytes": 18686,
+            "decoded": 18386,
+            "duration": 100,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/7tpaxZTTi2w.BIwKmqQH_ZrsC8e.webp",
+            "bytes": 22220,
+            "decoded": 21920,
+            "duration": 103,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/t2G8KVzTwfw.DlQHL1ux_1I6JXD.webp",
+            "bytes": 12888,
+            "decoded": 12588,
+            "duration": 104,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/nfpXC98FLuE.BNq7YCL8_2i958T.webp",
+            "bytes": 23456,
+            "decoded": 23156,
+            "duration": 106,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/Bwa5Bf656As.CwEvgmaY_LPaWA.webp",
+            "bytes": 10994,
+            "decoded": 10694,
+            "duration": 106,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/YcSOLHMsJYw.DDYpzeHY_ZvT5Ls.webp",
+            "bytes": 31068,
+            "decoded": 30768,
+            "duration": 109,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/4y-1D7jTW_4.C6tvDIk1_FxTlJ.webp",
+            "bytes": 13354,
+            "decoded": 13054,
+            "duration": 89,
+            "type": "img"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 248,
+            "size": 25125,
+            "tag": "H1",
+            "source": ""
+          },
+          {
+            "time": 312,
+            "size": 86580,
+            "tag": "IMG",
+            "source": "https://sports-injury-atlas.pages.dev/_astro/azQpbyDBktk.DJv0hOZw_ZMhqjA.webp"
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 0,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "\"Barlow Condensed\", \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif"
+        },
+        "firstCard": {
+          "x": 104,
+          "y": 488.640625,
+          "width": 394.65625,
+          "height": 411.53125,
+          "top": 488.640625,
+          "right": 498.65625,
+          "bottom": 900.171875,
+          "left": 104
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/cases/anfernee-simons-ankle-sprain-2023/",
+      "width": 1440,
+      "theme": "light",
+      "scale": 1,
+      "status": 200,
+      "dom": {
+        "title": "Anfernee Simons｜踝關節扭傷｜職業運動傷害影片圖鑑",
+        "description": "Anfernee Simons 的 踝關節扭傷 教學案例：可見過程觀察與外部確認診斷。",
+        "canonical": "https://sports-injury-atlas.pages.dev/cases/anfernee-simons-ankle-sprain-2023/",
+        "h1": [
+          "Anfernee Simons｜踝關節扭傷"
+        ],
+        "headings": [
+          "受傷當下的影片",
+          "先做這幾件事",
+          "這些狀況別等",
+          "大約多久能回場？",
+          "傷後多久再出賽？",
+          "來源與證據",
+          "其他 踝關節扭傷 案例（最多 3 筆）"
+        ],
+        "width": 1440,
+        "overflow": [],
+        "theme": "light",
+        "fontScale": "1",
+        "resources": [
+          {
+            "name": "/_astro/8TIJGIRP634.DLUgUBrO_ZDTDcM.webp",
+            "bytes": 0,
+            "decoded": 17540,
+            "duration": 0,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/CaseVideo.astro_astro_type_script_index_0_lang.D3BSckb_.js",
+            "bytes": 355,
+            "decoded": 51,
+            "duration": 175,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/zZdndTqOexc.CL4ZJaoQ_1GkYh1.webp",
+            "bytes": 0,
+            "decoded": 18386,
+            "duration": 0,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/RDDGpqOvSdg.BBhQW5hD_ZLBJWS.webp",
+            "bytes": 0,
+            "decoded": 14258,
+            "duration": 0,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/FQAPZASQyX0.BNe-tdBg_29Gth7.webp",
+            "bytes": 0,
+            "decoded": 12580,
+            "duration": 0,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/video-player.tjCucBQj.js",
+            "bytes": 1737,
+            "decoded": 3373,
+            "duration": 26,
+            "type": "script"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 592,
+            "size": 114281,
+            "tag": "IMG",
+            "source": "https://sports-injury-atlas.pages.dev/_astro/8TIJGIRP634.DLUgUBrO_ZDTDcM.webp"
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 1,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "Fraunces, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-serif, Georgia, serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    },
+    {
+      "path": "/videos/zverev-roland-garros-2022/",
+      "width": 1440,
+      "theme": "light",
+      "scale": 1,
+      "status": 200,
+      "dom": {
+        "title": "Alexander Zverev｜運動傷害影片圖鑑",
+        "description": "側移回球時倒地，之後以輪椅離場，未能繼續比賽。",
+        "canonical": "https://sports-injury-atlas.pages.dev/videos/zverev-roland-garros-2022/",
+        "h1": [
+          "Alexander Zverev"
+        ],
+        "headings": [
+          "受傷當下看什麼",
+          "當下怎麼做",
+          "後續回場"
+        ],
+        "width": 1440,
+        "overflow": [],
+        "theme": "light",
+        "fontScale": "1",
+        "resources": [
+          {
+            "name": "/_astro/7tpaxZTTi2w.BIwKmqQH_ZrsC8e.webp",
+            "bytes": 0,
+            "decoded": 21920,
+            "duration": 0,
+            "type": "img"
+          },
+          {
+            "name": "/_astro/_slug_.astro_astro_type_script_index_0_lang.D3BSckb_.js",
+            "bytes": 355,
+            "decoded": 51,
+            "duration": 45,
+            "type": "script"
+          },
+          {
+            "name": "/_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+            "bytes": 0,
+            "decoded": 22308,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+            "bytes": 0,
+            "decoded": 18212,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-400-normal.C38fXH4l.woff2",
+            "bytes": 0,
+            "decoded": 23664,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/inter-latin-600-normal.LgqL8muc.woff2",
+            "bytes": 0,
+            "decoded": 24452,
+            "duration": 0,
+            "type": "css"
+          },
+          {
+            "name": "/_astro/video-player.tjCucBQj.js",
+            "bytes": 0,
+            "decoded": 3373,
+            "duration": 0,
+            "type": "script"
+          }
+        ],
+        "lcp": [
+          {
+            "time": 180,
+            "size": 172583,
+            "tag": "IMG",
+            "source": "https://sports-injury-atlas.pages.dev/_astro/7tpaxZTTi2w.BIwKmqQH_ZrsC8e.webp"
+          }
+        ],
+        "iframes": 0,
+        "videoButtons": 1,
+        "fonts": {
+          "body": "Inter, \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif",
+          "heading": "\"Barlow Condensed\", \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", ui-sans-serif, system-ui, sans-serif"
+        }
+      },
+      "violations": [],
+      "errors": []
+    }
+  ]
+}

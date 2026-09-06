@@ -1,0 +1,338 @@
+[
+  {
+    "path": "index.html",
+    "filters": 0,
+    "formcontrols": 0,
+    "playerPhotos": 0,
+    "unclear": false,
+    "enums": {
+      "video-original": 0,
+      "diagnosis-first-party": 0,
+      "event-context": 0,
+      "teaching-evidence": 0
+    },
+    "reviewedEnglish": true
+  },
+  {
+    "path": "404.html",
+    "filters": 0,
+    "formcontrols": 0,
+    "playerPhotos": 0,
+    "unclear": false,
+    "enums": {
+      "video-original": 0,
+      "diagnosis-first-party": 0,
+      "event-context": 0,
+      "teaching-evidence": 0
+    },
+    "reviewedEnglish": false
+  },
+  {
+    "path": "privacy/index.html",
+    "filters": 0,
+    "formcontrols": 0,
+    "playerPhotos": 0,
+    "unclear": false,
+    "enums": {
+      "video-original": 0,
+      "diagnosis-first-party": 0,
+      "event-context": 0,
+      "teaching-evidence": 0
+    },
+    "reviewedEnglish": false
+  },
+  {
+    "path": "about/index.html",
+    "filters": 0,
+    "formcontrols": 0,
+    "playerPhotos": 0,
+    "unclear": false,
+    "enums": {
+      "video-original": 0,
+      "diagnosis-first-party": 0,
+      "event-context": 0,
+      "teaching-evidence": 0
+    },
+    "reviewedEnglish": false
+  },
+  {
+    "path": "source-policy/index.html",
+    "filters": 0,
+    "formcontrols": 0,
+    "playerPhotos": 0,
+    "unclear": false,
+    "enums": {
+      "video-original": 0,
+      "diagnosis-first-party": 0,
+      "event-context": 0,
+      "teaching-evidence": 0
+    },
+    "reviewedEnglish": false
+  },
+  {
+    "path": "credits-notices/index.html",
+    "filters": 0,
+    "formcontrols": 0,
+    "playerPhotos": 0,
+    "unclear": false,
+    "enums": {
+      "video-original": 0,
+      "diagnosis-first-party": 0,
+      "event-context": 0,
+      "teaching-evidence": 0
+    },
+    "reviewedEnglish": false
+  },
+  {
+    "path": "injuries/ankle-sprain/index.html",
+    "filters": 1,
+    "formcontrols": 10,
+    "playerPhotos": 0,
+    "unclear": false,
+    "enums": {
+      "video-original": 0,
+      "diagnosis-first-party": 0,
+      "event-context": 0,
+      "teaching-evidence": 0
+    },
+    "reviewedEnglish": true
+  },
+  {
+    "path": "injuries/achilles-rupture/index.html",
+    "filters": 1,
+    "formcontrols": 10,
+    "playerPhotos": 0,
+    "unclear": false,
+    "enums": {
+      "video-original": 0,
+      "diagnosis-first-party": 0,
+      "event-context": 0,
+      "teaching-evidence": 0
+    },
+    "reviewedEnglish": true
+  },
+  {
+    "path": "injuries/acl/index.html",
+    "filters": 1,
+    "formcontrols": 10,
+    "playerPhotos": 0,
+    "unclear": false,
+    "enums": {
+      "video-original": 0,
+      "diagnosis-first-party": 0,
+      "event-context": 0,
+      "teaching-evidence": 0
+    },
+    "reviewedEnglish": true
+  },
+  {
+    "path": "videos/zverev-roland-garros-2022/index.html",
+    "filters": 0,
+    "formcontrols": 0,
+    "playerPhotos": 0,
+    "unclear": false,
+    "enums": {
+      "video-original": 0,
+      "diagnosis-first-party": 0,
+      "event-context": 0,
+      "teaching-evidence": 0
+    },
+    "reviewedEnglish": false
+  },
+  {
+    "path": "videos/carolina-marin-indonesia-2019/index.html",
+    "filters": 0,
+    "formcontrols": 0,
+    "playerPhotos": 0,
+    "unclear": false,
+    "enums": {
+      "video-original": 0,
+      "diagnosis-first-party": 0,
+      "event-context": 0,
+      "teaching-evidence": 0
+    },
+    "reviewedEnglish": false
+  },
+  {
+    "path": "videos/julie-foucher-box-jump-2015/index.html",
+    "filters": 0,
+    "formcontrols": 0,
+    "playerPhotos": 0,
+    "unclear": false,
+    "enums": {
+      "video-original": 0,
+      "diagnosis-first-party": 0,
+      "event-context": 0,
+      "teaching-evidence": 0
+    },
+    "reviewedEnglish": false
+  },
+  {
+    "path": "videos/volleyball-pov-135/index.html",
+    "filters": 0,
+    "formcontrols": 0,
+    "playerPhotos": 0,
+    "unclear": false,
+    "enums": {
+      "video-original": 0,
+      "diagnosis-first-party": 0,
+      "event-context": 0,
+      "teaching-evidence": 0
+    },
+    "reviewedEnglish": false
+  },
+  {
+    "path": "videos/derek-redmond-barcelona-1992/index.html",
+    "filters": 0,
+    "formcontrols": 0,
+    "playerPhotos": 0,
+    "unclear": false,
+    "enums": {
+      "video-original": 0,
+      "diagnosis-first-party": 0,
+      "event-context": 0,
+      "teaching-evidence": 0
+    },
+    "reviewedEnglish": false
+  },
+  {
+    "path": "videos/kerri-strug-atlanta-1996/index.html",
+    "filters": 0,
+    "formcontrols": 0,
+    "playerPhotos": 0,
+    "unclear": false,
+    "enums": {
+      "video-original": 0,
+      "diagnosis-first-party": 0,
+      "event-context": 0,
+      "teaching-evidence": 0
+    },
+    "reviewedEnglish": false
+  },
+  {
+    "path": "videos/ankle-inversion-observation/index.html",
+    "filters": 0,
+    "formcontrols": 0,
+    "playerPhotos": 0,
+    "unclear": false,
+    "enums": {
+      "video-original": 0,
+      "diagnosis-first-party": 0,
+      "event-context": 0,
+      "teaching-evidence": 0
+    },
+    "reviewedEnglish": false
+  },
+  {
+    "path": "cases/kevin-durant-achilles-rupture-2019/index.html",
+    "filters": 0,
+    "formcontrols": 0,
+    "playerPhotos": 0,
+    "unclear": true,
+    "enums": {
+      "video-original": 1,
+      "diagnosis-first-party": 1,
+      "event-context": 1,
+      "teaching-evidence": 1
+    },
+    "reviewedEnglish": false
+  },
+  {
+    "path": "cases/tyrese-haliburton-achilles-rupture-2025/index.html",
+    "filters": 0,
+    "formcontrols": 0,
+    "playerPhotos": 0,
+    "unclear": true,
+    "enums": {
+      "video-original": 1,
+      "diagnosis-first-party": 1,
+      "event-context": 1,
+      "teaching-evidence": 1
+    },
+    "reviewedEnglish": false
+  },
+  {
+    "path": "cases/lamelo-ball-ankle-sprain-2023/index.html",
+    "filters": 0,
+    "formcontrols": 0,
+    "playerPhotos": 0,
+    "unclear": true,
+    "enums": {
+      "video-original": 1,
+      "diagnosis-first-party": 1,
+      "event-context": 1,
+      "teaching-evidence": 1
+    },
+    "reviewedEnglish": false
+  },
+  {
+    "path": "cases/lamelo-ball-ankle-sprain-2025/index.html",
+    "filters": 0,
+    "formcontrols": 0,
+    "playerPhotos": 0,
+    "unclear": true,
+    "enums": {
+      "video-original": 1,
+      "diagnosis-first-party": 1,
+      "event-context": 1,
+      "teaching-evidence": 1
+    },
+    "reviewedEnglish": false
+  },
+  {
+    "path": "cases/anfernee-simons-ankle-sprain-2023/index.html",
+    "filters": 0,
+    "formcontrols": 0,
+    "playerPhotos": 0,
+    "unclear": true,
+    "enums": {
+      "video-original": 1,
+      "diagnosis-first-party": 1,
+      "event-context": 1,
+      "teaching-evidence": 1
+    },
+    "reviewedEnglish": false
+  },
+  {
+    "path": "cases/kyrie-irving-ankle-sprain-2021/index.html",
+    "filters": 0,
+    "formcontrols": 0,
+    "playerPhotos": 0,
+    "unclear": true,
+    "enums": {
+      "video-original": 1,
+      "diagnosis-first-party": 1,
+      "event-context": 1,
+      "teaching-evidence": 1
+    },
+    "reviewedEnglish": false
+  },
+  {
+    "path": "cases/jayson-tatum-achilles-rupture-2025/index.html",
+    "filters": 0,
+    "formcontrols": 0,
+    "playerPhotos": 0,
+    "unclear": true,
+    "enums": {
+      "video-original": 1,
+      "diagnosis-first-party": 1,
+      "event-context": 1,
+      "teaching-evidence": 1
+    },
+    "reviewedEnglish": false
+  },
+  {
+    "path": "leagues/nba/index.html",
+    "filters": 1,
+    "formcontrols": 10,
+    "playerPhotos": 0,
+    "unclear": false,
+    "enums": {
+      "video-original": 0,
+      "diagnosis-first-party": 0,
+      "event-context": 0,
+      "teaching-evidence": 0
+    },
+    "reviewedEnglish": true
+  }
+]

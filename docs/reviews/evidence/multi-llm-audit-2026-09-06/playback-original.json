@@ -1,0 +1,125 @@
+[
+  {
+    "caseId": "CASE-NBAANKLE-2023-004",
+    "url": "https://www.youtube.com/watch?v=8TIJGIRP634",
+    "checkedAt": "2026-09-06T03:02:30.650Z",
+    "status": "played",
+    "title": "Anfernee Simons helped to locker room after suffering leg injury | NBA on ESPN - YouTube",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.012646,
+      "paused": false,
+      "readyState": 4,
+      "tracks": []
+    },
+    "captionToggleAfter": "字幕/CC 已開啟",
+    "captionControls": [
+      {
+        "label": "字幕/CC 已開啟",
+        "title": "字幕/CC 已開啟",
+        "disabled": null
+      }
+    ]
+  },
+  {
+    "caseId": "CASE-NBAACHILLES-2019-005",
+    "url": "https://www.youtube.com/watch?v=YcSOLHMsJYw",
+    "checkedAt": "2026-09-06T03:02:34.411Z",
+    "status": "played",
+    "title": "Kevin Durant suffers Achilles injury after hot start, exits Game 5 | 2019 NBA Finals Highlights - YouTube",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.011166,
+      "paused": false,
+      "readyState": 4,
+      "tracks": []
+    },
+    "captionToggleAfter": "字幕/CC 已開啟",
+    "captionControls": [
+      {
+        "label": "字幕/CC 已開啟",
+        "title": "字幕/CC 已開啟",
+        "disabled": null
+      }
+    ]
+  },
+  {
+    "caseId": "CASE-NBAANKLE-2021-002",
+    "url": "https://www.youtube.com/watch?v=FQAPZASQyX0",
+    "checkedAt": "2026-09-06T03:02:38.838Z",
+    "status": "played",
+    "title": "YouTube",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.003988,
+      "paused": false,
+      "readyState": 4,
+      "tracks": []
+    },
+    "error": "locator.elementHandle: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /字幕\\/CC 已關閉|Subtitles\\/closed captions/i }).first()\u001b[22m\n"
+  },
+  {
+    "caseId": "CASE-NBAANKLE-2023-008",
+    "url": "https://www.youtube.com/watch?v=RDDGpqOvSdg",
+    "checkedAt": "2026-09-06T03:02:48.311Z",
+    "status": "played",
+    "title": "LaMelo Ball was helped to the locker room after suffering an apparent injury - YouTube",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.004273,
+      "paused": false,
+      "readyState": 4,
+      "tracks": []
+    },
+    "captionToggleAfter": "字幕/CC 已開啟",
+    "captionControls": [
+      {
+        "label": "字幕/CC 已開啟",
+        "title": "字幕/CC 已開啟",
+        "disabled": null
+      }
+    ]
+  },
+  {
+    "caseId": "CASE-NBAANKLE-2025-002",
+    "url": "https://www.youtube.com/watch?v=zZdndTqOexc",
+    "checkedAt": "2026-09-06T03:02:51.246Z",
+    "status": "played",
+    "title": "LaMelo Ball would go into the locker room after noticeably limping on court. - YouTube",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.019314,
+      "paused": false,
+      "readyState": 4,
+      "tracks": []
+    },
+    "captionToggleAfter": "字幕/CC 已開啟",
+    "captionControls": [
+      {
+        "label": "字幕/CC 已開啟",
+        "title": "字幕/CC 已開啟",
+        "disabled": null
+      }
+    ]
+  }
+]

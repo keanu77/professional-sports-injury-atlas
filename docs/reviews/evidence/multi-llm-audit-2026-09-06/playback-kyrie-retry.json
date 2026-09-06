@@ -1,0 +1,28 @@
+[
+  {
+    "caseId": "CASE-NBAANKLE-2021-002",
+    "url": "https://www.youtube.com/watch?v=FQAPZASQyX0",
+    "checkedAt": "2026-09-06T03:07:30.866Z",
+    "status": "played",
+    "title": "Kyrie Irving sustains 2nd quarter ankle injury, out for rest of Game 3 #Shorts - YouTube",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.014751,
+      "paused": false,
+      "readyState": 4,
+      "tracks": []
+    },
+    "captionToggleAfter": "字幕/CC 已開啟",
+    "captionControls": [
+      {
+        "label": "字幕/CC 已開啟",
+        "title": "字幕/CC 已開啟",
+        "disabled": null
+      }
+    ]
+  }
+]

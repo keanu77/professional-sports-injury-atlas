@@ -1,4 +1,18 @@
-# Current handoff — 2026-09-06 Decision 25
+# Current handoff — 2026-09-06 multi-llm-audit
+
+使用者要求以multi-llm-audit重新檢視全網站。本輪稽核已完成：Codex8項、Grok13項、Antigravity公開內容7項，共28條原始論點，經獨立Pass 2與正式瀏覽器逐條採用／降級／排除。未修改網站程式、未重新部署。
+
+報告：`docs/reviews/2026-09-06-multi-llm-audit.md`；證據與Pass2矩陣：`docs/reviews/evidence/multi-llm-audit-2026-09-06/`。3項P1：ready後播放器錯誤未備援、320px最大字級播放文字裁11.625px、案例播放焦點外框裁切。P2包括5個外部起點遺失、無JS／读屏狀態、既有general.whatIsVisible未顯示、4頁舊篩選、審查語氣、回場缺資料表述、主站返回、21照片歷史名錄語氣與LaMelo2023初報／後續診斷脈絡。
+
+14支影片今日均實播；Kyrie字幕首測逾時、單支重試開啟成功。24頁320px深色字級1.5，加6個手機桌面關鍵頁組合，共30組Axe無錯誤及整頁無水平溢位；人工另找到元件裁字與焦點問題，不能把Axe當全面無障礙通過。
+
+Antigravity私有code傳送被auto-review拒絕，改成公開HTML文字注入完成，未變更任何CLI權限。Qwen可用但因skill的白天GPU窗口未跑。模型「Tatum/Haliburton是假資料」「ACL頁全空」「把未知膝部觀察歸ACL」等已排除。
+
+下一步僅為報告中的待確認實作建議；先做3項P1及播放相關P2。既有主站配色、YouTube預設封面、首頁無搜尋及頁內分類不變。本次audit報告與證據尚未commit/push，先前網站修改已在main與origin/main同步至3b97e16。正式部署仍是下方D25。
+
+---
+
+# Decision 25 — 現行正式部署
 
 已完成並發布使用者要求：14支影片的卡片、主播放器、相關影片卡片改用各自YouTube預設封面；右上角傷害分類移除，首頁下方分類入口保留。人物照片與署名段落不再出現在公開影片卡片。搜尋移除與D24內容頁版型保留。
 
