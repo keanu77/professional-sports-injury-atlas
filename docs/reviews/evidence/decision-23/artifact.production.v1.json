@@ -1,0 +1,1336 @@
+{
+  "schemaVersion": 1,
+  "decision": "decision-21",
+  "mode": "public",
+  "origin": "https://sports-injury-atlas.pages.dev",
+  "commit": "9fa63393469ec67db9fbccdb772da0a3574e10ce",
+  "approvalDigest": "96a7270db0f266b170a9743290b8fe75bd700c1ed30b3f3b7efd4eab12708fb6",
+  "generatedAt": "2026-09-06T02:11:17.324Z",
+  "cases": [
+    {
+      "id": "CASE-NBAANKLE-2023-004",
+      "slug": "anfernee-simons-ankle-sprain-2023"
+    },
+    {
+      "id": "CASE-NBAACHILLES-2025-016",
+      "slug": "jayson-tatum-achilles-rupture-2025"
+    },
+    {
+      "id": "CASE-NBAACHILLES-2019-005",
+      "slug": "kevin-durant-achilles-rupture-2019"
+    },
+    {
+      "id": "CASE-NBAANKLE-2021-002",
+      "slug": "kyrie-irving-ankle-sprain-2021"
+    },
+    {
+      "id": "CASE-NBAANKLE-2023-008",
+      "slug": "lamelo-ball-ankle-sprain-2023"
+    },
+    {
+      "id": "CASE-NBAANKLE-2025-002",
+      "slug": "lamelo-ball-ankle-sprain-2025"
+    },
+    {
+      "id": "CASE-NBAACHILLES-2025-017",
+      "slug": "tyrese-haliburton-achilles-rupture-2025"
+    }
+  ],
+  "clips": [
+    {
+      "slug": "zverev-roland-garros-2022",
+      "videoUrl": "https://www.youtube.com/watch?v=7tpaxZTTi2w",
+      "startSeconds": 1340
+    },
+    {
+      "slug": "derek-redmond-barcelona-1992",
+      "videoUrl": "https://www.youtube.com/watch?v=t2G8KVzTwfw",
+      "startSeconds": 15
+    },
+    {
+      "slug": "kerri-strug-atlanta-1996",
+      "videoUrl": "https://www.youtube.com/watch?v=Bwa5Bf656As",
+      "startSeconds": 0
+    },
+    {
+      "slug": "carolina-marin-indonesia-2019",
+      "videoUrl": "https://www.youtube.com/watch?v=nfpXC98FLuE",
+      "startSeconds": 35
+    },
+    {
+      "slug": "julie-foucher-box-jump-2015",
+      "videoUrl": "https://www.youtube.com/watch?v=4y-1D7jTW_4",
+      "startSeconds": 35
+    },
+    {
+      "slug": "volleyball-pov-135",
+      "videoUrl": "https://www.youtube.com/watch?v=tEHP_6GA6ZA",
+      "startSeconds": 215
+    },
+    {
+      "slug": "ankle-inversion-observation",
+      "videoUrl": "https://www.youtube.com/watch?v=qwuEydc9qXQ",
+      "startSeconds": 0
+    }
+  ],
+  "htmlPages": 24,
+  "internalLinks": 474,
+  "files": [
+    {
+      "path": "404.html",
+      "digest": "2efa194dd70036e2cc2206fc8b9f3600c7f671a7e9cd4d97bf7a09571e1942af"
+    },
+    {
+      "path": "_astro/CaseFilters.astro_astro_type_script_index_0_lang.DoPLBKUk.js",
+      "digest": "237b8a4059447faf1e6c76a5be366149e271a44ea05162ec3023211764fe47b5"
+    },
+    {
+      "path": "_astro/CaseVideo.astro_astro_type_script_index_0_lang.D3BSckb_.js",
+      "digest": "f5028054563cf36efbe3465f3633d5d76979c3ea25fec54a7552d29cfd63d9e2"
+    },
+    {
+      "path": "_astro/_slug_.astro_astro_type_script_index_0_lang.D3BSckb_.js",
+      "digest": "f5028054563cf36efbe3465f3633d5d76979c3ea25fec54a7552d29cfd63d9e2"
+    },
+    {
+      "path": "_astro/achilles-rupture-case-01.BV8nYdj7_16f93q.avif",
+      "digest": "438ad3160ddf287a39044e3e919dcc20893d2bfffd41dade55b67af7b82c5dc7"
+    },
+    {
+      "path": "_astro/achilles-rupture-case-01.BV8nYdj7_1b7bjV.webp",
+      "digest": "e28c367edf8d5f63b86ed6cb3f7ffe6a9760263eb2c59c8a2b645222a175bb07"
+    },
+    {
+      "path": "_astro/achilles-rupture-case-01.BV8nYdj7_2fGMgM.avif",
+      "digest": "076376e853e14a34d4108043a7488f70717fb0a15a65a27ded8056adb48d3da5"
+    },
+    {
+      "path": "_astro/achilles-rupture-case-01.BV8nYdj7_CLdng.webp",
+      "digest": "3dfaf43dcad4d5f00d768ede842c7e88c8df9128f5d4b74989406c5abe3804b9"
+    },
+    {
+      "path": "_astro/achilles-rupture-case-01.BV8nYdj7_Z2h9nAt.avif",
+      "digest": "fdf19c4daeeef84e446b39fdb60fd2ad12f45b84fe2f77d17bc6b57b5d039b32"
+    },
+    {
+      "path": "_astro/achilles-rupture-case-01.BV8nYdj7_ZvFpP6.webp",
+      "digest": "07978a3cc838b88921743e7832fe350a846fa4bf7345fa1c6a2ff42da514b32b"
+    },
+    {
+      "path": "_astro/achilles-rupture-case-01.BV8nYdj7_jbIQn.webp",
+      "digest": "f459a5b12ca41c9eb4d346a43cbd979ec186cfcf8690bdd53378b408b92f2aa3"
+    },
+    {
+      "path": "_astro/achilles-rupture-case-02.B13u64uI.png",
+      "digest": "037bb950968e93b7ff1277f597b4eda0ed94589bb88f9bba888fdd13368777df"
+    },
+    {
+      "path": "_astro/achilles-rupture-case-03.y0o9PtUE.png",
+      "digest": "2f5fb577d579ed13ef607a4aec4342e9924df83b55cc427f833ecea1bcc7f46f"
+    },
+    {
+      "path": "_astro/achilles-rupture-case-04.DZIuceMF.png",
+      "digest": "6334f689d1b26b2a6e959708d6f1560594a9cf1249f9da2f3baa82f93db67b0d"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_1OYqpD.png",
+      "digest": "0bc8f02ca30483e9c45afc26bf53d67cddab46dc55e89b924cafdfdf548b8127"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_1XuS89.webp",
+      "digest": "88e87816efb59594e4b7d92772e53b0e1a742b6b836771a8af1b3780c8ba7de7"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_1y2aWw.avif",
+      "digest": "106f83f3d81dd1c604d7cafd6fc7605b5c59f634a864f4ee40a79a9aaa95d67e"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_20D0as.webp",
+      "digest": "3286bd82ee4c5d62b4f93cb676b301d3b91114ffba8a97f09fccb40f9d06b404"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_20wdP.png",
+      "digest": "3e3b181b759c822364e50c4c12b1ccd58627b7ebe40573fec772f18a60f2d931"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_2mrYxX.avif",
+      "digest": "4426f6ed7a3658437996d13091b07132375d56c4cca13de1cce5f66442d996da"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_2pBLW7.avif",
+      "digest": "51b3b0d71861b48c8a8dc425ee00d30fb1c0cb1bb4d9828bccab4a2d0155d2ff"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_2qoL70.webp",
+      "digest": "67f39bd91b8ef0b4a5864d15557f707494f3885e87718d0f4b501fa1e72c4c51"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_8bCgG.avif",
+      "digest": "747de5fda7c9beec9fc0b3c362ec88242230b0df72d3bacc31c8e995b12c4c60"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_A5vfx.avif",
+      "digest": "bb3481692d3f2daf2ec804a2860f53be2803400631c7019066a9bef9c52aadae"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_Z18CO5B.webp",
+      "digest": "58c7083c8bfbc55c331a13c00d61717bdcf760655676e325faab541c7af442a8"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_Z1Ic1JD.png",
+      "digest": "a8623212c6fb3a07a500c01a8bd9108c50a8c7ce525b105e1e2ab187f5c8c2ff"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_Z1Kk8LW.png",
+      "digest": "bb9aaf3d25d83b40ae9823a5ada539cb55b2ec02d923113fbf0d4b13ea3df65c"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_Z1cU8S1.png",
+      "digest": "3218d67a496e9ecf620c91303921b9019f1cd8433284c5309685467ef1820af8"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_Z1iqfN6.png",
+      "digest": "7a8dcef5cb8d7a21ae565fe9b835f261836bb01501d7002f234f9ab5da047854"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_Z1lFVkE.avif",
+      "digest": "44213b1e65952a2404ddf363d975afff76a30990043261b5898f1e0719eeeea5"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_Z1vXScR.webp",
+      "digest": "3e33f9af262aafc01a3280d73e7df9611c468f8f53380584be992e22689f3631"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_Z2hehJy.avif",
+      "digest": "d65d072e59c412fb25de6f1afecacfedea0b11ef6e5812996d18dd27515c161b"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_Z2nyucs.webp",
+      "digest": "b5af825fbc6af4d655b46aa4a8a7c9b685435543f838b26ba294aaa5d2006cb2"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_ZRpSov.webp",
+      "digest": "3af608483665f5b97ddc0c612d1b09d7f6ccd6062077e2ee7f337f81456ffdf7"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_ZlkwSq.png",
+      "digest": "d8d89f6358f43b7d95b38b10c4be01ffdf9f7733d73aea6824c738e7393d66cc"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_ajJj0.avif",
+      "digest": "9d0a2e8975663444442143829355a10ec0aaaf6c25850f5c79d019aaf2e1fa37"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_sVduk.png",
+      "digest": "a197a81748dc460db7b80aa73aa5dc5092956ee871ca04730ece7a29ad3f4e68"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_tCjvN.webp",
+      "digest": "fd67827841b4b3daaa24acbd3f46ab604ffb451d05242517717d33de8af979af"
+    },
+    {
+      "path": "_astro/acl-case-01.Dz5vIFsD.png",
+      "digest": "1eadfeab2babd48da41810f0e9f9a3bfa865d198d0077ad1fc71d298a937c50d"
+    },
+    {
+      "path": "_astro/acl-case-02.BFqo1l4y.png",
+      "digest": "f8a48b36a4a056886f3c49fa794b5f7580daaa1580ce2085b5a2f549b4aa6953"
+    },
+    {
+      "path": "_astro/acl-case-03.B6JQhsLm.png",
+      "digest": "ad5be2de623028b90614e09ed3811af93e36f2d0b0de32c60299d60d6460d4f8"
+    },
+    {
+      "path": "_astro/acl-case-04.C1L2yY3c.png",
+      "digest": "8565ff1cfd55be4f0cf1732bfa2700144801051c8e8b7c75360f6a219bd8352e"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_1DbaT3.webp",
+      "digest": "ade4de5a34510d569a2425f7959f84f156680cb7876073a2c96dea82e25b3a35"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_1HLSNd.webp",
+      "digest": "2389a82e2b1018baf33f825d22acf80648d5235a93509251676d01d948af1241"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_1J1WCv.png",
+      "digest": "31dbfa536c29cc8ca69cfdd94e25cafe961fdde72472952f8c0e67bf894ae758"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_1y0pFl.webp",
+      "digest": "5f64865af74dbafcc2a2634673c7a70cee17ceed933b2af0eda0679400a1621b"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_20DIuD.png",
+      "digest": "f21e74bf3cbb93e9e87e82dbabedbcd115e136f4684f4e2ea94947c7425e7f38"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_23ieKs.png",
+      "digest": "90cb4aede19c7305ce3f69540f8d63eade1466cacf4f6a2056e4a9bc2fe9c0c6"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_244Wkt.webp",
+      "digest": "fb1c161559c28ccd05a673368dcf84264d21f7983979ff1b629eefbd35a3c75c"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_29agVI.webp",
+      "digest": "3ff11f242312bf7236f0c89c843fa7b4b86a986b1be4c68b2d1928bfbedd6e80"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_2fOk4e.avif",
+      "digest": "9568f714a7b1291e5f2d36b2b8e92ac23f9a19e692a18c41d6ad3d61a553d012"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_2lG4sO.avif",
+      "digest": "6a6977be9a157f5d6cfba4f69e71b546a5bcfc6b998dad403e1a2fc3f3be1aeb"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_2miy9j.avif",
+      "digest": "0ea44dc6fc64e58de7ffdc0c0dafecfae413b012908a0a5d6cd84b32cd06e15d"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_9M2bF.webp",
+      "digest": "82dbed28fa5fb92a1480a4d8f3d2bea36bfbbd134ea053ae3f54cfbd0ef64f97"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_AWwFG.webp",
+      "digest": "65eec88ed4b2b869b3d8a2158dd6cea30d1c21f8b049c31e3ceee6ed9f41e363"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_SyDO2.avif",
+      "digest": "eda4f0019b2d1bba5ecb1162bb9ec2723b1eaafaa0a72b85ccc9d77a7e17812c"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_X5aED.avif",
+      "digest": "ec29f431587414eec7d0e97b90e8344f972b6d311df2e1bc9547d1521e1b3a20"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z1AP9lv.webp",
+      "digest": "f82d20ba3c1148d564616f5d9afca6148cf17008bf6a9f63aad05a7ef89555b6"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z1c5fBB.avif",
+      "digest": "fac156de56783c17960467d616e6c9ba6ab625c3a4d1d8b36e6ba4bdac54d8b9"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z1hyRdy.webp",
+      "digest": "b8a1a634221e58d5bceae4a465f640d92e25bc6d4afe4051f6f366ff987a4c5e"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z1tGmJW.webp",
+      "digest": "dfd3fee2da5a710f0f2d0a4f98849cf2ef04e634ba043ecfe87ca26f9137edda"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z1x7AzM.png",
+      "digest": "d074fe899aa2331c0ac16fac5914d1de02dc06023667355b4dc973134b5cf243"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z26gR5I.avif",
+      "digest": "84ab64716493f52c15c4c4fb6937dc75408db1cdbea4dd7259176c1bf97f9b7d"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z27IIof.avif",
+      "digest": "be706b637344c113c9e7d9648cfebcf474f854bb5d0fe0ea5b3a9fa09ef10aff"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z2bmE2x.avif",
+      "digest": "2d38711575de1b70574536996aab6530b3a3704abd5ec0669a1aed505ad581f3"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z2nRYe4.webp",
+      "digest": "d952bab638e8d1dff9b3d24a5db8833bf1942e2f200842f671aee59217f816ab"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z2rjd3T.png",
+      "digest": "6e1ddd80448f0e3f9c15c0a48bf10eb44ec1b37e1893d48f1e73e39f4614a424"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z2sXLaS.webp",
+      "digest": "835495b50eb87e7912996f7372d8e35680b33a71905b5847280ec7bf4d52790f"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z2v6wBK.avif",
+      "digest": "0d5f14a82f6f2a5ee1f4d4a0ea53b21dccfffa6babd60462bf144541ad6cd87a"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z2wp00I.png",
+      "digest": "45e364dd97fa84c13e3c76e27a40b3de09287ed56687fea8fa65e9a5eba69310"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z68PUR.png",
+      "digest": "e9adc9ff95e144066a02f30458169e1ea40b4f15ab1ab08fb9ff07e983993ef4"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_pDvuQ.avif",
+      "digest": "f3bc4c47b66752ec36e361bbfa8fb0412bfe87ff12436d61010640d7eda85c11"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_xwiPQ.png",
+      "digest": "ea0b5ddb5e93f9fda40c28a7cfd845d65f54e8c35da1a6039d4815c0967a1378"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3.jpg",
+      "digest": "2c651d636a979b4e838c28817e56ce56917d7b216fc6e59603075654a067fd7e"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3_12L9JO.jpg",
+      "digest": "556ab4866978b790b07291121bca292b747952570e1877b14ace1b6a733ec1d8"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3_132G0f.jpg",
+      "digest": "74eea90006e3c62fb60a84c4f26c2e67634f3dc1515cdcc702a2dff3e3110f8c"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3_15HL4o.webp",
+      "digest": "cd94a92c7bc3ed07311ad5b46a3274f072a78798937283835022f8c4327b4100"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3_1OiotP.jpg",
+      "digest": "970535f7a143cab9e7894210b101498df4e813b063a242ba040e36f7f941e274"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3_25QdeC.webp",
+      "digest": "e9005add71cdda3e839baf8d8de7bf2bb70729da79dd5f49350a384e086399b7"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3_26kJ0s.avif",
+      "digest": "ee78008a1fbe8742d24092f235d04ecbfff43863c709f76b0f7d3ed3029adb43"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3_2mjKVG.avif",
+      "digest": "cca7e53af374fa1dc6ad0f72aa884671b8c30ce91ddb78ee8f82da868a63cf9a"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3_5MmQm.webp",
+      "digest": "f8f7e447f16365f74a2652664ab5ef39eeb1957ae40c456c3b2de7b12cd20641"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3_Z10vKvo.webp",
+      "digest": "bd08bb4c80bcdbbdcfd52c96807d9bf473ba0e2160c53fc344c00c060c4d3596"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3_Z12wtrJ.webp",
+      "digest": "79053a5bd577e9d4c285a68e50a9755367e4b1b2832c73902dbd5ce19fb897c9"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3_Z17MqY6.jpg",
+      "digest": "4331cd43b78ade604292a77d27e367d446bcbef829c319f6174bdbaa24b0b8d7"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3_Z1NMbVk.webp",
+      "digest": "552a25ebfdda3ff444e6120cce5e96ca6524255d352a9d0fbf7dc26ef4fe5766"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3_Z1TAVrj.avif",
+      "digest": "31ec6895b393468b2ef5051c08826a8b2df40b117863e0c8d0bb177fbcbb7c54"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3_Z1VBEnE.avif",
+      "digest": "43004d3fa2dea0889b49f47669716e358cf801133a85aac4ecab1d6ed721269c"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3_Z24LdRy.webp",
+      "digest": "7c4b003adfe405c0bd43916a20b225d42ba4e0f2b5ee654ff973fe3e008fe50f"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3_Z2d5d5I.webp",
+      "digest": "dcb5ccaff6da50ca0e179f74a994ac13358b45806c143211e3a663ba8ec53a27"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3_Z2e1SrY.avif",
+      "digest": "324c1646dd4a2ced5d751fc45e9ccf8155f83b4fb6484d6bfa7d711e2ec03f26"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3_Z3wXBV.jpg",
+      "digest": "ba545cd6fb61a1b434a6ec1e7edf8ead3caabcd8e2f80420eb44c4356ac01337"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3_Z5xGyh.jpg",
+      "digest": "60410b671344021bc0cb7d6c62a6319a98802aa653dad0d76adaa6dadf7453e7"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3_ZNhN4y.avif",
+      "digest": "8488a48b50a9bad04506f0b8cfdf8a376d03eedc884f7212db96b294ebd20df8"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3_ZOfJjG.jpg",
+      "digest": "d1cf10a39a5072c62c9d385779135206a618088c306c4796d6bb48fedbb62097"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3_ZQNp2R.jpg",
+      "digest": "548e3e5994e66109bb8a563b361275ab8ebdbd4d2233157b9b012b2692309eb4"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3_ZsLBAa.avif",
+      "digest": "494f75d4eb6f15a8131f6457a5d247bc23375630c73dbac494a881496910b9b4"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3_it5Sq.avif",
+      "digest": "c94ba37e936d9dda73d8f1176963355e90f0b80ecab8b2b67b7b1f5cd5522ac3"
+    },
+    {
+      "path": "_astro/ankle-sprain-case-01.mtpwD0H__Z1JSxc5.webp",
+      "digest": "e9a835300011945d86cb0fc0e8aaa45072cd1376739c0e94c03a770f63d3abec"
+    },
+    {
+      "path": "_astro/ankle-sprain-case-01.mtpwD0H__Z1Lgqv.webp",
+      "digest": "64ba5946cbb7827a0cf19965e4bd5411f2234a79ad70c1a36503a4bac9b5cbcd"
+    },
+    {
+      "path": "_astro/ankle-sprain-case-01.mtpwD0H__Z1w25L1.avif",
+      "digest": "64d606832b717b040e855d7567649c4c2ec8b899cdbd43eb1e3a69406fee44eb"
+    },
+    {
+      "path": "_astro/ankle-sprain-case-01.mtpwD0H__Z2dkh3x.webp",
+      "digest": "3efc91e7d33861ed14c82ad7d20e3b213bdfcf044258b3cb8d90c141d1a73361"
+    },
+    {
+      "path": "_astro/ankle-sprain-case-01.mtpwD0H__Z2fHuuT.avif",
+      "digest": "0319ffaa6691d1d106c250bac7252e544c9b4b64de0e87d751f334505ba675f0"
+    },
+    {
+      "path": "_astro/ankle-sprain-case-01.mtpwD0H__Z2tyVUX.webp",
+      "digest": "a45ad9b1dcc408f22fdf9d4fda2843e48d32a91bb2484ea62ecd2dbf0db4e5bd"
+    },
+    {
+      "path": "_astro/ankle-sprain-case-01.mtpwD0H__c5aYy.avif",
+      "digest": "b25178bd225182916172889ecb93d0b36bb09cd8d112e1349c15d316b2ea2a82"
+    },
+    {
+      "path": "_astro/ankle-sprain-case-02.BXg9HN_o.png",
+      "digest": "b8ce93d3862b17b5f5fe7911c48fbab15574ce26eab598809de9767e3c7a12b1"
+    },
+    {
+      "path": "_astro/ankle-sprain-case-03.Bm41_iIZ.png",
+      "digest": "68a0e76730fd3922e785af502aaf7ff7ce866250cbd144b9255129168852b139"
+    },
+    {
+      "path": "_astro/ankle-sprain-case-04.B2qAEBD2.png",
+      "digest": "cf45e134c69c1cd20785758549930cef52dc8896b1e79864db04e13da2a6f8ae"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_1AlqGH.png",
+      "digest": "be74e7272486e54d8052ee60f7895bc628b0dd90b23b75de304640d11d17032b"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_1X4qNo.png",
+      "digest": "9fc0ec2b2488f6a11b63ff39adb104a3add73db53be5b9323c6618000ce61731"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_1fW9Hr.webp",
+      "digest": "04c33f9e158a486377a0715d6f100084ca5e12faba2acdde9de0f3a89039e265"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_1kedQu.avif",
+      "digest": "5b5b568a4628e331e1ebdb061e621b5b0df211601a69ddc6b1bca7da366d90f3"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_1tqUg9.avif",
+      "digest": "8e0c3dda96db8b335a6aca08b097580709a0c04548cb852e4e76748e59b3b16c"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_2mcODh.webp",
+      "digest": "472c4867990985cf48c3d05b7291867edcb01961a4cc25e674a69ca96e1bc27d"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_2oatua.png",
+      "digest": "5ebd04e4747a9be834e8ba5b5a28385d65d698b819a192980d7b8da8da7b30bc"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_2tzdgA.png",
+      "digest": "27fb693af1dbae23719929a8f0889ecb3fa4be32394631557b80d319334e8552"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_FpySD.webp",
+      "digest": "51b4e87e9e9ac395487e5e6964021a59dde12bd4a7f77a85c3d4c686471b974e"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_LMUEh.webp",
+      "digest": "e71231311a16c991d134e08c44eeea9a2707a2537e7a8edc0babad99d8f9a85c"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_REUpm.png",
+      "digest": "11353249e8f1cc142cb76f5c0fc764a914a65053d795572b18784e9e550feb41"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_RcEqH.webp",
+      "digest": "4a9c5a6df7d41bd19fa2466d4a8d821659afef618cf08f23f20e16f8bd57f4de"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_WvdJN.avif",
+      "digest": "98347ad6b845a4545eef6a96bea22a504d4df1e78cac05471dcc19383b813122"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_Z15xKCt.webp",
+      "digest": "74db93e15afe827e4421e4155594f05bf78e33af4cdd8cfec2c99cb8d385668b"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_Z1Qp9z3.png",
+      "digest": "3646b54694fbf9e4be105d18303d81d6cd0e7af1e41d51cb0a9a7b7fcbf604fb"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_Z1YPUGy.avif",
+      "digest": "68d64e38c280de56d72dca55a046f7c0e8ddd603ffa502cee6af1492c2df7270"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_Z25fEsY.avif",
+      "digest": "4f587297ef09c3fc3a3f33eec5fe618cf72fdf2b0d6ce41cbf3e543604dbf291"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_Z2lgj3X.webp",
+      "digest": "740ee6de3899c2cd902b01ec847ae212bace8edeab68ed7b0ba31fcae0c42056"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_Z2ufmvW.avif",
+      "digest": "275203d98dbc1731f7797813be0bd09220dbdc82cd87f666202d78075393ea51"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_Z5qO2V.png",
+      "digest": "453b6bda7d3f8fbff314c8b2ae0f552162db5129926ba11e5682b1412d8fd71a"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_Z8Jrb2.avif",
+      "digest": "7a1461a5b67888e6835f5e73936914ba304a7af274ea17fc9382b413597a41c3"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_ZIGCpw.webp",
+      "digest": "420a73261f59ebd8275c95e146dbb654b57f05b3ba2cca743b973a9f3cf6a822"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_ZIh1YP.avif",
+      "digest": "63894edddfa954a9450dbf656d444caf7e56810ba2e183eff4818fce5aaac71d"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_u5KKR.png",
+      "digest": "32e773b12e588000484a8a7b5237f9e9bafd76d38a10448ff9ac4031aaa1d5c1"
+    },
+    {
+      "path": "_astro/anthony-edwards.C6Q0aPru.jpg",
+      "digest": "bc9cabfae1125da0d4520397260c72909473e536b0e027aa447c78576ea82455"
+    },
+    {
+      "path": "_astro/barlow-condensed-latin-600-normal.BFJEwTuo.woff",
+      "digest": "02e9d2ca2e9af5d8dbdfd30c4a5aa59632205901e9045140b559a44d361d8a46"
+    },
+    {
+      "path": "_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+      "digest": "215a93c696f442034a46fbb382958f753fda60e30490683aeea6b235fcbb2b66"
+    },
+    {
+      "path": "_astro/brandon-clarke.DI7PKZp5.jpg",
+      "digest": "b864f9073782b2556d93a593d44bd36498234a68f692fe6b5fcfb3bbffab1c3f"
+    },
+    {
+      "path": "_astro/cj-mccollum.ngownTQ1.jpg",
+      "digest": "5688298371c4ec218dae6f5131685f4ab511fab6d0797685146953235c8c7e45"
+    },
+    {
+      "path": "_astro/damian-lillard.BzQ5lR26.jpg",
+      "digest": "ba8a0f23d721519e4796c89513f21a9e3c1d4fafe39f84a0192244162bb3abcf"
+    },
+    {
+      "path": "_astro/danny-green.BlmQSMAX.jpg",
+      "digest": "c9752a7cd9604e24126076812b3ba67883ac694857a196c3f6c893ced735f112"
+    },
+    {
+      "path": "_astro/dejounte-murray.CqA5YVln.jpg",
+      "digest": "01cd99a39fad8138a6eae8084b4c91f2e01cc82c8f677d1d71bd8afdb78da798"
+    },
+    {
+      "path": "_astro/dwight-powell.CxpjKRdp.jpg",
+      "digest": "d1cab51c99f25b380d05d14bd5fe4f826b51042d4c007a7d105a7240265cd211"
+    },
+    {
+      "path": "_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+      "digest": "c38570d224b830056e69484bb9e768e1d3fa7ba4755c8891a3c6d366194d2ff3"
+    },
+    {
+      "path": "_astro/fraunces-latin-700-normal.DTjk5d1Q.woff",
+      "digest": "1f9b0930f7a5e2b6aaba0df15f21bcdebebfcaff4b704daf3619589da69fd2a4"
+    },
+    {
+      "path": "_astro/home-atlas.eapPC7KP.png",
+      "digest": "178f3989118f0f2f9cc5218c9c17aee4e72a1fccf16caf3e66279eba2d7f71bb"
+    },
+    {
+      "path": "_astro/inter-latin-400-normal.C38fXH4l.woff2",
+      "digest": "8909904ab6c872eb994093482a88a28eca2cd95912d7b6fecd72103b0dc07edc"
+    },
+    {
+      "path": "_astro/inter-latin-400-normal.CyCys3Eg.woff",
+      "digest": "e20fa0b4fd2dd26e4d14b3ac3cc922509c3a63fa5e910e90c614544aa042dd45"
+    },
+    {
+      "path": "_astro/inter-latin-600-normal.CiBQ2DWP.woff",
+      "digest": "6a9cb3a509b4eeaf12b7dda6c4aacac3e85d07f4201bf4dd716e332e692b87bd"
+    },
+    {
+      "path": "_astro/inter-latin-600-normal.LgqL8muc.woff2",
+      "digest": "f9a06e79cd3a2a20951c0f0e28f66dd0e6d3fda73911d640a2125c8fcb78f21a"
+    },
+    {
+      "path": "_astro/ja-morant.IXflZFFv.jpg",
+      "digest": "29f451b2c9b61ed00ac3cbf5208b61438108faab6a626e749b82c0a622671b56"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn.jpg",
+      "digest": "0adddc2e2918f307434e18e79c96ed7bf2e852122bea0adc0c38203584d7cb78"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn_10ufWb.webp",
+      "digest": "deb2c7b67c0ada8c1240b5173134056137012b49d541cbfc038379d2809f22e9"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn_15R30E.webp",
+      "digest": "34da97ce1120024b6f524a58c98a6a0d03125a5a365e34edd5a508b01598c7f4"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn_1TU3A6.jpg",
+      "digest": "63bb200bad679a154d51983f0a7e6022c70158cab8cc413dab98057d93fb16e2"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn_1geTqK.jpg",
+      "digest": "25c0259bdd4eebc6b9730a7b139db1e81de73565261d28dfa52d865ec1913eb8"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn_1lDOnw.avif",
+      "digest": "4263685af421ffa00dc0f4cc1e4605d52f1e016eb1d3aa877ef63464c27d1034"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn_1q1bX0.avif",
+      "digest": "fd49583e3e80e71a3b07cf6911aee9e4f08d49553e59b521decbb5eeccaacef6"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn_1rUePY.avif",
+      "digest": "2197fa5c1cffd4ecba1fcccf172bf80a6afe3da6bb4554e89a905b8bfeef776c"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn_1zJai2.webp",
+      "digest": "bd00f29811f4ebb7b49d2810c82427ee23b88d7c5a7d24421089772be016d3e8"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn_Fvprp.webp",
+      "digest": "85d40817658162f35f395f86a6c47fc3c358a3296d4f913ad797a1116d8ca31d"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn_Z1Uha2R.jpg",
+      "digest": "eb3455e4fd3d3180e754c49eb258315774cb545249ca96043fcaec1a834d214f"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn_Z1mEwyv.avif",
+      "digest": "bfe46c05dca89d74f1194ff708d8a3f1ea8939fe351d39d8384d8f41b9e68eea"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn_Z1qp2Ku.jpg",
+      "digest": "5a4b065ba5a1266530b236a2438c201a6943be036d6ed864f339af4fcd15108b"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn_Z1xb2Xk.jpg",
+      "digest": "5767173fa035c4757d2593052f1da5f2b8a694541bd0ae383f1629498f2ca191"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn_Z21kFHQ.avif",
+      "digest": "b9ea32d770f286a8001b453581b6f46758a96ee2515fff603bef4d6777fe8b2f"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn_Z2kCMB7.jpg",
+      "digest": "2bc190cd0384e3484be4563b39b0da1338b416cbaed9fe439698e9aa265d1408"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn_Z2qDhrJ.webp",
+      "digest": "cfb3b831b9445407b4d19f5711c89e8811f87889f4dbbc1e6168f25333bbc572"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn_Z2v0E2d.webp",
+      "digest": "65ab475cc259e587f9669465af83d4786474e2c499457a82b2e2cea539bdf116"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn_Z7EBnx.avif",
+      "digest": "4d88a54c492216242e5dd06111a00fdd41c6fa697c4fa46618b7ee9c95c684fa"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn_Z97Raj.webp",
+      "digest": "7c6c07d9bb7e4973176350a4f997f358ff1295715a15c486086ec9d53c53313a"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn_ZMN1jE.webp",
+      "digest": "b7918a32c6ffabf2f3b6399fb798630e7f707150a9868006d2c1a86ebd977589"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn_ZmAlGk.jpg",
+      "digest": "fa5e972a8429175fb55e7a73a907fcbc2b543bee197a2f79a6825e120ea0c62e"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn_ZqWIgN.jpg",
+      "digest": "aa8386d4a498f167989ba0614ce7a37525fa546750312018d32617a1560a4d2b"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn_Zx1eVM.avif",
+      "digest": "be3410815c02855a8e14a1fea68df20d2324778727385fc7ac130a9376edd922"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn_mcuSP.avif",
+      "digest": "dd78087ab9ee733f45298d34ef8aa8ffe7960558d6cde7043ea044de5bb91226"
+    },
+    {
+      "path": "_astro/joe-ingles.B_pEwfMx.jpg",
+      "digest": "9cf8ccdc7221deede6df154ecb1201534165c86f35a49a4330afa0e4f034b44a"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk.jpg",
+      "digest": "6f18766d49193c6858d607ae26551ba6c4422eebefb535ca2805ccd8b54e956d"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk_16pOxE.jpg",
+      "digest": "0f1ab9c0878641a59f4eed86108b9182511ef8df3880018e061456c362ab4a74"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk_1OhRS2.jpg",
+      "digest": "76a4bdbb496bba18b5123d9f69289ff38efd574f1ba4cb143ca832b63ad761bd"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk_1P4yxG.jpg",
+      "digest": "26b6654ba50a39c1dd89753752a75254e8c6f9df741d9cc65ba155eb5a4a0e6d"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk_1fUMpD.avif",
+      "digest": "0c778c6f08eca0101c61d652ba8ceb94c04beab298f79438d7443f872d4cc3b6"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk_1jHccy.jpg",
+      "digest": "edd2ff6480e506913303faadb255445c887d8f655e93d09e330b474f40f6f33d"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk_1jbina.webp",
+      "digest": "50a205c8970a4d73971275e0a14bfa16b30644ffa60e96f3d1b4d9cc68049e85"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk_1oNtOc.jpg",
+      "digest": "95683129716f3cca74192e52f380caba1d0266d8cf78c657d3f4535885fe3c23"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk_2bkiq6.avif",
+      "digest": "52e83b8da497965b83f997222cd20cad6672607dcbe34626c2cde09d75a4883a"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk_4palW.avif",
+      "digest": "0506d89fbb17f19c97e46b222288782630ae56609bf641ee31eca6fedecb550d"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk_DDRP2.webp",
+      "digest": "a14257674dc2b0e1276b3cb89139b38f410122f404315a8b523e3346ef1356d8"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk_PitKy.avif",
+      "digest": "f37547f15bfb45c325aa811957693345b00878fe59465cc676c6fe087bfe1ca3"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk_Z1NIvGE.jpg",
+      "digest": "a7c321e658a35873d85865c5103923d984a123a7e25400095a15165fb11d85e7"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk_Z1NavH8.webp",
+      "digest": "e1be9e7a7129b1dadf260749316504be1ed8f83844e783c19035c72984331a0a"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk_Z1kGlVz.avif",
+      "digest": "2f26b73d17bdab333febd11bb5a6c395bb4b0fb64e7529dae3393c0333c70760"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk_Z2dDTKX.webp",
+      "digest": "315ca948f84060515593e302422832cf5aa661614026b36daf995a076ec40dfc"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk_Z2elOlJ.jpg",
+      "digest": "39a61cd5882c4aad3bf8545ccf5af33399033008c3ecff73212984a82d449756"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk_Z8RchW.avif",
+      "digest": "5a0b8734dd90feaceb29441a57fc8b694dcf3e63642513abed613936c7aad89b"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk_ZAIkRr.avif",
+      "digest": "a3d30670325cab197d33b8f6c72cac2247936b01834ae7bee9d8f33fdf183447"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk_ZLC57X.webp",
+      "digest": "dfdb87afcbbf423a8aa15882deee076f4e619854030fb3f0dc9f48b2fa1d8ee6"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk_ZSk0Gc.jpg",
+      "digest": "0decf5bc60193a432bdd9d201c626734d0283a3ad279dca02c152b4b007d05c7"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk_ZbeVNB.avif",
+      "digest": "fe031267cf9d91fdb57c0324d780419e0884690624a25f82ad6322b6fcf48e8f"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk_ZlYLsS.webp",
+      "digest": "32cb9a81e5693bb9ac6627b1f738a940cf8edb4a9443984ca91d439c2ed1213b"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk_qmvb8.webp",
+      "digest": "cf8db188eef5984a710fcaf50148b8f40fed70493f07898819e5e4a1f3373cd1"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk_yoIwz.webp",
+      "digest": "3c0445eab62ce294ef0bc980e98708605e5bc50e0473335ff9c53224289f6773"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH.jpg",
+      "digest": "4f631559835221f8276ef7b1ee09b4435a5003ad9a50614bb0c72673dec745b6"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH_11TzG2.webp",
+      "digest": "bb9c5afcdaaa01cf4f8e253b407b6ddffe6e86e27392eb3134327933ed278c83"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH_18j2DY.webp",
+      "digest": "8b8bd4948a3df5d8084aaca744a387572b60f586086ff96c98b97dc19842f86d"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH_1KzFeX.webp",
+      "digest": "5a0717f300d188c44fc8d202d40dc6f35f37ee4136c1dd6298bb3c923088d2f2"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH_1gEkh5.avif",
+      "digest": "e387ab90ad5329d59a92887f67481d2b55adc6172c522d032fd6021f8b191512"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH_1o5O1Q.avif",
+      "digest": "2c7b30bf805b2e4f4a84ccc475bf3ceab41d64b68be8dae616d6d7c501efcc30"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH_1tkyzP.avif",
+      "digest": "09e92c36f6e210ed6f9ac6475b79cc62ae06d050813038695f335fe873b46e5e"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH_2bEi4U.webp",
+      "digest": "1f86120d1a09504fdbd3c3c0c8f54488de6d08b2f2a9ec2049728efb8e1eb8db"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH_2oUbrY.jpg",
+      "digest": "47d66189312602be7bb01bff4582af5c6348bda1a641ddfd58fd0f9b156670e5"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH_2ubYFh.webp",
+      "digest": "f4ab00c8ef1c0fe4610d941a0eecbf991e44a000a6f6391ba7a2b660d0947bf1"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH_UAJFU.jpg",
+      "digest": "09ecbd4d94fa0e32019ae60b8f064d35dee1bcc3a2a55116c052637430cd16dc"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH_X7CFI.avif",
+      "digest": "da407a9b2548f5e7b6c2dad83dc81592a95ba259c33f268d579e09408215b4be"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH_Z18rb4u.webp",
+      "digest": "83818e6c89a0435d24b39ece9e2c0d01ddd943290ea66f97b2e489c7266c4fef"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH_Z1RPaox.jpg",
+      "digest": "bb75c17c24720add938810f2a3b31091a802a1469c41cf9448d4d388ce8ba719"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH_Z1fywNy.jpg",
+      "digest": "d54793438d5f851e6e03f4efd752c2f88c218e7f876096a1ee3537f6c8908338"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH_Z1vKIet.jpg",
+      "digest": "49c2bd65d1b74be9358d7fd41c4af6cd73bbc58fac4ba44ef1790f589f440f6a"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH_Z2lXPsG.avif",
+      "digest": "b50d3bedfc84a4f7c8653cf8a9f232aead8219961393cec09e8693f595f4d871"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH_Z2syEnS.webp",
+      "digest": "4caa271128bc141c86e635e75e6cd5d7875b2fb679a5d0b44efea2bc5e218f67"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH_Z5dBJd.avif",
+      "digest": "873c6c52579bedfccc646d282c570ce5bb34a70a1b9bc7f36fc2325290cc4bb4"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH_ZOtTXB.jpg",
+      "digest": "00ba14ba224fb63dc002f272896078d219adb75d86512a66b02c648e02ad2c03"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH_ZREoGC.avif",
+      "digest": "997748754e7f54552b349a823cf2bc17dc0a548e0cf178f21b85b2c9c326cab0"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH_ZovICt.jpg",
+      "digest": "bb00895f01e3c7201c946498e6deb63f6aa01c87ed3663ffe6452ba9352cd018"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH_ZvWdnf.jpg",
+      "digest": "61866b8c66c24257283759dda6e82c383c8e95ad6a850c5662d9505afab71377"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH_kRfGz.webp",
+      "digest": "4342ad89717a6de4384d245bddfe5b09549d8a1a231f961d26ac2e220cc98211"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH_x30PL.avif",
+      "digest": "b701c8ab46e9fed84e731e5b4f47a8cdae8262d6176a0d805d908b21627d2f6d"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ.jpg",
+      "digest": "611c8be59bbb4c671753ccc7a33ccf8de57c3d28d26f1bf8f58aab454541fc7f"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ_1076GV.webp",
+      "digest": "fe1ab799f0237eb8ec9bfdf21f2c010bb676e1ab8d422f1379752f9991a0e58d"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ_1Fve4C.avif",
+      "digest": "a1a8b2bef88c7e7bfe5573ff4062db56f96e25bec74c2785b152fd9ea2cc34b2"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ_1Xt99r.webp",
+      "digest": "568d0733e12eaaaecd4f4d900a9d0e24a02a71c7b7c53846766ed211f04163fc"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ_1cX6WI.avif",
+      "digest": "ac304943dc21e9cb98723a53be52f0b35b2681c74b5d19efb56879543c032c29"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ_1hWJRe.jpg",
+      "digest": "3c433d9687cd2c980307f2cb65bee8791ba921a39ca18c18e7b848d6a6d6e88d"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ_1n2BDN.webp",
+      "digest": "4294df1a9689e9c4b86cb06a10a5adfb223a549c684cb0887d45f8baebe47d89"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ_1nT6Vh.webp",
+      "digest": "1037a5e34ce897488930e6709fdf6338665c444e38c575d0f02faee8e1c5df70"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ_29dYkS.avif",
+      "digest": "5dbe4265777290e6d8b75bfb73fa2ed6d7793eaa98d6000ed4c08aac22f07404"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ_2w9uhK.avif",
+      "digest": "d6241853020477bbc3beaabfdc5ffaec2dfb01cbc231e70d665b5f15fcb762f9"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ_9uWfB.avif",
+      "digest": "08e8e1201acae2f57cb3cb3436fabf66efe6ccb27c11d8340fedd35cf17f436b"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ_IwVCq.jpg",
+      "digest": "a7826496d4eee7cd472516b2b93e7a613d15202c7b021e72c9ac9fcf55f97cc4"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ_OpCKk.jpg",
+      "digest": "a9f63ed00abf079e41f13c12401de7fc92f75aea1ed35e63e2c6497bd8c02154"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ_UlYOn.webp",
+      "digest": "41772a294c510dcda44273248486bb5e4daeb657640d67f4fe3d3588c2f9af98"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ_Z1D6AoI.jpg",
+      "digest": "e1b886de82b0a8cef8da3831e44404eeb503fb58b44b84f50a6cb94f2b724c24"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ_Z1Hqu4Q.webp",
+      "digest": "511f27b2e2070814cb69bb55d9ad1e9a4b79f93b6f13b6a88020403d49a9820b"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ_Z1kuY7Y.webp",
+      "digest": "d815c66dfb74db03192a011f018e1987076137710634100855224a66fcc2106f"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ_Z2126lA.jpg",
+      "digest": "1fa176a71c7ddfcfdf26f02c3950b8f92af36e9775073308c74c46e041e615b5"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ_Z4BRT0.jpg",
+      "digest": "e07cd92c7abbb1cdc553e375202a455df9ddefdb262e9dae1945d02a176d936e"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ_ZGbmXj.webp",
+      "digest": "be8b1ad6244571686cd3f763a4a27dd010c7216362c8dfedbd4cba1d7e3b48bf"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ_ZM7J2m.jpg",
+      "digest": "86e6d22f60b0b8acb1e5360eb6c631b80169c88d1518bd4ccf3b553e96145396"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ_ZdpxGg.avif",
+      "digest": "3c586772a6c9351449466307c8666f43bb2db54217379d198ec7e0a994696607"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ_ZiImp7.avif",
+      "digest": "559c1ce858fa6ee9af51c74af4b3b9d239e213a11e1c70cf2423480b75064d66"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ_ZozfOX.avif",
+      "digest": "81c5dc822d3276f8a59e790ad465a21faad407a9e5dd13deda4f1a30d70a94a1"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ_lBqFy.jpg",
+      "digest": "a96eef01228f2710dda0907b61b284abe866392b33522b76704d6680ce2d2c13"
+    },
+    {
+      "path": "_astro/lebron-james.BOEUjp68.jpg",
+      "digest": "8f5550b3acc78302a465a84b9e78f62d466e484fbfec1e3c1054e9123457680c"
+    },
+    {
+      "path": "_astro/markelle-fultz.BUCt7PnW.jpg",
+      "digest": "a159eaad7777cd6825ec2db2ac959dcdf526aa241d71c58d2c62a2ff78a3a73f"
+    },
+    {
+      "path": "_astro/moritz-wagner.BF2fokPf.jpg",
+      "digest": "bcfe61a1b69129db077900592b8113ef282a12a0558707ba92e38d5e6dc58373"
+    },
+    {
+      "path": "_astro/ricky-rubio.DAUd2Tah.jpg",
+      "digest": "5e1245b16c4ba4e8d95100c40eeb360e6318a6716106bef1f62bf9667a101709"
+    },
+    {
+      "path": "_astro/thomas-bryant.CvRoJOz5.jpg",
+      "digest": "b651bb59f1caa3dfe67ff81ab524610002b8c677f710206111d58b5d6c9d589b"
+    },
+    {
+      "path": "_astro/trae-young.CeQXqkD2.jpg",
+      "digest": "0c7a77e45d05648b8e52e6db692086e240e883639e8a8617f36d44f70061fcaf"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif.jpg",
+      "digest": "8a307fe26217d5c951d8647367207cb6c383a83ea96b1c6361e969ab1c914270"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif_1C0Opu.avif",
+      "digest": "f2e134c1d312ddf37540557801164359aaff87ec8aad3e259f3e066fafad812d"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif_1Xz0ny.avif",
+      "digest": "392a0a52ae8daf2515543f73c89827d6fcdaf4e9deb461182ebd4693e41bd5ce"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif_1YdV8H.webp",
+      "digest": "b5bf0843a097d272ba99a6ec6c3f798407887b51c403c7e50a88ed9aff97c670"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif_1YqM4z.webp",
+      "digest": "e027d3f26260e275488082cfc8f9e2ed2f28984a350196795749584be63083dc"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif_1v6B0w.jpg",
+      "digest": "5d9685599ca25b2f8a8e06e2f2dbb10f574741222af41427fe40ef174411e9d9"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif_20Nx74.avif",
+      "digest": "2ac32fd20bf56d1e3a3c3d704252ab0c79593648d94539d7694948aad4419dcb"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif_23W9db.jpg",
+      "digest": "75cad8bf33a48d94ab74961988538d80a675581ce519acb37e60801410271b84"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif_4fpJC.jpg",
+      "digest": "5211a983f8c803affb1dcec5f2329234ba2a0da81742540d09380a11e0c5b5cd"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif_Ed4Yz.avif",
+      "digest": "393807c2978161d8e86e85120d81e99ac5787c96b48c66a3688eb51f3e6d09fc"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif_Z1EBryz.jpg",
+      "digest": "f88e93ddd2723ee4cf1fb8872670b30cef032999139707872179a164b3289bab"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif_Z1Loqln.webp",
+      "digest": "42e63716bbe0d9e9d87f10b6d8cee420e0ca179ba3403c1cb34418366488eb6e"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif_Z1kvInF.avif",
+      "digest": "fcf595eaf33951aec4242643931ec42afd8ec21c174decfdde1b33cc4bbd1f96"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif_Z1ofRE9.avif",
+      "digest": "4113cbe08e31484a4c00fb7f447a48c7d1922cdc3c669c6a56650ffe5a996d01"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif_Z1vBz9G.jpg",
+      "digest": "39efb13cac34e3739ace280a245d1f6977a60c9699a641e7636bd1b49a8a5f13"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif_Z23pag9.jpg",
+      "digest": "8beedde2bd37a6092237a8259b469ea52bf8f8388c165a9e05ea26ffed98a3fa"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif_Z2i4zGV.jpg",
+      "digest": "1af3def4aea2380a4899e4df3986ff4d17bf201f926389b8cd41e3f9ab65e0c6"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif_Z42az9.webp",
+      "digest": "c00def8d5f11961f015e2b14c48c456b5d148066008ad9ca852833f84ae385b6"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif_Z8qDR4.webp",
+      "digest": "d832d3aa38734082363415fc929530218fcda9b05bd6ea26ffafa8aed5c34d84"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif_ZPpkru.avif",
+      "digest": "57a601d11fa2473dfe581fabc709ae966eb47051ebce0d657be97c900e35f99b"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif_ZSU3CW.avif",
+      "digest": "28f665c825832c8daf9f9979dfb1824d1203e050e5e63e18fce5a3f369ed971e"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif_ZcfDKH.jpg",
+      "digest": "33c0cc76e857ff27ff0b925d628bcb16d3854f3146e021ec648337170c89637d"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif_ZixjDq.webp",
+      "digest": "a003ed5977b251823ab9118c1f62851c89bf4bf9502b756b85ee4e7bda379f5e"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif_fm3Ov.webp",
+      "digest": "e54e9d5a6b0ec0177a493dca9a2194bcbc29f98dc56bebfb9e1c8007a3819ce4"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif_tNmCv.webp",
+      "digest": "36a830689a4648f0032c9fa0f42c2d11fa22ece32387df8729c232b9c2f633c8"
+    },
+    {
+      "path": "_astro/video-player.tjCucBQj.js",
+      "digest": "2cfb250b83c5b46fd707a37d7c05cf63303d09e28a9d498f83648db013d0a7d1"
+    },
+    {
+      "path": "_headers",
+      "digest": "e4cdfc76fd86cda7dbe24177e82b7eb20ecc75083b8174ef3df2bcfbb7e77168"
+    },
+    {
+      "path": "about/index.html",
+      "digest": "8fe6987679c9687ad7b7064acb858f030cedcfb41d76b5d41b00533b8e8294e6"
+    },
+    {
+      "path": "case-index/achilles-rupture/1.json",
+      "digest": "4c8b8d01e6a2e30436122a7de7610534487823b1b1b3dac07c6ec8cc1c04f1cb"
+    },
+    {
+      "path": "case-index/ankle-sprain/1.json",
+      "digest": "0d4187270113bc2f886a40a2ce6114ae16850acdb59251bb83a6adc480f1e64d"
+    },
+    {
+      "path": "case-index/manifest.json",
+      "digest": "bbe7703d9a9124184ff0c3913abe748ef43adeb8ed7395caa8d24779c3e3ff98"
+    },
+    {
+      "path": "cases/anfernee-simons-ankle-sprain-2023/index.html",
+      "digest": "0c9363ab3e4e4e587ba1f5ce0663ddfb37704ff9cf63ed50de37814eb0b901d8"
+    },
+    {
+      "path": "cases/jayson-tatum-achilles-rupture-2025/index.html",
+      "digest": "88167320477d59d24c639ccbbfb0578c60910a360183ec10f10d4d8d0133ad02"
+    },
+    {
+      "path": "cases/kevin-durant-achilles-rupture-2019/index.html",
+      "digest": "aa360224b5ee860edcb41f96eee656dc653de4d4662195edd1f38fa6d68a9748"
+    },
+    {
+      "path": "cases/kyrie-irving-ankle-sprain-2021/index.html",
+      "digest": "b2f655ff377d86bb6d61ad428aab01be987bdbf639891eb2f835dfd271b83c99"
+    },
+    {
+      "path": "cases/lamelo-ball-ankle-sprain-2023/index.html",
+      "digest": "38e45c84c82a91f6759f738e942732edfd437f1b32573b9b51fef5b97f338a2b"
+    },
+    {
+      "path": "cases/lamelo-ball-ankle-sprain-2025/index.html",
+      "digest": "b5173eea43e636fbb76f838fa2c78356a3a6477807c72328767bba5d35d4e0fe"
+    },
+    {
+      "path": "cases/tyrese-haliburton-achilles-rupture-2025/index.html",
+      "digest": "30f8fbb495ca17f86882a0033675fee7c0a3fa6f2deeae0e50621260a6e7b430"
+    },
+    {
+      "path": "credits-notices/index.html",
+      "digest": "7b9d7055c74d34dfce37d0c0e6f2b7bf634d294af8744d95e056f50c2cb009b8"
+    },
+    {
+      "path": "fonts/noto-serif-tc-600.woff2",
+      "digest": "c686f371a73517be475546ef3bf186e52f609c919ebf861d83ee13e095102109"
+    },
+    {
+      "path": "fonts/noto-serif-tc-700.woff2",
+      "digest": "060756a7e4ed7988e881dc2e0e2d3b9057a094781c141885c24eeb3f60bd0b4f"
+    },
+    {
+      "path": "fonts/noto-serif-tc-heading-600.woff2",
+      "digest": "1ee4d047cd81f1c834cd141858c754be0cd97eb9bc79a95435cdda9431a57166"
+    },
+    {
+      "path": "fonts/noto-serif-tc-heading-700.woff2",
+      "digest": "afa96c4cb7309fdaa1ca09f866620f9bc4edfd8f3f2a151ff1c75a02152727d9"
+    },
+    {
+      "path": "index.html",
+      "digest": "1324e8f72f5b2a62e0f2a9612d944d2f8a193b587fbafb3ecc1ec273e2c34dd5"
+    },
+    {
+      "path": "injuries/achilles-rupture/index.html",
+      "digest": "d6c939db405d2f351ed8855d000153db67a0db7ca38e3c2d1b235dda5dc9f5ec"
+    },
+    {
+      "path": "injuries/acl/index.html",
+      "digest": "13d17f79cfdd3d57f539330f5978f0cca4e0ef0d91cc330b0310bb7e4a4ddae4"
+    },
+    {
+      "path": "injuries/ankle-sprain/index.html",
+      "digest": "bb0690109897008e178c5b006b7de5e28ebb3b20265e499bd5f30c0d119c5b85"
+    },
+    {
+      "path": "leagues/nba/index.html",
+      "digest": "5f64d9016a331f2cd243e9248d023dc77563895b8ab496de6cef97d06152d9f5"
+    },
+    {
+      "path": "privacy/index.html",
+      "digest": "fc8f41174f6fbec3a7ad374bddca2851d99bb3d3636c2cd81ae00f736dcd0bff"
+    },
+    {
+      "path": "robots.txt",
+      "digest": "16ceb5ee3e0dc13aa9adf31a3ebbe45a1d965b8c2b9f72eaf84e5911e140ed95"
+    },
+    {
+      "path": "source-policy/index.html",
+      "digest": "14de5040011024a80844d889873afe7008b9d24e393734056eddeef379278255"
+    },
+    {
+      "path": "videos/ankle-inversion-observation/index.html",
+      "digest": "9e265c9f47b60c7f0d54f28a0afaf579b283a03fc04be27bcac511b532becbc8"
+    },
+    {
+      "path": "videos/carolina-marin-indonesia-2019/index.html",
+      "digest": "2c4d0446ec2e044fe9a49ae49ca29e640352bdb13c044a98746c1cad0fd05b7f"
+    },
+    {
+      "path": "videos/derek-redmond-barcelona-1992/index.html",
+      "digest": "d5359175c47d8a2273b69401d1ab63c23f11f17289d7f3b299c473233b5d03ce"
+    },
+    {
+      "path": "videos/julie-foucher-box-jump-2015/index.html",
+      "digest": "fef69a858883cb1e55b5503570b67431a54150ad939529f3e600134bc1c0afa3"
+    },
+    {
+      "path": "videos/kerri-strug-atlanta-1996/index.html",
+      "digest": "bec574860a38015b987f2317d1b4c1a14c72bacab8ea3ceab068f8525d915a91"
+    },
+    {
+      "path": "videos/volleyball-pov-135/index.html",
+      "digest": "cbc1ba83ca816ba23ed83f381990d8185bd3f16dd1b653af8ec0ddf99d5ac9b9"
+    },
+    {
+      "path": "videos/zverev-roland-garros-2022/index.html",
+      "digest": "4fd499845a3585d8978e4fc20a919e55552312e2dac8d7c69e9245aaa3c297aa"
+    }
+  ]
+}

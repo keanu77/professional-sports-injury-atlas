@@ -20,7 +20,7 @@
 | Strug / Bwa5Bf656As | 0 | Olympics 官方短片；USA Gymnastics 1996 奧運團隊回顧支持事件；同場第二跳不稱回場。 |
 | Marín / nfpXC98FLuE | 35 | BWF 官方片，0:50 落地重播；西班牙羽協與 RTVE 核對2019-09-11實際復賽，與1月27日相隔227天。 |
 | Foucher / 4y-1D7jTW_4 | 35 | 0:45跳箱，0:50停止，0:55接受協助；CrossFit 2016 Mind Games 回顧支持2015 Central Regional事件，不推定回場日期。 |
-| Volleyball POV 135 / tEHP_6GA6ZA | 215 | 3:35進入網前受傷段落，4:00球友倒地、5:00協助離場。標題 BROKE 不當骨折诊斷。 |
+| Volleyball POV 135 / tEHP_6GA6ZA | 215 | 3:35進入網前受傷段落，4:00球友倒地、5:00協助離場。標題 BROKE 不當骨折診斷。 |
 | 腳踝翻轉 / qwuEydc9qXQ | 0 | 18秒短片；可見排球動作與護膝、無球拍；0:12原片圈出腳踝。選手身分、賽事等級不推定。 |
 
 所有回場日期與來源連結保存在 src/data/videos/expansion.v1.json。官方經典片是事件史料，保留較舊來源以對應當時事件。一般處理引用 https://www.nhs.uk/conditions/sprains-and-strains/，2026-09-06重開核對。內部瀏覽器截圖只用於核對，不進公開素材、Git 或網站。
@@ -39,3 +39,12 @@
 預覽上傳曾被自動審查拒絕（目的地所有權未證）。唯讀 wrangler pages project list 證明既有圖鑑與使用者明示擁有的 sportsmedicine.tw 同在登入帳號管理，dist掃描無私密檔案；帶證據重試獲准。預覽 https://2bfdfcdc.sports-injury-atlas.pages.dev ，正式版仍待發布。
 
 HTTPS預覽九支全部實播通過；POV一次緩衝逾時後獨立重測通過，原失敗與重測紀錄均保留。手機與桌面15個主頁/影片頁均通過Axe，28個公開HTML/JSON/robots回應雜湊匹配，播放前零第三方請求。
+
+## 正式發布完成
+
+- 正式：https://sports-injury-atlas.pages.dev/
+- 原始版本：9fa63393469ec67db9fbccdb772da0a3574e10ce。
+- Production/main：7c0c00fc-32bb-4483-b25f-919027742b2a。
+- 2026-09-06T02:12:15.884Z（台灣10:12）正式驗證：28個回應雜湊與本機產物一致；九支新增全部實播通過，無逾時；手機/桌面15頁Axe與播放前零第三方請求通過。
+- 320/390/1440px正式網站：14支總數、籃球關鍵字7支、六種運動篩選、觀察分類、22:20時間碼及無JS觀察內容/原始連結全部通過。
+- 原有五支保留，新增九支，共14。沒有待核准項目或待完成部署；沒有新增套件或環境變數。

@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-09-06T02:12:15.884Z",
+  "unitTests": 1305,
+  "reviewBrowserTests": 256,
+  "typeErrors": 0,
+  "typeWarnings": 0,
+  "publicPages": 24,
+  "publicCases": 7,
+  "observationClips": 7,
+  "totalVideos": 14,
+  "newVideosPlayedOnProduction": 9,
+  "discoveryWidths": [
+    320,
+    390,
+    1440
+  ],
+  "discoveryTests": "basketball keyword, six sport filters, observation filter, timecode, no-JavaScript text and source link passed",
+  "dependencyChanges": false,
+  "newEnvironmentVariables": false
+}

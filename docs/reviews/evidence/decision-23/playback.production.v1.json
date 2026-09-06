@@ -1,0 +1,185 @@
+[
+  {
+    "url": "https://www.youtube.com/watch?v=xSUKd03LJwE",
+    "path": "/cases/jayson-tatum-achilles-rupture-2025/",
+    "startSeconds": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T02:11:41.883Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.009788,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": []
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=azQpbyDBktk",
+    "path": "/cases/tyrese-haliburton-achilles-rupture-2025/",
+    "startSeconds": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T02:11:44.828Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.014997,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": []
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=7tpaxZTTi2w",
+    "path": "/videos/zverev-roland-garros-2022/",
+    "startSeconds": 1340,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T02:11:47.401Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1341.017679,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "這部影片未提供字幕"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=t2G8KVzTwfw",
+    "path": "/videos/derek-redmond-barcelona-1992/",
+    "startSeconds": 15,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T02:11:50.053Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 16.005253,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "這部影片未提供字幕"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=Bwa5Bf656As",
+    "path": "/videos/kerri-strug-atlanta-1996/",
+    "startSeconds": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T02:11:52.645Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.011756,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "這部影片未提供字幕"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=nfpXC98FLuE",
+    "path": "/videos/carolina-marin-indonesia-2019/",
+    "startSeconds": 35,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T02:11:55.535Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 36.013266,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=4y-1D7jTW_4",
+    "path": "/videos/julie-foucher-box-jump-2015/",
+    "startSeconds": 35,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T02:11:58.181Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 36.014758,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": []
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=tEHP_6GA6ZA",
+    "path": "/videos/volleyball-pov-135/",
+    "startSeconds": 215,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T02:12:01.046Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 216.008278,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "這部影片未提供字幕"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=qwuEydc9qXQ",
+    "path": "/videos/ankle-inversion-observation/",
+    "startSeconds": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T02:12:03.758Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.020274,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "這部影片未提供字幕"
+    ]
+  }
+]
