@@ -1,0 +1,556 @@
+{
+  "schemaVersion": 1,
+  "decision": "decision-31",
+  "authorizationQuote": "好的，我們繼續補充",
+  "authorizedAt": "2026-09-06T09:28:07.455024Z",
+  "clips": [
+    {
+      "slug": "edwin-diaz-2023-patellar-tendon",
+      "videoId": "aVmzQYIwTfc",
+      "name": "Edwin Díaz",
+      "sport": "棒球",
+      "event": "世界棒球經典賽波多黎各對多明尼加賽後",
+      "bodyPart": "膝部",
+      "eventDate": "2023-03-15",
+      "returnDate": "2024-03-11",
+      "observation": "賽後與隊友圍圈跳躍慶祝，隨後坐倒在地並由工作人員協助離場；身體部分被隊友遮住。",
+      "returnText": "2024-03-11 於春訓對馬林魚出賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=aVmzQYIwTfc",
+      "publisher": "ESPN",
+      "sourceTitle": "Edwin Diaz suffers knee injury celebrating Puerto Rico's win",
+      "captionStatus": "not-verified",
+      "startSeconds": 6,
+      "durationSeconds": 60,
+      "sources": [
+        {
+          "title": "MLB：Díaz 右膝髕腱傷勢與手術",
+          "url": "https://www.mlb.com/news/edwin-diaz-knee-surgery"
+        },
+        {
+          "title": "MLB：Díaz 春訓實際復出賽報",
+          "url": "https://www.mlb.com/news/edwin-diaz-strikes-out-side-in-spring-debut"
+        },
+        {
+          "title": "Sports Illustrated：先前隊內模擬賽紀錄",
+          "url": "https://www.si.com/mlb/mets/onsi/news/new-york-mets-closer-edwin-diaz-set-to-return-on-monday-joe9"
+        }
+      ]
+    },
+    {
+      "slug": "rhys-hoskins-2023-acl",
+      "videoId": "9c2i7OQerbY",
+      "name": "Rhys Hoskins",
+      "sport": "棒球",
+      "event": "MLB 春訓費城人對老虎",
+      "bodyPart": "膝部",
+      "eventDate": "2023-03-23",
+      "returnDate": "2024-03-01",
+      "observation": "追接一壘附近滾地球時倒地，隨後抱住膝部，接受場上處理。",
+      "returnText": "2024-03-01 代表釀酒人於春訓對教士擔任指定打擊。",
+      "videoUrl": "https://www.youtube.com/watch?v=9c2i7OQerbY",
+      "publisher": "MLB Games",
+      "sourceTitle": "Hoskins' knee injury | FastCast",
+      "captionStatus": "not-verified",
+      "startSeconds": 30,
+      "durationSeconds": 350,
+      "sources": [
+        {
+          "title": "MLB：Hoskins 左膝 ACL 傷勢公告",
+          "url": "https://www.mlb.com/news/rhys-hoskins-suffers-left-knee-injury"
+        },
+        {
+          "title": "MLB：2024 年 3 月 1 日春訓出賽紀錄",
+          "url": "https://www.mlb.com/gameday/padres-vs-brewers/2024/03/01/748155/final/box"
+        },
+        {
+          "title": "MLB 官方資料：Hoskins 2024 春訓逐場紀錄",
+          "url": "https://statsapi.mlb.com/api/v1/people/656555/stats?stats=gameLog&group=hitting&season=2024&gameType=S"
+        }
+      ]
+    },
+    {
+      "slug": "tim-hudson-2013-ankle",
+      "videoId": "q9WIUVebPf8",
+      "name": "Tim Hudson",
+      "sport": "棒球",
+      "event": "MLB 勇士對大都會",
+      "bodyPart": "腳踝",
+      "eventDate": "2013-07-24",
+      "returnDate": "2014-03-02",
+      "observation": "補位一壘時與跑者接觸，腳踝受撞擊後倒地，無法繼續投球。",
+      "returnText": "2014-03-02 代表巨人於春訓對響尾蛇先發登板。",
+      "videoUrl": "https://www.youtube.com/watch?v=q9WIUVebPf8",
+      "publisher": "MLB",
+      "sourceTitle": "Hudson injures ankle covering first",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 504,
+      "sources": [
+        {
+          "title": "MLB：Hudson 骨折後春訓首度登板",
+          "url": "https://www.mlb.com/news/pitcher-tim-hudson-strong-in-first-cactus-league-start-for-giants/c-68600942"
+        },
+        {
+          "title": "MLB：Hudson 右踝骨折手術紀錄",
+          "url": "https://www.mlb.com/news/hudson-undergoes-surgery-for-fractured-ankle/c-54853176"
+        }
+      ]
+    },
+    {
+      "slug": "buster-posey-2011-ankle",
+      "videoId": "KK-tjBfB9ys",
+      "name": "Buster Posey",
+      "sport": "棒球",
+      "event": "MLB 巨人對馬林魚",
+      "bodyPart": "腳踝",
+      "eventDate": "2011-05-25",
+      "returnDate": "2012-03-09",
+      "observation": "在本壘接球時與跑者碰撞，隨後倒地並接受協助。",
+      "returnText": "2012-03-09 於春訓對紅人擔任捕手，完成兩局守備。",
+      "videoUrl": "https://www.youtube.com/watch?v=KK-tjBfB9ys",
+      "publisher": "MLB",
+      "sourceTitle": "FLA@SF: Posey helped off after collision at home",
+      "captionStatus": "not-verified",
+      "startSeconds": 5,
+      "durationSeconds": 177,
+      "sources": [
+        {
+          "title": "MLB：Posey 生涯傷勢紀錄",
+          "url": "https://www.mlb.com/player/buster-posey-457763"
+        },
+        {
+          "title": "NBC Sports：Posey 傷後首場春訓賽報",
+          "url": "https://www.nbcsports.com/mlb/news/buster-posey-catches-two-innings-in-first-game-since-collision-last-may"
+        }
+      ]
+    },
+    {
+      "slug": "kendrys-morales-2010-ankle",
+      "videoId": "CHU789PuCWg",
+      "name": "Kendrys Morales",
+      "sport": "棒球",
+      "event": "MLB 天使對水手賽後慶祝",
+      "bodyPart": "腳踝",
+      "eventDate": "2010-05-29",
+      "returnDate": "2012-03-16",
+      "observation": "擊出再見全壘打後，跳起踩本壘慶祝，落地後倒下；周圍隊友隨即停止慶祝。",
+      "returnText": "2012-03-16 先於對響尾蛇的小聯盟熱身賽恢復出賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=CHU789PuCWg",
+      "publisher": "MLB",
+      "sourceTitle": "Morales hits walk-off slam, hurt celebrating",
+      "captionStatus": "not-verified",
+      "startSeconds": 19,
+      "durationSeconds": 71,
+      "sources": [
+        {
+          "title": "CBS Sports：Morales 傷後首場小聯盟熱身賽",
+          "url": "https://www.cbssports.com/mlb/news/kendrys-morales-plays-in-a-minor-league-game/"
+        },
+        {
+          "title": "Los Angeles Times：3 月 22 日大聯盟春訓紀錄",
+          "url": "https://www.latimes.com/sports/la-xpm-2012-mar-22-la-sp-sn-angels-kendrys-morales-has-two-hits-in-in-angels-win-20120322-story.html"
+        }
+      ]
+    },
+    {
+      "slug": "steven-stamkos-2013-tibia",
+      "videoId": "WC6e9OaS8WM",
+      "name": "Steven Stamkos",
+      "sport": "冰球",
+      "event": "NHL 閃電對棕熊",
+      "bodyPart": "小腿／阿基里斯腱",
+      "eventDate": "2013-11-11",
+      "returnDate": "2014-03-06",
+      "observation": "回防時失去平衡滑向球門，腿部撞到門柱，隨後無法正常起身。",
+      "returnText": "2014-03-06 對水牛城軍刀重返 NHL 比賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=WC6e9OaS8WM",
+      "publisher": "Fred Murtz",
+      "sourceTitle": "Steven Stamkos breaks his leg Tampa Bay Lightning vs Boston Bruins 11/11/13 NHL Hockey.",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 353,
+      "sources": [
+        {
+          "title": "NHL：Stamkos 受傷與首次復出日期",
+          "url": "https://www.nhl.com/news/steven-stamkos-career-timeline-with-lightning-281087120"
+        },
+        {
+          "title": "Sports Illustrated：Stamkos 復出對軍刀賽報",
+          "url": "https://www.si.com/nhl/2014/03/07/steven-stamkos-returns-to-lightning-as-captain"
+        }
+      ]
+    },
+    {
+      "slug": "connor-mcdavid-2019-pcl",
+      "videoId": "bni6Jp6p4P8",
+      "name": "Connor McDavid",
+      "sport": "冰球",
+      "event": "NHL 油人對火焰球季最終戰",
+      "bodyPart": "膝部",
+      "eventDate": "2019-04-06",
+      "returnDate": "2019-09-24",
+      "observation": "持球推進時與防守者接觸，失衡後腿部滑向球門柱。",
+      "returnText": "2019-09-24 於季前賽對亞利桑那郊狼重返比賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=bni6Jp6p4P8",
+      "publisher": "SPORTSNET",
+      "sourceTitle": "Connor McDavid Suffers Brutal Injury After Slamming Feet-First Into Post",
+      "captionStatus": "not-verified",
+      "startSeconds": 10,
+      "durationSeconds": 116,
+      "sources": [
+        {
+          "title": "NHL：McDavid 左膝傷勢公告",
+          "url": "https://www.nhl.com/news/edmonton-oilers-connor-mcdavid-to-begin-rehabilitation-for-leg-injury-306715866"
+        },
+        {
+          "title": "NHL：McDavid 傷後首次季前賽紀錄",
+          "url": "https://www.nhl.com/news/arizona-coyotes-edmonton-oilers-preseason-game-recap-309439706"
+        },
+        {
+          "title": "NHL：McDavid 傷勢後續披露",
+          "url": "https://www.nhl.com/news/connor-mcdavid-declined-surgey-to-play-this-season-314292808"
+        }
+      ]
+    },
+    {
+      "slug": "mikhail-sergachev-2024-leg",
+      "videoId": "EScFb5vASZ8",
+      "name": "Mikhail Sergachev",
+      "sport": "冰球",
+      "event": "NHL 閃電對遊騎兵",
+      "bodyPart": "小腿／阿基里斯腱",
+      "eventDate": "2024-02-07",
+      "returnDate": "2024-04-27",
+      "observation": "與對手碰撞後倒地，隨後抱住腿部並接受場上協助。",
+      "returnText": "2024-04-27 於季後賽對黑豹第 4 戰復出。",
+      "videoUrl": "https://www.youtube.com/watch?v=EScFb5vASZ8",
+      "publisher": "Center Ice Central",
+      "sourceTitle": "Mikhail Sergachev Injury after Alexis Lafreniere Collision (FULL CLIP) - 2024 NHL Highlights",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 109,
+      "sources": [
+        {
+          "title": "閃電：Sergachev 骨折手術公告",
+          "url": "https://www.nhl.com/lightning/news/tampa-bay-lightning-defenseman-mikhail-sergachev-has-successful-surgery"
+        },
+        {
+          "title": "NHL：Sergachev 骨折後首次復出賽報",
+          "url": "https://www.nhl.com/news/mikhail-sergachev-return-from-broken-leg-boosts-lightning"
+        },
+        {
+          "title": "NHL：4 月 27 日 Sergachev 助攻影片紀錄",
+          "url": "https://www.nhl.com/video/topic/top-plays/fla-tbl-hagel-scores-goal-against-sergei-bobrovsky-6351902134112"
+        }
+      ]
+    },
+    {
+      "slug": "max-pacioretty-2011-concussion",
+      "videoId": "jimZ1tSdPY0",
+      "name": "Max Pacioretty",
+      "sport": "冰球",
+      "event": "NHL 加拿大人對棕熊",
+      "bodyPart": "頭頸部",
+      "eventDate": "2011-03-08",
+      "returnDate": "2011-09-21",
+      "observation": "沿場邊爭球時與對手碰撞，撞上圍板附近的支柱後倒地。",
+      "returnText": "2011-09-21 於季前賽對水牛城軍刀重返比賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=jimZ1tSdPY0",
+      "publisher": "hockeyfights.com",
+      "sourceTitle": "Zdeno Chara hits Max Pacioretty Mar 8, 2011",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 179,
+      "sources": [
+        {
+          "title": "TVA：球隊確認 Pacioretty 腦震盪與頸椎傷勢",
+          "url": "https://www.tvanouvelles.ca/2011/03/09/vertebre-fracturee-pour-pacioretty"
+        },
+        {
+          "title": "NBC Sports：Pacioretty 傷後首次季前賽",
+          "url": "https://www.nbcsports.com/nhl/news/max-pacioretty-plays-for-first-time-since-zdeno-chara-hit"
+        }
+      ]
+    },
+    {
+      "slug": "bethanie-mattek-sands-2017-knee",
+      "videoId": "WJseH_HrC7o",
+      "name": "Bethanie Mattek-Sands",
+      "sport": "網球",
+      "event": "溫布頓女單第二輪對 Sorana Cîrstea",
+      "bodyPart": "膝部",
+      "eventDate": "2017-07-06",
+      "returnDate": "2018-03-21",
+      "observation": "向網前移動時突然倒地並抱住膝部，對手與醫療人員隨後上前協助。",
+      "returnText": "2018-03-21 在邁阿密公開賽對 Alizé Cornet 重返比賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=WJseH_HrC7o",
+      "publisher": "ABC News",
+      "sourceTitle": "US tennis star collapses mid-match at Wimbledon",
+      "captionStatus": "not-verified",
+      "startSeconds": 46,
+      "durationSeconds": 157,
+      "sources": [
+        {
+          "title": "WTA：Mattek-Sands 傷勢與手術後近況",
+          "url": "https://www.wtatennis.com/news/1416827/mattek-sands-enjoying-the-moment-in-new-york"
+        },
+        {
+          "title": "WTA：邁阿密首場復出賽報",
+          "url": "https://www.wtatennis.com/news/1443662/cornet-halts-mattek-sands-comeback-puig-thrills-home-crowd-at-night-in-miami"
+        },
+        {
+          "title": "Sports Illustrated：溫網受傷賽事",
+          "url": "https://www.si.com/tennis/video/2017/07/06/bethanie-mattek-sands-guesome-knee-injury-wimbledon-tennis"
+        }
+      ]
+    },
+    {
+      "slug": "aaron-rodgers-2023-achilles",
+      "videoId": "RDSkmfmqNic",
+      "name": "Aaron Rodgers",
+      "sport": "美式足球",
+      "event": "NFL Jets 對 Buffalo Bills",
+      "bodyPart": "小腿／阿基里斯腱",
+      "eventDate": "2023-09-11",
+      "returnDate": "2024-09-09",
+      "observation": "準備傳球時遭到擒抱，隨後倒地；解說影片保留腳部支撐與倒地過程的回放。",
+      "returnText": "2024-09-09 對舊金山 49 人重返 NFL 比賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=RDSkmfmqNic",
+      "publisher": "Brian Sutterer MD",
+      "sourceTitle": "Aaron Rodgers Achilles Snaps - Doctor Explains Injury",
+      "captionStatus": "not-verified",
+      "startSeconds": 8,
+      "durationSeconds": 210,
+      "sources": [
+        {
+          "title": "NFL：MRI 與球隊確認阿基里斯腱斷裂",
+          "url": "https://www.nfl.com/news/jets-qb-aaron-rodgers-suffered-torn-achilles-will-miss-remainder-of-season"
+        },
+        {
+          "title": "Jets：對 49 人實際復出賽報",
+          "url": "https://www.newyorkjets.com/news/jets-49ers-game-recap-aaron-rodgers-week-1-2024"
+        }
+      ]
+    },
+    {
+      "slug": "harvey-elliott-2021-ankle",
+      "videoId": "ZrJ_d7oyhN8",
+      "name": "Harvey Elliott",
+      "sport": "足球",
+      "event": "英超 Liverpool 對 Leeds United",
+      "bodyPart": "腳踝",
+      "eventDate": "2021-09-12",
+      "returnDate": "2022-01-29",
+      "observation": "帶球時遭到滑鏟，隨後倒地；影片以回放呈現接觸與停止比賽的過程。",
+      "returnText": "2022-01-29 先於對 Wrexham 的閉門友誼賽回場。",
+      "videoUrl": "https://www.youtube.com/watch?v=ZrJ_d7oyhN8",
+      "publisher": "Brian Sutterer MD",
+      "sourceTitle": "Harvey Elliot SERIOUS Ankle Injury & Dislocation - Doctor Explains Injury",
+      "captionStatus": "not-verified",
+      "startSeconds": 25,
+      "durationSeconds": 371,
+      "sources": [
+        {
+          "title": "Liverpool：隊醫公布骨折脫位與手術",
+          "url": "https://www.liverpoolfc.com/news/first-team/443363-harvey-elliott-undergoes-successful-ankle-surgery"
+        },
+        {
+          "title": "Liverpool：1 月 29 日閉門友誼賽進球與助攻",
+          "url": "https://www.liverpoolfc.com/news/watch-harvey-elliotts-goal-and-assists-friendly"
+        }
+      ]
+    },
+    {
+      "slug": "wesley-fofana-2021-leg",
+      "videoId": "UxS0YVftoWs",
+      "name": "Wesley Fofana",
+      "sport": "足球",
+      "event": "Leicester City 對 Villarreal 季前友誼賽",
+      "bodyPart": "小腿／阿基里斯腱",
+      "eventDate": "2021-08-04",
+      "returnDate": "2022-03-17",
+      "observation": "帶球時遭到對手滑鏟，腿部受到撞擊後倒地。",
+      "returnText": "2022-03-17 對 Rennes 的歐洲協會聯賽回場並進球。",
+      "videoUrl": "https://www.youtube.com/watch?v=UxS0YVftoWs",
+      "publisher": "ARK HD SPORTS & GAMING",
+      "sourceTitle": "Leicester City's Wesley Fofana's Preseason Injury vs Villarreal [4/8/2021]",
+      "captionStatus": "not-verified",
+      "startSeconds": 14,
+      "durationSeconds": 84,
+      "sources": [
+        {
+          "title": "Leicester City：骨折手術後恢復近況",
+          "url": "https://www.lcfc.com/media-article/Rodgers-Delivers-Pre-Chelsea-Fitness-Update"
+        },
+        {
+          "title": "Leicester City：對 Rennes 回歸賽報",
+          "url": "https://www.lcfc.com/media-article/Special-Fofana-Goal-Sends-City-Into-UECL-Quarter-Finals"
+        },
+        {
+          "title": "Leicester City：回歸前 COVID-19 與傷勢更新",
+          "url": "https://www.lcfc.com/media-article/Rodgers%3A-Fofana-Could-Play-A-Part-In-Rennes"
+        },
+        {
+          "title": "Leicester City：8 月 4 日季前賽腓骨骨折確認",
+          "url": "https://www.lcfc.com/media-article/Rodgers-Confirms-Fofana-Fibula-Fracture"
+        }
+      ]
+    },
+    {
+      "slug": "hector-bellerin-2019-knee",
+      "videoId": "Pzul0WT-LJs",
+      "name": "Héctor Bellerín",
+      "sport": "足球",
+      "event": "英超 Arsenal 對 Chelsea",
+      "bodyPart": "膝部",
+      "eventDate": "2019-01-19",
+      "returnDate": "2019-09-20",
+      "observation": "跑動中膝部突然失去支撐，隨後倒地；可觀察腿部支撐的變化。",
+      "returnText": "2019-09-20 先在 Arsenal U23 對 Wolves U23 的比賽回場。",
+      "videoUrl": "https://www.youtube.com/watch?v=Pzul0WT-LJs",
+      "publisher": "duonhuyen.official",
+      "sourceTitle": "Hector Bellerin Injury vs Chelsea 18/19",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 74,
+      "sources": [
+        {
+          "title": "Arsenal：左膝前十字韌帶傷勢",
+          "url": "https://www.arsenal.com/news/bellerin-is-mature-and-can-come-back-stronger-a2i6B9m9arqB"
+        },
+        {
+          "title": "Wolves：9 月 20 日 U23 賽事與 Bellerín 出場名單",
+          "url": "https://www.wolves.co.uk/news/under-21/20190920-perry-earns-dramatic-late-draw/"
+        },
+        {
+          "title": "Premier League：對 Chelsea 受傷當日賽事",
+          "url": "https://www.premierleague.com/en/news/974932"
+        },
+        {
+          "title": "BBC：Arsenal 公布 ACL 手術完成",
+          "url": "https://www.bbc.co.uk/sport/football/47086237"
+        }
+      ]
+    },
+    {
+      "slug": "annemiek-van-vleuten-2016-concussion",
+      "videoId": "02FgIaR6WZ4",
+      "name": "Annemiek van Vleuten",
+      "sport": "自行車",
+      "event": "里約奧運女子公路賽",
+      "bodyPart": "頭頸部",
+      "eventDate": "2016-08-07",
+      "returnDate": "2016-09-06",
+      "observation": "下坡過彎時失去平衡，向前翻落並撞向路邊。",
+      "returnText": "2016-09-06 在 Lotto Belgium Tour 序幕計時賽重返競賽並獲勝。",
+      "videoUrl": "https://www.youtube.com/watch?v=02FgIaR6WZ4",
+      "publisher": "Jay Price",
+      "sourceTitle": "Annemiek Van Vleuten crash Rio Olympics 2016",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 36,
+      "sources": [
+        {
+          "title": "選手官網：受傷與恢復近況",
+          "url": "https://www.annemiekvanvleuten.nl/archief/life-isnt-only-about-gold-medals/"
+        },
+        {
+          "title": "NOS：比利時序幕賽實際回歸獲勝",
+          "url": "https://nos.nl/artikel/2130331-van-vleuten-laat-iedereen-versteld-staan-onkruid-vergaat-niet-he"
+        },
+        {
+          "title": "選手官網：2016 賽事時間軸",
+          "url": "https://www.annemiekvanvleuten.nl/timeline/2016/"
+        }
+      ]
+    },
+    {
+      "slug": "rebeca-andrade-2019-knee",
+      "videoId": "G9_DOWNXdjc",
+      "name": "Rebeca Andrade",
+      "sport": "體操",
+      "event": "巴西體操單項錦標賽地板資格賽",
+      "bodyPart": "膝部",
+      "eventDate": "2019-06-07",
+      "returnDate": null,
+      "observation": "地板動作包含多次翻騰與落地，最後走離場地；影片無法單獨判斷哪次落地造成傷害。",
+      "returnText": "2020 年 3 月已在 Baku 世界盃資格賽回歸；精確首次出賽日期尚未確認。",
+      "videoUrl": "https://www.youtube.com/watch?v=G9_DOWNXdjc",
+      "publisher": "Gymnastea",
+      "sourceTitle": "Rebeca Andrade INJURY on Floor 2019",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 76,
+      "sources": [
+        {
+          "title": "Globo：6 月 7 日地板資格賽受傷與手術計畫",
+          "url": "https://ge.globo.com/ginastica-artistica/noticia/exames-detectam-lesao-no-joelho-direito-e-rebeca-andrade-vai-precisar-passar-por-cirurgia.ghtml"
+        },
+        {
+          "title": "FIG：第三次 ACL 傷勢紀錄",
+          "url": "https://www.gymnastics.sport/site/news/displaynews.php?urlNews=3165435"
+        },
+        {
+          "title": "Globo：Baku 實際資格賽回歸及決賽取消",
+          "url": "https://ge.globo.com/ginastica-artistica/noticia/brasil-vai-a-quatro-finais-em-baku-mas-decisoes-sao-canceladas-por-causa-do-coronavirus.ghtml"
+        }
+      ]
+    },
+    {
+      "slug": "juan-martin-del-potro-2018-knee",
+      "videoId": "P-bLI8A0q2k",
+      "name": "Juan Martín del Potro",
+      "sport": "網球",
+      "event": "上海大師賽十六強對 Borna Ćorić",
+      "bodyPart": "膝部",
+      "eventDate": "2018-10-11",
+      "returnDate": "2019-02-19",
+      "observation": "追球時向前跌倒，隨後扶住膝部，並在場邊接受處理。",
+      "returnText": "2019-02-19 在 Delray Beach 公開賽對西岡良仁重返比賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=P-bLI8A0q2k",
+      "publisher": "Somos Jujuy",
+      "sourceTitle": "Del Potro sufrió una fractura en su rodilla y su futuro es incierto",
+      "captionStatus": "not-verified",
+      "startSeconds": 12,
+      "durationSeconds": 111,
+      "sources": [
+        {
+          "title": "BBC：上海賽右膝髕骨骨折",
+          "url": "https://www.bbc.co.uk/sport/tennis/45858929"
+        },
+        {
+          "title": "Tennis.com：Delray Beach 首場實際回歸賽報",
+          "url": "https://www.tennis.com/news/articles/watch-del-potro-wins-first-match-in-four-months-at-delray-beach-open"
+        }
+      ]
+    },
+    {
+      "slug": "dominic-thiem-2021-wrist",
+      "videoId": "dnEbS6xmiLA",
+      "name": "Dominic Thiem",
+      "sport": "網球",
+      "event": "Mallorca Championships 對 Adrian Mannarino",
+      "bodyPart": "手腕",
+      "eventDate": "2021-06-22",
+      "returnDate": "2022-03-29",
+      "observation": "正拍擊球後停下動作並查看手腕，隨後接受場邊檢查並退賽。",
+      "returnText": "2022-03-29 在 Marbella 挑戰賽對 Pedro Cachín 重返比賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=dnEbS6xmiLA",
+      "publisher": "Tennis TV",
+      "sourceTitle": "Medvedev & Thiem In Action; Djokovic Returns To Grass in Doubles! | Mallorca 2021 Day 3 Highlights",
+      "captionStatus": "not-verified",
+      "startSeconds": 172,
+      "durationSeconds": 530,
+      "sources": [
+        {
+          "title": "奧地利網協：Thiem 在 Marbella 實際回歸賽報",
+          "url": "https://www.oetv.at/news-detail/dominic-thiem-beim-comeback-mit-auftaktniederlage-in-marbella"
+        },
+        {
+          "title": "BBC：右手腕傷勢與退出溫網",
+          "url": "https://www.bbc.co.uk/sport/tennis/57600746"
+        }
+      ]
+    }
+  ]
+}

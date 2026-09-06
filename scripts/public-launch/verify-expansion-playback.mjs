@@ -13,6 +13,9 @@ const batch30 = JSON.parse(
   fs.readFileSync("src/data/videos/batch-30.v1.json", "utf8"),
 );
 const origin = process.argv[2] ?? "http://127.0.0.1:14324";
+const batch31 = JSON.parse(
+  fs.readFileSync("src/data/videos/batch-31.v1.json", "utf8"),
+);
 const output = process.argv[3] ?? "/tmp/atlas23-playback.json";
 const allItems = [
   ...expansion.cases.map((c) => ({
@@ -25,6 +28,7 @@ const allItems = [
     ...additions.clips,
     ...curation.clips,
     ...batch30.clips,
+    ...batch31.clips,
   ]
     .filter((c) => !curation.removedSlugs.includes(c.slug))
     .map((c) => ({
@@ -34,13 +38,15 @@ const allItems = [
 ];
 const items = process.argv[4]
   ? allItems.filter((item) =>
-      process.argv[4] === "--batch-30"
-        ? batch30.clips.some((c) => c.slug === item.slug)
-        : process.argv[4] === "--curation"
-          ? curation.clips.some((c) => c.slug === item.slug)
-          : process.argv[4] === "--additions"
-            ? additions.clips.some((c) => c.slug === item.slug)
-            : item.slug === process.argv[4],
+      process.argv[4] === "--batch-31"
+        ? batch31.clips.some((c) => c.slug === item.slug)
+        : process.argv[4] === "--batch-30"
+          ? batch30.clips.some((c) => c.slug === item.slug)
+          : process.argv[4] === "--curation"
+            ? curation.clips.some((c) => c.slug === item.slug)
+            : process.argv[4] === "--additions"
+              ? additions.clips.some((c) => c.slug === item.slug)
+              : item.slug === process.argv[4],
     )
   : allItems;
 if (items.length === 0) throw new Error("Unknown video slug");

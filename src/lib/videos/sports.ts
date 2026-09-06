@@ -12,6 +12,7 @@ export const SPORTS = [
   { code: "gymnastics", label: "體操" },
   { code: "ice-hockey", label: "冰球" },
   { code: "rugby", label: "橄欖球" },
+  { code: "american-football", label: "美式足球" },
   { code: "alpine-skiing", label: "高山滑雪" },
   { code: "cycling", label: "自行車" },
   { code: "crossfit", label: "CrossFit" },

@@ -1,6 +1,6 @@
 import {
   allObservationClips,
-  batch30,
+  batch31,
   expansion,
   expandedCaseAllowed,
 } from "../../src/lib/videos/expansion";
@@ -142,12 +142,19 @@ const batch30Proof = JSON.parse(
     "utf8",
   ),
 );
+const batch31Proof = JSON.parse(
+  readFileSync(
+    "docs/reviews/evidence/decision-31/playback.preview.json",
+    "utf8",
+  ),
+);
 for (const item of [...expansion.cases, ...allObservationClips]) {
   const proof = [
     ...additional,
     ...additionsProof,
     ...curationProof,
     ...batch30Proof,
+    ...batch31Proof,
   ].find((p: { url: string }) => p.url === item.videoUrl);
   assert.ok(
     proof &&
@@ -181,7 +188,7 @@ for (const item of [...expansion.cases, ...allObservationClips]) {
     );
 }
 console.log(
-  `Video expansions: ${expansion.cases.length + allObservationClips.length} additional videos (${batch30.clips.length} new); source records preserved.`,
+  `Video expansions: ${expansion.cases.length + allObservationClips.length} additional videos (${batch31.clips.length} new); source records preserved.`,
 );
 
 // All displayed events require an independently checked source summary bound to the exact video.

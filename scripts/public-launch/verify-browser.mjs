@@ -36,6 +36,14 @@ updates.entries.push(
 const batch30 = JSON.parse(
   fs.readFileSync("src/data/videos/batch-30.v1.json", "utf8"),
 );
+updates.entries.push(
+  ...JSON.parse(
+    fs.readFileSync("src/data/videos/event-batch-31.v1.json", "utf8"),
+  ).entries,
+);
+const batch31 = JSON.parse(
+  fs.readFileSync("src/data/videos/batch-31.v1.json", "utf8"),
+);
 const curation = JSON.parse(
   fs.readFileSync("src/data/videos/curation.v1.json", "utf8"),
 );
@@ -198,9 +206,11 @@ try {
         assert.ok(await report.isVisible());
         assert.ok((await report.innerText()).includes(update.injury));
         assert.ok((await report.innerText()).includes(update.returnSummary));
-        const headClip = [...curation.clips, ...batch30.clips].find(
-          (c) => c.slug === update.slug && c.bodyPart === "頭頸部",
-        );
+        const headClip = [
+          ...curation.clips,
+          ...batch30.clips,
+          ...batch31.clips,
+        ].find((c) => c.slug === update.slug && c.bodyPart === "頭頸部");
         if (headClip) {
           const care = page.locator("[data-head-injury-care]");
           assert.ok(await care.isVisible());

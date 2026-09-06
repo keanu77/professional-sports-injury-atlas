@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-09-06T09:40:40.407153+00:00",
+  "newVideoCount": 18,
+  "uniqueObservationEvents": 65,
+  "clipDigest": "9b93e0f19e42752d2f737726cadef7783495c8c7a939a29bd0eb18e39d94c9d9",
+  "eventDigest": "d490d40585ca0ab15936344883dfd0da4338b21ea0c1dbc8005085beed6edc00",
+  "bindings": "passed",
+  "notes": "Clip timing, body label and visible-action text finalized after source Pass 2; sourced injuries and return dates unchanged."
+}

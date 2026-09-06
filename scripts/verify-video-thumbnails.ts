@@ -38,6 +38,9 @@ export function loadVideoThumbnails(root: string): {
         ...additions.clips,
         ...curation.clips,
         ...batch30.clips,
+        ...JSON.parse(
+          readFileSync(join(root, "src/data/videos/batch-31.v1.json"), "utf8"),
+        ).clips,
       ].map((clip: { videoId: string }) => clip.videoId),
     ]);
     if (

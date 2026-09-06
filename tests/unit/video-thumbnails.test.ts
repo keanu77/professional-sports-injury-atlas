@@ -1,4 +1,5 @@
 import batch30Data from "../../src/data/videos/batch-30.v1.json";
+import batch31Data from "../../src/data/videos/batch-31.v1.json";
 import curation from "../../src/data/videos/curation.v1.json";
 import {
   cpSync,
@@ -31,15 +32,20 @@ function fixture() {
     "src/data/videos/additions.v1.json",
     "src/data/videos/curation.v1.json",
     "src/data/videos/batch-30.v1.json",
+    "src/data/videos/batch-31.v1.json",
   ])
     cpSync(path, join(root, path));
+  expect(loadVideoThumbnails(root).issues).toEqual([]);
   return root;
 }
 test("all selected video covers have matching local provenance", () => {
   const result = loadVideoThumbnails(process.cwd());
   expect(result.issues).toEqual([]);
   expect(result.allowedPaths).toHaveLength(
-    19 + curation.clips.length + batch30Data.clips.length,
+    19 +
+      curation.clips.length +
+      batch30Data.clips.length +
+      batch31Data.clips.length,
   );
 });
 test("changed cover bytes fail closed", () => {

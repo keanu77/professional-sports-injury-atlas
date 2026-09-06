@@ -1,0 +1,9 @@
+
+ RUN  v4.1.10 /private/tmp/atlas31-checkout
+
+
+ Test Files  4 passed (4)
+      Tests  33 passed (33)
+   Start at  17:37:26
+   Duration  964ms (transform 261ms, setup 0ms, import 431ms, tests 1.75s, environment 0ms)
+

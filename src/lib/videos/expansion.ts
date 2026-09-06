@@ -1,6 +1,7 @@
 /** User-confirmed video expansion; observation clips do not claim medical approval. */
 import { z } from "astro/zod";
 import batchData from "../../data/videos/batch-30.v1.json";
+import batch31Data from "../../data/videos/batch-31.v1.json";
 import data from "../../data/videos/expansion.v1.json";
 import launchData from "../../data/public-launch.v1.json";
 import curationData from "../../data/videos/curation.v1.json";
@@ -172,11 +173,37 @@ export const batch30Schema = z
       });
   });
 export const batch30 = batch30Schema.parse(batchData);
+export const batch31Schema = z
+  .strictObject({
+    schemaVersion: z.literal(1),
+    decision: z.literal("decision-31"),
+    authorizationQuote: z.literal("好的，我們繼續補充"),
+    authorizedAt: z.iso.datetime(),
+    clips: z.array(observationClipSchema).min(1),
+  })
+  .superRefine((value, ctx) => {
+    const combined = additionsSchema.safeParse({
+      ...additions,
+      clips: [
+        ...additions.clips,
+        ...curation.clips,
+        ...batch30.clips,
+        ...value.clips,
+      ],
+    });
+    if (!combined.success)
+      ctx.addIssue({
+        code: "custom",
+        message: "Invalid or duplicate batch 31 video",
+      });
+  });
+export const batch31 = batch31Schema.parse(batch31Data);
 export const allObservationClips: ObservationClip[] = [
   ...expansion.clips,
   ...additions.clips,
   ...curation.clips,
   ...batch30.clips,
+  ...batch31.clips,
 ].filter((c) => !curation.removedSlugs.some((slug) => slug === c.slug));
 export const expansionEnabled = () =>
   process.env.ATLAS_PUBLIC_LAUNCH === "decision-21";

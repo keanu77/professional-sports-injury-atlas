@@ -1,0 +1,538 @@
+
+> professional-sports-injury-atlas@0.1.0 test:unit
+> vitest run
+
+
+ RUN  v4.1.10 /Users/ethanstudio/Documents/Vibe coding/professional-sports injury
+
+ ❯ tests/unit/video-thumbnails.test.ts (5 tests | 1 failed) 172ms
+   × all selected video covers have matching local provenance 14ms
+ ❯ tests/unit/follow-up-approval-ledger.test.ts (10 tests | 1 failed) 419ms
+     × loads the committed corpus through D18 provenance and D20 authority into the effective review state 386ms
+ ❯ tests/unit/decision-17-follow-up-corpus.test.ts (2 tests | 1 failed) 871ms
+     × binds all 26 cases to completed Decision 18 ledgers and pending sidecars 419ms
+ ❯ tests/unit/decision-18-transitional-follow-up-loader.test.ts (16 tests | 1 failed) 2186ms
+     × concretely resolves the repository through its valid committed receipt chain 363ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/decision-17-follow-up-corpus.test.ts > Decision 18 real follow-up corpus > binds all 26 cases to completed Decision 18 ledgers and pending sidecars
+AssertionError: expected [ { …(3) }, { …(3) }, { …(3) }, …(26) ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: scripts/public-launch/check-release.ts",
++     "path": "receiptChain.worktree.dirtyPaths.0",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: scripts/public-launch/verify-expansion-playback.mjs",
++     "path": "receiptChain.worktree.dirtyPaths.1",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: scripts/verify-video-thumbnails.ts",
++     "path": "receiptChain.worktree.dirtyPaths.2",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/provenance.json",
++     "path": "receiptChain.worktree.dirtyPaths.3",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/lib/videos/body-parts.ts",
++     "path": "receiptChain.worktree.dirtyPaths.4",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/lib/videos/event-updates.ts",
++     "path": "receiptChain.worktree.dirtyPaths.5",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/lib/videos/expansion.ts",
++     "path": "receiptChain.worktree.dirtyPaths.6",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/lib/videos/sports.ts",
++     "path": "receiptChain.worktree.dirtyPaths.7",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: tests/unit/video-expansion.test.ts",
++     "path": "receiptChain.worktree.dirtyPaths.8",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/02FgIaR6WZ4.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.9",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/9c2i7OQerbY.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.10",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/CHU789PuCWg.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.11",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/EScFb5vASZ8.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.12",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/G9_DOWNXdjc.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.13",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/KK-tjBfB9ys.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.14",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/P-bLI8A0q2k.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.15",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/Pzul0WT-LJs.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.16",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/RDSkmfmqNic.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.17",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/UxS0YVftoWs.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.18",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/WC6e9OaS8WM.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.19",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/WJseH_HrC7o.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.20",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/ZrJ_d7oyhN8.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.21",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/aVmzQYIwTfc.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.22",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/bni6Jp6p4P8.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.23",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/dnEbS6xmiLA.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.24",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/jimZ1tSdPY0.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.25",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/q9WIUVebPf8.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.26",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/data/videos/batch-31.v1.json",
++     "path": "receiptChain.worktree.dirtyPaths.27",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/data/videos/event-batch-31.v1.json",
++     "path": "receiptChain.worktree.dirtyPaths.28",
++   },
++ ]
+
+ ❯ tests/unit/decision-17-follow-up-corpus.test.ts:40:27
+     38|   it("binds all 26 cases to completed Decision 18 ledgers and pending …
+     39|     const corpus = loadCorpus();
+     40|     expect(corpus.issues).toEqual([]);
+       |                           ^
+     41|     expect(corpus.entries).toHaveLength(26);
+     42|     expect(corpus.completedBatchIds).toEqual(["acl", "ankle", "achille…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  tests/unit/decision-18-transitional-follow-up-loader.test.ts > Decision 18 transitional follow-up loader > concretely resolves the repository through its valid committed receipt chain
+AssertionError: expected [ { …(3) }, { …(3) }, { …(3) }, …(26) ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: scripts/public-launch/check-release.ts",
++     "path": "receiptChain.worktree.dirtyPaths.0",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: scripts/public-launch/verify-expansion-playback.mjs",
++     "path": "receiptChain.worktree.dirtyPaths.1",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: scripts/verify-video-thumbnails.ts",
++     "path": "receiptChain.worktree.dirtyPaths.2",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/provenance.json",
++     "path": "receiptChain.worktree.dirtyPaths.3",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/lib/videos/body-parts.ts",
++     "path": "receiptChain.worktree.dirtyPaths.4",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/lib/videos/event-updates.ts",
++     "path": "receiptChain.worktree.dirtyPaths.5",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/lib/videos/expansion.ts",
++     "path": "receiptChain.worktree.dirtyPaths.6",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/lib/videos/sports.ts",
++     "path": "receiptChain.worktree.dirtyPaths.7",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: tests/unit/video-expansion.test.ts",
++     "path": "receiptChain.worktree.dirtyPaths.8",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/02FgIaR6WZ4.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.9",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/9c2i7OQerbY.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.10",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/CHU789PuCWg.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.11",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/EScFb5vASZ8.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.12",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/G9_DOWNXdjc.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.13",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/KK-tjBfB9ys.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.14",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/P-bLI8A0q2k.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.15",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/Pzul0WT-LJs.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.16",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/RDSkmfmqNic.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.17",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/UxS0YVftoWs.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.18",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/WC6e9OaS8WM.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.19",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/WJseH_HrC7o.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.20",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/ZrJ_d7oyhN8.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.21",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/aVmzQYIwTfc.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.22",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/bni6Jp6p4P8.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.23",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/dnEbS6xmiLA.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.24",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/jimZ1tSdPY0.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.25",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/q9WIUVebPf8.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.26",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/data/videos/batch-31.v1.json",
++     "path": "receiptChain.worktree.dirtyPaths.27",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/data/videos/event-batch-31.v1.json",
++     "path": "receiptChain.worktree.dirtyPaths.28",
++   },
++ ]
+
+ ❯ tests/unit/decision-18-transitional-follow-up-loader.test.ts:468:27
+    466|     );
+    467|
+    468|     expect(result.issues).toEqual([]);
+       |                           ^
+    469|     expect(result.entries).toHaveLength(26);
+    470|     for (const entry of result.entries) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  tests/unit/follow-up-approval-ledger.test.ts > Decision 20 approval ledger > loads the committed corpus through D18 provenance and D20 authority into the effective review state
+AssertionError: expected [ { …(3) }, { …(3) }, { …(3) }, …(26) ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: scripts/public-launch/check-release.ts",
++     "path": "receiptChain.worktree.dirtyPaths.0",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: scripts/public-launch/verify-expansion-playback.mjs",
++     "path": "receiptChain.worktree.dirtyPaths.1",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: scripts/verify-video-thumbnails.ts",
++     "path": "receiptChain.worktree.dirtyPaths.2",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/provenance.json",
++     "path": "receiptChain.worktree.dirtyPaths.3",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/lib/videos/body-parts.ts",
++     "path": "receiptChain.worktree.dirtyPaths.4",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/lib/videos/event-updates.ts",
++     "path": "receiptChain.worktree.dirtyPaths.5",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/lib/videos/expansion.ts",
++     "path": "receiptChain.worktree.dirtyPaths.6",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/lib/videos/sports.ts",
++     "path": "receiptChain.worktree.dirtyPaths.7",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: tests/unit/video-expansion.test.ts",
++     "path": "receiptChain.worktree.dirtyPaths.8",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/02FgIaR6WZ4.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.9",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/9c2i7OQerbY.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.10",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/CHU789PuCWg.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.11",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/EScFb5vASZ8.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.12",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/G9_DOWNXdjc.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.13",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/KK-tjBfB9ys.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.14",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/P-bLI8A0q2k.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.15",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/Pzul0WT-LJs.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.16",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/RDSkmfmqNic.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.17",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/UxS0YVftoWs.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.18",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/WC6e9OaS8WM.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.19",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/WJseH_HrC7o.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.20",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/ZrJ_d7oyhN8.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.21",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/aVmzQYIwTfc.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.22",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/bni6Jp6p4P8.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.23",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/dnEbS6xmiLA.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.24",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/jimZ1tSdPY0.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.25",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/assets/videos/q9WIUVebPf8.jpg",
++     "path": "receiptChain.worktree.dirtyPaths.26",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/data/videos/batch-31.v1.json",
++     "path": "receiptChain.worktree.dirtyPaths.27",
++   },
++   {
++     "code": "decision18-batch-dirty-path-outside-allowlist",
++     "message": "dirty path is outside the active batch allowlist: src/data/videos/event-batch-31.v1.json",
++     "path": "receiptChain.worktree.dirtyPaths.28",
++   },
++ ]
+
+ ❯ tests/unit/follow-up-approval-ledger.test.ts:144:27
+    142|       expectedPolicyBinding: FOLLOW_UP_SOURCE_POLICY_V10_BINDING,
+    143|     });
+    144|     expect(corpus.issues).toEqual([]);
+       |                           ^
+    145|     expect(corpus.entries).toHaveLength(26);
+    146|     expect(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  tests/unit/video-thumbnails.test.ts > all selected video covers have matching local provenance
+AssertionError: expected [ …(72) ] to have a length of 54 but got 72
+
+- Expected
++ Received
+
+- 54
++ 72
+
+ ❯ tests/unit/video-thumbnails.test.ts:41:31
+     39|   const result = loadVideoThumbnails(process.cwd());
+     40|   expect(result.issues).toEqual([]);
+     41|   expect(result.allowedPaths).toHaveLength(
+       |                               ^
+     42|     19 + curation.clips.length + batch30Data.clips.length,
+     43|   );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  4 failed | 78 passed (82)
+      Tests  4 failed | 1317 passed (1321)
+   Start at  17:34:59
+   Duration  7.80s (transform 9.92s, setup 0ms, import 20.20s, tests 50.54s, environment 4ms)
+

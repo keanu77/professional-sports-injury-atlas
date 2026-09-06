@@ -1,0 +1,240 @@
+[
+  {
+    "url": "https://www.mlb.com/news/edwin-diaz-knee-surgery",
+    "publishedAt": "2023-03-17",
+    "extract": "complete patellar tendon tear in his right knee",
+    "supportsDeclaredDates": true,
+    "verification": "injury and surgery; Wednesday night = 2023-03-15; article date 2023-03-17",
+    "httpStatus": 200,
+    "httpError": null,
+    "method": "web.run open/find + independent public HTTP where available",
+    "textSha256": "09ca0a6ff46f8497391ddd6a4382deae8bc19de847d8464c62edb3a8dbe6aad4"
+  },
+  {
+    "url": "https://www.mlb.com/news/edwin-diaz-strikes-out-side-in-spring-debut",
+    "publishedAt": "2024-03-12",
+    "extract": "Monday night's 1-0 loss to the Marlins",
+    "supportsDeclaredDates": true,
+    "verification": "actual appearance 2024-03-11; publication 2024-03-12",
+    "httpStatus": 200,
+    "httpError": null,
+    "method": "web.run open/find + independent public HTTP where available",
+    "textSha256": "bcb3ad38b72ca7736e0eafcf4aff60de739bacce6049af26351df07d069e0888"
+  },
+  {
+    "url": "https://www.si.com/mlb/mets/onsi/news/new-york-mets-closer-edwin-diaz-set-to-return-on-monday-joe9",
+    "publishedAt": "2024-03-10",
+    "extract": "Diaz pitched in two simulated minor league games in the backfields",
+    "supportsDeclaredDates": true,
+    "verification": "retrospective previous Tuesday 2024-03-05; distinguish intrasquad simulation from scheduled March11 game",
+    "httpStatus": 200,
+    "httpError": null,
+    "method": "web.run open/find + independent public HTTP where available",
+    "textSha256": "47885424983eec94d04ad96b4230748113dfe8ac7fccbde9bd256fdc1632a67d"
+  },
+  {
+    "url": "https://www.mlb.com/news/rhys-hoskins-suffers-left-knee-injury",
+    "publishedAt": "2023-03-23",
+    "extract": "tore the ACL in his left knee",
+    "supportsDeclaredDates": true,
+    "verification": "injury on 2023-03-23, article date same day",
+    "httpStatus": 200,
+    "httpError": null,
+    "method": "web.run open/find + independent public HTTP where available",
+    "textSha256": "5364ed74fbcf04bd19813286951e6b5414b631362e479b45efda9117a51786af"
+  },
+  {
+    "url": "https://www.mlb.com/gameday/padres-vs-brewers/2024/03/01/748155/final/box",
+    "publishedAt": null,
+    "extract": "Padres 3, Brewers 4 Final Score (03/01/2024)",
+    "supportsDeclaredDates": true,
+    "verification": "actual game corroborated by MLB API; gamePk748155",
+    "httpStatus": 200,
+    "httpError": null,
+    "method": "web.run open/find + independent public HTTP where available",
+    "textSha256": "90faafd30757c2eddca289fb85a272252dec53e5c9a22a34865db12242820016"
+  },
+  {
+    "url": "https://statsapi.mlb.com/api/v1/people/656555/stats?stats=gameLog&group=hitting&season=2024&gameType=S",
+    "publishedAt": null,
+    "extract": "\"date\":\"2024-03-01\",\"gameType\":\"S\",\"gamesPlayed\":1",
+    "supportsDeclaredDates": true,
+    "verification": "structured MLB API first chronological split; 3 PA, DH, 0-2 with walk. Not a verbatim contiguous prose quote.",
+    "httpStatus": 200,
+    "httpError": null,
+    "method": "official MLB Stats API independent fetch; archived full structured game log",
+    "textSha256": "0594b52493a24d547dcf10752cf4e54499743af3a563e97571f718c2ca90ba49"
+  },
+  {
+    "url": "https://www.mlb.com/news/pitcher-tim-hudson-strong-in-first-cactus-league-start-for-giants/c-68600942",
+    "publishedAt": "2014-03-02",
+    "extract": "In his first competitive activity as a Giant, Hudson threw two hitless innings Sunday",
+    "supportsDeclaredDates": true,
+    "verification": "actual spring debut 2014-03-02; article shows March2,2014; ankle event July24",
+    "httpStatus": 200,
+    "httpError": null,
+    "method": "web.run open/find + independent public HTTP where available",
+    "textSha256": "94598230a2a58dd4bce015cea6d10310292e6029b5f2ad66a4aa0346641f9b5b"
+  },
+  {
+    "url": "https://www.mlb.com/news/hudson-undergoes-surgery-for-fractured-ankle/c-54853176",
+    "publishedAt": "2013-07-26",
+    "extract": "repair his deltoid ligament and fractured fibula in his right ankle",
+    "supportsDeclaredDates": true,
+    "verification": "MLB surgery report 2013-07-26; injury previous Wednesday 2013-07-24, fracture/dislocation",
+    "httpStatus": null,
+    "httpError": null,
+    "method": "web.run open/find + independent public HTTP where available"
+  },
+  {
+    "url": "https://www.mlb.com/player/buster-posey-457763",
+    "publishedAt": null,
+    "extract": "torn ligaments in his ankle, fractured fibula in his lower left leg",
+    "supportsDeclaredDates": true,
+    "verification": "2011 bio entry supports left fibula and ankle ligaments; injured night before May26",
+    "httpStatus": 200,
+    "httpError": null,
+    "method": "web.run open/find + independent public HTTP where available",
+    "textSha256": "3fb54cec3abba432e861f0b87b801a50819a773f3cd8bec2f53986d27756b0db"
+  },
+  {
+    "url": "https://www.nbcsports.com/mlb/news/buster-posey-catches-two-innings-in-first-game-since-collision-last-may",
+    "publishedAt": "2012-03-10",
+    "extract": "Posey caught two innings yesterday in his Cactus League debut against the Reds",
+    "supportsDeclaredDates": true,
+    "verification": "publication March10, actual match March9; photo caption explicitly March9,2012",
+    "httpStatus": 200,
+    "httpError": null,
+    "method": "web.run open/find + independent public HTTP where available",
+    "textSha256": "cce3fa7f58b57d5b805a4d75dcda3e1865dc13ae500c0fa6528aef84ee710ca3"
+  },
+  {
+    "url": "https://www.cbssports.com/mlb/news/kendrys-morales-plays-in-a-minor-league-game/",
+    "publishedAt": "2012-03-16",
+    "extract": "For the first time since suffering a broken ankle",
+    "supportsDeclaredDates": true,
+    "verification": "web.run full article lines667-684 supports March16,2012 debut, left ankle May29,2010; HTTP406 is access restriction not dead source",
+    "httpStatus": null,
+    "httpError": "HTTP Error 406: Not Acceptable",
+    "method": "web.run open/find + independent public HTTP where available"
+  },
+  {
+    "url": "https://www.latimes.com/sports/la-xpm-2012-mar-22-la-sp-sn-angels-kendrys-morales-has-two-hits-in-in-angels-win-20120322-story.html",
+    "publishedAt": "2012-03-22",
+    "extract": "singled twice in three at-bats",
+    "supportsDeclaredDates": true,
+    "verification": "actual March22 big-league exhibition, later than March16 minor exhibitions",
+    "httpStatus": 200,
+    "httpError": null,
+    "method": "web.run open/find + independent public HTTP where available",
+    "textSha256": "6c137d29d828e098f064e5d3af08154243464c84e49c068b1e4dad186cd1889c"
+  },
+  {
+    "url": "https://www.nhl.com/news/steven-stamkos-career-timeline-with-lightning-281087120",
+    "publishedAt": "2016-06-30",
+    "extract": "March 6, 2014: In Stamkos' first game back from his broken leg",
+    "supportsDeclaredDates": true,
+    "verification": "also Nov11,2013 right tibia; official timeline publication June30,2016",
+    "httpStatus": 200,
+    "httpError": null,
+    "method": "web.run open/find + independent public HTTP where available",
+    "textSha256": "7a9b0f11f6ded9da658c81c06586823ed83fd11bd85cba034c597052339fb78f"
+  },
+  {
+    "url": "https://www.si.com/nhl/2014/03/07/steven-stamkos-returns-to-lightning-as-captain",
+    "publishedAt": null,
+    "extract": "first game action for Stamkos since he broke his right shin in Boston on Nov. 11",
+    "supportsDeclaredDates": true,
+    "verification": "actual Buffalo return; date independently verified NHL timeline; source publication left null",
+    "httpStatus": 200,
+    "httpError": null,
+    "method": "web.run open/find + independent public HTTP where available",
+    "textSha256": "6308348b08aa94a32221c8517b2c78c160136353ae9effc1a6dd7f27070f9981"
+  },
+  {
+    "url": "https://www.nhl.com/news/edmonton-oilers-connor-mcdavid-to-begin-rehabilitation-for-leg-injury-306715866",
+    "publishedAt": "2019-04-13",
+    "extract": "a small PCL ligament tear in his left knee",
+    "supportsDeclaredDates": true,
+    "verification": "2019-04-13 initial announcement; no prediction promoted as actual recovery",
+    "httpStatus": 200,
+    "httpError": null,
+    "method": "web.run open/find + independent public HTTP where available",
+    "textSha256": "92a94d8dccda936b60156e7eda75a356067cfe4f500fbd9368f5b531ded42959"
+  },
+  {
+    "url": "https://www.nhl.com/news/arizona-coyotes-edmonton-oilers-preseason-game-recap-309439706",
+    "publishedAt": "2019-09-25",
+    "extract": "held without a point in his preseason debut",
+    "supportsDeclaredDates": true,
+    "verification": "actual Tuesday Sept24,2019; published Sept25; 20:38 ice time confirms participation",
+    "httpStatus": 200,
+    "httpError": null,
+    "method": "web.run open/find + independent public HTTP where available",
+    "textSha256": "61981c536d9114e20a3433b14149a00fea9843f8cde90727f6d66c2fc3878500"
+  },
+  {
+    "url": "https://www.nhl.com/news/connor-mcdavid-declined-surgey-to-play-this-season-314292808",
+    "publishedAt": "2020-01-26",
+    "extract": "multiple tears in the knee and a broken tibia",
+    "supportsDeclaredDates": true,
+    "verification": "NHL later disclosure January26,2020; injury April6,2019",
+    "httpStatus": null,
+    "httpError": null,
+    "method": "web.run open/find + independent public HTTP where available"
+  },
+  {
+    "url": "https://www.nhl.com/lightning/news/tampa-bay-lightning-defenseman-mikhail-sergachev-has-successful-surgery",
+    "publishedAt": "2024-02-08",
+    "extract": "fractures to both the tibia and fibula in his left leg",
+    "supportsDeclaredDates": true,
+    "verification": "official announcement Feb8; injury Wednesday Feb7,2024",
+    "httpStatus": 200,
+    "httpError": null,
+    "method": "web.run open/find + independent public HTTP where available",
+    "textSha256": "07afc4977033e0b025f2f8cb335197251a78693c0e319ffc05ca0b9f9961f206"
+  },
+  {
+    "url": "https://www.nhl.com/news/mikhail-sergachev-return-from-broken-leg-boosts-lightning",
+    "publishedAt": "2024-04-28",
+    "extract": "Defenseman has assist in 1st game back",
+    "supportsDeclaredDates": true,
+    "verification": "actual April27,2024 playoff return, article April28; prior17 missed games relates separate injury",
+    "httpStatus": 200,
+    "httpError": null,
+    "method": "web.run open/find + independent public HTTP where available",
+    "textSha256": "48de0e24a34ed3ececcb59be9b6b85772c55588abd052e7d651f38d72d236a85"
+  },
+  {
+    "url": "https://www.nhl.com/video/topic/top-plays/fla-tbl-hagel-scores-goal-against-sergei-bobrovsky-6351902134112",
+    "publishedAt": "2024-04-27",
+    "extract": "In his Game 4 return, Mikhail Sergachev feeds it to Brandon Hagel",
+    "supportsDeclaredDates": true,
+    "verification": "official video has April27,2024 date; supports completed participation",
+    "httpStatus": 200,
+    "httpError": null,
+    "method": "web.run open/find + independent public HTTP where available",
+    "textSha256": "2054c58b2936afffae5726a4d889beb3d76eb78c25a27dbd8333a6a8e8847813"
+  },
+  {
+    "url": "https://www.tvanouvelles.ca/2011/03/09/vertebre-fracturee-pour-pacioretty",
+    "publishedAt": "2011-03-09",
+    "extract": "une sérieuse commotion cérébrale et d'une fracture à la quatrième vertèbre cervicale",
+    "supportsDeclaredDates": true,
+    "verification": "TVA web.run opened lines85-96; March9 report on previous Tuesday March8; curl redirect loop is access limitation",
+    "httpStatus": null,
+    "httpError": "HTTP Error 307: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nTemporary Redirect",
+    "method": "web.run open/find + independent public HTTP where available"
+  },
+  {
+    "url": "https://www.nbcsports.com/nhl/news/max-pacioretty-plays-for-first-time-since-zdeno-chara-hit",
+    "publishedAt": "2011-09-21",
+    "extract": "Pacioretty suited up tonight for the Canadiens",
+    "supportsDeclaredDates": true,
+    "verification": "September21,2011 preseason vsBuffalo; actual participation and neck fracture/concussion explicitly reported",
+    "httpStatus": 200,
+    "httpError": null,
+    "method": "web.run open/find + independent public HTTP where available",
+    "textSha256": "90cadac4cd5041add20d43831eeef4f1982ff7b247018ffbc8eba6d0edec0a65"
+  }
+]
