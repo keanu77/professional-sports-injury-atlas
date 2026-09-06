@@ -1,0 +1,84 @@
+---
+interface Props {
+  situations: { code: string; label: string; count: number }[];
+  current?: string;
+}
+const { situations, current } = Astro.props;
+---
+
+<nav class="situation-nav" aria-label="依受傷情境看影片" data-situation-nav>
+  <p>依受傷情境看影片</p>
+  <p class="situation-note">依影片中的主要動作分類，不代表確定的致傷原因。</p>
+  <ul>
+    {
+      situations.map((situation) => (
+        <li>
+          <a
+            href={`/situations/${situation.code}/`}
+            aria-current={current === situation.code ? "page" : undefined}
+          >
+            {situation.label}
+            <span>{situation.count} 支影片</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+<style>
+  .situation-nav {
+    margin: 0 0 2rem;
+  }
+  p {
+    margin: 0 0 0.75rem;
+    font-weight: 600;
+    color: var(--color-brand-900);
+  }
+  .situation-note {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--color-ink-muted);
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 44px;
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--color-brand-100);
+    border-radius: 999px;
+    background: var(--color-surface-raised);
+    color: var(--color-brand-primary);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  a:hover,
+  a[aria-current="page"] {
+    background: var(--color-brand-50);
+    border-color: var(--color-brand-primary);
+  }
+  a:focus-visible {
+    outline: 3px solid var(--color-brand-primary);
+    outline-offset: 3px;
+  }
+  span {
+    color: var(--color-ink-muted);
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+  @media (max-width: 26rem) {
+    a {
+      border-radius: 1rem;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+  }
+</style>

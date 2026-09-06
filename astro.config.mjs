@@ -1,5 +1,5 @@
-// Static-only output. No SSR adapter, sitemap integration, analytics,
-// or remote image domain may be added while public release is closed.
+// Pages remain static; the two same-origin playback statistics endpoints
+// are handled separately by Cloudflare Pages Functions after public launch.
 import { defineConfig } from "astro/config";
 
 export default defineConfig({

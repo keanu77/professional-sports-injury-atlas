@@ -722,7 +722,11 @@ test.describe("click-to-load player", () => {
     expect(player.tagName).toBe("IFRAME");
     expect(player.optionKeys).toEqual(["events"]);
     expect(player.optionKeys).not.toContain("host");
-    expect(player.eventKeys.sort()).toEqual(["onError", "onReady"]);
+    expect(player.eventKeys.sort()).toEqual([
+      "onError",
+      "onReady",
+      "onStateChange",
+    ]);
     expect(player.sameElement).toBe(true);
     expect(new URL(player.src).hostname).toBe("www.youtube-nocookie.com");
 

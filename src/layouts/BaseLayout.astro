@@ -121,7 +121,13 @@ const casePreload =
 ---
 
 <!doctype html>
-<html lang="zh-Hant" data-theme="light">
+<html
+  lang="zh-Hant"
+  data-theme="light"
+  data-playback-statistics={buildMode === "public" && isLaunchEnabled()
+    ? "enabled"
+    : undefined}
+>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

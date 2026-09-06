@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-06",
+  "classificationBasis": "依既有影片觀察摘要選擇一個主要情境；分類描述影片中的動作，不判定致傷原因。畫面不足者歸其他或畫面未明。",
+  "curationBasis": "優先選擇受傷過程清楚、具名傷勢與回場來源完整，並涵蓋不同運動與情境的影片。精選順序由本站編輯安排，不代表熱門程度。",
+  "videos": [
+    {
+      "slug": "aaron-rodgers-2023-achilles",
+      "situation": "collision"
+    },
+    {
+      "slug": "adam-eaton-2017-knee",
+      "situation": "running-turning"
+    },
+    {
+      "slug": "aksel-svindal-kitzbuhel-2016",
+      "situation": "fall"
+    },
+    {
+      "slug": "alex-cobb-2013-concussion",
+      "situation": "ball-impact"
+    },
+    {
+      "slug": "alex-oxlade-chamberlain-2018",
+      "situation": "collision"
+    },
+    {
+      "slug": "andre-gomes-2019",
+      "situation": "collision"
+    },
+    {
+      "slug": "anfernee-simons-ankle-sprain-2023",
+      "situation": "unclear"
+    },
+    {
+      "slug": "annemiek-van-vleuten-2016-concussion",
+      "situation": "fall"
+    },
+    {
+      "slug": "antoine-dupont-world-cup-2023",
+      "situation": "collision",
+      "curatedRank": 5
+    },
+    {
+      "slug": "beth-mead-2022",
+      "situation": "running-turning"
+    },
+    {
+      "slug": "bethanie-mattek-sands-2017-knee",
+      "situation": "running-turning"
+    },
+    {
+      "slug": "bryce-harper-2017-knee",
+      "situation": "fall"
+    },
+    {
+      "slug": "buster-posey-2011-ankle",
+      "situation": "collision"
+    },
+    {
+      "slug": "cameron-brink-2024-acl",
+      "situation": "running-turning"
+    },
+    {
+      "slug": "carolina-marin-indonesia-2019",
+      "situation": "landing",
+      "curatedRank": 3
+    },
+    {
+      "slug": "charlie-morton-2021-fibula",
+      "situation": "ball-impact"
+    },
+    {
+      "slug": "chris-bassitt-2021-face",
+      "situation": "ball-impact",
+      "curatedRank": 4
+    },
+    {
+      "slug": "connor-mcdavid-2019-pcl",
+      "situation": "collision"
+    },
+    {
+      "slug": "cristiano-ronaldo-2016",
+      "situation": "collision"
+    },
+    {
+      "slug": "david-beckham-2010",
+      "situation": "running-turning"
+    },
+    {
+      "slug": "dejounte-murray-acl-2018",
+      "situation": "running-turning"
+    },
+    {
+      "slug": "demarcus-cousins-achilles-2018",
+      "situation": "unclear"
+    },
+    {
+      "slug": "derek-redmond-barcelona-1992",
+      "situation": "running-turning"
+    },
+    {
+      "slug": "derrick-rose-acl-2012",
+      "situation": "landing"
+    },
+    {
+      "slug": "dominic-thiem-2021-wrist",
+      "situation": "racket-swing"
+    },
+    {
+      "slug": "dustin-fowler-2017-patellar-tendon",
+      "situation": "collision"
+    },
+    {
+      "slug": "edwin-diaz-2023-patellar-tendon",
+      "situation": "landing"
+    },
+    {
+      "slug": "george-north-2015-concussion",
+      "situation": "collision"
+    },
+    {
+      "slug": "giancarlo-stanton-2014-face",
+      "situation": "ball-impact"
+    },
+    {
+      "slug": "gianmarco-tamberi-2016-ankle",
+      "situation": "landing"
+    },
+    {
+      "slug": "giannis-east-final-2021",
+      "situation": "landing"
+    },
+    {
+      "slug": "gordon-hayward-ankle-fracture-2017",
+      "situation": "landing"
+    },
+    {
+      "slug": "harvey-elliott-2021-ankle",
+      "situation": "collision"
+    },
+    {
+      "slug": "hector-bellerin-2019-knee",
+      "situation": "running-turning"
+    },
+    {
+      "slug": "jamal-murray-acl-2021",
+      "situation": "running-turning"
+    },
+    {
+      "slug": "jayson-tatum-achilles-rupture-2025",
+      "situation": "unclear"
+    },
+    {
+      "slug": "john-tavares-2021-concussion",
+      "situation": "collision"
+    },
+    {
+      "slug": "juan-martin-del-potro-2018-knee",
+      "situation": "fall"
+    },
+    {
+      "slug": "julie-foucher-box-jump-2015",
+      "situation": "landing"
+    },
+    {
+      "slug": "kawhi-leonard-acl-2021",
+      "situation": "collision"
+    },
+    {
+      "slug": "kendrys-morales-2010-ankle",
+      "situation": "landing"
+    },
+    {
+      "slug": "kerri-strug-atlanta-1996",
+      "situation": "landing"
+    },
+    {
+      "slug": "kevin-durant-achilles-rupture-2019",
+      "situation": "unclear"
+    },
+    {
+      "slug": "klay-thompson-2019-acl",
+      "situation": "landing"
+    },
+    {
+      "slug": "kobe-bryant-2013-achilles",
+      "situation": "running-turning"
+    },
+    {
+      "slug": "kristaps-porzingis-acl-2018",
+      "situation": "landing"
+    },
+    {
+      "slug": "kyle-schwarber-2016-knee",
+      "situation": "collision"
+    },
+    {
+      "slug": "kyrie-irving-ankle-sprain-2021",
+      "situation": "unclear"
+    },
+    {
+      "slug": "lamelo-ball-ankle-sprain-2023",
+      "situation": "unclear"
+    },
+    {
+      "slug": "lamelo-ball-ankle-sprain-2025",
+      "situation": "collision"
+    },
+    {
+      "slug": "laurent-koscielny-2018",
+      "situation": "running-turning"
+    },
+    {
+      "slug": "leah-williamson-2023",
+      "situation": "running-turning"
+    },
+    {
+      "slug": "lindsey-vonn-schladming-2013",
+      "situation": "landing",
+      "curatedRank": 6
+    },
+    {
+      "slug": "mark-cavendish-2023-clavicle",
+      "situation": "fall"
+    },
+    {
+      "slug": "markelle-fultz-orlando-2021",
+      "situation": "running-turning"
+    },
+    {
+      "slug": "max-pacioretty-2011-concussion",
+      "situation": "collision"
+    },
+    {
+      "slug": "mikhail-sergachev-2024-leg",
+      "situation": "collision"
+    },
+    {
+      "slug": "mohamed-salah-final-2018",
+      "situation": "collision"
+    },
+    {
+      "slug": "neymar-2023-acl",
+      "situation": "collision"
+    },
+    {
+      "slug": "paul-george-leg-fracture-2014",
+      "situation": "landing"
+    },
+    {
+      "slug": "rebeca-andrade-2019-knee",
+      "situation": "landing"
+    },
+    {
+      "slug": "rhys-hoskins-2023-acl",
+      "situation": "running-turning"
+    },
+    {
+      "slug": "ronald-acuna-miami-2021",
+      "situation": "landing",
+      "curatedRank": 1
+    },
+    {
+      "slug": "serena-williams-2021-hamstring",
+      "situation": "unclear"
+    },
+    {
+      "slug": "shaun-livingston-knee-2007",
+      "situation": "landing"
+    },
+    {
+      "slug": "shohei-ohtani-world-series-2024",
+      "situation": "fall"
+    },
+    {
+      "slug": "sidney-crosby-concussion-2017",
+      "situation": "collision"
+    },
+    {
+      "slug": "steve-smith-2019-concussion",
+      "situation": "ball-impact"
+    },
+    {
+      "slug": "steven-stamkos-2013-tibia",
+      "situation": "collision"
+    },
+    {
+      "slug": "tim-hudson-2013-ankle",
+      "situation": "collision"
+    },
+    {
+      "slug": "tyrese-haliburton-achilles-rupture-2025",
+      "situation": "unclear"
+    },
+    {
+      "slug": "usain-bolt-london-2017",
+      "situation": "running-turning"
+    },
+    {
+      "slug": "victor-oladipo-2019-quadriceps",
+      "situation": "running-turning"
+    },
+    {
+      "slug": "vivianne-miedema-2022",
+      "situation": "unclear"
+    },
+    {
+      "slug": "wesley-fofana-2021-leg",
+      "situation": "collision"
+    },
+    {
+      "slug": "zach-lavine-acl-2017",
+      "situation": "landing"
+    },
+    {
+      "slug": "zlatan-ibrahimovic-2017-knee",
+      "situation": "landing"
+    },
+    {
+      "slug": "zverev-roland-garros-2022",
+      "situation": "running-turning",
+      "curatedRank": 2
+    }
+  ]
+}

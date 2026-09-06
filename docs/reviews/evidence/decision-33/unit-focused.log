@@ -1,0 +1,11 @@
+
+ RUN  v4.1.10 /Users/ethanstudio/Documents/Vibe coding/professional-sports injury
+
+(node:69679) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+ Test Files  3 passed (3)
+      Tests  30 passed (30)
+   Start at  18:45:25
+   Duration  266ms (transform 274ms, setup 0ms, import 444ms, tests 39ms, environment 0ms)
+

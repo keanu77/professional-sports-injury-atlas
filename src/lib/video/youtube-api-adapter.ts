@@ -2,8 +2,8 @@
  * Typed adapter over the official YouTube IFrame Player API. It dynamically
  * loads `https://www.youtube.com/iframe_api` only after the reader's explicit
  * click, hands the existing privacy-enhanced iframe element to one
- * `YT.Player` instance using only the documented `events.onReady` /
- * `events.onError` options (never the undocumented `host` option, never a
+ * `YT.Player` instance using only the documented `events.onReady`, `events.onError`, and
+ * `events.onStateChange` options (never the undocumented `host` option, never a
  * replacement iframe, and never a raw postMessage protocol). Load or
  * readiness failure rejects so the caller can remove the iframe and restore
  * its local facade.
@@ -20,6 +20,7 @@ export interface YouTubeNamespace {
       events: {
         onReady: (event: unknown) => void;
         onError: (event: unknown) => void;
+        onStateChange: (event: { data: number }) => void;
       };
     },
   ) => YouTubePlayerInstance;
@@ -28,6 +29,7 @@ export interface YouTubeNamespace {
 export interface PlayerEventHandlers {
   onReady: () => void;
   onError: () => void;
+  onPlaying?: () => void;
 }
 
 type YouTubeWindow = Window & {
@@ -104,7 +106,7 @@ export function loadIframeApi(
 
 /**
  * Passes the existing iframe element to one `YT.Player` with only the
- * documented ready/error events.
+ * documented ready/error/playing events.
  */
 export function createPlayer(
   namespace: YouTubeNamespace,
@@ -118,6 +120,9 @@ export function createPlayer(
       },
       onError: () => {
         handlers.onError();
+      },
+      onStateChange: (event) => {
+        if (event.data === 1) handlers.onPlaying?.();
       },
     },
   });

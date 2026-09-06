@@ -1,0 +1,16 @@
+{
+  "origin": "https://49b4fe97.sports-injury-atlas.pages.dev",
+  "checkedAt": "2026-09-06T10:51:21.993Z",
+  "before": 2,
+  "after": 3,
+  "event": {
+    "videoId": "9JoITljMoU0",
+    "eventId": "253eeb1a-a629-47e2-8ec9-94637eabb0f6"
+  },
+  "readyDoesNotCount": true,
+  "pauseResumeDoesNotCount": true,
+  "retryDoesNotCount": true,
+  "unknownRejected": true,
+  "crossOriginRejected": true,
+  "rankingReflectsPlayback": true
+}

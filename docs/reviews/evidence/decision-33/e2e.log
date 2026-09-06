@@ -1,0 +1,215 @@
+[WebServer] (node:81131) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:90989) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 100 tests using 14 workers
+
+(node:90991) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:90993) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:90992) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:90995) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:90994) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:90997) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:90996) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:90999) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91001) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91003) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:90998) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91002) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91000) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91004) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   10 [chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/patient-experience.spec.ts:39:1 › patient content remains readable without scripts (419ms)
+  ✓    6 [chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/atlas-navigation.spec.ts:79:3 › atlas navigation › review lab and fixture routes are marked as review-only (494ms)
+  ✓    3 [chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/atlas-navigation.spec.ts:65:3 › atlas navigation › course cards show the exact pending label and never guess a URL (500ms)
+  ✓    9 [chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/atlas-navigation.spec.ts:50:3 › atlas navigation › generates NBA but no MLB, football, or unknown injury route (463ms)
+  ✓   14 [chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:404:3 › component lab before enhancement › the YouTube connection disclosure remains visible at 390px (472ms)
+  ✓    2 [chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/medical-notices.spec.ts:146:3 › Decision 13 medical notices › keeps the central medical deep-link target below the sticky header (593ms)
+  ✓   17 [chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:666:3 › component lab without JavaScript › the source anchor remains a normal link and the removed timeline stays absent (115ms)
+  ✓   19 [chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:562:3 › governed case facades › the Taiwan-blocked Anthony Edwards video is a labeled external link with no facade or request (194ms)
+  ✓   12 [chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:389:3 › component lab before enhancement › every photo facade uses a responsive local picture with descriptive alt text (680ms)
+  ✓    1 [chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/medical-notices.spec.ts:114:3 › Decision 13 medical notices › keeps every approved clause initially visible at desktop and 390px (797ms)
+  ✓    7 [chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/atlas-navigation.spec.ts:20:3 › atlas navigation › home shows videos without the removed injury directory (771ms)
+  ✓   18 [chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:600:3 › governed case facades › a real NBA case uses its registry v7 photo facade and complete plain-text citation (300ms)
+  ✓   20 [chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:762:3 › click-to-load player › playback error after readiness restores a retry and ignores stale player events (267ms)
+  ✓   11 [chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/patient-experience.spec.ts:4:1 › video collection is directly browsable without search or filters (874ms)
+  ✓   23 [chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:816:3 › non-embedded states and caption policy › NBA external-link-only renders a complete plain-text citation and no player (204ms)
+  ✓   25 [chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:855:3 › non-embedded states and caption policy › unavailable renders a clear notice and no player (134ms)
+  ✓   24 [chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:870:3 › non-embedded states and caption policy › caption states are visibly labeled and gate the public player (159ms)
+  ✓    8 [chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/patient-experience.spec.ts:19:1 › case opens with video, concise care, and a separately attributed athlete return (966ms)
+(node:91076) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91077) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91078) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91079) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    5 [chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/atlas-navigation.spec.ts:30:3 › atlas navigation › the three injury routes expose their real overviews and exact cases (1.2s)
+(node:91082) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91081) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91083) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   21 [chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:683:3 › click-to-load player › first click creates one validated no-cookie iframe and one player (620ms)
+  ✓   22 [chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:791:3 › click-to-load player › API load failure removes the iframe, returns focus, and keeps the source link (551ms)
+  ✓   13 [chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:347:3 › component lab before enhancement › initial DOM and network log contain no YouTube artifacts (1.2s)
+(node:91089) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   16 [chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:527:3 › governed case facades › all seven unrestricted cases load on click with five portraits at 9:16 (974ms)
+(node:91096) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91095) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91097) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   15 [chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:420:3 › governed case facades › all seven embeddable YouTube cases use their registry v7 local photo facade and make zero pre-click requests (1.1s)
+(node:91099) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91103) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    4 [chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/medical-notices.spec.ts:62:3 › Decision 13 medical notices › renders compact notices on exactly 26 cases, three overviews, and one update (2.7s)
+(node:91117) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   28 [firefox] › ../../../../../private/tmp/atlas33-e2e/e2e/atlas-navigation.spec.ts:50:3 › atlas navigation › generates NBA but no MLB, football, or unknown injury route (733ms)
+  ✓   26 [firefox] › ../../../../../private/tmp/atlas33-e2e/e2e/atlas-navigation.spec.ts:20:3 › atlas navigation › home shows videos without the removed injury directory (1.2s)
+  ✓   40 [firefox] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:420:3 › governed case facades › all seven embeddable YouTube cases use their registry v7 local photo facade and make zero pre-click requests (1.4s)
+  ✓   37 [firefox] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:347:3 › component lab before enhancement › initial DOM and network log contain no YouTube artifacts (1.8s)
+  ✓   34 [firefox] › ../../../../../private/tmp/atlas33-e2e/e2e/patient-experience.spec.ts:4:1 › video collection is directly browsable without search or filters (1.4s)
+  ✓   38 [firefox] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:389:3 › component lab before enhancement › every photo facade uses a responsive local picture with descriptive alt text (1.1s)
+  ✓   42 [firefox] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:562:3 › governed case facades › the Taiwan-blocked Anthony Edwards video is a labeled external link with no facade or request (244ms)
+  ✓   41 [firefox] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:527:3 › governed case facades › all seven unrestricted cases load on click with five portraits at 9:16 (1.4s)
+  ✓   36 [firefox] › ../../../../../private/tmp/atlas33-e2e/e2e/patient-experience.spec.ts:39:1 › patient content remains readable without scripts (850ms)
+  ✓   27 [firefox] › ../../../../../private/tmp/atlas33-e2e/e2e/atlas-navigation.spec.ts:30:3 › atlas navigation › the three injury routes expose their real overviews and exact cases (1.8s)
+  ✓   43 [firefox] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:600:3 › governed case facades › a real NBA case uses its registry v7 photo facade and complete plain-text citation (336ms)
+  ✓   46 [firefox] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:666:3 › component lab without JavaScript › the source anchor remains a normal link and the removed timeline stays absent (258ms)
+  ✓   50 [firefox] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:855:3 › non-embedded states and caption policy › unavailable renders a clear notice and no player (230ms)
+  ✓   49 [firefox] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:870:3 › non-embedded states and caption policy › caption states are visibly labeled and gate the public player (317ms)
+  ✓   45 [firefox] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:762:3 › click-to-load player › playback error after readiness restores a retry and ignores stale player events (498ms)
+  ✓   48 [firefox] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:816:3 › non-embedded states and caption policy › NBA external-link-only renders a complete plain-text citation and no player (409ms)
+  ✓   29 [firefox] › ../../../../../private/tmp/atlas33-e2e/e2e/atlas-navigation.spec.ts:65:3 › atlas navigation › course cards show the exact pending label and never guess a URL (1.1s)
+(node:91184) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91186) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   47 [firefox] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:791:3 › click-to-load player › API load failure removes the iframe, returns focus, and keeps the source link (812ms)
+(node:91188) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   33 [firefox] › ../../../../../private/tmp/atlas33-e2e/e2e/medical-notices.spec.ts:146:3 › Decision 13 medical notices › keeps the central medical deep-link target below the sticky header (1.0s)
+  ✓   44 [firefox] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:683:3 › click-to-load player › first click creates one validated no-cookie iframe and one player (930ms)
+(node:91194) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91193) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91212) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91238) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91239) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91248) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   35 [firefox] › ../../../../../private/tmp/atlas33-e2e/e2e/patient-experience.spec.ts:19:1 › case opens with video, concise care, and a separately attributed athlete return (1.8s)
+  ✓   53 [webkit] › ../../../../../private/tmp/atlas33-e2e/e2e/atlas-navigation.spec.ts:50:3 › atlas navigation › generates NBA but no MLB, football, or unknown injury route (808ms)
+  ✓   54 [webkit] › ../../../../../private/tmp/atlas33-e2e/e2e/atlas-navigation.spec.ts:65:3 › atlas navigation › course cards show the exact pending label and never guess a URL (819ms)
+  ✓   55 [webkit] › ../../../../../private/tmp/atlas33-e2e/e2e/atlas-navigation.spec.ts:79:3 › atlas navigation › review lab and fixture routes are marked as review-only (806ms)
+  ✓   32 [firefox] › ../../../../../private/tmp/atlas33-e2e/e2e/atlas-navigation.spec.ts:79:3 › atlas navigation › review lab and fixture routes are marked as review-only (1.2s)
+  ✓   60 [webkit] › ../../../../../private/tmp/atlas33-e2e/e2e/patient-experience.spec.ts:39:1 › patient content remains readable without scripts (394ms)
+  ✓   58 [webkit] › ../../../../../private/tmp/atlas33-e2e/e2e/medical-notices.spec.ts:146:3 › Decision 13 medical notices › keeps the central medical deep-link target below the sticky header (745ms)
+  ✓   51 [webkit] › ../../../../../private/tmp/atlas33-e2e/e2e/atlas-navigation.spec.ts:20:3 › atlas navigation › home shows videos without the removed injury directory (1.3s)
+(node:91326) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   62 [webkit] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:389:3 › component lab before enhancement › every photo facade uses a responsive local picture with descriptive alt text (569ms)
+(node:91330) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   57 [webkit] › ../../../../../private/tmp/atlas33-e2e/e2e/medical-notices.spec.ts:114:3 › Decision 13 medical notices › keeps every approved clause initially visible at desktop and 390px (1.1s)
+  ✓   39 [firefox] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:404:3 › component lab before enhancement › the YouTube connection disclosure remains visible at 390px (1.2s)
+  ✓   65 [webkit] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:562:3 › governed case facades › the Taiwan-blocked Anthony Edwards video is a labeled external link with no facade or request (368ms)
+  ✓   59 [webkit] › ../../../../../private/tmp/atlas33-e2e/e2e/patient-experience.spec.ts:4:1 › video collection is directly browsable without search or filters (1.2s)
+  ✓   52 [webkit] › ../../../../../private/tmp/atlas33-e2e/e2e/atlas-navigation.spec.ts:30:3 › atlas navigation › the three injury routes expose their real overviews and exact cases (1.8s)
+  ✓   31 [firefox] › ../../../../../private/tmp/atlas33-e2e/e2e/medical-notices.spec.ts:114:3 › Decision 13 medical notices › keeps every approved clause initially visible at desktop and 390px (1.8s)
+  ✓   68 [webkit] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:666:3 › component lab without JavaScript › the source anchor remains a normal link and the removed timeline stays absent (306ms)
+  ✓   66 [webkit] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:600:3 › governed case facades › a real NBA case uses its registry v7 photo facade and complete plain-text citation (508ms)
+  ✓   70 [webkit] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:762:3 › click-to-load player › playback error after readiness restores a retry and ignores stale player events (502ms)
+  ✓   72 [webkit] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:816:3 › non-embedded states and caption policy › NBA external-link-only renders a complete plain-text citation and no player (411ms)
+(node:91367) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   61 [webkit] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:347:3 › component lab before enhancement › initial DOM and network log contain no YouTube artifacts (1.4s)
+  ✓   73 [webkit] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:870:3 › non-embedded states and caption policy › caption states are visibly labeled and gate the public player (350ms)
+(node:91369) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   69 [webkit] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:404:3 › component lab before enhancement › the YouTube connection disclosure remains visible at 390px (501ms)
+(node:91371) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91372) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91373) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91374) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91376) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91378) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   71 [webkit] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:791:3 › click-to-load player › API load failure removes the iframe, returns focus, and keeps the source link (863ms)
+  ✓   67 [webkit] › ../../../../../private/tmp/atlas33-e2e/e2e/patient-experience.spec.ts:19:1 › case opens with video, concise care, and a separately attributed athlete return (1.2s)
+  ✓   78 [mobile-chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/atlas-navigation.spec.ts:50:3 › atlas navigation › generates NBA but no MLB, football, or unknown injury route (200ms)
+  ✓   64 [webkit] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:527:3 › governed case facades › all seven unrestricted cases load on click with five portraits at 9:16 (1.6s)
+(node:91408) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   81 [mobile-chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/atlas-navigation.spec.ts:79:3 › atlas navigation › review lab and fixture routes are marked as review-only (202ms)
+  ✓   79 [mobile-chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/atlas-navigation.spec.ts:65:3 › atlas navigation › course cards show the exact pending label and never guess a URL (260ms)
+  ✓   74 [mobile-chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/atlas-navigation.spec.ts:20:3 › atlas navigation › home shows videos without the removed injury directory (579ms)
+  ✓   63 [webkit] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:420:3 › governed case facades › all seven embeddable YouTube cases use their registry v7 local photo facade and make zero pre-click requests (1.9s)
+  ✓   83 [mobile-chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/patient-experience.spec.ts:39:1 › patient content remains readable without scripts (169ms)
+(node:91429) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:91430) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   76 [webkit] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:855:3 › non-embedded states and caption policy › unavailable renders a clear notice and no player (523ms)
+  ✓   86 [mobile-chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:389:3 › component lab before enhancement › every photo facade uses a responsive local picture with descriptive alt text (318ms)
+(node:91440) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   90 [mobile-chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:562:3 › governed case facades › the Taiwan-blocked Anthony Edwards video is a labeled external link with no facade or request (161ms)
+  ✓   82 [mobile-chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/patient-experience.spec.ts:4:1 › video collection is directly browsable without search or filters (642ms)
+(node:91443) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   88 [mobile-chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/medical-notices.spec.ts:146:3 › Decision 13 medical notices › keeps the central medical deep-link target below the sticky header (224ms)
+  ✓   85 [mobile-chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/medical-notices.spec.ts:114:3 › Decision 13 medical notices › keeps every approved clause initially visible at desktop and 390px (435ms)
+  ✓   92 [mobile-chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:666:3 › component lab without JavaScript › the source anchor remains a normal link and the removed timeline stays absent (113ms)
+  ✓   77 [mobile-chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/atlas-navigation.spec.ts:30:3 › atlas navigation › the three injury routes expose their real overviews and exact cases (982ms)
+  ✓   91 [mobile-chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:600:3 › governed case facades › a real NBA case uses its registry v7 photo facade and complete plain-text citation (233ms)
+  ✓   75 [webkit] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:683:3 › click-to-load player › first click creates one validated no-cookie iframe and one player (1.3s)
+  ✓   93 [mobile-chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:404:3 › component lab before enhancement › the YouTube connection disclosure remains visible at 390px (162ms)
+  ✓   99 [mobile-chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:855:3 › non-embedded states and caption policy › unavailable renders a clear notice and no player (132ms)
+  ✓   98 [mobile-chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:816:3 › non-embedded states and caption policy › NBA external-link-only renders a complete plain-text citation and no player (229ms)
+  ✓   94 [mobile-chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:762:3 › click-to-load player › playback error after readiness restores a retry and ignores stale player events (303ms)
+  ✓   84 [mobile-chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:347:3 › component lab before enhancement › initial DOM and network log contain no YouTube artifacts (933ms)
+(node:91471) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   89 [mobile-chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/patient-experience.spec.ts:19:1 › case opens with video, concise care, and a separately attributed athlete return (672ms)
+  ✓   95 [mobile-chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:683:3 › click-to-load player › first click creates one validated no-cookie iframe and one player (612ms)
+  ✓   97 [mobile-chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:791:3 › click-to-load player › API load failure removes the iframe, returns focus, and keeps the source link (571ms)
+  ✓   87 [mobile-chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:420:3 › governed case facades › all seven embeddable YouTube cases use their registry v7 local photo facade and make zero pre-click requests (1.1s)
+  ✓  100 [mobile-chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:870:3 › non-embedded states and caption policy › caption states are visibly labeled and gate the public player (134ms)
+  ✓   96 [mobile-chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/video-player.spec.ts:527:3 › governed case facades › all seven unrestricted cases load on click with five portraits at 9:16 (915ms)
+  ✓   56 [webkit] › ../../../../../private/tmp/atlas33-e2e/e2e/medical-notices.spec.ts:62:3 › Decision 13 medical notices › renders compact notices on exactly 26 cases, three overviews, and one update (5.1s)
+  ✓   30 [firefox] › ../../../../../private/tmp/atlas33-e2e/e2e/medical-notices.spec.ts:62:3 › Decision 13 medical notices › renders compact notices on exactly 26 cases, three overviews, and one update (6.0s)
+  ✓   80 [mobile-chromium] › ../../../../../private/tmp/atlas33-e2e/e2e/medical-notices.spec.ts:62:3 › Decision 13 medical notices › renders compact notices on exactly 26 cases, three overviews, and one update (2.6s)
+
+  100 passed (33.8s)

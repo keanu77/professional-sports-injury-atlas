@@ -72,7 +72,7 @@ let matchedPages = 0;
 for (const file of receipt.files.filter(
   (file) =>
     file.path.endsWith(".html") ||
-    file.path.endsWith(".json") ||
+    (file.path.endsWith(".json") && file.path !== "_routes.json") ||
     file.path === "robots.txt",
 )) {
   const path =
@@ -122,6 +122,9 @@ try {
       "/",
       ...receipt.bodyParts.map((part) => `/body-parts/${part.code}/`),
       ...receipt.sports.map((sport) => `/sports/${sport.code}/`),
+      ...receipt.situations.map(
+        (situation) => `/situations/${situation.code}/`,
+      ),
       ...videoPaths,
       ...Object.keys(policyPages),
     ]) {
@@ -157,7 +160,10 @@ try {
         (p) => path === `/body-parts/${p.code}/`,
       );
       const sport = receipt.sports.find((s) => path === `/sports/${s.code}/`);
-      const group = part ?? sport;
+      const situation = receipt.situations.find(
+        (s) => path === `/situations/${s.code}/`,
+      );
+      const group = part ?? sport ?? situation;
       if (path === "/" || group) {
         assert.equal(
           await covers.count(),
@@ -166,10 +172,16 @@ try {
         for (const [kind, groups, current] of [
           ["body-part", receipt.bodyParts, part],
           ["sport", receipt.sports, sport],
+          ["situation", receipt.situations, situation],
         ]) {
           if (path !== "/" && !current) continue;
           const nav = page.locator(`[data-${kind}-nav]`);
-          const route = kind === "sport" ? "sports" : "body-parts";
+          const route =
+            kind === "sport"
+              ? "sports"
+              : kind === "situation"
+                ? "situations"
+                : "body-parts";
           assert.deepEqual(
             await nav
               .locator("a")
@@ -198,7 +210,7 @@ try {
         const cards = page.locator(
           path === "/"
             ? "[data-featured-videos] [data-featured-card]"
-            : `[data-${sport ? "sport" : "body-part"}-videos] [data-featured-card]`,
+            : `[data-${sport ? "sport" : situation ? "situation" : "body-part"}-videos] [data-featured-card]`,
         );
         assert.equal(
           await cards.count(),
@@ -332,6 +344,7 @@ try {
         (receipt.clips ?? []).length +
         receipt.bodyParts.length +
         receipt.sports.length +
+        receipt.situations.length +
         1 +
         Object.keys(policyPages).length,
       accessibility: "passed",

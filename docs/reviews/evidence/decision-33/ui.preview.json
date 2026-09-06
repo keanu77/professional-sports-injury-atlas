@@ -1,0 +1,73 @@
+[
+  {
+    "initialCards": 78,
+    "situations": 7,
+    "noInitialApi": true
+  },
+  {
+    "curated": 6,
+    "ranked": [
+      {
+        "id": "8rQjyuPU_gM",
+        "count": "第 1 名 · 近 30 天播放 7 次"
+      },
+      {
+        "id": "C4xerhbFNnc",
+        "count": "第 2 名 · 近 30 天播放 2 次"
+      }
+    ]
+  },
+  {
+    "honestEmptyAndError": true
+  },
+  {
+    "slowResponseCannotOverrideMode": true
+  },
+  {
+    "width": 320,
+    "scroll": 320,
+    "inner": 320
+  },
+  {
+    "width": 390,
+    "scroll": 390,
+    "inner": 390
+  },
+  {
+    "width": 1440,
+    "scroll": 1440,
+    "inner": 1440
+  },
+  {
+    "route": "/situations/landing/",
+    "count": 18
+  },
+  {
+    "route": "/situations/running-turning/",
+    "count": 17
+  },
+  {
+    "route": "/situations/collision/",
+    "count": 22
+  },
+  {
+    "route": "/situations/fall/",
+    "count": 6
+  },
+  {
+    "route": "/situations/ball-impact/",
+    "count": 5
+  },
+  {
+    "route": "/situations/racket-swing/",
+    "count": 1
+  },
+  {
+    "route": "/situations/unclear/",
+    "count": 9
+  },
+  {
+    "noJsCards": 78,
+    "noJsSituations": 7
+  }
+]

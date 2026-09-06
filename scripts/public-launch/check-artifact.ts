@@ -1,5 +1,7 @@
 import { videosByBodyPart } from "../../src/lib/videos/body-parts";
 import { videosBySport } from "../../src/lib/videos/sports";
+import { videosBySituation } from "../../src/lib/videos/discovery";
+import { publicVideoIds } from "../../src/lib/videos/public-video-ids";
 import {
   allObservationClips,
   curation,
@@ -38,6 +40,35 @@ const selected = loadContentCollections()
     ),
   );
 assert.equal(selected.length, approval.cases.length + expansion.cases.length);
+assert.deepEqual(
+  [...publicVideoIds].sort(),
+  [
+    ...selected.map((record) =>
+      new URL(record.video.canonicalUrl).searchParams.get("v"),
+    ),
+    ...allObservationClips.map((clip) => clip.videoId),
+  ].sort(),
+  "Statistics allowlist must match the actual public video collection",
+);
+const situations = videosBySituation(selected, allObservationClips).map(
+  (item) => ({
+    code: item.code,
+    label: item.label,
+    count: item.count,
+    paths: [
+      ...item.cases.map((c) => `/cases/${c.slug}/`),
+      ...item.clips.map((c) => `/videos/${c.slug}/`),
+    ],
+  }),
+);
+assert.deepEqual(
+  readdirSync("dist/situations").sort(),
+  situations.map((s) => s.code).sort(),
+);
+assert.equal(
+  situations.reduce((sum, item) => sum + item.count, 0),
+  selected.length + allObservationClips.length,
+);
 assert.deepEqual(
   readdirSync("dist/videos").sort(),
   allObservationClips.map((c) => c.slug).sort(),
@@ -223,6 +254,7 @@ const receipt = {
   })),
   bodyParts,
   sports,
+  situations,
   htmlPages: htmlFiles.length,
   internalLinks: links,
   files: list("dist")

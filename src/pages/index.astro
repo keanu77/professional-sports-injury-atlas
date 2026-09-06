@@ -1,4 +1,7 @@
 ---
+import SituationNav from "../components/atlas/SituationNav.astro";
+import { discoveryFor, videosBySituation } from "../lib/videos/discovery";
+import { parseYouTubeVideoId } from "../lib/video/youtube";
 import SportNav from "../components/atlas/SportNav.astro";
 import { videosBySport } from "../lib/videos/sports";
 import BodyPartNav from "../components/atlas/BodyPartNav.astro";
@@ -20,6 +23,7 @@ const featured = videoFirstCases(permitted).filter(hasPublicEmbed);
 const clips = observationClips();
 const bodyParts = videosByBodyPart(featured, clips);
 const sports = videosBySport(featured, clips);
+const situations = videosBySituation(featured, clips);
 const videoCount = featured.length + clips.length;
 ---
 
@@ -38,7 +42,7 @@ const videoCount = featured.length + clips.length;
     <h1>運動傷害影片圖鑑</h1>
     <p>
       從落地不穩、急停轉向，到碰撞與球體撞擊，用真實影片認識運動傷害可能發生的過程。
-      依部位或運動項目選片，了解受傷當下的處理重點與選手實際回場紀錄。
+      依部位、運動項目或受傷情境選片，了解受傷當下的處理重點與選手實際回場紀錄。
     </p>
     <dl class="atlas-stats" aria-label="目前收錄內容">
       <div>
@@ -72,14 +76,62 @@ const videoCount = featured.length + clips.length;
         <div id="sports">
           <SportNav sports={sports} />
         </div>
+        <div id="situations">
+          <SituationNav situations={situations} />
+        </div>
       </div>
     )
   }
-  <section id="videos-heading" aria-label="運動傷害影片" data-featured-videos>
-    <ol class="video-grid">
+  <section
+    id="videos-heading"
+    aria-label="運動傷害影片"
+    data-featured-videos
+    data-video-discovery
+  >
+    <div
+      class="discovery-controls"
+      data-discovery-controls
+      hidden
+      role="group"
+      aria-label="影片選單"
+    >
+      <button
+        type="button"
+        data-discovery-mode="all"
+        aria-pressed="true"
+        aria-controls="discovery-videos">全部影片</button
+      >
+      <button
+        type="button"
+        data-discovery-mode="curated"
+        aria-pressed="false"
+        aria-controls="discovery-videos">精選影片</button
+      >
+      <button
+        type="button"
+        data-discovery-mode="popular"
+        aria-pressed="false"
+        aria-controls="discovery-videos">本站熱門</button
+      >
+    </div>
+    <p
+      class="discovery-status"
+      data-discovery-status
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    >
+    </p>
+    <ol class="video-grid" id="discovery-videos" data-discovery-grid>
       {
         featured.map((record, index) => (
-          <li data-featured-card>
+          <li
+            data-featured-card
+            data-discovery-slug={record.slug}
+            data-video-id={parseYouTubeVideoId(record.video.canonicalUrl)}
+            data-curated-rank={discoveryFor(record.slug).curatedRank}
+          >
+            <span class="popular-count" data-popular-count hidden />
             <CaseCard
               record={record}
               showWorkflowBadge={false}
@@ -91,7 +143,13 @@ const videoCount = featured.length + clips.length;
       }
       {
         clips.map((clip) => (
-          <li data-featured-card>
+          <li
+            data-featured-card
+            data-discovery-slug={clip.slug}
+            data-video-id={clip.videoId}
+            data-curated-rank={discoveryFor(clip.slug).curatedRank}
+          >
+            <span class="popular-count" data-popular-count hidden />
             <ObservationCard clip={clip} />
           </li>
         ))
@@ -102,7 +160,65 @@ const videoCount = featured.length + clips.length;
     影片呈現受傷過程；診斷依具名來源。球員的回場紀錄不等於你的恢復時間。
   </p>
 </BaseLayout>
+<script>
+  import "../scripts/video-discovery";
+</script>
 <style>
+  [hidden] {
+    display: none !important;
+  }
+  .discovery-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .discovery-controls button {
+    min-height: 44px;
+    padding: 0.65rem 1.1rem;
+    border: 1px solid var(--color-brand-100);
+    border-radius: 999px;
+    background: var(--color-surface-raised);
+    color: var(--color-brand-primary);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .discovery-controls button[aria-pressed="true"] {
+    background: var(--color-brand-primary);
+    color: var(--color-on-brand);
+    border-color: var(--color-brand-primary);
+  }
+  .discovery-controls button:focus-visible {
+    outline: 3px solid var(--color-brand-primary);
+    outline-offset: 3px;
+  }
+  .discovery-status {
+    color: var(--color-ink-muted);
+    font-size: 0.875rem;
+    margin-block: 0.75rem 1.25rem;
+  }
+  .discovery-status:empty {
+    display: none;
+  }
+  .video-grid > li {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  .video-grid > li > :global(.case-card),
+  .video-grid > li > :global(.observation-card) {
+    flex: 1;
+    height: auto;
+  }
+  .popular-count {
+    padding: 0.5rem 0.75rem;
+    background: var(--color-brand-50);
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-brand-900);
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
   .video-intro {
     margin: -1.5rem calc(50% - 50vw) 4rem;
     padding: 4rem max(1.5rem, calc((100vw - 77rem) / 2));

@@ -26,6 +26,9 @@ export function inputTreeDigest(root = process.cwd()): string {
     "package.json",
     "package-lock.json",
     "scripts",
+    "functions",
+    "migrations",
+    "wrangler.jsonc",
   ])
     visit(path);
   return sha256Hex(

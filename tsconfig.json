@@ -8,6 +8,7 @@
     ".astro/types.d.ts",
     "src/**/*",
     "scripts/**/*",
+    "functions/**/*",
     "tests/**/*",
     "e2e/**/*"
   ],

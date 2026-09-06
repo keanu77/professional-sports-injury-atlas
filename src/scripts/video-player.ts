@@ -6,6 +6,7 @@ import {
   type YouTubePlayerInstance,
 } from "../lib/video/youtube-api-adapter";
 import { buildPrivacyEnhancedEmbedUrl } from "../lib/video/youtube";
+import { createPlaybackTracker } from "../lib/video/playback-tracking";
 
 type PlayerState = "idle" | "loading" | "ready" | "failed";
 
@@ -21,12 +22,14 @@ function awaitReady(
   namespace: Parameters<typeof createPlayer>[0],
   iframe: HTMLIFrameElement,
   onFailure: () => void,
+  onPlaying: () => void,
 ): Promise<void> {
   return new Promise<void>((resolve, reject) => {
     const timer = window.setTimeout(() => {
       reject(new Error("youtube-player-ready-timeout"));
     }, READY_TIMEOUT_MS);
     controller.player = createPlayer(namespace, iframe, {
+      onPlaying,
       onReady: () => {
         window.clearTimeout(timer);
         resolve();
@@ -53,6 +56,7 @@ function setupEmbed(root: HTMLElement): void {
 
   const status = root.querySelector<HTMLElement>("[data-video-status]");
   const controller: VideoController = { state: "idle", player: null };
+  const trackPlayback = createPlaybackTracker(root.dataset.videoId ?? "");
   let activeIframe: HTMLIFrameElement | null = null;
   root.dataset.videoState = "idle";
 
@@ -114,7 +118,16 @@ function setupEmbed(root: HTMLElement): void {
     loadIframeApi()
       .then((namespace) => {
         if (activeIframe !== iframe) return;
-        return awaitReady(controller, namespace, iframe, () => fail(iframe));
+        return awaitReady(
+          controller,
+          namespace,
+          iframe,
+          () => fail(iframe),
+          () => {
+            if (activeIframe === iframe && controller.state !== "failed")
+              trackPlayback();
+          },
+        );
       })
       .then(() => {
         if (activeIframe !== iframe) return;

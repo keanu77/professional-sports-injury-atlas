@@ -1,0 +1,22 @@
+
+ ⛅️ wrangler 4.129.0
+────────────────────
+Resource location: remote 
+
+Migrations to be applied:
+┌──────────────────────┐
+│ name                 │
+├──────────────────────┤
+│ 0001_play_events.sql │
+└──────────────────────┘
+? About to apply 1 migration(s)
+Your database may not be available to serve requests during the migration, continue?
+🤖 Using fallback value in non-interactive context: yes
+🌀 Executing on remote database PLAYBACK_DB (d7fae228-d624-4746-bfad-a00bc9ed7800):
+🌀 To execute on your local development database, remove the --remote flag from your wrangler command.
+🚣 Executed 3 commands in 0.53ms
+┌──────────────────────┬────────┐
+│ name                 │ status │
+├──────────────────────┼────────┤
+│ 0001_play_events.sql │ ✅     │
+└──────────────────────┴────────┘

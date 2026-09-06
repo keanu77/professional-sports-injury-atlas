@@ -8,7 +8,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 >
   <h1>隱私與播放設定</h1>
   <p>
-    本站不提供會員註冊，也不要求填寫姓名或健康資料。網站本身未加入廣告追蹤或訪客分析程式。
+    本站不提供會員註冊，也不要求填寫姓名或健康資料。本站不使用廣告追蹤；「本站熱門」只統計站內影片的實際開始播放次數。
   </p>
   <section aria-labelledby="playback-heading">
     <h2 id="playback-heading">點選後才連線到 YouTube</h2>
@@ -28,6 +28,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </p>
     <p>
       你可以只閱讀文字而不載入影片。若選擇「觀看原始影片」，會離開本站，改由該平台的設定與政策適用。
+    </p>
+  </section>
+  <section aria-labelledby="statistics-heading">
+    <h2 id="statistics-heading">本站熱門怎麼統計</h2>
+    <p>
+      當 YouTube
+      播放器回報開始播放，本站才記錄一次。同一次開啟頁面中的暫停、繼續播放或資料重送，不會重複計入；重新開啟影片頁並播放可再計一次。這是播放次數，不是觀看人數，也不是
+      YouTube 平台的觀看數。
+    </p>
+    <p>
+      統計資料只保存影片代碼、伺服器收到的播放時間，以及本次播放的隨機防重複碼。不在統計資料庫保存
+      IP 位址、姓名或跨頁訪客識別碼，也不為此設定 Cookie。播放紀錄由 Cloudflare
+      D1 儲存；排行榜只使用最近 30 天的紀錄，過期紀錄會隨後續寫入清除。
+    </p>
+    <p>
+      為減少短時間大量請求，伺服器會在記憶體中暫存連線 IP
+      的請求次數，於下一分鐘收到請求時清除上一分鐘的紀錄，或隨執行個體回收消失，不寫入播放資料庫。排行可能有約一分鐘的更新間隔。
+    </p>
+    <p>
+      瀏覽器若啟用「不要追蹤」（DNT）或全域隱私控制（GPC），本站不傳送播放統計。阻擋統計請求或網路中斷，也可能讓播放未被計入，但不影響影片播放。精選影片由本站挑選，與熱門排行分開。
     </p>
   </section>
   <section aria-labelledby="preferences-heading">

@@ -70,12 +70,19 @@ describe("Decision 21 public scope", () => {
   it("binds newly added and modified rendering inputs while excluding its own manifest", () => {
     const root = mkdtempSync(join(tmpdir(), "atlas-launch-tree-"));
     try {
-      for (const p of ["src/data", "public", "scripts/public-launch"])
+      for (const p of [
+        "src/data",
+        "public",
+        "scripts/public-launch",
+        "functions/api",
+        "migrations",
+      ])
         mkdirSync(join(root, p), { recursive: true });
       for (const p of [
         "astro.config.mjs",
         "package.json",
         "package-lock.json",
+        "wrangler.jsonc",
         "src/data/public-launch.v1.json",
       ])
         writeFileSync(join(root, p), "{}");
@@ -87,6 +94,9 @@ describe("Decision 21 public scope", () => {
       expect(inputTreeDigest(root)).toBe(initial);
       writeFileSync(join(root, "src/new.astro"), "unreviewed");
       expect(inputTreeDigest(root)).not.toBe(initial);
+      const changed = inputTreeDigest(root);
+      writeFileSync(join(root, "functions/api/plays.ts"), "changed counter");
+      expect(inputTreeDigest(root)).not.toBe(changed);
       rmSync(join(root, "src/new.astro"));
       writeFileSync(join(root, "astro.config.mjs"), "changed renderer");
       expect(inputTreeDigest(root)).not.toBe(initial);

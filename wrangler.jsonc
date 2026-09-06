@@ -1,0 +1,32 @@
+{
+  "name": "sports-injury-atlas",
+  "pages_build_output_dir": "./dist",
+  "compatibility_date": "2026-09-06",
+  "d1_databases": [
+    {
+      "binding": "PLAYBACK_DB",
+      "database_name": "atlas-playback-preview",
+      "database_id": "14ebcfe3-b040-4726-b7e6-84c6c8c03f3d",
+    },
+  ],
+  "env": {
+    "preview": {
+      "d1_databases": [
+        {
+          "binding": "PLAYBACK_DB",
+          "database_name": "atlas-playback-preview",
+          "database_id": "14ebcfe3-b040-4726-b7e6-84c6c8c03f3d",
+        },
+      ],
+    },
+    "production": {
+      "d1_databases": [
+        {
+          "binding": "PLAYBACK_DB",
+          "database_name": "atlas-playback-production",
+          "database_id": "d7fae228-d624-4746-bfad-a00bc9ed7800",
+        },
+      ],
+    },
+  },
+}
