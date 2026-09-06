@@ -1,0 +1,17 @@
+{
+  "project": "sports-injury-atlas",
+  "domains": [
+    "sports-injury-atlas.pages.dev",
+    "injury.sportsmedicine.tw"
+  ],
+  "deploymentId": "3593ae04-0722-42cc-ae18-367d7b933b12",
+  "url": "https://3593ae04.sports-injury-atlas.pages.dev",
+  "environment": "production",
+  "source": {
+    "branch": "main",
+    "commit_hash": "d42d5163986d306b312de3336382b561591100c0",
+    "commit_message": "fix: make public video contribution URL optional",
+    "commit_dirty": false
+  },
+  "createdOn": "2026-09-06T13:06:29.172236Z"
+}

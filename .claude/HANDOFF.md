@@ -4,7 +4,13 @@
 
 正式 https://injury.sportsmedicine.tw/ 已啟用；Pages domain、驗證、TLS 狀態 active。CNAME 由使用者新增，先前 522／pending 已解決，不要再要求新增 DNS。主站首頁及 /content/ 的 HTTP 200 與內容 hash 和本輪前相同。
 
-正式部署 f49d7320-ac5f-406b-95f8-be68a386f39e，來源 6d20b40f8f87940ebc26c3fedb30590c62046277，main，乾淨提交；已 commit/push。root dist 是最終正式產物。收尾證據／文件另提交，不需重部署。仍為 101 支影片、11 部位、15 運動，其中棒球 30 支。
+正式部署 3593ae04-0722-42cc-ae18-367d7b933b12，來源 d42d5163986d306b312de3336382b561591100c0，main，乾淨提交；已 commit/push。root dist 是最終正式產物。收尾證據／文件另提交，不需重部署。仍為 101 支影片、11 部位、15 運動，其中棒球 30 支。
+
+## 最新補充（21:06 台灣時間）
+
+使用者要求公開影片網址選填，已同步移除前端必填、切換時更新 required，backend 接受省略／空白影片 URL，有填仍驗格式，信內顯示「未提供」。資料修正頁面 URL 仍必填。36 項相關單元、四瀏覽器 16 項、Astro 0 errors／0 warnings、release:public 通過；正式 /contribute/ hash 相符，留白與分類切換以攔截 API 的瀏覽器測試確認，未寄真實郵件。收件設定未變更；本機主站收件地址已告知使用者，正式 CONTACT_RECIPIENT_EMAIL 為不可讀回 secret，不能用本機值保證正式收件地址。
+
+證據 docs/reviews/evidence/decision-35/optional-url/。以下完整站點回歸紀錄屬前一版，這次小改只重跑相關驗證。
 
 ## 本輪功能
 

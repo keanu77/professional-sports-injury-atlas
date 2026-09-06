@@ -35,3 +35,9 @@ public/_routes.json 明確開放新 API；CSP 放行 Turnstile script/frame，�
 已詢問使用者是否允許一封「影片圖鑑功能測試」，尚未收到答覆。下一步由真人完成驗證後送出一筆測試，再確認主站目前設定的收件信箱收到通知；未確認之前不得宣稱端到端寄信已完成。收件地址 secret 未讀出，也不得僅依本機 .env 宣稱正式寄送到某地址。
 
 本次來源提交 c749c03（功能）與 6d20b40（提示／尺寸），均已 push。證據位於 evidence/decision-35；最終 browser.production.final.json 與 deployment.final.json 為目前正式依據。先前 pending-domain 與 preview 證據保留為歷史，不能當作當前狀態。
+
+## 後續：公開影片網址選填（2026-09-06 21:06）
+
+依使用者指示，公開影片網址可留白或省略；有填仍檢查格式，通知信顯示「未提供」。資料修正 URL 仍必填，切換類型會同步更新 required。來源 d42d5163986d306b312de3336382b561591100c0，正式部署 3593ae04-0722-42cc-ae18-367d7b933b12，已 push／上線。36 項相關單元、四瀏覽器 16 項、Astro 0 errors／0 warnings、release:public 通過。正式表單 HTML hash 及留白送出／類型切換以 mock API 驗證，不寄真實郵件；證據 optional-url/。
+
+使用者另問收件地址：已查本機主站設定並回覆，但正式收件 secret 不能讀回，尚無實際收件證據；這次沒有修改寄信目的地。
