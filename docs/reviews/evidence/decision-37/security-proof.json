@@ -1,0 +1,33 @@
+{
+  "scope": "offline functions with mock DB and mock mail; no network calls or real mail",
+  "emptyContribution": {
+    "status": 200,
+    "body": {
+      "ok": true,
+      "message": "謝謝你協助完善運動傷害影片圖鑑！你的訊息已送出，我們會查核後評估更新。"
+    },
+    "events": [
+      "reserve",
+      "upstream-called",
+      "settle:sent"
+    ],
+    "message": "類型：提供公開影片\n網址：未提供\n\n說明：未補充\n\n參考來源：\n未補充\n\n此訊息由影片圖鑑匿名表單送出，沒有收集訪客姓名或回覆信箱。Email 欄為系統 no-reply 地址，請勿回覆。"
+  },
+  "clientDeclaredPlayback": {
+    "responses": [
+      {
+        "status": 200,
+        "body": {
+          "accepted": true
+        }
+      },
+      {
+        "status": 200,
+        "body": {
+          "accepted": true
+        }
+      }
+    ],
+    "insertedEvents": 2
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "observations": 94,
+  "eventUpdates": 101,
+  "missingUpdates": [],
+  "captions": {
+    "unavailable": 12,
+    "available": 9,
+    "not-verified": 73
+  },
+  "sport": {
+    "網球": 5,
+    "田徑": 4,
+    "體操": 3,
+    "羽球": 1,
+    "CrossFit": 1,
+    "棒球": 30,
+    "足球": 14,
+    "籃球": 16,
+    "高山滑雪": 5,
+    "橄欖球": 2,
+    "冰球": 6,
+    "板球": 1,
+    "自行車": 4,
+    "美式足球": 1,
+    "花式滑冰": 1
+  },
+  "nullReturnDate": [
+    {
+      "slug": "tyrese-haliburton-achilles-rupture-2025",
+      "summary": "截至本次查核，未核得傷後正式復賽日期。",
+      "context": "NBA 2026-08-24 報導指出他缺席 2025–26 球季；下一季回歸展望不是已完成出賽。"
+    },
+    {
+      "slug": "derek-redmond-barcelona-1992",
+      "summary": "未核得傷後第一場正式比賽的日期。",
+      "context": "後來轉往籃球等運動；不能把離開田徑等同此後沒有比賽，也不能把走到終點當作康復。"
+    },
+    {
+      "slug": "kerri-strug-atlanta-1996",
+      "summary": "未核得傷後首次正式復賽日期。",
+      "context": "本人年表記載，她退出其餘全能、跳馬與自由體操決賽；同場第二跳並不是康復後復出。"
+    },
+    {
+      "slug": "julie-foucher-box-jump-2015",
+      "summary": "已查到傷後參賽成績，但首次復賽日期仍未確認。",
+      "context": "官方選手頁列有 2016 年 Open 與 Central 個人賽，以及 2017 年 Central 團體賽成績；不能標為此後未再參賽。"
+    },
+    {
+      "slug": "usain-bolt-london-2017",
+      "summary": "這是田徑生涯最後一戰；不填田徑回場天數。",
+      "context": "田徑退役不等於傷勢一直未癒。跨運動項目的首場正式比賽日，本次未核定。"
+    },
+    {
+      "slug": "shaun-livingston-knee-2007",
+      "summary": "2008-10-29已有代表熱火出賽的NBA例行賽紀錄；首次回場日尚未核清。",
+      "context": "該場官方紀錄為4分20秒；不據此計算首次回場天數。"
+    },
+    {
+      "slug": "rebeca-andrade-2019-knee",
+      "summary": "2020 年 3 月已在 Baku 世界盃資格賽回歸；精確首次出賽日期尚未確認。",
+      "context": "Baku 資格賽已完成，但決賽因疫情取消；有資格賽成績不等於當屆決賽獲牌。"
+    },
+    {
+      "slug": "adam-eaton-2017-knee",
+      "summary": "2018-03-17 重返大聯盟春訓；此前已參加小聯盟熱身賽，最早日期未確認。",
+      "context": "最早小聯盟熱身賽的確切日期未確認，因此不計算離場天數；3 月 17 日是之後的大聯盟春訓紀錄。"
+    },
+    {
+      "slug": "yuzuru-hanyu-2014-collision",
+      "summary": "當天曾繼續自由滑；11 月 28 日再參加 NHK 盃。",
+      "context": "當天繼續比賽不代表傷勢復原，因此不換算為零天回場；11 月 28 日 NHK 盃是後續正式賽事紀錄。"
+    },
+    {
+      "slug": "liu-xiang-2012-achilles",
+      "summary": "此後未再參賽，2015-04-07 宣布退役。",
+      "context": "退役日期不是回場日期；雖曾嘗試恢復訓練，世界田徑總會確認他未再恢復比賽。"
+    }
+  ],
+  "rehabOrSpring": [
+    {
+      "slug": "ronald-acuna-miami-2021",
+      "days": 283,
+      "summary": "2022-04-19 先在 3A 小聯盟復健賽出場；4 月 28 日重返 MLB。"
+    },
+    {
+      "slug": "george-north-2015-concussion",
+      "days": 155,
+      "summary": "2015-08-29 代表威爾斯對愛爾蘭出賽，完成世界盃熱身賽。"
+    },
+    {
+      "slug": "edwin-diaz-2023-patellar-tendon",
+      "days": 362,
+      "summary": "2024-03-11 於春訓對馬林魚出賽。"
+    },
+    {
+      "slug": "rhys-hoskins-2023-acl",
+      "days": 344,
+      "summary": "2024-03-01 代表釀酒人於春訓對教士擔任指定打擊。"
+    },
+    {
+      "slug": "tim-hudson-2013-ankle",
+      "days": 221,
+      "summary": "2014-03-02 代表巨人於春訓對響尾蛇先發登板。"
+    },
+    {
+      "slug": "buster-posey-2011-ankle",
+      "days": 289,
+      "summary": "2012-03-09 於春訓對紅人擔任捕手，完成兩局守備。"
+    },
+    {
+      "slug": "kendrys-morales-2010-ankle",
+      "days": 657,
+      "summary": "2012-03-16 先於對響尾蛇的小聯盟熱身賽恢復出賽。"
+    },
+    {
+      "slug": "dustin-fowler-2017-patellar-tendon",
+      "days": 241,
+      "summary": "2018-02-25 代表運動家於春訓對皇家恢復出賽。"
+    },
+    {
+      "slug": "adam-eaton-2017-knee",
+      "days": null,
+      "summary": "2018-03-17 重返大聯盟春訓；此前已參加小聯盟熱身賽，最早日期未確認。"
+    },
+    {
+      "slug": "alex-cobb-2013-concussion",
+      "days": 38,
+      "summary": "2013-07-23 於 Class A Charlotte 開始復健賽登板。"
+    },
+    {
+      "slug": "giancarlo-stanton-2014-face",
+      "days": 175,
+      "summary": "2015-03-05 於春訓對紅雀出賽。"
+    },
+    {
+      "slug": "charlie-morton-2021-fibula",
+      "days": 152,
+      "summary": "2022-03-27 於春訓對光芒先發。"
+    },
+    {
+      "slug": "mitch-haniger-2017-face",
+      "days": 14,
+      "summary": "2017-08-12 於 3A Tacoma 開始復健賽。"
+    },
+    {
+      "slug": "justin-turner-2023-face",
+      "days": 14,
+      "summary": "2023-03-20 於春訓對海盜恢復出賽。"
+    },
+    {
+      "slug": "bryce-harper-2022-thumb",
+      "days": 59,
+      "summary": "2022-08-23 於 3A Lehigh Valley 開始復健賽。"
+    },
+    {
+      "slug": "curtis-granderson-2013-hand",
+      "days": 62,
+      "summary": "2013-07-25 於高階 1A Tampa 開始復健賽。"
+    },
+    {
+      "slug": "matt-shoemaker-2016-head",
+      "days": 180,
+      "summary": "2017-03-03 於春訓對釀酒人先發。"
+    },
+    {
+      "slug": "ja-happ-2013-head",
+      "days": 67,
+      "summary": "2013-07-13 在新人聯盟 GCL Blue Jays 復健賽登板。"
+    },
+    {
+      "slug": "dan-jennings-2014-concussion",
+      "days": 12,
+      "summary": "2014-08-19 在新人聯盟 GCL Marlins 復健賽登板。"
+    },
+    {
+      "slug": "manny-machado-2013-knee",
+      "days": 208,
+      "summary": "2014-04-19 在延長春訓比賽恢復出賽。"
+    },
+    {
+      "slug": "chien-ming-wang-2008-foot",
+      "days": 260,
+      "summary": "2009-03-02 春訓對太空人投兩局無失分，為足傷後首次比賽登板。"
+    }
+  ],
+  "returnDisagreements": []
+}

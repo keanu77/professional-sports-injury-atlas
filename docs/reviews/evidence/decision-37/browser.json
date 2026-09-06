@@ -1,0 +1,232 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://s.ytimg.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.youtube-nocookie.com https://challenges.cloudflare.com; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "x-content-type-options": "nosniff"
+    },
+    "textLength": 5730,
+    "metrics": {
+      "width": 390,
+      "scrollWidth": 390,
+      "scrollHeight": 40020,
+      "headerHeight": 177,
+      "firstVideo": 2230.4375,
+      "h1": "運動傷害影片圖鑑",
+      "images": 101,
+      "links": 153,
+      "iframes": 0
+    },
+    "axe": []
+  },
+  {
+    "path": "/cases/tyrese-haliburton-achilles-rupture-2025/",
+    "status": 200,
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://s.ytimg.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.youtube-nocookie.com https://challenges.cloudflare.com; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "x-content-type-options": "nosniff"
+    },
+    "textLength": 1440,
+    "metrics": {
+      "width": 390,
+      "scrollWidth": 390,
+      "scrollHeight": 4706,
+      "headerHeight": 177,
+      "h1": "Tyrese Haliburton｜阿基里斯腱斷裂",
+      "images": 3,
+      "links": 23,
+      "iframes": 0
+    },
+    "axe": [
+      {
+        "id": "target-size",
+        "impact": "serious",
+        "nodes": [
+          {
+            "target": [
+              ".case-video-source-link"
+            ],
+            "summary": "Fix any of the following:\n  Target has insufficient size (236.7px by 16px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 18px instead of at least 24px."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/videos/zverev-roland-garros-2022/",
+    "status": 200,
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://s.ytimg.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.youtube-nocookie.com https://challenges.cloudflare.com; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "x-content-type-options": "nosniff"
+    },
+    "textLength": 866,
+    "metrics": {
+      "width": 390,
+      "scrollWidth": 390,
+      "scrollHeight": 2595,
+      "headerHeight": 177,
+      "h1": "Alexander Zverev",
+      "images": 1,
+      "links": 23,
+      "iframes": 0
+    },
+    "axe": []
+  },
+  {
+    "path": "/videos/mitch-haniger-2017-face/",
+    "status": 200,
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://s.ytimg.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.youtube-nocookie.com https://challenges.cloudflare.com; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "x-content-type-options": "nosniff"
+    },
+    "textLength": 797,
+    "metrics": {
+      "width": 390,
+      "scrollWidth": 390,
+      "scrollHeight": 2509,
+      "headerHeight": 177,
+      "h1": "Mitch Haniger",
+      "images": 1,
+      "links": 23,
+      "iframes": 0
+    },
+    "axe": []
+  },
+  {
+    "path": "/contribute/",
+    "status": 200,
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://s.ytimg.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.youtube-nocookie.com https://challenges.cloudflare.com; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "x-content-type-options": "nosniff"
+    },
+    "textLength": 564,
+    "metrics": {
+      "width": 390,
+      "scrollWidth": 390,
+      "scrollHeight": 2099,
+      "headerHeight": 177,
+      "h1": "提供影片／資料修正",
+      "images": 0,
+      "links": 15,
+      "iframes": 0
+    },
+    "axe": []
+  },
+  {
+    "path": "/privacy/",
+    "status": 200,
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://s.ytimg.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.youtube-nocookie.com https://challenges.cloudflare.com; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "x-content-type-options": "nosniff"
+    },
+    "textLength": 1709,
+    "metrics": {
+      "width": 390,
+      "scrollWidth": 390,
+      "scrollHeight": 3401,
+      "headerHeight": 177,
+      "h1": "隱私與播放設定",
+      "images": 0,
+      "links": 17,
+      "iframes": 0
+    },
+    "axe": []
+  },
+  {
+    "path": "/about/",
+    "status": 200,
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://s.ytimg.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.youtube-nocookie.com https://challenges.cloudflare.com; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "x-content-type-options": "nosniff"
+    },
+    "textLength": 704,
+    "metrics": {
+      "width": 390,
+      "scrollWidth": 390,
+      "scrollHeight": 1730,
+      "headerHeight": 177,
+      "h1": "認識影片圖鑑",
+      "images": 0,
+      "links": 13,
+      "iframes": 0
+    },
+    "axe": []
+  },
+  {
+    "path": "/source-policy/",
+    "status": 200,
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://s.ytimg.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.youtube-nocookie.com https://challenges.cloudflare.com; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "x-content-type-options": "nosniff"
+    },
+    "textLength": 979,
+    "metrics": {
+      "width": 390,
+      "scrollWidth": 390,
+      "scrollHeight": 2304,
+      "headerHeight": 177,
+      "h1": "影片來源與資料查核",
+      "images": 0,
+      "links": 12,
+      "iframes": 0
+    },
+    "axe": []
+  },
+  {
+    "path": "/licensing/",
+    "status": 404,
+    "headers": {
+      "cache-control": "no-store",
+      "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://s.ytimg.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.youtube-nocookie.com https://challenges.cloudflare.com; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+      "content-type": "text/html; charset=utf-8",
+      "permissions-policy": "camera=(), microphone=(), geolocation=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "x-content-type-options": "nosniff"
+    },
+    "textLength": 339,
+    "metrics": {
+      "width": 390,
+      "scrollWidth": 390,
+      "scrollHeight": 967,
+      "headerHeight": 177,
+      "h1": "找不到這個頁面",
+      "images": 0,
+      "links": 12,
+      "iframes": 0
+    },
+    "axe": []
+  }
+]

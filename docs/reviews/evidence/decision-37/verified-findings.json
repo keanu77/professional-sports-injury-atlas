@@ -1,0 +1,293 @@
+{
+  "categories": [
+    {
+      "href": "/body-parts/head-neck/",
+      "text": "頭頸部20 支影片"
+    },
+    {
+      "href": "/body-parts/shoulder/",
+      "text": "肩部4 支影片"
+    },
+    {
+      "href": "/body-parts/wrist/",
+      "text": "手腕1 支影片"
+    },
+    {
+      "href": "/body-parts/hand/",
+      "text": "手部3 支影片"
+    },
+    {
+      "href": "/body-parts/trunk/",
+      "text": "軀幹1 支影片"
+    },
+    {
+      "href": "/body-parts/pelvis/",
+      "text": "骨盆1 支影片"
+    },
+    {
+      "href": "/body-parts/ankle/",
+      "text": "腳踝13 支影片"
+    },
+    {
+      "href": "/body-parts/foot/",
+      "text": "足部2 支影片"
+    },
+    {
+      "href": "/body-parts/calf-achilles/",
+      "text": "小腿與阿基里斯腱16 支影片"
+    },
+    {
+      "href": "/body-parts/knee/",
+      "text": "膝蓋37 支影片"
+    },
+    {
+      "href": "/body-parts/posterior-thigh/",
+      "text": "大腿後側3 支影片"
+    },
+    {
+      "href": "/sports/basketball/",
+      "text": "籃球23 支影片"
+    },
+    {
+      "href": "/sports/baseball/",
+      "text": "棒球30 支影片"
+    },
+    {
+      "href": "/sports/cricket/",
+      "text": "板球1 支影片"
+    },
+    {
+      "href": "/sports/football/",
+      "text": "足球14 支影片"
+    },
+    {
+      "href": "/sports/tennis/",
+      "text": "網球5 支影片"
+    },
+    {
+      "href": "/sports/badminton/",
+      "text": "羽球1 支影片"
+    },
+    {
+      "href": "/sports/athletics/",
+      "text": "田徑4 支影片"
+    },
+    {
+      "href": "/sports/gymnastics/",
+      "text": "體操3 支影片"
+    },
+    {
+      "href": "/sports/figure-skating/",
+      "text": "花式滑冰1 支影片"
+    },
+    {
+      "href": "/sports/ice-hockey/",
+      "text": "冰球6 支影片"
+    },
+    {
+      "href": "/sports/rugby/",
+      "text": "橄欖球2 支影片"
+    },
+    {
+      "href": "/sports/american-football/",
+      "text": "美式足球1 支影片"
+    },
+    {
+      "href": "/sports/alpine-skiing/",
+      "text": "高山滑雪5 支影片"
+    },
+    {
+      "href": "/sports/cycling/",
+      "text": "自行車4 支影片"
+    },
+    {
+      "href": "/sports/crossfit/",
+      "text": "CrossFit1 支影片"
+    },
+    {
+      "href": "/situations/landing/",
+      "text": "跳躍與落地19 支影片"
+    },
+    {
+      "href": "/situations/running-turning/",
+      "text": "跑動與轉向20 支影片"
+    },
+    {
+      "href": "/situations/collision/",
+      "text": "碰撞與接觸27 支影片"
+    },
+    {
+      "href": "/situations/fall/",
+      "text": "滑壘、滑倒與摔落10 支影片"
+    },
+    {
+      "href": "/situations/ball-impact/",
+      "text": "球體撞擊15 支影片"
+    },
+    {
+      "href": "/situations/racket-swing/",
+      "text": "揮拍擊球1 支影片"
+    },
+    {
+      "href": "/situations/unclear/",
+      "text": "其他或畫面未明9 支影片"
+    }
+  ],
+  "curated": [
+    {
+      "slug": "ronald-acuna-miami-2021",
+      "text": "▶\n\n2021 勇士對馬林魚\n\nRonald Acuña Jr.\n受傷動作觀察 →"
+    },
+    {
+      "slug": "zverev-roland-garros-2022",
+      "text": "▶\n\n2022 法網準決賽\n\nAlexander Zverev\n受傷動作觀察 →"
+    },
+    {
+      "slug": "carolina-marin-indonesia-2019",
+      "text": "▶\n\n2019 印尼大師賽決賽\n\nCarolina Marín\n受傷動作觀察 →"
+    },
+    {
+      "slug": "chris-bassitt-2021-face",
+      "text": "▶\n\nMLB 運動家對白襪\n\nChris Bassitt\n受傷動作觀察 →"
+    },
+    {
+      "slug": "antoine-dupont-world-cup-2023",
+      "text": "▶\n\n2023 世界盃法國對納米比亞\n\nAntoine Dupont\n受傷動作觀察 →"
+    },
+    {
+      "slug": "lindsey-vonn-schladming-2013",
+      "text": "▶\n\n2013 Schladming 世錦賽超大曲道\n\nLindsey Vonn\n受傷動作觀察 →"
+    }
+  ],
+  "baseball": {
+    "h1": "棒球受傷影片",
+    "cards": 30,
+    "url": "https://injury.sportsmedicine.tw/sports/baseball/"
+  },
+  "caseTargets": [
+    {
+      "path": "/cases/tyrese-haliburton-achilles-rupture-2025/",
+      "violations": [
+        {
+          "id": "target-size",
+          "nodes": [
+            {
+              "target": [
+                ".case-video-source-link"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (236.7px by 16px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 18px instead of at least 24px."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/cases/jayson-tatum-achilles-rupture-2025/",
+      "violations": [
+        {
+          "id": "target-size",
+          "nodes": [
+            {
+              "target": [
+                ".case-video-source-link"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (236.7px by 16px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 18px instead of at least 24px."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/cases/lamelo-ball-ankle-sprain-2025/",
+      "violations": [
+        {
+          "id": "target-size",
+          "nodes": [
+            {
+              "target": [
+                ".case-video-source-link"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (236.7px by 16px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 18px instead of at least 24px."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/cases/lamelo-ball-ankle-sprain-2023/",
+      "violations": [
+        {
+          "id": "target-size",
+          "nodes": [
+            {
+              "target": [
+                ".case-video-source-link"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (236.7px by 16px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 18px instead of at least 24px."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/cases/anfernee-simons-ankle-sprain-2023/",
+      "violations": [
+        {
+          "id": "target-size",
+          "nodes": [
+            {
+              "target": [
+                ".case-video-source-link"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (236.7px by 16px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 18px instead of at least 24px."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/cases/kyrie-irving-ankle-sprain-2021/",
+      "violations": [
+        {
+          "id": "target-size",
+          "nodes": [
+            {
+              "target": [
+                ".case-video-source-link"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (236.7px by 16px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 18px instead of at least 24px."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/cases/kevin-durant-achilles-rupture-2019/",
+      "violations": [
+        {
+          "id": "target-size",
+          "nodes": [
+            {
+              "target": [
+                ".case-video-source-link"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (236.7px by 16px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 18px instead of at least 24px."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reviewDate": "查看傷勢與回場來源\n\n依公開報導整理 · 查核日期 2026-09-06\n\nMLB：Haniger 臉部與腦震盪傷勢 · 2017-08-01\n水手官方：Haniger 復健賽與歸隊紀錄 · 2017-08-19\nMLB：Haniger 傷後實際比賽紀錄 · 2017-08-19",
+  "returnContext": "傷勢與後續\n\n球團公布腦震盪、鼻部骨折與上唇撕裂傷。\n\n傷後多久再出賽？\n\n距受傷 14 天\n\n2017-08-12 於 3A Tacoma 開始復健賽。\n\n2017-07-29 受傷 → 2017-08-12 再次出賽\n\n回場採小聯盟復健賽；8 月 19 日才重返大聯盟。\n\n出賽不等於完全康復；日期差不是個人的回場期限。\n\n查看傷勢與回場來源\n\n依公開報導整理 · 查核日期 2026-09-06\n\nMLB：Haniger 臉部與腦震盪傷勢 · 2017-08-01\n水手官方：Haniger 復健賽與歸隊紀錄 · 2017-08-19\nMLB：Haniger 傷後實際比賽紀錄 · 2017-08-19",
+  "correction": {
+    "urlLabel": "需要修正的頁面網址",
+    "url": "https://injury.sportsmedicine.tw/videos/mitch-haniger-2017-face/",
+    "urlRequired": true,
+    "noteLabel": "需要修正的內容與建議",
+    "noteRequired": true
+  },
+  "darkAxe": [],
+  "headMeta": 0,
+  "faviconStatus": 404
+}

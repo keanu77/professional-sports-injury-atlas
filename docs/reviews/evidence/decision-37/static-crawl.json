@@ -1,0 +1,845 @@
+{
+  "result": {
+    "pages": 145,
+    "internalMissing": [],
+    "missingDescription": [
+      "/404.html"
+    ],
+    "missingCanonical": [],
+    "missingOg": [
+      "/404.html",
+      "/about/",
+      "/body-parts/ankle/",
+      "/body-parts/calf-achilles/",
+      "/body-parts/foot/",
+      "/body-parts/hand/",
+      "/body-parts/head-neck/",
+      "/body-parts/knee/",
+      "/body-parts/pelvis/",
+      "/body-parts/posterior-thigh/",
+      "/body-parts/shoulder/",
+      "/body-parts/trunk/",
+      "/body-parts/wrist/",
+      "/cases/anfernee-simons-ankle-sprain-2023/",
+      "/cases/jayson-tatum-achilles-rupture-2025/",
+      "/cases/kevin-durant-achilles-rupture-2019/",
+      "/cases/kyrie-irving-ankle-sprain-2021/",
+      "/cases/lamelo-ball-ankle-sprain-2023/",
+      "/cases/lamelo-ball-ankle-sprain-2025/",
+      "/cases/tyrese-haliburton-achilles-rupture-2025/",
+      "/contribute/",
+      "/credits-notices/",
+      "/",
+      "/injuries/achilles-rupture/",
+      "/injuries/acl/",
+      "/injuries/ankle-sprain/",
+      "/leagues/nba/",
+      "/privacy/",
+      "/situations/ball-impact/",
+      "/situations/collision/",
+      "/situations/fall/",
+      "/situations/landing/",
+      "/situations/racket-swing/",
+      "/situations/running-turning/",
+      "/situations/unclear/",
+      "/source-policy/",
+      "/sports/alpine-skiing/",
+      "/sports/american-football/",
+      "/sports/athletics/",
+      "/sports/badminton/",
+      "/sports/baseball/",
+      "/sports/basketball/",
+      "/sports/cricket/",
+      "/sports/crossfit/",
+      "/sports/cycling/",
+      "/sports/figure-skating/",
+      "/sports/football/",
+      "/sports/gymnastics/",
+      "/sports/ice-hockey/",
+      "/sports/rugby/",
+      "/sports/tennis/",
+      "/videos/aaron-judge-2023-toe/",
+      "/videos/aaron-rodgers-2023-achilles/",
+      "/videos/adam-eaton-2017-knee/",
+      "/videos/aksel-svindal-kitzbuhel-2016/",
+      "/videos/aleksander-kilde-2024-shoulder/",
+      "/videos/alex-cobb-2013-concussion/",
+      "/videos/alex-oxlade-chamberlain-2018/",
+      "/videos/andre-gomes-2019/",
+      "/videos/annemiek-van-vleuten-2016-concussion/",
+      "/videos/antoine-dupont-world-cup-2023/",
+      "/videos/beth-mead-2022/",
+      "/videos/bethanie-mattek-sands-2017-knee/",
+      "/videos/bryce-harper-2017-knee/",
+      "/videos/bryce-harper-2022-thumb/",
+      "/videos/buster-posey-2011-ankle/",
+      "/videos/cameron-brink-2024-acl/",
+      "/videos/carolina-marin-indonesia-2019/",
+      "/videos/charlie-morton-2021-fibula/",
+      "/videos/chase-headley-2014-face/",
+      "/videos/chien-ming-wang-2008-foot/",
+      "/videos/chris-bassitt-2021-face/",
+      "/videos/connor-mcdavid-2019-pcl/",
+      "/videos/cristiano-ronaldo-2016/",
+      "/videos/curtis-granderson-2013-hand/",
+      "/videos/dan-jennings-2014-concussion/",
+      "/videos/david-beckham-2010/",
+      "/videos/dejounte-murray-acl-2018/",
+      "/videos/demarcus-cousins-achilles-2018/",
+      "/videos/derek-redmond-barcelona-1992/",
+      "/videos/derrick-rose-acl-2012/",
+      "/videos/dominic-thiem-2021-wrist/",
+      "/videos/dustin-fowler-2017-patellar-tendon/",
+      "/videos/dustin-pedroia-2017-knee/",
+      "/videos/edwin-diaz-2023-patellar-tendon/",
+      "/videos/fabio-jakobsen-2020-concussion/",
+      "/videos/george-north-2015-concussion/",
+      "/videos/giancarlo-stanton-2014-face/",
+      "/videos/gianmarco-tamberi-2016-ankle/",
+      "/videos/giannis-east-final-2021/",
+      "/videos/gordon-hayward-ankle-fracture-2017/",
+      "/videos/harvey-elliott-2021-ankle/",
+      "/videos/hector-bellerin-2019-knee/",
+      "/videos/ja-happ-2013-head/",
+      "/videos/jamal-murray-acl-2021/",
+      "/videos/john-tavares-2021-concussion/",
+      "/videos/juan-martin-del-potro-2018-knee/",
+      "/videos/julie-foucher-box-jump-2015/",
+      "/videos/justin-turner-2023-face/",
+      "/videos/kawhi-leonard-acl-2021/",
+      "/videos/kendrys-morales-2010-ankle/",
+      "/videos/kerri-strug-atlanta-1996/",
+      "/videos/kevin-pillar-2021-face/",
+      "/videos/klay-thompson-2019-acl/",
+      "/videos/kobe-bryant-2013-achilles/",
+      "/videos/kristaps-porzingis-acl-2018/",
+      "/videos/kyle-schwarber-2016-knee/",
+      "/videos/laurent-koscielny-2018/",
+      "/videos/leah-williamson-2023/",
+      "/videos/lindsey-vonn-schladming-2013/",
+      "/videos/liu-xiang-2012-achilles/",
+      "/videos/manny-machado-2013-knee/",
+      "/videos/mark-cavendish-2023-clavicle/",
+      "/videos/markelle-fultz-orlando-2021/",
+      "/videos/matt-shoemaker-2016-head/",
+      "/videos/max-pacioretty-2011-concussion/",
+      "/videos/mikaela-shiffrin-2024-abdomen/",
+      "/videos/mikhail-sergachev-2024-leg/",
+      "/videos/mitch-haniger-2017-face/",
+      "/videos/mohamed-salah-final-2018/",
+      "/videos/mookie-betts-2024-hand/",
+      "/videos/neymar-2023-acl/",
+      "/videos/paul-george-leg-fracture-2014/",
+      "/videos/rebeca-andrade-2019-knee/",
+      "/videos/remco-evenepoel-2020-pelvis/",
+      "/videos/rhys-hoskins-2023-acl/",
+      "/videos/ronald-acuna-miami-2021/",
+      "/videos/samir-ait-said-2016-leg/",
+      "/videos/serena-williams-2021-hamstring/",
+      "/videos/shaun-livingston-knee-2007/",
+      "/videos/shohei-ohtani-world-series-2024/",
+      "/videos/sidney-crosby-concussion-2017/",
+      "/videos/sofia-goggia-2022-knee/",
+      "/videos/stephen-piscotty-2015-concussion/",
+      "/videos/steve-smith-2019-concussion/",
+      "/videos/steven-stamkos-2013-tibia/",
+      "/videos/tim-hudson-2013-ankle/",
+      "/videos/usain-bolt-london-2017/",
+      "/videos/victor-oladipo-2019-quadriceps/",
+      "/videos/vivianne-miedema-2022/",
+      "/videos/wesley-fofana-2021-leg/",
+      "/videos/yuzuru-hanyu-2014-collision/",
+      "/videos/zach-lavine-acl-2017/",
+      "/videos/zlatan-ibrahimovic-2017-knee/",
+      "/videos/zverev-roland-garros-2022/"
+    ],
+    "missingVideoSchema": [
+      "/cases/anfernee-simons-ankle-sprain-2023/",
+      "/cases/jayson-tatum-achilles-rupture-2025/",
+      "/cases/kevin-durant-achilles-rupture-2019/",
+      "/cases/kyrie-irving-ankle-sprain-2021/",
+      "/cases/lamelo-ball-ankle-sprain-2023/",
+      "/cases/lamelo-ball-ankle-sprain-2025/",
+      "/cases/tyrese-haliburton-achilles-rupture-2025/",
+      "/videos/aaron-judge-2023-toe/",
+      "/videos/aaron-rodgers-2023-achilles/",
+      "/videos/adam-eaton-2017-knee/",
+      "/videos/aksel-svindal-kitzbuhel-2016/",
+      "/videos/aleksander-kilde-2024-shoulder/",
+      "/videos/alex-cobb-2013-concussion/",
+      "/videos/alex-oxlade-chamberlain-2018/",
+      "/videos/andre-gomes-2019/",
+      "/videos/annemiek-van-vleuten-2016-concussion/",
+      "/videos/antoine-dupont-world-cup-2023/",
+      "/videos/beth-mead-2022/",
+      "/videos/bethanie-mattek-sands-2017-knee/",
+      "/videos/bryce-harper-2017-knee/",
+      "/videos/bryce-harper-2022-thumb/",
+      "/videos/buster-posey-2011-ankle/",
+      "/videos/cameron-brink-2024-acl/",
+      "/videos/carolina-marin-indonesia-2019/",
+      "/videos/charlie-morton-2021-fibula/",
+      "/videos/chase-headley-2014-face/",
+      "/videos/chien-ming-wang-2008-foot/",
+      "/videos/chris-bassitt-2021-face/",
+      "/videos/connor-mcdavid-2019-pcl/",
+      "/videos/cristiano-ronaldo-2016/",
+      "/videos/curtis-granderson-2013-hand/",
+      "/videos/dan-jennings-2014-concussion/",
+      "/videos/david-beckham-2010/",
+      "/videos/dejounte-murray-acl-2018/",
+      "/videos/demarcus-cousins-achilles-2018/",
+      "/videos/derek-redmond-barcelona-1992/",
+      "/videos/derrick-rose-acl-2012/",
+      "/videos/dominic-thiem-2021-wrist/",
+      "/videos/dustin-fowler-2017-patellar-tendon/",
+      "/videos/dustin-pedroia-2017-knee/",
+      "/videos/edwin-diaz-2023-patellar-tendon/",
+      "/videos/fabio-jakobsen-2020-concussion/",
+      "/videos/george-north-2015-concussion/",
+      "/videos/giancarlo-stanton-2014-face/",
+      "/videos/gianmarco-tamberi-2016-ankle/",
+      "/videos/giannis-east-final-2021/",
+      "/videos/gordon-hayward-ankle-fracture-2017/",
+      "/videos/harvey-elliott-2021-ankle/",
+      "/videos/hector-bellerin-2019-knee/",
+      "/videos/ja-happ-2013-head/",
+      "/videos/jamal-murray-acl-2021/",
+      "/videos/john-tavares-2021-concussion/",
+      "/videos/juan-martin-del-potro-2018-knee/",
+      "/videos/julie-foucher-box-jump-2015/",
+      "/videos/justin-turner-2023-face/",
+      "/videos/kawhi-leonard-acl-2021/",
+      "/videos/kendrys-morales-2010-ankle/",
+      "/videos/kerri-strug-atlanta-1996/",
+      "/videos/kevin-pillar-2021-face/",
+      "/videos/klay-thompson-2019-acl/",
+      "/videos/kobe-bryant-2013-achilles/",
+      "/videos/kristaps-porzingis-acl-2018/",
+      "/videos/kyle-schwarber-2016-knee/",
+      "/videos/laurent-koscielny-2018/",
+      "/videos/leah-williamson-2023/",
+      "/videos/lindsey-vonn-schladming-2013/",
+      "/videos/liu-xiang-2012-achilles/",
+      "/videos/manny-machado-2013-knee/",
+      "/videos/mark-cavendish-2023-clavicle/",
+      "/videos/markelle-fultz-orlando-2021/",
+      "/videos/matt-shoemaker-2016-head/",
+      "/videos/max-pacioretty-2011-concussion/",
+      "/videos/mikaela-shiffrin-2024-abdomen/",
+      "/videos/mikhail-sergachev-2024-leg/",
+      "/videos/mitch-haniger-2017-face/",
+      "/videos/mohamed-salah-final-2018/",
+      "/videos/mookie-betts-2024-hand/",
+      "/videos/neymar-2023-acl/",
+      "/videos/paul-george-leg-fracture-2014/",
+      "/videos/rebeca-andrade-2019-knee/",
+      "/videos/remco-evenepoel-2020-pelvis/",
+      "/videos/rhys-hoskins-2023-acl/",
+      "/videos/ronald-acuna-miami-2021/",
+      "/videos/samir-ait-said-2016-leg/",
+      "/videos/serena-williams-2021-hamstring/",
+      "/videos/shaun-livingston-knee-2007/",
+      "/videos/shohei-ohtani-world-series-2024/",
+      "/videos/sidney-crosby-concussion-2017/",
+      "/videos/sofia-goggia-2022-knee/",
+      "/videos/stephen-piscotty-2015-concussion/",
+      "/videos/steve-smith-2019-concussion/",
+      "/videos/steven-stamkos-2013-tibia/",
+      "/videos/tim-hudson-2013-ankle/",
+      "/videos/usain-bolt-london-2017/",
+      "/videos/victor-oladipo-2019-quadriceps/",
+      "/videos/vivianne-miedema-2022/",
+      "/videos/wesley-fofana-2021-leg/",
+      "/videos/yuzuru-hanyu-2014-collision/",
+      "/videos/zach-lavine-acl-2017/",
+      "/videos/zlatan-ibrahimovic-2017-knee/",
+      "/videos/zverev-roland-garros-2022/"
+    ],
+    "cases": 7,
+    "videos": 94,
+    "allCasesRelated": 7
+  },
+  "records": [
+    {
+      "route": "/404.html",
+      "canonical": "https://injury.sportsmedicine.tw/404/"
+    },
+    {
+      "route": "/about/",
+      "canonical": "https://injury.sportsmedicine.tw/about/"
+    },
+    {
+      "route": "/body-parts/ankle/",
+      "canonical": "https://injury.sportsmedicine.tw/body-parts/ankle/"
+    },
+    {
+      "route": "/body-parts/calf-achilles/",
+      "canonical": "https://injury.sportsmedicine.tw/body-parts/calf-achilles/"
+    },
+    {
+      "route": "/body-parts/foot/",
+      "canonical": "https://injury.sportsmedicine.tw/body-parts/foot/"
+    },
+    {
+      "route": "/body-parts/hand/",
+      "canonical": "https://injury.sportsmedicine.tw/body-parts/hand/"
+    },
+    {
+      "route": "/body-parts/head-neck/",
+      "canonical": "https://injury.sportsmedicine.tw/body-parts/head-neck/"
+    },
+    {
+      "route": "/body-parts/knee/",
+      "canonical": "https://injury.sportsmedicine.tw/body-parts/knee/"
+    },
+    {
+      "route": "/body-parts/pelvis/",
+      "canonical": "https://injury.sportsmedicine.tw/body-parts/pelvis/"
+    },
+    {
+      "route": "/body-parts/posterior-thigh/",
+      "canonical": "https://injury.sportsmedicine.tw/body-parts/posterior-thigh/"
+    },
+    {
+      "route": "/body-parts/shoulder/",
+      "canonical": "https://injury.sportsmedicine.tw/body-parts/shoulder/"
+    },
+    {
+      "route": "/body-parts/trunk/",
+      "canonical": "https://injury.sportsmedicine.tw/body-parts/trunk/"
+    },
+    {
+      "route": "/body-parts/wrist/",
+      "canonical": "https://injury.sportsmedicine.tw/body-parts/wrist/"
+    },
+    {
+      "route": "/cases/anfernee-simons-ankle-sprain-2023/",
+      "canonical": "https://injury.sportsmedicine.tw/cases/anfernee-simons-ankle-sprain-2023/"
+    },
+    {
+      "route": "/cases/jayson-tatum-achilles-rupture-2025/",
+      "canonical": "https://injury.sportsmedicine.tw/cases/jayson-tatum-achilles-rupture-2025/"
+    },
+    {
+      "route": "/cases/kevin-durant-achilles-rupture-2019/",
+      "canonical": "https://injury.sportsmedicine.tw/cases/kevin-durant-achilles-rupture-2019/"
+    },
+    {
+      "route": "/cases/kyrie-irving-ankle-sprain-2021/",
+      "canonical": "https://injury.sportsmedicine.tw/cases/kyrie-irving-ankle-sprain-2021/"
+    },
+    {
+      "route": "/cases/lamelo-ball-ankle-sprain-2023/",
+      "canonical": "https://injury.sportsmedicine.tw/cases/lamelo-ball-ankle-sprain-2023/"
+    },
+    {
+      "route": "/cases/lamelo-ball-ankle-sprain-2025/",
+      "canonical": "https://injury.sportsmedicine.tw/cases/lamelo-ball-ankle-sprain-2025/"
+    },
+    {
+      "route": "/cases/tyrese-haliburton-achilles-rupture-2025/",
+      "canonical": "https://injury.sportsmedicine.tw/cases/tyrese-haliburton-achilles-rupture-2025/"
+    },
+    {
+      "route": "/contribute/",
+      "canonical": "https://injury.sportsmedicine.tw/contribute/"
+    },
+    {
+      "route": "/credits-notices/",
+      "canonical": "https://injury.sportsmedicine.tw/credits-notices/"
+    },
+    {
+      "route": "/",
+      "canonical": "https://injury.sportsmedicine.tw/"
+    },
+    {
+      "route": "/injuries/achilles-rupture/",
+      "canonical": "https://injury.sportsmedicine.tw/injuries/achilles-rupture/"
+    },
+    {
+      "route": "/injuries/acl/",
+      "canonical": "https://injury.sportsmedicine.tw/injuries/acl/"
+    },
+    {
+      "route": "/injuries/ankle-sprain/",
+      "canonical": "https://injury.sportsmedicine.tw/injuries/ankle-sprain/"
+    },
+    {
+      "route": "/leagues/nba/",
+      "canonical": "https://injury.sportsmedicine.tw/leagues/nba/"
+    },
+    {
+      "route": "/privacy/",
+      "canonical": "https://injury.sportsmedicine.tw/privacy/"
+    },
+    {
+      "route": "/situations/ball-impact/",
+      "canonical": "https://injury.sportsmedicine.tw/situations/ball-impact/"
+    },
+    {
+      "route": "/situations/collision/",
+      "canonical": "https://injury.sportsmedicine.tw/situations/collision/"
+    },
+    {
+      "route": "/situations/fall/",
+      "canonical": "https://injury.sportsmedicine.tw/situations/fall/"
+    },
+    {
+      "route": "/situations/landing/",
+      "canonical": "https://injury.sportsmedicine.tw/situations/landing/"
+    },
+    {
+      "route": "/situations/racket-swing/",
+      "canonical": "https://injury.sportsmedicine.tw/situations/racket-swing/"
+    },
+    {
+      "route": "/situations/running-turning/",
+      "canonical": "https://injury.sportsmedicine.tw/situations/running-turning/"
+    },
+    {
+      "route": "/situations/unclear/",
+      "canonical": "https://injury.sportsmedicine.tw/situations/unclear/"
+    },
+    {
+      "route": "/source-policy/",
+      "canonical": "https://injury.sportsmedicine.tw/source-policy/"
+    },
+    {
+      "route": "/sports/alpine-skiing/",
+      "canonical": "https://injury.sportsmedicine.tw/sports/alpine-skiing/"
+    },
+    {
+      "route": "/sports/american-football/",
+      "canonical": "https://injury.sportsmedicine.tw/sports/american-football/"
+    },
+    {
+      "route": "/sports/athletics/",
+      "canonical": "https://injury.sportsmedicine.tw/sports/athletics/"
+    },
+    {
+      "route": "/sports/badminton/",
+      "canonical": "https://injury.sportsmedicine.tw/sports/badminton/"
+    },
+    {
+      "route": "/sports/baseball/",
+      "canonical": "https://injury.sportsmedicine.tw/sports/baseball/"
+    },
+    {
+      "route": "/sports/basketball/",
+      "canonical": "https://injury.sportsmedicine.tw/sports/basketball/"
+    },
+    {
+      "route": "/sports/cricket/",
+      "canonical": "https://injury.sportsmedicine.tw/sports/cricket/"
+    },
+    {
+      "route": "/sports/crossfit/",
+      "canonical": "https://injury.sportsmedicine.tw/sports/crossfit/"
+    },
+    {
+      "route": "/sports/cycling/",
+      "canonical": "https://injury.sportsmedicine.tw/sports/cycling/"
+    },
+    {
+      "route": "/sports/figure-skating/",
+      "canonical": "https://injury.sportsmedicine.tw/sports/figure-skating/"
+    },
+    {
+      "route": "/sports/football/",
+      "canonical": "https://injury.sportsmedicine.tw/sports/football/"
+    },
+    {
+      "route": "/sports/gymnastics/",
+      "canonical": "https://injury.sportsmedicine.tw/sports/gymnastics/"
+    },
+    {
+      "route": "/sports/ice-hockey/",
+      "canonical": "https://injury.sportsmedicine.tw/sports/ice-hockey/"
+    },
+    {
+      "route": "/sports/rugby/",
+      "canonical": "https://injury.sportsmedicine.tw/sports/rugby/"
+    },
+    {
+      "route": "/sports/tennis/",
+      "canonical": "https://injury.sportsmedicine.tw/sports/tennis/"
+    },
+    {
+      "route": "/videos/aaron-judge-2023-toe/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/aaron-judge-2023-toe/"
+    },
+    {
+      "route": "/videos/aaron-rodgers-2023-achilles/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/aaron-rodgers-2023-achilles/"
+    },
+    {
+      "route": "/videos/adam-eaton-2017-knee/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/adam-eaton-2017-knee/"
+    },
+    {
+      "route": "/videos/aksel-svindal-kitzbuhel-2016/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/aksel-svindal-kitzbuhel-2016/"
+    },
+    {
+      "route": "/videos/aleksander-kilde-2024-shoulder/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/aleksander-kilde-2024-shoulder/"
+    },
+    {
+      "route": "/videos/alex-cobb-2013-concussion/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/alex-cobb-2013-concussion/"
+    },
+    {
+      "route": "/videos/alex-oxlade-chamberlain-2018/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/alex-oxlade-chamberlain-2018/"
+    },
+    {
+      "route": "/videos/andre-gomes-2019/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/andre-gomes-2019/"
+    },
+    {
+      "route": "/videos/annemiek-van-vleuten-2016-concussion/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/annemiek-van-vleuten-2016-concussion/"
+    },
+    {
+      "route": "/videos/antoine-dupont-world-cup-2023/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/antoine-dupont-world-cup-2023/"
+    },
+    {
+      "route": "/videos/beth-mead-2022/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/beth-mead-2022/"
+    },
+    {
+      "route": "/videos/bethanie-mattek-sands-2017-knee/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/bethanie-mattek-sands-2017-knee/"
+    },
+    {
+      "route": "/videos/bryce-harper-2017-knee/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/bryce-harper-2017-knee/"
+    },
+    {
+      "route": "/videos/bryce-harper-2022-thumb/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/bryce-harper-2022-thumb/"
+    },
+    {
+      "route": "/videos/buster-posey-2011-ankle/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/buster-posey-2011-ankle/"
+    },
+    {
+      "route": "/videos/cameron-brink-2024-acl/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/cameron-brink-2024-acl/"
+    },
+    {
+      "route": "/videos/carolina-marin-indonesia-2019/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/carolina-marin-indonesia-2019/"
+    },
+    {
+      "route": "/videos/charlie-morton-2021-fibula/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/charlie-morton-2021-fibula/"
+    },
+    {
+      "route": "/videos/chase-headley-2014-face/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/chase-headley-2014-face/"
+    },
+    {
+      "route": "/videos/chien-ming-wang-2008-foot/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/chien-ming-wang-2008-foot/"
+    },
+    {
+      "route": "/videos/chris-bassitt-2021-face/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/chris-bassitt-2021-face/"
+    },
+    {
+      "route": "/videos/connor-mcdavid-2019-pcl/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/connor-mcdavid-2019-pcl/"
+    },
+    {
+      "route": "/videos/cristiano-ronaldo-2016/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/cristiano-ronaldo-2016/"
+    },
+    {
+      "route": "/videos/curtis-granderson-2013-hand/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/curtis-granderson-2013-hand/"
+    },
+    {
+      "route": "/videos/dan-jennings-2014-concussion/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/dan-jennings-2014-concussion/"
+    },
+    {
+      "route": "/videos/david-beckham-2010/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/david-beckham-2010/"
+    },
+    {
+      "route": "/videos/dejounte-murray-acl-2018/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/dejounte-murray-acl-2018/"
+    },
+    {
+      "route": "/videos/demarcus-cousins-achilles-2018/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/demarcus-cousins-achilles-2018/"
+    },
+    {
+      "route": "/videos/derek-redmond-barcelona-1992/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/derek-redmond-barcelona-1992/"
+    },
+    {
+      "route": "/videos/derrick-rose-acl-2012/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/derrick-rose-acl-2012/"
+    },
+    {
+      "route": "/videos/dominic-thiem-2021-wrist/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/dominic-thiem-2021-wrist/"
+    },
+    {
+      "route": "/videos/dustin-fowler-2017-patellar-tendon/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/dustin-fowler-2017-patellar-tendon/"
+    },
+    {
+      "route": "/videos/dustin-pedroia-2017-knee/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/dustin-pedroia-2017-knee/"
+    },
+    {
+      "route": "/videos/edwin-diaz-2023-patellar-tendon/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/edwin-diaz-2023-patellar-tendon/"
+    },
+    {
+      "route": "/videos/fabio-jakobsen-2020-concussion/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/fabio-jakobsen-2020-concussion/"
+    },
+    {
+      "route": "/videos/george-north-2015-concussion/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/george-north-2015-concussion/"
+    },
+    {
+      "route": "/videos/giancarlo-stanton-2014-face/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/giancarlo-stanton-2014-face/"
+    },
+    {
+      "route": "/videos/gianmarco-tamberi-2016-ankle/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/gianmarco-tamberi-2016-ankle/"
+    },
+    {
+      "route": "/videos/giannis-east-final-2021/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/giannis-east-final-2021/"
+    },
+    {
+      "route": "/videos/gordon-hayward-ankle-fracture-2017/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/gordon-hayward-ankle-fracture-2017/"
+    },
+    {
+      "route": "/videos/harvey-elliott-2021-ankle/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/harvey-elliott-2021-ankle/"
+    },
+    {
+      "route": "/videos/hector-bellerin-2019-knee/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/hector-bellerin-2019-knee/"
+    },
+    {
+      "route": "/videos/ja-happ-2013-head/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/ja-happ-2013-head/"
+    },
+    {
+      "route": "/videos/jamal-murray-acl-2021/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/jamal-murray-acl-2021/"
+    },
+    {
+      "route": "/videos/john-tavares-2021-concussion/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/john-tavares-2021-concussion/"
+    },
+    {
+      "route": "/videos/juan-martin-del-potro-2018-knee/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/juan-martin-del-potro-2018-knee/"
+    },
+    {
+      "route": "/videos/julie-foucher-box-jump-2015/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/julie-foucher-box-jump-2015/"
+    },
+    {
+      "route": "/videos/justin-turner-2023-face/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/justin-turner-2023-face/"
+    },
+    {
+      "route": "/videos/kawhi-leonard-acl-2021/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/kawhi-leonard-acl-2021/"
+    },
+    {
+      "route": "/videos/kendrys-morales-2010-ankle/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/kendrys-morales-2010-ankle/"
+    },
+    {
+      "route": "/videos/kerri-strug-atlanta-1996/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/kerri-strug-atlanta-1996/"
+    },
+    {
+      "route": "/videos/kevin-pillar-2021-face/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/kevin-pillar-2021-face/"
+    },
+    {
+      "route": "/videos/klay-thompson-2019-acl/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/klay-thompson-2019-acl/"
+    },
+    {
+      "route": "/videos/kobe-bryant-2013-achilles/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/kobe-bryant-2013-achilles/"
+    },
+    {
+      "route": "/videos/kristaps-porzingis-acl-2018/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/kristaps-porzingis-acl-2018/"
+    },
+    {
+      "route": "/videos/kyle-schwarber-2016-knee/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/kyle-schwarber-2016-knee/"
+    },
+    {
+      "route": "/videos/laurent-koscielny-2018/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/laurent-koscielny-2018/"
+    },
+    {
+      "route": "/videos/leah-williamson-2023/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/leah-williamson-2023/"
+    },
+    {
+      "route": "/videos/lindsey-vonn-schladming-2013/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/lindsey-vonn-schladming-2013/"
+    },
+    {
+      "route": "/videos/liu-xiang-2012-achilles/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/liu-xiang-2012-achilles/"
+    },
+    {
+      "route": "/videos/manny-machado-2013-knee/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/manny-machado-2013-knee/"
+    },
+    {
+      "route": "/videos/mark-cavendish-2023-clavicle/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/mark-cavendish-2023-clavicle/"
+    },
+    {
+      "route": "/videos/markelle-fultz-orlando-2021/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/markelle-fultz-orlando-2021/"
+    },
+    {
+      "route": "/videos/matt-shoemaker-2016-head/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/matt-shoemaker-2016-head/"
+    },
+    {
+      "route": "/videos/max-pacioretty-2011-concussion/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/max-pacioretty-2011-concussion/"
+    },
+    {
+      "route": "/videos/mikaela-shiffrin-2024-abdomen/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/mikaela-shiffrin-2024-abdomen/"
+    },
+    {
+      "route": "/videos/mikhail-sergachev-2024-leg/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/mikhail-sergachev-2024-leg/"
+    },
+    {
+      "route": "/videos/mitch-haniger-2017-face/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/mitch-haniger-2017-face/"
+    },
+    {
+      "route": "/videos/mohamed-salah-final-2018/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/mohamed-salah-final-2018/"
+    },
+    {
+      "route": "/videos/mookie-betts-2024-hand/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/mookie-betts-2024-hand/"
+    },
+    {
+      "route": "/videos/neymar-2023-acl/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/neymar-2023-acl/"
+    },
+    {
+      "route": "/videos/paul-george-leg-fracture-2014/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/paul-george-leg-fracture-2014/"
+    },
+    {
+      "route": "/videos/rebeca-andrade-2019-knee/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/rebeca-andrade-2019-knee/"
+    },
+    {
+      "route": "/videos/remco-evenepoel-2020-pelvis/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/remco-evenepoel-2020-pelvis/"
+    },
+    {
+      "route": "/videos/rhys-hoskins-2023-acl/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/rhys-hoskins-2023-acl/"
+    },
+    {
+      "route": "/videos/ronald-acuna-miami-2021/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/ronald-acuna-miami-2021/"
+    },
+    {
+      "route": "/videos/samir-ait-said-2016-leg/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/samir-ait-said-2016-leg/"
+    },
+    {
+      "route": "/videos/serena-williams-2021-hamstring/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/serena-williams-2021-hamstring/"
+    },
+    {
+      "route": "/videos/shaun-livingston-knee-2007/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/shaun-livingston-knee-2007/"
+    },
+    {
+      "route": "/videos/shohei-ohtani-world-series-2024/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/shohei-ohtani-world-series-2024/"
+    },
+    {
+      "route": "/videos/sidney-crosby-concussion-2017/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/sidney-crosby-concussion-2017/"
+    },
+    {
+      "route": "/videos/sofia-goggia-2022-knee/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/sofia-goggia-2022-knee/"
+    },
+    {
+      "route": "/videos/stephen-piscotty-2015-concussion/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/stephen-piscotty-2015-concussion/"
+    },
+    {
+      "route": "/videos/steve-smith-2019-concussion/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/steve-smith-2019-concussion/"
+    },
+    {
+      "route": "/videos/steven-stamkos-2013-tibia/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/steven-stamkos-2013-tibia/"
+    },
+    {
+      "route": "/videos/tim-hudson-2013-ankle/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/tim-hudson-2013-ankle/"
+    },
+    {
+      "route": "/videos/usain-bolt-london-2017/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/usain-bolt-london-2017/"
+    },
+    {
+      "route": "/videos/victor-oladipo-2019-quadriceps/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/victor-oladipo-2019-quadriceps/"
+    },
+    {
+      "route": "/videos/vivianne-miedema-2022/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/vivianne-miedema-2022/"
+    },
+    {
+      "route": "/videos/wesley-fofana-2021-leg/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/wesley-fofana-2021-leg/"
+    },
+    {
+      "route": "/videos/yuzuru-hanyu-2014-collision/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/yuzuru-hanyu-2014-collision/"
+    },
+    {
+      "route": "/videos/zach-lavine-acl-2017/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/zach-lavine-acl-2017/"
+    },
+    {
+      "route": "/videos/zlatan-ibrahimovic-2017-knee/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/zlatan-ibrahimovic-2017-knee/"
+    },
+    {
+      "route": "/videos/zverev-roland-garros-2022/",
+      "canonical": "https://injury.sportsmedicine.tw/videos/zverev-roland-garros-2022/"
+    }
+  ]
+}

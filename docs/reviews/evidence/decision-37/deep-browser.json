@@ -1,0 +1,164 @@
+[
+  {
+    "width": 320,
+    "scale": 1,
+    "metrics": {
+      "width": 320,
+      "scrollWidth": 320,
+      "height": 36730,
+      "header": 229,
+      "videoTop": 2657.90625,
+      "font": 16
+    },
+    "focusObscured": [],
+    "axe": []
+  },
+  {
+    "width": 320,
+    "scale": 1.5,
+    "metrics": {
+      "width": 320,
+      "scrollWidth": 320,
+      "height": 50226,
+      "header": 391.5625,
+      "videoTop": 5429.953125,
+      "font": 24
+    },
+    "focusObscured": [],
+    "axe": []
+  },
+  {
+    "width": 390,
+    "scale": 1,
+    "metrics": {
+      "width": 390,
+      "scrollWidth": 390,
+      "height": 40020,
+      "header": 177,
+      "videoTop": 2230.4375,
+      "font": 16
+    },
+    "focusObscured": [],
+    "axe": []
+  },
+  {
+    "width": 390,
+    "scale": 1.5,
+    "metrics": {
+      "width": 390,
+      "scrollWidth": 390,
+      "height": 51705,
+      "header": 332.984375,
+      "videoTop": 4962.765625,
+      "font": 24
+    },
+    "focusObscured": [],
+    "axe": []
+  },
+  {
+    "width": 1440,
+    "scale": 1,
+    "metrics": {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "height": 15095,
+      "header": 88.203125,
+      "videoTop": 1320.765625,
+      "font": 16
+    },
+    "focusObscured": [],
+    "axe": []
+  },
+  {
+    "width": 1440,
+    "scale": 1.5,
+    "metrics": {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "height": 19859,
+      "header": 131.78125,
+      "videoTop": 2040.671875,
+      "font": 24
+    },
+    "focusObscured": [],
+    "axe": []
+  },
+  {
+    "caseTargetSize": [
+      {
+        "id": "target-size",
+        "impact": "serious",
+        "tags": [
+          "cat.sensory-and-visual-cues",
+          "wcag22aa",
+          "wcag258"
+        ],
+        "description": "Ensure touch targets have sufficient size and space",
+        "help": "All touch targets must be 24px large, or leave sufficient space",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/target-size?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "target-size",
+                "data": {
+                  "minSize": 24,
+                  "width": 236.7,
+                  "height": 16
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Target has insufficient size (236.7px by 16px, should be at least 24px by 24px)"
+              },
+              {
+                "id": "target-offset",
+                "data": {
+                  "closestOffset": 18,
+                  "minOffset": 24
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<summary data-astro-cid-mletqp5x=\"\">影片來源與字幕</summary>",
+                    "target": [
+                      ".case-video-meta > summary"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 18px instead of at least 24px."
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<a class=\"case-video-source-link\" data-video-source-link=\"\" href=\"https://www.youtube.com/watch?v=azQpbyDBktk\" rel=\"noopener noreferrer\" data-astro-cid-mletqp5x=\"\">於 YouTube 觀看原始影片（外部連結）</a>",
+            "target": [
+              ".case-video-source-link"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (236.7px by 16px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 18px instead of at least 24px."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "caseAnchors": []
+  },
+  {
+    "honeypot": {
+      "tabIndex": -1,
+      "ariaHiddenParent": true,
+      "parentClip": "inset(50%)"
+    },
+    "buttons": [
+      {
+        "text": "A−",
+        "aria": "縮小字級"
+      },
+      {
+        "text": "A＋",
+        "aria": "放大字級"
+      }
+    ]
+  }
+]
