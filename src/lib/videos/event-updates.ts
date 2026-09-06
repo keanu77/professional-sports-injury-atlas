@@ -148,3 +148,41 @@ export function returnDays(entry: EventUpdate): number | null {
       )
     : null;
 }
+
+export type ReturnMilestone =
+  | "復健賽"
+  | "春訓"
+  | "季前賽"
+  | "熱身賽"
+  | "正式賽"
+  | "帶傷出賽"
+  | "首次出賽"
+  | "再次出賽";
+
+const RETURN_MILESTONE_BY_SLUG: Readonly<
+  Partial<Record<EventUpdate["slug"], ReturnMilestone>>
+> = {
+  "shohei-ohtani-world-series-2024": "帶傷出賽",
+};
+
+/** Labels the recorded return event without changing or extending its facts. */
+export function classifyReturnMilestone(
+  entry: Pick<EventUpdate, "slug" | "returnSummary" | "context">,
+): ReturnMilestone {
+  const summary = entry.returnSummary;
+  const governedLabel = RETURN_MILESTONE_BY_SLUG[entry.slug];
+  if (governedLabel) return governedLabel;
+
+  if (/復健賽/u.test(summary)) return "復健賽";
+  if (/春訓/u.test(summary)) return "春訓";
+  if (/季前賽/u.test(summary)) return "季前賽";
+  if (/(?:熱身賽|友誼賽)/u.test(summary)) return "熱身賽";
+  if (/帶傷(?:出賽|參賽)/u.test(summary)) return "帶傷出賽";
+  if (
+    /(?:首次(?:復出|出賽|重返|比賽)|傷後.{0,12}(?:第一場|首場))/u.test(summary)
+  )
+    return "首次出賽";
+  if (/(?:正式復出|正式賽|例行賽|季後賽|世界盃|奧運)/u.test(summary))
+    return "正式賽";
+  return "再次出賽";
+}

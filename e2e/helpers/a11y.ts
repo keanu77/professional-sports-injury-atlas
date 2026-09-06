@@ -10,7 +10,14 @@ import { expect, type Page } from "@playwright/test";
 /** Runs an Axe WCAG A/AA scan and fails on any violation. */
 export async function expectNoAxeViolations(page: Page): Promise<void> {
   const results = await new AxeBuilder({ page })
-    .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
+    .withTags([
+      "wcag2a",
+      "wcag2aa",
+      "wcag21a",
+      "wcag21aa",
+      "wcag22a",
+      "wcag22aa",
+    ])
     .analyze();
   const violationSummaries = results.violations.map(
     (violation) =>

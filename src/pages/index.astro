@@ -68,18 +68,64 @@ const videoCount = featured.length + clips.length;
         </dd>
       </div>
     </dl>
+    <a class="home-video-cta" href="#videos-heading">直接看全部影片</a>
   </header>
   {
     isLaunchEnabled() && (
-      <div id="body-parts">
-        <BodyPartNav parts={bodyParts} />
-        <div id="sports">
-          <SportNav sports={sports} />
+      <section class="home-categories" data-home-categories>
+        <div
+          class="home-category-controls"
+          data-home-category-controls
+          hidden
+          aria-label="選擇影片分類"
+        >
+          <button
+            type="button"
+            data-home-category-select="body-parts"
+            aria-expanded="true"
+            aria-controls="home-category-body-parts"
+          >
+            依受傷部位
+          </button>
+          <button
+            type="button"
+            data-home-category-select="sports"
+            aria-expanded="false"
+            aria-controls="home-category-sports"
+          >
+            依運動項目
+          </button>
+          <button
+            type="button"
+            data-home-category-select="situations"
+            aria-expanded="false"
+            aria-controls="home-category-situations"
+          >
+            依受傷情境
+          </button>
         </div>
-        <div id="situations">
-          <SituationNav situations={situations} />
+        <div
+          id="home-category-body-parts"
+          data-home-category-panel="body-parts"
+        >
+          <div id="body-parts">
+            <BodyPartNav parts={bodyParts} />
+          </div>
         </div>
-      </div>
+        <div id="home-category-sports" data-home-category-panel="sports">
+          <div id="sports">
+            <SportNav sports={sports} />
+          </div>
+        </div>
+        <div
+          id="home-category-situations"
+          data-home-category-panel="situations"
+        >
+          <div id="situations">
+            <SituationNav situations={situations} />
+          </div>
+        </div>
+      </section>
     )
   }
   <section
@@ -161,6 +207,7 @@ const videoCount = featured.length + clips.length;
   </p>
 </BaseLayout>
 <script>
+  import "../scripts/home-categories";
   import "../scripts/video-discovery";
 </script>
 <style>
@@ -171,6 +218,37 @@ const videoCount = featured.length + clips.length;
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
+  }
+  .home-video-cta {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-block-start: 1.5rem;
+    padding: 0.65rem 1rem;
+    border-radius: 999px;
+    background: var(--color-brand-primary);
+    color: var(--color-on-brand);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .home-category-controls {
+    gap: 0.5rem;
+    margin-block-end: 1rem;
+  }
+  .home-category-controls button {
+    min-height: 44px;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--color-brand-100);
+    border-radius: 999px;
+    background: var(--color-surface-raised);
+    color: var(--color-brand-primary);
+    font: inherit;
+    font-weight: 600;
+  }
+  .home-category-controls button[aria-expanded="true"] {
+    border-color: var(--color-brand-primary);
+    background: var(--color-brand-primary);
+    color: var(--color-on-brand);
   }
   .discovery-controls button {
     min-height: 44px;
@@ -204,6 +282,9 @@ const videoCount = featured.length + clips.length;
     display: flex;
     flex-direction: column;
     min-width: 0;
+  }
+  [data-featured-videos] {
+    scroll-margin-top: 6rem;
   }
   .video-grid > li > :global(.case-card),
   .video-grid > li > :global(.observation-card) {
@@ -304,12 +385,26 @@ const videoCount = featured.length + clips.length;
     }
   }
   @media (max-width: 40rem) {
+    .home-category-controls:not([hidden]) {
+      display: flex;
+      overflow-x: auto;
+      padding-block: 0.25rem;
+    }
+    .home-category-controls button {
+      flex: 0 0 auto;
+    }
     .video-grid {
       grid-template-columns: 1fr;
     }
     .video-intro {
-      padding: 2.5rem 1rem;
-      margin-bottom: 2.5rem;
+      padding: 1.75rem 1rem;
+      margin-bottom: 1.75rem;
+    }
+    .video-intro > p {
+      font-size: 1rem;
+    }
+    .atlas-stats {
+      margin-block-start: 1.25rem;
     }
   }
 </style>

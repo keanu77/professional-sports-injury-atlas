@@ -1,6 +1,7 @@
 ---
 import {
   eventUpdates,
+  classifyReturnMilestone,
   returnDays,
   type EventUpdate,
 } from "../../lib/videos/event-updates";
@@ -10,6 +11,7 @@ interface Props {
 }
 const { update } = Astro.props;
 const days = returnDays(update);
+const milestone = classifyReturnMilestone(update);
 ---
 
 <section
@@ -23,7 +25,12 @@ const days = returnDays(update);
   {
     days !== null && (
       <p class="return-days">
-        距受傷 <strong>{days} 天</strong>
+        <span>
+          距受傷 <strong>{days} 天</strong>
+        </span>
+        <span class="return-milestone" data-return-milestone>
+          里程碑：{milestone}
+        </span>
       </p>
     )
   }
@@ -91,6 +98,20 @@ const days = returnDays(update);
   .return-days strong {
     color: var(--color-brand-primary-hover);
     font-size: 1.8rem;
+  }
+  .return-days {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 0.85rem;
+  }
+  .return-milestone {
+    padding: 0.3rem 0.65rem;
+    border-radius: 999px;
+    background: var(--color-brand-50);
+    color: var(--color-brand-900);
+    font-size: 0.875rem;
+    font-weight: 600;
   }
   .event-dates,
   .event-note,

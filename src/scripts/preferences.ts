@@ -96,9 +96,12 @@ function initFontScaleControls(root: Document): void {
 }
 
 function initMobileNav(root: Document): void {
+  const header = root.querySelector<HTMLElement>("[data-site-header]");
   const toggle = root.querySelector<HTMLButtonElement>("[data-nav-toggle]");
   const panel = root.querySelector<HTMLElement>("#site-nav-panel");
-  if (toggle === null || panel === null) return;
+  if (header === null || toggle === null || panel === null) return;
+
+  header.dataset.navEnhanced = "true";
 
   const trapItems = (): HTMLElement[] => [
     toggle,

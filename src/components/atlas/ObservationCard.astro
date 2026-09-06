@@ -1,10 +1,12 @@
 ---
 import VideoThumbnail from "../cases/VideoThumbnail.astro";
 import type { ObservationClip } from "../../lib/videos/expansion";
+import { observationCardMetadata } from "../../lib/videos/observation-card";
 interface Props {
   clip: ObservationClip;
 }
 const { clip } = Astro.props;
+const metadata = observationCardMetadata(clip);
 ---
 
 <a class="observation-card" href={`/videos/${clip.slug}/`}>
@@ -12,7 +14,13 @@ const { clip } = Astro.props;
     <span slot="media-action" class="play" aria-hidden="true">▶</span>
   </VideoThumbnail>
   <div class="observation-copy">
-    <p>{clip.event}</p><h3>{clip.name}</h3><span>受傷動作觀察 →</span>
+    <p>{clip.event}</p><h3>{clip.name}</h3>
+    <ul class="observation-metadata" data-observation-metadata>
+      <li data-observation-sport>{metadata.sport}</li>
+      <li data-observation-body-part>{metadata.bodyPart}</li>
+      <li data-observation-event-year>{metadata.eventYear}</li>
+    </ul>
+    <span>受傷動作觀察 →</span>
   </div>
 </a>
 <style>
@@ -47,6 +55,20 @@ const { clip } = Astro.props;
   .observation-copy h3 {
     font: 700 1.2rem/1.5 var(--font-display);
     margin: 0.4rem 0 0.75rem;
+  }
+  .observation-metadata {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.75rem;
+    padding: 0;
+    margin: 0 0 0.75rem;
+    color: var(--color-ink-muted);
+    font-size: 0.8rem;
+    list-style: none;
+  }
+  .observation-metadata li + li::before {
+    content: "·";
+    margin-inline-end: 0.75rem;
   }
   .observation-copy p,
   .observation-copy > span {

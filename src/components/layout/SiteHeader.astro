@@ -11,14 +11,16 @@ import ThemeToggle from "./ThemeToggle.astro";
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="site-header">
+<header class="site-header" data-site-header>
   <div class="site-header-inner">
     <p class="site-identity">
-      <a class="site-identity-link" href="/"
-        >運動傷害影片圖鑑<small aria-hidden="true"
-          >SPORTS MEDICINE · VIDEO ATLAS</small
-        ></a
-      >
+      <a class="site-identity-link" href="/" aria-label="運動傷害影片圖鑑">
+        <span class="site-identity-full" aria-hidden="true"
+          >運動傷害影片圖鑑</span
+        >
+        <span class="site-identity-mobile" aria-hidden="true">傷害圖鑑</span>
+        <small aria-hidden="true">SPORTS MEDICINE · VIDEO ATLAS</small>
+      </a>
     </p>
     <button
       type="button"
@@ -44,6 +46,18 @@ const currentPath = Astro.url.pathname;
             aria-current={currentPath === "/" ? "page" : undefined}
           >
             首頁
+          </a>
+        </li>
+        <li class="mobile-nav-only">
+          <a
+            class="site-nav-link"
+            href={`/contribute/?page=${encodeURIComponent(currentPath)}`}
+            >提供影片／資料修正</a
+          >
+        </li>
+        <li class="mobile-nav-only">
+          <a class="site-nav-link" href="https://sportsmedicine.tw/">
+            製作者：運動醫學科 吳易澄醫師
           </a>
         </li>
       </ul>

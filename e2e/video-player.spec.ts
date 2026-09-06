@@ -494,6 +494,12 @@ test.describe("governed case facades", () => {
         "href",
         `https://www.youtube.com/watch?v=${entry.videoId}`,
       );
+      const sourceTarget = await card
+        .locator(".case-video-source-link")
+        .boundingBox();
+      expect(sourceTarget).not.toBeNull();
+      expect(sourceTarget!.width).toBeGreaterThanOrEqual(44);
+      expect(sourceTarget!.height).toBeGreaterThanOrEqual(44);
       await expect(page.locator("[data-video-timeline]")).toHaveCount(0);
       await expect(card.locator("[data-caption-status]")).toHaveAttribute(
         "data-caption-status",
@@ -516,6 +522,7 @@ test.describe("governed case facades", () => {
       await expect(page.locator("[autoplay]")).toHaveCount(0);
       expect(await page.locator("img").count()).toBeGreaterThanOrEqual(1);
       expect(await page.content()).not.toContain("ytimg");
+      await expectNoAxeViolations(page);
       await expect(
         page.locator('[src*="youtube-nocookie"], [href*="youtube-nocookie"]'),
       ).toHaveCount(0);
