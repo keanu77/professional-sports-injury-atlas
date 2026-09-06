@@ -1,0 +1,32 @@
+{
+  "typecheck": {
+    "errors": 0,
+    "warnings": 0,
+    "existingHints": 16
+  },
+  "unit": {
+    "files": 81,
+    "passed": 1314,
+    "environment": "clean isolated checkout; local sockets allowed"
+  },
+  "e2e": {
+    "passed": 68,
+    "browsers": [
+      "chromium",
+      "firefox",
+      "webkit",
+      "mobile-chromium"
+    ]
+  },
+  "release": {
+    "pages": 34,
+    "cases": 7,
+    "clips": 12,
+    "internalLinks": 532
+  },
+  "productionPlayback": {
+    "passed": 19,
+    "failed": 0
+  },
+  "sourceCommit": "c97192b15596ab75820d1968ac33298cced9ba5b"
+}

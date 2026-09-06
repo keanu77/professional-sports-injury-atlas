@@ -1,4 +1,22 @@
-# Current handoff — Decision 26，2026-09-06
+# Current handoff — Decision 27，2026-09-06
+
+已完成影片擴充與使用者指定 multi-llm-audit 的傷勢／恢復比賽查核並上線。新增大谷翔平、Bolt、Salah、Giannis、Fultz 共 5 支，公開總數 19（7 原病例＋12 觀察影片）；首頁部位為肩部 2、腳踝 8、小腿與阿基里斯腱 4、膝蓋 3、大腿後側 2。維持 YouTube 預設封面、無搜尋、主站設計。Nadal 已研究，但候選未確認包含受傷當下，因此未發布。
+
+正式 https://sports-injury-atlas.pages.dev/；網站來源 `c97192b15596ab75820d1968ac33298cced9ba5b`；Production/main `f15a755c-3a55-4224-994a-a43166862486`。root dist 為正式 34 頁產物。
+
+實際執行 Codex、Grok、Antigravity 三 CLI（全部 exit 0），只傳公開頁面文字；Qwen 因白天 GPU 窗口未跑。獨立 Pass 2 驗 20 個候選事件，最終 19 筆來源摘要再複查。排除錯誤數字／網址與未支持醫療推論；Simons 首返 3/1、Durant 區分季前／正式、LaMelo 2023 後續 MRI 更新、Irving 非傷病缺賽因素、大谷指定打擊回歸與季後肩部手術、Foucher 後續正式成績皆已呈現。未知日期與匿名排球不推估。
+
+`src/data/videos/additions.v1.json` 保存 D27 影片授權；`event-updates.v1.json` 是獨立公開報導摘要，19 筆 slug／影片 URL／事件日均綁定。公開頁顯示簡短傷勢與復賽脈絡、可展開來源。原病例、D18/D20 核准、衛教文字未改，沒有冒充醫療簽核。NBA 引用維持純文字 URL 政策。
+
+Astro check 0 errors / 0 warnings、16 既有 hints；乾淨隔離副本 1,314 單元與四瀏覽器 68 項回歸通過。2026-09-06T03:54:15.020Z 正式 38 回應 hash、25 頁 × 3 尺寸 = 75 組、來源展開／Axe／縮圖／分类／無水平溢位／零預先第三方請求／無 JS 全過。19 支正式實播全部成功，原 5 支字幕亦通過，沒有重試。
+
+報告 `docs/reviews/2026-09-06-decision-27-video-expansion-and-event-audit.md`；三模型原始輸出、接受／排除矩陣、影片與正式瀏覽證據在 `docs/reviews/evidence/decision-27/`。原始模型輸出含誤報，僅採 Pass 2 已核實結論。GitHub 為 keanu77 私有 ADMIN，來源提交已 push；收尾文件與證據另 commit/push 後，以 HEAD 與 origin/main 一致確認完成。文件 commit 不需再部署。
+
+後續新增影片沿用 HTTPS 真實路徑實播與來源核對，release:public 仍要求乾淨已提交版本、inputTreeDigest、既有核准鏈及新增影片 7 天內證據。使用 Node 24.14.0。預覽分支 decision-27-preview 保留，舊 4321 參考未更動。沒有本輪未完成的已授權實作。
+
+---
+
+# Historical handoff — Decision 26，2026-09-06
 
 首頁部位分類與使用者授權的稽核修正已實作並部署。首頁提供腳踝 8 支、小腿與阿基里斯腱 4 支、膝蓋 1 支、大腿後側 1 支，連到四個 `/body-parts/` 頁面；14 支影片各歸屬一處、無 JS 也能選取。維持 YouTube 預設封面、無搜尋、主站淡藍／珊瑚色設計。
 
