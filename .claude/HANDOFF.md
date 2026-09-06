@@ -1,3 +1,13 @@
+# 最新交接 — Decision 29，2026-09-06
+
+已移除首頁標題下的「22 支影片 · 點選後播放」，連同不用的計數變數與樣式；依追加要求刪除全站頁尾「傷種圖鑑」及 ACL／踝扭傷／阿基里斯腱三個連結，頁尾改為兩欄。
+
+正式 https://sports-injury-atlas.pages.dev/；來源 `376898ea0a416729791a43326ba1fd3f1d11b50a`；Production/main `e60573d3-dfcc-43ad-97ff-6219381f3879`。首頁提交 7e87e3f、頁尾提交 376898e 均已 push；root dist 為正式產物。22 支影片、分類與來源資料不變。
+
+Astro check 0 errors / 0 warnings、16 既有 hints；格式檢查、7 個既有醫療聲明測試與乾淨副本／正式 release:public 通過（38 HTML、483 內部連結）。2026-09-06T07:56:05.285Z 正式 38 HTML 雜湊逐頁匹配且頁尾皆無傷種圖鑑；首頁與 Crosby 頁於 320/390/1440 六組瀏覽檢查通過，首頁 22 卡、兩欄導覽、醫療聲明與無水平溢位。390/1440 截圖已人工檢视。證據 docs/reviews/evidence/decision-29/browser.production.json。收尾文件另 commit/push，不需重部署，無待辦。
+
+---
+
 # 最新交接 — Decision 28，2026-09-06
 
 已依使用者要求移除兩支匿名球友影片，新增五支可內嵌的具名選手影片：Acuña（棒球）、Vonn／Svindal（高山滑雪）、Dupont（橄欖球）、Crosby（冰球、確認腦震盪）。公開總數 22，六個部位分類；新增頭頸部 2 支。YouTube 預設封面、無搜尋及既有主站版型保留。
