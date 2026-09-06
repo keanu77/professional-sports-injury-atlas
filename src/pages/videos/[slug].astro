@@ -85,15 +85,50 @@ if (clip.startSeconds > 0)
     </section>
     <div class="clip-notes">
       <section><h2>受傷當下看什麼</h2><p>{clip.observation}</p></section>
-      <section>
-        <h2>當下怎麼做</h2><p>
-          先停止運動、保護受傷部位。疼痛加重或無法承重時就醫；不要用忍痛完成動作來判斷能否繼續。
-        </p><a
-          class="clip-meta"
-          href="https://www.nhs.uk/conditions/sprains-and-strains/"
-          rel="noopener noreferrer">處理原則：NHS</a
-        >
-      </section>
+      {
+        clip.bodyPart === "頭頸部" ? (
+          <section data-head-injury-care>
+            <h2>當下怎麼做</h2>
+            <p>頭部碰撞後若疑似腦震盪，立即停止運動並接受醫療評估。</p>
+            <p>
+              不得當天回場；後續回場由醫療人員評估。昏迷、叫不醒、抽搐或新出現手腳無力，立即叫救護車。
+            </p>
+            <p class="clip-meta">
+              處理參考：
+              <a
+                href="https://www.cdc.gov/heads-up/response/index.html"
+                rel="noopener noreferrer"
+              >
+                CDC HEADS UP
+              </a>{" "}
+              ·{" "}
+              <a
+                href="https://www.nhs.uk/conditions/head-injury-and-concussion/"
+                rel="noopener noreferrer"
+              >
+                NHS 頭部受傷
+              </a>
+            </p>
+          </section>
+        ) : (
+          <section>
+            <>
+              <h2>當下怎麼做</h2>
+              <p>
+                先停止運動、保護受傷部位。疼痛加重或無法承重時就醫；不要用忍痛完成動作來判斷能否繼續。
+              </p>
+              <a
+                class="clip-meta"
+                href="https://www.nhs.uk/conditions/sprains-and-strains/"
+                rel="noopener noreferrer"
+              >
+                處理原則：NHS
+              </a>
+            </>
+          </section>
+        )
+      }
+
       {
         eventUpdate ? (
           <EventFollowUp update={eventUpdate} />

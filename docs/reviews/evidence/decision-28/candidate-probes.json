@@ -1,0 +1,154 @@
+[
+  {
+    "name": "Lindsey Vonn",
+    "id": "a6m0UfL04ow",
+    "start": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T07:12:43.028Z",
+    "status": "unverified",
+    "error": "locator.click: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('iframe').contentFrame().getByRole('button', { name: '播放影片', exact: true })\u001b[22m\n",
+    "title": null,
+    "publisher": null,
+    "captionControls": null
+  },
+  {
+    "name": "Aaron Rodgers",
+    "id": "4bVDfY60Q4Y",
+    "start": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T07:14:03.222Z",
+    "status": "unverified",
+    "error": "locator.click: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('iframe').contentFrame().getByRole('button', { name: '播放影片', exact: true })\u001b[22m\n",
+    "frameText": "無法播放影片\n無法播放影片\n這部影片含有「NFL」的著作權內容，而對方已禁止在這個網站上或應用程式中播放這部影片\n<a href='http://www.youtube.com/watch?v=4bVDfY60Q4Y&feature=emb_err_woyt' target='_blank'>在 YouTube 上觀看</a>\n在 YouTube 上觀看",
+    "title": null,
+    "publisher": null,
+    "captionControls": null
+  },
+  {
+    "name": "Ronald Acuna",
+    "id": "C4xerhbFNnc",
+    "start": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T07:14:16.857Z",
+    "status": "played",
+    "playback": {
+      "time": 2.009847,
+      "duration": 353.901,
+      "paused": false,
+      "readyState": 4
+    },
+    "title": "Ronald Acuna Jr. injury: 7/10/2021",
+    "publisher": "Mac VelJohnson",
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "name": "Lindsey Vonn alternative",
+    "id": "0TwnwjFJzUo",
+    "start": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T07:14:22.489Z",
+    "status": "played",
+    "playback": {
+      "time": 2.017459,
+      "duration": 121.2778231292517,
+      "paused": false,
+      "readyState": 4
+    },
+    "title": "2013 02 05:Lindsey Vonn crash",
+    "publisher": "swedishbaffe",
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "name": "Tua Tagovailoa concussion",
+    "id": "0Ta-raZvnC0",
+    "start": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T07:15:29.690Z",
+    "status": "unverified",
+    "error": "locator.click: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('iframe').contentFrame().getByRole('button', { name: '播放影片', exact: true })\u001b[22m\n",
+    "frameText": "無法播放影片\n無法播放影片\n這部影片含有「NFL」的著作權內容，而對方已禁止在這個網站上或應用程式中播放這部影片\n<a href='http://www.youtube.com/watch?v=0Ta-raZvnC0&feature=emb_err_woyt' target='_blank'>在 YouTube 上觀看</a>\n在 YouTube 上觀看",
+    "title": null,
+    "publisher": null,
+    "captionControls": null
+  },
+  {
+    "name": "Antoine Dupont",
+    "id": "LOaTNtmSxUY",
+    "start": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T07:16:08.527Z",
+    "status": "played",
+    "playback": {
+      "time": 2.011838,
+      "duration": 26.881,
+      "paused": false,
+      "readyState": 4
+    },
+    "title": "Antoine Dupont forfait ? La vidéo de sa blessure face à la Namibie pendant le mondial de rugby",
+    "publisher": "Le Monde",
+    "captionControls": [
+      "這部影片未提供字幕"
+    ]
+  },
+  {
+    "name": "Aksel Lund Svindal",
+    "id": "vM_UU11MMH0",
+    "start": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T07:16:14.645Z",
+    "status": "played",
+    "playback": {
+      "time": 2.02546,
+      "duration": 25.481,
+      "paused": false,
+      "readyState": 4
+    },
+    "title": "Horror Crash Streif 2016 | Axel Lund Svindal",
+    "publisher": "Gollo",
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "name": "Sidney Crosby concussion",
+    "id": "YjDF1Saryg4",
+    "start": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T07:18:24.328Z",
+    "status": "played",
+    "playback": {
+      "time": 2.018615,
+      "duration": 135.601,
+      "paused": false,
+      "readyState": 4
+    },
+    "title": "Niskanen tossed after Crosby takes cross check to face",
+    "publisher": "SPORTSNET",
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "name": "George North backup",
+    "id": "kPXcpXxG6Y0",
+    "start": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T07:18:29.651Z",
+    "status": "played",
+    "playback": {
+      "time": 2.021884,
+      "duration": 16.788026,
+      "paused": false,
+      "readyState": 4
+    },
+    "title": "George North knocked cold but Welsh let him play on",
+    "publisher": "MrCowfucker",
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  }
+]

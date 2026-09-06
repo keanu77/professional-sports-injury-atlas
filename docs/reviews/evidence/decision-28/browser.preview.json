@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-09-06T07:24:30.668Z",
+  "origin": "https://decision-28-preview.sports-injury-atlas.pages.dev",
+  "commit": "14da186241063d461a117e266587ae05197158a4",
+  "matchedPages": 42,
+  "noJavaScript": "passed",
+  "results": [
+    {
+      "viewport": {
+        "width": 320,
+        "height": 780
+      },
+      "pages": 29,
+      "accessibility": "passed",
+      "externalBeforeActivation": 0
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pages": 29,
+      "accessibility": "passed",
+      "externalBeforeActivation": 0
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "pages": 29,
+      "accessibility": "passed",
+      "externalBeforeActivation": 0
+    }
+  ]
+}

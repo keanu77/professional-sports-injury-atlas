@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "decision": "decision-28",
+  "authorizationQuote": "請刪除兩個球友上傳的影片，然後繼續搜尋更多影片來源，可包含任何運動項目",
+  "authorizedAt": "2026-09-06T07:12:09.056078Z",
+  "removedSlugs": ["volleyball-pov-135", "ankle-inversion-observation"],
+  "clips": [
+    {
+      "slug": "ronald-acuna-miami-2021",
+      "videoId": "C4xerhbFNnc",
+      "name": "Ronald Acuña Jr.",
+      "sport": "棒球",
+      "event": "2021 勇士對馬林魚",
+      "bodyPart": "膝部",
+      "observation": "外野追球跳起後落地失衡，倒地並停止比賽；影片包含後續協助離場。",
+      "eventDate": "2021-07-10",
+      "returnDate": "2022-04-19",
+      "returnText": "2022-04-19 先在 3A 小聯盟復健賽出場；4 月 28 日重返 MLB。",
+      "videoUrl": "https://www.youtube.com/watch?v=C4xerhbFNnc",
+      "publisher": "Mac VelJohnson",
+      "sourceTitle": "Ronald Acuna Jr. injury: 7/10/2021",
+      "captionStatus": "available",
+      "startSeconds": 0,
+      "durationSeconds": 354,
+      "sources": [
+        {
+          "title": "MLB：右膝傷勢公告",
+          "url": "https://www.mlb.com/news/ronald-acuna-jr-injured"
+        },
+        {
+          "title": "Gwinnett：4 月 19 日實際復健賽",
+          "url": "https://www.milb.com/gwinnett/news/acuna-doubles-in-return-but-stripers-lose-2-0-in-jacksonville"
+        },
+        {
+          "title": "MLB：4 月 28 日回歸賽後報導",
+          "url": "https://www.mlb.com/news/ronald-acuna-jr-returns-from-knee-injury"
+        }
+      ]
+    },
+    {
+      "slug": "lindsey-vonn-schladming-2013",
+      "videoId": "0TwnwjFJzUo",
+      "name": "Lindsey Vonn",
+      "sport": "高山滑雪",
+      "event": "2013 Schladming 世錦賽超大曲道",
+      "bodyPart": "膝部",
+      "observation": "開頭呈現滑降騰空後落地摔倒，接著為新聞與現場救援畫面。",
+      "eventDate": "2013-02-05",
+      "returnDate": "2013-12-06",
+      "returnText": "2013-12-06 在 Lake Louise 世界盃滑降賽復出。",
+      "videoUrl": "https://www.youtube.com/watch?v=0TwnwjFJzUo",
+      "publisher": "swedishbaffe",
+      "sourceTitle": "2013 02 05:Lindsey Vonn crash",
+      "captionStatus": "available",
+      "startSeconds": 0,
+      "durationSeconds": 122,
+      "sources": [
+        {
+          "title": "美國滑雪隊：受傷與診斷",
+          "url": "https://www.usskiandsnowboard.org/news/vonn-crashes-world-super-g"
+        },
+        {
+          "title": "美國滑雪隊：手術後更新",
+          "url": "https://www.usskiandsnowboard.org/news/optimistic-outlook-lindsey-vonn"
+        },
+        {
+          "title": "美國滑雪隊：11 月訓練再傷",
+          "url": "https://www.usskiandsnowboard.org/news/lindsey-vonn-injury-update"
+        },
+        {
+          "title": "美國滑雪隊：世界盃實際復出",
+          "url": "https://www.usskiandsnowboard.org/news/vonn-returns-world-cup-tour"
+        }
+      ]
+    },
+    {
+      "slug": "antoine-dupont-world-cup-2023",
+      "videoId": "LOaTNtmSxUY",
+      "name": "Antoine Dupont",
+      "sport": "橄欖球",
+      "event": "2023 世界盃法國對納米比亞",
+      "bodyPart": "頭頸部",
+      "observation": "爭球時頭部與對手碰撞，隨後扶住臉部接受查看；短片含碰撞重播。",
+      "eventDate": "2023-09-21",
+      "returnDate": "2023-10-15",
+      "returnText": "2023-10-15 在世界盃八強對南非復出。",
+      "videoUrl": "https://www.youtube.com/watch?v=LOaTNtmSxUY",
+      "publisher": "Le Monde",
+      "sourceTitle": "Antoine Dupont forfait ? La vidéo de sa blessure face à la Namibie pendant le mondial de rugby",
+      "captionStatus": "unavailable",
+      "startSeconds": 0,
+      "durationSeconds": 27,
+      "sources": [
+        {
+          "title": "World Rugby：隊醫與本人證言（文件日期 2023-09-27）",
+          "url": "https://resources.worldrugby-rims.pulselive.com/worldrugby/document/2023/09/27/c960a19f-e04d-4a7c-88ea-540524fd06e8/230927-RWC23-Disciplinary-Decision-Johan-Deysel-Namibia-.pdf"
+        },
+        {
+          "title": "World Rugby：傷後回歸名單",
+          "url": "https://www.rugbyworldcup.com/news/877678/france-announce-squad-to-play-south-africa"
+        },
+        {
+          "title": "南非橄欖球協會：八強實際賽事",
+          "url": "https://springboks.rugby/news-features/articles/2023/10/15/boks-victorious-in-paris-thriller"
+        }
+      ]
+    },
+    {
+      "slug": "aksel-svindal-kitzbuhel-2016",
+      "videoId": "vM_UU11MMH0",
+      "name": "Aksel Lund Svindal",
+      "sport": "高山滑雪",
+      "event": "2016 Kitzbühel 世界盃滑降賽",
+      "bodyPart": "膝部",
+      "observation": "高速滑降時失衡，接著摔倒滑向場邊防護網；畫面不能判定膝傷程度。",
+      "eventDate": "2016-01-23",
+      "returnDate": "2016-12-02",
+      "returnText": "2016-12-02 在 Val d’Isère 世界盃超大曲道復出，取得第 2 名。",
+      "videoUrl": "https://www.youtube.com/watch?v=vM_UU11MMH0",
+      "publisher": "Gollo",
+      "sourceTitle": "Horror Crash Streif 2016 | Axel Lund Svindal",
+      "captionStatus": "available",
+      "startSeconds": 0,
+      "durationSeconds": 26,
+      "sources": [
+        {
+          "title": "Dagbladet：具名滑雪隊主管確認傷勢",
+          "url": "https://www.dagbladet.no/sport/aksel-lund-svindal-rev-av-korsbandet-i-skrekk-krasjen/60549683"
+        },
+        {
+          "title": "FIS：選手正式賽果",
+          "url": "https://www.fis-ski.com/DB/general/athlete-biography.html?categorycode=WC&competitorid=59877&position=&sectorcode=AL&type=result"
+        },
+        {
+          "title": "SRF：復出賽事與本人訪問",
+          "url": "https://www.srf.ch/sport/ski-alpin/weltcup-maenner/weltcup-maenner-rueckkehrer-svindal-ueberstrahlt-alle-ausser-jansrud"
+        }
+      ]
+    },
+    {
+      "slug": "sidney-crosby-concussion-2017",
+      "videoId": "YjDF1Saryg4",
+      "name": "Sidney Crosby",
+      "sport": "冰球",
+      "event": "2017 季後賽企鵝對首都人第 3 戰",
+      "bodyPart": "頭頸部",
+      "observation": "頭部受到球桿碰撞後倒地，接著接受協助；影片含碰撞與重播。",
+      "eventDate": "2017-05-01",
+      "returnDate": "2017-05-06",
+      "returnText": "2017-05-06 在對首都人的第 5 戰正式復出。",
+      "videoUrl": "https://www.youtube.com/watch?v=YjDF1Saryg4",
+      "publisher": "SPORTSNET",
+      "sourceTitle": "Niskanen tossed after Crosby takes cross check to face",
+      "captionStatus": "available",
+      "startSeconds": 0,
+      "durationSeconds": 136,
+      "sources": [
+        {
+          "title": "NHL：教練確認腦震盪",
+          "url": "https://www.nhl.com/news/sidney-crosby-has-concussion-out-game-4-for-penguins-289221268"
+        },
+        {
+          "title": "NHL：第 5 戰實際復出報導",
+          "url": "https://www.nhl.com/news/sidney-crosby-returns-penguins-fail-to-eliminate-capitals-289315778"
+        }
+      ]
+    }
+  ]
+}

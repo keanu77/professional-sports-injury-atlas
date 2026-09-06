@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "decision": "decision-28",
+  "checkedAt": "2026-09-06",
+  "entries": [
+    {
+      "slug": "ronald-acuna-miami-2021",
+      "videoUrl": "https://www.youtube.com/watch?v=C4xerhbFNnc",
+      "eventDate": "2021-07-10",
+      "injury": "MLB 報導引述球隊公告，確認右膝前十字韌帶撕裂。",
+      "returnDate": "2022-04-19",
+      "returnSummary": "2022-04-19 先在 3A 小聯盟復健賽出場；4 月 28 日重返 MLB。",
+      "context": "復健賽也有正式賽事紀錄，但層級與任務不同；不能把 MLB 回歸日當作傷後所有比賽的第一場。",
+      "sources": [
+        {
+          "title": "MLB：右膝傷勢公告",
+          "url": "https://www.mlb.com/news/ronald-acuna-jr-injured",
+          "publishedAt": "2021-07-11"
+        },
+        {
+          "title": "Gwinnett：4 月 19 日實際復健賽",
+          "url": "https://www.milb.com/gwinnett/news/acuna-doubles-in-return-but-stripers-lose-2-0-in-jacksonville",
+          "publishedAt": "2022-04-19"
+        },
+        {
+          "title": "MLB：4 月 28 日回歸賽後報導",
+          "url": "https://www.mlb.com/news/ronald-acuna-jr-returns-from-knee-injury",
+          "publishedAt": "2022-04-29"
+        }
+      ]
+    },
+    {
+      "slug": "lindsey-vonn-schladming-2013",
+      "videoUrl": "https://www.youtube.com/watch?v=0TwnwjFJzUo",
+      "eventDate": "2013-02-05",
+      "injury": "美國滑雪隊確認右膝前十字與內側副韌帶撕裂，合併外側脛骨平台骨折，之後接受手術。",
+      "returnDate": "2013-12-06",
+      "returnSummary": "2013-12-06 在 Lake Louise 世界盃滑降賽復出。",
+      "context": "回歸前曾於 11 月訓練再傷；這段日期差不代表一次受傷後順利、連續的復健過程。",
+      "sources": [
+        {
+          "title": "美國滑雪隊：受傷與診斷",
+          "url": "https://www.usskiandsnowboard.org/news/vonn-crashes-world-super-g",
+          "publishedAt": "2013-02-05"
+        },
+        {
+          "title": "美國滑雪隊：手術後更新",
+          "url": "https://www.usskiandsnowboard.org/news/optimistic-outlook-lindsey-vonn",
+          "publishedAt": "2013-02-10"
+        },
+        {
+          "title": "美國滑雪隊：11 月訓練再傷",
+          "url": "https://www.usskiandsnowboard.org/news/lindsey-vonn-injury-update",
+          "publishedAt": "2013-11-20"
+        },
+        {
+          "title": "美國滑雪隊：世界盃實際復出",
+          "url": "https://www.usskiandsnowboard.org/news/vonn-returns-world-cup-tour",
+          "publishedAt": "2013-12-06"
+        }
+      ]
+    },
+    {
+      "slug": "antoine-dupont-world-cup-2023",
+      "videoUrl": "https://www.youtube.com/watch?v=LOaTNtmSxUY",
+      "eventDate": "2023-09-21",
+      "injury": "World Rugby 文件引述隊醫及本人證言，確認右側顏面骨折，並已接受手術。",
+      "returnDate": "2023-10-15",
+      "returnSummary": "2023-10-15 在世界盃八強對南非復出。",
+      "context": "本例官方確認的是顏面骨折；是否合併腦震盪，不能單憑碰撞畫面判定。",
+      "sources": [
+        {
+          "title": "World Rugby：隊醫與本人證言（文件日期 2023-09-27）",
+          "url": "https://resources.worldrugby-rims.pulselive.com/worldrugby/document/2023/09/27/c960a19f-e04d-4a7c-88ea-540524fd06e8/230927-RWC23-Disciplinary-Decision-Johan-Deysel-Namibia-.pdf",
+          "publishedAt": null
+        },
+        {
+          "title": "World Rugby：傷後回歸名單",
+          "url": "https://www.rugbyworldcup.com/news/877678/france-announce-squad-to-play-south-africa",
+          "publishedAt": "2023-10-13"
+        },
+        {
+          "title": "南非橄欖球協會：八強實際賽事",
+          "url": "https://springboks.rugby/news-features/articles/2023/10/15/boks-victorious-in-paris-thriller",
+          "publishedAt": "2023-10-15"
+        }
+      ]
+    },
+    {
+      "slug": "aksel-svindal-kitzbuhel-2016",
+      "videoUrl": "https://www.youtube.com/watch?v=vM_UU11MMH0",
+      "eventDate": "2016-01-23",
+      "injury": "挪威滑雪隊主管向媒體確認右膝前十字韌帶撕裂。",
+      "returnDate": "2016-12-02",
+      "returnSummary": "2016-12-02 在 Val d’Isère 世界盃超大曲道復出，取得第 2 名。",
+      "context": "復出表現與恢復時間都是這位選手的個別紀錄，不能直接套用到其他膝傷。",
+      "sources": [
+        {
+          "title": "Dagbladet：具名滑雪隊主管確認傷勢",
+          "url": "https://www.dagbladet.no/sport/aksel-lund-svindal-rev-av-korsbandet-i-skrekk-krasjen/60549683",
+          "publishedAt": "2016-01-23"
+        },
+        {
+          "title": "FIS：選手正式賽果",
+          "url": "https://www.fis-ski.com/DB/general/athlete-biography.html?categorycode=WC&competitorid=59877&position=&sectorcode=AL&type=result",
+          "publishedAt": null
+        },
+        {
+          "title": "SRF：復出賽事與本人訪問",
+          "url": "https://www.srf.ch/sport/ski-alpin/weltcup-maenner/weltcup-maenner-rueckkehrer-svindal-ueberstrahlt-alle-ausser-jansrud",
+          "publishedAt": "2016-12-02"
+        }
+      ]
+    },
+    {
+      "slug": "sidney-crosby-concussion-2017",
+      "videoUrl": "https://www.youtube.com/watch?v=YjDF1Saryg4",
+      "eventDate": "2017-05-01",
+      "injury": "NHL 報導引述教練確認腦震盪，並宣布缺席下一場比賽。",
+      "returnDate": "2017-05-06",
+      "returnSummary": "2017-05-06 在對首都人的第 5 戰正式復出。",
+      "context": "這是 2017 年的個人出賽紀錄，不是腦震盪休息五天就能回場的規則；須由醫療人員評估。",
+      "sources": [
+        {
+          "title": "NHL：教練確認腦震盪",
+          "url": "https://www.nhl.com/news/sidney-crosby-has-concussion-out-game-4-for-penguins-289221268",
+          "publishedAt": "2017-05-02"
+        },
+        {
+          "title": "NHL：第 5 戰實際復出報導",
+          "url": "https://www.nhl.com/news/sidney-crosby-returns-penguins-fail-to-eliminate-capitals-289315778",
+          "publishedAt": "2017-05-07"
+        }
+      ]
+    }
+  ]
+}

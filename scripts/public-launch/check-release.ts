@@ -1,6 +1,6 @@
 import {
   allObservationClips,
-  additions,
+  curation,
   expansion,
   expandedCaseAllowed,
 } from "../../src/lib/videos/expansion";
@@ -130,8 +130,14 @@ const additionsProof = JSON.parse(
     "utf8",
   ),
 );
+const curationProof = JSON.parse(
+  readFileSync(
+    "docs/reviews/evidence/decision-28/playback.preview.json",
+    "utf8",
+  ),
+);
 for (const item of [...expansion.cases, ...allObservationClips]) {
-  const proof = [...additional, ...additionsProof].find(
+  const proof = [...additional, ...additionsProof, ...curationProof].find(
     (p: { url: string }) => p.url === item.videoUrl,
   );
   assert.ok(
@@ -166,7 +172,7 @@ for (const item of [...expansion.cases, ...allObservationClips]) {
     );
 }
 console.log(
-  `Video expansions: ${expansion.cases.length + allObservationClips.length} additional videos (${additions.clips.length} new); source records preserved.`,
+  `Video expansions: ${expansion.cases.length + allObservationClips.length} additional videos (${curation.clips.length} new); source records preserved.`,
 );
 
 // All displayed events require an independently checked source summary bound to the exact video.

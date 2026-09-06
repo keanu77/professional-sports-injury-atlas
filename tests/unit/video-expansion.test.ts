@@ -2,6 +2,8 @@ import { readFileSync } from "node:fs";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   additions,
+  curation,
+  curationSchema,
   additionsSchema,
   expansion,
   expansionSchema,
@@ -36,7 +38,7 @@ describe("confirmed video expansion", () => {
     expect(expandedCaseAllowed(tatum)).toBe(true);
     expect(hasPublicEmbed(tatum)).toBe(true);
     expect(selectPublicCases([tatum])).toEqual([tatum]);
-    expect(observationClips()).toHaveLength(12);
+    expect(observationClips()).toHaveLength(10 + curation.clips.length);
     expect(
       captionsOptionalFor("https://www.youtube.com/watch?v=unlisted000"),
     ).toBe(false);
@@ -112,4 +114,20 @@ it("rejects additions that duplicate an existing video or imply unsupported retu
     mutate(changed);
     expect(additionsSchema.safeParse(changed).success).toBe(false);
   }
+});
+
+it("removes both anonymous clips from every public selector and rejects malformed removal scope", () => {
+  vi.stubEnv("ATLAS_PUBLIC_LAUNCH", "decision-21");
+  expect(
+    observationClips().some((c) =>
+      curation.removedSlugs.some((s) => s === c.slug),
+    ),
+  ).toBe(false);
+  expect(
+    captionsOptionalFor("https://www.youtube.com/watch?v=tEHP_6GA6ZA"),
+  ).toBe(false);
+  const invalid = structuredClone(curation);
+  invalid.removedSlugs[1] = invalid.removedSlugs[0]!;
+  expect(curationSchema.safeParse(invalid).success).toBe(false);
+  vi.unstubAllEnvs();
 });

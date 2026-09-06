@@ -11,6 +11,20 @@ const receipt = JSON.parse(
 const updates = JSON.parse(
   fs.readFileSync("src/data/videos/event-updates.v1.json", "utf8"),
 );
+updates.entries.push(
+  ...JSON.parse(
+    fs.readFileSync("src/data/videos/event-additions.v1.json", "utf8"),
+  ).entries,
+);
+const curation = JSON.parse(
+  fs.readFileSync("src/data/videos/curation.v1.json", "utf8"),
+);
+for (const slug of curation.removedSlugs)
+  assert.equal(
+    (await fetch(`${origin}/videos/${slug}/`)).status,
+    404,
+    `Removed video still served: ${slug}`,
+  );
 const live = origin.startsWith("https:");
 let matchedPages = 0;
 for (const file of receipt.files.filter(
@@ -133,6 +147,23 @@ try {
         assert.ok(await report.isVisible());
         assert.ok((await report.innerText()).includes(update.injury));
         assert.ok((await report.innerText()).includes(update.returnSummary));
+        const headClip = curation.clips.find(
+          (c) => c.slug === update.slug && c.bodyPart === "頭頸部",
+        );
+        if (headClip) {
+          const care = page.locator("[data-head-injury-care]");
+          assert.ok(await care.isVisible());
+          assert.ok((await care.innerText()).includes("不得當天回場"));
+          assert.equal(
+            await care
+              .locator(
+                'a[href="https://www.cdc.gov/heads-up/response/index.html"]',
+              )
+              .count(),
+            1,
+          );
+        }
+
         await report.locator("summary").click();
         assert.equal(await report.locator("li").count(), update.sources.length);
         assert.equal(await report.locator('a[href*="nba.com"]').count(), 0);

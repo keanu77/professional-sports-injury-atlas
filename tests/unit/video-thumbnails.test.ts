@@ -1,3 +1,4 @@
+import curation from "../../src/data/videos/curation.v1.json";
 import {
   cpSync,
   mkdirSync,
@@ -27,6 +28,7 @@ function fixture() {
     "src/data/public-launch.v1.json",
     "src/data/videos/expansion.v1.json",
     "src/data/videos/additions.v1.json",
+    "src/data/videos/curation.v1.json",
   ])
     cpSync(path, join(root, path));
   return root;
@@ -34,7 +36,7 @@ function fixture() {
 test("all selected video covers have matching local provenance", () => {
   const result = loadVideoThumbnails(process.cwd());
   expect(result.issues).toEqual([]);
-  expect(result.allowedPaths).toHaveLength(19);
+  expect(result.allowedPaths).toHaveLength(19 + curation.clips.length);
 });
 test("changed cover bytes fail closed", () => {
   const root = fixture();

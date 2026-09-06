@@ -1,5 +1,7 @@
 /** Attributed public reporting, separate from the original clinical approval ledger. */
 import { z } from "astro/zod";
+import newData from "../../data/videos/event-additions.v1.json";
+import { curation } from "./expansion";
 import data from "../../data/videos/event-updates.v1.json";
 const text = z.string().trim().min(1);
 const https = z.url({ protocol: /^https$/ });
@@ -63,7 +65,20 @@ export const eventUpdatesSchema = z
         ctx.addIssue({ code: "custom", message: "Future source" });
     }
   });
-export const eventUpdates = eventUpdatesSchema.parse(data);
+const additions = z
+  .strictObject({
+    schemaVersion: z.literal(1),
+    decision: z.literal("decision-28"),
+    checkedAt: z.iso.date(),
+    entries: z.array(eventUpdatesSchema.shape.entries.element),
+  })
+  .parse(newData);
+export const eventUpdates = eventUpdatesSchema.parse({
+  ...data,
+  entries: [...data.entries, ...additions.entries].filter(
+    (e) => !curation.removedSlugs.some((slug) => slug === e.slug),
+  ),
+});
 export type EventUpdate = (typeof eventUpdates.entries)[number];
 export function eventUpdateFor(
   slug: string,

@@ -1,5 +1,9 @@
 import { videosByBodyPart } from "../../src/lib/videos/body-parts";
-import { allObservationClips, expansion } from "../../src/lib/videos/expansion";
+import {
+  allObservationClips,
+  curation,
+  expansion,
+} from "../../src/lib/videos/expansion";
 import assert from "node:assert/strict";
 import {
   existsSync,
@@ -61,6 +65,11 @@ assert.deepEqual(
   ].sort(),
   "Each video must appear in exactly one body part",
 );
+for (const slug of curation.removedSlugs)
+  assert.ok(
+    !existsSync(`dist/videos/${slug}`),
+    `Removed video route exists: ${slug}`,
+  );
 assert.ok(!existsSync("dist/review"), "Private review routes leaked");
 assert.ok(!existsSync("dist/updates"), "Unapproved historical update leaked");
 const list = (path: string): string[] =>

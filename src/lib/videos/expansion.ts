@@ -2,6 +2,7 @@
 import { z } from "astro/zod";
 import data from "../../data/videos/expansion.v1.json";
 import launchData from "../../data/public-launch.v1.json";
+import curationData from "../../data/videos/curation.v1.json";
 import additionsData from "../../data/videos/additions.v1.json";
 import type { InjuryCase } from "../contracts/case";
 import { canonicalJson, sha256Hex } from "../contracts/canonical";
@@ -116,10 +117,41 @@ export const additionsSchema = z
     }
   });
 export const additions = additionsSchema.parse(additionsData);
+export const curationSchema = z
+  .strictObject({
+    schemaVersion: z.literal(1),
+    decision: z.literal("decision-28"),
+    authorizationQuote: z.literal(
+      "請刪除兩個球友上傳的影片，然後繼續搜尋更多影片來源，可包含任何運動項目",
+    ),
+    authorizedAt: z.iso.datetime(),
+    removedSlugs: z
+      .array(z.enum(["volleyball-pov-135", "ankle-inversion-observation"]))
+      .length(2),
+    clips: z.array(observationClipSchema),
+  })
+  .superRefine((value, ctx) => {
+    if (new Set(value.removedSlugs).size !== 2)
+      ctx.addIssue({
+        code: "custom",
+        message: "Exactly two distinct removed videos required",
+      });
+    const combined = additionsSchema.safeParse({
+      ...additions,
+      clips: [...additions.clips, ...value.clips],
+    });
+    if (!combined.success)
+      ctx.addIssue({
+        code: "custom",
+        message: "Invalid or duplicate new curation video",
+      });
+  });
+export const curation = curationSchema.parse(curationData);
 export const allObservationClips: ObservationClip[] = [
   ...expansion.clips,
   ...additions.clips,
-];
+  ...curation.clips,
+].filter((c) => !curation.removedSlugs.some((slug) => slug === c.slug));
 export const expansionEnabled = () =>
   process.env.ATLAS_PUBLIC_LAUNCH === "decision-21";
 export function captionsOptionalFor(videoUrl: string): boolean {

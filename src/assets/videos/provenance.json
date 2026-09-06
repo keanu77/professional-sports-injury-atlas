@@ -127,6 +127,46 @@
       "sha256": "75ba88b2b124d99cbf65b4372d5e935fa0ced8e8cf43da41b41d0c5cba60aab5",
       "capturedAt": "2026-09-06T03:35:27.476740+00:00",
       "additionDecision": "decision-27"
+    },
+    {
+      "videoId": "C4xerhbFNnc",
+      "path": "src/assets/videos/C4xerhbFNnc.jpg",
+      "source": "https://i.ytimg.com/vi/C4xerhbFNnc/hqdefault.jpg",
+      "sha256": "646283971261106f0105869fa9c244dfca55dccc563f7b4789da82aff06bac07",
+      "capturedAt": "2026-09-06T07:20:01.886821+00:00",
+      "additionDecision": "decision-28"
+    },
+    {
+      "videoId": "0TwnwjFJzUo",
+      "path": "src/assets/videos/0TwnwjFJzUo.jpg",
+      "source": "https://i.ytimg.com/vi/0TwnwjFJzUo/hqdefault.jpg",
+      "sha256": "013886652ca89a0e28eba50e370f90b7cbab8b8211741f4bf9974a94f5623e2c",
+      "capturedAt": "2026-09-06T07:20:01.953661+00:00",
+      "additionDecision": "decision-28"
+    },
+    {
+      "videoId": "LOaTNtmSxUY",
+      "path": "src/assets/videos/LOaTNtmSxUY.jpg",
+      "source": "https://i.ytimg.com/vi/LOaTNtmSxUY/hqdefault.jpg",
+      "sha256": "a0994708c6252953683804545a27444f1df976cf3a0de83623a13422e8eb4152",
+      "capturedAt": "2026-09-06T07:20:02.154416+00:00",
+      "additionDecision": "decision-28"
+    },
+    {
+      "videoId": "vM_UU11MMH0",
+      "path": "src/assets/videos/vM_UU11MMH0.jpg",
+      "source": "https://i.ytimg.com/vi/vM_UU11MMH0/hqdefault.jpg",
+      "sha256": "18e99b6b84d02c7546c93dcb0f369f70a14281ceaf68c9575d25d2621db3a55f",
+      "capturedAt": "2026-09-06T07:20:02.238857+00:00",
+      "additionDecision": "decision-28"
+    },
+    {
+      "videoId": "YjDF1Saryg4",
+      "path": "src/assets/videos/YjDF1Saryg4.jpg",
+      "source": "https://i.ytimg.com/vi/YjDF1Saryg4/hqdefault.jpg",
+      "sha256": "f570158bee29fd8f0d577f75a5f66bbf3060f41e605131c89eebed6507e25456",
+      "capturedAt": "2026-09-06T07:20:02.298339+00:00",
+      "additionDecision": "decision-28"
     }
   ]
 }
