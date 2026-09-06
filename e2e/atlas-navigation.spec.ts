@@ -21,6 +21,7 @@ test.describe("atlas navigation", () => {
     page,
   }) => {
     await page.goto("/");
+    await page.locator(".more-cases > summary").click();
     await expect(page.locator("[data-injury-card]")).toHaveCount(3);
     for (const code of INJURY_CODES) {
       await expect(page.locator(`[data-injury-card="${code}"]`)).toBeVisible();
@@ -48,6 +49,7 @@ test.describe("atlas navigation", () => {
       await expect(page.locator("[data-injury-scope]")).toContainText(
         `${REVIEW_COUNTS[code]} reviewed cases`,
       );
+      await page.locator(".injury-details > summary").click();
       await expect(
         page.getByRole("heading", { level: 2, name: "傷種教學總覽" }),
       ).toBeVisible();
@@ -77,6 +79,7 @@ test.describe("atlas navigation", () => {
     page,
   }) => {
     await page.goto("/injuries/acl/");
+    await page.locator(".injury-details > summary").click();
     const courseCard = page.locator("[data-course-key]").first();
     await expect(courseCard).toBeVisible();
     await expect(courseCard.locator("[data-course-link-pending]")).toHaveText(

@@ -19,6 +19,7 @@ import { assetCreditHref } from "../../lib/rights/photo-credits";
 
 interface Props {
   athleteName?: string;
+  priority?: boolean;
   imageAlt?: string;
   injuryCode: string;
   injuryLabel: string;
@@ -30,6 +31,7 @@ interface Props {
 
 const {
   athleteName,
+  priority = false,
   imageAlt,
   injuryCode,
   injuryLabel,
@@ -103,10 +105,10 @@ const assetCreditsHref =
           widths={renditionWidths}
           width={renditionWidths.at(-1)!}
           sizes={photoSizes}
-          quality={isHero ? CASE_HERO_QUALITY : CASE_COVER_QUALITY}
-          loading={isHero ? "eager" : "lazy"}
+          quality={isHero || isThumb ? CASE_HERO_QUALITY : CASE_COVER_QUALITY}
+          loading={isHero || priority ? "eager" : "lazy"}
           decoding="async"
-          fetchpriority={isHero ? "high" : undefined}
+          fetchpriority={isHero || priority ? "high" : undefined}
           alt={photoAlt}
           class="case-cover-photo"
           pictureAttributes={{ class: "case-cover-picture" }}

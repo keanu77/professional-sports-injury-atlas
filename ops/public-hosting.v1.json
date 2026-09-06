@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "provider": "cloudflare-pages",
+  "projectName": "sports-injury-atlas",
+  "productionBranch": "main",
+  "buildCommand": "npm run release:public",
+  "outputDirectory": "dist",
+  "expectedOrigin": "https://sports-injury-atlas.pages.dev",
+  "nodeVersion": "24.14.0",
+  "releaseState": "approved-ready-to-deploy",
+  "selection": "verified-embeddable-first",
+  "minimumTotalCases": 1,
+  "perInjuryQuota": null,
+  "sportOrCompetitionQuota": null,
+  "projectCreatedAt": "2026-09-06",
+  "projectExists": true
+}

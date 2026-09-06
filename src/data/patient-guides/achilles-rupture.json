@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "injuryCode": "achilles-rupture",
+  "label": "阿基里斯腱斷裂",
+  "immediate": [
+    {
+      "text": "停止運動，保護患腳，儘速就醫評估。",
+      "sourceIds": ["achilles-recovery"]
+    },
+    {
+      "text": "不要強拉小腿或把腳尖往上扳；先讓醫療人員確認傷勢。",
+      "sourceIds": ["achilles-recovery"]
+    },
+    {
+      "text": "固定與負重方式依醫療團隊指示，不自行調整護具。",
+      "sourceIds": ["achilles-recovery"]
+    }
+  ],
+  "redFlags": [
+    {
+      "text": "突然像被踢到腳跟，走路推蹬無力，應儘速就醫。",
+      "sourceIds": ["achilles-recovery"]
+    },
+    {
+      "text": "腳部麻木、冰冷或變色，立即急診。",
+      "sourceIds": ["nhs-sprains"]
+    }
+  ],
+  "returnRanges": [
+    {
+      "label": "依運動類型恢復運動",
+      "value": "約 4–12 個月",
+      "detail": {
+        "text": "低衝擊活動與跑跳球類不同；依肌力及運動技能評估，不能直接套用最短時間。",
+        "sourceIds": ["achilles-recovery"]
+      }
+    },
+    {
+      "label": "手術或非手術治療",
+      "value": "都需要分階段復健",
+      "detail": {
+        "text": "由醫療團隊依傷勢選擇治療；回場取決於功能恢復，並非拆掉護具就能比賽。",
+        "sourceIds": ["achilles-recovery"]
+      }
+    }
+  ],
+  "readiness": {
+    "text": "小腿力量與目標運動所需技能恢復，並經醫療團隊評估後，再逐步回場。",
+    "sourceIds": ["achilles-recovery"]
+  },
+  "sources": [
+    {
+      "id": "achilles-recovery",
+      "title": "Achilles tendon rupture: management and rehabilitation",
+      "publisher": "Cambridge University Hospitals NHS",
+      "url": "https://www.cuh.nhs.uk/patient-information/achilles-tendon-rupture-management-and-rehabilitation/",
+      "year": null,
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "nhs-sprains",
+      "title": "Sprains and strains",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/sprains-and-strains/",
+      "year": 2024,
+      "accessedAt": "2026-09-06"
+    }
+  ],
+  "review": {
+    "status": "approved",
+    "reviewedBy": "吳易澄",
+    "reviewedAt": "2026-09-06",
+    "contentDigest": "93d058851847fc817ea5031f474b9e0c6255c60afbbddde94ca8cac50d2e15e0"
+  }
+}

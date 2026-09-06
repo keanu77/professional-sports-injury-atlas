@@ -4,6 +4,8 @@
  * use only the public selector.
  */
 
+import { isLaunchEnabled, launchCaseAllowed } from "../patient/public-launch";
+
 import {
   hasMatchingPublicRightsClearance,
   validateCaseForApproval,
@@ -71,7 +73,9 @@ export function selectPublicCases(records: InjuryCase[]): InjuryCase[] {
     records.filter(
       (record) =>
         validateCaseForApproval(record).length === 0 &&
-        hasMatchingPublicRightsClearance(record) &&
+        (isLaunchEnabled()
+          ? launchCaseAllowed(record)
+          : hasMatchingPublicRightsClearance(record)) &&
         (record.video.embedStatus === "verified" ||
           record.video.embedStatus === "external-link-only"),
     ),

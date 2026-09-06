@@ -163,7 +163,7 @@ test.describe("no-javascript readability", () => {
     await page.goto("/cases/damian-lillard-achilles-rupture-2025/");
     const newCreditLink = page
       .locator(
-        '[data-editorial-case-cover][data-player-photo="Damian Lillard"]',
+        '.case-video [data-cover-presentation="facade"][data-player-photo="Damian Lillard"]',
       )
       .locator("[data-asset-credit-link]");
     await expect(newCreditLink).toHaveAttribute(
@@ -186,7 +186,7 @@ test.describe("no-javascript readability", () => {
     await page.goto("/cases/dejounte-murray-achilles-rupture-2025/");
     const publicDomainCreditLink = page
       .locator(
-        '[data-editorial-case-cover][data-player-photo="Dejounte Murray"]',
+        '.case-video [data-cover-presentation="facade"][data-player-photo="Dejounte Murray"]',
       )
       .locator("[data-asset-credit-link]");
     await expect(publicDomainCreditLink).toHaveAttribute(

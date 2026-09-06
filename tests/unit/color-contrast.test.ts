@@ -358,7 +358,9 @@ describe("governed case cover", () => {
     expect(component).toContain("data-cover-variant={selection.variant");
     expect(component).toContain("caseThumbWidthsFor(selection.image.width)");
     expect(component).toContain("caseHeroWidthsFor(selection.image.width)");
-    expect(component).toContain('loading={isHero ? "eager" : "lazy"}');
+    expect(component).toContain(
+      'loading={isHero || priority ? "eager" : "lazy"}',
+    );
     expect(component).toContain(
       "object-position: var(--cover-focal-x) var(--cover-focal-y)",
     );

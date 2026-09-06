@@ -117,6 +117,7 @@ test("Decision 20 real reports have no pending or approval badge and retain sour
   page,
 }) => {
   await page.goto("/cases/kevin-durant-achilles-rupture-2019/");
+  await page.getByText("後續報導與完整來源", { exact: true }).click();
   const block = page.locator("[data-follow-up-block]");
   await expect(block).toBeVisible();
   await expect(block.locator("[data-follow-up-attribution]")).toHaveText(

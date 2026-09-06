@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "injuryCode": "acl",
+  "label": "前十字韌帶損傷",
+  "immediate": [
+    {
+      "text": "先停止比賽，減少膝蓋負重，不要忍痛繼續跑跳。",
+      "sourceIds": ["nhs-knee"]
+    },
+    {
+      "text": "用毛巾包住冰袋短暫冰敷，避免直接接觸皮膚。",
+      "sourceIds": ["nhs-knee"]
+    },
+    {
+      "text": "安排醫師評估；受傷影片無法確認是哪條韌帶受傷。",
+      "sourceIds": ["acl-recovery"]
+    }
+  ],
+  "redFlags": [
+    {
+      "text": "無法承重、膝蓋卡住或很快腫起來，當天就醫。",
+      "sourceIds": ["nhs-knee"]
+    },
+    {
+      "text": "膝蓋明顯變形，或腳部麻木、冰冷，立即急診。",
+      "sourceIds": ["nhs-sprains"]
+    }
+  ],
+  "returnRanges": [
+    {
+      "label": "重建手術後回到運動",
+      "value": "約 9–12 個月以上",
+      "detail": {
+        "text": "從手術日計算；需配合復健進度與回場評估，部分人需要更久。",
+        "sourceIds": ["acl-recovery"]
+      }
+    },
+    {
+      "label": "未接受手術",
+      "value": "依穩定度與運動需求評估",
+      "detail": {
+        "text": "可先接受復健；若仍反覆軟腳，應與醫療團隊討論後續治療。",
+        "sourceIds": ["acl-recovery"]
+      }
+    }
+  ],
+  "readiness": {
+    "text": "膝蓋穩定、力量與運動功能恢復後，由醫師及物理治療師評估是否適合回場。",
+    "sourceIds": ["acl-recovery"]
+  },
+  "sources": [
+    {
+      "id": "acl-recovery",
+      "title": "Anterior Crutiate Ligament (ACL) Reconstruction or Repair",
+      "publisher": "Gateshead Health NHS",
+      "url": "https://www.gatesheadhealth.nhs.uk/resources/anterior-crutiate-ligament-acl-reconstruction-or-repair/",
+      "year": null,
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "nhs-knee",
+      "title": "Knee pain",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/symptoms/knee-pain/",
+      "year": null,
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "nhs-sprains",
+      "title": "Sprains and strains",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/sprains-and-strains/",
+      "year": 2024,
+      "accessedAt": "2026-09-06"
+    }
+  ],
+  "review": {
+    "status": "approved",
+    "reviewedBy": "吳易澄",
+    "reviewedAt": "2026-09-06",
+    "contentDigest": "cee2132754416a86cdf94f79b2afbcfb5a5052fea50b4d9a258b080422ff030e"
+  }
+}

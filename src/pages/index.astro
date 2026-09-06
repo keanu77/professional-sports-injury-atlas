@@ -1,302 +1,264 @@
 ---
-/**
- * Injury atlas home. Injury cards, the transparent reviewed-case counts, the
- * latest approved/review update state, the search/filter entry, the source
- * and review policy links, and the three read-only RTP mapping summaries all
- * derive from the mode-permitted selectors and real records only; no fixture
- * ever renders here.
- */
 import { getCollection } from "astro:content";
-import EditorialHero from "../components/atlas/EditorialHero.astro";
-import InjuryCard from "../components/atlas/InjuryCard.astro";
-import EmptyState from "../components/atlas/EmptyState.astro";
-import RtpCourseLink from "../components/cases/RtpCourseLink.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import courseLinksData from "../data/professional-course-links.v1.json";
-import courseSummariesData from "../data/generated/rtp-course-summaries.v1.json";
-import governance from "../data/site-governance.v1.json";
+import CaseCard from "../components/atlas/CaseCard.astro";
+import InjuryCard from "../components/atlas/InjuryCard.astro";
 import { INJURIES } from "../data/taxonomy/injuries";
 import { permittedCasesForMode } from "../lib/cases/pagination";
-import { groupCasesByInjury } from "../lib/cases/selectors";
 import { resolveBuildMode } from "../lib/governance/build-mode";
-import {
-  computeRenderedSetDigest,
-  latestUpdateRef,
-} from "../lib/routes/static-paths";
-import { homeEditorialImage } from "../lib/ui/editorial-images";
-import {
-  professionalCourseLinksSchema,
-  rtpCourseSummariesSchema,
-} from "../lib/rtp/course-links";
-
-const title = "職業運動傷害影片圖鑑";
+import { computeRenderedSetDigest } from "../lib/routes/static-paths";
+import { hasPublicEmbed, videoFirstCases } from "../lib/patient/featured";
+import { findSport } from "../lib/contracts/taxonomy";
 const buildMode = resolveBuildMode(process.env.ATLAS_BUILD_MODE);
-
-const caseRecords = (await getCollection("cases")).map((entry) => entry.data);
-const updateRecords = (await getCollection("updates")).map(
-  (entry) => entry.data,
+const records = (await getCollection("cases")).map((entry) => entry.data);
+const permitted = permittedCasesForMode(buildMode, records);
+const featured = videoFirstCases(permitted).filter(hasPublicEmbed);
+const availableInjuries = INJURIES.filter((injury) =>
+  featured.some((record) => record.injury.code === injury.code),
 );
-
-const permitted = permittedCasesForMode(buildMode, caseRecords);
-const grouped = groupCasesByInjury(permitted);
-const latestUpdate = latestUpdateRef(
-  buildMode,
-  updateRecords,
-  governance.currentUpdateId,
-);
-
-const courseLinks = professionalCourseLinksSchema.parse(courseLinksData);
-const courseSummaries = rtpCourseSummariesSchema.parse(courseSummariesData);
-const courseBySlug = new Map(
-  courseSummaries.courses.map((course) => [course.slug, course]),
-);
+const sports = [...new Set(featured.map((record) => record.sport.code))];
 ---
 
 <BaseLayout
-  title={title}
-  description="以公開影片觀察為基礎的職業運動傷害教學圖鑑：三大傷種、專業筆記與已審查案例。"
+  title="運動傷害影片圖鑑｜看懂受傷，了解回場"
+  description="從球員受傷影片，了解當下怎麼做、何時就醫與回場時間。"
   artifactRecordIds={permitted.map((record) => record.id)}
   artifactDigest={computeRenderedSetDigest(permitted)}
-  heroImage={homeEditorialImage}
-  heroImageSizes="(min-width: 72rem) 72rem, 100vw"
 >
-  <EditorialHero
-    variant="home"
-    imageAlt="匿名運動員的膝、踝與跟腱運動醫學攝影意象；面孔不可見，不代表任何特定球員或真實受傷事件。"
-  >
-    <span slot="eyebrow">職業運動傷害教學圖鑑</span>
-    <h1 slot="title">{title}</h1>
-    <p slot="meta">
-      {permitted.length} 筆已審查案例｜{INJURIES.length} 大傷種｜全部經醫療核准
-    </p>
-  </EditorialHero>
-
-  <p class="home-intro">
-    本站以公開比賽影片的觀察為基礎，整理職業運動常見傷害的教學案例。畫面只能
-    呈現可見的受傷過程，不能證明診斷；所有診斷資訊都來自外部具名來源。
-  </p>
-
-  <div class="home-grid">
-    <div class="home-primary">
-      <section
-        class="home-injury-section"
-        aria-labelledby="injury-atlas-heading"
-      >
-        <h2 class="section-title" id="injury-atlas-heading">三大傷種圖鑑</h2>
-        <p class="meta-row" data-total-reviewed-count>
-          目前全站共有 {permitted.length} 筆已審查顯示案例（{permitted.length}
-          reviewed cases）。
-        </p>
-        <div class="injury-feature-grid">
-          {
-            INJURIES.map((injury) => (
-              <InjuryCard
-                injuryCode={injury.code}
-                labelZh={injury.labelZh}
-                reviewedCaseCount={grouped.get(injury.code)?.length ?? 0}
-              />
-            ))
-          }
-        </div>
-      </section>
-
-      <div class="home-muted-band">
-        <section aria-labelledby="latest-update-heading">
-          <h2 class="section-title" id="latest-update-heading">最新季度更新</h2>
-          {
-            latestUpdate === null ? (
-              <EmptyState
-                title="尚無季度更新"
-                description="第一個季度更新完成審查後，會在此提供更新連結與變更清單。"
-              />
-            ) : (
-              <p>
-                <a data-latest-update-link href={latestUpdate.path}>
-                  最新季度更新：{latestUpdate.id}
-                </a>
-              </p>
-            )
-          }
-        </section>
-
-        <section aria-labelledby="search-entry-heading">
-          <h2 class="section-title" id="search-entry-heading">
-            搜尋與篩選入口
-          </h2>
-          <p>
-            每個傷種頁提供球員／球隊關鍵字、年份、球季、聯盟、可見機轉標籤、影片來源與經典案例
-            等複合篩選：
-          </p>
-          <ul class="home-search-links">
-            {
-              INJURIES.map((injury) => (
-                <li>
-                  <a href={`/injuries/${injury.code}/`}>
-                    篩選{injury.labelZh}案例
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
-        </section>
-      </div>
+  <header class="video-intro">
+    <p class="eyebrow">SPORTS INJURY / 從賽場到日常</p>
+    <h1>看懂受傷，<br />了解回場。</h1>
+    <p>先看影片，再看當下處理與回場時間。</p>
+    <span class="intro-count">{featured.length} 支影片</span>
+  </header>
+  <section aria-labelledby="videos-heading" data-featured-videos>
+    <div class="section-top">
+      <h2 id="videos-heading">先看影片</h2><p>點選球員，進入案例播放</p>
     </div>
-
-    <aside class="home-sidebar" aria-label="課程、政策與全站統計">
-      <section aria-labelledby="rtp-courses-heading">
-        <h2 class="sidebar-title" id="rtp-courses-heading">
-          回場復健課程對應（唯讀）
-        </h2>
-        <div class="headline-list">
-          {
-            courseLinks.links.map((link) => {
-              const course = courseBySlug.get(link.catalogSlug);
-              return course === undefined ? null : (
-                <RtpCourseLink link={link} course={course} />
-              );
-            })
-          }
-        </div>
-      </section>
-
-      <section aria-labelledby="policy-heading">
-        <h2 class="sidebar-title" id="policy-heading">來源與審查政策</h2>
-        <ul class="sidebar-link-list">
-          <li><a href="/source-policy/">來源與證據政策</a></li>
-          <li><a href="/about/">關於本站與審查流程</a></li>
-        </ul>
-      </section>
-
-      <section class="site-stat" aria-label="全站統計">
-        <p class="eyebrow">全站統計</p>
-        <p class="site-stat-value">
-          <strong>{permitted.length}</strong><span>總案例數</span>
-        </p>
-      </section>
-    </aside>
-  </div>
+    <form class="video-filters" data-video-filters hidden>
+      <label
+        >傷害種類<select aria-label="傷害種類" name="injury"
+          ><option value="">全部傷害</option>{
+            availableInjuries.map((injury) => (
+              <option value={injury.code}>{injury.labelZh}</option>
+            ))
+          }</select
+        ></label
+      >
+      <label
+        >運動項目<select aria-label="運動項目" name="sport"
+          ><option value="">全部運動</option>{
+            sports.map((code) => (
+              <option value={code}>{findSport(code)?.labelZh ?? code}</option>
+            ))
+          }</select
+        ></label
+      >
+      <label class="keyword-label"
+        >找球員<input
+          name="keyword"
+          type="search"
+          placeholder="球員或球隊"
+        /></label
+      >
+    </form>
+    <p class="filter-result" data-video-result aria-live="polite">
+      {featured.length} 支影片
+    </p>
+    <ol class="video-grid">
+      {
+        featured.map((record, index) => (
+          <li
+            data-featured-card
+            data-injury={record.injury.code}
+            data-sport={record.sport.code}
+            data-search={`${record.athlete.name} ${record.teamAtEvent.name}`}
+          >
+            <CaseCard
+              record={record}
+              showWorkflowBadge={false}
+              compact
+              priority={index === 0}
+            />
+          </li>
+        ))
+      }
+    </ol>
+    <p data-video-empty hidden>沒有符合的影片，試試其他關鍵字或選擇全部。</p>
+  </section>
+  <details class="more-cases">
+    <summary>更多傷害與案例 <span>目前共 {permitted.length} 筆</span></summary
+    ><div class="injury-feature-grid">
+      {
+        INJURIES.filter((injury) =>
+          permitted.some((record) => record.injury.code === injury.code),
+        ).map((injury) => (
+          <InjuryCard
+            injuryCode={injury.code}
+            labelZh={injury.labelZh}
+            reviewedCaseCount={
+              permitted.filter((record) => record.injury.code === injury.code)
+                .length
+            }
+          />
+        ))
+      }
+    </div><p data-total-reviewed-count>
+      {permitted.length} 筆案例（{permitted.length} reviewed cases）。
+    </p>
+  </details>
+  <p class="home-note">
+    影片呈現受傷過程；診斷依具名來源。球員的回場紀錄不等於你的恢復時間。
+  </p>
 </BaseLayout>
-
+<script>
+  const form = document.querySelector<HTMLFormElement>("[data-video-filters]");
+  if (form) {
+    form.hidden = false;
+    const cards = [
+      ...document.querySelectorAll<HTMLElement>("[data-featured-card]"),
+    ];
+    const update = () => {
+      const data = new FormData(form);
+      const injury = String(data.get("injury") ?? "");
+      const sport = String(data.get("sport") ?? "");
+      const keyword = String(data.get("keyword") ?? "")
+        .trim()
+        .toLocaleLowerCase();
+      let count = 0;
+      for (const card of cards) {
+        card.hidden = !!(
+          (injury && card.dataset.injury !== injury) ||
+          (sport && card.dataset.sport !== sport) ||
+          !(card.dataset.search ?? "").toLocaleLowerCase().includes(keyword)
+        );
+        if (!card.hidden) count++;
+      }
+      const result = document.querySelector("[data-video-result]");
+      if (result) result.textContent = `${count} 支影片`;
+      const empty = document.querySelector<HTMLElement>("[data-video-empty]");
+      if (empty) empty.hidden = count !== 0;
+    };
+    form.addEventListener("input", update);
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      update();
+    });
+  }
+</script>
 <style>
-  .home-intro {
-    margin: 1.5rem 0 0;
+  .video-intro {
+    padding: clamp(1.5rem, 5vw, 3.5rem) 0 2rem;
+    border-bottom: 1px solid var(--hairline);
+    position: relative;
   }
-
-  .home-grid {
-    margin-block-start: var(--space-section);
+  h1 {
+    font: 700 clamp(2.2rem, 5vw, 4rem)/1.15 var(--font-heading);
+    letter-spacing: -0.025em;
+    margin: 0.7rem 0 1rem;
   }
-
-  .home-primary,
-  .home-sidebar {
-    min-width: 0;
+  .video-intro > p:not(.eyebrow) {
+    color: var(--color-ink-muted);
+    margin: 0;
   }
-
-  .injury-feature-grid {
+  .intro-count {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--color-ink-muted);
+  }
+  .section-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin: 1.5rem 0 1rem;
+  }
+  .section-top h2 {
+    margin: 0;
+  }
+  .section-top p,
+  .home-note,
+  .filter-result {
+    color: var(--color-ink-muted);
+    font-size: 0.875rem;
+  }
+  .video-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .video-filters[hidden] {
+    display: none;
+  }
+  label {
+    display: grid;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  select,
+  input {
+    background: var(--color-surface-raised);
+    color: var(--color-ink);
+    border: 1px solid var(--hairline-strong);
+    border-radius: 4px;
+    min-height: 44px;
+    padding: 0.5rem 0.75rem;
+    font: inherit;
+  }
+  .keyword-label {
+    flex: 1;
+    min-width: 10rem;
+  }
+  .video-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.5rem;
-    margin-block-start: var(--space-block);
-  }
-
-  .home-muted-band {
-    margin-block-start: var(--space-section);
-    padding-block: 3rem;
-    background: var(--color-surface-muted);
-    box-shadow: 0 0 0 100vmax var(--color-surface-muted);
-    clip-path: inset(0 -100vmax);
-  }
-
-  .home-muted-band section + section,
-  .home-sidebar section + section {
-    margin-block-start: var(--space-section);
-  }
-
-  .home-search-links,
-  .sidebar-link-list {
-    margin: 0;
+    gap: 1.25rem;
     padding: 0;
     list-style: none;
   }
-
-  .home-search-links li,
-  .sidebar-link-list li {
-    border-block-end: 1px solid var(--hairline);
+  .more-cases {
+    margin-top: 2.5rem;
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+    padding: 1rem 0;
   }
-
-  .home-search-links a,
-  .sidebar-link-list a {
-    display: flex;
-    min-height: 44px;
-    align-items: center;
-    text-decoration: none;
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0.5rem 0;
   }
-
-  .sidebar-title {
-    margin: 0;
+  summary span {
+    font-size: 0.8rem;
     color: var(--color-ink-muted);
-    font: 600 var(--text-eyebrow) / 1.5 var(--font-meta);
-    letter-spacing: 0.08em;
+    margin-left: 1rem;
   }
-
-  .site-stat {
-    border: 1px solid var(--hairline);
-    padding: 1rem;
-    background: var(--color-surface-raised);
+  .injury-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    padding-block: 1rem;
   }
-
-  .site-stat > p {
-    margin: 0;
+  .home-note {
+    margin-block: 1.5rem;
   }
-
-  .site-stat-value {
-    display: flex;
-    align-items: baseline;
-    gap: 0.75rem;
-  }
-
-  .site-stat-value strong {
-    position: relative;
-    padding-block-end: 0.5rem;
-    font: 600 2.25rem/1 var(--font-display);
-  }
-
-  .site-stat-value strong::after {
-    position: absolute;
-    inset-block-end: 0;
-    inset-inline-start: 0;
-    width: 3rem;
-    height: 2px;
-    background: var(--color-metric);
-    content: "";
-  }
-
-  .site-stat-value span {
-    color: var(--color-ink-muted);
-    font: 400 var(--text-meta) / 1.5 var(--font-meta);
-  }
-
-  @media (min-width: 64rem) {
-    .home-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 19rem;
-      gap: 3rem;
-    }
-
-    .home-sidebar {
-      border-inline-start: 1px solid var(--hairline);
-      padding-inline-start: 1.5rem;
+  @media (max-width: 60rem) {
+    .video-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
-
-  @media (max-width: 63.999rem) {
-    .home-sidebar {
-      margin-block-start: var(--space-section);
-    }
-  }
-
-  @media (max-width: 47.999rem) {
+  @media (max-width: 40rem) {
+    .video-grid,
     .injury-feature-grid {
-      grid-template-columns: minmax(0, 1fr);
+      grid-template-columns: 1fr;
+    }
+    .video-intro {
+      padding-top: 1rem;
+    }
+    .video-intro h1 br {
+      display: none;
     }
   }
 </style>

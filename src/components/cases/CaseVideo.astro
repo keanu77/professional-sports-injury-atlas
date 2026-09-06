@@ -28,6 +28,7 @@ import type { EmbedStatus } from "../../lib/contracts/taxonomy";
 
 interface Props {
   athleteName?: string;
+  compact?: boolean;
   scopeId: string;
   recordId?: string;
   displayMode: VideoDisplayMode;
@@ -52,6 +53,7 @@ interface Props {
 
 const {
   athleteName,
+  compact = false,
   scopeId,
   recordId = scopeId,
   displayMode,
@@ -267,7 +269,8 @@ const coverIdPrefix = `video-cover-${scopeId}`;
     )
   }
 
-  <div class="case-video-meta">
+  <details class="case-video-meta" open={!compact}>
+    <summary hidden={!compact}>影片來源與字幕</summary>
     <p class="case-video-title">{sourceTitle}</p>
     <p class="case-video-facts">
       上傳者：{video.uploaderName}｜長度：{durationLabel}
@@ -308,29 +311,29 @@ const coverIdPrefix = `video-cover-${scopeId}`;
         </p>
       )
     }
-    {
-      presentation === "click-to-load" &&
-        sourceUrlPresentation === "clickable-link" && (
-          <p class="case-video-source-action">
-            <a
-              class="case-video-source-link"
-              data-video-source-link
-              href={video.canonicalUrl}
-              rel="noopener noreferrer"
-            >
-              於 YouTube 觀看原始影片（外部連結）
-            </a>
-          </p>
-        )
-    }
-    {
-      presentation === "unavailable-notice" && (
-        <p class="case-video-notice" data-video-unavailable-notice>
-          原始影片目前無法取得，本案例暫不提供影片播放。文字說明仍然完整可讀。
+  </details>
+  {
+    presentation === "click-to-load" &&
+      sourceUrlPresentation === "clickable-link" && (
+        <p class="case-video-source-action">
+          <a
+            class="case-video-source-link"
+            data-video-source-link
+            href={video.canonicalUrl}
+            rel="noopener noreferrer"
+          >
+            於 YouTube 觀看原始影片（外部連結）
+          </a>
         </p>
       )
-    }
-  </div>
+  }
+  {
+    presentation === "unavailable-notice" && (
+      <p class="case-video-notice" data-video-unavailable-notice>
+        原始影片目前無法取得，本案例暫不提供影片播放。文字說明仍然完整可讀。
+      </p>
+    )
+  }
 </section>
 
 <script>

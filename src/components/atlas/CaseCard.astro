@@ -15,9 +15,16 @@ import {
 interface Props {
   record: InjuryCase;
   showWorkflowBadge: boolean;
+  compact?: boolean;
+  priority?: boolean;
 }
 
-const { record, showWorkflowBadge } = Astro.props;
+const {
+  record,
+  showWorkflowBadge,
+  compact = false,
+  priority = false,
+} = Astro.props;
 const injuryLabel =
   findInjury(record.injury.code)?.labelZh ?? record.injury.code;
 const leagueLabel =
@@ -25,11 +32,12 @@ const leagueLabel =
 ---
 
 <article
-  class="case-card"
+  class:list={["case-card", { "case-card--compact": compact }]}
   data-case-card={record.id}
   data-injury-theme={record.injury.code}
 >
   <CaseCover
+    priority={priority}
     athleteName={record.athlete.name}
     injuryCode={record.injury.code}
     injuryLabel={injuryLabel}
@@ -54,19 +62,29 @@ const leagueLabel =
       {leagueLabel}｜{record.season} 球季｜{record.eventDate}｜
       {record.teamAtEvent.name} 對 {record.opponent.name}
     </p>
-    <p
-      class="case-card-confirmation meta-row"
-      data-confirmation-status={record.injury.confirmationStatus}
-    >
-      診斷確認狀態（外部來源）：{
-        confirmationStatusLabel(record.injury.confirmationStatus)
-      }
-    </p>
     {
-      record.isClassic && (
+      !compact && (
+        <p
+          class="case-card-confirmation meta-row"
+          data-confirmation-status={record.injury.confirmationStatus}
+        >
+          診斷確認狀態（外部來源）：
+          {confirmationStatusLabel(record.injury.confirmationStatus)}
+        </p>
+      )
+    }
+    {
+      !compact && record.isClassic && (
         <p class="case-card-classic" data-classic-label>
           <strong>{CLASSIC_CASE_LABEL}</strong>
           {record.classicReason !== null && <>：{record.classicReason}</>}
+        </p>
+      )
+    }
+    {
+      compact && (
+        <p class="watch-label">
+          觀看影片與回場重點 <span aria-hidden="true">↗</span>
         </p>
       )
     }
@@ -75,6 +93,15 @@ const leagueLabel =
 </article>
 
 <style>
+  .watch-label {
+    color: var(--color-brand-primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+  .case-card--compact .case-card-facts {
+    font-size: 0.8rem;
+  }
   .case-card {
     position: relative;
     overflow: hidden;

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "decision": "decision-21",
+  "status": "approved",
+  "reviewedBy": "吳易澄",
+  "recordedAt": "2026-09-06T00:56:47Z",
+  "approvalQuote": "預覽內容可以，請繼續",
+  "origin": "https://sports-injury-atlas.pages.dev",
+  "scope": "native-embeds-and-approved-patient-guides",
+  "previewOrigin": "http://127.0.0.1:14322",
+  "reviewPacketDigest": "aa2147477c9e7a1b5f4d3bd7d5fa6697f9f258685b0ba430f4803d5f10b6c4a6",
+  "inputTreeDigest": "1a1ca9fe3a1d37c9e87435cf45d8d152fcfdafeadde7450072479ea3494fd5ea",
+  "cases": [
+    {
+      "id": "CASE-NBAANKLE-2023-004",
+      "recordDigest": "6e95a573eef3f275a0067ba4373987d803759aed3fb8f1d9b18f26c6952831af",
+      "videoUrl": "https://www.youtube.com/watch?v=8TIJGIRP634"
+    },
+    {
+      "id": "CASE-NBAACHILLES-2019-005",
+      "recordDigest": "0bb3603626b8ea61bd15b078183ba3c7ccdc34089744c8a7f37d3cfc03554787",
+      "videoUrl": "https://www.youtube.com/watch?v=YcSOLHMsJYw"
+    },
+    {
+      "id": "CASE-NBAANKLE-2021-002",
+      "recordDigest": "c161a4ef011e1cf56cc06e519c8ad1ff372e6fe8705f4327bb4f95beac37f840",
+      "videoUrl": "https://www.youtube.com/watch?v=FQAPZASQyX0"
+    },
+    {
+      "id": "CASE-NBAANKLE-2023-008",
+      "recordDigest": "cd44122a2814f547341693f4dbe9bf645f5e7a816a44e58df9265cc55cb6cf4a",
+      "videoUrl": "https://www.youtube.com/watch?v=RDDGpqOvSdg"
+    },
+    {
+      "id": "CASE-NBAANKLE-2025-002",
+      "recordDigest": "c74c65fd6b75ef8b181027c725783cfce06a242c01090a1064194bc810ef44c8",
+      "videoUrl": "https://www.youtube.com/watch?v=zZdndTqOexc"
+    }
+  ]
+}

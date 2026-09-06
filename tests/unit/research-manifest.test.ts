@@ -194,9 +194,9 @@ describe("G2 source-manifest count floor", () => {
     },
   );
 
-  it("does not lower the separate public-release corpus gate", () => {
-    expect(MIN_PUBLIC_CASES_PER_INJURY).toBe(10);
-    expect(MIN_PUBLIC_CASES_TOTAL).toBe(30);
+  it("retains the historical manifest floor while D21 public launch uses playable selection", () => {
+    expect(MIN_PUBLIC_CASES_PER_INJURY).toBe(0);
+    expect(MIN_PUBLIC_CASES_TOTAL).toBe(1);
   });
 });
 

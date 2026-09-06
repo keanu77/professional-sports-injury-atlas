@@ -507,12 +507,12 @@ test.describe("governed case facades", () => {
       } else {
         await expect(card.locator("[data-caption-warning]")).toHaveCount(0);
       }
-      await expect(page.locator("[data-case-cover]")).toHaveCount(2);
+      await expect(page.locator("[data-case-cover]")).toHaveCount(1);
       await expect(page.locator("iframe")).toHaveCount(0);
       await expect(page.locator("link[rel='preconnect']")).toHaveCount(0);
       await expect(page.locator("link[rel='dns-prefetch']")).toHaveCount(0);
       await expect(page.locator("[autoplay]")).toHaveCount(0);
-      expect(await page.locator("img").count()).toBeGreaterThanOrEqual(2);
+      expect(await page.locator("img").count()).toBeGreaterThanOrEqual(1);
       expect(await page.content()).not.toContain("ytimg");
       await expect(
         page.locator('[src*="youtube-nocookie"], [href*="youtube-nocookie"]'),
@@ -652,7 +652,7 @@ test.describe("governed case facades", () => {
       ),
     ).toHaveCount(1);
     await expect(page.locator("iframe")).toHaveCount(0);
-    expect(await page.locator("img").count()).toBeGreaterThanOrEqual(2);
+    expect(await page.locator("img").count()).toBeGreaterThanOrEqual(1);
     expect(log.youtubeRequests).toEqual([]);
     expect(thirdPartyRequests).toEqual([]);
   });

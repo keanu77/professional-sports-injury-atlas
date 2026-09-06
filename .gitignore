@@ -10,3 +10,5 @@ artifacts/lighthouse-review.json
 !.env.example
 research/.source-batch-tmp/
 research/.source-batch-registry.lock
+
+artifacts/public-launch-receipt.v1.json

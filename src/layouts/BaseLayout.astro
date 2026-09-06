@@ -23,6 +23,7 @@ import ReviewBanner from "../components/layout/ReviewBanner.astro";
 import SiteFooter from "../components/layout/SiteFooter.astro";
 import SiteHeader from "../components/layout/SiteHeader.astro";
 import governance from "../data/site-governance.v1.json";
+import { isLaunchEnabled, launchApproval } from "../lib/patient/public-launch";
 import {
   resolveBuildMode,
   robotsMetaContent,
@@ -78,10 +79,13 @@ const artifactIdentity =
       })
     : null;
 
-const publicSiteUrl: string | null = governance.publicSiteUrl;
+const publicSiteUrl: string | null = isLaunchEnabled()
+  ? launchApproval.origin
+  : governance.publicSiteUrl;
 const canonicalUrl =
   publicSiteUrl !== null &&
-  governance.indexingAuthorization.status === "authorized"
+  (isLaunchEnabled() ||
+    governance.indexingAuthorization.status === "authorized")
     ? new URL(Astro.url.pathname, publicSiteUrl).href
     : null;
 

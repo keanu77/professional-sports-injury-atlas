@@ -1,0 +1,86 @@
+---
+import type { InjuryCase } from "../../lib/contracts/case";
+import type { CaseFollowUp } from "../../lib/contracts/case-follow-up";
+import { actualReturnSummary } from "../../lib/patient/actual-return";
+import { externalUrlPresentationFor } from "../../lib/rights/nba-link-policy";
+interface Props {
+  record: InjuryCase;
+  followUp?: CaseFollowUp;
+}
+const { record, followUp } = Astro.props;
+const summary = actualReturnSummary(record, followUp);
+---
+
+<section class="actual-return" data-actual-return aria-label="球員實際回場紀錄">
+  <p class="eyebrow">球員實際紀錄</p>
+  <h2>傷後多久再出賽？</h2>
+  {
+    summary ? (
+      <>
+        <>
+          <p class="elapsed">
+            距受傷 <strong>{summary.elapsedDays}</strong> 天
+          </p>
+          <p>
+            {record.eventDate} 受傷 → {summary.date} 有出賽紀錄
+          </p>
+          <details>
+            <>
+              <summary>查看這筆紀錄</summary>
+              <p>{summary.statement}</p>
+              <p>
+                {externalUrlPresentationFor(summary.source.canonicalUrl) ===
+                "clickable-link" ? (
+                  <a
+                    href={summary.source.canonicalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {summary.source.publisher}：{summary.source.title}
+                  </a>
+                ) : (
+                  <span>
+                    {summary.source.publisher}：{summary.source.title}
+                  </span>
+                )}
+              </p>
+            </>
+          </details>
+          <p class="note">
+            這是已確認的傷後出賽紀錄，不一定是首次復出，也不代表全程都在復健。
+          </p>
+        </>
+      </>
+    ) : (
+      <p>目前沒有可確認日期的傷後出賽紀錄，不推估回場日。</p>
+    )
+  }
+  <p class="note">每個人的傷勢與運動需求不同，不能直接套用球員的時間。</p>
+</section>
+<style>
+  .actual-return {
+    border-inline-start: 4px solid var(--color-brand-accent);
+    background: var(--color-surface-muted);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+  h2 {
+    margin-top: 0.4rem;
+  }
+  .elapsed {
+    font-size: 1.2rem;
+  }
+  .elapsed strong {
+    font: 700 2.6rem/1 var(--font-display);
+    color: var(--color-brand-primary);
+  }
+  .note {
+    font-size: 0.85rem;
+    color: var(--color-ink-muted);
+  }
+  summary {
+    cursor: pointer;
+    padding: 0.5rem 0;
+    font-weight: 600;
+  }
+</style>

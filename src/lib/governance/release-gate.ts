@@ -8,6 +8,7 @@
  */
 
 import { z } from "astro/zod";
+import { hasPublicEmbed } from "../patient/featured";
 import { parse, type DefaultTreeAdapterTypes } from "parse5";
 import {
   canonicalJson,
@@ -91,8 +92,9 @@ import {
 } from "./site-digest";
 import { evaluateCaseVideoRightsDecision } from "./video-rights-decision";
 
-export const MIN_PUBLIC_CASES_PER_INJURY = 10;
-export const MIN_PUBLIC_CASES_TOTAL = 30;
+// Decision 21: prioritize playable films; no per-injury, sport, or league quota.
+export const MIN_PUBLIC_CASES_PER_INJURY = 0;
+export const MIN_PUBLIC_CASES_TOTAL = 1;
 export const EXTERNAL_VERIFICATION_MAX_AGE_DAYS = 7;
 
 /* ------------------------------------------------------------------ */
@@ -824,19 +826,14 @@ function checkCounts(
   publicCases: readonly InjuryCase[],
   issues: ValidationIssue[],
 ): void {
-  for (const injuryCode of INJURY_CODES) {
-    const count = publicCases.filter(
-      (record) => record.injury.code === injuryCode,
-    ).length;
-    if (count < MIN_PUBLIC_CASES_PER_INJURY) {
-      issues.push(
-        issue(
-          "gate-count-per-injury",
-          injuryCode,
-          `launch injury ${injuryCode} has ${count} public cases; at least ${MIN_PUBLIC_CASES_PER_INJURY} are required`,
-        ),
-      );
-    }
+  if (!publicCases.some(hasPublicEmbed)) {
+    issues.push(
+      issue(
+        "gate-embed-required",
+        "cases",
+        "public launch requires at least one captioned, region-permitted in-site video",
+      ),
+    );
   }
   if (publicCases.length < MIN_PUBLIC_CASES_TOTAL) {
     issues.push(

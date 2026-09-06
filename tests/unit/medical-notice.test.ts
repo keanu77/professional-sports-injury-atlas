@@ -1,6 +1,5 @@
 /** Decision 13 medical-notice copy, placement, and route-matrix guard. */
 
-import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import {
@@ -83,7 +82,7 @@ describe("Decision 13 medical-notice route matrix", () => {
 
   it("makes the compact block the opening child of each clinical template", () => {
     expect(read(compactTemplates[0]!)).toMatch(
-      /<article[\s\S]*?>\s*<MedicalNotice variant="compact" \/>\s*<EditorialHero/u,
+      /<article[\s\S]*?>\s*<MedicalNotice variant="compact" \/>\s*<header class="case-heading"/u,
     );
     expect(read(compactTemplates[1]!)).toMatch(
       /<div class="injury-page"[^>]*>\s*<MedicalNotice variant="compact" \/>\s*<EditorialHero/u,
@@ -103,10 +102,9 @@ describe("Decision 13 medical-notice route matrix", () => {
     );
   });
 
-  it("pins the Decision 18 single-professional-note About copy", () => {
+  it("explains the reviewed patient experience without private workflow prose", () => {
     const about = read("src/pages/about.astro");
-    expect(createHash("sha256").update(about).digest("hex")).toBe(
-      "58d464a49c1f93ceb3db8ee91376e89e17ab49213f32d037da2b5977f0374252",
-    );
+    expect(about).toContain("球員回場紀錄與一般人的恢復參考分開呈現");
+    expect(about).not.toContain("noindex");
   });
 });

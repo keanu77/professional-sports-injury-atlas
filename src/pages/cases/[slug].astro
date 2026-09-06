@@ -10,7 +10,9 @@
  */
 import { getCollection, type CollectionEntry } from "astro:content";
 import CaseCard from "../../components/atlas/CaseCard.astro";
-import EditorialHero from "../../components/atlas/EditorialHero.astro";
+import { hasPublicEmbed, videoFirstCases } from "../../lib/patient/featured";
+import PatientGuide from "../../components/cases/PatientGuide.astro";
+import ActualReturn from "../../components/cases/ActualReturn.astro";
 import CaseVideo from "../../components/cases/CaseVideo.astro";
 import FollowUpReports from "../../components/cases/FollowUpReports.astro";
 import ReviewDigestDisclosure from "../../components/cases/ReviewDigestDisclosure.astro";
@@ -20,10 +22,7 @@ import MedicalNotice from "../../components/notices/MedicalNotice.astro";
 import ReviewBadge from "../../components/cases/ReviewBadge.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { computeCaseContentDigest } from "../../lib/cases/digest";
-import {
-  permittedCasesForMode,
-  relatedCases,
-} from "../../lib/cases/pagination";
+import { permittedCasesForMode } from "../../lib/cases/pagination";
 import { findInjury, findLeague } from "../../lib/contracts/taxonomy";
 import { resolveBuildMode } from "../../lib/governance/build-mode";
 import {
@@ -32,7 +31,6 @@ import {
   computeRenderedSetDigest,
   confirmationStatusLabel,
 } from "../../lib/routes/static-paths";
-import { caseImageFor } from "../../lib/ui/editorial-images";
 import { loadReviewFollowUpCorpus } from "../../lib/cases/follow-up-approval-ledger";
 import { FOLLOW_UP_SOURCE_POLICY_V10_BINDING } from "../../lib/contracts/case-follow-up";
 
@@ -60,7 +58,7 @@ export async function getStaticPaths(): Promise<
   const mode = resolveBuildMode(process.env.ATLAS_BUILD_MODE);
   const caseEntries = await getCollection("cases");
   const caseRecords = caseEntries.map((entry) => entry.data);
-  if (mode === "review") validatedFollowUps(caseEntries);
+  validatedFollowUps(caseEntries);
   return caseRouteParams(mode, caseRecords).map((params) => ({ params }));
 }
 
@@ -77,23 +75,23 @@ const injuryLabel =
   findInjury(record.injury.code)?.labelZh ?? record.injury.code;
 const leagueLabel =
   findLeague(record.league.code)?.labelZh ?? record.league.code;
-const related = relatedCases(record, permitted);
+const related = videoFirstCases(
+  permitted.filter(
+    (candidate) =>
+      candidate.id !== record.id &&
+      candidate.injury.code === record.injury.code,
+  ),
+)
+  .filter(hasPublicEmbed)
+  .slice(0, 3);
 const contentDigest = computeCaseContentDigest(record);
 const renderedSetDigest = computeRenderedSetDigest(permitted);
-const followUpEntry =
-  buildMode === "review"
-    ? validatedFollowUps(await getCollection("cases")).find(
-        (entry) => entry.sidecar.caseId === record.id,
-      )
-    : undefined;
+const followUpEntry = validatedFollowUps(await getCollection("cases")).find(
+  (entry) => entry.sidecar.caseId === record.id,
+);
 if (buildMode === "review" && followUpEntry === undefined) {
   throw new Error(`missing transitional follow-up sidecar for ${record.id}`);
 }
-const heroSelection = caseImageFor(
-  record.injury.code,
-  record.id,
-  record.athlete.name,
-);
 const videoSource = record.sources.find(
   (source) =>
     source.type === "video-original" &&
@@ -109,9 +107,6 @@ if (videoSource === undefined) {
   description={`${record.athlete.name} 的 ${injuryLabel} 教學案例：可見過程觀察與外部確認診斷。`}
   artifactRecordIds={[record.id]}
   artifactDigest={contentDigest}
-  heroImage={heroSelection.image}
-  heroImageMode="case"
-  heroImageSizes="(min-width: 48rem) 48rem, calc(100vw - 2rem)"
 >
   <article
     data-atlas-view="case-detail"
@@ -119,58 +114,19 @@ if (videoSource === undefined) {
     data-injury-theme={record.injury.code}
   >
     <MedicalNotice variant="compact" />
-    <EditorialHero
-      variant="case"
-      injuryCode={record.injury.code}
-      injuryLabel={injuryLabel}
-      recordId={record.id}
-      athleteName={record.athlete.name}
-      imageAlt={`${injuryLabel}匿名運動員運動醫學攝影意象；面孔不可見，不代表${record.athlete.name}或任何特定球員，也不是實際受傷畫面。`}
-    >
-      <span slot="eyebrow">
-        <span class="injury-name">{injuryLabel}</span><span>·</span><span
-          >{leagueLabel}</span
-        >
-      </span>
-      <h1 slot="title">{record.athlete.name}｜{injuryLabel}</h1>
-      <p slot="meta" class="case-facts">
-        {leagueLabel}｜{record.season} 球季｜{record.eventDate}｜
-        {record.teamAtEvent.name} 對 {record.opponent.name}
+    <header class="case-heading">
+      <p class="eyebrow">{injuryLabel} · {leagueLabel}</p>
+      <h1>{record.athlete.name}｜{injuryLabel}</h1>
+      <p class="case-facts">
+        {record.eventDate}｜{record.teamAtEvent.name} 對 {record.opponent.name}
       </p>
-    </EditorialHero>
-
-    <p
-      class="case-confirmation meta-row"
-      data-confirmation-status={record.injury.confirmationStatus}
-    >
-      診斷確認狀態（外部來源）：
-      <strong
-        >{confirmationStatusLabel(record.injury.confirmationStatus)}</strong
-      >
-      ｜外部確認診斷：{record.injury.confirmedDiagnosis}
-    </p>
-    {
-      record.isClassic && (
-        <p class="case-classic meta-row" data-classic-label>
-          <strong>{CLASSIC_CASE_LABEL}</strong>
-          {record.classicReason !== null && <>：{record.classicReason}</>}
-        </p>
-      )
-    }
-    {buildMode === "review" && <ReviewBadge record={record} />}
-    <p class="mechanism-tags meta-row">
-      可見機轉標籤（觀察分類，非診斷）：{
-        record.observedMechanismTags.join("、")
-      }
-    </p>
-
+    </header>
     <section aria-labelledby="case-analysis-heading">
-      <h2 class="section-title" id="case-analysis-heading">
-        案例影片與專業筆記
-      </h2>
+      <h2 class="section-title" id="case-analysis-heading">受傷當下的影片</h2>
       <div class="case-detail-grid">
         <div class="case-video-column">
           <CaseVideo
+            compact
             athleteName={record.athlete.name}
             scopeId={record.slug}
             recordId={record.id}
@@ -189,38 +145,70 @@ if (videoSource === undefined) {
             }}
           />
         </div>
-        <div class="case-notes-column">
-          <ProfessionalNotes professional={record.professional} />
-        </div>
       </div>
     </section>
 
-    {
-      followUpEntry !== undefined && (
-        <FollowUpReports
-          buildMode={buildMode}
-          record={record}
-          followUp={followUpEntry.sidecar}
-        />
-      )
-    }
-
-    <section class="case-section" aria-labelledby="sources-heading">
-      <h2 class="section-title" id="sources-heading">來源與證據</h2>
-      <ul class="source-list">
-        {
-          record.sources.map((source) => (
-            <li>
-              <ExternalSourceCitation
-                context="source-list"
-                sourceId={source.id}
-                {...source}
-              />
-            </li>
-          ))
+    <PatientGuide injuryCode={record.injury.code} buildMode={buildMode} />
+    <ActualReturn record={record} followUp={followUpEntry?.sidecar} />
+    <details class="case-disclosure">
+      <summary>深入了解這次受傷</summary>
+      <p
+        class="case-confirmation meta-row"
+        data-confirmation-status={record.injury.confirmationStatus}
+      >
+        診斷確認狀態（外部來源）：
+        <strong
+          >{confirmationStatusLabel(record.injury.confirmationStatus)}</strong
+        >
+        ｜外部確認診斷：{record.injury.confirmedDiagnosis}
+      </p>
+      {
+        record.isClassic && (
+          <p class="case-classic meta-row" data-classic-label>
+            <strong>{CLASSIC_CASE_LABEL}</strong>
+            {record.classicReason !== null && <>：{record.classicReason}</>}
+          </p>
+        )
+      }
+      {buildMode === "review" && <ReviewBadge record={record} />}
+      <p class="mechanism-tags meta-row">
+        可見機轉標籤（觀察分類，非診斷）：{
+          record.observedMechanismTags.join("、")
         }
-      </ul>
-    </section>
+      </p>
+
+      <ProfessionalNotes professional={record.professional} />
+    </details>
+    <details class="case-disclosure">
+      <summary>後續報導與完整來源</summary>
+
+      {
+        followUpEntry !== undefined && (
+          <FollowUpReports
+            buildMode={buildMode}
+            record={record}
+            followUp={followUpEntry.sidecar}
+          />
+        )
+      }
+
+      <section class="case-section" aria-labelledby="sources-heading">
+        <h2 class="section-title" id="sources-heading">來源與證據</h2>
+        <ul class="source-list">
+          {
+            record.sources.map((source) => (
+              <li>
+                <ExternalSourceCitation
+                  context="source-list"
+                  sourceId={source.id}
+                  {...source}
+                />
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </details>
 
     {
       buildMode === "review" && (
@@ -247,7 +235,8 @@ if (videoSource === undefined) {
               <li>
                 <CaseCard
                   record={candidate}
-                  showWorkflowBadge={buildMode === "review"}
+                  showWorkflowBadge={false}
+                  compact
                 />
               </li>
             ))}
@@ -259,6 +248,27 @@ if (videoSource === undefined) {
 </BaseLayout>
 
 <style>
+  .case-heading {
+    margin: 1rem 0;
+  }
+  .case-heading h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin: 0.4rem 0;
+  }
+  .case-facts {
+    font-size: 0.85rem;
+    color: var(--color-ink-muted);
+  }
+  .case-disclosure {
+    border-top: 1px solid var(--hairline);
+    padding: 0.75rem 0;
+  }
+  .case-disclosure > summary {
+    cursor: pointer;
+    padding: 0.6rem 0;
+    font-weight: 600;
+  }
+
   .case-detail-grid {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -268,7 +278,7 @@ if (videoSource === undefined) {
 
   @media (min-width: 64rem) {
     .case-detail-grid {
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      grid-template-columns: minmax(0, 1fr);
     }
   }
 

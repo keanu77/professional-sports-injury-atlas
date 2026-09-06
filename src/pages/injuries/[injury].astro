@@ -7,6 +7,7 @@
  * block, and semantic pagination links to the `/page/{n}/` routes.
  */
 import { getCollection } from "astro:content";
+import PatientGuide from "../../components/cases/PatientGuide.astro";
 import CaseCard from "../../components/atlas/CaseCard.astro";
 import CaseFilters from "../../components/atlas/CaseFilters.astro";
 import EditorialHero from "../../components/atlas/EditorialHero.astro";
@@ -142,46 +143,57 @@ const courseBySlug = new Map(
       }
     </section>
 
-    <section class="injury-content-section" aria-labelledby="overview-heading">
-      <h2 class="section-title" id="overview-heading">傷種教學總覽</h2>
-      <InjuryOverviewView overview={overview} injuryLabel={injuryLabel} />
-    </section>
-
-    <section
-      class="injury-content-section"
-      aria-labelledby="course-scope-heading"
-    >
-      <h2 class="section-title" id="course-scope-heading">對應回場課程範圍</h2>
-      {
-        injuryCourseLinks.length === 0 ? (
-          <EmptyState title="本傷種目前沒有對應的課程範圍資訊" />
-        ) : (
-          <div class="headline-list">
-            {injuryCourseLinks.map((link) => {
-              const course = courseBySlug.get(link.catalogSlug);
-              return course === undefined ? null : (
-                <RtpCourseLink link={link} course={course} />
-              );
-            })}
-          </div>
-        )
-      }
-    </section>
-
+    <PatientGuide injuryCode={injuryCode} buildMode={buildMode} />
     {
-      featuredCase !== null && (
-        <section
-          class="injury-content-section featured-case"
-          aria-labelledby="featured-heading"
-        >
-          <h2 class="section-title" id="featured-heading">
-            精選案例
-          </h2>
-          <CaseCard
-            record={featuredCase}
-            showWorkflowBadge={buildMode === "review"}
-          />
-        </section>
+      buildMode === "review" && (
+        <details class="injury-details">
+          <summary>深入了解傷害與復健課程</summary>
+          <section
+            class="injury-content-section"
+            aria-labelledby="overview-heading"
+          >
+            <h2 class="section-title" id="overview-heading">
+              傷種教學總覽
+            </h2>
+            <InjuryOverviewView overview={overview} injuryLabel={injuryLabel} />
+          </section>
+
+          <section
+            class="injury-content-section"
+            aria-labelledby="course-scope-heading"
+          >
+            <h2 class="section-title" id="course-scope-heading">
+              對應回場課程範圍
+            </h2>
+            {injuryCourseLinks.length === 0 ? (
+              <EmptyState title="本傷種目前沒有對應的課程範圍資訊" />
+            ) : (
+              <div class="headline-list">
+                {injuryCourseLinks.map((link) => {
+                  const course = courseBySlug.get(link.catalogSlug);
+                  return course === undefined ? null : (
+                    <RtpCourseLink link={link} course={course} />
+                  );
+                })}
+              </div>
+            )}
+          </section>
+
+          {featuredCase !== null && (
+            <section
+              class="injury-content-section featured-case"
+              aria-labelledby="featured-heading"
+            >
+              <h2 class="section-title" id="featured-heading">
+                精選案例
+              </h2>
+              <CaseCard
+                record={featuredCase}
+                showWorkflowBadge={buildMode === "review"}
+              />
+            </section>
+          )}
+        </details>
       )
     }
   </div>

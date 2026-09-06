@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "injuryCode": "ankle-sprain",
+  "label": "腳踝扭傷",
+  "immediate": [
+    {
+      "text": "先停止運動，保護腳踝；不要忍痛硬走。",
+      "sourceIds": ["nhs-sprains"]
+    },
+    {
+      "text": "抬高患腳，用毛巾包住冰袋短暫冰敷。",
+      "sourceIds": ["nhs-sprains"]
+    },
+    {
+      "text": "最初幾天避免熱敷與按摩；之後依疼痛與評估逐步恢復活動。",
+      "sourceIds": ["nhs-sprains"]
+    }
+  ],
+  "redFlags": [
+    {
+      "text": "無法走幾步、腫痛明顯或持續加重，當天就醫。",
+      "sourceIds": ["nhs-sprains"]
+    },
+    {
+      "text": "腳踝變形、麻木或腳部冰冷變色，立即急診。",
+      "sourceIds": ["nhs-sprains"]
+    }
+  ],
+  "returnRanges": [
+    {
+      "label": "一般扭傷（不含骨折或高位踝扭傷）",
+      "value": "數週；嚴重者數月",
+      "detail": {
+        "text": "多數約兩週感覺改善，但跑步等劇烈運動可能需暫緩至八週；改善不等於可以比賽。",
+        "sourceIds": ["nhs-sprains"]
+      }
+    },
+    {
+      "label": "反覆扭傷或持續不穩",
+      "value": "先評估，再決定回場",
+      "detail": {
+        "text": "除了疼痛，也要檢查力量、平衡、信心與運動表現。",
+        "sourceIds": ["paass"]
+      }
+    }
+  ],
+  "readiness": {
+    "text": "回場需評估疼痛、活動度與力量、平衡、信心，以及跳躍、變向和完整訓練表現。",
+    "sourceIds": ["paass"]
+  },
+  "sources": [
+    {
+      "id": "nhs-sprains",
+      "title": "Sprains and strains",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/sprains-and-strains/",
+      "year": 2024,
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "paass",
+      "title": "Return to sport decisions after an acute lateral ankle sprain injury: introducing the PAASS framework",
+      "publisher": "British Journal of Sports Medicine",
+      "url": "https://bjsm.bmj.com/content/55/22/1270",
+      "year": 2021,
+      "accessedAt": "2026-09-06"
+    }
+  ],
+  "review": {
+    "status": "approved",
+    "reviewedBy": "吳易澄",
+    "reviewedAt": "2026-09-06",
+    "contentDigest": "d7b163f9bc8effe720d3e3512b22fd79cea4b98a129ce2fa564883cd93ea808c"
+  }
+}

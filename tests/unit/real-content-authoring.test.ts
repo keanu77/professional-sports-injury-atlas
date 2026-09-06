@@ -250,9 +250,11 @@ describe("authorized real NBA case authoring", () => {
     ).toEqual({ acl: 7, "ankle-sprain": 12, "achilles-rupture": 7 });
 
     expect(selectPublicCases(records)).toEqual([]);
-    expect(MIN_PUBLIC_CASES_PER_INJURY).toBe(10);
-    expect(MIN_PUBLIC_CASES_TOTAL).toBe(30);
+    expect(MIN_PUBLIC_CASES_PER_INJURY).toBe(0);
+    expect(MIN_PUBLIC_CASES_TOTAL).toBe(1);
     expect(medicallyApproved).toHaveLength(26);
-    expect(medicallyApproved.length).toBeLessThan(MIN_PUBLIC_CASES_TOTAL);
+    expect(medicallyApproved.length).toBeGreaterThanOrEqual(
+      MIN_PUBLIC_CASES_TOTAL,
+    );
   });
 });

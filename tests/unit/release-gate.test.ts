@@ -887,7 +887,6 @@ describe("public release gate: achievable authorization", () => {
     });
     const observed = codes(issues);
     // counts, URLs, course links, external verification, authorization
-    expect(observed).toContain("gate-count-per-injury");
     expect(observed).toContain("gate-count-total");
     expect(observed).toContain("gate-url-missing");
     expect(observed).toContain("gate-course-link-policy");
@@ -1004,15 +1003,12 @@ describe("public release gate: negative conditions", () => {
     );
   });
 
-  it("3. rejects fewer than 10 per-injury or 30 total public cases", () => {
+  it("3. rejects an empty launch collection", () => {
     const fx = buildAuthorizedFixture();
-    const removed = fx.cases.pop();
-    fx.update.addedCases = fx.update.addedCases.filter(
-      (entry: any) => entry.caseId !== removed.id,
-    );
+    fx.cases = [];
+    fx.update.addedCases = [];
     resignUpdate(fx.update);
     const observed = codes(evaluatePublicReleaseGate(gateInput(fx)));
-    expect(observed).toContain("gate-count-per-injury");
     expect(observed).toContain("gate-count-total");
   });
 
@@ -1213,8 +1209,7 @@ describe("public release gate: negative conditions", () => {
     fx.cases[0].video.sourceProvenanceVerification.verifiedPolicyVersion =
       "source-policy-v0";
     const observed = codes(evaluatePublicReleaseGate(gateInput(fx)));
-    expect(observed).toContain("gate-count-per-injury");
-    expect(observed).toContain("gate-count-total");
+    expect(observed).toContain("gate-update-public-set");
   });
 
   it("8b. rejects stale/failed/mismatched external verification", () => {

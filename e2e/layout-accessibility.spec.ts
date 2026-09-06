@@ -188,7 +188,7 @@ test.describe("layout accessibility", () => {
     page,
   }) => {
     const targets = [
-      { path: "/", hero: "band" },
+      { path: "/", hero: "video-grid" },
       { path: "/injuries/ankle-sprain/", hero: "band" },
       {
         path: "/cases/anthony-edwards-ankle-sprain-2023/",
@@ -250,15 +250,13 @@ test.describe("layout accessibility", () => {
               stageBox!.y + stageBox!.height + 1,
             );
           }
-        } else {
+        } else if (target.hero === "case") {
           const titleBox = await page.locator("h1").boundingBox();
-          const figureBox = await page
-            .locator(".editorial-case-figure")
-            .boundingBox();
+          const figureBox = await page.locator(".case-video").boundingBox();
           expect(titleBox).not.toBeNull();
           expect(figureBox).not.toBeNull();
           expect(figureBox!.y).toBeGreaterThan(titleBox!.y + titleBox!.height);
-          expect(figureBox!.width).toBeLessThanOrEqual(768);
+          expect(figureBox!.width).toBeLessThanOrEqual(width);
         }
       }
     }

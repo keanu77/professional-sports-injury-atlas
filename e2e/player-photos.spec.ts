@@ -271,18 +271,13 @@ test.describe("registered player covers", () => {
     await page.goto("/cases/kevin-durant-achilles-rupture-2019/");
 
     const hero = page.locator(
-      '[data-editorial-case-cover][data-player-photo="Kevin Durant"]',
+      '.case-video [data-cover-presentation="facade"][data-player-photo="Kevin Durant"]',
     );
     await expectLicensedCover(hero, selection);
-    const heroImage = hero.locator("img");
-    await expect(heroImage).toHaveAttribute("loading", "eager");
-    await expect(heroImage).toHaveAttribute("fetchpriority", "high");
-
-    const preload = page.locator('link[rel="preload"][as="image"]');
-    await expect(preload).toHaveCount(1);
-    await expect(preload).toHaveAttribute("type", "image/avif");
-    expect(await preload.getAttribute("imagesrcset")).toBe(
-      await hero.locator('source[type="image/avif"]').getAttribute("srcset"),
+    // D21 removes the duplicate photo hero: the local player facade is the only lead image.
+    await expect(page.locator("[data-editorial-case-cover]")).toHaveCount(0);
+    await expect(page.locator('link[rel="preload"][as="image"]')).toHaveCount(
+      0,
     );
 
     const video = page.locator(
@@ -327,7 +322,7 @@ test.describe("registered player covers", () => {
 
       await page.goto(fixture.path);
       const hero = page.locator(
-        `[data-editorial-case-cover][data-player-photo="${fixture.athleteName}"]`,
+        `.case-video [data-cover-presentation="facade"][data-player-photo="${fixture.athleteName}"]`,
       );
       await expectLicensedCover(hero, selection);
       await expect(hero.locator("figcaption")).toContainText(fixture.caption);
@@ -350,7 +345,7 @@ test.describe("registered player covers", () => {
   }) => {
     await page.goto("/cases/anfernee-simons-ankle-sprain-2023/");
     const hero = page.locator(
-      '[data-editorial-case-cover][data-player-photo="Anfernee Simons"]',
+      '.case-video [data-cover-presentation="facade"][data-player-photo="Anfernee Simons"]',
     );
     const selection = selectionByCaseId.get("CASE-NBAANKLE-2023-004")!;
     await expectLicensedCover(hero, selection);

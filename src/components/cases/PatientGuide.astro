@@ -1,0 +1,152 @@
+---
+import {
+  patientGuideFor,
+  isPatientGuideApproved,
+} from "../../lib/patient/guides";
+interface Props {
+  injuryCode: string;
+  buildMode: "review" | "public";
+}
+const { injuryCode, buildMode } = Astro.props;
+const guide = patientGuideFor(injuryCode, buildMode);
+---
+
+<section
+  class="patient-guide"
+  data-patient-guide={injuryCode}
+  aria-label={`${guide.label}受傷後重點`}
+>
+  {
+    buildMode === "review" && !isPatientGuideApproved(guide) && (
+      <p class="draft-note">民眾版衛教草稿・待醫師確認</p>
+    )
+  }
+  <div class="action-grid">
+    <section aria-labelledby={`${injuryCode}-now`}>
+      <p class="eyebrow">01 / 受傷當下</p>
+      <h2 id={`${injuryCode}-now`}>先做這幾件事</h2>
+      <ol>{guide.immediate.map((item) => <li>{item.text}</li>)}</ol>
+    </section>
+    <section class="urgent" aria-labelledby={`${injuryCode}-urgent`}>
+      <p class="eyebrow">02 / 就醫警訊</p>
+      <h2 id={`${injuryCode}-urgent`}>這些狀況別等</h2>
+      <ul>{guide.redFlags.map((item) => <li>{item.text}</li>)}</ul>
+    </section>
+  </div>
+  <section class="return-guide" aria-labelledby={`${injuryCode}-return`}>
+    <p class="eyebrow">03 / 一般人參考</p>
+    <h2 id={`${injuryCode}-return`}>大約多久能回場？</h2>
+    <div class="range-grid">
+      {
+        guide.returnRanges.map((range) => (
+          <div class="range">
+            <>
+              <h3>{range.label}</h3>
+              <p class="range-value">{range.value}</p>
+              <p>{range.detail.text}</p>
+            </>
+          </div>
+        ))
+      }
+    </div>
+    <p class="readiness">
+      <strong>回場前還要看：</strong>{guide.readiness.text}
+    </p>
+    <p class="guide-note">
+      時間是參考範圍，不是回場許可。影片與球員紀錄無法判定你的傷勢。
+    </p>
+  </section>
+  <details class="guide-sources">
+    <summary>查看衛教來源</summary><ul>
+      {
+        guide.sources.map((source) => (
+          <li>
+            <a href={source.url} target="_blank" rel="noopener noreferrer">
+              {source.publisher}（{source.year ?? "2026 查核"}）— {source.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </details>
+</section>
+<style>
+  .patient-guide {
+    margin-block: 2rem;
+  }
+  .draft-note,
+  .guide-note {
+    color: var(--color-ink-muted);
+    font-size: 0.875rem;
+  }
+  .action-grid,
+  .range-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+  .action-grid > section {
+    padding: 1.5rem;
+    background: var(--color-surface-raised);
+    border: 1px solid var(--hairline);
+    border-top: 3px solid var(--color-brand-primary);
+  }
+  .action-grid > .urgent {
+    border-top-color: var(--color-danger);
+  }
+  h2 {
+    margin: 0.35rem 0 1rem;
+  }
+  h3 {
+    font: 600 1rem/1.5 var(--font-body);
+    margin: 0;
+  }
+  li {
+    margin-block: 0.7rem;
+  }
+  ul,
+  ol {
+    padding-inline-start: 1.3rem;
+    margin-bottom: 0;
+  }
+  .return-guide {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: var(--color-surface-muted);
+  }
+  .range {
+    padding-block: 0.5rem;
+  }
+  .range-value {
+    font: 700 clamp(1.5rem, 3vw, 2rem)/1.4 var(--font-display);
+    color: var(--color-brand-primary);
+    margin: 0.6rem 0;
+  }
+  .range p:not(.range-value),
+  .readiness {
+    font-size: 0.95rem;
+  }
+  .readiness {
+    border-top: 1px solid var(--hairline);
+    padding-top: 1rem;
+  }
+  .guide-sources {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+  }
+  summary {
+    cursor: pointer;
+    padding: 0.75rem 0;
+    font-weight: 600;
+  }
+  @media (max-width: 40rem) {
+    .action-grid,
+    .range-grid {
+      grid-template-columns: 1fr;
+    }
+    .action-grid > section,
+    .return-guide {
+      padding: 1.1rem;
+    }
+  }
+</style>
