@@ -171,6 +171,17 @@ writeFileSync(
   Cache-Control: public, max-age=31536000, immutable
 `,
 );
+// Removed Pages assets can remain in CDN cache. Redirect before asset lookup.
+writeFileSync(
+  "dist/_redirects",
+  curation.removedSlugs
+    .flatMap((slug) =>
+      ["", "/", "/index.html"].map(
+        (suffix) => `/videos/${slug}${suffix} /removed-video/ 302`,
+      ),
+    )
+    .join("\n") + "\n",
+);
 const receipt = {
   schemaVersion: 1,
   decision: "decision-21",
