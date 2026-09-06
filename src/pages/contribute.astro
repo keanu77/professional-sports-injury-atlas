@@ -1,0 +1,158 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="提供影片／資料修正｜運動傷害影片圖鑑"
+  description="提供公開運動傷害影片，或協助指出需要修正的資料。"
+>
+  <div class="contribution-page">
+    <a href="/">← 回到影片圖鑑</a>
+    <h1>提供影片／資料修正</h1>
+    <p>一起讓圖鑑更完整、正確。不必填寫姓名或信箱。</p>
+    <form data-contribution-form>
+      <fieldset>
+        <legend>你想提供什麼？</legend>
+        <label
+          ><input type="radio" name="type" value="video" checked /> 公開影片</label
+        >
+        <label
+          ><input type="radio" name="type" value="correction" /> 資料修正</label
+        >
+      </fieldset>
+      <label for="contribution-url" data-url-label>公開影片網址</label>
+      <input
+        id="contribution-url"
+        name="url"
+        type="url"
+        required
+        maxlength="2048"
+        placeholder="https://"
+        autocomplete="off"
+      />
+      <label for="contribution-note" data-note-label>補充說明（選填）</label>
+      <textarea
+        id="contribution-note"
+        name="note"
+        rows="4"
+        maxlength="2000"
+        placeholder="例如：選手、運動項目，或需要修正的內容"></textarea>
+      <label for="contribution-sources">參考來源（選填）</label>
+      <textarea
+        id="contribution-sources"
+        name="sources"
+        rows="2"
+        maxlength="3000"
+        placeholder="每行一個公開網址，最多 3 個"></textarea>
+      <div class="contribution-trap" aria-hidden="true">
+        <label
+          >網站<input name="website" tabindex="-1" autocomplete="off" /></label
+        >
+      </div>
+      <p class="contribution-privacy">
+        僅提供公開連結與資料，請勿填寫個人病情或其他人的個資。送出內容會寄給網站製作者，查核後再評估更新。<a
+          href="/privacy/#contributions-heading">資料使用說明</a
+        >
+      </p>
+      <div data-contribution-challenge></div>
+      <button class="control-button contribution-submit" type="submit" disabled
+        >送出</button
+      >
+      <p data-contribution-status role="status" aria-live="polite">
+        正在準備安全驗證…
+      </p>
+      <noscript
+        ><p>
+          此表單需要 JavaScript。也可使用<a
+            href="https://sportsmedicine.tw/contact/">主站聯絡頁</a
+          >提供資料。
+        </p></noscript
+      >
+    </form>
+    <p class="contribution-privacy">
+      表單無法使用時，也可透過<a href="https://sportsmedicine.tw/contact/"
+        >主站聯絡頁</a
+      >提供資料。
+    </p>
+    <div data-contribution-thanks hidden tabindex="-1">
+      <h2>謝謝你的協助！</h2><p>訊息已送出，我們會查核後評估更新。</p><a
+        href="/">繼續看影片</a
+      >
+    </div>
+  </div>
+</BaseLayout>
+<script>
+  import "../scripts/contributions";
+</script>
+<style>
+  .contribution-page {
+    max-width: 42rem;
+    margin-inline: auto;
+    padding-block: 2rem;
+  }
+  h1 {
+    margin-block: 1rem;
+  }
+  form {
+    display: grid;
+    gap: 0.75rem;
+    margin-block: 1.5rem;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    border: 1px solid var(--hairline);
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+  fieldset label {
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+    min-height: 44px;
+  }
+  legend,
+  form > label {
+    font-weight: 600;
+  }
+  input[type="url"],
+  textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    border: 1px solid var(--hairline);
+    background: var(--color-surface);
+    color: var(--color-ink);
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+    font: inherit;
+  }
+  textarea {
+    resize: vertical;
+  }
+  .contribution-privacy {
+    font-size: 0.875rem;
+    color: var(--color-ink-muted);
+  }
+  .contribution-trap {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .contribution-submit {
+    justify-self: start;
+    background: var(--color-brand-primary);
+    color: var(--color-on-brand);
+    min-width: 8rem;
+  }
+  .contribution-submit:disabled {
+    opacity: 0.6;
+    cursor: wait;
+  }
+</style>

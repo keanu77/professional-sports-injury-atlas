@@ -52,5 +52,14 @@ const currentPath = Astro.url.pathname;
       <ThemeToggle />
       <FontScaleControl />
     </div>
+    <a
+      class="site-nav-link site-contribute-link"
+      href={`/contribute/?page=${encodeURIComponent(currentPath)}`}
+      >提供影片／資料修正</a
+    >
+    <a class="site-author" href="https://sportsmedicine.tw/">
+      <small>製作者</small>
+      <span>運動醫學科 吳易澄醫師</span>
+    </a>
   </div>
 </header>

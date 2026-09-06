@@ -1,5 +1,5 @@
 {
   "version": 1,
-  "include": ["/api/plays", "/api/popular"],
+  "include": ["/api/plays", "/api/popular", "/api/contributions"],
   "exclude": []
 }
