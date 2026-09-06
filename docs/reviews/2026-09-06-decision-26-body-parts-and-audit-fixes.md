@@ -19,4 +19,10 @@ LaMelo 2023 後續診斷來源更新已形成 `2026-09-06-lamelo-source-update-d
 - 人工問題回歸：28 頁 320px 深色大字無水平溢位；7 支觀察影片播放文字邊界與外部時間碼正確；焦點框 -4px、late error 重試、ACL 衛教排序與無 JS 連結通過。已目視首頁手機截圖。
 - 無新套件、無新環境變數、無資料庫／migration；既有 ATLAS_BUILD_MODE 由 build 指令提供。Git 變更無密鑰，public gate 檢查無 private metadata 或缺失資產。
 
-驗證資料：`evidence/decision-26/`。正式部署與實播結果待發布後補入。
+## 正式部署
+
+正式 https://sports-injury-atlas.pages.dev/；Production/main `be2b7389-679f-47d8-85eb-3d5844e5c8cb`，來源 `ba2530166c281f89ab622009373bf765adb12712`。
+
+2026-09-06T03:24:44.432Z 正式驗證：32 回應 hash 與來源一致，19 頁 × 3 尺寸的 57 組 Axe、無溢位、縮圖、分類與零預先第三方請求檢查全部通過；無 JS 可操作分类。
+
+14 支正式實播全部成功；5 支指定非零起點皆正確。原五支字幕片的 LaMelo 2025 首測字幕控制逾時，實播已成功；單支重試實播與字幕開啟均成功。保留 first-attempt 與 retry，未抹除首次失敗。證據：`evidence/decision-26/`。

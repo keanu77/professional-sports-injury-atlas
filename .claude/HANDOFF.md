@@ -1,4 +1,20 @@
-# Current handoff — 2026-09-06 multi-llm-audit
+# Current handoff — Decision 26，2026-09-06
+
+首頁部位分類與使用者授權的稽核修正已實作並部署。首頁提供腳踝 8 支、小腿與阿基里斯腱 4 支、膝蓋 1 支、大腿後側 1 支，連到四個 `/body-parts/` 頁面；14 支影片各歸屬一處、無 JS 也能選取。維持 YouTube 預設封面、無搜尋、主站淡藍／珊瑚色設計。
+
+正式 https://sports-injury-atlas.pages.dev/；來源 `ba2530166c281f89ab622009373bf765adb12712`；Production/main `be2b7389-679f-47d8-85eb-3d5844e5c8cb`。公開 build 已由 24 增至 28 頁；receipt 包含 bodyParts 與各分類精確影片路徑，release gate 驗證 14 支完整覆蓋一次。root dist 為正式產物。
+
+三項 P1（late onError、手機播放字裁切、播放焦點框）及閱讀／播放 P2 已修正。案例直接顯示既有 whatIsVisible；4 個舊列表頁移除篩選、ACL 衛教提前、enum 中文顯示、未收錄回場資料用語、主站返回及歷史照片授權說明一併完成。沒有修改原始病例、醫療核准、影片綁定或時間碼。
+
+Astro check 0 errors / 0 warnings，16 既有 hints；四瀏覽器 68 項回歸通過。預覽 32 回應 hash 與 19 頁 × 3 尺寸 = 57 組頁面檢查通過（320px 字級 150%、390、1440，Axe、縮圖、分類、零預先第三方請求）；額外 28 頁大字深色及元件裁字／焦點、重試、時間碼、無 JS 回歸通過。正式 14 支實播成功；LaMelo 2025 字幕首測逾時、單支重試成功，首次紀錄保留。2026-09-06T03:24:44.432Z 正式瀏覽器驗證 32 回應 hash、57 組頁面及無 JS 全部通過。
+
+報告 `docs/reviews/2026-09-06-decision-26-body-parts-and-audit-fixes.md`，證據 `docs/reviews/evidence/decision-26/`。前次 audit 報告已在 `ad54447` 提交，D26 實作在 `ba25301`；遠端已核對為 keanu77 私有 ADMIN；收尾文件與證據提交後一併 push，完成後以 git HEAD 與 origin/main 相等為準。
+
+待醫療複核：LaMelo 2023 後續來源新稿已整理於 `docs/reviews/2026-09-06-lamelo-source-update-draft.md`，不可直接重算既有核准冒充簽核。低優先 Noto 歷史字型清理本輪未做；不是首頁／播放功能阻礙。下方歷史紀錄中的「尚未提交／D25 正式」僅代表當時狀態。
+
+---
+
+# 前次紀錄 — 2026-09-06 multi-llm-audit
 
 使用者要求以multi-llm-audit重新檢視全網站。本輪稽核已完成：Codex8項、Grok13項、Antigravity公開內容7項，共28條原始論點，經獨立Pass 2與正式瀏覽器逐條採用／降級／排除。未修改網站程式、未重新部署。
 
@@ -12,7 +28,7 @@ Antigravity私有code傳送被auto-review拒絕，改成公開HTML文字注入�
 
 ---
 
-# Decision 25 — 現行正式部署
+# Decision 25 — 歷史正式部署
 
 已完成並發布使用者要求：14支影片的卡片、主播放器、相關影片卡片改用各自YouTube預設封面；右上角傷害分類移除，首頁下方分類入口保留。人物照片與署名段落不再出現在公開影片卡片。搜尋移除與D24內容頁版型保留。
 

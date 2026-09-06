@@ -1,0 +1,28 @@
+[
+  {
+    "caseId": "CASE-NBAANKLE-2025-002",
+    "url": "https://www.youtube.com/watch?v=zZdndTqOexc",
+    "checkedAt": "2026-09-06T03:23:38.443Z",
+    "status": "played",
+    "title": "LaMelo Ball would go into the locker room after noticeably limping on court. - YouTube",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.006197,
+      "paused": false,
+      "readyState": 4,
+      "tracks": []
+    },
+    "captionToggleAfter": "字幕/CC 已開啟",
+    "captionControls": [
+      {
+        "label": "字幕/CC 已開啟",
+        "title": "字幕/CC 已開啟",
+        "disabled": null
+      }
+    ]
+  }
+]
