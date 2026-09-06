@@ -7,3 +7,9 @@
 此明確需求取代先前不採用影片縮圖的顯示規則。`src/assets/videos/provenance.json` 記錄使用者原話、14個影片ID、預設封面來源與SHA256。新驗證器限定這14支既有公開影片，拒絕檔案變更、錯誤ID、其他路徑或來源；其餘任意圖片/遠端圖片限制保留。來源說明頁同步更新；不宣稱YouTube封面具有Commons授權。歷史審查版人物照片、26筆病例、醫療核准與播放URL/時間碼均未修改。
 
 驗證：Astro check 0 errors/0 warnings、16既有hints；品牌/影片單元32項及縮圖來源完整性5項通過；相關四瀏覽器12項通過；公開建置24頁/7案例/7觀察、356內部連結通過。14個封面按鈕均能產生正確影片iframe；390px與1440px畫面已目視。
+
+正式：https://sports-injury-atlas.pages.dev/
+來源：3e8cc75ed026d6a026ed2c07865adc3b0c4ac0be
+Production/main：07b8ac9a-0fd4-4fe7-aceb-f907b0cc635c
+線上驗證：2026-09-06T02:55:54.277Z；28個HTML/JSON/robots回應雜湊一致、15頁手機/桌面Axe、所有可见縮圖解碼、頂端分類移除/頁內保留、無JS閱讀及零預先第三方請求通過。首次連線逾時後，以較長連線嘗試時間重試完成。
+無待辦。

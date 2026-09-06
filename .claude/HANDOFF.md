@@ -1,4 +1,16 @@
-# Current handoff — 2026-09-06 Decision 24
+# Current handoff — 2026-09-06 Decision 25
+
+已完成並發布使用者要求：14支影片的卡片、主播放器、相關影片卡片改用各自YouTube預設封面；右上角傷害分類移除，首頁下方分類入口保留。人物照片與署名段落不再出現在公開影片卡片。搜尋移除與D24內容頁版型保留。
+
+正式 https://sports-injury-atlas.pages.dev/；來源 `3e8cc75ed026d6a026ed2c07865adc3b0c4ac0be`；Production/main `07b8ac9a-0fd4-4fe7-aceb-f907b0cc635c`。2026-09-06T02:55:54.277Z正式驗證28回應hash、15頁手機/桌面Axe、縮圖解碼、導覽、無JS與零預先第三方請求通過。單元37項、相關四瀏覽器12項通過；Astro check無錯誤/警告。root dist為正式版本。
+
+D25使用者明確指定YouTube圖片，取代先前不採縮圖的顯示限制。`src/assets/videos/provenance.json` 保存14個預設封面來源、ID與SHA256；`scripts/verify-video-thumbnails.ts` 檢查精確範圍。縮圖由本站提供；播放前仍無第三方請求。原病例、醫療核准、影片URL/時間碼及歷史審查照片不變。歷史review模式保留照片，公開模式才用D25封面。
+
+詳見 `docs/reviews/2026-09-06-decision-25-video-covers.md`。無待辦，未修改主站專案。交接文件commit不需另行部署。發布協定仍見下方D23；公開瀏覽驗證涵蓋縮圖與分類。Node網路首次連線若逾時，可用 `node --network-family-autoselection-attempt-timeout=2000 scripts/public-launch/verify-browser.mjs https://sports-injury-atlas.pages.dev` 重試。
+
+---
+
+# Decision 24 — 內容頁設計
 
 已完成使用者要求：依主站 /content/ 的淡藍標題區、麵包屑與卡片列表調整首頁；移除搜尋、傷害/運動篩選、先看影片標題說明及對應JS/CSS。14支影片直接顯示，影片/醫療/核准/播放器未改。主站內容頁未修改，使用者自行安排入口。
 
