@@ -3,6 +3,7 @@
  * Editorial case teaser. All factual text and governance selectors remain
  * unchanged; only the presentation order and visual hierarchy change.
  */
+import { hasPublicEmbed } from "../../lib/patient/featured";
 import CaseCover from "../cases/CaseCover.astro";
 import ReviewBadge from "../cases/ReviewBadge.astro";
 import { findInjury, findLeague } from "../../lib/contracts/taxonomy";
@@ -49,7 +50,15 @@ const leagueLabel =
       slot="media-action"
       class="case-card-media-link"
       href={`/cases/${record.slug}/`}
-      aria-label={`查看${record.athlete.name}的${injuryLabel}案例`}></a>
+      aria-label={`查看${record.athlete.name}的${injuryLabel}案例`}
+      >{
+        hasPublicEmbed(record) && (
+          <span class="card-play" aria-hidden="true">
+            ▶
+          </span>
+        )
+      }</a
+    >
   </CaseCover>
   <div class="case-card-body">
     <p class="case-card-eyebrow eyebrow"><span>{injuryLabel}</span></p>
@@ -106,12 +115,17 @@ const leagueLabel =
     position: relative;
     overflow: hidden;
     padding: 0;
-    border: 1px solid var(--hairline);
+    border: 1px solid var(--color-brand-100);
+    border-radius: var(--radius-card);
     background: var(--color-surface-raised);
+    height: 100%;
+    transition:
+      box-shadow 160ms ease,
+      border-color 160ms ease;
   }
 
   .case-card-body {
-    padding: 0.875rem 1rem 1rem;
+    padding: 1.25rem;
   }
 
   .case-card-eyebrow {
@@ -122,15 +136,10 @@ const leagueLabel =
 
   .case-card-eyebrow span {
     flex: 0 0 auto;
-    padding-right: 0.375rem;
-    background: var(--color-surface-raised);
-  }
-
-  .case-card-eyebrow::after {
-    width: 100%;
-    height: 2px;
-    background: var(--injury-color);
-    content: "";
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
+    color: var(--color-brand-primary);
+    background: var(--color-brand-50);
   }
 
   .case-card-title {
@@ -143,7 +152,7 @@ const leagueLabel =
   }
 
   .case-card-title a {
-    color: var(--color-ink);
+    color: var(--color-brand-900);
     text-decoration: none;
   }
 
@@ -191,5 +200,28 @@ const leagueLabel =
     border-inline-start: 3px solid var(--color-metric);
     color: var(--color-ink-muted);
     font: 400 var(--text-meta) / 1.5 var(--font-meta);
+  }
+  .case-card:hover {
+    border-color: var(--color-brand-200);
+    box-shadow: 0 12px 30px var(--shadow-stuck);
+  }
+  .card-play {
+    position: absolute;
+    inset-inline-end: 1rem;
+    inset-block-end: 1rem;
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    background: var(--color-brand-accent);
+    color: var(--color-on-warm);
+    font-size: 1rem;
+    box-shadow: 0 2px 8px var(--shadow-stuck);
+  }
+  .case-card :global(.case-cover-attribution) {
+    padding: 0.6rem 1.25rem 0;
+    font-size: 0.72rem;
+    line-height: 1.6;
   }
 </style>

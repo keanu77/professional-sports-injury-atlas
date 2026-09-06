@@ -46,9 +46,9 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 0.5rem 1rem;
-  max-width: 72rem;
+  max-width: 80rem;
   margin-inline: auto;
-  padding: 0.75rem 1rem;
+  padding: 1rem 1.5rem;
 }
 
 .site-identity {
@@ -58,10 +58,10 @@
 
 .site-identity-link {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.375rem;
   font-weight: 600;
   letter-spacing: 0.02em;
-  color: var(--color-ink);
+  color: var(--color-brand-primary);
   text-decoration: none;
 }
 
@@ -116,7 +116,7 @@
 }
 
 @media (min-width: 48rem) {
-  .nav-toggle {
+  .site-header .nav-toggle {
     display: none;
   }
 
@@ -136,9 +136,9 @@
 main {
   flex: 1 0 auto;
   width: 100%;
-  max-width: 72rem;
+  max-width: 80rem;
   margin-inline: auto;
-  padding: 1.5rem 1rem 3rem;
+  padding: 1.5rem 1.5rem 4rem;
 }
 
 .site-footer {
@@ -151,9 +151,9 @@ main {
 }
 
 .site-footer-inner {
-  max-width: 72rem;
+  max-width: 80rem;
   margin-inline: auto;
-  padding: 1.5rem 1rem;
+  padding: 2.5rem 1.5rem;
   font: 400 var(--text-meta) / 1.6 var(--font-meta);
 }
 
@@ -193,8 +193,9 @@ main {
 }
 
 .site-footer-legal {
-  background: var(--color-brand-primary);
-  color: var(--color-on-brand);
+  background: var(--color-surface-muted);
+  color: var(--color-ink-muted);
+  border-top: 1px solid var(--hairline);
 }
 
 .footer-legal-inner {
@@ -215,5 +216,47 @@ main {
 
   .footer-legal-inner {
     display: block;
+  }
+}
+
+.site-header {
+  border-color: var(--color-brand-100);
+}
+.site-nav-link {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.site-identity-link small {
+  display: block;
+  font: 600 0.65rem/1.5 var(--font-body);
+  letter-spacing: 0.12em;
+  color: var(--color-ink-muted);
+}
+@media (max-width: 47.999rem) {
+  .site-header-inner {
+    padding: 0.75rem 1rem;
+    gap: 0.5rem;
+  }
+  .site-identity-link {
+    font-size: 1.125rem;
+  }
+  .site-controls {
+    margin-inline-start: auto;
+    gap: 0.125rem;
+  }
+  .font-scale-control {
+    gap: 0;
+  }
+  .control-button {
+    padding-inline: 0.5rem;
+  }
+  main {
+    padding-inline: 1rem;
+  }
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .footer-disclosure {
+    grid-column: 1 / -1;
   }
 }

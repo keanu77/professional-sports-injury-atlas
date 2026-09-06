@@ -179,6 +179,7 @@ const assetCreditsHref =
     overflow: hidden;
     aspect-ratio: var(--cover-aspect-ratio);
     background-color: var(--color-surface-muted);
+    border-radius: 0;
   }
 
   .case-cover-hero .case-cover-media {
@@ -215,5 +216,9 @@ const assetCreditsHref =
 
   .case-cover-attribution a:hover {
     color: var(--color-brand-primary);
+  }
+  .case-cover-facade .case-cover-media,
+  .case-cover-hero .case-cover-media {
+    border-radius: var(--radius-card);
   }
 </style>

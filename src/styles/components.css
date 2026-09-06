@@ -12,9 +12,9 @@
   min-width: 44px;
   min-height: 44px;
   padding: 0 0.75rem;
-  border: 2px solid var(--color-brand-primary);
+  border: 1px solid transparent;
   border-radius: 6px;
-  background: var(--color-surface-raised);
+  background: transparent;
   color: var(--color-brand-primary);
   font: 600 var(--text-meta) / 1.5 var(--font-meta);
   cursor: pointer;
@@ -46,17 +46,7 @@
   gap: 0.75rem;
   margin-block-end: var(--space-block);
   font-size: var(--text-h2);
-}
-
-:where(.section-title, main h2:not(.sidebar-title))::after {
-  height: 2px;
-  flex: 1;
-  background: linear-gradient(
-    90deg,
-    var(--injury-color, var(--color-brand-primary)) 0 2.5rem,
-    var(--hairline) 2.5rem 100%
-  );
-  content: "";
+  font-family: var(--font-display);
 }
 
 main > section:not(:first-child),
@@ -75,4 +65,12 @@ main > article > section {
 
 :where(h2, h3, [data-case-card], [data-course-key]) {
   scroll-margin-top: 8rem;
+}
+
+.control-button:hover {
+  background: var(--color-brand-50);
+}
+.control-button[aria-pressed="true"],
+.control-button[aria-expanded="true"] {
+  background: var(--color-brand-primary);
 }

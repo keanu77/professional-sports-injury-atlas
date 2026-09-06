@@ -58,7 +58,9 @@ body {
   color: var(--color-ink);
   font-family: var(--font-body);
   font-size: var(--text-body);
-  line-height: 1.75;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  -webkit-font-smoothing: antialiased;
   overflow-wrap: anywhere;
 }
 
@@ -69,8 +71,9 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
-  line-height: 1.25;
-  color: var(--color-ink);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--color-brand-900);
 }
 
 h1 {
@@ -117,8 +120,8 @@ h2 {
 }
 
 .eyebrow {
-  color: var(--color-ink-muted);
-  font: 600 var(--text-eyebrow) / 1.5 var(--font-meta);
+  color: var(--color-brand-primary);
+  font: 600 var(--text-eyebrow) / 1.8 var(--font-display);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
