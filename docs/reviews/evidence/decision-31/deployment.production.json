@@ -1,0 +1,10 @@
+{
+  "origin": "https://sports-injury-atlas.pages.dev",
+  "deploymentId": "3ba37ddc-5954-47ed-b609-36c9fb8f1b50",
+  "environment": "Production",
+  "branch": "main",
+  "sourceCommit": "b3b4cb0ad681f177ea1fcb16a55715802d12cb9d",
+  "deploymentUrl": "https://3ba37ddc.sports-injury-atlas.pages.dev",
+  "verification": "105 matched responses; 92 pages at 3 viewports; no JavaScript navigation passed; all 18 new videos played on the first attempt.",
+  "verifiedAt": "2026-09-06T09:53:52.477Z"
+}

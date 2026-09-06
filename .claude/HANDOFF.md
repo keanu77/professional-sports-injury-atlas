@@ -1,3 +1,21 @@
+# 最新交接 — Decision 31，2026-09-06
+
+依「好的，我們繼續補充」完成 52 → 70 第一批，新增 18 支（棒球 5、冰球 4、網球 3、足球 3、美式足球／自行車／體操各 1）。總數 70 = 7 病例 + 63 動作觀察，14 運動、7 部位；新增美式足球及手腕分類。沿用 YouTube 預設封面、無搜尋、頁內分類及主站設計。
+
+正式 https://sports-injury-atlas.pages.dev/；來源 b3b4cb0ad681f177ea1fcb16a55715802d12cb9d 已 commit/push；Production/main 部署 3ba37ddc-5954-47ed-b609-36c9fb8f1b50。root dist 為正式 101 HTML、1,430 內部連結產物。新增 18 支正式頁面首次全部實播成功。正式驗證於 2026-09-06T09:53:52.477Z 完成：105 回應 hash 與 b3b4cb0 產物相符，92 頁 × 3 尺寸 = 276 組，以及來源展開、分類、縮圖、Axe、無水平溢位、零第三方預先連線與無 JS 全數通過。
+
+實際執行連網 Codex、Grok 與獨立來源／程式 Pass 2。18 個事件及 17 組已知日期差均核對；Andrade 回場日期保留 null，只描述已確認 Baku 資格賽，不推算天數。Elliott 採較早閉門友誼賽，Bellerín 採 U23、Thiem 採 Challenger；棒球春訓、冰球季前與正式聯賽分開。Samir 片段在落地前切黑、數支 NFL 候選禁止內嵌，皆未採用。禁止依影片推定某次落地造成 Andrade 的 ACL 傷害。
+
+資料 src/data/videos/batch-31.v1.json、event-batch-31.v1.json；原病例、醫療核准與歷史影片資料保留，只重綁公開建置 inputTreeDigest。18 張預設封面來源與雜湊已保存。Van Vleuten 統一頭頸部分類，正確顯示頭傷處置。字幕維持 not-verified，以播放器為準。
+
+Astro 0 errors / 0 warnings、16 既有 hints；全單元初測 1,317/1,321，修正 fixture 計數後乾淨副本重跑四檔 33 項通過，原四個失敗已解除。四瀏覽器 88 項回歸通過，變更格式通過。乾淨隔離副本及 root release:public 通過。預覽 18 支首次實播成功，105 回應 hash、92 頁 × 3 尺寸 = 276 組，以及無 JS 全數通過；首頁／手腕／Thiem 手機與桌面截圖人工檢視。
+
+報告 docs/reviews/2026-09-06-decision-31-seventy-videos.md；證據 docs/reviews/evidence/decision-31/。Node 24.14.0；舊 4321 參考未更動。保留兩個已移除匿名影片的 404 redirects。
+
+後續：距 100 支尚餘 30，下一批可依 70 → 85 → 100 擴充；本批不代表已完成 100。每批仍需影片去重、HTTPS 真實頁面實播與來源核對。現有各批同日 checkedAt，跨日新增前需導入逐筆 checkedAt，不能重標舊查核日期。release:public 保留乾淨 Git、既有核准鏈、inputTreeDigest 和新增影片七天內實播證據要求。收尾文件另提交，不需重部署。
+
+---
+
 # 最新交接 — Decision 30，2026-09-06
 
 已依「50 支以上」目標新增 30 支，正式網站共 52 支（7 病例、45 動作觀察），有 13 運動分類與 6 部位分類。首頁已移除「更多傷害與案例」整區；保留部位分類、无搜尋、YouTube 預設封面及 sportsmedicine.tw 視覺。

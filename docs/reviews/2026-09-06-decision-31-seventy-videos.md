@@ -26,4 +26,8 @@ Astro check：0 errors、0 warnings，16 既有 hints。全單元初測 1,317/1,
 
 第一次 artifact 檢查抓到 Van Vleuten 的「頭部」未映射分類；已統一為「頭頸部」，使頭傷處理與不得當天回場提示正確顯示，完整分類覆蓋重驗通過。建置與 release:public 通過：101 HTML、70 支影片、1,430 內部連結。未放寬來源、核准、乾淨 Git 或七天內實播閘門。
 
-預覽：`https://b6f38717.sports-injury-atlas.pages.dev/`。完整瀏覽器及正式部署結果於完成後補記。證據：`docs/reviews/evidence/decision-31/`。
+預覽：`https://b6f38717.sports-injury-atlas.pages.dev/`。完整瀏覽器於 2026-09-06T09:46:28.380Z 通過：105 個回應雜湊、92 頁 × 3 尺寸 = 276 組；分類、來源展開、縮圖、Axe、無水平溢位、零第三方預先連線與無 JS 皆通過。首頁桌面／手機與手腕分類、Thiem 影片手機版另檢視截圖。正式 18 支影片首次全部實播成功。正式驗證於 2026-09-06T09:53:52.477Z 完成：105 回應 hash 與 b3b4cb0 產物相符，92 頁 × 3 尺寸 = 276 組，以及來源展開、分類、縮圖、Axe、無水平溢位、零第三方預先連線與無 JS 全數通過。證據：`docs/reviews/evidence/decision-31/`。
+
+獨立稽核的 scratch 檔名 `source-matrix.json` 對應保存的 `source-pass2.json`，`code-review.md` 對應 `code-pass2.md`；原始輸出保持原文。
+
+正式部署：`https://sports-injury-atlas.pages.dev/`；Production/main `3ba37ddc-5954-47ed-b609-36c9fb8f1b50`，來源 `b3b4cb0ad681f177ea1fcb16a55715802d12cb9d` 已推送。收尾證據與交接文件另行提交，不改已驗證的網站產物。下一階段距 100 支尚餘 30 支。
