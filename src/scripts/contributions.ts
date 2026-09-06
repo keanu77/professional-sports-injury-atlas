@@ -98,12 +98,13 @@ if (form) {
       status.textContent = "安全驗證無法載入，請重新整理，或使用主站聯絡頁。";
       return;
     }
+    status.textContent = "請完成上方安全驗證，再送出資料。";
     widget = api.render(
       form.querySelector<HTMLElement>("[data-contribution-challenge]")!,
       {
         sitekey: "0x4AAAAAADyuOfFI_URsi8Ap",
         action: "atlas-contribution",
-        size: "flexible",
+        size: form.clientWidth < 300 ? "compact" : "flexible",
         theme: "auto",
         callback: (value: string) => {
           token = value;
