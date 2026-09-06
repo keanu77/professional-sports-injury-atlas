@@ -1,0 +1,18 @@
+{
+  "sourceCommit": "d32951fa6fc76e2568d528bfc69413856010c4ab",
+  "previewOrigin": "https://d2a560b0.sports-injury-atlas.pages.dev",
+  "productionOrigin": "https://sports-injury-atlas.pages.dev",
+  "files": 324,
+  "videos": 78,
+  "bodyParts": 7,
+  "sports": 14,
+  "baseball": 15,
+  "deploymentId": "92ecacbc-2cf3-4e36-bcf5-39e62112e6c2",
+  "environment": "Production",
+  "branch": "main",
+  "newVideosPlayed": 8,
+  "productionVerifiedAt": "2026-09-06T10:35:16.191Z",
+  "matchedResponses": 113,
+  "responsiveChecks": 312,
+  "noJavaScript": "passed"
+}

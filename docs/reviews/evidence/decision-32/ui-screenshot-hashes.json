@@ -1,0 +1,37 @@
+{
+  "files": [
+    {
+      "path": "home-final-390.png",
+      "sha256": "eba26e6295c597798ceb3a9e2b66d95f88ab668baccd1888830b8a41854e91e9"
+    },
+    {
+      "path": "home-final-1440.png",
+      "sha256": "2f8c1200a14507730845c9bfbabe427050211f4d697b4c7027dde49cf8f0f09f"
+    },
+    {
+      "path": "home-final-320.png",
+      "sha256": "84d36f227de46f96f60b8e63af68c5e2f9c1eccfc991c1d62932761120e3dfb5"
+    },
+    {
+      "path": "stats-final-320.png",
+      "sha256": "78bb2eef3c471ba1c500fad74100325c0412fcfb454132d9646b8ca324330ce1"
+    },
+    {
+      "path": "footer-390.png",
+      "sha256": "acbdadd42ceafb58dd7e7a030c4b81a731cbf338e8cf4854ecad2643f8c43322"
+    },
+    {
+      "path": "footer-1440.png",
+      "sha256": "1763fe01d427becc2628428b25e32c291c85f900e345eedf440d83c893b8000b"
+    },
+    {
+      "path": "privacy-390.png",
+      "sha256": "d46d1c824909a4272144a0f4612c023d2662df3b6c718ef7cb30c5169c15bcde"
+    },
+    {
+      "path": "source-1440.png",
+      "sha256": "f55aa08be8d590fd11d6cf4d062e5f091338aa73c90260396d9c1bd139604cc2"
+    }
+  ],
+  "review": "Homepage desktop/mobile, narrow enlarged statistics, footer and policy screenshots visually reviewed; no overlap or horizontal overflow."
+}

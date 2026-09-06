@@ -1,0 +1,27 @@
+
+> professional-sports-injury-atlas@0.1.0 release:public
+> node --import tsx scripts/public-launch/check-release.ts && ATLAS_BUILD_MODE=public ATLAS_PUBLIC_LAUNCH=decision-21 astro build && node --import tsx scripts/public-launch/check-artifact.ts
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Release inputs changed after artifact preparation
++ actual - expected
+
++ '890e9cd5b984f1738fed2b27366c4b987123a117b59545ec9557c2c1cb8d2f91'
+- 'ff99fa950c84cf36c0b7436c81740cea7873a6f8d2087fef62cf9d274516b9db'
+
+    at <anonymous> (/Users/ethanstudio/Documents/Vibe coding/professional-sports injury/scripts/public-launch/check-release.ts:35:8)
+    at ModuleJob.run (node:internal/modules/esm/module_job:430:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:661:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: '890e9cd5b984f1738fed2b27366c4b987123a117b59545ec9557c2c1cb8d2f91',
+  expected: 'ff99fa950c84cf36c0b7436c81740cea7873a6f8d2087fef62cf9d274516b9db',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.14.0
