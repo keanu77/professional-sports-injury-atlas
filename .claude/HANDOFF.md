@@ -1,4 +1,16 @@
-# Current handoff — 2026-09-06 Decision 23
+# Current handoff — 2026-09-06 Decision 24
+
+已完成使用者要求：依主站 /content/ 的淡藍標題區、麵包屑與卡片列表調整首頁；移除搜尋、傷害/運動篩選、先看影片標題說明及對應JS/CSS。14支影片直接顯示，影片/醫療/核准/播放器未改。主站內容頁未修改，使用者自行安排入口。
+
+正式 https://sports-injury-atlas.pages.dev/；來源 `33cd45934b989eca7cf6f95ebfd72c6de039d8f0`；Production/main `30504fef-e3c2-4c79-bebf-8e49a9be21f8`。2026-09-06T02:45:43.594Z驗證28回應hash、15頁手機桌面Axe、無JS與零預先第三方請求通過。相關四瀏覽器12項通過；type check無錯誤/警告。root dist是正式版本。
+
+首頁已沒有搜尋，後續驗證不要再執行D23的臨時搜尋腳本；現有 `scripts/public-launch/verify-browser.mjs` 已改檢查14卡片直接顯示、無searchbox/combobox、無先看影片h2。發布協定與影片實播工具仍見下方D23。無更多已授權待辦。
+
+詳見 `docs/reviews/2026-09-06-decision-24-content-layout.md`。交接文件commit不需另行部署。
+
+---
+
+# Decision 23 — 既有影片與發布協定參考
 
 使用者確認九支候選、字幕非必要及事件核對後加入，回覆「可以」。本次已完成並發布，沒有待確認項目。
 
