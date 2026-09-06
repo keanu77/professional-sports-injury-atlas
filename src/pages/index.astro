@@ -10,28 +10,12 @@ import { permittedCasesForMode } from "../lib/cases/pagination";
 import { resolveBuildMode } from "../lib/governance/build-mode";
 import { computeRenderedSetDigest } from "../lib/routes/static-paths";
 import { hasPublicEmbed, videoFirstCases } from "../lib/patient/featured";
-import { findSport } from "../lib/contracts/taxonomy";
 const buildMode = resolveBuildMode(process.env.ATLAS_BUILD_MODE);
 const records = (await getCollection("cases")).map((entry) => entry.data);
 const permitted = permittedCasesForMode(buildMode, records);
 const featured = videoFirstCases(permitted).filter(hasPublicEmbed);
-const availableInjuries = INJURIES.filter((injury) =>
-  featured.some((record) => record.injury.code === injury.code),
-);
 const clips = observationClips();
 const videoCount = featured.length + clips.length;
-const sports = [
-  ...new Map([
-    ...featured.map(
-      (record) =>
-        [
-          record.sport.code,
-          findSport(record.sport.code)?.labelZh ?? record.sport.code,
-        ] as const,
-    ),
-    ...clips.map((c) => [c.sport, c.sport] as const),
-  ]).entries(),
-];
 ---
 
 <BaseLayout
@@ -41,64 +25,20 @@ const sports = [
   artifactDigest={computeRenderedSetDigest(permitted)}
 >
   <header class="video-intro">
-    <p class="eyebrow">SPORTS INJURY / 從賽場到日常</p>
-    <h1>
-      看懂<span class="hero-blue">受傷</span>，<br />了解<span
-        class="hero-coral">回場</span
-      >。
-    </h1>
-    <p>先看影片，再看當下處理與回場時間。</p>
-    <div class="intro-actions">
-      <a class="hero-cta" href="#videos-heading"
-        >觀看受傷影片 <span aria-hidden="true">↓</span></a
-      ><span class="intro-count">{videoCount} 支影片 · 點選後播放</span>
-    </div>
+    <nav class="content-trail" aria-label="麵包屑">
+      <a href="https://sportsmedicine.tw/content/">分享資訊</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">影片圖鑑</span>
+    </nav>
+    <h1>運動傷害影片圖鑑</h1>
+    <p>從受傷當下到重返運動，用影片了解運動傷害。</p>
+    <span class="intro-count">{videoCount} 支影片 · 點選後播放</span>
   </header>
-  <section aria-labelledby="videos-heading" data-featured-videos>
-    <div class="section-top">
-      <h2 id="videos-heading">先看影片</h2><p>選擇影片，了解受傷與回場</p>
-    </div>
-    <form class="video-filters" data-video-filters hidden>
-      <label
-        >傷害種類<select aria-label="傷害種類" name="injury"
-          ><option value="">全部傷害</option>{
-            availableInjuries.map((injury) => (
-              <option value={injury.code}>{injury.labelZh}</option>
-            ))
-          }{
-            clips.length > 0 && (
-              <option value="observation">受傷動作觀察（未分類診斷）</option>
-            )
-          }</select
-        ></label
-      >
-      <label
-        >運動項目<select aria-label="運動項目" name="sport"
-          ><option value="">全部運動</option>{
-            sports.map(([code, label]) => <option value={code}>{label}</option>)
-          }</select
-        ></label
-      >
-      <label class="keyword-label"
-        >找影片<input
-          name="keyword"
-          type="search"
-          placeholder="選手、運動或賽事"
-        /></label
-      >
-    </form>
-    <p class="filter-result" data-video-result aria-live="polite">
-      {videoCount} 支影片
-    </p>
+  <section id="videos-heading" aria-label="運動傷害影片" data-featured-videos>
     <ol class="video-grid">
       {
         featured.map((record, index) => (
-          <li
-            data-featured-card
-            data-injury={record.injury.code}
-            data-sport={record.sport.code}
-            data-search={`${record.athlete.name} ${record.teamAtEvent.name} ${findSport(record.sport.code)?.labelZh ?? record.sport.code} ${record.eventDate} ${record.league.code} ${record.competition.code}`}
-          >
+          <li data-featured-card>
             <CaseCard
               record={record}
               showWorkflowBadge={false}
@@ -110,18 +50,12 @@ const sports = [
       }
       {
         clips.map((clip) => (
-          <li
-            data-featured-card
-            data-injury="observation"
-            data-sport={clip.sport}
-            data-search={`${clip.name} ${clip.sport} ${clip.event} ${clip.bodyPart}`}
-          >
+          <li data-featured-card>
             <ObservationCard clip={clip} />
           </li>
         ))
       }
     </ol>
-    <p data-video-empty hidden>沒有符合的影片，試試其他關鍵字或選擇全部。</p>
   </section>
   <details class="more-cases">
     <summary>更多傷害與案例 <span>目前共 {permitted.length} 筆</span></summary
@@ -148,128 +82,58 @@ const sports = [
     影片呈現受傷過程；診斷依具名來源。球員的回場紀錄不等於你的恢復時間。
   </p>
 </BaseLayout>
-<script>
-  const form = document.querySelector<HTMLFormElement>("[data-video-filters]");
-  if (form) {
-    form.hidden = false;
-    const cards = [
-      ...document.querySelectorAll<HTMLElement>("[data-featured-card]"),
-    ];
-    const update = () => {
-      const data = new FormData(form);
-      const injury = String(data.get("injury") ?? "");
-      const sport = String(data.get("sport") ?? "");
-      const keyword = String(data.get("keyword") ?? "")
-        .trim()
-        .toLocaleLowerCase();
-      let count = 0;
-      for (const card of cards) {
-        card.hidden = !!(
-          (injury && card.dataset.injury !== injury) ||
-          (sport && card.dataset.sport !== sport) ||
-          !(card.dataset.search ?? "").toLocaleLowerCase().includes(keyword)
-        );
-        if (!card.hidden) count++;
-      }
-      const result = document.querySelector("[data-video-result]");
-      if (result) result.textContent = `${count} 支影片`;
-      const empty = document.querySelector<HTMLElement>("[data-video-empty]");
-      if (empty) empty.hidden = count !== 0;
-    };
-    form.addEventListener("input", update);
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      update();
-    });
-  }
-</script>
 <style>
   .video-intro {
-    margin: -1.5rem calc(50% - 50vw) 3rem;
-    padding: clamp(2.5rem, 6vw, 5rem) max(1.5rem, calc((100vw - 77rem) / 2));
+    margin: -1.5rem calc(50% - 50vw) 4rem;
+    padding: 4rem max(1.5rem, calc((100vw - 77rem) / 2));
     background: linear-gradient(
-      145deg,
+      135deg,
       var(--color-brand-50),
-      var(--color-surface) 55%,
-      var(--color-brand-accent-soft)
+      var(--color-surface)
     );
-    border-bottom: 1px solid var(--color-brand-100);
-    position: relative;
+  }
+  .content-trail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    align-items: center;
+    font-size: 0.875rem;
+    color: var(--color-ink-muted);
+  }
+  .content-trail a {
+    text-decoration: none;
+  }
+  .content-trail [aria-current] {
+    color: var(--color-brand-primary);
   }
   h1 {
-    font: 900 clamp(2.5rem, 5vw, 4.5rem)/1.3 var(--font-display);
+    font: 700 clamp(2.25rem, 4vw, 3rem)/1.3 var(--font-display);
+    margin: 1rem 0;
     letter-spacing: -0.025em;
-    margin: 1rem 0 1.5rem;
   }
-  .video-intro > p:not(.eyebrow) {
+  .video-intro > p {
+    font-size: 1.125rem;
     color: var(--color-ink-muted);
     margin: 0;
+    max-width: 42rem;
   }
   .intro-count {
-    display: inline-block;
+    display: block;
+    margin-top: 1rem;
     font-size: 0.85rem;
     color: var(--color-ink-muted);
-  }
-  .section-top {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 0.5rem;
-    margin: 1.5rem 0 1rem;
-  }
-  .section-top h2 {
-    margin: 0;
-  }
-  .section-top p,
-  .home-note,
-  .filter-result {
-    color: var(--color-ink-muted);
-    font-size: 0.875rem;
-  }
-  .video-filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding: 1.25rem;
-    border: 1px solid var(--color-brand-100);
-    background: var(--color-surface-raised);
-    border-radius: var(--radius-card);
-  }
-  .video-filters[hidden] {
-    display: none;
-  }
-  label {
-    display: grid;
-    gap: 0.3rem;
-    font-size: 0.8rem;
-    font-weight: 600;
-  }
-  select,
-  input {
-    background: var(--color-surface-raised);
-    color: var(--color-ink);
-    border: 1px solid var(--hairline-strong);
-    border-radius: 8px;
-    min-height: 44px;
-    padding: 0.5rem 0.75rem;
-    font: inherit;
-  }
-  .keyword-label {
-    flex: 1;
-    min-width: 10rem;
   }
   .video-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.5rem;
     padding: 0;
+    margin: 0;
     list-style: none;
   }
   .more-cases {
     margin-top: 2.5rem;
-    border-top: 1px solid var(--hairline);
-    border-bottom: 1px solid var(--hairline);
+    border-block: 1px solid var(--hairline);
     padding: 1rem 0;
   }
   summary {
@@ -289,6 +153,8 @@ const sports = [
     padding-block: 1rem;
   }
   .home-note {
+    color: var(--color-ink-muted);
+    font-size: 0.875rem;
     margin-block: 1.5rem;
   }
   @media (max-width: 60rem) {
@@ -303,53 +169,7 @@ const sports = [
     }
     .video-intro {
       padding: 2.5rem 1rem;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
-    .video-filters {
-      gap: 0.75rem;
-      padding: 1rem;
-    }
-    .video-filters label:not(.keyword-label) {
-      flex: 1;
-      min-width: 0;
-    }
-    .video-filters select {
-      width: 100%;
-      min-width: 0;
-    }
-    .keyword-label {
-      flex-basis: 100%;
-    }
-  }
-  .hero-blue {
-    color: var(--color-brand-primary);
-  }
-  .hero-coral {
-    color: var(--color-brand-accent);
-  }
-  .intro-actions {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 1.25rem;
-    margin-top: 1.75rem;
-  }
-  .hero-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 0.85rem 1.5rem;
-    border-radius: 8px;
-    background: var(--color-brand-accent);
-    color: var(--color-on-warm);
-    text-decoration: none;
-    font-weight: 600;
-    box-shadow: 0 4px 10px var(--shadow-stuck);
-  }
-  .hero-cta:hover {
-    background: var(--color-brand-accent-hover);
-  }
-  .section-top h2 {
-    font: 700 clamp(1.5rem, 3vw, 2.25rem)/1.3 var(--font-display);
   }
 </style>

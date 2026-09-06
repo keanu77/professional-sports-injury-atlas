@@ -1,24 +1,16 @@
 import { expect, test } from "@playwright/test";
 import { expectNoAxeViolations } from "./helpers/a11y";
 
-test("playable-first discovery filters without navigation and recovers from no results", async ({
+test("video collection is directly browsable without search or filters", async ({
   page,
 }) => {
   await page.goto("/");
-  await expect(page.locator("[data-featured-card]")).toHaveCount(5);
-  await page
-    .getByLabel("傷害種類", { exact: true })
-    .selectOption("achilles-rupture");
-  await expect(page.locator("[data-featured-card]:visible")).toHaveCount(1);
-  await expect(page.locator("[data-featured-card]:visible")).toContainText(
-    "Kevin Durant",
-  );
-  await page.getByLabel("找影片", { exact: true }).fill("no matching player");
-  await expect(page.locator("[data-video-empty]")).toBeVisible();
-  await page.getByLabel("找影片", { exact: true }).fill("");
-  await page.getByLabel("傷害種類", { exact: true }).selectOption("");
   await expect(page.locator("[data-featured-card]:visible")).toHaveCount(5);
+  await expect(page.getByRole("searchbox")).toHaveCount(0);
+  await expect(page.getByRole("combobox")).toHaveCount(0);
   await expectNoAxeViolations(page);
+  await page.locator("[data-featured-card] a").first().click();
+  await expect(page.locator("[data-video-load]")).toBeVisible();
 });
 
 test("case opens with video, concise care, and a separately attributed athlete return", async ({

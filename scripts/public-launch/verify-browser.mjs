@@ -85,12 +85,15 @@ try {
           await page.locator("[data-featured-card]:visible").count(),
           receipt.cases.length + (receipt.clips ?? []).length,
         );
-        await page.getByRole("searchbox").fill("Simons");
+        assert.equal(await page.getByRole("searchbox").count(), 0);
+        assert.equal(await page.getByRole("combobox").count(), 0);
         assert.equal(
-          await page.locator("[data-featured-card]:visible").count(),
-          1,
+          await page
+            .getByRole("heading", { name: "先看影片", exact: true })
+            .count(),
+          0,
         );
-        await page.getByRole("searchbox").fill("");
+        assert.equal(await page.locator("#videos-heading").count(), 1);
         await page.screenshot({
           path: `/tmp/atlas-public-${viewport.width}.png`,
           fullPage: true,
