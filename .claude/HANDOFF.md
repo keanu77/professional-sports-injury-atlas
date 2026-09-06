@@ -1,3 +1,23 @@
+# 最新交接 — Decision 28，2026-09-06
+
+已依使用者要求移除兩支匿名球友影片，新增五支可內嵌的具名選手影片：Acuña（棒球）、Vonn／Svindal（高山滑雪）、Dupont（橄欖球）、Crosby（冰球、確認腦震盪）。公開總數 22，六個部位分類；新增頭頸部 2 支。YouTube 預設封面、無搜尋及既有主站版型保留。
+
+正式 https://sports-injury-atlas.pages.dev/；來源 `edfa1809c7d204b54e31aa17fa7fc3f4e601f97a`；Production/main `c11df3ba-6213-48a0-a6a7-297b2d1c7cdd`。來源已 commit/push，root dist 為正式 38 HTML 頁、7 病例、15 觀察頁與 597 內部連結。收尾證據與文件另行提交，不需再次部署。
+
+curation.v1.json 保存五支新增與兩個移除 slug；event-additions.v1.json 保存獨立公開來源摘要。原始病例、D18/D20/D21 醫療核准及舊影片 JSON 保留。頭頸處置引用 CDC/NHS，疑似腦震盪立即停止、不得當天回場。Crosby 五天後出賽僅是 2017 個案紀錄；Dupont 是臉部骨折，未推定腦震盪。Acuña 區分 3A 復健賽與 MLB 回歸，Vonn 保留途中再傷，Svindal 計算 314 天。
+
+實際連網 Codex、Grok 加獨立 Pass 2 核對最終五筆。AGY 自身 read_url 權限拒絕而無輸出，未改權限；Qwen 未跑。Rodgers/Tua 的 NFL 禁止嵌入候選排除。五支採用影片已檢視事故畫面，預覽與正式各五支實播全部成功。原 17 支留用本日 D27 正式實播證據。
+
+驗證：Astro check 0 errors/0 warnings、16 既有 hints；81 檔 1,315 單元通過；四瀏覽器 68 回歸通過；乾淨副本與正式 release:public 通過。預覽 42 回應 hash、29 頁 × 3 尺寸 = 87 組、來源展開／Axe／縮圖／分類／無溢位／零預先第三方請求／無 JS 通過。最終正式驗證結果下附。
+
+注意 Cloudflare 移除檔案仍可能提供舊快取：第一輪正式兩個刪除 URL 回 200，但查詢參數與部署專用網址為 404。已在 check-artifact.ts 生成 `_redirects`，兩個舊 slug 的三種 URL 形式轉至不存在的 `/removed-video/`，最終 404；沒有改播放器或放寬檢查。第一次失敗證據保留。後續新增應保留此移除規則。
+
+報告 `docs/reviews/2026-09-06-decision-28-curation-and-concussion.md`，證據 `docs/reviews/evidence/decision-28/`。Node 24.14.0；公開發布仍要求乾淨 Git、inputTreeDigest、既有核准鏈與新影片七天內實播證據。舊 4321 參考未更動。本批已授權實作無剩餘項目。
+
+正式驗證 2026-09-06T07:32:27.203Z：42 個回應 hash 與 edfa180 產物一致，29 頁 × 3 尺寸共 87 組；來源展開、分類、縮圖、Axe、無水平溢位、零預先第三方請求及無 JS 全數通過。兩支移除影片的六種舊網址形式均最終回 404。
+
+---
+
 # Current handoff — Decision 27，2026-09-06
 
 已完成影片擴充與使用者指定 multi-llm-audit 的傷勢／恢復比賽查核並上線。新增大谷翔平、Bolt、Salah、Giannis、Fultz 共 5 支，公開總數 19（7 原病例＋12 觀察影片）；首頁部位為肩部 2、腳踝 8、小腿與阿基里斯腱 4、膝蓋 3、大腿後側 2。維持 YouTube 預設封面、無搜尋、主站設計。Nadal 已研究，但候選未確認包含受傷當下，因此未發布。

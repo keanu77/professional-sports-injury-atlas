@@ -35,3 +35,11 @@ curation.v1.json 保存本輪授權、兩個移除 slug 及五支新增影片；
 - 2026-09-06T07:24:30.668Z 預覽驗證：42 回應 hash、29 頁 × 3 尺寸共 87 組；來源展開、分類、縮圖、Axe、無水平溢位、播放前零第三方請求與無 JS 通過。兩個移除路徑均為 404。
 
 證據目錄：docs/reviews/evidence/decision-28/。正式部署與實播結果於發布後追加。
+
+## 正式發布與移除網址修正
+
+第一輪正式部署後，新增五支均於正式網址實播成功。刪除路徑卻仍命中 Cloudflare 舊快取（200、Age 12941），而加查詢參數與部署專用網址均為 404；首輪失敗紀錄保留。依 [Cloudflare Pages redirects 文件](https://developers.cloudflare.com/pages/configuration/redirects/) 加入僅涵蓋兩個舊 slug 的規則，先轉到不存在的 `/removed-video/`，以 404 頁終止舊內容供應，包含無尾斜線、尾斜線與 index.html 三種入口。沒有放寬驗證要求。此修改重新通過乾淨副本與正式 release build。
+
+最終來源提交 `edfa1809c7d204b54e31aa17fa7fc3f4e601f97a`，已 push；部署資訊見 deployment.production.json。實播證據在第一個正式部署取得，後續修改只增加舊網址轉向，影片內容與播放器未變。最終完整瀏覽器驗證於完成後追加。
+
+正式驗證 2026-09-06T07:32:27.203Z：42 個回應 hash 與 edfa180 產物一致，29 頁 × 3 尺寸共 87 組；來源展開、分類、縮圖、Axe、無水平溢位、零預先第三方請求及無 JS 全數通過。兩支移除影片的六種舊網址形式均最終回 404。

@@ -1,0 +1,19 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Removed video still served: volleyball-pov-135
+
+200 !== 404
+
+    at file:///Users/ethanstudio/Documents/Vibe%20coding/professional-sports%20injury/scripts/public-launch/verify-browser.mjs:23:10
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 200,
+  expected: 404,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.14.0
