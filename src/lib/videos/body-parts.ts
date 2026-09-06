@@ -3,6 +3,7 @@ import type { ObservationClip } from "./expansion";
 
 /** Browsing by anatomical location never assigns a diagnosis to an observation. */
 export const BODY_PARTS = [
+  { code: "shoulder", label: "肩部" },
   { code: "ankle", label: "腳踝" },
   { code: "calf-achilles", label: "小腿與阿基里斯腱" },
   { code: "knee", label: "膝蓋" },
@@ -15,6 +16,7 @@ const injuryParts: Record<string, BodyPartCode> = {
   acl: "knee",
 };
 const observationParts: Record<string, BodyPartCode> = {
+  肩部: "shoulder",
   腳踝: "ankle",
   "小腿／阿基里斯腱": "calf-achilles",
   膝部: "knee",

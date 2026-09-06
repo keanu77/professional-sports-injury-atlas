@@ -1,5 +1,5 @@
 import { videosByBodyPart } from "../../src/lib/videos/body-parts";
-import { expansion } from "../../src/lib/videos/expansion";
+import { allObservationClips, expansion } from "../../src/lib/videos/expansion";
 import assert from "node:assert/strict";
 import {
   existsSync,
@@ -35,18 +35,20 @@ const selected = loadContentCollections()
 assert.equal(selected.length, approval.cases.length + expansion.cases.length);
 assert.deepEqual(
   readdirSync("dist/videos").sort(),
-  expansion.clips.map((c) => c.slug).sort(),
+  allObservationClips.map((c) => c.slug).sort(),
   "Observation route set mismatch",
 );
-const bodyParts = videosByBodyPart(selected, expansion.clips).map((part) => ({
-  code: part.code,
-  label: part.label,
-  count: part.count,
-  paths: [
-    ...part.cases.map((c) => `/cases/${c.slug}/`),
-    ...part.clips.map((c) => `/videos/${c.slug}/`),
-  ],
-}));
+const bodyParts = videosByBodyPart(selected, allObservationClips).map(
+  (part) => ({
+    code: part.code,
+    label: part.label,
+    count: part.count,
+    paths: [
+      ...part.cases.map((c) => `/cases/${c.slug}/`),
+      ...part.clips.map((c) => `/videos/${c.slug}/`),
+    ],
+  }),
+);
 assert.deepEqual(
   readdirSync("dist/body-parts").sort(),
   bodyParts.map((p) => p.code).sort(),
@@ -55,7 +57,7 @@ assert.deepEqual(
   bodyParts.flatMap((p) => p.paths).sort(),
   [
     ...selected.map((c) => `/cases/${c.slug}/`),
-    ...expansion.clips.map((c) => `/videos/${c.slug}/`),
+    ...allObservationClips.map((c) => `/videos/${c.slug}/`),
   ].sort(),
   "Each video must appear in exactly one body part",
 );
@@ -130,6 +132,20 @@ for (const record of selected) {
     `Missing patient experience: ${record.id}`,
   );
 }
+for (const item of [
+  ...selected.map((r) => ({ ...r, prefix: "cases" })),
+  ...allObservationClips.map((c) => ({ ...c, prefix: "videos" })),
+]) {
+  const html = readFileSync(
+    `dist/${item.prefix}/${item.slug}/index.html`,
+    "utf8",
+  );
+  assert.ok(
+    html.includes(`data-event-follow-up="${item.slug}"`) &&
+      html.includes("查看傷勢與回場來源"),
+    `Missing sourced event report: ${item.slug}`,
+  );
+}
 assert.equal(
   readFileSync("dist/robots.txt", "utf8"),
   "User-agent: *\nAllow: /\n",
@@ -157,7 +173,7 @@ const receipt = {
   approvalDigest: sha256Hex(canonicalJson(approval)),
   generatedAt: new Date().toISOString(),
   cases: selected.map(({ id, slug }) => ({ id, slug })),
-  clips: expansion.clips.map(({ slug, videoUrl, startSeconds }) => ({
+  clips: allObservationClips.map(({ slug, videoUrl, startSeconds }) => ({
     slug,
     videoUrl,
     startSeconds,

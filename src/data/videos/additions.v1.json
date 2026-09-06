@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "decision": "decision-27",
+  "authorizationQuote": "可以，請在搜尋更多影片並加入",
+  "authorizedAt": "2026-09-06T03:35:09.807100Z",
+  "clips": [
+    {
+      "slug": "shohei-ohtani-world-series-2024",
+      "videoId": "hxcRVu1-T-c",
+      "name": "大谷翔平 Shohei Ohtani",
+      "sport": "棒球",
+      "event": "2024 世界大賽第 2 戰",
+      "bodyPart": "肩部",
+      "observation": "滑壘後留在二壘旁，由防護人員查看上肢狀況並陪同離場。",
+      "eventDate": "2024-10-26",
+      "returnDate": "2024-10-28",
+      "returnText": "已查到 2024-10-28 的正式出賽紀錄；這是選手個人紀錄，不代表每個人的恢復時間。",
+      "videoUrl": "https://www.youtube.com/watch?v=hxcRVu1-T-c",
+      "publisher": "ESPN MLB",
+      "sourceTitle": "Shohei Ohtani appears to hurt his arm on stolen base attempt in World Series Game 2 | ESPN MLB",
+      "captionStatus": "available",
+      "startSeconds": 0,
+      "durationSeconds": 78,
+      "sources": [
+        {
+          "title": "MLB：第 2 戰受傷事件",
+          "url": "https://www.mlb.com/news/shohei-ohtani-injures-left-shoulder-in-world-series-game-2"
+        },
+        {
+          "title": "MLB：第 3 戰後的出賽與肩部狀況",
+          "url": "https://www.mlb.com/news/shohei-ohtani-playing-through-shoulder-injury-in-world-series"
+        }
+      ]
+    },
+    {
+      "slug": "usain-bolt-london-2017",
+      "videoId": "12UNVAkLlmY",
+      "name": "Usain Bolt",
+      "sport": "田徑",
+      "event": "2017 倫敦世錦賽男子 4×100 公尺決賽",
+      "bodyPart": "大腿後側",
+      "observation": "接棒後衝刺途中突然減速、停止跑動並倒地，未完成接力賽。",
+      "eventDate": "2017-08-12",
+      "returnDate": null,
+      "returnText": "本頁尚未確認傷後正式復賽日期。",
+      "videoUrl": "https://www.youtube.com/watch?v=12UNVAkLlmY",
+      "publisher": "World Athletics",
+      "sourceTitle": "WCH London 2017 - 4X100m - Men - Final - Usain Bolt injured, Great Britain team wins!",
+      "captionStatus": "available",
+      "startSeconds": 30,
+      "durationSeconds": 60,
+      "sources": []
+    },
+    {
+      "slug": "mohamed-salah-final-2018",
+      "videoId": "mi7fXtGTwbc",
+      "name": "Mohamed Salah",
+      "sport": "足球",
+      "event": "2018 歐冠決賽",
+      "bodyPart": "肩部",
+      "observation": "與對手爭球後倒地，隨後接受場邊人員查看；畫面不單獨判定肩部傷害種類。",
+      "eventDate": "2018-05-26",
+      "returnDate": "2018-06-19",
+      "returnText": "已查到 2018-06-19 的正式出賽紀錄；這是選手個人紀錄，不代表每個人的恢復時間。",
+      "videoUrl": "https://www.youtube.com/watch?v=mi7fXtGTwbc",
+      "publisher": "Vade World - Piotr Miasik",
+      "sourceTitle": "Salah injury vs Real Madrid • Salah vs Ramos • Champions League Final 2018",
+      "captionStatus": "unavailable",
+      "startSeconds": 0,
+      "durationSeconds": 40,
+      "sources": [
+        {
+          "title": "Liverpool：傷後首次出賽並進球",
+          "url": "https://www.liverpoolfc.com/news/first-team/305043-mohamed-salah-goal-egypt-world-cup"
+        }
+      ]
+    },
+    {
+      "slug": "giannis-east-final-2021",
+      "videoId": "ctiT9toFmio",
+      "name": "Giannis Antetokounmpo",
+      "sport": "籃球",
+      "event": "2021 NBA 東區決賽第 4 戰",
+      "bodyPart": "膝部",
+      "observation": "籃下跳起防守後落地，隨即倒地；注意膝部支撐與停止比賽的過程。",
+      "eventDate": "2021-06-29",
+      "returnDate": "2021-07-06",
+      "returnText": "已查到 2021-07-06 的正式出賽紀錄；這是選手個人紀錄，不代表每個人的恢復時間。",
+      "videoUrl": "https://www.youtube.com/watch?v=ctiT9toFmio",
+      "publisher": "MLG Highlights",
+      "sourceTitle": "Giannis is down in serious pain after hyperextends his knee 👀 Bucks vs Hawks Game 4",
+      "captionStatus": "available",
+      "startSeconds": 0,
+      "durationSeconds": 70,
+      "sources": [
+        {
+          "title": "NBA：東區決賽受傷事件",
+          "url": "https://www.nba.com/news/giannis-antetokounmpo-exits-game-4-with-hyperextended-left-knee"
+        },
+        {
+          "title": "NBA：總決賽第 1 戰出賽紀錄",
+          "url": "https://www.nba.com/news/inside-the-box-score-2021-nba-finals-game-1"
+        }
+      ]
+    },
+    {
+      "slug": "markelle-fultz-orlando-2021",
+      "videoId": "b2vVxFhpEv0",
+      "name": "Markelle Fultz",
+      "sport": "籃球",
+      "event": "2021 魔術對騎士",
+      "bodyPart": "膝部",
+      "observation": "運球切入時腿部支撐改變，接著倒地；短片不呈現完整的後續處置。",
+      "eventDate": "2021-01-06",
+      "returnDate": "2022-02-28",
+      "returnText": "已查到 2022-02-28 的正式出賽紀錄；這是選手個人紀錄，不代表每個人的恢復時間。",
+      "videoUrl": "https://www.youtube.com/watch?v=b2vVxFhpEv0",
+      "publisher": "ClutchPoints",
+      "sourceTitle": "Markelle Fultz Season Ending Injury | #Shorts",
+      "captionStatus": "available",
+      "startSeconds": 0,
+      "durationSeconds": 8,
+      "sources": [
+        {
+          "title": "NBA：受傷後更新",
+          "url": "https://www.nba.com/news/magics-markelle-fultz-exits-with-left-knee-injury-will-not-return"
+        },
+        {
+          "title": "NBA：2022 年回歸比賽",
+          "url": "https://www.nba.com/news/magic-guard-markelle-fultz-will-return-from-acl-injury-against-pacers"
+        }
+      ]
+    }
+  ]
+}

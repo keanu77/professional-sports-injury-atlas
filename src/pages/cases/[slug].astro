@@ -13,6 +13,8 @@ import { getCollection, type CollectionEntry } from "astro:content";
 import CaseCard from "../../components/atlas/CaseCard.astro";
 import { hasPublicEmbed, videoFirstCases } from "../../lib/patient/featured";
 import PatientGuide from "../../components/cases/PatientGuide.astro";
+import EventFollowUp from "../../components/cases/EventFollowUp.astro";
+import { eventUpdateFor } from "../../lib/videos/event-updates";
 import ActualReturn from "../../components/cases/ActualReturn.astro";
 import CaseVideo from "../../components/cases/CaseVideo.astro";
 import FollowUpReports from "../../components/cases/FollowUpReports.astro";
@@ -72,6 +74,10 @@ if (record === undefined) {
   throw new Error(`case route for unknown permitted slug ${String(slug)}`);
 }
 
+const eventUpdate =
+  buildMode === "public"
+    ? eventUpdateFor(record.slug, record.video.canonicalUrl, record.eventDate)
+    : undefined;
 const injuryLabel =
   findInjury(record.injury.code)?.labelZh ?? record.injury.code;
 const leagueLabel =
@@ -160,9 +166,22 @@ if (videoSource === undefined) {
       )
     }
     <PatientGuide injuryCode={record.injury.code} buildMode={buildMode} />
-    <ActualReturn record={record} followUp={followUpEntry?.sidecar} />
+    {
+      eventUpdate ? (
+        <EventFollowUp update={eventUpdate} />
+      ) : (
+        <ActualReturn record={record} followUp={followUpEntry?.sidecar} />
+      )
+    }
     <details class="case-disclosure">
-      <summary>深入了解這次受傷</summary>
+      <summary
+        >{eventUpdate ? "原始事件紀錄與詳細說明" : "深入了解這次受傷"}</summary
+      >
+      {
+        eventUpdate && (
+          <p>以下保留初始來源的原文紀錄；傷勢與出賽的後續更新請見上方。</p>
+        )
+      }
       <p
         class="case-confirmation meta-row"
         data-confirmation-status={record.injury.confirmationStatus}

@@ -8,6 +8,9 @@ const origin = process.argv[2] ?? "http://127.0.0.1:14322";
 const receipt = JSON.parse(
   fs.readFileSync("artifacts/public-launch-receipt.v1.json", "utf8"),
 );
+const updates = JSON.parse(
+  fs.readFileSync("src/data/videos/event-updates.v1.json", "utf8"),
+);
 const live = origin.startsWith("https:");
 let matchedPages = 0;
 for (const file of receipt.files.filter(
@@ -87,7 +90,10 @@ try {
         (p) => path === `/body-parts/${p.code}/`,
       );
       if (path === "/" || part) {
-        assert.equal(await covers.count(), part ? part.count : 14);
+        assert.equal(
+          await covers.count(),
+          part ? part.count : receipt.cases.length + receipt.clips.length,
+        );
         const nav = page.locator("[data-body-part-nav]");
         assert.deepEqual(
           await nav
@@ -119,6 +125,17 @@ try {
           1,
         );
         assert.equal(await page.locator("[data-video-load]").count(), 1);
+        const update = updates.entries.find((e) =>
+          path.endsWith(`/${e.slug}/`),
+        );
+        assert.ok(update, `Missing update binding: ${path}`);
+        const report = page.locator(`[data-event-follow-up="${update.slug}"]`);
+        assert.ok(await report.isVisible());
+        assert.ok((await report.innerText()).includes(update.injury));
+        assert.ok((await report.innerText()).includes(update.returnSummary));
+        await report.locator("summary").click();
+        assert.equal(await report.locator("li").count(), update.sources.length);
+        assert.equal(await report.locator('a[href*="nba.com"]').count(), 0);
       }
       for (const cover of await covers.all()) {
         await cover.scrollIntoViewIfNeeded();

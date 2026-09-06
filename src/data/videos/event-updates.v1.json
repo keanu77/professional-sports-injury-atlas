@@ -1,0 +1,422 @@
+{
+  "schemaVersion": 1,
+  "decision": "decision-27",
+  "checkedAt": "2026-09-06",
+  "scope": "attributed-public-reports",
+  "entries": [
+    {
+      "slug": "anfernee-simons-ankle-sprain-2023",
+      "videoUrl": "https://www.youtube.com/watch?v=8TIJGIRP634",
+      "eventDate": "2023-02-14",
+      "injury": "NBA 傷勢更新確認右踝二級扭傷。",
+      "returnDate": "2023-03-01",
+      "returnSummary": "2023-03-01 對鵜鶘首次復出。",
+      "context": "同場再次傷到腳踝，之後再缺賽；3 月 10 日是再次復出，並非這次受傷後的第一場。",
+      "sources": [
+        {
+          "title": "NBA：右踝二級扭傷",
+          "url": "https://www.nba.com/news/blazers-anfernee-simons-injury-update",
+          "publishedAt": "2023-02-17"
+        },
+        {
+          "title": "NBA：3 月 1 日官方出賽紀錄",
+          "url": "https://statsdmz.nba.com/pdfs/20230301/20230301_NOPPOR_book.pdf",
+          "publishedAt": "2023-03-01"
+        },
+        {
+          "title": "NBA：3 月 1 日再傷後的賽事報導",
+          "url": "https://www.nba.com/game/por-vs-atl-0022200947",
+          "publishedAt": "2023-03-03"
+        },
+        {
+          "title": "NBA：3 月 10 日再次復出賽事",
+          "url": "https://www.nba.com/game/por-vs-phi-0022200998",
+          "publishedAt": "2023-03-10"
+        }
+      ]
+    },
+    {
+      "slug": "jayson-tatum-achilles-rupture-2025",
+      "videoUrl": "https://www.youtube.com/watch?v=xSUKd03LJwE",
+      "eventDate": "2025-05-12",
+      "injury": "右阿基里斯腱斷裂；塞爾提克於 2025-05-13 公布已接受修補手術。",
+      "returnDate": "2026-03-06",
+      "returnSummary": "2026-03-06 對獨行俠正式復出。",
+      "context": "這是實際出賽紀錄，與先前預告的復出計畫分開核對。",
+      "sources": [
+        {
+          "title": "NBA：手術更新",
+          "url": "https://www.nba.com/news/celtics-jayson-tatum-surgery-ruptured-right-achilles",
+          "publishedAt": "2025-05-13"
+        },
+        {
+          "title": "NBA：復出賽後更新",
+          "url": "https://www.nba.com/news/jayson-tatum-expected-debut-vs-mavs",
+          "publishedAt": "2026-03-07"
+        },
+        {
+          "title": "NBA：復出官方計分",
+          "url": "https://statsdmz.nba.com/pdfs/20260306/20260306_DALBOS_book.pdf",
+          "publishedAt": "2026-03-06"
+        }
+      ]
+    },
+    {
+      "slug": "kevin-durant-achilles-rupture-2019",
+      "videoUrl": "https://www.youtube.com/watch?v=YcSOLHMsJYw",
+      "eventDate": "2019-06-10",
+      "injury": "右阿基里斯腱斷裂，傷後接受手術。",
+      "returnDate": "2020-12-22",
+      "returnSummary": "2020-12-22 代表籃網重返 NBA 正式賽。",
+      "context": "2020-12-13 已參加季前賽；季前賽與例行賽的回歸日期不同。",
+      "sources": [
+        {
+          "title": "NBA：傷勢與手術更新",
+          "url": "https://www.nba.com/news/warriors-durant-achilles-injury-update",
+          "publishedAt": "2019-06-13"
+        },
+        {
+          "title": "NBA：籃網對勇士正式賽紀錄",
+          "url": "https://www.nba.com/game/gsw-vs-bkn-0022000001",
+          "publishedAt": "2020-12-22"
+        },
+        {
+          "title": "籃網：12 月 13 日季前賽紀錄",
+          "url": "https://www.nba.com/nets/news/recap/2020/12/13/nets-119-wizards-114-kevin-durant-kyrie-irving-sharp-in-preseason-opener",
+          "publishedAt": "2020-12-13"
+        }
+      ]
+    },
+    {
+      "slug": "kyrie-irving-ankle-sprain-2021",
+      "videoUrl": "https://www.youtube.com/watch?v=FQAPZASQyX0",
+      "eventDate": "2021-06-13",
+      "injury": "東區準決賽第 4 戰右踝扭傷；原片標題的 Game 3 與賽事紀錄不一致。",
+      "returnDate": "2022-01-05",
+      "returnSummary": "2022-01-05 對溜馬再度正式出賽。",
+      "context": "缺賽期間另涉及疫苗規定及球隊出賽安排，不能將這段日期差全部算成踝傷復健時間。",
+      "sources": [
+        {
+          "title": "NBA：第 4 戰右踝受傷",
+          "url": "https://www.nba.com/news/kyrie-irving-exits-game-4-with-right-ankle-sprain",
+          "publishedAt": null
+        },
+        {
+          "title": "NBA：重返賽場及缺賽背景",
+          "url": "https://www.nba.com/news/kyrie-irving-enjoys-return-months-uncertainty",
+          "publishedAt": "2022-01-06"
+        }
+      ]
+    },
+    {
+      "slug": "lamelo-ball-ankle-sprain-2023",
+      "videoUrl": "https://www.youtube.com/watch?v=RDDGpqOvSdg",
+      "eventDate": "2023-11-26",
+      "injury": "初報稱右踝 strain；黃蜂 2023-11-30 的 MRI 更新確認為右踝扭傷（sprain）。",
+      "returnDate": "2024-01-12",
+      "returnSummary": "2024-01-12 對馬刺復出。",
+      "context": "本頁採後續球隊公告補充初報；這次右踝事件與 2025 年左踝受傷分開。",
+      "sources": [
+        {
+          "title": "黃蜂：11 月 30 日 MRI 更新",
+          "url": "https://www.nba.com/hornets/news/charlotte-hornets-injury-update-6",
+          "publishedAt": "2023-11-30"
+        },
+        {
+          "title": "NBA：1 月 12 日復出報導",
+          "url": "https://www.nba.com/news/hornets-lamelo-ball-returns-from-injury",
+          "publishedAt": "2024-01-13"
+        }
+      ]
+    },
+    {
+      "slug": "lamelo-ball-ankle-sprain-2025",
+      "videoUrl": "https://www.youtube.com/watch?v=zZdndTqOexc",
+      "eventDate": "2025-01-27",
+      "injury": "左踝扭傷，與 2023 年右踝事件不同。",
+      "returnDate": "2025-02-07",
+      "returnSummary": "2025-02-07 對馬刺復出，先前缺席五場。",
+      "context": "不能從 11 天就回到比賽，反推這一定是輕度扭傷。",
+      "sources": [
+        {
+          "title": "NBA：黃蜂左踝 MRI 更新",
+          "url": "https://www.nba.com/news/hornets-lamelo-ball-injury-update",
+          "publishedAt": "2025-01-30"
+        },
+        {
+          "title": "黃蜂：正式復出賽後報導",
+          "url": "https://www.nba.com/hornets/news/hornets-end-homestand-in-dramatic-fashion",
+          "publishedAt": "2025-02-07"
+        }
+      ]
+    },
+    {
+      "slug": "tyrese-haliburton-achilles-rupture-2025",
+      "videoUrl": "https://www.youtube.com/watch?v=azQpbyDBktk",
+      "eventDate": "2025-06-22",
+      "injury": "右阿基里斯腱斷裂；溜馬於 2025-06-23 公布已接受修補手術。",
+      "returnDate": null,
+      "returnSummary": "截至本次查核，未核得傷後正式復賽日期。",
+      "context": "NBA 2026-08-24 報導指出他缺席 2025–26 球季；下一季回歸展望不是已完成出賽。",
+      "sources": [
+        {
+          "title": "溜馬：手術醫療更新",
+          "url": "https://www.nba.com/pacers/news/indiana-pacers-medical-update-tyrese-haliburton-250623",
+          "publishedAt": "2025-06-23"
+        },
+        {
+          "title": "NBA：2026–27 球季回歸展望",
+          "url": "https://www.nba.com/news/2026-comeback-players-to-watch",
+          "publishedAt": "2026-08-24"
+        }
+      ]
+    },
+    {
+      "slug": "zverev-roland-garros-2022",
+      "videoUrl": "https://www.youtube.com/watch?v=7tpaxZTTi2w",
+      "eventDate": "2022-06-03",
+      "injury": "據本人聲明，右踝三條外側韌帶撕裂，並於傷後接受手術。",
+      "returnDate": "2022-12-31",
+      "returnSummary": "2022-12-31 在 United Cup 對 Jiří Lehečka 重返正式賽。",
+      "context": "表演賽與正式賽分開計算；ATP 後續訪談也確認此場為傷後首場正式比賽。",
+      "sources": [
+        {
+          "title": "AP：本人傷勢與手術聲明",
+          "url": "https://apnews.com/article/french-open-rafael-nadal-winter-olympics-sports-f15fb9c8f926017f38c089aa5fe554f3",
+          "publishedAt": "2022-06-07"
+        },
+        {
+          "title": "ATP：United Cup 實際賽果",
+          "url": "https://www.atptour.com/en/news/czech-republic-germany-united-cup-2023-saturday",
+          "publishedAt": "2022-12-31"
+        },
+        {
+          "title": "ATP：本人回顧首次復出",
+          "url": "https://www.atptour.com/en/news/zverev-lehecka-dubai-2023-monday",
+          "publishedAt": "2023-02-27"
+        }
+      ]
+    },
+    {
+      "slug": "derek-redmond-barcelona-1992",
+      "videoUrl": "https://www.youtube.com/watch?v=t2G8KVzTwfw",
+      "eventDate": "1992-08-03",
+      "injury": "本人官網記載，奧運比賽中大腿後側肌群撕裂。",
+      "returnDate": null,
+      "returnSummary": "未核得傷後第一場正式比賽的日期。",
+      "context": "後來轉往籃球等運動；不能把離開田徑等同此後沒有比賽，也不能把走到終點當作康復。",
+      "sources": [
+        {
+          "title": "Derek Redmond：本人運動生涯回顧",
+          "url": "https://derekredmond.com/about-derek/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "kerri-strug-atlanta-1996",
+      "videoUrl": "https://www.youtube.com/watch?v=Bwa5Bf656As",
+      "eventDate": "1996-07-23",
+      "injury": "奧運跳馬落地後左踝受傷；同期報導引述隊醫診斷為三級扭傷。",
+      "returnDate": null,
+      "returnSummary": "未核得傷後首次正式復賽日期。",
+      "context": "本人年表記載，她退出其餘全能、跳馬與自由體操決賽；同場第二跳並不是康復後復出。",
+      "sources": [
+        {
+          "title": "Los Angeles Times：具名隊醫傷勢報導",
+          "url": "https://www.latimes.com/archives/la-xpm-1996-07-24-mn-27396-story.html",
+          "publishedAt": "1996-07-24"
+        },
+        {
+          "title": "Kerri Strug：本人年表",
+          "url": "https://www.kerristrug.info/chronology-2/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "carolina-marin-indonesia-2019",
+      "videoUrl": "https://www.youtube.com/watch?v=nfpXC98FLuE",
+      "eventDate": "2019-01-27",
+      "injury": "西班牙羽球協會確認右膝前十字韌帶斷裂，並接受重建手術。",
+      "returnDate": "2019-09-11",
+      "returnSummary": "2019-09-11 於越南公開賽重返比賽。",
+      "context": "這是 2019 年右膝事件；與她之後其他年份的膝傷分開記錄。",
+      "sources": [
+        {
+          "title": "西班牙羽球協會：醫療公告",
+          "url": "https://www.badminton.es/news/125348/Parte-Medico-de-Carolina-Marin",
+          "publishedAt": null
+        },
+        {
+          "title": "RTVE：越南公開賽實際復出及本人訪問",
+          "url": "https://www.rtve.es/deportes/20190911/carolina-marin-partido-regreso-vietnam/1979042.shtml",
+          "publishedAt": "2019-09-11"
+        }
+      ]
+    },
+    {
+      "slug": "julie-foucher-box-jump-2015",
+      "videoUrl": "https://www.youtube.com/watch?v=4y-1D7jTW_4",
+      "eventDate": null,
+      "injury": "CrossFit 報導記錄跳箱時阿基里斯腱受傷；本頁不以影片標題確認斷裂程度。",
+      "returnDate": null,
+      "returnSummary": "已查到傷後參賽成績，但首次復賽日期仍未確認。",
+      "context": "官方選手頁列有 2016 年 Open 與 Central 個人賽，以及 2017 年 Central 團體賽成績；不能標為此後未再參賽。",
+      "sources": [
+        {
+          "title": "CrossFit：受傷事件及後續回顧",
+          "url": "https://medium.com/@CrossFit/mind-games-566b14576fa4",
+          "publishedAt": "2016-07-15"
+        },
+        {
+          "title": "CrossFit Games：選手歷年正式成績",
+          "url": "https://games.crossfit.com/athlete/46243",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "volleyball-pov-135",
+      "videoUrl": "https://www.youtube.com/watch?v=tEHP_6GA6ZA",
+      "eventDate": null,
+      "injury": "未找到可核對的選手身分與醫療公告，不能從標題或畫面確認診斷。",
+      "returnDate": null,
+      "returnSummary": "未找到可核對的傷後回場紀錄。",
+      "context": "保留為動作觀察影片；不推估傷勢等級、受傷日期或恢復天數。",
+      "sources": [
+        {
+          "title": "DTvolleyball：原始影片",
+          "url": "https://www.youtube.com/watch?v=tEHP_6GA6ZA",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "ankle-inversion-observation",
+      "videoUrl": "https://www.youtube.com/watch?v=qwuEydc9qXQ",
+      "eventDate": null,
+      "injury": "未找到可核對的選手身分與醫療公告，不能從標題或畫面確認診斷。",
+      "returnDate": null,
+      "returnSummary": "未找到可核對的傷後回場紀錄。",
+      "context": "保留為動作觀察影片；不推估傷勢等級、受傷日期或恢復天數。",
+      "sources": [
+        {
+          "title": "Siwon Kim：原始影片",
+          "url": "https://www.youtube.com/watch?v=qwuEydc9qXQ",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "shohei-ohtani-world-series-2024",
+      "videoUrl": "https://www.youtube.com/watch?v=hxcRVu1-T-c",
+      "eventDate": "2024-10-26",
+      "injury": "左肩受傷；道奇於 2024-11-05 公布，已手術修補肩關節唇撕裂。",
+      "returnDate": "2024-10-28",
+      "returnSummary": "2024-10-28 世界大賽第 3 戰，以指定打擊身分出賽。",
+      "context": "這是打者出賽，不是投手復出；之後仍接受肩部手術，兩天後出賽不代表肩傷已痊癒。",
+      "sources": [
+        {
+          "title": "道奇：季後肩關節唇手術公告",
+          "url": "https://www.mlb.com/press-release/press-release-shohei-ohtani-undergoes-successful-arthroscopic-surgery-to-repair-labrum-tear-in-left-shoulder",
+          "publishedAt": "2024-11-05"
+        },
+        {
+          "title": "MLB：世界大賽第 3 戰正式紀錄",
+          "url": "https://www.mlb.com/gameday/dodgers-vs-yankees/2024/10/28/775298",
+          "publishedAt": "2024-10-28"
+        },
+        {
+          "title": "AP：第 3 戰帶傷出賽報導",
+          "url": "https://apnews.com/article/311bc657971726bc04028326dcf1cf72",
+          "publishedAt": "2024-10-28"
+        }
+      ]
+    },
+    {
+      "slug": "usain-bolt-london-2017",
+      "videoUrl": "https://www.youtube.com/watch?v=12UNVAkLlmY",
+      "eventDate": "2017-08-12",
+      "injury": "World Athletics 賽後報導記載大腿後側肌群撕裂，未能完成接力。",
+      "returnDate": null,
+      "returnSummary": "這是田徑生涯最後一戰；不填田徑回場天數。",
+      "context": "田徑退役不等於傷勢一直未癒。跨運動項目的首場正式比賽日，本次未核定。",
+      "sources": [
+        {
+          "title": "World Athletics：最後一戰與田徑退休專訪",
+          "url": "https://worldathletics.org/competitions/world-athletics-championships/london-2017-7093740/news/feature/usain-bolt-world-champs-london-2017",
+          "publishedAt": "2017-08-14"
+        }
+      ]
+    },
+    {
+      "slug": "mohamed-salah-final-2018",
+      "videoUrl": "https://www.youtube.com/watch?v=mi7fXtGTwbc",
+      "eventDate": "2018-05-26",
+      "injury": "歐冠決賽爭球倒地後肩部受傷並退場；本頁不填未獲官方來源確認的細部分級。",
+      "returnDate": "2018-06-19",
+      "returnSummary": "2018-06-19 代表埃及，在世界盃對俄羅斯復出。",
+      "context": "Liverpool 賽後報導確認這是傷後首次出賽；不能把回到比賽當作肩部功能已完全恢復。",
+      "sources": [
+        {
+          "title": "Liverpool：決賽肩傷更新",
+          "url": "https://www.liverpoolfc.com/news/first-team/303499-mohamed-salah-liverpool-fc-injury-update",
+          "publishedAt": "2018-05-26"
+        },
+        {
+          "title": "Liverpool：世界盃實際復出報導",
+          "url": "https://www.liverpoolfc.com/news/first-team/305043-mohamed-salah-goal-egypt-world-cup",
+          "publishedAt": "2018-06-19"
+        }
+      ]
+    },
+    {
+      "slug": "giannis-east-final-2021",
+      "videoUrl": "https://www.youtube.com/watch?v=ctiT9toFmio",
+      "eventDate": "2021-06-29",
+      "injury": "左膝過伸受傷；NBA 後續更新報導 MRI 未見結構損傷。",
+      "returnDate": "2021-07-06",
+      "returnSummary": "2021-07-06 在 NBA 總決賽第 1 戰復出。",
+      "context": "膝部動作看起來相似，實際傷勢仍可能不同；不能把這次紀錄套用到前十字韌帶斷裂。",
+      "sources": [
+        {
+          "title": "NBA：受傷與後續檢查更新",
+          "url": "https://www.nba.com/news/giannis-antetokounmpo-exits-game-4-with-hyperextended-left-knee",
+          "publishedAt": null
+        },
+        {
+          "title": "NBA：總決賽第 1 戰賽後紀錄",
+          "url": "https://www.nba.com/news/inside-the-box-score-2021-nba-finals-game-1",
+          "publishedAt": "2021-07-07"
+        }
+      ]
+    },
+    {
+      "slug": "markelle-fultz-orlando-2021",
+      "videoUrl": "https://www.youtube.com/watch?v=b2vVxFhpEv0",
+      "eventDate": "2021-01-06",
+      "injury": "魔術球隊報導確認左膝前十字韌帶斷裂。",
+      "returnDate": "2022-02-28",
+      "returnSummary": "2022-02-28 對溜馬正式復出。",
+      "context": "相隔約 14 個月是這位選手的實際紀錄，不能據此推定所有同類傷勢都需要相同時間。",
+      "sources": [
+        {
+          "title": "魔術：傷勢更新",
+          "url": "https://www.nba.com/magic/news/magic-teammates-confident-markelle-fultz-will-overcome-latest-setback-20210106",
+          "publishedAt": "2021-01-06"
+        },
+        {
+          "title": "NBA：復出當場上場紀錄",
+          "url": "https://www.nba.com/watch/video/markelle-fultz-checks-in",
+          "publishedAt": "2022-02-28"
+        },
+        {
+          "title": "NBA：傷後回歸比賽報導",
+          "url": "https://www.nba.com/news/magic-guard-markelle-fultz-will-return-from-acl-injury-against-pacers",
+          "publishedAt": null
+        }
+      ]
+    }
+  ]
+}

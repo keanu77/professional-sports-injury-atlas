@@ -1,4 +1,9 @@
-import { expansion, expandedCaseAllowed } from "../../src/lib/videos/expansion";
+import {
+  allObservationClips,
+  additions,
+  expansion,
+  expandedCaseAllowed,
+} from "../../src/lib/videos/expansion";
 import assert from "node:assert/strict";
 import {
   scanBrandAssets,
@@ -119,8 +124,14 @@ const additional = JSON.parse(
     "utf8",
   ),
 );
-for (const item of [...expansion.cases, ...expansion.clips]) {
-  const proof = additional.find(
+const additionsProof = JSON.parse(
+  readFileSync(
+    "docs/reviews/evidence/decision-27/playback.preview.json",
+    "utf8",
+  ),
+);
+for (const item of [...expansion.cases, ...allObservationClips]) {
+  const proof = [...additional, ...additionsProof].find(
     (p: { url: string }) => p.url === item.videoUrl,
   );
   assert.ok(
@@ -155,5 +166,34 @@ for (const item of [...expansion.cases, ...expansion.clips]) {
     );
 }
 console.log(
-  `Decision 23: ${expansion.cases.length + expansion.clips.length} additional videos; captions optional, source records preserved.`,
+  `Video expansions: ${expansion.cases.length + allObservationClips.length} additional videos (${additions.clips.length} new); source records preserved.`,
+);
+
+// All displayed events require an independently checked source summary bound to the exact video.
+const { eventUpdates, eventUpdateFor } =
+  await import("../../src/lib/videos/event-updates");
+const selectedEvents = [
+  ...records
+    .filter((r) =>
+      [...approval.cases, ...expansion.cases].some((c) => c.id === r.id),
+    )
+    .map((r) => ({
+      slug: r.slug,
+      videoUrl: r.video.canonicalUrl,
+      eventDate: r.eventDate,
+    })),
+  ...allObservationClips,
+];
+assert.deepEqual(
+  eventUpdates.entries.map((e) => e.slug).sort(),
+  selectedEvents.map((e) => e.slug).sort(),
+  "Event update coverage mismatch",
+);
+for (const item of selectedEvents)
+  assert.ok(
+    eventUpdateFor(item.slug, item.videoUrl, item.eventDate),
+    `Missing sourced event update: ${item.slug}`,
+  );
+console.log(
+  `Source reporting: ${selectedEvents.length} event bindings validated; original clinical approvals unchanged.`,
 );

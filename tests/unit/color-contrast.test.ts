@@ -355,7 +355,7 @@ describe("governed case cover", () => {
 
   it("binds every cover to stable responsive case-photo renditions", () => {
     expect(component).toContain("recordId = idPrefix");
-    expect(component).toContain("data-cover-variant={selection.variant");
+    expect(component).toMatch(/data-cover-variant=\{\s*selection\.variant/);
     expect(component).toContain("caseThumbWidthsFor(selection.image.width)");
     expect(component).toContain("caseHeroWidthsFor(selection.image.width)");
     expect(component).toContain(

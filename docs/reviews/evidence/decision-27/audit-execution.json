@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-09-06",
+  "models": [
+    "codex",
+    "grok",
+    "agy"
+  ],
+  "qwen": "available; not run during 09:00–15:30 GPU window",
+  "sharedMaterial": "public website text and public video candidates only",
+  "auditScope": "20 events; 19 published after rejecting Nadal candidates without verified injury segment",
+  "sourceSummariesSha256": "3b93fb6c6e97e0bce30d84e98c1b845e9645c3f8c81ceb8bc949c0b2ca9fcb1a",
+  "acceptedCorrections": "pass2-agy.md and pass2-final-json.md; all final citation corrections applied"
+}

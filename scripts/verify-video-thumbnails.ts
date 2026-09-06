@@ -3,7 +3,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { issue, type ValidationIssue } from "../src/lib/contracts/canonical";
 
-/** Decision 25: exact local copies of the 14 selected videos' default covers. */
+/** Decision 25: exact local copies of the selected videos' default covers. */
 export function loadVideoThumbnails(root: string): {
   allowedPaths: string[];
   issues: ValidationIssue[];
@@ -19,12 +19,17 @@ export function loadVideoThumbnails(root: string): {
     const expansion = JSON.parse(
       readFileSync(join(root, "src/data/videos/expansion.v1.json"), "utf8"),
     );
+    const additions = JSON.parse(
+      readFileSync(join(root, "src/data/videos/additions.v1.json"), "utf8"),
+    );
     const expected = new Set<string>([
       ...[...launch.cases, ...expansion.cases].map(
         (record: { videoUrl: string }) =>
           new URL(record.videoUrl).searchParams.get("v")!,
       ),
-      ...expansion.clips.map((clip: { videoId: string }) => clip.videoId),
+      ...[...expansion.clips, ...additions.clips].map(
+        (clip: { videoId: string }) => clip.videoId,
+      ),
     ]);
     if (
       manifest.schemaVersion !== 1 ||
@@ -32,8 +37,8 @@ export function loadVideoThumbnails(root: string): {
       manifest.authorizationQuote !==
         "影片的圖片請用youtube的第一張圖片為主就好" ||
       !Array.isArray(manifest.assets) ||
-      manifest.assets.length !== 14 ||
-      expected.size !== 14
+      manifest.assets.length !== expected.size ||
+      expected.size === 0
     )
       throw new Error("invalid inventory");
     const allowedPaths: string[] = [];

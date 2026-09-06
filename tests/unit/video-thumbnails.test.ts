@@ -26,6 +26,7 @@ function fixture() {
   for (const path of [
     "src/data/public-launch.v1.json",
     "src/data/videos/expansion.v1.json",
+    "src/data/videos/additions.v1.json",
   ])
     cpSync(path, join(root, path));
   return root;
@@ -33,7 +34,7 @@ function fixture() {
 test("all selected video covers have matching local provenance", () => {
   const result = loadVideoThumbnails(process.cwd());
   expect(result.issues).toEqual([]);
-  expect(result.allowedPaths).toHaveLength(14);
+  expect(result.allowedPaths).toHaveLength(19);
 });
 test("changed cover bytes fail closed", () => {
   const root = fixture();

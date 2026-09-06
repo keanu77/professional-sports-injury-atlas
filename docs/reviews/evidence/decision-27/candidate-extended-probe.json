@@ -1,0 +1,48 @@
+[
+  {
+    "id": "kPbwy5S8Qu0",
+    "slug": "rafael-nadal-australian-open-2023",
+    "start": 0,
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T03:35:52.276Z",
+    "status": "played",
+    "playback": {
+      "time": 2.016683,
+      "duration": 505.061,
+      "paused": false,
+      "readyState": 4
+    },
+    "metadata": {
+      "title": "Rafael Nadal v Mackenzie McDonald Extended Highlights | Australian Open 2023 Second Round - YouTube",
+      "player": {
+        "video_id": "kPbwy5S8Qu0",
+        "author": "Australian Open",
+        "title": "Rafael Nadal v Mackenzie McDonald Extended Highlights | Australian Open 2023 Second Round",
+        "isPlayable": true,
+        "errorCode": null,
+        "video_quality": "medium",
+        "video_quality_features": [],
+        "backgroundable": false,
+        "eventId": "md-caq3vNY6Ppt8P6-T1wQg",
+        "cpn": "nVT7zTQQjebs1kfV",
+        "isLive": false,
+        "isWindowedLive": false,
+        "isManifestless": false,
+        "allowLiveDvr": false,
+        "isListed": true,
+        "isMultiChannelAudio": false,
+        "hasProgressBarBoundaries": false,
+        "isPremiere": false,
+        "itct": "CAAQu2kiEwjtn4eXg9mWAxWOh-kFHWtyPYjKAQSwB6VS",
+        "playerResponseCpn": "",
+        "progressBarStartPositionUtcTimeMillis": null,
+        "progressBarEndPositionUtcTimeMillis": null,
+        "paidContentOverlayDurationMs": 0,
+        "isSeekable": null
+      },
+      "captions": [
+        "字幕/CC 已關閉"
+      ]
+    }
+  }
+]

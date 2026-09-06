@@ -3,6 +3,9 @@ import { chromium } from "@playwright/test";
 const expansion = JSON.parse(
   fs.readFileSync("src/data/videos/expansion.v1.json", "utf8"),
 );
+const additions = JSON.parse(
+  fs.readFileSync("src/data/videos/additions.v1.json", "utf8"),
+);
 const origin = process.argv[2] ?? "http://127.0.0.1:14324";
 const output = process.argv[3] ?? "/tmp/atlas23-playback.json";
 const allItems = [
@@ -11,10 +14,17 @@ const allItems = [
     path: `/cases/${c.slug}/`,
     startSeconds: 0,
   })),
-  ...expansion.clips.map((c) => ({ ...c, path: `/videos/${c.slug}/` })),
+  ...[...expansion.clips, ...additions.clips].map((c) => ({
+    ...c,
+    path: `/videos/${c.slug}/`,
+  })),
 ];
 const items = process.argv[4]
-  ? allItems.filter((item) => item.slug === process.argv[4])
+  ? allItems.filter((item) =>
+      process.argv[4] === "--additions"
+        ? additions.clips.some((c) => c.slug === item.slug)
+        : item.slug === process.argv[4],
+    )
   : allItems;
 if (items.length === 0) throw new Error("Unknown video slug");
 const browser = await chromium.launch({ channel: "chrome", headless: true });

@@ -1,11 +1,32 @@
 /** User-confirmed video expansion; observation clips do not claim medical approval. */
 import { z } from "astro/zod";
 import data from "../../data/videos/expansion.v1.json";
+import launchData from "../../data/public-launch.v1.json";
+import additionsData from "../../data/videos/additions.v1.json";
 import type { InjuryCase } from "../contracts/case";
 import { canonicalJson, sha256Hex } from "../contracts/canonical";
 import { parseYouTubeVideoId } from "../video/youtube";
 const url = z.url({ protocol: /^https$/ });
 const day = z.iso.date().nullable();
+export const observationClipSchema = z.strictObject({
+  slug: z.string().regex(/^[a-z0-9-]+$/),
+  videoId: z.string().regex(/^[\w-]{11}$/),
+  name: z.string().min(1),
+  sport: z.string().min(1),
+  event: z.string().min(1),
+  bodyPart: z.string().min(1),
+  observation: z.string().min(1),
+  eventDate: day,
+  returnDate: day,
+  returnText: z.string().min(1),
+  videoUrl: url,
+  publisher: z.string().min(1),
+  sourceTitle: z.string().min(1),
+  captionStatus: z.enum(["available", "unavailable", "not-verified"]),
+  startSeconds: z.number().int().nonnegative(),
+  durationSeconds: z.number().int().positive(),
+  sources: z.array(z.strictObject({ title: z.string().min(1), url })),
+});
 export const expansionSchema = z
   .strictObject({
     schemaVersion: z.literal(1),
@@ -23,29 +44,7 @@ export const expansionSchema = z
         }),
       )
       .length(2),
-    clips: z
-      .array(
-        z.strictObject({
-          slug: z.string().regex(/^[a-z0-9-]+$/),
-          videoId: z.string().regex(/^[\w-]{11}$/),
-          name: z.string().min(1),
-          sport: z.string().min(1),
-          event: z.string().min(1),
-          bodyPart: z.string().min(1),
-          observation: z.string().min(1),
-          eventDate: day,
-          returnDate: day,
-          returnText: z.string().min(1),
-          videoUrl: url,
-          publisher: z.string().min(1),
-          sourceTitle: z.string().min(1),
-          captionStatus: z.enum(["available", "unavailable", "not-verified"]),
-          startSeconds: z.number().int().nonnegative(),
-          durationSeconds: z.number().int().positive(),
-          sources: z.array(z.strictObject({ title: z.string().min(1), url })),
-        }),
-      )
-      .length(7),
+    clips: z.array(observationClipSchema).length(7),
   })
   .superRefine((value, ctx) => {
     const urls = [
@@ -82,13 +81,51 @@ export const expansionSchema = z
     }
   });
 export const expansion = expansionSchema.parse(data);
-export type ObservationClip = (typeof expansion.clips)[number];
+export type ObservationClip = z.infer<typeof observationClipSchema>;
+export const additionsSchema = z
+  .strictObject({
+    schemaVersion: z.literal(1),
+    decision: z.literal("decision-27"),
+    authorizationQuote: z.literal("可以，請在搜尋更多影片並加入"),
+    authorizedAt: z.iso.datetime(),
+    clips: z.array(observationClipSchema).min(1),
+  })
+  .superRefine((value, ctx) => {
+    const urls = new Set(
+      [...launchData.cases, ...expansion.cases].map((c) => c.videoUrl),
+    );
+    const slugs = new Set(expansion.cases.map((c) => c.slug));
+    for (const c of [...expansion.clips, ...value.clips]) {
+      if (
+        urls.has(c.videoUrl) ||
+        slugs.has(c.slug) ||
+        parseYouTubeVideoId(c.videoUrl) !== c.videoId ||
+        c.startSeconds >= c.durationSeconds ||
+        (c.returnDate &&
+          (!c.eventDate ||
+            c.returnDate < c.eventDate ||
+            c.sources.length === 0))
+      ) {
+        ctx.addIssue({
+          code: "custom",
+          message: `Invalid or duplicate clip: ${c.slug}`,
+        });
+      }
+      urls.add(c.videoUrl);
+      slugs.add(c.slug);
+    }
+  });
+export const additions = additionsSchema.parse(additionsData);
+export const allObservationClips: ObservationClip[] = [
+  ...expansion.clips,
+  ...additions.clips,
+];
 export const expansionEnabled = () =>
   process.env.ATLAS_PUBLIC_LAUNCH === "decision-21";
 export function captionsOptionalFor(videoUrl: string): boolean {
   return (
     expansionEnabled() &&
-    [...expansion.cases, ...expansion.clips].some(
+    [...expansion.cases, ...allObservationClips].some(
       (c) => c.videoUrl === videoUrl,
     )
   );
@@ -105,5 +142,5 @@ export function expandedCaseAllowed(record: InjuryCase): boolean {
   );
 }
 export function observationClips(): ObservationClip[] {
-  return expansionEnabled() ? expansion.clips : [];
+  return expansionEnabled() ? allObservationClips : [];
 }

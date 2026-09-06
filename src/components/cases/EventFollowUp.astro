@@ -1,0 +1,115 @@
+---
+import {
+  eventUpdates,
+  returnDays,
+  type EventUpdate,
+} from "../../lib/videos/event-updates";
+import { externalUrlPresentationFor } from "../../lib/rights/nba-link-policy";
+interface Props {
+  update: EventUpdate;
+}
+const { update } = Astro.props;
+const days = returnDays(update);
+---
+
+<section
+  class="event-follow-up"
+  data-event-follow-up={update.slug}
+  data-actual-return
+>
+  <h2>傷勢與後續</h2>
+  <p>{update.injury}</p>
+  <h3>傷後多久再出賽？</h3>
+  {
+    days !== null && (
+      <p class="return-days">
+        距受傷 <strong>{days} 天</strong>
+      </p>
+    )
+  }
+  <p>{update.returnSummary}</p>
+  {
+    update.eventDate && update.returnDate && (
+      <p class="event-dates">
+        <time datetime={update.eventDate}>{update.eventDate}</time> 受傷 →{" "}
+        <time datetime={update.returnDate}>{update.returnDate}</time> 正式出賽
+      </p>
+    )
+  }
+  <p>{update.context}</p>
+  <p class="event-note">出賽不等於完全康復；日期差不是個人的回場期限。</p>
+  <details>
+    <summary>查看傷勢與回場來源</summary>
+    <p class="event-note">
+      依公開報導整理 · 查核日期 <time datetime={eventUpdates.checkedAt}
+        >{eventUpdates.checkedAt}</time
+      >
+    </p>
+    <ul>
+      {
+        update.sources.map((source) => (
+          <li>
+            {externalUrlPresentationFor(source.url) === "clickable-link" ? (
+              <a href={source.url} rel="noopener noreferrer">
+                {source.title}
+              </a>
+            ) : (
+              <>
+                <span>{source.title}</span>
+                <span class="citation-url">{source.url}</span>
+              </>
+            )}
+            {source.publishedAt && (
+              <time datetime={source.publishedAt}> · {source.publishedAt}</time>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+  </details>
+</section>
+<style>
+  .event-follow-up {
+    margin: 1.5rem 0;
+    padding: 1.4rem;
+    background: var(--color-surface-raised);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-card);
+    min-width: 0;
+  }
+  h2 {
+    font: 700 1.4rem var(--font-display);
+    margin: 0 0 0.8rem;
+  }
+  h3 {
+    font: 700 1.1rem var(--font-display);
+    margin: 1.4rem 0 0.5rem;
+  }
+  p {
+    margin: 0.65rem 0;
+  }
+  .return-days strong {
+    color: var(--color-brand-primary-hover);
+    font-size: 1.8rem;
+  }
+  .event-dates,
+  .event-note,
+  li {
+    font-size: 0.9rem;
+    color: var(--color-ink-muted);
+  }
+  summary {
+    cursor: pointer;
+    padding: 0.75rem 0;
+  }
+  li {
+    margin: 0.75rem 0;
+  }
+  .citation-url {
+    display: block;
+    overflow-wrap: anywhere;
+  }
+  ul {
+    padding-left: 1.2rem;
+  }
+</style>

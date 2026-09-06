@@ -1,4 +1,7 @@
 ---
+import EventFollowUp from "../../components/cases/EventFollowUp.astro";
+import { eventUpdateFor } from "../../lib/videos/event-updates";
+import { externalUrlPresentationFor } from "../../lib/rights/nba-link-policy";
 import VideoThumbnail from "../../components/cases/VideoThumbnail.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import MedicalNotice from "../../components/notices/MedicalNotice.astro";
@@ -11,6 +14,7 @@ export function getStaticPaths() {
   }));
 }
 const { clip } = Astro.props;
+const eventUpdate = eventUpdateFor(clip.slug, clip.videoUrl, clip.eventDate);
 const watchUrl = new URL(clip.videoUrl);
 if (clip.startSeconds > 0)
   watchUrl.searchParams.set("t", String(clip.startSeconds));
@@ -90,15 +94,18 @@ if (clip.startSeconds > 0)
           rel="noopener noreferrer">處理原則：NHS</a
         >
       </section>
-      <section data-actual-return>
-        <h2>後續回場</h2><p>{clip.returnText}</p>{
-          clip.eventDate && clip.returnDate && (
-            <p class="clip-meta">
-              受傷 {clip.eventDate} → 正式出賽 {clip.returnDate}
-            </p>
-          )
-        }
-      </section>
+      {
+        eventUpdate ? (
+          <EventFollowUp update={eventUpdate} />
+        ) : (
+          <section data-actual-return>
+            <>
+              <h2>後續回場</h2>
+              <p>{clip.returnText}</p>
+            </>
+          </section>
+        )
+      }
     </div>
   </div>
   <details class="clip-references">
@@ -110,9 +117,18 @@ if (clip.startSeconds > 0)
       </li>{
         clip.sources.map((s) => (
           <li>
-            <a href={s.url} rel="noopener noreferrer">
-              {s.title}
-            </a>
+            {externalUrlPresentationFor(s.url) === "clickable-link" ? (
+              <a href={s.url} rel="noopener noreferrer">
+                {s.title}
+              </a>
+            ) : (
+              <>
+                <span>{s.title}</span>
+                <span style="display:block;overflow-wrap:anywhere">
+                  {s.url}
+                </span>
+              </>
+            )}
           </li>
         ))
       }

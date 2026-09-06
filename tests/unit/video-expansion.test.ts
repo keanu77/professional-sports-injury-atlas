@@ -1,6 +1,8 @@
 import { readFileSync } from "node:fs";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
+  additions,
+  additionsSchema,
   expansion,
   expansionSchema,
   observationClips,
@@ -34,7 +36,7 @@ describe("confirmed video expansion", () => {
     expect(expandedCaseAllowed(tatum)).toBe(true);
     expect(hasPublicEmbed(tatum)).toBe(true);
     expect(selectPublicCases([tatum])).toEqual([tatum]);
-    expect(observationClips()).toHaveLength(7);
+    expect(observationClips()).toHaveLength(12);
     expect(
       captionsOptionalFor("https://www.youtube.com/watch?v=unlisted000"),
     ).toBe(false);
@@ -91,4 +93,23 @@ describe("confirmed video expansion", () => {
       expect(expansionSchema.safeParse(changed).success).toBe(false);
     }
   });
+});
+
+it("rejects additions that duplicate an existing video or imply unsupported return dates", () => {
+  for (const mutate of [
+    (d: typeof additions) => {
+      d.clips[0]!.videoId = expansion.clips[0]!.videoId;
+      d.clips[0]!.videoUrl = expansion.clips[0]!.videoUrl;
+    },
+    (d: typeof additions) => {
+      d.clips[0]!.returnDate = "1900-01-01";
+    },
+    (d: typeof additions) => {
+      d.clips[0]!.sources = [];
+    },
+  ]) {
+    const changed = structuredClone(additions);
+    mutate(changed);
+    expect(additionsSchema.safeParse(changed).success).toBe(false);
+  }
 });
