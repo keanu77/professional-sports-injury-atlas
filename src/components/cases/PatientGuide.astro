@@ -3,12 +3,14 @@ import {
   patientGuideFor,
   isPatientGuideApproved,
 } from "../../lib/patient/guides";
+import articleGroups from "../../data/patient-related-articles.v1.json";
 interface Props {
   injuryCode: string;
   buildMode: "review" | "public";
 }
 const { injuryCode, buildMode } = Astro.props;
 const guide = patientGuideFor(injuryCode, buildMode);
+const articles = articleGroups[injuryCode as keyof typeof articleGroups] ?? [];
 ---
 
 <section
@@ -55,6 +57,22 @@ const guide = patientGuideFor(injuryCode, buildMode);
     <p class="guide-note">
       時間是參考範圍，不是回場許可。影片與球員紀錄無法判定你的傷勢。
     </p>
+    {
+      articles.length > 0 && (
+        <div class="related-articles" data-related-articles>
+          <h3>延伸閱讀｜吳易澄醫師的相關文章</h3>
+          <ul>
+            {articles.map((article) => (
+              <li>
+                <a href={article.url} target="_blank" rel="noopener noreferrer">
+                  {article.title} ↗
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
   </section>
   <details class="guide-sources">
     <summary>查看衛教來源</summary><ul>
@@ -133,6 +151,14 @@ const guide = patientGuideFor(injuryCode, buildMode);
   .guide-sources {
     margin-top: 1rem;
     font-size: 0.875rem;
+  }
+  .related-articles {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--hairline);
+  }
+  .related-articles a {
+    overflow-wrap: anywhere;
   }
   summary {
     cursor: pointer;

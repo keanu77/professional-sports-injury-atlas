@@ -1,6 +1,13 @@
 import { describe, expect, it, vi } from "vitest";
 import { readFileSync } from "node:fs";
-import { submitContribution } from "../../src/lib/video/contributions";
+import { submitContribution as handleContribution } from "../../src/lib/video/contributions";
+import type { ContributionGuard } from "../../src/lib/video/contribution-limits";
+const successfulGuard = (): ContributionGuard => ({
+  reserve: vi.fn().mockResolvedValue({ allowed: true, id: "test-reservation" }),
+  settle: vi.fn().mockResolvedValue(undefined),
+});
+const submitContribution = (request: Request, send: typeof fetch) =>
+  handleContribution(request, send, successfulGuard());
 
 let sequence = 0;
 const valid = {
@@ -35,6 +42,57 @@ const successfulMail = () =>
     .mockImplementation(async () => Response.json({ ok: true }));
 
 describe("anonymous contributions", () => {
+  it("does not send without a working shared guard", async () => {
+    const send = successfulMail();
+    expect((await handleContribution(request(), send)).status).toBe(503);
+    const guard = successfulGuard();
+    vi.mocked(guard.reserve).mockRejectedValue(new Error("database down"));
+    expect((await handleContribution(request(), send, guard)).status).toBe(503);
+    expect(send).not.toHaveBeenCalled();
+  });
+  it.each(["ip-daily", "site-daily", "duplicate"])(
+    "blocks %s before contacting mail service",
+    async (reason) => {
+      const send = successfulMail();
+      const guard = successfulGuard();
+      vi.mocked(guard.reserve).mockResolvedValue({
+        allowed: false,
+        reason: reason as "ip-daily",
+        retryAfter: 600,
+      });
+      const response = await handleContribution(request(), send, guard);
+      expect(response.status).toBe(429);
+      expect(response.headers.get("Retry-After")).toBe("600");
+      expect(await response.json()).toEqual({ error: reason });
+      expect(send).not.toHaveBeenCalled();
+    },
+  );
+  it.each([
+    [400, "rejected"],
+    [429, "rejected"],
+    [408, "uncertain"],
+    [502, "uncertain"],
+    [200, "sent"],
+  ] as const)("settles upstream %i as %s", async (status, state) => {
+    const guard = successfulGuard();
+    await handleContribution(
+      request(),
+      vi
+        .fn<typeof fetch>()
+        .mockResolvedValue(Response.json({ ok: status === 200 }, { status })),
+      guard,
+    );
+    expect(guard.settle).toHaveBeenCalledWith("test-reservation", state);
+  });
+  it("keeps a reservation for ambiguous transport outcomes", async () => {
+    const guard = successfulGuard();
+    await handleContribution(
+      request(),
+      vi.fn<typeof fetch>().mockRejectedValue(new Error("timeout")),
+      guard,
+    );
+    expect(guard.settle).toHaveBeenCalledWith("test-reservation", "uncertain");
+  });
   it.each([undefined, "", "   "])(
     "accepts an omitted video URL (%#)",
     async (url) => {

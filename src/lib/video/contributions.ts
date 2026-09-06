@@ -1,4 +1,5 @@
 import { createRequestLimiter } from "./play-rate-limit";
+import type { ContributionGuard, Reservation } from "./contribution-limits";
 
 const allowRequest = createRequestLimiter(3);
 const CONTACT_ENDPOINT = "https://sportsmedicine.tw/api/contact";
@@ -23,12 +24,13 @@ const publicUrl = (value: unknown): string | null => {
     return null;
   }
 };
-const respond = (status: number, body: object) =>
+const respond = (status: number, body: object, extraHeaders = {}) =>
   Response.json(body, {
     status,
     headers: {
       "Cache-Control": "no-store",
       "X-Content-Type-Options": "nosniff",
+      ...extraHeaders,
     },
   });
 
@@ -36,6 +38,7 @@ const respond = (status: number, body: object) =>
 export async function submitContribution(
   request: Request,
   send: typeof fetch = fetch,
+  guard?: ContributionGuard,
 ): Promise<Response> {
   if (request.method !== "POST") return respond(405, { error: "method" });
   if (
@@ -134,6 +137,38 @@ export async function submitContribution(
     "此訊息由影片圖鑑匿名表單送出，沒有收集訪客姓名或回覆信箱。Email 欄為系統 no-reply 地址，請勿回覆。",
   ].join("\n");
   if (message.length > 5000) return respond(413, { error: "too-large" });
+  let reservation: Reservation;
+  try {
+    if (!guard) throw new Error("missing-guard");
+    const content = JSON.stringify([
+      data.type,
+      url || "",
+      note.normalize("NFKC").replace(/\r\n?/g, "\n"),
+      [...sourceUrls].sort(),
+    ]);
+    reservation = await guard.reserve(
+      request.headers.get("CF-Connecting-IP") ?? "",
+      content,
+    );
+  } catch {
+    return respond(503, { error: "guard-unavailable" });
+  }
+  if (!reservation.allowed) {
+    return respond(
+      429,
+      { error: reservation.reason },
+      { "Retry-After": String(reservation.retryAfter) },
+    );
+  }
+  const reservationId = reservation.id;
+  const settle = async (state: "sent" | "uncertain" | "rejected") => {
+    // A failed status update retains the original pending reservation: fail closed.
+    try {
+      await guard!.settle(reservationId, state);
+    } catch {
+      /* quota remains reserved */
+    }
+  };
   try {
     const result = await send(CONTACT_ENDPOINT, {
       method: "POST",
@@ -148,14 +183,25 @@ export async function submitContribution(
       signal: AbortSignal.timeout(15000),
       redirect: "error",
     });
-    if (!result.ok)
+    if (!result.ok) {
+      await settle(
+        result.status >= 400 && result.status < 500 && result.status !== 408
+          ? "rejected"
+          : "uncertain",
+      );
       return respond(result.status === 429 ? 429 : 502, {
         error: result.status === 429 ? "rate-limit" : "delivery",
       });
+    }
     const body = (await result.json()) as { ok?: boolean };
-    if (body.ok !== true) return respond(502, { error: "delivery" });
+    if (body.ok !== true) {
+      await settle("uncertain");
+      return respond(502, { error: "delivery" });
+    }
+    await settle("sent");
     return respond(200, { ok: true, message: CONTRIBUTION_SUCCESS });
   } catch {
+    await settle("uncertain");
     return respond(502, { error: "delivery" });
   }
 }

@@ -12,6 +12,26 @@ test.beforeEach(async ({ page }) => {
       }),
   );
 });
+for (const [status, error, message] of [
+  [429, "ip-daily", "這個網路位址今天已達送出上限"],
+  [429, "site-daily", "本站今天的通知額度已滿"],
+  [429, "duplicate", "相同內容在 10 分鐘內已有送出紀錄"],
+  [503, "guard-unavailable", "目前暫停送出"],
+] as const) {
+  test(`retains input when ${error} blocks sending`, async ({ page }) => {
+    await page.route("**/api/contributions", (route) =>
+      route.fulfill({ status, json: { error } }),
+    );
+    await page.goto("/contribute/");
+    await page.getByLabel("補充說明（選填）").fill("請協助查核這個影片");
+    await page.getByRole("button", { name: "送出", exact: true }).click();
+    await expect(page.getByRole("status")).toContainText(message);
+    await expect(page.getByLabel("補充說明（選填）")).toHaveValue(
+      "請協助查核這個影片",
+    );
+    await expect(page.locator("[data-contribution-thanks]")).toBeHidden();
+  });
+}
 test("accepts an anonymous video and shows thanks only after confirmation", async ({
   page,
 }) => {
