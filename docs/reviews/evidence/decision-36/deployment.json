@@ -1,0 +1,17 @@
+{
+  "project": "sports-injury-atlas",
+  "domains": [
+    "sports-injury-atlas.pages.dev",
+    "injury.sportsmedicine.tw"
+  ],
+  "deploymentId": "f4e330ba-e41f-4f84-8813-4ded4b197bf7",
+  "url": "https://f4e330ba.sports-injury-atlas.pages.dev",
+  "environment": "production",
+  "source": {
+    "branch": "main",
+    "commit_hash": "ee5683c6426c21401bfd44e957640649a75d1a3a",
+    "commit_message": "feat: cap contribution emails and link related patient articles",
+    "commit_dirty": false
+  },
+  "createdOn": "2026-09-06T13:24:21.803511Z"
+}

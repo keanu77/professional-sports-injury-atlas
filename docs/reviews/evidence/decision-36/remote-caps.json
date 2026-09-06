@@ -1,0 +1,10 @@
+{
+  "database": "atlas-playback-preview",
+  "productionTouched": false,
+  "emailsSent": 0,
+  "checkedAt": "2026-09-06T13:17:43Z",
+  "globalAdmitted": 50,
+  "sameIpAdmitted": 10,
+  "duplicateAdmitted": 1,
+  "remainingTestRows": 0
+}

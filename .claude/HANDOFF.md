@@ -1,41 +1,40 @@
-# 最新交接 — Decision 35（2026-09-06）
+# 最新交接 — Decision 36（2026-09-06 21:25 台灣時間）
 
-## 現況
+## 正式狀態
 
-正式 https://injury.sportsmedicine.tw/ 已啟用；Pages domain、驗證、TLS 狀態 active。CNAME 由使用者新增，先前 522／pending 已解決，不要再要求新增 DNS。主站首頁及 /content/ 的 HTTP 200 與內容 hash 和本輪前相同。
+https://injury.sportsmedicine.tw/。來源 ee5683c6426c21401bfd44e957640649a75d1a3a 已 commit/push；Production/main 部署 f4e330ba-e41f-4f84-8813-4ded4b197bf7，乾淨提交。root dist 為正式產物；收尾 docs 另提交，不需再部署。仍為 101 影片、11 部位、15 運動，棒球 30。
 
-正式部署 3593ae04-0722-42cc-ae18-367d7b933b12，來源 d42d5163986d306b312de3336382b561591100c0，main，乾淨提交；已 commit/push。root dist 是最終正式產物。收尾證據／文件另提交，不需重部署。仍為 101 支影片、11 部位、15 運動，其中棒球 30 支。
+## 本輪兩項要求均已實作／部署
 
-## 最新補充（21:06 台灣時間）
+1. 防灌信：每 IP 每台灣日 10 次，全站每日最多 50 次保留中的寄信額度，相同內容跨 IP 在 600 秒內不重寄。原按鈕 busy lock、Turnstile、isolate/IP 3/min 與主站 KV 限流保留。台灣午夜重置日額度；超限回 429 + Retry-After，UI 顯示 IP／全站／重複原因且保留輸入，資料庫失效回 503 停止寄信。公開影片 URL 仍選填，修正 URL 必填。
+2. 七個含「03 / 一般人參考」的公開 /cases/ 頁加入主站 1–2 篇相關文章（共 5 個公開網址），位於該區塊下方。ACL 1 篇、踝扭傷 2 篇、阿基里斯斷裂 2 篇。其他 /videos/ 動作觀察頁沒有此 03 元件，本輪沒有新增該元件或改其醫療內容。來源映射獨立 src/data/patient-related-articles.v1.json，不改原 patient-guides 凍結內容／核准。
 
-使用者要求公開影片網址選填，已同步移除前端必填、切換時更新 required，backend 接受省略／空白影片 URL，有填仍驗格式，信內顯示「未提供」。資料修正頁面 URL 仍必填。36 項相關單元、四瀏覽器 16 項、Astro 0 errors／0 warnings、release:public 通過；正式 /contribute/ hash 相符，留白與分類切換以攔截 API 的瀏覽器測試確認，未寄真實郵件。收件設定未變更；本機主站收件地址已告知使用者，正式 CONTACT_RECIPIENT_EMAIL 為不可讀回 secret，不能用本機值保證正式收件地址。
+## 限流實作與必要部署資訊
 
-證據 docs/reviews/evidence/decision-35/optional-url/。以下完整站點回歸紀錄屬前一版，這次小改只重跑相關驗證。
+src/lib/video/contribution-limits.ts：單一 SQL INSERT 檢查 IP/global/duplicate，D1 transaction batch 內原子保留額度並判斷原因，跨 Workers／分頁共享，不是記憶體額度。functions/api/contributions.ts 使用既有 PLAYBACK_DB binding。
 
-## 本輪功能
+migrations/0002_contribution_limits.sql 已各套用 atlas-playback-preview 與 atlas-playback-production，新增 contribution_guard_key、contribution_attempts 與索引；未改 play_events。不要重建 key 或清正式 quota，否則 IP／去重可能失效。key 由 SQL randomblob 初始產生，只在伺服器記憶體供 HMAC，不輸出。日變 IP HMAC、內容 HMAC、時間／日、狀態／隨機 ID 留在獨立表，不保存明碼 IP 或表單全文；超過 48h 的紀錄在下次 reserve 清除。隱私說明已更新。
 
-右上角新增「製作者／運動醫學科 吳易澄醫師」連回 https://sportsmedicine.tw/；新增「提供影片／資料修正」至 /contribute/。無訪客姓名／信箱；公開影片網址或需要修正的頁面、說明、最多 3 筆來源。從任何頁面進入，選資料修正時自動帶入原頁網址。成功顯示感謝，失敗保留內容並可重試；不會自動改網站內容。
+reserve 在上游寄信前執行。上游確認 4xx（408 除外）在寄信前被拒，標記 rejected 釋放 global／duplicate 但仍占 IP 額度；其他錯誤、逾時、格式不明及中途停止保留 pending／uncertain，避免可能已寄出卻重寄。settle 寫入失敗保留 pending；確認上游成功仍可回成功。這是最多 50 個可能寄送的保守上限，服務異常時可寄的封數會更少；限制僅涵蓋本圖鑑 relay，不涵蓋主站其他聯絡表單或整個 Gmail。
 
-POST /api/contributions 使用固定第一方 https://sportsmedicine.tw/api/contact，由既有主站 Turnstile／Resend／CONTACT_RECIPIENT_EMAIL 處理寄送。未新增寄信 secret，未更動主站程式或設定。no-reply@injury.sportsmedicine.tw 僅為上游必填 email 的系統 placeholder，信內清楚標註沒有訪客回覆信箱。不得把本機主站 .env 的 RESEND placeholder 用在 production。
+## 驗證
 
-API 同源、方法、JSON、12 KB body、URL／說明／來源驗證、honeypot，每 isolate/IP 3 次／分鐘；只傳文字、不抓使用者 URL。上游回 ok:true 才回成功。既有主站有選用 KV 3/min、10/hr 限流，跨站 relay 可能共用上游出口 IP，非全域可靠寄信佇列。可能較早遇到 429；未宣稱保證送達或高流量容量。
+- 86 檔 1,403 單元通過；Astro 0 errors／0 warnings，16 既有 hints；變更格式通過。
+- 四瀏覽器 32 項表單驗證通過，含四種限額／服務錯誤文字、保留內容、不顯示成功。
+- 獨立唯讀 reviewer 信心 0.94，無阻擋問題；自行重跑 54 項相關單元，指出 E2E 缺口已補、需先 migration 已完成。
+- 真實預覽 D1：70 個不同 IP 併發恰 50 放行；同 IP 20 個恰 10；相同內容 20 個恰 1。finally 清除本次測試紀錄，零殘留。
+- 真實預覽 Pages API：預填 50 個測試額度後，POST 回 429/site-daily，在寄信前拒絕，清除測試紀錄。第一次 Python HTTP 用戶端遇非 JSON 回應，改 Node fetch 後通過；不是改 API 邏輯。未寄信。
+- 五篇主站文章 HTTP 200／H1 相符；首次 web fetch cache miss，Node 直接讀取成功。最終映射已逐一按傷害核對。
+- release:public 145 HTML、2,322 內部連結、384 產物；root 與預覽逐檔相同。
+- 正式 9 個修改頁面（7 case、contribute、privacy）hash 相符，兩尺寸共 18 組 Axe／無溢位／相關文章位置與數量通過。正式 schema 唯讀確認兩表與 1 key，attempts=0，沒有正式測試列或播放事件。
 
-public/_routes.json 已加入 /api/contributions。CSP 加入 Turnstile script/frame；安全驗證只在表單頁載入。320px 的窄表單使用 compact widget；其餘 flexible。隱私頁新增實際資料流說明。
+## 尚未完成的舊收信驗證
 
-## 驗證與限制
+目前仍沿用 https://sportsmedicine.tw/api/contact 的既有 CONTACT_RECIPIENT_EMAIL／Turnstile／Resend，主站 repo／secret 未改。使用者先前詢問收件信箱，本機值已回覆；正式 secret 不能讀回，因此不能宣稱實際收件地址已確認。沒有發出測試信，也沒有收件匣證據。先前詢問允許一封測試信尚無直接答覆；本輪「可以」承接的是三項限流，非實際寄信授權。
 
-最終 85 檔 1,380 單元通過，Astro 0 errors／0 warnings（16 既有 hints），格式通過。四瀏覽器頁首／表單 52 項通過；最後提示／尺寸修正再跑表單 12 項通過。release:public：145 HTML、2,322 內部連結、384 產物，原醫療來源凍結／核准不改，只重綁 inputTreeDigest。D35 新 canonical 用獨立 public-domain.v1.json，不改原 D21 醫療 origin。
+若後續要驗證收件：由使用者同意並在真人瀏覽器完成 Turnstile，送一封明確標記測試的資料，確認頁面及 inbox。不要繞過安全驗證、換測試 key 或將正式 quota 填滿做壓力測試。
 
-最終正式 149 回應 hash／canonical 全符，5 頁 × 2 尺寸 Axe／無溢位／入口與表單外觀通過；Turnstile 在這些自動測試中 mock。正式 API GET 405、跨來源 403、缺修正說明 400；以上不寄信。王建民在新網域 native playback 成功，DNT + 攔截 /api/plays，0 transmitted test posts，保留真實熱門資料。
+## 下一步與文件
 
-實際 Turnstile widget 已在新網域顯示，但自動 Chrome 未取得 token，畫面要求人工勾選；診斷也觀察到 challenge 子請求 ERR_ADDRESS_UNREACHABLE。沒有繞過或使用測試 key 替代。成功／失敗寄信介面與 backend 單元使用 mock；尚未實際寄信，未確認主站收件匣收到通知。已透過 async 詢問使用者是否同意寄一封「影片圖鑑功能測試」，本輪尚未收到答覆。不要把上線／mock 通過當成端到端寄信已驗證。
-
-## 下一步
-
-1. 使用者同意測試後，開 https://injury.sportsmedicine.tw/contribute/，由真人完成 Turnstile，送一筆清楚標記測試的資料；只送一封，不改安全驗證。
-2. 確認頁面成功狀態與使用者實際收信；失敗則依 /api/contributions 狀態及主站 /api/contact 診斷，不記錄 token 或個人內容。未經授權不要更動另一個主站 repo／secret。
-3. 更新 docs/reviews/2026-09-06-decision-35-custom-domain.md 的收信驗證結果。無更多已指定功能待實作。
-
-## 文件
-
-報告 docs/reviews/2026-09-06-decision-35-custom-domain.md；證據 docs/reviews/evidence/decision-35/。先前交接完整存 docs/handoffs/2026-09-06-before-decision-35-contributions.md。Node24.14.0；Wrangler4.129.0。原 4321 預覽未改，隔離 E2E 使用 14336。/tmp/atlas35/ 有本輪驗證工具，token 僅由 Wrangler 已有設定於記憶體讀取。
+已指定的本輪兩項功能沒有剩餘工作。後續可依使用者回覆完成一封實際收件驗證；無更多已指定任務。
+報告 docs/reviews/2026-09-06-decision-36-contribution-limits-and-related-articles.md；證據 evidence/decision-36。上一份交接 docs/handoffs/2026-09-06-before-decision-36.md。/tmp/atlas36/ 有驗證工具；隔離 checkout /tmp/atlas35-checkout，E2E 14336；原 4321 未改。Node24.14.0／Wrangler4.129.0。

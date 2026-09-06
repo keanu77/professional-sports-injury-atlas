@@ -1,0 +1,83 @@
+
+> professional-sports-injury-atlas@0.1.0 check
+> astro check --minimumFailingSeverity warning
+
+21:18:20 [content] Syncing content
+21:18:20 [content] Synced content
+21:18:20 [types] Generated 217ms
+21:18:20 [check] Getting diagnostics for Astro files in /Users/ethanstudio/Documents/Vibe coding/professional-sports injury...
+[96msrc/lib/contracts/player-photo-registry-v5.ts[0m:[93m12[0m:[93m8[0m - [93mwarning[0m[90m ts(6133): [0m'PlayerPhotoRegistryV4' is declared but its value is never read.
+
+[7m12[0m   type PlayerPhotoRegistryV4,
+[7m  [0m [93m       ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscripts/generate-decision-13-notice-before-evidence.ts[0m:[93m890[0m:[93m10[0m - [93mwarning[0m[90m ts(6133): [0m'normalizeText' is declared but its value is never read.
+
+[7m890[0m function normalizeText(value: string): string {
+[7m   [0m [93m         ~~~~~~~~~~~~~[0m
+
+[96mscripts/generate-player-photo-registry-v4.ts[0m:[93m33[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'v3ByAthlete' is declared but its value is never read.
+
+[7m33[0m const v3ByAthlete = new Map(
+[7m  [0m [93m      ~~~~~~~~~~~[0m
+
+[96mscripts/run-lighthouse.ts[0m:[93m159[0m:[93m26[0m - [93mwarning[0m[90m ts(80007): [0m'await' has no effect on the type of this expression.
+
+[7m159[0m     if (chrome !== null) await chrome.kill();
+[7m   [0m [93m                         ~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscripts/research/capture-decision-14-sandro-halank-evidence.ts[0m:[93m7[0m:[93m3[0m - [93mwarning[0m[90m ts(6133): [0m'compareCodePoints' is declared but its value is never read.
+
+[7m7[0m   compareCodePoints,
+[7m [0m [93m  ~~~~~~~~~~~~~~~~~[0m
+
+[96mtests/unit/private-host-verifier.test.ts[0m:[93m2379[0m:[93m7[0m - [93mwarning[0m[90m ts(6385): [0m'toThrowError' is deprecated.
+
+[7m2379[0m     ).toThrowError(expect.objectContaining({ code: "receipt-write-failed" }));
+[7m    [0m [93m      ~~~~~~~~~~~~[0m
+[96mtests/unit/private-host-verifier.test.ts[0m:[93m2372[0m:[93m7[0m - [93mwarning[0m[90m ts(6385): [0m'toThrowError' is deprecated.
+
+[7m2372[0m     ).toThrowError(expect.objectContaining({ code: "receipt-write-failed" }));
+[7m    [0m [93m      ~~~~~~~~~~~~[0m
+[96mtests/unit/private-host-verifier.test.ts[0m:[93m2362[0m:[93m7[0m - [93mwarning[0m[90m ts(6385): [0m'toThrowError' is deprecated.
+
+[7m2362[0m     ).toThrowError(PrivateHostVerifierError);
+[7m    [0m [93m      ~~~~~~~~~~~~[0m
+[96mtests/unit/private-host-verifier.test.ts[0m:[93m2352[0m:[93m7[0m - [93mwarning[0m[90m ts(6385): [0m'toThrowError' is deprecated.
+
+[7m2352[0m     ).toThrowError(PrivateHostVerifierError);
+[7m    [0m [93m      ~~~~~~~~~~~~[0m
+[96mtests/unit/private-host-verifier.test.ts[0m:[93m2317[0m:[93m65[0m - [93mwarning[0m[90m ts(6385): [0m'toThrowError' is deprecated.
+
+[7m2317[0m     expect(() => readCredentialFromTtyPort(failedRestore.port)).toThrowError(
+[7m    [0m [93m                                                                ~~~~~~~~~~~~[0m
+[96mtests/unit/private-host-verifier.test.ts[0m:[93m2304[0m:[93m65[0m - [93mwarning[0m[90m ts(6385): [0m'toThrowError' is deprecated.
+
+[7m2304[0m     expect(() => readCredentialFromTtyPort(failedDisable.port)).toThrowError(
+[7m    [0m [93m                                                                ~~~~~~~~~~~~[0m
+[96mtests/unit/private-host-verifier.test.ts[0m:[93m2293[0m:[93m62[0m - [93mwarning[0m[90m ts(6385): [0m'toThrowError' is deprecated.
+
+[7m2293[0m     expect(() => readCredentialFromTtyPort(failedRead.port)).toThrowError(
+[7m    [0m [93m                                                             ~~~~~~~~~~~~[0m
+[96mtests/unit/private-host-verifier.test.ts[0m:[93m2187[0m:[93m7[0m - [93mwarning[0m[90m ts(6385): [0m'toThrowError' is deprecated.
+
+[7m2187[0m     ).toThrowError(expect.objectContaining({ code: "credential-invalid" }));
+[7m    [0m [93m      ~~~~~~~~~~~~[0m
+[96mtests/unit/private-host-verifier.test.ts[0m:[93m2174[0m:[93m7[0m - [93mwarning[0m[90m ts(6385): [0m'toThrowError' is deprecated.
+
+[7m2174[0m     ).toThrowError(expect.objectContaining({ code: "credential-invalid" }));
+[7m    [0m [93m      ~~~~~~~~~~~~[0m
+[96mtests/unit/private-host-verifier.test.ts[0m:[93m2168[0m:[93m7[0m - [93mwarning[0m[90m ts(6385): [0m'toThrowError' is deprecated.
+
+[7m2168[0m     ).toThrowError(expect.objectContaining({ code: "credential-invalid" }));
+[7m    [0m [93m      ~~~~~~~~~~~~[0m
+[96mtests/unit/private-host-verifier.test.ts[0m:[93m2148[0m:[93m9[0m - [93mwarning[0m[90m ts(6385): [0m'toThrowError' is deprecated.
+
+[7m2148[0m       ).toThrowError(expect.objectContaining({ code: "credential-invalid" }));
+[7m    [0m [93m        ~~~~~~~~~~~~[0m
+
+Result (339 files): 
+- 0 errors
+- 0 warnings
+- 16 hints
+

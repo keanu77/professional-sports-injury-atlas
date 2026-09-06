@@ -1,0 +1,71 @@
+[WebServer] (node:38439) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:48601) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 32 tests using 4 workers
+
+(node:48605) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:48604) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:48603) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:48606) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › e2e/contributions.spec.ts:21:3 › retains input when site-daily blocks sending (228ms)
+  ✓   3 [chromium] › e2e/contributions.spec.ts:21:3 › retains input when guard-unavailable blocks sending (228ms)
+  ✓   4 [chromium] › e2e/contributions.spec.ts:21:3 › retains input when ip-daily blocks sending (228ms)
+  ✓   2 [chromium] › e2e/contributions.spec.ts:21:3 › retains input when duplicate blocks sending (228ms)
+  ✓   5 [chromium] › e2e/contributions.spec.ts:35:1 › accepts an anonymous video and shows thanks only after confirmation (152ms)
+  ✓   6 [chromium] › e2e/contributions.spec.ts:58:1 › prefills a correction, preserves text on failure, and allows retry (225ms)
+  ✓   7 [chromium] › e2e/contributions.spec.ts:95:1 › allows an empty video URL after switching back from correction (225ms)
+(node:48629) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:48631) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:48632) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   8 [chromium] › e2e/contributions.spec.ts:115:1 › header and form reflow with large text and pass accessibility in both themes (639ms)
+(node:48637) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   9 [firefox] › e2e/contributions.spec.ts:21:3 › retains input when ip-daily blocks sending (838ms)
+  ✓  13 [firefox] › e2e/contributions.spec.ts:35:1 › accepts an anonymous video and shows thanks only after confirmation (303ms)
+  ✓  10 [firefox] › e2e/contributions.spec.ts:21:3 › retains input when duplicate blocks sending (890ms)
+  ✓  12 [firefox] › e2e/contributions.spec.ts:21:3 › retains input when guard-unavailable blocks sending (905ms)
+  ✓  14 [firefox] › e2e/contributions.spec.ts:58:1 › prefills a correction, preserves text on failure, and allows retry (487ms)
+  ✓  15 [firefox] › e2e/contributions.spec.ts:95:1 › allows an empty video URL after switching back from correction (461ms)
+  ✓  11 [firefox] › e2e/contributions.spec.ts:21:3 › retains input when site-daily blocks sending (886ms)
+(node:48669) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:48670) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:48672) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  18 [webkit] › e2e/contributions.spec.ts:21:3 › retains input when site-daily blocks sending (467ms)
+  ✓  17 [webkit] › e2e/contributions.spec.ts:21:3 › retains input when ip-daily blocks sending (498ms)
+  ✓  16 [firefox] › e2e/contributions.spec.ts:115:1 › header and form reflow with large text and pass accessibility in both themes (1.3s)
+  ✓  19 [webkit] › e2e/contributions.spec.ts:21:3 › retains input when duplicate blocks sending (431ms)
+  ✓  20 [webkit] › e2e/contributions.spec.ts:21:3 › retains input when guard-unavailable blocks sending (286ms)
+  ✓  21 [webkit] › e2e/contributions.spec.ts:35:1 › accepts an anonymous video and shows thanks only after confirmation (286ms)
+(node:48714) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:48715) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  22 [webkit] › e2e/contributions.spec.ts:95:1 › allows an empty video URL after switching back from correction (416ms)
+  ✓  24 [mobile-chromium] › e2e/contributions.spec.ts:21:3 › retains input when ip-daily blocks sending (143ms)
+(node:48726) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  26 [mobile-chromium] › e2e/contributions.spec.ts:21:3 › retains input when duplicate blocks sending (128ms)
+  ✓  28 [mobile-chromium] › e2e/contributions.spec.ts:21:3 › retains input when guard-unavailable blocks sending (131ms)
+  ✓  27 [mobile-chromium] › e2e/contributions.spec.ts:21:3 › retains input when site-daily blocks sending (154ms)
+  ✓  29 [mobile-chromium] › e2e/contributions.spec.ts:35:1 › accepts an anonymous video and shows thanks only after confirmation (130ms)
+  ✓  25 [webkit] › e2e/contributions.spec.ts:58:1 › prefills a correction, preserves text on failure, and allows retry (538ms)
+  ✓  30 [mobile-chromium] › e2e/contributions.spec.ts:58:1 › prefills a correction, preserves text on failure, and allows retry (232ms)
+  ✓  31 [mobile-chromium] › e2e/contributions.spec.ts:95:1 › allows an empty video URL after switching back from correction (174ms)
+  ✓  23 [webkit] › e2e/contributions.spec.ts:115:1 › header and form reflow with large text and pass accessibility in both themes (1.1s)
+(node:48743) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  32 [mobile-chromium] › e2e/contributions.spec.ts:115:1 › header and form reflow with large text and pass accessibility in both themes (609ms)
+
+  32 passed (17.2s)

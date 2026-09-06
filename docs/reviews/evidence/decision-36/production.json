@@ -1,0 +1,99 @@
+{
+  "origin": "https://injury.sportsmedicine.tw",
+  "checkedAt": "2026-09-06T13:25:22.149Z",
+  "htmlHashesMatched": 9,
+  "casePagesWithRelatedArticles": 7,
+  "results": [
+    {
+      "path": "/cases/anfernee-simons-ankle-sprain-2023/",
+      "width": 390,
+      "screenshot": true
+    },
+    {
+      "path": "/cases/jayson-tatum-achilles-rupture-2025/",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/cases/kevin-durant-achilles-rupture-2019/",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/cases/kyrie-irving-ankle-sprain-2021/",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/cases/lamelo-ball-ankle-sprain-2023/",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/cases/lamelo-ball-ankle-sprain-2025/",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/cases/tyrese-haliburton-achilles-rupture-2025/",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/contribute/",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/privacy/",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "path": "/cases/anfernee-simons-ankle-sprain-2023/",
+      "width": 1440,
+      "screenshot": true
+    },
+    {
+      "path": "/cases/jayson-tatum-achilles-rupture-2025/",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/cases/kevin-durant-achilles-rupture-2019/",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/cases/kyrie-irving-ankle-sprain-2021/",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/cases/lamelo-ball-ankle-sprain-2023/",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/cases/lamelo-ball-ankle-sprain-2025/",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/cases/tyrese-haliburton-achilles-rupture-2025/",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/contribute/",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "path": "/privacy/",
+      "width": 1440,
+      "passed": true
+    }
+  ],
+  "realEmailsSent": 0
+}

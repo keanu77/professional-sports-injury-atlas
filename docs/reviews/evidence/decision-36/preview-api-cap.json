@@ -1,0 +1,10 @@
+{
+  "origin": "https://8ddb927c.sports-injury-atlas.pages.dev",
+  "status": 429,
+  "body": {
+    "error": "site-daily"
+  },
+  "checkedAt": "2026-09-06T13:22:13Z",
+  "mailServiceCallBlockedBeforeSend": true,
+  "remainingTestRows": 0
+}
