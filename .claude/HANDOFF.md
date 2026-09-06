@@ -1,40 +1,30 @@
-# 最新交接 — Decision 36（2026-09-06 21:25 台灣時間）
+# 最新交接 — Decision 38（2026-09-06）
 
 ## 正式狀態
 
-https://injury.sportsmedicine.tw/。來源 ee5683c6426c21401bfd44e957640649a75d1a3a 已 commit/push；Production/main 部署 f4e330ba-e41f-4f84-8813-4ded4b197bf7，乾淨提交。root dist 為正式產物；收尾 docs 另提交，不需再部署。仍為 101 影片、11 部位、15 運動，棒球 30。
+https://injury.sportsmedicine.tw/ 已更新。功能來源 a8fbc50ee9332d192c4dda204710383d933c0443 已 commit/push；正式部署 https://4151f2a7.sports-injury-atlas.pages.dev，root dist 為這次正式產物。仍為 101 影片、11 部位、15 種運動、棒球 30。
 
-## 本輪兩項要求均已實作／部署
+## 最新要求已完成
 
-1. 防灌信：每 IP 每台灣日 10 次，全站每日最多 50 次保留中的寄信額度，相同內容跨 IP 在 600 秒內不重寄。原按鈕 busy lock、Turnstile、isolate/IP 3/min 與主站 KV 限流保留。台灣午夜重置日額度；超限回 429 + Retry-After，UI 顯示 IP／全站／重複原因且保留輸入，資料庫失效回 503 停止寄信。公開影片 URL 仍選填，修正 URL 必填。
-2. 七個含「03 / 一般人參考」的公開 /cases/ 頁加入主站 1–2 篇相關文章（共 5 個公開網址），位於該區塊下方。ACL 1 篇、踝扭傷 2 篇、阿基里斯斷裂 2 篇。其他 /videos/ 動作觀察頁沒有此 03 元件，本輪沒有新增該元件或改其醫療內容。來源映射獨立 src/data/patient-related-articles.v1.json，不改原 patient-guides 凍結內容／核准。
+使用者指定「『熱門』次數1小時統計一次」。播放開始仍即時記錄，熱門以整點之前的 30 天資料排名，當小時新播放下整點納入。SQL 區間 `[hourStart - 30 days, hourStart)`，所有訪客相同截止；HTTP max-age 至下一個整點。GET 按固定区間計算，沒有新增排程或聲稱每小時僅一個 SQL。持續停留不自動刷新；重新點「本站熱門」讀更新。
 
-## 限流實作與必要部署資訊
-
-src/lib/video/contribution-limits.ts：單一 SQL INSERT 檢查 IP/global/duplicate，D1 transaction batch 內原子保留額度並判斷原因，跨 Workers／分頁共享，不是記憶體額度。functions/api/contributions.ts 使用既有 PLAYBACK_DB binding。
-
-migrations/0002_contribution_limits.sql 已各套用 atlas-playback-preview 與 atlas-playback-production，新增 contribution_guard_key、contribution_attempts 與索引；未改 play_events。不要重建 key 或清正式 quota，否則 IP／去重可能失效。key 由 SQL randomblob 初始產生，只在伺服器記憶體供 HMAC，不輸出。日變 IP HMAC、內容 HMAC、時間／日、狀態／隨機 ID 留在獨立表，不保存明碼 IP 或表單全文；超過 48h 的紀錄在下次 reserve 清除。隱私說明已更新。
-
-reserve 在上游寄信前執行。上游確認 4xx（408 除外）在寄信前被拒，標記 rejected 釋放 global／duplicate 但仍占 IP 額度；其他錯誤、逾時、格式不明及中途停止保留 pending／uncertain，避免可能已寄出卻重寄。settle 寫入失敗保留 pending；確認上游成功仍可回成功。這是最多 50 個可能寄送的保守上限，服務異常時可寄的封數會更少；限制僅涵蓋本圖鑑 relay，不涵蓋主站其他聯絡表單或整個 Gmail。
+清理舊播放紀錄也以相同區間為準，避免新寫入把當小時榜單所需紀錄刪除。首頁熱門提示與隱私說明已同步。未更動投稿、醫療內容或 D37 其他改善建議；public-launch rendering input digest 依此次功能指示刷新，原醫療核准不變。
 
 ## 驗證
 
-- 86 檔 1,403 單元通過；Astro 0 errors／0 warnings，16 既有 hints；變更格式通過。
-- 四瀏覽器 32 項表單驗證通過，含四種限額／服務錯誤文字、保留內容、不顯示成功。
-- 獨立唯讀 reviewer 信心 0.94，無阻擋問題；自行重跑 54 項相關單元，指出 E2E 缺口已補、需先 migration 已完成。
-- 真實預覽 D1：70 個不同 IP 併發恰 50 放行；同 IP 20 個恰 10；相同內容 20 個恰 1。finally 清除本次測試紀錄，零殘留。
-- 真實預覽 Pages API：預填 50 個測試額度後，POST 回 429/site-daily，在寄信前拒絕，清除測試紀錄。第一次 Python HTTP 用戶端遇非 JSON 回應，改 Node fetch 後通過；不是改 API 邏輯。未寄信。
-- 五篇主站文章 HTTP 200／H1 相符；首次 web fetch cache miss，Node 直接讀取成功。最終映射已逐一按傷害核對。
-- release:public 145 HTML、2,322 內部連結、384 產物；root 與預覽逐檔相同。
-- 正式 9 個修改頁面（7 case、contribute、privacy）hash 相符，兩尺寸共 18 組 Axe／無溢位／相關文章位置與數量通過。正式 schema 唯讀確認兩表與 1 key，attempts=0，沒有正式測試列或播放事件。
+- 2 檔 28 相關單元通過，使用實際 SQLite，含整點、跨台灣午夜、新播放延至下一小時、30 天窗及清理不改當小時排行。
+- Astro 0 errors／0 warnings、16 既有 hints；格式與 release:public 通過（145 HTML、2,322 內部連結）。
+- 預覽和正式各驗證 API generatedAt 整點、max-age 至下整點，首頁／privacy 共 2 HTML hash 相符，390／1440px 熱門提示與僅名次顯示正確。
+- 正式驗證 generatedAt=2026-09-06T14:00:00.000Z（台灣22:00）。沒有正式測試播放、寄信或資料庫結構變更。
 
-## 尚未完成的舊收信驗證
+## D37 稽核
 
-目前仍沿用 https://sportsmedicine.tw/api/contact 的既有 CONTACT_RECIPIENT_EMAIL／Turnstile／Resend，主站 repo／secret 未改。使用者先前詢問收件信箱，本機值已回覆；正式 secret 不能讀回，因此不能宣稱實際收件地址已確認。沒有發出測試信，也沒有收件匣證據。先前詢問允許一封測試信尚無直接答覆；本輪「可以」承接的是三項限流，非實際寄信授權。
+多模型稽核已交付，commit 36814f1。報告 docs/reviews/2026-09-06-decision-37-full-site-audit.md 與 evidence/decision-37。只提出建議，不代表全部獲准實作；D38 僅變更每小時熱門。P1 包括手機選片、卡片欄位、民眾導讀、里程碑標籤、小觸控連結、空投稿、防造播放及 dev/build 依賴修補。沒有已證 P0。其餘待使用者選擇。
 
-若後續要驗證收件：由使用者同意並在真人瀏覽器完成 Turnstile，送一封明確標記測試的資料，確認頁面及 inbox。不要繞過安全驗證、換測試 key 或將正式 quota 填滿做壓力測試。
+## 保留的營運限制
 
-## 下一步與文件
+D36 投稿每日10/IP、全站50、600秒去重與Turnstile依舊。真人驗證後一封測試信的實際收件驗收尚未獲明確指示，沒有寄信；不可把先前 mock 成功當信箱實收。詳見 docs/handoffs/2026-09-06-before-decision-38.md。
 
-已指定的本輪兩項功能沒有剩餘工作。後續可依使用者回覆完成一封實際收件驗證；無更多已指定任務。
-報告 docs/reviews/2026-09-06-decision-36-contribution-limits-and-related-articles.md；證據 evidence/decision-36。上一份交接 docs/handoffs/2026-09-06-before-decision-36.md。/tmp/atlas36/ 有驗證工具；隔離 checkout /tmp/atlas35-checkout，E2E 14336；原 4321 未改。Node24.14.0／Wrangler4.129.0。
+## 文件
+
+本輪報告 docs/reviews/2026-09-06-decision-38-hourly-popularity.md；證據 docs/reviews/evidence/decision-38。/tmp/atlas38/ 保存測試／建置／部署工具紀錄。原4321預覽未動；node_modules與機密設定未改。

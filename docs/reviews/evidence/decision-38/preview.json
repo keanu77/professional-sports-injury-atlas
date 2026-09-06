@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-09-06T14:01:47.348Z",
+  "origin": "https://1159c0f7.sports-injury-atlas.pages.dev",
+  "generatedAt": "2026-09-06T14:00:00.000Z",
+  "cacheControl": "public, max-age=3499",
+  "windowDays": 30,
+  "items": 24,
+  "htmlHashes": 2,
+  "views": [
+    {
+      "width": 390,
+      "status": "依本站近 30 天實際播放次數排序，每小時整點更新；不包含 YouTube 平台的累計觀看數。",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "status": "依本站近 30 天實際播放次數排序，每小時整點更新；不包含 YouTube 平台的累計觀看數。",
+      "passed": true
+    }
+  ],
+  "productionWrites": 0
+}

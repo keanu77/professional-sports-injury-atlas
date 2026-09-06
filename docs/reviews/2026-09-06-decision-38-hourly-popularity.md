@@ -9,3 +9,10 @@
 驗證：相關 SQLite／播放／分類單元 28 項通過，涵蓋整點事件留待下小時、同小時新播放不改榜、30 天邊界、清理不影響当前榜、跨台灣午夜、新整點快取到期與排名切換。Astro 檢查 0 errors／0 warnings、16 既有 hints。沒有往正式環境新增測試播放或寄信。
 
 發佈重新綁定 `public-launch.v1.json` 的 rendering input digest，依本次功能指示授權；原醫療核准、病例／衛教 bytes 和來源不變。部署後驗證記錄另附，未取得正式回應前不稱已上線。
+
+
+## 正式結果
+
+功能提交 `a8fbc50ee9332d192c4dda204710383d933c0443` 已推送；正式部署 [4151f2a7](https://4151f2a7.sports-injury-atlas.pages.dev)，[正式網域](https://injury.sportsmedicine.tw/) 已確認新版本。
+
+預覽與正式 API 的 `generatedAt` 皆為整點，快取到下一個整點；首頁與 privacy 的 HTML hash 相符，各在390／1440px確認每小時更新提示與榜單僅顯示名次。沒有寫正式播放資料或寄信。證據：[preview](evidence/decision-38/preview.json)、[production](evidence/decision-38/production.json)、[validation](evidence/decision-38/validation.json)。
