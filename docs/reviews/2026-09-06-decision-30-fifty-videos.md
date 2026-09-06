@@ -51,6 +51,16 @@ Astro check：0 errors、0 warnings、16 既有 hints。全單元 1,320 項：�
 
 預覽部署：6bb1bd96.sports-injury-atlas.pages.dev。81 HTML、7 病例、45 觀察片、6 部位分類、13 運動分類、1,156 內部連結，artifact 驗證通過。預覽後僅精簡 Gomes 觀察文，影片 ID／起播時間與播放器不變；正式發布將另驗所有檔案雜湊。
 
-最終正式部署、全站瀏覽器及 30 支實播結果於完成後追加。證據目錄：docs/reviews/evidence/decision-30/。
+最終正式部署、全站瀏覽器及 30 支實播結果見下方「正式完成」。證據目錄：docs/reviews/evidence/decision-30/。
 
 預覽 30 支新增影片首次全部實播成功。全站瀏覽器第一轮在 WNBA 來源觸發舊測試的 `href*=nba.com` 子字串誤判，已改精確 hostname／子網域比對，保留 WNBA 正常來源連結並重跑；沒有放寬 NBA 真正網域的呈現政策。
+
+## 正式完成
+
+來源 `d3a003fd1f8baedd8b4f77b6ee64ab397133a27d` 已推送；Production/main `21d81956-cfef-4d02-b7e9-6f0d3e79063b`，正式 https://sports-injury-atlas.pages.dev/。
+
+30 支新增影片於正式網址第一次全部實播成功，ID／起播时间符合清單，沒有失敗或重試。原 22 支保留本日此前正式實播證據。
+
+2026-09-06T09:12:54.442Z，正式 85 回應（81 HTML 及 JSON／robots）雜湊與來源產物全部吻合；72 頁 × 320／390／1440 三種尺寸共 216 組通過。來源展開、運動／部位分類集合與數量、縮圖、Axe、無水平溢位、零點擊前第三方請求、無 JavaScript 導覽及已刪除影片最終 404 均通過。首頁手機與桌面截圖亦已人工檢視。
+
+正式 root dist 與 receipt 保留；所有本輪使用者要求已完成。收尾證據與交接另行提交，不需重部署。

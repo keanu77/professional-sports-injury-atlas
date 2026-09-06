@@ -1,0 +1,9 @@
+{
+  "Id": "21d81956-cfef-4d02-b7e9-6f0d3e79063b",
+  "Environment": "Production",
+  "Branch": "main",
+  "Source": "d3a003f",
+  "Deployment": "https://21d81956.sports-injury-atlas.pages.dev",
+  "sourceCommit": "d3a003fd1f8baedd8b4f77b6ee64ab397133a27d",
+  "publicOrigin": "https://sports-injury-atlas.pages.dev"
+}

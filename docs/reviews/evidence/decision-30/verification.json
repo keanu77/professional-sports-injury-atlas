@@ -14,12 +14,7 @@
   },
   "e2e": {
     "passed": 88,
-    "projects": [
-      "chromium",
-      "firefox",
-      "webkit",
-      "mobile-chromium"
-    ]
+    "projects": ["chromium", "firefox", "webkit", "mobile-chromium"]
   },
   "format": {
     "changedCodeAndData": "passed",
@@ -36,5 +31,18 @@
   "previewPlayback": {
     "total": 30,
     "played": 30
-  }
+  },
+  "productionPlayback": {
+    "total": 30,
+    "played": 30,
+    "firstAttempt": true
+  },
+  "productionBrowser": {
+    "matchedResponses": 85,
+    "pageViewportChecks": 216,
+    "noJavaScript": "passed",
+    "overflow": "none",
+    "preactivationExternalRequests": 0
+  },
+  "productionCommit": "d3a003fd1f8baedd8b4f77b6ee64ab397133a27d"
 }

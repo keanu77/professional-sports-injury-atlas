@@ -1,14 +1,18 @@
-# 最新交接 — Decision 30，2026-09-06（發布驗證進行中）
+# 最新交接 — Decision 30，2026-09-06
 
-使用者目標提高至 50 支以上。本批已加入 30 支，公開產物共 52 支（7 病例、45 動作觀察）、13 運動分類及 6 部位分類。首頁「更多傷害與案例」已移除；依運動項目導覽已加入，保留無搜尋、YouTube 預設封面與主站版型。
+已依「50 支以上」目標新增 30 支，正式網站共 52 支（7 病例、45 動作觀察），有 13 運動分類與 6 部位分類。首頁已移除「更多傷害與案例」整區；保留部位分類、无搜尋、YouTube 預設封面及 sportsmedicine.tw 視覺。
 
-預覽 https://6bb1bd96.sports-injury-atlas.pages.dev/；30 支新增均已實際內嵌播放成功。乾淨副本 release:public 通過（81 HTML、1,156 內部連結），1,320 單元含 sandbox socket 重跑通過，四瀏覽器 88 回歸通過，Astro 0 errors / 0 warnings、16 既有 hints。完整預覽瀏覽器驗證仍進行，正式網站暫仍 D29；不可把本機／預覽完成當正式已發布。
+正式 https://sports-injury-atlas.pages.dev/；來源 d3a003fd1f8baedd8b4f77b6ee64ab397133a27d 已 commit/push；Production/main 部署 21d81956-cfef-4d02-b7e9-6f0d3e79063b。root dist 為正式 81 HTML、1,156 內部連結產物。30 支新增在預覽及正式各首次全部實播成功；原22支保留本日先前實播證據。
 
-D30 使用連網 Codex、Grok及獨立來源／畫面／程式 Pass 2。替換 LaVine 第四節錯誤片段、Cousins 訪談片與 Gomes 靜態講評片；30 筆新事件來源與日期分開保存，原醫療核准未改。Livingston 首次回場尚未核清，returnDate:null；只列已確認的較晚出賽紀錄。季前／U23／雙打等最早出賽與後續一隊／單打分開說明。
+實際執行連網 Codex、Grok，加獨立來源／畫面／程式 Pass 2。LaVine 已換成第三節真正受傷片段；Cousins/Gomes 已換掉只見講評的原候選。Tamberi、Cavendish、Smith 等首次出賽修正，季前賽、U23、女雙與後續聯賽分開標示。Livingston 首次回場尚未核清，returnDate:null，只列已確認的2008-10-29出賽；不推估天數。NBA引用仍維持既有政策，WNBA網址不誤判成NBA。
 
-資料 src/data/videos/batch-30.v1.json、event-batch-30.v1.json；報告 docs/reviews/2026-09-06-decision-30-fifty-videos.md；證據 docs/reviews/evidence/decision-30/。保留兩支已移除影片的 _redirects 最終404。新批跨日查核目前會明確拒絕混合日期，之後需導入逐筆 checkedAt，不可重標舊資料。
+資料 src/data/videos/batch-30.v1.json、event-batch-30.v1.json；原病例／醫療核准／歷史影片清單未改。縮圖新增30份並保存雜湊。新增明顯變形等立即就醫／叫救護車與不得自行扳正的NHS處置說明；頭頸部維持不得當天回場。字幕未查核為not-verified，明示以播放器為準。
 
-待完成：正式 root release、部署、正式全部檔案hash／各尺寸分類与頁面檢查、30支新增正式實播、更新此交接及收尾提交。Node 24.14.0；隔離副本 /tmp/atlas23-checkout。全庫 format:check 的47份歷史報告／證據格式警告維持，變更程式／資料格式皆通過。
+Astro 0 errors / 0 warnings、16既有hints；1,320單元通過（初測13個socket受sandbox限制，相關三檔51項重跑全通過）、四瀏覽器88項回歸通過；變更程式／資料格式通過，全庫47份既有報告／證據格式警告未重寫。乾淨隔離副本及root release:public均通過。預覽85回應雜湊、72頁×3尺寸=216組、來源／分類／縮圖／Axe／零第三方预連線／無JS通過。正式驗證於2026-09-06T09:12:54.442Z完成：85回應hash全部吻合d3a003f；72頁×3尺寸=216組、來源／分類／縮圖／Axe／無水平溢位／零第三方預連線／無JS全數通過。
+
+保留兩個已移除匿名影片的_redirects，三種舊URL形式最終404。去重改為videoId，不同網址形式不能重複計數；每支影片恰好進入一個部位與一個運動分類。各批目前同日查核；之後跨日新增需先導入逐筆checkedAt，loader會拒絕混合查核日期，不能重標舊資料。
+
+報告 docs/reviews/2026-09-06-decision-30-fifty-videos.md；證據 docs/reviews/evidence/decision-30/；Node24.14.0。舊4321參考未更動；本輪所有要求已完成，無待辦；收尾文件另提交推送，不需再次部署。
 
 ---
 
