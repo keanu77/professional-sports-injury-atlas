@@ -57,8 +57,8 @@
     "Barlow Condensed", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei",
     sans-serif;
   --font-heading:
-    "Fraunces", "Noto Serif TC Heading", "Noto Serif TC", "Songti TC",
-    "PingFang TC", serif;
+    "Fraunces", "Noto Serif TC Heading", "Songti TC", "PingFang TC",
+    "Microsoft JhengHei", serif;
   --font-body:
     "Inter", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
   --font-meta: "Inter", "PingFang TC", sans-serif;
