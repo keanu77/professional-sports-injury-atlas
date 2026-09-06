@@ -66,6 +66,29 @@ try {
       await page.goto(origin + path, { waitUntil: "networkidle" });
       assert.equal(await page.locator("iframe").count(), 0);
       assert.equal(
+        await page.locator('.site-nav a[href^="/injuries/"]').count(),
+        0,
+      );
+      const covers = page.locator("[data-video-thumbnail]");
+      if (path === "/") assert.equal(await covers.count(), 14);
+      else {
+        assert.equal(
+          await page
+            .locator("[data-video-facade] [data-video-thumbnail]")
+            .count(),
+          1,
+        );
+        assert.equal(await page.locator("[data-video-load]").count(), 1);
+      }
+      for (const cover of await covers.all()) {
+        await cover.scrollIntoViewIfNeeded();
+        await cover.locator("img").evaluate((img) => img.decode());
+        assert.ok(
+          await cover.locator("img").evaluate((img) => img.naturalWidth >= 320),
+        );
+      }
+      await page.evaluate(() => scrollTo(0, 0));
+      assert.equal(
         await page.evaluate(
           () => document.documentElement.scrollWidth > innerWidth,
         ),
@@ -81,6 +104,9 @@ try {
         `Accessibility: ${path}`,
       );
       if (path === "/") {
+        assert.ok(
+          (await page.locator('main a[href^="/injuries/"]').count()) > 0,
+        );
         assert.equal(
           await page.locator("[data-featured-card]:visible").count(),
           receipt.cases.length + (receipt.clips ?? []).length,

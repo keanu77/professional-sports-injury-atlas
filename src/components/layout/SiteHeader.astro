@@ -5,7 +5,6 @@
  * src/scripts/preferences.ts drives aria-expanded, Escape close with focus
  * return, and the focus trap while the panel is open.
  */
-import { INJURIES } from "../../data/taxonomy/injuries";
 import FontScaleControl from "./FontScaleControl.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 
@@ -47,23 +46,6 @@ const currentPath = Astro.url.pathname;
             首頁
           </a>
         </li>
-        {
-          INJURIES.map((injury) => (
-            <li>
-              <a
-                class="site-nav-link"
-                href={`/injuries/${injury.code}/`}
-                aria-current={
-                  currentPath === `/injuries/${injury.code}/`
-                    ? "page"
-                    : undefined
-                }
-              >
-                {injury.labelZh}
-              </a>
-            </li>
-          ))
-        }
       </ul>
     </nav>
     <div class="site-controls">

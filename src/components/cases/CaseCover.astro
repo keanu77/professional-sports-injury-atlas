@@ -1,10 +1,12 @@
 ---
 /**
  * Governed case cover shared by heroes, cards, and privacy-preserving video
- * facades. Every registered case uses a local, hash-bound governed photo with
- * visible attribution; unknown fixture IDs retain the injury-theme fallback.
+ * facades. Public videos use Decision 25 local YouTube covers; historical
+ * review photos retain attribution and unknown fixtures use the theme fallback.
  */
 import { Picture } from "astro:assets";
+import VideoThumbnail from "./VideoThumbnail.astro";
+import { caseThumbnailId } from "../../lib/ui/video-thumbnails";
 import {
   caseImageFor,
   type CaseImageSelection,
@@ -51,6 +53,7 @@ if (
   );
 }
 
+const thumbnailId = caseThumbnailId(recordId);
 const isHero = presentation === "hero";
 const isThumb = presentation === "thumb";
 const renditionWidths = isThumb
@@ -73,86 +76,95 @@ const assetCreditsHref =
     : null;
 ---
 
-<figure
-  class:list={[
-    "case-cover",
-    `case-cover-${presentation}`,
-    { "editorial-case-figure": isHero },
-  ]}
-  data-case-cover={isThumb ? undefined : injuryCode}
-  data-case-thumb={isThumb ? injuryCode : undefined}
-  data-cover-kind={selection.kind}
-  data-cover-presentation={presentation}
-  data-cover-variant={selection.variant === null
-    ? undefined
-    : String(selection.variant)}
-  data-editorial-case-cover={isHero ? recordId : undefined}
-  data-injury-theme={injuryCode}
-  data-player-photo={selection.kind === "licensed-player-photo"
-    ? selection.athleteName
-    : undefined}
-  data-focal-x={String(selection.focalPosition.xPercent)}
-  data-focal-y={String(selection.focalPosition.yPercent)}
-  style={`--cover-focal-x: ${selection.focalPosition.xPercent}%; --cover-focal-y: ${selection.focalPosition.yPercent}%;`}
->
-  <div class="case-cover-media">
-    {
-      (
-        <Picture
-          src={selection.image}
-          formats={["avif", "webp"]}
-          fallbackFormat={selection.image.format === "png" ? "png" : "jpg"}
-          widths={renditionWidths}
-          width={renditionWidths.at(-1)!}
-          sizes={photoSizes}
-          quality={isHero || isThumb ? CASE_HERO_QUALITY : CASE_COVER_QUALITY}
-          loading={isHero || priority ? "eager" : "lazy"}
-          decoding="async"
-          fetchpriority={isHero || priority ? "high" : undefined}
-          alt={photoAlt}
-          class="case-cover-photo"
-          pictureAttributes={{ class: "case-cover-picture" }}
-        />
-      )
-    }
-    <slot name="media-action" />
-    <span data-cover-illustration={injuryCode} aria-hidden="true"></span>
-  </div>
-  {
-    selection.kind === "licensed-player-photo" ? (
-      <figcaption
-        class="case-cover-attribution"
-        data-license-bucket={
-          selection.attribution.rightsAttribution.licenseBucket
+{
+  thumbnailId ? (
+    <VideoThumbnail
+      videoId={thumbnailId}
+      priority={priority || isHero || presentation === "facade"}
+    >
+      <slot name="media-action" slot="media-action" />
+    </VideoThumbnail>
+  ) : (
+    <figure
+      class:list={[
+        "case-cover",
+        `case-cover-${presentation}`,
+        { "editorial-case-figure": isHero },
+      ]}
+      data-case-cover={isThumb ? undefined : injuryCode}
+      data-case-thumb={isThumb ? injuryCode : undefined}
+      data-cover-kind={selection.kind}
+      data-cover-presentation={presentation}
+      data-cover-variant={
+        selection.variant === null ? undefined : String(selection.variant)
+      }
+      data-editorial-case-cover={isHero ? recordId : undefined}
+      data-injury-theme={injuryCode}
+      data-player-photo={
+        selection.kind === "licensed-player-photo"
+          ? selection.athleteName
+          : undefined
+      }
+      data-focal-x={String(selection.focalPosition.xPercent)}
+      data-focal-y={String(selection.focalPosition.yPercent)}
+      style={`--cover-focal-x: ${selection.focalPosition.xPercent}%; --cover-focal-y: ${selection.focalPosition.yPercent}%;`}
+    >
+      <div class="case-cover-media">
+        {
+          <Picture
+            src={selection.image}
+            formats={["avif", "webp"]}
+            fallbackFormat={selection.image.format === "png" ? "png" : "jpg"}
+            widths={renditionWidths}
+            width={renditionWidths.at(-1)!}
+            sizes={photoSizes}
+            quality={isHero || isThumb ? CASE_HERO_QUALITY : CASE_COVER_QUALITY}
+            loading={isHero || priority ? "eager" : "lazy"}
+            decoding="async"
+            fetchpriority={isHero || priority ? "high" : undefined}
+            alt={photoAlt}
+            class="case-cover-photo"
+            pictureAttributes={{ class: "case-cover-picture" }}
+          />
         }
-        data-source-revision-id={String(
-          selection.attribution.sourceRevision.id,
-        )}
-        data-source-risk-category={
-          selection.attribution.sourceRiskCategory ?? undefined
-        }
-        data-policy-version={selection.attribution.policyVersion}
-        data-use-policy={selection.attribution.usePolicyMode}
-      >
-        <span>{selection.nonEventCaption}</span>
-        <span aria-hidden="true"> · </span>
-        <span>署名：{selection.attribution.photographer}</span>
-        <span aria-hidden="true"> · </span>
-        <a
-          href={assetCreditsHref!}
-          data-asset-credit-link
-          aria-label={`${selection.athleteName} 資料照片的完整授權與逐檔說明`}
+        <slot name="media-action" />
+        <span data-cover-illustration={injuryCode} aria-hidden="true" />
+      </div>
+      {selection.kind === "licensed-player-photo" ? (
+        <figcaption
+          class="case-cover-attribution"
+          data-license-bucket={
+            selection.attribution.rightsAttribution.licenseBucket
+          }
+          data-source-revision-id={String(
+            selection.attribution.sourceRevision.id,
+          )}
+          data-source-risk-category={
+            selection.attribution.sourceRiskCategory ?? undefined
+          }
+          data-policy-version={selection.attribution.policyVersion}
+          data-use-policy={selection.attribution.usePolicyMode}
         >
-          完整授權與逐檔說明
-        </a>
-      </figcaption>
-    ) : (
-      showFallbackCaption && (
-        <figcaption>原創 AI 生成攝影意象，非球員實際影像。</figcaption>
-      )
-    )
-  }
-</figure>
+          <span>{selection.nonEventCaption}</span>
+          <span aria-hidden="true"> · </span>
+          <span>署名：{selection.attribution.photographer}</span>
+          <span aria-hidden="true"> · </span>
+          <a
+            href={assetCreditsHref!}
+            data-asset-credit-link
+            aria-label={`${selection.athleteName} 資料照片的完整授權與逐檔說明`}
+          >
+            完整授權與逐檔說明
+          </a>
+        </figcaption>
+      ) : (
+        showFallbackCaption && (
+          <figcaption>原創 AI 生成攝影意象，非球員實際影像。</figcaption>
+        )
+      )}
+    </figure>
+  )
+}
 
 <style>
   .case-cover {

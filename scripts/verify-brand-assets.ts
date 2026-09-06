@@ -1,13 +1,14 @@
 /**
  * Brand-asset verifier. Site identity remains text/CSS-geometry only with an
  * empty league/team/logo allowlist. Raster exceptions are limited to two
- * exact governed inventories: generated injury-theme images beneath
+ * exact governed inventories, plus Decision 25 local video covers: generated injury-theme images beneath
  * `src/assets/heroes/` and licensed Commons player photos beneath
  * `src/assets/players/`. Arbitrary assets, source intermediates, authored
  * `<img>` tags, remote thumbnails/logos, trademark-like names, and claims of
  * official partnership/authorization still fail closed.
  */
 
+import { loadVideoThumbnails } from "./verify-video-thumbnails";
 import { createHash } from "node:crypto";
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative } from "node:path";
@@ -647,11 +648,14 @@ export function scanBrandAssets(root: string): ValidationIssue[] {
   const playerPhotos = existsSync(playerDirectory)
     ? loadPlayerPhotoAssets(root)
     : { allowedPaths: [], issues: [] };
+  const videoThumbnails = loadVideoThumbnails(root);
   const governedPaths = new Set([
+    ...videoThumbnails.allowedPaths,
     ...provenance.allowedPaths,
     ...playerPhotos.allowedPaths,
   ]);
   const issues: ValidationIssue[] = [
+    ...videoThumbnails.issues,
     ...provenance.issues,
     ...playerPhotos.issues,
     ...scanShareAlikeCompositeRisks(root),
