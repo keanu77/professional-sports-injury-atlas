@@ -1,3 +1,19 @@
+# Current handoff — 2026-09-06 Decision 22
+
+User asked to align the atlas typography/layout to https://sportsmedicine.tw/. Implemented and deployed: native CJK sans typography, navy/sky/coral palette, soft gradient hero with direct video CTA, rounded cards and patient panels, calmer controls/footer and responsive navigation. Clinical prose and public case selection remain unchanged.
+
+Production: https://sports-injury-atlas.pages.dev/; source commit `89567d95f07187fa332ff0c8f06f902788652a9f`; deployment `3e4efb20-c900-4b40-850d-9d94118db76e`. Verified live 2026-09-06T01:51:56.879Z: exact hashes for 19 page/data responses, mobile/desktop Axe, no-JS and all five real videos/captions. Homepage LCP 980ms; case 1654ms. Four-browser suite 256 passed; one unit CSS-token issue fixed and relevant 46 passed after 1299 others had passed. Type check 0 errors / warnings.
+
+## Pending discussion: more videos
+
+During styling, user asked to add more embeddable injury videos with no sport, competition-level or injury restrictions, and explicitly requested a list for discussion first. Nine new candidates actually played in native embeds; eight lack captions. NO new videos were published and the caption gate is NOT yet changed.
+
+Read docs/reviews/2026-09-06-decision-22-brand-and-video-shortlist.md and evidence/decision-22/candidate-playback.v1.json for exact links, publishers and uncertainties. Candidates include Zverev, Redmond, Strug, Marín, Foucher, two general ankle/volleyball clips, and existing unlisted Tatum/Haliburton records. Propose captions optional; where no named diagnosis exists, use observational descriptions without inventing diagnosis or personal return dates. User confirmation is pending. Complete event/source checks and injury timestamp selection before authoring approved cases; new medical text does not inherit the existing patient-guide approvals.
+
+No other task remains for the style deployment. Current root dist is the deployed branded artifact. Prior 4321 reference unchanged. Root preview 14323 serves current dist; 14322 clone may hold review output from tests. See historical D21 handoff below for release commands, clean-tree requirements and source provenance.
+
+---
+
 # HANDOFF — 2026-09-06 Decision 21
 
 User approved the public patient-facing preview: 「預覽內容可以，請繼續」. This follows the explicit question reviewing the new patient copy and local 14322 preview. Three guides now record current digest-bound approval by 吳易澄 dated 2026-09-06. Do not ask again for the same approval.

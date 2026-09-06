@@ -1,0 +1,12 @@
+[
+  {
+    "path": "/",
+    "lcp": 980,
+    "accessibility": 1
+  },
+  {
+    "path": "/cases/anfernee-simons-ankle-sprain-2023/",
+    "lcp": 1654,
+    "accessibility": 0.96
+  }
+]
