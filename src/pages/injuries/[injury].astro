@@ -73,7 +73,7 @@ const courseBySlug = new Map(
 ---
 
 <BaseLayout
-  title={`${injuryLabel}｜職業運動傷害影片圖鑑`}
+  title={`${injuryLabel}｜運動傷害影片圖鑑`}
   description={`${injuryLabel} 的教學總覽、已審查案例與課程範圍資訊。`}
   artifactRecordIds={pageCases.map((record) => record.id)}
   artifactDigest={overview === null
@@ -92,17 +92,35 @@ const courseBySlug = new Map(
     >
       <span slot="eyebrow">傷種圖鑑</span>
       <h1 slot="title">{injuryLabel}</h1>
-      <p slot="meta">已審查 {injuryCases.length} 筆案例</p>
+      <p slot="meta">
+        {
+          buildMode === "public"
+            ? `${injuryCases.length} 支案例影片`
+            : `已審查 ${injuryCases.length} 筆案例`
+        }
+      </p>
     </EditorialHero>
 
     <p class="injury-scope meta-row" data-injury-scope>
-      本頁整理 {injuryLabel} 的教學總覽與已審查案例；目前共有
-      {injuryCases.length} 筆已審查顯示案例（{injuryCases.length} reviewed cases）。
+      {
+        buildMode === "public"
+          ? `${injuryLabel}衛教與 ${injuryCases.length} 支案例影片。`
+          : `本頁整理 ${injuryLabel} 的教學總覽與已審查案例；目前共有 ${injuryCases.length} 筆已審查顯示案例（${injuryCases.length} reviewed cases）。`
+      }
     </p>
 
-    <div class="filter-shell">
-      <CaseFilters buildMode={buildMode} scopeInjury={injuryCode} />
-    </div>
+    {
+      buildMode === "review" && (
+        <div class="filter-shell">
+          <CaseFilters buildMode={buildMode} scopeInjury={injuryCode} />
+        </div>
+      )
+    }
+    {
+      buildMode === "public" && injuryCases.length === 0 && (
+        <PatientGuide injuryCode={injuryCode} buildMode={buildMode} />
+      )
+    }
 
     <section
       class="injury-listing-section"
@@ -115,7 +133,11 @@ const courseBySlug = new Map(
       {
         pageCases.length === 0 ? (
           <EmptyState
-            title="目前沒有已審查的案例"
+            title={
+              buildMode === "public"
+                ? "更多案例影片整理中"
+                : "目前沒有已審查的案例"
+            }
             description="真實案例完成來源、影片與診斷驗證並通過具名醫療審查後才會出現在這裡。"
             injuryCode={injuryCode}
             injuryLabel={injuryLabel}
@@ -143,7 +165,11 @@ const courseBySlug = new Map(
       }
     </section>
 
-    <PatientGuide injuryCode={injuryCode} buildMode={buildMode} />
+    {
+      (buildMode === "review" || injuryCases.length > 0) && (
+        <PatientGuide injuryCode={injuryCode} buildMode={buildMode} />
+      )
+    }
     {
       buildMode === "review" && (
         <details class="injury-details">

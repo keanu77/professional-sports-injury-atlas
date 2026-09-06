@@ -8,6 +8,7 @@
  * rendered-set digest as copyable text, plus the private workflow badge that
  * never masquerades as a diagnosis.
  */
+import { MECHANISMS } from "../../data/taxonomy/mechanisms";
 import { getCollection, type CollectionEntry } from "astro:content";
 import CaseCard from "../../components/atlas/CaseCard.astro";
 import { hasPublicEmbed, videoFirstCases } from "../../lib/patient/featured";
@@ -103,7 +104,7 @@ if (videoSource === undefined) {
 ---
 
 <BaseLayout
-  title={`${record.athlete.name}｜${injuryLabel}｜職業運動傷害影片圖鑑`}
+  title={`${record.athlete.name}｜${injuryLabel}｜運動傷害影片圖鑑`}
   description={`${record.athlete.name} 的 ${injuryLabel} 教學案例：可見過程觀察與外部確認診斷。`}
   artifactRecordIds={[record.id]}
   artifactDigest={contentDigest}
@@ -148,6 +149,16 @@ if (videoSource === undefined) {
       </div>
     </section>
 
+    {
+      buildMode === "public" && (
+        <section class="case-section" data-visible-observation>
+          <>
+            <h2>受傷當下看什麼</h2>
+            <p>{record.general.whatIsVisible}</p>
+          </>
+        </section>
+      )
+    }
     <PatientGuide injuryCode={record.injury.code} buildMode={buildMode} />
     <ActualReturn record={record} followUp={followUpEntry?.sidecar} />
     <details class="case-disclosure">
@@ -173,7 +184,14 @@ if (videoSource === undefined) {
       {buildMode === "review" && <ReviewBadge record={record} />}
       <p class="mechanism-tags meta-row">
         可見機轉標籤（觀察分類，非診斷）：{
-          record.observedMechanismTags.join("、")
+          record.observedMechanismTags
+            .map((code) =>
+              buildMode === "public"
+                ? (MECHANISMS.find((item) => item.code === code)?.labelZh ??
+                  "機轉不明")
+                : code,
+            )
+            .join("、")
         }
       </p>
 
@@ -224,7 +242,7 @@ if (videoSource === undefined) {
 
     <section class="case-section" aria-labelledby="related-heading">
       <h2 class="section-title" id="related-heading">
-        其他 {injuryLabel} 案例（最多 3 筆）
+        其他 {injuryLabel} 案例{buildMode === "review" ? "（最多 3 筆）" : ""}
       </h2>
       {
         related.length === 0 ? (

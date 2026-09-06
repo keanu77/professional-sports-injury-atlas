@@ -1,4 +1,7 @@
 ---
+import BodyPartNav from "../components/atlas/BodyPartNav.astro";
+import { videosByBodyPart } from "../lib/videos/body-parts";
+import { isLaunchEnabled } from "../lib/patient/public-launch";
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { observationClips } from "../lib/videos/expansion";
@@ -34,6 +37,13 @@ const videoCount = featured.length + clips.length;
     <p>從受傷當下到重返運動，用影片了解運動傷害。</p>
     <span class="intro-count">{videoCount} 支影片 · 點選後播放</span>
   </header>
+  {
+    isLaunchEnabled() && (
+      <div id="body-parts">
+        <BodyPartNav parts={videosByBodyPart(featured, clips)} />
+      </div>
+    )
+  }
   <section id="videos-heading" aria-label="運動傷害影片" data-featured-videos>
     <ol class="video-grid">
       {
@@ -58,7 +68,10 @@ const videoCount = featured.length + clips.length;
     </ol>
   </section>
   <details class="more-cases">
-    <summary>更多傷害與案例 <span>目前共 {permitted.length} 筆</span></summary
+    <summary
+      >更多傷害與案例 <span
+        >{permitted.length} 則案例 · {clips.length} 則動作觀察</span
+      ></summary
     ><div class="injury-feature-grid">
       {
         INJURIES.filter((injury) =>
@@ -75,7 +88,11 @@ const videoCount = featured.length + clips.length;
         ))
       }
     </div><p data-total-reviewed-count>
-      {permitted.length} 筆案例（{permitted.length} reviewed cases）。
+      {
+        buildMode === "review"
+          ? `${permitted.length} 筆案例（${permitted.length} reviewed cases）。`
+          : `${permitted.length} 則案例影片`
+      }
     </p>
   </details>
   <p class="home-note">

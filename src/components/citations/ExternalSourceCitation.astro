@@ -18,6 +18,16 @@ interface Props {
 const { context, sourceId, title, publisher, publishedAt, url, type } =
   Astro.props;
 const presentation = externalUrlPresentationFor(url);
+const sourceLabels: Record<string, string> = {
+  "video-original": "原始影片",
+  "diagnosis-first-party": "官方診斷說明",
+  "event-context": "事件報導",
+  "teaching-evidence": "衛教參考",
+};
+const typeLabel =
+  process.env.ATLAS_BUILD_MODE === "public" && type
+    ? (sourceLabels[type] ?? "參考來源")
+    : type;
 ---
 
 {
@@ -38,7 +48,7 @@ const presentation = externalUrlPresentationFor(url);
       <span class="citation-url" data-citation-url>
         {url}
       </span>
-      {type !== undefined && <>（{type}）</>}
+      {type !== undefined && <>（{typeLabel}）</>}
     </span>
   ) : (
     <span
@@ -55,7 +65,7 @@ const presentation = externalUrlPresentationFor(url);
       <time datetime={publishedAt} data-citation-date>
         {publishedAt}
       </time>
-      {type !== undefined && <>（{type}）</>}
+      {type !== undefined && <>（{typeLabel}）</>}
     </span>
   )
 }

@@ -154,10 +154,12 @@ interface StubState {
 
 const STUB_API_JS = `(() => {
   window.__stub = { players: [] };
+  window.__playerEvents = [];
   window.YT = {
     Player: function (element, options) {
       const stub = window.__stub;
       const events = (options && options.events) || {};
+      window.__playerEvents.push(events);
       stub.players.push({
         tagName: element && element.tagName,
         src: (element && element.src) || "",
@@ -668,6 +670,7 @@ test.describe("component lab without JavaScript", () => {
     await page.goto(LAB_PATH);
 
     await expect(page.locator("iframe")).toHaveCount(0);
+    await expect(reviewCard(page).locator("[data-video-load]")).toBeHidden();
     await expect(
       reviewCard(page).locator("[data-video-source-link]"),
     ).toHaveAttribute("href", WATCH_URL);
@@ -750,6 +753,35 @@ test.describe("click-to-load player", () => {
     ).toBe(true);
 
     await expectNoAxeViolations(page);
+  });
+
+  test("playback error after readiness restores a retry and ignores stale player events", async ({
+    page,
+  }) => {
+    await stubYouTubeRoutes(page);
+    await page.goto(LAB_PATH);
+    const card = reviewCard(page);
+    const button = card.locator("[data-video-load]");
+    await button.click();
+    await expect(card).toHaveAttribute("data-video-state", "ready");
+    await page.evaluate(() =>
+      (window as any).__playerEvents[0].onError({ data: 150 }),
+    );
+    await expect(card).toHaveAttribute("data-video-state", "failed");
+    await expect(card.locator("iframe")).toHaveCount(0);
+    await expect(button).toBeFocused();
+    await expect(card.locator("[data-video-status]")).toContainText("播放失敗");
+    await button.click();
+    await expect(card).toHaveAttribute("data-video-state", "ready");
+    await page.evaluate(() => {
+      (window as any).__playerEvents[0].onError({ data: 150 });
+      (window as any).__playerEvents[0].onReady({});
+    });
+    await expect(card).toHaveAttribute("data-video-state", "ready");
+    await expect(card.locator("iframe")).toHaveCount(1);
+    await expect(card.locator("[data-video-status]")).toContainText(
+      "播放器已載入",
+    );
   });
 
   test("API load failure removes the iframe, returns focus, and keeps the source link", async ({

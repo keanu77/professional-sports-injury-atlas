@@ -1,0 +1,78 @@
+---
+interface Props {
+  parts: { code: string; label: string; count: number }[];
+  current?: string;
+}
+const { parts, current } = Astro.props;
+---
+
+<nav class="body-part-nav" aria-label="依受傷部位看影片" data-body-part-nav>
+  <p>依受傷部位看影片</p>
+  <ul>
+    {
+      parts.map((part) => (
+        <li>
+          <a
+            href={`/body-parts/${part.code}/`}
+            aria-current={current === part.code ? "page" : undefined}
+          >
+            {part.label}
+            <span>{part.count} 支影片</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+<style>
+  .body-part-nav {
+    margin: 0 0 2rem;
+  }
+  p {
+    margin: 0 0 0.75rem;
+    font-weight: 600;
+    color: var(--color-brand-900);
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 44px;
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--color-brand-100);
+    border-radius: 999px;
+    background: var(--color-surface-raised);
+    color: var(--color-brand-primary);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  a:hover,
+  a[aria-current="page"] {
+    background: var(--color-brand-50);
+    border-color: var(--color-brand-primary);
+  }
+  a:focus-visible {
+    outline: 3px solid var(--color-brand-primary);
+    outline-offset: 3px;
+  }
+  span {
+    color: var(--color-ink-muted);
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+  @media (max-width: 26rem) {
+    a {
+      border-radius: 1rem;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+  }
+</style>

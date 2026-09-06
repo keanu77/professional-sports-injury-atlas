@@ -1,3 +1,4 @@
+import { videosByBodyPart } from "../../src/lib/videos/body-parts";
 import { expansion } from "../../src/lib/videos/expansion";
 import assert from "node:assert/strict";
 import {
@@ -36,6 +37,27 @@ assert.deepEqual(
   readdirSync("dist/videos").sort(),
   expansion.clips.map((c) => c.slug).sort(),
   "Observation route set mismatch",
+);
+const bodyParts = videosByBodyPart(selected, expansion.clips).map((part) => ({
+  code: part.code,
+  label: part.label,
+  count: part.count,
+  paths: [
+    ...part.cases.map((c) => `/cases/${c.slug}/`),
+    ...part.clips.map((c) => `/videos/${c.slug}/`),
+  ],
+}));
+assert.deepEqual(
+  readdirSync("dist/body-parts").sort(),
+  bodyParts.map((p) => p.code).sort(),
+);
+assert.deepEqual(
+  bodyParts.flatMap((p) => p.paths).sort(),
+  [
+    ...selected.map((c) => `/cases/${c.slug}/`),
+    ...expansion.clips.map((c) => `/videos/${c.slug}/`),
+  ].sort(),
+  "Each video must appear in exactly one body part",
 );
 assert.ok(!existsSync("dist/review"), "Private review routes leaked");
 assert.ok(!existsSync("dist/updates"), "Unapproved historical update leaked");
@@ -140,6 +162,7 @@ const receipt = {
     videoUrl,
     startSeconds,
   })),
+  bodyParts,
   htmlPages: htmlFiles.length,
   internalLinks: links,
   files: list("dist")

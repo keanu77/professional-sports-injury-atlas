@@ -161,6 +161,8 @@ const coverIdPrefix = `video-cover-${scopeId}`;
               type="button"
               class="video-load-button"
               data-video-load
+              hidden
+              aria-describedby={`video-status-${scopeId}`}
             >
               <span class="video-load-label">
                 <span class="video-play-symbol" aria-hidden="true">
@@ -271,6 +273,19 @@ const coverIdPrefix = `video-cover-${scopeId}`;
     )
   }
 
+  {
+    presentation === "click-to-load" && (
+      <p
+        id={`video-status-${scopeId}`}
+        class="sr-only"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        data-video-status
+      />
+    )
+  }
+
   <details class="case-video-meta" open={!compact}>
     <summary hidden={!compact}>影片來源與字幕</summary>
     <p class="case-video-title">{sourceTitle}</p>
@@ -373,9 +388,13 @@ const coverIdPrefix = `video-cover-${scopeId}`;
     cursor: pointer;
   }
 
+  .video-load-button[hidden] {
+    display: none;
+  }
+
   .video-load-button:focus-visible {
     outline: 4px solid var(--color-brand-primary-hover);
-    outline-offset: 3px;
+    outline-offset: -4px;
   }
 
   .video-load-label {

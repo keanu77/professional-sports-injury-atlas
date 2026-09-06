@@ -47,6 +47,7 @@ const browser = await chromium.launch({ channel: "chrome", headless: true });
 const results = [];
 try {
   for (const viewport of [
+    { width: 320, height: 780 },
     { width: 390, height: 844 },
     { width: 1440, height: 1000 },
   ]) {
@@ -60,18 +61,57 @@ try {
     });
     for (const path of [
       "/",
+      ...receipt.bodyParts.map((part) => `/body-parts/${part.code}/`),
       ...receipt.cases.map((record) => `/cases/${record.slug}/`),
       ...(receipt.clips ?? []).map((clip) => `/videos/${clip.slug}/`),
     ]) {
       await page.goto(origin + path, { waitUntil: "networkidle" });
+      if (viewport.width === 320)
+        await page.evaluate(
+          () => (document.documentElement.style.fontSize = "150%"),
+        );
       assert.equal(await page.locator("iframe").count(), 0);
+      assert.equal(await page.getByRole("searchbox").count(), 0);
+      assert.equal(await page.getByRole("combobox").count(), 0);
+      assert.ok(
+        await page
+          .getByRole("link", { name: "返回吳易澄醫師網站", exact: true })
+          .isVisible(),
+      );
       assert.equal(
         await page.locator('.site-nav a[href^="/injuries/"]').count(),
         0,
       );
       const covers = page.locator("[data-video-thumbnail]");
-      if (path === "/") assert.equal(await covers.count(), 14);
-      else {
+      const part = receipt.bodyParts.find(
+        (p) => path === `/body-parts/${p.code}/`,
+      );
+      if (path === "/" || part) {
+        assert.equal(await covers.count(), part ? part.count : 14);
+        const nav = page.locator("[data-body-part-nav]");
+        assert.deepEqual(
+          await nav
+            .locator("a")
+            .evaluateAll((links) => links.map((a) => a.getAttribute("href"))),
+          receipt.bodyParts.map((p) => `/body-parts/${p.code}/`),
+        );
+        if (part) {
+          assert.equal(
+            await nav.locator('[aria-current="page"]').getAttribute("href"),
+            path,
+          );
+          assert.deepEqual(
+            (
+              await page
+                .locator("[data-body-part-videos] [data-featured-card] a")
+                .evaluateAll((links) => [
+                  ...new Set(links.map((a) => a.getAttribute("href"))),
+                ])
+            ).sort(),
+            [...part.paths].sort(),
+          );
+        }
+      } else {
         assert.equal(
           await page
             .locator("[data-video-facade] [data-video-thumbnail]")
@@ -130,7 +170,11 @@ try {
     assert.deepEqual(external, [], "Third-party requests before activation");
     results.push({
       viewport,
-      pages: receipt.cases.length + (receipt.clips ?? []).length + 1,
+      pages:
+        receipt.cases.length +
+        (receipt.clips ?? []).length +
+        receipt.bodyParts.length +
+        1,
       accessibility: "passed",
       externalBeforeActivation: 0,
     });
@@ -144,6 +188,11 @@ try {
       .getByRole("heading", { name: "先做這幾件事", exact: true })
       .isVisible(),
   );
+  assert.equal(await page.locator("[data-video-load]:visible").count(), 0);
+  assert.ok(await page.locator("[data-video-source-link]").isVisible());
+  await page.goto(origin + "/");
+  await page.locator("[data-body-part-nav] a").first().click();
+  assert.ok(await page.locator("[data-body-part-videos]").isVisible());
   await context.close();
   const result = {
     checkedAt: new Date().toISOString(),

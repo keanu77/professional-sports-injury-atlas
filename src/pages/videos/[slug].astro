@@ -11,6 +11,9 @@ export function getStaticPaths() {
   }));
 }
 const { clip } = Astro.props;
+const watchUrl = new URL(clip.videoUrl);
+if (clip.startSeconds > 0)
+  watchUrl.searchParams.set("t", String(clip.startSeconds));
 ---
 
 <BaseLayout
@@ -35,19 +38,32 @@ const { clip } = Astro.props;
     >
       <div data-video-stage>
         <div class="clip-facade" data-video-facade>
-          <VideoThumbnail videoId={clip.videoId} priority>
-            <button slot="media-action" type="button" data-video-load>
-              <span aria-hidden="true">▶</span> 載入 YouTube 播放器
-              <small>點擊後才會連線至 YouTube</small>
-            </button>
-          </VideoThumbnail>
+          <VideoThumbnail videoId={clip.videoId} priority />
+          <button
+            type="button"
+            data-video-load
+            hidden
+            aria-describedby={`video-status-${clip.slug}`}
+          >
+            <span aria-hidden="true">▶</span> 載入 YouTube 播放器
+            <small>點擊後才會連線至 YouTube</small>
+          </button>
         </div>
         <p data-video-failure hidden>
           播放器載入失敗，請使用下方原始影片連結。
         </p>
       </div>
+      <p
+        id={`video-status-${clip.slug}`}
+        class="sr-only"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        data-video-status
+      >
+      </p>
       <p class="clip-source">
-        <a href={clip.videoUrl} rel="noopener noreferrer"
+        <a href={watchUrl.href} rel="noopener noreferrer"
           >{clip.publisher} · 觀看原始影片 ↗</a
         >
       </p>
@@ -139,12 +155,9 @@ const { clip } = Astro.props;
     display: none;
   }
   .clip-facade button {
-    position: absolute;
-    bottom: 0.75rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: max-content;
-    max-width: calc(100% - 1rem);
+    display: block;
+    width: 100%;
+    margin-top: 0.75rem;
     font: 600 1rem var(--font-body);
     padding: 1rem;
     border: 0;
@@ -153,6 +166,13 @@ const { clip } = Astro.props;
     color: var(--color-on-brand);
     cursor: pointer;
     min-height: 44px;
+  }
+  .clip-facade button[hidden] {
+    display: none;
+  }
+  .clip-facade button:focus-visible {
+    outline: 3px solid var(--color-brand-primary-hover);
+    outline-offset: -4px;
   }
   .clip-facade small {
     display: block;

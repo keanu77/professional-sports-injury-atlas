@@ -1,0 +1,50 @@
+{
+  "origin": "http://127.0.0.1:14324",
+  "checkedAt": "2026-09-06T03:20:11.177Z",
+  "clipBounds": [
+    {
+      "slug": "zverev-roland-garros-2022",
+      "passed": true,
+      "startSeconds": 1340
+    },
+    {
+      "slug": "derek-redmond-barcelona-1992",
+      "passed": true,
+      "startSeconds": 15
+    },
+    {
+      "slug": "kerri-strug-atlanta-1996",
+      "passed": true,
+      "startSeconds": 0
+    },
+    {
+      "slug": "carolina-marin-indonesia-2019",
+      "passed": true,
+      "startSeconds": 35
+    },
+    {
+      "slug": "julie-foucher-box-jump-2015",
+      "passed": true,
+      "startSeconds": 35
+    },
+    {
+      "slug": "volleyball-pov-135",
+      "passed": true,
+      "startSeconds": 215
+    },
+    {
+      "slug": "ankle-inversion-observation",
+      "passed": true,
+      "startSeconds": 0
+    }
+  ],
+  "allPages": 28,
+  "focus": {
+    "offset": -4,
+    "width": 4,
+    "visible": true
+  },
+  "lateErrorRetry": "passed",
+  "aclGuideFirst": true,
+  "nojs": "passed"
+}

@@ -7,24 +7,11 @@ import { currentPhotoCredits } from "../lib/rights/photo-credits";
 ---
 
 <BaseLayout
-  title="授權與說明｜職業運動傷害影片圖鑑"
-  description="本站目前使用之球員資料照片的完整逐檔授權或公有領域狀態、來源、變更與通知。"
+  title="授權與說明｜運動傷害影片圖鑑"
+  description="影片、縮圖與歷史照片的來源及使用說明。"
 >
   <h1>授權與說明</h1>
-  <p>
-    本頁集中列出目前採用的球員資料照片。每筆資料均由受控 registry
-    產生，並保留固定來源版本、作品標題供應狀態、精確 CC
-    授權或公有領域狀態、署名、變更與逐檔通知。
-  </p>
-  <p>
-    每張照片均依逐檔證據標示實際來源事件，且該事件必須不同於案例受傷事件。現行照片都不是案例受傷當下影像；照片中的球衣、場館或其他附帶標記不代表聯盟、球隊或第三方與本站合作或背書。CC
-    或公有領域標示只處理著作權；不代表肖像／人格權、場地、契約、醫療、合法使用或公開發布已獲放行。
-  </p>
-
-  <p>
-    影片卡片與播放器封面使用各影片的 YouTube
-    預設縮圖，僅用來辨識影片；來源連結列於各影片頁。
-  </p>
+  <p>影片封面使用各支 YouTube 影片的預設縮圖，來源連結列於影片頁。</p>
   <section aria-labelledby="video-rights-heading">
     <h2 id="video-rights-heading">影片來源</h2>
     <p>
@@ -46,17 +33,21 @@ import { currentPhotoCredits } from "../lib/rights/photo-credits";
     </p>
   </section>
 
-  <section aria-labelledby="photo-credits-heading">
-    <h2 id="photo-credits-heading">目前使用的照片授權</h2>
-    <p>
-      共 {currentPhotoCredits.length} 筆；案例封面旁的連結會直接指向對應項目。
-    </p>
-    {
-      currentPhotoCredits.map(({ selection }) => (
-        <PhotoCredit selection={selection} />
-      ))
-    }
-  </section>
+  <details class="historical-credits">
+    <summary>歷史人物照片的來源與授權紀錄</summary>
+    <section aria-labelledby="photo-credits-heading">
+      <h2 id="photo-credits-heading">歷史照片紀錄</h2>
+      <p>
+        保留 {currentPhotoCredits.length} 筆過去版本使用的人物照片紀錄，供來源追溯；目前影片封面已改用
+        YouTube 預設縮圖。這些照片的授權不適用於影片或 YouTube 縮圖。
+      </p>
+      {
+        currentPhotoCredits.map(({ selection }) => (
+          <PhotoCredit selection={selection} />
+        ))
+      }
+    </section>
+  </details>
 </BaseLayout>
 
 <style>

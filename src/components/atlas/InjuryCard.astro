@@ -13,6 +13,7 @@ interface Props {
 }
 
 const { injuryCode, labelZh, reviewedCaseCount } = Astro.props;
+const publicView = process.env.ATLAS_BUILD_MODE === "public";
 const photo = featureImageFor(injuryCode);
 ---
 
@@ -39,9 +40,15 @@ const photo = featureImageFor(injuryCode);
       <a href={`/injuries/${injuryCode}/`}>{labelZh}</a>
     </h3>
     <p class="injury-card-count" data-reviewed-case-count={reviewedCaseCount}>
-      已審查案例：<span class="injury-card-stat">{reviewedCaseCount}</span> 筆<span
-        class="meta-en">（{reviewedCaseCount} reviewed cases）</span
+      {publicView ? "案例影片：" : "已審查案例："}<span class="injury-card-stat"
+        >{reviewedCaseCount}</span
       >
+      {publicView ? "支" : "筆"}
+      {
+        !publicView && (
+          <span class="meta-en">（{reviewedCaseCount} reviewed cases）</span>
+        )
+      }
     </p>
   </div>
 </article>

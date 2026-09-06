@@ -45,7 +45,7 @@ const currentPage = listingPages[0];
 ---
 
 <BaseLayout
-  title={`${leagueLabel} 案例列表｜職業運動傷害影片圖鑑`}
+  title={`${leagueLabel} 案例列表｜運動傷害影片圖鑑`}
   description={`${leagueLabel} 的已審查傷害案例列表。`}
   artifactRecordIds={pageCases.map((record) => record.id)}
   artifactDigest={computeRenderedSetDigest(pageCases)}
@@ -53,10 +53,18 @@ const currentPage = listingPages[0];
   <div class="league-page">
     <h1>{leagueLabel} 案例列表</h1>
     <p class="meta-row">
-      共有 {leagueCases.length} 筆已審查顯示案例（{leagueCases.length} reviewed cases）。
+      {
+        buildMode === "public"
+          ? `${leagueCases.length} 支案例影片`
+          : `共有 ${leagueCases.length} 筆已審查顯示案例（${leagueCases.length} reviewed cases）。`
+      }
     </p>
 
-    <CaseFilters buildMode={buildMode} scopeInjury={null} />
+    {
+      buildMode === "review" && (
+        <CaseFilters buildMode={buildMode} scopeInjury={null} />
+      )
+    }
 
     <section data-static-listing aria-labelledby="league-listing-heading">
       <h2 class="section-title" id="league-listing-heading">

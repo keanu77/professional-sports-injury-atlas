@@ -1,16 +1,4 @@
-/**
- * Progressive click-to-load enhancement for case videos. Before any click the
- * page contains no YouTube iframe, request, thumbnail, preconnect, autoplay,
- * or tracker: only the governed inline SVG facade and a normal canonical
- * source anchor. The first
- * click (and only then) hides that local facade, builds the validated
- * `youtube-nocookie.com` embed URL with the runtime page origin, inserts
- * exactly one iframe (accessible title,
- * `loading='lazy'`, `referrerpolicy='strict-origin-when-cross-origin'`, allow
- * list without autoplay), loads the official IFrame API, and hands that same
- * iframe to one `YT.Player`. On API load or readiness failure the iframe is
- * removed, the SVG facade is restored, and focus returns to the load button.
- */
+/** Click-to-load playback with local covers, retryable errors and announced status. */
 
 import {
   createPlayer,
@@ -32,6 +20,7 @@ function awaitReady(
   controller: VideoController,
   namespace: Parameters<typeof createPlayer>[0],
   iframe: HTMLIFrameElement,
+  onFailure: () => void,
 ): Promise<void> {
   return new Promise<void>((resolve, reject) => {
     const timer = window.setTimeout(() => {
@@ -44,6 +33,7 @@ function awaitReady(
       },
       onError: () => {
         window.clearTimeout(timer);
+        onFailure();
         reject(new Error("youtube-player-error"));
       },
     });
@@ -61,16 +51,24 @@ function setupEmbed(root: HTMLElement): void {
   if (root.dataset.videoWired === "true") return;
   root.dataset.videoWired = "true";
 
+  const status = root.querySelector<HTMLElement>("[data-video-status]");
   const controller: VideoController = { state: "idle", player: null };
+  let activeIframe: HTMLIFrameElement | null = null;
   root.dataset.videoState = "idle";
 
   const fail = (iframe: HTMLIFrameElement): void => {
+    if (activeIframe !== iframe) return;
+    activeIframe = null;
     iframe.remove();
     controller.player = null;
     controller.state = "failed";
     root.dataset.videoState = "failed";
     facade.hidden = false;
     if (failureNote !== null) failureNote.hidden = false;
+    if (status !== null)
+      status.textContent =
+        "播放器載入或播放失敗。可重新載入，或使用下方原始影片連結。";
+    button.setAttribute("aria-label", "重新載入 YouTube 播放器");
     button.focus();
   };
 
@@ -90,9 +88,11 @@ function setupEmbed(root: HTMLElement): void {
 
     controller.state = "loading";
     root.dataset.videoState = "loading";
+    if (status !== null) status.textContent = "正在載入 YouTube 播放器…";
     if (failureNote !== null) failureNote.hidden = true;
 
     const iframe = document.createElement("iframe");
+    activeIframe = iframe;
     const start = Number(root.dataset.videoStart ?? 0);
     if (Number.isSafeInteger(start) && start > 0) {
       const url = new URL(embedSrc);
@@ -112,15 +112,21 @@ function setupEmbed(root: HTMLElement): void {
     iframe.focus();
 
     loadIframeApi()
-      .then((namespace) => awaitReady(controller, namespace, iframe))
+      .then((namespace) => {
+        if (activeIframe !== iframe) return;
+        return awaitReady(controller, namespace, iframe, () => fail(iframe));
+      })
       .then(() => {
+        if (activeIframe !== iframe) return;
         controller.state = "ready";
         root.dataset.videoState = "ready";
+        if (status !== null) status.textContent = "播放器已載入，可開始播放。";
       })
       .catch(() => {
         fail(iframe);
       });
   });
+  button.hidden = false;
 }
 
 /** Wires every click-to-load card on the page. Idempotent. */
