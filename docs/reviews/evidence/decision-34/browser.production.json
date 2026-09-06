@@ -1,0 +1,445 @@
+{
+  "origin": "https://sports-injury-atlas.pages.dev",
+  "commit": "12c0cfd7cfdc276713304f004e33e27e694f0958",
+  "checkedAt": "2026-09-06T11:49:29.868Z",
+  "matchedPages": 148,
+  "noJavaScript": "passed",
+  "rankOnlyWithMockedResponse": "passed",
+  "results": [
+    {
+      "width": 320,
+      "path": "/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/videos/mitch-haniger-2017-face/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/videos/justin-turner-2023-face/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/videos/kevin-pillar-2021-face/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/videos/bryce-harper-2022-thumb/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/videos/mookie-betts-2024-hand/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/videos/chase-headley-2014-face/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/videos/curtis-granderson-2013-hand/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/videos/matt-shoemaker-2016-head/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/videos/ja-happ-2013-head/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/videos/dan-jennings-2014-concussion/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/videos/stephen-piscotty-2015-concussion/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/videos/dustin-pedroia-2017-knee/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/videos/aaron-judge-2023-toe/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/videos/manny-machado-2013-knee/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/videos/samir-ait-said-2016-leg/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/videos/sofia-goggia-2022-knee/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/videos/yuzuru-hanyu-2014-collision/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/videos/aleksander-kilde-2024-shoulder/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/videos/liu-xiang-2012-achilles/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/videos/fabio-jakobsen-2020-concussion/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/videos/mikaela-shiffrin-2024-abdomen/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/videos/remco-evenepoel-2020-pelvis/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/videos/chien-ming-wang-2008-foot/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/body-parts/hand/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/body-parts/trunk/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/body-parts/pelvis/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/body-parts/foot/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 320,
+      "path": "/sports/figure-skating/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/videos/mitch-haniger-2017-face/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/videos/justin-turner-2023-face/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/videos/kevin-pillar-2021-face/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/videos/bryce-harper-2022-thumb/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/videos/mookie-betts-2024-hand/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/videos/chase-headley-2014-face/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/videos/curtis-granderson-2013-hand/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/videos/matt-shoemaker-2016-head/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/videos/ja-happ-2013-head/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/videos/dan-jennings-2014-concussion/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/videos/stephen-piscotty-2015-concussion/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/videos/dustin-pedroia-2017-knee/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/videos/aaron-judge-2023-toe/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/videos/manny-machado-2013-knee/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/videos/samir-ait-said-2016-leg/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/videos/sofia-goggia-2022-knee/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/videos/yuzuru-hanyu-2014-collision/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/videos/aleksander-kilde-2024-shoulder/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/videos/liu-xiang-2012-achilles/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/videos/fabio-jakobsen-2020-concussion/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/videos/mikaela-shiffrin-2024-abdomen/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/videos/remco-evenepoel-2020-pelvis/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/videos/chien-ming-wang-2008-foot/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/body-parts/hand/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/body-parts/trunk/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/body-parts/pelvis/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/body-parts/foot/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 390,
+      "path": "/sports/figure-skating/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/videos/mitch-haniger-2017-face/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/videos/justin-turner-2023-face/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/videos/kevin-pillar-2021-face/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/videos/bryce-harper-2022-thumb/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/videos/mookie-betts-2024-hand/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/videos/chase-headley-2014-face/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/videos/curtis-granderson-2013-hand/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/videos/matt-shoemaker-2016-head/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/videos/ja-happ-2013-head/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/videos/dan-jennings-2014-concussion/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/videos/stephen-piscotty-2015-concussion/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/videos/dustin-pedroia-2017-knee/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/videos/aaron-judge-2023-toe/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/videos/manny-machado-2013-knee/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/videos/samir-ait-said-2016-leg/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/videos/sofia-goggia-2022-knee/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/videos/yuzuru-hanyu-2014-collision/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/videos/aleksander-kilde-2024-shoulder/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/videos/liu-xiang-2012-achilles/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/videos/fabio-jakobsen-2020-concussion/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/videos/mikaela-shiffrin-2024-abdomen/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/videos/remco-evenepoel-2020-pelvis/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/videos/chien-ming-wang-2008-foot/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/body-parts/hand/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/body-parts/trunk/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/body-parts/pelvis/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/body-parts/foot/",
+      "accessibility": "passed"
+    },
+    {
+      "width": 1440,
+      "path": "/sports/figure-skating/",
+      "accessibility": "passed"
+    }
+  ]
+}

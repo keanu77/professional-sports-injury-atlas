@@ -1,0 +1,15 @@
+{
+  "rawPath": "/tmp/atlas34/other/web-source-evidence.txt",
+  "sha256": "d0414ac9e00ce4b1cde8ebf01d82b6d3b6044cd50d41d21ac66fc7210b25b10d",
+  "method": "Actual web tool reads supplement HTTP fetches; direct urllib failures are preserved in the manifest. Full third-party source text stays in local scratch. Original URLs and factual summaries are in event records and research notes.",
+  "independentChecks": [
+    "MLB/MiLB game logs: 14 baseball returns",
+    "Wang AP actual March 2 spring appearance and official MLB career record",
+    "FISI Goggia injury and return",
+    "FIS Kilde and Shiffrin actual race results",
+    "Athlete statement for Jakobsen concussion; competition report for return",
+    "Le Parisien Samir official INSEP selection interview",
+    "Hanyu same-day continuation is not recovery; returnDate null",
+    "Liu no later official competition; returnDate null"
+  ]
+}
