@@ -1,5 +1,6 @@
 /** User-confirmed video expansion; observation clips do not claim medical approval. */
 import { z } from "astro/zod";
+import batchData from "../../data/videos/batch-30.v1.json";
 import data from "../../data/videos/expansion.v1.json";
 import launchData from "../../data/public-launch.v1.json";
 import curationData from "../../data/videos/curation.v1.json";
@@ -92,13 +93,15 @@ export const additionsSchema = z
     clips: z.array(observationClipSchema).min(1),
   })
   .superRefine((value, ctx) => {
-    const urls = new Set(
-      [...launchData.cases, ...expansion.cases].map((c) => c.videoUrl),
+    const videoIds = new Set(
+      [...launchData.cases, ...expansion.cases].map((c) =>
+        parseYouTubeVideoId(c.videoUrl),
+      ),
     );
     const slugs = new Set(expansion.cases.map((c) => c.slug));
     for (const c of [...expansion.clips, ...value.clips]) {
       if (
-        urls.has(c.videoUrl) ||
+        videoIds.has(c.videoId) ||
         slugs.has(c.slug) ||
         parseYouTubeVideoId(c.videoUrl) !== c.videoId ||
         c.startSeconds >= c.durationSeconds ||
@@ -112,7 +115,7 @@ export const additionsSchema = z
           message: `Invalid or duplicate clip: ${c.slug}`,
         });
       }
-      urls.add(c.videoUrl);
+      videoIds.add(c.videoId);
       slugs.add(c.slug);
     }
   });
@@ -147,10 +150,33 @@ export const curationSchema = z
       });
   });
 export const curation = curationSchema.parse(curationData);
+export const batch30Schema = z
+  .strictObject({
+    schemaVersion: z.literal(1),
+    decision: z.literal("decision-30"),
+    authorizationQuote: z.literal(
+      "影片總數量的目標是50個以上，請你盡最大努力完成",
+    ),
+    authorizedAt: z.iso.datetime(),
+    clips: z.array(observationClipSchema).min(1),
+  })
+  .superRefine((value, ctx) => {
+    const combined = additionsSchema.safeParse({
+      ...additions,
+      clips: [...additions.clips, ...curation.clips, ...value.clips],
+    });
+    if (!combined.success)
+      ctx.addIssue({
+        code: "custom",
+        message: "Invalid or duplicate batch 30 video",
+      });
+  });
+export const batch30 = batch30Schema.parse(batchData);
 export const allObservationClips: ObservationClip[] = [
   ...expansion.clips,
   ...additions.clips,
   ...curation.clips,
+  ...batch30.clips,
 ].filter((c) => !curation.removedSlugs.some((slug) => slug === c.slug));
 export const expansionEnabled = () =>
   process.env.ATLAS_PUBLIC_LAUNCH === "decision-21";

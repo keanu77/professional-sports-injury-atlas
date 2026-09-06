@@ -1,0 +1,797 @@
+{
+  "schemaVersion": 1,
+  "decision": "decision-30",
+  "checkedAt": "2026-09-06",
+  "entries": [
+    {
+      "slug": "klay-thompson-2019-acl",
+      "eventDate": "2019-06-13",
+      "injury": "NBA 報導確認左膝前十字韌帶撕裂。",
+      "returnDate": "2022-01-09",
+      "returnSummary": "2022-01-09 對騎士重返 NBA 比賽。",
+      "context": "期間另於 2020-11-18 右側阿基里斯腱斷裂，缺賽跨越兩次不同傷害。",
+      "videoUrl": "https://www.youtube.com/watch?v=3vHr8d5UQro",
+      "sources": [
+        {
+          "title": "NBA：Thompson 重返賽場與兩次傷勢",
+          "url": "https://www.nba.com/news/klay-thompson-return-feature",
+          "publishedAt": "2022-01-10"
+        },
+        {
+          "title": "NBA：勇士確認右側阿基里斯腱斷裂",
+          "url": "https://www.nba.com/news/report-klay-thompson-out-for-season-with-torn-achilles",
+          "publishedAt": "2020-11-19"
+        }
+      ]
+    },
+    {
+      "slug": "kobe-bryant-2013-achilles",
+      "eventDate": "2013-04-12",
+      "injury": "湖人醫療團隊確認左側阿基里斯腱斷裂。",
+      "returnDate": "2013-12-08",
+      "returnSummary": "2013-12-08 對暴龍重返 NBA 比賽。",
+      "context": "傷後隔天的 MRI 確認診斷；受傷當晚公告仍為疑似。",
+      "videoUrl": "https://www.youtube.com/watch?v=5KlgfpqWCkY",
+      "sources": [
+        {
+          "title": "湖人：醫療團隊說明 Bryant 傷勢",
+          "url": "https://www.nba.com/lakers/news/130413vittikobebryant",
+          "publishedAt": "2013-04-13"
+        },
+        {
+          "title": "湖人：對勇士受傷賽事報導",
+          "url": "https://www.nba.com/lakers/news/130412bryanttearsachilles",
+          "publishedAt": "2013-04-12"
+        },
+        {
+          "title": "NBA：2013 年 12 月 8 日湖人對暴龍紀錄",
+          "url": "https://www.nba.com/raptors/game/0021300303",
+          "publishedAt": null
+        },
+        {
+          "title": "NBC Sports：Bryant 實際復出賽報",
+          "url": "https://www.nbcsports.com/nba/news/kobe-is-back-but-loss-to-raptors-shows-lakers-still-have-a-lot-of-work-to-do",
+          "publishedAt": "2013-12-08"
+        }
+      ]
+    },
+    {
+      "slug": "gianmarco-tamberi-2016-ankle",
+      "eventDate": "2016-07-15",
+      "injury": "義大利田徑協會公布左踝三角韌帶受傷，之後接受手術。",
+      "returnDate": "2017-06-14",
+      "returnSummary": "2017-06-14 於聖馬利諾 Trofeo Titano 比賽重返跳高賽場。",
+      "context": "這場回歸測試賽已有正式成績；較晚的 Ostrava 與巴黎站不是首次回場。",
+      "videoUrl": "https://www.youtube.com/watch?v=blW4L9jn6iM",
+      "sources": [
+        {
+          "title": "義大利田徑協會：Tamberi 左踝傷勢",
+          "url": "https://www.fidal.it/content/Infortunio-per-Tamberi-sfuma-il-sogno-olimpico/95696",
+          "publishedAt": "2016-07-16"
+        },
+        {
+          "title": "義大利田徑協會：Tamberi 手術完成",
+          "url": "https://www.fidal.it/content/Intervento-riuscito-per-Gimbo-Tamberi/95747",
+          "publishedAt": "2016-07-19"
+        },
+        {
+          "title": "義大利田徑協會：Tamberi 在 Trofeo Titano 回歸",
+          "url": "https://www.fidal.it/content/Tamberi-che-sorpresa-rieccolo-in-pedana%21/107988",
+          "publishedAt": "2017-06-14"
+        }
+      ]
+    },
+    {
+      "slug": "john-tavares-2021-concussion",
+      "eventDate": "2021-05-20",
+      "injury": "NHL 報導確認腦震盪，並有膝部傷勢。",
+      "returnDate": "2021-09-25",
+      "returnSummary": "2021-09-25 先於季前賽對加拿大人出賽；10 月 13 日回到 NHL 例行賽。",
+      "context": "回場日期採最早實際季前賽，不等同例行賽復出或建議休息天數。",
+      "videoUrl": "https://www.youtube.com/watch?v=Gnhby06KpyQ",
+      "sources": [
+        {
+          "title": "NHL：Tavares 腦震盪公告",
+          "url": "https://www.nhl.com/news/maple-leafs-tavares-leaves-game-1-on-stretcher-324872014",
+          "publishedAt": "2021-05-21"
+        },
+        {
+          "title": "NHL：腦震盪與膝傷後續",
+          "url": "https://www.nhl.com/news/montreal-canadiens-toronto-maple-leafs-game-2-preview-324921064",
+          "publishedAt": "2021-05-22"
+        },
+        {
+          "title": "NHL：9 月 25 日季前賽回歸",
+          "url": "https://www.nhl.com/news/montreal-canadiens-toronto-maple-leafs-preseason-game-recap-326235276",
+          "publishedAt": "2021-09-26"
+        },
+        {
+          "title": "NHL：10 月 13 日例行賽出場紀錄",
+          "url": "https://www.nhl.com/scores/htmlreports/20212022/GS020003.HTM",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "neymar-2023-acl",
+      "eventDate": "2023-10-17",
+      "injury": "巴西足協確認左膝前十字韌帶與半月板撕裂。",
+      "returnDate": "2024-10-21",
+      "returnSummary": "2024-10-21 於亞冠菁英聯賽 Al Hilal 對 Al Ain 替補上場。",
+      "context": "受傷日期為 10 月 17 日，隔天才公布檢查結果；兩場相隔 370 天。",
+      "videoUrl": "https://www.youtube.com/watch?v=YfynOcvpQfY",
+      "sources": [
+        {
+          "title": "巴西足協：Neymar 傷勢正式公告",
+          "url": "https://www.cbf.com.br/selecao-brasileira/noticias/detalhes/selecao-masculina/nota-oficial-sobre-a-lesao-do-atacante-da-selecao-brasileira-neymar-jr",
+          "publishedAt": "2023-10-18"
+        },
+        {
+          "title": "The National：Neymar 替補復出現場賽報",
+          "url": "https://www.thenationalnews.com/sport/football/2024/10/21/al-hilal-beat-al-ain-in-nine-goal-acl-thriller-as-al-dawsari-and-rahimi-hit-hat-tricks-and-neymar-returns/",
+          "publishedAt": "2024-10-21"
+        },
+        {
+          "title": "亞足聯：Al Ain 對 Al Hilal 賽果",
+          "url": "https://www.the-afc.com/en/club/afc_champions_league_elite.html/news/md3-al-ain-fc-uae-4-5-al-hilal-sfc-ksa-1",
+          "publishedAt": "2024-10-22"
+        }
+      ]
+    },
+    {
+      "slug": "cameron-brink-2024-acl",
+      "eventDate": "2024-06-18",
+      "injury": "WNBA 賽報確認左膝前十字韌帶撕裂。",
+      "returnDate": "2025-07-29",
+      "returnSummary": "2025-07-29 對拉斯維加斯王牌，首次重返 WNBA 比賽。",
+      "context": "回場日期採當地比賽日；聯盟賽報於隔天發布。",
+      "videoUrl": "https://www.youtube.com/watch?v=Ue0VBshhwX8",
+      "sources": [
+        {
+          "title": "WNBA：Brink 受傷當日賽報",
+          "url": "https://www.wnba.com/game/las-vs-con-1022400082",
+          "publishedAt": null
+        },
+        {
+          "title": "WNBA：確認 Brink 左膝 ACL 撕裂",
+          "url": "https://www.wnba.com/game/las-vs-nyl-1022400088",
+          "publishedAt": null
+        },
+        {
+          "title": "WNBA：Brink 7 月 29 日復出賽報",
+          "url": "https://www.wnba.com/game/lva-vs-las-1022500169",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "steve-smith-2019-concussion",
+      "eventDate": "2019-08-17",
+      "injury": "澳洲板球協會報導：頸後遭球擊中，隔天出現症狀並確診腦震盪。",
+      "returnDate": "2019-08-29",
+      "returnSummary": "2019-08-29 於對 Derbyshire 的三日巡迴賽重返比賽，隔天恢復打擊。",
+      "context": "受傷當天曾繼續比賽，翌日才確診；回場日期採傷後休賽後的首場，不把較晚的測試賽當作首次出賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=A_Wnlt1RP38",
+      "sources": [
+        {
+          "title": "澳洲板球協會：Smith 延遲出現腦震盪症狀",
+          "url": "https://www.cricket.com.au/news/3302474",
+          "publishedAt": "2019-08-18"
+        },
+        {
+          "title": "The Guardian：Smith 8 月 29 日實際出場",
+          "url": "https://www.theguardian.com/sport/2019/aug/29/steve-smith-quiet-return-australia-derbyshire-tour-match",
+          "publishedAt": "2019-08-29"
+        },
+        {
+          "title": "澳洲板球協會：Derbyshire 巡迴賽回歸紀錄",
+          "url": "https://www.cricket.com.au/news/3302201/smith-proves-the-star-attraction-to-delight-derby",
+          "publishedAt": "2019-08-31"
+        },
+        {
+          "title": "CricketArchive：三日賽實際成績",
+          "url": "https://cricketarchive.com/Archive/Scorecards/1091/1091840.html",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "george-north-2015-concussion",
+      "eventDate": "2015-03-27",
+      "injury": "BBC 採訪報導確認腦震盪後休賽。",
+      "returnDate": "2015-08-29",
+      "returnSummary": "2015-08-29 代表威爾斯對愛爾蘭出賽，完成世界盃熱身賽。",
+      "context": "本片是 3 月 27 日俱樂部賽事件；同年 2 月對英格蘭另有頭部碰撞，不能混用回場日期。",
+      "videoUrl": "https://www.youtube.com/watch?v=5EclrKrPNvI",
+      "sources": [
+        {
+          "title": "BBC：North 自 3 月腦震盪後休賽與回歸安排",
+          "url": "https://www.bbc.co.uk/sport/rugby-union/34067333",
+          "publishedAt": "2015-08-27"
+        },
+        {
+          "title": "愛爾蘭橄欖球協會：8 月 29 日威爾斯出賽名單",
+          "url": "https://www.irishrugby.ie/2015/08/27/wales-team-named-for-dublin-date/",
+          "publishedAt": "2015-08-27"
+        },
+        {
+          "title": "The Guardian：North 完成回歸賽事紀錄",
+          "url": "https://www.theguardian.com/sport/live/2015/aug/29/ireland-wales-rugby-world-cup-warm-up-live?filterKeyEvents=false",
+          "publishedAt": "2015-08-29"
+        }
+      ]
+    },
+    {
+      "slug": "mark-cavendish-2023-clavicle",
+      "eventDate": "2023-07-08",
+      "injury": "Astana 車隊聲明確認右鎖骨骨折。",
+      "returnDate": "2023-10-08",
+      "returnSummary": "2023-10-08 已在環土耳其賽第 1 站重返正式比賽。",
+      "context": "2024 年的賽事並非首次回場；曾預定退休也不等於此後沒有再出賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=O3IZGzHla4U",
+      "sources": [
+        {
+          "title": "Cyclingnews：車隊確認 Cavendish 右鎖骨骨折",
+          "url": "https://www.cyclingnews.com/news/mark-cavendish-abandons-tour-de-france-on-stage-8/",
+          "publishedAt": "2023-07-08"
+        },
+        {
+          "title": "Cyclingnews：Cavendish 環土耳其賽回歸安排",
+          "url": "https://www.cyclingnews.com/news/mark-cavendish-to-take-on-jasper-philipsen-at-tour-of-turkey/",
+          "publishedAt": "2023-10-08"
+        },
+        {
+          "title": "ProCyclingStats：10 月 8 日第 1 站實際成績",
+          "url": "https://www.procyclingstats.com/race/tour-of-turkey/2023/stage-1",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "derrick-rose-acl-2012",
+      "eventDate": "2012-04-28",
+      "injury": "NBA回顧記載，Rose當時左膝前十字韌帶撕裂。",
+      "returnDate": "2013-10-05",
+      "returnSummary": "2013-10-05代表公牛參加季前賽，重返比賽。",
+      "context": "此處記錄季前賽回場，不代表已恢復受傷前表現。",
+      "videoUrl": "https://www.youtube.com/watch?v=jo1UlzDeY-o",
+      "sources": [
+        {
+          "title": "NBA：Rose左膝傷勢與生涯回顧",
+          "url": "https://www.nba.com/news/derrick-rose-back-in-chicago",
+          "publishedAt": null
+        },
+        {
+          "title": "公牛：2013年回顧，10月5日季前賽復出",
+          "url": "https://www.nba.com/bulls/news/memorable-moments-2013.html",
+          "publishedAt": "2013-12-31"
+        }
+      ]
+    },
+    {
+      "slug": "demarcus-cousins-achilles-2018",
+      "eventDate": "2018-01-26",
+      "injury": "鵜鶘公告，MRI確認左阿基里斯腱斷裂。",
+      "returnDate": "2019-01-18",
+      "returnSummary": "2019-01-18代表勇士對快艇，重返NBA例行賽。",
+      "context": "受傷時效力鵜鶘，回場時已轉至勇士。",
+      "videoUrl": "https://www.youtube.com/watch?v=LZTOTwvfli0",
+      "sources": [
+        {
+          "title": "鵜鶘：Cousins傷勢更新",
+          "url": "https://www.nba.com/pelicans/news/demarcus-cousins-medical-update",
+          "publishedAt": "2018-01-27"
+        },
+        {
+          "title": "NBA：Cousins於1月18日回場",
+          "url": "https://www.nba.com/news/about-last-night-1-18-19-2",
+          "publishedAt": "2019-01-19"
+        }
+      ]
+    },
+    {
+      "slug": "kristaps-porzingis-acl-2018",
+      "eventDate": "2018-02-06",
+      "injury": "尼克公告，MRI確認左膝前十字韌帶撕裂。",
+      "returnDate": "2019-10-09",
+      "returnSummary": "2019-10-09代表獨行俠對活塞，先於季前賽回場。",
+      "context": "此處記錄季前賽，並非例行賽復出日期。",
+      "videoUrl": "https://www.youtube.com/watch?v=qAZG23aT4IY",
+      "sources": [
+        {
+          "title": "尼克：MRI確認Porzingis左膝傷勢",
+          "url": "https://www.nba.com/knicks/5-things-know-presented-spectrum/knicks-battle-raptors-series-locked-one-apiece",
+          "publishedAt": "2018-02-08"
+        },
+        {
+          "title": "NBA：Porzingis手術與2月6日受傷紀錄",
+          "url": "https://www.nba.com/news/new-york-knicks-kristaps-porzingis-has-successful-surgery-torn-acl",
+          "publishedAt": "2018-02-13"
+        },
+        {
+          "title": "NBA：Porzingis於季前賽復出",
+          "url": "https://www.nba.com/news/porzingis-1st-quarter-preseason-debut",
+          "publishedAt": "2019-10-10"
+        }
+      ]
+    },
+    {
+      "slug": "gordon-hayward-ankle-fracture-2017",
+      "eventDate": "2017-10-17",
+      "injury": "塞爾提克當日報導記載，Hayward左踝骨折。",
+      "returnDate": "2018-09-28",
+      "returnSummary": "2018-09-28先參加季前賽；2018-10-16重返例行賽。",
+      "context": "季前賽與例行賽的回場日期分開記錄。",
+      "videoUrl": "https://www.youtube.com/watch?v=HhuFTOZt6TU",
+      "sources": [
+        {
+          "title": "塞爾提克：Hayward開幕戰左踝骨折",
+          "url": "https://www.nba.com/celtics/news/sidebar/post-101717-celtics-lose-hayward-to-gruesome-leg-injury",
+          "publishedAt": "2017-10-18"
+        },
+        {
+          "title": "塞爾提克：2018年9月28日季前賽紀錄",
+          "url": "https://www.nba.com/celtics/game/0011800002-celtics-vs-hornets-chapel-hill-nc-09-28-2018",
+          "publishedAt": null
+        },
+        {
+          "title": "NBA：Hayward重返例行賽",
+          "url": "https://www.nba.com/news/18-6",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "jamal-murray-acl-2021",
+      "eventDate": "2021-04-12",
+      "injury": "金塊公告，Murray左膝前十字韌帶撕裂。",
+      "returnDate": "2022-10-03",
+      "returnSummary": "2022-10-03先參加季前賽；2022-10-19重返例行賽。",
+      "context": "兩場皆有官方出賽紀錄；上場不等於已恢復原有表現。",
+      "videoUrl": "https://www.youtube.com/watch?v=yDDkfhw1Qd0",
+      "sources": [
+        {
+          "title": "NBA：金塊公布Murray左膝傷勢",
+          "url": "https://www.nba.com/news/jamal-murray-out-indefinitely-with-torn-acl-in-left-knee",
+          "publishedAt": "2021-04-13"
+        },
+        {
+          "title": "NBA：2022年10月3日雷霆對金塊官方紀錄",
+          "url": "https://statsdmz.nba.com/pdfs/20221003/20221003_OKCDEN.pdf",
+          "publishedAt": null
+        },
+        {
+          "title": "NBA：2022年10月19日金塊對爵士官方紀錄",
+          "url": "https://statsdmz.nba.com/pdfs/20221019/20221019_DENUTA.pdf",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "dejounte-murray-acl-2018",
+      "eventDate": "2018-10-07",
+      "injury": "馬刺公告，Murray右膝前十字韌帶撕裂。",
+      "returnDate": "2019-10-05",
+      "returnSummary": "2019-10-05代表馬刺對魔術，重返季前賽。",
+      "context": "受傷賽事與此處記錄的回場賽事，都是季前賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=Ajto95dt2yQ",
+      "sources": [
+        {
+          "title": "NBA：Murray在對火箭季前賽傷退",
+          "url": "https://www.nba.com/news/dejounte-murray-leaves-game-knee-injury",
+          "publishedAt": "2018-10-08"
+        },
+        {
+          "title": "NBA：馬刺確認Murray右膝前十字韌帶撕裂",
+          "url": "https://www.nba.com/news/spurs-dejounte-murray-torn-acl",
+          "publishedAt": "2018-10-08"
+        },
+        {
+          "title": "熱火：回顧馬刺季前首戰與Murray回場",
+          "url": "https://www.nba.com/heat/news/sas-mia-game-preview-1901008",
+          "publishedAt": "2019-10-08"
+        }
+      ]
+    },
+    {
+      "slug": "kawhi-leonard-acl-2021",
+      "eventDate": "2021-06-14",
+      "injury": "快艇後續手術公告確認，Leonard右膝前十字韌帶部分撕裂。",
+      "returnDate": "2022-10-03",
+      "returnSummary": "2022-10-03先參加季前賽；2022-10-20重返例行賽。",
+      "context": "傷勢採後續球隊確認的診斷，不以影片標題判定。",
+      "videoUrl": "https://www.youtube.com/watch?v=iwZgXGRJENE",
+      "sources": [
+        {
+          "title": "NBA：Leonard右膝前十字韌帶部分撕裂手術",
+          "url": "https://www.nba.com/news/kawhi-leonard-has-surgery-to-repair-partially-torn-acl",
+          "publishedAt": "2021-07-14"
+        },
+        {
+          "title": "CBS：Leonard手術公告與6月14日賽事",
+          "url": "https://www.cbsnews.com/losangeles/news/clippers-star-kawhi-leonard-undergoes-surgery-for-partially-torn-acl/",
+          "publishedAt": "2021-07-13"
+        },
+        {
+          "title": "NBA：Leonard於季前賽回場",
+          "url": "https://www.nba.com/news/ben-simmons-kawhi-leonard-jamal-murray-make-long-awaited-returns",
+          "publishedAt": "2022-10-04"
+        },
+        {
+          "title": "NBA：2022年10月20日快艇對湖人官方紀錄",
+          "url": "https://statsdmz.nba.com/pdfs/20221020/20221020_LACLAL.pdf",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "paul-george-leg-fracture-2014",
+      "eventDate": "2014-08-01",
+      "injury": "溜馬回顧記載，George當時右脛骨與腓骨骨折。",
+      "returnDate": "2015-04-05",
+      "returnSummary": "2015-04-05代表溜馬對熱火，重返NBA例行賽。",
+      "context": "本例為小腿骨折；受傷發生於國家隊對抗賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=Qoy8tUXsqQs",
+      "sources": [
+        {
+          "title": "溜馬：George骨折後回場的賽後回顧",
+          "url": "https://www.nba.com/pacers/rewind-pacers-heat-150405",
+          "publishedAt": "2015-04-05"
+        },
+        {
+          "title": "溜馬：George於4月5日首次回場",
+          "url": "https://www.nba.com/pacers/news/george-follows-perfect-script",
+          "publishedAt": "2015-04-05"
+        },
+        {
+          "title": "NBA：George受傷與回場時間軸",
+          "url": "https://jr.nba.com/paul-george-teaches-you-to-never-give-up/",
+          "publishedAt": "2015-10-15"
+        }
+      ]
+    },
+    {
+      "slug": "zach-lavine-acl-2017",
+      "eventDate": "2017-02-03",
+      "injury": "灰狼公告，LaVine左膝前十字韌帶撕裂。",
+      "returnDate": "2018-01-13",
+      "returnSummary": "2018-01-13代表公牛對活塞，重返NBA例行賽。",
+      "context": "受傷發生在第三節；第四節曾再次上場，不能據此認定可以安全繼續比賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=g4CkpVi5Iqk",
+      "sources": [
+        {
+          "title": "灰狼：LaVine左膝傷勢更新",
+          "url": "https://www.nba.com/timberwolves/zach-lavine-injury-update-02-04-2017",
+          "publishedAt": "2017-02-04"
+        },
+        {
+          "title": "公牛：2018年1月13日LaVine回場紀錄",
+          "url": "https://www.nba.com/bulls/game/0021700632",
+          "publishedAt": null
+        },
+        {
+          "title": "NBA：第三節受傷後曾繼續出賽",
+          "url": "https://www.nba.com/news/minnesota-playoff-hopes-take-big-hit-lavine-injury",
+          "publishedAt": "2017-02-05"
+        },
+        {
+          "title": "灰狼：LaVine回憶第三節上籃落地",
+          "url": "https://www.nba.com/timberwolves/lavine-making-progress-rehab-acl-injury",
+          "publishedAt": "2017-03-22"
+        }
+      ]
+    },
+    {
+      "slug": "shaun-livingston-knee-2007",
+      "eventDate": "2007-02-26",
+      "injury": "快艇MRI公告記載，左膝脫位合併多條韌帶與半月板損傷。",
+      "returnDate": null,
+      "returnSummary": "2008-10-29已有代表熱火出賽的NBA例行賽紀錄；首次回場日尚未核清。",
+      "context": "該場官方紀錄為4分20秒；不據此計算首次回場天數。",
+      "videoUrl": "https://www.youtube.com/watch?v=cWGLRqXsT54",
+      "sources": [
+        {
+          "title": "快艇：Livingston左膝MRI傷勢公告",
+          "url": "https://www.nba.com/clippers/news/livingston_update_070227.html",
+          "publishedAt": "2007-02-27"
+        },
+        {
+          "title": "NBA：2008年10月29日熱火對尼克官方紀錄",
+          "url": "https://www.nba.com/game/mia-vs-nyk-0020800007/box-score",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "alex-oxlade-chamberlain-2018",
+      "eventDate": "2018-04-24",
+      "injury": "利物浦證實膝韌帶受傷，並接受手術。",
+      "returnDate": "2019-03-08",
+      "returnSummary": "2019-03-08先參加U23正式賽事40分鐘；2019-04-26重返一隊英超。",
+      "context": "日期採最早查得的U23正式出賽；一隊回場較晚。公開球隊來源僅寫膝韌帶損傷，本筆不自行細分韌帶。",
+      "videoUrl": "https://www.youtube.com/watch?v=rPYOGKhlzag",
+      "sources": [
+        {
+          "title": "利物浦：膝韌帶傷後復健進展",
+          "url": "https://www.liverpoolfc.com/news/first-team/305536-alex-oxlade-chamberlain-knee-injury-rehabilitation",
+          "publishedAt": "2018-06-29"
+        },
+        {
+          "title": "利物浦：U23復出40分鐘後的狀況",
+          "url": "https://www.liverpoolfc.com/news/first-team/340949-alex-oxlade-chamberlain-fitness-update",
+          "publishedAt": "2019-03-08"
+        },
+        {
+          "title": "利物浦：一隊對哈德斯菲爾德賽後談復出",
+          "url": "https://www.liverpoolfc.com/news/first-team/347685-jurgen-klopp-liverpool-huddersfield-reaction",
+          "publishedAt": "2019-04-26"
+        },
+        {
+          "title": "利物浦：4月24日對羅馬受傷更新",
+          "url": "https://www.liverpoolfc.com/news/first-team/299392-alex-oxlade-chamberlain-injury-update-jurgen-klopp",
+          "publishedAt": "2018-04-24"
+        }
+      ]
+    },
+    {
+      "slug": "david-beckham-2010",
+      "eventDate": "2010-03-14",
+      "injury": "洛杉磯銀河證實左阿基里斯腱撕裂，接受手術。",
+      "returnDate": "2010-09-11",
+      "returnSummary": "2010-09-11在MLS替補出賽20分鐘；此前已參加封閉練習賽。",
+      "context": "回場日期採MLS正式比賽，封閉練習賽不計為正式回場。",
+      "videoUrl": "https://www.youtube.com/watch?v=cgOemKqIzEE",
+      "sources": [
+        {
+          "title": "洛杉磯銀河：Beckham移出傷兵名單與受傷紀錄",
+          "url": "https://www.lagalaxy.com/news/la-galaxy-activate-david-beckham-disabled-list",
+          "publishedAt": "2010-09-09"
+        },
+        {
+          "title": "洛杉磯銀河：9月13日週報記錄前週六復出",
+          "url": "https://www.lagalaxy.com/news/la-galaxy-weekly-update-september-13",
+          "publishedAt": "2010-09-13"
+        },
+        {
+          "title": "洛杉磯銀河：首次正式回場與先前練習賽",
+          "url": "https://www.lagalaxy.com/news/beckham-feels-great-about-first-game-back",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "cristiano-ronaldo-2016",
+      "eventDate": "2016-07-10",
+      "injury": "膝傷退場；本次未取得足以確認受傷組織的一手診斷。",
+      "returnDate": "2016-09-10",
+      "returnSummary": "2016-09-10重返西甲，對奧薩蘇納先發並進球。",
+      "context": "UEFA確認決賽受傷退場與傷後首度出賽；不將影片外觀或媒體MCL說法當成球隊已證實的診斷。",
+      "videoUrl": "https://www.youtube.com/watch?v=wgPxm0RKJAk",
+      "sources": [
+        {
+          "title": "UEFA：2016歐洲國家盃決賽受傷退場紀錄",
+          "url": "https://www.uefa.com/news/0253-0d81c3763c88-e741506b5589-1000--portugal-spoil-france-s-party-with-extra-time-win/",
+          "publishedAt": "2016-07-10"
+        },
+        {
+          "title": "UEFA：Ronaldo傷後首次出賽對奧薩蘇納",
+          "url": "https://www.uefa.com/uefachampionsleague/news/0231-0e94e9f3100f-a7c8efd2558f-1000--city-and-celtic-s-derby-delight-as-barcelona-stunned/",
+          "publishedAt": "2016-09-10"
+        }
+      ]
+    },
+    {
+      "slug": "vivianne-miedema-2022",
+      "eventDate": "2022-12-15",
+      "injury": "兵工廠確認前十字韌帶受傷，並接受手術。",
+      "returnDate": "2023-10-22",
+      "returnSummary": "2023-10-22在女子英超對布里斯托城替補回場。",
+      "context": "回場採實際替補出賽，不採重新跑步、回到訓練或列入替補名單的日期。",
+      "videoUrl": "https://www.youtube.com/watch?v=YXpvkHw2BP8",
+      "sources": [
+        {
+          "title": "兵工廠：Miedema前十字韌帶傷後重返跑步訓練",
+          "url": "https://www.arsenal.com/news/gallery-miedema-back-running-gym",
+          "publishedAt": "2023-05-23"
+        },
+        {
+          "title": "澳洲足協：2023年10月22日布里斯托城一戰Miedema復出",
+          "url": "https://matildas.com.au/news/matildas-abroad-review-foord-hits-a-century-arsenal",
+          "publishedAt": null
+        },
+        {
+          "title": "荷蘭NOS：Miedema於10月22日回場",
+          "url": "https://nos.nl/artikel/2495004-rentree-miedema-bij-zege-arsenal-janssen-scoort-voor-en-tegen-wolfsburg",
+          "publishedAt": "2023-10-22"
+        },
+        {
+          "title": "Goal賽事現場報導：12月15日Miedema傷退",
+          "url": "https://www.goal.com/en-sg/news/miedema-stretchered-off-tears-injury-arsenal-champions-league-lyon/bltbcfafd01b277e015",
+          "publishedAt": "2022-12-15"
+        }
+      ]
+    },
+    {
+      "slug": "laurent-koscielny-2018",
+      "eventDate": "2018-05-03",
+      "injury": "兵工廠確認阿基里斯腱斷裂。",
+      "returnDate": "2018-11-26",
+      "returnSummary": "2018-11-26先參加U23賽事；2018-12-13於歐霸重返一隊。",
+      "context": "日期採U23實際出賽，一隊回場為12月13日；影片是球隊製作的傷後紀錄片。",
+      "videoUrl": "https://www.youtube.com/watch?v=4--y5nQdVE0",
+      "sources": [
+        {
+          "title": "德比郡：11月26日U23比賽與Koscielny出場名單",
+          "url": "https://www.dcfc.co.uk/news/2018/11/u23-vs-arsenal-match-report",
+          "publishedAt": "2018-11-26"
+        },
+        {
+          "title": "兵工廠：Koscielny談5月3日阿基里斯腱斷裂與一隊復出",
+          "url": "https://www.arsenal.com/news/koscielny-it-was-emotional-my-smile-back",
+          "publishedAt": "2018-12-13"
+        }
+      ]
+    },
+    {
+      "slug": "andre-gomes-2019",
+      "eventDate": "2019-11-03",
+      "injury": "艾佛頓官方回顧確認腳踝骨折合併脫位。",
+      "returnDate": "2020-02-23",
+      "returnSummary": "2020-02-23在英超對兵工廠下半場替補回場。",
+      "context": "傷勢依球隊公開紀錄確認；回場日期採英超實際替補出賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=8_d9ITG6Rmk",
+      "sources": [
+        {
+          "title": "艾佛頓官方：Gomes傷勢與2月23日回場紀錄",
+          "url": "https://www.youtube.com/watch?v=0QV_Qxn2THY",
+          "publishedAt": "2020-02-26"
+        },
+        {
+          "title": "英超：兵工廠對艾佛頓，Gomes替補復出",
+          "url": "https://www.premierleague.com/en/news/1609662",
+          "publishedAt": "2020-02-23"
+        },
+        {
+          "title": "荷蘭NOS：11月3日Gomes在熱刺一戰傷退",
+          "url": "https://nos.nl/artikel/2308934-horrorblessure-gomes-overschaduwt-remise-tussen-everton-en-tottenham",
+          "publishedAt": "2019-11-03"
+        }
+      ]
+    },
+    {
+      "slug": "beth-mead-2022",
+      "eventDate": "2022-11-19",
+      "injury": "兵工廠確認前十字韌帶斷裂。",
+      "returnDate": "2023-10-15",
+      "returnSummary": "2023-10-15對阿斯頓維拉第87分鐘替補回場，並送出助攻。",
+      "context": "8月重返團隊訓練不等於正式出賽；日期採女子英超實際回場。",
+      "videoUrl": "https://www.youtube.com/watch?v=Kxz1vhDq94Y",
+      "sources": [
+        {
+          "title": "兵工廠：Mead前十字韌帶傷後首次團隊訓練",
+          "url": "https://www.arsenal.com/news/gallery-mead-back-first-training-session",
+          "publishedAt": "2023-08-29"
+        },
+        {
+          "title": "BBC：Mead於11月19日對曼聯受傷",
+          "url": "https://www.bbc.co.uk/sport/football/63720708",
+          "publishedAt": "2022-11-22"
+        },
+        {
+          "title": "兵工廠：10月15日對阿斯頓維拉比賽紀錄",
+          "url": "https://www.arsenal.com/fixture/women/2023-Oct-15/women-aston-villa-women-match-report",
+          "publishedAt": "2023-10-15"
+        }
+      ]
+    },
+    {
+      "slug": "leah-williamson-2023",
+      "eventDate": "2023-04-19",
+      "injury": "英格蘭足協確認前十字韌帶受傷。",
+      "returnDate": "2024-01-24",
+      "returnSummary": "2024-01-24在女子聯賽盃對雷丁替補回場。",
+      "context": "日期採兵工廠正式賽事出場；國家隊重新徵召與國際賽回場是不同階段。",
+      "videoUrl": "https://www.youtube.com/watch?v=TygjH39bmfU",
+      "sources": [
+        {
+          "title": "英格蘭足協：Williamson前十字韌帶傷勢與1月24日俱樂部復出",
+          "url": "https://www.englandfootball.com/articles/2024/Feb/13/sarina-wiegman-england-womens-squad-announcement-20240213",
+          "publishedAt": "2024-02-13"
+        },
+        {
+          "title": "Arseblog賽事報導：1月24日雷丁對兵工廠",
+          "url": "https://arseblog.news/2024/01/reading-women-0-6-arsenal-match-report/",
+          "publishedAt": "2024-01-24"
+        },
+        {
+          "title": "兵工廠：Williamson球員紀錄與2023年4月受傷",
+          "url": "https://www.arsenal.com/fixtures/women/players/leah-williamson-aQqQA1l42Lqw",
+          "publishedAt": null
+        },
+        {
+          "title": "Standard賽後報導：4月19日Williamson傷退",
+          "url": "https://www.standard.co.uk/sport/football/leah-williamson-injury-lionesses-world-cup-arsenal-wsl-b1075359.html",
+          "publishedAt": "2023-04-19"
+        }
+      ]
+    },
+    {
+      "slug": "zlatan-ibrahimovic-2017-knee",
+      "eventDate": "2017-04-20",
+      "injury": "曼聯確認膝部韌帶受損。",
+      "returnDate": "2017-11-18",
+      "returnSummary": "2017-11-18 於英超曼聯對 Newcastle United 替補上場。",
+      "context": "球隊公告未細分韌帶名稱；此處不將傷勢自行改寫為前十字韌帶斷裂。",
+      "videoUrl": "https://www.youtube.com/watch?v=AzVEucCufd0",
+      "sources": [
+        {
+          "title": "BBC：Ibrahimovic 對 Anderlecht 比賽受傷",
+          "url": "https://www.bbc.co.uk/sport/football/39661512",
+          "publishedAt": "2017-04-20"
+        },
+        {
+          "title": "衛報：曼聯公布膝部韌帶傷勢",
+          "url": "https://www.theguardian.com/football/2017/apr/22/manchester-united-zlatan-ibrahimovic-marcos-rojo-significant-knee-ligament-damage",
+          "publishedAt": "2017-04-22"
+        },
+        {
+          "title": "英超：曼聯對 Newcastle 賽報與 Ibrahimovic 復出",
+          "url": "https://www.premierleague.com/en/news/511689/match-summary",
+          "publishedAt": "2017-11-18"
+        }
+      ]
+    },
+    {
+      "slug": "victor-oladipo-2019-quadriceps",
+      "eventDate": "2019-01-23",
+      "injury": "溜馬確認右側股四頭肌腱斷裂。",
+      "returnDate": "2020-01-29",
+      "returnSummary": "2020-01-29 對公牛重返 NBA 比賽，距離受傷 371 天。",
+      "context": "本例為 2019 年溜馬時期的傷害；與之後在熱火的傷勢分開記錄。",
+      "videoUrl": "https://www.youtube.com/watch?v=qGFHQQWFhWg",
+      "sources": [
+        {
+          "title": "溜馬：Oladipo 受傷當晚公告",
+          "url": "https://www.nba.com/pacers/news/victor-oladipo-update-190123",
+          "publishedAt": "2019-01-23"
+        },
+        {
+          "title": "NBA：Oladipo 股四頭肌腱斷裂診斷",
+          "url": "https://www.nba.com/news/victor-oladipo-to-have-knee-surgery",
+          "publishedAt": "2019-01-24"
+        },
+        {
+          "title": "NBA：Oladipo 對公牛實際復出賽報",
+          "url": "https://www.nba.com/news/oladipo-caps-emotional-week-winning-return",
+          "publishedAt": "2020-01-30"
+        }
+      ]
+    },
+    {
+      "slug": "serena-williams-2021-hamstring",
+      "eventDate": "2021-06-29",
+      "injury": "美網官方報導 Williams 公布右側腿後肌撕裂。",
+      "returnDate": "2022-06-21",
+      "returnSummary": "2022-06-21 先在 Eastbourne 與 Ons Jabeur 搭檔出賽女雙並獲勝。",
+      "context": "最早回場為女雙；之後重返溫布頓女單不是本例的首次比賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=pi0rz4KrTAM",
+      "sources": [
+        {
+          "title": "BBC：Williams 溫布頓首輪受傷退賽",
+          "url": "https://www.bbc.co.uk/sport/tennis/57656647",
+          "publishedAt": "2021-06-29"
+        },
+        {
+          "title": "美網：Williams 因腿後肌撕裂退出美網",
+          "url": "https://www.usopen.org/en_US/news/articles/2021-08-25/serena_williams_pulls_out_of_2021_us_open_with_torn_hamstring.html",
+          "publishedAt": "2021-08-25"
+        },
+        {
+          "title": "WTA：Williams 在 Eastbourne 女雙實際復出",
+          "url": "https://www.wtatennis.com/news/2652001/serena-returns-to-tour-with-doubles-win-jabeur-badosa-upset-in-eastbourne",
+          "publishedAt": "2022-06-21"
+        }
+      ]
+    }
+  ]
+}

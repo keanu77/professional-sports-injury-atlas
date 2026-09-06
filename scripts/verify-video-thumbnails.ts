@@ -25,14 +25,20 @@ export function loadVideoThumbnails(root: string): {
     const curation = JSON.parse(
       readFileSync(join(root, "src/data/videos/curation.v1.json"), "utf8"),
     );
+    const batch30 = JSON.parse(
+      readFileSync(join(root, "src/data/videos/batch-30.v1.json"), "utf8"),
+    );
     const expected = new Set<string>([
       ...[...launch.cases, ...expansion.cases].map(
         (record: { videoUrl: string }) =>
           new URL(record.videoUrl).searchParams.get("v")!,
       ),
-      ...[...expansion.clips, ...additions.clips, ...curation.clips].map(
-        (clip: { videoId: string }) => clip.videoId,
-      ),
+      ...[
+        ...expansion.clips,
+        ...additions.clips,
+        ...curation.clips,
+        ...batch30.clips,
+      ].map((clip: { videoId: string }) => clip.videoId),
     ]);
     if (
       manifest.schemaVersion !== 1 ||

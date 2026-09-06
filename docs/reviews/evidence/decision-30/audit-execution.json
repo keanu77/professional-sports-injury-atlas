@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-09-06T08:57:07.237696+00:00",
+  "models": [
+    "Codex with web search",
+    "Grok with web search"
+  ],
+  "scope": "Public sources and public video candidates only",
+  "agy": "Not rerun: prior headless tool limitation remains; not counted as completed audit",
+  "qwen": "Not run",
+  "pass2": "Independent source, segment and code review",
+  "target": 51,
+  "prepared": 52
+}

@@ -8,6 +8,18 @@ const origin = process.argv[2] ?? "http://127.0.0.1:14322";
 const receipt = JSON.parse(
   fs.readFileSync("artifacts/public-launch-receipt.v1.json", "utf8"),
 );
+assert.ok(receipt.sports?.length, "Missing sport classification receipt");
+const videoPaths = [
+  ...receipt.cases.map((record) => `/cases/${record.slug}/`),
+  ...(receipt.clips ?? []).map((clip) => `/videos/${clip.slug}/`),
+];
+assert.deepEqual(
+  receipt.sports.flatMap((sport) => sport.paths).sort(),
+  [...videoPaths].sort(),
+  "Each video must appear in exactly one sport",
+);
+for (const sport of receipt.sports)
+  assert.equal(sport.count, sport.paths.length, `Sport count: ${sport.code}`);
 const updates = JSON.parse(
   fs.readFileSync("src/data/videos/event-updates.v1.json", "utf8"),
 );
@@ -15,6 +27,14 @@ updates.entries.push(
   ...JSON.parse(
     fs.readFileSync("src/data/videos/event-additions.v1.json", "utf8"),
   ).entries,
+);
+updates.entries.push(
+  ...JSON.parse(
+    fs.readFileSync("src/data/videos/event-batch-30.v1.json", "utf8"),
+  ).entries,
+);
+const batch30 = JSON.parse(
+  fs.readFileSync("src/data/videos/batch-30.v1.json", "utf8"),
 );
 const curation = JSON.parse(
   fs.readFileSync("src/data/videos/curation.v1.json", "utf8"),
@@ -79,8 +99,8 @@ try {
     for (const path of [
       "/",
       ...receipt.bodyParts.map((part) => `/body-parts/${part.code}/`),
-      ...receipt.cases.map((record) => `/cases/${record.slug}/`),
-      ...(receipt.clips ?? []).map((clip) => `/videos/${clip.slug}/`),
+      ...receipt.sports.map((sport) => `/sports/${sport.code}/`),
+      ...videoPaths,
     ]) {
       await page.goto(origin + path, { waitUntil: "networkidle" });
       if (viewport.width === 320)
@@ -103,34 +123,65 @@ try {
       const part = receipt.bodyParts.find(
         (p) => path === `/body-parts/${p.code}/`,
       );
-      if (path === "/" || part) {
+      const sport = receipt.sports.find((s) => path === `/sports/${s.code}/`);
+      const group = part ?? sport;
+      if (path === "/" || group) {
         assert.equal(
           await covers.count(),
-          part ? part.count : receipt.cases.length + receipt.clips.length,
+          group ? group.count : videoPaths.length,
         );
-        const nav = page.locator("[data-body-part-nav]");
-        assert.deepEqual(
-          await nav
-            .locator("a")
-            .evaluateAll((links) => links.map((a) => a.getAttribute("href"))),
-          receipt.bodyParts.map((p) => `/body-parts/${p.code}/`),
-        );
-        if (part) {
-          assert.equal(
-            await nav.locator('[aria-current="page"]').getAttribute("href"),
-            path,
-          );
+        for (const [kind, groups, current] of [
+          ["body-part", receipt.bodyParts, part],
+          ["sport", receipt.sports, sport],
+        ]) {
+          if (path !== "/" && !current) continue;
+          const nav = page.locator(`[data-${kind}-nav]`);
+          const route = kind === "sport" ? "sports" : "body-parts";
           assert.deepEqual(
-            (
-              await page
-                .locator("[data-body-part-videos] [data-featured-card] a")
-                .evaluateAll((links) => [
-                  ...new Set(links.map((a) => a.getAttribute("href"))),
-                ])
-            ).sort(),
-            [...part.paths].sort(),
+            await nav
+              .locator("a")
+              .evaluateAll((links) => links.map((a) => a.getAttribute("href"))),
+            groups.map((item) => `/${route}/${item.code}/`),
+            `Classification navigation: ${path}`,
           );
+          assert.equal(
+            await nav.locator('[aria-current="page"]').count(),
+            current ? 1 : 0,
+          );
+          if (current)
+            assert.equal(
+              await nav.locator('[aria-current="page"]').getAttribute("href"),
+              path,
+            );
+          for (const item of groups) {
+            const link = nav.locator(`a[href="/${route}/${item.code}/"]`);
+            assert.ok((await link.innerText()).includes(item.label));
+            assert.equal(
+              await link.locator("span").innerText(),
+              `${item.count} 支影片`,
+            );
+          }
         }
+        const cards = page.locator(
+          path === "/"
+            ? "[data-featured-videos] [data-featured-card]"
+            : `[data-${sport ? "sport" : "body-part"}-videos] [data-featured-card]`,
+        );
+        assert.equal(
+          await cards.count(),
+          group ? group.count : videoPaths.length,
+        );
+        assert.deepEqual(
+          (
+            await cards.evaluateAll((items) =>
+              items.map((item) =>
+                item.querySelector("a")?.getAttribute("href"),
+              ),
+            )
+          ).sort(),
+          [...(group ? group.paths : videoPaths)].sort(),
+          `Classification video membership: ${path}`,
+        );
       } else {
         assert.equal(
           await page
@@ -147,7 +198,7 @@ try {
         assert.ok(await report.isVisible());
         assert.ok((await report.innerText()).includes(update.injury));
         assert.ok((await report.innerText()).includes(update.returnSummary));
-        const headClip = curation.clips.find(
+        const headClip = [...curation.clips, ...batch30.clips].find(
           (c) => c.slug === update.slug && c.bodyPart === "頭頸部",
         );
         if (headClip) {
@@ -166,7 +217,14 @@ try {
 
         await report.locator("summary").click();
         assert.equal(await report.locator("li").count(), update.sources.length);
-        assert.equal(await report.locator('a[href*="nba.com"]').count(), 0);
+        const nbaLinks = await report.locator("a[href]").evaluateAll(
+          (links) =>
+            links.filter((link) => {
+              const host = new URL(link.href).hostname;
+              return host === "nba.com" || host.endsWith(".nba.com");
+            }).length,
+        );
+        assert.equal(nbaLinks, 0);
       }
       for (const cover of await covers.all()) {
         await cover.scrollIntoViewIfNeeded();
@@ -192,9 +250,7 @@ try {
         `Accessibility: ${path}`,
       );
       if (path === "/") {
-        assert.ok(
-          (await page.locator('main a[href^="/injuries/"]').count()) > 0,
-        );
+        assert.equal(await page.locator(".more-cases").count(), 0);
         assert.equal(
           await page.locator("[data-featured-card]:visible").count(),
           receipt.cases.length + (receipt.clips ?? []).length,
@@ -222,6 +278,7 @@ try {
         receipt.cases.length +
         (receipt.clips ?? []).length +
         receipt.bodyParts.length +
+        receipt.sports.length +
         1,
       accessibility: "passed",
       externalBeforeActivation: 0,
@@ -241,6 +298,19 @@ try {
   await page.goto(origin + "/");
   await page.locator("[data-body-part-nav] a").first().click();
   assert.ok(await page.locator("[data-body-part-videos]").isVisible());
+  for (const sport of receipt.sports) {
+    await page.goto(origin + "/");
+    await page
+      .locator(`[data-sport-nav] a[href="/sports/${sport.code}/"]`)
+      .click();
+    assert.equal(new URL(page.url()).pathname, `/sports/${sport.code}/`);
+    assert.ok(
+      await page.locator(`[data-sport-videos="${sport.code}"]`).isVisible(),
+    );
+    await page.locator('a[href="/#sports"]').click();
+    assert.equal(new URL(page.url()).hash, "#sports");
+    assert.ok(await page.locator("[data-sport-nav]").isVisible());
+  }
   await context.close();
   const result = {
     checkedAt: new Date().toISOString(),

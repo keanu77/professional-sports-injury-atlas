@@ -79,7 +79,9 @@ if (clip.startSeconds > 0)
         }{
           clip.captionStatus === "available"
             ? "字幕可由播放器開啟"
-            : "原始影片未提供字幕"
+            : clip.captionStatus === "unavailable"
+              ? "原始影片未提供字幕"
+              : "字幕請以播放器提供為準"
         }
       </p>
     </section>
@@ -115,15 +117,34 @@ if (clip.startSeconds > 0)
             <>
               <h2>當下怎麼做</h2>
               <p>
-                先停止運動、保護受傷部位。疼痛加重或無法承重時就醫；不要用忍痛完成動作來判斷能否繼續。
+                先停止運動、保護受傷部位，避免勉強移動或承重；不要自行扳正。疼痛加重或無法承重時儘速就醫。
               </p>
-              <a
-                class="clip-meta"
-                href="https://www.nhs.uk/conditions/sprains-and-strains/"
-                rel="noopener noreferrer"
-              >
-                處理原則：NHS
-              </a>
+              <p>
+                若明顯變形、有深傷口或骨頭外露、麻木，或手腳末端冰冷變色，立即叫救護車。
+              </p>
+              <p class="clip-meta">
+                處理參考：NHS{" "}
+                <a
+                  href="https://www.nhs.uk/conditions/sprains-and-strains/"
+                  rel="noopener noreferrer"
+                >
+                  扭拉傷
+                </a>{" "}
+                ·{" "}
+                <a
+                  href="https://www.nhs.uk/conditions/broken-leg/"
+                  rel="noopener noreferrer"
+                >
+                  骨折
+                </a>{" "}
+                ·{" "}
+                <a
+                  href="https://www.nhs.uk/conditions/dislocated-shoulder/"
+                  rel="noopener noreferrer"
+                >
+                  脫位
+                </a>
+              </p>
             </>
           </section>
         )

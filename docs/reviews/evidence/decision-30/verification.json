@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-09-06T09:02:49.222355+00:00",
+  "astro": {
+    "errors": 0,
+    "warnings": 0,
+    "existingHints": 16
+  },
+  "unit": {
+    "total": 1320,
+    "initialPassed": 1307,
+    "initialSocketEperm": 13,
+    "socketRetryFiles": 3,
+    "socketRetryPassed": 51
+  },
+  "e2e": {
+    "passed": 88,
+    "projects": [
+      "chromium",
+      "firefox",
+      "webkit",
+      "mobile-chromium"
+    ]
+  },
+  "format": {
+    "changedCodeAndData": "passed",
+    "wholeRepository": "47 existing historical report/evidence warnings"
+  },
+  "artifact": {
+    "htmlPages": 81,
+    "localLinks": 1156,
+    "cases": 7,
+    "clips": 45,
+    "bodyParts": 6,
+    "sports": 13
+  },
+  "previewPlayback": {
+    "total": 30,
+    "played": 30
+  }
+}

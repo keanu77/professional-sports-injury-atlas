@@ -1,0 +1,976 @@
+{
+  "schemaVersion": 1,
+  "decision": "decision-30",
+  "authorizationQuote": "影片總數量的目標是50個以上，請你盡最大努力完成",
+  "authorizedAt": "2026-09-06T08:30:00Z",
+  "clips": [
+    {
+      "slug": "klay-thompson-2019-acl",
+      "videoId": "3vHr8d5UQro",
+      "name": "Klay Thompson",
+      "sport": "籃球",
+      "event": "NBA 總冠軍賽第 6 戰對暴龍",
+      "bodyPart": "膝部",
+      "eventDate": "2019-06-13",
+      "returnDate": "2022-01-09",
+      "observation": "灌籃遭到干擾後落地失衡，隨後倒地；可觀察落地與停止比賽的過程。",
+      "returnText": "2022-01-09 對騎士重返 NBA 比賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=3vHr8d5UQro",
+      "publisher": "TheNBAFreak",
+      "sourceTitle": "Klay Thompson Tears ACL, Checks Himself Back In Game and Shoots Free throws",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 251,
+      "sources": [
+        {
+          "title": "NBA：Thompson 重返賽場與兩次傷勢",
+          "url": "https://www.nba.com/news/klay-thompson-return-feature"
+        },
+        {
+          "title": "NBA：勇士確認右側阿基里斯腱斷裂",
+          "url": "https://www.nba.com/news/report-klay-thompson-out-for-season-with-torn-achilles"
+        }
+      ]
+    },
+    {
+      "slug": "kobe-bryant-2013-achilles",
+      "videoId": "5KlgfpqWCkY",
+      "name": "Kobe Bryant",
+      "sport": "籃球",
+      "event": "NBA 湖人對勇士",
+      "bodyPart": "小腿／阿基里斯腱",
+      "eventDate": "2013-04-12",
+      "returnDate": "2013-12-08",
+      "observation": "切入時突然跌倒並摸向腳踝後方；影片也保留後續離場過程。",
+      "returnText": "2013-12-08 對暴龍重返 NBA 比賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=5KlgfpqWCkY",
+      "publisher": "ZQJP",
+      "sourceTitle": "KOBE BRYANT TORN ACHILLES INJURY | FULL VERSION | WITH POST-GAME INTERVIEW [April 12, 2013] [HD]",
+      "captionStatus": "not-verified",
+      "startSeconds": 33,
+      "durationSeconds": 388,
+      "sources": [
+        {
+          "title": "湖人：醫療團隊說明 Bryant 傷勢",
+          "url": "https://www.nba.com/lakers/news/130413vittikobebryant"
+        },
+        {
+          "title": "湖人：對勇士受傷賽事報導",
+          "url": "https://www.nba.com/lakers/news/130412bryanttearsachilles"
+        },
+        {
+          "title": "NBA：2013 年 12 月 8 日湖人對暴龍紀錄",
+          "url": "https://www.nba.com/raptors/game/0021300303"
+        },
+        {
+          "title": "NBC Sports：Bryant 實際復出賽報",
+          "url": "https://www.nbcsports.com/nba/news/kobe-is-back-but-loss-to-raptors-shows-lakers-still-have-a-lot-of-work-to-do"
+        }
+      ]
+    },
+    {
+      "slug": "gianmarco-tamberi-2016-ankle",
+      "videoId": "blW4L9jn6iM",
+      "name": "Gianmarco Tamberi",
+      "sport": "田徑",
+      "event": "摩納哥 Herculis 跳高賽",
+      "bodyPart": "腳踝",
+      "eventDate": "2016-07-15",
+      "returnDate": "2017-06-14",
+      "observation": "助跑起跳後落在跳高墊上，隨即抱住腳踝，無法繼續比賽。",
+      "returnText": "2017-06-14 於聖馬利諾 Trofeo Titano 比賽重返跳高賽場。",
+      "videoUrl": "https://www.youtube.com/watch?v=blW4L9jn6iM",
+      "publisher": "BadBoyPK21",
+      "sourceTitle": "Gianmarco Tamberi's moment of injury",
+      "captionStatus": "not-verified",
+      "startSeconds": 10,
+      "durationSeconds": 205,
+      "sources": [
+        {
+          "title": "義大利田徑協會：Tamberi 左踝傷勢",
+          "url": "https://www.fidal.it/content/Infortunio-per-Tamberi-sfuma-il-sogno-olimpico/95696"
+        },
+        {
+          "title": "義大利田徑協會：Tamberi 手術完成",
+          "url": "https://www.fidal.it/content/Intervento-riuscito-per-Gimbo-Tamberi/95747"
+        },
+        {
+          "title": "義大利田徑協會：Tamberi 在 Trofeo Titano 回歸",
+          "url": "https://www.fidal.it/content/Tamberi-che-sorpresa-rieccolo-in-pedana%21/107988"
+        }
+      ]
+    },
+    {
+      "slug": "john-tavares-2021-concussion",
+      "videoId": "Gnhby06KpyQ",
+      "name": "John Tavares",
+      "sport": "冰球",
+      "event": "NHL 季後賽楓葉對加拿大人第 1 戰",
+      "bodyPart": "頭頸部",
+      "eventDate": "2021-05-20",
+      "returnDate": "2021-09-25",
+      "observation": "冰上碰撞後倒地，頭部再與另一名球員碰撞；隊醫進場處理。",
+      "returnText": "2021-09-25 先於季前賽對加拿大人出賽；10 月 13 日回到 NHL 例行賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=Gnhby06KpyQ",
+      "publisher": "SPORTSNET",
+      "sourceTitle": "Hockey Night Panel On Scary Injury To John Tavares",
+      "captionStatus": "not-verified",
+      "startSeconds": 92,
+      "durationSeconds": 297,
+      "sources": [
+        {
+          "title": "NHL：Tavares 腦震盪公告",
+          "url": "https://www.nhl.com/news/maple-leafs-tavares-leaves-game-1-on-stretcher-324872014"
+        },
+        {
+          "title": "NHL：腦震盪與膝傷後續",
+          "url": "https://www.nhl.com/news/montreal-canadiens-toronto-maple-leafs-game-2-preview-324921064"
+        },
+        {
+          "title": "NHL：9 月 25 日季前賽回歸",
+          "url": "https://www.nhl.com/news/montreal-canadiens-toronto-maple-leafs-preseason-game-recap-326235276"
+        },
+        {
+          "title": "NHL：10 月 13 日例行賽出場紀錄",
+          "url": "https://www.nhl.com/scores/htmlreports/20212022/GS020003.HTM"
+        }
+      ]
+    },
+    {
+      "slug": "neymar-2023-acl",
+      "videoId": "YfynOcvpQfY",
+      "name": "Neymar",
+      "sport": "足球",
+      "event": "世界盃南美洲資格賽巴西對烏拉圭",
+      "bodyPart": "膝部",
+      "eventDate": "2023-10-17",
+      "returnDate": "2024-10-21",
+      "observation": "與對手爭球後跌倒，隨後需要工作人員協助離場。",
+      "returnText": "2024-10-21 於亞冠菁英聯賽 Al Hilal 對 Al Ain 替補上場。",
+      "videoUrl": "https://www.youtube.com/watch?v=YfynOcvpQfY",
+      "publisher": "TyC Sports",
+      "sourceTitle": "LA DURA LESIÓN DE NEYMAR EN LA DERROTA DE BRASIL ANTE URUGUAY 🔥 Eliminatorias Sudamericanas",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 249,
+      "sources": [
+        {
+          "title": "巴西足協：Neymar 傷勢正式公告",
+          "url": "https://www.cbf.com.br/selecao-brasileira/noticias/detalhes/selecao-masculina/nota-oficial-sobre-a-lesao-do-atacante-da-selecao-brasileira-neymar-jr"
+        },
+        {
+          "title": "The National：Neymar 替補復出現場賽報",
+          "url": "https://www.thenationalnews.com/sport/football/2024/10/21/al-hilal-beat-al-ain-in-nine-goal-acl-thriller-as-al-dawsari-and-rahimi-hit-hat-tricks-and-neymar-returns/"
+        },
+        {
+          "title": "亞足聯：Al Ain 對 Al Hilal 賽果",
+          "url": "https://www.the-afc.com/en/club/afc_champions_league_elite.html/news/md3-al-ain-fc-uae-4-5-al-hilal-sfc-ksa-1"
+        }
+      ]
+    },
+    {
+      "slug": "cameron-brink-2024-acl",
+      "videoId": "Ue0VBshhwX8",
+      "name": "Cameron Brink",
+      "sport": "籃球",
+      "event": "WNBA 洛杉磯火花對康乃狄克太陽",
+      "bodyPart": "膝部",
+      "eventDate": "2024-06-18",
+      "returnDate": "2025-07-29",
+      "observation": "持球切入、準備跨步時倒地，隨後無法自行正常離場。",
+      "returnText": "2025-07-29 對拉斯維加斯王牌，首次重返 WNBA 比賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=Ue0VBshhwX8",
+      "publisher": "Women Hooping",
+      "sourceTitle": "🫣 CAMERON BRINK CARRIED OFF COURT, TORN ACL KNEE INJURY | WNBA Los Angeles Sparks vs Connecticut Sun",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 55,
+      "sources": [
+        {
+          "title": "WNBA：Brink 受傷當日賽報",
+          "url": "https://www.wnba.com/game/las-vs-con-1022400082"
+        },
+        {
+          "title": "WNBA：確認 Brink 左膝 ACL 撕裂",
+          "url": "https://www.wnba.com/game/las-vs-nyl-1022400088"
+        },
+        {
+          "title": "WNBA：Brink 7 月 29 日復出賽報",
+          "url": "https://www.wnba.com/game/lva-vs-las-1022500169"
+        }
+      ]
+    },
+    {
+      "slug": "steve-smith-2019-concussion",
+      "videoId": "A_Wnlt1RP38",
+      "name": "Steve Smith",
+      "sport": "板球",
+      "event": "英澳 Ashes 系列賽 Lord’s 第 2 場測試賽",
+      "bodyPart": "頭頸部",
+      "eventDate": "2019-08-17",
+      "returnDate": "2019-08-29",
+      "observation": "投球擊中頭頸部後倒地，醫療人員進場；影片也呈現之後的處理。",
+      "returnText": "2019-08-29 於對 Derbyshire 的三日巡迴賽重返比賽，隔天恢復打擊。",
+      "videoUrl": "https://www.youtube.com/watch?v=A_Wnlt1RP38",
+      "publisher": "England & Wales Cricket Board",
+      "sourceTitle": "Sporting DRAMA | Jofra Archer Bowling Spell To Steve Smith | Lord's | Ashes 2019",
+      "captionStatus": "unavailable",
+      "startSeconds": 150,
+      "durationSeconds": 223,
+      "sources": [
+        {
+          "title": "澳洲板球協會：Smith 延遲出現腦震盪症狀",
+          "url": "https://www.cricket.com.au/news/3302474"
+        },
+        {
+          "title": "The Guardian：Smith 8 月 29 日實際出場",
+          "url": "https://www.theguardian.com/sport/2019/aug/29/steve-smith-quiet-return-australia-derbyshire-tour-match"
+        },
+        {
+          "title": "澳洲板球協會：Derbyshire 巡迴賽回歸紀錄",
+          "url": "https://www.cricket.com.au/news/3302201/smith-proves-the-star-attraction-to-delight-derby"
+        },
+        {
+          "title": "CricketArchive：三日賽實際成績",
+          "url": "https://cricketarchive.com/Archive/Scorecards/1091/1091840.html"
+        }
+      ]
+    },
+    {
+      "slug": "george-north-2015-concussion",
+      "videoId": "5EclrKrPNvI",
+      "name": "George North",
+      "sport": "橄欖球",
+      "event": "英格蘭 Premiership Northampton Saints 對 Wasps",
+      "bodyPart": "頭頸部",
+      "eventDate": "2015-03-27",
+      "returnDate": "2015-08-29",
+      "observation": "持球遭擒抱倒地時頭部受到碰撞；畫面與節目討論可分開觀看。",
+      "returnText": "2015-08-29 代表威爾斯對愛爾蘭出賽，完成世界盃熱身賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=5EclrKrPNvI",
+      "publisher": "TNT Sports Football",
+      "sourceTitle": "Debate: concussion and discipline - George North & Nathan Hughes.",
+      "captionStatus": "not-verified",
+      "startSeconds": 119,
+      "durationSeconds": 441,
+      "sources": [
+        {
+          "title": "BBC：North 自 3 月腦震盪後休賽與回歸安排",
+          "url": "https://www.bbc.co.uk/sport/rugby-union/34067333"
+        },
+        {
+          "title": "愛爾蘭橄欖球協會：8 月 29 日威爾斯出賽名單",
+          "url": "https://www.irishrugby.ie/2015/08/27/wales-team-named-for-dublin-date/"
+        },
+        {
+          "title": "The Guardian：North 完成回歸賽事紀錄",
+          "url": "https://www.theguardian.com/sport/live/2015/aug/29/ireland-wales-rugby-world-cup-warm-up-live?filterKeyEvents=false"
+        }
+      ]
+    },
+    {
+      "slug": "mark-cavendish-2023-clavicle",
+      "videoId": "O3IZGzHla4U",
+      "name": "Mark Cavendish",
+      "sport": "自行車",
+      "event": "環法自行車賽第 8 站",
+      "bodyPart": "肩部",
+      "eventDate": "2023-07-08",
+      "returnDate": "2023-10-08",
+      "observation": "集團騎乘中摔車，隨後躺在路面並護住肩部。",
+      "returnText": "2023-10-08 已在環土耳其賽第 1 站重返正式比賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=O3IZGzHla4U",
+      "publisher": "FloBikes",
+      "sourceTitle": "Mark Cavendish CRASH Crushes Record Dreams In Stage 8 At Tour de France 2023",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 100,
+      "sources": [
+        {
+          "title": "Cyclingnews：車隊確認 Cavendish 右鎖骨骨折",
+          "url": "https://www.cyclingnews.com/news/mark-cavendish-abandons-tour-de-france-on-stage-8/"
+        },
+        {
+          "title": "Cyclingnews：Cavendish 環土耳其賽回歸安排",
+          "url": "https://www.cyclingnews.com/news/mark-cavendish-to-take-on-jasper-philipsen-at-tour-of-turkey/"
+        },
+        {
+          "title": "ProCyclingStats：10 月 8 日第 1 站實際成績",
+          "url": "https://www.procyclingstats.com/race/tour-of-turkey/2023/stage-1"
+        }
+      ]
+    },
+    {
+      "slug": "derrick-rose-acl-2012",
+      "videoId": "jo1UlzDeY-o",
+      "name": "Derrick Rose",
+      "sport": "籃球",
+      "event": "NBA季後賽：公牛對76人",
+      "bodyPart": "膝部",
+      "eventDate": "2012-04-28",
+      "returnDate": "2013-10-05",
+      "observation": "運球切入後起跳、落地失衡，隨後坐倒並停止比賽。",
+      "returnText": "2013-10-05代表公牛參加季前賽，重返比賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=jo1UlzDeY-o",
+      "publisher": "nbaus3030",
+      "sourceTitle": "Derrick Rose ACL Knee Injury - 4/28/2012 2012 NBA Playoffs Game 1",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 72,
+      "sources": [
+        {
+          "title": "NBA：Rose左膝傷勢與生涯回顧",
+          "url": "https://www.nba.com/news/derrick-rose-back-in-chicago"
+        },
+        {
+          "title": "公牛：2013年回顧，10月5日季前賽復出",
+          "url": "https://www.nba.com/bulls/news/memorable-moments-2013.html"
+        }
+      ]
+    },
+    {
+      "slug": "demarcus-cousins-achilles-2018",
+      "videoId": "LZTOTwvfli0",
+      "name": "DeMarcus Cousins",
+      "sport": "籃球",
+      "event": "NBA例行賽：鵜鶘對火箭",
+      "bodyPart": "小腿／阿基里斯腱",
+      "eventDate": "2018-01-26",
+      "returnDate": "2019-01-18",
+      "observation": "爭搶籃板後移動突然受限，隨後倒地並需要協助。",
+      "returnText": "2019-01-18代表勇士對快艇，重返NBA例行賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=LZTOTwvfli0",
+      "publisher": "NBAHighlights2",
+      "sourceTitle": "DeMarcus Cousins' leg injury - torn achilles vs Houston (01.26.2018)",
+      "captionStatus": "not-verified",
+      "startSeconds": 10,
+      "durationSeconds": 122,
+      "sources": [
+        {
+          "title": "鵜鶘：Cousins傷勢更新",
+          "url": "https://www.nba.com/pelicans/news/demarcus-cousins-medical-update"
+        },
+        {
+          "title": "NBA：Cousins於1月18日回場",
+          "url": "https://www.nba.com/news/about-last-night-1-18-19-2"
+        }
+      ]
+    },
+    {
+      "slug": "kristaps-porzingis-acl-2018",
+      "videoId": "qAZG23aT4IY",
+      "name": "Kristaps Porzingis",
+      "sport": "籃球",
+      "event": "NBA例行賽：尼克對公鹿",
+      "bodyPart": "膝部",
+      "eventDate": "2018-02-06",
+      "returnDate": "2019-10-09",
+      "observation": "灌籃後落地失衡，倒地並抱住膝部；節目包含受傷回放。",
+      "returnText": "2019-10-09代表獨行俠對活塞，先於季前賽回場。",
+      "videoUrl": "https://www.youtube.com/watch?v=qAZG23aT4IY",
+      "publisher": "ESPN",
+      "sourceTitle": "Kristaps Porzingis sidelined with a torn ACL | SportsCenter | ESPN",
+      "captionStatus": "unavailable",
+      "startSeconds": 33,
+      "durationSeconds": 156,
+      "sources": [
+        {
+          "title": "尼克：MRI確認Porzingis左膝傷勢",
+          "url": "https://www.nba.com/knicks/5-things-know-presented-spectrum/knicks-battle-raptors-series-locked-one-apiece"
+        },
+        {
+          "title": "NBA：Porzingis手術與2月6日受傷紀錄",
+          "url": "https://www.nba.com/news/new-york-knicks-kristaps-porzingis-has-successful-surgery-torn-acl"
+        },
+        {
+          "title": "NBA：Porzingis於季前賽復出",
+          "url": "https://www.nba.com/news/porzingis-1st-quarter-preseason-debut"
+        }
+      ]
+    },
+    {
+      "slug": "gordon-hayward-ankle-fracture-2017",
+      "videoId": "HhuFTOZt6TU",
+      "name": "Gordon Hayward",
+      "sport": "籃球",
+      "event": "NBA開幕戰：塞爾提克對騎士",
+      "bodyPart": "腳踝",
+      "eventDate": "2017-10-17",
+      "returnDate": "2018-09-28",
+      "observation": "空中爭球後落地倒下，隊友與醫療人員隨即上前協助。",
+      "returnText": "2018-09-28先參加季前賽；2018-10-16重返例行賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=HhuFTOZt6TU",
+      "publisher": "ESPN",
+      "sourceTitle": "Gordon Hayward fractures left ankle in 1st quarter of Celtics vs. Cavaliers | SportsCenter | ESPN",
+      "captionStatus": "not-verified",
+      "startSeconds": 22,
+      "durationSeconds": 111,
+      "sources": [
+        {
+          "title": "塞爾提克：Hayward開幕戰左踝骨折",
+          "url": "https://www.nba.com/celtics/news/sidebar/post-101717-celtics-lose-hayward-to-gruesome-leg-injury"
+        },
+        {
+          "title": "塞爾提克：2018年9月28日季前賽紀錄",
+          "url": "https://www.nba.com/celtics/game/0011800002-celtics-vs-hornets-chapel-hill-nc-09-28-2018"
+        },
+        {
+          "title": "NBA：Hayward重返例行賽",
+          "url": "https://www.nba.com/news/18-6"
+        }
+      ]
+    },
+    {
+      "slug": "jamal-murray-acl-2021",
+      "videoId": "yDDkfhw1Qd0",
+      "name": "Jamal Murray",
+      "sport": "籃球",
+      "event": "NBA例行賽：金塊對勇士",
+      "bodyPart": "膝部",
+      "eventDate": "2021-04-12",
+      "returnDate": "2022-10-03",
+      "observation": "運球切入時突然倒地，抱住膝部並停止比賽。",
+      "returnText": "2022-10-03先參加季前賽；2022-10-19重返例行賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=yDDkfhw1Qd0",
+      "publisher": "Rookie Productions",
+      "sourceTitle": "Jamal Murray Tears ACL & Leaves The Game After Struggling To Stand On His Own & Denies Wheelchair",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 146,
+      "sources": [
+        {
+          "title": "NBA：金塊公布Murray左膝傷勢",
+          "url": "https://www.nba.com/news/jamal-murray-out-indefinitely-with-torn-acl-in-left-knee"
+        },
+        {
+          "title": "NBA：2022年10月3日雷霆對金塊官方紀錄",
+          "url": "https://statsdmz.nba.com/pdfs/20221003/20221003_OKCDEN.pdf"
+        },
+        {
+          "title": "NBA：2022年10月19日金塊對爵士官方紀錄",
+          "url": "https://statsdmz.nba.com/pdfs/20221019/20221019_DENUTA.pdf"
+        }
+      ]
+    },
+    {
+      "slug": "dejounte-murray-acl-2018",
+      "videoId": "Ajto95dt2yQ",
+      "name": "Dejounte Murray",
+      "sport": "籃球",
+      "event": "NBA季前賽：馬刺對火箭",
+      "bodyPart": "膝部",
+      "eventDate": "2018-10-07",
+      "returnDate": "2019-10-05",
+      "observation": "切入準備起跳時失去支撐，隨後倒地。",
+      "returnText": "2019-10-05代表馬刺對魔術，重返季前賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=Ajto95dt2yQ",
+      "publisher": "PROBASKET",
+      "sourceTitle": "Dejounte Murray ACL injury #NBA",
+      "captionStatus": "unavailable",
+      "startSeconds": 0,
+      "durationSeconds": 43,
+      "sources": [
+        {
+          "title": "NBA：Murray在對火箭季前賽傷退",
+          "url": "https://www.nba.com/news/dejounte-murray-leaves-game-knee-injury"
+        },
+        {
+          "title": "NBA：馬刺確認Murray右膝前十字韌帶撕裂",
+          "url": "https://www.nba.com/news/spurs-dejounte-murray-torn-acl"
+        },
+        {
+          "title": "熱火：回顧馬刺季前首戰與Murray回場",
+          "url": "https://www.nba.com/heat/news/sas-mia-game-preview-1901008"
+        }
+      ]
+    },
+    {
+      "slug": "kawhi-leonard-acl-2021",
+      "videoId": "iwZgXGRJENE",
+      "name": "Kawhi Leonard",
+      "sport": "籃球",
+      "event": "NBA季後賽：快艇對爵士",
+      "bodyPart": "膝部",
+      "eventDate": "2021-06-14",
+      "returnDate": "2022-10-03",
+      "observation": "持球推進並與防守者接觸後，步態出現變化；影片保留回放。",
+      "returnText": "2022-10-03先參加季前賽；2022-10-20重返例行賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=iwZgXGRJENE",
+      "publisher": "LegendZ Productions",
+      "sourceTitle": "KAWHI LEONARD HAS SUFFERED AN ACL INJURY & IS OUT FOR THE REST OF THE SEASON",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 135,
+      "sources": [
+        {
+          "title": "NBA：Leonard右膝前十字韌帶部分撕裂手術",
+          "url": "https://www.nba.com/news/kawhi-leonard-has-surgery-to-repair-partially-torn-acl"
+        },
+        {
+          "title": "CBS：Leonard手術公告與6月14日賽事",
+          "url": "https://www.cbsnews.com/losangeles/news/clippers-star-kawhi-leonard-undergoes-surgery-for-partially-torn-acl/"
+        },
+        {
+          "title": "NBA：Leonard於季前賽回場",
+          "url": "https://www.nba.com/news/ben-simmons-kawhi-leonard-jamal-murray-make-long-awaited-returns"
+        },
+        {
+          "title": "NBA：2022年10月20日快艇對湖人官方紀錄",
+          "url": "https://statsdmz.nba.com/pdfs/20221020/20221020_LACLAL.pdf"
+        }
+      ]
+    },
+    {
+      "slug": "paul-george-leg-fracture-2014",
+      "videoId": "Qoy8tUXsqQs",
+      "name": "Paul George",
+      "sport": "籃球",
+      "event": "美國男籃隊內對抗賽",
+      "bodyPart": "小腿／阿基里斯腱",
+      "eventDate": "2014-08-01",
+      "returnDate": "2015-04-05",
+      "observation": "追防起跳後在籃架附近落地受傷；影片包含現場處理。",
+      "returnText": "2015-04-05代表溜馬對熱火，重返NBA例行賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=Qoy8tUXsqQs",
+      "publisher": "CBS Mornings",
+      "sourceTitle": "Paul George suffers horrific injury in scrimmage",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 40,
+      "sources": [
+        {
+          "title": "溜馬：George骨折後回場的賽後回顧",
+          "url": "https://www.nba.com/pacers/rewind-pacers-heat-150405"
+        },
+        {
+          "title": "溜馬：George於4月5日首次回場",
+          "url": "https://www.nba.com/pacers/news/george-follows-perfect-script"
+        },
+        {
+          "title": "NBA：George受傷與回場時間軸",
+          "url": "https://jr.nba.com/paul-george-teaches-you-to-never-give-up/"
+        }
+      ]
+    },
+    {
+      "slug": "zach-lavine-acl-2017",
+      "videoId": "g4CkpVi5Iqk",
+      "name": "Zach LaVine",
+      "sport": "籃球",
+      "event": "NBA例行賽：灰狼對活塞",
+      "bodyPart": "膝部",
+      "eventDate": "2017-02-03",
+      "returnDate": "2018-01-13",
+      "observation": "第三節上籃後落地倒下；影片後段也保留再次上場的過程，不代表傷勢輕微。",
+      "returnText": "2018-01-13代表公牛對活塞，重返NBA例行賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=g4CkpVi5Iqk",
+      "publisher": "Ximo Pierto 2",
+      "sourceTitle": "Zach LaVine Plays 6 More Minutes after Tearing ACL vs Pistons | Feb 3, 2017 | 2016-17 NBA Season",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 562,
+      "sources": [
+        {
+          "title": "灰狼：LaVine左膝傷勢更新",
+          "url": "https://www.nba.com/timberwolves/zach-lavine-injury-update-02-04-2017"
+        },
+        {
+          "title": "公牛：2018年1月13日LaVine回場紀錄",
+          "url": "https://www.nba.com/bulls/game/0021700632"
+        },
+        {
+          "title": "NBA：第三節受傷後曾繼續出賽",
+          "url": "https://www.nba.com/news/minnesota-playoff-hopes-take-big-hit-lavine-injury"
+        },
+        {
+          "title": "灰狼：LaVine回憶第三節上籃落地",
+          "url": "https://www.nba.com/timberwolves/lavine-making-progress-rehab-acl-injury"
+        }
+      ]
+    },
+    {
+      "slug": "shaun-livingston-knee-2007",
+      "videoId": "cWGLRqXsT54",
+      "name": "Shaun Livingston",
+      "sport": "籃球",
+      "event": "NBA例行賽：快艇對山貓",
+      "bodyPart": "膝部",
+      "eventDate": "2007-02-26",
+      "returnDate": null,
+      "observation": "上籃後落地倒下，膝部出現明顯異常，隨後接受場上處理。",
+      "returnText": "2008-10-29已有代表熱火出賽的NBA例行賽紀錄；首次回場日尚未核清。",
+      "videoUrl": "https://www.youtube.com/watch?v=cWGLRqXsT54",
+      "publisher": "CLOSE TO THE STARS",
+      "sourceTitle": "The Shaun Livingston's knee injury 2007",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 35,
+      "sources": [
+        {
+          "title": "快艇：Livingston左膝MRI傷勢公告",
+          "url": "https://www.nba.com/clippers/news/livingston_update_070227.html"
+        },
+        {
+          "title": "NBA：2008年10月29日熱火對尼克官方紀錄",
+          "url": "https://www.nba.com/game/mia-vs-nyk-0020800007/box-score"
+        }
+      ]
+    },
+    {
+      "slug": "alex-oxlade-chamberlain-2018",
+      "videoId": "rPYOGKhlzag",
+      "name": "Alex Oxlade-Chamberlain",
+      "sport": "足球",
+      "event": "歐冠準決賽：利物浦對羅馬",
+      "bodyPart": "膝部",
+      "eventDate": "2018-04-24",
+      "returnDate": "2019-03-08",
+      "observation": "爭球滑鏟時與對手接觸，可觀察腳部支撐與倒地的過程。",
+      "returnText": "2019-03-08先參加U23正式賽事40分鐘；2019-04-26重返一隊英超。",
+      "videoUrl": "https://www.youtube.com/watch?v=rPYOGKhlzag",
+      "publisher": "WRC10",
+      "sourceTitle": "Oxlade Chamberlain injury vs Roma 24/4/2018",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 19,
+      "sources": [
+        {
+          "title": "利物浦：膝韌帶傷後復健進展",
+          "url": "https://www.liverpoolfc.com/news/first-team/305536-alex-oxlade-chamberlain-knee-injury-rehabilitation"
+        },
+        {
+          "title": "利物浦：U23復出40分鐘後的狀況",
+          "url": "https://www.liverpoolfc.com/news/first-team/340949-alex-oxlade-chamberlain-fitness-update"
+        },
+        {
+          "title": "利物浦：一隊對哈德斯菲爾德賽後談復出",
+          "url": "https://www.liverpoolfc.com/news/first-team/347685-jurgen-klopp-liverpool-huddersfield-reaction"
+        },
+        {
+          "title": "利物浦：4月24日對羅馬受傷更新",
+          "url": "https://www.liverpoolfc.com/news/first-team/299392-alex-oxlade-chamberlain-injury-update-jurgen-klopp"
+        }
+      ]
+    },
+    {
+      "slug": "david-beckham-2010",
+      "videoId": "cgOemKqIzEE",
+      "name": "David Beckham",
+      "sport": "足球",
+      "event": "義甲：AC米蘭對切沃",
+      "bodyPart": "小腿／阿基里斯腱",
+      "eventDate": "2010-03-14",
+      "returnDate": "2010-09-11",
+      "observation": "移動中突然停下並摸向腳踝後方，隨後無法正常行走。",
+      "returnText": "2010-09-11在MLS替補出賽20分鐘；此前已參加封閉練習賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=cgOemKqIzEE",
+      "publisher": "Mark Sickmiller",
+      "sourceTitle": "David Beckham Injury - Achilles Tendon - 14 March 2010",
+      "captionStatus": "unavailable",
+      "startSeconds": 0,
+      "durationSeconds": 97,
+      "sources": [
+        {
+          "title": "洛杉磯銀河：Beckham移出傷兵名單與受傷紀錄",
+          "url": "https://www.lagalaxy.com/news/la-galaxy-activate-david-beckham-disabled-list"
+        },
+        {
+          "title": "洛杉磯銀河：9月13日週報記錄前週六復出",
+          "url": "https://www.lagalaxy.com/news/la-galaxy-weekly-update-september-13"
+        },
+        {
+          "title": "洛杉磯銀河：首次正式回場與先前練習賽",
+          "url": "https://www.lagalaxy.com/news/beckham-feels-great-about-first-game-back"
+        }
+      ]
+    },
+    {
+      "slug": "cristiano-ronaldo-2016",
+      "videoId": "wgPxm0RKJAk",
+      "name": "Cristiano Ronaldo",
+      "sport": "足球",
+      "event": "歐洲國家盃決賽：葡萄牙對法國",
+      "bodyPart": "膝部",
+      "eventDate": "2016-07-10",
+      "returnDate": "2016-09-10",
+      "observation": "爭球碰撞後膝部不適，曾嘗試繼續，最後退場。",
+      "returnText": "2016-09-10重返西甲，對奧薩蘇納先發並進球。",
+      "videoUrl": "https://www.youtube.com/watch?v=wgPxm0RKJAk",
+      "publisher": "Adventures",
+      "sourceTitle": "Injury of Cristiano Ronaldo vs France (  Euro 2016 Final )",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 246,
+      "sources": [
+        {
+          "title": "UEFA：2016歐洲國家盃決賽受傷退場紀錄",
+          "url": "https://www.uefa.com/news/0253-0d81c3763c88-e741506b5589-1000--portugal-spoil-france-s-party-with-extra-time-win/"
+        },
+        {
+          "title": "UEFA：Ronaldo傷後首次出賽對奧薩蘇納",
+          "url": "https://www.uefa.com/uefachampionsleague/news/0231-0e94e9f3100f-a7c8efd2558f-1000--city-and-celtic-s-derby-delight-as-barcelona-stunned/"
+        }
+      ]
+    },
+    {
+      "slug": "vivianne-miedema-2022",
+      "videoId": "YXpvkHw2BP8",
+      "name": "Vivianne Miedema",
+      "sport": "足球",
+      "event": "女子歐冠：兵工廠對里昂",
+      "bodyPart": "膝部",
+      "eventDate": "2022-12-15",
+      "returnDate": "2023-10-22",
+      "observation": "爭球過程中倒地並停止移動，隨後接受場上處理。",
+      "returnText": "2023-10-22在女子英超對布里斯托城替補回場。",
+      "videoUrl": "https://www.youtube.com/watch?v=YXpvkHw2BP8",
+      "publisher": "FootFem",
+      "sourceTitle": "Vivianne Miedema stretchered off after nasty looking knee injury.",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 291,
+      "sources": [
+        {
+          "title": "兵工廠：Miedema前十字韌帶傷後重返跑步訓練",
+          "url": "https://www.arsenal.com/news/gallery-miedema-back-running-gym"
+        },
+        {
+          "title": "澳洲足協：2023年10月22日布里斯托城一戰Miedema復出",
+          "url": "https://matildas.com.au/news/matildas-abroad-review-foord-hits-a-century-arsenal"
+        },
+        {
+          "title": "荷蘭NOS：Miedema於10月22日回場",
+          "url": "https://nos.nl/artikel/2495004-rentree-miedema-bij-zege-arsenal-janssen-scoort-voor-en-tegen-wolfsburg"
+        },
+        {
+          "title": "Goal賽事現場報導：12月15日Miedema傷退",
+          "url": "https://www.goal.com/en-sg/news/miedema-stretchered-off-tears-injury-arsenal-champions-league-lyon/bltbcfafd01b277e015"
+        }
+      ]
+    },
+    {
+      "slug": "laurent-koscielny-2018",
+      "videoId": "4--y5nQdVE0",
+      "name": "Laurent Koscielny",
+      "sport": "足球",
+      "event": "歐霸準決賽：兵工廠對馬德里競技",
+      "bodyPart": "小腿／阿基里斯腱",
+      "eventDate": "2018-05-03",
+      "returnDate": "2018-11-26",
+      "observation": "跑動中突然倒地；球隊紀錄片接著呈現傷後復健與回歸。",
+      "returnText": "2018-11-26先參加U23賽事；2018-12-13於歐霸重返一隊。",
+      "videoUrl": "https://www.youtube.com/watch?v=4--y5nQdVE0",
+      "publisher": "Arsenal",
+      "sourceTitle": "Laurent Koscielny: Stronger | Exclusive in-depth documentary",
+      "captionStatus": "not-verified",
+      "startSeconds": 40,
+      "durationSeconds": 1488,
+      "sources": [
+        {
+          "title": "德比郡：11月26日U23比賽與Koscielny出場名單",
+          "url": "https://www.dcfc.co.uk/news/2018/11/u23-vs-arsenal-match-report"
+        },
+        {
+          "title": "兵工廠：Koscielny談5月3日阿基里斯腱斷裂與一隊復出",
+          "url": "https://www.arsenal.com/news/koscielny-it-was-emotional-my-smile-back"
+        }
+      ]
+    },
+    {
+      "slug": "andre-gomes-2019",
+      "videoId": "8_d9ITG6Rmk",
+      "name": "André Gomes",
+      "sport": "足球",
+      "event": "英超：艾佛頓對熱刺",
+      "bodyPart": "腳踝",
+      "eventDate": "2019-11-03",
+      "returnDate": "2020-02-23",
+      "observation": "與對手接觸後跌倒，隨後球員與工作人員上前協助。",
+      "returnText": "2020-02-23在英超對兵工廠下半場替補回場。",
+      "videoUrl": "https://www.youtube.com/watch?v=8_d9ITG6Rmk",
+      "publisher": "AA Football",
+      "sourceTitle": "ANDRE GOMEZ HORRIFIC INJURY(SON EMOTIONALLY CRIES)",
+      "captionStatus": "unavailable",
+      "startSeconds": 0,
+      "durationSeconds": 28,
+      "sources": [
+        {
+          "title": "艾佛頓官方：Gomes傷勢與2月23日回場紀錄",
+          "url": "https://www.youtube.com/watch?v=0QV_Qxn2THY"
+        },
+        {
+          "title": "英超：兵工廠對艾佛頓，Gomes替補復出",
+          "url": "https://www.premierleague.com/en/news/1609662"
+        },
+        {
+          "title": "荷蘭NOS：11月3日Gomes在熱刺一戰傷退",
+          "url": "https://nos.nl/artikel/2308934-horrorblessure-gomes-overschaduwt-remise-tussen-everton-en-tottenham"
+        }
+      ]
+    },
+    {
+      "slug": "beth-mead-2022",
+      "videoId": "Kxz1vhDq94Y",
+      "name": "Beth Mead",
+      "sport": "足球",
+      "event": "女子英超：兵工廠對曼聯",
+      "bodyPart": "膝部",
+      "eventDate": "2022-11-19",
+      "returnDate": "2023-10-15",
+      "observation": "追球轉向後失去支撐並倒地，隨後停止比賽。",
+      "returnText": "2023-10-15對阿斯頓維拉第87分鐘替補回場，並送出助攻。",
+      "videoUrl": "https://www.youtube.com/watch?v=Kxz1vhDq94Y",
+      "publisher": "FootFem",
+      "sourceTitle": "Beth Mead nasty knee injury (ACL) | Arsenal and England star 90th minute woe!",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 146,
+      "sources": [
+        {
+          "title": "兵工廠：Mead前十字韌帶傷後首次團隊訓練",
+          "url": "https://www.arsenal.com/news/gallery-mead-back-first-training-session"
+        },
+        {
+          "title": "BBC：Mead於11月19日對曼聯受傷",
+          "url": "https://www.bbc.co.uk/sport/football/63720708"
+        },
+        {
+          "title": "兵工廠：10月15日對阿斯頓維拉比賽紀錄",
+          "url": "https://www.arsenal.com/fixture/women/2023-Oct-15/women-aston-villa-women-match-report"
+        }
+      ]
+    },
+    {
+      "slug": "leah-williamson-2023",
+      "videoId": "TygjH39bmfU",
+      "name": "Leah Williamson",
+      "sport": "足球",
+      "event": "女子英超：兵工廠對曼聯",
+      "bodyPart": "膝部",
+      "eventDate": "2023-04-19",
+      "returnDate": "2024-01-24",
+      "observation": "跑動中倒地，隊醫隨即進場，之後離開比賽。",
+      "returnText": "2024-01-24在女子聯賽盃對雷丁替補回場。",
+      "videoUrl": "https://www.youtube.com/watch?v=TygjH39bmfU",
+      "publisher": "FootFem",
+      "sourceTitle": "Leah Williamson: England and Arsenal captain set to miss World Cup with ACL injury!!",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 341,
+      "sources": [
+        {
+          "title": "英格蘭足協：Williamson前十字韌帶傷勢與1月24日俱樂部復出",
+          "url": "https://www.englandfootball.com/articles/2024/Feb/13/sarina-wiegman-england-womens-squad-announcement-20240213"
+        },
+        {
+          "title": "Arseblog賽事報導：1月24日雷丁對兵工廠",
+          "url": "https://arseblog.news/2024/01/reading-women-0-6-arsenal-match-report/"
+        },
+        {
+          "title": "兵工廠：Williamson球員紀錄與2023年4月受傷",
+          "url": "https://www.arsenal.com/fixtures/women/players/leah-williamson-aQqQA1l42Lqw"
+        },
+        {
+          "title": "Standard賽後報導：4月19日Williamson傷退",
+          "url": "https://www.standard.co.uk/sport/football/leah-williamson-injury-lionesses-world-cup-arsenal-wsl-b1075359.html"
+        }
+      ]
+    },
+    {
+      "slug": "zlatan-ibrahimovic-2017-knee",
+      "videoId": "AzVEucCufd0",
+      "name": "Zlatan Ibrahimovic",
+      "sport": "足球",
+      "event": "歐霸聯賽曼聯對 Anderlecht 八強次回合",
+      "bodyPart": "膝部",
+      "eventDate": "2017-04-20",
+      "returnDate": "2017-11-18",
+      "observation": "爭頂後落地失衡並倒下，之後無法繼續比賽。",
+      "returnText": "2017-11-18 於英超曼聯對 Newcastle United 替補上場。",
+      "videoUrl": "https://www.youtube.com/watch?v=AzVEucCufd0",
+      "publisher": "Sport Light",
+      "sourceTitle": "ZLATAN IBRAHIMOVIC injury SUFFERS HORROR INJURY AGAINST ANDERLECHT AS KNEE BENDS WRONG WAY",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 66,
+      "sources": [
+        {
+          "title": "BBC：Ibrahimovic 對 Anderlecht 比賽受傷",
+          "url": "https://www.bbc.co.uk/sport/football/39661512"
+        },
+        {
+          "title": "衛報：曼聯公布膝部韌帶傷勢",
+          "url": "https://www.theguardian.com/football/2017/apr/22/manchester-united-zlatan-ibrahimovic-marcos-rojo-significant-knee-ligament-damage"
+        },
+        {
+          "title": "英超：曼聯對 Newcastle 賽報與 Ibrahimovic 復出",
+          "url": "https://www.premierleague.com/en/news/511689/match-summary"
+        }
+      ]
+    },
+    {
+      "slug": "victor-oladipo-2019-quadriceps",
+      "videoId": "qGFHQQWFhWg",
+      "name": "Victor Oladipo",
+      "sport": "籃球",
+      "event": "NBA 溜馬對暴龍",
+      "bodyPart": "膝部",
+      "eventDate": "2019-01-23",
+      "returnDate": "2020-01-29",
+      "observation": "追防時突然倒地，隨後抱住膝部並接受協助。",
+      "returnText": "2020-01-29 對公牛重返 NBA 比賽，距離受傷 371 天。",
+      "videoUrl": "https://www.youtube.com/watch?v=qGFHQQWFhWg",
+      "publisher": "ESPN",
+      "sourceTitle": "Victor Oladipo suffers major leg injury, Pacers hold off Raptors | NBA Highlights",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 174,
+      "sources": [
+        {
+          "title": "溜馬：Oladipo 受傷當晚公告",
+          "url": "https://www.nba.com/pacers/news/victor-oladipo-update-190123"
+        },
+        {
+          "title": "NBA：Oladipo 股四頭肌腱斷裂診斷",
+          "url": "https://www.nba.com/news/victor-oladipo-to-have-knee-surgery"
+        },
+        {
+          "title": "NBA：Oladipo 對公牛實際復出賽報",
+          "url": "https://www.nba.com/news/oladipo-caps-emotional-week-winning-return"
+        }
+      ]
+    },
+    {
+      "slug": "serena-williams-2021-hamstring",
+      "videoId": "pi0rz4KrTAM",
+      "name": "Serena Williams",
+      "sport": "網球",
+      "event": "溫布頓女單首輪對 Aliaksandra Sasnovich",
+      "bodyPart": "大腿後側",
+      "eventDate": "2021-06-29",
+      "returnDate": "2022-06-21",
+      "observation": "受傷後移動明顯受限，最後停止比賽；畫面呈現傷後反應與退場。",
+      "returnText": "2022-06-21 先在 Eastbourne 與 Ons Jabeur 搭檔出賽女雙並獲勝。",
+      "videoUrl": "https://www.youtube.com/watch?v=pi0rz4KrTAM",
+      "publisher": "Wimbledon",
+      "sourceTitle": "Serena Williams Retires Injured From Wimbledon 2021",
+      "captionStatus": "unavailable",
+      "startSeconds": 0,
+      "durationSeconds": 113,
+      "sources": [
+        {
+          "title": "BBC：Williams 溫布頓首輪受傷退賽",
+          "url": "https://www.bbc.co.uk/sport/tennis/57656647"
+        },
+        {
+          "title": "美網：Williams 因腿後肌撕裂退出美網",
+          "url": "https://www.usopen.org/en_US/news/articles/2021-08-25/serena_williams_pulls_out_of_2021_us_open_with_torn_hamstring.html"
+        },
+        {
+          "title": "WTA：Williams 在 Eastbourne 女雙實際復出",
+          "url": "https://www.wtatennis.com/news/2652001/serena-returns-to-tour-with-doubles-win-jabeur-badosa-upset-in-eastbourne"
+        }
+      ]
+    }
+  ]
+}

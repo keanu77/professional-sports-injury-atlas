@@ -1,5 +1,6 @@
 /** Attributed public reporting, separate from the original clinical approval ledger. */
 import { z } from "astro/zod";
+import batchData from "../../data/videos/event-batch-30.v1.json";
 import newData from "../../data/videos/event-additions.v1.json";
 import { curation } from "./expansion";
 import data from "../../data/videos/event-updates.v1.json";
@@ -73,9 +74,24 @@ const additions = z
     entries: z.array(eventUpdatesSchema.shape.entries.element),
   })
   .parse(newData);
+const batch30 = z
+  .strictObject({
+    schemaVersion: z.literal(1),
+    decision: z.literal("decision-30"),
+    checkedAt: z.iso.date(),
+    entries: z.array(eventUpdatesSchema.shape.entries.element),
+  })
+  .parse(batchData);
+// The shared public check date is valid only when every batch was reviewed on it.
+// A later review must introduce per-entry dates rather than silently relabel older entries.
+if (
+  additions.checkedAt !== data.checkedAt ||
+  batch30.checkedAt !== data.checkedAt
+)
+  throw new Error("Mixed event review dates require per-entry check dates");
 export const eventUpdates = eventUpdatesSchema.parse({
   ...data,
-  entries: [...data.entries, ...additions.entries].filter(
+  entries: [...data.entries, ...additions.entries, ...batch30.entries].filter(
     (e) => !curation.removedSlugs.some((slug) => slug === e.slug),
   ),
 });

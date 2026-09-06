@@ -1,0 +1,94 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SportNav from "../../components/atlas/SportNav.astro";
+import CaseCard from "../../components/atlas/CaseCard.astro";
+import ObservationCard from "../../components/atlas/ObservationCard.astro";
+import { videosBySport } from "../../lib/videos/sports";
+import { observationClips } from "../../lib/videos/expansion";
+import { hasPublicEmbed, videoFirstCases } from "../../lib/patient/featured";
+import { isLaunchEnabled } from "../../lib/patient/public-launch";
+import { permittedCasesForMode } from "../../lib/cases/pagination";
+export async function getStaticPaths() {
+  if (!isLaunchEnabled()) return [];
+  const records = (await getCollection("cases")).map((entry) => entry.data);
+  const groups = videosBySport(
+    videoFirstCases(permittedCasesForMode("public", records)).filter(
+      hasPublicEmbed,
+    ),
+    observationClips(),
+  );
+  return groups.map((group) => ({
+    params: { sport: group.code },
+    props: { group, groups },
+  }));
+}
+const { group, groups } = Astro.props;
+---
+
+<BaseLayout
+  title={`${group.label}受傷影片｜運動傷害影片圖鑑`}
+  description={`觀看${group.label}受傷影片，了解受傷當下與後續回場。`}
+>
+  <a href="/#sports">← 全部影片</a>
+  <header class="part-heading">
+    <h1>{group.label}受傷影片</h1><p>
+      {group.count} 支影片 · 點選影片看受傷與回場重點
+    </p>
+  </header>
+  <SportNav sports={groups} current={group.code} />
+  <ol
+    class="part-grid"
+    aria-label={`${group.label}影片`}
+    data-sport-videos={group.code}
+  >
+    {
+      group.cases.map((record, index) => (
+        <li data-featured-card>
+          <CaseCard
+            record={record}
+            showWorkflowBadge={false}
+            compact
+            priority={index === 0}
+          />
+        </li>
+      ))
+    }
+    {
+      group.clips.map((clip) => (
+        <li data-featured-card>
+          <ObservationCard clip={clip} />
+        </li>
+      ))
+    }
+  </ol>
+</BaseLayout>
+<style>
+  .part-heading {
+    margin: 1.5rem 0 2rem;
+  }
+  h1 {
+    font-family: var(--font-display);
+  }
+  .part-heading p {
+    color: var(--color-ink-muted);
+  }
+  .part-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  @media (max-width: 60rem) {
+    .part-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 40rem) {
+    .part-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,3 +1,17 @@
+# 最新交接 — Decision 30，2026-09-06（發布驗證進行中）
+
+使用者目標提高至 50 支以上。本批已加入 30 支，公開產物共 52 支（7 病例、45 動作觀察）、13 運動分類及 6 部位分類。首頁「更多傷害與案例」已移除；依運動項目導覽已加入，保留無搜尋、YouTube 預設封面與主站版型。
+
+預覽 https://6bb1bd96.sports-injury-atlas.pages.dev/；30 支新增均已實際內嵌播放成功。乾淨副本 release:public 通過（81 HTML、1,156 內部連結），1,320 單元含 sandbox socket 重跑通過，四瀏覽器 88 回歸通過，Astro 0 errors / 0 warnings、16 既有 hints。完整預覽瀏覽器驗證仍進行，正式網站暫仍 D29；不可把本機／預覽完成當正式已發布。
+
+D30 使用連網 Codex、Grok及獨立來源／畫面／程式 Pass 2。替換 LaVine 第四節錯誤片段、Cousins 訪談片與 Gomes 靜態講評片；30 筆新事件來源與日期分開保存，原醫療核准未改。Livingston 首次回場尚未核清，returnDate:null；只列已確認的較晚出賽紀錄。季前／U23／雙打等最早出賽與後續一隊／單打分開說明。
+
+資料 src/data/videos/batch-30.v1.json、event-batch-30.v1.json；報告 docs/reviews/2026-09-06-decision-30-fifty-videos.md；證據 docs/reviews/evidence/decision-30/。保留兩支已移除影片的 _redirects 最終404。新批跨日查核目前會明確拒絕混合日期，之後需導入逐筆 checkedAt，不可重標舊資料。
+
+待完成：正式 root release、部署、正式全部檔案hash／各尺寸分類与頁面檢查、30支新增正式實播、更新此交接及收尾提交。Node 24.14.0；隔離副本 /tmp/atlas23-checkout。全庫 format:check 的47份歷史報告／證據格式警告維持，變更程式／資料格式皆通過。
+
+---
+
 # 最新交接 — Decision 29，2026-09-06
 
 已移除首頁標題下的「22 支影片 · 點選後播放」，連同不用的計數變數與樣式；依追加要求刪除全站頁尾「傷種圖鑑」及 ACL／踝扭傷／阿基里斯腱三個連結，頁尾改為兩欄。

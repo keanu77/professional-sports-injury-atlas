@@ -1,0 +1,165 @@
+[
+  {
+    "name": "Kristaps Porzingis",
+    "originalVideoId": "qAZG23aT4IY",
+    "videoId": "qAZG23aT4IY",
+    "startSeconds": 33,
+    "decision": "keep",
+    "observation": "33秒切入比賽；36秒灌籃、40秒抱膝倒地；43至50秒再次播放灌籃落地過程。",
+    "evidenceSeconds": [
+      32,
+      36,
+      40,
+      43,
+      45,
+      47,
+      50
+    ],
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "verification": "原生YouTube隱私增強iframe實播、seek後截圖，使用view_image逐張人工目視檢查；未下載影片。",
+    "screenshots": [
+      "/tmp/atlas30/agent-qAZG23aT4IY-32s.png",
+      "/tmp/atlas30/agent-qAZG23aT4IY-36s.png",
+      "/tmp/atlas30/agent-qAZG23aT4IY-40s.png",
+      "/tmp/atlas30/agent-qAZG23aT4IY-43s.png",
+      "/tmp/atlas30/agent-qAZG23aT4IY-45s.png",
+      "/tmp/atlas30/agent-qAZG23aT4IY-47s.png",
+      "/tmp/atlas30/agent-qAZG23aT4IY-50s.png"
+    ],
+    "playbackLog": "/tmp/atlas30/results-agent.json"
+  },
+  {
+    "name": "DeMarcus Cousins",
+    "originalVideoId": "NExQ6KDBXEw",
+    "videoId": "LZTOTwvfli0",
+    "startSeconds": 10,
+    "decision": "replace",
+    "uploader": "NBAHighlights2",
+    "watchUrl": "https://www.youtube.com/watch?v=LZTOTwvfli0",
+    "observation": "替代片10至16秒包含罰球未進、追搶籃板與落地後留在底線；40秒可見Cousins倒地，54至80秒有同一回合的慢動作回放。",
+    "evidenceSeconds": [
+      10,
+      12,
+      14,
+      15,
+      16,
+      40,
+      54,
+      60,
+      70,
+      80
+    ],
+    "originalFinding": "原ESPN影片在5、10、15、20、30、35、45、60秒皆為主播或電話訪談；未找到受傷動作，不能作為已驗證直擊片。",
+    "context": "10秒起播跳過影片前段置入的T恤宣傳；54秒可作慢動作回放起點。",
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "verification": "原生YouTube隱私增強iframe實播、seek後截圖，使用view_image逐張人工目視檢查；未下載影片。",
+    "screenshots": [
+      "/tmp/atlas30/agent-LZTOTwvfli0-10s.png",
+      "/tmp/atlas30/agent-LZTOTwvfli0-12s.png",
+      "/tmp/atlas30/agent-LZTOTwvfli0-14s.png",
+      "/tmp/atlas30/agent-LZTOTwvfli0-15s.png",
+      "/tmp/atlas30/agent-LZTOTwvfli0-16s.png",
+      "/tmp/atlas30/agent-LZTOTwvfli0-40s.png",
+      "/tmp/atlas30/agent-LZTOTwvfli0-54s.png",
+      "/tmp/atlas30/agent-LZTOTwvfli0-60s.png",
+      "/tmp/atlas30/agent-LZTOTwvfli0-70s.png",
+      "/tmp/atlas30/agent-LZTOTwvfli0-80s.png"
+    ],
+    "playbackLog": "/tmp/atlas30/results-agent-alt.json"
+  },
+  {
+    "name": "John Tavares",
+    "originalVideoId": "Gnhby06KpyQ",
+    "videoId": "Gnhby06KpyQ",
+    "startSeconds": 92,
+    "decision": "keep",
+    "observation": "92秒轉到比赛；96至100秒Tavares被碰撞後失去平衡，104至112秒在倒地時與另一位球員腿部交錯接觸，120秒倒在冰面。",
+    "evidenceSeconds": [
+      92,
+      96,
+      100,
+      104,
+      108,
+      112,
+      116,
+      120
+    ],
+    "context": "官方Sportsnet影片本身已有實際多角度動作，不需改用未驗證替代來源。",
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "verification": "原生YouTube隱私增強iframe實播、seek後截圖，使用view_image逐張人工目視檢查；未下載影片。",
+    "screenshots": [
+      "/tmp/atlas30/agent-Gnhby06KpyQ-92s.png",
+      "/tmp/atlas30/agent-Gnhby06KpyQ-96s.png",
+      "/tmp/atlas30/agent-Gnhby06KpyQ-100s.png",
+      "/tmp/atlas30/agent-Gnhby06KpyQ-104s.png",
+      "/tmp/atlas30/agent-Gnhby06KpyQ-108s.png",
+      "/tmp/atlas30/agent-Gnhby06KpyQ-112s.png",
+      "/tmp/atlas30/agent-Gnhby06KpyQ-116s.png",
+      "/tmp/atlas30/agent-Gnhby06KpyQ-120s.png"
+    ],
+    "playbackLog": "/tmp/atlas30/results-agent.json"
+  },
+  {
+    "name": "George North",
+    "originalVideoId": "5EclrKrPNvI",
+    "videoId": "5EclrKrPNvI",
+    "startSeconds": 119,
+    "decision": "keep",
+    "observation": "119至125秒為清楚近距離回放：North持球前進，122秒遭側後方擒抱，125秒倒地時頭部附近與另一位球員腿部接觸；128秒裁判出示紅牌。",
+    "evidenceSeconds": [
+      110,
+      114,
+      118,
+      120,
+      122,
+      125,
+      128
+    ],
+    "context": "實際碰撞可見，但不依畫面判定接觸意圖或臨床診斷。110秒也可作較早的回放起點。",
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "verification": "原生YouTube隱私增強iframe實播、seek後截圖，使用view_image逐張人工目視檢查；未下載影片。",
+    "screenshots": [
+      "/tmp/atlas30/agent-5EclrKrPNvI-110s.png",
+      "/tmp/atlas30/agent-5EclrKrPNvI-114s.png",
+      "/tmp/atlas30/agent-5EclrKrPNvI-118s.png",
+      "/tmp/atlas30/agent-5EclrKrPNvI-120s.png",
+      "/tmp/atlas30/agent-5EclrKrPNvI-122s.png",
+      "/tmp/atlas30/agent-5EclrKrPNvI-125s.png",
+      "/tmp/atlas30/agent-5EclrKrPNvI-128s.png"
+    ],
+    "playbackLog": "/tmp/atlas30/results-agent.json"
+  },
+  {
+    "name": "André Gomes",
+    "originalVideoId": "O4tcS9YZDvw",
+    "videoId": "8_d9ITG6Rmk",
+    "startSeconds": 0,
+    "decision": "replace",
+    "uploader": "AA Football",
+    "watchUrl": "https://www.youtube.com/watch?v=8_d9ITG6Rmk",
+    "observation": "替代片0至4秒可見Gomes帶球向邊線、遭身後滑鏟後倒地；15至20秒可見隊友圍在他身邊。",
+    "evidenceSeconds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      15,
+      20
+    ],
+    "originalFinding": "原醫師影片檢查10、20、30、45、60、90、120、150、180、210、240、270、290、305秒皆為講評、照片或解剖圖，沒有核實到動態受傷片段。",
+    "context": "替代片僅27秒且畫質較低，能看整體接觸與倒地，不能用來判讀特定韌帶或骨折細節。另FHtyaz5RYm0也實播成功，但更長且畫質較差。",
+    "origin": "https://sports-injury-atlas.pages.dev",
+    "verification": "原生YouTube隱私增強iframe實播、seek後截圖，使用view_image逐張人工目視檢查；未下載影片。",
+    "screenshots": [
+      "/tmp/atlas30/agent-8_d9ITG6Rmk-0s.png",
+      "/tmp/atlas30/agent-8_d9ITG6Rmk-1s.png",
+      "/tmp/atlas30/agent-8_d9ITG6Rmk-2s.png",
+      "/tmp/atlas30/agent-8_d9ITG6Rmk-3s.png",
+      "/tmp/atlas30/agent-8_d9ITG6Rmk-4s.png",
+      "/tmp/atlas30/agent-8_d9ITG6Rmk-15s.png",
+      "/tmp/atlas30/agent-8_d9ITG6Rmk-20s.png"
+    ],
+    "playbackLog": "/tmp/atlas30/results-agent-alt.json"
+  }
+]

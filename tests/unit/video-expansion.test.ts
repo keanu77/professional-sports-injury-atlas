@@ -1,6 +1,9 @@
+import batch30Data from "../../src/data/videos/batch-30.v1.json";
 import { readFileSync } from "node:fs";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
+  batch30,
+  batch30Schema,
   additions,
   curation,
   curationSchema,
@@ -38,7 +41,9 @@ describe("confirmed video expansion", () => {
     expect(expandedCaseAllowed(tatum)).toBe(true);
     expect(hasPublicEmbed(tatum)).toBe(true);
     expect(selectPublicCases([tatum])).toEqual([tatum]);
-    expect(observationClips()).toHaveLength(10 + curation.clips.length);
+    expect(observationClips()).toHaveLength(
+      10 + curation.clips.length + batch30Data.clips.length,
+    );
     expect(
       captionsOptionalFor("https://www.youtube.com/watch?v=unlisted000"),
     ).toBe(false);
@@ -131,3 +136,24 @@ it("removes both anonymous clips from every public selector and rejects malforme
   expect(curationSchema.safeParse(invalid).success).toBe(false);
   vi.unstubAllEnvs();
 });
+
+it("rejects batch videos duplicated across past expansions", () => {
+  const changed = structuredClone(batch30);
+  changed.clips[0] = structuredClone(curation.clips[0]!);
+  expect(batch30Schema.safeParse(changed).success).toBe(false);
+});
+
+it.each(["youtube.com", "youtu.be"])(
+  "rejects duplicate video IDs using %s URLs",
+  (host) => {
+    const changed = structuredClone(batch30);
+    const clip = structuredClone(changed.clips[0]!);
+    clip.slug += "-duplicate";
+    clip.videoUrl =
+      host === "youtu.be"
+        ? `https://youtu.be/${clip.videoId}`
+        : `https://youtube.com/watch?v=${clip.videoId}`;
+    changed.clips.push(clip);
+    expect(batch30Schema.safeParse(changed).success).toBe(false);
+  },
+);

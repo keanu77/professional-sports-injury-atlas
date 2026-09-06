@@ -1,6 +1,6 @@
 /**
  * Atlas navigation spec against the authorized 26-case review build. Covers
- * the exact 7/12/7 home counts, injury routes with reviewed overviews and
+ * the video-first home, injury routes with reviewed overviews and
  * cases, the NBA route and absence of MLB/football routes, the
  * exact pending course-link label without a guessed URL, and the review-only
  * markers on lab/fixture routes.
@@ -17,26 +17,13 @@ const REVIEW_COUNTS: Record<string, number> = {
 };
 
 test.describe("atlas navigation", () => {
-  test("home shows the exact authorized case distribution", async ({
+  test("home shows videos without the removed injury directory", async ({
     page,
   }) => {
     await page.goto("/");
-    await page.locator(".more-cases > summary").click();
-    await expect(page.locator("[data-injury-card]")).toHaveCount(3);
-    for (const code of INJURY_CODES) {
-      await expect(page.locator(`[data-injury-card="${code}"]`)).toBeVisible();
-      await expect(
-        page.locator(
-          `[data-injury-card="${code}"] [data-reviewed-case-count="${REVIEW_COUNTS[code]}"]`,
-        ),
-      ).toContainText(`${REVIEW_COUNTS[code]} reviewed cases`);
-    }
-    await expect(page.locator("[data-total-reviewed-count]")).toContainText(
-      "26",
-    );
-    await expect(page.locator("[data-total-reviewed-count]")).toContainText(
-      "reviewed cases",
-    );
+    await expect(page.locator("[data-featured-videos]")).toBeVisible();
+    await expect(page.locator(".more-cases")).toHaveCount(0);
+    await expect(page.locator("[data-injury-card]")).toHaveCount(0);
     await expectNoAxeViolations(page);
   });
 

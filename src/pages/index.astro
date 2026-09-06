@@ -1,4 +1,6 @@
 ---
+import SportNav from "../components/atlas/SportNav.astro";
+import { videosBySport } from "../lib/videos/sports";
 import BodyPartNav from "../components/atlas/BodyPartNav.astro";
 import { videosByBodyPart } from "../lib/videos/body-parts";
 import { isLaunchEnabled } from "../lib/patient/public-launch";
@@ -7,8 +9,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { observationClips } from "../lib/videos/expansion";
 import ObservationCard from "../components/atlas/ObservationCard.astro";
 import CaseCard from "../components/atlas/CaseCard.astro";
-import InjuryCard from "../components/atlas/InjuryCard.astro";
-import { INJURIES } from "../data/taxonomy/injuries";
 import { permittedCasesForMode } from "../lib/cases/pagination";
 import { resolveBuildMode } from "../lib/governance/build-mode";
 import { computeRenderedSetDigest } from "../lib/routes/static-paths";
@@ -39,6 +39,9 @@ const clips = observationClips();
     isLaunchEnabled() && (
       <div id="body-parts">
         <BodyPartNav parts={videosByBodyPart(featured, clips)} />
+        <div id="sports">
+          <SportNav sports={videosBySport(featured, clips)} />
+        </div>
       </div>
     )
   }
@@ -65,34 +68,6 @@ const clips = observationClips();
       }
     </ol>
   </section>
-  <details class="more-cases">
-    <summary
-      >更多傷害與案例 <span
-        >{permitted.length} 則案例 · {clips.length} 則動作觀察</span
-      ></summary
-    ><div class="injury-feature-grid">
-      {
-        INJURIES.filter((injury) =>
-          permitted.some((record) => record.injury.code === injury.code),
-        ).map((injury) => (
-          <InjuryCard
-            injuryCode={injury.code}
-            labelZh={injury.labelZh}
-            reviewedCaseCount={
-              permitted.filter((record) => record.injury.code === injury.code)
-                .length
-            }
-          />
-        ))
-      }
-    </div><p data-total-reviewed-count>
-      {
-        buildMode === "review"
-          ? `${permitted.length} 筆案例（${permitted.length} reviewed cases）。`
-          : `${permitted.length} 則案例影片`
-      }
-    </p>
-  </details>
   <p class="home-note">
     影片呈現受傷過程；診斷依具名來源。球員的回場紀錄不等於你的恢復時間。
   </p>
@@ -140,27 +115,6 @@ const clips = observationClips();
     margin: 0;
     list-style: none;
   }
-  .more-cases {
-    margin-top: 2.5rem;
-    border-block: 1px solid var(--hairline);
-    padding: 1rem 0;
-  }
-  summary {
-    cursor: pointer;
-    font-weight: 600;
-    padding: 0.5rem 0;
-  }
-  summary span {
-    font-size: 0.8rem;
-    color: var(--color-ink-muted);
-    margin-left: 1rem;
-  }
-  .injury-feature-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-    padding-block: 1rem;
-  }
   .home-note {
     color: var(--color-ink-muted);
     font-size: 0.875rem;
@@ -172,8 +126,7 @@ const clips = observationClips();
     }
   }
   @media (max-width: 40rem) {
-    .video-grid,
-    .injury-feature-grid {
+    .video-grid {
       grid-template-columns: 1fr;
     }
     .video-intro {

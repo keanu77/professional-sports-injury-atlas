@@ -1,4 +1,5 @@
 import { videosByBodyPart } from "../../src/lib/videos/body-parts";
+import { videosBySport } from "../../src/lib/videos/sports";
 import {
   allObservationClips,
   curation,
@@ -64,6 +65,28 @@ assert.deepEqual(
     ...allObservationClips.map((c) => `/videos/${c.slug}/`),
   ].sort(),
   "Each video must appear in exactly one body part",
+);
+const sports = videosBySport(selected, allObservationClips).map((sport) => ({
+  code: sport.code,
+  label: sport.label,
+  count: sport.count,
+  paths: [
+    ...sport.cases.map((c) => `/cases/${c.slug}/`),
+    ...sport.clips.map((c) => `/videos/${c.slug}/`),
+  ],
+}));
+assert.deepEqual(
+  readdirSync("dist/sports").sort(),
+  sports.map((sport) => sport.code).sort(),
+  "Sport route set mismatch",
+);
+assert.deepEqual(
+  sports.flatMap((sport) => sport.paths).sort(),
+  [
+    ...selected.map((c) => `/cases/${c.slug}/`),
+    ...allObservationClips.map((c) => `/videos/${c.slug}/`),
+  ].sort(),
+  "Each video must appear in exactly one sport",
 );
 for (const slug of curation.removedSlugs)
   assert.ok(
@@ -199,6 +222,7 @@ const receipt = {
     startSeconds,
   })),
   bodyParts,
+  sports,
   htmlPages: htmlFiles.length,
   internalLinks: links,
   files: list("dist")
