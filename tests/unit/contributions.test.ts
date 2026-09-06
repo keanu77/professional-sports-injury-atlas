@@ -35,6 +35,17 @@ const successfulMail = () =>
     .mockImplementation(async () => Response.json({ ok: true }));
 
 describe("anonymous contributions", () => {
+  it.each([undefined, "", "   "])(
+    "accepts an omitted video URL (%#)",
+    async (url) => {
+      const send = successfulMail();
+      expect(
+        (await submitContribution(request({ ...valid, url }), send)).status,
+      ).toBe(200);
+      const body = JSON.parse(send.mock.calls[0]![1]!.body as string);
+      expect(body.message).toContain("網址：未提供");
+    },
+  );
   it("routes the deployed form endpoint through Cloudflare Functions", () => {
     const routes = JSON.parse(readFileSync("public/_routes.json", "utf8"));
     expect(routes.include).toContain("/api/contributions");
@@ -74,6 +85,8 @@ describe("anonymous contributions", () => {
     { ...valid, url: "http://127.0.0.1/admin" },
     { ...valid, url: "https://user:password@example.org" },
     { ...valid, type: "correction", note: "" },
+    { ...valid, type: "correction", url: "", note: "請修正回場日期" },
+    { ...valid, url: 123 },
     { ...valid, sources: "not a URL" },
     { ...valid, sources: Array(4).fill("https://example.org").join("\n") },
     { ...valid, website: "spam" },

@@ -98,6 +98,9 @@ export async function submitContribution(
   )
     return respond(400, { error: "invalid" });
   if (data.website) return respond(400, { error: "invalid" });
+  const urlMissing =
+    data.url === undefined ||
+    (typeof data.url === "string" && data.url.trim() === "");
   const url = publicUrl(data.url);
   const note = typeof data.note === "string" ? data.note.trim() : "";
   const sources = typeof data.sources === "string" ? data.sources.trim() : "";
@@ -105,7 +108,7 @@ export async function submitContribution(
     typeof data.turnstileToken === "string" ? data.turnstileToken : "";
   if (
     !["video", "correction"].includes(String(data.type)) ||
-    !url ||
+    (!url && (data.type === "correction" || !urlMissing)) ||
     note.length > 2000 ||
     /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/.test(note) ||
     sources.length > 3000 ||
@@ -122,7 +125,7 @@ export async function submitContribution(
   const label = data.type === "video" ? "提供公開影片" : "回報資料修正";
   const message = [
     `類型：${label}`,
-    `網址：${url}`,
+    `網址：${url || "未提供"}`,
     "",
     `說明：${note || "未補充"}`,
     "",

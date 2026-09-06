@@ -20,12 +20,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           ><input type="radio" name="type" value="correction" /> 資料修正</label
         >
       </fieldset>
-      <label for="contribution-url" data-url-label>公開影片網址</label>
+      <label for="contribution-url" data-url-label>公開影片網址（選填）</label>
       <input
         id="contribution-url"
         name="url"
         type="url"
-        required
         maxlength="2048"
         placeholder="https://"
         autocomplete="off"

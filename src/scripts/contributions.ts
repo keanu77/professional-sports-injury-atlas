@@ -30,10 +30,11 @@ if (form) {
     const correction = new FormData(form).get("type") === "correction";
     form.querySelector("[data-url-label]")!.textContent = correction
       ? "需要修正的頁面網址"
-      : "公開影片網址";
+      : "公開影片網址（選填）";
     form.querySelector("[data-note-label]")!.textContent = correction
       ? "需要修正的內容與建議"
       : "補充說明（選填）";
+    url.required = correction;
     note.required = correction;
     note.minLength = correction ? 5 : 0;
     if (correction && !url.value) url.value = pageUrl;

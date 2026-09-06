@@ -54,6 +54,10 @@ test("prefills a correction, preserves text on failure, and allows retry", async
   });
   await page.goto("/contribute/?page=%2Fvideos%2Fchien-ming-wang-2008-foot%2F");
   await page.getByRole("radio", { name: "資料修正" }).check();
+  await expect(page.getByLabel("需要修正的頁面網址")).toHaveAttribute(
+    "required",
+    "",
+  );
   await expect(page.getByLabel("需要修正的內容與建議")).toHaveAttribute(
     "required",
     "",
@@ -65,6 +69,26 @@ test("prefills a correction, preserves text on failure, and allows retry", async
     "建議重新確認回場日期",
   );
   await expect(page.locator("[data-contribution-thanks]")).toBeHidden();
+  await page.getByRole("button", { name: "送出", exact: true }).click();
+  await expect(page.locator("[data-contribution-thanks]")).toBeVisible();
+});
+test("allows an empty video URL after switching back from correction", async ({
+  page,
+}) => {
+  await page.route("**/api/contributions", async (route) => {
+    expect(route.request().postDataJSON()).toMatchObject({
+      type: "video",
+      url: "",
+    });
+    await route.fulfill({ json: { ok: true } });
+  });
+  await page.goto("/contribute/?page=%2F");
+  await page.getByRole("radio", { name: "資料修正" }).check();
+  await page.getByRole("radio", { name: "公開影片", exact: true }).check();
+  await expect(page.getByLabel("公開影片網址（選填）")).not.toHaveAttribute(
+    "required",
+  );
+  await expect(page.getByLabel("公開影片網址（選填）")).toHaveValue("");
   await page.getByRole("button", { name: "送出", exact: true }).click();
   await expect(page.locator("[data-contribution-thanks]")).toBeVisible();
 });
