@@ -1,7 +1,7 @@
 {
-  "origin": "https://313b9807.sports-injury-atlas.pages.dev",
-  "checkedAt": "2026-09-06T12:13:13.174Z",
-  "matchedPages": 148,
+  "origin": "https://440e5adb.sports-injury-atlas.pages.dev",
+  "checkedAt": "2026-09-06T12:36:29.762Z",
+  "matchedPages": 149,
   "canonicalOrigin": "https://injury.sportsmedicine.tw",
   "popularGet": "passed",
   "results": [
@@ -26,6 +26,11 @@
       "passed": true
     },
     {
+      "width": 390,
+      "path": "/contribute/",
+      "passed": true
+    },
+    {
       "width": 1440,
       "path": "/",
       "passed": true
@@ -43,6 +48,11 @@
     {
       "width": 1440,
       "path": "/privacy/",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "path": "/contribute/",
       "passed": true
     }
   ]

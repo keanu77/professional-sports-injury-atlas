@@ -1,0 +1,22 @@
+{
+  "origin": "https://injury.sportsmedicine.tw",
+  "checkedAt": "2026-09-06T12:42:14.910Z",
+  "noMailRequests": true,
+  "results": [
+    {
+      "method": "GET",
+      "expected": 405,
+      "status": 405
+    },
+    {
+      "method": "POST",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "method": "POST",
+      "expected": 400,
+      "status": 400
+    }
+  ]
+}

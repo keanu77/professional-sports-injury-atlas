@@ -1,0 +1,22 @@
+{
+  "origin": "https://440e5adb.sports-injury-atlas.pages.dev",
+  "checkedAt": "2026-09-06T12:36:25.848Z",
+  "noMailRequests": true,
+  "results": [
+    {
+      "method": "GET",
+      "expected": 405,
+      "status": 405
+    },
+    {
+      "method": "POST",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "method": "POST",
+      "expected": 400,
+      "status": 400
+    }
+  ]
+}

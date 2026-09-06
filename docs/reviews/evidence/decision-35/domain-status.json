@@ -4,13 +4,12 @@
     "id": "e35880e7-8c5d-49d1-9fdc-3750770fe37a",
     "domain_id": "e35880e7-8c5d-49d1-9fdc-3750770fe37a",
     "name": "injury.sportsmedicine.tw",
-    "status": "pending",
+    "status": "active",
     "verification_data": {
-      "status": "pending",
-      "error_message": "CNAME record not set"
+      "status": "active"
     },
     "validation_data": {
-      "status": "pending",
+      "status": "active",
       "method": "http"
     },
     "certificate_authority": "google",

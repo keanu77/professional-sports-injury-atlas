@@ -1,0 +1,17 @@
+{
+  "project": "sports-injury-atlas",
+  "domains": [
+    "sports-injury-atlas.pages.dev",
+    "injury.sportsmedicine.tw"
+  ],
+  "deploymentId": "f49d7320-ac5f-406b-95f8-be68a386f39e",
+  "url": "https://f49d7320.sports-injury-atlas.pages.dev",
+  "environment": "production",
+  "source": {
+    "branch": "main",
+    "commit_hash": "6d20b40f8f87940ebc26c3fedb30590c62046277",
+    "commit_message": "fix: clarify verification prompt and fit narrow screens",
+    "commit_dirty": false
+  },
+  "createdOn": "2026-09-06T12:41:25.344647Z"
+}

@@ -1,0 +1,93 @@
+[WebServer] (node:60848) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:70975) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 52 tests using 4 workers
+
+(node:70978) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:70977) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:70980) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:70979) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 [chromium] › e2e/contributions.spec.ts:15:1 › accepts an anonymous video and shows thanks only after confirmation (169ms)
+  ✓   5 [chromium] › e2e/layout-accessibility.spec.ts:28:3 › layout accessibility › exposes a skip link that jumps to the single main landmark (105ms)
+  ✓   1 [chromium] › e2e/contributions.spec.ts:38:1 › prefills a correction, preserves text on failure, and allows retry (299ms)
+  ✓   6 [chromium] › e2e/layout-accessibility.spec.ts:52:3 › layout accessibility › keeps keyboard focus visible on interactive controls (113ms)
+  ✓   7 [chromium] › e2e/layout-accessibility.spec.ts:79:3 › layout accessibility › gives every persistent control a 44x44 minimum target (112ms)
+  ✓   8 [chromium] › e2e/layout-accessibility.spec.ts:99:3 › layout accessibility › persists the manual theme choice locally only (194ms)
+  ✓  10 [chromium] › e2e/layout-accessibility.spec.ts:170:3 › layout accessibility › avoids horizontal main-content scrolling at 200% zoom reflow (68ms)
+  ✓   3 [chromium] › e2e/contributions.spec.ts:71:1 › header and form reflow with large text and pass accessibility in both themes (676ms)
+  ✓   4 [chromium] › e2e/layout-accessibility.spec.ts:16:3 › layout accessibility › passes Axe WCAG A/AA scans in light and manual dark mode (748ms)
+  ✓  12 [chromium] › e2e/layout-accessibility.spec.ts:265:3 › layout accessibility › honors prefers-reduced-motion (97ms)
+  ✓   9 [chromium] › e2e/layout-accessibility.spec.ts:126:3 › layout accessibility › clamps and persists the font scale between 0.875 and 1.5 (520ms)
+(node:71010) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  11 [chromium] › e2e/layout-accessibility.spec.ts:187:3 › layout accessibility › keeps all three redesigned templates stable across target breakpoints (440ms)
+(node:71011) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  13 [chromium] › e2e/layout-accessibility.spec.ts:281:3 › layout accessibility › mobile navigation announces state, traps focus, and closes on Escape (469ms)
+(node:71051) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:71054) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  14 [firefox] › e2e/contributions.spec.ts:15:1 › accepts an anonymous video and shows thanks only after confirmation (869ms)
+  ✓  18 [firefox] › e2e/layout-accessibility.spec.ts:28:3 › layout accessibility › exposes a skip link that jumps to the single main landmark (251ms)
+  ✓  19 [firefox] › e2e/layout-accessibility.spec.ts:52:3 › layout accessibility › keeps keyboard focus visible on interactive controls (236ms)
+  ✓  20 [firefox] › e2e/layout-accessibility.spec.ts:79:3 › layout accessibility › gives every persistent control a 44x44 minimum target (266ms)
+  ✓  17 [firefox] › e2e/layout-accessibility.spec.ts:16:3 › layout accessibility › passes Axe WCAG A/AA scans in light and manual dark mode (1.7s)
+  ✓  15 [firefox] › e2e/contributions.spec.ts:38:1 › prefills a correction, preserves text on failure, and allows retry (998ms)
+  ✓  21 [firefox] › e2e/layout-accessibility.spec.ts:99:3 › layout accessibility › persists the manual theme choice locally only (438ms)
+  ✓  23 [firefox] › e2e/layout-accessibility.spec.ts:170:3 › layout accessibility › avoids horizontal main-content scrolling at 200% zoom reflow (223ms)
+  ✓  25 [firefox] › e2e/layout-accessibility.spec.ts:265:3 › layout accessibility › honors prefers-reduced-motion (177ms)
+  ✓  16 [firefox] › e2e/contributions.spec.ts:71:1 › header and form reflow with large text and pass accessibility in both themes (1.9s)
+  ✓  24 [firefox] › e2e/layout-accessibility.spec.ts:187:3 › layout accessibility › keeps all three redesigned templates stable across target breakpoints (801ms)
+(node:71096) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  26 [firefox] › e2e/layout-accessibility.spec.ts:281:3 › layout accessibility › mobile navigation announces state, traps focus, and closes on Escape (785ms)
+(node:71105) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:71116) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  22 [firefox] › e2e/layout-accessibility.spec.ts:126:3 › layout accessibility › clamps and persists the font scale between 0.875 and 1.5 (1.6s)
+  ✓  27 [webkit] › e2e/contributions.spec.ts:15:1 › accepts an anonymous video and shows thanks only after confirmation (589ms)
+(node:71130) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  28 [webkit] › e2e/contributions.spec.ts:38:1 › prefills a correction, preserves text on failure, and allows retry (562ms)
+  ✓  30 [webkit] › e2e/layout-accessibility.spec.ts:28:3 › layout accessibility › exposes a skip link that jumps to the single main landmark (270ms)
+  ✓  32 [webkit] › e2e/layout-accessibility.spec.ts:52:3 › layout accessibility › keeps keyboard focus visible on interactive controls (272ms)
+  ✓  33 [webkit] › e2e/layout-accessibility.spec.ts:79:3 › layout accessibility › gives every persistent control a 44x44 minimum target (253ms)
+  ✓  34 [webkit] › e2e/layout-accessibility.spec.ts:99:3 › layout accessibility › persists the manual theme choice locally only (443ms)
+  ✓  36 [webkit] › e2e/layout-accessibility.spec.ts:170:3 › layout accessibility › avoids horizontal main-content scrolling at 200% zoom reflow (204ms)
+  ✓  29 [webkit] › e2e/contributions.spec.ts:71:1 › header and form reflow with large text and pass accessibility in both themes (1.3s)
+  ✓  38 [webkit] › e2e/layout-accessibility.spec.ts:265:3 › layout accessibility › honors prefers-reduced-motion (254ms)
+  ✓  31 [webkit] › e2e/layout-accessibility.spec.ts:16:3 › layout accessibility › passes Axe WCAG A/AA scans in light and manual dark mode (1.2s)
+(node:71166) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  35 [webkit] › e2e/layout-accessibility.spec.ts:126:3 › layout accessibility › clamps and persists the font scale between 0.875 and 1.5 (1.2s)
+(node:71168) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  40 [mobile-chromium] › e2e/contributions.spec.ts:15:1 › accepts an anonymous video and shows thanks only after confirmation (174ms)
+  ✓  37 [webkit] › e2e/layout-accessibility.spec.ts:187:3 › layout accessibility › keeps all three redesigned templates stable across target breakpoints (879ms)
+  ✓  39 [webkit] › e2e/layout-accessibility.spec.ts:281:3 › layout accessibility › mobile navigation announces state, traps focus, and closes on Escape (752ms)
+(node:71178) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  41 [mobile-chromium] › e2e/contributions.spec.ts:38:1 › prefills a correction, preserves text on failure, and allows retry (262ms)
+(node:71181) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  44 [mobile-chromium] › e2e/layout-accessibility.spec.ts:52:3 › layout accessibility › keeps keyboard focus visible on interactive controls (115ms)
+  ✓  46 [mobile-chromium] › e2e/layout-accessibility.spec.ts:79:3 › layout accessibility › gives every persistent control a 44x44 minimum target (102ms)
+  ✓  42 [mobile-chromium] › e2e/contributions.spec.ts:71:1 › header and form reflow with large text and pass accessibility in both themes (653ms)
+  ✓  45 [mobile-chromium] › e2e/layout-accessibility.spec.ts:28:3 › layout accessibility › exposes a skip link that jumps to the single main landmark (130ms)
+  ✓  47 [mobile-chromium] › e2e/layout-accessibility.spec.ts:99:3 › layout accessibility › persists the manual theme choice locally only (179ms)
+  ✓  49 [mobile-chromium] › e2e/layout-accessibility.spec.ts:170:3 › layout accessibility › avoids horizontal main-content scrolling at 200% zoom reflow (74ms)
+  ✓  51 [mobile-chromium] › e2e/layout-accessibility.spec.ts:265:3 › layout accessibility › honors prefers-reduced-motion (84ms)
+  ✓  43 [mobile-chromium] › e2e/layout-accessibility.spec.ts:16:3 › layout accessibility › passes Axe WCAG A/AA scans in light and manual dark mode (746ms)
+  ✓  50 [mobile-chromium] › e2e/layout-accessibility.spec.ts:187:3 › layout accessibility › keeps all three redesigned templates stable across target breakpoints (424ms)
+  ✓  48 [mobile-chromium] › e2e/layout-accessibility.spec.ts:126:3 › layout accessibility › clamps and persists the font scale between 0.875 and 1.5 (523ms)
+  ✓  52 [mobile-chromium] › e2e/layout-accessibility.spec.ts:281:3 › layout accessibility › mobile navigation announces state, traps focus, and closes on Escape (471ms)
+
+  52 passed (20.1s)

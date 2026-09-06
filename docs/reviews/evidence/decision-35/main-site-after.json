@@ -1,0 +1,12 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "digest": "81b94be309e3b10c16f327a6fe085a49c42bf51202796e3808c399934525ba69"
+  },
+  {
+    "path": "/content/",
+    "status": 200,
+    "digest": "745e41970770c9f4c2099bee41afcadcb03f3504f13feb6008efd431045ccbf3"
+  }
+]

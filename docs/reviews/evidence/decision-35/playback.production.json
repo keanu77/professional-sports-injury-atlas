@@ -1,0 +1,28 @@
+[
+  {
+    "url": "https://www.youtube.com/watch?v=blRqsO9--38",
+    "path": "/videos/chien-ming-wang-2008-foot/",
+    "startSeconds": 0,
+    "origin": "https://injury.sportsmedicine.tw",
+    "checkedAt": "2026-09-06T12:38:22.513Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.014147,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ],
+    "statistics": {
+      "dnt": true,
+      "transmittedTestPosts": 0,
+      "blockedPosts": 1
+    }
+  }
+]
