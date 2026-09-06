@@ -7,13 +7,14 @@
 
 import type { APIRoute } from "astro";
 import { isLaunchEnabled } from "../lib/patient/public-launch";
+import { publicDomain } from "../lib/patient/public-domain";
 import governance from "../data/site-governance.v1.json";
 import { resolveBuildMode, robotsTxtBody } from "../lib/governance/build-mode";
 
 export const GET: APIRoute = () => {
   const body =
     isLaunchEnabled() && resolveBuildMode() === "public"
-      ? "User-agent: *\nAllow: /\n"
+      ? `User-agent: *\nAllow: /\nSitemap: ${new URL("/sitemap.xml", publicDomain.origin).href}\n`
       : robotsTxtBody(
           resolveBuildMode(process.env.ATLAS_BUILD_MODE),
           governance,

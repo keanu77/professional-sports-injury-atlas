@@ -212,7 +212,26 @@ for (const item of [
 }
 assert.equal(
   readFileSync("dist/robots.txt", "utf8"),
-  "User-agent: *\nAllow: /\n",
+  `User-agent: *\nAllow: /\nSitemap: ${publicDomain.origin}/sitemap.xml\n`,
+);
+const sitemap = readFileSync("dist/sitemap.xml", "utf8");
+const sitemapLocations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(
+  (match) => match[1],
+);
+assert.equal(
+  sitemapLocations.length,
+  htmlFiles.length - 1,
+  "Sitemap must include every public HTML page except 404",
+);
+assert.ok(
+  sitemapLocations.every(
+    (url) =>
+      url?.startsWith(`${publicDomain.origin}/`) &&
+      !url.includes("/404/") &&
+      !url.includes("/review/") &&
+      !url.endsWith(".json"),
+  ),
+  "Sitemap contains a non-indexable URL",
 );
 // Native YouTube API loads only after the visitor activates the local facade.
 writeFileSync(

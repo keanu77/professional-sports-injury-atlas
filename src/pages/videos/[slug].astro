@@ -1,12 +1,25 @@
 ---
 import EventFollowUp from "../../components/cases/EventFollowUp.astro";
+import ObservationCard from "../../components/atlas/ObservationCard.astro";
 import { eventUpdateFor } from "../../lib/videos/event-updates";
 import { externalUrlPresentationFor } from "../../lib/rights/nba-link-policy";
 import VideoThumbnail from "../../components/cases/VideoThumbnail.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import MedicalNotice from "../../components/notices/MedicalNotice.astro";
-import { observationClips } from "../../lib/videos/expansion";
-import { formatDurationLabel } from "../../lib/video/player-state";
+import {
+  allObservationClips,
+  observationClips,
+} from "../../lib/videos/expansion";
+import {
+  observationCategoryLinks,
+  observationResourcesFor,
+  relatedObservationClips,
+} from "../../lib/videos/observation-guidance";
+import { discoveryFor } from "../../lib/videos/discovery";
+import {
+  captionStatusLabel,
+  formatDurationLabel,
+} from "../../lib/video/player-state";
 export function getStaticPaths() {
   return observationClips().map((clip) => ({
     params: { slug: clip.slug },
@@ -15,6 +28,10 @@ export function getStaticPaths() {
 }
 const { clip } = Astro.props;
 const eventUpdate = eventUpdateFor(clip.slug, clip.videoUrl, clip.eventDate);
+const resources = observationResourcesFor(clip.slug);
+const related = relatedObservationClips(clip, allObservationClips);
+const categoryLinks = observationCategoryLinks(clip);
+const isFeatured = discoveryFor(clip.slug).curatedRank !== undefined;
 const watchUrl = new URL(clip.videoUrl);
 if (clip.startSeconds > 0)
   watchUrl.searchParams.set("t", String(clip.startSeconds));
@@ -67,7 +84,7 @@ if (clip.startSeconds > 0)
       >
       </p>
       <p class="clip-source">
-        <a href={watchUrl.href} rel="noopener noreferrer"
+        <a href={watchUrl.href} target="_blank" rel="noopener noreferrer"
           >{clip.publisher} · 觀看原始影片 ↗</a
         >
       </p>
@@ -86,11 +103,32 @@ if (clip.startSeconds > 0)
       </p>
     </section>
     <div class="clip-notes">
-      <section><h2>受傷當下看什麼</h2><p>{clip.observation}</p></section>
+      <section
+        data-video-text-highlights
+        data-featured-observation={isFeatured ? "true" : undefined}
+      >
+        <h2>影片文字重點</h2>
+        <p>{clip.observation}</p>
+        <dl class="text-highlight-meta">
+          <div>
+            <dt>關鍵片段</dt>
+            <dd>{formatDurationLabel(clip.startSeconds)} 附近開始</dd>
+          </div>
+          <div>
+            <dt>字幕狀態</dt>
+            <dd data-caption-status={clip.captionStatus}>
+              {captionStatusLabel(clip.captionStatus)}
+            </dd>
+          </div>
+        </dl>
+        <p class="clip-meta">
+          文字重點協助理解關鍵畫面，不是完整逐字稿，也不是完整口述影像。
+        </p>
+      </section>
       {
         clip.bodyPart === "頭頸部" ? (
-          <section data-head-injury-care>
-            <h2>當下怎麼做</h2>
+          <section data-general-guidance data-head-injury-care>
+            <h2>一般人參考：當下怎麼做</h2>
             <p>頭部碰撞後若疑似腦震盪，立即停止運動並接受醫療評估。</p>
             <p>
               不得當天回場；後續回場由醫療人員評估。昏迷、叫不醒、抽搐或新出現手腳無力，立即叫救護車。
@@ -99,6 +137,7 @@ if (clip.startSeconds > 0)
               處理參考：
               <a
                 href="https://www.cdc.gov/heads-up/response/index.html"
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 CDC HEADS UP
@@ -106,6 +145,7 @@ if (clip.startSeconds > 0)
               ·{" "}
               <a
                 href="https://www.nhs.uk/conditions/head-injury-and-concussion/"
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 NHS 頭部受傷
@@ -113,9 +153,9 @@ if (clip.startSeconds > 0)
             </p>
           </section>
         ) : (
-          <section>
+          <section data-general-guidance>
             <>
-              <h2>當下怎麼做</h2>
+              <h2>一般人參考：當下怎麼做</h2>
               <p>
                 先停止運動、保護受傷部位，避免勉強移動或承重；不要自行扳正。疼痛加重或無法承重時儘速就醫。
               </p>
@@ -126,6 +166,7 @@ if (clip.startSeconds > 0)
                 處理參考：NHS{" "}
                 <a
                   href="https://www.nhs.uk/conditions/sprains-and-strains/"
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
                   扭拉傷
@@ -133,6 +174,7 @@ if (clip.startSeconds > 0)
                 ·{" "}
                 <a
                   href="https://www.nhs.uk/conditions/broken-leg/"
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
                   骨折
@@ -140,12 +182,37 @@ if (clip.startSeconds > 0)
                 ·{" "}
                 <a
                   href="https://www.nhs.uk/conditions/dislocated-shoulder/"
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
                   脫位
                 </a>
               </p>
             </>
+          </section>
+        )
+      }
+
+      {
+        resources.length > 0 && (
+          <section data-main-site-resources>
+            <h2>一般人參考：主站延伸閱讀</h2>
+            <ul>
+              {resources.map((resource) => (
+                <li>
+                  <span class="resource-kind">
+                    {resource.kind === "topic-overview" ? "主題總覽" : "文章"}
+                  </span>{" "}
+                  <a
+                    href={resource.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {resource.title} ↗
+                  </a>
+                </li>
+              ))}
+            </ul>
           </section>
         )
       }
@@ -167,14 +234,14 @@ if (clip.startSeconds > 0)
   <details class="clip-references">
     <summary>事件來源</summary><ul>
       <li>
-        <a href={clip.videoUrl} rel="noopener noreferrer"
+        <a href={clip.videoUrl} target="_blank" rel="noopener noreferrer"
           >{clip.publisher}：{clip.sourceTitle}</a
         >
       </li>{
         clip.sources.map((s) => (
           <li>
             {externalUrlPresentationFor(s.url) === "clickable-link" ? (
-              <a href={s.url} rel="noopener noreferrer">
+              <a href={s.url} target="_blank" rel="noopener noreferrer">
                 {s.title}
               </a>
             ) : (
@@ -190,6 +257,33 @@ if (clip.startSeconds > 0)
       }
     </ul><p>本頁描述公開片段，不以畫面推定診斷、傷勢等級或個人恢復時間。</p>
   </details>
+  <section
+    class="related-observations"
+    aria-labelledby="related-videos-heading"
+  >
+    <h2 id="related-videos-heading">相關影片</h2>
+    <ol class="related-video-grid" data-related-observations>
+      {
+        related.map((candidate) => (
+          <li data-related-slug={candidate.slug}>
+            <ObservationCard clip={candidate} />
+          </li>
+        ))
+      }
+    </ol>
+    <nav class="observation-categories" aria-label="這支影片的分類入口">
+      <h3>依分類繼續看</h3>
+      <ul>
+        {
+          categoryLinks.map((link) => (
+            <li data-category-kind={link.kind}>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </section>
   <MedicalNotice variant="compact" />
 </BaseLayout>
 <script>
@@ -284,6 +378,27 @@ if (clip.startSeconds > 0)
   .clip-notes p {
     margin: 0.5rem 0;
   }
+  .text-highlight-meta {
+    display: grid;
+    gap: 0.4rem;
+    margin: 1rem 0;
+  }
+  .text-highlight-meta div {
+    display: grid;
+    grid-template-columns: 5rem minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+  .text-highlight-meta dt {
+    color: var(--color-ink-muted);
+    font-weight: 600;
+  }
+  .text-highlight-meta dd {
+    margin: 0;
+  }
+  .resource-kind {
+    color: var(--color-ink-muted);
+    font-size: 0.8rem;
+  }
   .clip-references {
     margin: 2rem 0;
     font-size: 0.9rem;
@@ -295,10 +410,40 @@ if (clip.startSeconds > 0)
   .clip-references li {
     margin: 0.5rem 0;
   }
+  .related-observations {
+    margin: 2rem 0;
+  }
+  .related-observations > h2,
+  .observation-categories h3 {
+    font-family: var(--font-display);
+  }
+  .related-video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+  }
+  .related-video-grid > li {
+    min-width: 0;
+  }
+  .observation-categories {
+    margin-block-start: 1.5rem;
+  }
+  .observation-categories ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    padding: 0;
+    list-style: none;
+  }
   @media (max-width: 55rem) {
     .clip-layout {
       grid-template-columns: 1fr;
       gap: 1rem;
+    }
+    .related-video-grid {
+      grid-template-columns: 1fr;
     }
   }
   @media (max-width: 25rem) {

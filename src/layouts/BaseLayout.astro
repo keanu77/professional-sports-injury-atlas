@@ -15,6 +15,7 @@ import "@fontsource/fraunces/latin-700.css";
 import "@fontsource/inter/latin-400.css";
 import "@fontsource/inter/latin-600.css";
 import { getImage } from "astro:assets";
+import homeAtlas from "../assets/heroes/home-atlas.png";
 import "../styles/tokens.css";
 import "../styles/global.css";
 import "../styles/layout.css";
@@ -51,7 +52,7 @@ interface Props {
 
 const {
   title,
-  description,
+  description = "運動傷害影片圖鑑整理受傷影片、當下處置與公開回場紀錄。",
   artifactRecordIds = [],
   artifactDigest = null,
   heroImage,
@@ -89,6 +90,20 @@ const canonicalUrl =
     governance.indexingAuthorization.status === "authorized")
     ? new URL(Astro.url.pathname, publicSiteUrl).href
     : null;
+const defaultShareImage =
+  canonicalUrl === null
+    ? null
+    : await getImage({
+        src: homeAtlas,
+        width: 1200,
+        height: 630,
+        fit: "cover",
+        format: "png",
+      });
+const shareImageUrl =
+  canonicalUrl === null || defaultShareImage === null
+    ? null
+    : new URL(defaultShareImage.src, canonicalUrl).href;
 
 const bandPreloadWidths = [480, 720, 768, 840, 960, 1280, 1600, 2400];
 const casePreloadWidths =
@@ -132,6 +147,8 @@ const casePreload =
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     {robotsContent !== null && <meta name="robots" content={robotsContent} />}
     {
       artifactIdentity !== null && (
@@ -139,12 +156,27 @@ const casePreload =
       )
     }
     <title>{title}</title>
+    <meta name="description" content={description} />
+    {canonicalUrl !== null && <link rel="canonical" href={canonicalUrl} />}
     {
-      description !== undefined && (
-        <meta name="description" content={description} />
+      canonicalUrl !== null && shareImageUrl !== null && (
+        <>
+          <meta property="og:type" content="website" />
+          <meta property="og:locale" content="zh_TW" />
+          <meta property="og:title" content={title} />
+          <meta property="og:description" content={description} />
+          <meta property="og:url" content={canonicalUrl} />
+          <meta property="og:image" content={shareImageUrl} />
+          <meta property="og:image:alt" content="運動傷害影片圖鑑" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={title} />
+          <meta name="twitter:description" content={description} />
+          <meta name="twitter:url" content={canonicalUrl} />
+          <meta name="twitter:image" content={shareImageUrl} />
+          <meta name="twitter:image:alt" content="運動傷害影片圖鑑" />
+        </>
       )
     }
-    {canonicalUrl !== null && <link rel="canonical" href={canonicalUrl} />}
     {
       bandPreloads.length > 0 && (
         <link
