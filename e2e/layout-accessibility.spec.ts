@@ -13,15 +13,15 @@ import { expectNoAxeViolations } from "./helpers/a11y";
 const MOBILE_VIEWPORT = { width: 390, height: 844 };
 
 test.describe("layout accessibility", () => {
-  test("passes Axe WCAG A/AA scans in light and manual dark mode", async ({
+  test("defaults to dark and passes Axe WCAG A/AA scans in both themes", async ({
     page,
   }) => {
     await page.goto("/");
-    await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+    await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
     await expectNoAxeViolations(page);
 
     await page.getByRole("button", { name: "深色模式" }).click();
-    await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+    await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
     await expectNoAxeViolations(page);
   });
 
@@ -99,28 +99,50 @@ test.describe("layout accessibility", () => {
   test("persists the manual theme choice locally only", async ({ page }) => {
     await page.goto("/");
     const themeToggle = page.getByRole("button", { name: "深色模式" });
-    await expect(themeToggle).toHaveAttribute("aria-pressed", "false");
-
-    await themeToggle.click();
-    await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
     await expect(themeToggle).toHaveAttribute("aria-pressed", "true");
 
+    await themeToggle.click();
+    await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+    await expect(themeToggle).toHaveAttribute("aria-pressed", "false");
+
     await page.reload();
-    await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+    await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
     await expect(
       page.getByRole("button", { name: "深色模式" }),
-    ).toHaveAttribute("aria-pressed", "true");
+    ).toHaveAttribute("aria-pressed", "false");
 
     const storage = await page.evaluate(() => ({
       theme: window.localStorage.getItem("atlas-theme"),
       cookies: document.cookie,
     }));
-    expect(storage.theme).toBe("dark");
+    expect(storage.theme).toBe("light");
     expect(storage.cookies).toBe("");
 
     await page.getByRole("button", { name: "深色模式" }).click();
     await page.reload();
-    await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+    await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  });
+
+  test("renders the six public follow links from the main site", async ({
+    page,
+  }) => {
+    await page.goto("/");
+    const follow = page.getByRole("navigation", { name: "追蹤吳易澄醫師" });
+    const expected = [
+      ["衛教部落格", "https://blog.sportsmedicine.tw/"],
+      ["Facebook", "https://www.facebook.com/EthanWuMD/"],
+      ["Instagram", "https://www.instagram.com/ethan77wu/"],
+      ["GitHub", "https://github.com/keanu77"],
+      ["LINE", "https://line.me/R/ti/p/@521cvffb"],
+      ["RSS", "https://blog.sportsmedicine.tw/feeds/posts/default?alt=rss"],
+    ] as const;
+    await expect(follow.getByRole("link")).toHaveCount(expected.length);
+    for (const [name, href] of expected) {
+      const link = follow.getByRole("link", { name: new RegExp(`^${name}`) });
+      await expect(link).toHaveAttribute("href", href);
+      await expect(link).toHaveAttribute("target", "_blank");
+      await expect(link).toHaveAttribute("rel", "noopener noreferrer");
+    }
   });
 
   test("clamps and persists the font scale between 0.875 and 1.5", async ({

@@ -382,7 +382,7 @@ test.describe("component lab before enhancement", () => {
     await expectNoAxeViolations(page);
 
     await page.getByRole("button", { name: "深色模式" }).click();
-    await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+    await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
     await expectNoAxeViolations(page);
   });
 

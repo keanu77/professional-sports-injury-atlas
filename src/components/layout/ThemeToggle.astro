@@ -2,7 +2,7 @@
 /**
  * Manual dark-mode toggle. aria-pressed reflects the current theme; the
  * persisted value lives only in the reader's localStorage. The button starts
- * unpressed for the light default and src/scripts/preferences.ts syncs it to
+ * pressed for the dark default and src/scripts/preferences.ts syncs it to
  * the restored preference on load.
  */
 ---
@@ -12,7 +12,7 @@
   class="control-button"
   data-theme-toggle
   aria-label="深色模式"
-  aria-pressed="false"
+  aria-pressed="true"
 >
   <span class="theme-label-full">深色模式</span>
   <span class="theme-label-mobile" aria-hidden="true">深色</span>

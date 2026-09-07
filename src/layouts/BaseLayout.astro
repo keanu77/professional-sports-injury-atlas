@@ -4,7 +4,7 @@
  * review robots meta on every HTML page in review mode, and renders the
  * accessible site chrome: skip link, single main landmark, text-only header
  * identity, review banner, and footer. An inline script applies the locally
- * stored theme (light default, manual dark) and font scale (0.875-1.5)
+ * stored theme (dark default, manually switchable) and font scale (0.875-1.5)
  * before first paint through a parser-blocking same-origin script. Canonical
  * metadata is emitted only when governance records an authorized public site
  * URL (currently none). Review builds
@@ -140,7 +140,7 @@ const casePreload =
 <!doctype html>
 <html
   lang="zh-Hant"
-  data-theme="light"
+  data-theme="dark"
   data-playback-statistics={buildMode === "public" && isLaunchEnabled()
     ? "enabled"
     : undefined}

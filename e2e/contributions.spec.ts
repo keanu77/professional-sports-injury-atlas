@@ -172,8 +172,8 @@ test("header and form reflow with large text and pass accessibility in both them
       .getByRole("link", { name: "提供影片／資料修正" }),
   ).toBeVisible();
   await page.keyboard.press("Escape");
-  for (const theme of ["light", "dark"]) {
-    if (theme === "dark")
+  for (const theme of ["dark", "light"]) {
+    if (theme === "light")
       await page.getByRole("button", { name: "深色模式" }).click();
     await expectNoAxeViolations(page);
   }

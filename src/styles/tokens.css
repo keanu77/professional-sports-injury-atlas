@@ -1,13 +1,13 @@
 /**
  * Production color tokens measured from sportsmedicine.tw on 2026-08-08.
  * Every canonical color is a light-dark() pair; the root color-scheme below
- * selects the light value by default and the dark value for the site's
- * explicit, locally persisted theme. Components consume only this semantic
+ * selects the dark value by default and the light value when the reader
+ * switches the site's explicit, locally persisted theme. Components consume only this semantic
  * layer, including the governed editorial-photo presentation layer.
  */
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 
   /* sportsmedicine.tw brand and surface system */
   --color-brand-primary: light-dark(oklch(53% 0.12 228), oklch(66% 0.13 228));
@@ -85,6 +85,10 @@
 
 :root[data-theme="dark"] {
   color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
 }
 
 [data-injury-theme="acl"] {

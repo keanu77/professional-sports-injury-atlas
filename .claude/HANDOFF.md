@@ -11,12 +11,13 @@ Decision 37 的 15 項建議均已由 Codex 完成本機實作與驗證。Atlas 
 - CSP 移除 `script-src 'unsafe-inline'`；主站 Turnstile 精確綁定四組合法 hostname/action，400 與 503 分流，日誌不含投稿內容、token、IP 或上游正文。
 - 逐筆 `checkedAt` 與每週來源健康工作流程完成。實掃 101 影片／287 來源：YouTube oEmbed 101／101；2 個確認 404、15 個無法判定；無 YouTube API key，嵌入權限檢查誠實標為 skipped。
 - 依賴高風險公告修補完成，Atlas `npm audit --audit-level=high` 為 0。
+- 使用者追加的預設夜間模式、可持久切換，以及主站六個追蹤入口已完成，正進行最後瀏覽器驗收。
 
 ## 驗證基準
 
 - Atlas：1457／1457 unit、16／16 Decision 39 browser、12／12 contribution E2E；Astro 0 error／0 warning；public release 101 bindings、145 pages、3,323 local links。
 - 主站：30／30 Turnstile 目標測試、1590／1590 full tests、380 pages；369／369 搜尋探索無錯誤；路徑連續性 unresolved=0。
-- 最終 public input digest：`90dde8af7f47863e86cd08a2bf8297a4c53ddce1d0609c09f6d2476fbdf6e92b`。
+- 最新 public input digest：`5d44498932844e71d7ef156bdd59783f90b337e1bf18b71c9f0b340ef7116e60`。
 - D1 preview `atlas-playback-preview` 與 production `atlas-playback-production` 均已套用 `0003_play_guards.sql`。
 
 ## 待完成

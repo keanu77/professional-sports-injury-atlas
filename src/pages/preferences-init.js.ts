@@ -1,6 +1,6 @@
 export const prerender = true;
 
-export const PREFERENCES_INIT_SOURCE = `(()=>{const root=document.documentElement;let theme="light";let scale=1;try{if(window.localStorage.getItem("atlas-theme")==="dark")theme="dark";const raw=Number.parseFloat(window.localStorage.getItem("atlas-font-scale")??"1");if(Number.isFinite(raw))scale=Math.min(1.5,Math.max(.875,raw))}catch{}root.dataset.theme=theme;root.dataset.fontScale=String(scale);root.style.setProperty("--font-scale",String(scale))})();`;
+export const PREFERENCES_INIT_SOURCE = `(()=>{const root=document.documentElement;let theme="dark";let scale=1;try{const saved=window.localStorage.getItem("atlas-theme");if(saved==="light"||saved==="dark")theme=saved;const raw=Number.parseFloat(window.localStorage.getItem("atlas-font-scale")??"1");if(Number.isFinite(raw))scale=Math.min(1.5,Math.max(.875,raw))}catch{}root.dataset.theme=theme;root.dataset.fontScale=String(scale);root.style.setProperty("--font-scale",String(scale))})();`;
 
 export function GET() {
   return new Response(PREFERENCES_INIT_SOURCE, {
