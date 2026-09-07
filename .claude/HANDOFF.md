@@ -27,9 +27,13 @@ Decision 37 的 15 項建議、預設夜間模式與六個追蹤入口均已由 
 - Atlas deployment：`https://1f9f8b91.sports-injury-atlas.pages.dev/`；自訂網域 `https://injury.sportsmedicine.tw/` 與部署首頁 SHA-256 相同，夜間預設、六個追蹤入口、無 inline script CSP 與偏好腳本均實測。
 - 主站 deployment：`https://4ca9fa52.sportsmedicine-tw.pages.dev/`；自訂網域 contact 與 deployment HTML SHA-256 相同，`data-action="main-contact"` 已實測。無效 token 回 400 且沒有寄信。
 
-## 尚待使用者批准的唯一驗收
+## 投稿實信驗收（已授權，待真人驗證）
 
-送出 1 封真人投稿測試信，確認 Resend 到實際收件匣的完整鏈路。這會占用一次投稿額度並寄出一封信；沒有明確允許前不得執行。mock、4xx 或程式測試均不能宣稱實際收件。
+使用者已於 2026-09-07 明確授權 1 封測試信。自動化瀏覽器停在 Turnstile 真人驗證，未提交、未寄信；使用者回報反覆驗證失敗。已開啟一般預設瀏覽器的正式投稿頁供重試，尚未確認一般瀏覽器結果，不能宣稱寄送或收件成功。不要使用測試金鑰或跳過驗證完成正式驗收。
+
+## 頁尾追蹤圖示（2026-09-07 追加）
+
+依使用者截圖改為圓形 SVG 圖示，移除 RSS、加入 https://sportsmedicine.tw/ 個人網站（地球圖示）；保留部落格、Facebook、Instagram、GitHub、LINE。功能提交 `4efd324`、發布摘要 `dac351a`。Astro 0 error／0 warning；正式產物 145 頁、3323 站內連結通過；390px／1280px 深淺色瀏覽器檢查六個 SVG、48px 觸控尺寸與無水平溢位通過。
 
 ## 文件
 
