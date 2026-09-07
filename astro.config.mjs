@@ -46,4 +46,13 @@ export default defineConfig({
     // render-blocking round trip while local fonts continue to use swap.
     inlineStylesheets: "always",
   },
+  vite: {
+    build: {
+      // Keep executable JavaScript as same-origin assets so the public CSP does
+      // not need script-src 'unsafe-inline'. Other small assets retain Vite's
+      // normal inlining decision.
+      assetsInlineLimit: (filePath) =>
+        /\.(?:[cm]?js|tsx?)$/i.test(filePath) ? false : undefined,
+    },
+  },
 });

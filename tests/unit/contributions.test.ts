@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { readFileSync } from "node:fs";
 import { submitContribution as handleContribution } from "../../src/lib/video/contributions";
 import type { ContributionGuard } from "../../src/lib/video/contribution-limits";
@@ -40,8 +40,64 @@ const successfulMail = () =>
   vi
     .fn<typeof fetch>()
     .mockImplementation(async () => Response.json({ ok: true }));
+afterEach(() => vi.restoreAllMocks());
 
 describe("anonymous contributions", () => {
+  it.each([
+    [400, 400, "verification-invalid", "rejected"],
+    [503, 503, "verification-unavailable", "uncertain"],
+  ] as const)(
+    "distinguishes upstream %i and preserves settlement %s",
+    async (upstream, status, error, state) => {
+      const log = vi.spyOn(console, "info").mockImplementation(() => {});
+      const guard = successfulGuard();
+      const response = await handleContribution(
+        request(),
+        vi
+          .fn<typeof fetch>()
+          .mockResolvedValue(
+            Response.json(
+              { error: "private upstream details" },
+              { status: upstream },
+            ),
+          ),
+        guard,
+      );
+      expect(response.status).toBe(status);
+      expect(await response.json()).toEqual({ error });
+      expect(guard.settle).toHaveBeenCalledWith("test-reservation", state);
+      expect(log.mock.calls).toEqual([
+        [JSON.stringify({ event: "contribution-delivery", status: state })],
+      ]);
+    },
+  );
+  it("logs only bounded non-content labels for local and delivery outcomes", async () => {
+    const log = vi.spyOn(console, "info").mockImplementation(() => {});
+    await handleContribution(
+      request({ ...valid, url: "", note: "" }),
+      successfulMail(),
+      successfulGuard(),
+    );
+    await handleContribution(request(), successfulMail());
+    await handleContribution(request(), successfulMail(), successfulGuard());
+    await handleContribution(
+      request(),
+      vi
+        .fn<typeof fetch>()
+        .mockRejectedValue(new Error("private transport details")),
+      successfulGuard(),
+    );
+    const labels = log.mock.calls.map((call) => JSON.parse(call[0]));
+    expect(labels).toEqual(
+      ["invalid", "guard-unavailable", "sent", "uncertain"].map((status) => ({
+        event: "contribution-delivery",
+        status,
+      })),
+    );
+    expect(JSON.stringify(labels)).not.toMatch(
+      /private|test-only-token|youtube|test-reservation|test-\d/,
+    );
+  });
   it("does not send without a working shared guard", async () => {
     const send = successfulMail();
     expect((await handleContribution(request(), send)).status).toBe(503);
@@ -250,7 +306,9 @@ describe("anonymous contributions", () => {
         .fn<typeof fetch>()
         .mockResolvedValue(Response.json({ error: "failure" }, { status }));
       const response = await submitContribution(request(), send);
-      expect(response.status).toBe(status === 429 ? 429 : 502);
+      expect(response.status).toBe(
+        status === 429 ? 429 : status === 400 ? 400 : 502,
+      );
       expect(await response.json()).not.toHaveProperty("ok", true);
     },
   );

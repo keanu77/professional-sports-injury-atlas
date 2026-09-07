@@ -9,34 +9,35 @@ import { curation } from "./expansion";
 import data from "../../data/videos/event-updates.v1.json";
 const text = z.string().trim().min(1);
 const https = z.url({ protocol: /^https$/ });
+const eventUpdateEntryInputSchema = z.strictObject({
+  slug: text,
+  videoUrl: https,
+  eventDate: z.iso.date().nullable(),
+  injury: text,
+  returnDate: z.iso.date().nullable(),
+  returnSummary: text,
+  context: text,
+  checkedAt: z.iso.date().optional(),
+  sources: z
+    .array(
+      z.strictObject({
+        title: text,
+        url: https,
+        publishedAt: z.iso.date().nullable(),
+      }),
+    )
+    .min(1),
+});
+const eventUpdateEntrySchema = eventUpdateEntryInputSchema.extend({
+  checkedAt: z.iso.date(),
+});
 export const eventUpdatesSchema = z
   .strictObject({
     schemaVersion: z.literal(1),
     decision: z.literal("decision-27"),
     checkedAt: z.iso.date(),
     scope: z.literal("attributed-public-reports"),
-    entries: z
-      .array(
-        z.strictObject({
-          slug: text,
-          videoUrl: https,
-          eventDate: z.iso.date().nullable(),
-          injury: text,
-          returnDate: z.iso.date().nullable(),
-          returnSummary: text,
-          context: text,
-          sources: z
-            .array(
-              z.strictObject({
-                title: text,
-                url: https,
-                publishedAt: z.iso.date().nullable(),
-              }),
-            )
-            .min(1),
-        }),
-      )
-      .min(1),
+    entries: z.array(eventUpdateEntrySchema).min(1),
   })
   .superRefine((value, ctx) => {
     const slugs = new Set<string>();
@@ -49,21 +50,26 @@ export const eventUpdatesSchema = z
         ctx.addIssue({ code: "custom", message: "Duplicate event update" });
       slugs.add(entry.slug);
       videos.add(entry.videoUrl);
+      if (entry.checkedAt > today)
+        ctx.addIssue({
+          code: "custom",
+          message: `Future verification date: ${entry.slug}`,
+        });
       if (
         entry.returnDate &&
         (!entry.eventDate ||
           entry.returnDate < entry.eventDate ||
-          entry.returnDate > value.checkedAt)
+          entry.returnDate > entry.checkedAt)
       )
         ctx.addIssue({
           code: "custom",
           message: `Invalid completed return: ${entry.slug}`,
         });
-      if (entry.eventDate && entry.eventDate > value.checkedAt)
+      if (entry.eventDate && entry.eventDate > entry.checkedAt)
         ctx.addIssue({ code: "custom", message: "Future event" });
       if (
         entry.sources.some(
-          (s) => s.publishedAt && s.publishedAt > value.checkedAt,
+          (s) => s.publishedAt && s.publishedAt > entry.checkedAt,
         )
       )
         ctx.addIssue({ code: "custom", message: "Future source" });
@@ -74,7 +80,7 @@ const additions = z
     schemaVersion: z.literal(1),
     decision: z.literal("decision-28"),
     checkedAt: z.iso.date(),
-    entries: z.array(eventUpdatesSchema.shape.entries.element),
+    entries: z.array(eventUpdateEntryInputSchema),
   })
   .parse(newData);
 const batch30 = z
@@ -82,7 +88,7 @@ const batch30 = z
     schemaVersion: z.literal(1),
     decision: z.literal("decision-30"),
     checkedAt: z.iso.date(),
-    entries: z.array(eventUpdatesSchema.shape.entries.element),
+    entries: z.array(eventUpdateEntryInputSchema),
   })
   .parse(batchData);
 const batch31 = z
@@ -90,7 +96,7 @@ const batch31 = z
     schemaVersion: z.literal(1),
     decision: z.literal("decision-31"),
     checkedAt: z.iso.date(),
-    entries: z.array(eventUpdatesSchema.shape.entries.element),
+    entries: z.array(eventUpdateEntryInputSchema),
   })
   .parse(batch31Data);
 const batch32 = z
@@ -98,7 +104,7 @@ const batch32 = z
     schemaVersion: z.literal(1),
     decision: z.literal("decision-32"),
     checkedAt: z.iso.date(),
-    entries: z.array(eventUpdatesSchema.shape.entries.element),
+    entries: z.array(eventUpdateEntryInputSchema),
   })
   .parse(batch32Data);
 const batch34 = z
@@ -106,29 +112,44 @@ const batch34 = z
     schemaVersion: z.literal(1),
     decision: z.literal("decision-34"),
     checkedAt: z.iso.date(),
-    entries: z.array(eventUpdatesSchema.shape.entries.element),
+    entries: z.array(eventUpdateEntryInputSchema),
   })
   .parse(batch34Data);
-// The shared public check date is valid only when every batch was reviewed on it.
-// A later review must introduce per-entry dates rather than silently relabel older entries.
-if (
-  additions.checkedAt !== data.checkedAt ||
-  batch30.checkedAt !== data.checkedAt ||
-  batch31.checkedAt !== data.checkedAt ||
-  batch32.checkedAt !== data.checkedAt ||
-  batch34.checkedAt !== data.checkedAt
-)
-  throw new Error("Mixed event review dates require per-entry check dates");
+
+type EventUpdateBatchInput = {
+  checkedAt: string;
+  entries: readonly z.input<typeof eventUpdateEntryInputSchema>[];
+};
+
+/** Preserve the date of the batch that actually checked each entry. */
+export function normalizeEventUpdateBatches(
+  batches: readonly EventUpdateBatchInput[],
+): z.infer<typeof eventUpdateEntrySchema>[] {
+  return batches.flatMap((batch) =>
+    batch.entries.map((entry) =>
+      eventUpdateEntrySchema.parse({
+        ...entry,
+        checkedAt: entry.checkedAt ?? batch.checkedAt,
+      }),
+    ),
+  );
+}
+
+const normalizedEntries = normalizeEventUpdateBatches([
+  data,
+  additions,
+  batch30,
+  batch31,
+  batch32,
+  batch34,
+]).filter((e) => !curation.removedSlugs.some((slug) => slug === e.slug));
 export const eventUpdates = eventUpdatesSchema.parse({
   ...data,
-  entries: [
-    ...data.entries,
-    ...additions.entries,
-    ...batch30.entries,
-    ...batch31.entries,
-    ...batch32.entries,
-    ...batch34.entries,
-  ].filter((e) => !curation.removedSlugs.some((slug) => slug === e.slug)),
+  checkedAt: normalizedEntries.reduce(
+    (latest, entry) => (entry.checkedAt > latest ? entry.checkedAt : latest),
+    data.checkedAt,
+  ),
+  entries: normalizedEntries,
 });
 export type EventUpdate = (typeof eventUpdates.entries)[number];
 export function eventUpdateFor(

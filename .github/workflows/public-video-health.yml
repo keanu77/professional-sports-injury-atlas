@@ -1,0 +1,33 @@
+name: Public video health
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 2 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Check public video and source health
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: npm run video:health
+      - name: Upload redacted health artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-video-health
+          path: artifacts/public-video-health.v1.json
+          if-no-files-found: error
+          retention-days: 30

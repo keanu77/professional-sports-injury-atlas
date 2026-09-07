@@ -40,6 +40,7 @@
     "research:registry:check": "tsx scripts/research/check-source-manifest-registry.ts",
     "rtp:import": "tsx scripts/import-rtp-catalog.ts",
     "external:verify": "tsx scripts/verify-external-sources.ts",
+    "video:health": "tsx scripts/monitor-public-videos.ts",
     "player-photos:verify": "tsx scripts/verify-player-photo-assets.ts",
     "player-photos:v4:generate": "tsx scripts/generate-player-photo-registry-v4.ts",
     "player-photos:v4:check": "tsx scripts/generate-player-photo-registry-v4.ts --check",

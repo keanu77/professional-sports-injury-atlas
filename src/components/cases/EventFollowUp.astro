@@ -1,6 +1,5 @@
 ---
 import {
-  eventUpdates,
   classifyReturnMilestone,
   returnDays,
   type EventUpdate,
@@ -48,8 +47,8 @@ const milestone = classifyReturnMilestone(update);
   <details>
     <summary>查看傷勢與回場來源</summary>
     <p class="event-note">
-      依公開報導整理 · 查核日期 <time datetime={eventUpdates.checkedAt}
-        >{eventUpdates.checkedAt}</time
+      依公開報導整理 · 查核日期 <time datetime={update.checkedAt}
+        >{update.checkedAt}</time
       >
     </p>
     <ul>

@@ -17,6 +17,8 @@ for (const [status, error, message] of [
   [429, "site-daily", "本站今天的通知額度已滿"],
   [429, "duplicate", "相同內容在 10 分鐘內已有送出紀錄"],
   [503, "guard-unavailable", "目前暫停送出"],
+  [400, "verification-invalid", "安全驗證未通過"],
+  [503, "verification-unavailable", "安全驗證服務暫時無法使用"],
 ] as const) {
   test(`retains input when ${error} blocks sending`, async ({ page }) => {
     await page.route("**/api/contributions", (route) =>

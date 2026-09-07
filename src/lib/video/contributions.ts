@@ -4,6 +4,10 @@ import { publicContributionUrl as publicUrl } from "./contribution-content";
 
 const allowRequest = createRequestLimiter(3);
 const CONTACT_ENDPOINT = "https://sportsmedicine.tw/api/contact";
+type DeliveryLogStatus =
+  "invalid" | "guard-unavailable" | "rejected" | "uncertain" | "sent";
+const logDelivery = (status: DeliveryLogStatus) =>
+  console.info(JSON.stringify({ event: "contribution-delivery", status }));
 export const CONTRIBUTION_SUCCESS =
   "謝謝你協助完善運動傷害影片圖鑑！你的訊息已送出，我們會查核後評估更新。";
 const respond = (status: number, body: object, extraHeaders = {}) =>
@@ -80,8 +84,10 @@ export async function submitContribution(
           "website",
         ].includes(k),
     )
-  )
+  ) {
+    logDelivery("invalid");
     return respond(400, { error: "invalid" });
+  }
   if (data.website) return respond(400, { error: "invalid" });
   const urlMissing =
     data.url === undefined ||
@@ -105,10 +111,14 @@ export async function submitContribution(
   const sourceUrls = sources
     ? sources.split(/\r?\n/).filter(Boolean).map(publicUrl)
     : [];
-  if (sourceUrls.length > 3 || sourceUrls.some((u) => u === null))
+  if (sourceUrls.length > 3 || sourceUrls.some((u) => u === null)) {
+    logDelivery("invalid");
     return respond(400, { error: "sources" });
-  if (data.type === "video" && !url && !note && sourceUrls.length === 0)
+  }
+  if (data.type === "video" && !url && !note && sourceUrls.length === 0) {
+    logDelivery("invalid");
     return respond(400, { error: "empty-content" });
+  }
   const label = data.type === "video" ? "提供公開影片" : "回報資料修正";
   const message = [
     `類型：${label}`,
@@ -120,7 +130,10 @@ export async function submitContribution(
     "",
     "此訊息由影片圖鑑匿名表單送出，沒有收集訪客姓名或回覆信箱。Email 欄為系統 no-reply 地址，請勿回覆。",
   ].join("\n");
-  if (message.length > 5000) return respond(413, { error: "too-large" });
+  if (message.length > 5000) {
+    logDelivery("invalid");
+    return respond(413, { error: "too-large" });
+  }
   let reservation: Reservation;
   try {
     if (!guard) throw new Error("missing-guard");
@@ -135,9 +148,11 @@ export async function submitContribution(
       content,
     );
   } catch {
+    logDelivery("guard-unavailable");
     return respond(503, { error: "guard-unavailable" });
   }
   if (!reservation.allowed) {
+    logDelivery("rejected");
     return respond(
       429,
       { error: reservation.reason },
@@ -168,11 +183,16 @@ export async function submitContribution(
       redirect: "error",
     });
     if (!result.ok) {
-      await settle(
+      const state =
         result.status >= 400 && result.status < 500 && result.status !== 408
           ? "rejected"
-          : "uncertain",
-      );
+          : "uncertain";
+      await settle(state);
+      logDelivery(state);
+      if (result.status === 400)
+        return respond(400, { error: "verification-invalid" });
+      if (result.status === 503)
+        return respond(503, { error: "verification-unavailable" });
       return respond(result.status === 429 ? 429 : 502, {
         error: result.status === 429 ? "rate-limit" : "delivery",
       });
@@ -180,12 +200,15 @@ export async function submitContribution(
     const body = (await result.json()) as { ok?: boolean };
     if (body.ok !== true) {
       await settle("uncertain");
+      logDelivery("uncertain");
       return respond(502, { error: "delivery" });
     }
     await settle("sent");
+    logDelivery("sent");
     return respond(200, { ok: true, message: CONTRIBUTION_SUCCESS });
   } catch {
     await settle("uncertain");
+    logDelivery("uncertain");
     return respond(502, { error: "delivery" });
   }
 }
