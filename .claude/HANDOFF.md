@@ -38,3 +38,13 @@ Decision 37 的 15 項建議、預設夜間模式與六個追蹤入口均已由 
 ## 文件
 
 完整對照與驗證：`docs/reviews/2026-09-07-decision-39-top-tier-implementation.md`。Decision 37 原稽核及 evidence 保持不變。
+
+## 寄信設定重新部署（2026-09-07 21:51 台灣時間）
+
+使用者確認已更新主站 Cloudflare 的寄信 secrets。以最新主站提交 `992973d7e5c9744dec4234f718aae014865d7de5` 重試部署，保留同期新增文章；本次先前建立的舊提交排隊部署已刪除，未上線。
+
+- 正式部署 `fcacacab-0c07-45cd-9b44-66c5f1df9037`，21:51:26 成功；canonical deployment 已核對吻合。
+- 新部署包含 `RESEND_API_KEY`、`CONTACT_FROM_EMAIL`、`CONTACT_RECIPIENT_EMAIL`，秘密值未讀取或記錄。
+- Node fetch 實測 sportsmedicine.tw/contact/ 與 fcacacab.sportsmedicine-tw.pages.dev/contact/ 均 200，HTML SHA-256 相同，main-contact action 存在。Python urllib 被 403，未据此判定網站故障。
+- D1 最近兩筆投稿時間 21:09:59、21:22:37，皆 uncertain，均早於本次設定部署。沒有新部署後的寄送成功證據。
+- 下一步須由一般瀏覽器完成真人驗證並送出一次新測試，再核對 D1 sent、Resend 投遞與實際收件；不得宣稱寄信已修復。
