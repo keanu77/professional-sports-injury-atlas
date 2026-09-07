@@ -3,9 +3,7 @@ import type { ContributionGuard, Reservation } from "./contribution-limits";
 import { publicContributionUrl as publicUrl } from "./contribution-content";
 
 const allowRequest = createRequestLimiter(3);
-// Use the first-party Pages origin: same-zone custom-host fetches may not
-// invoke the destination Pages Function. The original Turnstile binding remains.
-const CONTACT_ENDPOINT = "https://sportsmedicine-tw.pages.dev/api/contact";
+const CONTACT_ENDPOINT = "https://sportsmedicine.tw/api/contact";
 type DeliveryLogStatus =
   "invalid" | "guard-unavailable" | "rejected" | "uncertain" | "sent";
 const logDelivery = (status: DeliveryLogStatus) =>
@@ -182,7 +180,9 @@ export async function submitContribution(
         turnstileToken: token,
       }),
       signal: AbortSignal.timeout(15000),
-      redirect: "error",
+      // Workers supports manual/follow only. Non-2xx (including redirects)
+      // is rejected below without forwarding the token to another destination.
+      redirect: "manual",
     });
     if (!result.ok) {
       const state =

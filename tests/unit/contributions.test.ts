@@ -239,10 +239,8 @@ describe("anonymous contributions", () => {
       expect(await response.json()).toMatchObject({ ok: true });
       expect(send).toHaveBeenCalledTimes(1);
       const [destination, options] = send.mock.calls[0]!;
-      expect(destination).toBe(
-        "https://sportsmedicine-tw.pages.dev/api/contact",
-      );
-      expect(options?.redirect).toBe("error");
+      expect(destination).toBe("https://sportsmedicine.tw/api/contact");
+      expect(options?.redirect).toBe("manual");
       const body = JSON.parse(options!.body as string);
       expect(body.email).toBe("no-reply@injury.sportsmedicine.tw");
       expect(body.message).toContain("沒有收集訪客姓名或回覆信箱");
@@ -349,4 +347,25 @@ describe("anonymous contributions", () => {
     ).toBe(429);
     expect(send).toHaveBeenCalledTimes(3);
   });
+});
+
+describe("upstream redirects", () => {
+  it.each([301, 302, 303, 307, 308])(
+    "rejects HTTP %i without following or reporting delivery",
+    async (status) => {
+      const send = vi
+        .fn<typeof fetch>()
+        .mockResolvedValue(
+          new Response(null, {
+            status,
+            headers: { Location: "https://example.org/other" },
+          }),
+        );
+      const response = await submitContribution(request(), send);
+      expect(response.status).toBe(502);
+      expect(await response.json()).toEqual({ error: "delivery" });
+      expect(send).toHaveBeenCalledTimes(1);
+      expect(send.mock.calls[0][1]?.redirect).toBe("manual");
+    },
+  );
 });

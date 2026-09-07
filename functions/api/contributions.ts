@@ -27,13 +27,6 @@ export const onRequest = ({
           JSON.stringify({
             event: "contribution-upstream",
             errorName: error instanceof Error ? error.name : "unknown",
-            errorMessage:
-              error instanceof Error
-                ? error.message
-                    .replace(/https?:\/\/\S+/g, "[url]")
-                    .replace(/[A-Za-z0-9_-]{32,}/g, "[redacted]")
-                    .slice(0, 180)
-                : "unknown",
           }),
         );
         throw error;
