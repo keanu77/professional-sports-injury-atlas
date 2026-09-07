@@ -16,7 +16,6 @@ import "@fontsource/fraunces/latin-700.css";
 import "@fontsource/inter/latin-400.css";
 import "@fontsource/inter/latin-600.css";
 import { getImage } from "astro:assets";
-import homeAtlas from "../assets/heroes/home-atlas.png";
 import "../styles/tokens.css";
 import "../styles/global.css";
 import "../styles/layout.css";
@@ -91,20 +90,11 @@ const canonicalUrl =
     governance.indexingAuthorization.status === "authorized")
     ? new URL(Astro.url.pathname, publicSiteUrl).href
     : null;
-const defaultShareImage =
+// User-provided homepage screenshot, preserved without cropping or re-encoding.
+const shareImageUrl =
   canonicalUrl === null
     ? null
-    : await getImage({
-        src: homeAtlas,
-        width: 1200,
-        height: 630,
-        fit: "cover",
-        format: "png",
-      });
-const shareImageUrl =
-  canonicalUrl === null || defaultShareImage === null
-    ? null
-    : new URL(defaultShareImage.src, canonicalUrl).href;
+    : new URL("/social/injury-atlas-home-20260907.png", canonicalUrl).href;
 
 const bandPreloadWidths = [480, 720, 768, 840, 960, 1280, 1600, 2400];
 const casePreloadWidths =
@@ -168,6 +158,9 @@ const casePreload =
           <meta property="og:description" content={description} />
           <meta property="og:url" content={canonicalUrl} />
           <meta property="og:image" content={shareImageUrl} />
+          <meta property="og:image:type" content="image/png" />
+          <meta property="og:image:width" content="1380" />
+          <meta property="og:image:height" content="542" />
           <meta property="og:image:alt" content="運動傷害影片圖鑑" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content={title} />
