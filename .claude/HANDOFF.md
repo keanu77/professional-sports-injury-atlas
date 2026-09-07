@@ -72,3 +72,12 @@ Decision 37 的 15 項建議、預設夜間模式與六個追蹤入口均已由 
 已透過 Gmail 唯讀查詢確認 22:34:30 通知信實際抵達設定收件人的 INBOX（CATEGORY_UPDATES、UNREAD），主旨「[網站聯絡] 影片圖鑑｜回報資料修正」，寄件人 notifications@sportsmedicine.tw。未標示已讀、未寄出額外郵件。至此完成真人驗證→主站轉送→Resend→實際收件匣完整驗收。
 
 本次兩個已確認根因：Cloudflare 不支援 redirect=error（已改 manual、拒絕 3xx）；Resend 回覆 403 validation_error，寄件網域未驗證（使用者已完成驗證）。先前金鑰／換行疑慮不能列為已確認根因。
+
+
+## 2026-09-08 文章串聯與傷後經過補充（已發布）
+
+- 使用者批准稽核後補充。新增 observation-resources.v1.json，94 個 videos 全部有明確配對；全站 101 頁中 73 頁有文章、28 頁有總覽與缺文說明，無空白資源區。背景／合併傷害文章皆標明適用範圍。
+- Kobe、Rodgers、Mead 補手術／復健里程碑及來源；首次回場日期與原有簽核內容不變。三筆 checkedAt 採 UTC 2026-09-07，本地查核日期 09-08。
+- 20 主站資源網址皆 200；10 個相關單元測試通過；Astro 0 errors／0 warnings（16 hints）；public release 145 頁、3323 local links；8 個手機／桌面情境無水平溢位。
+- 功能提交 32d74e0；Cloudflare deployment https://58aaa1d4.sports-injury-atlas.pages.dev 。injury.sportsmedicine.tw 的 101/101 詳細頁 HTML SHA-256 與新建置完全一致。
+- 完整報告與逐頁配對：docs/reviews/2026-09-08-content-enrichment/README.md。28 頁仍無合適主站專文，不應硬湊相關傷名；10 筆未知／不適用回場日期保持誠實標示。

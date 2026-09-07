@@ -17,6 +17,8 @@
 
 ## 驗證
 
-10 項資源／事件資料測試通過。Astro 檢查 0 errors、0 warnings、16 hints。全部 101 頁產物、手機與桌面版型、正式部署驗證結果待本輪發布後追加。
+10 項資源／事件資料測試通過。Astro 檢查 0 errors、0 warnings、16 hints。發布檢查通過：145 頁、7 cases、3,323 站內連結。101 頁皆有資源與後續區塊；73 頁有文章、28 頁總覽。Chromium 390px／1280px 各抽查四頁，8 個場景皆無水平溢位且連結數符合 1–3 篇。
+
+Cloudflare deployment：https://58aaa1d4.sports-injury-atlas.pages.dev ，來源提交 `32d74e0`。自訂網域 101/101 分頁均 HTTP 200，HTML SHA-256 與本機本次建置完全相符，結果見 live.json。
 
 [逐頁對應](article-mapping.csv) · [文章網址檢查](article-link-check.json)

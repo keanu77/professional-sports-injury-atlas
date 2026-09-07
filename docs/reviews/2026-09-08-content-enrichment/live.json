@@ -1,0 +1,507 @@
+[
+  {
+    "path": "/cases/kevin-durant-achilles-rupture-2019/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/cases/tyrese-haliburton-achilles-rupture-2025/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/cases/lamelo-ball-ankle-sprain-2025/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/cases/lamelo-ball-ankle-sprain-2023/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/cases/anfernee-simons-ankle-sprain-2023/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/matt-shoemaker-2016-head/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/chris-bassitt-2021-face/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/zlatan-ibrahimovic-2017-knee/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/cases/jayson-tatum-achilles-rupture-2025/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/cases/kyrie-irving-ankle-sprain-2021/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/shaun-livingston-knee-2007/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/dominic-thiem-2021-wrist/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/derrick-rose-acl-2012/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/gordon-hayward-ankle-fracture-2017/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/george-north-2015-concussion/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/connor-mcdavid-2019-pcl/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/mohamed-salah-final-2018/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/tim-hudson-2013-ankle/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/rhys-hoskins-2023-acl/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/ronald-acuna-miami-2021/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/cameron-brink-2024-acl/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/samir-ait-said-2016-leg/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/sofia-goggia-2022-knee/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/steve-smith-2019-concussion/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/juan-martin-del-potro-2018-knee/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/lindsey-vonn-schladming-2013/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/manny-machado-2013-knee/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/mikaela-shiffrin-2024-abdomen/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/aaron-judge-2023-toe/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/klay-thompson-2019-acl/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/chase-headley-2014-face/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/laurent-koscielny-2018/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/vivianne-miedema-2022/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/giancarlo-stanton-2014-face/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/victor-oladipo-2019-quadriceps/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/giannis-east-final-2021/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/charlie-morton-2021-fibula/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/zverev-roland-garros-2022/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/bryce-harper-2017-knee/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/kobe-bryant-2013-achilles/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/demarcus-cousins-achilles-2018/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/sidney-crosby-concussion-2017/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/dejounte-murray-acl-2018/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/cristiano-ronaldo-2016/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/kyle-schwarber-2016-knee/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/aleksander-kilde-2024-shoulder/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/jamal-murray-acl-2021/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/curtis-granderson-2013-hand/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/paul-george-leg-fracture-2014/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/aksel-svindal-kitzbuhel-2016/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/buster-posey-2011-ankle/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/markelle-fultz-orlando-2021/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/wesley-fofana-2021-leg/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/annemiek-van-vleuten-2016-concussion/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/alex-cobb-2013-concussion/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/carolina-marin-indonesia-2019/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/bryce-harper-2022-thumb/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/gianmarco-tamberi-2016-ankle/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/aaron-rodgers-2023-achilles/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/shohei-ohtani-world-series-2024/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/neymar-2023-acl/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/adam-eaton-2017-knee/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/mikhail-sergachev-2024-leg/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/john-tavares-2021-concussion/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/mark-cavendish-2023-clavicle/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/julie-foucher-box-jump-2015/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/usain-bolt-london-2017/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/chien-ming-wang-2008-foot/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/david-beckham-2010/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/dan-jennings-2014-concussion/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/derek-redmond-barcelona-1992/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/ja-happ-2013-head/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/edwin-diaz-2023-patellar-tendon/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/dustin-fowler-2017-patellar-tendon/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/yuzuru-hanyu-2014-collision/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/mitch-haniger-2017-face/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/andre-gomes-2019/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/kendrys-morales-2010-ankle/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/kawhi-leonard-acl-2021/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/kerri-strug-atlanta-1996/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/harvey-elliott-2021-ankle/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/liu-xiang-2012-achilles/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/bethanie-mattek-sands-2017-knee/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/serena-williams-2021-hamstring/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/mookie-betts-2024-hand/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/leah-williamson-2023/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/fabio-jakobsen-2020-concussion/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/zach-lavine-acl-2017/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/hector-bellerin-2019-knee/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/max-pacioretty-2011-concussion/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/remco-evenepoel-2020-pelvis/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/justin-turner-2023-face/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/kevin-pillar-2021-face/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/antoine-dupont-world-cup-2023/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/stephen-piscotty-2015-concussion/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/beth-mead-2022/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/alex-oxlade-chamberlain-2018/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/rebeca-andrade-2019-knee/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/dustin-pedroia-2017-knee/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/kristaps-porzingis-acl-2018/",
+    "status": 200,
+    "matchesBuild": true
+  },
+  {
+    "path": "/videos/steven-stamkos-2013-tibia/",
+    "status": 200,
+    "matchesBuild": true
+  }
+]
