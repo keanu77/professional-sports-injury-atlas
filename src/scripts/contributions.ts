@@ -110,6 +110,11 @@ if (form) {
         }),
         signal: AbortSignal.timeout(20000),
       });
+      if (!response.headers.get("content-type")?.includes("application/json")) {
+        status.textContent =
+          "寄信服務暫時無法回應，尚未確認送出。你填寫的內容已保留，請稍後再試。";
+        return;
+      }
       const result = (await response.json()) as {
         ok?: boolean;
         error?: string;

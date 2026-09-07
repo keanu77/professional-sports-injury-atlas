@@ -239,7 +239,9 @@ describe("anonymous contributions", () => {
       expect(await response.json()).toMatchObject({ ok: true });
       expect(send).toHaveBeenCalledTimes(1);
       const [destination, options] = send.mock.calls[0]!;
-      expect(destination).toBe("https://sportsmedicine.tw/api/contact");
+      expect(destination).toBe(
+        "https://sportsmedicine-tw.pages.dev/api/contact",
+      );
       expect(options?.redirect).toBe("error");
       const body = JSON.parse(options!.body as string);
       expect(body.email).toBe("no-reply@injury.sportsmedicine.tw");

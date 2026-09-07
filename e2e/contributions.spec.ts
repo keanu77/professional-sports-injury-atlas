@@ -185,3 +185,26 @@ test("header and form reflow with large text and pass accessibility in both them
     ),
   ).toBeLessThanOrEqual(1);
 });
+
+test("preserves input and distinguishes an HTML gateway failure from a disconnected network", async ({
+  page,
+}) => {
+  await page.route("**/api/contributions", (route) =>
+    route.fulfill({
+      status: 502,
+      contentType: "text/html",
+      body: "<h1>Bad gateway</h1>",
+    }),
+  );
+  await page.goto("/contribute/");
+  await page.getByLabel("補充說明（選填）").fill("請確認寄信服務");
+  await page.getByRole("button", { name: "送出", exact: true }).click();
+  await expect(page.getByRole("status")).toContainText("寄信服務暫時無法回應");
+  await expect(page.getByLabel("補充說明（選填）")).toHaveValue(
+    "請確認寄信服務",
+  );
+  await expect(page.locator("[data-contribution-thanks]")).toBeHidden();
+  await expect(
+    page.getByRole("button", { name: "送出", exact: true }),
+  ).toBeEnabled();
+});

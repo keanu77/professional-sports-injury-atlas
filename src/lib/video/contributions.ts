@@ -3,7 +3,9 @@ import type { ContributionGuard, Reservation } from "./contribution-limits";
 import { publicContributionUrl as publicUrl } from "./contribution-content";
 
 const allowRequest = createRequestLimiter(3);
-const CONTACT_ENDPOINT = "https://sportsmedicine.tw/api/contact";
+// Use the first-party Pages origin: same-zone custom-host fetches may not
+// invoke the destination Pages Function. The original Turnstile binding remains.
+const CONTACT_ENDPOINT = "https://sportsmedicine-tw.pages.dev/api/contact";
 type DeliveryLogStatus =
   "invalid" | "guard-unavailable" | "rejected" | "uncertain" | "sent";
 const logDelivery = (status: DeliveryLogStatus) =>
