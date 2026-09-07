@@ -24,6 +24,20 @@ export const BRAND_ASSET_POLICY_PATH = "src/data/brand-asset-policy.v1.json";
 export const EDITORIAL_IMAGE_PROVENANCE_PATH =
   "src/assets/heroes/provenance.json";
 
+// User-approved text/CSS homepage screenshot. See docs/reviews/2026-09-07-share-preview.md.
+export const SITE_SHARE_SCREENSHOT_PATH =
+  "public/social/injury-atlas-home-20260907.png";
+const SITE_SHARE_SCREENSHOT_SHA256 =
+  "d5ac4db08b672fc4065b66a83cb65d77b4fa7d7a51c8cb2c5cdb589f5e9d2c30";
+export function isApprovedSiteShareScreenshot(root: string): boolean {
+  const path = join(root, SITE_SHARE_SCREENSHOT_PATH);
+  return (
+    existsSync(path) &&
+    createHash("sha256").update(readFileSync(path)).digest("hex") ===
+      SITE_SHARE_SCREENSHOT_SHA256
+  );
+}
+
 const IMAGE_EXT_RE = /\.(png|jpe?g|gif|webp|avif|svg|ico|bmp|tiff?)$/i;
 const EDITORIAL_RASTER_PATH_RE =
   /^src\/assets\/heroes\/[a-z0-9]+(?:-[a-z0-9]+)*\.png$/;
@@ -520,7 +534,11 @@ export function scanShareAlikeCompositeRisks(root: string): ValidationIssue[] {
       const relPath = relative(root, filePath);
       if (
         IMAGE_EXT_RE.test(relPath) &&
-        COMPOSITE_ASSET_FILENAME_RE.test(relPath)
+        COMPOSITE_ASSET_FILENAME_RE.test(relPath) &&
+        !(
+          relPath === SITE_SHARE_SCREENSHOT_PATH &&
+          isApprovedSiteShareScreenshot(root)
+        )
       ) {
         issues.push(
           issue(
@@ -650,6 +668,9 @@ export function scanBrandAssets(root: string): ValidationIssue[] {
     : { allowedPaths: [], issues: [] };
   const videoThumbnails = loadVideoThumbnails(root);
   const governedPaths = new Set([
+    ...(isApprovedSiteShareScreenshot(root)
+      ? [SITE_SHARE_SCREENSHOT_PATH]
+      : []),
     ...videoThumbnails.allowedPaths,
     ...provenance.allowedPaths,
     ...playerPhotos.allowedPaths,
