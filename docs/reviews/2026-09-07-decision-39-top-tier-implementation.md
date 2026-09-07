@@ -38,6 +38,7 @@
 - Atlas 單元測試：92 檔、1457／1457 通過。
 - Atlas Astro：0 errors、0 warnings、16 個既有 hints；內容檢查通過。
 - Decision 39 桌機與手機瀏覽器驗收：16／16；投稿 Chromium E2E：12／12。
+- 夜間預設、切換、頁尾連結與既有投稿／播放器 Chromium 驗收：37／37；版型與無障礙跨 Chromium、Firefox、WebKit、行動 Chromium：44／44。
 - Atlas `npm audit --audit-level=high`：0 vulnerabilities。
 - Atlas public release：101 個事件綁定、145 頁、3,323 個本機連結，沒有 review route 或預先載入影片；Decision 21 核准鏈保持有效。
 - D1 migration `0003_play_guards.sql` 已套用 preview 與 production；既有播放與投稿資料表保留。
@@ -49,4 +50,11 @@
 
 發布前另依使用者指示，把新訪客的初始外觀改為夜間模式；讀者仍可切換淺色模式，選擇只保存在瀏覽器。頁尾同步加入主站公開的衛教部落格、Facebook、Instagram、GitHub、LINE 與 RSS 六個追蹤入口。
 
-正式發布資訊會在 Cloudflare 部署完成後補入。本輪不會以無效 token 或 mock 成功取代真實收信證明；網站與錯誤路徑上線後，仍需使用者明確允許送出 1 次真人投稿，才能完成實際信箱寄達驗收。
+- Atlas 功能來源 commit `1ba51be7cbc4d19abba5db047ac2e538965d8719` 已推送至 GitHub main；Cloudflare Pages deployment `1f9f8b91`：<https://1f9f8b91.sports-injury-atlas.pages.dev/>。
+- <https://injury.sportsmedicine.tw/> 與本次 deployment 首頁 SHA-256 同為 `e388ed8084b36a3703632a8d5783663f3af27f342591694355197f8a9dfe516a`。兩者都含夜間初始值、直接看全部影片與六個追蹤入口。
+- 正式 Atlas CSP 的 `script-src` 已無 `unsafe-inline`；`/preferences-init.js` 為 200、JavaScript MIME，實際內容以 `dark` 起始並接受已保存的 `light`／`dark`。
+- 主站來源 commit `d2533c9239b5987f4ede70143c6b8d3902586c51` 已推送至 GitHub main；Cloudflare Pages deployment `4ca9fa52-e47c-4869-ab55-5018cfa25f5d`：<https://4ca9fa52.sportsmedicine-tw.pages.dev/>。
+- <https://sportsmedicine.tw/contact/> 與主站 deployment HTML SHA-256 同為 `a1d5f3f3d172a0f3e9d2c7a75b0e73bf791722fe845f65ed9f5ad766ef5f99c8`，都含 `data-action="main-contact"`。刻意無效的 Turnstile token 得到 400 `Turnstile verification failed`，在 Resend 之前停止，沒有寄信。
+- preview 與 production D1 均回報 `No migrations to apply`。
+
+本輪不會以無效 token 或 mock 成功取代真實收信證明；仍需使用者明確允許送出 1 次真人投稿，才能完成實際信箱寄達驗收。
