@@ -64,3 +64,11 @@ Decision 37 的 15 項建議、預設夜間模式與六個追蹤入口均已由 
 ## 診斷額度清理完成（2026-09-07）
 
 使用者明確回覆「可以清除」後，已依上一節列出的六個 UUID 且 state=uncertain 精準刪除助手診斷紀錄。D1 回報 changes=6。清理後剩 4 筆：21:09:59、21:22:37、21:56:40 三筆真人投稿（uncertain）完整保留，22:10:17 無效碼驗收（rejected）保留。每日 10 筆限制未修改，恢復至少 6 筆可用額度。下一步由一般瀏覽器送出一次有效真人驗證的測試，再核對寄送與收件；尚未宣稱寄信成功。
+
+## 實際寄信與收件驗收完成（2026-09-07 22:34 台灣時間）
+
+使用者於 Resend 完成 sportsmedicine.tw 網域驗證後，再以一般瀏覽器提交資料修正。主站即時日誌 turnstile-valid、mail-sent；圖鑑 upstream HTTP 200、contribution-delivery sent；使用者畫面顯示感謝與送出成功。
+
+已透過 Gmail 唯讀查詢確認 22:34:30 通知信實際抵達設定收件人的 INBOX（CATEGORY_UPDATES、UNREAD），主旨「[網站聯絡] 影片圖鑑｜回報資料修正」，寄件人 notifications@sportsmedicine.tw。未標示已讀、未寄出額外郵件。至此完成真人驗證→主站轉送→Resend→實際收件匣完整驗收。
+
+本次兩個已確認根因：Cloudflare 不支援 redirect=error（已改 manual、拒絕 3xx）；Resend 回覆 403 validation_error，寄件網域未驗證（使用者已完成驗證）。先前金鑰／換行疑慮不能列為已確認根因。
