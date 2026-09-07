@@ -30,7 +30,7 @@
       "injury": "湖人醫療團隊確認左側阿基里斯腱斷裂。",
       "returnDate": "2013-12-08",
       "returnSummary": "2013-12-08 對暴龍重返 NBA 比賽。",
-      "context": "傷後隔天的 MRI 確認診斷；受傷當晚公告仍為疑似。",
+      "context": "2013-04-13 接受左阿基里斯腱修補手術；11 月獲准恢復籃球活動，12 月才正式出賽。傷後隔天 MRI 確認診斷，受傷當晚公告仍為疑似。",
       "videoUrl": "https://www.youtube.com/watch?v=5KlgfpqWCkY",
       "sources": [
         {
@@ -52,8 +52,19 @@
           "title": "NBC Sports：Bryant 實際復出賽報",
           "url": "https://www.nbcsports.com/nba/news/kobe-is-back-but-loss-to-raptors-shows-lakers-still-have-a-lot-of-work-to-do",
           "publishedAt": "2013-12-08"
+        },
+        {
+          "title": "湖人：11 月恢復籃球活動的醫療許可",
+          "url": "https://www.nba.com/lakers/news/131118_bryant",
+          "publishedAt": "2013-11-18"
+        },
+        {
+          "title": "CBS：4 月 13 日阿基里斯腱修補手術後報導",
+          "url": "https://www.cbsnews.com/losangeles/news/bryant-recovering-after-successful-surgery-to-repair-torn-achilles-tendon/",
+          "publishedAt": "2013-04-14"
         }
-      ]
+      ],
+      "checkedAt": "2026-09-07"
     },
     {
       "slug": "gianmarco-tamberi-2016-ankle",
@@ -664,7 +675,7 @@
       "injury": "兵工廠確認前十字韌帶斷裂。",
       "returnDate": "2023-10-15",
       "returnSummary": "2023-10-15對阿斯頓維拉第87分鐘替補回場，並送出助攻。",
-      "context": "8月重返團隊訓練不等於正式出賽；日期採女子英超實際回場。",
+      "context": "傷後接受手術與復健；球隊紀錄片記錄手術前後及重返訓練的過程。2023-08-29 已重返團隊訓練，與 10 月正式出賽分開記錄。",
       "videoUrl": "https://www.youtube.com/watch?v=Kxz1vhDq94Y",
       "sources": [
         {
@@ -681,8 +692,14 @@
           "title": "兵工廠：10月15日對阿斯頓維拉比賽紀錄",
           "url": "https://www.arsenal.com/fixture/women/2023-Oct-15/women-aston-villa-women-match-report",
           "publishedAt": "2023-10-15"
+        },
+        {
+          "title": "兵工廠：Step by Step 傷後手術、復健與回場紀錄",
+          "url": "https://www.arsenal.com/stepbystep",
+          "publishedAt": null
         }
-      ]
+      ],
+      "checkedAt": "2026-09-07"
     },
     {
       "slug": "leah-williamson-2023",

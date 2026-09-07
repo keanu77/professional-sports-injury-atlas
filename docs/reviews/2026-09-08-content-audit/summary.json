@@ -1,0 +1,12 @@
+{
+  "total": 101,
+  "kinds": {
+    "cases": 7,
+    "videos": 94
+  },
+  "withArticles": 11,
+  "withTopicsOnly": 2,
+  "withoutResources": 88,
+  "withEventFollowUp": 101,
+  "observationMissingUpdates": []
+}

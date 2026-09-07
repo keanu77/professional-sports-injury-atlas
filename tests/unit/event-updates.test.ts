@@ -38,7 +38,7 @@ describe("source-backed event updates", () => {
     ]);
   });
 
-  it("keeps each legacy batch checkedAt on its normalized entries", () => {
+  it("keeps batch dates unless an entry has been checked again", () => {
     for (const batch of [
       originalData,
       additionsData,
@@ -48,7 +48,14 @@ describe("source-backed event updates", () => {
       batch34Data,
     ]) {
       for (const entry of normalizeEventUpdateBatches([batch])) {
-        expect(entry.checkedAt, entry.slug).toBe(batch.checkedAt);
+        const original = batch.entries.find(
+          (item) => item.slug === entry.slug,
+        )!;
+        const explicitDate =
+          "checkedAt" in original ? original.checkedAt : undefined;
+        expect(entry.checkedAt, entry.slug).toBe(
+          explicitDate ?? batch.checkedAt,
+        );
       }
     }
   });

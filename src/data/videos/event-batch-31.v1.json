@@ -244,7 +244,7 @@
       "injury": "NFL 報導與球隊確認左側阿基里斯腱斷裂。",
       "returnDate": "2024-09-09",
       "returnSummary": "2024-09-09 對舊金山 49 人重返 NFL 比賽。",
-      "context": "採實際 NFL 比賽回場，與恢復練習分開。",
+      "context": "傷後接受阿基里斯腱修補手術與復健。2023 年 10 月球隊報導已能不靠拐杖行走及原地傳球，但仍需逐步恢復跑動、單腳力量與爆發動作；這些進展不等於正式復賽。",
       "videoUrl": "https://www.youtube.com/watch?v=RDSkmfmqNic",
       "sources": [
         {
@@ -256,8 +256,14 @@
           "title": "Jets：對 49 人實際復出賽報",
           "url": "https://www.newyorkjets.com/news/jets-49ers-game-recap-aaron-rodgers-week-1-2024",
           "publishedAt": "2024-09-10"
+        },
+        {
+          "title": "Jets：手術後的行走、傳球與復健里程碑",
+          "url": "https://www.newyorkjets.com/news/aaron-rodgers-achilles-injury-recovery",
+          "publishedAt": "2023-10-17"
         }
-      ]
+      ],
+      "checkedAt": "2026-09-07"
     },
     {
       "slug": "harvey-elliott-2021-ankle",

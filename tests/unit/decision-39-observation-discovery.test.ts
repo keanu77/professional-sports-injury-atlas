@@ -15,7 +15,7 @@ const featuredSlugs = allObservationClips
   .sort();
 
 describe("Decision 39 observation guidance", () => {
-  it("binds only the six featured observations to reviewed main-site resources", () => {
+  it("preserves featured resources while covering all observations", () => {
     expect(featuredSlugs).toEqual([
       "antoine-dupont-world-cup-2023",
       "carolina-marin-indonesia-2019",
@@ -49,7 +49,16 @@ describe("Decision 39 observation guidance", () => {
         expect(link.url).toMatch(/^https:\/\/sportsmedicine\.tw\/content\//u);
       }
     }
-    expect(observationResourcesFor("kevin-pillar-2021-face")).toEqual([]);
+    expect(observationResourcesFor("kevin-pillar-2021-face")).toEqual([
+      expect.objectContaining({ kind: "topic-overview" }),
+    ]);
+    for (const clip of allObservationClips) {
+      const links = observationResourcesFor(clip.slug);
+      expect(links.length, clip.slug).toBeGreaterThanOrEqual(1);
+      expect(links.length, clip.slug).toBeLessThanOrEqual(3);
+      expect(new Set(links.map((link) => link.url)).size).toBe(links.length);
+    }
+    expect(observationResourcesFor("not-a-real-video")).toEqual([]);
   });
 
   it("selects at most three deterministic related videos without self-links", () => {

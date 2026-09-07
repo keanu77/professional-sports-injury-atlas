@@ -1,0 +1,504 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-09-08",
+  "resources": {
+    "acl": {
+      "kind": "article",
+      "title": "前十字韌帶重建的術後復健評估",
+      "url": "https://sportsmedicine.tw/content/articles/2020-03-10-運醫-前十字韌帶重建的術後復健評估/",
+      "note": "說明重建術後的評估，不代表每位選手都採同一療程。"
+    },
+    "achilles": {
+      "kind": "article",
+      "title": "阿基里斯腱斷裂知多少？成因解析與術後訓練建議",
+      "url": "https://sportsmedicine.tw/content/articles/2024-11-16-運醫-阿基里斯腱斷裂知多少-成因解析與術後訓練建議/",
+      "note": ""
+    },
+    "achilles-options": {
+      "kind": "article",
+      "title": "阿基里斯腱斷裂怎麼治療？最新系統性回顧比較手術與保守治療成效",
+      "url": "https://sportsmedicine.tw/content/articles/2025-07-14-研究-阿基里斯腱斷裂怎麼治療-最新系統性回顧比較手術與保守治療成效/",
+      "note": ""
+    },
+    "ankle": {
+      "kind": "article",
+      "title": "外側腳踝受傷不再恐慌：快速應對指南",
+      "url": "https://sportsmedicine.tw/content/articles/2023-09-16-復健-外側腳踝受傷不再恐慌-快速應對指南/",
+      "note": ""
+    },
+    "cai": {
+      "kind": "article",
+      "title": "慢性踝關節不穩定（CAI）：反覆扭傷的成因、復健階梯與手術時機",
+      "url": "https://sportsmedicine.tw/content/articles/2026-07-19-運醫-慢性踝關節不穩/",
+      "note": "延伸了解反覆扭傷；不代表這位選手已出現慢性不穩。"
+    },
+    "medial-ankle": {
+      "kind": "article",
+      "title": "內踝扭傷後的復健治療策略：減少慢性不穩定的關鍵步驟",
+      "url": "https://sportsmedicine.tw/content/articles/2024-06-08-運醫-內踝扭傷後的復健治療策略-減少慢性不穩定的關鍵步驟/",
+      "note": ""
+    },
+    "high-ankle": {
+      "kind": "article",
+      "title": "高踝扭傷的危機  常扭傷腳踝的人需知風險與預後",
+      "url": "https://sportsmedicine.tw/content/articles/2024-12-31-運醫-高踝扭傷的危機-常扭傷腳踝的人需知風險與預後/",
+      "note": ""
+    },
+    "ankle-fracture": {
+      "kind": "article",
+      "title": "腳踝骨折的病史與典型症狀：如何快速辨別並處理",
+      "url": "https://sportsmedicine.tw/content/articles/2024-12-31-運醫-腳踝骨折的病史與典型症狀-如何快速辨別並處理/",
+      "note": ""
+    },
+    "patella-fracture": {
+      "kind": "article",
+      "title": "從跳躍到跌倒都要注意的髕骨骨折原因解析",
+      "url": "https://sportsmedicine.tw/content/articles/2024-12-31-運醫-從跳躍到跌倒都要注意的髕骨骨折原因解析/",
+      "note": ""
+    },
+    "hamstring": {
+      "kind": "article",
+      "title": "踢球或跑步的大腿後肌拉傷 Hamstring strain",
+      "url": "https://sportsmedicine.tw/content/articles/2022-11-02-運醫-踢球或跑步的大腿後肌拉傷-hamstring-strain/",
+      "note": ""
+    },
+    "hand-fracture": {
+      "kind": "article",
+      "title": "運動員常見的手掌骨折：拳擊手骨折損傷解析",
+      "url": "https://sportsmedicine.tw/content/articles/2024-08-26-運醫-運動員常見的手掌骨折-拳擊手骨折損傷解析/",
+      "note": "文章聚焦第五掌骨；不表示此傷由拳擊造成。"
+    },
+    "meniscus": {
+      "kind": "article",
+      "title": "從預防到治療：全面了解膝蓋半月板破裂及治療選項",
+      "url": "https://sportsmedicine.tw/content/articles/2024-04-06-運醫-從預防到治療-全面了解膝蓋半月板破裂及治療選項/",
+      "note": ""
+    },
+    "pcl": {
+      "kind": "article",
+      "title": "後十字韌帶損傷該不該開刀：分級、後外側角與股四頭肌的決策地圖",
+      "url": "https://sportsmedicine.tw/content/articles/2026-08-20-運醫-後十字韌帶損傷該不該開刀/",
+      "note": ""
+    },
+    "football-acl": {
+      "kind": "article",
+      "title": "揭開女子足球ACL損傷的四大模式：預防與應對策略",
+      "url": "https://sportsmedicine.tw/content/articles/2024-05-25-運醫-揭開女子足球acl損傷的四大模式-預防與應對策略/",
+      "note": ""
+    },
+    "soft-tissue": {
+      "kind": "article",
+      "title": "運動受傷後怎麼處理？取代 PRICE 的 PEACE & LOVE 原則",
+      "url": "https://sportsmedicine.tw/content/articles/2026-06-25-運醫-急性軟組織傷害處置-peace-love/",
+      "note": "一般扭拉傷處理原則；嚴重創傷須先就醫，不能直接套用自行訓練。"
+    },
+    "shoulder": {
+      "kind": "article",
+      "title": "肩膀脫位與腋神經損傷 的核心資訊",
+      "url": "https://sportsmedicine.tw/content/articles/2024-12-28-運醫-肩膀脫位與腋神經損傷-的核心資訊/",
+      "note": "延伸認識肩脫位相關神經症狀；不表示此選手有腋神經損傷。"
+    },
+    "cycling": {
+      "kind": "article",
+      "title": "專項運動傷害 自行車的急慢性傷害",
+      "url": "https://sportsmedicine.tw/content/articles/2022-09-19-運醫-專項運動傷害-自行車的急慢性傷害/",
+      "note": "自行車事故的傷害概覽，非此個案的療程或回場期限。"
+    },
+    "peroneal": {
+      "kind": "article",
+      "title": "腓骨肌腱病變：慢性外踝後方疼痛最容易漏掉的原因",
+      "url": "https://sportsmedicine.tw/content/articles/2026-08-27-運醫-腓骨肌腱病變/",
+      "note": "對應合併的腓骨長肌腱傷勢，不涵蓋 Lisfranc 韌帶傷害。"
+    },
+    "nutrition": {
+      "kind": "article",
+      "title": "修復肌腱韌帶損傷的營養建議",
+      "url": "https://sportsmedicine.tw/content/articles/2023-12-29-門診-修復肌腱韌帶損傷的營養建議/",
+      "note": "肌腱與韌帶恢復期的一般營養參考，不能取代修補手術或復健。"
+    },
+    "overview": {
+      "kind": "topic-overview",
+      "title": "運動傷害主題總覽",
+      "url": "https://sportsmedicine.tw/content/topics/sports-injury/",
+      "note": ""
+    }
+  },
+  "entries": {
+    "zverev-roland-garros-2022": {
+      "resources": ["ankle", "cai"],
+      "note": ""
+    },
+    "derek-redmond-barcelona-1992": {
+      "resources": ["hamstring"],
+      "note": ""
+    },
+    "kerri-strug-atlanta-1996": {
+      "resources": ["soft-tissue"],
+      "note": ""
+    },
+    "carolina-marin-indonesia-2019": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "julie-foucher-box-jump-2015": {
+      "resources": ["nutrition"],
+      "note": "尚未配對到此傷勢的專文，先提供恢復期的一般營養參考。"
+    },
+    "shohei-ohtani-world-series-2024": {
+      "resources": ["nutrition"],
+      "note": "尚未配對到此傷勢的專文，先提供恢復期的一般營養參考。"
+    },
+    "usain-bolt-london-2017": {
+      "resources": ["hamstring"],
+      "note": ""
+    },
+    "mohamed-salah-final-2018": {
+      "resources": ["soft-tissue"],
+      "note": ""
+    },
+    "giannis-east-final-2021": {
+      "resources": ["soft-tissue"],
+      "note": ""
+    },
+    "markelle-fultz-orlando-2021": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "ronald-acuna-miami-2021": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "lindsey-vonn-schladming-2013": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "antoine-dupont-world-cup-2023": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "aksel-svindal-kitzbuhel-2016": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "sidney-crosby-concussion-2017": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "klay-thompson-2019-acl": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "kobe-bryant-2013-achilles": {
+      "resources": ["achilles", "achilles-options"],
+      "note": ""
+    },
+    "gianmarco-tamberi-2016-ankle": {
+      "resources": ["medial-ankle"],
+      "note": ""
+    },
+    "john-tavares-2021-concussion": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "neymar-2023-acl": {
+      "resources": ["acl", "meniscus"],
+      "note": ""
+    },
+    "cameron-brink-2024-acl": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "steve-smith-2019-concussion": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "george-north-2015-concussion": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "mark-cavendish-2023-clavicle": {
+      "resources": ["cycling"],
+      "note": ""
+    },
+    "derrick-rose-acl-2012": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "demarcus-cousins-achilles-2018": {
+      "resources": ["achilles", "achilles-options"],
+      "note": ""
+    },
+    "kristaps-porzingis-acl-2018": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "gordon-hayward-ankle-fracture-2017": {
+      "resources": ["ankle-fracture"],
+      "note": ""
+    },
+    "jamal-murray-acl-2021": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "dejounte-murray-acl-2018": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "kawhi-leonard-acl-2021": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "paul-george-leg-fracture-2014": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "zach-lavine-acl-2017": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "shaun-livingston-knee-2007": {
+      "resources": ["meniscus"],
+      "note": "此文只涵蓋合併的半月板傷害；多韌帶損傷需個別評估。"
+    },
+    "alex-oxlade-chamberlain-2018": {
+      "resources": ["nutrition"],
+      "note": "尚未配對到此傷勢的專文，先提供恢復期的一般營養參考。"
+    },
+    "david-beckham-2010": {
+      "resources": ["achilles", "achilles-options"],
+      "note": ""
+    },
+    "cristiano-ronaldo-2016": {
+      "resources": ["soft-tissue"],
+      "note": ""
+    },
+    "vivianne-miedema-2022": {
+      "resources": ["football-acl", "acl"],
+      "note": ""
+    },
+    "laurent-koscielny-2018": {
+      "resources": ["achilles", "achilles-options"],
+      "note": ""
+    },
+    "andre-gomes-2019": {
+      "resources": ["ankle-fracture"],
+      "note": ""
+    },
+    "beth-mead-2022": {
+      "resources": ["football-acl", "acl"],
+      "note": ""
+    },
+    "leah-williamson-2023": {
+      "resources": ["football-acl", "acl"],
+      "note": ""
+    },
+    "zlatan-ibrahimovic-2017-knee": {
+      "resources": ["nutrition"],
+      "note": "尚未配對到此傷勢的專文，先提供恢復期的一般營養參考。"
+    },
+    "victor-oladipo-2019-quadriceps": {
+      "resources": ["nutrition"],
+      "note": "尚未配對到此傷勢的專文，先提供恢復期的一般營養參考。"
+    },
+    "serena-williams-2021-hamstring": {
+      "resources": ["hamstring"],
+      "note": ""
+    },
+    "edwin-diaz-2023-patellar-tendon": {
+      "resources": ["nutrition"],
+      "note": "尚未配對到此傷勢的專文，先提供恢復期的一般營養參考。"
+    },
+    "rhys-hoskins-2023-acl": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "tim-hudson-2013-ankle": {
+      "resources": ["ankle-fracture"],
+      "note": ""
+    },
+    "buster-posey-2011-ankle": {
+      "resources": ["ankle-fracture"],
+      "note": ""
+    },
+    "kendrys-morales-2010-ankle": {
+      "resources": ["ankle-fracture"],
+      "note": ""
+    },
+    "steven-stamkos-2013-tibia": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "connor-mcdavid-2019-pcl": {
+      "resources": ["pcl"],
+      "note": "此文只涵蓋後十字韌帶，未涵蓋本案例所有合併傷勢。"
+    },
+    "mikhail-sergachev-2024-leg": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "max-pacioretty-2011-concussion": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "bethanie-mattek-sands-2017-knee": {
+      "resources": ["nutrition"],
+      "note": "尚未配對到此傷勢的專文，先提供恢復期的一般營養參考。"
+    },
+    "aaron-rodgers-2023-achilles": {
+      "resources": ["achilles", "achilles-options"],
+      "note": ""
+    },
+    "harvey-elliott-2021-ankle": {
+      "resources": ["ankle-fracture"],
+      "note": ""
+    },
+    "wesley-fofana-2021-leg": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "hector-bellerin-2019-knee": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "annemiek-van-vleuten-2016-concussion": {
+      "resources": ["cycling"],
+      "note": ""
+    },
+    "rebeca-andrade-2019-knee": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "juan-martin-del-potro-2018-knee": {
+      "resources": ["patella-fracture"],
+      "note": ""
+    },
+    "dominic-thiem-2021-wrist": {
+      "resources": ["soft-tissue"],
+      "note": ""
+    },
+    "kyle-schwarber-2016-knee": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "bryce-harper-2017-knee": {
+      "resources": ["soft-tissue"],
+      "note": ""
+    },
+    "dustin-fowler-2017-patellar-tendon": {
+      "resources": ["nutrition"],
+      "note": "尚未配對到此傷勢的專文，先提供恢復期的一般營養參考。"
+    },
+    "adam-eaton-2017-knee": {
+      "resources": ["acl", "meniscus", "high-ankle"],
+      "note": ""
+    },
+    "chris-bassitt-2021-face": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "alex-cobb-2013-concussion": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "giancarlo-stanton-2014-face": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "charlie-morton-2021-fibula": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "mitch-haniger-2017-face": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "justin-turner-2023-face": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "kevin-pillar-2021-face": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "bryce-harper-2022-thumb": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "mookie-betts-2024-hand": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "chase-headley-2014-face": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "curtis-granderson-2013-hand": {
+      "resources": ["hand-fracture"],
+      "note": ""
+    },
+    "matt-shoemaker-2016-head": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "ja-happ-2013-head": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "dan-jennings-2014-concussion": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "stephen-piscotty-2015-concussion": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "dustin-pedroia-2017-knee": {
+      "resources": ["soft-tissue"],
+      "note": ""
+    },
+    "aaron-judge-2023-toe": {
+      "resources": ["soft-tissue"],
+      "note": ""
+    },
+    "manny-machado-2013-knee": {
+      "resources": ["nutrition"],
+      "note": "尚未配對到此傷勢的專文，先提供恢復期的一般營養參考。"
+    },
+    "samir-ait-said-2016-leg": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "sofia-goggia-2022-knee": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "yuzuru-hanyu-2014-collision": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "aleksander-kilde-2024-shoulder": {
+      "resources": ["shoulder"],
+      "note": ""
+    },
+    "liu-xiang-2012-achilles": {
+      "resources": ["achilles", "achilles-options"],
+      "note": ""
+    },
+    "fabio-jakobsen-2020-concussion": {
+      "resources": ["cycling"],
+      "note": ""
+    },
+    "mikaela-shiffrin-2024-abdomen": {
+      "resources": ["overview"],
+      "note": "尚未配對到合適的主站專文，可先瀏覽運動傷害主題總覽。"
+    },
+    "remco-evenepoel-2020-pelvis": {
+      "resources": ["cycling"],
+      "note": ""
+    },
+    "chien-ming-wang-2008-foot": {
+      "resources": ["peroneal"],
+      "note": "主站尚未配對到 Lisfranc 專文，以下為合併肌腱傷勢的延伸閱讀。"
+    }
+  }
+}

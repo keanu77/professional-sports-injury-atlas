@@ -1,3 +1,5 @@
+import { z } from "astro/zod";
+import resourceData from "../../data/videos/observation-resources.v1.json";
 import { compareCodePoints } from "../contracts/canonical";
 import { BODY_PARTS, videosByBodyPart } from "./body-parts";
 import { discoveryFor, SITUATIONS } from "./discovery";
@@ -8,47 +10,48 @@ export interface ObservationResource {
   kind: "article" | "topic-overview";
   title: string;
   url: string;
+  note: string;
 }
 
-const ACL_ARTICLE: ObservationResource = {
-  kind: "article",
-  title: "前十字韌帶重建的術後復健評估",
-  url: "https://sportsmedicine.tw/content/articles/2020-03-10-運醫-前十字韌帶重建的術後復健評估/",
-};
-const ANKLE_FIRST_AID_ARTICLE: ObservationResource = {
-  kind: "article",
-  title: "外側腳踝受傷不再恐慌：快速應對指南",
-  url: "https://sportsmedicine.tw/content/articles/2023-09-16-復健-外側腳踝受傷不再恐慌-快速應對指南/",
-};
-const CHRONIC_ANKLE_INSTABILITY_ARTICLE: ObservationResource = {
-  kind: "article",
-  title: "慢性踝關節不穩",
-  url: "https://sportsmedicine.tw/content/articles/2026-07-19-運醫-慢性踝關節不穩/",
-};
-const SPORTS_INJURY_TOPIC: ObservationResource = {
-  kind: "topic-overview",
-  title: "運動傷害主題總覽",
-  url: "https://sportsmedicine.tw/content/topics/sports-injury/",
-};
-
-const RESOURCES_BY_SLUG: Readonly<
-  Record<string, readonly ObservationResource[]>
-> = {
-  "ronald-acuna-miami-2021": [ACL_ARTICLE],
-  "carolina-marin-indonesia-2019": [ACL_ARTICLE],
-  "lindsey-vonn-schladming-2013": [ACL_ARTICLE],
-  "zverev-roland-garros-2022": [
-    ANKLE_FIRST_AID_ARTICLE,
-    CHRONIC_ANKLE_INSTABILITY_ARTICLE,
-  ],
-  "chris-bassitt-2021-face": [SPORTS_INJURY_TOPIC],
-  "antoine-dupont-world-cup-2023": [SPORTS_INJURY_TOPIC],
-};
+const resourceSchema = z.strictObject({
+  kind: z.enum(["article", "topic-overview"]),
+  title: z.string().min(1),
+  url: z
+    .url()
+    .refine((url) => new URL(url).origin === "https://sportsmedicine.tw"),
+  note: z.string(),
+});
+const resourceRegistry = z
+  .strictObject({
+    schemaVersion: z.literal(1),
+    checkedAt: z.iso.date(),
+    resources: z.record(z.string(), resourceSchema),
+    entries: z.record(
+      z.string(),
+      z.strictObject({
+        resources: z.array(z.string()).min(1).max(3),
+        note: z.string(),
+      }),
+    ),
+  })
+  .parse(resourceData);
+for (const entry of Object.values(resourceRegistry.entries)) {
+  for (const id of entry.resources) {
+    if (!resourceRegistry.resources[id])
+      throw new Error(`Unknown article resource: ${id}`);
+  }
+}
 
 export function observationResourcesFor(
   slug: string,
 ): readonly ObservationResource[] {
-  return RESOURCES_BY_SLUG[slug] ?? [];
+  return (resourceRegistry.entries[slug]?.resources ?? []).map(
+    (id) => resourceRegistry.resources[id]!,
+  );
+}
+
+export function observationResourceNoteFor(slug: string): string {
+  return resourceRegistry.entries[slug]?.note ?? "";
 }
 
 function relatedPriority(

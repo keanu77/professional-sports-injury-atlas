@@ -13,6 +13,7 @@ import {
 import {
   observationCategoryLinks,
   observationResourcesFor,
+  observationResourceNoteFor,
   relatedObservationClips,
 } from "../../lib/videos/observation-guidance";
 import { discoveryFor } from "../../lib/videos/discovery";
@@ -29,6 +30,7 @@ export function getStaticPaths() {
 const { clip } = Astro.props;
 const eventUpdate = eventUpdateFor(clip.slug, clip.videoUrl, clip.eventDate);
 const resources = observationResourcesFor(clip.slug);
+const resourceNote = observationResourceNoteFor(clip.slug);
 const related = relatedObservationClips(clip, allObservationClips);
 const categoryLinks = observationCategoryLinks(clip);
 const isFeatured = discoveryFor(clip.slug).curatedRank !== undefined;
@@ -197,6 +199,7 @@ if (clip.startSeconds > 0)
         resources.length > 0 && (
           <section data-main-site-resources>
             <h2>一般人參考：主站延伸閱讀</h2>
+            {resourceNote && <p>{resourceNote}</p>}
             <ul>
               {resources.map((resource) => (
                 <li>
@@ -210,6 +213,9 @@ if (clip.startSeconds > 0)
                   >
                     {resource.title} ↗
                   </a>
+                  {resource.note && (
+                    <p class="resource-note">{resource.note}</p>
+                  )}
                 </li>
               ))}
             </ul>
