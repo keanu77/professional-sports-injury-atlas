@@ -3,7 +3,7 @@ import type { ContributionGuard, Reservation } from "./contribution-limits";
 import { publicContributionUrl as publicUrl } from "./contribution-content";
 
 const allowRequest = createRequestLimiter(3);
-const CONTACT_ENDPOINT = "https://sportsmedicine.tw/api/contact";
+const CONTACT_ENDPOINT = "https://sportsmedicine-tw.pages.dev/api/contact";
 type DeliveryLogStatus =
   "invalid" | "guard-unavailable" | "rejected" | "uncertain" | "sent";
 const logDelivery = (status: DeliveryLogStatus) =>
