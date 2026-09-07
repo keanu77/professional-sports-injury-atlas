@@ -43,7 +43,9 @@ export interface PublicVideoHealthArtifact {
     videos: number;
     sourceUrls: number;
     unavailableSources: number;
+    indeterminateSources: number;
     unavailableMetadata: number;
+    indeterminateMetadata: number;
     notEmbeddable: number;
     embedChecksSkipped: number;
   };
@@ -63,6 +65,11 @@ const unavailable = (
   reason: Exclude<HealthReason, "ok" | "youtube-api-key-unavailable">,
   httpStatus: number | null,
 ): AvailabilityResult => ({ status: "unavailable", httpStatus, reason });
+
+const indeterminate = (
+  reason: Exclude<HealthReason, "ok" | "youtube-api-key-unavailable">,
+  httpStatus: number | null,
+): AvailabilityResult => ({ status: "indeterminate", httpStatus, reason });
 
 function createLimiter(limit: number) {
   let active = 0;
@@ -153,15 +160,17 @@ export async function monitorPublicVideos(
     try {
       const response = await request(url);
       await response.body?.cancel();
-      return response.ok
-        ? { status: "available", httpStatus: response.status, reason: "ok" }
-        : unavailable("http-error", response.status);
+      if (response.ok)
+        return {
+          status: "available",
+          httpStatus: response.status,
+          reason: "ok",
+        };
+      return response.status === 404 || response.status === 410
+        ? unavailable("http-error", response.status)
+        : indeterminate("http-error", response.status);
     } catch {
-      return {
-        status: "indeterminate",
-        httpStatus: null,
-        reason: "network-error",
-      };
+      return indeterminate("network-error", null);
     }
   };
 
@@ -173,24 +182,23 @@ export async function monitorPublicVideos(
     endpoint.searchParams.set("format", "json");
     try {
       const response = await request(endpoint);
-      if (!response.ok) return unavailable("http-error", response.status);
+      if (!response.ok)
+        return response.status === 404 || response.status === 410
+          ? unavailable("http-error", response.status)
+          : indeterminate("http-error", response.status);
       const body = await readBounded(response, maxBodyBytes);
       if (body.tooLarge)
-        return unavailable("response-too-large", response.status);
+        return indeterminate("response-too-large", response.status);
       try {
         const value = JSON.parse(body.text) as unknown;
         if (!value || typeof value !== "object" || Array.isArray(value))
-          return unavailable("invalid-response", response.status);
+          return indeterminate("invalid-response", response.status);
       } catch {
-        return unavailable("invalid-response", response.status);
+        return indeterminate("invalid-response", response.status);
       }
       return { status: "available", httpStatus: response.status, reason: "ok" };
     } catch {
-      return {
-        status: "indeterminate",
-        httpStatus: null,
-        reason: "network-error",
-      };
+      return indeterminate("network-error", null);
     }
   };
 
@@ -292,10 +300,16 @@ export async function monitorPublicVideos(
       videos: videos.length,
       sourceUrls: uniqueSources.length,
       unavailableSources: [...sourceResults.values()].filter(
-        (result) => result.status !== "available",
+        (result) => result.status === "unavailable",
+      ).length,
+      indeterminateSources: [...sourceResults.values()].filter(
+        (result) => result.status === "indeterminate",
       ).length,
       unavailableMetadata: videos.filter(
-        (item) => item.youtubeMetadata.status !== "available",
+        (item) => item.youtubeMetadata.status === "unavailable",
+      ).length,
+      indeterminateMetadata: videos.filter(
+        (item) => item.youtubeMetadata.status === "indeterminate",
       ).length,
       notEmbeddable: videos.filter(
         (item) => item.embedCapability.status === "not-embeddable",

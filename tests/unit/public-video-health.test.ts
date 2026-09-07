@@ -78,9 +78,38 @@ describe("public video health monitoring", () => {
           : new Response("source"),
     });
     expect(artifact.videos[0]!.youtubeMetadata).toMatchObject({
-      status: "unavailable",
+      status: "indeterminate",
       reason: "response-too-large",
     });
     expect(JSON.stringify(artifact)).not.toContain(privateBody);
+  });
+
+  it("distinguishes confirmed dead links from access blocks", async () => {
+    const artifact = await monitorPublicVideos(
+      [
+        {
+          ...input,
+          sourceUrls: [
+            "https://example.org/dead",
+            "https://example.org/blocked",
+          ],
+        },
+      ],
+      {
+        fetchImpl: async (request) => {
+          const url = String(request);
+          if (url.includes("oembed")) return Response.json({ title: "Video" });
+          return new Response("", {
+            status: url.endsWith("/dead") ? 404 : 403,
+          });
+        },
+      },
+    );
+    expect(artifact.summary).toMatchObject({
+      unavailableSources: 1,
+      indeterminateSources: 1,
+      unavailableMetadata: 0,
+      indeterminateMetadata: 0,
+    });
   });
 });
