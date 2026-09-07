@@ -48,3 +48,15 @@ Decision 37 的 15 項建議、預設夜間模式與六個追蹤入口均已由 
 - Node fetch 實測 sportsmedicine.tw/contact/ 與 fcacacab.sportsmedicine-tw.pages.dev/contact/ 均 200，HTML SHA-256 相同，main-contact action 存在。Python urllib 被 403，未据此判定網站故障。
 - D1 最近兩筆投稿時間 21:09:59、21:22:37，皆 uncertain，均早於本次設定部署。沒有新部署後的寄送成功證據。
 - 下一步須由一般瀏覽器完成真人驗證並送出一次新測試，再核對 D1 sent、Resend 投遞與實際收件；不得宣稱寄信已修復。
+
+## 投稿 502 根因修正（2026-09-07 22:11）
+
+- 實測 Worker 拋 TypeError：Cloudflare 不支援 fetch redirect=error；改為 manual 並維持所有 3xx 拒絕，轉送入口使用同一主站 sportsmedicine-tw.pages.dev/api/contact。
+- 前端明確處理 HTML gateway error，保留輸入，不再一律誤稱連線中斷。
+- 69 項投稿／限額單元測試、13 項 Chromium 投稿 E2E 通過；正式產物 145 頁與 3323 連結通過。
+- 最新功能提交 0e9ab8c；部署 https://a48bd4dc.sports-injury-atlas.pages.dev 。該部署正式 API 無效碼測試於約 1.6 秒回 400 verification-invalid，主站驗證可達；尚無有效碼寄信／收件成功證據。
+- injury.sportsmedicine.tw 相同診斷回 429 ip-daily：真人 3 筆與我建立的診斷占滿每日 10 筆。不可繞過限額。
+- 曾暫時記錄遮蔽 URL/長字串的 TypeError message 以定位根因；最終版本移除 message，只記錄 upstream HTTP status 或 error name。
+- 自動審核拒絕刪除以下六筆確定由助手建立的無效碼診斷，要求使用者明確同意；尚未執行。只可在明確批准後清理，保留 21:09:59、21:22:37、21:56:40 三筆真人投稿：
+  ecde5593-97ff-4588-a87b-50377215dcf8 (21:58:12), 1f9e8163-93ab-470b-a7c5-d903cd0003c7 (22:00:22), e3ca5cc4-e7c1-425d-9e8d-08a65e4331de (22:03:29), d560b1cd-47d5-4dd6-8dd6-088934dcfc84 (22:05:18), acca6c0a-c1d1-4846-8e4f-4edf3e300d26 (22:06:42), 0bdbcf09-3f22-46aa-ac79-c04fb5f77c0a (22:08:08)。
+- 未獲清理批准時，額度於台灣午夜自然恢復；下一步一般瀏覽器有效真人驗證實信測試。
