@@ -7,9 +7,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   description="提供公開運動傷害影片，或協助指出需要修正的資料。"
 >
   <div class="contribution-page">
-    <a href="/">← 回到影片圖鑑</a>
-    <h1>提供影片／資料修正</h1>
+    <a href="/" data-contribution-return>← 回到影片圖鑑</a>
+    <h1 data-contribution-title>提供影片／文獻／資料修正</h1>
     <p>一起讓圖鑑更完整、正確。不必填寫姓名或信箱。</p>
+    <p data-contribution-context hidden></p>
     <form data-contribution-form>
       <fieldset>
         <legend>你想提供什麼？</legend>
@@ -18,6 +19,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         >
         <label
           ><input type="radio" name="type" value="correction" /> 資料修正</label
+        >
+        <label
+          ><input type="radio" name="type" value="reference" /> 參考文獻</label
         >
       </fieldset>
       <p id="contribution-content-help">
@@ -48,7 +52,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         rows="2"
         maxlength="3000"
         aria-describedby="contribution-content-help"
-        placeholder="每行一個公開網址，最多 3 個"></textarea>
+        placeholder="每行一個公開網址，最多 3 個；可貼 DOI、PubMed 或學會教材連結"
+      ></textarea>
       <div class="contribution-trap" aria-hidden="true">
         <label
           >網站<input name="website" tabindex="-1" autocomplete="off" /></label
@@ -98,6 +103,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     max-width: 42rem;
     margin-inline: auto;
     padding-block: 2rem;
+  }
+  [data-contribution-context] {
+    overflow-wrap: anywhere;
+    font-size: 0.875rem;
   }
   h1 {
     margin-block: 1rem;

@@ -239,7 +239,9 @@ describe("anonymous contributions", () => {
       expect(await response.json()).toMatchObject({ ok: true });
       expect(send).toHaveBeenCalledTimes(1);
       const [destination, options] = send.mock.calls[0]!;
-      expect(destination).toBe("https://sportsmedicine-tw.pages.dev/api/contact");
+      expect(destination).toBe(
+        "https://sportsmedicine-tw.pages.dev/api/contact",
+      );
       expect(options?.redirect).toBe("manual");
       const body = JSON.parse(options!.body as string);
       expect(body.email).toBe("no-reply@injury.sportsmedicine.tw");
@@ -353,14 +355,12 @@ describe("upstream redirects", () => {
   it.each([301, 302, 303, 307, 308])(
     "rejects HTTP %i without following or reporting delivery",
     async (status) => {
-      const send = vi
-        .fn<typeof fetch>()
-        .mockResolvedValue(
-          new Response(null, {
-            status,
-            headers: { Location: "https://example.org/other" },
-          }),
-        );
+      const send = vi.fn<typeof fetch>().mockResolvedValue(
+        new Response(null, {
+          status,
+          headers: { Location: "https://example.org/other" },
+        }),
+      );
       const response = await submitContribution(request(), send);
       expect(response.status).toBe(502);
       expect(await response.json()).toEqual({ error: "delivery" });
@@ -368,4 +368,66 @@ describe("upstream redirects", () => {
       expect(send.mock.calls[0][1]?.redirect).toBe("manual");
     },
   );
+});
+
+describe("imaging course contributions", () => {
+  it("labels a literature recommendation and its known course in the message", async () => {
+    const send = successfulMail();
+    const response = await submitContribution(
+      request({
+        ...valid,
+        type: "reference",
+        url: "https://doi.org/10.1000/example",
+        contextUrl: "https://hip-imaging-course.pages.dev/?tab=course#ch1-u1",
+      }),
+      send,
+    );
+    expect(response.status).toBe(200);
+    const body = JSON.parse(send.mock.calls[0][1]!.body as string);
+    expect(body.subject).toBe("影像學習站｜髖關節｜推薦參考文獻");
+    expect(body.message).toContain(
+      "來源頁面：https://hip-imaging-course.pages.dev/?tab=course#ch1-u1",
+    );
+  });
+  it.each([
+    "https://evil.example/",
+    "https://hip-imaging-course.pages.dev.evil.example/",
+    "javascript:alert(1)",
+    "https://user:pass@hip-imaging-course.pages.dev/",
+  ])("rejects untrusted course context %s", async (contextUrl) => {
+    const send = successfulMail();
+    const response = await submitContribution(
+      request({ ...valid, contextUrl }),
+      send,
+    );
+    expect(response.status).toBe(400);
+    expect(send).not.toHaveBeenCalled();
+  });
+  it("requires a link for a literature recommendation", async () => {
+    const send = successfulMail();
+    expect(
+      (
+        await submitContribution(
+          request({ ...valid, type: "reference", url: "", note: "只有說明" }),
+          send,
+        )
+      ).status,
+    ).toBe(400);
+    expect(send).not.toHaveBeenCalled();
+  });
+  it("accepts literature in reference sources without a primary URL", async () => {
+    expect(
+      (
+        await submitContribution(
+          request({
+            ...valid,
+            type: "reference",
+            url: "",
+            sources: "https://pubmed.ncbi.nlm.nih.gov/1234/",
+          }),
+          successfulMail(),
+        )
+      ).status,
+    ).toBe(200);
+  });
 });

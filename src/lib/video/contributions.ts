@@ -1,3 +1,4 @@
+import { contributionContext } from "./contribution-context";
 import { createRequestLimiter } from "./play-rate-limit";
 import type { ContributionGuard, Reservation } from "./contribution-limits";
 import { publicContributionUrl as publicUrl } from "./contribution-content";
@@ -82,6 +83,7 @@ export async function submitContribution(
           "sources",
           "turnstileToken",
           "website",
+          "contextUrl",
         ].includes(k),
     )
   ) {
@@ -89,6 +91,9 @@ export async function submitContribution(
     return respond(400, { error: "invalid" });
   }
   if (data.website) return respond(400, { error: "invalid" });
+  const context = contributionContext(data.contextUrl);
+  if (data.contextUrl !== undefined && !context)
+    return respond(400, { error: "invalid" });
   const urlMissing =
     data.url === undefined ||
     (typeof data.url === "string" && data.url.trim() === "");
@@ -98,7 +103,8 @@ export async function submitContribution(
   const token =
     typeof data.turnstileToken === "string" ? data.turnstileToken : "";
   if (
-    (data.type !== "video" && data.type !== "correction") ||
+    typeof data.type !== "string" ||
+    !["video", "reference", "correction"].includes(data.type) ||
     (!url && (data.type === "correction" || !urlMissing)) ||
     note.length > 2000 ||
     /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/.test(note) ||
@@ -119,9 +125,19 @@ export async function submitContribution(
     logDelivery("invalid");
     return respond(400, { error: "empty-content" });
   }
-  const label = data.type === "video" ? "提供公開影片" : "回報資料修正";
+  if (data.type === "reference" && !url && !sourceUrls.length)
+    return respond(400, { error: "empty-content" });
+  const label =
+    data.type === "video"
+      ? "提供公開影片"
+      : data.type === "reference"
+        ? "推薦參考文獻"
+        : "回報資料修正";
   const message = [
     `類型：${label}`,
+    ...(context
+      ? [`來源課程：${context.label}`, `來源頁面：${context.url}`]
+      : []),
     `網址：${url || "未提供"}`,
     "",
     `說明：${note || "未補充"}`,
@@ -139,6 +155,7 @@ export async function submitContribution(
     if (!guard) throw new Error("missing-guard");
     const content = JSON.stringify([
       data.type,
+      context?.url || "",
       url || "",
       note.normalize("NFKC").replace(/\r\n?/g, "\n"),
       [...sourceUrls].sort(),
@@ -175,7 +192,7 @@ export async function submitContribution(
       body: JSON.stringify({
         name: "影片圖鑑匿名讀者",
         email: "no-reply@injury.sportsmedicine.tw",
-        subject: `影片圖鑑｜${label}`,
+        subject: `${context ? "影像學習站｜" + context.label : "影片圖鑑"}｜${label}`,
         message,
         turnstileToken: token,
       }),

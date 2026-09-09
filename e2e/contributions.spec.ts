@@ -208,3 +208,47 @@ test("preserves input and distinguishes an HTML gateway failure from a disconnec
     page.getByRole("button", { name: "送出", exact: true }),
   ).toBeEnabled();
 });
+
+test("imaging literature retains unit context and returns to the course", async ({
+  page,
+}) => {
+  const context = "https://hip-imaging-course.pages.dev/?tab=course#ch1-u1";
+  await page.route("**/api/contributions", async (route) => {
+    const data = route.request().postDataJSON();
+    expect(data.type).toBe("reference");
+    expect(data.contextUrl).toBe(context);
+    expect(data.sources).toBe("https://pubmed.ncbi.nlm.nih.gov/1234/");
+    await route.fulfill({ json: { ok: true } });
+  });
+  await page.goto("/contribute/?context=" + encodeURIComponent(context));
+  await expect(
+    page.getByRole("heading", { name: "推薦影片與參考文獻" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: "回到影像課程" }),
+  ).toHaveAttribute("href", context);
+  await page.getByRole("radio", { name: "參考文獻", exact: true }).check();
+  await page.getByLabel("補充說明（選填）").fill("補充 MRI 判讀資料");
+  await expect(
+    page.getByRole("button", { name: "送出", exact: true }),
+  ).toBeDisabled();
+  await page
+    .getByLabel("參考來源（選填）")
+    .fill("https://pubmed.ncbi.nlm.nih.gov/1234/");
+  await page.getByRole("button", { name: "送出", exact: true }).click();
+  await expect(page.locator("[data-contribution-thanks]")).toBeVisible();
+  await expect(page.getByRole("link", { name: "繼續學習" })).toHaveAttribute(
+    "href",
+    context,
+  );
+});
+test("unknown contribution context cannot change the return destination", async ({
+  page,
+}) => {
+  await page.goto("/contribute/?context=https://evil.example/");
+  await expect(page.locator("[data-contribution-context]")).toBeHidden();
+  await expect(page.locator("[data-contribution-return]")).toHaveAttribute(
+    "href",
+    "/",
+  );
+});

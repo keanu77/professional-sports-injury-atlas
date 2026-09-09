@@ -1,3 +1,4 @@
+import { contributionContext } from "../lib/video/contribution-context";
 import {
   CONTRIBUTION_CONTENT_REQUIRED,
   publicContributionUrl,
@@ -27,14 +28,37 @@ if (form) {
   const challenge = () =>
     (window as Window & { turnstile?: ChallengeApi }).turnstile;
   const requestedPage = new URLSearchParams(location.search).get("page");
+  const context = contributionContext(
+    new URLSearchParams(location.search).get("context"),
+  );
+  if (context) {
+    document.title = "推薦影片與參考文獻｜運動醫學影像學習站";
+    document.querySelector("[data-contribution-title]")!.textContent =
+      "推薦影片與參考文獻";
+    const info = document.querySelector<HTMLElement>(
+      "[data-contribution-context]",
+    )!;
+    info.hidden = false;
+    info.textContent = `來源課程：${context.label}｜${context.url}`;
+    const back = document.querySelector<HTMLAnchorElement>(
+      "[data-contribution-return]",
+    )!;
+    back.href = context.url;
+    back.textContent = "← 回到影像課程";
+    const done = thanks.querySelector<HTMLAnchorElement>("a")!;
+    done.href = context.url;
+    done.textContent = "繼續學習";
+  }
   const pageUrl =
-    requestedPage?.startsWith("/") &&
+    context?.url ??
+    (requestedPage?.startsWith("/") &&
     !requestedPage.startsWith("//") &&
     !requestedPage.includes("\\")
       ? new URL(requestedPage, "https://injury.sportsmedicine.tw").href
-      : "";
+      : "");
   const contentError = () => {
-    const correction = new FormData(form).get("type") === "correction";
+    const kind = new FormData(form).get("type");
+    const correction = kind === "correction";
     const sourceUrls = sources.value.trim()
       ? sources.value
           .trim()
@@ -46,6 +70,8 @@ if (form) {
       return "參考來源請填寫有效的公開網址，每行一個，最多 3 個。";
     if (url.value.trim() && !publicContributionUrl(url.value))
       return "請填寫有效的公開網址。";
+    if (kind === "reference" && !url.value.trim() && !sourceUrls.length)
+      return "請提供至少一個文獻連結，可使用 DOI、PubMed 或學會教材網址。";
     if (correction && (!url.value.trim() || note.value.trim().length < 5))
       return "請提供需要修正的頁面網址，以及至少 5 個字的修正說明。";
     if (
@@ -66,10 +92,13 @@ if (form) {
   };
   form.addEventListener("input", refreshContent);
   form.addEventListener("change", () => {
-    const correction = new FormData(form).get("type") === "correction";
+    const kind = new FormData(form).get("type");
+    const correction = kind === "correction";
     form.querySelector("[data-url-label]")!.textContent = correction
       ? "需要修正的頁面網址"
-      : "公開影片網址（選填）";
+      : kind === "reference"
+        ? "文獻網址（或填下方參考來源）"
+        : "公開影片網址（選填）";
     form.querySelector("[data-note-label]")!.textContent = correction
       ? "需要修正的內容與建議"
       : "補充說明（選填）";
@@ -105,6 +134,7 @@ if (form) {
           url: fields.get("url"),
           note: fields.get("note"),
           sources: fields.get("sources"),
+          ...(context ? { contextUrl: context.url } : {}),
           website: fields.get("website"),
           turnstileToken: token,
         }),
