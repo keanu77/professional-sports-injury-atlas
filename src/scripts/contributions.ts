@@ -32,6 +32,10 @@ if (form) {
     new URLSearchParams(location.search).get("context"),
   );
   if (context) {
+    document.querySelector("[data-contribution-intro]")!.textContent =
+      "歡迎推薦近十年的教學影片與文獻，也可補充值得保留的經典。請簡述推薦理由，不必填寫姓名或信箱。";
+    note.placeholder =
+      "例如：影片適合哪個單元、文獻的教學價值，或需要修正的內容";
     document.title = "推薦影片與參考文獻｜運動醫學影像學習站";
     document.querySelector("[data-contribution-title]")!.textContent =
       "推薦影片與參考文獻";
@@ -102,6 +106,12 @@ if (form) {
     form.querySelector("[data-note-label]")!.textContent = correction
       ? "需要修正的內容與建議"
       : "補充說明（選填）";
+    document.querySelector("#contribution-content-help")!.textContent =
+      correction
+        ? "請提供需要修正的頁面網址，並說明哪一段內容需要調整。"
+        : kind === "reference"
+          ? "請提供至少一個文獻網址，可貼 DOI、PubMed 或學會教材連結，並簡述推薦理由。"
+          : "提供公開影片時，至少填寫公開影片網址、補充說明或有效參考來源其中一項。";
     url.required = correction;
     note.required = correction;
     note.minLength = correction ? 5 : 0;
