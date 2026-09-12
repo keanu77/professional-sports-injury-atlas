@@ -1,0 +1,2919 @@
+{
+  "schemaVersion": 1,
+  "decision": "decision-21",
+  "mode": "public",
+  "origin": "https://injury.sportsmedicine.tw",
+  "commit": "4a6f158a8c7240fe8522ce648e65b7e8dae08006",
+  "approvalDigest": "7f57a8963f4d9e3681c75dcd02f6d96d1b231885affd2683d4433a9f3117d52b",
+  "generatedAt": "2026-09-12T15:54:51.341Z",
+  "cases": [
+    {
+      "id": "CASE-NBAANKLE-2023-004",
+      "slug": "anfernee-simons-ankle-sprain-2023"
+    },
+    {
+      "id": "CASE-NBAACHILLES-2025-016",
+      "slug": "jayson-tatum-achilles-rupture-2025"
+    },
+    {
+      "id": "CASE-NBAACHILLES-2019-005",
+      "slug": "kevin-durant-achilles-rupture-2019"
+    },
+    {
+      "id": "CASE-NBAANKLE-2021-002",
+      "slug": "kyrie-irving-ankle-sprain-2021"
+    },
+    {
+      "id": "CASE-NBAANKLE-2023-008",
+      "slug": "lamelo-ball-ankle-sprain-2023"
+    },
+    {
+      "id": "CASE-NBAANKLE-2025-002",
+      "slug": "lamelo-ball-ankle-sprain-2025"
+    },
+    {
+      "id": "CASE-NBAACHILLES-2025-017",
+      "slug": "tyrese-haliburton-achilles-rupture-2025"
+    }
+  ],
+  "clips": [
+    {
+      "slug": "zverev-roland-garros-2022",
+      "videoUrl": "https://www.youtube.com/watch?v=7tpaxZTTi2w",
+      "startSeconds": 1340
+    },
+    {
+      "slug": "derek-redmond-barcelona-1992",
+      "videoUrl": "https://www.youtube.com/watch?v=t2G8KVzTwfw",
+      "startSeconds": 15
+    },
+    {
+      "slug": "kerri-strug-atlanta-1996",
+      "videoUrl": "https://www.youtube.com/watch?v=Bwa5Bf656As",
+      "startSeconds": 0
+    },
+    {
+      "slug": "carolina-marin-indonesia-2019",
+      "videoUrl": "https://www.youtube.com/watch?v=nfpXC98FLuE",
+      "startSeconds": 35
+    },
+    {
+      "slug": "julie-foucher-box-jump-2015",
+      "videoUrl": "https://www.youtube.com/watch?v=4y-1D7jTW_4",
+      "startSeconds": 35
+    },
+    {
+      "slug": "shohei-ohtani-world-series-2024",
+      "videoUrl": "https://www.youtube.com/watch?v=hxcRVu1-T-c",
+      "startSeconds": 0
+    },
+    {
+      "slug": "usain-bolt-london-2017",
+      "videoUrl": "https://www.youtube.com/watch?v=12UNVAkLlmY",
+      "startSeconds": 30
+    },
+    {
+      "slug": "mohamed-salah-final-2018",
+      "videoUrl": "https://www.youtube.com/watch?v=mi7fXtGTwbc",
+      "startSeconds": 0
+    },
+    {
+      "slug": "giannis-east-final-2021",
+      "videoUrl": "https://www.youtube.com/watch?v=ctiT9toFmio",
+      "startSeconds": 0
+    },
+    {
+      "slug": "markelle-fultz-orlando-2021",
+      "videoUrl": "https://www.youtube.com/watch?v=b2vVxFhpEv0",
+      "startSeconds": 0
+    },
+    {
+      "slug": "ronald-acuna-miami-2021",
+      "videoUrl": "https://www.youtube.com/watch?v=C4xerhbFNnc",
+      "startSeconds": 0
+    },
+    {
+      "slug": "lindsey-vonn-schladming-2013",
+      "videoUrl": "https://www.youtube.com/watch?v=0TwnwjFJzUo",
+      "startSeconds": 0
+    },
+    {
+      "slug": "antoine-dupont-world-cup-2023",
+      "videoUrl": "https://www.youtube.com/watch?v=LOaTNtmSxUY",
+      "startSeconds": 0
+    },
+    {
+      "slug": "aksel-svindal-kitzbuhel-2016",
+      "videoUrl": "https://www.youtube.com/watch?v=vM_UU11MMH0",
+      "startSeconds": 0
+    },
+    {
+      "slug": "sidney-crosby-concussion-2017",
+      "videoUrl": "https://www.youtube.com/watch?v=YjDF1Saryg4",
+      "startSeconds": 0
+    },
+    {
+      "slug": "klay-thompson-2019-acl",
+      "videoUrl": "https://www.youtube.com/watch?v=3vHr8d5UQro",
+      "startSeconds": 0
+    },
+    {
+      "slug": "kobe-bryant-2013-achilles",
+      "videoUrl": "https://www.youtube.com/watch?v=5KlgfpqWCkY",
+      "startSeconds": 33
+    },
+    {
+      "slug": "gianmarco-tamberi-2016-ankle",
+      "videoUrl": "https://www.youtube.com/watch?v=blW4L9jn6iM",
+      "startSeconds": 10
+    },
+    {
+      "slug": "john-tavares-2021-concussion",
+      "videoUrl": "https://www.youtube.com/watch?v=Gnhby06KpyQ",
+      "startSeconds": 92
+    },
+    {
+      "slug": "neymar-2023-acl",
+      "videoUrl": "https://www.youtube.com/watch?v=YfynOcvpQfY",
+      "startSeconds": 0
+    },
+    {
+      "slug": "cameron-brink-2024-acl",
+      "videoUrl": "https://www.youtube.com/watch?v=Ue0VBshhwX8",
+      "startSeconds": 0
+    },
+    {
+      "slug": "steve-smith-2019-concussion",
+      "videoUrl": "https://www.youtube.com/watch?v=A_Wnlt1RP38",
+      "startSeconds": 150
+    },
+    {
+      "slug": "george-north-2015-concussion",
+      "videoUrl": "https://www.youtube.com/watch?v=5EclrKrPNvI",
+      "startSeconds": 119
+    },
+    {
+      "slug": "mark-cavendish-2023-clavicle",
+      "videoUrl": "https://www.youtube.com/watch?v=O3IZGzHla4U",
+      "startSeconds": 0
+    },
+    {
+      "slug": "derrick-rose-acl-2012",
+      "videoUrl": "https://www.youtube.com/watch?v=jo1UlzDeY-o",
+      "startSeconds": 0
+    },
+    {
+      "slug": "demarcus-cousins-achilles-2018",
+      "videoUrl": "https://www.youtube.com/watch?v=LZTOTwvfli0",
+      "startSeconds": 10
+    },
+    {
+      "slug": "kristaps-porzingis-acl-2018",
+      "videoUrl": "https://www.youtube.com/watch?v=qAZG23aT4IY",
+      "startSeconds": 33
+    },
+    {
+      "slug": "gordon-hayward-ankle-fracture-2017",
+      "videoUrl": "https://www.youtube.com/watch?v=HhuFTOZt6TU",
+      "startSeconds": 22
+    },
+    {
+      "slug": "jamal-murray-acl-2021",
+      "videoUrl": "https://www.youtube.com/watch?v=yDDkfhw1Qd0",
+      "startSeconds": 0
+    },
+    {
+      "slug": "dejounte-murray-acl-2018",
+      "videoUrl": "https://www.youtube.com/watch?v=Ajto95dt2yQ",
+      "startSeconds": 0
+    },
+    {
+      "slug": "kawhi-leonard-acl-2021",
+      "videoUrl": "https://www.youtube.com/watch?v=iwZgXGRJENE",
+      "startSeconds": 0
+    },
+    {
+      "slug": "paul-george-leg-fracture-2014",
+      "videoUrl": "https://www.youtube.com/watch?v=Qoy8tUXsqQs",
+      "startSeconds": 0
+    },
+    {
+      "slug": "zach-lavine-acl-2017",
+      "videoUrl": "https://www.youtube.com/watch?v=g4CkpVi5Iqk",
+      "startSeconds": 0
+    },
+    {
+      "slug": "shaun-livingston-knee-2007",
+      "videoUrl": "https://www.youtube.com/watch?v=cWGLRqXsT54",
+      "startSeconds": 0
+    },
+    {
+      "slug": "alex-oxlade-chamberlain-2018",
+      "videoUrl": "https://www.youtube.com/watch?v=rPYOGKhlzag",
+      "startSeconds": 0
+    },
+    {
+      "slug": "david-beckham-2010",
+      "videoUrl": "https://www.youtube.com/watch?v=cgOemKqIzEE",
+      "startSeconds": 0
+    },
+    {
+      "slug": "cristiano-ronaldo-2016",
+      "videoUrl": "https://www.youtube.com/watch?v=wgPxm0RKJAk",
+      "startSeconds": 0
+    },
+    {
+      "slug": "vivianne-miedema-2022",
+      "videoUrl": "https://www.youtube.com/watch?v=YXpvkHw2BP8",
+      "startSeconds": 0
+    },
+    {
+      "slug": "laurent-koscielny-2018",
+      "videoUrl": "https://www.youtube.com/watch?v=4--y5nQdVE0",
+      "startSeconds": 40
+    },
+    {
+      "slug": "andre-gomes-2019",
+      "videoUrl": "https://www.youtube.com/watch?v=8_d9ITG6Rmk",
+      "startSeconds": 0
+    },
+    {
+      "slug": "beth-mead-2022",
+      "videoUrl": "https://www.youtube.com/watch?v=Kxz1vhDq94Y",
+      "startSeconds": 0
+    },
+    {
+      "slug": "leah-williamson-2023",
+      "videoUrl": "https://www.youtube.com/watch?v=TygjH39bmfU",
+      "startSeconds": 0
+    },
+    {
+      "slug": "zlatan-ibrahimovic-2017-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=AzVEucCufd0",
+      "startSeconds": 0
+    },
+    {
+      "slug": "victor-oladipo-2019-quadriceps",
+      "videoUrl": "https://www.youtube.com/watch?v=qGFHQQWFhWg",
+      "startSeconds": 0
+    },
+    {
+      "slug": "serena-williams-2021-hamstring",
+      "videoUrl": "https://www.youtube.com/watch?v=pi0rz4KrTAM",
+      "startSeconds": 0
+    },
+    {
+      "slug": "edwin-diaz-2023-patellar-tendon",
+      "videoUrl": "https://www.youtube.com/watch?v=aVmzQYIwTfc",
+      "startSeconds": 6
+    },
+    {
+      "slug": "rhys-hoskins-2023-acl",
+      "videoUrl": "https://www.youtube.com/watch?v=9c2i7OQerbY",
+      "startSeconds": 30
+    },
+    {
+      "slug": "tim-hudson-2013-ankle",
+      "videoUrl": "https://www.youtube.com/watch?v=q9WIUVebPf8",
+      "startSeconds": 0
+    },
+    {
+      "slug": "buster-posey-2011-ankle",
+      "videoUrl": "https://www.youtube.com/watch?v=KK-tjBfB9ys",
+      "startSeconds": 5
+    },
+    {
+      "slug": "kendrys-morales-2010-ankle",
+      "videoUrl": "https://www.youtube.com/watch?v=CHU789PuCWg",
+      "startSeconds": 19
+    },
+    {
+      "slug": "steven-stamkos-2013-tibia",
+      "videoUrl": "https://www.youtube.com/watch?v=WC6e9OaS8WM",
+      "startSeconds": 0
+    },
+    {
+      "slug": "connor-mcdavid-2019-pcl",
+      "videoUrl": "https://www.youtube.com/watch?v=bni6Jp6p4P8",
+      "startSeconds": 10
+    },
+    {
+      "slug": "mikhail-sergachev-2024-leg",
+      "videoUrl": "https://www.youtube.com/watch?v=EScFb5vASZ8",
+      "startSeconds": 0
+    },
+    {
+      "slug": "max-pacioretty-2011-concussion",
+      "videoUrl": "https://www.youtube.com/watch?v=jimZ1tSdPY0",
+      "startSeconds": 0
+    },
+    {
+      "slug": "bethanie-mattek-sands-2017-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=WJseH_HrC7o",
+      "startSeconds": 46
+    },
+    {
+      "slug": "aaron-rodgers-2023-achilles",
+      "videoUrl": "https://www.youtube.com/watch?v=RDSkmfmqNic",
+      "startSeconds": 8
+    },
+    {
+      "slug": "harvey-elliott-2021-ankle",
+      "videoUrl": "https://www.youtube.com/watch?v=ZrJ_d7oyhN8",
+      "startSeconds": 25
+    },
+    {
+      "slug": "wesley-fofana-2021-leg",
+      "videoUrl": "https://www.youtube.com/watch?v=UxS0YVftoWs",
+      "startSeconds": 14
+    },
+    {
+      "slug": "hector-bellerin-2019-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=Pzul0WT-LJs",
+      "startSeconds": 0
+    },
+    {
+      "slug": "annemiek-van-vleuten-2016-concussion",
+      "videoUrl": "https://www.youtube.com/watch?v=02FgIaR6WZ4",
+      "startSeconds": 0
+    },
+    {
+      "slug": "rebeca-andrade-2019-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=G9_DOWNXdjc",
+      "startSeconds": 0
+    },
+    {
+      "slug": "juan-martin-del-potro-2018-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=P-bLI8A0q2k",
+      "startSeconds": 12
+    },
+    {
+      "slug": "dominic-thiem-2021-wrist",
+      "videoUrl": "https://www.youtube.com/watch?v=dnEbS6xmiLA",
+      "startSeconds": 172
+    },
+    {
+      "slug": "kyle-schwarber-2016-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=9JoITljMoU0",
+      "startSeconds": 0
+    },
+    {
+      "slug": "bryce-harper-2017-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=5STUOgvQWgQ",
+      "startSeconds": 0
+    },
+    {
+      "slug": "dustin-fowler-2017-patellar-tendon",
+      "videoUrl": "https://www.youtube.com/watch?v=GfnIhZIzIE8",
+      "startSeconds": 0
+    },
+    {
+      "slug": "adam-eaton-2017-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=J1iIgGSiSFc",
+      "startSeconds": 0
+    },
+    {
+      "slug": "chris-bassitt-2021-face",
+      "videoUrl": "https://www.youtube.com/watch?v=8rQjyuPU_gM",
+      "startSeconds": 0
+    },
+    {
+      "slug": "alex-cobb-2013-concussion",
+      "videoUrl": "https://www.youtube.com/watch?v=ggGrmIf-SQE",
+      "startSeconds": 0
+    },
+    {
+      "slug": "giancarlo-stanton-2014-face",
+      "videoUrl": "https://www.youtube.com/watch?v=W5Bg3oaHI8I",
+      "startSeconds": 0
+    },
+    {
+      "slug": "charlie-morton-2021-fibula",
+      "videoUrl": "https://www.youtube.com/watch?v=2UZJNvs7G_o",
+      "startSeconds": 24
+    },
+    {
+      "slug": "mitch-haniger-2017-face",
+      "videoUrl": "https://www.youtube.com/watch?v=Pi6Pku8QVXY",
+      "startSeconds": 0
+    },
+    {
+      "slug": "justin-turner-2023-face",
+      "videoUrl": "https://www.youtube.com/watch?v=szivDYWhjXM",
+      "startSeconds": 0
+    },
+    {
+      "slug": "kevin-pillar-2021-face",
+      "videoUrl": "https://www.youtube.com/watch?v=c_laCIZqsPM",
+      "startSeconds": 0
+    },
+    {
+      "slug": "bryce-harper-2022-thumb",
+      "videoUrl": "https://www.youtube.com/watch?v=4ekUPuhJEYI",
+      "startSeconds": 8
+    },
+    {
+      "slug": "mookie-betts-2024-hand",
+      "videoUrl": "https://www.youtube.com/watch?v=wglRV7rAQ2Q",
+      "startSeconds": 0
+    },
+    {
+      "slug": "chase-headley-2014-face",
+      "videoUrl": "https://www.youtube.com/watch?v=0iPz58nL0L8",
+      "startSeconds": 0
+    },
+    {
+      "slug": "curtis-granderson-2013-hand",
+      "videoUrl": "https://www.youtube.com/watch?v=22U4bCbhtig",
+      "startSeconds": 0
+    },
+    {
+      "slug": "matt-shoemaker-2016-head",
+      "videoUrl": "https://www.youtube.com/watch?v=a1Malj3Fqm8",
+      "startSeconds": 0
+    },
+    {
+      "slug": "ja-happ-2013-head",
+      "videoUrl": "https://www.youtube.com/watch?v=g1fZXmVr_oA",
+      "startSeconds": 0
+    },
+    {
+      "slug": "dan-jennings-2014-concussion",
+      "videoUrl": "https://www.youtube.com/watch?v=wVj6I9Q5IvE",
+      "startSeconds": 0
+    },
+    {
+      "slug": "stephen-piscotty-2015-concussion",
+      "videoUrl": "https://www.youtube.com/watch?v=qLR_C8wg68E",
+      "startSeconds": 0
+    },
+    {
+      "slug": "dustin-pedroia-2017-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=rbAYcXPhIUE",
+      "startSeconds": 0
+    },
+    {
+      "slug": "aaron-judge-2023-toe",
+      "videoUrl": "https://www.youtube.com/watch?v=jhBAzccW-Oc",
+      "startSeconds": 0
+    },
+    {
+      "slug": "manny-machado-2013-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=gQ0WzuOYh_A",
+      "startSeconds": 0
+    },
+    {
+      "slug": "samir-ait-said-2016-leg",
+      "videoUrl": "https://www.youtube.com/watch?v=Bt7EHTIivuA",
+      "startSeconds": 58
+    },
+    {
+      "slug": "sofia-goggia-2022-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=QDOJL9lwYdI",
+      "startSeconds": 0
+    },
+    {
+      "slug": "yuzuru-hanyu-2014-collision",
+      "videoUrl": "https://www.youtube.com/watch?v=Jf84VzlzLhI",
+      "startSeconds": 0
+    },
+    {
+      "slug": "aleksander-kilde-2024-shoulder",
+      "videoUrl": "https://www.youtube.com/watch?v=D0VibSVWwBA",
+      "startSeconds": 0
+    },
+    {
+      "slug": "liu-xiang-2012-achilles",
+      "videoUrl": "https://www.youtube.com/watch?v=Pa50gXELqp0",
+      "startSeconds": 0
+    },
+    {
+      "slug": "fabio-jakobsen-2020-concussion",
+      "videoUrl": "https://www.youtube.com/watch?v=RvDqK9NnqyI",
+      "startSeconds": 0
+    },
+    {
+      "slug": "mikaela-shiffrin-2024-abdomen",
+      "videoUrl": "https://www.youtube.com/watch?v=nFbLC6Dv6Xk",
+      "startSeconds": 100
+    },
+    {
+      "slug": "remco-evenepoel-2020-pelvis",
+      "videoUrl": "https://www.youtube.com/watch?v=o8mXn1hwdtA",
+      "startSeconds": 0
+    },
+    {
+      "slug": "chien-ming-wang-2008-foot",
+      "videoUrl": "https://www.youtube.com/watch?v=blRqsO9--38",
+      "startSeconds": 0
+    },
+    {
+      "slug": "nick-chubb-knee-2023",
+      "videoUrl": "https://www.youtube.com/watch?v=RdAvC8i0szY",
+      "startSeconds": 0
+    },
+    {
+      "slug": "kirk-cousins-achilles-2023",
+      "videoUrl": "https://www.youtube.com/watch?v=E0mYSZ1jTG4",
+      "startSeconds": 0
+    },
+    {
+      "slug": "joe-burrow-wrist-2023",
+      "videoUrl": "https://www.youtube.com/watch?v=geUMkoM42iE",
+      "startSeconds": 0
+    },
+    {
+      "slug": "aidan-hutchinson-leg-2024",
+      "videoUrl": "https://www.youtube.com/watch?v=aWo-ur71zvo",
+      "startSeconds": 0
+    },
+    {
+      "slug": "gavi-acl-2023",
+      "videoUrl": "https://www.youtube.com/watch?v=1HEC31qHp90",
+      "startSeconds": 48
+    },
+    {
+      "slug": "ter-stegen-patellar-tendon-2024",
+      "videoUrl": "https://www.youtube.com/watch?v=ZRP1PfMv6ds",
+      "startSeconds": 21
+    },
+    {
+      "slug": "rodri-acl-2024",
+      "videoUrl": "https://www.youtube.com/watch?v=HgrqAWPBSTk",
+      "startSeconds": 0
+    },
+    {
+      "slug": "dani-carvajal-knee-2024",
+      "videoUrl": "https://www.youtube.com/watch?v=nBC7o7Iz0RM",
+      "startSeconds": 0
+    },
+    {
+      "slug": "jamal-musiala-ankle-2025",
+      "videoUrl": "https://www.youtube.com/watch?v=AHzOcxBu0Fk",
+      "startSeconds": 0
+    },
+    {
+      "slug": "eder-militao-acl-2024",
+      "videoUrl": "https://www.youtube.com/watch?v=mmngoDkXwxc",
+      "startSeconds": 0
+    },
+    {
+      "slug": "carolina-marin-acl-2024",
+      "videoUrl": "https://www.youtube.com/watch?v=Hk46I0O_mjU",
+      "startSeconds": 12
+    },
+    {
+      "slug": "jonas-vingegaard-crash-2024",
+      "videoUrl": "https://www.youtube.com/watch?v=r58I6buCUA0",
+      "startSeconds": 0
+    },
+    {
+      "slug": "wout-van-aert-crash-2024",
+      "videoUrl": "https://www.youtube.com/watch?v=x4QE1G_VXxw",
+      "startSeconds": 0
+    },
+    {
+      "slug": "ronald-acuna-acl-2024",
+      "videoUrl": "https://www.youtube.com/watch?v=S2NsAbb8MNg",
+      "startSeconds": 14
+    },
+    {
+      "slug": "novak-djokovic-meniscus-2024",
+      "videoUrl": "https://www.youtube.com/watch?v=mF6QEVNcgD4",
+      "startSeconds": 0
+    },
+    {
+      "slug": "kristaps-porzingis-retinaculum-2024",
+      "videoUrl": "https://www.youtube.com/watch?v=0xVAWNzYcKE",
+      "startSeconds": 0
+    },
+    {
+      "slug": "joel-embiid-meniscus-2024",
+      "videoUrl": "https://www.youtube.com/watch?v=xI6yz7rFdrE",
+      "startSeconds": 35
+    },
+    {
+      "slug": "connor-bedard-jaw-2024",
+      "videoUrl": "https://www.youtube.com/watch?v=bLxN2RZYgds",
+      "startSeconds": 100
+    },
+    {
+      "slug": "federica-brignone-leg-2025",
+      "videoUrl": "https://www.youtube.com/watch?v=KTaglqZADPw",
+      "startSeconds": 0
+    }
+  ],
+  "bodyParts": [
+    {
+      "code": "head-neck",
+      "label": "頭頸部",
+      "count": 21,
+      "paths": [
+        "/videos/antoine-dupont-world-cup-2023/",
+        "/videos/sidney-crosby-concussion-2017/",
+        "/videos/john-tavares-2021-concussion/",
+        "/videos/steve-smith-2019-concussion/",
+        "/videos/george-north-2015-concussion/",
+        "/videos/max-pacioretty-2011-concussion/",
+        "/videos/annemiek-van-vleuten-2016-concussion/",
+        "/videos/chris-bassitt-2021-face/",
+        "/videos/alex-cobb-2013-concussion/",
+        "/videos/giancarlo-stanton-2014-face/",
+        "/videos/mitch-haniger-2017-face/",
+        "/videos/justin-turner-2023-face/",
+        "/videos/kevin-pillar-2021-face/",
+        "/videos/chase-headley-2014-face/",
+        "/videos/matt-shoemaker-2016-head/",
+        "/videos/ja-happ-2013-head/",
+        "/videos/dan-jennings-2014-concussion/",
+        "/videos/stephen-piscotty-2015-concussion/",
+        "/videos/yuzuru-hanyu-2014-collision/",
+        "/videos/fabio-jakobsen-2020-concussion/",
+        "/videos/connor-bedard-jaw-2024/"
+      ]
+    },
+    {
+      "code": "shoulder",
+      "label": "肩部",
+      "count": 4,
+      "paths": [
+        "/videos/shohei-ohtani-world-series-2024/",
+        "/videos/mohamed-salah-final-2018/",
+        "/videos/mark-cavendish-2023-clavicle/",
+        "/videos/aleksander-kilde-2024-shoulder/"
+      ]
+    },
+    {
+      "code": "wrist",
+      "label": "手腕",
+      "count": 2,
+      "paths": [
+        "/videos/dominic-thiem-2021-wrist/",
+        "/videos/joe-burrow-wrist-2023/"
+      ]
+    },
+    {
+      "code": "hand",
+      "label": "手部",
+      "count": 3,
+      "paths": [
+        "/videos/bryce-harper-2022-thumb/",
+        "/videos/mookie-betts-2024-hand/",
+        "/videos/curtis-granderson-2013-hand/"
+      ]
+    },
+    {
+      "code": "trunk",
+      "label": "軀幹",
+      "count": 3,
+      "paths": [
+        "/videos/mikaela-shiffrin-2024-abdomen/",
+        "/videos/jonas-vingegaard-crash-2024/",
+        "/videos/wout-van-aert-crash-2024/"
+      ]
+    },
+    {
+      "code": "pelvis",
+      "label": "骨盆",
+      "count": 1,
+      "paths": [
+        "/videos/remco-evenepoel-2020-pelvis/"
+      ]
+    },
+    {
+      "code": "ankle",
+      "label": "腳踝",
+      "count": 15,
+      "paths": [
+        "/cases/anfernee-simons-ankle-sprain-2023/",
+        "/cases/kyrie-irving-ankle-sprain-2021/",
+        "/cases/lamelo-ball-ankle-sprain-2023/",
+        "/cases/lamelo-ball-ankle-sprain-2025/",
+        "/videos/zverev-roland-garros-2022/",
+        "/videos/kerri-strug-atlanta-1996/",
+        "/videos/gianmarco-tamberi-2016-ankle/",
+        "/videos/gordon-hayward-ankle-fracture-2017/",
+        "/videos/andre-gomes-2019/",
+        "/videos/tim-hudson-2013-ankle/",
+        "/videos/buster-posey-2011-ankle/",
+        "/videos/kendrys-morales-2010-ankle/",
+        "/videos/harvey-elliott-2021-ankle/",
+        "/videos/jamal-musiala-ankle-2025/",
+        "/videos/kristaps-porzingis-retinaculum-2024/"
+      ]
+    },
+    {
+      "code": "foot",
+      "label": "足部",
+      "count": 2,
+      "paths": [
+        "/videos/aaron-judge-2023-toe/",
+        "/videos/chien-ming-wang-2008-foot/"
+      ]
+    },
+    {
+      "code": "calf-achilles",
+      "label": "小腿與阿基里斯腱",
+      "count": 18,
+      "paths": [
+        "/cases/jayson-tatum-achilles-rupture-2025/",
+        "/cases/kevin-durant-achilles-rupture-2019/",
+        "/cases/tyrese-haliburton-achilles-rupture-2025/",
+        "/videos/julie-foucher-box-jump-2015/",
+        "/videos/kobe-bryant-2013-achilles/",
+        "/videos/demarcus-cousins-achilles-2018/",
+        "/videos/paul-george-leg-fracture-2014/",
+        "/videos/david-beckham-2010/",
+        "/videos/laurent-koscielny-2018/",
+        "/videos/steven-stamkos-2013-tibia/",
+        "/videos/mikhail-sergachev-2024-leg/",
+        "/videos/aaron-rodgers-2023-achilles/",
+        "/videos/wesley-fofana-2021-leg/",
+        "/videos/charlie-morton-2021-fibula/",
+        "/videos/samir-ait-said-2016-leg/",
+        "/videos/liu-xiang-2012-achilles/",
+        "/videos/kirk-cousins-achilles-2023/",
+        "/videos/aidan-hutchinson-leg-2024/"
+      ]
+    },
+    {
+      "code": "knee",
+      "label": "膝蓋",
+      "count": 48,
+      "paths": [
+        "/videos/carolina-marin-indonesia-2019/",
+        "/videos/giannis-east-final-2021/",
+        "/videos/markelle-fultz-orlando-2021/",
+        "/videos/ronald-acuna-miami-2021/",
+        "/videos/lindsey-vonn-schladming-2013/",
+        "/videos/aksel-svindal-kitzbuhel-2016/",
+        "/videos/klay-thompson-2019-acl/",
+        "/videos/neymar-2023-acl/",
+        "/videos/cameron-brink-2024-acl/",
+        "/videos/derrick-rose-acl-2012/",
+        "/videos/kristaps-porzingis-acl-2018/",
+        "/videos/jamal-murray-acl-2021/",
+        "/videos/dejounte-murray-acl-2018/",
+        "/videos/kawhi-leonard-acl-2021/",
+        "/videos/zach-lavine-acl-2017/",
+        "/videos/shaun-livingston-knee-2007/",
+        "/videos/alex-oxlade-chamberlain-2018/",
+        "/videos/cristiano-ronaldo-2016/",
+        "/videos/vivianne-miedema-2022/",
+        "/videos/beth-mead-2022/",
+        "/videos/leah-williamson-2023/",
+        "/videos/zlatan-ibrahimovic-2017-knee/",
+        "/videos/victor-oladipo-2019-quadriceps/",
+        "/videos/edwin-diaz-2023-patellar-tendon/",
+        "/videos/rhys-hoskins-2023-acl/",
+        "/videos/connor-mcdavid-2019-pcl/",
+        "/videos/bethanie-mattek-sands-2017-knee/",
+        "/videos/hector-bellerin-2019-knee/",
+        "/videos/rebeca-andrade-2019-knee/",
+        "/videos/juan-martin-del-potro-2018-knee/",
+        "/videos/kyle-schwarber-2016-knee/",
+        "/videos/bryce-harper-2017-knee/",
+        "/videos/dustin-fowler-2017-patellar-tendon/",
+        "/videos/adam-eaton-2017-knee/",
+        "/videos/dustin-pedroia-2017-knee/",
+        "/videos/manny-machado-2013-knee/",
+        "/videos/sofia-goggia-2022-knee/",
+        "/videos/nick-chubb-knee-2023/",
+        "/videos/gavi-acl-2023/",
+        "/videos/ter-stegen-patellar-tendon-2024/",
+        "/videos/rodri-acl-2024/",
+        "/videos/dani-carvajal-knee-2024/",
+        "/videos/eder-militao-acl-2024/",
+        "/videos/carolina-marin-acl-2024/",
+        "/videos/ronald-acuna-acl-2024/",
+        "/videos/novak-djokovic-meniscus-2024/",
+        "/videos/joel-embiid-meniscus-2024/",
+        "/videos/federica-brignone-leg-2025/"
+      ]
+    },
+    {
+      "code": "posterior-thigh",
+      "label": "大腿後側",
+      "count": 3,
+      "paths": [
+        "/videos/derek-redmond-barcelona-1992/",
+        "/videos/usain-bolt-london-2017/",
+        "/videos/serena-williams-2021-hamstring/"
+      ]
+    }
+  ],
+  "sports": [
+    {
+      "code": "basketball",
+      "label": "籃球",
+      "count": 25,
+      "paths": [
+        "/cases/anfernee-simons-ankle-sprain-2023/",
+        "/cases/jayson-tatum-achilles-rupture-2025/",
+        "/cases/kevin-durant-achilles-rupture-2019/",
+        "/cases/kyrie-irving-ankle-sprain-2021/",
+        "/cases/lamelo-ball-ankle-sprain-2023/",
+        "/cases/lamelo-ball-ankle-sprain-2025/",
+        "/cases/tyrese-haliburton-achilles-rupture-2025/",
+        "/videos/giannis-east-final-2021/",
+        "/videos/markelle-fultz-orlando-2021/",
+        "/videos/klay-thompson-2019-acl/",
+        "/videos/kobe-bryant-2013-achilles/",
+        "/videos/cameron-brink-2024-acl/",
+        "/videos/derrick-rose-acl-2012/",
+        "/videos/demarcus-cousins-achilles-2018/",
+        "/videos/kristaps-porzingis-acl-2018/",
+        "/videos/gordon-hayward-ankle-fracture-2017/",
+        "/videos/jamal-murray-acl-2021/",
+        "/videos/dejounte-murray-acl-2018/",
+        "/videos/kawhi-leonard-acl-2021/",
+        "/videos/paul-george-leg-fracture-2014/",
+        "/videos/zach-lavine-acl-2017/",
+        "/videos/shaun-livingston-knee-2007/",
+        "/videos/victor-oladipo-2019-quadriceps/",
+        "/videos/kristaps-porzingis-retinaculum-2024/",
+        "/videos/joel-embiid-meniscus-2024/"
+      ]
+    },
+    {
+      "code": "baseball",
+      "label": "棒球",
+      "count": 31,
+      "paths": [
+        "/videos/shohei-ohtani-world-series-2024/",
+        "/videos/ronald-acuna-miami-2021/",
+        "/videos/edwin-diaz-2023-patellar-tendon/",
+        "/videos/rhys-hoskins-2023-acl/",
+        "/videos/tim-hudson-2013-ankle/",
+        "/videos/buster-posey-2011-ankle/",
+        "/videos/kendrys-morales-2010-ankle/",
+        "/videos/kyle-schwarber-2016-knee/",
+        "/videos/bryce-harper-2017-knee/",
+        "/videos/dustin-fowler-2017-patellar-tendon/",
+        "/videos/adam-eaton-2017-knee/",
+        "/videos/chris-bassitt-2021-face/",
+        "/videos/alex-cobb-2013-concussion/",
+        "/videos/giancarlo-stanton-2014-face/",
+        "/videos/charlie-morton-2021-fibula/",
+        "/videos/mitch-haniger-2017-face/",
+        "/videos/justin-turner-2023-face/",
+        "/videos/kevin-pillar-2021-face/",
+        "/videos/bryce-harper-2022-thumb/",
+        "/videos/mookie-betts-2024-hand/",
+        "/videos/chase-headley-2014-face/",
+        "/videos/curtis-granderson-2013-hand/",
+        "/videos/matt-shoemaker-2016-head/",
+        "/videos/ja-happ-2013-head/",
+        "/videos/dan-jennings-2014-concussion/",
+        "/videos/stephen-piscotty-2015-concussion/",
+        "/videos/dustin-pedroia-2017-knee/",
+        "/videos/aaron-judge-2023-toe/",
+        "/videos/manny-machado-2013-knee/",
+        "/videos/chien-ming-wang-2008-foot/",
+        "/videos/ronald-acuna-acl-2024/"
+      ]
+    },
+    {
+      "code": "cricket",
+      "label": "板球",
+      "count": 1,
+      "paths": [
+        "/videos/steve-smith-2019-concussion/"
+      ]
+    },
+    {
+      "code": "football",
+      "label": "足球",
+      "count": 20,
+      "paths": [
+        "/videos/mohamed-salah-final-2018/",
+        "/videos/neymar-2023-acl/",
+        "/videos/alex-oxlade-chamberlain-2018/",
+        "/videos/david-beckham-2010/",
+        "/videos/cristiano-ronaldo-2016/",
+        "/videos/vivianne-miedema-2022/",
+        "/videos/laurent-koscielny-2018/",
+        "/videos/andre-gomes-2019/",
+        "/videos/beth-mead-2022/",
+        "/videos/leah-williamson-2023/",
+        "/videos/zlatan-ibrahimovic-2017-knee/",
+        "/videos/harvey-elliott-2021-ankle/",
+        "/videos/wesley-fofana-2021-leg/",
+        "/videos/hector-bellerin-2019-knee/",
+        "/videos/gavi-acl-2023/",
+        "/videos/ter-stegen-patellar-tendon-2024/",
+        "/videos/rodri-acl-2024/",
+        "/videos/dani-carvajal-knee-2024/",
+        "/videos/jamal-musiala-ankle-2025/",
+        "/videos/eder-militao-acl-2024/"
+      ]
+    },
+    {
+      "code": "tennis",
+      "label": "網球",
+      "count": 6,
+      "paths": [
+        "/videos/zverev-roland-garros-2022/",
+        "/videos/serena-williams-2021-hamstring/",
+        "/videos/bethanie-mattek-sands-2017-knee/",
+        "/videos/juan-martin-del-potro-2018-knee/",
+        "/videos/dominic-thiem-2021-wrist/",
+        "/videos/novak-djokovic-meniscus-2024/"
+      ]
+    },
+    {
+      "code": "badminton",
+      "label": "羽球",
+      "count": 2,
+      "paths": [
+        "/videos/carolina-marin-indonesia-2019/",
+        "/videos/carolina-marin-acl-2024/"
+      ]
+    },
+    {
+      "code": "athletics",
+      "label": "田徑",
+      "count": 4,
+      "paths": [
+        "/videos/derek-redmond-barcelona-1992/",
+        "/videos/usain-bolt-london-2017/",
+        "/videos/gianmarco-tamberi-2016-ankle/",
+        "/videos/liu-xiang-2012-achilles/"
+      ]
+    },
+    {
+      "code": "gymnastics",
+      "label": "體操",
+      "count": 3,
+      "paths": [
+        "/videos/kerri-strug-atlanta-1996/",
+        "/videos/rebeca-andrade-2019-knee/",
+        "/videos/samir-ait-said-2016-leg/"
+      ]
+    },
+    {
+      "code": "figure-skating",
+      "label": "花式滑冰",
+      "count": 1,
+      "paths": [
+        "/videos/yuzuru-hanyu-2014-collision/"
+      ]
+    },
+    {
+      "code": "ice-hockey",
+      "label": "冰球",
+      "count": 7,
+      "paths": [
+        "/videos/sidney-crosby-concussion-2017/",
+        "/videos/john-tavares-2021-concussion/",
+        "/videos/steven-stamkos-2013-tibia/",
+        "/videos/connor-mcdavid-2019-pcl/",
+        "/videos/mikhail-sergachev-2024-leg/",
+        "/videos/max-pacioretty-2011-concussion/",
+        "/videos/connor-bedard-jaw-2024/"
+      ]
+    },
+    {
+      "code": "rugby",
+      "label": "橄欖球",
+      "count": 2,
+      "paths": [
+        "/videos/antoine-dupont-world-cup-2023/",
+        "/videos/george-north-2015-concussion/"
+      ]
+    },
+    {
+      "code": "american-football",
+      "label": "美式足球",
+      "count": 5,
+      "paths": [
+        "/videos/aaron-rodgers-2023-achilles/",
+        "/videos/nick-chubb-knee-2023/",
+        "/videos/kirk-cousins-achilles-2023/",
+        "/videos/joe-burrow-wrist-2023/",
+        "/videos/aidan-hutchinson-leg-2024/"
+      ]
+    },
+    {
+      "code": "alpine-skiing",
+      "label": "高山滑雪",
+      "count": 6,
+      "paths": [
+        "/videos/lindsey-vonn-schladming-2013/",
+        "/videos/aksel-svindal-kitzbuhel-2016/",
+        "/videos/sofia-goggia-2022-knee/",
+        "/videos/aleksander-kilde-2024-shoulder/",
+        "/videos/mikaela-shiffrin-2024-abdomen/",
+        "/videos/federica-brignone-leg-2025/"
+      ]
+    },
+    {
+      "code": "cycling",
+      "label": "自行車",
+      "count": 6,
+      "paths": [
+        "/videos/mark-cavendish-2023-clavicle/",
+        "/videos/annemiek-van-vleuten-2016-concussion/",
+        "/videos/fabio-jakobsen-2020-concussion/",
+        "/videos/remco-evenepoel-2020-pelvis/",
+        "/videos/jonas-vingegaard-crash-2024/",
+        "/videos/wout-van-aert-crash-2024/"
+      ]
+    },
+    {
+      "code": "crossfit",
+      "label": "CrossFit",
+      "count": 1,
+      "paths": [
+        "/videos/julie-foucher-box-jump-2015/"
+      ]
+    }
+  ],
+  "situations": [
+    {
+      "code": "landing",
+      "label": "跳躍與落地",
+      "count": 22,
+      "paths": [
+        "/videos/kerri-strug-atlanta-1996/",
+        "/videos/carolina-marin-indonesia-2019/",
+        "/videos/julie-foucher-box-jump-2015/",
+        "/videos/giannis-east-final-2021/",
+        "/videos/ronald-acuna-miami-2021/",
+        "/videos/lindsey-vonn-schladming-2013/",
+        "/videos/klay-thompson-2019-acl/",
+        "/videos/gianmarco-tamberi-2016-ankle/",
+        "/videos/derrick-rose-acl-2012/",
+        "/videos/kristaps-porzingis-acl-2018/",
+        "/videos/gordon-hayward-ankle-fracture-2017/",
+        "/videos/paul-george-leg-fracture-2014/",
+        "/videos/zach-lavine-acl-2017/",
+        "/videos/shaun-livingston-knee-2007/",
+        "/videos/zlatan-ibrahimovic-2017-knee/",
+        "/videos/edwin-diaz-2023-patellar-tendon/",
+        "/videos/kendrys-morales-2010-ankle/",
+        "/videos/rebeca-andrade-2019-knee/",
+        "/videos/samir-ait-said-2016-leg/",
+        "/videos/ter-stegen-patellar-tendon-2024/",
+        "/videos/eder-militao-acl-2024/",
+        "/videos/carolina-marin-acl-2024/"
+      ]
+    },
+    {
+      "code": "running-turning",
+      "label": "跑動與轉向",
+      "count": 24,
+      "paths": [
+        "/videos/zverev-roland-garros-2022/",
+        "/videos/derek-redmond-barcelona-1992/",
+        "/videos/usain-bolt-london-2017/",
+        "/videos/markelle-fultz-orlando-2021/",
+        "/videos/kobe-bryant-2013-achilles/",
+        "/videos/cameron-brink-2024-acl/",
+        "/videos/jamal-murray-acl-2021/",
+        "/videos/dejounte-murray-acl-2018/",
+        "/videos/david-beckham-2010/",
+        "/videos/laurent-koscielny-2018/",
+        "/videos/beth-mead-2022/",
+        "/videos/leah-williamson-2023/",
+        "/videos/victor-oladipo-2019-quadriceps/",
+        "/videos/rhys-hoskins-2023-acl/",
+        "/videos/bethanie-mattek-sands-2017-knee/",
+        "/videos/hector-bellerin-2019-knee/",
+        "/videos/adam-eaton-2017-knee/",
+        "/videos/manny-machado-2013-knee/",
+        "/videos/liu-xiang-2012-achilles/",
+        "/videos/chien-ming-wang-2008-foot/",
+        "/videos/kirk-cousins-achilles-2023/",
+        "/videos/gavi-acl-2023/",
+        "/videos/rodri-acl-2024/",
+        "/videos/ronald-acuna-acl-2024/"
+      ]
+    },
+    {
+      "code": "collision",
+      "label": "碰撞與接觸",
+      "count": 35,
+      "paths": [
+        "/cases/lamelo-ball-ankle-sprain-2025/",
+        "/videos/mohamed-salah-final-2018/",
+        "/videos/antoine-dupont-world-cup-2023/",
+        "/videos/sidney-crosby-concussion-2017/",
+        "/videos/john-tavares-2021-concussion/",
+        "/videos/neymar-2023-acl/",
+        "/videos/george-north-2015-concussion/",
+        "/videos/kawhi-leonard-acl-2021/",
+        "/videos/alex-oxlade-chamberlain-2018/",
+        "/videos/cristiano-ronaldo-2016/",
+        "/videos/andre-gomes-2019/",
+        "/videos/tim-hudson-2013-ankle/",
+        "/videos/buster-posey-2011-ankle/",
+        "/videos/steven-stamkos-2013-tibia/",
+        "/videos/connor-mcdavid-2019-pcl/",
+        "/videos/mikhail-sergachev-2024-leg/",
+        "/videos/max-pacioretty-2011-concussion/",
+        "/videos/aaron-rodgers-2023-achilles/",
+        "/videos/harvey-elliott-2021-ankle/",
+        "/videos/wesley-fofana-2021-leg/",
+        "/videos/kyle-schwarber-2016-knee/",
+        "/videos/dustin-fowler-2017-patellar-tendon/",
+        "/videos/stephen-piscotty-2015-concussion/",
+        "/videos/dustin-pedroia-2017-knee/",
+        "/videos/aaron-judge-2023-toe/",
+        "/videos/yuzuru-hanyu-2014-collision/",
+        "/videos/fabio-jakobsen-2020-concussion/",
+        "/videos/nick-chubb-knee-2023/",
+        "/videos/joe-burrow-wrist-2023/",
+        "/videos/aidan-hutchinson-leg-2024/",
+        "/videos/dani-carvajal-knee-2024/",
+        "/videos/jamal-musiala-ankle-2025/",
+        "/videos/kristaps-porzingis-retinaculum-2024/",
+        "/videos/joel-embiid-meniscus-2024/",
+        "/videos/connor-bedard-jaw-2024/"
+      ]
+    },
+    {
+      "code": "fall",
+      "label": "滑壘、滑倒與摔落",
+      "count": 13,
+      "paths": [
+        "/videos/shohei-ohtani-world-series-2024/",
+        "/videos/aksel-svindal-kitzbuhel-2016/",
+        "/videos/mark-cavendish-2023-clavicle/",
+        "/videos/annemiek-van-vleuten-2016-concussion/",
+        "/videos/juan-martin-del-potro-2018-knee/",
+        "/videos/bryce-harper-2017-knee/",
+        "/videos/sofia-goggia-2022-knee/",
+        "/videos/aleksander-kilde-2024-shoulder/",
+        "/videos/mikaela-shiffrin-2024-abdomen/",
+        "/videos/remco-evenepoel-2020-pelvis/",
+        "/videos/jonas-vingegaard-crash-2024/",
+        "/videos/wout-van-aert-crash-2024/",
+        "/videos/federica-brignone-leg-2025/"
+      ]
+    },
+    {
+      "code": "ball-impact",
+      "label": "球體撞擊",
+      "count": 15,
+      "paths": [
+        "/videos/steve-smith-2019-concussion/",
+        "/videos/chris-bassitt-2021-face/",
+        "/videos/alex-cobb-2013-concussion/",
+        "/videos/giancarlo-stanton-2014-face/",
+        "/videos/charlie-morton-2021-fibula/",
+        "/videos/mitch-haniger-2017-face/",
+        "/videos/justin-turner-2023-face/",
+        "/videos/kevin-pillar-2021-face/",
+        "/videos/bryce-harper-2022-thumb/",
+        "/videos/mookie-betts-2024-hand/",
+        "/videos/chase-headley-2014-face/",
+        "/videos/curtis-granderson-2013-hand/",
+        "/videos/matt-shoemaker-2016-head/",
+        "/videos/ja-happ-2013-head/",
+        "/videos/dan-jennings-2014-concussion/"
+      ]
+    },
+    {
+      "code": "racket-swing",
+      "label": "揮拍擊球",
+      "count": 1,
+      "paths": [
+        "/videos/dominic-thiem-2021-wrist/"
+      ]
+    },
+    {
+      "code": "unclear",
+      "label": "其他或畫面未明",
+      "count": 10,
+      "paths": [
+        "/cases/anfernee-simons-ankle-sprain-2023/",
+        "/cases/jayson-tatum-achilles-rupture-2025/",
+        "/cases/kevin-durant-achilles-rupture-2019/",
+        "/cases/kyrie-irving-ankle-sprain-2021/",
+        "/cases/lamelo-ball-ankle-sprain-2023/",
+        "/cases/tyrese-haliburton-achilles-rupture-2025/",
+        "/videos/demarcus-cousins-achilles-2018/",
+        "/videos/vivianne-miedema-2022/",
+        "/videos/serena-williams-2021-hamstring/",
+        "/videos/novak-djokovic-meniscus-2024/"
+      ]
+    }
+  ],
+  "htmlPages": 164,
+  "internalLinks": 3760,
+  "files": [
+    {
+      "path": "404.html",
+      "digest": "eb3c2221d11bcacef399bcb36947af505d604954c255ced6abeb18090fbfcf27"
+    },
+    {
+      "path": "_astro/02FgIaR6WZ4.EEG-7PO1_1klUSC.webp",
+      "digest": "ca81d5bf91414967b0aeb986d9145f7f536472d93c3864df2d0f6f5b6d1fed3c"
+    },
+    {
+      "path": "_astro/0TwnwjFJzUo.BEtwuw0T_Z1L7oi4.webp",
+      "digest": "c7a140325903096294ba98a09c1e9e2d867eaddfb136e539e7b171374169dbd5"
+    },
+    {
+      "path": "_astro/0iPz58nL0L8.Dfy6LliI_1aHN2J.webp",
+      "digest": "842776f926cccf52b4643702a4d292a8e5a3597087f155b9a7699ec913bb8f04"
+    },
+    {
+      "path": "_astro/0xVAWNzYcKE.DPFzDJGd_ZLcEha.webp",
+      "digest": "65b5499611303e198d9cc4277ca9909a01fcd669babd006efde02422f263c7b0"
+    },
+    {
+      "path": "_astro/12UNVAkLlmY.oDfNtBoV_Z1kF9IM.webp",
+      "digest": "a9980c67efd409e4243253696b95f987182c3afe89aededed9fb67ccaad0965f"
+    },
+    {
+      "path": "_astro/1HEC31qHp90.BwOngvzH_Z3nlU4.webp",
+      "digest": "614622c675380b35d73e5cfb08c67aa31e7c0153dada52f6adce4064720e4afc"
+    },
+    {
+      "path": "_astro/22U4bCbhtig.DrvhtgEp_Z1FI1bj.webp",
+      "digest": "fa82109900516fd89cf487277b37d49672dfff99c70f8284434afff7a9da5248"
+    },
+    {
+      "path": "_astro/2UZJNvs7G_o.CM9egr2Z_ZQarhS.webp",
+      "digest": "011e330bffa212bfe3392757dba24ce956361744ce61e0a4fdea8a712c8cee73"
+    },
+    {
+      "path": "_astro/3vHr8d5UQro.CJ355Lbi_ZqQkP4.webp",
+      "digest": "00aec0ca3eb0a2d7ebcd9f3384ae57f2acb60ef6c19175817c60137843f25b62"
+    },
+    {
+      "path": "_astro/4--y5nQdVE0.D8ldYYtc_2s4Moo.webp",
+      "digest": "7de21513be044430e1cf78ebd571ae2b24bcdf387320ad14dc52f2cea8fb6ae6"
+    },
+    {
+      "path": "_astro/4ekUPuhJEYI.CkWRjZ26_1L63uC.webp",
+      "digest": "84538a82880ec5334413f1e3010f274586ef8a40d536a286ba12bd71a3b1baef"
+    },
+    {
+      "path": "_astro/4y-1D7jTW_4.C6tvDIk1_FxTlJ.webp",
+      "digest": "f6d4dc4e76b164d2d9235ddda7f5451962dc9e29c8ffbb81cc0f7d366e0686a0"
+    },
+    {
+      "path": "_astro/5EclrKrPNvI.D8SuRONE_1qUNnF.webp",
+      "digest": "c82c1c86138bf0ce02118e5bff238ad828613eda57f7693f971c4839df66d1b4"
+    },
+    {
+      "path": "_astro/5KlgfpqWCkY.7EfRknxM_1oQYTj.webp",
+      "digest": "e147d327e237a9210ee60f32ed1a264071b3f372f853892373e54dfaa9a8e115"
+    },
+    {
+      "path": "_astro/5STUOgvQWgQ.fDwRlZBS_Z1KyArY.webp",
+      "digest": "672f5268fc0c71f75fd5ac312d9815b9aed06a3b524f08b0add71cefa18759c2"
+    },
+    {
+      "path": "_astro/7tpaxZTTi2w.BIwKmqQH_ZrsC8e.webp",
+      "digest": "5b14d5c50d1dc3480dded3353d98be81036a9ce0ddfcfe16b79db6f0f8f02aeb"
+    },
+    {
+      "path": "_astro/8TIJGIRP634.DLUgUBrO_ZDTDcM.webp",
+      "digest": "878a84129338cd6b31268b0d0bc288fb1998706357908d680444f218ee9522a4"
+    },
+    {
+      "path": "_astro/8_d9ITG6Rmk.BM3zH399_1bVj4e.webp",
+      "digest": "9f47c8f292660be3912b5116f35ef2fbaf121dcc619bac8ce472b52cd180af2d"
+    },
+    {
+      "path": "_astro/8rQjyuPU_gM.DLkfxY_C_Z1OXTRI.webp",
+      "digest": "002aa8ce2938e73129b183adc96b034f19d2bc3f1e50b93b1dc9788835981ce3"
+    },
+    {
+      "path": "_astro/9JoITljMoU0.WqrTNxOC_2pETrm.webp",
+      "digest": "4b50ea7a8044a76295081907dbf52f86d7c999b35ebca8f871469c7fe4056032"
+    },
+    {
+      "path": "_astro/9c2i7OQerbY.Bcsj0a6w_1n6EqX.webp",
+      "digest": "424a8deef61cfaf2d8bf9d8a16b4c7415c929038a5a65628c7eb2089c32cc908"
+    },
+    {
+      "path": "_astro/AHzOcxBu0Fk.fTnJF4E5_Z1IGJw2.webp",
+      "digest": "3dd1b4390d33866dcab0f508840ff6086873cfc40cf7026405a7d117ae48d2c5"
+    },
+    {
+      "path": "_astro/A_Wnlt1RP38.BSKWzIRB_1TBRw6.webp",
+      "digest": "c115e8302d8f16c9c838c172993659aeb2c7034da1c646d694b696e02703e34d"
+    },
+    {
+      "path": "_astro/Ajto95dt2yQ.CqAqX8Gs_Z1CO7DA.webp",
+      "digest": "83dd8cb3a4b94535c0b39c0bc2404534acec8a844c1704a21836e7c52ec724dc"
+    },
+    {
+      "path": "_astro/AzVEucCufd0.Dh2ENCdM_24FobE.webp",
+      "digest": "0ae4756da2625488e9351ce62ec7e9634279238e88709366e8782e6cf059b37c"
+    },
+    {
+      "path": "_astro/BaseLayout.astro_astro_type_script_index_0_lang.7QhLh6XX.js",
+      "digest": "65f41bdd5b7c5a4efde9cf2f2255e373735e81e92f2ade95bd29aa0dd5ed2048"
+    },
+    {
+      "path": "_astro/Bt7EHTIivuA.TixAtnJ9_Z1LiDlS.webp",
+      "digest": "953cab84cde0a1d26f79ab9c20728a717fb62c239108238f4fca040375755530"
+    },
+    {
+      "path": "_astro/Bwa5Bf656As.CwEvgmaY_LPaWA.webp",
+      "digest": "b1e6766c5108dcb8933bbd3630423f44518235c305fa16c512e7488bdd03f6d9"
+    },
+    {
+      "path": "_astro/C4xerhbFNnc.CJ_evRJx_2kLhsb.webp",
+      "digest": "ae242910bb28e3371b2461c404d28d437047125ebf8f22adef004829e563cbef"
+    },
+    {
+      "path": "_astro/CHU789PuCWg.CutoHCxZ_gaFNh.webp",
+      "digest": "debe2ea917e39318743dde7db0becb608051a70ae0f434ff77e3264e8c73bbec"
+    },
+    {
+      "path": "_astro/CaseFilters.astro_astro_type_script_index_0_lang.DoPLBKUk.js",
+      "digest": "237b8a4059447faf1e6c76a5be366149e271a44ea05162ec3023211764fe47b5"
+    },
+    {
+      "path": "_astro/CaseVideo.astro_astro_type_script_index_0_lang.xFGZLLj-.js",
+      "digest": "b5965e26996b00a33145e33740759f8115a89e88143843b53ecab158e447a8a9"
+    },
+    {
+      "path": "_astro/D0VibSVWwBA.Bo7lPXIF_Z2kGvcq.webp",
+      "digest": "40bc6653ecb659b3f12b526306f07a4a84f91b28eaf459ffd9dbd3184350413a"
+    },
+    {
+      "path": "_astro/E0mYSZ1jTG4.DRGS-oM3_Z9Ngd.webp",
+      "digest": "880e831c3a7b9b022f081af5ff67cc546da7375690e2e9aea05e4402161b522f"
+    },
+    {
+      "path": "_astro/EScFb5vASZ8.DLRfHemp_RBo05.webp",
+      "digest": "e5389b9e0ff8b389b4b6d3923d224b50b250287edf43218eabf045b4b3d43155"
+    },
+    {
+      "path": "_astro/FQAPZASQyX0.BNe-tdBg_29Gth7.webp",
+      "digest": "323d182246481b83a92f538ab2f93ae55d2c1bcb19e178172f823f63392d7f7f"
+    },
+    {
+      "path": "_astro/G9_DOWNXdjc.BaDEtkUU_Z149tAn.webp",
+      "digest": "3411cd247d2187cd3a732cc11402425c1fc7d9f346e9b54143d1a4efc6ab6321"
+    },
+    {
+      "path": "_astro/GfnIhZIzIE8.CQKAiyem_Z12M6cT.webp",
+      "digest": "52ffbdce93cedc3f1b7b1b06a2fa1dc2aa152b339ce8408343936fb51b00184c"
+    },
+    {
+      "path": "_astro/Gnhby06KpyQ.DTINOrzT_2dY3c4.webp",
+      "digest": "6bbacb6899c8d1de546a58094e9295277e63fd31b61f5d6e68138293b2e19057"
+    },
+    {
+      "path": "_astro/HgrqAWPBSTk.BLoNZNGO_2fEKCD.webp",
+      "digest": "ab5522596b90dbfbb78ea3326feae42344ccc0dc9b7354b416e8b6e26ee1cf3e"
+    },
+    {
+      "path": "_astro/HhuFTOZt6TU.C5Nd0lEH_Z1l9BIV.webp",
+      "digest": "f5fad903f1acd981881a1b3e6e9e4af835a1d8a80a4f78df821dbc592357f40f"
+    },
+    {
+      "path": "_astro/Hk46I0O_mjU.CWYJ_5vr_ZKAMtH.webp",
+      "digest": "a263602714d550c5ec9f494aa32c54da5f6917ced69f0afa76bf1369af2c92e6"
+    },
+    {
+      "path": "_astro/J1iIgGSiSFc.o9rGJdjr_Z1hu2sT.webp",
+      "digest": "75d96241772555d5c15882e948507c16f553c34e64ef0dc153be426139b59fc0"
+    },
+    {
+      "path": "_astro/Jf84VzlzLhI.C98O5tS5_Z2sqfOJ.webp",
+      "digest": "f3bcfad567dd66e4bdc5d8c2cfb7994ab8133db6cb30fecaa31a4df9015b3cef"
+    },
+    {
+      "path": "_astro/KK-tjBfB9ys.BwtJb3pR_OHMJt.webp",
+      "digest": "ef94782371b9457b393cb2398be2008158056e3c3551a96318e06d3e06fe4d4d"
+    },
+    {
+      "path": "_astro/KTaglqZADPw.DcBdhIAo_1QUkLR.webp",
+      "digest": "2e347b7353c82939b20dd505831b5cef51bee29cb381b78301ac113f5dbc8c3f"
+    },
+    {
+      "path": "_astro/Kxz1vhDq94Y.DOM_Zxwb_z2qtq.webp",
+      "digest": "7096439fecb85f332c390fcfb4b334ae5001744ba0249f986dfddc10f0bac4f6"
+    },
+    {
+      "path": "_astro/LOaTNtmSxUY.CAPRXF-V_ZR8d1F.webp",
+      "digest": "d85f20a9ab5ec169c42b44dac9fcfefcb63a1a6af1c2f6ce93bcb30f002c1a7b"
+    },
+    {
+      "path": "_astro/LZTOTwvfli0.B_ZVLx1e_4HzqH.webp",
+      "digest": "6757d40499a853a8bc4a07dbf1f8f0464b780ffab7d53031650b7430f44d19a0"
+    },
+    {
+      "path": "_astro/O3IZGzHla4U.BKR2C4m__XVM5m.webp",
+      "digest": "71468d8ed89dbf7df8c40db8a2be30bc05ecfdc98bfe6bfbb068169db00f7678"
+    },
+    {
+      "path": "_astro/P-bLI8A0q2k.BL5CXj26_Z1ogOny.webp",
+      "digest": "b67bbfba4d8e82588950840e82913dbd75e061dee86661ec2226f678e91d558f"
+    },
+    {
+      "path": "_astro/Pa50gXELqp0.DTrvnLYL_ZiNGfL.webp",
+      "digest": "6f789214ef724b84a620fd1f4d86c57ce8f788816b0fb40fc237222e350e5228"
+    },
+    {
+      "path": "_astro/Pi6Pku8QVXY.B1-mnIAa_1B4icU.webp",
+      "digest": "ae59c88df9032b125caff244db380e5c8feee4b6b2c8ae7af1a624ff796ba24e"
+    },
+    {
+      "path": "_astro/Pzul0WT-LJs.C_Cctvq9_nlViE.webp",
+      "digest": "027e29c3ec18c1bc5ebeef897c356b388f601c102ea64fd3fe938d08e73dcfaf"
+    },
+    {
+      "path": "_astro/QDOJL9lwYdI.CviDp27N_AJwMh.webp",
+      "digest": "6d77fbddadd8c23cf482ea931bb78a97297b70e287257e17936bd1ca91b26ff7"
+    },
+    {
+      "path": "_astro/Qoy8tUXsqQs.Bc8JPU_Y_1qjUat.webp",
+      "digest": "00362f9c9cd592ad12f37e37638f975a661d973aefb90508f40c7acf36e55a81"
+    },
+    {
+      "path": "_astro/RDDGpqOvSdg.BBhQW5hD_ZLBJWS.webp",
+      "digest": "af770c997635ffb699ee36270fe3487e794bfb58ef586e285ab7d0a029bda715"
+    },
+    {
+      "path": "_astro/RDSkmfmqNic.BG6h6K0i_KNoki.webp",
+      "digest": "6734dc3acc665ccc7991dfef26f0359043cc75ca95e45cd5acabf3ead0c43b14"
+    },
+    {
+      "path": "_astro/RdAvC8i0szY.D6iqqVjn_CtDUP.webp",
+      "digest": "022d6ad25a09b741d35c60afe9e808813d66d767e1705e0886c4b78c101564e0"
+    },
+    {
+      "path": "_astro/RvDqK9NnqyI.Ot-_tTHA_Z2avg3j.webp",
+      "digest": "6a224849fc5906d14c8ac4acf597b79d860ec94117b6e26d792bba56b9179ccf"
+    },
+    {
+      "path": "_astro/S2NsAbb8MNg.CGX5pJ6X_ZiaPfX.webp",
+      "digest": "3ff22ae3a017f011ba02ce0523fd1b9757275dcdd65e209b16d16106171a12f0"
+    },
+    {
+      "path": "_astro/TygjH39bmfU.D-aBFasg_Z2bMHvp.webp",
+      "digest": "49b91e839ffd1168b41a88117421094024549388f6ba5fe1366a747b67c695f1"
+    },
+    {
+      "path": "_astro/Ue0VBshhwX8.B0K92Cr-_Z17LxWV.webp",
+      "digest": "cb421ac498d0c5f0184e19479b0f7502acaa90bbbe8c489df32f75c7f8fafb0b"
+    },
+    {
+      "path": "_astro/UxS0YVftoWs.CWn-CuN2_AU0IQ.webp",
+      "digest": "a227a75b6499aaa54bd08ffa02e8e8026ca94083a58f857905b9a061cc0b06f9"
+    },
+    {
+      "path": "_astro/W5Bg3oaHI8I.PV_2iFx9_1soU8h.webp",
+      "digest": "11d7790278df0e807ee354636738c05eabf5ee7c96f8b491bea2bce10876c0f1"
+    },
+    {
+      "path": "_astro/WC6e9OaS8WM.CNSnd9jq_LHtPY.webp",
+      "digest": "3b241b349a3b7e9ab18fceb7c7e2b978f7b3408a3e9ec8bddc42c2e134a84752"
+    },
+    {
+      "path": "_astro/WJseH_HrC7o.CvYV0Em7_Johva.webp",
+      "digest": "babd8a08991fe34b085f7098505dde952d55ada35538ed16333c054d73efc31c"
+    },
+    {
+      "path": "_astro/YXpvkHw2BP8.-TqNWe2z_11yKCQ.webp",
+      "digest": "7c1e03573ba50878365a2ff1eac053fea33322a2e0aa8bd6504e66afb23c4f4b"
+    },
+    {
+      "path": "_astro/YcSOLHMsJYw.DDYpzeHY_ZvT5Ls.webp",
+      "digest": "9bdcb2994a5fc5dc4c802080858be39e0955ac7d2e66631606c47ea9a761ba72"
+    },
+    {
+      "path": "_astro/YfynOcvpQfY.0qWUC5J6_20WxKh.webp",
+      "digest": "9f2b0a0723ba9abc7bdf4749046cbdfb6dbccbd67848c2ed56aada757173bcfd"
+    },
+    {
+      "path": "_astro/YjDF1Saryg4.C1_DmX-U_Z1MTUYt.webp",
+      "digest": "c23387c78c2c967aca1d57ba620f862b44f2a49ddd71eb8d25d26135ea9f3614"
+    },
+    {
+      "path": "_astro/ZRP1PfMv6ds.HKXOtOty_Z254wg5.webp",
+      "digest": "3af0777960f432357a62f8a153c4d391450e1486b6af7d43c61f9b41f2725d4c"
+    },
+    {
+      "path": "_astro/ZrJ_d7oyhN8.DkTZGMiv_Z27sKj1.webp",
+      "digest": "5e98105314f340b97fadb3080941889eaeb9bdec47c7ac7da2109db107342d24"
+    },
+    {
+      "path": "_astro/_slug_.astro_astro_type_script_index_0_lang.xFGZLLj-.js",
+      "digest": "b5965e26996b00a33145e33740759f8115a89e88143843b53ecab158e447a8a9"
+    },
+    {
+      "path": "_astro/a1Malj3Fqm8.D9Avt6x__14w6jX.webp",
+      "digest": "377256becb1e94329d91bf800c8a94b6d62d119ebfbe26145ebd5b772c1c1579"
+    },
+    {
+      "path": "_astro/aVmzQYIwTfc.9ginkG_Y_2ezOQ8.webp",
+      "digest": "84ae86a65116fc940bacd76bb0d05899c9058f6bb5ca7e803b3d7b76b49c97d2"
+    },
+    {
+      "path": "_astro/aWo-ur71zvo.CF_ZhpQ-_Z1XCXI0.webp",
+      "digest": "2a5c1896ef372b96e0597aa6a4ab9ee5eb82a3db4f1f518c4845d52de69e5e83"
+    },
+    {
+      "path": "_astro/achilles-rupture-case-01.BV8nYdj7.png",
+      "digest": "0a9702b965b72ddc1c9130ce34dc1b48fab268a9dd628422958380b2d2629bec"
+    },
+    {
+      "path": "_astro/achilles-rupture-case-02.B13u64uI.png",
+      "digest": "037bb950968e93b7ff1277f597b4eda0ed94589bb88f9bba888fdd13368777df"
+    },
+    {
+      "path": "_astro/achilles-rupture-case-03.y0o9PtUE.png",
+      "digest": "2f5fb577d579ed13ef607a4aec4342e9924df83b55cc427f833ecea1bcc7f46f"
+    },
+    {
+      "path": "_astro/achilles-rupture-case-04.DZIuceMF.png",
+      "digest": "6334f689d1b26b2a6e959708d6f1560594a9cf1249f9da2f3baa82f93db67b0d"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_1OYqpD.png",
+      "digest": "0bc8f02ca30483e9c45afc26bf53d67cddab46dc55e89b924cafdfdf548b8127"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_1XuS89.webp",
+      "digest": "88e87816efb59594e4b7d92772e53b0e1a742b6b836771a8af1b3780c8ba7de7"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_1y2aWw.avif",
+      "digest": "106f83f3d81dd1c604d7cafd6fc7605b5c59f634a864f4ee40a79a9aaa95d67e"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_20D0as.webp",
+      "digest": "3286bd82ee4c5d62b4f93cb676b301d3b91114ffba8a97f09fccb40f9d06b404"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_20wdP.png",
+      "digest": "3e3b181b759c822364e50c4c12b1ccd58627b7ebe40573fec772f18a60f2d931"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_2mrYxX.avif",
+      "digest": "4426f6ed7a3658437996d13091b07132375d56c4cca13de1cce5f66442d996da"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_2pBLW7.avif",
+      "digest": "51b3b0d71861b48c8a8dc425ee00d30fb1c0cb1bb4d9828bccab4a2d0155d2ff"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_2qoL70.webp",
+      "digest": "67f39bd91b8ef0b4a5864d15557f707494f3885e87718d0f4b501fa1e72c4c51"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_8bCgG.avif",
+      "digest": "747de5fda7c9beec9fc0b3c362ec88242230b0df72d3bacc31c8e995b12c4c60"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_A5vfx.avif",
+      "digest": "bb3481692d3f2daf2ec804a2860f53be2803400631c7019066a9bef9c52aadae"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_Z18CO5B.webp",
+      "digest": "58c7083c8bfbc55c331a13c00d61717bdcf760655676e325faab541c7af442a8"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_Z1Ic1JD.png",
+      "digest": "a8623212c6fb3a07a500c01a8bd9108c50a8c7ce525b105e1e2ab187f5c8c2ff"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_Z1Kk8LW.png",
+      "digest": "bb9aaf3d25d83b40ae9823a5ada539cb55b2ec02d923113fbf0d4b13ea3df65c"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_Z1cU8S1.png",
+      "digest": "3218d67a496e9ecf620c91303921b9019f1cd8433284c5309685467ef1820af8"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_Z1iqfN6.png",
+      "digest": "7a8dcef5cb8d7a21ae565fe9b835f261836bb01501d7002f234f9ab5da047854"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_Z1lFVkE.avif",
+      "digest": "44213b1e65952a2404ddf363d975afff76a30990043261b5898f1e0719eeeea5"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_Z1vXScR.webp",
+      "digest": "3e33f9af262aafc01a3280d73e7df9611c468f8f53380584be992e22689f3631"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_Z2hehJy.avif",
+      "digest": "d65d072e59c412fb25de6f1afecacfedea0b11ef6e5812996d18dd27515c161b"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_Z2nyucs.webp",
+      "digest": "b5af825fbc6af4d655b46aa4a8a7c9b685435543f838b26ba294aaa5d2006cb2"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_ZRpSov.webp",
+      "digest": "3af608483665f5b97ddc0c612d1b09d7f6ccd6062077e2ee7f337f81456ffdf7"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_ZlkwSq.png",
+      "digest": "d8d89f6358f43b7d95b38b10c4be01ffdf9f7733d73aea6824c738e7393d66cc"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_ajJj0.avif",
+      "digest": "9d0a2e8975663444442143829355a10ec0aaaf6c25850f5c79d019aaf2e1fa37"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_sVduk.png",
+      "digest": "a197a81748dc460db7b80aa73aa5dc5092956ee871ca04730ece7a29ad3f4e68"
+    },
+    {
+      "path": "_astro/achilles-rupture-overview.xq-lZQGE_tCjvN.webp",
+      "digest": "fd67827841b4b3daaa24acbd3f46ab604ffb451d05242517717d33de8af979af"
+    },
+    {
+      "path": "_astro/acl-case-01.Dz5vIFsD.png",
+      "digest": "1eadfeab2babd48da41810f0e9f9a3bfa865d198d0077ad1fc71d298a937c50d"
+    },
+    {
+      "path": "_astro/acl-case-02.BFqo1l4y.png",
+      "digest": "f8a48b36a4a056886f3c49fa794b5f7580daaa1580ce2085b5a2f549b4aa6953"
+    },
+    {
+      "path": "_astro/acl-case-03.B6JQhsLm.png",
+      "digest": "ad5be2de623028b90614e09ed3811af93e36f2d0b0de32c60299d60d6460d4f8"
+    },
+    {
+      "path": "_astro/acl-case-04.C1L2yY3c.png",
+      "digest": "8565ff1cfd55be4f0cf1732bfa2700144801051c8e8b7c75360f6a219bd8352e"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_1DbaT3.webp",
+      "digest": "ade4de5a34510d569a2425f7959f84f156680cb7876073a2c96dea82e25b3a35"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_1HLSNd.webp",
+      "digest": "2389a82e2b1018baf33f825d22acf80648d5235a93509251676d01d948af1241"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_1J1WCv.png",
+      "digest": "31dbfa536c29cc8ca69cfdd94e25cafe961fdde72472952f8c0e67bf894ae758"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_1y0pFl.webp",
+      "digest": "5f64865af74dbafcc2a2634673c7a70cee17ceed933b2af0eda0679400a1621b"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_20DIuD.png",
+      "digest": "f21e74bf3cbb93e9e87e82dbabedbcd115e136f4684f4e2ea94947c7425e7f38"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_23ieKs.png",
+      "digest": "90cb4aede19c7305ce3f69540f8d63eade1466cacf4f6a2056e4a9bc2fe9c0c6"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_244Wkt.webp",
+      "digest": "fb1c161559c28ccd05a673368dcf84264d21f7983979ff1b629eefbd35a3c75c"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_29agVI.webp",
+      "digest": "3ff11f242312bf7236f0c89c843fa7b4b86a986b1be4c68b2d1928bfbedd6e80"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_2fOk4e.avif",
+      "digest": "9568f714a7b1291e5f2d36b2b8e92ac23f9a19e692a18c41d6ad3d61a553d012"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_2lG4sO.avif",
+      "digest": "6a6977be9a157f5d6cfba4f69e71b546a5bcfc6b998dad403e1a2fc3f3be1aeb"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_2miy9j.avif",
+      "digest": "0ea44dc6fc64e58de7ffdc0c0dafecfae413b012908a0a5d6cd84b32cd06e15d"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_9M2bF.webp",
+      "digest": "82dbed28fa5fb92a1480a4d8f3d2bea36bfbbd134ea053ae3f54cfbd0ef64f97"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_AWwFG.webp",
+      "digest": "65eec88ed4b2b869b3d8a2158dd6cea30d1c21f8b049c31e3ceee6ed9f41e363"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_SyDO2.avif",
+      "digest": "eda4f0019b2d1bba5ecb1162bb9ec2723b1eaafaa0a72b85ccc9d77a7e17812c"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_X5aED.avif",
+      "digest": "ec29f431587414eec7d0e97b90e8344f972b6d311df2e1bc9547d1521e1b3a20"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z1AP9lv.webp",
+      "digest": "f82d20ba3c1148d564616f5d9afca6148cf17008bf6a9f63aad05a7ef89555b6"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z1c5fBB.avif",
+      "digest": "fac156de56783c17960467d616e6c9ba6ab625c3a4d1d8b36e6ba4bdac54d8b9"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z1hyRdy.webp",
+      "digest": "b8a1a634221e58d5bceae4a465f640d92e25bc6d4afe4051f6f366ff987a4c5e"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z1tGmJW.webp",
+      "digest": "dfd3fee2da5a710f0f2d0a4f98849cf2ef04e634ba043ecfe87ca26f9137edda"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z1x7AzM.png",
+      "digest": "d074fe899aa2331c0ac16fac5914d1de02dc06023667355b4dc973134b5cf243"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z26gR5I.avif",
+      "digest": "84ab64716493f52c15c4c4fb6937dc75408db1cdbea4dd7259176c1bf97f9b7d"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z27IIof.avif",
+      "digest": "be706b637344c113c9e7d9648cfebcf474f854bb5d0fe0ea5b3a9fa09ef10aff"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z2bmE2x.avif",
+      "digest": "2d38711575de1b70574536996aab6530b3a3704abd5ec0669a1aed505ad581f3"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z2nRYe4.webp",
+      "digest": "d952bab638e8d1dff9b3d24a5db8833bf1942e2f200842f671aee59217f816ab"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z2rjd3T.png",
+      "digest": "6e1ddd80448f0e3f9c15c0a48bf10eb44ec1b37e1893d48f1e73e39f4614a424"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z2sXLaS.webp",
+      "digest": "835495b50eb87e7912996f7372d8e35680b33a71905b5847280ec7bf4d52790f"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z2v6wBK.avif",
+      "digest": "0d5f14a82f6f2a5ee1f4d4a0ea53b21dccfffa6babd60462bf144541ad6cd87a"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z2wp00I.png",
+      "digest": "45e364dd97fa84c13e3c76e27a40b3de09287ed56687fea8fa65e9a5eba69310"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_Z68PUR.png",
+      "digest": "e9adc9ff95e144066a02f30458169e1ea40b4f15ab1ab08fb9ff07e983993ef4"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_pDvuQ.avif",
+      "digest": "f3bc4c47b66752ec36e361bbfa8fb0412bfe87ff12436d61010640d7eda85c11"
+    },
+    {
+      "path": "_astro/acl-overview.CdsW2ZtA_xwiPQ.png",
+      "digest": "ea0b5ddb5e93f9fda40c28a7cfd845d65f54e8c35da1a6039d4815c0967a1378"
+    },
+    {
+      "path": "_astro/anfernee-simons.Dzy6n5s3.jpg",
+      "digest": "2c651d636a979b4e838c28817e56ce56917d7b216fc6e59603075654a067fd7e"
+    },
+    {
+      "path": "_astro/ankle-sprain-case-01.mtpwD0H_.png",
+      "digest": "30edc84ba131fa068214be49e3688894ef0cf83e773520e0131f8867d85522eb"
+    },
+    {
+      "path": "_astro/ankle-sprain-case-02.BXg9HN_o.png",
+      "digest": "b8ce93d3862b17b5f5fe7911c48fbab15574ce26eab598809de9767e3c7a12b1"
+    },
+    {
+      "path": "_astro/ankle-sprain-case-03.Bm41_iIZ.png",
+      "digest": "68a0e76730fd3922e785af502aaf7ff7ce866250cbd144b9255129168852b139"
+    },
+    {
+      "path": "_astro/ankle-sprain-case-04.B2qAEBD2.png",
+      "digest": "cf45e134c69c1cd20785758549930cef52dc8896b1e79864db04e13da2a6f8ae"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_1AlqGH.png",
+      "digest": "be74e7272486e54d8052ee60f7895bc628b0dd90b23b75de304640d11d17032b"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_1X4qNo.png",
+      "digest": "9fc0ec2b2488f6a11b63ff39adb104a3add73db53be5b9323c6618000ce61731"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_1fW9Hr.webp",
+      "digest": "04c33f9e158a486377a0715d6f100084ca5e12faba2acdde9de0f3a89039e265"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_1kedQu.avif",
+      "digest": "5b5b568a4628e331e1ebdb061e621b5b0df211601a69ddc6b1bca7da366d90f3"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_1tqUg9.avif",
+      "digest": "8e0c3dda96db8b335a6aca08b097580709a0c04548cb852e4e76748e59b3b16c"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_2mcODh.webp",
+      "digest": "472c4867990985cf48c3d05b7291867edcb01961a4cc25e674a69ca96e1bc27d"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_2oatua.png",
+      "digest": "5ebd04e4747a9be834e8ba5b5a28385d65d698b819a192980d7b8da8da7b30bc"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_2tzdgA.png",
+      "digest": "27fb693af1dbae23719929a8f0889ecb3fa4be32394631557b80d319334e8552"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_FpySD.webp",
+      "digest": "51b4e87e9e9ac395487e5e6964021a59dde12bd4a7f77a85c3d4c686471b974e"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_LMUEh.webp",
+      "digest": "e71231311a16c991d134e08c44eeea9a2707a2537e7a8edc0babad99d8f9a85c"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_REUpm.png",
+      "digest": "11353249e8f1cc142cb76f5c0fc764a914a65053d795572b18784e9e550feb41"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_RcEqH.webp",
+      "digest": "4a9c5a6df7d41bd19fa2466d4a8d821659afef618cf08f23f20e16f8bd57f4de"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_WvdJN.avif",
+      "digest": "98347ad6b845a4545eef6a96bea22a504d4df1e78cac05471dcc19383b813122"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_Z15xKCt.webp",
+      "digest": "74db93e15afe827e4421e4155594f05bf78e33af4cdd8cfec2c99cb8d385668b"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_Z1Qp9z3.png",
+      "digest": "3646b54694fbf9e4be105d18303d81d6cd0e7af1e41d51cb0a9a7b7fcbf604fb"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_Z1YPUGy.avif",
+      "digest": "68d64e38c280de56d72dca55a046f7c0e8ddd603ffa502cee6af1492c2df7270"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_Z25fEsY.avif",
+      "digest": "4f587297ef09c3fc3a3f33eec5fe618cf72fdf2b0d6ce41cbf3e543604dbf291"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_Z2lgj3X.webp",
+      "digest": "740ee6de3899c2cd902b01ec847ae212bace8edeab68ed7b0ba31fcae0c42056"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_Z2ufmvW.avif",
+      "digest": "275203d98dbc1731f7797813be0bd09220dbdc82cd87f666202d78075393ea51"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_Z5qO2V.png",
+      "digest": "453b6bda7d3f8fbff314c8b2ae0f552162db5129926ba11e5682b1412d8fd71a"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_Z8Jrb2.avif",
+      "digest": "7a1461a5b67888e6835f5e73936914ba304a7af274ea17fc9382b413597a41c3"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_ZIGCpw.webp",
+      "digest": "420a73261f59ebd8275c95e146dbb654b57f05b3ba2cca743b973a9f3cf6a822"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_ZIh1YP.avif",
+      "digest": "63894edddfa954a9450dbf656d444caf7e56810ba2e183eff4818fce5aaac71d"
+    },
+    {
+      "path": "_astro/ankle-sprain-overview.CBcasoKL_u5KKR.png",
+      "digest": "32e773b12e588000484a8a7b5237f9e9bafd76d38a10448ff9ac4031aaa1d5c1"
+    },
+    {
+      "path": "_astro/anthony-edwards.C6Q0aPru.jpg",
+      "digest": "bc9cabfae1125da0d4520397260c72909473e536b0e027aa447c78576ea82455"
+    },
+    {
+      "path": "_astro/azQpbyDBktk.DJv0hOZw_ZMhqjA.webp",
+      "digest": "41259c5fa7297a0c0c4bbad5885ab2f9560b2647bc43ea8312e095f3e82677fc"
+    },
+    {
+      "path": "_astro/b2vVxFhpEv0.CNNL8uMa_Z10TDO3.webp",
+      "digest": "e3ba06f962b8a2f98bcc261cfe03786604a07cb594858cba52c766b168a13a90"
+    },
+    {
+      "path": "_astro/bLxN2RZYgds.afa9Hr9f_2jqdOW.webp",
+      "digest": "6833114f42332cc6ad5c3e02b1d18dcd0a7a7a6d4b32808c0683299e97d26092"
+    },
+    {
+      "path": "_astro/barlow-condensed-latin-600-normal.BFJEwTuo.woff",
+      "digest": "02e9d2ca2e9af5d8dbdfd30c4a5aa59632205901e9045140b559a44d361d8a46"
+    },
+    {
+      "path": "_astro/barlow-condensed-latin-600-normal.DepVgxBB.woff2",
+      "digest": "215a93c696f442034a46fbb382958f753fda60e30490683aeea6b235fcbb2b66"
+    },
+    {
+      "path": "_astro/blRqsO9--38.DByl47pv_Za4S2K.webp",
+      "digest": "dcc8bb650e5d29c4516ac609a87b3196d529ca95c8cea3f03fd8b5c8d89f24d3"
+    },
+    {
+      "path": "_astro/blW4L9jn6iM.B2KZhqwe_XmsPB.webp",
+      "digest": "cc76553aae171caf9cc3f089fe18b2a9a276646adf249bb45202849b74d09e74"
+    },
+    {
+      "path": "_astro/bni6Jp6p4P8.C29UKrOW_1xgPv2.webp",
+      "digest": "1b4d0d9209332141546b6d19eee2ca9a856fc8b2b63713653572063813ff001c"
+    },
+    {
+      "path": "_astro/brandon-clarke.DI7PKZp5.jpg",
+      "digest": "b864f9073782b2556d93a593d44bd36498234a68f692fe6b5fcfb3bbffab1c3f"
+    },
+    {
+      "path": "_astro/cWGLRqXsT54.Crwhar3x_ZeWO3U.webp",
+      "digest": "79f34db05ed72dc232a7f07ca6191bbb403319494ecde436c2a604014b278bf9"
+    },
+    {
+      "path": "_astro/c_laCIZqsPM.CV4DWNgO_NA3zK.webp",
+      "digest": "f3367554ea5010ca5a96384316e9d288b9912bc0a2b23fccb4e8979150430684"
+    },
+    {
+      "path": "_astro/cgOemKqIzEE.CQsNE4JJ_2tEFFy.webp",
+      "digest": "7aa41bf0d8c37fdd336bd755f074d49bdfa3cdc644c48876905b501d5e0614a9"
+    },
+    {
+      "path": "_astro/cj-mccollum.ngownTQ1.jpg",
+      "digest": "5688298371c4ec218dae6f5131685f4ab511fab6d0797685146953235c8c7e45"
+    },
+    {
+      "path": "_astro/contribute.astro_astro_type_script_index_0_lang.BrYccbI7.js",
+      "digest": "63beae75d0d4a83b3e701fb44c99a7fa3b5bccc8989b4ab9feb762db78468164"
+    },
+    {
+      "path": "_astro/ctiT9toFmio.CcjMUzVM_2aCTFB.webp",
+      "digest": "7980936aad4a739c2b78de32a8417aef1eb6454a4d473147ce8581b476b96d21"
+    },
+    {
+      "path": "_astro/damian-lillard.BzQ5lR26.jpg",
+      "digest": "ba8a0f23d721519e4796c89513f21a9e3c1d4fafe39f84a0192244162bb3abcf"
+    },
+    {
+      "path": "_astro/danny-green.BlmQSMAX.jpg",
+      "digest": "c9752a7cd9604e24126076812b3ba67883ac694857a196c3f6c893ced735f112"
+    },
+    {
+      "path": "_astro/dejounte-murray.CqA5YVln.jpg",
+      "digest": "01cd99a39fad8138a6eae8084b4c91f2e01cc82c8f677d1d71bd8afdb78da798"
+    },
+    {
+      "path": "_astro/dnEbS6xmiLA.BWg957ks_Z18Km1v.webp",
+      "digest": "39d5846e680039987a25f4990fe0b9aba76b94c60d3148d4e1145e4b084e2a33"
+    },
+    {
+      "path": "_astro/dwight-powell.CxpjKRdp.jpg",
+      "digest": "d1cab51c99f25b380d05d14bd5fe4f826b51042d4c007a7d105a7240265cd211"
+    },
+    {
+      "path": "_astro/fraunces-latin-700-normal.CEOla-zY.woff2",
+      "digest": "c38570d224b830056e69484bb9e768e1d3fa7ba4755c8891a3c6d366194d2ff3"
+    },
+    {
+      "path": "_astro/fraunces-latin-700-normal.DTjk5d1Q.woff",
+      "digest": "1f9b0930f7a5e2b6aaba0df15f21bcdebebfcaff4b704daf3619589da69fd2a4"
+    },
+    {
+      "path": "_astro/g1fZXmVr_oA.BzTUTNYx_Z19l26c.webp",
+      "digest": "f176a01f27890ae8f988127634a5d79e040d61c198ba499ec16a134e78628553"
+    },
+    {
+      "path": "_astro/g4CkpVi5Iqk.BvHd8CBh_Z24Ws2q.webp",
+      "digest": "a0730e0fdd9f3c38879957d4c4605281f16fbda0b8d825b4ed1ffb80114c49af"
+    },
+    {
+      "path": "_astro/gQ0WzuOYh_A.D_V0lNTx_ZQRHOE.webp",
+      "digest": "63cfd3a581b44ea5ccec8792b54d41615454f4d5ef4da861e6e3d20d0e7c7ffb"
+    },
+    {
+      "path": "_astro/geUMkoM42iE.Kf_ZOg7M_1S8lvj.webp",
+      "digest": "192c79c2f6ead0c8f8a5df13478c72fd7f220f60041e5ee8263d21b83c5d4a43"
+    },
+    {
+      "path": "_astro/ggGrmIf-SQE.Dc22HahZ_1VjDkI.webp",
+      "digest": "8205022f622cc73bbbea3d2f9da2cf0ac6f9b09bbf0405f2c60dfe7602575157"
+    },
+    {
+      "path": "_astro/home-atlas.eapPC7KP.png",
+      "digest": "178f3989118f0f2f9cc5218c9c17aee4e72a1fccf16caf3e66279eba2d7f71bb"
+    },
+    {
+      "path": "_astro/hxcRVu1-T-c.Dv8lzcqg_1cOFhf.webp",
+      "digest": "ec683ea24102e994709f3c83941c3fc1c7f941fae8694f20f931744e511ed542"
+    },
+    {
+      "path": "_astro/index.astro_astro_type_script_index_0_lang.BL07oGKd.js",
+      "digest": "f9b6b2e3a283751f2f7274ea609dfee5d5f6a02423d08a6b0af369730e279436"
+    },
+    {
+      "path": "_astro/inter-latin-400-normal.C38fXH4l.woff2",
+      "digest": "8909904ab6c872eb994093482a88a28eca2cd95912d7b6fecd72103b0dc07edc"
+    },
+    {
+      "path": "_astro/inter-latin-400-normal.CyCys3Eg.woff",
+      "digest": "e20fa0b4fd2dd26e4d14b3ac3cc922509c3a63fa5e910e90c614544aa042dd45"
+    },
+    {
+      "path": "_astro/inter-latin-600-normal.CiBQ2DWP.woff",
+      "digest": "6a9cb3a509b4eeaf12b7dda6c4aacac3e85d07f4201bf4dd716e332e692b87bd"
+    },
+    {
+      "path": "_astro/inter-latin-600-normal.LgqL8muc.woff2",
+      "digest": "f9a06e79cd3a2a20951c0f0e28f66dd0e6d3fda73911d640a2125c8fcb78f21a"
+    },
+    {
+      "path": "_astro/iwZgXGRJENE.CV_x-vIe_2fxCl9.webp",
+      "digest": "f9ea482fcbad997237618ac710ca668ff449006e3ed40b311949601212f99da0"
+    },
+    {
+      "path": "_astro/ja-morant.IXflZFFv.jpg",
+      "digest": "29f451b2c9b61ed00ac3cbf5208b61438108faab6a626e749b82c0a622671b56"
+    },
+    {
+      "path": "_astro/jayson-tatum.DpAEB6jn.jpg",
+      "digest": "0adddc2e2918f307434e18e79c96ed7bf2e852122bea0adc0c38203584d7cb78"
+    },
+    {
+      "path": "_astro/jhBAzccW-Oc.mpiQYn8G_ZtEQqo.webp",
+      "digest": "e5b92bc9df83e549c3f7ba82f7ff9aede5608a0907235053bb074f1a94e3e477"
+    },
+    {
+      "path": "_astro/jimZ1tSdPY0.DSl4Mu4q_ZIV0yt.webp",
+      "digest": "4f7d04b1dab73c1aba9de529f83ad86fe6211aeac78072458130aee8292b0683"
+    },
+    {
+      "path": "_astro/jo1UlzDeY-o.Cm-U9wD__Z2pL7dJ.webp",
+      "digest": "3b425fe4e8ce2b1de9ba66c9cb1aa62dd91c6a9a52273ca5acce5c66b522f8a9"
+    },
+    {
+      "path": "_astro/joe-ingles.B_pEwfMx.jpg",
+      "digest": "9cf8ccdc7221deede6df154ecb1201534165c86f35a49a4330afa0e4f034b44a"
+    },
+    {
+      "path": "_astro/kevin-durant.ClEzShFk.jpg",
+      "digest": "6f18766d49193c6858d607ae26551ba6c4422eebefb535ca2805ccd8b54e956d"
+    },
+    {
+      "path": "_astro/kyrie-irving.Cvh4vveH.jpg",
+      "digest": "4f631559835221f8276ef7b1ee09b4435a5003ad9a50614bb0c72673dec745b6"
+    },
+    {
+      "path": "_astro/lamelo-ball.BoZbDMPZ.jpg",
+      "digest": "611c8be59bbb4c671753ccc7a33ccf8de57c3d28d26f1bf8f58aab454541fc7f"
+    },
+    {
+      "path": "_astro/lebron-james.BOEUjp68.jpg",
+      "digest": "8f5550b3acc78302a465a84b9e78f62d466e484fbfec1e3c1054e9123457680c"
+    },
+    {
+      "path": "_astro/mF6QEVNcgD4.C98yA1FA_Z2uyqEs.webp",
+      "digest": "27a4cfc95ffcadd20e40bb0c6df14bdb950b3b333239ff21d4174f2770a77043"
+    },
+    {
+      "path": "_astro/markelle-fultz.BUCt7PnW.jpg",
+      "digest": "a159eaad7777cd6825ec2db2ac959dcdf526aa241d71c58d2c62a2ff78a3a73f"
+    },
+    {
+      "path": "_astro/mi7fXtGTwbc.BfKt-J6E_ZRKA9I.webp",
+      "digest": "45bee83a80f2ee49053a1ab9bb6994aa9f58af972d39b926b4a9cf28d2272eef"
+    },
+    {
+      "path": "_astro/mmngoDkXwxc.CKncodC7_ZpBjKD.webp",
+      "digest": "9c7746449de77fa9024e9eeeffff4d8baa26bd00656b2335b7e3d9a09f642bce"
+    },
+    {
+      "path": "_astro/moritz-wagner.BF2fokPf.jpg",
+      "digest": "bcfe61a1b69129db077900592b8113ef282a12a0558707ba92e38d5e6dc58373"
+    },
+    {
+      "path": "_astro/nBC7o7Iz0RM.C1Fdv1N2_IK49V.webp",
+      "digest": "8519cdd6da56610d0493b3f2f98f213781518528426886d417869632ac68f034"
+    },
+    {
+      "path": "_astro/nFbLC6Dv6Xk.CDizDUFl_2iONKp.webp",
+      "digest": "a36afb0ad55fca97c0e83498e21db6a5577bc5ec570993e1630ed88dc351e987"
+    },
+    {
+      "path": "_astro/nfpXC98FLuE.BNq7YCL8_2i958T.webp",
+      "digest": "405ebf362c6362cc3608bf4da84b1d4b6d5188eaec14f85eaa5428272775c7c0"
+    },
+    {
+      "path": "_astro/o8mXn1hwdtA.DxIHgEWy_nrxTr.webp",
+      "digest": "d59c645fbf2ede62e918bdea68267f286cc90e03f6397608536c94eb0d04928c"
+    },
+    {
+      "path": "_astro/pi0rz4KrTAM.NVcS08mc_1akGcO.webp",
+      "digest": "397bfe2d3054f4f99b0ad937042b0b809356874ab67979462682e616a9d5b8c0"
+    },
+    {
+      "path": "_astro/q9WIUVebPf8.CIfAO2WA_ZDaltw.webp",
+      "digest": "e4091803b832562b02d90a428a5e1e5aa2aba05ed2616c65e8f096b4fec3d5ac"
+    },
+    {
+      "path": "_astro/qAZG23aT4IY.DHy_qBKG_16CoDt.webp",
+      "digest": "b8edbe42ae9cd386e2e1151d4e5627db833a463bed50b7f15aa19f2f61d2d482"
+    },
+    {
+      "path": "_astro/qGFHQQWFhWg.l8XzVWzf_Z2jSmfh.webp",
+      "digest": "582f244e9a280ae7855139f812158f9b80c13794a09966a0d3851a7e419cd823"
+    },
+    {
+      "path": "_astro/qLR_C8wg68E.Dw012kEK_Z1LRCjS.webp",
+      "digest": "af09dcee139a87961cc6241a7a3d10f0fc03c5b71ab8dfce3879671153afa687"
+    },
+    {
+      "path": "_astro/r58I6buCUA0.B9gNMxMt_1zgRac.webp",
+      "digest": "3fb9a2801dab0626ca78127a550b84bd8b795fce298e20f17825af16c28f1ba2"
+    },
+    {
+      "path": "_astro/rPYOGKhlzag.Da9cVoKZ_Z1wSGCP.webp",
+      "digest": "b5a645e3102bafce32ddfdb94fdea42dd0694d2236f82ec38cc2d201eddda9fe"
+    },
+    {
+      "path": "_astro/rbAYcXPhIUE.Bje-E1an_Z1uS8mh.webp",
+      "digest": "e7d5f3294e1658bbf814ee9b8b7e269171fff52baf8b32cc531949debf706145"
+    },
+    {
+      "path": "_astro/ricky-rubio.DAUd2Tah.jpg",
+      "digest": "5e1245b16c4ba4e8d95100c40eeb360e6318a6716106bef1f62bf9667a101709"
+    },
+    {
+      "path": "_astro/szivDYWhjXM.D7rPuW7i_Z4KAK7.webp",
+      "digest": "54741f275a88a69a90eaf7a3b9cdc163a7a9fa4567ec5856bb2528404af7a5b0"
+    },
+    {
+      "path": "_astro/t2G8KVzTwfw.DlQHL1ux_1I6JXD.webp",
+      "digest": "477b6943749d5a2ae18deb8fc335c5ed198b28389fb023733c4495d3b92b26b8"
+    },
+    {
+      "path": "_astro/thomas-bryant.CvRoJOz5.jpg",
+      "digest": "b651bb59f1caa3dfe67ff81ab524610002b8c677f710206111d58b5d6c9d589b"
+    },
+    {
+      "path": "_astro/trae-young.CeQXqkD2.jpg",
+      "digest": "0c7a77e45d05648b8e52e6db692086e240e883639e8a8617f36d44f70061fcaf"
+    },
+    {
+      "path": "_astro/tyrese-haliburton.5CALicif.jpg",
+      "digest": "8a307fe26217d5c951d8647367207cb6c383a83ea96b1c6361e969ab1c914270"
+    },
+    {
+      "path": "_astro/vM_UU11MMH0.BKG0VHCE_1Om499.webp",
+      "digest": "08b834c08810f2a3514210e3d2bed757abf2e747701c0a91348016193bf29481"
+    },
+    {
+      "path": "_astro/video-player.D-o1tqXd.js",
+      "digest": "3806e695375fb1f32cf3f51cbfbb411b6883e69eb0077d51eb8b894a47a47540"
+    },
+    {
+      "path": "_astro/wVj6I9Q5IvE.nLNANZQg_Z26lhtW.webp",
+      "digest": "b9443d8e68f88cf38e1ec330cdbc92c819648c46f27903b02deb3a48916697ae"
+    },
+    {
+      "path": "_astro/wgPxm0RKJAk.BkKP6ftv_1InwFA.webp",
+      "digest": "4f1d6c80e620d99f095d76d7a698e08dfc40238f75fdef8dedebeec88152b8e7"
+    },
+    {
+      "path": "_astro/wglRV7rAQ2Q.muVdhKJ4_13DFGC.webp",
+      "digest": "275957055cb96b7eaf023ba1c598f871f0b1f97228fabd234118e2742cbce919"
+    },
+    {
+      "path": "_astro/x4QE1G_VXxw.BsDPA6R3_2aCVCb.webp",
+      "digest": "36178ea2c39d323f9eef7128c35c05641256925510a7bf369d02371c74a33146"
+    },
+    {
+      "path": "_astro/xI6yz7rFdrE.6GQ4Ph4a_Z29mE5U.webp",
+      "digest": "53bce86d09df365785242c6c70aef848cd0da795d66865be443d2b18998bbaf1"
+    },
+    {
+      "path": "_astro/xSUKd03LJwE.D2ro18hU_1zYU66.webp",
+      "digest": "9214d4c8c7cfbba1ae5db79bb61b863021585bc1507bf3f8225aa92c0e001895"
+    },
+    {
+      "path": "_astro/yDDkfhw1Qd0.DG6XgY8Q_pN9R4.webp",
+      "digest": "87749a932f28bab18398b1746de0ff22590f835acc2cf2cdf1bc74487f66e238"
+    },
+    {
+      "path": "_astro/zZdndTqOexc.CL4ZJaoQ_1GkYh1.webp",
+      "digest": "12a24af7bace71417fe53c95b7bcb3461759d637d15abf43917a1eaf60d3bec0"
+    },
+    {
+      "path": "_headers",
+      "digest": "360c4e4759789f3ae683769717765b2214b9306698765af851c38b43d4e566be"
+    },
+    {
+      "path": "_redirects",
+      "digest": "cfaedb249c46e3a73c4f49ba569028db47bc68f4896539318955638336c08689"
+    },
+    {
+      "path": "_routes.json",
+      "digest": "82dfdc2121a70cf5ac50b268e6aad8478aa512225b71b22571a776b7824fce03"
+    },
+    {
+      "path": "about/index.html",
+      "digest": "d0fe23bf4f860a70e246ae5b51622d887cadb42dd55e4b9a4ef2cb7520a43239"
+    },
+    {
+      "path": "body-parts/ankle/index.html",
+      "digest": "d2e71560a1a5e3d22a92068f291a7921bf2b833d16955786b7755f627330983d"
+    },
+    {
+      "path": "body-parts/calf-achilles/index.html",
+      "digest": "a35d697568e96965014d545acef033ed0529790ebb516b412510f6030b2ddd7f"
+    },
+    {
+      "path": "body-parts/foot/index.html",
+      "digest": "4322dea52cc7bf19c58a3508450db077fbc704017a4e067d5e5aae1320f86d30"
+    },
+    {
+      "path": "body-parts/hand/index.html",
+      "digest": "0f9b92a04de3774e89665a577e687954c71e97024beb94afd421c02b6152dd09"
+    },
+    {
+      "path": "body-parts/head-neck/index.html",
+      "digest": "4e4803fa54b324b590bf650947fd7eef805530ccc60cbe7dffaa32e656646d05"
+    },
+    {
+      "path": "body-parts/knee/index.html",
+      "digest": "8bc41d5201030b5154890a8fc1da88a82a334629fe5b03fdb1356bd85bb327b4"
+    },
+    {
+      "path": "body-parts/pelvis/index.html",
+      "digest": "b39e64e6ee3712767ec738c3d8ecc2f382d21b96323e42ed9282c111630e7cf1"
+    },
+    {
+      "path": "body-parts/posterior-thigh/index.html",
+      "digest": "8e41b843e02b1eb0fbe7361c93c9e29a85c537d806253820d31194085c106d3f"
+    },
+    {
+      "path": "body-parts/shoulder/index.html",
+      "digest": "de8db5032cb177cf0ace0b4ab3b73608432437f8c5ee34b01ce1ca82abde48e9"
+    },
+    {
+      "path": "body-parts/trunk/index.html",
+      "digest": "9c60c7320314f04f63c513d80f1a355e037999f5f52fa31b339c1d0a83fc1db0"
+    },
+    {
+      "path": "body-parts/wrist/index.html",
+      "digest": "900b9fcb41b682fc6e6462503998bff22ddd049ea264557999fc885c4b60616e"
+    },
+    {
+      "path": "case-index/achilles-rupture/1.json",
+      "digest": "4c8b8d01e6a2e30436122a7de7610534487823b1b1b3dac07c6ec8cc1c04f1cb"
+    },
+    {
+      "path": "case-index/ankle-sprain/1.json",
+      "digest": "0d4187270113bc2f886a40a2ce6114ae16850acdb59251bb83a6adc480f1e64d"
+    },
+    {
+      "path": "case-index/manifest.json",
+      "digest": "bbe7703d9a9124184ff0c3913abe748ef43adeb8ed7395caa8d24779c3e3ff98"
+    },
+    {
+      "path": "cases/anfernee-simons-ankle-sprain-2023/index.html",
+      "digest": "de41489bc2b6a8c0460d8a19b4b3f1228fd1e7994fa64981d7fdb33f99270fa4"
+    },
+    {
+      "path": "cases/jayson-tatum-achilles-rupture-2025/index.html",
+      "digest": "e72b9dc2fec2beea9668cb1e18663537a60a47585e4f62ea3eb01a84c947e33d"
+    },
+    {
+      "path": "cases/kevin-durant-achilles-rupture-2019/index.html",
+      "digest": "36128b7bc003a4d6b871b202a0c7d352d2d8a79bcee26d3d339ecfffbb12a16f"
+    },
+    {
+      "path": "cases/kyrie-irving-ankle-sprain-2021/index.html",
+      "digest": "b5683654eafb77437d73c825ac8c91192cc7d45e09a2609bb548d0b7f6efc005"
+    },
+    {
+      "path": "cases/lamelo-ball-ankle-sprain-2023/index.html",
+      "digest": "c0bbee5ad16f7f4002116e46509314541055c6e5544671d72066e417d3989112"
+    },
+    {
+      "path": "cases/lamelo-ball-ankle-sprain-2025/index.html",
+      "digest": "6bad017f4e957ed0f57e1b351724bb2e3521d2b1a6ccc57db1dc9e36028a6d12"
+    },
+    {
+      "path": "cases/tyrese-haliburton-achilles-rupture-2025/index.html",
+      "digest": "7415af2902a91dd1520f342ade1fbed3afc14dbfdc2aea093c77fadd6f2598b2"
+    },
+    {
+      "path": "contribute/index.html",
+      "digest": "18b460d25930090b61e62fe6c199b6098a93a04eb8cd2ff9d04c3b305bfbebcc"
+    },
+    {
+      "path": "credits-notices/index.html",
+      "digest": "aa9db535f5cf7dd7b9ed8357e520698bce5ec80f4fe31b3b08f9425e767eb4e2"
+    },
+    {
+      "path": "favicon.ico",
+      "digest": "639a1b6038c475c892aa1c8aec6b0bd055b18347f89744f304f0f383f94a8f26"
+    },
+    {
+      "path": "favicon.svg",
+      "digest": "60bfe310b32599473d4ad0964f9403b318d419a89a769a9ab1a87a1e085fad96"
+    },
+    {
+      "path": "fonts/noto-serif-tc-600.woff2",
+      "digest": "c686f371a73517be475546ef3bf186e52f609c919ebf861d83ee13e095102109"
+    },
+    {
+      "path": "fonts/noto-serif-tc-700.woff2",
+      "digest": "060756a7e4ed7988e881dc2e0e2d3b9057a094781c141885c24eeb3f60bd0b4f"
+    },
+    {
+      "path": "fonts/noto-serif-tc-heading-600.woff2",
+      "digest": "1ee4d047cd81f1c834cd141858c754be0cd97eb9bc79a95435cdda9431a57166"
+    },
+    {
+      "path": "fonts/noto-serif-tc-heading-700.woff2",
+      "digest": "afa96c4cb7309fdaa1ca09f866620f9bc4edfd8f3f2a151ff1c75a02152727d9"
+    },
+    {
+      "path": "index.html",
+      "digest": "1d3a9234085ddd6053d185bacbc5d56e413545df7c2c9f60d0b21178f00da425"
+    },
+    {
+      "path": "injuries/achilles-rupture/index.html",
+      "digest": "21846e7e2e4a16e293b949c9ecef089ca9c57f91b4c527338bd6fdbb182adaa4"
+    },
+    {
+      "path": "injuries/acl/index.html",
+      "digest": "0c580012a3f69f618e6d501c19a768a1cca68dc3df31ffc1e37a5d40c826508a"
+    },
+    {
+      "path": "injuries/ankle-sprain/index.html",
+      "digest": "a33b91cb0398f3d4a584927ffe39a5c724eb6f3aa774b20f82e33757e0057960"
+    },
+    {
+      "path": "leagues/nba/index.html",
+      "digest": "e66b420047b3212b0d8caebdf67194bd70670faa6c5dbb27e88e1ba96124bd55"
+    },
+    {
+      "path": "preferences-init.js",
+      "digest": "c3513172eaba0c9a6c7d9330f3fc6bc3501e767d56bd932f0ef92a551ca0f111"
+    },
+    {
+      "path": "privacy/index.html",
+      "digest": "e4aba6660cf0ccef01f5081c4f4a4a362acbfccb65aa17278caf6749489c3286"
+    },
+    {
+      "path": "robots.txt",
+      "digest": "38de4497d9e4ba8390ac139d210657ab78389e56ccc35cf46638eda276d0e04c"
+    },
+    {
+      "path": "sitemap.xml",
+      "digest": "5f8381171b17b0aaf7cd90702d3120e8a2146c5796320fdbe8f471bf769a776b"
+    },
+    {
+      "path": "situations/ball-impact/index.html",
+      "digest": "e3b51992cee06af372a740a99a4ea99185d25eb6519020ac62a4a0c95e2e32db"
+    },
+    {
+      "path": "situations/collision/index.html",
+      "digest": "1b198e85f17657de4143ca5be78ee701a46d5fa8205c334430610e0726e61ca9"
+    },
+    {
+      "path": "situations/fall/index.html",
+      "digest": "bcf4eb77e6314de28e7f272995491ccee7c7fce3217f1c76364e3d44808741a1"
+    },
+    {
+      "path": "situations/landing/index.html",
+      "digest": "5361cb9b801413e8724a7e75f69ac4ab2264f6eae423444f2c9ac107f9512c06"
+    },
+    {
+      "path": "situations/racket-swing/index.html",
+      "digest": "acc270a4a66f92dadf60ae2c30092b709254332160318e816e5bcbf7c8679e90"
+    },
+    {
+      "path": "situations/running-turning/index.html",
+      "digest": "6590e8e8c0892cfddc691247914c79aac0dd37f13fa53939cffa0a5429bdab7c"
+    },
+    {
+      "path": "situations/unclear/index.html",
+      "digest": "ca4b399c00523d1c0d258fcf831d1ec94500b78836d64d2948e965d85c93805b"
+    },
+    {
+      "path": "social/injury-atlas-home-20260907.png",
+      "digest": "d5ac4db08b672fc4065b66a83cb65d77b4fa7d7a51c8cb2c5cdb589f5e9d2c30"
+    },
+    {
+      "path": "source-policy/index.html",
+      "digest": "ca5e977e05bb44b56b7681f90a01a4f4610cdb9dd61564be062b85c19553f528"
+    },
+    {
+      "path": "sports/alpine-skiing/index.html",
+      "digest": "3f019b9a3b91854a372eaad5869a49ba9384a7e4b1b97780e13b3e5f49b47ed5"
+    },
+    {
+      "path": "sports/american-football/index.html",
+      "digest": "329ef33726a0d4873440dbef4e9489b66d81f9d7648fb01742335704c2270d8f"
+    },
+    {
+      "path": "sports/athletics/index.html",
+      "digest": "337ad2f9106f8afb2523f741a625b57a30115fdb5866aaa67b831cc7892e8072"
+    },
+    {
+      "path": "sports/badminton/index.html",
+      "digest": "af95bfbbb8b631748f712e17260b13c304b1b14a1cf573c2c4424f5b5df44a31"
+    },
+    {
+      "path": "sports/baseball/index.html",
+      "digest": "ad966c365e724f35d30ac113ebe90257eae6be6d615ee0485bb06525678998ad"
+    },
+    {
+      "path": "sports/basketball/index.html",
+      "digest": "a3b463560310fba79166e56a5ccbc9417826dcdf8f46b27ed123d39827f1f4e7"
+    },
+    {
+      "path": "sports/cricket/index.html",
+      "digest": "8b4492dfdc850c3c8cdc7cf9b8ea699437118ac80ae977ee38f815663ddc14f5"
+    },
+    {
+      "path": "sports/crossfit/index.html",
+      "digest": "53733f59437511510267755966907ffbe3de02990d720986963832a6fa63e523"
+    },
+    {
+      "path": "sports/cycling/index.html",
+      "digest": "488974f99d873da6b70335fdbda213d711dde52e4ed31388b0388e30dbac6d31"
+    },
+    {
+      "path": "sports/figure-skating/index.html",
+      "digest": "7c3f0c923317e4c018908c04fee65d48d39106907916afd7ac571de2e638fc45"
+    },
+    {
+      "path": "sports/football/index.html",
+      "digest": "8dbf7397005c09cbbb166ec8841d3c387d819ed469e990e441c8b9bf063ecc2d"
+    },
+    {
+      "path": "sports/gymnastics/index.html",
+      "digest": "a81ef0316bcf31b8d7057ddc743dc393386adff34991d5c8a91325fcf0fdfd87"
+    },
+    {
+      "path": "sports/ice-hockey/index.html",
+      "digest": "4c90c710d493fea11ce0e4b4019a974546e4efa9cd5a5c6789be7cbfc21834f5"
+    },
+    {
+      "path": "sports/rugby/index.html",
+      "digest": "770436da8cc25651cb6f04a59f03ae02ad90edd36af5298958db85df3fa6a114"
+    },
+    {
+      "path": "sports/tennis/index.html",
+      "digest": "a07ef9cf958a4da8150211bc8a80d305b2592f968923ecc6220e51af447a0206"
+    },
+    {
+      "path": "videos/aaron-judge-2023-toe/index.html",
+      "digest": "8f55dee00582fc0cd9c970c985eb9167267b5d88c8eeed8051ac75b57820a7f7"
+    },
+    {
+      "path": "videos/aaron-rodgers-2023-achilles/index.html",
+      "digest": "26089036aa0d21e047fd1ab228474a98d20a50ba286366a692e2309bcca03927"
+    },
+    {
+      "path": "videos/adam-eaton-2017-knee/index.html",
+      "digest": "66e581cf3082712e6a9c051ec1c40f3d43dcaa2e41fd7de289e9adf58484ff63"
+    },
+    {
+      "path": "videos/aidan-hutchinson-leg-2024/index.html",
+      "digest": "b017f777a0dd46351127981f5b32350cfa5c5521a704b65a199f3360ca6eedad"
+    },
+    {
+      "path": "videos/aksel-svindal-kitzbuhel-2016/index.html",
+      "digest": "d49a03e91efe677ee3e39f3301d3f9f74dc5a04adab4baff17638c2f24ec1784"
+    },
+    {
+      "path": "videos/aleksander-kilde-2024-shoulder/index.html",
+      "digest": "f642593220d1b953405f9daac0245b7f95d06746c40df0e28990c5386b210e8c"
+    },
+    {
+      "path": "videos/alex-cobb-2013-concussion/index.html",
+      "digest": "e2a71f1d4b3de4ecb1b975f9fceb8f84ff23d99857e8200aabd095ec02337a9b"
+    },
+    {
+      "path": "videos/alex-oxlade-chamberlain-2018/index.html",
+      "digest": "b9eab7e5f82c6101a4819ca9241d021e7fd08ea4f1ff20cb76accf6af566e83f"
+    },
+    {
+      "path": "videos/andre-gomes-2019/index.html",
+      "digest": "18ab1866d5c05e8e000f426f2f95686fbf0f641c7f1c7202a23029ccd65e6d76"
+    },
+    {
+      "path": "videos/annemiek-van-vleuten-2016-concussion/index.html",
+      "digest": "ead201395364b9742d9b006c7cf2e06e617a1ee584bf5b89bca631663954afee"
+    },
+    {
+      "path": "videos/antoine-dupont-world-cup-2023/index.html",
+      "digest": "e748e64c6ef8d2613596a6d4ab8c6803376fbbda011dff808236307af0dbf6be"
+    },
+    {
+      "path": "videos/beth-mead-2022/index.html",
+      "digest": "3f479ae30cbd8679c20479d46255f42ee798a313c2a8efd1fecb8b7a67a35d66"
+    },
+    {
+      "path": "videos/bethanie-mattek-sands-2017-knee/index.html",
+      "digest": "947e3fa5aff7b9bacdde4fe2ae55c1d685257d8dcced2961ffa8285318b793a2"
+    },
+    {
+      "path": "videos/bryce-harper-2017-knee/index.html",
+      "digest": "181f18b2d58c8c6dfb25972dd2aed1ba36f2317a479a56712366648dd6f69913"
+    },
+    {
+      "path": "videos/bryce-harper-2022-thumb/index.html",
+      "digest": "683220ca9a03b9741b7f02fdf282a721043bd09b52821a999333f88f4e921fe3"
+    },
+    {
+      "path": "videos/buster-posey-2011-ankle/index.html",
+      "digest": "8a5a4e8bf8243558916dfa848fba888f46e3f00391880ee8ff4d21ee51c3d97e"
+    },
+    {
+      "path": "videos/cameron-brink-2024-acl/index.html",
+      "digest": "0d7db35ee4313ebf13d3a5f68f84e29c4a7355ebd3a858b1160e2a053a88ef7c"
+    },
+    {
+      "path": "videos/carolina-marin-acl-2024/index.html",
+      "digest": "497e99d7999b32f702fedb635f07393333e28ade6ea99df5e3b097ecf2be1917"
+    },
+    {
+      "path": "videos/carolina-marin-indonesia-2019/index.html",
+      "digest": "788088d55c9f6d920e41559254b57f04f25f034ba17327eeff978acb0cc0404b"
+    },
+    {
+      "path": "videos/charlie-morton-2021-fibula/index.html",
+      "digest": "c862291d275433ecff499042d8b3596851e7b9ae5f252c46e2b0e1cdd5810606"
+    },
+    {
+      "path": "videos/chase-headley-2014-face/index.html",
+      "digest": "d2b33fae9f9bb96a50541b2cf21492e85883ed4ba0a3164bf7b1d894dd5e6734"
+    },
+    {
+      "path": "videos/chien-ming-wang-2008-foot/index.html",
+      "digest": "d7ca7d85641aea09ffa9c28c6e941b3556f6e14ca0f746ed5b85a38e340f7879"
+    },
+    {
+      "path": "videos/chris-bassitt-2021-face/index.html",
+      "digest": "d5957e5dc1a497b349d40218f184377a2f1e59746b739f0b78625ada8b3ab9c0"
+    },
+    {
+      "path": "videos/connor-bedard-jaw-2024/index.html",
+      "digest": "f862676b38cc85702f2396563499c1d93c6ac7cd66faae0614d8a6cfc740d9fa"
+    },
+    {
+      "path": "videos/connor-mcdavid-2019-pcl/index.html",
+      "digest": "3a9bf2f4939fc97bab8f5009863c77a2f31e598de21a5627718e1f35e54181bf"
+    },
+    {
+      "path": "videos/cristiano-ronaldo-2016/index.html",
+      "digest": "4d0406c1873da1fcdc7ec179ffa23cb0c0d8c214dc7a35d636173032228f43bd"
+    },
+    {
+      "path": "videos/curtis-granderson-2013-hand/index.html",
+      "digest": "570dab815895316b51eaa2c966006775830ad4518a38a991226714243cff5bdf"
+    },
+    {
+      "path": "videos/dan-jennings-2014-concussion/index.html",
+      "digest": "a715a5d3089c13288e1bc90b0f14b26296ae7ac5b7a87fab3bdfd2b4c5c31029"
+    },
+    {
+      "path": "videos/dani-carvajal-knee-2024/index.html",
+      "digest": "556766d7406c71e10cf9f3a45ead4994a291a676067c1368aeb4602a16f3b2b1"
+    },
+    {
+      "path": "videos/david-beckham-2010/index.html",
+      "digest": "b8b1f547f7b3c470a7811ead671e6469dccf4ebd620781a904cde5e87af85d68"
+    },
+    {
+      "path": "videos/dejounte-murray-acl-2018/index.html",
+      "digest": "e5655fb2c39f7c36e8220d5f3bb11dc8e0b4ee08edf382292c8f117ce86d20e9"
+    },
+    {
+      "path": "videos/demarcus-cousins-achilles-2018/index.html",
+      "digest": "4ce7825474b70d3ebe574b9203232e83ef7ad19d3a73e11b099a3cf7cd143ed9"
+    },
+    {
+      "path": "videos/derek-redmond-barcelona-1992/index.html",
+      "digest": "8819cfb3ad965278e64bc2e8e16123d661b67af2eca24fdc4313a06a0a499d87"
+    },
+    {
+      "path": "videos/derrick-rose-acl-2012/index.html",
+      "digest": "cf6beee4566237a3636e2007455a71e64b84f5bdaced0100bb13eadf5af56b3a"
+    },
+    {
+      "path": "videos/dominic-thiem-2021-wrist/index.html",
+      "digest": "df4c74f8c82d5eb0d84db3e2a2a4fd1d2fc8d7bd02b1ef16c27ee63f5fe3701b"
+    },
+    {
+      "path": "videos/dustin-fowler-2017-patellar-tendon/index.html",
+      "digest": "e73f9ee6ce3fb49c7f153f4dc902dd9c99d48b2bed222ba42045fdb95292a23f"
+    },
+    {
+      "path": "videos/dustin-pedroia-2017-knee/index.html",
+      "digest": "bab5ecd7bcbad6a56bedc6ae704d86a7a3eeb505295d0899f46db9db41161477"
+    },
+    {
+      "path": "videos/eder-militao-acl-2024/index.html",
+      "digest": "e91087554b640627e01b87e6f10b2994e6d13dd6cd1abfe6349ec251bcbb0e30"
+    },
+    {
+      "path": "videos/edwin-diaz-2023-patellar-tendon/index.html",
+      "digest": "decfa109ae0cbf178853fb8efba77c94f76f2ba4e4fc0af68faa7c023b7f69c3"
+    },
+    {
+      "path": "videos/fabio-jakobsen-2020-concussion/index.html",
+      "digest": "a4d30f381bb51d85365bb7655588626584ee00a9706846c7b0d95acb19cb2b33"
+    },
+    {
+      "path": "videos/federica-brignone-leg-2025/index.html",
+      "digest": "0cc2552f803739d9af87cebdba49b27373e3859a43b1cd1674b7f3deb0808089"
+    },
+    {
+      "path": "videos/gavi-acl-2023/index.html",
+      "digest": "5f84092aa339d3c1ecdca919df16336332d19da6130150d8551ab21ccbe5e3c2"
+    },
+    {
+      "path": "videos/george-north-2015-concussion/index.html",
+      "digest": "e833d98448be32fc0be2a303eb3c5c271ec665162971483ca7c206249fb86f06"
+    },
+    {
+      "path": "videos/giancarlo-stanton-2014-face/index.html",
+      "digest": "24308373a0307a01498ec6f0424eba1c6d74c8aa61e13b969a3ea019036b3326"
+    },
+    {
+      "path": "videos/gianmarco-tamberi-2016-ankle/index.html",
+      "digest": "ef942d8ec3f32d0115e6e2d9054da25b267b9a210bfd11d33c220f89830525d8"
+    },
+    {
+      "path": "videos/giannis-east-final-2021/index.html",
+      "digest": "34bdd02df70f54b09deebc7f628288e80ab7bf102e3f243fb145506add4506c8"
+    },
+    {
+      "path": "videos/gordon-hayward-ankle-fracture-2017/index.html",
+      "digest": "47bb553b4a06103be860a400b9741eca5e547845ab7957158a08a83465788884"
+    },
+    {
+      "path": "videos/harvey-elliott-2021-ankle/index.html",
+      "digest": "9ec1030deca8919828ace2ac2441e0d45628e8c22fec911a643baa38b4a6abd8"
+    },
+    {
+      "path": "videos/hector-bellerin-2019-knee/index.html",
+      "digest": "454cc1a611bbbc01a9f1e12df7beb2ec4d936cfeb7021482d71ab6574faba612"
+    },
+    {
+      "path": "videos/ja-happ-2013-head/index.html",
+      "digest": "1853a913c0cffd4cd3602b2b6fc6c445150ae50a873a58897b41c8506c3ba82d"
+    },
+    {
+      "path": "videos/jamal-murray-acl-2021/index.html",
+      "digest": "0fd6cf7215bc8bc4a4ffad666ee346cdd7716e6e1aeab2481a34635073808841"
+    },
+    {
+      "path": "videos/jamal-musiala-ankle-2025/index.html",
+      "digest": "c2f480e46abc2508c27eaea07446466807c4c6328c053e72fbffb99b4d7f904a"
+    },
+    {
+      "path": "videos/joe-burrow-wrist-2023/index.html",
+      "digest": "8f6983add8d1926d691d33582c177f9d833c60cc54d020ddaa31ea9d67e2ed50"
+    },
+    {
+      "path": "videos/joel-embiid-meniscus-2024/index.html",
+      "digest": "4c80f0a16ee11fa8897612664c9fdf922a66b0a5900c1d2978b8bd87f4837484"
+    },
+    {
+      "path": "videos/john-tavares-2021-concussion/index.html",
+      "digest": "785909e58ee6524e41908cf90a1ed5b8de3a8781320ae09771d379393d9350c8"
+    },
+    {
+      "path": "videos/jonas-vingegaard-crash-2024/index.html",
+      "digest": "e24826db692a49e6e122352a68680cddc4a99a46648388705c39cd6d278d2962"
+    },
+    {
+      "path": "videos/juan-martin-del-potro-2018-knee/index.html",
+      "digest": "a152577a643f1fdc5e14d925b29a235bce2f1a1a83dcf1089d976ad8725bb275"
+    },
+    {
+      "path": "videos/julie-foucher-box-jump-2015/index.html",
+      "digest": "e12bb684f94d34da2ecdb5e714e1d3c76a2e0cec19eaa3216b80294834bbba06"
+    },
+    {
+      "path": "videos/justin-turner-2023-face/index.html",
+      "digest": "fd49f0076c11941e5dc9ea9b3328ac717aec6035522e52c949bf13164f41e482"
+    },
+    {
+      "path": "videos/kawhi-leonard-acl-2021/index.html",
+      "digest": "3c628514ded79c2d2a7e5dc1d4325473e359e1ef7089b98487eabb2880d62e48"
+    },
+    {
+      "path": "videos/kendrys-morales-2010-ankle/index.html",
+      "digest": "4df3580528e16c95d6cbbf20baff9f951c8ce36c1527374a20c2d3eb3e1e5aaa"
+    },
+    {
+      "path": "videos/kerri-strug-atlanta-1996/index.html",
+      "digest": "b5d52afc93dff3a1dee5a8809b16fe0af1729a1aa970d3d6089af5c550ee0954"
+    },
+    {
+      "path": "videos/kevin-pillar-2021-face/index.html",
+      "digest": "5dcff188e31bcf7eb2d1b8acfa9beca7625de7af527255022575bd02dc18df36"
+    },
+    {
+      "path": "videos/kirk-cousins-achilles-2023/index.html",
+      "digest": "715ed6375a39ef3d2a18f55890c0c2276291ffbe87de601fd900f2b5b7e04a48"
+    },
+    {
+      "path": "videos/klay-thompson-2019-acl/index.html",
+      "digest": "aaad0acf035f00f69fd3c45d08f0870c0a62a6d2b2bb3ce7f1f77411ea156388"
+    },
+    {
+      "path": "videos/kobe-bryant-2013-achilles/index.html",
+      "digest": "d4a710dbedc5d7164ef6f6c6b66930aec97dd22a37e4e2245f10501bd202b73d"
+    },
+    {
+      "path": "videos/kristaps-porzingis-acl-2018/index.html",
+      "digest": "94dbda5466b8a50e7581688c13d59946e904ac26057746904543f96c24cc7c6e"
+    },
+    {
+      "path": "videos/kristaps-porzingis-retinaculum-2024/index.html",
+      "digest": "70fb624c2ba89855fb0894d959d020c261386530c03c2d061b0636250bea2ccf"
+    },
+    {
+      "path": "videos/kyle-schwarber-2016-knee/index.html",
+      "digest": "215892cd6de121727ec1f4fe0ef171b533d5f99e737584b6a8d1bbdb3d9ccb4e"
+    },
+    {
+      "path": "videos/laurent-koscielny-2018/index.html",
+      "digest": "900fb4a092cff68f84f9c438c201edc7114418a814ea3719bdeb6a2bbd83924b"
+    },
+    {
+      "path": "videos/leah-williamson-2023/index.html",
+      "digest": "a526414c5f8a15a0ff4af267348b7aa627c8bfbb2a9ed6722f47585fa31fa550"
+    },
+    {
+      "path": "videos/lindsey-vonn-schladming-2013/index.html",
+      "digest": "1c78a2ca0ac277fbe8792264e79b8a9049cf26db37990058fe459f2e2470961f"
+    },
+    {
+      "path": "videos/liu-xiang-2012-achilles/index.html",
+      "digest": "c5ee42912b9ca43e332f4fde8ddaa0f75e4a2b06d4b7eabd3090c73265e5364b"
+    },
+    {
+      "path": "videos/manny-machado-2013-knee/index.html",
+      "digest": "ec5218d7d7fb4b95dfae14947cd83c7b3dd3ba69234b312eaea2038eed378842"
+    },
+    {
+      "path": "videos/mark-cavendish-2023-clavicle/index.html",
+      "digest": "aba2d3c33cf3bf89a8d51c380f7ea2dc3279989494771a16946df993a1250e17"
+    },
+    {
+      "path": "videos/markelle-fultz-orlando-2021/index.html",
+      "digest": "1ad3229c6fa41e0b0067814912d7ce797143c9004ab6f31c23b4b7289cd93f1a"
+    },
+    {
+      "path": "videos/matt-shoemaker-2016-head/index.html",
+      "digest": "50cdef3d7e40e5f2773c20d3b137de008d82e253812434939fbbccfe7fb94a23"
+    },
+    {
+      "path": "videos/max-pacioretty-2011-concussion/index.html",
+      "digest": "36c9995d2313a225822c4845ecc2d271013b12d19877a2c89ba412ffd016ad3b"
+    },
+    {
+      "path": "videos/mikaela-shiffrin-2024-abdomen/index.html",
+      "digest": "5f2482541e4fc4e73b0670878977b5c80e6a2412f7929f0ba9019dcca6fd8d39"
+    },
+    {
+      "path": "videos/mikhail-sergachev-2024-leg/index.html",
+      "digest": "7538c80737e2628d0dbe6f4967f54a6e9cad28dfbaead81e61a802efdd84b876"
+    },
+    {
+      "path": "videos/mitch-haniger-2017-face/index.html",
+      "digest": "a0202ae262b413191982049028f936432363a1199ce5b5e3737cc3215510620e"
+    },
+    {
+      "path": "videos/mohamed-salah-final-2018/index.html",
+      "digest": "1acb23c9a3e10fd41f0adb2449b3d53c5ce90bc5668f558f4c77da3d93b09e5b"
+    },
+    {
+      "path": "videos/mookie-betts-2024-hand/index.html",
+      "digest": "61d2f2e3c166f9060659b35e2d4d9aeb0b46219d2e918b44d2dd24cc45981dd2"
+    },
+    {
+      "path": "videos/neymar-2023-acl/index.html",
+      "digest": "363e35e2db3aa88845c8822afb00517a811cde93f0d5c1932ded3315a491841b"
+    },
+    {
+      "path": "videos/nick-chubb-knee-2023/index.html",
+      "digest": "fbceca949a7d9b2ce508bb5bbb360e88a4319188161a7245ff6c814272d30d2f"
+    },
+    {
+      "path": "videos/novak-djokovic-meniscus-2024/index.html",
+      "digest": "c7be0951e165319648d47199c2966b75d60aa44fbe3ff997289e66510cb2cb1a"
+    },
+    {
+      "path": "videos/paul-george-leg-fracture-2014/index.html",
+      "digest": "663c787f9def420877eac08609b867c7038d68389008efd7043141f3d1d67921"
+    },
+    {
+      "path": "videos/rebeca-andrade-2019-knee/index.html",
+      "digest": "e0de5d9f38a4eef2f4e89cfddb1e042f275c762645545f5666cf6103f2bd9a34"
+    },
+    {
+      "path": "videos/remco-evenepoel-2020-pelvis/index.html",
+      "digest": "74bdeb3fc9a166785d7d1ac18e848d39b5a1a6ab3f369c1cea5322f795fa80c1"
+    },
+    {
+      "path": "videos/rhys-hoskins-2023-acl/index.html",
+      "digest": "310bb59b9d2f206be8d393d320dff72ce8281c4973887b33e2ba454cccc6d412"
+    },
+    {
+      "path": "videos/rodri-acl-2024/index.html",
+      "digest": "0c88a8befa0e1f664a8fea528475e2afdfe9b32d29f934284a12a3d01e3d2a98"
+    },
+    {
+      "path": "videos/ronald-acuna-acl-2024/index.html",
+      "digest": "418b0efc4c7954b74c5bc562e9d27a528dd5669681a5635228930944b331c74c"
+    },
+    {
+      "path": "videos/ronald-acuna-miami-2021/index.html",
+      "digest": "552756db98b840f545cb88643e53ea2a93018b6fb6f1c28c36567af7a857e0f5"
+    },
+    {
+      "path": "videos/samir-ait-said-2016-leg/index.html",
+      "digest": "f32c762f4b72b81ec2a2364b6204b080049b5573b51183536ad1726e05a8b4ab"
+    },
+    {
+      "path": "videos/serena-williams-2021-hamstring/index.html",
+      "digest": "8f896b2f358374698204e52bfd6dd02ff25f07a4c1b34eaeea81a7753da623e1"
+    },
+    {
+      "path": "videos/shaun-livingston-knee-2007/index.html",
+      "digest": "984cad355bec4f224b5b0a411a7c9cab0bed077c97c79d31f50888387902a31b"
+    },
+    {
+      "path": "videos/shohei-ohtani-world-series-2024/index.html",
+      "digest": "a63be7ca072245989ac30c57c563e76a056b8705220a5379392ec3bed591e2f5"
+    },
+    {
+      "path": "videos/sidney-crosby-concussion-2017/index.html",
+      "digest": "5fbbf22188f7fd87bdcfaf2e1bbd6bf53f83ba31308511c0d1d65643046f9fcb"
+    },
+    {
+      "path": "videos/sofia-goggia-2022-knee/index.html",
+      "digest": "33d7eae1f983b0b09380ab6be432bfa8c7d648f54dd4cc6e332d84763b92ec04"
+    },
+    {
+      "path": "videos/stephen-piscotty-2015-concussion/index.html",
+      "digest": "5a97b57ec1a55f0b30c027d146937df16e6e48af9cc6b5e62dce42b7f9d594c7"
+    },
+    {
+      "path": "videos/steve-smith-2019-concussion/index.html",
+      "digest": "1242b65f6980a28249be28bbacb39a461953eaee5c01fbe4e880c318c81e016d"
+    },
+    {
+      "path": "videos/steven-stamkos-2013-tibia/index.html",
+      "digest": "c544dafd3df40355ffd727fcafcf45a90d484afe286f2602633162c30390e8ba"
+    },
+    {
+      "path": "videos/ter-stegen-patellar-tendon-2024/index.html",
+      "digest": "3147a8eb73af3c5035aedb919a24e4f945abf35e2c1904ea16db1d044d432c99"
+    },
+    {
+      "path": "videos/tim-hudson-2013-ankle/index.html",
+      "digest": "5fa11c7354d4dfd420165f3baf48969de61fa185da5105437f65c36d5d903e0f"
+    },
+    {
+      "path": "videos/usain-bolt-london-2017/index.html",
+      "digest": "7af2486c379824bf915a9c90cc6be81c4813e75b1d967c716da428f752a92bfb"
+    },
+    {
+      "path": "videos/victor-oladipo-2019-quadriceps/index.html",
+      "digest": "fae07300ca151691b402f4788330c4d90c90749f6dc0771a8ed3516dafa5e082"
+    },
+    {
+      "path": "videos/vivianne-miedema-2022/index.html",
+      "digest": "41828f64ccd55634c4cebf743f592150287dedf89fb6280f29d5f7376ca6e618"
+    },
+    {
+      "path": "videos/wesley-fofana-2021-leg/index.html",
+      "digest": "1bf9dff854fbff1a418213f10311f89a8b1914cd82e04e32ba1bb2964b96ea09"
+    },
+    {
+      "path": "videos/wout-van-aert-crash-2024/index.html",
+      "digest": "ab50bdf31a67e1534f21c91cce5707f64c8e770e476cd9bb0a5fa3f8894cb4e3"
+    },
+    {
+      "path": "videos/yuzuru-hanyu-2014-collision/index.html",
+      "digest": "4f26cd092f7c1bb05e73539ee059d7ae23a2174fc31968623965df277dca0a42"
+    },
+    {
+      "path": "videos/zach-lavine-acl-2017/index.html",
+      "digest": "6c562be2d7882afce0a54877dc4c4e236a0ea5309388d725319119811544094e"
+    },
+    {
+      "path": "videos/zlatan-ibrahimovic-2017-knee/index.html",
+      "digest": "d9e73b504e10495cfa5d0532a41d9064d5433f9fac40744cea0b5baaaee07591"
+    },
+    {
+      "path": "videos/zverev-roland-garros-2022/index.html",
+      "digest": "fdd8a6fd92f65d9f23af5bab625e0b144ed9e3c21bf165c8f0f6491e54398859"
+    }
+  ]
+}

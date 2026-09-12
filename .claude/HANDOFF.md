@@ -1,11 +1,12 @@
-# 2026-09-12 120 個案完成，多模型稽核修正已通過發布前檢查
+# 2026-09-12 120 個案與多模型稽核完成，正式站已驗證部署
 
 - 使用者授權先完成120個案，再稽核、部署；另明確同意全部120個案隔離副本交給Codex／Grok／agy，本機Qwen亦已完成。不用再次索取相同授權。
 - 全站120頁（7 clinical +113 observation），新增19例事件落在2023-09-12至2026-09-12。來源、機轉、時間軸及19支影片原生播放均有紀錄。
 - Codex/gpt-5.5、Grok、agy及本機Qwen已完成；主agent逐項處理33則意見，修正來源／日期標籤、重複來源、手機與鍵盤閱讀、重複事件防護及排除封面。不是全站臨床認證，7核心個案簽核與權利政策未擴張。
 - 1,482單元測試、Astro/check/content、240組頁面檢查、33端對端測試及public release gate通過。3個review-only測試跳過；完整格式檢查有132個既有歷史文件問題，34個本輪source/test檔均通過。
 - 最新紀錄：`docs/reviews/2026-09-12-multi-llm-audit/README.md`、`validation.json`；新19例研究、播放：`docs/reviews/2026-09-12-recent-120/`。下列101階段段落是歷史，不能蓋過本段。
-- 即將以通過的inputTreeDigest提交並部署；發布後以release.json與live.json核對commit及所有公開頁HTML SHA-256，不能以此準備段落當作已上線。
+- 正式部署：`7481dd1e-2b11-4607-bd86-2f4f2219b658`，網站來源commit `4a6f158a8c7240fe8522ce648e65b7e8dae08006` 已推送至既有私有origin/main。正式網域 https://injury.sportsmedicine.tw/ ，Pages https://7481dd1e.sports-injury-atlas.pages.dev/ 。
+- 全站164頁（含120個案）live HTML SHA-256均與正式build相符；2支正式站native播放器抽驗通過，2舊觀察頁及2封面URL均302移除說明。部署與完整逐頁證據見同目錄 `release.json`、`live.json`、`production-artifact.json`。後續文件提交不更動網站輸入。
 
 # 2026-09-12 個案機轉摘要：101 / 101 本機整理與驗證完成
 

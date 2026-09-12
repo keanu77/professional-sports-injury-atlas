@@ -67,3 +67,7 @@
 ## 最終驗證
 
 1,482項單元測試（94檔）、Astro 0 errors/0 warnings、內容與公開artifact檢查通過。120頁×390/1280px共240組DOM檢查通過，Chrome／手機Chrome／WebKit端對端33通過，3個review-only測試在public模式跳過。19支新增影片均於owned HTTPS預覽原生播放成功。132筆原有凍結文件格式警告保留，34個此次source/test檔格式檢查通過。詳細數據與限制見validation.json。
+
+## 正式發布
+
+2026-09-12 已部署至 https://injury.sportsmedicine.tw/ ，來源commit `4a6f158a8c7240fe8522ce648e65b7e8dae08006`。全站164頁HTML SHA-256與本機正式build一致，其中120個案全部相符；首頁數量120。2支正式站播放器抽驗成功，4個已移除路由／封面URL皆302至移除說明。詳細結果見 [release.json](release.json)、[live.json](live.json)。

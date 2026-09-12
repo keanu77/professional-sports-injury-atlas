@@ -1,0 +1,44 @@
+[
+  {
+    "url": "https://www.youtube.com/watch?v=ZRP1PfMv6ds",
+    "path": "/videos/ter-stegen-patellar-tendon-2024/",
+    "startSeconds": 21,
+    "origin": "https://injury.sportsmedicine.tw",
+    "checkedAt": "2026-09-12T15:58:25.203Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 22.013068,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=S2NsAbb8MNg",
+    "path": "/videos/ronald-acuna-acl-2024/",
+    "startSeconds": 14,
+    "origin": "https://injury.sportsmedicine.tw",
+    "checkedAt": "2026-09-12T15:58:22.063Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 15.010598,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  }
+]

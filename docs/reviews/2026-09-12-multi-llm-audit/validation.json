@@ -54,7 +54,7 @@
     "passed": 33,
     "failed": 0,
     "skipped": 3,
-    "skipReason": "public launch mode intentionally skips three copies of review-only cases-index test"
+    "skipReason": "public launch mode intentionally skips three browser copies of the review-only noindex/no-sitemap assertion"
   },
   "nativePlayback": {
     "newVideos": 19,

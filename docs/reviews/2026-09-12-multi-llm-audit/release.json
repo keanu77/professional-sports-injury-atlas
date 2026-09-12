@@ -1,0 +1,41 @@
+{
+  "releasedAt": "2026-09-12T15:59:50.344673+00:00",
+  "production": {
+    "id": "7481dd1e-2b11-4607-bd86-2f4f2219b658",
+    "url": "https://7481dd1e.sports-injury-atlas.pages.dev",
+    "origin": "https://injury.sportsmedicine.tw",
+    "branch": "main",
+    "commit": "4a6f158a8c7240fe8522ce648e65b7e8dae08006"
+  },
+  "previousGoodDeployment": {
+    "id": "856d8268-b5ee-40a1-95af-f87df66677c6",
+    "commit": "cf186f0",
+    "url": "https://856d8268.sports-injury-atlas.pages.dev"
+  },
+  "inputTreeDigest": "0f8afbb2d2be6d8e58e6f6e7eb0f62cc2aeae9e2f39c11134e89390a5abe1017",
+  "gitPushVerified": true,
+  "repositoryVisibilityVerified": "private",
+  "releaseCommand": "npm run release:public",
+  "publicPages": 164,
+  "casePages": 120,
+  "allLiveHtmlMatchesBuild": true,
+  "previewNativePlayback": {
+    "passed": 19,
+    "total": 19
+  },
+  "productionNativePlaybackSample": {
+    "passed": 2,
+    "total": 2
+  },
+  "removedRoutesAndCovers": "four probes returned 302 to /removed-video/",
+  "apiReadOnlySmoke": {
+    "popular": 200,
+    "contributionsGet": 405
+  },
+  "clinicalApproval": false,
+  "notes": [
+    "後續驗證文件提交不改變網站輸入或部署commit。",
+    "未送出投稿或测试信；API只做GET。",
+    "本次核准是網站擴充／稽核／發布，沒有擴張臨床簽核。"
+  ]
+}
