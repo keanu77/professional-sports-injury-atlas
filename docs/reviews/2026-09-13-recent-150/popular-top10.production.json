@@ -1,0 +1,45 @@
+{
+  "origin": "https://injury.sportsmedicine.tw",
+  "checkedAt": "2026-09-12T17:38:02.057Z",
+  "apiItems": 42,
+  "results": [
+    {
+      "width": 390,
+      "popularCount": 10,
+      "lastRank": "近 30 天播放第十名",
+      "allCount": 150,
+      "shownIds": [
+        "azQpbyDBktk",
+        "hxcRVu1-T-c",
+        "nfpXC98FLuE",
+        "dnEbS6xmiLA",
+        "mi7fXtGTwbc",
+        "zZdndTqOexc",
+        "12UNVAkLlmY",
+        "C4xerhbFNnc",
+        "xSUKd03LJwE",
+        "7tpaxZTTi2w"
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1280,
+      "popularCount": 10,
+      "lastRank": "近 30 天播放第十名",
+      "allCount": 150,
+      "shownIds": [
+        "azQpbyDBktk",
+        "hxcRVu1-T-c",
+        "nfpXC98FLuE",
+        "dnEbS6xmiLA",
+        "mi7fXtGTwbc",
+        "zZdndTqOexc",
+        "12UNVAkLlmY",
+        "C4xerhbFNnc",
+        "xSUKd03LJwE",
+        "7tpaxZTTi2w"
+      ],
+      "overflow": false
+    }
+  ]
+}

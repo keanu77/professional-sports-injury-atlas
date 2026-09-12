@@ -1,0 +1,76 @@
+{
+  "recordedAt": "2026-09-12T17:39:14.064562+00:00",
+  "status": "production-verified",
+  "sourceCommit": "4d7ec5972968f488532dbd291fde7d4fe348a535",
+  "deployedCommit": "75f2d005d64f484fbcb15d466164be3d5a793213",
+  "inputTreeDigest": "7b54f81e8836faf0e13300b7585eb2a4bf163451f6315984df99c9f690910a97",
+  "repository": "keanu77/professional-sports-injury-atlas",
+  "repositoryVisibility": "private",
+  "branch": "main",
+  "pushedSourceVerified": true,
+  "verifiedRemoteCommit": "75f2d005d64f484fbcb15d466164be3d5a793213",
+  "authorization": {
+    "quote": "授權推送跟更新",
+    "recordedAt": "2026-09-12T17:34:29.445928+00:00",
+    "repository": "keanu77/professional-sports-injury-atlas",
+    "productionProject": "sports-injury-atlas",
+    "productionOrigin": "https://injury.sportsmedicine.tw"
+  },
+  "deployment": {
+    "project": "sports-injury-atlas",
+    "id": "463f01a7-0bec-4128-b12f-10ec8bcc7faf",
+    "url": "https://463f01a7.sports-injury-atlas.pages.dev",
+    "environment": "production",
+    "origin": "https://injury.sportsmedicine.tw"
+  },
+  "previousGoodProduction": {
+    "id": "1cf3b175-a434-475e-8819-7fd7510fd70e",
+    "url": "https://1cf3b175.sports-injury-atlas.pages.dev",
+    "sourceCommit": "3cbb26cf61268ffd60064f886c0868c54c24bba2"
+  },
+  "counts": {
+    "publicCases": 150,
+    "coreCasePages": 7,
+    "observationPages": 143,
+    "newCases": 30,
+    "htmlPages": 195,
+    "localLinks": 4494,
+    "artifactFiles": 489
+  },
+  "verification": {
+    "unitPassed": 1490,
+    "endToEndPassed": 36,
+    "endToEndSkipped": 3,
+    "layoutChecksPassed": 300,
+    "newVideosPreviewPlaybackPassed": 30,
+    "productionPlaybackSamplesPassed": 2,
+    "liveHtmlMatchesBuild": 195,
+    "liveCasePagesMatchBuild": 150,
+    "productionArtifactMatchesPreparedFiles": 489,
+    "popularTop10AndAll150PassedWidths": [
+      390,
+      1280
+    ],
+    "removedRoutesAndAssetsRedirect": true,
+    "popularApiStatus": 200,
+    "contributionsGetStatus": 405,
+    "releaseCommand": "mise exec node@24.14.0 -- npm run release:public",
+    "releaseCommandPassed": true,
+    "proofs": [
+      "validation.json",
+      "playback.preview.json",
+      "production-artifact.json",
+      "live.json",
+      "playback.production-godwin.json",
+      "playback.production-tua.json",
+      "popular-top10.production.json"
+    ]
+  },
+  "clinicalApproval": false,
+  "contributionFormSent": false,
+  "emailSent": false,
+  "notes": [
+    "Final documentation commit follows the deployed commit; documentation changes do not require a second deployment.",
+    "Playback observations are time- and environment-specific; this is not a new clinical or rights signoff."
+  ]
+}

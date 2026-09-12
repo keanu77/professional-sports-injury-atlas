@@ -1,0 +1,23 @@
+[
+  {
+    "url": "https://www.youtube.com/watch?v=Nawq7KDQAkc",
+    "path": "/videos/chris-godwin-2024-ankle/",
+    "startSeconds": 40,
+    "origin": "https://injury.sportsmedicine.tw",
+    "checkedAt": "2026-09-12T17:37:44.319Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 41.003866,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  }
+]

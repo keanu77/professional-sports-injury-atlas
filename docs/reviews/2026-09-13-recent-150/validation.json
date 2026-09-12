@@ -82,5 +82,15 @@
     "popularCount": 10,
     "allCount": 150,
     "proof": "popular-top10.local.json"
+  },
+  "production": {
+    "checkedAt": "2026-09-12T17:37:54.862Z",
+    "deploymentId": "463f01a7-0bec-4128-b12f-10ec8bcc7faf",
+    "deployedCommit": "75f2d005d64f484fbcb15d466164be3d5a793213",
+    "htmlMatched": 195,
+    "casePagesMatched": 150,
+    "nativePlaybackSamplesPassed": 2,
+    "popularTop10AndAll150Passed": true,
+    "proof": "release.json"
   }
 }

@@ -1,0 +1,23 @@
+[
+  {
+    "url": "https://www.youtube.com/watch?v=mNbDeYmDUbg",
+    "path": "/videos/tua-tagovailoa-2024-concussion/",
+    "startSeconds": 120,
+    "origin": "https://injury.sportsmedicine.tw",
+    "checkedAt": "2026-09-12T17:37:43.861Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 121.014506,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  }
+]

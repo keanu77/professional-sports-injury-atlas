@@ -1,0 +1,1422 @@
+{
+  "checkedAt": "2026-09-12T17:37:54.862Z",
+  "origin": "https://injury.sportsmedicine.tw",
+  "deployment": "https://463f01a7.sports-injury-atlas.pages.dev",
+  "commit": "75f2d005d64f484fbcb15d466164be3d5a793213",
+  "total": 195,
+  "matched": 195,
+  "casePages": 150,
+  "casePagesMatched": 150,
+  "homeCount150": true,
+  "deploymentHomeMatches": true,
+  "headers": {
+    "csp": "default-src 'self'; script-src 'self' https://www.youtube.com https://s.ytimg.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.youtube-nocookie.com https://challenges.cloudflare.com; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+    "nosniff": "nosniff",
+    "referrerPolicy": "strict-origin-when-cross-origin"
+  },
+  "probes": [
+    {
+      "path": "/videos/volleyball-pov-135/",
+      "status": 302,
+      "location": "/removed-video/",
+      "contentType": "text/plain;charset=UTF-8"
+    },
+    {
+      "path": "/videos/ankle-inversion-observation/",
+      "status": 302,
+      "location": "/removed-video/",
+      "contentType": "text/plain;charset=UTF-8"
+    },
+    {
+      "path": "/_astro/qwuEydc9qXQ.3iGMs2YR.jpg",
+      "status": 302,
+      "location": "/removed-video/",
+      "contentType": "text/plain;charset=UTF-8"
+    },
+    {
+      "path": "/_astro/tEHP_6GA6ZA.CTFwOaes.jpg",
+      "status": 302,
+      "location": "/removed-video/",
+      "contentType": "text/plain;charset=UTF-8"
+    },
+    {
+      "path": "/api/popular",
+      "status": 200,
+      "location": null,
+      "contentType": "application/json"
+    },
+    {
+      "path": "/api/contributions",
+      "status": 405,
+      "location": null,
+      "contentType": "application/json"
+    }
+  ],
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "localSha256": "b0b5cbd7ca4c58091f6d84fde97fa6d3fa2ea3b6e83ea745dc178d614deddd4d",
+      "liveSha256": "b0b5cbd7ca4c58091f6d84fde97fa6d3fa2ea3b6e83ea745dc178d614deddd4d",
+      "matchesBuild": true
+    },
+    {
+      "path": "/404.html",
+      "status": 200,
+      "localSha256": "eb3c2221d11bcacef399bcb36947af505d604954c255ced6abeb18090fbfcf27",
+      "liveSha256": "eb3c2221d11bcacef399bcb36947af505d604954c255ced6abeb18090fbfcf27",
+      "matchesBuild": true
+    },
+    {
+      "path": "/about/",
+      "status": 200,
+      "localSha256": "d0fe23bf4f860a70e246ae5b51622d887cadb42dd55e4b9a4ef2cb7520a43239",
+      "liveSha256": "d0fe23bf4f860a70e246ae5b51622d887cadb42dd55e4b9a4ef2cb7520a43239",
+      "matchesBuild": true
+    },
+    {
+      "path": "/body-parts/ankle/",
+      "status": 200,
+      "localSha256": "d7b9e72a73aa8bc764927d961ecd6369cd0c4ad5d583f3fa0ca124fce043d3a7",
+      "liveSha256": "d7b9e72a73aa8bc764927d961ecd6369cd0c4ad5d583f3fa0ca124fce043d3a7",
+      "matchesBuild": true
+    },
+    {
+      "path": "/body-parts/calf-achilles/",
+      "status": 200,
+      "localSha256": "13d51ed2417ee2d1d3427a62243dfc2fd1da395c872c77fd758aeebef66d75c7",
+      "liveSha256": "13d51ed2417ee2d1d3427a62243dfc2fd1da395c872c77fd758aeebef66d75c7",
+      "matchesBuild": true
+    },
+    {
+      "path": "/body-parts/foot/",
+      "status": 200,
+      "localSha256": "34e398ea8fac6a00728b6e1cdd5345c88f332366f1bb8834d403e78fb0faf150",
+      "liveSha256": "34e398ea8fac6a00728b6e1cdd5345c88f332366f1bb8834d403e78fb0faf150",
+      "matchesBuild": true
+    },
+    {
+      "path": "/body-parts/hand/",
+      "status": 200,
+      "localSha256": "857aeb4dc44c04ea3b49cad19cf408926634e5f7811953779807964ca828b5e3",
+      "liveSha256": "857aeb4dc44c04ea3b49cad19cf408926634e5f7811953779807964ca828b5e3",
+      "matchesBuild": true
+    },
+    {
+      "path": "/body-parts/head-neck/",
+      "status": 200,
+      "localSha256": "68f3f00a65d5619fa67916c28b91779a5e1f658b9bd85520d107ad7cd37f84f7",
+      "liveSha256": "68f3f00a65d5619fa67916c28b91779a5e1f658b9bd85520d107ad7cd37f84f7",
+      "matchesBuild": true
+    },
+    {
+      "path": "/body-parts/knee/",
+      "status": 200,
+      "localSha256": "581f471ce12c6f6356a72947a8c4dc067b740e658d3de73173807541a0ba13b3",
+      "liveSha256": "581f471ce12c6f6356a72947a8c4dc067b740e658d3de73173807541a0ba13b3",
+      "matchesBuild": true
+    },
+    {
+      "path": "/body-parts/pelvis/",
+      "status": 200,
+      "localSha256": "adc898a6fdef915db8328cf8c9813430e304642f24e86cd0bf27e7904a945fb1",
+      "liveSha256": "adc898a6fdef915db8328cf8c9813430e304642f24e86cd0bf27e7904a945fb1",
+      "matchesBuild": true
+    },
+    {
+      "path": "/body-parts/posterior-thigh/",
+      "status": 200,
+      "localSha256": "37ae6a8734cc7efb642bc2ead83dcff17bcf1ca1a192e5d3d012cba6a68915b0",
+      "liveSha256": "37ae6a8734cc7efb642bc2ead83dcff17bcf1ca1a192e5d3d012cba6a68915b0",
+      "matchesBuild": true
+    },
+    {
+      "path": "/body-parts/shoulder/",
+      "status": 200,
+      "localSha256": "6962e16d57b36b6ead018350bfb1d3996d7fade57532ce85aa591e4e5e50a934",
+      "liveSha256": "6962e16d57b36b6ead018350bfb1d3996d7fade57532ce85aa591e4e5e50a934",
+      "matchesBuild": true
+    },
+    {
+      "path": "/body-parts/trunk/",
+      "status": 200,
+      "localSha256": "03323d05c053ef0972de6385b667c7922baf0f3406152139b1715c16b0482718",
+      "liveSha256": "03323d05c053ef0972de6385b667c7922baf0f3406152139b1715c16b0482718",
+      "matchesBuild": true
+    },
+    {
+      "path": "/body-parts/wrist/",
+      "status": 200,
+      "localSha256": "6851235209cd78568031481714107edc451dd279d00a3da01a62d55a9e5e1464",
+      "liveSha256": "6851235209cd78568031481714107edc451dd279d00a3da01a62d55a9e5e1464",
+      "matchesBuild": true
+    },
+    {
+      "path": "/cases/anfernee-simons-ankle-sprain-2023/",
+      "status": 200,
+      "localSha256": "de41489bc2b6a8c0460d8a19b4b3f1228fd1e7994fa64981d7fdb33f99270fa4",
+      "liveSha256": "de41489bc2b6a8c0460d8a19b4b3f1228fd1e7994fa64981d7fdb33f99270fa4",
+      "matchesBuild": true
+    },
+    {
+      "path": "/cases/jayson-tatum-achilles-rupture-2025/",
+      "status": 200,
+      "localSha256": "e72b9dc2fec2beea9668cb1e18663537a60a47585e4f62ea3eb01a84c947e33d",
+      "liveSha256": "e72b9dc2fec2beea9668cb1e18663537a60a47585e4f62ea3eb01a84c947e33d",
+      "matchesBuild": true
+    },
+    {
+      "path": "/cases/kevin-durant-achilles-rupture-2019/",
+      "status": 200,
+      "localSha256": "36128b7bc003a4d6b871b202a0c7d352d2d8a79bcee26d3d339ecfffbb12a16f",
+      "liveSha256": "36128b7bc003a4d6b871b202a0c7d352d2d8a79bcee26d3d339ecfffbb12a16f",
+      "matchesBuild": true
+    },
+    {
+      "path": "/cases/kyrie-irving-ankle-sprain-2021/",
+      "status": 200,
+      "localSha256": "b5683654eafb77437d73c825ac8c91192cc7d45e09a2609bb548d0b7f6efc005",
+      "liveSha256": "b5683654eafb77437d73c825ac8c91192cc7d45e09a2609bb548d0b7f6efc005",
+      "matchesBuild": true
+    },
+    {
+      "path": "/cases/lamelo-ball-ankle-sprain-2023/",
+      "status": 200,
+      "localSha256": "c0bbee5ad16f7f4002116e46509314541055c6e5544671d72066e417d3989112",
+      "liveSha256": "c0bbee5ad16f7f4002116e46509314541055c6e5544671d72066e417d3989112",
+      "matchesBuild": true
+    },
+    {
+      "path": "/cases/lamelo-ball-ankle-sprain-2025/",
+      "status": 200,
+      "localSha256": "6bad017f4e957ed0f57e1b351724bb2e3521d2b1a6ccc57db1dc9e36028a6d12",
+      "liveSha256": "6bad017f4e957ed0f57e1b351724bb2e3521d2b1a6ccc57db1dc9e36028a6d12",
+      "matchesBuild": true
+    },
+    {
+      "path": "/cases/tyrese-haliburton-achilles-rupture-2025/",
+      "status": 200,
+      "localSha256": "7415af2902a91dd1520f342ade1fbed3afc14dbfdc2aea093c77fadd6f2598b2",
+      "liveSha256": "7415af2902a91dd1520f342ade1fbed3afc14dbfdc2aea093c77fadd6f2598b2",
+      "matchesBuild": true
+    },
+    {
+      "path": "/contribute/",
+      "status": 200,
+      "localSha256": "18b460d25930090b61e62fe6c199b6098a93a04eb8cd2ff9d04c3b305bfbebcc",
+      "liveSha256": "18b460d25930090b61e62fe6c199b6098a93a04eb8cd2ff9d04c3b305bfbebcc",
+      "matchesBuild": true
+    },
+    {
+      "path": "/credits-notices/",
+      "status": 200,
+      "localSha256": "aa9db535f5cf7dd7b9ed8357e520698bce5ec80f4fe31b3b08f9425e767eb4e2",
+      "liveSha256": "aa9db535f5cf7dd7b9ed8357e520698bce5ec80f4fe31b3b08f9425e767eb4e2",
+      "matchesBuild": true
+    },
+    {
+      "path": "/injuries/achilles-rupture/",
+      "status": 200,
+      "localSha256": "21846e7e2e4a16e293b949c9ecef089ca9c57f91b4c527338bd6fdbb182adaa4",
+      "liveSha256": "21846e7e2e4a16e293b949c9ecef089ca9c57f91b4c527338bd6fdbb182adaa4",
+      "matchesBuild": true
+    },
+    {
+      "path": "/injuries/acl/",
+      "status": 200,
+      "localSha256": "0c580012a3f69f618e6d501c19a768a1cca68dc3df31ffc1e37a5d40c826508a",
+      "liveSha256": "0c580012a3f69f618e6d501c19a768a1cca68dc3df31ffc1e37a5d40c826508a",
+      "matchesBuild": true
+    },
+    {
+      "path": "/injuries/ankle-sprain/",
+      "status": 200,
+      "localSha256": "a33b91cb0398f3d4a584927ffe39a5c724eb6f3aa774b20f82e33757e0057960",
+      "liveSha256": "a33b91cb0398f3d4a584927ffe39a5c724eb6f3aa774b20f82e33757e0057960",
+      "matchesBuild": true
+    },
+    {
+      "path": "/leagues/nba/",
+      "status": 200,
+      "localSha256": "e66b420047b3212b0d8caebdf67194bd70670faa6c5dbb27e88e1ba96124bd55",
+      "liveSha256": "e66b420047b3212b0d8caebdf67194bd70670faa6c5dbb27e88e1ba96124bd55",
+      "matchesBuild": true
+    },
+    {
+      "path": "/privacy/",
+      "status": 200,
+      "localSha256": "e4aba6660cf0ccef01f5081c4f4a4a362acbfccb65aa17278caf6749489c3286",
+      "liveSha256": "e4aba6660cf0ccef01f5081c4f4a4a362acbfccb65aa17278caf6749489c3286",
+      "matchesBuild": true
+    },
+    {
+      "path": "/situations/ball-impact/",
+      "status": 200,
+      "localSha256": "441ff6e10b2dd8db54bbfbc67bfba7e78094ac277707f4792d175d96498fe6fb",
+      "liveSha256": "441ff6e10b2dd8db54bbfbc67bfba7e78094ac277707f4792d175d96498fe6fb",
+      "matchesBuild": true
+    },
+    {
+      "path": "/situations/collision/",
+      "status": 200,
+      "localSha256": "ccc952aec94d40d72e35a8fa114fc39d5e191af3b703c5fc68f3467a1dcd1553",
+      "liveSha256": "ccc952aec94d40d72e35a8fa114fc39d5e191af3b703c5fc68f3467a1dcd1553",
+      "matchesBuild": true
+    },
+    {
+      "path": "/situations/fall/",
+      "status": 200,
+      "localSha256": "0bfff0dba1aa6def6674f5d1c174335f317da571681a16a517aa1be20e04cfcd",
+      "liveSha256": "0bfff0dba1aa6def6674f5d1c174335f317da571681a16a517aa1be20e04cfcd",
+      "matchesBuild": true
+    },
+    {
+      "path": "/situations/landing/",
+      "status": 200,
+      "localSha256": "51cb776730a98058aac415eff1315de2f152428b66a1948da5a5431487c4e985",
+      "liveSha256": "51cb776730a98058aac415eff1315de2f152428b66a1948da5a5431487c4e985",
+      "matchesBuild": true
+    },
+    {
+      "path": "/situations/racket-swing/",
+      "status": 200,
+      "localSha256": "87adb90fa90eef4255241ae07434aef99bdcff51e0bcee197c1dc68e53a131a5",
+      "liveSha256": "87adb90fa90eef4255241ae07434aef99bdcff51e0bcee197c1dc68e53a131a5",
+      "matchesBuild": true
+    },
+    {
+      "path": "/situations/running-turning/",
+      "status": 200,
+      "localSha256": "d58ea2b12195c0214945d31627f450b91b438bf2ea9c615c6d1b817a484a5172",
+      "liveSha256": "d58ea2b12195c0214945d31627f450b91b438bf2ea9c615c6d1b817a484a5172",
+      "matchesBuild": true
+    },
+    {
+      "path": "/situations/unclear/",
+      "status": 200,
+      "localSha256": "669525d0258738210245c013f6b5bb52fd017c77a00741758bcb084411c18b7c",
+      "liveSha256": "669525d0258738210245c013f6b5bb52fd017c77a00741758bcb084411c18b7c",
+      "matchesBuild": true
+    },
+    {
+      "path": "/source-policy/",
+      "status": 200,
+      "localSha256": "ca5e977e05bb44b56b7681f90a01a4f4610cdb9dd61564be062b85c19553f528",
+      "liveSha256": "ca5e977e05bb44b56b7681f90a01a4f4610cdb9dd61564be062b85c19553f528",
+      "matchesBuild": true
+    },
+    {
+      "path": "/sports/alpine-skiing/",
+      "status": 200,
+      "localSha256": "ee8bcaf3c45192d6e040f14c4552a89a03fc7aeb52b67498915be2ca0365baa4",
+      "liveSha256": "ee8bcaf3c45192d6e040f14c4552a89a03fc7aeb52b67498915be2ca0365baa4",
+      "matchesBuild": true
+    },
+    {
+      "path": "/sports/american-football/",
+      "status": 200,
+      "localSha256": "f53a7cd8fb35900af4cce95d6861620b12c751cebe768a12bfc47c65f05d93c3",
+      "liveSha256": "f53a7cd8fb35900af4cce95d6861620b12c751cebe768a12bfc47c65f05d93c3",
+      "matchesBuild": true
+    },
+    {
+      "path": "/sports/athletics/",
+      "status": 200,
+      "localSha256": "5ffa5f8152b53e94aa2d94126669af6364584a30670498f411f05012720395e9",
+      "liveSha256": "5ffa5f8152b53e94aa2d94126669af6364584a30670498f411f05012720395e9",
+      "matchesBuild": true
+    },
+    {
+      "path": "/sports/badminton/",
+      "status": 200,
+      "localSha256": "c04271723f0f02db139229197e6df6be76b49b599d7690ae1206047d2ae3b67b",
+      "liveSha256": "c04271723f0f02db139229197e6df6be76b49b599d7690ae1206047d2ae3b67b",
+      "matchesBuild": true
+    },
+    {
+      "path": "/sports/baseball/",
+      "status": 200,
+      "localSha256": "f52c95eb40498c181d1c43cdeece87c48c4ba1cb8f3c0ac8b015f43e4ac0f722",
+      "liveSha256": "f52c95eb40498c181d1c43cdeece87c48c4ba1cb8f3c0ac8b015f43e4ac0f722",
+      "matchesBuild": true
+    },
+    {
+      "path": "/sports/basketball/",
+      "status": 200,
+      "localSha256": "43988d8195f170f80404fcc06648d813cdc6a8f382c67cd5c6a74fcd33461526",
+      "liveSha256": "43988d8195f170f80404fcc06648d813cdc6a8f382c67cd5c6a74fcd33461526",
+      "matchesBuild": true
+    },
+    {
+      "path": "/sports/cricket/",
+      "status": 200,
+      "localSha256": "c28a0c3c2123979b889f331d021343de15fa6f6f3156906093fd2385da80cf32",
+      "liveSha256": "c28a0c3c2123979b889f331d021343de15fa6f6f3156906093fd2385da80cf32",
+      "matchesBuild": true
+    },
+    {
+      "path": "/sports/crossfit/",
+      "status": 200,
+      "localSha256": "cef8911d9c412afe9afcc8db001ac7c85d389508eea11b42473f22091103e496",
+      "liveSha256": "cef8911d9c412afe9afcc8db001ac7c85d389508eea11b42473f22091103e496",
+      "matchesBuild": true
+    },
+    {
+      "path": "/sports/cycling/",
+      "status": 200,
+      "localSha256": "563906b2a5c8150f07884bacdbfde304b58656dcb12469c89f251804718ec412",
+      "liveSha256": "563906b2a5c8150f07884bacdbfde304b58656dcb12469c89f251804718ec412",
+      "matchesBuild": true
+    },
+    {
+      "path": "/sports/figure-skating/",
+      "status": 200,
+      "localSha256": "25e49003eb7c3c948506d891035383d39b64ccb9c6fbfe8ede436c4aee7db571",
+      "liveSha256": "25e49003eb7c3c948506d891035383d39b64ccb9c6fbfe8ede436c4aee7db571",
+      "matchesBuild": true
+    },
+    {
+      "path": "/sports/football/",
+      "status": 200,
+      "localSha256": "1194c68dbbb781110bd5f603aae4b65ff45defe4ef0aa0920c3a80ed1422f5bc",
+      "liveSha256": "1194c68dbbb781110bd5f603aae4b65ff45defe4ef0aa0920c3a80ed1422f5bc",
+      "matchesBuild": true
+    },
+    {
+      "path": "/sports/gymnastics/",
+      "status": 200,
+      "localSha256": "12c12ddcdb887e40fbf34e9d3f97b11c7a63d4e8cf14680856f573348a6d14e3",
+      "liveSha256": "12c12ddcdb887e40fbf34e9d3f97b11c7a63d4e8cf14680856f573348a6d14e3",
+      "matchesBuild": true
+    },
+    {
+      "path": "/sports/ice-hockey/",
+      "status": 200,
+      "localSha256": "6f0d9573639a2786bc759188ea9df57397430c2bbc63efa5a3f6474d07309cc9",
+      "liveSha256": "6f0d9573639a2786bc759188ea9df57397430c2bbc63efa5a3f6474d07309cc9",
+      "matchesBuild": true
+    },
+    {
+      "path": "/sports/motorcycle-racing/",
+      "status": 200,
+      "localSha256": "a275649f7f67aee97d2cd76eb2b31227b0f86d4be63b0e34af78c2bb3bf99035",
+      "liveSha256": "a275649f7f67aee97d2cd76eb2b31227b0f86d4be63b0e34af78c2bb3bf99035",
+      "matchesBuild": true
+    },
+    {
+      "path": "/sports/rugby/",
+      "status": 200,
+      "localSha256": "d44fb14db56d1897e3873eb611700e757dd7ec838d482d9af899240f551ebd6e",
+      "liveSha256": "d44fb14db56d1897e3873eb611700e757dd7ec838d482d9af899240f551ebd6e",
+      "matchesBuild": true
+    },
+    {
+      "path": "/sports/tennis/",
+      "status": 200,
+      "localSha256": "22939fac1287a3721ac1cbf92f78bbd114382561e7ed52dcb599742b30887b56",
+      "liveSha256": "22939fac1287a3721ac1cbf92f78bbd114382561e7ed52dcb599742b30887b56",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/aaron-judge-2023-toe/",
+      "status": 200,
+      "localSha256": "b8e788ef58c94daf4ad452f18177951fb29778089f30b7f97b8471e767f3e638",
+      "liveSha256": "b8e788ef58c94daf4ad452f18177951fb29778089f30b7f97b8471e767f3e638",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/aaron-rodgers-2023-achilles/",
+      "status": 200,
+      "localSha256": "5429e11d3eaadacd8c95c6acbb60dddf1b01b768b8aa4a7829ac285beafb580c",
+      "liveSha256": "5429e11d3eaadacd8c95c6acbb60dddf1b01b768b8aa4a7829ac285beafb580c",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/adam-eaton-2017-knee/",
+      "status": 200,
+      "localSha256": "eaeef6d26077d1be9587a07b5512f4d86f96181729895cba095b087a2a8196f7",
+      "liveSha256": "eaeef6d26077d1be9587a07b5512f4d86f96181729895cba095b087a2a8196f7",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/adam-fantilli-2024-calf/",
+      "status": 200,
+      "localSha256": "31a737b899ac6c3992bfca0be63317258e308b9c80faa201c5268ddb524ade65",
+      "liveSha256": "31a737b899ac6c3992bfca0be63317258e308b9c80faa201c5268ddb524ade65",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/aidan-hutchinson-leg-2024/",
+      "status": 200,
+      "localSha256": "a53437faaf5789ebb453d4300afb100a798c2f2f1aea11f6aa36417b4c9b31f1",
+      "liveSha256": "a53437faaf5789ebb453d4300afb100a798c2f2f1aea11f6aa36417b4c9b31f1",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/aksel-svindal-kitzbuhel-2016/",
+      "status": 200,
+      "localSha256": "017335c00d8d661ecb917f96340b168583526efc44fc721365a8bef14933bccf",
+      "liveSha256": "017335c00d8d661ecb917f96340b168583526efc44fc721365a8bef14933bccf",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/aleksander-kilde-2024-shoulder/",
+      "status": 200,
+      "localSha256": "f6b4ec0e32a0dc3c5a037b97ff8ed92964b8e90bc10cfafad8353fd1d87db4aa",
+      "liveSha256": "f6b4ec0e32a0dc3c5a037b97ff8ed92964b8e90bc10cfafad8353fd1d87db4aa",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/alex-cobb-2013-concussion/",
+      "status": 200,
+      "localSha256": "79d7362618622bcdd62412e549686f9868f374b800642501a27c5df6dbe50034",
+      "liveSha256": "79d7362618622bcdd62412e549686f9868f374b800642501a27c5df6dbe50034",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/alex-greenwood-2024-knee/",
+      "status": 200,
+      "localSha256": "42dd5e6b8e08383a28ddec328da6d940571ce8242663f2057c04b75eb94d21d2",
+      "liveSha256": "42dd5e6b8e08383a28ddec328da6d940571ce8242663f2057c04b75eb94d21d2",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/alex-oxlade-chamberlain-2018/",
+      "status": 200,
+      "localSha256": "ce6e71294433dbf5a84bb746149584a3f7d9d1275bfae1968e4ed8c141680944",
+      "liveSha256": "ce6e71294433dbf5a84bb746149584a3f7d9d1275bfae1968e4ed8c141680944",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/alex-rins-2024-assen-wrist/",
+      "status": 200,
+      "localSha256": "81fcfc3b83dac508b2192b223d746522b709c15146b323330f05623033a49983",
+      "liveSha256": "81fcfc3b83dac508b2192b223d746522b709c15146b323330f05623033a49983",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/alexis-pinturault-2024-wengen-knee/",
+      "status": 200,
+      "localSha256": "eb2897f9487bc79732344e4066c8ed44d412b87ab982fa73f13583e6ac1e6ed6",
+      "liveSha256": "eb2897f9487bc79732344e4066c8ed44d412b87ab982fa73f13583e6ac1e6ed6",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/an-se-young-2023-asian-games-knee/",
+      "status": 200,
+      "localSha256": "e96412f67af6894017a618911ac6b6a7d1684814cf73e4370841c2bd4786b967",
+      "liveSha256": "e96412f67af6894017a618911ac6b6a7d1684814cf73e4370841c2bd4786b967",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/andre-gomes-2019/",
+      "status": 200,
+      "localSha256": "404ad83102a974fbec0b46d86149a6e02ed108f7c648d747d5dbb4b70b84781d",
+      "liveSha256": "404ad83102a974fbec0b46d86149a6e02ed108f7c648d747d5dbb4b70b84781d",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/angel-reese-2024-wrist/",
+      "status": 200,
+      "localSha256": "a9d08b60b168598413f36bfe985b70c62bd98fb7aaba860b1f58a6e257063dbd",
+      "liveSha256": "a9d08b60b168598413f36bfe985b70c62bd98fb7aaba860b1f58a6e257063dbd",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/annemiek-van-vleuten-2016-concussion/",
+      "status": 200,
+      "localSha256": "13abc73b56b44612ff1a592ec2d993913d12a50de389fbb6794300b4af9dfecd",
+      "liveSha256": "13abc73b56b44612ff1a592ec2d993913d12a50de389fbb6794300b4af9dfecd",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/anthony-richardson-2023-shoulder/",
+      "status": 200,
+      "localSha256": "e434602a274541b43410a3bc4931f9e37383598b8ca3556b712e9539311884df",
+      "liveSha256": "e434602a274541b43410a3bc4931f9e37383598b8ca3556b712e9539311884df",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/antoine-dupont-2025-six-nations-knee/",
+      "status": 200,
+      "localSha256": "dc08de3fa8fe7627b1b3bf0c6608bc4e017de462a07edba42b67360c393bd1d2",
+      "liveSha256": "dc08de3fa8fe7627b1b3bf0c6608bc4e017de462a07edba42b67360c393bd1d2",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/antoine-dupont-world-cup-2023/",
+      "status": 200,
+      "localSha256": "6ffb5144da4beb0fdf35a757e3a6fb795d4921a09ceeb6d1573535a6f0c579a6",
+      "liveSha256": "6ffb5144da4beb0fdf35a757e3a6fb795d4921a09ceeb6d1573535a6f0c579a6",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/beth-mead-2022/",
+      "status": 200,
+      "localSha256": "e57be24aee396358fe266dcd7ecdb87997e02dab88645d3dacd9eeffddead8bf",
+      "liveSha256": "e57be24aee396358fe266dcd7ecdb87997e02dab88645d3dacd9eeffddead8bf",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/bethanie-mattek-sands-2017-knee/",
+      "status": 200,
+      "localSha256": "b8fdccc698129756ce145605d903cc1b22ff388533bd9e2d998718ade8d2cd0a",
+      "liveSha256": "b8fdccc698129756ce145605d903cc1b22ff388533bd9e2d998718ade8d2cd0a",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/bryce-harper-2017-knee/",
+      "status": 200,
+      "localSha256": "17c3d66d848896014a414abb74b84014073e1bcfe2486c86066e5757bd56080c",
+      "liveSha256": "17c3d66d848896014a414abb74b84014073e1bcfe2486c86066e5757bd56080c",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/bryce-harper-2022-thumb/",
+      "status": 200,
+      "localSha256": "e4b38da4c5e1f1a36d625b2c6844b340f3b7f9a734b6717519f08ef3ecf99c1c",
+      "liveSha256": "e4b38da4c5e1f1a36d625b2c6844b340f3b7f9a734b6717519f08ef3ecf99c1c",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/buster-posey-2011-ankle/",
+      "status": 200,
+      "localSha256": "19019d9d91b56cb4233f9bdbd35d146e2c759b7b9089d36ec13aa9c55f1aa898",
+      "liveSha256": "19019d9d91b56cb4233f9bdbd35d146e2c759b7b9089d36ec13aa9c55f1aa898",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/cameron-brink-2024-acl/",
+      "status": 200,
+      "localSha256": "1c12eeb9b278cbb5f765b17e5523f2da4a7200aa0d6ea4e92f5d617215263047",
+      "liveSha256": "1c12eeb9b278cbb5f765b17e5523f2da4a7200aa0d6ea4e92f5d617215263047",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/carlos-alcaraz-2024-rio-ankle/",
+      "status": 200,
+      "localSha256": "f400b3d5477a82b5eed8df8537597e07e3b2a4257194260004023e40061098e4",
+      "liveSha256": "f400b3d5477a82b5eed8df8537597e07e3b2a4257194260004023e40061098e4",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/carolina-marin-acl-2024/",
+      "status": 200,
+      "localSha256": "9d0c4a92b4ff5770db4dd593b15b7038987df45ec4a943d8bd225777e76a7f47",
+      "liveSha256": "9d0c4a92b4ff5770db4dd593b15b7038987df45ec4a943d8bd225777e76a7f47",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/carolina-marin-indonesia-2019/",
+      "status": 200,
+      "localSha256": "d6ef3814d78e0e28aa2a3752b8158b03771864765e545036e144e049b0a82c08",
+      "liveSha256": "d6ef3814d78e0e28aa2a3752b8158b03771864765e545036e144e049b0a82c08",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/charlie-morton-2021-fibula/",
+      "status": 200,
+      "localSha256": "74864c8c7c355a61ade05be939f252a2535c726fec38fb41b985aa16aae4f250",
+      "liveSha256": "74864c8c7c355a61ade05be939f252a2535c726fec38fb41b985aa16aae4f250",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/chase-headley-2014-face/",
+      "status": 200,
+      "localSha256": "4afae3049f343d32b0e56a1e9e9768d63c6e14beea3943bde35deeade9e19e0e",
+      "liveSha256": "4afae3049f343d32b0e56a1e9e9768d63c6e14beea3943bde35deeade9e19e0e",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/chien-ming-wang-2008-foot/",
+      "status": 200,
+      "localSha256": "805bb062f855b2accfcd3f3c02ff36bda9fcc9e201fa42d7cb5568dce62fbb11",
+      "liveSha256": "805bb062f855b2accfcd3f3c02ff36bda9fcc9e201fa42d7cb5568dce62fbb11",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/chris-bassitt-2021-face/",
+      "status": 200,
+      "localSha256": "200e4a0fd58c4e29c5078075d2f1c1d0c943ba04ef014b16577ecac3984306b2",
+      "liveSha256": "200e4a0fd58c4e29c5078075d2f1c1d0c943ba04ef014b16577ecac3984306b2",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/chris-godwin-2024-ankle/",
+      "status": 200,
+      "localSha256": "2d603008afe8c9b28f44ffb56a83fcc681cd3fdfc895b92b3e51d3ed1378c490",
+      "liveSha256": "2d603008afe8c9b28f44ffb56a83fcc681cd3fdfc895b92b3e51d3ed1378c490",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/connor-bedard-jaw-2024/",
+      "status": 200,
+      "localSha256": "fd69c1a48c84fb6a5cdeb8194dbc993789aa9962c3439fb492913dc9caa64e19",
+      "liveSha256": "fd69c1a48c84fb6a5cdeb8194dbc993789aa9962c3439fb492913dc9caa64e19",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/connor-mcdavid-2019-pcl/",
+      "status": 200,
+      "localSha256": "aacfa245d85c42f49417f5417b50e7c38f7c49aa3396cb2c8879d244350282cd",
+      "liveSha256": "aacfa245d85c42f49417f5417b50e7c38f7c49aa3396cb2c8879d244350282cd",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/cristiano-ronaldo-2016/",
+      "status": 200,
+      "localSha256": "f95110abb8cf82e1e59267cf5c2632b14ad2f54449fee52d2435b78dfddce674",
+      "liveSha256": "f95110abb8cf82e1e59267cf5c2632b14ad2f54449fee52d2435b78dfddce674",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/curtis-granderson-2013-hand/",
+      "status": 200,
+      "localSha256": "f59d45d0d01b1676c2fae16e9c9187fdea11dcffaf404a280ddb21062de4c4d8",
+      "liveSha256": "f59d45d0d01b1676c2fae16e9c9187fdea11dcffaf404a280ddb21062de4c4d8",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/dan-jennings-2014-concussion/",
+      "status": 200,
+      "localSha256": "f0529dd914aa1751bab9cb2ed743cf87f73d1cff82573bd468f6dd0376f63f61",
+      "liveSha256": "f0529dd914aa1751bab9cb2ed743cf87f73d1cff82573bd468f6dd0376f63f61",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/dani-carvajal-knee-2024/",
+      "status": 200,
+      "localSha256": "300cd4c6aa75340d5cc04823c5557d0d1a9fd85435f6c2cc8f04299e417e9d2f",
+      "liveSha256": "300cd4c6aa75340d5cc04823c5557d0d1a9fd85435f6c2cc8f04299e417e9d2f",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/david-beckham-2010/",
+      "status": 200,
+      "localSha256": "779dff75a59ec6d588dc96ee4bf540081540b43b1f7ee95171f4ab7e88e53f85",
+      "liveSha256": "779dff75a59ec6d588dc96ee4bf540081540b43b1f7ee95171f4ab7e88e53f85",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/dejounte-murray-acl-2018/",
+      "status": 200,
+      "localSha256": "d039511616f395fafb4deb74584cd9e2668a868f832ad1bb7cf85e4003444cf7",
+      "liveSha256": "d039511616f395fafb4deb74584cd9e2668a868f832ad1bb7cf85e4003444cf7",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/demarcus-cousins-achilles-2018/",
+      "status": 200,
+      "localSha256": "7e1362dc0accba9b81e53717629faadc810e276fcca8b75dd1127fb944a13b83",
+      "liveSha256": "7e1362dc0accba9b81e53717629faadc810e276fcca8b75dd1127fb944a13b83",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/derek-redmond-barcelona-1992/",
+      "status": 200,
+      "localSha256": "aed18117b40dff775916e8bf0c2b1396419ed9928e79e8cd916fa04cceffa525",
+      "liveSha256": "aed18117b40dff775916e8bf0c2b1396419ed9928e79e8cd916fa04cceffa525",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/derrick-rose-acl-2012/",
+      "status": 200,
+      "localSha256": "2b542b0cc5876abb3826cd510c30bdc47927c5f46562cdd699e4f8dbf03fbee0",
+      "liveSha256": "2b542b0cc5876abb3826cd510c30bdc47927c5f46562cdd699e4f8dbf03fbee0",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/dominic-thiem-2021-wrist/",
+      "status": 200,
+      "localSha256": "686129430e0cb0c83b55dff33909ab85a03badd48a9b82db1401b5f656d989b4",
+      "liveSha256": "686129430e0cb0c83b55dff33909ab85a03badd48a9b82db1401b5f656d989b4",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/dustin-fowler-2017-patellar-tendon/",
+      "status": 200,
+      "localSha256": "f108ab81ef0a803521b680d0e457b9b9e20b31a07ab6e2f16339931d7ef49523",
+      "liveSha256": "f108ab81ef0a803521b680d0e457b9b9e20b31a07ab6e2f16339931d7ef49523",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/dustin-pedroia-2017-knee/",
+      "status": 200,
+      "localSha256": "eae735c72bb00d670fe67d47be4034e1b9eac2504d7de50fb7a8f5307d103771",
+      "liveSha256": "eae735c72bb00d670fe67d47be4034e1b9eac2504d7de50fb7a8f5307d103771",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/eder-militao-acl-2024/",
+      "status": 200,
+      "localSha256": "0167b18cf7a2170c45627cee13c0501ba901ed01c61304f6f8ab63cafc8f70b0",
+      "liveSha256": "0167b18cf7a2170c45627cee13c0501ba901ed01c61304f6f8ab63cafc8f70b0",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/edwin-diaz-2023-patellar-tendon/",
+      "status": 200,
+      "localSha256": "b7e75ec345b8eecac6ac6f9f198f756541846e93dc2cd411a21229c1bfcad9db",
+      "liveSha256": "b7e75ec345b8eecac6ac6f9f198f756541846e93dc2cd411a21229c1bfcad9db",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/elaine-thompson-herah-2024-achilles/",
+      "status": 200,
+      "localSha256": "7ad0a768a8d164612540b999d41d4943dc56bcc8fcc00e992f579088e6fcb747",
+      "liveSha256": "7ad0a768a8d164612540b999d41d4943dc56bcc8fcc00e992f579088e6fcb747",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/fabio-jakobsen-2020-concussion/",
+      "status": 200,
+      "localSha256": "06c54b59d6a008318f352a8aa82524d3b4f7b63eb7a42ddad63406ff738fbe72",
+      "liveSha256": "06c54b59d6a008318f352a8aa82524d3b4f7b63eb7a42ddad63406ff738fbe72",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/federica-brignone-leg-2025/",
+      "status": 200,
+      "localSha256": "5f80b4a9c7ebd7c8e6424a6c6eb6548b5884da86ca950cfcf4ab4fca01385bb7",
+      "liveSha256": "5f80b4a9c7ebd7c8e6424a6c6eb6548b5884da86ca950cfcf4ab4fca01385bb7",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/gavi-acl-2023/",
+      "status": 200,
+      "localSha256": "9fb43e2b56895e84a762bcbb8cc001aca310cb905fdf460358390f1db73c3ced",
+      "liveSha256": "9fb43e2b56895e84a762bcbb8cc001aca310cb905fdf460358390f1db73c3ced",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/george-north-2015-concussion/",
+      "status": 200,
+      "localSha256": "631e055c4553fb1fccbcfb53ca67f290bb14bbb521256d4a6e98811bb8b772b8",
+      "liveSha256": "631e055c4553fb1fccbcfb53ca67f290bb14bbb521256d4a6e98811bb8b772b8",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/giancarlo-stanton-2014-face/",
+      "status": 200,
+      "localSha256": "c83218f2ae7af4c341086048fd658fd9447c985771435f473ac5dcf9add05fe8",
+      "liveSha256": "c83218f2ae7af4c341086048fd658fd9447c985771435f473ac5dcf9add05fe8",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/gianmarco-tamberi-2016-ankle/",
+      "status": 200,
+      "localSha256": "86407882f40e2d2f742418225d06fb9531e998a5b8df109e8fcef76a9ecf42e1",
+      "liveSha256": "86407882f40e2d2f742418225d06fb9531e998a5b8df109e8fcef76a9ecf42e1",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/giannis-east-final-2021/",
+      "status": 200,
+      "localSha256": "46bffae24e253f00e9c340c5a613c2206cf636f84a064484184bbc3cb8702d41",
+      "liveSha256": "46bffae24e253f00e9c340c5a613c2206cf636f84a064484184bbc3cb8702d41",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/gordon-hayward-ankle-fracture-2017/",
+      "status": 200,
+      "localSha256": "4b1b507f1e730e6ed3833332c6af05c610a205877ee0818c36d2b012d68123ed",
+      "liveSha256": "4b1b507f1e730e6ed3833332c6af05c610a205877ee0818c36d2b012d68123ed",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/grigor-dimitrov-2025-wimbledon-pectoral/",
+      "status": 200,
+      "localSha256": "1839e549d967791917cfd677f98265d5e7534de85196ecdcd869b4a456da9266",
+      "liveSha256": "1839e549d967791917cfd677f98265d5e7534de85196ecdcd869b4a456da9266",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/hardik-pandya-2023-world-cup-ankle/",
+      "status": 200,
+      "localSha256": "35cae3e4c31d6a3ca6e1e95805a065b8ac01f2684645e9db1f2b85c148daad09",
+      "liveSha256": "35cae3e4c31d6a3ca6e1e95805a065b8ac01f2684645e9db1f2b85c148daad09",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/harvey-elliott-2021-ankle/",
+      "status": 200,
+      "localSha256": "9cb2be2627317d0d23e7937d679ed735b3b73f260570c9773e6f89bf33f803ef",
+      "liveSha256": "9cb2be2627317d0d23e7937d679ed735b3b73f260570c9773e6f89bf33f803ef",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/hector-bellerin-2019-knee/",
+      "status": 200,
+      "localSha256": "7656055729257a99921fd24e516a24abc347f4d326fb04475aa068b1fd4ee1b6",
+      "liveSha256": "7656055729257a99921fd24e516a24abc347f4d326fb04475aa068b1fd4ee1b6",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/hubert-hurkacz-2024-wimbledon-knee/",
+      "status": 200,
+      "localSha256": "155dd7d2abf99c33c826e75203823b96162b3994ae0a813e42b010d12dcdef73",
+      "liveSha256": "155dd7d2abf99c33c826e75203823b96162b3994ae0a813e42b010d12dcdef73",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/ja-happ-2013-head/",
+      "status": 200,
+      "localSha256": "7d98938ae844ea023085e2b217528128ee63425e2f0b259e98a23e2fee3fec1e",
+      "liveSha256": "7d98938ae844ea023085e2b217528128ee63425e2f0b259e98a23e2fee3fec1e",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/jamal-murray-acl-2021/",
+      "status": 200,
+      "localSha256": "88f76a78e82a39b0938e5f7e481f9a9abab5cf609951fa1e04090ae272cba690",
+      "liveSha256": "88f76a78e82a39b0938e5f7e481f9a9abab5cf609951fa1e04090ae272cba690",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/jamal-musiala-ankle-2025/",
+      "status": 200,
+      "localSha256": "26f14ad423045ca7925e4a1501f6edf266681aa065c80aed0e1149f08ecd45e9",
+      "liveSha256": "26f14ad423045ca7925e4a1501f6edf266681aa065c80aed0e1149f08ecd45e9",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/joe-burrow-wrist-2023/",
+      "status": 200,
+      "localSha256": "ef8d3e9cbd9ec4160d35db721287776df02034de9e86359932fee31a4f598407",
+      "liveSha256": "ef8d3e9cbd9ec4160d35db721287776df02034de9e86359932fee31a4f598407",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/joel-embiid-meniscus-2024/",
+      "status": 200,
+      "localSha256": "834777a68311408e12ffe9ba7769ac43450dfbacab0d4567f256ea40994c8204",
+      "liveSha256": "834777a68311408e12ffe9ba7769ac43450dfbacab0d4567f256ea40994c8204",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/john-tavares-2021-concussion/",
+      "status": 200,
+      "localSha256": "2b6fc51ebb013ee5d32bb46a95b070da83f58861644a144bcbb8c7c4b6cdb7dd",
+      "liveSha256": "2b6fc51ebb013ee5d32bb46a95b070da83f58861644a144bcbb8c7c4b6cdb7dd",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/jonas-vingegaard-crash-2024/",
+      "status": 200,
+      "localSha256": "e9142d94141cb6f2275088df7a900cef1d20a37ad3931e124d21d1debfea27d5",
+      "liveSha256": "e9142d94141cb6f2275088df7a900cef1d20a37ad3931e124d21d1debfea27d5",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/jorge-martin-2025-qatar-chest/",
+      "status": 200,
+      "localSha256": "2931ee81d6cf56cdc4d68840bd20c4fdc6cd40ac44ede1e8ed3c2e7edc978a84",
+      "liveSha256": "2931ee81d6cf56cdc4d68840bd20c4fdc6cd40ac44ede1e8ed3c2e7edc978a84",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/juan-martin-del-potro-2018-knee/",
+      "status": 200,
+      "localSha256": "53bce96ae88b991a6a5bb902bb04d96c6b372d4f069348e91db396b343ccd6c2",
+      "liveSha256": "53bce96ae88b991a6a5bb902bb04d96c6b372d4f069348e91db396b343ccd6c2",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/juju-watkins-2025-knee/",
+      "status": 200,
+      "localSha256": "49593fe5bcb575ae5cef2a9fbab8b6e75842b94c3d88379b2df74d6b8e54dc51",
+      "liveSha256": "49593fe5bcb575ae5cef2a9fbab8b6e75842b94c3d88379b2df74d6b8e54dc51",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/julie-foucher-box-jump-2015/",
+      "status": 200,
+      "localSha256": "c0dbc9bbd6941e826f22b46ca9ebee189c3c752ab7615761affc5c1abd3fe2f2",
+      "liveSha256": "c0dbc9bbd6941e826f22b46ca9ebee189c3c752ab7615761affc5c1abd3fe2f2",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/justin-turner-2023-face/",
+      "status": 200,
+      "localSha256": "a7eccda07ebcdd52b97b8e30197c0126443874da5bd092aba32e0efc34412f21",
+      "liveSha256": "a7eccda07ebcdd52b97b8e30197c0126443874da5bd092aba32e0efc34412f21",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/kane-williamson-2023-world-cup-thumb/",
+      "status": 200,
+      "localSha256": "ea58d570dfb9b9f68f458cd5ae1312ae27941118ae77f7357ace7f9808207908",
+      "liveSha256": "ea58d570dfb9b9f68f458cd5ae1312ae27941118ae77f7357ace7f9808207908",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/kawhi-leonard-acl-2021/",
+      "status": 200,
+      "localSha256": "82842fe636145611eab1a5b796ef11fc2067728bca160b1900cf2b59a3a38fe1",
+      "liveSha256": "82842fe636145611eab1a5b796ef11fc2067728bca160b1900cf2b59a3a38fe1",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/kendrys-morales-2010-ankle/",
+      "status": 200,
+      "localSha256": "b30a1516bb380916adbf42a867c8e135a8286649ec9efd65312bce9ff6953a83",
+      "liveSha256": "b30a1516bb380916adbf42a867c8e135a8286649ec9efd65312bce9ff6953a83",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/kerri-strug-atlanta-1996/",
+      "status": 200,
+      "localSha256": "2ee30d711096094833e44b6a27dd5877b6a42133f71a396a6200eff4e2c1f06c",
+      "liveSha256": "2ee30d711096094833e44b6a27dd5877b6a42133f71a396a6200eff4e2c1f06c",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/kevin-mayer-2024-paris-hamstring/",
+      "status": 200,
+      "localSha256": "c9199ad40d8a4d4e07219da2f37d5b670862855a36e276fd475fc342a47abd8d",
+      "liveSha256": "c9199ad40d8a4d4e07219da2f37d5b670862855a36e276fd475fc342a47abd8d",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/kevin-pillar-2021-face/",
+      "status": 200,
+      "localSha256": "64aea042356d2122d9b604bba49a2105fa1baad2a00d7488145f56df4a974607",
+      "liveSha256": "64aea042356d2122d9b604bba49a2105fa1baad2a00d7488145f56df4a974607",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/kirk-cousins-achilles-2023/",
+      "status": 200,
+      "localSha256": "6cf847bf6f8f82ce7cd1166f37c65d0fac6111c1fca4848590a17562965d751f",
+      "liveSha256": "6cf847bf6f8f82ce7cd1166f37c65d0fac6111c1fca4848590a17562965d751f",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/klay-thompson-2019-acl/",
+      "status": 200,
+      "localSha256": "7f3c443a9d6cd0053db7c6fde0c393b9781f24c24be9e61afd71bd299f9c9599",
+      "liveSha256": "7f3c443a9d6cd0053db7c6fde0c393b9781f24c24be9e61afd71bd299f9c9599",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/kobe-bryant-2013-achilles/",
+      "status": 200,
+      "localSha256": "765261d04c3ae4486d9124a31baab0d2ebaf3b82f9814c576776f328a5f5176d",
+      "liveSha256": "765261d04c3ae4486d9124a31baab0d2ebaf3b82f9814c576776f328a5f5176d",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/kristaps-porzingis-acl-2018/",
+      "status": 200,
+      "localSha256": "f4210decb08aa2a143affab2ec623ae9f71bf8eff19cd7ee44b052b636da7917",
+      "liveSha256": "f4210decb08aa2a143affab2ec623ae9f71bf8eff19cd7ee44b052b636da7917",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/kristaps-porzingis-retinaculum-2024/",
+      "status": 200,
+      "localSha256": "82c4cb86d2b9f2b03b34f8d51e83c2dca47442e511a5f6708d5c4bc62f52d022",
+      "liveSha256": "82c4cb86d2b9f2b03b34f8d51e83c2dca47442e511a5f6708d5c4bc62f52d022",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/kyle-schwarber-2016-knee/",
+      "status": 200,
+      "localSha256": "59b4a0515b1018bd4a6458aaf51e13602feb585f49a96a7f1940955ff30043b9",
+      "liveSha256": "59b4a0515b1018bd4a6458aaf51e13602feb585f49a96a7f1940955ff30043b9",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/laurent-koscielny-2018/",
+      "status": 200,
+      "localSha256": "3e43bb447121bcf19f45edd146bd7c034483e14f5648d1b8660caf4e9e52ba90",
+      "liveSha256": "3e43bb447121bcf19f45edd146bd7c034483e14f5648d1b8660caf4e9e52ba90",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/leah-williamson-2023/",
+      "status": 200,
+      "localSha256": "1e6c9e4cd8af54196570a3bd819d397613d4fb91e9dfe548567b27de44aee331",
+      "liveSha256": "1e6c9e4cd8af54196570a3bd819d397613d4fb91e9dfe548567b27de44aee331",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/lindsey-vonn-schladming-2013/",
+      "status": 200,
+      "localSha256": "6a1a16e5d37113af6598b03b14a92ef1e874018277a64f9c81c202a3b6eda5cd",
+      "liveSha256": "6a1a16e5d37113af6598b03b14a92ef1e874018277a64f9c81c202a3b6eda5cd",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/liu-xiang-2012-achilles/",
+      "status": 200,
+      "localSha256": "2d0f4fbc361bde1463dd99281f77b72de9d66ea854eefdce3cfe29db1a324a37",
+      "liveSha256": "2d0f4fbc361bde1463dd99281f77b72de9d66ea854eefdce3cfe29db1a324a37",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/manny-machado-2013-knee/",
+      "status": 200,
+      "localSha256": "66bd851e68c36c45ffd765d30b9b496e9b9139fc177f3c5f9bffb1437fe4d953",
+      "liveSha256": "66bd851e68c36c45ffd765d30b9b496e9b9139fc177f3c5f9bffb1437fe4d953",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/marco-schwarz-2023-bormio-knee/",
+      "status": 200,
+      "localSha256": "5295895ce039a73e3fc0df1c89f108ed3075c70dbff87b14a29a07f316bf3e87",
+      "liveSha256": "5295895ce039a73e3fc0df1c89f108ed3075c70dbff87b14a29a07f316bf3e87",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/mark-cavendish-2023-clavicle/",
+      "status": 200,
+      "localSha256": "c2cb43ce716cc1d7b0fdc368a2dfa027709122f030fe4443aa91b1f9d5e1864b",
+      "liveSha256": "c2cb43ce716cc1d7b0fdc368a2dfa027709122f030fe4443aa91b1f9d5e1864b",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/markelle-fultz-orlando-2021/",
+      "status": 200,
+      "localSha256": "3872b3625b6b507730b60ece62cf298ac1e952f70af84346e545fda8282bb4ef",
+      "liveSha256": "3872b3625b6b507730b60ece62cf298ac1e952f70af84346e545fda8282bb4ef",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/marketa-vondrousova-2024-berlin-hip/",
+      "status": 200,
+      "localSha256": "ad19f5addd4a03e5ec35ed883aefe4c6fcb9c95b773e91ca41c33a89ffae7d1b",
+      "liveSha256": "ad19f5addd4a03e5ec35ed883aefe4c6fcb9c95b773e91ca41c33a89ffae7d1b",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/matt-shoemaker-2016-head/",
+      "status": 200,
+      "localSha256": "43c5c4353abf8678e83b6fd8417e058b204d52db83f9895823268caf7c327419",
+      "liveSha256": "43c5c4353abf8678e83b6fd8417e058b204d52db83f9895823268caf7c327419",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/max-pacioretty-2011-concussion/",
+      "status": 200,
+      "localSha256": "ff6cdbbf99394a07a23dfd3895a1ebd2aba14db6bbd362b6781c1320e566669a",
+      "liveSha256": "ff6cdbbf99394a07a23dfd3895a1ebd2aba14db6bbd362b6781c1320e566669a",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/mikaela-shiffrin-2024-abdomen/",
+      "status": 200,
+      "localSha256": "4084318ce4e4519c9c7a646dc69319ef1fd92e58e5451ba9e8585cbdedb6bd71",
+      "liveSha256": "4084318ce4e4519c9c7a646dc69319ef1fd92e58e5451ba9e8585cbdedb6bd71",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/mikaela-shiffrin-2024-cortina-knee/",
+      "status": 200,
+      "localSha256": "5aea7bfaa3bea24f9e1b0aa25704eceaa787514777d7fab9fe745d293ae1ee97",
+      "liveSha256": "5aea7bfaa3bea24f9e1b0aa25704eceaa787514777d7fab9fe745d293ae1ee97",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/mikhail-sergachev-2024-leg/",
+      "status": 200,
+      "localSha256": "01853fb431606ce033f0a7b9663b9a5b77214876ebeecd0372470da60292330c",
+      "liveSha256": "01853fb431606ce033f0a7b9663b9a5b77214876ebeecd0372470da60292330c",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/mitch-haniger-2017-face/",
+      "status": 200,
+      "localSha256": "4ccc5fa37434204d238f75290e3a84e51f47c74e185862602d295d48d549fc97",
+      "liveSha256": "4ccc5fa37434204d238f75290e3a84e51f47c74e185862602d295d48d549fc97",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/mohamed-salah-final-2018/",
+      "status": 200,
+      "localSha256": "a2ae3a6fc668089f07320423e90e6d0d3f951f46ba40f2fa3f9b820cfb90f888",
+      "liveSha256": "a2ae3a6fc668089f07320423e90e6d0d3f951f46ba40f2fa3f9b820cfb90f888",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/mookie-betts-2024-hand/",
+      "status": 200,
+      "localSha256": "4d6caef3f16b8ff8d27bcee8da319fdfd73795aa25d1be3ff8963cca7974bdc2",
+      "liveSha256": "4d6caef3f16b8ff8d27bcee8da319fdfd73795aa25d1be3ff8963cca7974bdc2",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/neymar-2023-acl/",
+      "status": 200,
+      "localSha256": "4d4e0a3bb6f37349811f629488b3e47d13367d4063d9d29a4bc4e5c07cd68b64",
+      "liveSha256": "4d4e0a3bb6f37349811f629488b3e47d13367d4063d9d29a4bc4e5c07cd68b64",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/nick-chubb-knee-2023/",
+      "status": 200,
+      "localSha256": "2f8e8927d6defb0e66eecbf1d2f829fa18e499872638622b21725d95bba0ba95",
+      "liveSha256": "2f8e8927d6defb0e66eecbf1d2f829fa18e499872638622b21725d95bba0ba95",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/novak-djokovic-meniscus-2024/",
+      "status": 200,
+      "localSha256": "9e34f8fdf7c67f67eb9ed977872205ebd9ef4a5130a735cae66fc57f8642bd7e",
+      "liveSha256": "9e34f8fdf7c67f67eb9ed977872205ebd9ef4a5130a735cae66fc57f8642bd7e",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/patrik-laine-2024-knee/",
+      "status": 200,
+      "localSha256": "6fa0a8dd87a801dfb62267a32a2b65d1e26d698271f94e0f80934e9acbea0534",
+      "liveSha256": "6fa0a8dd87a801dfb62267a32a2b65d1e26d698271f94e0f80934e9acbea0534",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/paul-george-leg-fracture-2014/",
+      "status": 200,
+      "localSha256": "b47296b17fe8653aaf52cc146c7d15f090bc964f3a9abf60c9198d5fd4176b0b",
+      "liveSha256": "b47296b17fe8653aaf52cc146c7d15f090bc964f3a9abf60c9198d5fd4176b0b",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/petra-vlhova-2024-jasna-knee/",
+      "status": 200,
+      "localSha256": "bd76bddf404951ed68b28e686c746a4ae20101b0299bf365078b894a98b0bcfb",
+      "liveSha256": "bd76bddf404951ed68b28e686c746a4ae20101b0299bf365078b894a98b0bcfb",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/pv-sindhu-2023-french-open-knee/",
+      "status": 200,
+      "localSha256": "76c6314a6e995369795ba50f4012d8902848a04aa58faa672dda142d1fd723a2",
+      "liveSha256": "76c6314a6e995369795ba50f4012d8902848a04aa58faa672dda142d1fd723a2",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/rebeca-andrade-2019-knee/",
+      "status": 200,
+      "localSha256": "b7c4e21c1c20b1a40195cb433c6471484298623431957c2bc7758ef0cfe0e24f",
+      "liveSha256": "b7c4e21c1c20b1a40195cb433c6471484298623431957c2bc7758ef0cfe0e24f",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/remco-evenepoel-2020-pelvis/",
+      "status": 200,
+      "localSha256": "7a1c159637d96417aaaf10f35f9fda455b44a5af5ae25ba28336f94c11d7cfd5",
+      "liveSha256": "7a1c159637d96417aaaf10f35f9fda455b44a5af5ae25ba28336f94c11d7cfd5",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/rhys-hoskins-2023-acl/",
+      "status": 200,
+      "localSha256": "f78580bcddee571f8f82eb3f658fbb9b5e2a4246192e012954d99716a9623a9b",
+      "liveSha256": "f78580bcddee571f8f82eb3f658fbb9b5e2a4246192e012954d99716a9623a9b",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/rodri-acl-2024/",
+      "status": 200,
+      "localSha256": "8c15edba8bcfa7f36f80547477d72356192705a4ffdad6cccc6fa27c3a7635af",
+      "liveSha256": "8c15edba8bcfa7f36f80547477d72356192705a4ffdad6cccc6fa27c3a7635af",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/ronald-acuna-acl-2024/",
+      "status": 200,
+      "localSha256": "bd7c28df7616ef4ee3850dd30479386381792843ae43d167a6f787ef85ae0d75",
+      "liveSha256": "bd7c28df7616ef4ee3850dd30479386381792843ae43d167a6f787ef85ae0d75",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/ronald-acuna-miami-2021/",
+      "status": 200,
+      "localSha256": "c4f7e29bd794853ff0bb2dc44b592b1f8d70eeaaffef954e0690d384463056d2",
+      "liveSha256": "c4f7e29bd794853ff0bb2dc44b592b1f8d70eeaaffef954e0690d384463056d2",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/samir-ait-said-2016-leg/",
+      "status": 200,
+      "localSha256": "354b784f9e7be8dc905884c2da4e94a0334c5c39931b391bfe00499fab606f0f",
+      "liveSha256": "354b784f9e7be8dc905884c2da4e94a0334c5c39931b391bfe00499fab606f0f",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/serena-williams-2021-hamstring/",
+      "status": 200,
+      "localSha256": "c5bb4b8ae122f2b572da15e4a8527d9a385e4aa30ed187339fdeeb061462d7a7",
+      "liveSha256": "c5bb4b8ae122f2b572da15e4a8527d9a385e4aa30ed187339fdeeb061462d7a7",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/shaun-livingston-knee-2007/",
+      "status": 200,
+      "localSha256": "a63249f73f4fddcc457051c0a861b8c5971e4fd324b1f4e7b47b9f9150b51333",
+      "liveSha256": "a63249f73f4fddcc457051c0a861b8c5971e4fd324b1f4e7b47b9f9150b51333",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/shilese-jones-2024-trials-acl/",
+      "status": 200,
+      "localSha256": "fb7b7d62dd03ffa40c23d86c9aaf10cef2b3fec91713469ca55cf1dfa773a540",
+      "liveSha256": "fb7b7d62dd03ffa40c23d86c9aaf10cef2b3fec91713469ca55cf1dfa773a540",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/shohei-ohtani-world-series-2024/",
+      "status": 200,
+      "localSha256": "f023bbbe18f52b61dd8fc90b7cc3805ab4ee5ddaf822ad2752a82f87ed36af18",
+      "liveSha256": "f023bbbe18f52b61dd8fc90b7cc3805ab4ee5ddaf822ad2752a82f87ed36af18",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/sidney-crosby-concussion-2017/",
+      "status": 200,
+      "localSha256": "b7c68c9bfa6095620677dc81c65285d2bcad7c9f991983bf877c483a73e10aeb",
+      "liveSha256": "b7c68c9bfa6095620677dc81c65285d2bcad7c9f991983bf877c483a73e10aeb",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/skye-blakely-2024-achilles/",
+      "status": 200,
+      "localSha256": "3e481dfbb7aa4360d08b9a62962c9cae258416917376c0caa5091a966c1bf4ac",
+      "liveSha256": "3e481dfbb7aa4360d08b9a62962c9cae258416917376c0caa5091a966c1bf4ac",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/sofia-goggia-2022-knee/",
+      "status": 200,
+      "localSha256": "73ced2b9210056aff450ebbed2c64dba37d7aa8d69ca9328cd6dbdf07c3e6ed4",
+      "liveSha256": "73ced2b9210056aff450ebbed2c64dba37d7aa8d69ca9328cd6dbdf07c3e6ed4",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/stephen-piscotty-2015-concussion/",
+      "status": 200,
+      "localSha256": "8509a6caffb053110b331bf12a5313f6dfad13dca0728af7e2d17472debc41ce",
+      "liveSha256": "8509a6caffb053110b331bf12a5313f6dfad13dca0728af7e2d17472debc41ce",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/steve-smith-2019-concussion/",
+      "status": 200,
+      "localSha256": "c6179091de573140b1e374adde9424cab7b97ea83d16b3719face816eb48aba3",
+      "liveSha256": "c6179091de573140b1e374adde9424cab7b97ea83d16b3719face816eb48aba3",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/steven-stamkos-2013-tibia/",
+      "status": 200,
+      "localSha256": "3e0633e1dd043cb8b98906aaa5b59a41ea1ea83d095241471d76b0ea433e4ce9",
+      "liveSha256": "3e0633e1dd043cb8b98906aaa5b59a41ea1ea83d095241471d76b0ea433e4ce9",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/ter-stegen-patellar-tendon-2024/",
+      "status": 200,
+      "localSha256": "8eb7bbbc0a0aa0611f77be38632dab94fc0346d6af9bbfbb9cddfaadecbe6151",
+      "liveSha256": "8eb7bbbc0a0aa0611f77be38632dab94fc0346d6af9bbfbb9cddfaadecbe6151",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/tim-hudson-2013-ankle/",
+      "status": 200,
+      "localSha256": "8abd249abd389d0efc27f034192ce3b03bd7033c2c550379e6c97221abe008d2",
+      "liveSha256": "8abd249abd389d0efc27f034192ce3b03bd7033c2c550379e6c97221abe008d2",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/trevor-zegras-2024-ankle/",
+      "status": 200,
+      "localSha256": "3e4f13ead0f8333004fa2f824b33e0b4413a8f125565848f2e7c5ac8e6f970de",
+      "liveSha256": "3e4f13ead0f8333004fa2f824b33e0b4413a8f125565848f2e7c5ac8e6f970de",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/trinity-rodman-2024-back/",
+      "status": 200,
+      "localSha256": "24e08f616cf7fee24638d830ac8702acfeb78904204c8f668f564b7fa698a657",
+      "liveSha256": "24e08f616cf7fee24638d830ac8702acfeb78904204c8f668f564b7fa698a657",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/tua-tagovailoa-2024-concussion/",
+      "status": 200,
+      "localSha256": "4430b7160bf34309009415a0a48ebf150610b375e2c09ffc21da6574024302ce",
+      "liveSha256": "4430b7160bf34309009415a0a48ebf150610b375e2c09ffc21da6574024302ce",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/usain-bolt-london-2017/",
+      "status": 200,
+      "localSha256": "6949e7b86a94b0df45d93632bdcdbe14e0481f8437f0be51ad260f5b8a5aab48",
+      "liveSha256": "6949e7b86a94b0df45d93632bdcdbe14e0481f8437f0be51ad260f5b8a5aab48",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/victor-oladipo-2019-quadriceps/",
+      "status": 200,
+      "localSha256": "25df1477b75206d8f1269ae2891a4b45bde126cbab1c7bf4d469751b905fcc0a",
+      "liveSha256": "25df1477b75206d8f1269ae2891a4b45bde126cbab1c7bf4d469751b905fcc0a",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/vivianne-miedema-2022/",
+      "status": 200,
+      "localSha256": "4bd36ff9abcc559987a3ce488849b6db0410e4ba8c4f409ce8f4790cb99eb453",
+      "liveSha256": "4bd36ff9abcc559987a3ce488849b6db0410e4ba8c4f409ce8f4790cb99eb453",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/wesley-fofana-2021-leg/",
+      "status": 200,
+      "localSha256": "e9fa51cc24275ec72fbe7ce41ad58278a13e68ac19be4d4ce0a93100c14f7057",
+      "liveSha256": "e9fa51cc24275ec72fbe7ce41ad58278a13e68ac19be4d4ce0a93100c14f7057",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/wout-van-aert-2024-vuelta-knee/",
+      "status": 200,
+      "localSha256": "2cc0ee219c3a974df54e1bb938220166557519e7154e0fc502544e2cf6432480",
+      "liveSha256": "2cc0ee219c3a974df54e1bb938220166557519e7154e0fc502544e2cf6432480",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/wout-van-aert-crash-2024/",
+      "status": 200,
+      "localSha256": "848d403415c5222176325a63e94e5268385b86c138c98e39b11bfe43090fd727",
+      "liveSha256": "848d403415c5222176325a63e94e5268385b86c138c98e39b11bfe43090fd727",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/yuzuru-hanyu-2014-collision/",
+      "status": 200,
+      "localSha256": "14f38285333ac05e068eb7dec7b04d62a6ae0198009dfb7d4060a252a26c4c42",
+      "liveSha256": "14f38285333ac05e068eb7dec7b04d62a6ae0198009dfb7d4060a252a26c4c42",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/zach-lavine-acl-2017/",
+      "status": 200,
+      "localSha256": "b5176fa7913724f78592a9b2742e138a6a2b50bd3ea99849022a778489ff388e",
+      "liveSha256": "b5176fa7913724f78592a9b2742e138a6a2b50bd3ea99849022a778489ff388e",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/zlatan-ibrahimovic-2017-knee/",
+      "status": 200,
+      "localSha256": "a394574e14e4b65d3b0bc3ef65589dd4eec6b4b04884bb1ea027c3e2878fcfdd",
+      "liveSha256": "a394574e14e4b65d3b0bc3ef65589dd4eec6b4b04884bb1ea027c3e2878fcfdd",
+      "matchesBuild": true
+    },
+    {
+      "path": "/videos/zverev-roland-garros-2022/",
+      "status": 200,
+      "localSha256": "5bb081aa6a98c88d01ab6bc722a7f201bcdd4156758809e544f49ef29bf4e3b2",
+      "liveSha256": "5bb081aa6a98c88d01ab6bc722a7f201bcdd4156758809e544f49ef29bf4e3b2",
+      "matchesBuild": true
+    }
+  ]
+}
