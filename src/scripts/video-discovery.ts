@@ -127,7 +127,7 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
         const items = readPopularVideos(
           await response.json(),
           new Set(byId.keys()),
-        );
+        ).slice(0, 10);
         if (current !== version) return;
         display(items.map((item) => byId.get(item.videoId)!));
         for (const [index, item] of items.entries()) {
@@ -140,7 +140,7 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
           }
         }
         status.textContent = items.length
-          ? "依本站近 30 天實際播放次數排序，每小時整點更新；不包含 YouTube 平台的累計觀看數。"
+          ? "依本站近 30 天實際播放次數排序，最多顯示前 10 名，每小時整點更新；不包含 YouTube 平台的累計觀看數。"
           : "截至上一個整點，本站近 30 天尚無播放紀錄；每小時更新。也可以先看精選或全部影片。";
       } catch {
         if (current === version)
