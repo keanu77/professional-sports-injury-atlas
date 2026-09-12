@@ -1,0 +1,48 @@
+[
+  {
+    "slug": "chris-godwin-2024-ankle",
+    "id": "d-ba2pKSRF4",
+    "candidateOnly": true,
+    "status": "unverified",
+    "checkedAt": "2026-09-12T17:16:28.893Z",
+    "error": "Error: Player failed: [150]",
+    "playerErrors": [
+      150
+    ]
+  },
+  {
+    "slug": "chris-godwin-2024-ankle",
+    "id": "g9aoJ_WmBcU",
+    "candidateOnly": true,
+    "status": "unverified",
+    "checkedAt": "2026-09-12T17:16:30.355Z",
+    "error": "Error: Player failed: [150]",
+    "playerErrors": [
+      150
+    ]
+  },
+  {
+    "slug": "tua-tagovailoa-2024-concussion",
+    "id": "mNbDeYmDUbg",
+    "candidateOnly": true,
+    "status": "played",
+    "checkedAt": "2026-09-12T17:16:31.803Z",
+    "after": {
+      "time": 1.013925,
+      "paused": false,
+      "readyState": 4
+    }
+  },
+  {
+    "slug": "tua-tagovailoa-2024-concussion",
+    "id": "S7l4Ouhz7Cs",
+    "candidateOnly": true,
+    "status": "played",
+    "checkedAt": "2026-09-12T17:16:35.531Z",
+    "after": {
+      "time": 1.01802,
+      "paused": false,
+      "readyState": 4
+    }
+  }
+]

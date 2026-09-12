@@ -11,7 +11,7 @@ const FEATURED = [
   "lindsey-vonn-schladming-2013",
 ];
 
-test("all 113 observation pages expose general guidance, text highlights, related videos, and category routes", async ({
+test("all 143 observation pages expose general guidance, text highlights, related videos, and category routes", async ({
   request,
 }) => {
   test.skip(!PUBLIC_LAUNCH, "Observation routes belong to the public launch");
@@ -23,7 +23,7 @@ test("all 113 observation pages expose general guidance, text highlights, relate
       ),
     ),
   ];
-  expect(observationPaths).toHaveLength(113);
+  expect(observationPaths).toHaveLength(143);
   const categoryRoutes = new Set<string>();
 
   for (const path of observationPaths) {
@@ -81,6 +81,54 @@ test("the six featured observations identify their reviewed main-site resources"
     }
   }
   await expectNoAxeViolations(page);
+});
+
+test("news, aftermath, and injury footage have consistent card and detail labels", async ({
+  page,
+}) => {
+  test.skip(!PUBLIC_LAUNCH, "Observation routes belong to the public launch");
+  const examples = [
+    {
+      slug: "kane-williamson-2023-world-cup-thumb",
+      category: "cricket",
+      kind: "news-analysis",
+      label: "傷勢新聞與說明",
+    },
+    {
+      slug: "marketa-vondrousova-2024-berlin-hip",
+      category: "tennis",
+      kind: "aftermath",
+      label: "受傷後處理與續賽",
+    },
+    {
+      slug: "hubert-hurkacz-2024-wimbledon-knee",
+      category: "tennis",
+      kind: "injury-motion",
+      label: "受傷動作觀察",
+    },
+  ];
+  for (const example of examples) {
+    for (const path of ["/", `/sports/${example.category}/`]) {
+      await page.goto(path);
+      const card = page.locator(
+        `.observation-card[href="/videos/${example.slug}/"]`,
+      );
+      await expect(card.locator("[data-observation-footage-kind]")).toHaveText(
+        `${example.label} →`,
+      );
+      await expect(
+        card.locator("[data-observation-footage-kind]"),
+      ).toHaveAttribute("data-observation-footage-kind", example.kind);
+    }
+    await page.goto(`/videos/${example.slug}/`);
+    await expect(page.locator("[data-footage-kind]")).toHaveAttribute(
+      "data-footage-kind",
+      example.kind,
+    );
+    await expect(page.locator("[data-footage-kind]")).toContainText(
+      example.label,
+    );
+  }
 });
 
 test("sharing metadata, favicons, and home heading hierarchy are complete", async ({

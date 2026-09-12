@@ -17,6 +17,10 @@
       "situation": "running-turning"
     },
     {
+      "slug": "adam-fantilli-2024-calf",
+      "situation": "collision"
+    },
+    {
       "slug": "aidan-hutchinson-leg-2024",
       "situation": "collision"
     },
@@ -33,8 +37,24 @@
       "situation": "ball-impact"
     },
     {
+      "slug": "alex-greenwood-2024-knee",
+      "situation": "unclear"
+    },
+    {
       "slug": "alex-oxlade-chamberlain-2018",
       "situation": "collision"
+    },
+    {
+      "slug": "alex-rins-2024-assen-wrist",
+      "situation": "fall"
+    },
+    {
+      "slug": "alexis-pinturault-2024-wengen-knee",
+      "situation": "fall"
+    },
+    {
+      "slug": "an-se-young-2023-asian-games-knee",
+      "situation": "unclear"
     },
     {
       "slug": "andre-gomes-2019",
@@ -45,8 +65,20 @@
       "situation": "unclear"
     },
     {
+      "slug": "angel-reese-2024-wrist",
+      "situation": "unclear"
+    },
+    {
       "slug": "annemiek-van-vleuten-2016-concussion",
       "situation": "fall"
+    },
+    {
+      "slug": "anthony-richardson-2023-shoulder",
+      "situation": "collision"
+    },
+    {
+      "slug": "antoine-dupont-2025-six-nations-knee",
+      "situation": "unclear"
     },
     {
       "slug": "antoine-dupont-world-cup-2023",
@@ -78,6 +110,10 @@
       "situation": "running-turning"
     },
     {
+      "slug": "carlos-alcaraz-2024-rio-ankle",
+      "situation": "running-turning"
+    },
+    {
       "slug": "carolina-marin-acl-2024",
       "situation": "landing"
     },
@@ -102,6 +138,10 @@
       "slug": "chris-bassitt-2021-face",
       "situation": "ball-impact",
       "curatedRank": 4
+    },
+    {
+      "slug": "chris-godwin-2024-ankle",
+      "situation": "collision"
     },
     {
       "slug": "connor-bedard-jaw-2024",
@@ -168,6 +208,10 @@
       "situation": "landing"
     },
     {
+      "slug": "elaine-thompson-herah-2024-achilles",
+      "situation": "unclear"
+    },
+    {
       "slug": "fabio-jakobsen-2020-concussion",
       "situation": "collision"
     },
@@ -200,12 +244,24 @@
       "situation": "landing"
     },
     {
+      "slug": "grigor-dimitrov-2025-wimbledon-pectoral",
+      "situation": "racket-swing"
+    },
+    {
+      "slug": "hardik-pandya-2023-world-cup-ankle",
+      "situation": "unclear"
+    },
+    {
       "slug": "harvey-elliott-2021-ankle",
       "situation": "collision"
     },
     {
       "slug": "hector-bellerin-2019-knee",
       "situation": "running-turning"
+    },
+    {
+      "slug": "hubert-hurkacz-2024-wimbledon-knee",
+      "situation": "fall"
     },
     {
       "slug": "ja-happ-2013-head",
@@ -240,8 +296,16 @@
       "situation": "fall"
     },
     {
+      "slug": "jorge-martin-2025-qatar-chest",
+      "situation": "fall"
+    },
+    {
       "slug": "juan-martin-del-potro-2018-knee",
       "situation": "fall"
+    },
+    {
+      "slug": "juju-watkins-2025-knee",
+      "situation": "running-turning"
     },
     {
       "slug": "julie-foucher-box-jump-2015",
@@ -250,6 +314,10 @@
     {
       "slug": "justin-turner-2023-face",
       "situation": "ball-impact"
+    },
+    {
+      "slug": "kane-williamson-2023-world-cup-thumb",
+      "situation": "unclear"
     },
     {
       "slug": "kawhi-leonard-acl-2021",
@@ -265,6 +333,10 @@
     },
     {
       "slug": "kevin-durant-achilles-rupture-2019",
+      "situation": "unclear"
+    },
+    {
+      "slug": "kevin-mayer-2024-paris-hamstring",
       "situation": "unclear"
     },
     {
@@ -329,12 +401,20 @@
       "situation": "running-turning"
     },
     {
+      "slug": "marco-schwarz-2023-bormio-knee",
+      "situation": "fall"
+    },
+    {
       "slug": "mark-cavendish-2023-clavicle",
       "situation": "fall"
     },
     {
       "slug": "markelle-fultz-orlando-2021",
       "situation": "running-turning"
+    },
+    {
+      "slug": "marketa-vondrousova-2024-berlin-hip",
+      "situation": "unclear"
     },
     {
       "slug": "matt-shoemaker-2016-head",
@@ -346,6 +426,10 @@
     },
     {
       "slug": "mikaela-shiffrin-2024-abdomen",
+      "situation": "fall"
+    },
+    {
+      "slug": "mikaela-shiffrin-2024-cortina-knee",
       "situation": "fall"
     },
     {
@@ -377,8 +461,20 @@
       "situation": "unclear"
     },
     {
+      "slug": "patrik-laine-2024-knee",
+      "situation": "collision"
+    },
+    {
       "slug": "paul-george-leg-fracture-2014",
       "situation": "landing"
+    },
+    {
+      "slug": "petra-vlhova-2024-jasna-knee",
+      "situation": "fall"
+    },
+    {
+      "slug": "pv-sindhu-2023-french-open-knee",
+      "situation": "running-turning"
     },
     {
       "slug": "rebeca-andrade-2019-knee",
@@ -418,12 +514,20 @@
       "situation": "landing"
     },
     {
+      "slug": "shilese-jones-2024-trials-acl",
+      "situation": "landing"
+    },
+    {
       "slug": "shohei-ohtani-world-series-2024",
       "situation": "fall"
     },
     {
       "slug": "sidney-crosby-concussion-2017",
       "situation": "collision"
+    },
+    {
+      "slug": "skye-blakely-2024-achilles",
+      "situation": "unclear"
     },
     {
       "slug": "sofia-goggia-2022-knee",
@@ -450,6 +554,18 @@
       "situation": "collision"
     },
     {
+      "slug": "trevor-zegras-2024-ankle",
+      "situation": "collision"
+    },
+    {
+      "slug": "trinity-rodman-2024-back",
+      "situation": "unclear"
+    },
+    {
+      "slug": "tua-tagovailoa-2024-concussion",
+      "situation": "collision"
+    },
+    {
       "slug": "tyrese-haliburton-achilles-rupture-2025",
       "situation": "unclear"
     },
@@ -468,6 +584,10 @@
     {
       "slug": "wesley-fofana-2021-leg",
       "situation": "collision"
+    },
+    {
+      "slug": "wout-van-aert-2024-vuelta-knee",
+      "situation": "fall"
     },
     {
       "slug": "wout-van-aert-crash-2024",

@@ -16,6 +16,7 @@ export const SPORTS = [
   { code: "american-football", label: "美式足球" },
   { code: "alpine-skiing", label: "高山滑雪" },
   { code: "cycling", label: "自行車" },
+  { code: "motorcycle-racing", label: "機車競速" },
   { code: "crossfit", label: "CrossFit" },
 ] as const;
 

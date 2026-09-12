@@ -5,6 +5,7 @@ import batch31Data from "../../data/videos/batch-31.v1.json";
 import batch32Data from "../../data/videos/batch-32.v1.json";
 import batch34Data from "../../data/videos/batch-34.v1.json";
 import recent120Data from "../../data/videos/recent-120.v1.json";
+import recent150Data from "../../data/videos/recent-150.v1.json";
 import data from "../../data/videos/expansion.v1.json";
 import launchData from "../../data/public-launch.v1.json";
 import curationData from "../../data/videos/curation.v1.json";
@@ -22,6 +23,9 @@ export const observationClipSchema = z.strictObject({
   event: z.string().min(1),
   bodyPart: z.string().min(1),
   observation: z.string().min(1),
+  footageKind: z
+    .enum(["injury-motion", "aftermath", "news-analysis"])
+    .optional(),
   eventDate: day,
   returnDate: day,
   returnText: z.string().min(1),
@@ -327,6 +331,68 @@ export const recent120Schema = z
     }
   });
 export const recent120 = recent120Schema.parse(recent120Data);
+export const recent150Schema = z
+  .strictObject({
+    schemaVersion: z.literal(1),
+    decision: z.literal("recent-150-2026-09-13"),
+    authorizationQuote: z.literal("可以，那我們就新增到150例"),
+    authorizedAt: z.iso.datetime(),
+    scope: z.literal("thirty-recent-observation-cases"),
+    clips: z.array(observationClipSchema).length(30),
+  })
+  .superRefine((value, ctx) => {
+    const combined = additionsSchema.safeParse({
+      ...additions,
+      clips: [
+        ...additions.clips,
+        ...curation.clips,
+        ...batch30.clips,
+        ...batch31.clips,
+        ...batch32.clips,
+        ...batch34.clips,
+        ...recent120.clips,
+        ...value.clips,
+      ],
+    });
+    if (!combined.success)
+      ctx.addIssue({
+        code: "custom",
+        message: "Invalid or duplicate recent video",
+      });
+    const knownEvents = new Set(
+      [
+        ...expansion.clips,
+        ...additions.clips,
+        ...curation.clips,
+        ...batch30.clips,
+        ...batch31.clips,
+        ...batch32.clips,
+        ...batch34.clips,
+        ...recent120.clips,
+      ]
+        .map(observationEventKey)
+        .filter((key) => key !== null),
+    );
+    for (const clip of value.clips) {
+      const key = observationEventKey(clip);
+      if (key && knownEvents.has(key))
+        ctx.addIssue({
+          code: "custom",
+          message: `Duplicate recent event: ${clip.slug}`,
+        });
+      if (key) knownEvents.add(key);
+      if (
+        !clip.eventDate ||
+        clip.eventDate < "2023-09-13" ||
+        clip.eventDate > "2026-09-13"
+      )
+        ctx.addIssue({
+          code: "custom",
+          message: `Recent event outside the requested three years: ${clip.slug}`,
+        });
+    }
+  });
+export const recent150 = recent150Schema.parse(recent150Data);
 export const allObservationClips: ObservationClip[] = [
   ...expansion.clips,
   ...additions.clips,
@@ -336,6 +402,7 @@ export const allObservationClips: ObservationClip[] = [
   ...batch32.clips,
   ...batch34.clips,
   ...recent120.clips,
+  ...recent150.clips,
 ].filter((c) => !curation.removedSlugs.some((slug) => slug === c.slug));
 export const expansionEnabled = () =>
   process.env.ATLAS_PUBLIC_LAUNCH === "decision-21";

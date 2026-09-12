@@ -1,0 +1,2903 @@
+{
+  "checkedAt": "2026-09-12T17:30:52.511691+00:00",
+  "snapshot": "/private/tmp/atlas-150-review-a01ctdij",
+  "snapshotCommit": "a6e32f604c0e0a85618a93a978f53f1a092cd2d8",
+  "files": [
+    {
+      "path": "astro.config.mjs",
+      "sha256": "ea7c7c13cd8406a366d304348165756d65b07f5fa5b2336dd89d4b444acf912d"
+    },
+    {
+      "path": "e2e/atlas-navigation.spec.ts",
+      "sha256": "da698f99aac961701d5c5ec9ccceded0a861f2fb5c7f0306a8b2f86eea421bba"
+    },
+    {
+      "path": "e2e/contributions.spec.ts",
+      "sha256": "bd6b157ed65e5aaf3d285d62b103bcc0725e65ac3b237d16cff0041991e0d5ab"
+    },
+    {
+      "path": "e2e/data-bearing-routes.spec.ts",
+      "sha256": "66f8b65aab53f3835553a8c4990c31e7779e454e213105f69596d8462417c203"
+    },
+    {
+      "path": "e2e/decision-39-observation-pages.spec.ts",
+      "sha256": "abbf866aea430dfe68a37ff6ecb9861238195eb353ae0ed6998a7a2c8f01de99"
+    },
+    {
+      "path": "e2e/decision-39-ux.spec.ts",
+      "sha256": "a480b0750006c87bc3dead0017f260a5efea0c4b531e3514e22018f9b3edc529"
+    },
+    {
+      "path": "e2e/filtering.spec.ts",
+      "sha256": "a56babf73b65b4a7b9ac71a41e1deb2a4701304091e9d3ae71fb0f7fd63b996d"
+    },
+    {
+      "path": "e2e/follow-ups.spec.ts",
+      "sha256": "93802c1a35033280dc8af6982a42b85a483cfb6fda39b76a754436cd0459fddf"
+    },
+    {
+      "path": "e2e/helpers/a11y.ts",
+      "sha256": "cb6401c3976bc1c1f89b429e9d80282c9a8e1fb0f285ea3a424f8206993e1f52"
+    },
+    {
+      "path": "e2e/layout-accessibility.spec.ts",
+      "sha256": "0b2c7122536b3bfe09f674641dc4c5669b7b95fead1ce0dca09481356db7106b"
+    },
+    {
+      "path": "e2e/medical-notices.spec.ts",
+      "sha256": "c84682e9021c80b08d88c641a4213d3201f56e85fcb880d9c7d25011687d4f02"
+    },
+    {
+      "path": "e2e/no-javascript.spec.ts",
+      "sha256": "90bc274efc35aeba50d12c525d08d9ebeab1824aa6526f8c0dc197dafa725888"
+    },
+    {
+      "path": "e2e/patient-experience.spec.ts",
+      "sha256": "09acb0d5a5f20504c8a75f7d6933c31bb65fbd56db780722ddc9befce0622146"
+    },
+    {
+      "path": "e2e/player-photos.spec.ts",
+      "sha256": "47f90d8bbe329a8f590a1801ac547b47db31b213b9c0d7240ace6bdcb185e8f0"
+    },
+    {
+      "path": "e2e/video-player.spec.ts",
+      "sha256": "f8be2f3e541106b329a4f6b23681d1ed323c2e48e59585fff656c2bd9d87a32e"
+    },
+    {
+      "path": "functions/api/contributions.ts",
+      "sha256": "b18b6ff249e203d201bb2e0ead6b1340f8a022d6838e6cbeab477e465024535c"
+    },
+    {
+      "path": "functions/api/plays.ts",
+      "sha256": "ef971293bf75090635ea3a517268812a851ccdf8041219c6284fdc753ceae8bd"
+    },
+    {
+      "path": "functions/api/popular.ts",
+      "sha256": "33bd3d2f3c3fa71f2726615af4d00e46a0cc2ddafe65980b59ed4b90a952b7f9"
+    },
+    {
+      "path": "migrations/0001_play_events.sql",
+      "sha256": "44ec3bfd0953f56524e677ffd1098e09d889a382fa28ab059126062419d573b5"
+    },
+    {
+      "path": "migrations/0002_contribution_limits.sql",
+      "sha256": "8ecdf11b77c672284228a3cd507c3e19ef6f46a37cc33976ce6b4f7c2987be5b"
+    },
+    {
+      "path": "migrations/0003_play_guards.sql",
+      "sha256": "e13e2d2cf5b4c788aeb05e0d8ea7f6c01a9d1d15b20964b1abd8e0398c4de16e"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "b5b10ba9dd3751571560abe6b92b473f235576e0bf80c74ffd580661bd8cfc6e"
+    },
+    {
+      "path": "package.json",
+      "sha256": "78acb973149d240a23bf6363a28c0bb3d88e5dba966df2ab3791059a7a16544f"
+    },
+    {
+      "path": "public/_routes.json",
+      "sha256": "82dfdc2121a70cf5ac50b268e6aad8478aa512225b71b22571a776b7824fce03"
+    },
+    {
+      "path": "public/fonts/noto-serif-tc-600.woff2",
+      "sha256": "c686f371a73517be475546ef3bf186e52f609c919ebf861d83ee13e095102109"
+    },
+    {
+      "path": "public/fonts/noto-serif-tc-700.woff2",
+      "sha256": "060756a7e4ed7988e881dc2e0e2d3b9057a094781c141885c24eeb3f60bd0b4f"
+    },
+    {
+      "path": "public/fonts/noto-serif-tc-heading-600.woff2",
+      "sha256": "1ee4d047cd81f1c834cd141858c754be0cd97eb9bc79a95435cdda9431a57166"
+    },
+    {
+      "path": "public/fonts/noto-serif-tc-heading-700.woff2",
+      "sha256": "afa96c4cb7309fdaa1ca09f866620f9bc4edfd8f3f2a151ff1c75a02152727d9"
+    },
+    {
+      "path": "public/social/injury-atlas-home-20260907.png",
+      "sha256": "d5ac4db08b672fc4065b66a83cb65d77b4fa7d7a51c8cb2c5cdb589f5e9d2c30"
+    },
+    {
+      "path": "scripts/adopt-decision-13-photo-assets.sh",
+      "sha256": "ba7bfcdd8c4c7c43be87823417d6d9117f16d703240b1d86c1cffef5870dacf4"
+    },
+    {
+      "path": "scripts/adopt-decision-14-photo-assets.sh",
+      "sha256": "2447dda552f08fdaa51c94dde5cd4f0ea323ebd93b8ed53cf2e4c431e99ee749"
+    },
+    {
+      "path": "scripts/adopt-decision-15-photo-assets.sh",
+      "sha256": "762a1d42b0fe8d917eb62010b201b643b027cc4f258750e4056d4ee94014195f"
+    },
+    {
+      "path": "scripts/assert-plan-authorized.ts",
+      "sha256": "499dbea87a36ec2e0d5d6487816436ac60a7c1eefc1701fb6879f0c2ad613fa1"
+    },
+    {
+      "path": "scripts/bind-authority-document.ts",
+      "sha256": "eb76d3f74d2efd35fd1c28f37b87e12dd047d0cf22256e9355de085b6595dba4"
+    },
+    {
+      "path": "scripts/check-case-authoring-coverage.ts",
+      "sha256": "d77e316af872a2afad9fb91fd466bf25199b1064ae604557b9bc96a6441d0561"
+    },
+    {
+      "path": "scripts/check-content.ts",
+      "sha256": "285c66d319f472126529f985a70e436bc612efcf72e2e17c9385bf302963fd0d"
+    },
+    {
+      "path": "scripts/check-nba-embed-batch2-content-correction.ts",
+      "sha256": "6f97eb4b1702adb596d495087268cba4bd0d50959f038ed09e1fca13dd9393ae"
+    },
+    {
+      "path": "scripts/decision-18-follow-up-batch.ts",
+      "sha256": "ffa328167c3074ab0a138aacf2b23e27a661ef19ba75b1a1e8b861d8dd51c416"
+    },
+    {
+      "path": "scripts/export-case-schema.ts",
+      "sha256": "9f6ae1d34f9cbcb3eb409e39c23a281df55dd24fb3672bb29c169b2a9fc81948"
+    },
+    {
+      "path": "scripts/generate-authorized-nba-content.ts",
+      "sha256": "9d43d3f3c3ffb682ea160c80c20ff4734c36f8e63fec7141dbed9de0de75c2df"
+    },
+    {
+      "path": "scripts/generate-decision-13-cover-baseline.ts",
+      "sha256": "54b80149528927bfecd2aa7c0ecdff8c570ae682f56a804dae1c0e65fa510d6e"
+    },
+    {
+      "path": "scripts/generate-decision-13-cover-replacement-evidence.ts",
+      "sha256": "938f793c7b1b78bd2ecb16b2f378c77f03225c2cc662e8b5d173416a6ff014fb"
+    },
+    {
+      "path": "scripts/generate-decision-13-notice-after-evidence.ts",
+      "sha256": "955ee79d007899ae0043d5d257a3ee8006929d277af6a5223c3c2dfd60592cbd"
+    },
+    {
+      "path": "scripts/generate-decision-13-notice-before-evidence.ts",
+      "sha256": "3ae683ec868e7bb9c36cc8f9905ad5c4d56f6a47b7a193d6ab3790bb38e6d54b"
+    },
+    {
+      "path": "scripts/generate-decision-14-p0-baseline.ts",
+      "sha256": "b150a1036fa1840ad24769ae0852acf7d6b00b38580e61dad8b5b0b00b68c85c"
+    },
+    {
+      "path": "scripts/generate-decision-15-p0-baseline.ts",
+      "sha256": "4a7ed62675b37644e35759a57c6a61fdc22adc4cd9defb9eb69fdf9ddb54ac83"
+    },
+    {
+      "path": "scripts/generate-decision-16-p0-baseline.ts",
+      "sha256": "a4e377ca837f710cb837b2b2bb9dad04733f7ae53ef6ed715acb535addbc5e79"
+    },
+    {
+      "path": "scripts/generate-decision-16-rendition.ts",
+      "sha256": "da4220db9cf7e9eb4d20cb890e2b5004c12b769b64a2c041631e07582bcb87f2"
+    },
+    {
+      "path": "scripts/generate-decision-17-follow-ups.ts",
+      "sha256": "aed8a6dc080f95518b13c9512528b8bc263d6b6cc1ff8001063233db0a2f44b4"
+    },
+    {
+      "path": "scripts/generate-decision-17-p0-baseline.ts",
+      "sha256": "bb9fb0336e20fb215858a01a2cbf7a47472d11e26daf9c70179d4fd81e4a31ce"
+    },
+    {
+      "path": "scripts/generate-decision-18-follow-up-batch-receipt.ts",
+      "sha256": "5b3d7eeff581370d9c1afff24c59348d9dd5b1610251137db65dc9ec2948a09d"
+    },
+    {
+      "path": "scripts/generate-decision-18-follow-up-cases.ts",
+      "sha256": "8afbc9196b6108ef973c59e290a64e87da76f300ce0dd27e6f5db54dba88742b"
+    },
+    {
+      "path": "scripts/generate-decision-18-p0-baseline.ts",
+      "sha256": "b9a2a6366470791d684c5d0a738e54a38caa683a8ea7819e9a0896cddc9c97d0"
+    },
+    {
+      "path": "scripts/generate-player-photo-registry-v2.ts",
+      "sha256": "a5b5f0dc7a442740223d501ef215c2dc8ed9f89e1627983970d8340f748a445d"
+    },
+    {
+      "path": "scripts/generate-player-photo-registry-v3.ts",
+      "sha256": "ecfa1e18f900f2c67ec97b423537b8b5a15132edfaa0cfeca2d899594dc88d79"
+    },
+    {
+      "path": "scripts/generate-player-photo-registry-v4.ts",
+      "sha256": "47cb5c73b8fc22379d891acd12eb084159f865474e7e0bc7bbba6be41e25199b"
+    },
+    {
+      "path": "scripts/generate-player-photo-registry-v5.ts",
+      "sha256": "be43a81c9a5b98b8be592dc37d91dfbcebdfb774897106949e6bc29854dd42f5"
+    },
+    {
+      "path": "scripts/generate-player-photo-registry-v6.ts",
+      "sha256": "5ab3404f81123a325ab7b70686e11e2dbb2b4d2a564595d249740d6c5bf18ccf"
+    },
+    {
+      "path": "scripts/generate-player-photo-registry-v7.ts",
+      "sha256": "1c1835d169cb5d9055b7cbd5f7ddcf31c72156cab8161ae5d5302caffcf3c2c2"
+    },
+    {
+      "path": "scripts/generate-player-photo-registry-v8.ts",
+      "sha256": "6a3e66d69252e810a1d5aefd90ef3b4ccb4ce2a9cdc253a1ee60be1b0bc39107"
+    },
+    {
+      "path": "scripts/generate-review-set.ts",
+      "sha256": "90d559665b663e13737e77d2a9a912eef237fc49a2a2b99342c672c1eb2a4202"
+    },
+    {
+      "path": "scripts/import-rtp-catalog.ts",
+      "sha256": "a9c2254ddb6a0248867a8e45c8ef09911ad916fe2ff600b488afd1c29744c865"
+    },
+    {
+      "path": "scripts/monitor-public-videos.ts",
+      "sha256": "c2cf7d5b5985475c831ba77e03c3101534c5894bc1f8d9957972a652e1457c3a"
+    },
+    {
+      "path": "scripts/private-hosting/generate-private-dist-manifest.ts",
+      "sha256": "484d2690eb41d0b5c8913e75d1ace4d895b1394a4e0a05173c29238b564cb0fa"
+    },
+    {
+      "path": "scripts/private-hosting/manage-private-review-service.ts",
+      "sha256": "01454de144b82ec7f7838b47af78be2b7fa4bdf0eb7951967ef9836eda90570a"
+    },
+    {
+      "path": "scripts/private-hosting/provision-review-credential.ts",
+      "sha256": "faa05b524f0649b030444f23abdbc1cd1a0ad596d53998f123faf18cf5910c23"
+    },
+    {
+      "path": "scripts/private-hosting/serve-private-review.ts",
+      "sha256": "42cd9e23bc5eaddef4c95ed59833e4ba006549088d43e7fc039d9d27198a7176"
+    },
+    {
+      "path": "scripts/private-hosting/verify-private-review.ts",
+      "sha256": "e059bdb62331ed995b09f1bd9e2a76ffeb2cdc24ccbdbb6cbd9587b3666d1fc8"
+    },
+    {
+      "path": "scripts/public-launch/check-artifact.ts",
+      "sha256": "3cd6b47fbc95531e667bf1aad18be9bf7c9742f85f4ebc5aa1c84f0e1f3d8781"
+    },
+    {
+      "path": "scripts/public-launch/check-patient-guides.ts",
+      "sha256": "694f76d8ddf045d1554d10d23bfa264a581bc6cf09972d2ea466613452d24206"
+    },
+    {
+      "path": "scripts/public-launch/check-release.ts",
+      "sha256": "bd79550de2755991e6953589ef82227558e331db545d72477bf1b41f6c50d133"
+    },
+    {
+      "path": "scripts/public-launch/input-tree.ts",
+      "sha256": "f4f4b887e26d4a3db80bfb502293428d62af41aa787956f13816043f942871e9"
+    },
+    {
+      "path": "scripts/public-launch/verify-browser.mjs",
+      "sha256": "cc435c28ea18601044f47b9295520005719d1c1fdf6c846ec0cb4ace190c77ad"
+    },
+    {
+      "path": "scripts/public-launch/verify-expansion-playback.mjs",
+      "sha256": "01852bd055fb895ed4da95d8dea36bbfb7f5cecf5021093906af4392aec90839"
+    },
+    {
+      "path": "scripts/public-launch/verify-playback.mjs",
+      "sha256": "b72e094d3c739ace8d4ede23597368294c0b9d1781d93d34b672afb9312ea51c"
+    },
+    {
+      "path": "scripts/release-check.ts",
+      "sha256": "8aae0966f43a73d23fef69ccf6ee1a8c7839fc1dbb3bc6bae5b34f28dee23b95"
+    },
+    {
+      "path": "scripts/research/capture-decision-14-erik-drost-evidence.ts",
+      "sha256": "883ca4824818673277bd42ec1d732b2d992bb69ca031055f28e2481870fb2917"
+    },
+    {
+      "path": "scripts/research/capture-decision-14-p1-leads.ts",
+      "sha256": "aa518c6293801ab60ab07800fc6a669fb9fa87f3f63068abb8bef6deacae3650"
+    },
+    {
+      "path": "scripts/research/capture-decision-14-sandro-halank-evidence.ts",
+      "sha256": "06c0974f4c3ca26c2c0abd35ce8d355374e914103daf232bcf2f017b1113e69a"
+    },
+    {
+      "path": "scripts/research/check-candidate-manifest.ts",
+      "sha256": "856c06f964a777126240b60370e1908423df5db0f28e423d8afacafb2f09f2ff"
+    },
+    {
+      "path": "scripts/research/check-candidate-verification.ts",
+      "sha256": "faeb4deffdb1abb9f3f714f89a1f4590f4a67cabe5640110199a292d655118fc"
+    },
+    {
+      "path": "scripts/research/check-candidates.ts",
+      "sha256": "76becc9ec2298248c33989f80528c08e15cc72a114220d7627144e1d75e52b22"
+    },
+    {
+      "path": "scripts/research/check-embed-batch2-correction.ts",
+      "sha256": "8e5a975f55a072fb55965300fdf4c9bbe56fb1ac38f593d1c61deac438a16ee4"
+    },
+    {
+      "path": "scripts/research/check-embed-enrichment-correction.ts",
+      "sha256": "e4274276c8d5b6e51910b62b32eb3af74b275ddb208e69c482de758cca54967a"
+    },
+    {
+      "path": "scripts/research/check-embed-enrichment-review-set.ts",
+      "sha256": "1e40c81539ceebae35ab29c8b9ddd87cb5e42c80603933edb62f607c34141718"
+    },
+    {
+      "path": "scripts/research/check-source-manifest-registry.ts",
+      "sha256": "a1e55cea98cc9918821aea8febb73cd6461c74e5f8f483824729778e82382426"
+    },
+    {
+      "path": "scripts/research/decision-17-follow-ups-batch1.ts",
+      "sha256": "f95ebe2cb06e71a442374c48f87e6ed9a46d269623c61d12aea77bf60ca31eec"
+    },
+    {
+      "path": "scripts/research/decision-17-follow-ups-batch2.ts",
+      "sha256": "62da287ba741a736e9cb6c801e467ba75d99a7e5267365b095771187f57c95d3"
+    },
+    {
+      "path": "scripts/research/decision-17-follow-ups-batch3.ts",
+      "sha256": "fcc138b2dea34fed107bbcaf477fd74400f6bd264dc7df179a4ad67c66f180ca"
+    },
+    {
+      "path": "scripts/research/digest-candidate-manifest.ts",
+      "sha256": "b6b29495583f316c294d57745e71490a24def177bc751bfb17d52648f4c81bb3"
+    },
+    {
+      "path": "scripts/research/digest-review-set.ts",
+      "sha256": "f95d3911a3a626c740dc0eabffaad4c81cb2a3907d9deab4d14c5e4f9239d908"
+    },
+    {
+      "path": "scripts/research/generate-candidate-manifest.ts",
+      "sha256": "b35d4ab8bc2f5530510f9bc55df770cf9c569522cced37a2ff85f20ed03b9a9b"
+    },
+    {
+      "path": "scripts/research/generate-source-policy-v10.ts",
+      "sha256": "77c123b171254cd808d4aded2d89350eb1c098ca1a5d2e7b1ef173193f212952"
+    },
+    {
+      "path": "scripts/research/generate-source-policy-v4.ts",
+      "sha256": "b5bdc85ddee40402f7a544c6e01eda3663248ad8771a5a0d1f7d8da5303974f3"
+    },
+    {
+      "path": "scripts/research/generate-source-policy-v5.ts",
+      "sha256": "4f0cff571e1ea5be47b1553132a093be18ff5527f5d69599f04c27f9340421dc"
+    },
+    {
+      "path": "scripts/research/generate-source-policy-v6.ts",
+      "sha256": "3e0467966da279c8525c24c20734ed3b9f80d3b79118856046a6381599ec9a58"
+    },
+    {
+      "path": "scripts/research/generate-source-policy-v7.ts",
+      "sha256": "986f5fbacee3432f2634766edbf083ebe61aa1174686210edc70d04f0303d700"
+    },
+    {
+      "path": "scripts/research/generate-source-policy-v8.ts",
+      "sha256": "3740e0c6660dcfeb78f3b4706d0898af61605bc31061b15a034c2c3aca5c404d"
+    },
+    {
+      "path": "scripts/research/generate-source-policy-v9.ts",
+      "sha256": "53463c10ddce7ee95abb270bf862f47d959345a74d70fb5e9a1298ba123f8c15"
+    },
+    {
+      "path": "scripts/research/verify-candidate-links.ts",
+      "sha256": "a5a4281b3c06461e821dc495d374a25843f1bba119f041f292f5c69648fc3fcc"
+    },
+    {
+      "path": "scripts/resolve-active-plan.ts",
+      "sha256": "9bd8c63329df4eddf1944b103f804eb9f6e927476a41d841f7ebc827bb5b2e80"
+    },
+    {
+      "path": "scripts/run-lighthouse.ts",
+      "sha256": "68ccb0cc822006e0d67d26dd657d6b5c9ce6a657b7947dcca53e3fba6cdd9e01"
+    },
+    {
+      "path": "scripts/validate-plan-execution-decision.ts",
+      "sha256": "4fa67cb67de8d046fbe07ebe5089054bc75b0002b95b4d885b5d6ffe34852c1e"
+    },
+    {
+      "path": "scripts/verify-brand-assets.ts",
+      "sha256": "287ab44717b60c8d6d4447e44bf295735b055845358662e91a10e79770c7bc94"
+    },
+    {
+      "path": "scripts/verify-decision-13-clinical-freeze.ts",
+      "sha256": "f5d4ea2a68f7c6b999c9740e8a5607f0aa0b1c563ac18e3eab05ee21edd9d2a3"
+    },
+    {
+      "path": "scripts/verify-decision-17-c-digests.ts",
+      "sha256": "75db8e57eca59f04b25734bd101715becb0a97b06a82b5a32bb1da65d2145a0e"
+    },
+    {
+      "path": "scripts/verify-decision-17-follow-up-dom.ts",
+      "sha256": "5508b5ac2a5c0b23c4cac28dd4ffd4a58392fe67287b2890d641695e4157366a"
+    },
+    {
+      "path": "scripts/verify-decision-18-professional-safety.ts",
+      "sha256": "5f26ec4c44f57ed8464907c46030a0a61074c8a8a68d5b18cefe81aea1af49d7"
+    },
+    {
+      "path": "scripts/verify-external-sources.ts",
+      "sha256": "4e6abd9400c18c67fbe3828afc357f734509feff8029083a8cefc6bc408177e4"
+    },
+    {
+      "path": "scripts/verify-plan-binding.ts",
+      "sha256": "36c6e1b8aa7b21e3565f5dc81d34416975f70b442d441e58bb47dab5aa25c66d"
+    },
+    {
+      "path": "scripts/verify-player-photo-assets.ts",
+      "sha256": "773d51caf94afbbc46fa97126397b3bf4718ab8cc2caf71a68011c0fd918b22a"
+    },
+    {
+      "path": "scripts/verify-public-artifact.ts",
+      "sha256": "50a11755ddba7679ba743de263028e1726ed780f85f799315e80eadcf2b90ed9"
+    },
+    {
+      "path": "scripts/verify-review-artifact.ts",
+      "sha256": "7c806e506c91e46e1f6672665760272658f753d17bd9813bb3e9ce0b7b2375f7"
+    },
+    {
+      "path": "scripts/verify-video-thumbnails.ts",
+      "sha256": "0dc433f09c6bd43b9270183d1b4701ac690d3c1477e71e2827896af56568f062"
+    },
+    {
+      "path": "src/assets/heroes/achilles-rupture-case-01.png",
+      "sha256": "0a9702b965b72ddc1c9130ce34dc1b48fab268a9dd628422958380b2d2629bec"
+    },
+    {
+      "path": "src/assets/heroes/achilles-rupture-case-02.png",
+      "sha256": "037bb950968e93b7ff1277f597b4eda0ed94589bb88f9bba888fdd13368777df"
+    },
+    {
+      "path": "src/assets/heroes/achilles-rupture-case-03.png",
+      "sha256": "2f5fb577d579ed13ef607a4aec4342e9924df83b55cc427f833ecea1bcc7f46f"
+    },
+    {
+      "path": "src/assets/heroes/achilles-rupture-case-04.png",
+      "sha256": "6334f689d1b26b2a6e959708d6f1560594a9cf1249f9da2f3baa82f93db67b0d"
+    },
+    {
+      "path": "src/assets/heroes/achilles-rupture-overview.png",
+      "sha256": "6d7858ec369c61e74891718672b6e66ed728a557124e236d60c306e82637387b"
+    },
+    {
+      "path": "src/assets/heroes/acl-case-01.png",
+      "sha256": "1eadfeab2babd48da41810f0e9f9a3bfa865d198d0077ad1fc71d298a937c50d"
+    },
+    {
+      "path": "src/assets/heroes/acl-case-02.png",
+      "sha256": "f8a48b36a4a056886f3c49fa794b5f7580daaa1580ce2085b5a2f549b4aa6953"
+    },
+    {
+      "path": "src/assets/heroes/acl-case-03.png",
+      "sha256": "ad5be2de623028b90614e09ed3811af93e36f2d0b0de32c60299d60d6460d4f8"
+    },
+    {
+      "path": "src/assets/heroes/acl-case-04.png",
+      "sha256": "8565ff1cfd55be4f0cf1732bfa2700144801051c8e8b7c75360f6a219bd8352e"
+    },
+    {
+      "path": "src/assets/heroes/acl-overview.png",
+      "sha256": "7704bc944a8781f6b07c1fe9acc542c6aed5ecb7427b72d6ea6789c80700fc9b"
+    },
+    {
+      "path": "src/assets/heroes/ankle-sprain-case-01.png",
+      "sha256": "30edc84ba131fa068214be49e3688894ef0cf83e773520e0131f8867d85522eb"
+    },
+    {
+      "path": "src/assets/heroes/ankle-sprain-case-02.png",
+      "sha256": "b8ce93d3862b17b5f5fe7911c48fbab15574ce26eab598809de9767e3c7a12b1"
+    },
+    {
+      "path": "src/assets/heroes/ankle-sprain-case-03.png",
+      "sha256": "68a0e76730fd3922e785af502aaf7ff7ce866250cbd144b9255129168852b139"
+    },
+    {
+      "path": "src/assets/heroes/ankle-sprain-case-04.png",
+      "sha256": "cf45e134c69c1cd20785758549930cef52dc8896b1e79864db04e13da2a6f8ae"
+    },
+    {
+      "path": "src/assets/heroes/ankle-sprain-overview.png",
+      "sha256": "f92167e9bcbaaf745843efb1d2cd24eb63f105889c38d6cf5931b4302529a0e9"
+    },
+    {
+      "path": "src/assets/heroes/home-atlas.png",
+      "sha256": "178f3989118f0f2f9cc5218c9c17aee4e72a1fccf16caf3e66279eba2d7f71bb"
+    },
+    {
+      "path": "src/assets/heroes/provenance.json",
+      "sha256": "45ea1a2efee5293e87e49fa61daab65124325d054012b760239a7385473a7f0b"
+    },
+    {
+      "path": "src/assets/heroes/provenance/achilles-rupture.md",
+      "sha256": "0fb37948063c1eadaeec88891c4e2c5ea9ddff9401284ee80c3013698c35d2a2"
+    },
+    {
+      "path": "src/assets/heroes/provenance/acl.md",
+      "sha256": "5c321ea2e9def23f7ff795706e7716001509c5e2bb0a5fda08f4b0fd9173b347"
+    },
+    {
+      "path": "src/assets/heroes/provenance/ankle-sprain.md",
+      "sha256": "0adda9b30318918c1bce39e42f81f195ab41d4882dd39631a5339c1924664858"
+    },
+    {
+      "path": "src/assets/heroes/provenance/home.md",
+      "sha256": "e849ce692cc7470121bc2d531f0bce168c2b0973fbd0751cc8d5d29bf4b85c13"
+    },
+    {
+      "path": "src/assets/players/anfernee-simons.jpg",
+      "sha256": "2c651d636a979b4e838c28817e56ce56917d7b216fc6e59603075654a067fd7e"
+    },
+    {
+      "path": "src/assets/players/anthony-edwards.jpg",
+      "sha256": "7a3f5a1164f51a05172a49385cee845f4b0deb9150dbc83a5b9905316689c650"
+    },
+    {
+      "path": "src/assets/players/brandon-clarke.jpg",
+      "sha256": "735ece4e9d1007910f96d02dbab9e5ac0724ba551b4c574ccc234b4bc9454324"
+    },
+    {
+      "path": "src/assets/players/cj-mccollum.jpg",
+      "sha256": "81732b5f1bb005d6da0e779068318e77175511f3b11b570f3ac9cdf7f17412cd"
+    },
+    {
+      "path": "src/assets/players/damian-lillard.jpg",
+      "sha256": "bdfa8f6be1c15225d7a7cc1c43c6af8c314dd4d84a4cad8b33ec0bda2d049686"
+    },
+    {
+      "path": "src/assets/players/danny-green.jpg",
+      "sha256": "ccd450f0da10209a86a866b0d407b5714671e6e6366eed91c1719c75f23128e2"
+    },
+    {
+      "path": "src/assets/players/decision-13/anfernee-simons.svg",
+      "sha256": "2cccee620a61d139cf45df54248cf3eb730ca25a97c78950550143ea517062da"
+    },
+    {
+      "path": "src/assets/players/decision-13/anthony-edwards.svg",
+      "sha256": "8b939edf0eab3be601e558c3187e411ad7569448e3ddeda8ad443aa6a2999272"
+    },
+    {
+      "path": "src/assets/players/decision-13/brandon-clarke.svg",
+      "sha256": "c621544de4a32fb0ad92ac3d611e77db913ab8292c08410e26db0cf1a4d111e0"
+    },
+    {
+      "path": "src/assets/players/decision-13/cj-mccollum.jpg",
+      "sha256": "5688298371c4ec218dae6f5131685f4ab511fab6d0797685146953235c8c7e45"
+    },
+    {
+      "path": "src/assets/players/decision-13/damian-lillard.svg",
+      "sha256": "a82bcb6e92ef03798745e8cb9f3458abe6cb37657d6111343a3a72e3cd89d226"
+    },
+    {
+      "path": "src/assets/players/decision-13/danny-green.svg",
+      "sha256": "ed6804a361a5cdc0006151e3538b91aed2f39977b7882e889493e103f7ed2416"
+    },
+    {
+      "path": "src/assets/players/decision-13/dejounte-murray.svg",
+      "sha256": "6ad3d68a744d8373ef7a8e0fd82a96c5405f43aba971e203fd82b81d8102004c"
+    },
+    {
+      "path": "src/assets/players/decision-13/dwight-powell.jpg",
+      "sha256": "d1cab51c99f25b380d05d14bd5fe4f826b51042d4c007a7d105a7240265cd211"
+    },
+    {
+      "path": "src/assets/players/decision-13/ja-morant.svg",
+      "sha256": "b4b26eecf67ab52ed32b32a703e7482be2dfff3653ad55eba5175bdbb4bbd3d9"
+    },
+    {
+      "path": "src/assets/players/decision-13/jayson-tatum.svg",
+      "sha256": "793a0aeb4f815a5e2c03340613e8646e92d8aacb4290164ffea2abe701280ade"
+    },
+    {
+      "path": "src/assets/players/decision-13/joe-ingles.svg",
+      "sha256": "bd132701afb690e79f02e9378a8d5a7db4ab8b29de31a234f5d9f2d2ed53a40a"
+    },
+    {
+      "path": "src/assets/players/decision-13/kevin-durant.jpg",
+      "sha256": "6f18766d49193c6858d607ae26551ba6c4422eebefb535ca2805ccd8b54e956d"
+    },
+    {
+      "path": "src/assets/players/decision-13/kyrie-irving.jpg",
+      "sha256": "4f631559835221f8276ef7b1ee09b4435a5003ad9a50614bb0c72673dec745b6"
+    },
+    {
+      "path": "src/assets/players/decision-13/lamelo-ball.svg",
+      "sha256": "cb564f0969076e33f6071f6aa22797ff8a1bcca270da2363ce0cf03352e1d505"
+    },
+    {
+      "path": "src/assets/players/decision-13/lebron-james.jpg",
+      "sha256": "8f5550b3acc78302a465a84b9e78f62d466e484fbfec1e3c1054e9123457680c"
+    },
+    {
+      "path": "src/assets/players/decision-13/markelle-fultz.svg",
+      "sha256": "882ddf275717f24be9a0e56b7af868beb7e6217365cbc435c4dd7fc1c6dc0b42"
+    },
+    {
+      "path": "src/assets/players/decision-13/moritz-wagner.svg",
+      "sha256": "c8d8f3f6caeb9490e9862ac12dc0bb5a4ab34e710b79e0431a7cfc1bbf5956fc"
+    },
+    {
+      "path": "src/assets/players/decision-13/ricky-rubio.svg",
+      "sha256": "46befffc187be9a1df332ff8001945a1a1b5bb6b7be21285435fec1190402043"
+    },
+    {
+      "path": "src/assets/players/decision-13/thomas-bryant.svg",
+      "sha256": "4f8639171dadb0aed4f28a0d3cdd66679f1cfcc7f9e19339c40fb5e1ec0b047a"
+    },
+    {
+      "path": "src/assets/players/decision-13/trae-young.svg",
+      "sha256": "0944f448409207ae27f056b8e2c95c5586ad443ab7760ebbaf87498a95e4a3c3"
+    },
+    {
+      "path": "src/assets/players/decision-13/tyrese-haliburton.svg",
+      "sha256": "aed4fd61b43f986a65b84e968221f397078c1b31ccac52e0fb46bfd877cf6bfb"
+    },
+    {
+      "path": "src/assets/players/decision-14/damian-lillard.jpg",
+      "sha256": "ba8a0f23d721519e4796c89513f21a9e3c1d4fafe39f84a0192244162bb3abcf"
+    },
+    {
+      "path": "src/assets/players/decision-14/jayson-tatum.jpg",
+      "sha256": "0adddc2e2918f307434e18e79c96ed7bf2e852122bea0adc0c38203584d7cb78"
+    },
+    {
+      "path": "src/assets/players/decision-15/anfernee-simons.jpg",
+      "sha256": "2c651d636a979b4e838c28817e56ce56917d7b216fc6e59603075654a067fd7e"
+    },
+    {
+      "path": "src/assets/players/decision-15/anthony-edwards.jpg",
+      "sha256": "bc9cabfae1125da0d4520397260c72909473e536b0e027aa447c78576ea82455"
+    },
+    {
+      "path": "src/assets/players/decision-15/brandon-clarke.jpg",
+      "sha256": "b864f9073782b2556d93a593d44bd36498234a68f692fe6b5fcfb3bbffab1c3f"
+    },
+    {
+      "path": "src/assets/players/decision-15/danny-green.jpg",
+      "sha256": "c9752a7cd9604e24126076812b3ba67883ac694857a196c3f6c893ced735f112"
+    },
+    {
+      "path": "src/assets/players/decision-15/dejounte-murray.jpg",
+      "sha256": "01cd99a39fad8138a6eae8084b4c91f2e01cc82c8f677d1d71bd8afdb78da798"
+    },
+    {
+      "path": "src/assets/players/decision-15/ja-morant.jpg",
+      "sha256": "29f451b2c9b61ed00ac3cbf5208b61438108faab6a626e749b82c0a622671b56"
+    },
+    {
+      "path": "src/assets/players/decision-15/joe-ingles.jpg",
+      "sha256": "9cf8ccdc7221deede6df154ecb1201534165c86f35a49a4330afa0e4f034b44a"
+    },
+    {
+      "path": "src/assets/players/decision-15/lamelo-ball.jpg",
+      "sha256": "611c8be59bbb4c671753ccc7a33ccf8de57c3d28d26f1bf8f58aab454541fc7f"
+    },
+    {
+      "path": "src/assets/players/decision-15/markelle-fultz.jpg",
+      "sha256": "a159eaad7777cd6825ec2db2ac959dcdf526aa241d71c58d2c62a2ff78a3a73f"
+    },
+    {
+      "path": "src/assets/players/decision-15/moritz-wagner.jpg",
+      "sha256": "bcfe61a1b69129db077900592b8113ef282a12a0558707ba92e38d5e6dc58373"
+    },
+    {
+      "path": "src/assets/players/decision-15/ricky-rubio.jpg",
+      "sha256": "5e1245b16c4ba4e8d95100c40eeb360e6318a6716106bef1f62bf9667a101709"
+    },
+    {
+      "path": "src/assets/players/decision-15/thomas-bryant.jpg",
+      "sha256": "b651bb59f1caa3dfe67ff81ab524610002b8c677f710206111d58b5d6c9d589b"
+    },
+    {
+      "path": "src/assets/players/decision-15/trae-young.jpg",
+      "sha256": "b489695d343b4e072708b242d6cdbbe4a22df84133e0aef5397f4a3bad46b1b0"
+    },
+    {
+      "path": "src/assets/players/decision-15/tyrese-haliburton.jpg",
+      "sha256": "8a307fe26217d5c951d8647367207cb6c383a83ea96b1c6361e969ab1c914270"
+    },
+    {
+      "path": "src/assets/players/decision-16/trae-young.jpg",
+      "sha256": "0c7a77e45d05648b8e52e6db692086e240e883639e8a8617f36d44f70061fcaf"
+    },
+    {
+      "path": "src/assets/players/dejounte-murray.jpg",
+      "sha256": "a0a9133906a442f2d9d6d8c18019318cd3399a465c23d824afa3104820552fa4"
+    },
+    {
+      "path": "src/assets/players/dwight-powell.jpg",
+      "sha256": "d1cab51c99f25b380d05d14bd5fe4f826b51042d4c007a7d105a7240265cd211"
+    },
+    {
+      "path": "src/assets/players/ja-morant.jpg",
+      "sha256": "3445fc842474f72d2b8444b3f8c394af404e7ce549ec84b49a7a17606652c53d"
+    },
+    {
+      "path": "src/assets/players/jayson-tatum.jpg",
+      "sha256": "5df6e08f45d04ac27c1d9254f2bd77602eb878236be9df50d62198a759252af9"
+    },
+    {
+      "path": "src/assets/players/joe-ingles.jpg",
+      "sha256": "9cf8ccdc7221deede6df154ecb1201534165c86f35a49a4330afa0e4f034b44a"
+    },
+    {
+      "path": "src/assets/players/kevin-durant.jpg",
+      "sha256": "4a91618fbf28b0b86dff3539a07aa0d2490127e104e478d30caedc881bd4f2d0"
+    },
+    {
+      "path": "src/assets/players/kyrie-irving.jpg",
+      "sha256": "2e03d8ba85b8eadc758e10737c2f9a857ca17e49ca9fe492e307f87baebf5b7c"
+    },
+    {
+      "path": "src/assets/players/lamelo-ball.jpg",
+      "sha256": "611c8be59bbb4c671753ccc7a33ccf8de57c3d28d26f1bf8f58aab454541fc7f"
+    },
+    {
+      "path": "src/assets/players/lebron-james.jpg",
+      "sha256": "938c5f531ad11722b58e59bc30b105bf9e24ee5e178eca89678340f4406fbb7a"
+    },
+    {
+      "path": "src/assets/players/markelle-fultz.jpg",
+      "sha256": "a159eaad7777cd6825ec2db2ac959dcdf526aa241d71c58d2c62a2ff78a3a73f"
+    },
+    {
+      "path": "src/assets/players/moritz-wagner.jpg",
+      "sha256": "bcfe61a1b69129db077900592b8113ef282a12a0558707ba92e38d5e6dc58373"
+    },
+    {
+      "path": "src/assets/players/player-photo-registry.v1.json",
+      "sha256": "770a7e6d7f13ecd0dda17a629b13f179357b9c64ebc268404a5640ad9aa08eec"
+    },
+    {
+      "path": "src/assets/players/player-photo-registry.v2.json",
+      "sha256": "0fa9a14660d798b32586047eaec1a0fc14912ca8710aaccc83963ac4f9dc28d0"
+    },
+    {
+      "path": "src/assets/players/player-photo-registry.v3.json",
+      "sha256": "d91e97aa34e347375dd5ca14cf961208ae4b2c43cc8a90a01bea49f1172a3c05"
+    },
+    {
+      "path": "src/assets/players/player-photo-registry.v4.json",
+      "sha256": "ef7149b57ab5d08a328a0a7ed88177fc4d6a35af998bcfd95a0ec318bcf345b5"
+    },
+    {
+      "path": "src/assets/players/player-photo-registry.v5.json",
+      "sha256": "26129455fe5b9297c44ac91c3be1fc1678a928cf77bd12d00695614fe5df3985"
+    },
+    {
+      "path": "src/assets/players/player-photo-registry.v6.json",
+      "sha256": "16851aaa3d1dd223f20f102ef543f104a23ee61335a796f4b70cbe75d76d5cf0"
+    },
+    {
+      "path": "src/assets/players/player-photo-registry.v7.json",
+      "sha256": "77a146729b95802fbe978bc8a4360ed54929121936a04454afe49998ea93b0c4"
+    },
+    {
+      "path": "src/assets/players/player-photo-registry.v8.json",
+      "sha256": "908ccc9c1d9aeee56c907a476701c8875914af5090614c36271a76447057084a"
+    },
+    {
+      "path": "src/assets/players/ricky-rubio.jpg",
+      "sha256": "b4fe802e7643c3f3f0081a6d6d39872a2a895c3f1de160c2eb659ca7d67cb84c"
+    },
+    {
+      "path": "src/assets/players/thomas-bryant.jpg",
+      "sha256": "dd4c0ed901c7300fb32c3b212991615688d42b4084674974660906ad64d5537f"
+    },
+    {
+      "path": "src/assets/players/trae-young.jpg",
+      "sha256": "b489695d343b4e072708b242d6cdbbe4a22df84133e0aef5397f4a3bad46b1b0"
+    },
+    {
+      "path": "src/assets/players/tyrese-haliburton.jpg",
+      "sha256": "8a307fe26217d5c951d8647367207cb6c383a83ea96b1c6361e969ab1c914270"
+    },
+    {
+      "path": "src/assets/videos/-2-Chylawx8.jpg",
+      "sha256": "ef831ac3eb17c3fde7e981f2968a124938a6b98567c3f8adb353aaeb6147c22e"
+    },
+    {
+      "path": "src/assets/videos/02FgIaR6WZ4.jpg",
+      "sha256": "30381b1b1df4502f38df8ab259e592b27d3e52684be6732a25168a1deb78d2b0"
+    },
+    {
+      "path": "src/assets/videos/0TwnwjFJzUo.jpg",
+      "sha256": "013886652ca89a0e28eba50e370f90b7cbab8b8211741f4bf9974a94f5623e2c"
+    },
+    {
+      "path": "src/assets/videos/0iPz58nL0L8.jpg",
+      "sha256": "48bef26d40dd7aceb552ffa8cef862b1b87e751115dce14dded7a70557754a32"
+    },
+    {
+      "path": "src/assets/videos/0xVAWNzYcKE.jpg",
+      "sha256": "be50f9bc63d1457732cbfa324e7ac78599406a22bbc15b28f1c7f6cccd9a3522"
+    },
+    {
+      "path": "src/assets/videos/12UNVAkLlmY.jpg",
+      "sha256": "2785ee6bfd22b3c0f0bf510a4947ae2925f8ee35ea70bcbcfe20b4b45732bb39"
+    },
+    {
+      "path": "src/assets/videos/1HEC31qHp90.jpg",
+      "sha256": "e28276acbe1357b1a76ea1bd29cbb0d734433b6b022d60428817856e1f7e9892"
+    },
+    {
+      "path": "src/assets/videos/22U4bCbhtig.jpg",
+      "sha256": "0abcde37caadebff568a54f820957f3eecde962179fed700347c6c8cbd569985"
+    },
+    {
+      "path": "src/assets/videos/2UZJNvs7G_o.jpg",
+      "sha256": "65b929de7ff784bf509a5b9d24abe1a09e0883e79efcc384db5c41b20786c491"
+    },
+    {
+      "path": "src/assets/videos/3SueGOiUU_A.jpg",
+      "sha256": "fcafbc255ad654e1792905d1f4358e84428130c2f4a36e32bb5fb6c93bb28c67"
+    },
+    {
+      "path": "src/assets/videos/3vHr8d5UQro.jpg",
+      "sha256": "0e684b547fb034143d86509d621a805ef6357c5e28b76eb33dd2ae496ab199b9"
+    },
+    {
+      "path": "src/assets/videos/4--y5nQdVE0.jpg",
+      "sha256": "8baa16acde28813eee3cfd9be480ab023a25f095a39d5ef8755eaf49284933b0"
+    },
+    {
+      "path": "src/assets/videos/4WeLwd2-YhA.jpg",
+      "sha256": "f28f2d27ad7c82947146b2f9aa118e543eeb10ce1a5b7871cc9134d5bb7f5e2f"
+    },
+    {
+      "path": "src/assets/videos/4ekUPuhJEYI.jpg",
+      "sha256": "cec108968ba1cc4a2d04e6cb03b6986e53e39ed282bc992d2cf31dea56df93ec"
+    },
+    {
+      "path": "src/assets/videos/4y-1D7jTW_4.jpg",
+      "sha256": "c3350a06c6e48b02925c742aa9f4aec1cb15accf348f29d0b21c62eba48ffdbc"
+    },
+    {
+      "path": "src/assets/videos/5EclrKrPNvI.jpg",
+      "sha256": "7d7e7b61bbe8809d9a1dbead9ec4f179fd6328595ee079aecf7628457f4d160b"
+    },
+    {
+      "path": "src/assets/videos/5HwejN_19pM.jpg",
+      "sha256": "906ab59ff0be7845e9770db187ab9d7cf64f73dea9b9ce25ecbc57fc605f45c3"
+    },
+    {
+      "path": "src/assets/videos/5KlgfpqWCkY.jpg",
+      "sha256": "8fb969a4d20a5bc65641f7ee09765d8e780bd3e1a85089b97673ff6ba488154c"
+    },
+    {
+      "path": "src/assets/videos/5STUOgvQWgQ.jpg",
+      "sha256": "2a6f7f1a171c42477352a21131a583be7456dbd33424bb6fa6d49688d146cf57"
+    },
+    {
+      "path": "src/assets/videos/5cwk5Y0Iq1E.jpg",
+      "sha256": "e1f725ec80730c45c82f36490134351c2b49ead4929e1c6e81483c6c8bcc3791"
+    },
+    {
+      "path": "src/assets/videos/7tpaxZTTi2w.jpg",
+      "sha256": "be6573f57dbb712d5611f431db3f1b312fbc08b71b6700a4d4e1cf51724e4ed5"
+    },
+    {
+      "path": "src/assets/videos/8TIJGIRP634.jpg",
+      "sha256": "6835d360563667ce5bf192a40d5af2203c209513d80c44b8270dae3ae54a998d"
+    },
+    {
+      "path": "src/assets/videos/8_d9ITG6Rmk.jpg",
+      "sha256": "36c19a32a5d23e1e6ef33d7bdf70c2bd7987fc2312ef25d88079734ed162fd5f"
+    },
+    {
+      "path": "src/assets/videos/8rQjyuPU_gM.jpg",
+      "sha256": "3033bd9479d83b0e599d229e9b2ea1ffaf531426af2a84f61d7a3c1d080a0931"
+    },
+    {
+      "path": "src/assets/videos/9JoITljMoU0.jpg",
+      "sha256": "f0472c1801855f5504eb93cfe5c786075c485b6e341e4cb051116f7980940f53"
+    },
+    {
+      "path": "src/assets/videos/9c2i7OQerbY.jpg",
+      "sha256": "37734be33cd26c3b2fc28389e456010193acb06389912c46be0e8a9b496a0687"
+    },
+    {
+      "path": "src/assets/videos/AHzOcxBu0Fk.jpg",
+      "sha256": "6ce03938cd52b4d69d465b2925458d08a62a9a04eaa693c7e4cefbc0a13f087c"
+    },
+    {
+      "path": "src/assets/videos/A_Wnlt1RP38.jpg",
+      "sha256": "459e2539d339948b8f0d0e9cf1da00121d5ea299c47872bbaca11a0df55311de"
+    },
+    {
+      "path": "src/assets/videos/Ajto95dt2yQ.jpg",
+      "sha256": "276e4f1784e43b3afa23ea05a4f0d44782a6ba52dd66c05c0c5e1272aaccabf8"
+    },
+    {
+      "path": "src/assets/videos/AzVEucCufd0.jpg",
+      "sha256": "4e6e65c971b235037a58bcbf48fdb82137d835f15485d1f682b1016d76c9d91b"
+    },
+    {
+      "path": "src/assets/videos/Bt7EHTIivuA.jpg",
+      "sha256": "3c8d70d0efbf9ae7a7235733d5c5ebafb889e43a59de1b831c0beee7b8628e40"
+    },
+    {
+      "path": "src/assets/videos/Bwa5Bf656As.jpg",
+      "sha256": "04b7f0bef2695090cabb4cb6a67da527000be579af6aece444a492c1806c1b60"
+    },
+    {
+      "path": "src/assets/videos/C4xerhbFNnc.jpg",
+      "sha256": "646283971261106f0105869fa9c244dfca55dccc563f7b4789da82aff06bac07"
+    },
+    {
+      "path": "src/assets/videos/CBRNZrv7GNk.jpg",
+      "sha256": "9b8643190696682e013810f5cba6be2701d68f359a1431f30234439805a8ff51"
+    },
+    {
+      "path": "src/assets/videos/CHU789PuCWg.jpg",
+      "sha256": "4c3239de3d8c9e25dff6808d3383bade0e5eda37230261b6dd08af45d9371c53"
+    },
+    {
+      "path": "src/assets/videos/D0VibSVWwBA.jpg",
+      "sha256": "de102697d1f5f4711aacd9c69291e6b71979fda8a7d05f89afe63e04677ed245"
+    },
+    {
+      "path": "src/assets/videos/DbKcBrl8AOg.jpg",
+      "sha256": "880db86aa946f2c5bd51cdc75a4fcfe67cf0e54195f6e9ebdae16cddc6b39c6b"
+    },
+    {
+      "path": "src/assets/videos/E0mYSZ1jTG4.jpg",
+      "sha256": "e327224e61c7366b53e7b8d9a81d50635b03bdd18674137518f25670534daab5"
+    },
+    {
+      "path": "src/assets/videos/EScFb5vASZ8.jpg",
+      "sha256": "2a8d73c88ad60ad0e1a91471d4120f708b56834bbdc6c9d91ceea55eb5fc3447"
+    },
+    {
+      "path": "src/assets/videos/FQAPZASQyX0.jpg",
+      "sha256": "7eca566920f70d613529afc53d5143c742ccff9763add40449fcb86fab9f01c5"
+    },
+    {
+      "path": "src/assets/videos/FseibZgB1Pk.jpg",
+      "sha256": "bd9d6e0dc9785b94690de7233256bc1c006773bf759b1c23240bc56d0bc14232"
+    },
+    {
+      "path": "src/assets/videos/G9_DOWNXdjc.jpg",
+      "sha256": "fbca1e3914227ca36f9e67215582dc81d57d8a7d53b918e460df2978ae40b7e9"
+    },
+    {
+      "path": "src/assets/videos/GfnIhZIzIE8.jpg",
+      "sha256": "15a3b6b87c0195ffd4393bd59f19a833485d7d890d6eba04bc16daa2ce8b70e9"
+    },
+    {
+      "path": "src/assets/videos/GjRtEqAnRNc.jpg",
+      "sha256": "55f245ce12a3b078a1214ef3d26f23a1e56172b4ff47dfbb4e74913c46b9e828"
+    },
+    {
+      "path": "src/assets/videos/Gnhby06KpyQ.jpg",
+      "sha256": "70730f3832ece6b2253bfcdfb33834e356672531aa273eb45a7eb18948e7bc98"
+    },
+    {
+      "path": "src/assets/videos/HWKf4g01YWY.jpg",
+      "sha256": "ce6b80321537957dfdd6597c22b9c63316df54a03230b0d295a34994202d4d44"
+    },
+    {
+      "path": "src/assets/videos/HgrqAWPBSTk.jpg",
+      "sha256": "366fa3e39c8c27eef1bc281e2110eb25e75d7c49bd32e2eabc8dc716034ec457"
+    },
+    {
+      "path": "src/assets/videos/HhuFTOZt6TU.jpg",
+      "sha256": "094db389a6ad3c83424cce70a7cf8facb7ce7e362ac644940c0a8ac62f80968c"
+    },
+    {
+      "path": "src/assets/videos/Hk46I0O_mjU.jpg",
+      "sha256": "f5ff3ffb5063a61a9b10400fb3e8f19cce860a457222fde47499f4225d7b6925"
+    },
+    {
+      "path": "src/assets/videos/I4ll6KgWL6U.jpg",
+      "sha256": "ce2eb1889848fb70c9c25b868d1bd27da8a3f8b7ba12ea31c910565981faba1c"
+    },
+    {
+      "path": "src/assets/videos/J1iIgGSiSFc.jpg",
+      "sha256": "87662d33e8fc8fe38432c802be176775fe07a9a5ac9e7efbc456e4f7b9533d9f"
+    },
+    {
+      "path": "src/assets/videos/Jf84VzlzLhI.jpg",
+      "sha256": "9cf76414031fb4c4f470fd6634e1b586c247a095460ac374182e8a886d124bb9"
+    },
+    {
+      "path": "src/assets/videos/KK-tjBfB9ys.jpg",
+      "sha256": "0aab379631d31166706fab640ca3b9a060d54690d14dc3c59784cad64a0582b1"
+    },
+    {
+      "path": "src/assets/videos/KTaglqZADPw.jpg",
+      "sha256": "2553eaac7e64f42d4b3e2bfba59f23d99f16c302166e751a65074fa1747f838a"
+    },
+    {
+      "path": "src/assets/videos/Kxz1vhDq94Y.jpg",
+      "sha256": "4b13300572e9e6563f18b980e88a7fa55a4f58abe4f8c2823818d5794b38a564"
+    },
+    {
+      "path": "src/assets/videos/LOaTNtmSxUY.jpg",
+      "sha256": "a0994708c6252953683804545a27444f1df976cf3a0de83623a13422e8eb4152"
+    },
+    {
+      "path": "src/assets/videos/LZTOTwvfli0.jpg",
+      "sha256": "31ef832682df3697e6e765cf18172f981117a21524da8b0e0c78aaca81e0c43b"
+    },
+    {
+      "path": "src/assets/videos/MtIaPgMih1c.jpg",
+      "sha256": "b2321df042d3ba5924fcfbed355375df8769bd524ed494ddeccea9fd8a97dbc2"
+    },
+    {
+      "path": "src/assets/videos/Nawq7KDQAkc.jpg",
+      "sha256": "5dde64d1ed348f92dd0a92b8fb042c45430a7b277bdb79f18d47ae37adc0963a"
+    },
+    {
+      "path": "src/assets/videos/O3IZGzHla4U.jpg",
+      "sha256": "aedfc91bff86cfc9574f5d9dd90c29f8893ef4bf1153005243cd1550f586e7c8"
+    },
+    {
+      "path": "src/assets/videos/OxBEhPSt2ew.jpg",
+      "sha256": "257cbd9949a394364789bde21ebc8b9d95115f1b5bb15fb53e304d96dd3f2e0c"
+    },
+    {
+      "path": "src/assets/videos/P-bLI8A0q2k.jpg",
+      "sha256": "527a2e8b2609868449ed7d6f539ea9038d01f624bf82b59c892692af220f106b"
+    },
+    {
+      "path": "src/assets/videos/PS2qTdAV2Lc.jpg",
+      "sha256": "f86e5ba55e71b17fe42bce3daf5a2409707e65d15b91e77b26f5e98ad2ad3bc5"
+    },
+    {
+      "path": "src/assets/videos/Pa50gXELqp0.jpg",
+      "sha256": "9259bb706ffb6c662490fb2c660723093aa9580af38527237b72313b42dd1da6"
+    },
+    {
+      "path": "src/assets/videos/Pi6Pku8QVXY.jpg",
+      "sha256": "44a620d1763f0512a4578cfff401d08515de488d9e8a8446507d584e263ed3df"
+    },
+    {
+      "path": "src/assets/videos/Pzul0WT-LJs.jpg",
+      "sha256": "99a4b6a0c6ebbc789885bc3847a136292c622091e8c1359bbcd9d147853806fe"
+    },
+    {
+      "path": "src/assets/videos/QDOJL9lwYdI.jpg",
+      "sha256": "b21098895bcad09893334816cf9180278f24de4fc3e90fc434cf38bd2fe7198a"
+    },
+    {
+      "path": "src/assets/videos/Qoy8tUXsqQs.jpg",
+      "sha256": "7d16a70ed6191779017d06b1a001821b0888642092a632a9db5047fda8300c35"
+    },
+    {
+      "path": "src/assets/videos/Qyzau4_9NNQ.jpg",
+      "sha256": "73f849b89a046a62bf41408d3277a4b2fb65df1fe66348ab97ea5e76ac5e50fd"
+    },
+    {
+      "path": "src/assets/videos/RDDGpqOvSdg.jpg",
+      "sha256": "1a6035aaba97ab24d93f2301db99e4dbbd410e4f814caa6f84d7ec464e0dbac6"
+    },
+    {
+      "path": "src/assets/videos/RDSkmfmqNic.jpg",
+      "sha256": "4b7194e2f16466022d0056a939cb6bb06190b352fea5cd5187c8d5d35cd8ab03"
+    },
+    {
+      "path": "src/assets/videos/RdAvC8i0szY.jpg",
+      "sha256": "0b0bfda7b8e90188d383e3a0a395fc713323569501363142345e8839da65bd8f"
+    },
+    {
+      "path": "src/assets/videos/RvDqK9NnqyI.jpg",
+      "sha256": "8ba094c289462f0af7c68b9f1dd56160ae4b66d248aaaf760de6e05825d8d304"
+    },
+    {
+      "path": "src/assets/videos/S2NsAbb8MNg.jpg",
+      "sha256": "e3d98562e376777a2953a58fef5feb5e82270215e090f6a58d1cde5a6ceafb5c"
+    },
+    {
+      "path": "src/assets/videos/TygjH39bmfU.jpg",
+      "sha256": "c9840e3cad4508429c4c794d12ec8680d1a12a401086f0786ad66179a29af956"
+    },
+    {
+      "path": "src/assets/videos/Ue0VBshhwX8.jpg",
+      "sha256": "549ea9cbcf97c700d805526516d836c4cc982777b71590882ea8b969e1114906"
+    },
+    {
+      "path": "src/assets/videos/UxS0YVftoWs.jpg",
+      "sha256": "045d9d8d5edff7764adc70498ed7945ca99f268b536b82b079ce65181c5ae2cb"
+    },
+    {
+      "path": "src/assets/videos/W5Bg3oaHI8I.jpg",
+      "sha256": "838fb2036afeef7159bac880328917dd6e96ba062e36fb650c4c485b592e386c"
+    },
+    {
+      "path": "src/assets/videos/WC6e9OaS8WM.jpg",
+      "sha256": "cba3bdf2bfc2e0ad6a185592d10ccfc70bdd3bff6e518283c5a9ff4769253215"
+    },
+    {
+      "path": "src/assets/videos/WJseH_HrC7o.jpg",
+      "sha256": "6d51197f034caf6f127cfd521039d95293d2c027ff4d787fd094f57f6416f4d0"
+    },
+    {
+      "path": "src/assets/videos/WnWnsmfra-s.jpg",
+      "sha256": "8568b3bb3ba8fd0e470e0da52cdd83dc3f854cd5dde655919b6d68265e5cd779"
+    },
+    {
+      "path": "src/assets/videos/YXpvkHw2BP8.jpg",
+      "sha256": "bc6b0d3706566772b67c2f0950c11535c322f294a218b777856d1bef919d2e9a"
+    },
+    {
+      "path": "src/assets/videos/YcSOLHMsJYw.jpg",
+      "sha256": "627dc99b2a5276af41cf4d611d14135312d92450045291f24b0d27a5f4fd9bd0"
+    },
+    {
+      "path": "src/assets/videos/YfynOcvpQfY.jpg",
+      "sha256": "177f55dfa9fe253832ad431c96bb2123ab314568d4983fceca35ccdaeef2294d"
+    },
+    {
+      "path": "src/assets/videos/YjDF1Saryg4.jpg",
+      "sha256": "f570158bee29fd8f0d577f75a5f66bbf3060f41e605131c89eebed6507e25456"
+    },
+    {
+      "path": "src/assets/videos/ZRP1PfMv6ds.jpg",
+      "sha256": "3829fba4840539849d9f30d58d116c4816360635776b909970ca020b5e34c5b3"
+    },
+    {
+      "path": "src/assets/videos/ZrJ_d7oyhN8.jpg",
+      "sha256": "e66fa4930396a1fa628fddb8eba0e890b1c28b16627ed25125a5940feb0673e2"
+    },
+    {
+      "path": "src/assets/videos/a1Malj3Fqm8.jpg",
+      "sha256": "c2f93e14c02c9c1776fc940601a78e4fb88c0b8be4057d739ba1fa5b35629779"
+    },
+    {
+      "path": "src/assets/videos/aSlYO9XfYaA.jpg",
+      "sha256": "f72e174272bdf311af855307b956e06a6a65d18b60bb3411c949b47faa7b1a4b"
+    },
+    {
+      "path": "src/assets/videos/aVmzQYIwTfc.jpg",
+      "sha256": "75c9664929b3abfca346d1f762041bcbc5ba28c58f593e2d0bed8ab6da4ad072"
+    },
+    {
+      "path": "src/assets/videos/aWo-ur71zvo.jpg",
+      "sha256": "47ab120e6ff6ac949d64f3197975c9599bae7a2c4a9d272ac0dc20e99f31b4a2"
+    },
+    {
+      "path": "src/assets/videos/azQpbyDBktk.jpg",
+      "sha256": "fa7e3b2694e27dca5666aeca1f361e6b41d78fa6140144b6dcf7158f33e38a3e"
+    },
+    {
+      "path": "src/assets/videos/b2vVxFhpEv0.jpg",
+      "sha256": "75ba88b2b124d99cbf65b4372d5e935fa0ced8e8cf43da41b41d0c5cba60aab5"
+    },
+    {
+      "path": "src/assets/videos/bLxN2RZYgds.jpg",
+      "sha256": "063baa1dbdb87f3c4976cb31f97259ab97ac1fbadd247cfaeba717ae13a72ab3"
+    },
+    {
+      "path": "src/assets/videos/blRqsO9--38.jpg",
+      "sha256": "f124001536141a09aff82f417ce006cffc9951b22ea06c27dc416f54e60c8f3f"
+    },
+    {
+      "path": "src/assets/videos/blW4L9jn6iM.jpg",
+      "sha256": "663603955f4c4cd0ab88542b7d04b53997cd375a9a2a3b0c7fe4aa0c6438c288"
+    },
+    {
+      "path": "src/assets/videos/bni6Jp6p4P8.jpg",
+      "sha256": "52eae2ad9666c038f8261d85d0cfebb62fcb795e5bcfb9bbe4e8d23da3f8fe29"
+    },
+    {
+      "path": "src/assets/videos/cWGLRqXsT54.jpg",
+      "sha256": "6c69c067e9c4caf85625d01f8677d545dfcc4ec626a6d274c13671b912563170"
+    },
+    {
+      "path": "src/assets/videos/c_laCIZqsPM.jpg",
+      "sha256": "2703bf9c0eb6208d1004ac64491a9b1b117e80783b1cd7ad5feb7072081063a1"
+    },
+    {
+      "path": "src/assets/videos/cgOemKqIzEE.jpg",
+      "sha256": "0a6fe9218ae119e51b5785465644822ebea248746e7281af3ff49f1477e608ed"
+    },
+    {
+      "path": "src/assets/videos/ctiT9toFmio.jpg",
+      "sha256": "68dfaa23daf247a319f72872d2dde96b24657acfaee6b6d6643ad78b98c7c691"
+    },
+    {
+      "path": "src/assets/videos/dCMckwzPJog.jpg",
+      "sha256": "42840d4dea45803b407a06d6596b553825d31351727c7a4f1c410fdbee8d575e"
+    },
+    {
+      "path": "src/assets/videos/dnEbS6xmiLA.jpg",
+      "sha256": "36d2172aaf23f0195b3c3fe8a2cead1cd922e6fdee55d4c63e10719554e545aa"
+    },
+    {
+      "path": "src/assets/videos/g1fZXmVr_oA.jpg",
+      "sha256": "eeee7abba72e2d6202c841b0be91c69856f7e2c31273941c3236adbdf2fe4ef6"
+    },
+    {
+      "path": "src/assets/videos/g4CkpVi5Iqk.jpg",
+      "sha256": "ee1ce48b3751d39bd048f545f20ceca7fb2dfb3ef1fa04bf105952bee0b3896f"
+    },
+    {
+      "path": "src/assets/videos/gQ0WzuOYh_A.jpg",
+      "sha256": "cd7ea9066063bf3b94c6c25cf49618a9a7b1954833cad79d55266033b603c608"
+    },
+    {
+      "path": "src/assets/videos/geUMkoM42iE.jpg",
+      "sha256": "de6a33a271a046dab2fa03ef0c0bd19c5eed6e2e67b7e5af516612ce3c7a978c"
+    },
+    {
+      "path": "src/assets/videos/ggGrmIf-SQE.jpg",
+      "sha256": "7ae3740e3adf66e33a1f476694a0c73a9866868b26abf06b0193c280d4f43a5b"
+    },
+    {
+      "path": "src/assets/videos/hxcRVu1-T-c.jpg",
+      "sha256": "2a326d99519ac8bc6dd86b1ce25b57af4101aa77d0d0caf0e28bb84049393cd7"
+    },
+    {
+      "path": "src/assets/videos/igzfkBo1mpw.jpg",
+      "sha256": "8c4558de105b914a84542f5db417b1d0f9ef1df2bae2ea5ad6edcf4f4f29945a"
+    },
+    {
+      "path": "src/assets/videos/iwZgXGRJENE.jpg",
+      "sha256": "1b62df6833dcefe7f9ef869fa79ce8e1e0600dddecf60c9df3afbad7bdde19fc"
+    },
+    {
+      "path": "src/assets/videos/jK2BphKTP6M.jpg",
+      "sha256": "f2c59ab727f6dd825186ad15a22399384dc988fe75be9fd76959a116cd689b37"
+    },
+    {
+      "path": "src/assets/videos/jhBAzccW-Oc.jpg",
+      "sha256": "21db4b77d2681e71b2ae5f4f7eba8e5dbaa2054d678c9220523f34b6879703ad"
+    },
+    {
+      "path": "src/assets/videos/jimZ1tSdPY0.jpg",
+      "sha256": "c78e31430964828d4ed68ecf2196ae58aa5b435a6420dd23123c0c4152dd6825"
+    },
+    {
+      "path": "src/assets/videos/jo1UlzDeY-o.jpg",
+      "sha256": "0ae6edbb0550221820a5642578d076f17b2b4ac4a2bf119d88385e130b7c5bb8"
+    },
+    {
+      "path": "src/assets/videos/mF6QEVNcgD4.jpg",
+      "sha256": "7d7f623f7a66a028f3399c544ea19a88773e6ce4757943baeeb61c9ebccecf3a"
+    },
+    {
+      "path": "src/assets/videos/mNbDeYmDUbg.jpg",
+      "sha256": "9dad3794e235a40b5fcae90759ef7cfb7f5f6a6bef09036ffdfe7dda89afc425"
+    },
+    {
+      "path": "src/assets/videos/mi7fXtGTwbc.jpg",
+      "sha256": "2b8b9161f4440c925482f586d100213b2fc450e04438d542a2fb190780bb6c4d"
+    },
+    {
+      "path": "src/assets/videos/mmngoDkXwxc.jpg",
+      "sha256": "0e051e50fc75d55bbd14385790c8b18e0b7f51fa7f5a4dc171ac077e159102fd"
+    },
+    {
+      "path": "src/assets/videos/nBC7o7Iz0RM.jpg",
+      "sha256": "fa64a6d68e9f12f7a467facb00ef2970cc66c5992cbe97008eeb9a27c230bd7c"
+    },
+    {
+      "path": "src/assets/videos/nFbLC6Dv6Xk.jpg",
+      "sha256": "17b91ea35bc9b84e3b167e8a143a2ede1f8208d2203f5d612efd36a74d2e22cb"
+    },
+    {
+      "path": "src/assets/videos/n_VjzzwVVoo.jpg",
+      "sha256": "9dedb547c163f81049d9361303bed72b7a5b8fa9473572943f8c5d2a0b7439ff"
+    },
+    {
+      "path": "src/assets/videos/nfpXC98FLuE.jpg",
+      "sha256": "ea5b0c2ce3773b14793864d0595e3eead75ca200a43009d85d09db0952864e9a"
+    },
+    {
+      "path": "src/assets/videos/o2rT5OH3gWE.jpg",
+      "sha256": "a5ce9ed7f9e314628346bc19d285bb1b6a88396c1be1529a176023f8fc3072b7"
+    },
+    {
+      "path": "src/assets/videos/o8mXn1hwdtA.jpg",
+      "sha256": "44287e5f18d8fa3391cf998b2bdb2502ca4f6890b2c5542108b1abe65bb617fb"
+    },
+    {
+      "path": "src/assets/videos/pU5QTK8kSB4.jpg",
+      "sha256": "4f23e8b6b744ab3107659624285e507607585f75f93cac78f3a25851815b3da4"
+    },
+    {
+      "path": "src/assets/videos/pi0rz4KrTAM.jpg",
+      "sha256": "adc3ce8a28f0bfd9f6c668a348baf4c610930ce549509cd27abd728884cc1c62"
+    },
+    {
+      "path": "src/assets/videos/provenance.json",
+      "sha256": "b97927ac82dd4b70e16bcceba4550676464c0ec3f20e5f31a31f2d0f82f3d132"
+    },
+    {
+      "path": "src/assets/videos/q9WIUVebPf8.jpg",
+      "sha256": "8d60e5bdb5fb2b62e32344dd8cbff0cba25ffcf5e4c816dcb856b29e4cf857c9"
+    },
+    {
+      "path": "src/assets/videos/qAZG23aT4IY.jpg",
+      "sha256": "03f605186a5d60dcdcdceb9acdff2fab0231b22bf7801e570bf141361e709ad4"
+    },
+    {
+      "path": "src/assets/videos/qGFHQQWFhWg.jpg",
+      "sha256": "1c73410e02fdf98c8288a279d8e7f47f6ff33028f1dfa7c829c469ef1addab8e"
+    },
+    {
+      "path": "src/assets/videos/qLR_C8wg68E.jpg",
+      "sha256": "4662868b5cd146bb5d465f6611223212f942ebf214f2153597511f79afeb3511"
+    },
+    {
+      "path": "src/assets/videos/r58I6buCUA0.jpg",
+      "sha256": "d139c27f437421e42a582ba940bbdae6de08d036b72c5ba55b6d30f2902f81f7"
+    },
+    {
+      "path": "src/assets/videos/r6gMIBsHuD8.jpg",
+      "sha256": "954e6a9c456dd3b166b91f861c64b78df56ac8d123ca7e3357330a21c4955bb8"
+    },
+    {
+      "path": "src/assets/videos/rPYOGKhlzag.jpg",
+      "sha256": "e5f258a2dac3dc7f7cead5612cec4932f2d25604a5953d6f23e731b80a4a66ff"
+    },
+    {
+      "path": "src/assets/videos/rbAYcXPhIUE.jpg",
+      "sha256": "7b3184eb898e784e1fa6bab404f15a37f6cec61b4f09ad67356699d3fa8c4213"
+    },
+    {
+      "path": "src/assets/videos/szivDYWhjXM.jpg",
+      "sha256": "4d1bc5cf6cacb40b79b51c5bf6e9235b28a57ba6762501e8b1fedaa4f6d6ec27"
+    },
+    {
+      "path": "src/assets/videos/t2G8KVzTwfw.jpg",
+      "sha256": "8dda4bb849125d91facd8ef19807c9ecfc581a519a706426bdd681fa018c05d2"
+    },
+    {
+      "path": "src/assets/videos/tnpULHHcX0E.jpg",
+      "sha256": "9b93bb0a691df801e3939e9f397f43309a382511c34e489b53198ae32de5b758"
+    },
+    {
+      "path": "src/assets/videos/uQDKyD-Sk4w.jpg",
+      "sha256": "778bf05fe231e8bda9209d3db3e184e9afcfa84970d6444fc3cedc519da46cfc"
+    },
+    {
+      "path": "src/assets/videos/uw0GVL3nfN8.jpg",
+      "sha256": "1f0b0b14229be587f6aff08c680d933acbe722832c2fa3b77ce35e6ae6198c39"
+    },
+    {
+      "path": "src/assets/videos/vM_UU11MMH0.jpg",
+      "sha256": "18e99b6b84d02c7546c93dcb0f369f70a14281ceaf68c9575d25d2621db3a55f"
+    },
+    {
+      "path": "src/assets/videos/wVj6I9Q5IvE.jpg",
+      "sha256": "49fb12e7efdc4df14374b69736b4e3246ae722e66a05ac9eb6850295aac2a7c7"
+    },
+    {
+      "path": "src/assets/videos/wgPxm0RKJAk.jpg",
+      "sha256": "3d01cdc14120d139179ccdaaebab89d6a776c23cfdad0915a94308161f2d8e5f"
+    },
+    {
+      "path": "src/assets/videos/wglRV7rAQ2Q.jpg",
+      "sha256": "7fdc56c0d8c01211cca19ba2d267c9a863e2c5fa97e2dc80db6aab3462306198"
+    },
+    {
+      "path": "src/assets/videos/x4QE1G_VXxw.jpg",
+      "sha256": "6307e304e4b0629bd32cf5f76bba05cd01c7e31705a95094098c95a0c88c8e3d"
+    },
+    {
+      "path": "src/assets/videos/xI6yz7rFdrE.jpg",
+      "sha256": "16f05d09d3ea2c1c209a5d1a63e924f0d9ba4c3f5336632463cb314eaf1c191e"
+    },
+    {
+      "path": "src/assets/videos/xSUKd03LJwE.jpg",
+      "sha256": "7487368d0875d4807c716a7e847e3e8ecb6c67e48bb183251c3d3988d397eddc"
+    },
+    {
+      "path": "src/assets/videos/yDDkfhw1Qd0.jpg",
+      "sha256": "d8dac2aae3911ac1b494e17f18ea95c76dfaa875f04ce961e6b8e5be305f5be3"
+    },
+    {
+      "path": "src/assets/videos/zZdndTqOexc.jpg",
+      "sha256": "e74ec36126a8a755fe75a0bfe9833836baf3292d33cc89e4256156465366247c"
+    },
+    {
+      "path": "src/assets/videos/zvgsEswg8KA.jpg",
+      "sha256": "968578c5dd0cfd3789e6bc95a4c65df1ac805cdc9f492ff329120683bd8c42ad"
+    },
+    {
+      "path": "src/components/atlas/BodyPartNav.astro",
+      "sha256": "5ee6a2d6219a5d0c8578b71615c26bd6c1324f9a096d55fe81b43a301d82e2e8"
+    },
+    {
+      "path": "src/components/atlas/CaseCard.astro",
+      "sha256": "0e3e73665a2d1e2a903eaec9e176e4bcf38c2a4a57367fcc5e29ee1f3cb963a7"
+    },
+    {
+      "path": "src/components/atlas/CaseFilters.astro",
+      "sha256": "eae79f580f784b549fa8a53d0ad855e2e693cb5c6defc824731ee4153690b5f3"
+    },
+    {
+      "path": "src/components/atlas/EditorialHero.astro",
+      "sha256": "0afc2ffe663d5aa6b3914556cb42a2fa5565208a252202185ebe14eaaa8f2e9c"
+    },
+    {
+      "path": "src/components/atlas/EmptyState.astro",
+      "sha256": "987ea0e843fa7cccb894f5cabdf791ea25101ad9a4f44099f5f6cbf624662954"
+    },
+    {
+      "path": "src/components/atlas/InjuryCard.astro",
+      "sha256": "649ba24fe020cd52ddca1857ea68607d6c2f82e359c9fe12bbd9457412ac7a98"
+    },
+    {
+      "path": "src/components/atlas/ListingPagination.astro",
+      "sha256": "07bbf13c09f3af85c7d44a28267c2c0f23c616740c55c93ab8363daebd0057ea"
+    },
+    {
+      "path": "src/components/atlas/ObservationCard.astro",
+      "sha256": "d68f16ee28c850dd9d1c2ae8f517a39cdb6b64f94409778db0ee4fa5d95592e4"
+    },
+    {
+      "path": "src/components/atlas/SituationNav.astro",
+      "sha256": "5f32a67634e914f89f5f63a6347aca1d981fb9786b544ba2c03e25fec97cc57a"
+    },
+    {
+      "path": "src/components/atlas/SportNav.astro",
+      "sha256": "57946fac6bc8c383daa81b6051a173a680b4685ec930ddcccdf492037d9956af"
+    },
+    {
+      "path": "src/components/cases/ActualReturn.astro",
+      "sha256": "a4f84dcaf5d0f9ed11410609382ff4928e0186386d5fde70a93e600bdd788755"
+    },
+    {
+      "path": "src/components/cases/CaseCover.astro",
+      "sha256": "49375a88dda3ec8f576bb94988b4399b2c95012fe2e838ae86fcc3e420a26bf2"
+    },
+    {
+      "path": "src/components/cases/CaseVideo.astro",
+      "sha256": "5089f3c5c2da7219d5a98c48425831f3887fa75c3165f0874448edccaa278099"
+    },
+    {
+      "path": "src/components/cases/EventFollowUp.astro",
+      "sha256": "d8f8c960e381c1f2c97404276201a71bdc4f776d46d1bee3ed838b041c0fac6b"
+    },
+    {
+      "path": "src/components/cases/EventMechanism.astro",
+      "sha256": "0296cda758534b7d579628b34e1b57a071715799662273139e987df16c2044ca"
+    },
+    {
+      "path": "src/components/cases/FollowUpReports.astro",
+      "sha256": "97dcd5de7f97e50df95073b13089764cc5bd9fa5c3e8c91b76f6561b5a2f283e"
+    },
+    {
+      "path": "src/components/cases/PatientGuide.astro",
+      "sha256": "6d437d00a5a5548f9e71b65dac8ab09c206bb009af896af478034ec1dbc7ca28"
+    },
+    {
+      "path": "src/components/cases/ProfessionalNotes.astro",
+      "sha256": "6761dd7bd9a20b2b5674bb77937f0390eb5b927f60bd3af6604e251fe60d9e07"
+    },
+    {
+      "path": "src/components/cases/ReportSourceRefs.astro",
+      "sha256": "2c04cc637b09fca316b76b2ef7c967c9e2386b1b6faea1c5329bad0349fd0967"
+    },
+    {
+      "path": "src/components/cases/ReviewBadge.astro",
+      "sha256": "f551995fe5a11e3e228c371d665045baf4767916681f361f553d1b822cb966c0"
+    },
+    {
+      "path": "src/components/cases/ReviewDigestDisclosure.astro",
+      "sha256": "aa3ab47c669438dd53bbfb20d3d4a89d8f3adf02aea9cf3827dc6421b653c643"
+    },
+    {
+      "path": "src/components/cases/RtpCourseLink.astro",
+      "sha256": "9509ccfe5c014f4df7b7b0b6b2e7a56e057c79fea901b62a9995fc701e15eb73"
+    },
+    {
+      "path": "src/components/cases/VideoThumbnail.astro",
+      "sha256": "a2b44fb6644a4f0e3ed80e51bbc1fdb78edde18e4a8f98cc2b75c72e4f76af50"
+    },
+    {
+      "path": "src/components/citations/ExternalSourceCitation.astro",
+      "sha256": "b7e1055813f478d5dd72417a9d3450dd47ca91ad875820cb0e3add9a432fe52b"
+    },
+    {
+      "path": "src/components/credits/PhotoCredit.astro",
+      "sha256": "10f9777cfd4f9c5de0d84b50d368610f6d8fda6291b744d087e2d601ce44553e"
+    },
+    {
+      "path": "src/components/injuries/InjuryOverview.astro",
+      "sha256": "3bb8fe440f01812c1fb8a02aae60a317a1091b35031254708fa3579c150b46e5"
+    },
+    {
+      "path": "src/components/layout/FontScaleControl.astro",
+      "sha256": "7e7c1f24871101a5505fe8ef7edfdf9f841705ce4b6a87e552959643eda51e43"
+    },
+    {
+      "path": "src/components/layout/ReviewBanner.astro",
+      "sha256": "42ca01c4e4c551fb8c76457af9140b9bf580e420698bbed60fa5cf07b72bcc6d"
+    },
+    {
+      "path": "src/components/layout/SiteFooter.astro",
+      "sha256": "e1a06b28de13cb8abe3ac9f42468c117d1f14c8b82727804e0e8bce5365261ee"
+    },
+    {
+      "path": "src/components/layout/SiteHeader.astro",
+      "sha256": "b648e302c8584ffba17bf235620c3b3d16ca80fe9e6aebfb5c2026cc044b6931"
+    },
+    {
+      "path": "src/components/layout/ThemeToggle.astro",
+      "sha256": "1e99dd276e07be532f0b302d6d467b218bf99033d21dd91f311851a25106212b"
+    },
+    {
+      "path": "src/components/notices/MedicalNotice.astro",
+      "sha256": "f9d8c9e4abaa2adc86874ae757c3d14112d9a65701027c07633359c32a66cc44"
+    },
+    {
+      "path": "src/content.config.ts",
+      "sha256": "549bc745fad484bc3313f74878c0585429c1a2d817c4c3bf7bcb3d40cc75de1a"
+    },
+    {
+      "path": "src/content/cases/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/content/cases/anfernee-simons-ankle-sprain-2023.json",
+      "sha256": "ad0867eb761b1022349b672611cba9bff2591a670a441851b46baeb376fd655c"
+    },
+    {
+      "path": "src/content/cases/anthony-edwards-ankle-sprain-2023.json",
+      "sha256": "c3658572ab987ba166550afe54b76cf916bcaac9228c7eb08a4b86a962662623"
+    },
+    {
+      "path": "src/content/cases/anthony-edwards-ankle-sprain-2025.json",
+      "sha256": "d9bd03d8ec6c74c4c8c2a6a802156051ca3a5c999ef87e9cc5f09036d3fe20ed"
+    },
+    {
+      "path": "src/content/cases/brandon-clarke-achilles-rupture-2023.json",
+      "sha256": "c06df42c4470b2e13a517b2aab82d1cbe91aec9b487318c6c6f6419150e46168"
+    },
+    {
+      "path": "src/content/cases/cj-mccollum-ankle-sprain-2020.json",
+      "sha256": "1ecae81a15f6134cfb6f7bc7e8a8a1d79f193126d20196042f8d2bd6d9c409b6"
+    },
+    {
+      "path": "src/content/cases/damian-lillard-achilles-rupture-2025.json",
+      "sha256": "8ce887e115f8dba7225f541cf10b5c7bbccb72d17f55bb8fdae2165c6053d805"
+    },
+    {
+      "path": "src/content/cases/danny-green-acl-2022.json",
+      "sha256": "7b30db5ab896ab00c6f81efdda1a835aba2111eed78d97e20089628a81d5a9f9"
+    },
+    {
+      "path": "src/content/cases/dejounte-murray-achilles-rupture-2025.json",
+      "sha256": "745ec2361c8e3d5a23160628ed1a01a0b5a5706ba0dc208aa6c72bea0df5a7a5"
+    },
+    {
+      "path": "src/content/cases/dwight-powell-achilles-rupture-2020.json",
+      "sha256": "347d8e149e499eee9f3f627efa079fd6d1e0c0392973dc98052a510d67539996"
+    },
+    {
+      "path": "src/content/cases/ja-morant-ankle-sprain-2020.json",
+      "sha256": "72f3679b0f5ba91fb65a30b63194e916b65640a6abdbfb04b5a701d43f17742c"
+    },
+    {
+      "path": "src/content/cases/jayson-tatum-achilles-rupture-2025.json",
+      "sha256": "92f41beb8e9819f97319c273e6899140c9453957a1ede8c63f456772d6a55c47"
+    },
+    {
+      "path": "src/content/cases/joe-ingles-acl-2022.json",
+      "sha256": "298dc63f859030836e163fe1343e6b9efab1637b4bcd506159ecde0a9b020383"
+    },
+    {
+      "path": "src/content/cases/kevin-durant-achilles-rupture-2019.json",
+      "sha256": "85fad7db7ee71658e74833a9f6220c6c614d3024f0bc6c24f11c6a84cd0d7824"
+    },
+    {
+      "path": "src/content/cases/kevin-durant-ankle-sprain-2024.json",
+      "sha256": "2403c1427a7796f6c2c1f506ffb7930d657a93b7baeab73b9fcd2854f961f05e"
+    },
+    {
+      "path": "src/content/cases/kyrie-irving-acl-2025.json",
+      "sha256": "d67fd06108d8994d7d923e1c0de9bd4e2522bda29da3e59b32c7452d39fe868d"
+    },
+    {
+      "path": "src/content/cases/kyrie-irving-ankle-sprain-2021.json",
+      "sha256": "0589174cf2b6235cb16c15c6cee0f56da92bc1f60f06ca5b4df4ad09680344e6"
+    },
+    {
+      "path": "src/content/cases/lamelo-ball-ankle-sprain-2022.json",
+      "sha256": "c40c4dfc1c663f4477491731ea2b9af885f4a4070ba4d67aefb3823a22aee9d5"
+    },
+    {
+      "path": "src/content/cases/lamelo-ball-ankle-sprain-2023.json",
+      "sha256": "0b594716f6eab358a0d9fc297655c8274ee409bebad4d4ec34d9b43deaf1744d"
+    },
+    {
+      "path": "src/content/cases/lamelo-ball-ankle-sprain-2025.json",
+      "sha256": "9f787d71fb6b06e14eb14e9d1bf1fea8025fe5ab9720f9f3717533e1de8a75f6"
+    },
+    {
+      "path": "src/content/cases/lebron-james-ankle-sprain-2021.json",
+      "sha256": "e8316dd3bb58ababfaa6fe19c05d75aaac7934918deb5fc82118d86cff62e2ac"
+    },
+    {
+      "path": "src/content/cases/markelle-fultz-acl-2021.json",
+      "sha256": "d210dec9e1a0fd59d36a58648e0c3dcb7dc1f8df9ceaf119951e2abf05d762f0"
+    },
+    {
+      "path": "src/content/cases/moritz-wagner-acl-2024.json",
+      "sha256": "43f58a0b7f3965a0da031be9ef9275ba0c89713c35543e000a9071a8ed34f12b"
+    },
+    {
+      "path": "src/content/cases/ricky-rubio-acl-2021.json",
+      "sha256": "270e2589d16d757d515dd4285dd9d6ea0688d0e7291e039e462bc0c0dba5cc7d"
+    },
+    {
+      "path": "src/content/cases/thomas-bryant-acl-2021.json",
+      "sha256": "a0e6b53e0ca73cbb5e0f116693b889aaa9d7d3e84730116a10d67dc57bb3fb72"
+    },
+    {
+      "path": "src/content/cases/trae-young-ankle-sprain-2021.json",
+      "sha256": "831f40ca5cf659e98b0d2d44bf1a24cda5c56cd4dedb7e37f72d6209cb9e63bf"
+    },
+    {
+      "path": "src/content/cases/tyrese-haliburton-achilles-rupture-2025.json",
+      "sha256": "f56deb443ed9456e0a7afa655d349f827815b5fe677012da6fcc4cc5357873cb"
+    },
+    {
+      "path": "src/content/follow-ups/anfernee-simons-ankle-sprain-2023.json",
+      "sha256": "cbf14baecf618ca8c7f1d4f0fbfdc4402aba682f935d9523c719abbb640a5bd5"
+    },
+    {
+      "path": "src/content/follow-ups/anthony-edwards-ankle-sprain-2023.json",
+      "sha256": "04253c09d3c2aa2385a44ce5891fc4bff308d9f8bd21c26d5cdeca0c6538c222"
+    },
+    {
+      "path": "src/content/follow-ups/anthony-edwards-ankle-sprain-2025.json",
+      "sha256": "8d9026744da94b952045139024634f902de81765e28fdc937379240ddd796f46"
+    },
+    {
+      "path": "src/content/follow-ups/brandon-clarke-achilles-rupture-2023.json",
+      "sha256": "89cd315e9f9ddb1492f8b1d6cfc53e3d4d4f0c3ab69e25513943678351303e4f"
+    },
+    {
+      "path": "src/content/follow-ups/cj-mccollum-ankle-sprain-2020.json",
+      "sha256": "1b82ab432226de41047fd5d162eaaac58997f1befe36f915ed1af197c3a20087"
+    },
+    {
+      "path": "src/content/follow-ups/damian-lillard-achilles-rupture-2025.json",
+      "sha256": "579eb06816400c569ad7116aa7ccba7072912cb62d88232f68fbcc1880ae685d"
+    },
+    {
+      "path": "src/content/follow-ups/danny-green-acl-2022.json",
+      "sha256": "84d2473eda1b9d970f1896033cf6393899bbd3c7a736ce2ed0adcede7ac65939"
+    },
+    {
+      "path": "src/content/follow-ups/dejounte-murray-achilles-rupture-2025.json",
+      "sha256": "affd78f9b5499e9d16aec667522109752632f733f09f9b625c51860fa1156f45"
+    },
+    {
+      "path": "src/content/follow-ups/dwight-powell-achilles-rupture-2020.json",
+      "sha256": "8bdd70218453deaf0991235ec209e695bf276921da462b6e7c95816f9505839a"
+    },
+    {
+      "path": "src/content/follow-ups/ja-morant-ankle-sprain-2020.json",
+      "sha256": "5611fae21bd6281f74a0c1578d1487af24b5117a322843120683c683fdd1d579"
+    },
+    {
+      "path": "src/content/follow-ups/jayson-tatum-achilles-rupture-2025.json",
+      "sha256": "b6efeb0f72c504c8c1fe24a02e7996a6ee60c957bcfb98b035f0a1846f5d07a7"
+    },
+    {
+      "path": "src/content/follow-ups/joe-ingles-acl-2022.json",
+      "sha256": "44d9a67d4e990dd1120e09b4002ddca024fe4b58d55c6c7014440106a2d9f7a6"
+    },
+    {
+      "path": "src/content/follow-ups/kevin-durant-achilles-rupture-2019.json",
+      "sha256": "962b2165fbb6392e5b2a3abfee3be34cac6ebc672b8b8a1b27d1575f13ab2d2f"
+    },
+    {
+      "path": "src/content/follow-ups/kevin-durant-ankle-sprain-2024.json",
+      "sha256": "10abc2221d7394585a190f6ef25a0974f301e8a04a4422a31e28aa97c95c0afb"
+    },
+    {
+      "path": "src/content/follow-ups/kyrie-irving-acl-2025.json",
+      "sha256": "a9e818a0fe9687034e388d8dcb0f397ffa68fdf7f2591628963281a6e48bc85f"
+    },
+    {
+      "path": "src/content/follow-ups/kyrie-irving-ankle-sprain-2021.json",
+      "sha256": "d3feca4cb8bdc1e8f6900566f9145c4f25873c8615a396cefc23087b94ebc6f9"
+    },
+    {
+      "path": "src/content/follow-ups/lamelo-ball-ankle-sprain-2022.json",
+      "sha256": "9424c02b12035ba67858bf5aef520ea8baff3d8fa7a022aefc12118d3ce30ea2"
+    },
+    {
+      "path": "src/content/follow-ups/lamelo-ball-ankle-sprain-2023.json",
+      "sha256": "1bcf0f910fdcf9f6540a991309cbd5ee45d4258f4200aac2d21456ee95475065"
+    },
+    {
+      "path": "src/content/follow-ups/lamelo-ball-ankle-sprain-2025.json",
+      "sha256": "5c69073ac00ec63cfa63db0158c61b0e41f8bda1b2428ecb0b8b1fd2c26c622b"
+    },
+    {
+      "path": "src/content/follow-ups/lebron-james-ankle-sprain-2021.json",
+      "sha256": "6741b70137583fd913c987c1f4aad383ebcbd35d0cec6316ac62823ecb2219aa"
+    },
+    {
+      "path": "src/content/follow-ups/markelle-fultz-acl-2021.json",
+      "sha256": "e3b1044965d4c8d5fb38babaa499e1da194a31afa621056d170977e145006c61"
+    },
+    {
+      "path": "src/content/follow-ups/moritz-wagner-acl-2024.json",
+      "sha256": "02472c8a2097e992590825cffd47f1a39e1c58d00ecaf7e2bc8ede5983c65c51"
+    },
+    {
+      "path": "src/content/follow-ups/ricky-rubio-acl-2021.json",
+      "sha256": "54f47cb0eec0cb9d04c50ac73513f3d5c6ffed72bdc1db16b9bba92328ae6efd"
+    },
+    {
+      "path": "src/content/follow-ups/thomas-bryant-acl-2021.json",
+      "sha256": "9156108a6b391816b3923e967f8d3272a4411230df81464f945a6c5a9dd8c301"
+    },
+    {
+      "path": "src/content/follow-ups/trae-young-ankle-sprain-2021.json",
+      "sha256": "5e95becf8b93f45dc69f7abb1b6271e55257a57193764882bda97f1600734bb7"
+    },
+    {
+      "path": "src/content/follow-ups/tyrese-haliburton-achilles-rupture-2025.json",
+      "sha256": "c534036ae2f03fd26214a84d76c15d49f0b4f17164bf77d34fad7b879a5488c3"
+    },
+    {
+      "path": "src/content/injuries/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/content/injuries/achilles-rupture.json",
+      "sha256": "0ad61708cc2116a668bfc9c19ead49dbd5476453812a8c3216d0229201017138"
+    },
+    {
+      "path": "src/content/injuries/acl.json",
+      "sha256": "577dd0c5de31ad8084d4e9045decc8d488f8c8f310d00ca5d599eddde9f86903"
+    },
+    {
+      "path": "src/content/injuries/ankle-sprain.json",
+      "sha256": "9d3a9c7f6d7a01684ea488cf75dee7b6cc6e085750907ca9d0563c5cf8103e5b"
+    },
+    {
+      "path": "src/content/updates/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/content/updates/2026-q3.json",
+      "sha256": "ddf04e5aee0cac066d245534f0d004107cd4aafb0dc792f16032244ee8a30021"
+    },
+    {
+      "path": "src/data/brand-asset-policy.v1.json",
+      "sha256": "a757ee37b0d33ffe558e3394e6498b59a6f3388b61038a8bcda069d0e951e40e"
+    },
+    {
+      "path": "src/data/generated/rtp-course-summaries.v1.json",
+      "sha256": "b10fb2d4a9787743ffa3aff9350ca8658494ddaf4c074fc835dc47aee8826036"
+    },
+    {
+      "path": "src/data/patient-guides/achilles-rupture.json",
+      "sha256": "f583849eb7be12f44c2e2d120b9f53f34947aa316d2d4f12196c5d86c95bedcb"
+    },
+    {
+      "path": "src/data/patient-guides/acl.json",
+      "sha256": "c4afe13275fb84b500bcde143fa5797e9f2a5b92c89cbfdf81c81295763bd076"
+    },
+    {
+      "path": "src/data/patient-guides/ankle-sprain.json",
+      "sha256": "224d837b2fd9249b84981840ea5ad06ab9eaa720c4c0ba04d3908649780cc584"
+    },
+    {
+      "path": "src/data/patient-related-articles.v1.json",
+      "sha256": "19b19f610fcffbd9809d8abf4aab55004c96b40f83dada3c6e0156cad5f9be07"
+    },
+    {
+      "path": "src/data/professional-course-links.v1.json",
+      "sha256": "1df8ebc762e6cee1d5b43000ea1dfebb82a75a50cd942274db7ee2f952a906e4"
+    },
+    {
+      "path": "src/data/public-domain.v1.json",
+      "sha256": "8d8128cc22da7848bf25b031a9ca0dd09119306240709e120481e3a9eb52b856"
+    },
+    {
+      "path": "src/data/public-launch.v1.json",
+      "sha256": "3f3f262960baf8f1a0122a05198b9ebb8ff7d2a63fe606a5fdeb321e8d4b78c4"
+    },
+    {
+      "path": "src/data/review-fixtures.ts",
+      "sha256": "ebade43dc0e838147439ca6817436fdf1a0f86b2b6cb588c6d60e97c1376ec16"
+    },
+    {
+      "path": "src/data/site-governance.v1.json",
+      "sha256": "8aebcdf9bc4b00f26b183eb2dd828904ab83a4ff607c9579ab3054bd0d1ee7d5"
+    },
+    {
+      "path": "src/data/taxonomy/competitions.ts",
+      "sha256": "7c8164c166cafda300faab22d1b87705febbe604c337c77fdbd0d288554b61a3"
+    },
+    {
+      "path": "src/data/taxonomy/injuries.ts",
+      "sha256": "340e94f20421f86d5191617630af1b561027b0653341c037ca4324d8e549c48b"
+    },
+    {
+      "path": "src/data/taxonomy/leagues.ts",
+      "sha256": "fd4bc5d206bfcb51fd9aa6ab99ca7a2374bc7a06bf32d538cdc5f28f5ea6b202"
+    },
+    {
+      "path": "src/data/taxonomy/mechanisms.ts",
+      "sha256": "435b39434dc2948efa2ca5ccabad98c4afbc1894bdc9021798f113461b7d3372"
+    },
+    {
+      "path": "src/data/taxonomy/sports.ts",
+      "sha256": "ee7288eb010dc024356ea583615bec45b45b41bef90494aad8a8a92d3871e2c6"
+    },
+    {
+      "path": "src/data/taxonomy/video-providers.ts",
+      "sha256": "940c48bc748c691b511363c078dfd5b8658bb74e7c3ba9aeab54684073b22cb0"
+    },
+    {
+      "path": "src/data/videos/additions.v1.json",
+      "sha256": "7d27ab5b87ce915a4f90e064fffa954fd5346c3d5311a1a3f5c20f4e4ac350c8"
+    },
+    {
+      "path": "src/data/videos/batch-30.v1.json",
+      "sha256": "f377f12e1696206afd65a1b9c14099a59a2d0be179a251015e92fd8e49b5f670"
+    },
+    {
+      "path": "src/data/videos/batch-31.v1.json",
+      "sha256": "9b93e0f19e42752d2f737726cadef7783495c8c7a939a29bd0eb18e39d94c9d9"
+    },
+    {
+      "path": "src/data/videos/batch-32.v1.json",
+      "sha256": "9b1a33a2d62f61275d3063a2d59ddfba77d1c3f4ef9c6e385f698a06bda91389"
+    },
+    {
+      "path": "src/data/videos/batch-34.v1.json",
+      "sha256": "0f5b77f79be769f2f9f59d994dd7d9cc6a6e744ab125aace49ed756001c26cc1"
+    },
+    {
+      "path": "src/data/videos/curation.v1.json",
+      "sha256": "a9dbffa8f339f504c4922ddd878b93cb5d379bc77e71e2e3d3a827ded2398043"
+    },
+    {
+      "path": "src/data/videos/discovery.v1.json",
+      "sha256": "3f643ca6300497ea9f73312c7526d96ef361a055708f1527de72a0955db66393"
+    },
+    {
+      "path": "src/data/videos/event-additions.v1.json",
+      "sha256": "71278b5ca0ed1aac6854d2bf4c23f1c9fa19ab7911cb338ad36962447e11f149"
+    },
+    {
+      "path": "src/data/videos/event-batch-30.v1.json",
+      "sha256": "009244613bf113998d23eb79ad4dd452e95ee5b2160db42156e557733993cf9b"
+    },
+    {
+      "path": "src/data/videos/event-batch-31.v1.json",
+      "sha256": "815ed90c26249fe414d1e0be598f8015e9ae3f89dfbed9508d6a46fe778ac090"
+    },
+    {
+      "path": "src/data/videos/event-batch-32.v1.json",
+      "sha256": "0949f036b57ddb3e82ed4c1926c997b6e94cb794ffe4e2f215a0afeadcbe270e"
+    },
+    {
+      "path": "src/data/videos/event-batch-34.v1.json",
+      "sha256": "35309899eebd1425268d1ffa807ff1f53ec4c553edb598849ddc6a642c794052"
+    },
+    {
+      "path": "src/data/videos/event-recent-120.v1.json",
+      "sha256": "786c64250b4786fca1c05345c4dd4e52e94d13b91acb606bd78ee83545e05827"
+    },
+    {
+      "path": "src/data/videos/event-recent-150.v1.json",
+      "sha256": "f3cf0c0912e0c3db0a59ab6e53b0510b1d9e1817c5ffcb6cf58df8bbbbd906a3"
+    },
+    {
+      "path": "src/data/videos/event-updates.v1.json",
+      "sha256": "92942314f465df7f55028be4830b8f01f919d16c658d6154724e16fd0a68de0d"
+    },
+    {
+      "path": "src/data/videos/expansion.v1.json",
+      "sha256": "4203d2b1876c09d381604dd7cb86ea0993ba312017b46b7ea5983d327e27d65f"
+    },
+    {
+      "path": "src/data/videos/observation-resources.v1.json",
+      "sha256": "4c357589235bbb9922ac7eeb84c9ba3f7e227d31251b53c06a069ec7a0af4245"
+    },
+    {
+      "path": "src/data/videos/recent-120.v1.json",
+      "sha256": "5707d320176ebce77865b490ed8ec4176b2cd9e5ae6b2ea688ba823d365f4c88"
+    },
+    {
+      "path": "src/data/videos/recent-150.v1.json",
+      "sha256": "537159ef47624151d26b094724b53354ecc11a9e2338ef271fba6fe860e906ff"
+    },
+    {
+      "path": "src/layouts/BaseLayout.astro",
+      "sha256": "a2448295d7c4ea1a5bd02bfc66d61df96778020e454b29c2b85e1750a1de5eb8"
+    },
+    {
+      "path": "src/lib/cases/canonical-json.ts",
+      "sha256": "fd49ca5b1e4d7872f7fa6cc711e6944c729eb7ba4a135272cbc9f30fa784b535"
+    },
+    {
+      "path": "src/lib/cases/decision-18-follow-up-batch.ts",
+      "sha256": "a39755b275d4afbe9e3903e3fe4e518e29bb5262ec8eb7a3702a71df67948cdf"
+    },
+    {
+      "path": "src/lib/cases/decision-18-follow-up-corpus.ts",
+      "sha256": "c05907d6e90db223ccd8828a279b7cdf7eff53731def733f840480bf1ee9e85c"
+    },
+    {
+      "path": "src/lib/cases/decision-18-follow-up-generation.ts",
+      "sha256": "be7ab15345ea19027eeeb46a61d62aac1a261c4e2b03cd83638e691935993033"
+    },
+    {
+      "path": "src/lib/cases/decision-18-transitional-follow-up-loader.ts",
+      "sha256": "c1c940ec489f964ffbcf2ab600d4a27f10af431def24ff7308901ee54d2c30ab"
+    },
+    {
+      "path": "src/lib/cases/digest.ts",
+      "sha256": "0e32538c6eff4b472209f9149666ff120d33b9c1df62c90ee66359b315dfe154"
+    },
+    {
+      "path": "src/lib/cases/follow-up-approval-ledger.ts",
+      "sha256": "aafcb42ae57cd7a4c12c567e0418155c6955962cdddfda0a12248f9a744bdb6c"
+    },
+    {
+      "path": "src/lib/cases/follow-up-digest.ts",
+      "sha256": "8a5432e57791a364546ac6f81ffc0bec6656ff1ac73e13f7eb8f9aa52033b491"
+    },
+    {
+      "path": "src/lib/cases/follow-up-loader.ts",
+      "sha256": "811c9bdcae59f1ea39cce8dcddd9e891422ea7eaee2088040fb3ca659089ba62"
+    },
+    {
+      "path": "src/lib/cases/follow-up-presentation.ts",
+      "sha256": "fa3f738bda5e49a7058476674fc298d6ebdef031e0e697c8358659c7837eab08"
+    },
+    {
+      "path": "src/lib/cases/follow-up-research-v2-digest.ts",
+      "sha256": "8b074b06d8492d7b3cef51a6bf748d094ddc35cbe894d0f92a1bf6f3c50bdf35"
+    },
+    {
+      "path": "src/lib/cases/follow-up-research-v2-validation.ts",
+      "sha256": "aaa92bd5cb6b4105876bb0fec3cb255ba2219e27e1832fe79d98a18a998c8bc2"
+    },
+    {
+      "path": "src/lib/cases/injury-overview-digest.ts",
+      "sha256": "9ee206d79914cc640804c7eed1db7cda9718da80e0501a30034fe3e24f341416"
+    },
+    {
+      "path": "src/lib/cases/pagination.ts",
+      "sha256": "d7be888c62db2d4e55d038ea498f75aeec0d91bc0f00e26148879315b06ea737"
+    },
+    {
+      "path": "src/lib/cases/review-validation.ts",
+      "sha256": "8475e502b2249d5c3999583e4821d954ccb5a8edb068cbc43a0a119c32c6e528"
+    },
+    {
+      "path": "src/lib/cases/search-index.ts",
+      "sha256": "80ffff64ebc45204ef9d21ec6dc22a4ef9a293ef5a8def586c7772a55770508a"
+    },
+    {
+      "path": "src/lib/cases/selectors.ts",
+      "sha256": "567cc708ed8d3b28944986c0c553d75e84e177f835cb4353195f27151e33e4c0"
+    },
+    {
+      "path": "src/lib/cases/update-digest.ts",
+      "sha256": "06630a652484ffac145fcd349306c137c8931ccce9062771f4cfa76b063c69ff"
+    },
+    {
+      "path": "src/lib/cases/video-source.ts",
+      "sha256": "558ddf94b591f143cc9d9d24fce99356414009260bbc57bedc961ae42a6da939"
+    },
+    {
+      "path": "src/lib/contracts/canonical.ts",
+      "sha256": "b75327e075747b24f9ac587c5716a27a4726a703c58180f2dc30deed63e63045"
+    },
+    {
+      "path": "src/lib/contracts/case-follow-up-research-v2.ts",
+      "sha256": "a6625068703885320a54f49a150a897adce447ad21f1004bfe52cd6fde523981"
+    },
+    {
+      "path": "src/lib/contracts/case-follow-up.ts",
+      "sha256": "dae16a9c98c7c56a75294e858053dc244bf273e40043a9fcfdc3a36cd3f1094a"
+    },
+    {
+      "path": "src/lib/contracts/case.ts",
+      "sha256": "292acf826a8fb2a26aea7d2cb83df430d72256a5ee6900acdc035443527bfc4f"
+    },
+    {
+      "path": "src/lib/contracts/cross-validation.ts",
+      "sha256": "69c8c2d759ce4b836bdbfd0c57faae59024ac8ed92fd4a4180edcb80d3158205"
+    },
+    {
+      "path": "src/lib/contracts/decision-14-photo-contract.ts",
+      "sha256": "bfcafb1b56cd77bdd8af375871461f0eaf9c5acf0ec8e2e252bdc69c0f4d7036"
+    },
+    {
+      "path": "src/lib/contracts/decision-15-photo-contract.ts",
+      "sha256": "0295b55c57ccc2f7550dab41d4a4f6eca119cc909207cce7765af98a49a1992f"
+    },
+    {
+      "path": "src/lib/contracts/decision-16-rendition-contract.ts",
+      "sha256": "ea9f3ce3c47b6681c94f13b7a097cd2e27ade7c24a83d698593fecc5c5bcf9ac"
+    },
+    {
+      "path": "src/lib/contracts/decision-17-regression-contract.ts",
+      "sha256": "f99b3130baaacc3c98732a133a54987a373cb31c3331c21153c44b99ea7996ac"
+    },
+    {
+      "path": "src/lib/contracts/decision-18-follow-up-batch.ts",
+      "sha256": "39112bb52af92edacbe0afe60357c6eeadadc250f9d9292175649ea4da116082"
+    },
+    {
+      "path": "src/lib/contracts/decision-18-follow-up-research-record.ts",
+      "sha256": "3e94497754a431226d9466310ef79b49401ad55cbed10226b1aacaee81d2ccd2"
+    },
+    {
+      "path": "src/lib/contracts/decision-18-regression-contract.ts",
+      "sha256": "bb61c8b48573b3c60904aa637738244e348b6b284e6fe85f70b3b405de45c193"
+    },
+    {
+      "path": "src/lib/contracts/injury-overview.ts",
+      "sha256": "6cf38e26f5f065375aa5b97b863d6a82e8ef9b42f3e4ddf6ad538ada7eb63b03"
+    },
+    {
+      "path": "src/lib/contracts/player-photo-registry-v4.ts",
+      "sha256": "153362a50894e2c188ab4dded9990c19b894422bbbe6259ab178d869663d4e7f"
+    },
+    {
+      "path": "src/lib/contracts/player-photo-registry-v5.ts",
+      "sha256": "f4654726f844461302439b15c1cb9711934a5c08b41a652a2ef8eaf44151ac0d"
+    },
+    {
+      "path": "src/lib/contracts/player-photo-registry-v6.ts",
+      "sha256": "cfdb2745385df1d6af5426df90995658d36e9df17b89c774f07c8cebc0d68e31"
+    },
+    {
+      "path": "src/lib/contracts/player-photo-registry-v7.ts",
+      "sha256": "3bab72d89533bcfb598b32cd0a68d2dcc27335a54b1df818ed0f381c79995c00"
+    },
+    {
+      "path": "src/lib/contracts/player-photo-registry-v8.ts",
+      "sha256": "95153c25e42f149de1e30994db22b6914dfd2e7813adf295cf081c9ed49e18fd"
+    },
+    {
+      "path": "src/lib/contracts/player-photo.ts",
+      "sha256": "8986d33f7db7f7b4756735bd1fbd24d4865a52b5cbb22b5c8b8bc07635ff13dd"
+    },
+    {
+      "path": "src/lib/contracts/release-history.ts",
+      "sha256": "a582bcf82170c380f24bf55cd6f1f8918311e3c4c70ec3be4042bcd6b6536dfc"
+    },
+    {
+      "path": "src/lib/contracts/site-governance.ts",
+      "sha256": "14f28a17e53fe191ebb4cd240906fb0c6738d3ff9d4a8b8710d4147fe63b33f4"
+    },
+    {
+      "path": "src/lib/contracts/source-manifest-registry.ts",
+      "sha256": "5609a342a06f540f7a074f3868ae250b6adb5ad81a04bf66c8a9f0d8cc8c03c6"
+    },
+    {
+      "path": "src/lib/contracts/taxonomy.ts",
+      "sha256": "093b2c2ed13de152b178842a872e53a641cefba5d037f2a8110eb08299625584"
+    },
+    {
+      "path": "src/lib/contracts/update.ts",
+      "sha256": "24828b2fd16028a6c09cac04f4d98b51843c4ac886db881f3d6076d1e790ebe5"
+    },
+    {
+      "path": "src/lib/external/verification.ts",
+      "sha256": "28eaf2d0ed4a9ea844b25fe181d16ebe52e16cf549f737e6171caed3ebce8d46"
+    },
+    {
+      "path": "src/lib/governance/artifact-manifest.ts",
+      "sha256": "10b114629c440d60c08fb6a7d8e15fb509e0e684e1f381edfa78e92af3c00c15"
+    },
+    {
+      "path": "src/lib/governance/build-mode.ts",
+      "sha256": "26b269d636f780e5dc057d6c034b3fd29ada6f5399eabff0b698e700bf3605d1"
+    },
+    {
+      "path": "src/lib/governance/medical-review-decision.ts",
+      "sha256": "2358b90572d3de4b2d0408653a595f3e5070169b4b1c7dc6c2ace7589ea45e9c"
+    },
+    {
+      "path": "src/lib/governance/private-review-limits.ts",
+      "sha256": "7065d9c1d118e4706c1491fb875660feb617848197b989432ce9a6a3afb2dd49"
+    },
+    {
+      "path": "src/lib/governance/release-gate.ts",
+      "sha256": "d6cf890f9b081d6610e26a516ec7280eedc9644feae8468e1aeee12a06a05891"
+    },
+    {
+      "path": "src/lib/governance/review-set.ts",
+      "sha256": "3e669ffc36b5cceb9e6cd4fd7de4d83b5232944a2555eedbb31eeacd679879d1"
+    },
+    {
+      "path": "src/lib/governance/served-artifact-receipt.ts",
+      "sha256": "bbf1eb2d0233b9ad687ac237bfcff4f82ff0c6b0817e0fcf53f898cadeee1bc7"
+    },
+    {
+      "path": "src/lib/governance/site-digest.ts",
+      "sha256": "97497e5dc418d88f6f842e1019717b30efd1f6460277219851d0e92056361956"
+    },
+    {
+      "path": "src/lib/governance/sitemap.ts",
+      "sha256": "74418be1ce7396e734935a7f44123c7ab44467b4c46890c15df43fad227f4dcd"
+    },
+    {
+      "path": "src/lib/governance/video-rights-decision.ts",
+      "sha256": "0e4c1bef6d5d0615c1758e8ce027093ad3476f50a8c7e884f71925b59570676a"
+    },
+    {
+      "path": "src/lib/medical-notice.ts",
+      "sha256": "a4749440a3facb585aaa297fec21a2af219630e4034089a7071c3ec9e083876e"
+    },
+    {
+      "path": "src/lib/patient/actual-return.ts",
+      "sha256": "2f6eb92f5c575852c3adae1f12602496295a1e6ab797ed3a5d15eeb00e66e491"
+    },
+    {
+      "path": "src/lib/patient/featured.ts",
+      "sha256": "bd3a178402b2c3ea88630027a95488509c9c95c4c536ab8d924a790705b003f4"
+    },
+    {
+      "path": "src/lib/patient/guides.ts",
+      "sha256": "75b8a44583fb3a1464a9d7ce7ff5f46e0918cc0909f1366cb0201d07a6c8a154"
+    },
+    {
+      "path": "src/lib/patient/public-domain.ts",
+      "sha256": "5100c9359c0a00f83dd79372ab4bcac1f2db6db579dfcb7a6ced51128673b14c"
+    },
+    {
+      "path": "src/lib/patient/public-launch.ts",
+      "sha256": "9209647abeb05cc804f3a1f1b4d4dc8b21aa1d0bc4e522258a2bb321e69c7d05"
+    },
+    {
+      "path": "src/lib/releases/history.ts",
+      "sha256": "e4ddb23ea2bc43284d9b831b7794e21eff481a0d1be35b0eb69d922bcaa4cdcc"
+    },
+    {
+      "path": "src/lib/research/candidate-contract.ts",
+      "sha256": "a92f9182c925006ec00362e19e7047a9883cfdac3fd0a17f12573acac33c10e3"
+    },
+    {
+      "path": "src/lib/research/candidate-manifest.ts",
+      "sha256": "222630c944416ac12df130d92257e72a610164c6e8a1c26b389742dc40c0b7ee"
+    },
+    {
+      "path": "src/lib/research/csv.ts",
+      "sha256": "5b58892fda7afe12e0a2fe89304199b79f9bba4ccc174b28d461c06e646d0149"
+    },
+    {
+      "path": "src/lib/research/link-verification.ts",
+      "sha256": "8bc775c6bdd41f7a85f359ab624c140bcb31490004f48bb77dd91bade251c7d0"
+    },
+    {
+      "path": "src/lib/research/validation.ts",
+      "sha256": "6903a124bb8a7e1faec4d3b136247f4c98187dd0c617a49e571f8778dfa6d2b2"
+    },
+    {
+      "path": "src/lib/rights/nba-link-policy.ts",
+      "sha256": "4af1098f12c4e3f424a190fe5ec83a2d806ccc24d713074015721ad4edc78e73"
+    },
+    {
+      "path": "src/lib/rights/photo-credits.ts",
+      "sha256": "4b9a8aa6fbcdab3b9f7e5369a83481ab7b163da9ba382963be1abeae34a8d0eb"
+    },
+    {
+      "path": "src/lib/routes/static-paths.ts",
+      "sha256": "aef4e90ea37b08407906037d4eea2997dec8f29ee39223900826dfc3c0b0ed46"
+    },
+    {
+      "path": "src/lib/rtp/course-link-decision.ts",
+      "sha256": "151d4c7c3a6ff1e46854b059b2a34849a202d4d881cb46d42246565994e25333"
+    },
+    {
+      "path": "src/lib/rtp/course-links.ts",
+      "sha256": "ae51a7d78a4c09ecfbfb2b26a37fe856c077a45ff0d679038e06068fe102eff8"
+    },
+    {
+      "path": "src/lib/ui/editorial-images.ts",
+      "sha256": "0beff61f477a295fce67b3a0daedbb7f27bc4b995c61dad3fa3e225bb5db0603"
+    },
+    {
+      "path": "src/lib/ui/image-renditions.ts",
+      "sha256": "6c7b7a53ee47d1fbedfb0b0054f595898974ce8969cc608c43b360e7af339224"
+    },
+    {
+      "path": "src/lib/ui/public-security-policy.ts",
+      "sha256": "82633da209bcac8877be20177015da1fb35cd67f870f8679796c3fb618f86735"
+    },
+    {
+      "path": "src/lib/ui/video-thumbnails.ts",
+      "sha256": "7154a65d527f0b7e3c47b53b73c40a2dc29bdaca24fa954bea29968b29a0639a"
+    },
+    {
+      "path": "src/lib/video/availability.ts",
+      "sha256": "65f58c8713d6c87ca54f95de5db15312adc986365b48c9b8f7c64499b6cda5b1"
+    },
+    {
+      "path": "src/lib/video/contribution-content.ts",
+      "sha256": "39a42840e7d1190f32dd21cdaea4f19511b3a280c15b4c8806864be3792a4db5"
+    },
+    {
+      "path": "src/lib/video/contribution-context.ts",
+      "sha256": "74d691e5efb711a9ebc9d7aab56b6467980b7ae55c7ce6b2cb322e39b38de730"
+    },
+    {
+      "path": "src/lib/video/contribution-limits.ts",
+      "sha256": "70385d15684d0ba836b992e4bb72064ad53c8e068e06e08056770f9f633c6c22"
+    },
+    {
+      "path": "src/lib/video/contributions.ts",
+      "sha256": "556897a0eb43bb815939af8405d3fa4b873e3a12388ce323cda9361e8a788ac5"
+    },
+    {
+      "path": "src/lib/video/facade.ts",
+      "sha256": "062afef6d2a8cbea030035ae457a8a6b32940430d8bb64a7b3b69ca8c2a67781"
+    },
+    {
+      "path": "src/lib/video/health-monitor.ts",
+      "sha256": "29e372691ccae142a3ab83f138f5e132cfe55fdb46e1159991a22e2c504b6b8e"
+    },
+    {
+      "path": "src/lib/video/play-counts.ts",
+      "sha256": "f72966d96da7e8ce8c6a94d6a4b449d67a05c6b6f6366fb5c9cf0a645b374274"
+    },
+    {
+      "path": "src/lib/video/play-guard.ts",
+      "sha256": "38ada50859034b161eaa255999822b96f9a190e8e34ea27e4b99dc4f431ddea2"
+    },
+    {
+      "path": "src/lib/video/play-rate-limit.ts",
+      "sha256": "818b1360ea4b12098768b6607a091dc351c4a67dfead36a065275d0ab1f97767"
+    },
+    {
+      "path": "src/lib/video/playback-tracking.ts",
+      "sha256": "485ca7963302e09505241f505e40f03fa7998422803aff5dc8dc73549fe17a9e"
+    },
+    {
+      "path": "src/lib/video/player-state.ts",
+      "sha256": "0acebd6bca8998ed1259d401a41012b549433f0ee1bca13b6b4e2c165c8f63b0"
+    },
+    {
+      "path": "src/lib/video/youtube-api-adapter.ts",
+      "sha256": "17d034da08e2c0f333ed08c50556cc74bd20f519f252c28c5174f53e8d67a75c"
+    },
+    {
+      "path": "src/lib/video/youtube.ts",
+      "sha256": "890be786a3381b9e5492f83f3134e63c84a9bfcc150e9d8d9bc6daa15f7f0cce"
+    },
+    {
+      "path": "src/lib/videos/body-parts.ts",
+      "sha256": "81bbf8c8b97d8e7a3790d574b86a8cc2b5424e41ef6ae5b0b9fbac0de90ed945"
+    },
+    {
+      "path": "src/lib/videos/discovery.ts",
+      "sha256": "d80cac67e5ba69ffd9acf67ece04af0c523374ab639ec0a61a5aab28b52d9588"
+    },
+    {
+      "path": "src/lib/videos/event-updates.ts",
+      "sha256": "35acc535474d876814bf319a65ee69849e848395c69ff6e66d080f0f0c9ed051"
+    },
+    {
+      "path": "src/lib/videos/expansion.ts",
+      "sha256": "4d89cdaa3bc0c7740a2dec2e32fef9611ffde0aea5097e0ac3864fe81e751fee"
+    },
+    {
+      "path": "src/lib/videos/observation-card.ts",
+      "sha256": "e92357929cf4c8217f0a8e81d17e9febdf2c7979b4f95a3f3932f0b6a67acb8f"
+    },
+    {
+      "path": "src/lib/videos/observation-guidance.ts",
+      "sha256": "5fc19580496152911db146902f7cafd039480ae52d7c2e3fffe706b54b71b318"
+    },
+    {
+      "path": "src/lib/videos/public-video-ids.ts",
+      "sha256": "edc2c0234142b32baab83424cbbf5a82b2cbaef25d259b64acea26cb66815e69"
+    },
+    {
+      "path": "src/lib/videos/sports.ts",
+      "sha256": "b11fec2cfff533ae5bb7fb0ac36240c9c2f368dad244c123260c7cd16f9f4d9d"
+    },
+    {
+      "path": "src/pages/404.astro",
+      "sha256": "3b1440ab93590120a3fe195d6da5b3c01066985a3e7c72febf254f2a0073c7c6"
+    },
+    {
+      "path": "src/pages/about.astro",
+      "sha256": "ee91ba7d6afc61622d3d2f61a0b3716fcc344a846ca6dd815f74c63ae1a64308"
+    },
+    {
+      "path": "src/pages/body-parts/[part].astro",
+      "sha256": "e4bb2f8c3437e7d6f0604c1f6af943a13fdb867d4f62480525c4ffdf807b59d5"
+    },
+    {
+      "path": "src/pages/case-index/[injury]/[page].json.ts",
+      "sha256": "4b2d3067a876494e495694f2227398a7d2dea44c7ae65681edeb2d5de20bef88"
+    },
+    {
+      "path": "src/pages/case-index/manifest.json.ts",
+      "sha256": "a44801aa1dcbbd176af137b818f57f0638ded0e637ea65b5e405e3a499cce714"
+    },
+    {
+      "path": "src/pages/cases/[slug].astro",
+      "sha256": "7530a9422ae5f44b69991cdcc389b1bd0f3c856ee9c0688c7a6349112a462f4c"
+    },
+    {
+      "path": "src/pages/contribute.astro",
+      "sha256": "7942b9875a044d6782df767243ffa84d20484add0754c9307b16b6dba2e94cc1"
+    },
+    {
+      "path": "src/pages/credits-notices.astro",
+      "sha256": "a39dc622ec2082fef2989f90c21550bde2512bb8adea2494b761ea5b63e2bdc8"
+    },
+    {
+      "path": "src/pages/favicon.ico.ts",
+      "sha256": "f9c9318bd4222614ed7a8237a677e6949983176f106df00de118caff1c1123e6"
+    },
+    {
+      "path": "src/pages/favicon.svg.ts",
+      "sha256": "fb4729ce150213a0ff12e993f928230a5cdab2e67dd3a38ce491f70a7cfd3a72"
+    },
+    {
+      "path": "src/pages/index.astro",
+      "sha256": "a75e46bf82f59f94c5997e2413fd5654df896e5b18cfe0b997440e3e356eb261"
+    },
+    {
+      "path": "src/pages/injuries/[injury].astro",
+      "sha256": "9a66459b13bea95c32244911499c9849a29ddf517bbb71aab9d18fcc4ce4a487"
+    },
+    {
+      "path": "src/pages/injuries/[injury]/page/[page].astro",
+      "sha256": "fddbeb91e4658d4b1f41518fc92386da1678cf44059c72ebd514ab6580802275"
+    },
+    {
+      "path": "src/pages/leagues/[league].astro",
+      "sha256": "1046bbb3ad3b09fffb9bba9ee95ef46a671b301ed455ec08927e75bb16dbf7e0"
+    },
+    {
+      "path": "src/pages/leagues/[league]/page/[page].astro",
+      "sha256": "9b4b557b3592d430fa133687a8a9b12092d61137486aafdfc6a94780d889fb5a"
+    },
+    {
+      "path": "src/pages/preferences-init.js.ts",
+      "sha256": "b1ec27357b6f29603afb3fce6dec38d215b9e5c51d8bd720b67f3ad5bf27ddea"
+    },
+    {
+      "path": "src/pages/privacy.astro",
+      "sha256": "2d947cfa5156b522882381106f4d74a885c0cb245e860ebaa9d4847676b790ea"
+    },
+    {
+      "path": "src/pages/review/[artifact].json.ts",
+      "sha256": "20e16effdb49d8ddc136b0831f5bbdd55a9d895feee4d5932d650b17026f1ece"
+    },
+    {
+      "path": "src/pages/review/[lab].astro",
+      "sha256": "b8377ccfa9bb2cd1295d58aa7f567097124cf45966d116e88b73b0846fc03ade"
+    },
+    {
+      "path": "src/pages/review/fixtures/[fixture].astro",
+      "sha256": "5f3ae8e6f0cc742d3146c8aa2286c9af09c66fd9774e60a2e27c005341d76c14"
+    },
+    {
+      "path": "src/pages/robots.txt.ts",
+      "sha256": "9a3318d2e1583fef83fd1ec38faa18d64b7f5b1c9e8e07440e822bbc109b83bb"
+    },
+    {
+      "path": "src/pages/situations/[situation].astro",
+      "sha256": "438710a917944d1d02ca0765c392072ed3bb9718887a42f2df4ec24d24757e4b"
+    },
+    {
+      "path": "src/pages/source-policy.astro",
+      "sha256": "40604fcc0a348a77504410b92f70cd8812e8ac40c31b0f0cd180dc9524c918de"
+    },
+    {
+      "path": "src/pages/sports/[sport].astro",
+      "sha256": "af7516f10011a16a8a72b9fe8241c3e9f67f0625ff9408fae97a48bfddfe4ebd"
+    },
+    {
+      "path": "src/pages/updates/[quarter].astro",
+      "sha256": "4af279c9a90055951bab0847bac40ab93f225a3719557946b14eeb676a10552a"
+    },
+    {
+      "path": "src/pages/videos/[slug].astro",
+      "sha256": "c943bb6f77de7082662e2e04bb2882dfeb4b5c460cb1c4f804d28ff6583d1c17"
+    },
+    {
+      "path": "src/routes/public-sitemap.ts",
+      "sha256": "763215795f424ea34e524381cfd1b19e0191063091459abc39f514a3d1972ca6"
+    },
+    {
+      "path": "src/scripts/case-filters.ts",
+      "sha256": "d07458aea2a8b19f3531e5908b1c6cb205297464e8b2e2885e80ab337f6ca395"
+    },
+    {
+      "path": "src/scripts/contributions.ts",
+      "sha256": "3f7da186df72f5c03b44fd20fe962be787add4cc402361538d17f19474862d05"
+    },
+    {
+      "path": "src/scripts/home-categories.ts",
+      "sha256": "9aa3d670049b8c2a35ef9c1b99b108e26975fcace4afc6d780c4b3d83b956b08"
+    },
+    {
+      "path": "src/scripts/preferences.ts",
+      "sha256": "bd0fbaec6b8a5e5613ffeb969ab4cbd8440d3841f6bd36311ad2b1daaf9caab2"
+    },
+    {
+      "path": "src/scripts/video-discovery.ts",
+      "sha256": "1821c24f0795d38cb7329924647e3fc371e2eb934b372aba9e2ee02865fde4ce"
+    },
+    {
+      "path": "src/scripts/video-player.ts",
+      "sha256": "04c1bc354c7b0d077af98190bdb3a81a6c2ba46f3a7aefc76da8c73dd7487573"
+    },
+    {
+      "path": "src/styles/components.css",
+      "sha256": "ecddd9fd5227f17a77b8a6f0871709b020ebaf88fb626ca6a102c3ec897cf647"
+    },
+    {
+      "path": "src/styles/global.css",
+      "sha256": "2f16e4a62d7b5150bc7a149bde8ec1eaf3badf5928fbcf30f0fa7bb2be9dba64"
+    },
+    {
+      "path": "src/styles/layout.css",
+      "sha256": "72cb8882023a44b08bd4ffee23003bab6d08e05696120a5f24d59000d1fcbd28"
+    },
+    {
+      "path": "src/styles/tokens.css",
+      "sha256": "1d5326289c227a37644b204a39bfda69eb82dbbd80928a9f3b8f49539a2bcc5a"
+    },
+    {
+      "path": "tests/fixtures/cases/valid-approved-classic.json",
+      "sha256": "6a60e58b98dd542ef2c1ad1e51def5bf76a4cc1456d4af47a84e82343e860a2c"
+    },
+    {
+      "path": "tests/fixtures/cases/valid-medical-review.json",
+      "sha256": "49119f87bfe6aa5989544a518526f41f2db524c83e13e1c6a8610049eb8925aa"
+    },
+    {
+      "path": "tests/fixtures/injuries/valid-medical-review.json",
+      "sha256": "99274a63c1f930f23816e65a8a658636e072cacadfdc121801e52e5c98943088"
+    },
+    {
+      "path": "tests/fixtures/research/invalid-candidates.csv",
+      "sha256": "5f611b02781c425a34ddbf48e6a4138a0aa926fbae7bfc2f62a24941c0c889cd"
+    },
+    {
+      "path": "tests/fixtures/research/reviews/source-batches/FICTIONAL-SOURCE-2026-08-06-001-source-review-decision.v1.json",
+      "sha256": "7277a541c96d459ca87f7976d8cc852ef3faf2634968321e2518edda0d454446"
+    },
+    {
+      "path": "tests/fixtures/research/source-manifest-registry.v1.json",
+      "sha256": "7a8862f18d4508134e5398274889eaada03efa9057dab4b572dab5d8e9f8e45a"
+    },
+    {
+      "path": "tests/fixtures/research/source-manifests/FICTIONAL-SOURCE-2026-08-06-001.v1.json",
+      "sha256": "5453cce03c2669af706873fa6e0e860208e75ac8cd9461ed1748057f12db6434"
+    },
+    {
+      "path": "tests/fixtures/research/valid-candidates.csv",
+      "sha256": "f4197148ea3a4097756608da21d1b6a1d56ff4c1805a74927abdeae665b55cf7"
+    },
+    {
+      "path": "tests/fixtures/rtp/course-link-decision.valid.json",
+      "sha256": "329f5ecd97b60568ff858d7e45b9b32ed96c1c9c8e000d24cb5f76285cd81ea5"
+    },
+    {
+      "path": "tests/fixtures/rtp/rtp-catalog.valid.json",
+      "sha256": "e0ce4af050c407c20d6c9f619ddf2fa7115c118c9c15ad73560e6394dc7a9277"
+    },
+    {
+      "path": "tests/fixtures/rtp/rtp-catalog.valid.manifest.json",
+      "sha256": "31abe19fdbf84bb5e4b17f60adabbbcdc1f79f350a92ed1bfbc9d56fd13b6fb5"
+    },
+    {
+      "path": "tests/fixtures/updates/valid-baseline.json",
+      "sha256": "6db1ad8a7d2675578db1da4ec11cca5f3f3e5c5f61524074f9e3d91d612ab5b0"
+    },
+    {
+      "path": "tests/unit/artifact-manifest.test.ts",
+      "sha256": "ba836b80efb596b619d7f9b471f756ebabcf8da4284740eb000f8b24a9520bfc"
+    },
+    {
+      "path": "tests/unit/brand-assets.test.ts",
+      "sha256": "b0d04aea995b10a5d877f4d594c458e5d9f84c97eb8073e8302d784f044d6ab0"
+    },
+    {
+      "path": "tests/unit/case-authoring-coverage.test.ts",
+      "sha256": "52a419c2a2ffb731a6bc7c202d75ccc7a68cfcff73faa50d05249f6a4c7b055f"
+    },
+    {
+      "path": "tests/unit/case-cross-validation.test.ts",
+      "sha256": "baee58e56d5105a12faa1cd62968967e3994cb7889f09e88d93aaba4ed2c0021"
+    },
+    {
+      "path": "tests/unit/case-digest.test.ts",
+      "sha256": "f7fb63d6d6cc83aa6fc8d2f95e8cf739fefe15b4fac2eaad297167fb5d946eb2"
+    },
+    {
+      "path": "tests/unit/case-follow-up-research-v2.test.ts",
+      "sha256": "f56be5371cca9453ec53eb7ca48c131419d77596274ca37e018836ff7a300d4f"
+    },
+    {
+      "path": "tests/unit/case-follow-up.test.ts",
+      "sha256": "9237f0c0dd4039b0fdc6e5e4078dd88a275beafc2e536979a9735c5ebc7d6198"
+    },
+    {
+      "path": "tests/unit/case-schema.test.ts",
+      "sha256": "89d3c063bdfa67b012f253bb3dce5d3e853788b19e4bb6e0a77e12a8cf232801"
+    },
+    {
+      "path": "tests/unit/case-selectors.test.ts",
+      "sha256": "dae42ad412817a95c50182fedae23d0d43927763401770c5c8a3afc9a6a072af"
+    },
+    {
+      "path": "tests/unit/color-contrast.test.ts",
+      "sha256": "d4e80547b494f00ef0802f8781a55f771f8d9b0a0337ecab52c1a188ae15a775"
+    },
+    {
+      "path": "tests/unit/contribution-limits.test.ts",
+      "sha256": "f0e89a4c2b2cd8e8de4d07c4d17a5c382c5c7f3f4a33e8afc8d30050dc4d18d7"
+    },
+    {
+      "path": "tests/unit/contributions.test.ts",
+      "sha256": "c44e2692e718281f3127fc1514cc654e3d9424e25f837978121840b8480c3de1"
+    },
+    {
+      "path": "tests/unit/course-links.test.ts",
+      "sha256": "2ca47ccbda2236da15c3c67e9b727b8c0e92ec5685e2fe6a21aa4c02e9b99298"
+    },
+    {
+      "path": "tests/unit/decision-14-photo-contract.test.ts",
+      "sha256": "c4e0a1c84125b368052d6105165cd86ca6432004492f62c11a8e279e967674ba"
+    },
+    {
+      "path": "tests/unit/decision-15-photo-contract.test.ts",
+      "sha256": "551fbdcf4d2b80d8a8114407b0a45a6bc0705c55a53a1da817c0bd613f694afc"
+    },
+    {
+      "path": "tests/unit/decision-16-rendition-contract.test.ts",
+      "sha256": "cb24272859a1e927026b4628a98b27e67d848af29cfd911c218fdb5342b96b7d"
+    },
+    {
+      "path": "tests/unit/decision-17-follow-up-corpus.test.ts",
+      "sha256": "57f1b777fbec15dde52e53af416e05f60d4f770313370aedd0eb22b5139c184f"
+    },
+    {
+      "path": "tests/unit/decision-17-regression-contract.test.ts",
+      "sha256": "19525ccfed2887793e03fc3d59939d6a1a1397f827c765ebe22ed33921b5c586"
+    },
+    {
+      "path": "tests/unit/decision-18-follow-up-batch-cli.test.ts",
+      "sha256": "8eb765f9e23011cf0e968d43d35741e92983cce672d99c0d6908572c19e0da7b"
+    },
+    {
+      "path": "tests/unit/decision-18-follow-up-batch-contract.test.ts",
+      "sha256": "fe2fecfd12eeb5c98baca0ec50e3a6b25384020fc37b5c89519f2783fa9ed615"
+    },
+    {
+      "path": "tests/unit/decision-18-regression-contract.test.ts",
+      "sha256": "9656285f8e39ec23c7a5f0ca26e6ac8839717fa39d87d8d9f23b6350831222d7"
+    },
+    {
+      "path": "tests/unit/decision-18-transitional-consumers.test.ts",
+      "sha256": "3abbe61c57c38e83f608706f76999ad7635a69f3ab410cde237f5c00b3ce9dca"
+    },
+    {
+      "path": "tests/unit/decision-18-transitional-follow-up-loader.test.ts",
+      "sha256": "00e2ae6816038d2c4f55e1e8d248a71401b68de5de25940939921468c3a37f2f"
+    },
+    {
+      "path": "tests/unit/decision-39-favicon.test.ts",
+      "sha256": "404279409c7cf0b7209bc5778b6f59323d28512267d9124bce94d2cf31530065"
+    },
+    {
+      "path": "tests/unit/decision-39-observation-discovery.test.ts",
+      "sha256": "31ea62082c0bb79c8b1527750e6d325874604174ab71c9c69f28f1eb98a108e0"
+    },
+    {
+      "path": "tests/unit/decision-39-security-policy.test.ts",
+      "sha256": "0cbc2b36f6e5025f2eb7b7a92d9a1699efa3a2607e54067dabb5312d74c89bf2"
+    },
+    {
+      "path": "tests/unit/decision-39-sitemap.test.ts",
+      "sha256": "35690563af74c53a9c84245c330ee874a2c7074de5864518c29ca378de83faae"
+    },
+    {
+      "path": "tests/unit/decision-39-ux.test.ts",
+      "sha256": "7735fef7837c3609565762ce781e219479359b5863af94afd7712360e00e0fbf"
+    },
+    {
+      "path": "tests/unit/decision11-channel-attribution.test.ts",
+      "sha256": "5ded585c8912587097a8b5d52e43757e907e74bdde2cb6d42a1ed60b9e6df2c1"
+    },
+    {
+      "path": "tests/unit/editorial-images.test.ts",
+      "sha256": "feed05766fff3c68600afbc130f793fea398b80bca7445e6e5eb0aca9110d431"
+    },
+    {
+      "path": "tests/unit/event-updates.test.ts",
+      "sha256": "9c55a8416cc52b2d5376942a4b9de1880cf414a5a7f1a7aa064ede9d0a945b41"
+    },
+    {
+      "path": "tests/unit/external-verification.test.ts",
+      "sha256": "6d8e99ce59edad5e26c1fe2f9db553f682205959251d8213361965ce08fe7560"
+    },
+    {
+      "path": "tests/unit/filtering.test.ts",
+      "sha256": "e6d634b5b6c90d20fccb22136f126599c65578f0b6503108ee1b689bd7e2993e"
+    },
+    {
+      "path": "tests/unit/follow-up-approval-ledger.test.ts",
+      "sha256": "3738201d6dc03e7c471820df48a1149c1baf69cac5e9ca4170d7e439f6ffdbe3"
+    },
+    {
+      "path": "tests/unit/follow-up-presentation.test.ts",
+      "sha256": "5b6545bfba7de30fea9e40246a4b0fd091981fcefdc48ef859ff921a60b0df97"
+    },
+    {
+      "path": "tests/unit/generate-decision-18-follow-up-batch-receipt.test.ts",
+      "sha256": "f6fb0fd9f1806a698185d867321458fa7bef8678f393ebb119382c1f5112235e"
+    },
+    {
+      "path": "tests/unit/generate-decision-18-follow-up-cases.test.ts",
+      "sha256": "330704854a441cb4b031d4454b4c7c3a1778f1b5f251a222a3dcbbc1255fa88c"
+    },
+    {
+      "path": "tests/unit/indexing-policy.test.ts",
+      "sha256": "61a31cfd4484bcb47911470ac411832d904819a313f37f17d497c2dbcf85c463"
+    },
+    {
+      "path": "tests/unit/injury-overview-digest.test.ts",
+      "sha256": "0f42407fb1a6963a848bf02cc95af88abe4fe71479237b320eaec76ac1662a20"
+    },
+    {
+      "path": "tests/unit/injury-overview-schema.test.ts",
+      "sha256": "965e1243abe5c827f95ff63aac830bb8714f5253f1af696b45311e46e7b549df"
+    },
+    {
+      "path": "tests/unit/medical-notice.test.ts",
+      "sha256": "781575b64e7b943f4fc99c499ebc0dce0dbf262285d8c298220245879ada14a7"
+    },
+    {
+      "path": "tests/unit/nba-embed-batch2-content-correction.test.ts",
+      "sha256": "464fc3c30e6a303eb5f08e73b879c45e7587082542ede4383fb10cff92055a60"
+    },
+    {
+      "path": "tests/unit/nba-link-policy.test.ts",
+      "sha256": "7a5a0a466766265b88cfe7f64946748f28ada2e9721396ffa3b8c59a6380436e"
+    },
+    {
+      "path": "tests/unit/pagination.test.ts",
+      "sha256": "0e7b27561760cc177fecdd16cc867290c519f694af8bfd0726ff3e01a11739fd"
+    },
+    {
+      "path": "tests/unit/patient-experience.test.ts",
+      "sha256": "4e06c152f89a37914b057dd6750a308901f381ab8303e8b0eb159f4f34a28b77"
+    },
+    {
+      "path": "tests/unit/photo-credits.test.ts",
+      "sha256": "5aafc4683e8bd2deaa7a1fb20d0b0d22721c5aadfb03b509f6768607da16d0a0"
+    },
+    {
+      "path": "tests/unit/plan-binding.test.ts",
+      "sha256": "4875fd1c64566d93f807da790a018e60fdc25609661de1fb176e46c736ef98ce"
+    },
+    {
+      "path": "tests/unit/play-counts.test.ts",
+      "sha256": "1f106041fd87471dbbbc62efaf4d8600b60a62fdfcf04a4dbf932b595e501392"
+    },
+    {
+      "path": "tests/unit/player-photo-assets.test.ts",
+      "sha256": "235ec7feecb7477630326147d54ae0cff4cc14adf62d7bcdd10874643daf7597"
+    },
+    {
+      "path": "tests/unit/player-photo-registry-v4-contract.test.ts",
+      "sha256": "1af82679ac511c8907c04e81d8435facd80e2bfa580fb744e855d11afe00e6c5"
+    },
+    {
+      "path": "tests/unit/player-photo-registry-v5-contract.test.ts",
+      "sha256": "94e9d3b967bbdd8642f90ee1def786657e458ff0103dece953ace795260b2f17"
+    },
+    {
+      "path": "tests/unit/player-photo-registry-v6-contract.test.ts",
+      "sha256": "70f04215e938c8d76f1f66c4f4770ec2395d41eeb5946778415244060eabe5ac"
+    },
+    {
+      "path": "tests/unit/player-photo-registry-v7-contract.test.ts",
+      "sha256": "6442aa77b496f87ffec242a0834575f0f9340deb0aa07570f6ff5dca202717e7"
+    },
+    {
+      "path": "tests/unit/player-photo-registry-v8-contract.test.ts",
+      "sha256": "0a3cbcb823ff3e58bdc8a38748e41f54bf0adfe04de01f06f690e6a300c3f600"
+    },
+    {
+      "path": "tests/unit/private-auth-server.test.ts",
+      "sha256": "cc0b6c64e7f606360f2c1de96c57f80f8c38dce57637308849b3fc0d3e5298a5"
+    },
+    {
+      "path": "tests/unit/private-dist-manifest.test.ts",
+      "sha256": "95b24928e167812f74676acc93ae6ae4e88ffaf6d6f31e5c9cb1e76d1b347c97"
+    },
+    {
+      "path": "tests/unit/private-host-operations.test.ts",
+      "sha256": "7b078c33ccffe321efc28d9998a156e825498e337a5f2eb3ca01815b24a93c12"
+    },
+    {
+      "path": "tests/unit/private-host-verifier.test.ts",
+      "sha256": "cf980dd38563faaffad9f1278461a1c8a9120cd55430192348e81db6678659ec"
+    },
+    {
+      "path": "tests/unit/public-launch.test.ts",
+      "sha256": "f0177053f2518004a1ce0ea110c147c63b8cb2ed3f151fdee49c1f4c99fcfa63"
+    },
+    {
+      "path": "tests/unit/public-video-health.test.ts",
+      "sha256": "b8f40ceb712f5b51fc1bbe607c12c59bff156ff309d240b147b1c70fbf173504"
+    },
+    {
+      "path": "tests/unit/real-content-authoring.test.ts",
+      "sha256": "03fe45dfc01dca72cd7583053c7d12e4f39617a5108093d397d57bfea816436b"
+    },
+    {
+      "path": "tests/unit/recent-120.test.ts",
+      "sha256": "98e911ddc6c2fa0cb196ebd7777c585308156a538c972cea2e11b41cf176db48"
+    },
+    {
+      "path": "tests/unit/recent-150.test.ts",
+      "sha256": "067e52e745e79549bd390ce63d3dea2b486282c61398fd5055439a20ed301d58"
+    },
+    {
+      "path": "tests/unit/release-gate.test.ts",
+      "sha256": "97f895460e4f150bfe3fa128881a77734559e4ea04dabd0807ba8673696f0dfa"
+    },
+    {
+      "path": "tests/unit/release-history-schema.test.ts",
+      "sha256": "8637ff4c4048bef4e4a941b5ad14a8dd09bc278ef7598c9d86afb9511642e148"
+    },
+    {
+      "path": "tests/unit/release-transition.test.ts",
+      "sha256": "af826574520f696e033561292444507128df2f10f541321cb5b7a2f0563e5d0c"
+    },
+    {
+      "path": "tests/unit/research-candidates.test.ts",
+      "sha256": "b27bd8984ea2a682c9536ffb7c2d53dc714c7b137ba25b4157f3203f9438f882"
+    },
+    {
+      "path": "tests/unit/research-embed-batch2-correction.test.ts",
+      "sha256": "ec318eca9e0c0e4e764a466351e5c2d5d5c8f3671b03092d9122e7843c9ba25f"
+    },
+    {
+      "path": "tests/unit/research-link-verification.test.ts",
+      "sha256": "45bcdd6000ac691e4ae57b82aa385de700890ecf1752b9632651ce976c36cbc4"
+    },
+    {
+      "path": "tests/unit/research-manifest-transaction.test.ts",
+      "sha256": "f468eafa1a3bfabe0a9e7614f912e288ef927ac7ae1fd6747366f8c446dd834a"
+    },
+    {
+      "path": "tests/unit/research-manifest.test.ts",
+      "sha256": "f918c83f87d8539be656ca8b5025c2e26d65129e91c93bd6ccfccc84cfe9d6ea"
+    },
+    {
+      "path": "tests/unit/research-source-policy.test.ts",
+      "sha256": "3666c23355695be000b9f9a9188b3359d0b8e816b2e6b9729b30fbe3ded01611"
+    },
+    {
+      "path": "tests/unit/review-artifact-citations.test.ts",
+      "sha256": "7bf6b25a83cc228e3e8573264d2c9997a92ca59bfd83c542f1b7018a84cacba0"
+    },
+    {
+      "path": "tests/unit/review-artifact-size-guard.test.ts",
+      "sha256": "781e319b4d47446d661e241db4dfb15628647ebcced1ad39bba7a7ad1e42bd92"
+    },
+    {
+      "path": "tests/unit/review-digest-disclosure.test.ts",
+      "sha256": "bc8f8987882fcaed7d55d0d6a60bc1fb55b13e2b15a4e956cb69a5328f20bb9b"
+    },
+    {
+      "path": "tests/unit/review-fixture-routes.test.ts",
+      "sha256": "681d47991da1cf0e4671096999bf4aa163c4afd55a2c87dd28d287987b11eadc"
+    },
+    {
+      "path": "tests/unit/review-set-v2.test.ts",
+      "sha256": "60de4a9b8cf144a5c62b05bc6fd47cc7f16c3be2848892893212a7959e0d50ab"
+    },
+    {
+      "path": "tests/unit/review-set.test.ts",
+      "sha256": "2ed790022decf4802f1cf62b1de7cccfd5b582e010636c0f249f504f0644cf8d"
+    },
+    {
+      "path": "tests/unit/routes.test.ts",
+      "sha256": "522cf2ddab0713d5c1138500b2f2fe6943240409a39dcdcc38e4400ef75ecf6b"
+    },
+    {
+      "path": "tests/unit/rtp-import.test.ts",
+      "sha256": "a9ec1fe0b38dbc896bcc52cd05d5564400252fe36296c4f0658187554655e655"
+    },
+    {
+      "path": "tests/unit/search-index.test.ts",
+      "sha256": "4363c0c0a40e58811d77dc59544aa65787ec1fd3644ea600ceefb0a7092b44a6"
+    },
+    {
+      "path": "tests/unit/site-digest.test.ts",
+      "sha256": "6698b85775e35d1e96b88437050eb606841dcfe3d6e99abddace8ae3f0e889fc"
+    },
+    {
+      "path": "tests/unit/site-share-screenshot.test.ts",
+      "sha256": "920864edc269fb06c69c61d8c08c71ef5a71e71ab52729cde710ca02583de9bb"
+    },
+    {
+      "path": "tests/unit/source-manifest-registry.test.ts",
+      "sha256": "0d3916f577fe154d5159be1d52cf85744a0619a4cf1f1a2fa9cb06fa287f61ea"
+    },
+    {
+      "path": "tests/unit/taxonomy.test.ts",
+      "sha256": "0642d5dad3ad124771e19ad71e0a5b87e0f7353694c0b9d1e6749fe540ca331a"
+    },
+    {
+      "path": "tests/unit/update-digest.test.ts",
+      "sha256": "9a796193888c8bc85e87c4e4e005b6a6451d40b1a720016b78f27e44811f445a"
+    },
+    {
+      "path": "tests/unit/update-schema.test.ts",
+      "sha256": "b7814e617be1fb3fd20c9ff0b93726bb9fb2461aa5f0a0873792ed709455271d"
+    },
+    {
+      "path": "tests/unit/video-discovery.test.ts",
+      "sha256": "a83d6b8a7cda680e242736b98f21427799315831f24c515995991e3f0babc611"
+    },
+    {
+      "path": "tests/unit/video-expansion.test.ts",
+      "sha256": "6b59fcdf3167e70e5c75bc474d37ba3b92c9b4f5d0458aed504adccbf7b4e402"
+    },
+    {
+      "path": "tests/unit/video-facade.test.ts",
+      "sha256": "e2fe79f55e176b6fe0574703ce5a6ad6738be1da2c02f9faea896be868bfc891"
+    },
+    {
+      "path": "tests/unit/video-source-filter.test.ts",
+      "sha256": "b58f4dd533fbafc5ed3ceb2952df1e843654231b5f7db405b3a61ddc3d22688d"
+    },
+    {
+      "path": "tests/unit/video-sports.test.ts",
+      "sha256": "342d5fdcc4f6136ae86cac8de76a7d458c91124864c68665ede2d23fe153cd13"
+    },
+    {
+      "path": "tests/unit/video-state.test.ts",
+      "sha256": "67abe9b15583f47c3e17053a7047270016faca6df5e91742c887e55498cbe763"
+    },
+    {
+      "path": "tests/unit/video-thumbnails.test.ts",
+      "sha256": "2202dc6a618e1518dbc8e1c1fca8ae1a18a7cfa6f3783dd245420acb6e895662"
+    },
+    {
+      "path": "tests/unit/youtube-url.test.ts",
+      "sha256": "695675b6ddef2e24c969a5717731b4042d246d3403c48f9362a699156d210852"
+    },
+    {
+      "path": "wrangler.jsonc",
+      "sha256": "c8dc6d5015d600d4ae1bf2a90e4981b919ae45dae0eaf2e72310a2af892efd2f"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "checkedAt": "2026-09-12T17:30:52.525859+00:00",
+  "inputTreeDigest": "7b54f81e8836faf0e13300b7585eb2a4bf163451f6315984df99c9f690910a97",
+  "sourceAndTestsMatchSnapshot": 724,
+  "node": "24.14.0",
+  "unit": {
+    "files": 95,
+    "passed": 1490,
+    "failed": 0
+  },
+  "astro": {
+    "errors": 0,
+    "warnings": 0,
+    "existingHints": 16
+  },
+  "content": "passed via release:public",
+  "changedSourceFormatting": {
+    "files": 27,
+    "status": "passed"
+  },
+  "build": {
+    "htmlPages": 195,
+    "clinicalCasePages": 7,
+    "observationPages": 143,
+    "publicCases": 150,
+    "localLinks": 4494
+  },
+  "nativePlayback": {
+    "newVideos": 30,
+    "passed": 30,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "proof": "playback.preview.json"
+  },
+  "layout": {
+    "pages": 150,
+    "widths": [
+      390,
+      1280
+    ],
+    "checks": 300,
+    "passed": 300,
+    "allCardFootageLabelsMatch": true
+  },
+  "endToEnd": {
+    "projects": [
+      "chrome",
+      "mobile-chrome",
+      "webkit"
+    ],
+    "passed": 36,
+    "failed": 0,
+    "skipped": 3,
+    "skipReason": "Existing review-only noindex/no-sitemap test does not apply to public output."
+  },
+  "regression": {
+    "footageLabelsOldBuild": "failed as expected",
+    "footageLabelsFixedBuild": "passed on all three projects"
+  },
+  "preflight": {
+    "dependenciesChanged": false,
+    "newEnvironmentVariables": false,
+    "migrationsChanged": false,
+    "sensitivePaths": [],
+    "credentialPatternMatches": [],
+    "remotePrivate": true
+  },
+  "clinicalApproval": false,
+  "limitations": [
+    "Source and date review uses previously stored source claims; not a new full-text clinical review of every case.",
+    "Two replacement videos reviewed with sampled frames and captions; no complete frame-by-frame clinical assessment.",
+    "WebKit automation is not a physical iOS/Safari test.",
+    "Initial suite attempts under Node 24.19.0 and sandbox socket restrictions failed; final suite used pinned Node and a clean isolated tree.",
+    "A layout run overlapped a rebuild and returned one transient 404; the final complete 300-check run used a stable artifact.",
+    "Native playback can vary over time; first attempts and retries retained.",
+    "No contribution form or email was sent."
+  ]
+}

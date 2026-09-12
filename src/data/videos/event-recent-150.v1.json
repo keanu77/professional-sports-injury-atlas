@@ -1,0 +1,2050 @@
+{
+  "schemaVersion": 1,
+  "decision": "recent-150-2026-09-13",
+  "checkedAt": "2026-09-12",
+  "entries": [
+    {
+      "slug": "hubert-hurkacz-2024-wimbledon-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=tnpULHHcX0E",
+      "eventDate": "2024-07-04",
+      "injury": "右膝半月板傷害；官方賽事報導確認後續接受半月板手術。",
+      "returnDate": "2024-08-10",
+      "returnSummary": "2024-08-10 於蒙特婁恢復 ATP 正式比賽，先擊敗 Thanasi Kokkinakis，再於同日擊敗 Arthur Rinderknech。",
+      "context": "溫布頓第四盤搶七飛撲救球後受傷，接受手術並退出巴黎奧運。",
+      "mechanism": {
+        "title": "飛撲後重新起身承重，右膝出現疼痛",
+        "summary": {
+          "text": "可觀察飛撲、落地和起身後抓膝的先後順序。後續半月板手術由官方賽事報導確認，不能只憑倒地姿勢推定撕裂形狀。",
+          "sourceIndexes": [1, 3]
+        },
+        "steps": [
+          "向前飛撲救球。",
+          "落地後準備站起，右腿重新承重。",
+          "抓住右膝倒回草地，最後退出比賽。"
+        ],
+        "explanation": {
+          "text": "半月板像膝部的緩衝墊，協助分散承重。承重同時轉身可增加負荷，但畫面無法判斷受傷發生在落地或起身哪一刻。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "此片為非官方頻道剪輯；手術方式未公開，不應把快速回場當成一般半月板手術的標準。"
+      },
+      "timeline": [
+        {
+          "date": "2024-07-04",
+          "title": "溫布頓受傷",
+          "text": "飛撲救球後抓住右膝，接受處理後仍無法完成比賽。",
+          "sourceIndexes": [3]
+        },
+        {
+          "date": "2024-07-15",
+          "title": "接受膝部手術",
+          "text": "ITF 確認手術日期；公開來源未交代此處採用哪一種半月板術式。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2024-07-22",
+          "title": "退出巴黎奧運",
+          "text": "復健持續進步，但尚未達到參賽狀態。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2024-08-10",
+          "title": "恢復 ATP 正式出賽",
+          "text": "蒙特婁回場首日贏下兩場比賽。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "National Bank Open：Hurkacz 回場首日連勝兩場",
+          "url": "https://nationalbankopen.com/en/news/read/2024/hurkacz-wins-two-matches-one-day-start-comeback",
+          "publishedAt": "2024-08-11"
+        },
+        {
+          "title": "ITF：Hurkacz 未能及時恢復參加巴黎奧運",
+          "url": "https://www.itftennis.com/en/news-and-media/articles/hurkacz-falls-short-in-race-to-be-fit-for-paris-2024/",
+          "publishedAt": "2024-07-23"
+        },
+        {
+          "title": "Tennis.com：Hurkacz 飛撲後右膝疼痛退賽",
+          "url": "https://www.tennis.com/news/articles/hubert-hurkacz-injures-knee-wimbledon-dive-retires-down-match-point-arthur-fils-sportsmanship",
+          "publishedAt": "2024-07-04"
+        },
+        {
+          "title": "AAOS：半月板撕裂",
+          "url": "https://www.orthoinfo.org/diseases--conditions/meniscus-tears/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "skye-blakely-2024-achilles",
+      "videoUrl": "https://www.youtube.com/watch?v=o2rT5OH3gWE",
+      "eventDate": "2024-06-26",
+      "injury": "右側阿基里斯腱斷裂。",
+      "returnDate": "2025-01-10",
+      "returnSummary": "2025-01-10 代表佛羅里達大學於 NCAA 賽季開幕戰參加高低槓，得到9.725分；此處為單項回場。",
+      "context": "奧運選拔賽開始前的賽台訓練受傷，後續先恢復NCAA高低槓出賽。",
+      "mechanism": {
+        "title": "地板空翻訓練受傷，之後分項重返比賽",
+        "summary": {
+          "text": "她在地板雙直體空翻訓練中受傷，後續確認右阿基里斯腱斷裂，因此退出奧運選拔；傷後先恢復NCAA高低槓出賽。",
+          "sourceIndexes": [1, 2, 3]
+        },
+        "steps": [
+          "報導指出她正進行地板雙直體空翻訓練。",
+          "訓練中出現傷勢，停止練習。",
+          "檢查確認右阿基里斯腱斷裂，退出選拔。"
+        ],
+        "explanation": {
+          "text": "阿基里斯腱連接小腿肌肉與腳跟，協助蹬地及起跳；肌腱受傷後，各單項承受的負荷不同。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "此片為新聞剪輯，沒有可辨認的受傷瞬間。不能判定斷裂發生於起跳或落地；回場日期只指NCAA高低槓。"
+      },
+      "timeline": [
+        {
+          "date": "2024-06-26",
+          "title": "賽台訓練受傷",
+          "text": "練習地板動作時受傷，被工作人員協助離場。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-06-27",
+          "title": "確認退出奧運選拔",
+          "text": "USA Gymnastics 表示右阿基里斯腱傷勢使她無法出賽。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2025-01-10",
+          "title": "NCAA 高低槓回場",
+          "text": "完成高低槓項目，這不代表已恢復地板、跳馬及全能競賽。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "Florida Gators：Blakely 傷後首次大學體操出賽",
+          "url": "https://floridagators.com/news/2025/1/10/gymnastics-determined-debut-gators-freshman-blakely-pushed-herself-to-get-back-before-many-thought-possible",
+          "publishedAt": "2025-01-10"
+        },
+        {
+          "title": "Inside Gymnastics：Blakely 因阿基里斯腱傷勢退出選拔",
+          "url": "https://www.insidegymnastics.com/news-features/skye-blakelys-journey-to-paris-ends-with-heartbreaking-injury/",
+          "publishedAt": "2024-06-27"
+        },
+        {
+          "title": "Gymnastics Memories：Blakely 受傷新聞剪輯",
+          "url": "https://www.youtube.com/watch?v=o2rT5OH3gWE",
+          "publishedAt": "2024-06-27"
+        },
+        {
+          "title": "AAOS：阿基里斯腱的構造與功能",
+          "url": "https://www.orthoinfo.org/diseases--conditions/achilles-tendinitis/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "marketa-vondrousova-2024-berlin-hip",
+      "videoUrl": "https://www.youtube.com/watch?v=OxBEhPSt2ew",
+      "eventDate": "2024-06-20",
+      "injury": "右髖部傷害；公開來源未確認特定受傷組織或撕裂程度。",
+      "returnDate": "2024-07-02",
+      "returnSummary": "2024-07-02 於溫布頓首輪正式出賽，兩盤不敵 Jessica Bouzas Maneiro。",
+      "context": "2023年溫布頓冠軍在衛冕前的草地熱身賽受傷。",
+      "mechanism": {
+        "title": "滑倒後右髖疼痛，處理後仍無法完成比賽",
+        "summary": {
+          "text": "報導記錄她在底線後滑倒，右髖不適，包紮後嘗試續賽。此片從處理與續賽開始，並未清楚呈現最初滑倒。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "底線移動時滑倒，右髖出現不適。",
+          "接受醫療暫停並包紮上大腿。",
+          "嘗試續賽後退出比賽。"
+        ],
+        "explanation": {
+          "text": "髖周圍肌肉協助移動與穩定骨盆。滑倒可能突然改變承重與拉伸負荷，但無法由外觀知道是肌肉、肌腱或其他組織受傷。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "片段主要是受傷後處理與續賽；未呈現清楚的滑倒瞬間。未公開MRI診斷，不稱為特定肌腱或盂唇撕裂。"
+      },
+      "timeline": [
+        {
+          "date": "2024-06-20",
+          "title": "柏林滑倒退賽",
+          "text": "右髖疼痛，包紮後再打兩局仍退賽。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-06-30",
+          "title": "表示準備參賽",
+          "text": "已在溫布頓練球；此時仍是賽前準備。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2024-07-02",
+          "title": "恢復正式比賽",
+          "text": "完成溫布頓首輪，兩盤落敗。",
+          "sourceIndexes": [3]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "AP／Tennis.com：Vondrousova 柏林滑倒後退賽",
+          "url": "https://www.tennis.com/news/articles/wimbledon-champion-vondrousova-retires-from-berlin-match-because-of-injury",
+          "publishedAt": "2024-06-20"
+        },
+        {
+          "title": "WTA：Vondrousova 表示狀態良好，準備溫布頓衛冕",
+          "url": "https://www.wtatennis.com/news/4047578/vondrousova-feeling-good-while-preparing-for-wimbledon-title-defense",
+          "publishedAt": "2024-06-30"
+        },
+        {
+          "title": "WTA：Bouzas Maneiro 擊敗衛冕冠軍",
+          "url": "https://www.wtatennis.com/news/4048888/bouzas-maneiro-shocks-defending-champion-vondrousova-at-wimbledon",
+          "publishedAt": "2024-07-02"
+        },
+        {
+          "title": "AAOS：髖部肌肉與肌腱的功能及拉傷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/hip-strains",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "shilese-jones-2024-trials-acl",
+      "videoUrl": "https://www.youtube.com/watch?v=zvgsEswg8KA",
+      "eventDate": "2024-06-28",
+      "injury": "左膝前十字韌帶及半月板撕裂。",
+      "returnDate": null,
+      "returnSummary": "本次來源未確認傷後正式回場日；2026-08-09 仍在準備復出。",
+      "context": "世界全能獎牌選手於選拔首日熱身受傷，未能參加巴黎奧運。",
+      "mechanism": {
+        "title": "跳馬熱身落地受傷，當日仍完成高低槓",
+        "summary": {
+          "text": "轉播回放可見跳馬落地及後續需要協助移動。後來仍能完成高低槓，並不能否定檢查確認的膝部傷害。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "跑動上板並完成跳馬動作。",
+          "落地後膝部不適，步態和承重改變。",
+          "接受協助與處理，當日只完成高低槓。"
+        ],
+        "explanation": {
+          "text": "ACL 協助控制小腿相對大腿的前後與旋轉穩定；落地需要膝部協調承重。是否合併半月板傷害需靠臨床檢查，不能從畫面直接下診斷。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "影片為2026年上傳的2024事件剪輯；當日高低槓不是傷後康復回場。訓練進展也不等於恢復正式競賽。"
+      },
+      "timeline": [
+        {
+          "date": "2024-06-28",
+          "title": "跳馬熱身落地受傷",
+          "text": "之後仍完成高低槓，不能因能完成單項就判斷膝蓋沒有嚴重傷害。",
+          "sourceIndexes": [1, 3]
+        },
+        {
+          "date": "2024-06-29",
+          "title": "退出餘下選拔",
+          "text": "退出比賽與該次奧運選拔。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-07-29",
+          "title": "公開確診傷勢",
+          "text": "本人公開左膝ACL及半月板撕裂，目標轉向2028。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2026-08-09",
+          "title": "仍準備復出",
+          "text": "尚未確認正式回場。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "AP：Jones 公開左膝ACL及半月板傷勢，目標2028奧運",
+          "url": "https://www.ksl.com/article/sports/olympics/american-gymnast-shilese-jones-pointing-toward-2028-olympics-following-knee-injury-at-us-trials/51083201",
+          "publishedAt": "2024-07-30"
+        },
+        {
+          "title": "NBC Sports：Jones 持續準備重返體操",
+          "url": "https://www.nbcsports.com/olympics/news/shilese-jones-gymnastics-comeback",
+          "publishedAt": "2026-08-09"
+        },
+        {
+          "title": "Emily：Shilese Jones 選拔賽傷勢及高低槓轉播片段",
+          "url": "https://www.youtube.com/watch?v=zvgsEswg8KA",
+          "publishedAt": "2026-07-12"
+        },
+        {
+          "title": "AAOS：前十字韌帶傷害",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "carlos-alcaraz-2024-rio-ankle",
+      "videoUrl": "https://www.youtube.com/watch?v=3SueGOiUU_A",
+      "eventDate": "2024-02-20",
+      "injury": "右踝外側第二級扭傷；本人轉述MRI及醫療團隊評估。",
+      "returnDate": "2024-03-08",
+      "returnSummary": "2024-03-08 於印地安泉正式賽首戰擊敗 Matteo Arnaldi；與先前安排的拉斯維加斯表演賽分開計算。",
+      "context": "在賽事一開始發生踝傷，沒有完成首輪比賽。",
+      "mechanism": {
+        "title": "移動接球時右踝翻轉，隨即倒地",
+        "summary": {
+          "text": "官方重播可見他移動接球時右腳支撐改變，踝部翻轉後跌倒。診斷分級來自隔日公開的醫療評估。",
+          "sourceIndexes": [1, 3]
+        },
+        "steps": [
+          "為了回球向側方移動。",
+          "右腳落地支撐時，腳踝突然翻轉。",
+          "倒地接受處理，短暫續賽後退出。"
+        ],
+        "explanation": {
+          "text": "腳踝外側韌帶幫助維持穩定。腳向內翻時，外側韌帶可能被拉長；實際損傷程度仍需檢查。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "影片無法量測韌帶撕裂程度。表演賽、正式賽回場和恢復原本競技狀態是不同里程碑。"
+      },
+      "timeline": [
+        {
+          "date": "2024-02-20",
+          "title": "開賽第二分扭傷",
+          "text": "右踝翻轉倒地，嘗試續賽後在1-1退賽。",
+          "sourceIndexes": [1, 3]
+        },
+        {
+          "date": "2024-02-21",
+          "title": "公開MRI後評估",
+          "text": "本人表示醫療團隊診斷為第二級外側扭傷。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-03-08",
+          "title": "正式賽回場",
+          "text": "印地安泉三盤擊敗Arnaldi；仍需逐步找回比賽節奏。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "Tennis.com：Alcaraz 公開MRI後的踝扭傷評估",
+          "url": "https://www.tennis.com/news/articles/carlos-alcaraz-shares-positive-update-after-ankle-sprain-injury-in-rio-see-you-in-indian-wells",
+          "publishedAt": "2024-02-21"
+        },
+        {
+          "title": "BNP Paribas Open：Alcaraz 3月8日賽後記者會",
+          "url": "https://bnpparibasopen.com/news/carlos-alcaraz-march-8-2024",
+          "publishedAt": "2024-03-08"
+        },
+        {
+          "title": "Tennis TV：Alcaraz 里約踝傷與賽後訪問",
+          "url": "https://www.youtube.com/watch?v=3SueGOiUU_A",
+          "publishedAt": "2024-02-21"
+        },
+        {
+          "title": "AAOS：踝扭傷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/sprained-ankle/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "grigor-dimitrov-2025-wimbledon-pectoral",
+      "videoUrl": "https://www.youtube.com/watch?v=HWKf4g01YWY",
+      "eventDate": "2025-07-07",
+      "injury": "右胸肌傷害；巴黎大師賽官方後續報導描述為胸肌撕裂。",
+      "returnDate": "2025-10-27",
+      "returnSummary": "2025-10-27 於巴黎大師賽首輪擊敗 Giovanni Mpetshi Perricard，恢復 ATP 正式出賽。",
+      "context": "兩盤領先世界第一時退賽；病例可用來說明能否續賽不能只看比分優勢。",
+      "mechanism": {
+        "title": "完成保發後抓住右胸，隨即無法續賽",
+        "summary": {
+          "text": "官方精華可見他完成該局後停下並抓住右胸，坐倒接受協助。傷害涉及胸肌，但畫面不能分辨是哪一束肌肉或肌腱部位。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "在自己的發球局完成一分。",
+          "該局結束後抓住右胸並坐到草地。",
+          "接受場邊評估，最後退出比賽。"
+        ],
+        "explanation": {
+          "text": "胸大肌連接胸前與上臂，參與揮拍時手臂向內及向前的動作。這些動作需要肌肉與肌腱傳遞力量；影像不能測得它們承受多少拉力。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "報導對最後一拍有發球與截擊的不同描述，因此摘要只寫完成保發後發作；不推測手術方式或胸大肌肌腱斷裂位置。"
+      },
+      "timeline": [
+        {
+          "date": "2025-07-07",
+          "title": "溫布頓領先時退賽",
+          "text": "兩盤領先，第三盤2-2時因右胸不適退出。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2025-07-11",
+          "title": "公開恢復近況",
+          "text": "表示開始恢復，當時沒有確定回場日。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2025-10-27",
+          "title": "巴黎大師賽回場",
+          "text": "擊敗Mpetshi Perricard，完成傷後正式首戰。",
+          "sourceIndexes": [3]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "Tennis.com：Dimitrov 兩盤領先時因胸部傷害退賽",
+          "url": "https://www.tennis.com/news/articles/grigor-dimitrov-retires-two-set-lead-jannik-sinner-pectoral-injury-wimbledon",
+          "publishedAt": "2025-07-07"
+        },
+        {
+          "title": "Tennis.com：Dimitrov 表示復健開始",
+          "url": "https://www.tennis.com/baseline/articles/grigor-dimitrov-wimbledon-injury-one-of-the-most-painful-moments-update",
+          "publishedAt": "2025-07-11"
+        },
+        {
+          "title": "Rolex Paris Masters：Dimitrov 回場贏得首輪",
+          "url": "https://www.rolexparismasters.com/en/news/article/main-draw-first-round-victories-dimitrov-khachanov",
+          "publishedAt": "2025-10-27"
+        },
+        {
+          "title": "AAOS：胸大肌及肌腱功能",
+          "url": "https://www.orthoinfo.org/diseases--conditions/pectoralis-tendon-tear/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "elaine-thompson-herah-2024-achilles",
+      "videoUrl": "https://www.youtube.com/watch?v=WnWnsmfra-s",
+      "eventDate": "2024-06-09",
+      "injury": "本人表示檢查發現阿基里斯腱小範圍撕裂；所選聲明未明確交代側別。",
+      "returnDate": "2026-02-14",
+      "returnSummary": "2026-02-14 在牙買加 Camperdown Classic 恢復正式比賽；AFP報導為2024年6月後首戰。",
+      "context": "連兩屆奧運短跑雙金得主在巴黎奧運前受傷，最終無法參加該屆選拔。",
+      "mechanism": {
+        "title": "短跑中感覺異常，賽後需協助離場",
+        "summary": {
+          "text": "她在100公尺途中逐漸放慢，接近終點出現跛行，賽後需協助離場。後續本人表示檢查發現阿基里斯腱小範圍撕裂。",
+          "sourceIndexes": [1, 2]
+        },
+        "steps": [
+          "100公尺起跑後加速。",
+          "途中逐漸放慢，近終點出現跛行。",
+          "賽後步行困難，由他人協助離場。"
+        ],
+        "explanation": {
+          "text": "阿基里斯腱將小腿肌肉的力量傳到腳跟，支援蹬地與跑步。出現疼痛或承重困難並不能只靠畫面區分肌腱炎、部分撕裂與完全斷裂。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "此片為CVM TV傷勢新聞說明。小範圍撕裂不等於完全斷裂；脫下右鞋也不足以代替醫療聲明確認側別。"
+      },
+      "timeline": [
+        {
+          "date": "2024-06-09",
+          "title": "紐約賽後無法正常行走",
+          "text": "完成100公尺後跛行，接受協助離場。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-06-27",
+          "title": "公開傷勢並退出奧運選拔",
+          "text": "表示檢查發現阿基里斯腱小範圍撕裂。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2026-02-14",
+          "title": "恢復正式比賽",
+          "text": "牙買加Camperdown Classic完成2024年6月後首戰。",
+          "sourceIndexes": [3]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "AP：Thompson-Herah 紐約100公尺賽後被協助離場",
+          "url": "https://www.news4jax.com/sports/2024/06/09/defending-olympic-champion-elaine-thompson-herah-appears-to-hurt-achilles-in-100-at-grand-prix-event/",
+          "publishedAt": "2024-06-09"
+        },
+        {
+          "title": "ABC／Reuters：Thompson-Herah 公開阿基里斯腱小撕裂",
+          "url": "https://www.abc.net.au/news/2024-06-27/paris-olympics-elaine-thompson-herah-to-miss-games/104031312",
+          "publishedAt": "2024-06-27"
+        },
+        {
+          "title": "AFP／SuperSport：Thompson-Herah 完成2024年後首戰",
+          "url": "https://supersport.com/athletics/news/f4189279-6328-491a-a2e9-76673240558e/jamaica-s-thompson-herah-runs-first-race-since-2024",
+          "publishedAt": "2026-02-15"
+        },
+        {
+          "title": "AAOS：阿基里斯腱的構造與功能",
+          "url": "https://www.orthoinfo.org/diseases--conditions/achilles-tendinitis/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "kevin-mayer-2024-paris-hamstring",
+      "videoUrl": "https://www.youtube.com/watch?v=aSlYO9XfYaA",
+      "eventDate": "2024-07-07",
+      "injury": "左大腿後側肌群嚴重傷害；法國田徑總會後續報導為半膜肌肌腱近乎完全撕裂。",
+      "returnDate": "2026-05-03",
+      "returnSummary": "2026-05-03 於法國 Lunel 俱樂部賽恢復撐竿跳及鐵餅出賽；這是分項回場，不代表恢復完整十項全能。",
+      "context": "十項全能世界紀錄保持人在主場奧運前受傷；後續先以部分項目恢復出賽。",
+      "mechanism": {
+        "title": "跨欄途中左大腿後側受傷，奧運前測試仍無法參賽",
+        "summary": {
+          "text": "他在110公尺跨欄途中左大腿後側受傷。MRI確認嚴重傷害，法國田徑總會後續描述為半膜肌肌腱近乎完全撕裂；奧運前測試後仍無法參賽。",
+          "sourceIndexes": [1, 2]
+        },
+        "steps": [
+          "參加110公尺跨欄，反覆跑動與跨越欄架。",
+          "途中左大腿後側受傷，停止比賽。",
+          "接受檢查與恢復訓練，奧運前試跑後仍決定退賽。"
+        ],
+        "explanation": {
+          "text": "大腿後側肌群協助伸髖與彎膝，在跑步及跨欄時傳遞力量。肌肉與肌腱在拉長時也可能承受負荷，但影像不能判定受傷的確切時刻與程度。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "此片是本人傷勢訪問；不推定撕裂發生在起跨或落地，也不把撐竿跳、鐵餅回場等同恢復十項全能。"
+      },
+      "timeline": [
+        {
+          "date": "2024-07-07",
+          "title": "跨欄途中受傷",
+          "text": "巴黎110公尺跨欄途中左大腿後側受傷。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-07-08",
+          "title": "MRI確認傷害",
+          "text": "法國田徑總會公布左大腿後側嚴重傷害。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-08-01",
+          "title": "退出巴黎奧運",
+          "text": "試跑後仍未達參賽狀態，退出十項全能。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2026-05-03",
+          "title": "分項恢復正式出賽",
+          "text": "俱樂部賽完成撐竿跳及鐵餅，並非完整十項全能。",
+          "sourceIndexes": [3]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "法國田徑總會：Mayer 左大腿後側嚴重傷害",
+          "url": "https://www.athle.fr/actualites/equipe-de-france-lesion-importante-a-l-ischio-jambier-gauche-pour-mayer/20269",
+          "publishedAt": "2024-07-08"
+        },
+        {
+          "title": "法國田徑總會：Mayer 退出巴黎奧運十項全能",
+          "url": "https://www.athle.fr/contenu/jeux-olympiques-2024-paris-fra-kevin-mayer-forfait/6921",
+          "publishedAt": "2024-08-01"
+        },
+        {
+          "title": "法國田徑總會：Mayer 於俱樂部賽重返比賽",
+          "url": "https://www.athle.fr/actualites/les-resultats-du-week-end-kevin-mayer-a-retrouve-la-competition-lors-des-interclubs/22967",
+          "publishedAt": "2026-05-05"
+        },
+        {
+          "title": "AAOS：大腿後側肌群功能與拉傷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/hamstring-muscle-injuries/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "pv-sindhu-2023-french-open-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=igzfkBo1mpw",
+      "eventDate": "2023-10-26",
+      "injury": "左膝傷害；本人公開掃描後仍需休息，未明確公開受傷組織或分級。",
+      "returnDate": "2024-02-14",
+      "returnSummary": "2024-02-14 於亞洲羽球團體錦標賽正式回場，以21-17、21-15擊敗韓悅。",
+      "context": "首局領先後仍因膝部不適退賽；傷後先休息，再於團體賽恢復正式出賽。",
+      "mechanism": {
+        "title": "比賽移動後左膝不適，接受處理後退賽",
+        "summary": {
+          "text": "官方轉播可見第二局開局的回合，以及她停下、到場邊接受膝部處理。單一回合不能證明是哪個動作造成組織傷害。",
+          "sourceIndexes": [1, 2]
+        },
+        "steps": [
+          "第二局開局持續前後移動與回球。",
+          "回合後停下，與裁判及場邊人員溝通。",
+          "坐在場邊接受左膝處理，最後退出比賽。"
+        ],
+        "explanation": {
+          "text": "膝部由軟骨、韌帶、肌腱等組織一起承重與活動。球場上的蹲低和步伐變化會改變負荷，但疼痛位置不能代替檢查確認受傷組織。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "公開資料只確認左膝傷害；不把片段稱為ACL、半月板或特定肌腱撕裂。"
+      },
+      "timeline": [
+        {
+          "date": "2023-10-26",
+          "title": "法國公開賽退賽",
+          "text": "首局獲勝後，次局1-1時因膝部不適停止比賽。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2023-10-31",
+          "title": "公開檢查近況",
+          "text": "本人說明左膝問題需要休息，未公布具體組織與程度。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-02-14",
+          "title": "恢復正式出賽",
+          "text": "亞洲團體錦標賽擊敗韓悅，完成傷後首戰。",
+          "sourceIndexes": [3]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "Indian Express：Sindhu 公開法國賽後的左膝檢查近況",
+          "url": "https://indianexpress.com/article/sports/badminton/pv-sindhu-provides-injury-update-after-french-open-withdrawal-determined-to-come-back-firing-on-all-cylinders-9008573/",
+          "publishedAt": "2023-11-01"
+        },
+        {
+          "title": "BWF TV：Katethong 對 Sindhu 法國公開賽16強完整轉播",
+          "url": "https://www.youtube.com/watch?v=igzfkBo1mpw",
+          "publishedAt": "2023-10-26"
+        },
+        {
+          "title": "Scroll：Sindhu 傷後於亞洲團體錦標賽回場",
+          "url": "https://scroll.in/field/1063667/age-of-pv-sindhu-continues-after-an-injury-layoff-the-star-indian-shuttler-makes-her-return",
+          "publishedAt": "2024-02-15"
+        },
+        {
+          "title": "AAOS：膝部構造與常見傷害",
+          "url": "https://www.orthoinfo.org/diseases--conditions/common-knee-injuries/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "an-se-young-2023-asian-games-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=CBRNZrv7GNk",
+      "eventDate": "2023-10-07",
+      "injury": "右膝周圍肌腱撕裂；韓聯社未公開具體肌腱名稱及撕裂程度。",
+      "returnDate": "2023-11-15",
+      "returnSummary": "2023-11-15 於日本熊本大師賽女單首輪擊敗白馭珀，恢復正式出賽。",
+      "context": "亞運決賽受傷後完成比賽並奪金，之後仍須停止參賽與復健。",
+      "mechanism": {
+        "title": "前場救球後右膝不適，賽後檢查確認傷害",
+        "summary": {
+          "text": "她在亞運決賽救前場球時右膝不適，處理後仍完成比賽。返國接受MRI檢查，報導確認膝周圍肌腱撕裂，但未公開具體肌腱名稱。",
+          "sourceIndexes": [1, 3]
+        },
+        "steps": [
+          "在決賽移動到前場救球。",
+          "右膝出現不適，接受冰敷與包紮。",
+          "完成比賽後返國檢查，暫停參賽並復健。"
+        ],
+        "explanation": {
+          "text": "肌腱連接肌肉與骨頭，協助膝部運動及傳遞力量。前場移動需要屈膝承重，但公開資料不足以確認哪條肌腱或哪種受力造成撕裂。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "影片為新聞說明，未呈現受傷瞬間；不能稱為ACL傷害。帶傷完成決賽與獲勝不代表安全，也不等於肌腱已恢復。"
+      },
+      "timeline": [
+        {
+          "date": "2023-10-07",
+          "title": "亞運決賽右膝受傷",
+          "text": "救前場球時受傷，場邊處理後繼續完成決賽。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2023-10-09",
+          "title": "公開MRI後評估",
+          "text": "報導膝周圍肌腱撕裂，預估需復健數週；此為當時預估。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2023-11-15",
+          "title": "熊本大師賽回場",
+          "text": "首輪擊敗白馭珀，完成傷後首場正式比賽。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "韓聯社：安洗瑩亞運膝傷檢查後需復健",
+          "url": "https://www.yna.co.kr/view/AKR20231009037200007",
+          "publishedAt": "2023-10-09"
+        },
+        {
+          "title": "東亞日報：安洗瑩傷後回場首戰直落二獲勝",
+          "url": "https://www.donga.com/en/article/all/20231116/4557490/1",
+          "publishedAt": "2023-11-16"
+        },
+        {
+          "title": "韓聯社TV：安洗瑩膝傷與復健期新聞",
+          "url": "https://www.youtube.com/watch?v=CBRNZrv7GNk",
+          "publishedAt": "2023-10-09"
+        },
+        {
+          "title": "AAOS：膝部構造與常見傷害",
+          "url": "https://www.orthoinfo.org/diseases--conditions/common-knee-injuries/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "marco-schwarz-2023-bormio-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=n_VjzzwVVoo",
+      "eventDate": "2023-12-28",
+      "injury": "ÖSV 經 ORF 報導確認右膝前十字韌帶撕裂、內側半月板撕裂及軟骨損傷。",
+      "returnDate": "2024-12-15",
+      "returnSummary": "在 Val d’Isère 世界盃曲道賽實際出賽，第一趟第十、第二趟未完賽。",
+      "context": "Schwarz 在 Bormio 滑降賽過彎時右膝受力後摔倒並滑入防護網；他自述膝部在倒地前已感到異常。",
+      "mechanism": {
+        "title": "過彎受力後失去穩定",
+        "summary": {
+          "text": "Schwarz 在 Bormio 滑降賽過彎時右膝受力後摔倒並滑入防護網；他自述膝部在倒地前已感到異常。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "沿坡面連續過彎，下肢承重。",
+          "過彎後失去平衡，身體倒向雪面。",
+          "倒地後繼續滑行，最後停在防護網附近。"
+        ],
+        "explanation": {
+          "text": "ACL 協助穩定膝部轉動；突然轉向或落地力量過大時可能受傷，常需要同時檢查半月板與軟骨。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "公開報導與影片無法提供完整病歷；畫面能說明動作順序，不能確定組織受損的精確瞬間、力量或治療細節。"
+      },
+      "timeline": [
+        {
+          "date": "2023-12-28",
+          "title": "滑降事故與確診",
+          "text": "在 Bormio 受傷，送回 Innsbruck 檢查後確認右膝 ACL、內側半月板及軟骨損傷，賽季提前結束。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2023-12-29",
+          "title": "接受手術",
+          "text": "ORF 更新報導記載他於星期五接受手術；公開資料未提供可在此確認的移植物或固定方式。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-12-15",
+          "title": "回到正式比賽",
+          "text": "Val d’Isère 曲道賽首趟第十，第二趟未完賽；回場日以實際出賽計算。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "ORF：Schwarz 右膝確診及手術",
+          "url": "https://sport.orf.at/stories/3120575/",
+          "publishedAt": "2023-12-28"
+        },
+        {
+          "title": "ORF：Val d’Isère 賽果及 Schwarz 復出",
+          "url": "https://sport.orf.at/stories/3135813/",
+          "publishedAt": "2024-12-15"
+        },
+        {
+          "title": "AAOS：前十字韌帶傷害的一般原因與診斷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "alexis-pinturault-2024-wengen-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=pU5QTK8kSB4",
+      "eventDate": "2024-01-12",
+      "injury": "法國滑雪協會經 SRF 報導確認左膝前十字韌帶撕裂。",
+      "returnDate": "2024-12-07",
+      "returnSummary": "在 Beaver Creek 世界盃超級大曲道實際復出，名列第十。",
+      "context": "Pinturault 在 Wengen 的 Silberhorn 跳躍後摔倒，搭直升機送醫，後續確診左膝 ACL 撕裂。",
+      "mechanism": {
+        "title": "跳躍後失衡與膝部受力",
+        "summary": {
+          "text": "Pinturault 在 Wengen 的 Silberhorn 跳躍後摔倒，搭直升機送醫，後續確診左膝 ACL 撕裂。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "高速通過跳躍地形。",
+          "起跳後落地，隨即失去平衡。",
+          "倒地後翻滾並滑出原先路線。"
+        ],
+        "explanation": {
+          "text": "ACL 協助控制膝部旋轉；跳躍落地失衡可能增加負荷，受傷程度仍須由檢查確認。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "公開報導與影片無法提供完整病歷；畫面能說明動作順序，不能確定組織受損的精確瞬間、力量或治療細節。"
+      },
+      "timeline": [
+        {
+          "date": "2024-01-12",
+          "title": "Wengen 受傷",
+          "text": "跳躍後摔倒送醫，法國滑雪協會確認左膝 ACL 撕裂。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-08-28",
+          "title": "恢復雪上滑行",
+          "text": "在 Cervinia 首次重返雪上；本人仍表示距離比賽狀態有一段路。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2024-12-07",
+          "title": "世界盃復出",
+          "text": "Beaver Creek 超級大曲道第十；12月初的滑降訓練不列為正式回場。",
+          "sourceIndexes": [3]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "SRF：法國滑雪協會確認 Pinturault 左膝 ACL 撕裂",
+          "url": "https://www.srf.ch/sport/ski-alpin/weltcup-maenner/naechstes-opfer-am-lauberhorn-nach-sturz-kreuzbandriss-und-saisonende-bei-pinturault",
+          "publishedAt": "2024-01-12"
+        },
+        {
+          "title": "FIS：Pinturault 重返雪上訓練",
+          "url": "https://www.fis-ski.com/alpine-skiing/news/2024-25/alexis-pinturault-celebrates-comeback-to-the-slopes-after-his-knee-injury",
+          "publishedAt": "2024-08-29"
+        },
+        {
+          "title": "FIS：Pinturault 官方出賽紀錄",
+          "url": "https://www.fis-ski.com/DB/general/athlete-biography.html?competitorid=127048&sectorcode=al&type=result",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：前十字韌帶傷害的一般原因與診斷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "petra-vlhova-2024-jasna-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=jK2BphKTP6M",
+      "eventDate": "2024-01-20",
+      "injury": "公開報導確認右膝前十字韌帶撕裂。",
+      "returnDate": "2026-02-10",
+      "returnSummary": "在米蘭科爾蒂納冬奧團體全能的曲道部分實際復出，未完賽。",
+      "context": "Vlhová 在主場 Jasná 大曲道首趟早段摔倒，右膝 ACL 撕裂後長期離開賽場，至 2026 冬奧才重返正式比賽。",
+      "mechanism": {
+        "title": "滑行失衡後的膝部傷害",
+        "summary": {
+          "text": "Vlhová 在主場 Jasná 大曲道首趟早段摔倒，右膝 ACL 撕裂後長期離開賽場，至 2026 冬奧才重返正式比賽。",
+          "sourceIndexes": [1, 2]
+        },
+        "steps": [
+          "通過首趟前段旗門。",
+          "轉向時失衡，身體倒向雪面。",
+          "倒地後滑向賽道邊防護網。"
+        ],
+        "explanation": {
+          "text": "ACL 對膝部旋轉穩定有作用；轉向負荷與失衡可能相關，但不能由遠景量出韌帶承受多少力量。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "公開報導與影片無法提供完整病歷；畫面能說明動作順序，不能確定組織受損的精確瞬間、力量或治療細節。"
+      },
+      "timeline": [
+        {
+          "date": "2024-01-20",
+          "title": "主場大曲道摔倒",
+          "text": "在 Jasná 首趟受傷，這是後續兩年比賽中斷的起點。",
+          "sourceIndexes": [1, 2]
+        },
+        {
+          "date": "2024-01-20",
+          "title": "右膝 ACL 傷勢報導",
+          "text": "Eurosport 更新確診右膝 ACL 撕裂，當季提前結束。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2026-02-10",
+          "title": "冬奧正式復出",
+          "text": "參加團體全能曲道部分，途中出錯未完賽；已實際出發仍算正式回場。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "Eurosport：Jasná 事故及右膝 ACL 撕裂",
+          "url": "https://www.eurosport.fr/ski-alpin/jasna/2023-2024/jasna-et-maintenant-petra-vlhova.-lhecatombe-se-poursuit-chez-les-cadors_sto9978855/story.shtml",
+          "publishedAt": "2024-01-20"
+        },
+        {
+          "title": "ta3／TASR：Vlhová 冬奧首次正式回歸",
+          "url": "https://www.ta3.com/clanok/1033365/petra-vlhova-nedokoncila-slalom-v-timovej-kombinacii-pri-svojom-sutaznom-navrate-po-zraneni-urobila-chybu-v-branke",
+          "publishedAt": "2026-02-10"
+        },
+        {
+          "title": "AAOS：前十字韌帶傷害的一般原因與診斷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "wout-van-aert-2024-vuelta-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=-2-Chylawx8",
+      "eventDate": "2024-09-03",
+      "injury": "車隊確認膝部深層傷口，檢查未發現骨折。",
+      "returnDate": "2024-12-27",
+      "returnSummary": "在 Loenhout 越野自行車賽實際復出，名列第四。",
+      "context": "Van Aert 在環西第16站摔車後退賽；車隊翌日確認膝部有深層傷口，未見骨折。",
+      "mechanism": {
+        "title": "摔車後的膝部深層傷口",
+        "summary": {
+          "text": "Van Aert 在環西第16站摔車後退賽；車隊翌日確認膝部有深層傷口，未見骨折。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "騎行途中摔車，身體離開正常踩踏位置。",
+          "倒地與路面接觸可能造成撞擊和擦傷。",
+          "膝部傷口使他無法繼續比賽，之後接受醫療檢查與傷口照護。"
+        ],
+        "explanation": {
+          "text": "皮膚被割破或擦破後，傷口深度與污染會影響處置；即使沒有骨折，深傷口仍可能需要住院與感染預防。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "公開報導與影片無法提供完整病歷；畫面能說明動作順序，不能確定組織受損的精確瞬間、力量或治療細節。"
+      },
+      "timeline": [
+        {
+          "date": "2024-09-03",
+          "title": "環西摔車退賽",
+          "text": "在第16站事故後退賽。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-09-04",
+          "title": "膝部深層傷口",
+          "text": "車隊表示檢查未見骨折，主要問題為深層傷口。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-09-05",
+          "title": "住院與感染預防",
+          "text": "車隊公布靜脈抗生素治療，並取消當季剩餘公路賽事。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2024-12-27",
+          "title": "越野賽復出",
+          "text": "Loenhout 越野自行車賽第四名；這是實際比賽回歸，並非公路賽回歸日期。",
+          "sourceIndexes": [3]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "Visma：第17站報告與 Van Aert 傷勢更新",
+          "url": "https://www.teamvismaleaseabike.com/race-report/news/no-major-role-for-team-visma-lease-a-bike-in-seventeenth-vuelta-stage/",
+          "publishedAt": "2024-09-04"
+        },
+        {
+          "title": "Visma：Van Aert 結束當年公路賽季",
+          "url": "https://www.teamvismaleaseabike.com/news/news/wout-van-aert-will-not-race-any-more-this-season/",
+          "publishedAt": "2024-09-05"
+        },
+        {
+          "title": "Visma：Loenhout 復出獲第四",
+          "url": "https://www.teamvismaleaseabike.com/liveblog/liveblog/liveblog-exact-cross-loenhout/",
+          "publishedAt": "2024-12-27"
+        },
+        {
+          "title": "NHS：割傷與擦傷",
+          "url": "https://www.nhs.uk/conditions/cuts-and-grazes/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "kane-williamson-2023-world-cup-thumb",
+      "videoUrl": "https://www.youtube.com/watch?v=MtIaPgMih1c",
+      "eventDate": "2023-10-13",
+      "injury": "ICC 確認左手拇指無位移骨折。",
+      "returnDate": "2023-11-04",
+      "returnSummary": "在世界盃對巴基斯坦一戰實際復出，攻下95分。",
+      "context": "Williamson 在 Chennai 對孟加拉跑分時，被回傳球打中左手拇指；掃描確認無位移骨折。",
+      "mechanism": {
+        "title": "回傳球直接擊中拇指",
+        "summary": {
+          "text": "Williamson 在 Chennai 對孟加拉跑分時，被回傳球打中左手拇指；掃描確認無位移骨折。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "跑分時，防守方將球回傳。",
+          "回傳球擊中他的左手拇指，形成局部撞擊。",
+          "手部疼痛影響繼續比賽，後續掃描確認骨折。"
+        ],
+        "explanation": {
+          "text": "手指骨骼受到直接撞擊時可能骨折；「無位移」表示骨折片沒有明顯錯開，仍不能只靠疼痛或外觀判斷。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "影片是新聞討論與比賽照片，沒有連續受傷畫面；上方事件順序依公開報導整理，不能由影片判定撞擊瞬間、力量或骨折細節。"
+      },
+      "timeline": [
+        {
+          "date": "2023-10-13",
+          "title": "左拇指被球擊中",
+          "text": "對孟加拉跑分時受傷，當場因傷退場。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2023-10-14",
+          "title": "掃描確認骨折",
+          "text": "ICC 公布左拇指無位移骨折，隊伍另安排人員備援。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2023-11-04",
+          "title": "世界盃實際復出",
+          "text": "對巴基斯坦上場並攻下95分。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "ICC：Williamson 左拇指骨折確診",
+          "url": "https://www.icc-cricket.com/tournaments/cricketworldcup/news/new-zealand-suffer-williamson-blow-with-fractured-thumb-confirmed",
+          "publishedAt": "2023-10-14"
+        },
+        {
+          "title": "Wisden：Williamson 對巴基斯坦復出",
+          "url": "https://www.wisden.com/series/icc-mens-cricket-world-cup-2023-24/cricket-news/watch-kane-williamson-comeback-cuts-loose-against-pakistan-cwc-2023-pak-nz",
+          "publishedAt": "2023-11-04"
+        },
+        {
+          "title": "AAOS：手部骨折",
+          "url": "https://www.orthoinfo.org/diseases--conditions/hand-fractures/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "hardik-pandya-2023-world-cup-ankle",
+      "videoUrl": "https://www.youtube.com/watch?v=uQDKyD-Sk4w",
+      "eventDate": "2023-10-19",
+      "injury": "ICC 確認左腳踝受傷，之後退出該屆世界盃。",
+      "returnDate": "2024-02-26",
+      "returnSummary": "代表 Reliance 1 參加 DY Patil T20 Cup，實際投球與打擊；屬地方競賽回歸。",
+      "context": "Pandya 投球後嘗試攔接打回來的球，接著倒地抓住腳踝，無法完成該輪投球；後續確認左腳踝傷勢。",
+      "mechanism": {
+        "title": "場上動作後的腳踝傷害",
+        "summary": {
+          "text": "Pandya 投球後嘗試攔接打回來的球，接著倒地抓住腳踝，無法完成該輪投球；後續確認左腳踝傷勢。",
+          "sourceIndexes": [1, 4]
+        },
+        "steps": [
+          "投球後嘗試攔接打回來的球。",
+          "倒地並抓住腳踝。",
+          "無法完成該輪投球，離場接受檢查。"
+        ],
+        "explanation": {
+          "text": "腳踝周圍韌帶協助穩定關節；過度扭轉可能傷到韌帶。不過，本案官方只公布腳踝傷勢，不能據此指定韌帶名稱、撕裂分級或排除其他傷害。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "影片是新聞字幕與場上、離場照片，沒有連續受傷畫面；上方事件順序依公開報導整理，不能據此指定受傷韌帶、撕裂分級或確定受力方向。"
+      },
+      "timeline": [
+        {
+          "date": "2023-10-19",
+          "title": "世界盃受傷",
+          "text": "印度對孟加拉比賽中左腳踝受傷。",
+          "sourceIndexes": [1, 4]
+        },
+        {
+          "date": "2023-11-04",
+          "title": "退出世界盃",
+          "text": "ICC 核准替補人員，確認他未能及時復原。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-02-26",
+          "title": "地方競賽實際回歸",
+          "text": "在 DY Patil T20 Cup 投球及打擊；此前 NCA 練習賽不作本筆回場日。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "ICC：核准更換 Pandya 名單",
+          "url": "https://www.icc-cricket.com/media-releases/krishna-approved-as-replacement-for-pandya-in-india-squad",
+          "publishedAt": "2023-11-04"
+        },
+        {
+          "title": "ESPN：Pandya 重返競賽板球",
+          "url": "https://www.espn.com.sg/cricket/story/_/id/39602581/hardik-pandya-returns-competitive-cricket-dy-patil-t20-cup",
+          "publishedAt": "2024-02-27"
+        },
+        {
+          "title": "AAOS：腳踝扭傷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/sprained-ankle/",
+          "publishedAt": null
+        },
+        {
+          "title": "ICC：Pandya 投球後守備受傷送檢",
+          "url": "https://www.icc-cricket.com/tournaments/cricketworldcup/news/pandya-sent-for-scans-after-hurting-ankle-against-bangladesh",
+          "publishedAt": "2023-10-19"
+        }
+      ]
+    },
+    {
+      "slug": "mikaela-shiffrin-2024-cortina-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=5cwk5Y0Iq1E",
+      "eventDate": "2024-01-26",
+      "injury": "左膝傷勢；美國滑雪隊後續回顧稱半月板拉傷。",
+      "returnDate": "2024-03-10",
+      "returnSummary": "在 Åre 世界盃曲道賽實際復出並奪冠。",
+      "context": "Shiffrin 在 Cortina 滑降賽落地後失控並撞上防護網，左膝受傷，之後約六週未比賽。",
+      "mechanism": {
+        "title": "滑降落地失控與膝部負荷",
+        "summary": {
+          "text": "Shiffrin 在 Cortina 滑降賽落地後失控並撞上防護網，左膝受傷，之後約六週未比賽。",
+          "sourceIndexes": [1, 2]
+        },
+        "steps": [
+          "滑降通過起伏地形後落地，滑雪板重新承重。",
+          "接著失去原本滑行方向，身體倒向雪面。",
+          "倒地後滑向防護網；不能只以碰網瞬間判定全部傷勢來源。"
+        ],
+        "explanation": {
+          "text": "半月板像膝內的緩衝墊，幫助分散承重；轉向和外傷都可能增加其負荷。隊伍使用「拉傷」描述，不能自行改寫成特定形狀的半月板撕裂。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "公開報導與影片無法提供完整病歷；畫面能說明動作順序，不能確定組織受損的精確瞬間、力量或治療細節。"
+      },
+      "timeline": [
+        {
+          "date": "2024-01-26",
+          "title": "Cortina 滑降摔倒",
+          "text": "左膝受傷，醫療人員安排後續檢查。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-01-26",
+          "title": "取消接下來賽程",
+          "text": "本人表示不再參加該週末Cortina賽事，並退出翌週Kronplatz大曲道。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-03-10",
+          "title": "Åre 復出奪冠",
+          "text": "約六週未比賽後重返世界盃曲道，拿下冠軍。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "AP：Shiffrin 在 Cortina 受傷",
+          "url": "https://apnews.com/article/d7d9233c6efe8052b5fc86463b3a2f52",
+          "publishedAt": "2024-01-26"
+        },
+        {
+          "title": "U.S. Ski & Snowboard：Shiffrin 復出奪冠",
+          "url": "https://www.usskiandsnowboard.org/news/shiffrin-returns-win-clinches-slalom-crystal-globe",
+          "publishedAt": "2024-03-10"
+        },
+        {
+          "title": "AAOS：半月板的功能與外傷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/meniscus-tears/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "jorge-martin-2025-qatar-chest",
+      "videoUrl": "https://www.youtube.com/watch?v=dCMckwzPJog",
+      "eventDate": "2025-04-13",
+      "injury": "Aprilia 與 MotoGP 確認右側多處肋骨骨折合併氣胸。",
+      "returnDate": "2025-07-19",
+      "returnSummary": "在 Brno 捷克站 Sprint 實際復出，名列第十一；翌日大獎賽第七。",
+      "context": "Martín 在卡達大獎賽第14圈摔車，胸部外傷後住院；檢查確認右側多處肋骨骨折及氣胸。",
+      "mechanism": {
+        "title": "摔車後的胸部撞擊",
+        "summary": {
+          "text": "Martín 在卡達大獎賽第14圈摔車，胸部外傷後住院；檢查確認右側多處肋骨骨折及氣胸。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "過彎時人車倒向路面，車手離開正常騎乘姿勢。",
+          "滑行時與路面、周圍人車的接觸可能把外力傳到胸部。",
+          "胸部外傷後接受檢查，確認肋骨骨折並出現氣胸。"
+        ],
+        "explanation": {
+          "text": "肋骨像保護胸腔的支架，強烈撞擊可能使肋骨與下方肺部一起受傷。氣胸是肺與胸壁間積氣，可能讓肺無法正常張開；是否引流須由醫療檢查決定。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "公開報導與影片無法提供完整病歷；畫面能說明動作順序，不能確定組織受損的精確瞬間、力量或治療細節。"
+      },
+      "timeline": [
+        {
+          "date": "2025-04-13",
+          "title": "卡達站摔車住院",
+          "text": "第14圈事故後接受胸部檢查，確認右側肋骨骨折及氣胸，安排引流與觀察。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2025-04-14",
+          "title": "更新骨折分布",
+          "text": "Aprilia 公布多處肋骨骨折，持續留院觀察氣胸。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2025-07-19",
+          "title": "Sprint 實際復出",
+          "text": "Brno捷克站短程賽第十一；星期五練習不列為回場日。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2025-07-20",
+          "title": "完成大獎賽",
+          "text": "週日主賽第七。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "MotoGP／Aprilia：Martín 卡達胸部傷勢與更新",
+          "url": "https://www.motogp.com/en/news/2025/04/13/kecelakaan-di-gp-qatar-jorge-martin-patah-enam-tulang-rusuk/524365",
+          "publishedAt": "2025-04-13"
+        },
+        {
+          "title": "Piaggio／Aprilia：Brno 週末賽果",
+          "url": "https://wide.piaggiogroup.com/en/articles/racing/podium-for-aprilia-racing-and-marco-bezzecchi-in-the-brno-race/index.html",
+          "publishedAt": "2025-07-20"
+        },
+        {
+          "title": "North Bristol NHS Trust：胸部外傷",
+          "url": "https://www.nbt.nhs.uk/our-services/a-z-services/emergency-zone/ed-miu-patient-informationtt-information/chest-injury-advice",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "alex-rins-2024-assen-wrist",
+      "videoUrl": "https://www.youtube.com/watch?v=FseibZgB1Pk",
+      "eventDate": "2024-06-30",
+      "injury": "MotoGP 醫療公告記載右手腕骨折；同次事故亦有右足與腳踝傷勢。",
+      "returnDate": "2024-08-17",
+      "returnSummary": "在奧地利站 Sprint 實際出賽，之後因機械問題退賽。",
+      "context": "Rins 在 Assen 正賽首圈第一彎被拋離車輛，右手腕與右足受傷；翌日接受手腕及腳踝手術。",
+      "mechanism": {
+        "title": "被拋離車輛後的肢體撞擊",
+        "summary": {
+          "text": "Rins 在 Assen 正賽首圈第一彎被拋離車輛，右手腕與右足受傷；翌日接受手腕及腳踝手術。",
+          "sourceIndexes": [1, 2]
+        },
+        "steps": [
+          "首圈進入第一彎時，車手被拋離車輛。",
+          "身體落地與後續滑行，讓手腕、足部等部位承受撞擊。",
+          "他無法繼續比賽，醫療檢查後安排進一步治療。"
+        ],
+        "explanation": {
+          "text": "骨骼受到的外力超過承受能力時可能骨折；高速摔車也可能同時傷到不同部位。手腕哪一塊骨頭受傷、如何固定，需有明確醫療資料才能判定。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "公開報導與影片無法提供完整病歷；畫面能說明動作順序，不能確定組織受損的精確瞬間、力量或治療細節。"
+      },
+      "timeline": [
+        {
+          "date": "2024-06-30",
+          "title": "Assen 首圈摔車",
+          "text": "第一彎事故後退出比賽，返回Madrid接受進一步檢查。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-07-01",
+          "title": "手腕與腳踝手術",
+          "text": "Yamaha在翌日公告手術已完成，德國站由Gardner替補。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2024-08-17",
+          "title": "Sprint 實際回場",
+          "text": "在奧地利站短程賽出發，因機械問題退賽。",
+          "sourceIndexes": [3]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "MotoGP：Rins Assen 事故與初步醫療資訊",
+          "url": "https://www.motogp.com/pt/news/2024/06/30/rins-viaja-a-madrid-para-someterse-a-mas-examenes-medicos/502384",
+          "publishedAt": "2024-06-30"
+        },
+        {
+          "title": "Yamaha：Rins 手腕及腳踝術後缺席德國站",
+          "url": "https://www.yamaha-racing.com/news/motogp/remy-gardner-joins-monster-energy-yamaha-motogp-for-german-gp-we/",
+          "publishedAt": "2024-07-02"
+        },
+        {
+          "title": "Motorsport.com：Rins 在奧地利 Sprint 出賽後因機械故障退賽",
+          "url": "https://es.motorsport.com/motogp/news/declaraciones-alex-rins-problema-mecanico-sprint-austria/10645329/",
+          "publishedAt": "2024-08-17"
+        },
+        {
+          "title": "AAOS：骨折的原因與檢查",
+          "url": "https://www.orthoinfo.org/diseases--conditions/fractures-broken-bones/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "antoine-dupont-2025-six-nations-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=GjRtEqAnRNc",
+      "eventDate": "2025-03-08",
+      "injury": "六國賽官方後續報導確認右膝前十字韌帶斷裂。",
+      "returnDate": "2025-11-29",
+      "returnSummary": "代表 Toulouse 對 Racing 92，下半場第50分鐘替補上場。",
+      "context": "Dupont 在 Dublin 對愛爾蘭一戰第28分鐘，於爭球團（ruck）的清除對抗後右膝受傷，後續確認 ACL 斷裂。",
+      "mechanism": {
+        "title": "對抗比賽中的膝部傷害",
+        "summary": {
+          "text": "Dupont 在 Dublin 對愛爾蘭一戰第28分鐘，於爭球團（ruck）的清除對抗後右膝受傷，後續確認 ACL 斷裂。",
+          "sourceIndexes": [1, 4]
+        },
+        "steps": [
+          "在爭球團（ruck）附近參與球權對抗。",
+          "清除對抗發生後，右膝出現傷勢。",
+          "離場接受醫療評估，由替補球員接手。"
+        ],
+        "explanation": {
+          "text": "ACL 協助穩定膝部轉動；突然轉向或碰撞可能增加受傷風險。這是一般原理，新聞畫面沒有提供足夠細節來量出個案受力或判定責任。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "影片是傷勢聲明與離場照片，沒有連續對抗畫面；上方事件順序依公開報導整理，不能由影片量出膝部受力、定位斷裂瞬間或判定責任。"
+      },
+      "timeline": [
+        {
+          "date": "2025-03-08",
+          "title": "六國賽受傷離場",
+          "text": "第28分鐘於爭球團清除對抗後右膝受傷，由Lucu替補。",
+          "sourceIndexes": [4]
+        },
+        {
+          "date": "2025-03-15",
+          "title": "官方回顧傷勢",
+          "text": "六國賽官方報導記載右膝ACL斷裂及後續缺賽；文中的預估復原期不是實際回場。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2025-11-29",
+          "title": "俱樂部正式復出",
+          "text": "Toulouse對Racing92第50分鐘替補上場，結束266日正式比賽中斷。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "六國賽官方：Dupont 右膝 ACL 斷裂",
+          "url": "https://www.sixnationsrugby.com/en/m6n/news/when-serin-replaced-dupont-96-years-ago-france-rugby",
+          "publishedAt": "2025-03-15"
+        },
+        {
+          "title": "L’Équipe：Dupont 正式比賽回歸",
+          "url": "https://www.lequipe.fr/Rugby/Actualites/Antoine-dupont-a-fait-son-retour-en-competition-officielle-apres-266-jours-d-absence/1613363",
+          "publishedAt": "2025-11-29"
+        },
+        {
+          "title": "AAOS：前十字韌帶傷害的一般原因與診斷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+          "publishedAt": null
+        },
+        {
+          "title": "六國賽官方法文：Dupont 於爭球團對抗後傷退",
+          "url": "https://www.sixnationsrugby.com/fr/m6n/matchs/202500/ireland-v-france-08032025-1415/report",
+          "publishedAt": "2025-03-08"
+        }
+      ]
+    },
+    {
+      "slug": "angel-reese-2024-wrist",
+      "videoUrl": "https://www.youtube.com/watch?v=Qyzau4_9NNQ",
+      "eventDate": "2024-09-06",
+      "injury": "左手腕骨折",
+      "returnDate": "2025-01-17",
+      "returnSummary": "2025 年 1 月 17 日代表 Rose 參加 Unrivaled 正式賽事；這是三對三職業聯盟復賽，並非 WNBA 復賽。",
+      "context": "WNBA 新秀球季末段在比賽後確認手腕受傷，後續缺席剩餘球季。公開資料未明確交代受傷的是哪一塊腕骨。",
+      "mechanism": {
+        "title": "手部著地與腕部負荷",
+        "summary": {
+          "text": "上籃遭犯規後跌倒，仍繼續出賽，賽後確認左腕骨折。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "上籃接觸後身體失衡。",
+          "落地時手部承受支撐力量。",
+          "繼續出賽後接受檢查，確認左腕骨折。"
+        ],
+        "explanation": {
+          "text": "跌倒時用手支撐，力量可從手掌傳到腕骨；公開醫學資料以舟狀骨骨折說明此類受力，但不能因此認定 Reese 傷到哪一塊腕骨。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "影片剪輯了數個可能時點，無法只靠片段確定骨折發生在哪一格，也不能從仍繼續打球排除骨折。"
+      },
+      "timeline": [
+        {
+          "date": "2024-09-06",
+          "title": "比賽中受傷",
+          "text": "左手腕骨折",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-09-10",
+          "title": "完成手腕手術",
+          "text": "球隊表示手腕手術已順利完成。",
+          "sourceIndexes": [4]
+        },
+        {
+          "date": "2025-01-17",
+          "title": "跨聯盟回場",
+          "text": "2025 年 1 月 17 日代表 Rose 參加 Unrivaled 正式賽事；這是三對三職業聯盟復賽，並非 WNBA 復賽。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "Sky get needed win over Wings without injured Angel Reese",
+          "url": "https://chicago.suntimes.com/chicago-sky-and-wnba/2024/09/08/sky-get-needed-win-over-wings-in-angel-reeses-first-absence",
+          "publishedAt": "2024-09-08"
+        },
+        {
+          "title": "Vinyl (79-73) Rose (Jan 17, 2025) Final Score",
+          "url": "https://www.unrivaled.basketball/game/jb3jklxmsrks",
+          "publishedAt": "2025-01-17"
+        },
+        {
+          "title": "Scaphoid Fracture of the Wrist - AAOS",
+          "url": "https://www.orthoinfo.org/diseases--conditions/scaphoid-fracture-of-the-wrist",
+          "publishedAt": null
+        },
+        {
+          "title": "Angel Reese explains injury to left wrist, undergoes surgery",
+          "url": "https://www.espn.com/wnba/story/_/id/41196082/angel-reese-explains-wrist-injury-says-surgery",
+          "publishedAt": "2024-09-09"
+        }
+      ]
+    },
+    {
+      "slug": "juju-watkins-2025-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=uw0GVL3nfN8",
+      "eventDate": "2025-03-24",
+      "injury": "右膝前十字韌帶撕裂（媒體具名報導；USC 官方公告為需手術的球季終結傷勢）",
+      "returnDate": null,
+      "returnSummary": "USC 在 2025 年 9 月 28 日宣布她缺席整個 2025–26 球季；查核截至 2026 年 9 月 13 日，未取得正式復賽證據。",
+      "context": "USC 明星後衛在 NCAA 淘汰賽上半場受傷，球隊之後晉級；她未能繼續參賽。",
+      "mechanism": {
+        "title": "快攻支撐時的膝關節負荷",
+        "summary": {
+          "text": "Watkins 在快攻上籃前右腳支撐時倒地；媒體報導右膝 ACL 撕裂，USC 確認需手術及停止當季比賽。",
+          "sourceIndexes": [1, 2]
+        },
+        "steps": [
+          "快攻接近籃框。",
+          "右腳支撐後身體失衡倒地。",
+          "接受協助離場，未再上場。"
+        ],
+        "explanation": {
+          "text": "腳踩地時，身體仍可能向前或旋轉，造成膝部瞬間負荷；這是 ACL 損傷常見情境的一般解釋，並不是從影片反推出她的精確受傷力矩。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "轉播角度不能顯示韌帶撕裂本身，也不能排除同時合併其他組織傷害；ACL 名稱依報導，非僅看影像所得。"
+      },
+      "timeline": [
+        {
+          "date": "2025-03-24",
+          "title": "比賽中受傷",
+          "text": "NCAA 第二輪快攻時右膝受傷，未再上場。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2025-03-26",
+          "title": "球季結束並安排手術",
+          "text": "USC 正式公告她將接受手術，缺席剩餘 NCAA 賽程。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2025-09-28",
+          "title": "延長恢復期",
+          "text": "USC 宣布她不參加 2025–26 球季。這是休賽公告，並非復賽日期。",
+          "sourceIndexes": [3]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "JuJu Watkins tears ACL, sources say, ending USC star's season",
+          "url": "https://www.espn.com/womens-college-basketball/story/_/id/44393492/usc-trojans-star-juju-watkins-carried-injury-vs-mississippi-state-women-ncaa-tournament",
+          "publishedAt": "2025-03-24"
+        },
+        {
+          "title": "USC All-American JuJu Watkins Sustains Season-Ending Injury",
+          "url": "https://usctrojans.com/news/2025/3/26/womens-basketball-usc-all-american-juju-watkins-sustains-season-ending-injury",
+          "publishedAt": "2025-03-26"
+        },
+        {
+          "title": "USC’s JuJu Watkins to Miss 2025-26 Season to Focus on Recovery",
+          "url": "https://usctrojans.com/news/2025/9/28/womens-basketball-uscs-juju-watkins-to-miss-2025-26-season-to-focus-on-recovery",
+          "publishedAt": "2025-09-28"
+        },
+        {
+          "title": "Anterior Cruciate Ligament (ACL) Injuries - AAOS",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "trinity-rodman-2024-back",
+      "videoUrl": "https://www.youtube.com/watch?v=4WeLwd2-YhA",
+      "eventDate": "2024-09-20",
+      "injury": "背部受傷及背肌痙攣（經紀人公開說明）",
+      "returnDate": "2024-10-13",
+      "returnSummary": "10 月 13 日對 Racing Louisville 於第 67 分鐘替補上場。",
+      "context": "華盛頓精神隊前鋒在護球後出現背部疼痛，經紀人後續說明為背肌痙攣。影片提供球隊最初的賽後說明。",
+      "mechanism": {
+        "title": "護球情境與背部症狀",
+        "summary": {
+          "text": "Rodman 在場邊護球後出現背部疼痛，經紀人後續說明是明顯背肌痙攣。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "在場邊護球後出現背痛。",
+          "明顯背肌痙攣影響站立與移動。",
+          "由工作人員協助並以輪椅離開場邊。"
+        ],
+        "explanation": {
+          "text": "背肌痙攣是肌肉不自主收縮，可讓站立或移動非常疼痛。運動中的軀幹受力是理解症狀的背景，但痙攣本身不等於已證實椎間盤、骨骼或神經損傷。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "本片為官方賽後記者會，沒有受傷瞬間。不能由訪談估算腰椎角度、衝擊力或特定結構病變。"
+      },
+      "timeline": [
+        {
+          "date": "2024-09-20",
+          "title": "比賽中受傷",
+          "text": "護球後背部疼痛並離場，經紀人翌日說明為明顯背肌痙攣。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-09-22",
+          "title": "公開賽後說明",
+          "text": "球隊刊出記者會，教練說明背部不適，當時尚待進一步了解。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2024-10-13",
+          "title": "正式比賽回場",
+          "text": "10 月 13 日對 Racing Louisville 於第 67 分鐘替補上場。",
+          "sourceIndexes": [3]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "Spirit's Trinity Rodman leaves game in wheelchair after back injury",
+          "url": "https://www.espn.com/soccer/story/_/id/41349813/washington-spirit-trinity-rodman-leaves-game-wheelchair-back-injury",
+          "publishedAt": "2024-09-21"
+        },
+        {
+          "title": "What They’re Saying After Playing Kansas City",
+          "url": "https://washingtonspirit.com/blog/2024/09/22/what-theyre-saying-after-playing-kansas-city/",
+          "publishedAt": "2024-09-22"
+        },
+        {
+          "title": "Recap: Spirit Triumphs in Dominating, 4-1, Victory over Racing Louisville FC",
+          "url": "https://washingtonspirit.com/blog/2024/10/13/recap-spirit-triumphs-in-dominating-4-1-victory-over-racing-louisville-fc/",
+          "publishedAt": "2024-10-13"
+        },
+        {
+          "title": "Back Spasms - Cleveland Clinic",
+          "url": "https://my.clevelandclinic.org/health/diseases/22881-back-spasms",
+          "publishedAt": "2022-04-26"
+        }
+      ]
+    },
+    {
+      "slug": "alex-greenwood-2024-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=DbKcBrl8AOg",
+      "eventDate": "2024-12-12",
+      "injury": "膝內側副韌帶（MCL）受傷並接受修補手術",
+      "returnDate": "2025-04-27",
+      "returnSummary": "4 月 27 日 WSL 對 Leicester，於第 60 分鐘替補上場。",
+      "context": "曼城隊長在女子歐冠小組賽受傷離場。影片是該場賽後教練記者會，可對照最初傷情說明及後續正式診斷。",
+      "mechanism": {
+        "title": "膝部碰撞與內側穩定組織",
+        "summary": {
+          "text": "Greenwood 對 St. Pölten 一戰碰撞後離場；曼城之後確認 MCL 受傷並已接受修補。",
+          "sourceIndexes": [1, 3]
+        },
+        "steps": [
+          "女子歐冠比賽中與對手發生碰撞。",
+          "膝部受傷後離場，未能繼續比賽。",
+          "後續檢查確認 MCL 受傷並接受修補。"
+        ],
+        "explanation": {
+          "text": "MCL 位於膝內側，協助限制側向不穩定；碰撞或扭轉可使膝周韌帶承受拉力。這是一般受力解釋，個案的確切方向與撕裂程度仍需檢查與影像判斷。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "本片是教練記者會，沒有事故瞬間；不能據此描述她膝蓋內夾角度或判定韌帶分級。"
+      },
+      "timeline": [
+        {
+          "date": "2024-12-12",
+          "title": "比賽中受傷",
+          "text": "女子歐冠對 St. Pölten 發生碰撞，膝部受傷離場。",
+          "sourceIndexes": [3]
+        },
+        {
+          "date": "2024-12-19",
+          "title": "公布手術消息",
+          "text": "曼城確認已完成 MCL 修補手術，接著進入復健。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2025-04-27",
+          "title": "正式比賽回場",
+          "text": "4 月 27 日 WSL 對 Leicester，於第 60 分鐘替補上場。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "Injury update: Alex Greenwood",
+          "url": "https://www.mancity.com/news/womens/alex-greenwood-injury-update-63870188",
+          "publishedAt": "2024-12-19"
+        },
+        {
+          "title": "Park earns City hard-fought Leicester win",
+          "url": "https://www.mancity.com/news/womens/leicester-man-city-wsl-match-report-63881362",
+          "publishedAt": "2025-04-27"
+        },
+        {
+          "title": "Man City v St Polten - 12 Dec 2024",
+          "url": "https://www.mancity.com/matchday/fixtures/womens/2024/uwcl/man-city-v-st-polten-12-dec-2024",
+          "publishedAt": "2024-12-12"
+        },
+        {
+          "title": "Collateral Ligament Injuries - AAOS",
+          "url": "https://www.orthoinfo.org/diseases--conditions/collateral-ligament-injuries/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "anthony-richardson-2023-shoulder",
+      "videoUrl": "https://www.youtube.com/watch?v=5HwejN_19pM",
+      "eventDate": "2023-10-08",
+      "injury": "右肩肩鎖關節（AC joint）受傷，後續接受手術",
+      "returnDate": "2024-08-11",
+      "returnSummary": "2024 年 8 月 11 日對 Denver 的 NFL 季前賽上場兩波進攻，完成傷後首場比賽。",
+      "context": "新秀四分衛第二節持球跑動遭擒抱後，右側投擲肩受傷；本片是醫師解說，不取代球隊公告。",
+      "mechanism": {
+        "title": "擒抱後肩部承受撞擊",
+        "summary": {
+          "text": "持球跑動遭擒抱後，Richardson 的右側肩部著地；小馬後續確認肩鎖關節傷勢及手術。",
+          "sourceIndexes": [1, 2]
+        },
+        "steps": [
+          "持球跑動時遭防守者擒抱。",
+          "倒地時右側肩部承受撞擊。",
+          "肩部疼痛後離場，後續接受肩鎖關節手術。"
+        ],
+        "explanation": {
+          "text": "肩鎖關節連接鎖骨與肩胛骨肩峰。直接落在肩外側可能使周圍穩定韌帶承受拉力；這與肩盂肱關節脫臼是不同部位的問題。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "轉播無法判定韌帶完整性或手術方式；影片作者並非替球員看診的醫師，分級與治療應依正式資料。"
+      },
+      "timeline": [
+        {
+          "date": "2023-10-08",
+          "title": "比賽中受傷",
+          "text": "持球遭擒抱後右肩受傷，退出當場比賽。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2023-10-24",
+          "title": "完成右肩手術",
+          "text": "球隊確認右肩手術成功，此次傷勢使新秀球季提前結束。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2024-08-11",
+          "title": "季前賽回場",
+          "text": "2024 年 8 月 11 日對 Denver 的 NFL 季前賽上場兩波進攻，完成傷後首場比賽。",
+          "sourceIndexes": [3]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "Colts QB Anthony Richardson suffers right shoulder injury in win over Titans",
+          "url": "https://www.nfl.com/news/colts-qb-anthony-richardson-suffers-right-shoulder-injury-vs-titans",
+          "publishedAt": "2023-10-08"
+        },
+        {
+          "title": "Colts QB Anthony Richardson undergoes successful shoulder surgery",
+          "url": "https://www.colts.com/news/anthony-richardson-successful-shoulder-surgery-update-shane-steichen",
+          "publishedAt": "2023-10-25"
+        },
+        {
+          "title": "Colts fall to Broncos in first preseason game of 2024",
+          "url": "https://www.colts.com/news/colts-loss-broncos-anthony-richardson-kenny-moore-first-preaseason-game",
+          "publishedAt": "2024-08-11"
+        },
+        {
+          "title": "Shoulder Separation - AAOS",
+          "url": "https://www.orthoinfo.org/diseases--conditions/shoulder-separation/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "chris-godwin-2024-ankle",
+      "videoUrl": "https://www.youtube.com/watch?v=Nawq7KDQAkc",
+      "eventDate": "2024-10-21",
+      "injury": "踝關節脫臼",
+      "returnDate": "2025-09-28",
+      "returnSummary": "2025 年 9 月 28 日對 Eagles 正式復賽，完成 3 次接球、推進 26 碼。",
+      "context": "對烏鴉比賽末段接球後被擒抱，隨後因踝部傷勢由醫療車帶離；球隊翌日確認踝關節脫臼。",
+      "mechanism": {
+        "title": "擒抱時下肢受壓與踝部負荷",
+        "summary": {
+          "text": "接球後遭擒抱，Godwin 隨即留在地面，球隊翌日確認踝關節脫臼。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "接球後向前推進。",
+          "遭擒抱倒地，下肢承受接觸與身體重量。",
+          "留在地面接受處理，隨後由醫療車帶離。"
+        ],
+        "explanation": {
+          "text": "擒抱時身體與下肢的移動可能不同步，使踝部同時承受扭轉及壓迫。這只能解釋風險情境，無法從遠景得知關節內哪些組織受損。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "影片包含慢放、定格、解剖示意與講者推測。本站傷勢名稱依球隊確認的踝關節脫臼，不由影片片名推定骨折、韌帶斷裂或受力大小；影片也不是擒抱規則裁決。"
+      },
+      "timeline": [
+        {
+          "date": "2024-10-21",
+          "title": "比賽中受傷",
+          "text": "踝關節脫臼",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-10-22",
+          "title": "確認脫臼",
+          "text": "教練確認踝脫臼並表示將接受手術。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2025-09-28",
+          "title": "正式比賽回場",
+          "text": "2025 年 9 月 28 日對 Eagles 正式復賽，完成 3 次接球、推進 26 碼。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "October 2024 | Updates",
+          "url": "https://www.buccaneers.com/news/updates-october-2024",
+          "publishedAt": "2024-10-22"
+        },
+        {
+          "title": "Chris Godwin Jr. - 2025 game log",
+          "url": "https://www.buccaneers.com/team/players-roster/chris-godwin/logs/2025/reg/",
+          "publishedAt": null
+        },
+        {
+          "title": "Ankle Fractures (Broken Ankle) - AAOS",
+          "url": "https://www.orthoinfo.org/diseases--conditions/ankle-fractures-broken-ankle/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "patrik-laine-2024-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=I4ll6KgWL6U",
+      "eventDate": "2024-09-28",
+      "injury": "左膝扭傷",
+      "returnDate": "2024-12-03",
+      "returnSummary": "12 月 3 日對 Islanders 實際上場並進球。",
+      "context": "加盟加拿大人後的季前賽第一節發生膝部碰撞。RDS 影片標題寫右膝，但球隊確認左膝；資料應以球隊公告為準。",
+      "mechanism": {
+        "title": "膝部直接碰撞後失去穩定",
+        "summary": {
+          "text": "Laine 與 Cedric Paré 發生膝部碰撞後倒地，球隊確認左膝扭傷。",
+          "sourceIndexes": [1, 3]
+        },
+        "steps": [
+          "持球滑行接近防守者。",
+          "膝部直接碰撞後失去平衡倒地。",
+          "減少左腿負重，由隊友協助離場。"
+        ],
+        "explanation": {
+          "text": "膝部在滑行中遭直接撞擊或扭轉，可能使穩定關節的組織承受突發負荷。球隊只公布左膝扭傷，因此此處不進一步指定是 MCL、ACL 或其他結構。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "RDS 原標題寫右膝，與球隊左膝公告不同；側別依球隊。轉播也不能直接證實特定韌帶或推定碰撞者意圖。"
+      },
+      "timeline": [
+        {
+          "date": "2024-09-28",
+          "title": "比賽中受傷",
+          "text": "與 Cedric Paré 發生膝部碰撞，後續確認左膝扭傷。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-12-03",
+          "title": "正式比賽回場",
+          "text": "12 月 3 日對 Islanders 實際上場並進球。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "Laine activated off IR, will make Habs regular season debut Tuesday",
+          "url": "https://www.nhl.com/canadiens/news/laine-activated-off-ir-will-make-habs-regular-season-debut-tuesday",
+          "publishedAt": "2024-12-03"
+        },
+        {
+          "title": "Laine scores in season debut, Canadiens edge Islanders in OT",
+          "url": "https://www.nhl.com/news/new-york-islanders-montreal-canadiens-game-recap-december-3",
+          "publishedAt": "2024-12-04"
+        },
+        {
+          "title": "Canadiens' Laine exits after knee-on-knee collision vs. Maple Leafs",
+          "url": "https://www.sportsnet.ca/nhl/article/canadiens-laine-exits-after-knee-on-knee-collision-vs-maple-leafs/",
+          "publishedAt": "2024-09-28"
+        },
+        {
+          "title": "Collateral Ligament Injuries - AAOS",
+          "url": "https://www.orthoinfo.org/diseases--conditions/collateral-ligament-injuries/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "adam-fantilli-2024-calf",
+      "videoUrl": "https://www.youtube.com/watch?v=PS2qTdAV2Lc",
+      "eventDate": "2024-01-28",
+      "injury": "左小腿遭冰刀割傷",
+      "returnDate": "2024-09-23",
+      "returnSummary": "2024 年 9 月 23 日在對 Buffalo 的 NHL 季前賽重新上場。",
+      "context": "與 Jared McCann 發生身體接觸後，冰刀造成小腿割傷；這與一般扭傷或肌肉拉傷是不同機制。",
+      "mechanism": {
+        "title": "冰刀接觸造成割傷",
+        "summary": {
+          "text": "Fantilli 與對手接觸後，左腿遭冰刀割傷；球隊正式公告為小腿割傷。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "在護牆旁與 Jared McCann 發生身體接觸。",
+          "接觸過程中左小腿遭對手冰刀割傷。",
+          "隨後退出比賽，未再上場。"
+        ],
+        "explanation": {
+          "text": "冰刀的銳利邊緣可能切開皮膚，與肌肉被拉長造成的拉傷不同。傷口是否深入肌腱、肌肉、神經或血管，必須靠實際檢查判斷。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "冰刀與腿部接觸區域部分被遮擋，不能從影片判定深度；未有足夠公開資料支持阿基里斯腱斷裂或血管損傷等額外診斷。"
+      },
+      "timeline": [
+        {
+          "date": "2024-01-28",
+          "title": "比賽中受傷",
+          "text": "左小腿遭冰刀割傷",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-01-31",
+          "title": "公布傷情",
+          "text": "球隊確認左小腿割傷，當時估計休養約八週；這是預估，不等於實際回場時間。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-09-23",
+          "title": "季前賽回場",
+          "text": "2024 年 9 月 23 日在對 Buffalo 的 NHL 季前賽重新上場。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "Adam Fantilli to miss approximately eight weeks",
+          "url": "https://www.nhl.com/bluejackets/news/adam-fantilli-to-miss-eight-weeks-with-calf-laceration",
+          "publishedAt": "2024-01-31"
+        },
+        {
+          "title": "Blue Jackets drop preseason opener in Buffalo",
+          "url": "https://www.nhl.com/bluejackets/news/blue-jackets-drop-preseason-opener-to-buffalo-sabres",
+          "publishedAt": "2024-09-23"
+        },
+        {
+          "title": "Cuts and puncture wounds - MedlinePlus",
+          "url": "https://www.medlineplus.gov/ency/article/000043.htm",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "trevor-zegras-2024-ankle",
+      "videoUrl": "https://www.youtube.com/watch?v=r6gMIBsHuD8",
+      "eventDate": "2024-01-09",
+      "injury": "左踝骨折",
+      "returnDate": "2024-03-26",
+      "returnSummary": "3 月 26 日對 Kraken 回到先發名單並上場 15 分 57 秒。",
+      "context": "對 Predators 第一節滑行失衡，腳先撞上場邊護牆後離場，後續確認左踝骨折。",
+      "mechanism": {
+        "title": "滑行失衡後腳先撞上護牆",
+        "summary": {
+          "text": "Zegras 在球桿與冰刀接近後失去平衡，腳先滑向護牆；官方報導確認左踝骨折。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "護牆旁滑行時球桿碰到冰刀附近。",
+          "失去平衡後腳先滑向護牆。",
+          "撞牆後倒地，接受隊友協助離場。"
+        ],
+        "explanation": {
+          "text": "腳先撞到護牆時，減速力量會傳到足踝，並可能伴隨旋轉。踝骨折可由扭轉或撞擊造成，但影片不足以判斷個案的骨折型態。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "骨折位置、移位程度與手術固定方式要靠影像或正式病情資訊；不能從轉播角度推定。"
+      },
+      "timeline": [
+        {
+          "date": "2024-01-09",
+          "title": "比賽中受傷",
+          "text": "左踝骨折",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-01-12",
+          "title": "確認骨折",
+          "text": "聯盟報導確認左踝骨折並將接受手術，當時估計缺席六至八週。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-03-26",
+          "title": "正式比賽回場",
+          "text": "3 月 26 日對 Kraken 回到先發名單並上場 15 分 57 秒。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "Zegras out 6-8 weeks for Ducks, will have surgery for broken ankle",
+          "url": "https://www.nhl.com/news/ducks-trevor-zegras-injury-update-status",
+          "publishedAt": "2024-01-12"
+        },
+        {
+          "title": "Recap: Ducks Shut Out by Kraken in Road Trip Opener",
+          "url": "https://www.nhl.com/ducks/news/recap-ducks-shut-out-by-kraken-in-road-trip-opener",
+          "publishedAt": "2024-03-27"
+        },
+        {
+          "title": "Ankle Fractures (Broken Ankle) - AAOS",
+          "url": "https://www.orthoinfo.org/diseases--conditions/ankle-fractures-broken-ankle/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "tua-tagovailoa-2024-concussion",
+      "videoUrl": "https://www.youtube.com/watch?v=mNbDeYmDUbg",
+      "eventDate": "2024-09-12",
+      "injury": "腦震盪",
+      "returnDate": "2024-10-27",
+      "returnSummary": "10 月 27 日對 Cardinals 正式復賽，完成 28 次傳球、推進 234 碼。",
+      "context": "四分衛持球推進時發生碰撞，第三節因腦震盪退場；復賽以醫療評估及實際比賽紀錄為依據。",
+      "mechanism": {
+        "title": "持球碰撞與頭部快速減速",
+        "summary": {
+          "text": "Tagovailoa 在持球跑動碰撞後倒地，海豚隊確認他因腦震盪離開當晚比賽。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "持球向前跑動接近防守者。",
+          "發生碰撞後倒地。",
+          "留在地面接受評估，因腦震盪退出比賽。"
+        ],
+        "explanation": {
+          "text": "腦震盪可發生於頭部受撞擊，或身體受力使頭部及腦迅速移動。畫面能呈現碰撞背景，但臨床判定仍需症狀與醫療評估。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "解說片同時引用本次與過往傷勢畫面。不能用單一姿勢分級腦震盪、判定是否永久受損，或預測何時可以安全回場；本頁事件日期與回場紀錄以球隊報導為準。"
+      },
+      "timeline": [
+        {
+          "date": "2024-09-12",
+          "title": "比賽中受傷",
+          "text": "腦震盪",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-10-27",
+          "title": "正式比賽回場",
+          "text": "10 月 27 日對 Cardinals 正式復賽，完成 28 次傳球、推進 234 碼。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "sources": [
+        {
+          "title": "Game Recap: Dolphins Lose First Game of Season in 31-10 Loss to Bills",
+          "url": "https://www.miamidolphins.com/news/game-recap-dolphins-lose-first-game-of-season-9-12-24",
+          "publishedAt": "2024-09-13"
+        },
+        {
+          "title": "Game Recap: Dolphins Fall Short to Cardinals, 28-27, at Home",
+          "url": "https://www.miamidolphins.com/news/game-recap-20241027",
+          "publishedAt": "2024-10-27"
+        },
+        {
+          "title": "Concussion Basics - CDC HEADS UP",
+          "url": "https://www.cdc.gov/heads-up/about/index.html",
+          "publishedAt": null
+        }
+      ]
+    }
+  ]
+}

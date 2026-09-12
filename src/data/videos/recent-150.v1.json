@@ -1,0 +1,1083 @@
+{
+  "schemaVersion": 1,
+  "decision": "recent-150-2026-09-13",
+  "authorizationQuote": "可以，那我們就新增到150例",
+  "authorizedAt": "2026-09-12T16:29:22.731772Z",
+  "scope": "thirty-recent-observation-cases",
+  "clips": [
+    {
+      "slug": "hubert-hurkacz-2024-wimbledon-knee",
+      "videoId": "tnpULHHcX0E",
+      "name": "Hubert Hurkacz",
+      "sport": "網球",
+      "event": "2024 溫布頓男單第二輪對 Arthur Fils",
+      "bodyPart": "膝部",
+      "observation": "可見草地上飛撲救球、起身後抓右膝及後續退賽；片段帶有非官方編者字幕。",
+      "eventDate": "2024-07-04",
+      "returnDate": "2024-08-10",
+      "videoUrl": "https://www.youtube.com/watch?v=tnpULHHcX0E",
+      "publisher": "Reaction Zone",
+      "sourceTitle": "Hubi Hurkacz got  injured  in his match against Arthur Fils at Wimbledon. 🔥💔",
+      "startSeconds": 0,
+      "durationSeconds": 36,
+      "returnText": "2024-08-10 於蒙特婁恢復 ATP 正式比賽，先擊敗 Thanasi Kokkinakis，再於同日擊敗 Arthur Rinderknech。",
+      "footageKind": "injury-motion",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "National Bank Open：Hurkacz 回場首日連勝兩場",
+          "url": "https://nationalbankopen.com/en/news/read/2024/hurkacz-wins-two-matches-one-day-start-comeback"
+        },
+        {
+          "title": "ITF：Hurkacz 未能及時恢復參加巴黎奧運",
+          "url": "https://www.itftennis.com/en/news-and-media/articles/hurkacz-falls-short-in-race-to-be-fit-for-paris-2024/"
+        },
+        {
+          "title": "Tennis.com：Hurkacz 飛撲後右膝疼痛退賽",
+          "url": "https://www.tennis.com/news/articles/hubert-hurkacz-injures-knee-wimbledon-dive-retires-down-match-point-arthur-fils-sportsmanship"
+        },
+        {
+          "title": "AAOS：半月板撕裂",
+          "url": "https://www.orthoinfo.org/diseases--conditions/meniscus-tears/"
+        }
+      ]
+    },
+    {
+      "slug": "skye-blakely-2024-achilles",
+      "videoId": "o2rT5OH3gWE",
+      "name": "Skye Blakely",
+      "sport": "體操",
+      "event": "2024 美國奧運體操選拔賽賽台訓練",
+      "bodyPart": "小腿／阿基里斯腱",
+      "observation": "新聞整理與其他訓練畫面，沒有2024年地板訓練阿基里斯腱斷裂瞬間；末段另提2021年選拔，不應混同。",
+      "eventDate": "2024-06-26",
+      "returnDate": "2025-01-10",
+      "videoUrl": "https://www.youtube.com/watch?v=o2rT5OH3gWE",
+      "publisher": "Gymnastics Memories",
+      "sourceTitle": "Olympic hopeful Skye Blakely injured at 2024 U.S. Olympic Gymnastics trials",
+      "startSeconds": 0,
+      "durationSeconds": 33,
+      "returnText": "2025-01-10 代表佛羅里達大學於 NCAA 賽季開幕戰參加高低槓，得到9.725分；此處為單項回場。",
+      "footageKind": "news-analysis",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "Florida Gators：Blakely 傷後首次大學體操出賽",
+          "url": "https://floridagators.com/news/2025/1/10/gymnastics-determined-debut-gators-freshman-blakely-pushed-herself-to-get-back-before-many-thought-possible"
+        },
+        {
+          "title": "Inside Gymnastics：Blakely 因阿基里斯腱傷勢退出選拔",
+          "url": "https://www.insidegymnastics.com/news-features/skye-blakelys-journey-to-paris-ends-with-heartbreaking-injury/"
+        },
+        {
+          "title": "Gymnastics Memories：Blakely 受傷新聞剪輯",
+          "url": "https://www.youtube.com/watch?v=o2rT5OH3gWE"
+        },
+        {
+          "title": "AAOS：阿基里斯腱的構造與功能",
+          "url": "https://www.orthoinfo.org/diseases--conditions/achilles-tendinitis/"
+        }
+      ]
+    },
+    {
+      "slug": "marketa-vondrousova-2024-berlin-hip",
+      "videoId": "OxBEhPSt2ew",
+      "name": "Marketa Vondrousova",
+      "sport": "網球",
+      "event": "2024 柏林草地賽第二輪對 Anna Kalinskaya",
+      "bodyPart": "骨盆",
+      "observation": "觀眾角度可見場邊上大腿包紮、回場嘗試發球及退賽握手；沒有呈現最初滑倒。",
+      "eventDate": "2024-06-20",
+      "returnDate": "2024-07-02",
+      "videoUrl": "https://www.youtube.com/watch?v=OxBEhPSt2ew",
+      "publisher": "Grebensikov Dmitrij",
+      "sourceTitle": "Marketa Vondrousova injury Tennis Drama verletzt in Berlin Vondrousova vs Anna Kalinskaya 20 06 2024",
+      "startSeconds": 0,
+      "durationSeconds": 101,
+      "returnText": "2024-07-02 於溫布頓首輪正式出賽，兩盤不敵 Jessica Bouzas Maneiro。",
+      "footageKind": "aftermath",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "AP／Tennis.com：Vondrousova 柏林滑倒後退賽",
+          "url": "https://www.tennis.com/news/articles/wimbledon-champion-vondrousova-retires-from-berlin-match-because-of-injury"
+        },
+        {
+          "title": "WTA：Vondrousova 表示狀態良好，準備溫布頓衛冕",
+          "url": "https://www.wtatennis.com/news/4047578/vondrousova-feeling-good-while-preparing-for-wimbledon-title-defense"
+        },
+        {
+          "title": "WTA：Bouzas Maneiro 擊敗衛冕冠軍",
+          "url": "https://www.wtatennis.com/news/4048888/bouzas-maneiro-shocks-defending-champion-vondrousova-at-wimbledon"
+        },
+        {
+          "title": "AAOS：髖部肌肉與肌腱的功能及拉傷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/hip-strains"
+        }
+      ]
+    },
+    {
+      "slug": "shilese-jones-2024-trials-acl",
+      "videoId": "zvgsEswg8KA",
+      "name": "Shilese Jones",
+      "sport": "體操",
+      "event": "2024 美國奧運體操選拔賽首日跳馬熱身",
+      "bodyPart": "膝部",
+      "observation": "轉播剪輯可見跳馬熱身落地、隨後左膝不適與場邊處理，後段為當日高低槓；影片於2026年上傳，內容是2024年事件。",
+      "eventDate": "2024-06-28",
+      "returnDate": null,
+      "videoUrl": "https://www.youtube.com/watch?v=zvgsEswg8KA",
+      "publisher": "Emily",
+      "sourceTitle": "Shilese Jones UB + INJURY: 2024 US Olympic trials",
+      "startSeconds": 18,
+      "durationSeconds": 329,
+      "returnText": "本次來源未確認傷後正式回場日；2026-08-09 仍在準備復出。",
+      "footageKind": "injury-motion",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "AP：Jones 公開左膝ACL及半月板傷勢，目標2028奧運",
+          "url": "https://www.ksl.com/article/sports/olympics/american-gymnast-shilese-jones-pointing-toward-2028-olympics-following-knee-injury-at-us-trials/51083201"
+        },
+        {
+          "title": "NBC Sports：Jones 持續準備重返體操",
+          "url": "https://www.nbcsports.com/olympics/news/shilese-jones-gymnastics-comeback"
+        },
+        {
+          "title": "Emily：Shilese Jones 選拔賽傷勢及高低槓轉播片段",
+          "url": "https://www.youtube.com/watch?v=zvgsEswg8KA"
+        },
+        {
+          "title": "AAOS：前十字韌帶傷害",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/"
+        }
+      ]
+    },
+    {
+      "slug": "carlos-alcaraz-2024-rio-ankle",
+      "videoId": "3SueGOiUU_A",
+      "name": "Carlos Alcaraz",
+      "sport": "網球",
+      "event": "2024 里約公開賽首輪對 Thiago Monteiro",
+      "bodyPart": "腳踝",
+      "observation": "官方片段可見側向移動時右踝翻轉、倒地及近距離重播，之後有退賽與受訪畫面。",
+      "eventDate": "2024-02-20",
+      "returnDate": "2024-03-08",
+      "videoUrl": "https://www.youtube.com/watch?v=3SueGOiUU_A",
+      "publisher": "Tennis TV",
+      "sourceTitle": "Carlos Alcaraz Retires With Ankle Injury 😥 | Rio 2024",
+      "startSeconds": 0,
+      "durationSeconds": 212,
+      "returnText": "2024-03-08 於印地安泉正式賽首戰擊敗 Matteo Arnaldi；與先前安排的拉斯維加斯表演賽分開計算。",
+      "footageKind": "injury-motion",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "Tennis.com：Alcaraz 公開MRI後的踝扭傷評估",
+          "url": "https://www.tennis.com/news/articles/carlos-alcaraz-shares-positive-update-after-ankle-sprain-injury-in-rio-see-you-in-indian-wells"
+        },
+        {
+          "title": "BNP Paribas Open：Alcaraz 3月8日賽後記者會",
+          "url": "https://bnpparibasopen.com/news/carlos-alcaraz-march-8-2024"
+        },
+        {
+          "title": "Tennis TV：Alcaraz 里約踝傷與賽後訪問",
+          "url": "https://www.youtube.com/watch?v=3SueGOiUU_A"
+        },
+        {
+          "title": "AAOS：踝扭傷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/sprained-ankle/"
+        }
+      ]
+    },
+    {
+      "slug": "grigor-dimitrov-2025-wimbledon-pectoral",
+      "videoId": "HWKf4g01YWY",
+      "name": "Grigor Dimitrov",
+      "sport": "網球",
+      "event": "2025 溫布頓男單第四輪對 Jannik Sinner",
+      "bodyPart": "軀幹",
+      "observation": "310秒起為相關保發局末段，約322秒後可見抓右胸並蹲坐草地，隨後接受協助；未從畫面判讀撕裂位置。",
+      "eventDate": "2025-07-07",
+      "returnDate": "2025-10-27",
+      "videoUrl": "https://www.youtube.com/watch?v=HWKf4g01YWY",
+      "publisher": "Wimbledon",
+      "sourceTitle": "Gutting retirement | Jannik Sinner vs Grigor Dimitrov | Extended Highlights | Wimbledon 2025",
+      "startSeconds": 310,
+      "durationSeconds": 387,
+      "returnText": "2025-10-27 於巴黎大師賽首輪擊敗 Giovanni Mpetshi Perricard，恢復 ATP 正式出賽。",
+      "footageKind": "injury-motion",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "Tennis.com：Dimitrov 兩盤領先時因胸部傷害退賽",
+          "url": "https://www.tennis.com/news/articles/grigor-dimitrov-retires-two-set-lead-jannik-sinner-pectoral-injury-wimbledon"
+        },
+        {
+          "title": "Tennis.com：Dimitrov 表示復健開始",
+          "url": "https://www.tennis.com/baseline/articles/grigor-dimitrov-wimbledon-injury-one-of-the-most-painful-moments-update"
+        },
+        {
+          "title": "Rolex Paris Masters：Dimitrov 回場贏得首輪",
+          "url": "https://www.rolexparismasters.com/en/news/article/main-draw-first-round-victories-dimitrov-khachanov"
+        },
+        {
+          "title": "AAOS：胸大肌及肌腱功能",
+          "url": "https://www.orthoinfo.org/diseases--conditions/pectoralis-tendon-tear/"
+        }
+      ]
+    },
+    {
+      "slug": "elaine-thompson-herah-2024-achilles",
+      "videoId": "WnWnsmfra-s",
+      "name": "Elaine Thompson-Herah",
+      "sport": "田徑",
+      "event": "2024 USATF 紐約大獎賽女子100公尺",
+      "bodyPart": "小腿／阿基里斯腱",
+      "observation": "CVM TV主播說明，搭配選手訪談背景與本人傷勢聲明；本片未呈現紐約100公尺受傷瞬間。",
+      "eventDate": "2024-06-09",
+      "returnDate": "2026-02-14",
+      "videoUrl": "https://www.youtube.com/watch?v=WnWnsmfra-s",
+      "publisher": "CVM TV NEWS",
+      "sourceTitle": "Achilles Tear Forces Thompson-Herah's Withdrawal from National Championships | Sports | @CVMTVNews",
+      "startSeconds": 0,
+      "durationSeconds": 68,
+      "returnText": "2026-02-14 在牙買加 Camperdown Classic 恢復正式比賽；AFP報導為2024年6月後首戰。",
+      "footageKind": "news-analysis",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "AP：Thompson-Herah 紐約100公尺賽後被協助離場",
+          "url": "https://www.news4jax.com/sports/2024/06/09/defending-olympic-champion-elaine-thompson-herah-appears-to-hurt-achilles-in-100-at-grand-prix-event/"
+        },
+        {
+          "title": "ABC／Reuters：Thompson-Herah 公開阿基里斯腱小撕裂",
+          "url": "https://www.abc.net.au/news/2024-06-27/paris-olympics-elaine-thompson-herah-to-miss-games/104031312"
+        },
+        {
+          "title": "AFP／SuperSport：Thompson-Herah 完成2024年後首戰",
+          "url": "https://supersport.com/athletics/news/f4189279-6328-491a-a2e9-76673240558e/jamaica-s-thompson-herah-runs-first-race-since-2024"
+        },
+        {
+          "title": "AAOS：阿基里斯腱的構造與功能",
+          "url": "https://www.orthoinfo.org/diseases--conditions/achilles-tendinitis/"
+        }
+      ]
+    },
+    {
+      "slug": "kevin-mayer-2024-paris-hamstring",
+      "videoId": "aSlYO9XfYaA",
+      "name": "Kevin Mayer",
+      "sport": "田徑",
+      "event": "2024 巴黎鑽石聯賽三項賽110公尺跨欄",
+      "bodyPart": "大腿後側",
+      "observation": "Eurosport 8月1日訪問畫面，Mayer 說明無法參加十項全能；未呈現7月7日受傷過程。",
+      "eventDate": "2024-07-07",
+      "returnDate": "2026-05-03",
+      "videoUrl": "https://www.youtube.com/watch?v=aSlYO9XfYaA",
+      "publisher": "Eurosport",
+      "sourceTitle": "JO PARIS 2024 - Énorme coup dur pour la France : Kévin Mayer annonce son forfait pour le décathlon",
+      "startSeconds": 0,
+      "durationSeconds": 93,
+      "returnText": "2026-05-03 於法國 Lunel 俱樂部賽恢復撐竿跳及鐵餅出賽；這是分項回場，不代表恢復完整十項全能。",
+      "footageKind": "news-analysis",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "法國田徑總會：Mayer 左大腿後側嚴重傷害",
+          "url": "https://www.athle.fr/actualites/equipe-de-france-lesion-importante-a-l-ischio-jambier-gauche-pour-mayer/20269"
+        },
+        {
+          "title": "法國田徑總會：Mayer 退出巴黎奧運十項全能",
+          "url": "https://www.athle.fr/contenu/jeux-olympiques-2024-paris-fra-kevin-mayer-forfait/6921"
+        },
+        {
+          "title": "法國田徑總會：Mayer 於俱樂部賽重返比賽",
+          "url": "https://www.athle.fr/actualites/les-resultats-du-week-end-kevin-mayer-a-retrouve-la-competition-lors-des-interclubs/22967"
+        },
+        {
+          "title": "AAOS：大腿後側肌群功能與拉傷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/hamstring-muscle-injuries/"
+        }
+      ]
+    },
+    {
+      "slug": "pv-sindhu-2023-french-open-knee",
+      "videoId": "igzfkBo1mpw",
+      "name": "P. V. Sindhu",
+      "sport": "羽球",
+      "event": "2023 法國公開賽女單16強對 Supanida Katethong",
+      "bodyPart": "膝部",
+      "observation": "1970秒起可見第二局開局回合，回合後停下，稍後到場邊接受膝部處理；可辨識左膝處理，不能判定特定組織傷害。",
+      "eventDate": "2023-10-26",
+      "returnDate": "2024-02-14",
+      "videoUrl": "https://www.youtube.com/watch?v=igzfkBo1mpw",
+      "publisher": "BWF TV",
+      "sourceTitle": "YONEX French Open 2023 | Supanida Katethong (THA) vs. Pusarla V. Sindhu (IND) | R16",
+      "startSeconds": 1970,
+      "durationSeconds": 2450,
+      "returnText": "2024-02-14 於亞洲羽球團體錦標賽正式回場，以21-17、21-15擊敗韓悅。",
+      "footageKind": "injury-motion",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "Indian Express：Sindhu 公開法國賽後的左膝檢查近況",
+          "url": "https://indianexpress.com/article/sports/badminton/pv-sindhu-provides-injury-update-after-french-open-withdrawal-determined-to-come-back-firing-on-all-cylinders-9008573/"
+        },
+        {
+          "title": "BWF TV：Katethong 對 Sindhu 法國公開賽16強完整轉播",
+          "url": "https://www.youtube.com/watch?v=igzfkBo1mpw"
+        },
+        {
+          "title": "Scroll：Sindhu 傷後於亞洲團體錦標賽回場",
+          "url": "https://scroll.in/field/1063667/age-of-pv-sindhu-continues-after-an-injury-layoff-the-star-indian-shuttler-makes-her-return"
+        },
+        {
+          "title": "AAOS：膝部構造與常見傷害",
+          "url": "https://www.orthoinfo.org/diseases--conditions/common-knee-injuries/"
+        }
+      ]
+    },
+    {
+      "slug": "an-se-young-2023-asian-games-knee",
+      "videoId": "CBRNZrv7GNk",
+      "name": "安洗瑩 An Se-young",
+      "sport": "羽球",
+      "event": "2023 杭州亞運女單金牌戰對陳雨菲",
+      "bodyPart": "膝部",
+      "observation": "韓聯社TV主播及返國接機畫面，說明膝部檢查和復健安排；無受傷動作回放。",
+      "eventDate": "2023-10-07",
+      "returnDate": "2023-11-15",
+      "videoUrl": "https://www.youtube.com/watch?v=CBRNZrv7GNk",
+      "publisher": "연합뉴스TV",
+      "sourceTitle": "안세영, 최대 5주 재활 진단…올림픽 영향 없을 듯 / 연합뉴스TV (YonhapnewsTV)",
+      "startSeconds": 0,
+      "durationSeconds": 28,
+      "returnText": "2023-11-15 於日本熊本大師賽女單首輪擊敗白馭珀，恢復正式出賽。",
+      "footageKind": "news-analysis",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "韓聯社：安洗瑩亞運膝傷檢查後需復健",
+          "url": "https://www.yna.co.kr/view/AKR20231009037200007"
+        },
+        {
+          "title": "東亞日報：安洗瑩傷後回場首戰直落二獲勝",
+          "url": "https://www.donga.com/en/article/all/20231116/4557490/1"
+        },
+        {
+          "title": "韓聯社TV：安洗瑩膝傷與復健期新聞",
+          "url": "https://www.youtube.com/watch?v=CBRNZrv7GNk"
+        },
+        {
+          "title": "AAOS：膝部構造與常見傷害",
+          "url": "https://www.orthoinfo.org/diseases--conditions/common-knee-injuries/"
+        }
+      ]
+    },
+    {
+      "slug": "marco-schwarz-2023-bormio-knee",
+      "videoId": "n_VjzzwVVoo",
+      "name": "Marco Schwarz",
+      "sport": "高山滑雪",
+      "event": "2023 Bormio 世界盃滑降賽",
+      "bodyPart": "膝部",
+      "observation": "0秒起可見過彎滑行；約5秒倒地滑出路線，後段有近景重播及防護網旁救援畫面。",
+      "eventDate": "2023-12-28",
+      "returnDate": "2024-12-15",
+      "videoUrl": "https://www.youtube.com/watch?v=n_VjzzwVVoo",
+      "publisher": "CRASH",
+      "sourceTitle": "Marco SCHWARZ - CRASH - Downhill - Bormio 2023",
+      "startSeconds": 0,
+      "durationSeconds": 85,
+      "returnText": "在 Val d’Isère 世界盃曲道賽實際出賽，第一趟第十、第二趟未完賽。",
+      "footageKind": "injury-motion",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "ORF：Schwarz 右膝確診及手術",
+          "url": "https://sport.orf.at/stories/3120575/"
+        },
+        {
+          "title": "ORF：Val d’Isère 賽果及 Schwarz 復出",
+          "url": "https://sport.orf.at/stories/3135813/"
+        },
+        {
+          "title": "AAOS：前十字韌帶傷害的一般原因與診斷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/"
+        }
+      ]
+    },
+    {
+      "slug": "alexis-pinturault-2024-wengen-knee",
+      "videoId": "pU5QTK8kSB4",
+      "name": "Alexis Pinturault",
+      "sport": "高山滑雪",
+      "event": "2024 Wengen 世界盃超級大曲道",
+      "bodyPart": "膝部",
+      "observation": "約20秒起呈現跳躍區前的滑行；約26至31秒可見落地後倒地與滑行，後段為救援直升機及現場畫面。",
+      "eventDate": "2024-01-12",
+      "returnDate": "2024-12-07",
+      "videoUrl": "https://www.youtube.com/watch?v=pU5QTK8kSB4",
+      "publisher": "Ski Patrol",
+      "sourceTitle": "Alexis Pinturault - Heavy ski crash - terrible chute  - Super G - Wengen 2024",
+      "startSeconds": 20,
+      "durationSeconds": 67,
+      "returnText": "在 Beaver Creek 世界盃超級大曲道實際復出，名列第十。",
+      "footageKind": "injury-motion",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "SRF：法國滑雪協會確認 Pinturault 左膝 ACL 撕裂",
+          "url": "https://www.srf.ch/sport/ski-alpin/weltcup-maenner/naechstes-opfer-am-lauberhorn-nach-sturz-kreuzbandriss-und-saisonende-bei-pinturault"
+        },
+        {
+          "title": "FIS：Pinturault 重返雪上訓練",
+          "url": "https://www.fis-ski.com/alpine-skiing/news/2024-25/alexis-pinturault-celebrates-comeback-to-the-slopes-after-his-knee-injury"
+        },
+        {
+          "title": "FIS：Pinturault 官方出賽紀錄",
+          "url": "https://www.fis-ski.com/DB/general/athlete-biography.html?competitorid=127048&sectorcode=al&type=result"
+        },
+        {
+          "title": "AAOS：前十字韌帶傷害的一般原因與診斷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/"
+        }
+      ]
+    },
+    {
+      "slug": "petra-vlhova-2024-jasna-knee",
+      "videoId": "jK2BphKTP6M",
+      "name": "Petra Vlhová",
+      "sport": "高山滑雪",
+      "event": "2024 Jasná 世界盃大曲道",
+      "bodyPart": "膝部",
+      "observation": "約14秒起可看過門，接著倒地滑向防護網；約62至74秒有慢動作回放。",
+      "eventDate": "2024-01-20",
+      "returnDate": "2026-02-10",
+      "videoUrl": "https://www.youtube.com/watch?v=jK2BphKTP6M",
+      "publisher": "Sport Plus",
+      "sourceTitle": "Petra Vlhová VYPADLA v obrovskom slalome v jasnej || MUSELI JU ODNIESŤ VRTULNÍKOM",
+      "startSeconds": 14,
+      "durationSeconds": 94,
+      "returnText": "在米蘭科爾蒂納冬奧團體全能的曲道部分實際復出，未完賽。",
+      "footageKind": "injury-motion",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "Eurosport：Jasná 事故及右膝 ACL 撕裂",
+          "url": "https://www.eurosport.fr/ski-alpin/jasna/2023-2024/jasna-et-maintenant-petra-vlhova.-lhecatombe-se-poursuit-chez-les-cadors_sto9978855/story.shtml"
+        },
+        {
+          "title": "ta3／TASR：Vlhová 冬奧首次正式回歸",
+          "url": "https://www.ta3.com/clanok/1033365/petra-vlhova-nedokoncila-slalom-v-timovej-kombinacii-pri-svojom-sutaznom-navrate-po-zraneni-urobila-chybu-v-branke"
+        },
+        {
+          "title": "AAOS：前十字韌帶傷害的一般原因與診斷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/"
+        }
+      ]
+    },
+    {
+      "slug": "wout-van-aert-2024-vuelta-knee",
+      "videoId": "-2-Chylawx8",
+      "name": "Wout van Aert",
+      "sport": "自行車",
+      "event": "2024 環西班牙自行車賽第16站",
+      "bodyPart": "膝部",
+      "observation": "約180至186秒可見車群在下坡彎道失去平衡並滑向路邊；187至188秒圖卡標示 Wout van Aert，後面接事故重播。",
+      "eventDate": "2024-09-03",
+      "returnDate": "2024-12-27",
+      "videoUrl": "https://www.youtube.com/watch?v=-2-Chylawx8",
+      "publisher": "Lanterne Rouge",
+      "sourceTitle": "I Can't Believe This Happened to Wout van Aert Again | Vuelta a Espana 2024 Stage 16",
+      "startSeconds": 179,
+      "durationSeconds": 410,
+      "returnText": "在 Loenhout 越野自行車賽實際復出，名列第四。",
+      "footageKind": "injury-motion",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "Visma：第17站報告與 Van Aert 傷勢更新",
+          "url": "https://www.teamvismaleaseabike.com/race-report/news/no-major-role-for-team-visma-lease-a-bike-in-seventeenth-vuelta-stage/"
+        },
+        {
+          "title": "Visma：Van Aert 結束當年公路賽季",
+          "url": "https://www.teamvismaleaseabike.com/news/news/wout-van-aert-will-not-race-any-more-this-season/"
+        },
+        {
+          "title": "Visma：Loenhout 復出獲第四",
+          "url": "https://www.teamvismaleaseabike.com/liveblog/liveblog/liveblog-exact-cross-loenhout/"
+        },
+        {
+          "title": "NHS：割傷與擦傷",
+          "url": "https://www.nhs.uk/conditions/cuts-and-grazes/"
+        }
+      ]
+    },
+    {
+      "slug": "kane-williamson-2023-world-cup-thumb",
+      "videoId": "MtIaPgMih1c",
+      "name": "Kane Williamson",
+      "sport": "板球",
+      "event": "2023 世界盃紐西蘭對孟加拉",
+      "bodyPart": "手部",
+      "observation": "抽樣畫面為 WION 主持人與來賓討論，後方顯示 Williamson 比賽照片；沒有連續受傷動作可供判讀。",
+      "eventDate": "2023-10-13",
+      "returnDate": "2023-11-04",
+      "videoUrl": "https://www.youtube.com/watch?v=MtIaPgMih1c",
+      "publisher": "WION",
+      "sourceTitle": "NZ stay perfect but Williamson injured again | WION World of Cricket",
+      "startSeconds": 0,
+      "durationSeconds": 114,
+      "returnText": "在世界盃對巴基斯坦一戰實際復出，攻下95分。",
+      "footageKind": "news-analysis",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "ICC：Williamson 左拇指骨折確診",
+          "url": "https://www.icc-cricket.com/tournaments/cricketworldcup/news/new-zealand-suffer-williamson-blow-with-fractured-thumb-confirmed"
+        },
+        {
+          "title": "Wisden：Williamson 對巴基斯坦復出",
+          "url": "https://www.wisden.com/series/icc-mens-cricket-world-cup-2023-24/cricket-news/watch-kane-williamson-comeback-cuts-loose-against-pakistan-cwc-2023-pak-nz"
+        },
+        {
+          "title": "AAOS：手部骨折",
+          "url": "https://www.orthoinfo.org/diseases--conditions/hand-fractures/"
+        }
+      ]
+    },
+    {
+      "slug": "hardik-pandya-2023-world-cup-ankle",
+      "videoId": "uQDKyD-Sk4w",
+      "name": "Hardik Pandya",
+      "sport": "板球",
+      "event": "2023 世界盃印度對孟加拉",
+      "bodyPart": "腳踝",
+      "observation": "13秒後的抽樣畫面交替呈現 Pandya 坐在場上與被攙扶離場照片，並有腳踝傷勢新聞字幕；未呈現連續受傷動作。",
+      "eventDate": "2023-10-19",
+      "returnDate": "2024-02-26",
+      "videoUrl": "https://www.youtube.com/watch?v=uQDKyD-Sk4w",
+      "publisher": "MIRROR NOW",
+      "sourceTitle": "Breaking News | Hardik Pandya Suffers Ankle Injury During India Vs Bangladesh In World Cup 2023",
+      "startSeconds": 13,
+      "durationSeconds": 116,
+      "returnText": "代表 Reliance 1 參加 DY Patil T20 Cup，實際投球與打擊；屬地方競賽回歸。",
+      "footageKind": "news-analysis",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "ICC：核准更換 Pandya 名單",
+          "url": "https://www.icc-cricket.com/media-releases/krishna-approved-as-replacement-for-pandya-in-india-squad"
+        },
+        {
+          "title": "ESPN：Pandya 重返競賽板球",
+          "url": "https://www.espn.com.sg/cricket/story/_/id/39602581/hardik-pandya-returns-competitive-cricket-dy-patil-t20-cup"
+        },
+        {
+          "title": "AAOS：腳踝扭傷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/sprained-ankle/"
+        },
+        {
+          "title": "ICC：Pandya 投球後守備受傷送檢",
+          "url": "https://www.icc-cricket.com/tournaments/cricketworldcup/news/pandya-sent-for-scans-after-hurting-ankle-against-bangladesh"
+        }
+      ]
+    },
+    {
+      "slug": "mikaela-shiffrin-2024-cortina-knee",
+      "videoId": "5cwk5Y0Iq1E",
+      "name": "Mikaela Shiffrin",
+      "sport": "高山滑雪",
+      "event": "2024 Cortina 世界盃女子滑降",
+      "bodyPart": "膝部",
+      "observation": "約18秒起呈現通過起伏地形與後續轉向，23秒後倒地並滑向防護網；不能由遠景確認膝內組織變化。",
+      "eventDate": "2024-01-26",
+      "returnDate": "2024-03-10",
+      "videoUrl": "https://www.youtube.com/watch?v=5cwk5Y0Iq1E",
+      "publisher": "WorldCup Skiing",
+      "sourceTitle": "THE BEST SKIER IN THE WORLD CRASHED AT 100km/h Mikaela Shiffrin Cortina Italy 2024",
+      "startSeconds": 18,
+      "durationSeconds": 40,
+      "returnText": "在 Åre 世界盃曲道賽實際復出並奪冠。",
+      "footageKind": "injury-motion",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "AP：Shiffrin 在 Cortina 受傷",
+          "url": "https://apnews.com/article/d7d9233c6efe8052b5fc86463b3a2f52"
+        },
+        {
+          "title": "U.S. Ski & Snowboard：Shiffrin 復出奪冠",
+          "url": "https://www.usskiandsnowboard.org/news/shiffrin-returns-win-clinches-slalom-crystal-globe"
+        },
+        {
+          "title": "AAOS：半月板的功能與外傷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/meniscus-tears/"
+        }
+      ]
+    },
+    {
+      "slug": "jorge-martin-2025-qatar-chest",
+      "videoId": "dCMckwzPJog",
+      "name": "Jorge Martín",
+      "sport": "機車競速",
+      "event": "2025 MotoGP 卡達大獎賽",
+      "bodyPart": "軀幹",
+      "observation": "5秒後可見彎道重播，人車倒地後滑行；0秒及15至17秒附近有車手在緩衝區跪地的畫面。畫面是螢幕翻拍，無法清楚分辨胸部每次接觸。",
+      "eventDate": "2025-04-13",
+      "returnDate": "2025-07-19",
+      "videoUrl": "https://www.youtube.com/watch?v=dCMckwzPJog",
+      "publisher": "futadore",
+      "sourceTitle": "motgp qatar 2025 Jorge Martin crash almost died like Marco Simoncelli",
+      "startSeconds": 5,
+      "durationSeconds": 18,
+      "returnText": "在 Brno 捷克站 Sprint 實際復出，名列第十一；翌日大獎賽第七。",
+      "footageKind": "injury-motion",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "MotoGP／Aprilia：Martín 卡達胸部傷勢與更新",
+          "url": "https://www.motogp.com/en/news/2025/04/13/kecelakaan-di-gp-qatar-jorge-martin-patah-enam-tulang-rusuk/524365"
+        },
+        {
+          "title": "Piaggio／Aprilia：Brno 週末賽果",
+          "url": "https://wide.piaggiogroup.com/en/articles/racing/podium-for-aprilia-racing-and-marco-bezzecchi-in-the-brno-race/index.html"
+        },
+        {
+          "title": "North Bristol NHS Trust：胸部外傷",
+          "url": "https://www.nbt.nhs.uk/our-services/a-z-services/emergency-zone/ed-miu-patient-informationtt-information/chest-injury-advice"
+        }
+      ]
+    },
+    {
+      "slug": "alex-rins-2024-assen-wrist",
+      "videoId": "FseibZgB1Pk",
+      "name": "Álex Rins",
+      "sport": "機車競速",
+      "event": "2024 MotoGP 荷蘭 Assen 大獎賽",
+      "bodyPart": "手腕",
+      "observation": "約10秒起可見起跑後車群進入彎道，接著鏡頭轉向賽道邊；20秒後有人員靠近車手。事故距離較遠，不能從此片確認手腕落地角度。",
+      "eventDate": "2024-06-30",
+      "returnDate": "2024-08-17",
+      "videoUrl": "https://www.youtube.com/watch?v=FseibZgB1Pk",
+      "publisher": "Dennis De Swart",
+      "sourceTitle": "TT Assen 2024 moto Gp race start & crash Alex Rins #assen #yamaha #ducati #honda #motogp #ttassen",
+      "startSeconds": 10,
+      "durationSeconds": 51,
+      "returnText": "在奧地利站 Sprint 實際出賽，之後因機械問題退賽。",
+      "footageKind": "injury-motion",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "MotoGP：Rins Assen 事故與初步醫療資訊",
+          "url": "https://www.motogp.com/pt/news/2024/06/30/rins-viaja-a-madrid-para-someterse-a-mas-examenes-medicos/502384"
+        },
+        {
+          "title": "Yamaha：Rins 手腕及腳踝術後缺席德國站",
+          "url": "https://www.yamaha-racing.com/news/motogp/remy-gardner-joins-monster-energy-yamaha-motogp-for-german-gp-we/"
+        },
+        {
+          "title": "Motorsport.com：Rins 在奧地利 Sprint 出賽後因機械故障退賽",
+          "url": "https://es.motorsport.com/motogp/news/declaraciones-alex-rins-problema-mecanico-sprint-austria/10645329/"
+        },
+        {
+          "title": "AAOS：骨折的原因與檢查",
+          "url": "https://www.orthoinfo.org/diseases--conditions/fractures-broken-bones/"
+        }
+      ]
+    },
+    {
+      "slug": "antoine-dupont-2025-six-nations-knee",
+      "videoId": "GjRtEqAnRNc",
+      "name": "Antoine Dupont",
+      "sport": "橄欖球",
+      "event": "2025 六國錦標賽愛爾蘭對法國",
+      "bodyPart": "膝部",
+      "observation": "18秒後的抽樣畫面出現 Dupont 的傷勢聲明圖卡及被攙扶離場照片；不是膝部受傷的連續轉播。",
+      "eventDate": "2025-03-08",
+      "returnDate": "2025-11-29",
+      "videoUrl": "https://www.youtube.com/watch?v=GjRtEqAnRNc",
+      "publisher": "Sky Sports News",
+      "sourceTitle": "France skipper Antoine Dupont confirms he ruptured knee ligaments in Ireland win",
+      "startSeconds": 18,
+      "durationSeconds": 46,
+      "returnText": "代表 Toulouse 對 Racing 92，下半場第50分鐘替補上場。",
+      "footageKind": "news-analysis",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "六國賽官方：Dupont 右膝 ACL 斷裂",
+          "url": "https://www.sixnationsrugby.com/en/m6n/news/when-serin-replaced-dupont-96-years-ago-france-rugby"
+        },
+        {
+          "title": "L’Équipe：Dupont 正式比賽回歸",
+          "url": "https://www.lequipe.fr/Rugby/Actualites/Antoine-dupont-a-fait-son-retour-en-competition-officielle-apres-266-jours-d-absence/1613363"
+        },
+        {
+          "title": "AAOS：前十字韌帶傷害的一般原因與診斷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/"
+        },
+        {
+          "title": "六國賽官方法文：Dupont 於爭球團對抗後傷退",
+          "url": "https://www.sixnationsrugby.com/fr/m6n/matchs/202500/ireland-v-france-08032025-1415/report"
+        }
+      ]
+    },
+    {
+      "slug": "angel-reese-2024-wrist",
+      "videoId": "Qyzau4_9NNQ",
+      "name": "Angel Reese",
+      "sport": "籃球",
+      "event": "2024 WNBA 芝加哥天空對洛杉磯火花",
+      "bodyPart": "手腕",
+      "observation": "本片包含觀眾席拍攝與電視重播，約 38 秒起有籃下動作；片中列出多個「可能」時點。可觀察跌倒與手部支撐情境，不能將其中一幕定為骨折確切瞬間。",
+      "eventDate": "2024-09-06",
+      "returnDate": "2025-01-17",
+      "videoUrl": "https://www.youtube.com/watch?v=Qyzau4_9NNQ",
+      "publisher": "Quita Loves Sports",
+      "sourceTitle": "Here's how Angel Reese injured her wrist against the LA Sparks | In game footage",
+      "startSeconds": 38,
+      "durationSeconds": 103,
+      "returnText": "2025 年 1 月 17 日代表 Rose 參加 Unrivaled 正式賽事；這是三對三職業聯盟復賽，並非 WNBA 復賽。",
+      "footageKind": "injury-motion",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "Sky get needed win over Wings without injured Angel Reese",
+          "url": "https://chicago.suntimes.com/chicago-sky-and-wnba/2024/09/08/sky-get-needed-win-over-wings-in-angel-reeses-first-absence"
+        },
+        {
+          "title": "Vinyl (79-73) Rose (Jan 17, 2025) Final Score",
+          "url": "https://www.unrivaled.basketball/game/jb3jklxmsrks"
+        },
+        {
+          "title": "Scaphoid Fracture of the Wrist - AAOS",
+          "url": "https://www.orthoinfo.org/diseases--conditions/scaphoid-fracture-of-the-wrist"
+        },
+        {
+          "title": "Angel Reese explains injury to left wrist, undergoes surgery",
+          "url": "https://www.espn.com/wnba/story/_/id/41196082/angel-reese-explains-wrist-injury-says-surgery"
+        }
+      ]
+    },
+    {
+      "slug": "juju-watkins-2025-knee",
+      "videoId": "uw0GVL3nfN8",
+      "name": "JuJu Watkins",
+      "sport": "籃球",
+      "event": "2025 NCAA 女籃錦標賽第二輪 USC 對 Mississippi State",
+      "bodyPart": "膝部",
+      "observation": "ESPN 新聞前段有該場快攻、右腳支撐後倒地與被協助離場的重播，約 5 秒起可觀察。後段為記者及棚內討論，不能當作醫療檢查結果。",
+      "eventDate": "2025-03-24",
+      "returnDate": null,
+      "videoUrl": "https://www.youtube.com/watch?v=uw0GVL3nfN8",
+      "publisher": "ESPN",
+      "sourceTitle": "JuJu Watkins leaves the game with apparent knee injury as USC advances to Sweet 16 | SC with SVP",
+      "startSeconds": 5,
+      "durationSeconds": 716,
+      "returnText": "USC 在 2025 年 9 月 28 日宣布她缺席整個 2025–26 球季；查核截至 2026 年 9 月 13 日，未取得正式復賽證據。",
+      "footageKind": "injury-motion",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "JuJu Watkins tears ACL, sources say, ending USC star's season",
+          "url": "https://www.espn.com/womens-college-basketball/story/_/id/44393492/usc-trojans-star-juju-watkins-carried-injury-vs-mississippi-state-women-ncaa-tournament"
+        },
+        {
+          "title": "USC All-American JuJu Watkins Sustains Season-Ending Injury",
+          "url": "https://usctrojans.com/news/2025/3/26/womens-basketball-usc-all-american-juju-watkins-sustains-season-ending-injury"
+        },
+        {
+          "title": "USC’s JuJu Watkins to Miss 2025-26 Season to Focus on Recovery",
+          "url": "https://usctrojans.com/news/2025/9/28/womens-basketball-uscs-juju-watkins-to-miss-2025-26-season-to-focus-on-recovery"
+        },
+        {
+          "title": "Anterior Cruciate Ligament (ACL) Injuries - AAOS",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/"
+        }
+      ]
+    },
+    {
+      "slug": "trinity-rodman-2024-back",
+      "videoId": "4WeLwd2-YhA",
+      "name": "Trinity Rodman",
+      "sport": "足球",
+      "event": "2024 NWSL 華盛頓精神對堪薩斯城潮流",
+      "bodyPart": "軀幹",
+      "observation": "約 1 分 38 秒開始詢問 Rodman 等人的傷勢，教練說明她背部不適、當時資訊仍有限。本片沒有事故畫面，適合對照最初公開說明與後續診斷。",
+      "eventDate": "2024-09-20",
+      "returnDate": "2024-10-13",
+      "videoUrl": "https://www.youtube.com/watch?v=4WeLwd2-YhA",
+      "publisher": "Washington Spirit",
+      "sourceTitle": "\"We didn't create many chances.\" | Head Coach Jonatan Giráldez Post Match Press Conference",
+      "startSeconds": 98,
+      "durationSeconds": 1139,
+      "returnText": "10 月 13 日對 Racing Louisville 於第 67 分鐘替補上場。",
+      "footageKind": "news-analysis",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "Spirit's Trinity Rodman leaves game in wheelchair after back injury",
+          "url": "https://www.espn.com/soccer/story/_/id/41349813/washington-spirit-trinity-rodman-leaves-game-wheelchair-back-injury"
+        },
+        {
+          "title": "What They’re Saying After Playing Kansas City",
+          "url": "https://washingtonspirit.com/blog/2024/09/22/what-theyre-saying-after-playing-kansas-city/"
+        },
+        {
+          "title": "Recap: Spirit Triumphs in Dominating, 4-1, Victory over Racing Louisville FC",
+          "url": "https://washingtonspirit.com/blog/2024/10/13/recap-spirit-triumphs-in-dominating-4-1-victory-over-racing-louisville-fc/"
+        },
+        {
+          "title": "Back Spasms - Cleveland Clinic",
+          "url": "https://my.clevelandclinic.org/health/diseases/22881-back-spasms"
+        }
+      ]
+    },
+    {
+      "slug": "alex-greenwood-2024-knee",
+      "videoId": "DbKcBrl8AOg",
+      "name": "Alex Greenwood",
+      "sport": "足球",
+      "event": "2024–25 UEFA 女子歐冠 曼城對 St. Pölten",
+      "bodyPart": "膝部",
+      "observation": "約 9 秒起記者詢問 Greenwood 的狀況，Gareth Taylor 回答有碰撞、仍待了解傷勢。此為當場賽後記者會，沒有受傷瞬間；後續 MCL 診斷以曼城公告為準。",
+      "eventDate": "2024-12-12",
+      "returnDate": "2025-04-27",
+      "videoUrl": "https://www.youtube.com/watch?v=DbKcBrl8AOg",
+      "publisher": "manchester football - Manchester City and United",
+      "sourceTitle": "“She could have had a hat trick tonight with the chances she had” - Gareth Taylor on Lily Murphy",
+      "startSeconds": 9,
+      "durationSeconds": 307,
+      "returnText": "4 月 27 日 WSL 對 Leicester，於第 60 分鐘替補上場。",
+      "footageKind": "news-analysis",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "Injury update: Alex Greenwood",
+          "url": "https://www.mancity.com/news/womens/alex-greenwood-injury-update-63870188"
+        },
+        {
+          "title": "Park earns City hard-fought Leicester win",
+          "url": "https://www.mancity.com/news/womens/leicester-man-city-wsl-match-report-63881362"
+        },
+        {
+          "title": "Man City v St Polten - 12 Dec 2024",
+          "url": "https://www.mancity.com/matchday/fixtures/womens/2024/uwcl/man-city-v-st-polten-12-dec-2024"
+        },
+        {
+          "title": "Collateral Ligament Injuries - AAOS",
+          "url": "https://www.orthoinfo.org/diseases--conditions/collateral-ligament-injuries/"
+        }
+      ]
+    },
+    {
+      "slug": "anthony-richardson-2023-shoulder",
+      "videoId": "5HwejN_19pM",
+      "name": "Anthony Richardson",
+      "sport": "美式足球",
+      "event": "2023 NFL 第 5 週 印第安納波利斯小馬對田納西泰坦",
+      "bodyPart": "肩部",
+      "observation": "約 20 秒起可見醫師搭配擒抱後肩部著地的慢動作解說。可觀察外力方向與著地姿勢；影片中的推測不等於球隊正式診斷。",
+      "eventDate": "2023-10-08",
+      "returnDate": "2024-08-11",
+      "videoUrl": "https://www.youtube.com/watch?v=5HwejN_19pM",
+      "publisher": "Brian Sutterer MD",
+      "sourceTitle": "Anthony Richardson in Serious Pain After Shoulder Injury - Doctor Explains",
+      "startSeconds": 20,
+      "durationSeconds": 272,
+      "returnText": "2024 年 8 月 11 日對 Denver 的 NFL 季前賽上場兩波進攻，完成傷後首場比賽。",
+      "footageKind": "injury-motion",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "Colts QB Anthony Richardson suffers right shoulder injury in win over Titans",
+          "url": "https://www.nfl.com/news/colts-qb-anthony-richardson-suffers-right-shoulder-injury-vs-titans"
+        },
+        {
+          "title": "Colts QB Anthony Richardson undergoes successful shoulder surgery",
+          "url": "https://www.colts.com/news/anthony-richardson-successful-shoulder-surgery-update-shane-steichen"
+        },
+        {
+          "title": "Colts fall to Broncos in first preseason game of 2024",
+          "url": "https://www.colts.com/news/colts-loss-broncos-anthony-richardson-kenny-moore-first-preaseason-game"
+        },
+        {
+          "title": "Shoulder Separation - AAOS",
+          "url": "https://www.orthoinfo.org/diseases--conditions/shoulder-separation/"
+        }
+      ]
+    },
+    {
+      "slug": "chris-godwin-2024-ankle",
+      "videoId": "Nawq7KDQAkc",
+      "name": "Chris Godwin",
+      "sport": "美式足球",
+      "event": "2024 NFL 第 7 週 坦帕灣海盜對巴爾的摩烏鴉",
+      "bodyPart": "腳踝",
+      "observation": "約 40 秒起以比賽重播與定格畫面解說被擒抱時的下肢位置，後段另有現場處置與解剖示意。這是第三方醫師解說；片名與講者對骨折的推測，不等於球隊已確認的診斷。",
+      "eventDate": "2024-10-21",
+      "returnDate": "2025-09-28",
+      "videoUrl": "https://www.youtube.com/watch?v=Nawq7KDQAkc",
+      "publisher": "Brian Sutterer MD",
+      "sourceTitle": "Chris Godwin Breaks His Ankle (Too Serious for TV Replay) - Doctor Explains",
+      "startSeconds": 40,
+      "durationSeconds": 328,
+      "returnText": "2025 年 9 月 28 日對 Eagles 正式復賽，完成 3 次接球、推進 26 碼。",
+      "footageKind": "news-analysis",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "October 2024 | Updates",
+          "url": "https://www.buccaneers.com/news/updates-october-2024"
+        },
+        {
+          "title": "Chris Godwin Jr. - 2025 game log",
+          "url": "https://www.buccaneers.com/team/players-roster/chris-godwin/logs/2025/reg/"
+        },
+        {
+          "title": "Ankle Fractures (Broken Ankle) - AAOS",
+          "url": "https://www.orthoinfo.org/diseases--conditions/ankle-fractures-broken-ankle/"
+        }
+      ]
+    },
+    {
+      "slug": "patrik-laine-2024-knee",
+      "videoId": "I4ll6KgWL6U",
+      "name": "Patrik Laine",
+      "sport": "冰球",
+      "event": "2024 NHL 季前賽 蒙特婁加拿大人對多倫多楓葉",
+      "bodyPart": "膝部",
+      "observation": "RDS 約 39 秒起有多角度重播，可觀察持球滑行、膝部碰撞、失衡倒地，之後由隊友協助離開。原始影片標題的右膝說法與球隊公告不同，本頁採用官方左膝資料。",
+      "eventDate": "2024-09-28",
+      "returnDate": "2024-12-03",
+      "videoUrl": "https://www.youtube.com/watch?v=I4ll6KgWL6U",
+      "publisher": "rdsca",
+      "sourceTitle": "Blessure sérieuse de PATRIK LAINE au genou droit; Xhekaj vient à sa défense!",
+      "startSeconds": 39,
+      "durationSeconds": 313,
+      "returnText": "12 月 3 日對 Islanders 實際上場並進球。",
+      "footageKind": "injury-motion",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "Laine activated off IR, will make Habs regular season debut Tuesday",
+          "url": "https://www.nhl.com/canadiens/news/laine-activated-off-ir-will-make-habs-regular-season-debut-tuesday"
+        },
+        {
+          "title": "Laine scores in season debut, Canadiens edge Islanders in OT",
+          "url": "https://www.nhl.com/news/new-york-islanders-montreal-canadiens-game-recap-december-3"
+        },
+        {
+          "title": "Canadiens' Laine exits after knee-on-knee collision vs. Maple Leafs",
+          "url": "https://www.sportsnet.ca/nhl/article/canadiens-laine-exits-after-knee-on-knee-collision-vs-maple-leafs/"
+        },
+        {
+          "title": "Collateral Ligament Injuries - AAOS",
+          "url": "https://www.orthoinfo.org/diseases--conditions/collateral-ligament-injuries/"
+        }
+      ]
+    },
+    {
+      "slug": "adam-fantilli-2024-calf",
+      "videoId": "PS2qTdAV2Lc",
+      "name": "Adam Fantilli",
+      "sport": "冰球",
+      "event": "2024 NHL 哥倫布藍衣對西雅圖海怪",
+      "bodyPart": "小腿／阿基里斯腱",
+      "observation": "約 102 秒起的慢動作重播呈現與 Jared McCann 的場邊接觸，之後可見 Fantilli 失衡、離場時減少負重。冰刀接觸細節受遮擋，割傷診斷採球隊公告。",
+      "eventDate": "2024-01-28",
+      "returnDate": "2024-09-23",
+      "videoUrl": "https://www.youtube.com/watch?v=PS2qTdAV2Lc",
+      "publisher": "Highlight Harbor",
+      "sourceTitle": "Adam Fantilli Leaves Game With Injury After Hitting Jared McCann",
+      "startSeconds": 102,
+      "durationSeconds": 128,
+      "returnText": "2024 年 9 月 23 日在對 Buffalo 的 NHL 季前賽重新上場。",
+      "footageKind": "injury-motion",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "Adam Fantilli to miss approximately eight weeks",
+          "url": "https://www.nhl.com/bluejackets/news/adam-fantilli-to-miss-eight-weeks-with-calf-laceration"
+        },
+        {
+          "title": "Blue Jackets drop preseason opener in Buffalo",
+          "url": "https://www.nhl.com/bluejackets/news/blue-jackets-drop-preseason-opener-to-buffalo-sabres"
+        },
+        {
+          "title": "Cuts and puncture wounds - MedlinePlus",
+          "url": "https://www.medlineplus.gov/ency/article/000043.htm"
+        }
+      ]
+    },
+    {
+      "slug": "trevor-zegras-2024-ankle",
+      "videoId": "r6gMIBsHuD8",
+      "name": "Trevor Zegras",
+      "sport": "冰球",
+      "event": "2024 NHL 安那翰鴨對納許維爾掠奪者",
+      "bodyPart": "腳踝",
+      "observation": "約 48 秒起有重播，可觀察靠近護牆的滑行、失衡與腳先撞牆；隨後有隊友協助離場的畫面。左踝骨折依正式報導確認。",
+      "eventDate": "2024-01-09",
+      "returnDate": "2024-03-26",
+      "videoUrl": "https://www.youtube.com/watch?v=r6gMIBsHuD8",
+      "publisher": "Highlight Harbor",
+      "sourceTitle": "Trevor Zegras Leaves Game With Injury After Awkward Collision Into Boards",
+      "startSeconds": 48,
+      "durationSeconds": 92,
+      "returnText": "3 月 26 日對 Kraken 回到先發名單並上場 15 分 57 秒。",
+      "footageKind": "injury-motion",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "Zegras out 6-8 weeks for Ducks, will have surgery for broken ankle",
+          "url": "https://www.nhl.com/news/ducks-trevor-zegras-injury-update-status"
+        },
+        {
+          "title": "Recap: Ducks Shut Out by Kraken in Road Trip Opener",
+          "url": "https://www.nhl.com/ducks/news/recap-ducks-shut-out-by-kraken-in-road-trip-opener"
+        },
+        {
+          "title": "Ankle Fractures (Broken Ankle) - AAOS",
+          "url": "https://www.orthoinfo.org/diseases--conditions/ankle-fractures-broken-ankle/"
+        }
+      ]
+    },
+    {
+      "slug": "tua-tagovailoa-2024-concussion",
+      "videoId": "mNbDeYmDUbg",
+      "name": "Tua Tagovailoa",
+      "sport": "美式足球",
+      "event": "2024 NFL 第 2 週 邁阿密海豚對水牛城比爾",
+      "bodyPart": "頭頸部",
+      "observation": "約 2 分鐘處回看 2024 年對 Bills 的持球跑動與碰撞，搭配第三方醫師解說。影片前段也引用過往傷勢畫面，不能把全片視為同一次受傷紀錄。",
+      "eventDate": "2024-09-12",
+      "returnDate": "2024-10-27",
+      "videoUrl": "https://www.youtube.com/watch?v=mNbDeYmDUbg",
+      "publisher": "Brian Sutterer MD",
+      "sourceTitle": "Tua Tagovailoa Postures on Field After Scary Head Injury - Doctor Explains",
+      "startSeconds": 120,
+      "durationSeconds": 603,
+      "returnText": "10 月 27 日對 Cardinals 正式復賽，完成 28 次傳球、推進 234 碼。",
+      "footageKind": "news-analysis",
+      "captionStatus": "not-verified",
+      "sources": [
+        {
+          "title": "Game Recap: Dolphins Lose First Game of Season in 31-10 Loss to Bills",
+          "url": "https://www.miamidolphins.com/news/game-recap-dolphins-lose-first-game-of-season-9-12-24"
+        },
+        {
+          "title": "Game Recap: Dolphins Fall Short to Cardinals, 28-27, at Home",
+          "url": "https://www.miamidolphins.com/news/game-recap-20241027"
+        },
+        {
+          "title": "Concussion Basics - CDC HEADS UP",
+          "url": "https://www.cdc.gov/heads-up/about/index.html"
+        }
+      ]
+    }
+  ]
+}

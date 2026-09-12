@@ -1,0 +1,23 @@
+[
+  {
+    "url": "https://www.youtube.com/watch?v=uQDKyD-Sk4w",
+    "path": "/videos/hardik-pandya-2023-world-cup-ankle/",
+    "startSeconds": 13,
+    "origin": "https://fd6d3309.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:12:00.985Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 14.012021,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  }
+]

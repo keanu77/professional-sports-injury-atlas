@@ -1,0 +1,1027 @@
+{
+  "checkedAt": "2026-09-12T16:30:00Z",
+  "cases": [
+    {
+      "slug": "angel-reese-2024-wrist",
+      "name": "Angel Reese",
+      "sport": "籃球",
+      "event": "2024 WNBA 芝加哥天空對洛杉磯火花",
+      "bodyPart": "手腕",
+      "eventDate": "2024-09-06",
+      "injury": "左手腕骨折",
+      "returnDate": "2025-01-17",
+      "returnSummary": "2025 年 1 月 17 日代表 Rose 參加 Unrivaled 正式賽事；這是三對三職業聯盟復賽，並非 WNBA 復賽。",
+      "context": "WNBA 新秀球季末段在比賽後確認手腕受傷，後續缺席剩餘球季。公開資料未明確交代受傷的是哪一塊腕骨。",
+      "videoId": "Qyzau4_9NNQ",
+      "videoUrl": "https://www.youtube.com/watch?v=Qyzau4_9NNQ",
+      "publisher": "Quita Loves Sports",
+      "sourceTitle": "Here's how Angel Reese injured her wrist against the LA Sparks | In game footage",
+      "durationSeconds": 103,
+      "startSeconds": 38,
+      "observation": "本片包含觀眾席拍攝與電視重播，約 38 秒起有籃下動作；片中列出多個「可能」時點。可觀察跌倒與手部支撐情境，不能將其中一幕定為骨折確切瞬間。",
+      "sources": [
+        {
+          "title": "Sky get needed win over Wings without injured Angel Reese",
+          "url": "https://chicago.suntimes.com/chicago-sky-and-wnba/2024/09/08/sky-get-needed-win-over-wings-in-angel-reeses-first-absence",
+          "publishedAt": "2024-09-08",
+          "claims": [
+            "球隊總經理確認左腕骨折",
+            "對 Sparks 第三節遭犯規後跌倒受傷，仍繼續比賽約十分鐘"
+          ],
+          "fulltextVerified": true
+        },
+        {
+          "title": "Vinyl (79-73) Rose (Jan 17, 2025) Final Score",
+          "url": "https://www.unrivaled.basketball/game/jb3jklxmsrks",
+          "publishedAt": "2025-01-17",
+          "claims": "正式比賽日期及 Angel Reese 出賽紀錄",
+          "fulltextVerified": true
+        },
+        {
+          "title": "Scaphoid Fracture of the Wrist - AAOS",
+          "url": "https://www.orthoinfo.org/diseases--conditions/scaphoid-fracture-of-the-wrist",
+          "publishedAt": null,
+          "claims": "手掌承受跌倒力量可造成腕部骨折；僅作一般原理，不能據此斷定她傷到舟狀骨",
+          "fulltextVerified": true
+        },
+        {
+          "title": "Angel Reese explains injury to left wrist, undergoes surgery",
+          "url": "https://www.espn.com/wnba/story/_/id/41196082/angel-reese-explains-wrist-injury-says-surgery",
+          "publishedAt": "2024-09-09",
+          "claims": ["9 月 10 日手腕手術已完成（更新後內文）"],
+          "fulltextVerified": true
+        }
+      ],
+      "mechanism": {
+        "title": "手部著地與腕部負荷",
+        "summary": {
+          "text": "上籃遭犯規後跌倒，仍繼續出賽，賽後確認左腕骨折。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "上籃接觸後身體失衡。",
+          "落地時手部承受支撐力量。",
+          "繼續出賽後接受檢查，確認左腕骨折。"
+        ],
+        "explanation": {
+          "text": "跌倒時用手支撐，力量可從手掌傳到腕骨；公開醫學資料以舟狀骨骨折說明此類受力，但不能因此認定 Reese 傷到哪一塊腕骨。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "影片剪輯了數個可能時點，無法只靠片段確定骨折發生在哪一格，也不能從仍繼續打球排除骨折。"
+      },
+      "timeline": [
+        {
+          "date": "2024-09-06",
+          "title": "比賽中受傷",
+          "text": "左手腕骨折",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-09-10",
+          "title": "完成手腕手術",
+          "text": "球隊表示手腕手術已順利完成。",
+          "sourceIndexes": [4]
+        },
+        {
+          "date": "2025-01-17",
+          "title": "跨聯盟回場",
+          "text": "2025 年 1 月 17 日代表 Rose 參加 Unrivaled 正式賽事；這是三對三職業聯盟復賽，並非 WNBA 復賽。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "notes": [
+        "左腕側別由 Chicago Sun-Times 具名採訪球隊總經理確認；部分轉載文字曾出現不同側別。ESPN 原頁已更新為手術完成，保留原始發表日 2024-09-09。"
+      ],
+      "verification": {
+        "status": "research-complete",
+        "footageReviewed": true,
+        "metadataVerified": true,
+        "availability": "public",
+        "playableInEmbed": true,
+        "uploadDate": "20240908",
+        "mediaPath": "/private/tmp/atlas150-team-media/Qyzau4_9NNQ.mp4",
+        "contactSheet": "/private/tmp/atlas150-team-media/Qyzau4_9NNQ-contact.jpg",
+        "mediaSha256": "1a9182acec5072e9f2a5a4aefde93104b81fb41a824010ae08583a2d11874d17",
+        "footageType": "fan-compilation-with-game-footage"
+      }
+    },
+    {
+      "slug": "juju-watkins-2025-knee",
+      "name": "JuJu Watkins",
+      "sport": "籃球",
+      "event": "2025 NCAA 女籃錦標賽第二輪 USC 對 Mississippi State",
+      "bodyPart": "膝部",
+      "eventDate": "2025-03-24",
+      "injury": "右膝前十字韌帶撕裂（媒體具名報導；USC 官方公告為需手術的球季終結傷勢）",
+      "returnDate": null,
+      "returnSummary": "USC 在 2025 年 9 月 28 日宣布她缺席整個 2025–26 球季；查核截至 2026 年 9 月 13 日，未取得正式復賽證據。",
+      "context": "USC 明星後衛在 NCAA 淘汰賽上半場受傷，球隊之後晉級；她未能繼續參賽。",
+      "videoId": "uw0GVL3nfN8",
+      "videoUrl": "https://www.youtube.com/watch?v=uw0GVL3nfN8",
+      "publisher": "ESPN",
+      "sourceTitle": "JuJu Watkins leaves the game with apparent knee injury as USC advances to Sweet 16 | SC with SVP",
+      "durationSeconds": 716,
+      "startSeconds": 5,
+      "observation": "ESPN 新聞前段有該場快攻、右腳支撐後倒地與被協助離場的重播，約 5 秒起可觀察。後段為記者及棚內討論，不能當作醫療檢查結果。",
+      "sources": [
+        {
+          "title": "JuJu Watkins tears ACL, sources say, ending USC star's season",
+          "url": "https://www.espn.com/womens-college-basketball/story/_/id/44393492/usc-trojans-star-juju-watkins-carried-injury-vs-mississippi-state-women-ncaa-tournament",
+          "publishedAt": "2025-03-24",
+          "claims": "事件日期、右膝 ACL 撕裂",
+          "fulltextVerified": true
+        },
+        {
+          "title": "USC All-American JuJu Watkins Sustains Season-Ending Injury",
+          "url": "https://usctrojans.com/news/2025/3/26/womens-basketball-usc-all-american-juju-watkins-sustains-season-ending-injury",
+          "publishedAt": "2025-03-26",
+          "claims": "官方確認賽季終結與需手術",
+          "fulltextVerified": true
+        },
+        {
+          "title": "USC’s JuJu Watkins to Miss 2025-26 Season to Focus on Recovery",
+          "url": "https://usctrojans.com/news/2025/9/28/womens-basketball-uscs-juju-watkins-to-miss-2025-26-season-to-focus-on-recovery",
+          "publishedAt": "2025-09-28",
+          "claims": "官方缺席 2025–26 球季聲明",
+          "fulltextVerified": true
+        },
+        {
+          "title": "Anterior Cruciate Ligament (ACL) Injuries - AAOS",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+          "publishedAt": null,
+          "claims": "支撐、變向與落地可使膝關節遭遇突發負荷",
+          "fulltextVerified": true
+        }
+      ],
+      "mechanism": {
+        "title": "快攻支撐時的膝關節負荷",
+        "summary": {
+          "text": "Watkins 在快攻上籃前右腳支撐時倒地；媒體報導右膝 ACL 撕裂，USC 確認需手術及停止當季比賽。",
+          "sourceIndexes": [1, 2]
+        },
+        "steps": [
+          "快攻接近籃框。",
+          "右腳支撐後身體失衡倒地。",
+          "接受協助離場，未再上場。"
+        ],
+        "explanation": {
+          "text": "腳踩地時，身體仍可能向前或旋轉，造成膝部瞬間負荷；這是 ACL 損傷常見情境的一般解釋，並不是從影片反推出她的精確受傷力矩。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "轉播角度不能顯示韌帶撕裂本身，也不能排除同時合併其他組織傷害；ACL 名稱依報導，非僅看影像所得。"
+      },
+      "timeline": [
+        {
+          "date": "2025-03-24",
+          "title": "比賽中受傷",
+          "text": "NCAA 第二輪快攻時右膝受傷，未再上場。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2025-03-26",
+          "title": "球季結束並安排手術",
+          "text": "USC 正式公告她將接受手術，缺席剩餘 NCAA 賽程。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2025-09-28",
+          "title": "延長恢復期",
+          "text": "USC 宣布她不參加 2025–26 球季。這是休賽公告，並非復賽日期。",
+          "sourceIndexes": [3]
+        }
+      ],
+      "notes": [],
+      "verification": {
+        "status": "research-complete",
+        "footageReviewed": true,
+        "metadataVerified": true,
+        "availability": "public",
+        "playableInEmbed": true,
+        "uploadDate": "20250325",
+        "mediaPath": "/private/tmp/atlas150-team-media/uw0GVL3nfN8.mp4",
+        "contactSheet": "/private/tmp/atlas150-team-media/uw0GVL3nfN8-contact.jpg",
+        "mediaSha256": "f16ccf8c4724f8aec0da36669b253939f4799a582bbcd29842459e948ab4a6b9",
+        "footageType": "news-with-event-replay"
+      }
+    },
+    {
+      "slug": "trinity-rodman-2024-back",
+      "name": "Trinity Rodman",
+      "sport": "足球",
+      "event": "2024 NWSL 華盛頓精神對堪薩斯城潮流",
+      "bodyPart": "軀幹",
+      "eventDate": "2024-09-20",
+      "injury": "背部受傷及背肌痙攣（經紀人公開說明）",
+      "returnDate": "2024-10-13",
+      "returnSummary": "10 月 13 日對 Racing Louisville 於第 67 分鐘替補上場。",
+      "context": "華盛頓精神隊前鋒在護球後出現背部疼痛，經紀人後續說明為背肌痙攣。影片提供球隊最初的賽後說明。",
+      "videoId": "4WeLwd2-YhA",
+      "videoUrl": "https://www.youtube.com/watch?v=4WeLwd2-YhA",
+      "publisher": "Washington Spirit",
+      "sourceTitle": "\"We didn't create many chances.\" | Head Coach Jonatan Giráldez Post Match Press Conference",
+      "durationSeconds": 1139,
+      "startSeconds": 98,
+      "observation": "約 1 分 38 秒開始詢問 Rodman 等人的傷勢，教練說明她背部不適、當時資訊仍有限。本片沒有事故畫面，適合對照最初公開說明與後續診斷。",
+      "sources": [
+        {
+          "title": "Spirit's Trinity Rodman leaves game in wheelchair after back injury",
+          "url": "https://www.espn.com/soccer/story/_/id/41349813/washington-spirit-trinity-rodman-leaves-game-wheelchair-back-injury",
+          "publishedAt": "2024-09-21",
+          "claims": "9 月 20 日護球後背痛，經紀人說明背肌痙攣",
+          "fulltextVerified": true
+        },
+        {
+          "title": "What They’re Saying After Playing Kansas City",
+          "url": "https://washingtonspirit.com/blog/2024/09/22/what-theyre-saying-after-playing-kansas-city/",
+          "publishedAt": "2024-09-22",
+          "claims": "球隊教練賽後確認背部不適；當時尚無完整傷情",
+          "fulltextVerified": true
+        },
+        {
+          "title": "Recap: Spirit Triumphs in Dominating, 4-1, Victory over Racing Louisville FC",
+          "url": "https://washingtonspirit.com/blog/2024/10/13/recap-spirit-triumphs-in-dominating-4-1-victory-over-racing-louisville-fc/",
+          "publishedAt": "2024-10-13",
+          "claims": "實際復賽，第 67 分鐘替補",
+          "fulltextVerified": true
+        },
+        {
+          "title": "Back Spasms - Cleveland Clinic",
+          "url": "https://my.clevelandclinic.org/health/diseases/22881-back-spasms",
+          "publishedAt": "2022-04-26",
+          "claims": "痙攣是肌肉不自主收縮，可造成明顯疼痛；不能單凭症狀判定結構損傷",
+          "fulltextVerified": true
+        }
+      ],
+      "mechanism": {
+        "title": "護球情境與背部症狀",
+        "summary": {
+          "text": "Rodman 在場邊護球後出現背部疼痛，經紀人後續說明是明顯背肌痙攣。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "在場邊護球後出現背痛。",
+          "明顯背肌痙攣影響站立與移動。",
+          "由工作人員協助並以輪椅離開場邊。"
+        ],
+        "explanation": {
+          "text": "背肌痙攣是肌肉不自主收縮，可讓站立或移動非常疼痛。運動中的軀幹受力是理解症狀的背景，但痙攣本身不等於已證實椎間盤、骨骼或神經損傷。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "本片為官方賽後記者會，沒有受傷瞬間。不能由訪談估算腰椎角度、衝擊力或特定結構病變。"
+      },
+      "timeline": [
+        {
+          "date": "2024-09-20",
+          "title": "比賽中受傷",
+          "text": "護球後背部疼痛並離場，經紀人翌日說明為明顯背肌痙攣。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-09-22",
+          "title": "公開賽後說明",
+          "text": "球隊刊出記者會，教練說明背部不適，當時尚待進一步了解。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2024-10-13",
+          "title": "正式比賽回場",
+          "text": "10 月 13 日對 Racing Louisville 於第 67 分鐘替補上場。",
+          "sourceIndexes": [3]
+        }
+      ],
+      "notes": [],
+      "verification": {
+        "status": "research-complete",
+        "footageReviewed": true,
+        "metadataVerified": true,
+        "availability": "public",
+        "playableInEmbed": true,
+        "uploadDate": "20240921",
+        "mediaPath": "/private/tmp/atlas150-team-media/4WeLwd2-YhA.mp4",
+        "contactSheet": "/private/tmp/atlas150-team-media/4WeLwd2-YhA-contact.jpg",
+        "mediaSha256": "719f5d86db6c0cfa4db84b2f1aca7742880be5c6a3ee7356775e94f726a6cde9",
+        "footageType": "official-postgame-injury-press-conference"
+      }
+    },
+    {
+      "slug": "alex-greenwood-2024-knee",
+      "name": "Alex Greenwood",
+      "sport": "足球",
+      "event": "2024–25 UEFA 女子歐冠 曼城對 St. Pölten",
+      "bodyPart": "膝部",
+      "eventDate": "2024-12-12",
+      "injury": "膝內側副韌帶（MCL）受傷並接受修補手術",
+      "returnDate": "2025-04-27",
+      "returnSummary": "4 月 27 日 WSL 對 Leicester，於第 60 分鐘替補上場。",
+      "context": "曼城隊長在女子歐冠小組賽受傷離場。影片是該場賽後教練記者會，可對照最初傷情說明及後續正式診斷。",
+      "videoId": "DbKcBrl8AOg",
+      "videoUrl": "https://www.youtube.com/watch?v=DbKcBrl8AOg",
+      "publisher": "manchester football - Manchester City and United",
+      "sourceTitle": "“She could have had a hat trick tonight with the chances she had” - Gareth Taylor on Lily Murphy",
+      "durationSeconds": 307,
+      "startSeconds": 9,
+      "observation": "約 9 秒起記者詢問 Greenwood 的狀況，Gareth Taylor 回答有碰撞、仍待了解傷勢。此為當場賽後記者會，沒有受傷瞬間；後續 MCL 診斷以曼城公告為準。",
+      "sources": [
+        {
+          "title": "Injury update: Alex Greenwood",
+          "url": "https://www.mancity.com/news/womens/alex-greenwood-injury-update-63870188",
+          "publishedAt": "2024-12-19",
+          "claims": "官方確認 MCL 修補手術，對 St. Pölten 受傷",
+          "fulltextVerified": true
+        },
+        {
+          "title": "Park earns City hard-fought Leicester win",
+          "url": "https://www.mancity.com/news/womens/leicester-man-city-wsl-match-report-63881362",
+          "publishedAt": "2025-04-27",
+          "claims": "實際復賽，第 60 分鐘入場",
+          "fulltextVerified": true
+        },
+        {
+          "title": "Man City v St Polten - 12 Dec 2024",
+          "url": "https://www.mancity.com/matchday/fixtures/womens/2024/uwcl/man-city-v-st-polten-12-dec-2024",
+          "publishedAt": "2024-12-12",
+          "claims": "事件日期与教練賽後說明，當時未能判定傷勢程度",
+          "fulltextVerified": true
+        },
+        {
+          "title": "Collateral Ligament Injuries - AAOS",
+          "url": "https://www.orthoinfo.org/diseases--conditions/collateral-ligament-injuries/",
+          "publishedAt": null,
+          "claims": "膝側向受力與 MCL 功能的一般解釋",
+          "fulltextVerified": true
+        }
+      ],
+      "mechanism": {
+        "title": "膝部碰撞與內側穩定組織",
+        "summary": {
+          "text": "Greenwood 對 St. Pölten 一戰碰撞後離場；曼城之後確認 MCL 受傷並已接受修補。",
+          "sourceIndexes": [1, 3]
+        },
+        "steps": [
+          "女子歐冠比賽中與對手發生碰撞。",
+          "膝部受傷後離場，未能繼續比賽。",
+          "後續檢查確認 MCL 受傷並接受修補。"
+        ],
+        "explanation": {
+          "text": "MCL 位於膝內側，協助限制側向不穩定；碰撞或扭轉可使膝周韌帶承受拉力。這是一般受力解釋，個案的確切方向與撕裂程度仍需檢查與影像判斷。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "本片是教練記者會，沒有事故瞬間；不能據此描述她膝蓋內夾角度或判定韌帶分級。"
+      },
+      "timeline": [
+        {
+          "date": "2024-12-12",
+          "title": "比賽中受傷",
+          "text": "女子歐冠對 St. Pölten 發生碰撞，膝部受傷離場。",
+          "sourceIndexes": [3]
+        },
+        {
+          "date": "2024-12-19",
+          "title": "公布手術消息",
+          "text": "曼城確認已完成 MCL 修補手術，接著進入復健。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2025-04-27",
+          "title": "正式比賽回場",
+          "text": "4 月 27 日 WSL 對 Leicester，於第 60 分鐘替補上場。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "notes": [],
+      "verification": {
+        "status": "research-complete",
+        "footageReviewed": true,
+        "metadataVerified": true,
+        "availability": "public",
+        "playableInEmbed": true,
+        "uploadDate": "20241213",
+        "mediaPath": "/private/tmp/atlas150-team-media/DbKcBrl8AOg.mp4",
+        "contactSheet": "/private/tmp/atlas150-team-media/DbKcBrl8AOg-detail.jpg",
+        "mediaSha256": "880b9aebb6cdc79538c5a756225810a5da40410e4d366af42156f4b1a30bb780",
+        "footageType": "postgame-injury-press-conference"
+      }
+    },
+    {
+      "slug": "anthony-richardson-2023-shoulder",
+      "name": "Anthony Richardson",
+      "sport": "美式足球",
+      "event": "2023 NFL 第 5 週 印第安納波利斯小馬對田納西泰坦",
+      "bodyPart": "肩部",
+      "eventDate": "2023-10-08",
+      "injury": "右肩肩鎖關節（AC joint）受傷，後續接受手術",
+      "returnDate": "2024-08-11",
+      "returnSummary": "2024 年 8 月 11 日對 Denver 的 NFL 季前賽上場兩波進攻，完成傷後首場比賽。",
+      "context": "新秀四分衛第二節持球跑動遭擒抱後，右側投擲肩受傷；本片是醫師解說，不取代球隊公告。",
+      "videoId": "5HwejN_19pM",
+      "videoUrl": "https://www.youtube.com/watch?v=5HwejN_19pM",
+      "publisher": "Brian Sutterer MD",
+      "sourceTitle": "Anthony Richardson in Serious Pain After Shoulder Injury - Doctor Explains",
+      "durationSeconds": 272,
+      "startSeconds": 20,
+      "observation": "約 20 秒起可見醫師搭配擒抱後肩部著地的慢動作解說。可觀察外力方向與著地姿勢；影片中的推測不等於球隊正式診斷。",
+      "sources": [
+        {
+          "title": "Colts QB Anthony Richardson suffers right shoulder injury in win over Titans",
+          "url": "https://www.nfl.com/news/colts-qb-anthony-richardson-suffers-right-shoulder-injury-vs-titans",
+          "publishedAt": "2023-10-08",
+          "claims": "比賽當日跑動遭擒抱，右肩著地；AC joint 初步診斷",
+          "fulltextVerified": true
+        },
+        {
+          "title": "Colts QB Anthony Richardson undergoes successful shoulder surgery",
+          "url": "https://www.colts.com/news/anthony-richardson-successful-shoulder-surgery-update-shane-steichen",
+          "publishedAt": "2023-10-25",
+          "claims": "10 月 24 日右肩手術、官方確認肩鎖關節伤勢",
+          "fulltextVerified": true
+        },
+        {
+          "title": "Colts fall to Broncos in first preseason game of 2024",
+          "url": "https://www.colts.com/news/colts-loss-broncos-anthony-richardson-kenny-moore-first-preaseason-game",
+          "publishedAt": "2024-08-11",
+          "claims": "首次傷後比賽，NFL 季前賽",
+          "fulltextVerified": true
+        },
+        {
+          "title": "Shoulder Separation - AAOS",
+          "url": "https://www.orthoinfo.org/diseases--conditions/shoulder-separation/",
+          "publishedAt": null,
+          "claims": "肩鎖關節承受直接肩部撞擊的一般機制",
+          "fulltextVerified": true
+        }
+      ],
+      "mechanism": {
+        "title": "擒抱後肩部承受撞擊",
+        "summary": {
+          "text": "持球跑動遭擒抱後，Richardson 的右側肩部著地；小馬後續確認肩鎖關節傷勢及手術。",
+          "sourceIndexes": [1, 2]
+        },
+        "steps": [
+          "持球跑動時遭防守者擒抱。",
+          "倒地時右側肩部承受撞擊。",
+          "肩部疼痛後離場，後續接受肩鎖關節手術。"
+        ],
+        "explanation": {
+          "text": "肩鎖關節連接鎖骨與肩胛骨肩峰。直接落在肩外側可能使周圍穩定韌帶承受拉力；這與肩盂肱關節脫臼是不同部位的問題。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "轉播無法判定韌帶完整性或手術方式；影片作者並非替球員看診的醫師，分級與治療應依正式資料。"
+      },
+      "timeline": [
+        {
+          "date": "2023-10-08",
+          "title": "比賽中受傷",
+          "text": "持球遭擒抱後右肩受傷，退出當場比賽。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2023-10-24",
+          "title": "完成右肩手術",
+          "text": "球隊確認右肩手術成功，此次傷勢使新秀球季提前結束。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2024-08-11",
+          "title": "季前賽回場",
+          "text": "2024 年 8 月 11 日對 Denver 的 NFL 季前賽上場兩波進攻，完成傷後首場比賽。",
+          "sourceIndexes": [3]
+        }
+      ],
+      "notes": [],
+      "verification": {
+        "status": "research-complete",
+        "footageReviewed": true,
+        "metadataVerified": true,
+        "availability": "public",
+        "playableInEmbed": true,
+        "uploadDate": "20231008",
+        "mediaPath": "/private/tmp/atlas150-team-media/5HwejN_19pM.mp4",
+        "contactSheet": "/private/tmp/atlas150-team-media/5HwejN_19pM-contact.jpg",
+        "mediaSha256": "b72793cd78d2ce2857aff0c580673cf45d29a7e0ca26c22ba822abc5be6b4c32",
+        "footageType": "doctor-analysis-with-event-replay"
+      }
+    },
+    {
+      "slug": "chris-godwin-2024-ankle",
+      "name": "Chris Godwin",
+      "sport": "美式足球",
+      "event": "2024 NFL 第 7 週 坦帕灣海盜對巴爾的摩烏鴉",
+      "bodyPart": "腳踝",
+      "eventDate": "2024-10-21",
+      "injury": "踝關節脫臼",
+      "returnDate": "2025-09-28",
+      "returnSummary": "2025 年 9 月 28 日對 Eagles 正式復賽，完成 3 次接球、推進 26 碼。",
+      "context": "對烏鴉比賽末段接球後被擒抱，隨後因踝部傷勢由醫療車帶離；球隊翌日確認踝關節脫臼。",
+      "videoId": "kESp_v-LqZ4",
+      "videoUrl": "https://www.youtube.com/watch?v=kESp_v-LqZ4",
+      "publisher": "FN Sports",
+      "sourceTitle": "Chris Godwin's Dislocated Ankle Injury vs Ravens (Week 7, 2024)",
+      "durationSeconds": 165,
+      "startSeconds": 1,
+      "observation": "約 1 秒起為該次接球進攻，接著可見被擒抱、留在場內與由醫療車帶離。影片未提供清晰關節近拍，適合觀察事件順序，不適合以外觀自行判讀脫臼細節。",
+      "sources": [
+        {
+          "title": "October 2024 | Updates",
+          "url": "https://www.buccaneers.com/news/updates-october-2024",
+          "publishedAt": "2024-10-22",
+          "claims": "球隊確認踝脫臼，末次進攻遭擒抱並預計手術",
+          "fulltextVerified": true
+        },
+        {
+          "title": "Chris Godwin Jr. - 2025 game log",
+          "url": "https://www.buccaneers.com/team/players-roster/chris-godwin/logs/2025/reg/",
+          "publishedAt": null,
+          "claims": "9 月 28 日 Eagles 實際出賽，3 次接球 26 碼",
+          "fulltextVerified": true
+        },
+        {
+          "title": "Ankle Fractures (Broken Ankle) - AAOS",
+          "url": "https://www.orthoinfo.org/diseases--conditions/ankle-fractures-broken-ankle/",
+          "publishedAt": null,
+          "claims": "旋轉與直接撞擊造成踝部傷害；僅一般生物力學，不推定 Godwin 有骨折",
+          "fulltextVerified": true
+        }
+      ],
+      "mechanism": {
+        "title": "擒抱時下肢受壓與踝部負荷",
+        "summary": {
+          "text": "接球後遭擒抱，Godwin 隨即留在地面，球隊翌日確認踝關節脫臼。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "接球後向前推進。",
+          "遭擒抱倒地，下肢承受接觸與身體重量。",
+          "留在地面接受處理，隨後由醫療車帶離。"
+        ],
+        "explanation": {
+          "text": "擒抱時身體與下肢的移動可能不同步，使踝部同時承受扭轉及壓迫。這只能解釋風險情境，無法從遠景得知關節內哪些組織受損。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "片段主要是轉播遠景與後續處置，不能從畫面判定韌帶斷裂、骨折或受力大小。球隊曾討論擒抱型態，但影片本身不是規則裁決。"
+      },
+      "timeline": [
+        {
+          "date": "2024-10-21",
+          "title": "比賽中受傷",
+          "text": "踝關節脫臼",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-10-22",
+          "title": "確認脫臼",
+          "text": "教練確認踝脫臼並表示將接受手術。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2025-09-28",
+          "title": "正式比賽回場",
+          "text": "2025 年 9 月 28 日對 Eagles 正式復賽，完成 3 次接球、推進 26 碼。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "notes": [],
+      "verification": {
+        "status": "research-complete",
+        "footageReviewed": true,
+        "metadataVerified": true,
+        "availability": "public",
+        "playableInEmbed": true,
+        "uploadDate": "20241022",
+        "mediaPath": "/private/tmp/atlas150-team-media/kESp_v-LqZ4.mp4",
+        "contactSheet": "/private/tmp/atlas150-team-media/kESp_v-LqZ4-contact.jpg",
+        "mediaSha256": "0e365ac2fca9efecd04ced97962a28b23d99bb6cb11c727dcf03cae4055f2129",
+        "footageType": "broadcast-event-and-aftermath"
+      }
+    },
+    {
+      "slug": "patrik-laine-2024-knee",
+      "name": "Patrik Laine",
+      "sport": "冰球",
+      "event": "2024 NHL 季前賽 蒙特婁加拿大人對多倫多楓葉",
+      "bodyPart": "膝部",
+      "eventDate": "2024-09-28",
+      "injury": "左膝扭傷",
+      "returnDate": "2024-12-03",
+      "returnSummary": "12 月 3 日對 Islanders 實際上場並進球。",
+      "context": "加盟加拿大人後的季前賽第一節發生膝部碰撞。RDS 影片標題寫右膝，但球隊確認左膝；資料應以球隊公告為準。",
+      "videoId": "I4ll6KgWL6U",
+      "videoUrl": "https://www.youtube.com/watch?v=I4ll6KgWL6U",
+      "publisher": "rdsca",
+      "sourceTitle": "Blessure sérieuse de PATRIK LAINE au genou droit; Xhekaj vient à sa défense!",
+      "durationSeconds": 313,
+      "startSeconds": 39,
+      "observation": "RDS 約 39 秒起有多角度重播，可觀察持球滑行、膝部碰撞、失衡倒地，之後由隊友協助離開。原始影片標題的右膝說法與球隊公告不同，本頁採用官方左膝資料。",
+      "sources": [
+        {
+          "title": "Laine activated off IR, will make Habs regular season debut Tuesday",
+          "url": "https://www.nhl.com/canadiens/news/laine-activated-off-ir-will-make-habs-regular-season-debut-tuesday",
+          "publishedAt": "2024-12-03",
+          "claims": "官方確認 9 月 28 日左膝扭傷、復賽許可",
+          "fulltextVerified": true
+        },
+        {
+          "title": "Laine scores in season debut, Canadiens edge Islanders in OT",
+          "url": "https://www.nhl.com/news/new-york-islanders-montreal-canadiens-game-recap-december-3",
+          "publishedAt": "2024-12-04",
+          "claims": "12 月 3 日正式復賽並進球",
+          "fulltextVerified": true
+        },
+        {
+          "title": "Canadiens' Laine exits after knee-on-knee collision vs. Maple Leafs",
+          "url": "https://www.sportsnet.ca/nhl/article/canadiens-laine-exits-after-knee-on-knee-collision-vs-maple-leafs/",
+          "publishedAt": "2024-09-28",
+          "claims": "與 Cedric Pare 膝碰膝後受傷",
+          "fulltextVerified": true
+        },
+        {
+          "title": "Collateral Ligament Injuries - AAOS",
+          "url": "https://www.orthoinfo.org/diseases--conditions/collateral-ligament-injuries/",
+          "publishedAt": null,
+          "claims": "側向與扭轉受力對膝周穩定組織的一般影響；不推定 Laine 韌帶名稱",
+          "fulltextVerified": true
+        }
+      ],
+      "mechanism": {
+        "title": "膝部直接碰撞後失去穩定",
+        "summary": {
+          "text": "Laine 與 Cedric Paré 發生膝部碰撞後倒地，球隊確認左膝扭傷。",
+          "sourceIndexes": [1, 3]
+        },
+        "steps": [
+          "持球滑行接近防守者。",
+          "膝部直接碰撞後失去平衡倒地。",
+          "減少左腿負重，由隊友協助離場。"
+        ],
+        "explanation": {
+          "text": "膝部在滑行中遭直接撞擊或扭轉，可能使穩定關節的組織承受突發負荷。球隊只公布左膝扭傷，因此此處不進一步指定是 MCL、ACL 或其他結構。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "RDS 原標題寫右膝，與球隊左膝公告不同；側別依球隊。轉播也不能直接證實特定韌帶或推定碰撞者意圖。"
+      },
+      "timeline": [
+        {
+          "date": "2024-09-28",
+          "title": "比賽中受傷",
+          "text": "與 Cedric Paré 發生膝部碰撞，後續確認左膝扭傷。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-12-03",
+          "title": "正式比賽回場",
+          "text": "12 月 3 日對 Islanders 實際上場並進球。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "notes": [],
+      "verification": {
+        "status": "research-complete",
+        "footageReviewed": true,
+        "metadataVerified": true,
+        "availability": "public",
+        "playableInEmbed": true,
+        "uploadDate": "20240929",
+        "mediaPath": "/private/tmp/atlas150-team-media/I4ll6KgWL6U.mp4",
+        "contactSheet": "/private/tmp/atlas150-team-media/I4ll6KgWL6U-contact.jpg",
+        "mediaSha256": "4ec25ece65f2a40bdb53cb1b57cd82055ea785893af1a59e245e1cb4e4a82755",
+        "footageType": "broadcaster-event-replays"
+      }
+    },
+    {
+      "slug": "adam-fantilli-2024-calf",
+      "name": "Adam Fantilli",
+      "sport": "冰球",
+      "event": "2024 NHL 哥倫布藍衣對西雅圖海怪",
+      "bodyPart": "小腿／阿基里斯腱",
+      "eventDate": "2024-01-28",
+      "injury": "左小腿遭冰刀割傷",
+      "returnDate": "2024-09-23",
+      "returnSummary": "2024 年 9 月 23 日在對 Buffalo 的 NHL 季前賽重新上場。",
+      "context": "與 Jared McCann 發生身體接觸後，冰刀造成小腿割傷；這與一般扭傷或肌肉拉傷是不同機制。",
+      "videoId": "PS2qTdAV2Lc",
+      "videoUrl": "https://www.youtube.com/watch?v=PS2qTdAV2Lc",
+      "publisher": "Highlight Harbor",
+      "sourceTitle": "Adam Fantilli Leaves Game With Injury After Hitting Jared McCann",
+      "durationSeconds": 128,
+      "startSeconds": 102,
+      "observation": "約 102 秒起的慢動作重播呈現與 Jared McCann 的場邊接觸，之後可見 Fantilli 失衡、離場時減少負重。冰刀接觸細節受遮擋，割傷診斷採球隊公告。",
+      "sources": [
+        {
+          "title": "Adam Fantilli to miss approximately eight weeks",
+          "url": "https://www.nhl.com/bluejackets/news/adam-fantilli-to-miss-eight-weeks-with-calf-laceration",
+          "publishedAt": "2024-01-31",
+          "claims": "官方確認左小腿遭冰刀割傷與事件日期",
+          "fulltextVerified": true
+        },
+        {
+          "title": "Blue Jackets drop preseason opener in Buffalo",
+          "url": "https://www.nhl.com/bluejackets/news/blue-jackets-drop-preseason-opener-to-buffalo-sabres",
+          "publishedAt": "2024-09-23",
+          "claims": "球隊確認此為 1 月球季終結傷勢後首度比賽",
+          "fulltextVerified": true
+        },
+        {
+          "title": "Cuts and puncture wounds - MedlinePlus",
+          "url": "https://www.medlineplus.gov/ency/article/000043.htm",
+          "publishedAt": null,
+          "claims": "割傷為皮膚破損，可涉及更深組織；不從轉播判定深度",
+          "fulltextVerified": true
+        }
+      ],
+      "mechanism": {
+        "title": "冰刀接觸造成割傷",
+        "summary": {
+          "text": "Fantilli 與對手接觸後，左腿遭冰刀割傷；球隊正式公告為小腿割傷。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "在護牆旁與 Jared McCann 發生身體接觸。",
+          "接觸過程中左小腿遭對手冰刀割傷。",
+          "隨後退出比賽，未再上場。"
+        ],
+        "explanation": {
+          "text": "冰刀的銳利邊緣可能切開皮膚，與肌肉被拉長造成的拉傷不同。傷口是否深入肌腱、肌肉、神經或血管，必須靠實際檢查判斷。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "冰刀與腿部接觸區域部分被遮擋，不能從影片判定深度；未有足夠公開資料支持阿基里斯腱斷裂或血管損傷等額外診斷。"
+      },
+      "timeline": [
+        {
+          "date": "2024-01-28",
+          "title": "比賽中受傷",
+          "text": "左小腿遭冰刀割傷",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-01-31",
+          "title": "公布傷情",
+          "text": "球隊確認左小腿割傷，當時估計休養約八週；這是預估，不等於實際回場時間。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-09-23",
+          "title": "季前賽回場",
+          "text": "2024 年 9 月 23 日在對 Buffalo 的 NHL 季前賽重新上場。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "notes": [],
+      "verification": {
+        "status": "research-complete",
+        "footageReviewed": true,
+        "metadataVerified": true,
+        "availability": "public",
+        "playableInEmbed": true,
+        "uploadDate": "20240129",
+        "mediaPath": "/private/tmp/atlas150-team-media/PS2qTdAV2Lc.mp4",
+        "contactSheet": "/private/tmp/atlas150-team-media/PS2qTdAV2Lc-contact.jpg",
+        "mediaSha256": "0e264e2abfdd1d86dc8c7f87ad7e18d73bf1541f6ae62434be95f544b0213b7c",
+        "footageType": "broadcast-event-replay"
+      }
+    },
+    {
+      "slug": "trevor-zegras-2024-ankle",
+      "name": "Trevor Zegras",
+      "sport": "冰球",
+      "event": "2024 NHL 安那翰鴨對納許維爾掠奪者",
+      "bodyPart": "腳踝",
+      "eventDate": "2024-01-09",
+      "injury": "左踝骨折",
+      "returnDate": "2024-03-26",
+      "returnSummary": "3 月 26 日對 Kraken 回到先發名單並上場 15 分 57 秒。",
+      "context": "對 Predators 第一節滑行失衡，腳先撞上場邊護牆後離場，後續確認左踝骨折。",
+      "videoId": "r6gMIBsHuD8",
+      "videoUrl": "https://www.youtube.com/watch?v=r6gMIBsHuD8",
+      "publisher": "Highlight Harbor",
+      "sourceTitle": "Trevor Zegras Leaves Game With Injury After Awkward Collision Into Boards",
+      "durationSeconds": 92,
+      "startSeconds": 48,
+      "observation": "約 48 秒起有重播，可觀察靠近護牆的滑行、失衡與腳先撞牆；隨後有隊友協助離場的畫面。左踝骨折依正式報導確認。",
+      "sources": [
+        {
+          "title": "Zegras out 6-8 weeks for Ducks, will have surgery for broken ankle",
+          "url": "https://www.nhl.com/news/ducks-trevor-zegras-injury-update-status",
+          "publishedAt": "2024-01-12",
+          "claims": "左踝骨折，1 月 9 日冰刀被球桿勾住後腳先撞牆，預計手術",
+          "fulltextVerified": true
+        },
+        {
+          "title": "Recap: Ducks Shut Out by Kraken in Road Trip Opener",
+          "url": "https://www.nhl.com/ducks/news/recap-ducks-shut-out-by-kraken-in-road-trip-opener",
+          "publishedAt": "2024-03-27",
+          "claims": "3 月 26 日實際出賽 15:57，缺席 31 場後返回",
+          "fulltextVerified": true
+        },
+        {
+          "title": "Ankle Fractures (Broken Ankle) - AAOS",
+          "url": "https://www.orthoinfo.org/diseases--conditions/ankle-fractures-broken-ankle/",
+          "publishedAt": null,
+          "claims": "扭轉與直接撞擊都可造成踝骨折",
+          "fulltextVerified": true
+        }
+      ],
+      "mechanism": {
+        "title": "滑行失衡後腳先撞上護牆",
+        "summary": {
+          "text": "Zegras 在球桿與冰刀接近後失去平衡，腳先滑向護牆；官方報導確認左踝骨折。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "護牆旁滑行時球桿碰到冰刀附近。",
+          "失去平衡後腳先滑向護牆。",
+          "撞牆後倒地，接受隊友協助離場。"
+        ],
+        "explanation": {
+          "text": "腳先撞到護牆時，減速力量會傳到足踝，並可能伴隨旋轉。踝骨折可由扭轉或撞擊造成，但影片不足以判斷個案的骨折型態。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "骨折位置、移位程度與手術固定方式要靠影像或正式病情資訊；不能從轉播角度推定。"
+      },
+      "timeline": [
+        {
+          "date": "2024-01-09",
+          "title": "比賽中受傷",
+          "text": "左踝骨折",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-01-12",
+          "title": "確認骨折",
+          "text": "聯盟報導確認左踝骨折並將接受手術，當時估計缺席六至八週。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-03-26",
+          "title": "正式比賽回場",
+          "text": "3 月 26 日對 Kraken 回到先發名單並上場 15 分 57 秒。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "notes": [],
+      "verification": {
+        "status": "research-complete",
+        "footageReviewed": true,
+        "metadataVerified": true,
+        "availability": "public",
+        "playableInEmbed": true,
+        "uploadDate": "20240110",
+        "mediaPath": "/private/tmp/atlas150-team-media/r6gMIBsHuD8.mp4",
+        "contactSheet": "/private/tmp/atlas150-team-media/r6gMIBsHuD8-contact.jpg",
+        "mediaSha256": "c28c1dc47012ee03766d86021299b0e05c5cef6a07e5f39e0140d42849109b4b",
+        "footageType": "broadcast-event-replay"
+      }
+    },
+    {
+      "slug": "tua-tagovailoa-2024-concussion",
+      "name": "Tua Tagovailoa",
+      "sport": "美式足球",
+      "event": "2024 NFL 第 2 週 邁阿密海豚對水牛城比爾",
+      "bodyPart": "頭頸部",
+      "eventDate": "2024-09-12",
+      "injury": "腦震盪",
+      "returnDate": "2024-10-27",
+      "returnSummary": "10 月 27 日對 Cardinals 正式復賽，完成 28 次傳球、推進 234 碼。",
+      "context": "四分衛持球推進時發生碰撞，第三節因腦震盪退場；復賽以醫療評估及實際比賽紀錄為依據。",
+      "videoId": "s3_dVbbj40c",
+      "videoUrl": "https://www.youtube.com/watch?v=s3_dVbbj40c",
+      "publisher": "SimplyAS10",
+      "sourceTitle": "Tua Tagovailoa Suffers SCARY Concussion vs Bills 😳 Bills vs Dolphins 2024 Highlights",
+      "durationSeconds": 31,
+      "startSeconds": 3,
+      "observation": "約 3 秒起可見 2024 年對 Bills 第三節的持球跑動、碰撞倒地及現場評估。影片可呈現事件順序，不能由肢體動作自行判定腦震盪程度。",
+      "sources": [
+        {
+          "title": "Game Recap: Dolphins Lose First Game of Season in 31-10 Loss to Bills",
+          "url": "https://www.miamidolphins.com/news/game-recap-dolphins-lose-first-game-of-season-9-12-24",
+          "publishedAt": "2024-09-13",
+          "claims": "9 月 12 日比賽第三節因腦震盪退場",
+          "fulltextVerified": true
+        },
+        {
+          "title": "Game Recap: Dolphins Fall Short to Cardinals, 28-27, at Home",
+          "url": "https://www.miamidolphins.com/news/game-recap-20241027",
+          "publishedAt": "2024-10-27",
+          "claims": "實際復賽、28/38 傳球與 234 碼",
+          "fulltextVerified": true
+        },
+        {
+          "title": "Concussion Basics - CDC HEADS UP",
+          "url": "https://www.cdc.gov/heads-up/about/index.html",
+          "publishedAt": null,
+          "claims": "頭或身體受撞擊使頭與腦迅速移動，可能造成腦震盪",
+          "fulltextVerified": true
+        }
+      ],
+      "mechanism": {
+        "title": "持球碰撞與頭部快速減速",
+        "summary": {
+          "text": "Tagovailoa 在持球跑動碰撞後倒地，海豚隊確認他因腦震盪離開當晚比賽。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "持球向前跑動接近防守者。",
+          "發生碰撞後倒地。",
+          "留在地面接受評估，因腦震盪退出比賽。"
+        ],
+        "explanation": {
+          "text": "腦震盪可發生於頭部受撞擊，或身體受力使頭部及腦迅速移動。畫面能呈現碰撞背景，但臨床判定仍需症狀與醫療評估。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "無法用單一姿勢分級腦震盪、判定是否永久受損，或預測何時可以安全回場。"
+      },
+      "timeline": [
+        {
+          "date": "2024-09-12",
+          "title": "比賽中受傷",
+          "text": "腦震盪",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-10-27",
+          "title": "正式比賽回場",
+          "text": "10 月 27 日對 Cardinals 正式復賽，完成 28 次傳球、推進 234 碼。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "notes": ["不以肢體姿勢替代腦震盪診斷，也不推定長期神經後遺症。"],
+      "verification": {
+        "status": "research-complete",
+        "footageReviewed": true,
+        "metadataVerified": true,
+        "availability": "public",
+        "playableInEmbed": true,
+        "uploadDate": "20240913",
+        "mediaPath": "/private/tmp/atlas150-team-media/s3_dVbbj40c.mp4",
+        "mediaSha256": "02cde02cb8d48e6d95e64661dd00b7bcb4a8be62a553b5ab6152938bcaeb6200",
+        "footageType": "broadcast-event-replay",
+        "contactSheet": "/private/tmp/atlas150-team-media/s3_dVbbj40c-detail.jpg"
+      }
+    }
+  ],
+  "backups": [
+    {
+      "slug": "mason-marchment-2024-face",
+      "name": "Mason Marchment",
+      "sport": "冰球",
+      "event": "2024 NHL 達拉斯星對明尼蘇達狂野",
+      "bodyPart": "頭頸部",
+      "eventDate": "2024-12-27",
+      "injury": "冰球擊中臉部，後續接受顏面手術",
+      "returnDate": "2025-02-02",
+      "returnSummary": "2 月 2 日對 Blue Jackets 回歸並進球，上場 13 分 11 秒。",
+      "context": "站在門前時被偏轉的射門擊中臉部；公開轉播不呈現 CT，也不能據此診斷腦震盪。",
+      "videoId": "khAX36KlHz4",
+      "videoUrl": "https://www.youtube.com/watch?v=khAX36KlHz4",
+      "publisher": "PEPO NEWS ",
+      "sourceTitle": "Stars forward Mason Marchment taken to hospital after injury during game against Wild 😭",
+      "durationSeconds": 110,
+      "startSeconds": 0,
+      "observation": "影片抽格查核中。",
+      "sources": [
+        {
+          "title": "Stars forward Mason Marchment taken to hospital after getting hit in face by puck",
+          "url": "https://www.clickorlando.com/sports/2024/12/28/stars-forward-mason-marchment-taken-to-hospital-after-getting-hit-in-face-by-puck/",
+          "publishedAt": "2024-12-27",
+          "claims": "事件日期、冰球偏轉擊臉後送醫",
+          "fulltextVerified": false
+        },
+        {
+          "title": "Heika’s Take: Revamped lineup shines as Stars push win streak to five straight games",
+          "url": "https://www.nhl.com/stars/news/heika-s-take-revamped-lineup-shines-as-dallas-stars-push-win-streak-to-five-straight-games-after-beating-columbus-blue-jackets-020225",
+          "publishedAt": "2025-02-03",
+          "claims": "2 月 2 日回歸、進球、上場時間及前次手術",
+          "fulltextVerified": false
+        },
+        {
+          "title": "Facial Fractures - Cleveland Clinic",
+          "url": "https://my.clevelandclinic.org/health/diseases/16025-facial-fractures",
+          "publishedAt": "2023-04-11",
+          "claims": "直接撞擊可傷及顏面骨；需影像評估傷勢",
+          "fulltextVerified": true
+        }
+      ],
+      "mechanism": null,
+      "timeline": [
+        {
+          "date": "2024-12-27",
+          "title": "比賽中受傷",
+          "text": "冰球擊中臉部，後續接受顏面手術",
+          "sourceIndexes": [1]
+        }
+      ],
+      "notes": [
+        "因選定影片是來源弱的照片拼接，未採為主 10 筆，需更換可靠片源後再用。"
+      ],
+      "verification": {
+        "status": "backup-not-selected",
+        "footageReviewed": true,
+        "metadataVerified": true,
+        "availability": "public",
+        "playableInEmbed": true,
+        "uploadDate": "20241228",
+        "mediaPath": "/private/tmp/atlas150-team-media/khAX36KlHz4.mp4",
+        "contactSheet": "/private/tmp/atlas150-team-media/khAX36KlHz4-contact.jpg",
+        "footageType": "photo-slideshow-with-unconfirmed-short-broadcast"
+      }
+    }
+  ]
+}

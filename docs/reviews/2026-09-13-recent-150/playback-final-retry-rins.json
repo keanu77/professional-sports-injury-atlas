@@ -1,0 +1,23 @@
+[
+  {
+    "url": "https://www.youtube.com/watch?v=FseibZgB1Pk",
+    "path": "/videos/alex-rins-2024-assen-wrist/",
+    "startSeconds": 10,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:26:06.214Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 11.007323,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  }
+]

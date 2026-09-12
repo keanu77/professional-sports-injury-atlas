@@ -14,6 +14,7 @@ import batch31Data from "../../src/data/videos/event-batch-31.v1.json";
 import batch32Data from "../../src/data/videos/event-batch-32.v1.json";
 import batch34Data from "../../src/data/videos/event-batch-34.v1.json";
 import recent120Data from "../../src/data/videos/event-recent-120.v1.json";
+import recent150Data from "../../src/data/videos/event-recent-150.v1.json";
 import originalData from "../../src/data/videos/event-updates.v1.json";
 
 describe("source-backed event updates", () => {
@@ -128,6 +129,7 @@ describe("source-backed event updates", () => {
       batch32Data,
       batch34Data,
       recent120Data,
+      recent150Data,
     ]) {
       for (const entry of normalizeEventUpdateBatches([batch])) {
         const original = batch.entries.find(

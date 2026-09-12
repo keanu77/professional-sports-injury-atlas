@@ -1,0 +1,23 @@
+[
+  {
+    "url": "https://www.youtube.com/watch?v=GjRtEqAnRNc",
+    "path": "/videos/antoine-dupont-2025-six-nations-knee/",
+    "startSeconds": 18,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:25:01.589Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 19.011178,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  }
+]

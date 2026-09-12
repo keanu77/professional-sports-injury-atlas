@@ -1,0 +1,52 @@
+{
+  "checkedAt": "2026-09-12T17:19:48.543290+00:00",
+  "clinicalApproval": false,
+  "replacements": [
+    {
+      "slug": "chris-godwin-2024-ankle",
+      "oldVideoId": "kESp_v-LqZ4",
+      "newVideoId": "Nawq7KDQAkc",
+      "reason": "Native owned-preview player onError 150; embedding disallowed.",
+      "newStartSeconds": 40,
+      "officialErrorReference": "https://developers.google.com/youtube/iframe_api_reference#onError",
+      "verification": {
+        "status": "replacement-candidate-reviewed",
+        "checkedAt": "2026-09-12T17:19:48.543290+00:00",
+        "footageReviewed": true,
+        "footageReviewScope": "Contact frames from first 200 seconds and captions; not a frame-by-frame clinical assessment.",
+        "metadataVerified": true,
+        "availability": "public",
+        "playableInEmbedMetadata": true,
+        "uploadDate": "20241022",
+        "mediaSha256": "194db54d13ab95d131723a53af8bb72e5480a66c993fb697028afbed34cc0b35",
+        "contactSheet": "Nawq7KDQAkc-sheet.jpg",
+        "contactSheetSha256": "d9385140b2af78681786e16f97e74cc4858d629b6c1bcdbc9bc3836048eefc81",
+        "captionSha256": "ff9f22c7683bbb849b8007a982efb1cab7580f193326a593c7383b3cf30351eb",
+        "footageType": "third-party-analysis-with-match-footage"
+      }
+    },
+    {
+      "slug": "tua-tagovailoa-2024-concussion",
+      "oldVideoId": "s3_dVbbj40c",
+      "newVideoId": "mNbDeYmDUbg",
+      "reason": "Native owned-preview player onError 150; embedding disallowed.",
+      "newStartSeconds": 120,
+      "officialErrorReference": "https://developers.google.com/youtube/iframe_api_reference#onError",
+      "verification": {
+        "status": "replacement-candidate-reviewed",
+        "checkedAt": "2026-09-12T17:19:48.543290+00:00",
+        "footageReviewed": true,
+        "footageReviewScope": "Contact frames from first 200 seconds and captions; not a frame-by-frame clinical assessment.",
+        "metadataVerified": true,
+        "availability": "public",
+        "playableInEmbedMetadata": true,
+        "uploadDate": "20240913",
+        "mediaSha256": "5916208b4a9ef394fe33aa94314e19c2a0d0451ae44ca88710695f7cf4ab33c3",
+        "contactSheet": "mNbDeYmDUbg-sheet.jpg",
+        "contactSheetSha256": "da345f72c31525d44eb9e282489fea2086e467251acb60801edd6618b13ebe80",
+        "captionSha256": "e7efa91f396e45f663ae0c491a6df27a1c064984d0bc0d1c012645a90e4b8985",
+        "footageType": "third-party-analysis-with-match-footage"
+      }
+    }
+  ]
+}

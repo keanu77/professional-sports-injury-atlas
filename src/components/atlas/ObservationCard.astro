@@ -1,7 +1,10 @@
 ---
 import VideoThumbnail from "../cases/VideoThumbnail.astro";
 import type { ObservationClip } from "../../lib/videos/expansion";
-import { observationCardMetadata } from "../../lib/videos/observation-card";
+import {
+  observationCardMetadata,
+  observationFootageLabel,
+} from "../../lib/videos/observation-card";
 interface Props {
   clip: ObservationClip;
 }
@@ -20,7 +23,9 @@ const metadata = observationCardMetadata(clip);
       <li data-observation-body-part>{metadata.bodyPart}</li>
       <li data-observation-event-year>{metadata.eventYear}</li>
     </ul>
-    <span>受傷動作觀察 →</span>
+    <span data-observation-footage-kind={clip.footageKind ?? "injury-motion"}>
+      {observationFootageLabel(clip)} →
+    </span>
   </div>
 </a>
 <style>

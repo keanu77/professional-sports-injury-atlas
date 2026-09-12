@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-09-12T17:30:21.097490+00:00",
+  "mode": "read-only independent agent",
+  "scope": {
+    "newClips": 30,
+    "eventEntries": 30,
+    "reviewRecords": 30,
+    "timelineNodes": 93,
+    "sourceReferences": 111
+  },
+  "findings": [
+    {
+      "issue": "Three news/photo cases incorrectly said the footage shows the movement sequence.",
+      "slugs": [
+        "kane-williamson-2023-world-cup-thumb",
+        "hardik-pandya-2023-world-cup-ankle",
+        "antoine-dupont-2025-six-nations-knee"
+      ],
+      "resolution": "Limitations now say event sequence comes from public reporting and the clip lacks continuous injury footage.",
+      "reviewerRecheck": "resolved"
+    },
+    {
+      "issue": "ObservationCard always labeled news/aftermath clips as injury-motion observation.",
+      "resolution": "observationFootageLabel is shared by the card and detail page; home/category/related cards use this component.",
+      "reviewerRecheck": "resolved",
+      "regressionTest": "e2e/decision-39-observation-pages.spec.ts: news, aftermath, and injury footage have consistent card and detail labels"
+    }
+  ],
+  "remainingFindings": [],
+  "noAdditionalBindingIssuesFound": [
+    "video URL and ID",
+    "event and return dates",
+    "source indexes",
+    "discovery metadata",
+    "related-resource coverage",
+    "duplicate event detection",
+    "replacement media/contact-sheet digests"
+  ],
+  "limitations": [
+    "Reviewed stored source claims and source data; did not independently fetch every full text.",
+    "No frame-by-frame clinical review.",
+    "Reviewer did not execute tests or deploy; primary agent records those separately."
+  ],
+  "clinicalApproval": false
+}

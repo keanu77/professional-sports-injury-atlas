@@ -575,6 +575,126 @@
     "federica-brignone-leg-2025": {
       "resources": ["overview"],
       "note": "延伸閱讀提供一般運動醫學背景，並非這位選手的個別治療紀錄。"
+    },
+    "hubert-hurkacz-2024-wimbledon-knee": {
+      "resources": ["meniscus"],
+      "note": ""
+    },
+    "skye-blakely-2024-achilles": {
+      "resources": ["achilles"],
+      "note": ""
+    },
+    "marketa-vondrousova-2024-berlin-hip": {
+      "resources": ["overview"],
+      "note": "尚未配對到髖部傷害的合適專文，先提供運動傷害主題總覽。"
+    },
+    "shilese-jones-2024-trials-acl": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "carlos-alcaraz-2024-rio-ankle": {
+      "resources": ["ankle"],
+      "note": ""
+    },
+    "grigor-dimitrov-2025-wimbledon-pectoral": {
+      "resources": ["overview"],
+      "note": "尚未配對到胸肌傷害的合適專文，先提供運動傷害主題總覽。"
+    },
+    "elaine-thompson-herah-2024-achilles": {
+      "resources": ["nutrition"],
+      "note": "此例為阿基里斯腱小範圍撕裂；延伸閱讀提供肌腱恢復期營養背景，不是完全斷裂的治療建議。"
+    },
+    "kevin-mayer-2024-paris-hamstring": {
+      "resources": ["hamstring"],
+      "note": ""
+    },
+    "pv-sindhu-2023-french-open-knee": {
+      "resources": ["overview"],
+      "note": "尚未配對到此膝部傷勢的合適專文，先提供運動傷害主題總覽。"
+    },
+    "an-se-young-2023-asian-games-knee": {
+      "resources": ["nutrition"],
+      "note": "延伸閱讀為肌腱與韌帶恢復期的一般營養背景，不代表此個案的療程。"
+    },
+    "marco-schwarz-2023-bormio-knee": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "alexis-pinturault-2024-wengen-knee": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "petra-vlhova-2024-jasna-knee": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "wout-van-aert-2024-vuelta-knee": {
+      "resources": ["cycling"],
+      "note": "自行車傷害概覽不等於膝部深傷口的治療指引。"
+    },
+    "kane-williamson-2023-world-cup-thumb": {
+      "resources": ["overview"],
+      "note": "尚未配對到拇指骨折的合適專文，先提供運動傷害主題總覽。"
+    },
+    "hardik-pandya-2023-world-cup-ankle": {
+      "resources": ["soft-tissue"],
+      "note": "一般軟組織傷害處理背景，不能由此推定選手的韌帶名稱或受傷分級。"
+    },
+    "mikaela-shiffrin-2024-cortina-knee": {
+      "resources": ["meniscus"],
+      "note": "延伸閱讀介紹半月板傷害；隊伍將本次傷勢描述為拉傷，不能套用特定撕裂分型或手術療程。"
+    },
+    "jorge-martin-2025-qatar-chest": {
+      "resources": ["overview"],
+      "note": "尚未配對到胸部創傷與氣胸的合適專文，先提供運動傷害主題總覽。"
+    },
+    "alex-rins-2024-assen-wrist": {
+      "resources": ["overview"],
+      "note": "尚未配對到這次合併骨折的合適專文，先提供運動傷害主題總覽。"
+    },
+    "antoine-dupont-2025-six-nations-knee": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "angel-reese-2024-wrist": {
+      "resources": ["overview"],
+      "note": "尚未配對到此腕部骨折的合適專文，先提供運動傷害主題總覽。"
+    },
+    "juju-watkins-2025-knee": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "trinity-rodman-2024-back": {
+      "resources": ["overview"],
+      "note": "尚未配對到背肌痙攣的合適專文，先提供運動傷害主題總覽。"
+    },
+    "alex-greenwood-2024-knee": {
+      "resources": ["soft-tissue"],
+      "note": "一般軟組織傷害處理背景，不是膝內側副韌帶修補術後的個人療程。"
+    },
+    "anthony-richardson-2023-shoulder": {
+      "resources": ["overview"],
+      "note": "尚未配對到肩鎖關節傷害的合適專文，先提供運動傷害主題總覽。"
+    },
+    "chris-godwin-2024-ankle": {
+      "resources": ["overview"],
+      "note": "尚未配對到踝關節脫臼的合適專文，先提供運動傷害主題總覽。"
+    },
+    "patrik-laine-2024-knee": {
+      "resources": ["soft-tissue"],
+      "note": "一般扭拉傷處理背景；不推定選手傷到哪一條膝部韌帶。"
+    },
+    "adam-fantilli-2024-calf": {
+      "resources": ["overview"],
+      "note": "尚未配對到冰刀割傷的合適專文，先提供運動傷害主題總覽。"
+    },
+    "trevor-zegras-2024-ankle": {
+      "resources": ["ankle-fracture"],
+      "note": ""
+    },
+    "tua-tagovailoa-2024-concussion": {
+      "resources": ["overview"],
+      "note": "尚未配對到腦震盪的合適主站專文，先提供運動傷害主題總覽；當下處理請參考上方頭部受傷說明。"
     }
   }
 }

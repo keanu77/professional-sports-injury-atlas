@@ -1,0 +1,1121 @@
+{
+  "checkedAt": "2026-09-12",
+  "cases": [
+    {
+      "slug": "marco-schwarz-2023-bormio-knee",
+      "name": "Marco Schwarz",
+      "sport": "高山滑雪",
+      "event": "2023 Bormio 世界盃滑降賽",
+      "bodyPart": "膝部",
+      "eventDate": "2023-12-28",
+      "injury": "ÖSV 經 ORF 報導確認右膝前十字韌帶撕裂、內側半月板撕裂及軟骨損傷。",
+      "returnDate": "2024-12-15",
+      "returnSummary": "在 Val d’Isère 世界盃曲道賽實際出賽，第一趟第十、第二趟未完賽。",
+      "context": "Schwarz 在 Bormio 滑降賽過彎時右膝受力後摔倒並滑入防護網；他自述膝部在倒地前已感到異常。",
+      "videoId": "n_VjzzwVVoo",
+      "videoUrl": "https://www.youtube.com/watch?v=n_VjzzwVVoo",
+      "publisher": "CRASH",
+      "sourceTitle": "Marco SCHWARZ - CRASH - Downhill - Bormio 2023",
+      "durationSeconds": 85,
+      "startSeconds": 0,
+      "observation": "0秒起可見過彎滑行；約5秒倒地滑出路線，後段有近景重播及防護網旁救援畫面。",
+      "sources": [
+        {
+          "title": "ORF：Schwarz 右膝確诊及手術",
+          "url": "https://sport.orf.at/stories/3120575/",
+          "publishedAt": "2023-12-28",
+          "claims": [
+            "2023-12-28 Bormio 事故，右膝 ACL、內側半月板及軟骨傷勢；12-29手術。"
+          ],
+          "fulltextVerified": true
+        },
+        {
+          "title": "ORF：Val d’Isère 賽果及 Schwarz 復出",
+          "url": "https://sport.orf.at/stories/3135813/",
+          "publishedAt": "2024-12-15",
+          "claims": ["Schwarz 近一年傷停後實際出賽，首趟第十，第二趟未完賽。"],
+          "fulltextVerified": true
+        },
+        {
+          "title": "AAOS：前十字韌帶傷害的一般原因與診斷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+          "publishedAt": null,
+          "claims": [
+            "一般知識：轉向、落地或直接碰撞可能使 ACL 承受過大力量；影像檢查用於確認合併傷勢，並非選手個案病歷。"
+          ],
+          "fulltextVerified": true
+        }
+      ],
+      "mechanism": {
+        "title": "過彎受力後失去穩定",
+        "summary": {
+          "text": "Schwarz 在 Bormio 滑降賽過彎時右膝受力後摔倒並滑入防護網；他自述膝部在倒地前已感到異常。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "沿坡面連續過彎，下肢承重。",
+          "過彎後失去平衡，身體倒向雪面。",
+          "倒地後繼續滑行，最後停在防護網附近。"
+        ],
+        "explanation": {
+          "text": "ACL 協助穩定膝部轉動；突然轉向或落地力量過大時可能受傷，常需要同時檢查半月板與軟骨。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "公開報導與影片無法提供完整病歷；畫面能說明動作順序，不能確定組織受損的精確瞬間、力量或治療細節。"
+      },
+      "timeline": [
+        {
+          "date": "2023-12-28",
+          "title": "滑降事故與確診",
+          "text": "在 Bormio 受傷，送回 Innsbruck 檢查後確認右膝 ACL、內側半月板及軟骨損傷，賽季提前結束。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2023-12-29",
+          "title": "接受手術",
+          "text": "ORF 更新報導記載他於星期五接受手術；公開資料未提供可在此確認的移植物或固定方式。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-12-15",
+          "title": "回到正式比賽",
+          "text": "Val d’Isère 曲道賽首趟第十，第二趟未完賽；回場日以實際出賽計算。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "notes": "",
+      "verification": {
+        "eventDistinctFromExisting120": true,
+        "eventDateInWindow": true,
+        "fulltextSourcesVerified": true,
+        "youtubeMetadataVerified": true,
+        "videoViewed": true,
+        "timecodeVerified": true,
+        "embedAllowedMetadata": true,
+        "checkedAt": "2026-09-12",
+        "metadataFile": "/private/tmp/atlas150-ski-media/n_VjzzwVVoo.info.json",
+        "footageType": "事故轉播重播",
+        "visualReviewMethod": "已由模型實際檢視抽樣contact sheet；不是連續播放或逐幀檢查。",
+        "viewedFrames": "0、5.6、11.2、39.2、44.8、50.4、61.6、78.4秒等16格",
+        "contactSheetPath": "/private/tmp/atlas150-ski-media/n_VjzzwVVoo-sheet.jpg",
+        "localVideoPath": "/private/tmp/atlas150-ski-media/n_VjzzwVVoo.mp4",
+        "videoSha256": "15ec9aea457410a6be72aa38f68e03bdbc770d0c1707cf7e4edd17988f9e4dfe",
+        "uploadDate": "20231228",
+        "sourceVerificationNotes": "已讀來源正文；如採搜尋工具回傳的完整新聞本文或HTML內嵌本文，另記於notes。"
+      },
+      "footageType": "事故轉播重播"
+    },
+    {
+      "slug": "alexis-pinturault-2024-wengen-knee",
+      "name": "Alexis Pinturault",
+      "sport": "高山滑雪",
+      "event": "2024 Wengen 世界盃超級大曲道",
+      "bodyPart": "膝部",
+      "eventDate": "2024-01-12",
+      "injury": "法國滑雪協會經 SRF 報導確認左膝前十字韌帶撕裂。",
+      "returnDate": "2024-12-07",
+      "returnSummary": "在 Beaver Creek 世界盃超級大曲道實際復出，名列第十。",
+      "context": "Pinturault 在 Wengen 的 Silberhorn 跳躍後摔倒，搭直升機送醫，後續確診左膝 ACL 撕裂。",
+      "videoId": "pU5QTK8kSB4",
+      "videoUrl": "https://www.youtube.com/watch?v=pU5QTK8kSB4",
+      "publisher": "Ski Patrol",
+      "sourceTitle": "Alexis Pinturault - Heavy ski crash - terrible chute  - Super G - Wengen 2024",
+      "durationSeconds": 67,
+      "startSeconds": 20,
+      "observation": "約20秒起呈現跳躍區前的滑行；約26至31秒可見落地後倒地與滑行，後段為救援直升機及現場畫面。",
+      "sources": [
+        {
+          "title": "SRF：法國滑雪協會確認 Pinturault 左膝 ACL 撕裂",
+          "url": "https://www.srf.ch/sport/ski-alpin/weltcup-maenner/naechstes-opfer-am-lauberhorn-nach-sturz-kreuzbandriss-und-saisonende-bei-pinturault",
+          "publishedAt": "2024-01-12",
+          "claims": ["Wengen 超級大曲道跳躍後摔倒，左 ACL 撕裂，賽季終止。"],
+          "fulltextVerified": true
+        },
+        {
+          "title": "FIS：Pinturault 重返雪上訓練",
+          "url": "https://www.fis-ski.com/alpine-skiing/news/2024-25/alexis-pinturault-celebrates-comeback-to-the-slopes-after-his-knee-injury",
+          "publishedAt": "2024-08-29",
+          "claims": [
+            "2024-08-28 在 Cervinia 首次恢復雪上滑行；此前左膝手術；這是訓練非比賽。"
+          ],
+          "fulltextVerified": true
+        },
+        {
+          "title": "FIS：Pinturault 官方出賽紀錄",
+          "url": "https://www.fis-ski.com/DB/general/athlete-biography.html?competitorid=127048&sectorcode=al&type=result",
+          "publishedAt": null,
+          "claims": [
+            "2024-01-12 Wengen DNF；12-03及12-05為訓練；12-07 Beaver Creek 超級大曲道第十，為傷後下一場正式出賽。"
+          ],
+          "fulltextVerified": true
+        },
+        {
+          "title": "AAOS：前十字韌帶傷害的一般原因與診斷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+          "publishedAt": null,
+          "claims": [
+            "一般知識：轉向、落地或直接碰撞可能使 ACL 承受過大力量；影像檢查用於確認合併傷勢，並非選手個案病歷。"
+          ],
+          "fulltextVerified": true
+        }
+      ],
+      "mechanism": {
+        "title": "跳躍後失衡與膝部受力",
+        "summary": {
+          "text": "Pinturault 在 Wengen 的 Silberhorn 跳躍後摔倒，搭直升機送醫，後續確診左膝 ACL 撕裂。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "高速通過跳躍地形。",
+          "起跳後落地，隨即失去平衡。",
+          "倒地後翻滾並滑出原先路線。"
+        ],
+        "explanation": {
+          "text": "ACL 協助控制膝部旋轉；跳躍落地失衡可能增加負荷，受傷程度仍須由檢查確認。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "公開報導與影片無法提供完整病歷；畫面能說明動作順序，不能確定組織受損的精確瞬間、力量或治療細節。"
+      },
+      "timeline": [
+        {
+          "date": "2024-01-12",
+          "title": "Wengen 受傷",
+          "text": "跳躍後摔倒送醫，法國滑雪協會確認左膝 ACL 撕裂。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-08-28",
+          "title": "恢復雪上滑行",
+          "text": "在 Cervinia 首次重返雪上；本人仍表示距離比賽狀態有一段路。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2024-12-07",
+          "title": "世界盃復出",
+          "text": "Beaver Creek 超級大曲道第十；12月初的滑降訓練不列為正式回場。",
+          "sourceIndexes": [3]
+        }
+      ],
+      "notes": "",
+      "verification": {
+        "eventDistinctFromExisting120": true,
+        "eventDateInWindow": true,
+        "fulltextSourcesVerified": true,
+        "youtubeMetadataVerified": true,
+        "videoViewed": true,
+        "timecodeVerified": true,
+        "embedAllowedMetadata": true,
+        "checkedAt": "2026-09-12",
+        "metadataFile": "/private/tmp/atlas150-ski-media/pU5QTK8kSB4.info.json",
+        "footageType": "事故轉播重播",
+        "visualReviewMethod": "已由模型實際檢視抽樣contact sheet；不是連續播放或逐幀檢查。",
+        "viewedFrames": "0至66秒16格，含22、26.4、30.8、39.6秒",
+        "contactSheetPath": "/private/tmp/atlas150-ski-media/pU5QTK8kSB4-sheet.jpg",
+        "localVideoPath": "/private/tmp/atlas150-ski-media/pU5QTK8kSB4.webm",
+        "videoSha256": "3155b93d3e2e95b732ce60fca470a86a9073447aaafd1869b0133d93a3e993ab",
+        "uploadDate": "20240113",
+        "sourceVerificationNotes": "已讀來源正文；如採搜尋工具回傳的完整新聞本文或HTML內嵌本文，另記於notes。"
+      },
+      "footageType": "事故轉播重播"
+    },
+    {
+      "slug": "petra-vlhova-2024-jasna-knee",
+      "name": "Petra Vlhová",
+      "sport": "高山滑雪",
+      "event": "2024 Jasná 世界盃大曲道",
+      "bodyPart": "膝部",
+      "eventDate": "2024-01-20",
+      "injury": "公開報導確認右膝前十字韌帶撕裂。",
+      "returnDate": "2026-02-10",
+      "returnSummary": "在米蘭科爾蒂納冬奧團體全能的曲道部分實際復出，未完賽。",
+      "context": "Vlhová 在主場 Jasná 大曲道首趟早段摔倒，右膝 ACL 撕裂後長期離開賽場，至 2026 冬奧才重返正式比賽。",
+      "videoId": "jK2BphKTP6M",
+      "videoUrl": "https://www.youtube.com/watch?v=jK2BphKTP6M",
+      "publisher": "Sport Plus",
+      "sourceTitle": "Petra Vlhová VYPADLA v obrovskom slalome v jasnej || MUSELI JU ODNIESŤ VRTULNÍKOM",
+      "durationSeconds": 94,
+      "startSeconds": 14,
+      "observation": "約14秒起可看過門，接著倒地滑向防護網；約62至74秒有慢動作回放。",
+      "sources": [
+        {
+          "title": "Eurosport：Jasná 事故及右膝 ACL 撕裂",
+          "url": "https://www.eurosport.fr/ski-alpin/jasna/2023-2024/jasna-et-maintenant-petra-vlhova.-lhecatombe-se-poursuit-chez-les-cadors_sto9978855/story.shtml",
+          "publishedAt": "2024-01-20",
+          "claims": ["首趟第九門附近摔倒，右膝 ACL 撕裂，賽季提前結束。"],
+          "fulltextVerified": true
+        },
+        {
+          "title": "ta3／TASR：Vlhová 冬奧首次正式回歸",
+          "url": "https://www.ta3.com/clanok/1033365/petra-vlhova-nedokoncila-slalom-v-timovej-kombinacii-pri-svojom-sutaznom-navrate-po-zraneni-urobila-chybu-v-branke",
+          "publishedAt": "2026-02-10",
+          "claims": [
+            "明載事故日2024-01-20；兩年後首次比賽為2026-02-10團體全能曲道，未完賽。"
+          ],
+          "fulltextVerified": true
+        },
+        {
+          "title": "AAOS：前十字韌帶傷害的一般原因與診斷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+          "publishedAt": null,
+          "claims": [
+            "一般知識：轉向、落地或直接碰撞可能使 ACL 承受過大力量；影像檢查用於確認合併傷勢，並非選手個案病歷。"
+          ],
+          "fulltextVerified": true
+        }
+      ],
+      "mechanism": {
+        "title": "滑行失衡後的膝部傷害",
+        "summary": {
+          "text": "Vlhová 在主場 Jasná 大曲道首趟早段摔倒，右膝 ACL 撕裂後長期離開賽場，至 2026 冬奧才重返正式比賽。",
+          "sourceIndexes": [1, 2]
+        },
+        "steps": [
+          "通過首趟前段旗門。",
+          "轉向時失衡，身體倒向雪面。",
+          "倒地後滑向賽道邊防護網。"
+        ],
+        "explanation": {
+          "text": "ACL 對膝部旋轉穩定有作用；轉向負荷與失衡可能相關，但不能由遠景量出韌帶承受多少力量。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "公開報導與影片無法提供完整病歷；畫面能說明動作順序，不能確定組織受損的精確瞬間、力量或治療細節。"
+      },
+      "timeline": [
+        {
+          "date": "2024-01-20",
+          "title": "主場大曲道摔倒",
+          "text": "在 Jasná 首趟受傷，這是後續兩年比賽中斷的起點。",
+          "sourceIndexes": [1, 2]
+        },
+        {
+          "date": "2024-01-20",
+          "title": "右膝 ACL 傷勢報導",
+          "text": "Eurosport 更新確診右膝 ACL 撕裂，當季提前結束。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2026-02-10",
+          "title": "冬奧正式復出",
+          "text": "參加團體全能曲道部分，途中出錯未完賽；已實際出發仍算正式回場。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "notes": "FIS biography search顯示2026紀錄，但 web open一度返回舊快取；本筆回場採可讀ta3/TASR全文，未把FIS舊快取宣稱為當日全表驗證。",
+      "verification": {
+        "eventDistinctFromExisting120": true,
+        "eventDateInWindow": true,
+        "fulltextSourcesVerified": true,
+        "youtubeMetadataVerified": true,
+        "videoViewed": true,
+        "timecodeVerified": true,
+        "embedAllowedMetadata": true,
+        "checkedAt": "2026-09-12",
+        "metadataFile": "/private/tmp/atlas150-ski-media/jK2BphKTP6M.info.json",
+        "footageType": "事故轉播重播",
+        "visualReviewMethod": "已由模型實際檢視抽樣contact sheet；不是連續播放或逐幀檢查。",
+        "viewedFrames": "0至93秒16格，含18.6、24.8、62、68.2、74.4秒",
+        "contactSheetPath": "/private/tmp/atlas150-ski-media/jK2BphKTP6M-sheet.jpg",
+        "localVideoPath": "/private/tmp/atlas150-ski-media/jK2BphKTP6M.mp4",
+        "videoSha256": "334f988de5c26207a79e7c4c3fc4a1bef00e97dbc9f21f2ab184ef69d1482ee3",
+        "uploadDate": "20240120",
+        "sourceVerificationNotes": "已讀來源正文；如採搜尋工具回傳的完整新聞本文或HTML內嵌本文，另記於notes。"
+      },
+      "footageType": "事故轉播重播"
+    },
+    {
+      "slug": "wout-van-aert-2024-vuelta-knee",
+      "name": "Wout van Aert",
+      "sport": "自行車",
+      "event": "2024 環西班牙自行車賽第16站",
+      "bodyPart": "膝部",
+      "eventDate": "2024-09-03",
+      "injury": "車隊確認膝部深層傷口，檢查未發現骨折。",
+      "returnDate": "2024-12-27",
+      "returnSummary": "在 Loenhout 越野自行車賽實際復出，名列第四。",
+      "context": "Van Aert 在環西第16站摔車後退賽；車隊翌日確認膝部有深層傷口，未見骨折。",
+      "videoId": "-2-Chylawx8",
+      "videoUrl": "https://www.youtube.com/watch?v=-2-Chylawx8",
+      "publisher": "Lanterne Rouge",
+      "sourceTitle": "I Can't Believe This Happened to Wout van Aert Again | Vuelta a Espana 2024 Stage 16",
+      "durationSeconds": 410,
+      "startSeconds": 179,
+      "observation": "約180至186秒可見車群在下坡彎道失去平衡並滑向路邊；187至188秒圖卡標示 Wout van Aert，後面接事故重播。",
+      "sources": [
+        {
+          "title": "Visma：第17站報告與 Van Aert 傷勢更新",
+          "url": "https://www.teamvismaleaseabike.com/race-report/news/no-major-role-for-team-visma-lease-a-bike-in-seventeenth-vuelta-stage/",
+          "publishedAt": "2024-09-04",
+          "claims": ["前一日摔車退賽；無骨折但膝部深層傷口，返回比利時。"],
+          "fulltextVerified": true
+        },
+        {
+          "title": "Visma：Van Aert 結束當年公路賽季",
+          "url": "https://www.teamvismaleaseabike.com/news/news/wout-van-aert-will-not-race-any-more-this-season/",
+          "publishedAt": "2024-09-05",
+          "claims": ["住院接受靜脈抗生素預防感染；不參加當年剩餘公路賽事。"],
+          "fulltextVerified": true
+        },
+        {
+          "title": "Visma：Loenhout 復出獲第四",
+          "url": "https://www.teamvismaleaseabike.com/liveblog/liveblog/liveblog-exact-cross-loenhout/",
+          "publishedAt": "2024-12-27",
+          "claims": ["車隊標題明載復出第四名，賽事為越野自行車。"],
+          "fulltextVerified": true
+        },
+        {
+          "title": "NHS：割傷與擦傷",
+          "url": "https://www.nhs.uk/conditions/cuts-and-grazes/",
+          "publishedAt": null,
+          "claims": [
+            "一般知識：深傷口需要專業處理，清潔與覆蓋可降低感染風險；未用來推斷個案已有感染。"
+          ],
+          "fulltextVerified": true
+        }
+      ],
+      "mechanism": {
+        "title": "摔車後的膝部深層傷口",
+        "summary": {
+          "text": "Van Aert 在環西第16站摔車後退賽；車隊翌日確認膝部有深層傷口，未見骨折。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "騎行途中摔車，身體離開正常踩踏位置。",
+          "倒地與路面接觸可能造成撞擊和擦傷。",
+          "膝部傷口使他無法繼續比賽，之後接受醫療檢查與傷口照護。"
+        ],
+        "explanation": {
+          "text": "皮膚被割破或擦破後，傷口深度與污染會影響處置；即使沒有骨折，深傷口仍可能需要住院與感染預防。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "公開報導與影片無法提供完整病歷；畫面能說明動作順序，不能確定組織受損的精確瞬間、力量或治療細節。"
+      },
+      "timeline": [
+        {
+          "date": "2024-09-03",
+          "title": "環西摔車退賽",
+          "text": "在第16站事故後退賽。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-09-04",
+          "title": "膝部深層傷口",
+          "text": "車隊表示檢查未見骨折，主要問題為深層傷口。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-09-05",
+          "title": "住院與感染預防",
+          "text": "車隊公布靜脈抗生素治療，並取消當季剩餘公路賽事。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2024-12-27",
+          "title": "越野賽復出",
+          "text": "Loenhout 越野自行車賽第四名；這是實際比賽回歸，並非公路賽回歸日期。",
+          "sourceIndexes": [3]
+        }
+      ],
+      "notes": "",
+      "verification": {
+        "eventDistinctFromExisting120": true,
+        "eventDateInWindow": true,
+        "fulltextSourcesVerified": true,
+        "youtubeMetadataVerified": true,
+        "videoViewed": true,
+        "timecodeVerified": true,
+        "embedAllowedMetadata": true,
+        "checkedAt": "2026-09-12",
+        "metadataFile": "/private/tmp/atlas150-ski-media/-2-Chylawx8.info.json",
+        "footageType": "賽事分析含事故轉播",
+        "visualReviewMethod": "已由模型實際檢視抽樣contact sheet；不是連續播放或逐幀檢查。",
+        "viewedFrames": "全片32格及172至196秒每秒1格",
+        "contactSheetPath": "/private/tmp/atlas150-ski-media/-2-Chylawx8-sheet.jpg",
+        "localVideoPath": "/private/tmp/atlas150-ski-media/-2-Chylawx8.webm",
+        "videoSha256": "72f0e6b6103c35f1db50993a0a196d66cfabfb6465ee4682973faa833fbd8c0d",
+        "uploadDate": "20240903",
+        "detailContactSheetPath": "/private/tmp/atlas150-ski-media/-2-Chylawx8-narrow.jpg",
+        "sourceVerificationNotes": "已讀來源正文；如採搜尋工具回傳的完整新聞本文或HTML內嵌本文，另記於notes。"
+      },
+      "footageType": "賽事分析含事故轉播"
+    },
+    {
+      "slug": "kane-williamson-2023-world-cup-thumb",
+      "name": "Kane Williamson",
+      "sport": "板球",
+      "event": "2023 世界盃紐西蘭對孟加拉",
+      "bodyPart": "手部",
+      "eventDate": "2023-10-13",
+      "injury": "ICC 確認左手拇指無位移骨折。",
+      "returnDate": "2023-11-04",
+      "returnSummary": "在世界盃對巴基斯坦一戰實際復出，攻下95分。",
+      "context": "Williamson 在 Chennai 對孟加拉跑分時，被回傳球打中左手拇指；掃描確認無位移骨折。",
+      "videoId": "MtIaPgMih1c",
+      "videoUrl": "https://www.youtube.com/watch?v=MtIaPgMih1c",
+      "publisher": "WION",
+      "sourceTitle": "NZ stay perfect but Williamson injured again | WION World of Cricket",
+      "durationSeconds": 114,
+      "startSeconds": 0,
+      "observation": "抽樣畫面為 WION 主持人與來賓討論，後方顯示 Williamson 比賽照片；沒有連續受傷動作可供判讀。",
+      "sources": [
+        {
+          "title": "ICC：Williamson 左拇指骨折確診",
+          "url": "https://www.icc-cricket.com/tournaments/cricketworldcup/news/new-zealand-suffer-williamson-blow-with-fractured-thumb-confirmed",
+          "publishedAt": "2023-10-14",
+          "claims": [
+            "10月13日跑分時遭回傳球擊中左拇指；掃描證實無位移骨折，與先前膝傷不同。"
+          ],
+          "fulltextVerified": true
+        },
+        {
+          "title": "Wisden：Williamson 對巴基斯坦復出",
+          "url": "https://www.wisden.com/series/icc-mens-cricket-world-cup-2023-24/cricket-news/watch-kane-williamson-comeback-cuts-loose-against-pakistan-cwc-2023-pak-nz",
+          "publishedAt": "2023-11-04",
+          "claims": ["拇指受傷後在對巴基斯坦比賽復出，95分。"],
+          "fulltextVerified": true
+        },
+        {
+          "title": "AAOS：手部骨折",
+          "url": "https://www.orthoinfo.org/diseases--conditions/hand-fractures/",
+          "publishedAt": null,
+          "claims": [
+            "一般知識：直接撞擊可能造成手指或掌骨骨折；需影像確認位置、排列及傷勢。"
+          ],
+          "fulltextVerified": true
+        }
+      ],
+      "mechanism": {
+        "title": "回傳球直接擊中拇指",
+        "summary": {
+          "text": "Williamson 在 Chennai 對孟加拉跑分時，被回傳球打中左手拇指；掃描確認無位移骨折。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "跑分時，防守方將球回傳。",
+          "回傳球擊中他的左手拇指，形成局部撞擊。",
+          "手部疼痛影響繼續比賽，後續掃描確認骨折。"
+        ],
+        "explanation": {
+          "text": "手指骨骼受到直接撞擊時可能骨折；「無位移」表示骨折片沒有明顯錯開，仍不能只靠疼痛或外觀判斷。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "公開報導與影片無法提供完整病歷；畫面能說明動作順序，不能確定組織受損的精確瞬間、力量或治療細節。"
+      },
+      "timeline": [
+        {
+          "date": "2023-10-13",
+          "title": "左拇指被球擊中",
+          "text": "對孟加拉跑分時受傷，當場因傷退場。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2023-10-14",
+          "title": "掃描確認骨折",
+          "text": "ICC 公布左拇指無位移骨折，隊伍另安排人員備援。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2023-11-04",
+          "title": "世界盃實際復出",
+          "text": "對巴基斯坦上場並攻下95分。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "notes": "影片為 WION 棚內賽事解說；不是事故的連續轉播。",
+      "verification": {
+        "eventDistinctFromExisting120": true,
+        "eventDateInWindow": true,
+        "fulltextSourcesVerified": true,
+        "youtubeMetadataVerified": true,
+        "videoViewed": true,
+        "timecodeVerified": true,
+        "embedAllowedMetadata": true,
+        "checkedAt": "2026-09-12",
+        "metadataFile": "/private/tmp/atlas150-ski-media/MtIaPgMih1c.info.json",
+        "footageType": "棚內新聞解說",
+        "visualReviewMethod": "已由模型實際檢視抽樣contact sheet；不是連續播放或逐幀檢查。",
+        "viewedFrames": "0至113秒16格",
+        "contactSheetPath": "/private/tmp/atlas150-ski-media/MtIaPgMih1c-sheet.jpg",
+        "localVideoPath": "/private/tmp/atlas150-ski-media/MtIaPgMih1c.webm",
+        "videoSha256": "ae99acfe06059abf0820b030a3182ed6d51837703db0a21483dadca9bc8efdd1",
+        "uploadDate": "20231013",
+        "sourceVerificationNotes": "已讀來源正文；如採搜尋工具回傳的完整新聞本文或HTML內嵌本文，另記於notes。"
+      },
+      "footageType": "棚內新聞解說"
+    },
+    {
+      "slug": "hardik-pandya-2023-world-cup-ankle",
+      "name": "Hardik Pandya",
+      "sport": "板球",
+      "event": "2023 世界盃印度對孟加拉",
+      "bodyPart": "腳踝",
+      "eventDate": "2023-10-19",
+      "injury": "ICC 確認左腳踝受傷，之後退出該屆世界盃。",
+      "returnDate": "2024-02-26",
+      "returnSummary": "代表 Reliance 1 參加 DY Patil T20 Cup，實際投球與打擊；屬地方競賽回歸。",
+      "context": "Pandya 投球後嘗試攔接打回來的球，接著倒地抓住腳踝，無法完成該輪投球；後續確認左腳踝傷勢。",
+      "videoId": "uQDKyD-Sk4w",
+      "videoUrl": "https://www.youtube.com/watch?v=uQDKyD-Sk4w",
+      "publisher": "MIRROR NOW",
+      "sourceTitle": "Breaking News | Hardik Pandya Suffers Ankle Injury During India Vs Bangladesh In World Cup 2023",
+      "durationSeconds": 116,
+      "startSeconds": 13,
+      "observation": "13秒後的抽樣畫面交替呈現 Pandya 坐在場上與被攙扶離場照片，並有腳踝傷勢新聞字幕；未呈現連續受傷動作。",
+      "sources": [
+        {
+          "title": "ICC：核准更換 Pandya 名單",
+          "url": "https://www.icc-cricket.com/media-releases/krishna-approved-as-replacement-for-pandya-in-india-squad",
+          "publishedAt": "2023-11-04",
+          "claims": ["明載10月19日對孟加拉左腳踝受傷，未及復原而退出世界盃。"],
+          "fulltextVerified": true
+        },
+        {
+          "title": "ESPN：Pandya 重返競賽板球",
+          "url": "https://www.espn.com.sg/cricket/story/_/id/39602581/hardik-pandya-returns-competitive-cricket-dy-patil-t20-cup",
+          "publishedAt": "2024-02-27",
+          "claims": [
+            "2月26日代表Reliance 1對BPCL實際出賽；此前NCA三場練習賽與正式競賽有別。"
+          ],
+          "fulltextVerified": true
+        },
+        {
+          "title": "AAOS：腳踝扭傷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/sprained-ankle/",
+          "publishedAt": null,
+          "claims": [
+            "一般知識：腳踝轉動超過可承受範圍可能使韌帶受傷；症狀不足以區分特定韌帶與骨折。"
+          ],
+          "fulltextVerified": true
+        },
+        {
+          "title": "ICC：Pandya 投球後守備受傷送檢",
+          "url": "https://www.icc-cricket.com/tournaments/cricketworldcup/news/pandya-sent-for-scans-after-hurting-ankle-against-bangladesh",
+          "publishedAt": "2023-10-19",
+          "claims": [
+            "投球後嘗試攔接回球，倒地抓住腳踝，無法完成該輪投球並送掃描。"
+          ],
+          "fulltextVerified": true
+        }
+      ],
+      "mechanism": {
+        "title": "場上動作後的腳踝傷害",
+        "summary": {
+          "text": "Pandya 投球後嘗試攔接打回來的球，接著倒地抓住腳踝，無法完成該輪投球；後續確認左腳踝傷勢。",
+          "sourceIndexes": [1, 4]
+        },
+        "steps": [
+          "投球後嘗試攔接打回來的球。",
+          "倒地並抓住腳踝。",
+          "無法完成該輪投球，離場接受檢查。"
+        ],
+        "explanation": {
+          "text": "腳踝周圍韌帶協助穩定關節；過度扭轉可能傷到韌帶。不過，本案官方只公布腳踝傷勢，不能據此指定韌帶名稱、撕裂分級或排除其他傷害。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "公開報導與影片無法提供完整病歷；畫面能說明動作順序，不能確定組織受損的精確瞬間、力量或治療細節。"
+      },
+      "timeline": [
+        {
+          "date": "2023-10-19",
+          "title": "世界盃受傷",
+          "text": "印度對孟加拉比賽中左腳踝受傷。",
+          "sourceIndexes": [1, 4]
+        },
+        {
+          "date": "2023-11-04",
+          "title": "退出世界盃",
+          "text": "ICC 核准替補人員，確認他未能及時復原。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-02-26",
+          "title": "地方競賽實際回歸",
+          "text": "在 DY Patil T20 Cup 投球及打擊；此前 NCA 練習賽不作本筆回場日。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "notes": "影片為 MIRROR NOW 新聞報導，抽樣畫面是受傷後照片與主播，未呈現連續受傷動作。",
+      "verification": {
+        "eventDistinctFromExisting120": true,
+        "eventDateInWindow": true,
+        "fulltextSourcesVerified": true,
+        "youtubeMetadataVerified": true,
+        "videoViewed": true,
+        "timecodeVerified": true,
+        "embedAllowedMetadata": true,
+        "checkedAt": "2026-09-12",
+        "metadataFile": "/private/tmp/atlas150-ski-media/uQDKyD-Sk4w.info.json",
+        "footageType": "新聞報導含受傷後照片",
+        "visualReviewMethod": "已由模型實際檢視抽樣contact sheet；不是連續播放或逐幀檢查。",
+        "viewedFrames": "0至115秒16格",
+        "contactSheetPath": "/private/tmp/atlas150-ski-media/uQDKyD-Sk4w-sheet.jpg",
+        "localVideoPath": "/private/tmp/atlas150-ski-media/uQDKyD-Sk4w.mp4",
+        "videoSha256": "93ecebb1e60791691c3a0b9d8fdeebd16ff6cbe06d1c7b162933f42e28a3e4bb",
+        "uploadDate": "20231019",
+        "sourceVerificationNotes": "已讀來源正文；如採搜尋工具回傳的完整新聞本文或HTML內嵌本文，另記於notes。"
+      },
+      "footageType": "新聞報導含受傷後照片"
+    },
+    {
+      "slug": "mikaela-shiffrin-2024-cortina-knee",
+      "name": "Mikaela Shiffrin",
+      "sport": "高山滑雪",
+      "event": "2024 Cortina 世界盃女子滑降",
+      "bodyPart": "膝部",
+      "eventDate": "2024-01-26",
+      "injury": "左膝傷勢；美國滑雪隊後續回顧稱半月板拉傷。",
+      "returnDate": "2024-03-10",
+      "returnSummary": "在 Åre 世界盃曲道賽實際復出並奪冠。",
+      "context": "Shiffrin 在 Cortina 滑降賽落地後失控並撞上防護網，左膝受傷，之後約六週未比賽。",
+      "videoId": "5cwk5Y0Iq1E",
+      "videoUrl": "https://www.youtube.com/watch?v=5cwk5Y0Iq1E",
+      "publisher": "WorldCup Skiing",
+      "sourceTitle": "THE BEST SKIER IN THE WORLD CRASHED AT 100km/h Mikaela Shiffrin Cortina Italy 2024",
+      "durationSeconds": 40,
+      "startSeconds": 18,
+      "observation": "約18秒起呈現通過起伏地形與後續轉向，23秒後倒地並滑向防護網；不能由遠景確認膝內組織變化。",
+      "sources": [
+        {
+          "title": "AP：Shiffrin 在 Cortina 受傷",
+          "url": "https://apnews.com/article/d7d9233c6efe8052b5fc86463b3a2f52",
+          "publishedAt": "2024-01-26",
+          "claims": [
+            "1月26日Cortina滑降落地失控撞網，左膝受傷；初步公告ACL及PCL看似完整。"
+          ],
+          "fulltextVerified": true
+        },
+        {
+          "title": "U.S. Ski & Snowboard：Shiffrin 復出奪冠",
+          "url": "https://www.usskiandsnowboard.org/news/shiffrin-returns-win-clinches-slalom-crystal-globe",
+          "publishedAt": "2024-03-10",
+          "claims": [
+            "隊伍稱Cortina傷勢為meniscus strain；約六週未比賽，Åre只比曲道並在3月10日復出奪冠。"
+          ],
+          "fulltextVerified": true
+        },
+        {
+          "title": "AAOS：半月板的功能與外傷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/meniscus-tears/",
+          "publishedAt": null,
+          "claims": [
+            "一般知識：半月板分散股骨與脛骨間的負荷，轉向或接觸外傷可能使其受傷；不是選手的撕裂分型。"
+          ],
+          "fulltextVerified": true
+        }
+      ],
+      "mechanism": {
+        "title": "滑降落地失控與膝部負荷",
+        "summary": {
+          "text": "Shiffrin 在 Cortina 滑降賽落地後失控並撞上防護網，左膝受傷，之後約六週未比賽。",
+          "sourceIndexes": [1, 2]
+        },
+        "steps": [
+          "滑降通過起伏地形後落地，滑雪板重新承重。",
+          "接著失去原本滑行方向，身體倒向雪面。",
+          "倒地後滑向防護網；不能只以碰網瞬間判定全部傷勢來源。"
+        ],
+        "explanation": {
+          "text": "半月板像膝內的緩衝墊，幫助分散承重；轉向和外傷都可能增加其負荷。隊伍使用「拉傷」描述，不能自行改寫成特定形狀的半月板撕裂。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "公開報導與影片無法提供完整病歷；畫面能說明動作順序，不能確定組織受損的精確瞬間、力量或治療細節。"
+      },
+      "timeline": [
+        {
+          "date": "2024-01-26",
+          "title": "Cortina 滑降摔倒",
+          "text": "左膝受傷，醫療人員安排後續檢查。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-01-26",
+          "title": "取消接下來賽程",
+          "text": "本人表示不再參加該週末Cortina賽事，並退出翌週Kronplatz大曲道。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-03-10",
+          "title": "Åre 復出奪冠",
+          "text": "約六週未比賽後重返世界盃曲道，拿下冠軍。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "notes": "不同於既有2024年11月Killington腹部穿刺傷；本筆為2024年1月Cortina膝傷。AP全文來自搜尋工具的完整新聞本文，直接open網址曾失敗。",
+      "verification": {
+        "eventDistinctFromExisting120": true,
+        "eventDateInWindow": true,
+        "fulltextSourcesVerified": true,
+        "youtubeMetadataVerified": true,
+        "videoViewed": true,
+        "timecodeVerified": true,
+        "embedAllowedMetadata": true,
+        "checkedAt": "2026-09-12",
+        "metadataFile": "/private/tmp/atlas150-ski-media/5cwk5Y0Iq1E.info.json",
+        "footageType": "事故轉播",
+        "visualReviewMethod": "已由模型實際檢視抽樣contact sheet；不是連續播放或逐幀檢查。",
+        "viewedFrames": "0至39秒16格，含18.2、20.8、23.4、26秒",
+        "contactSheetPath": "/private/tmp/atlas150-ski-media/5cwk5Y0Iq1E-sheet.jpg",
+        "localVideoPath": "/private/tmp/atlas150-ski-media/5cwk5Y0Iq1E.mp4",
+        "videoSha256": "f314236d477ac6b28c17e0755b44aab34f22319a29dfcb8b762131552a53d6cc",
+        "uploadDate": "20240126",
+        "sourceVerificationNotes": "已讀來源正文；如採搜尋工具回傳的完整新聞本文或HTML內嵌本文，另記於notes。"
+      },
+      "footageType": "事故轉播"
+    },
+    {
+      "slug": "jorge-martin-2025-qatar-chest",
+      "name": "Jorge Martín",
+      "sport": "機車競速",
+      "event": "2025 MotoGP 卡達大獎賽",
+      "bodyPart": "軀幹",
+      "eventDate": "2025-04-13",
+      "injury": "Aprilia 與 MotoGP 確認右側多處肋骨骨折合併氣胸。",
+      "returnDate": "2025-07-19",
+      "returnSummary": "在 Brno 捷克站 Sprint 實際復出，名列第十一；翌日大獎賽第七。",
+      "context": "Martín 在卡達大獎賽第14圈摔車，胸部外傷後住院；檢查確認右側多處肋骨骨折及氣胸。",
+      "videoId": "dCMckwzPJog",
+      "videoUrl": "https://www.youtube.com/watch?v=dCMckwzPJog",
+      "publisher": "futadore",
+      "sourceTitle": "motgp qatar 2025 Jorge Martin crash almost died like Marco Simoncelli",
+      "durationSeconds": 18,
+      "startSeconds": 5,
+      "observation": "5秒後可見彎道重播，人車倒地後滑行；0秒及15至17秒附近有車手在緩衝區跪地的畫面。畫面是螢幕翻拍，無法清楚分辨胸部每次接觸。",
+      "sources": [
+        {
+          "title": "MotoGP／Aprilia：Martín 卡達胸部傷勢與更新",
+          "url": "https://www.motogp.com/en/news/2025/04/13/kecelakaan-di-gp-qatar-jorge-martin-patah-enam-tulang-rusuk/524365",
+          "publishedAt": "2025-04-13",
+          "claims": [
+            "4月13日第14圈摔車；右側肋骨多處骨折及氣胸；CT顯示氣胸增加需引流；4月14日更新骨折分布。"
+          ],
+          "fulltextVerified": true
+        },
+        {
+          "title": "Piaggio／Aprilia：Brno 週末賽果",
+          "url": "https://wide.piaggiogroup.com/en/articles/racing/podium-for-aprilia-racing-and-marco-bezzecchi-in-the-brno-race/index.html",
+          "publishedAt": "2025-07-20",
+          "claims": [
+            "7月19日Sprint第十一，7月20日GP第七；傷停三個月後重返賽事。"
+          ],
+          "fulltextVerified": true
+        },
+        {
+          "title": "North Bristol NHS Trust：胸部外傷",
+          "url": "https://www.nbt.nhs.uk/our-services/a-z-services/emergency-zone/ed-miu-patient-informationtt-information/chest-injury-advice",
+          "publishedAt": null,
+          "claims": [
+            "一般知識：胸部鈍傷可能造成肋骨骨折與肺部傷害；氣胸為肺與胸壁間積氣，胸管用於引流。",
+            "頁尾標示版本出版於2024年4月，未提供日。"
+          ],
+          "fulltextVerified": true
+        }
+      ],
+      "mechanism": {
+        "title": "摔車後的胸部撞擊",
+        "summary": {
+          "text": "Martín 在卡達大獎賽第14圈摔車，胸部外傷後住院；檢查確認右側多處肋骨骨折及氣胸。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "過彎時人車倒向路面，車手離開正常騎乘姿勢。",
+          "滑行時與路面、周圍人車的接觸可能把外力傳到胸部。",
+          "胸部外傷後接受檢查，確認肋骨骨折並出現氣胸。"
+        ],
+        "explanation": {
+          "text": "肋骨像保護胸腔的支架，強烈撞擊可能使肋骨與下方肺部一起受傷。氣胸是肺與胸壁間積氣，可能讓肺無法正常張開；是否引流須由醫療檢查決定。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "公開報導與影片無法提供完整病歷；畫面能說明動作順序，不能確定組織受損的精確瞬間、力量或治療細節。"
+      },
+      "timeline": [
+        {
+          "date": "2025-04-13",
+          "title": "卡達站摔車住院",
+          "text": "第14圈事故後接受胸部檢查，確認右側肋骨骨折及氣胸，安排引流與觀察。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2025-04-14",
+          "title": "更新骨折分布",
+          "text": "Aprilia 公布多處肋骨骨折，持續留院觀察氣胸。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2025-07-19",
+          "title": "Sprint 實際復出",
+          "text": "Brno捷克站短程賽第十一；星期五練習不列為回場日。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2025-07-20",
+          "title": "完成大獎賽",
+          "text": "週日主賽第七。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "notes": "官方996秒精華在12圈剩餘到9圈剩餘間剪接，抽樣未見事故本身；因此主片改採已實看18秒轉播翻拍，並記錄畫質與來源限制。不要把官方11個骨折處誤寫成11根肋骨。",
+      "verification": {
+        "eventDistinctFromExisting120": true,
+        "eventDateInWindow": true,
+        "fulltextSourcesVerified": true,
+        "youtubeMetadataVerified": true,
+        "videoViewed": true,
+        "timecodeVerified": true,
+        "embedAllowedMetadata": true,
+        "checkedAt": "2026-09-12",
+        "metadataFile": "/private/tmp/atlas150-ski-media/dCMckwzPJog.info.json",
+        "footageType": "事故轉播翻拍",
+        "visualReviewMethod": "已由模型實際檢視抽樣contact sheet；不是連續播放或逐幀檢查。",
+        "viewedFrames": "0至17秒16格",
+        "contactSheetPath": "/private/tmp/atlas150-ski-media/dCMckwzPJog-sheet.jpg",
+        "localVideoPath": "/private/tmp/atlas150-ski-media/dCMckwzPJog.webm",
+        "videoSha256": "890ebfadc56cf654fefa1091c2946b02898e71b3ef7fe257e4ea479829f8f26e",
+        "uploadDate": "20250413",
+        "sourceVerificationNotes": "已讀來源正文；如採搜尋工具回傳的完整新聞本文或HTML內嵌本文，另記於notes。"
+      },
+      "footageType": "事故轉播翻拍"
+    },
+    {
+      "slug": "alex-rins-2024-assen-wrist",
+      "name": "Álex Rins",
+      "sport": "機車競速",
+      "event": "2024 MotoGP 荷蘭 Assen 大獎賽",
+      "bodyPart": "手腕",
+      "eventDate": "2024-06-30",
+      "injury": "MotoGP 醫療公告記載右手腕骨折；同次事故亦有右足與腳踝傷勢。",
+      "returnDate": "2024-08-17",
+      "returnSummary": "在奧地利站 Sprint 實際出賽，之後因機械問題退賽。",
+      "context": "Rins 在 Assen 正賽首圈第一彎被拋離車輛，右手腕與右足受傷；翌日接受手腕及腳踝手術。",
+      "videoId": "FseibZgB1Pk",
+      "videoUrl": "https://www.youtube.com/watch?v=FseibZgB1Pk",
+      "publisher": "Dennis De Swart",
+      "sourceTitle": "TT Assen 2024 moto Gp race start & crash Alex Rins #assen #yamaha #ducati #honda #motogp #ttassen",
+      "durationSeconds": 51,
+      "startSeconds": 10,
+      "observation": "約10秒起可見起跑後車群進入彎道，接著鏡頭轉向賽道邊；20秒後有人員靠近車手。事故距離較遠，不能從此片確認手腕落地角度。",
+      "sources": [
+        {
+          "title": "MotoGP：Rins Assen 事故與初步醫療資訊",
+          "url": "https://www.motogp.com/pt/news/2024/06/30/rins-viaja-a-madrid-para-someterse-a-mas-examenes-medicos/502384",
+          "publishedAt": "2024-06-30",
+          "claims": [
+            "首圈第一彎highside；嵌入醫療公告右手腕骨折；內文另述右足骨折與右腕挫傷，屬早期更新不一致。"
+          ],
+          "fulltextVerified": true
+        },
+        {
+          "title": "Yamaha：Rins 手腕及腳踝術後缺席德國站",
+          "url": "https://www.yamaha-racing.com/news/motogp/remy-gardner-joins-monster-energy-yamaha-motogp-for-german-gp-we/",
+          "publishedAt": "2024-07-02",
+          "claims": ["7月1日晚接受右手腕及腳踝手術；由Gardner替補德國站。"],
+          "fulltextVerified": true
+        },
+        {
+          "title": "Motorsport.com：Rins 在奧地利 Sprint 出賽後因機械故障退賽",
+          "url": "https://es.motorsport.com/motogp/news/declaraciones-alex-rins-problema-mecanico-sprint-austria/10645329/",
+          "publishedAt": "2024-08-17",
+          "claims": [
+            "當日從第21位起跑，短程賽因機械問題退賽；是實際比賽非練習。"
+          ],
+          "fulltextVerified": true
+        },
+        {
+          "title": "AAOS：骨折的原因與檢查",
+          "url": "https://www.orthoinfo.org/diseases--conditions/fractures-broken-bones/",
+          "publishedAt": null,
+          "claims": [
+            "一般知識：外力超過骨骼承受能力可能造成骨折，X光可確認位置與形態；並非選手的影像報告。"
+          ],
+          "fulltextVerified": true
+        }
+      ],
+      "mechanism": {
+        "title": "被拋離車輛後的肢體撞擊",
+        "summary": {
+          "text": "Rins 在 Assen 正賽首圈第一彎被拋離車輛，右手腕與右足受傷；翌日接受手腕及腳踝手術。",
+          "sourceIndexes": [1, 2]
+        },
+        "steps": [
+          "首圈進入第一彎時，車手被拋離車輛。",
+          "身體落地與後續滑行，讓手腕、足部等部位承受撞擊。",
+          "他無法繼續比賽，醫療檢查後安排進一步治療。"
+        ],
+        "explanation": {
+          "text": "骨骼受到的外力超過承受能力時可能骨折；高速摔車也可能同時傷到不同部位。手腕哪一塊骨頭受傷、如何固定，需有明確醫療資料才能判定。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "公開報導與影片無法提供完整病歷；畫面能說明動作順序，不能確定組織受損的精確瞬間、力量或治療細節。"
+      },
+      "timeline": [
+        {
+          "date": "2024-06-30",
+          "title": "Assen 首圈摔車",
+          "text": "第一彎事故後退出比賽，返回Madrid接受進一步檢查。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-07-01",
+          "title": "手腕與腳踝手術",
+          "text": "Yamaha在翌日公告手術已完成，德國站由Gardner替補。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2024-08-17",
+          "title": "Sprint 實際回場",
+          "text": "在奧地利站短程賽出發，因機械問題退賽。",
+          "sourceIndexes": [3]
+        }
+      ],
+      "notes": "Yamaha來源已讀搜尋工具提供的完整正文；直接網址open及HTTP抓取返回JS殼，未將殼誤稱正文。初期MotoGP同頁對腕部挫傷／骨折用語不一致，傷名歸屬醫療公告，不指定骨頭或固定法。",
+      "verification": {
+        "eventDistinctFromExisting120": true,
+        "eventDateInWindow": true,
+        "fulltextSourcesVerified": true,
+        "youtubeMetadataVerified": true,
+        "videoViewed": true,
+        "timecodeVerified": true,
+        "embedAllowedMetadata": true,
+        "checkedAt": "2026-09-12",
+        "metadataFile": "/private/tmp/atlas150-ski-media/FseibZgB1Pk.info.json",
+        "footageType": "現場觀眾遠景",
+        "visualReviewMethod": "已由模型實際檢視抽樣contact sheet；不是連續播放或逐幀檢查。",
+        "viewedFrames": "全片16格及4至16秒每0.5秒1格",
+        "contactSheetPath": "/private/tmp/atlas150-ski-media/FseibZgB1Pk-sheet.jpg",
+        "localVideoPath": "/private/tmp/atlas150-ski-media/FseibZgB1Pk.mp4",
+        "videoSha256": "b52e3b560c03f5eb2fc5a191ff22bf5aadc4642b0ed3645cb88070d30713a28e",
+        "uploadDate": "20240701",
+        "detailContactSheetPath": "/private/tmp/atlas150-ski-media/FseibZgB1Pk-narrow.jpg",
+        "sourceVerificationNotes": "已讀來源正文；如採搜尋工具回傳的完整新聞本文或HTML內嵌本文，另記於notes。"
+      },
+      "footageType": "現場觀眾遠景"
+    },
+    {
+      "slug": "antoine-dupont-2025-six-nations-knee",
+      "name": "Antoine Dupont",
+      "sport": "橄欖球",
+      "event": "2025 六國錦標賽愛爾蘭對法國",
+      "bodyPart": "膝部",
+      "eventDate": "2025-03-08",
+      "injury": "六國賽官方後續報導確認右膝前十字韌帶斷裂。",
+      "returnDate": "2025-11-29",
+      "returnSummary": "代表 Toulouse 對 Racing 92，下半場第50分鐘替補上場。",
+      "context": "Dupont 在 Dublin 對愛爾蘭一戰第28分鐘，於爭球團（ruck）的清除對抗後右膝受傷，後續確認 ACL 斷裂。",
+      "videoId": "GjRtEqAnRNc",
+      "videoUrl": "https://www.youtube.com/watch?v=GjRtEqAnRNc",
+      "publisher": "Sky Sports News",
+      "sourceTitle": "France skipper Antoine Dupont confirms he ruptured knee ligaments in Ireland win",
+      "durationSeconds": 46,
+      "startSeconds": 18,
+      "observation": "18秒後的抽樣畫面出現 Dupont 的傷勢聲明圖卡及被攙扶離場照片；不是膝部受傷的連續轉播。",
+      "sources": [
+        {
+          "title": "六國賽官方：Dupont 右膝 ACL 斷裂",
+          "url": "https://www.sixnationsrugby.com/en/m6n/news/when-serin-replaced-dupont-96-years-ago-france-rugby",
+          "publishedAt": "2025-03-15",
+          "claims": [
+            "2025對愛爾蘭42-27勝利中右膝ACL斷裂，六國赛與當季後續賽程中斷；預估6至8個月不作實際回場日。"
+          ],
+          "fulltextVerified": true
+        },
+        {
+          "title": "L’Équipe：Dupont 正式比賽回歸",
+          "url": "https://www.lequipe.fr/Rugby/Actualites/Antoine-dupont-a-fait-son-retour-en-competition-officielle-apres-266-jours-d-absence/1613363",
+          "publishedAt": "2025-11-29",
+          "claims": [
+            "右膝十字韌帶傷後266日，在Toulouse對Racing92第50分鐘實際替補上場。"
+          ],
+          "fulltextVerified": true
+        },
+        {
+          "title": "AAOS：前十字韌帶傷害的一般原因與診斷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+          "publishedAt": null,
+          "claims": [
+            "一般知識：轉向、落地或直接碰撞可能使 ACL 承受過大力量；影像檢查用於確認合併傷勢，並非選手個案病歷。"
+          ],
+          "fulltextVerified": true
+        },
+        {
+          "title": "六國賽官方法文：Dupont 於爭球團對抗後傷退",
+          "url": "https://www.sixnationsrugby.com/fr/m6n/matchs/202500/ireland-v-france-08032025-1415/report",
+          "publishedAt": "2025-03-08",
+          "claims": [
+            "2025年3月8日Dublin比賽，第28分鐘在ruck清除對抗後出現右膝傷勢，由Lucu替補。"
+          ],
+          "fulltextVerified": true
+        }
+      ],
+      "mechanism": {
+        "title": "對抗比賽中的膝部傷害",
+        "summary": {
+          "text": "Dupont 在 Dublin 對愛爾蘭一戰第28分鐘，於爭球團（ruck）的清除對抗後右膝受傷，後續確認 ACL 斷裂。",
+          "sourceIndexes": [1, 4]
+        },
+        "steps": [
+          "在爭球團（ruck）附近參與球權對抗。",
+          "清除對抗發生後，右膝出現傷勢。",
+          "離場接受醫療評估，由替補球員接手。"
+        ],
+        "explanation": {
+          "text": "ACL 協助穩定膝部轉動；突然轉向或碰撞可能增加受傷風險。這是一般原理，新聞畫面沒有提供足夠細節來量出個案受力或判定責任。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "公開報導與影片無法提供完整病歷；畫面能說明動作順序，不能確定組織受損的精確瞬間、力量或治療細節。"
+      },
+      "timeline": [
+        {
+          "date": "2025-03-08",
+          "title": "六國賽受傷離場",
+          "text": "第28分鐘於爭球團清除對抗後右膝受傷，由Lucu替補。",
+          "sourceIndexes": [4]
+        },
+        {
+          "date": "2025-03-15",
+          "title": "官方回顧傷勢",
+          "text": "六國賽官方報導記載右膝ACL斷裂及後續缺賽；文中的預估復原期不是實際回場。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2025-11-29",
+          "title": "俱樂部正式復出",
+          "text": "Toulouse對Racing92第50分鐘替補上場，結束266日正式比賽中斷。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "notes": "Six Nations 網頁讀取器返回頁尾，但已HTTP下載官方HTML並讀取其中完整文章文字payload（/private/tmp/atlas150-sixnations.html）；影片為Sky Sports News新聞與本人聲明圖卡，不是受傷連續動作。 法文賽事報告已HTTP下載並讀取可見HTML正文，存於/private/tmp/atlas150-dupont-fr-report.html。",
+      "verification": {
+        "eventDistinctFromExisting120": true,
+        "eventDateInWindow": true,
+        "fulltextSourcesVerified": true,
+        "youtubeMetadataVerified": true,
+        "videoViewed": true,
+        "timecodeVerified": true,
+        "embedAllowedMetadata": true,
+        "checkedAt": "2026-09-12",
+        "metadataFile": "/private/tmp/atlas150-ski-media/GjRtEqAnRNc.info.json",
+        "footageType": "新聞報導含本人聲明",
+        "visualReviewMethod": "已由模型實際檢視抽樣contact sheet；不是連續播放或逐幀檢查。",
+        "viewedFrames": "0至45秒16格",
+        "contactSheetPath": "/private/tmp/atlas150-ski-media/GjRtEqAnRNc-sheet.jpg",
+        "localVideoPath": "/private/tmp/atlas150-ski-media/GjRtEqAnRNc.webm",
+        "videoSha256": "2f67ba472fc5399f8a7a586bb8445f83b4650a38017dba038843ea85fca98438",
+        "uploadDate": "20250309",
+        "sourceVerificationNotes": "已讀來源正文；如採搜尋工具回傳的完整新聞本文或HTML內嵌本文，另記於notes。"
+      },
+      "footageType": "新聞報導含本人聲明"
+    }
+  ],
+  "backups": [],
+  "researchStatus": "10-cases-visual-review-complete-backups-in-progress",
+  "provisionalNames": [
+    "Marco Schwarz",
+    "Alexis Pinturault",
+    "Petra Vlhova",
+    "Wout van Aert",
+    "Jorge Martin",
+    "Alex Rins",
+    "Travis Head",
+    "Kane Williamson",
+    "Hardik Pandya",
+    "Antoine Dupont"
+  ]
+}

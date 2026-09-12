@@ -1,0 +1,630 @@
+[
+  {
+    "url": "https://www.youtube.com/watch?v=tnpULHHcX0E",
+    "path": "/videos/hubert-hurkacz-2024-wimbledon-knee/",
+    "startSeconds": 0,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:21:47.953Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.019727,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=o2rT5OH3gWE",
+    "path": "/videos/skye-blakely-2024-achilles/",
+    "startSeconds": 0,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:21:51.566Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.019333,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "這部影片未提供字幕"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=OxBEhPSt2ew",
+    "path": "/videos/marketa-vondrousova-2024-berlin-hip/",
+    "startSeconds": 0,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:21:54.598Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.01294,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "這部影片未提供字幕"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=zvgsEswg8KA",
+    "path": "/videos/shilese-jones-2024-trials-acl/",
+    "startSeconds": 18,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:21:57.698Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 19.014354,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=3SueGOiUU_A",
+    "path": "/videos/carlos-alcaraz-2024-rio-ankle/",
+    "startSeconds": 0,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:22:00.848Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.007141,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=HWKf4g01YWY",
+    "path": "/videos/grigor-dimitrov-2025-wimbledon-pectoral/",
+    "startSeconds": 310,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:22:04.330Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 311.022047,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=WnWnsmfra-s",
+    "path": "/videos/elaine-thompson-herah-2024-achilles/",
+    "startSeconds": 0,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:22:07.679Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.01456,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=aSlYO9XfYaA",
+    "path": "/videos/kevin-mayer-2024-paris-hamstring/",
+    "startSeconds": 0,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:22:10.870Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.01363,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=igzfkBo1mpw",
+    "path": "/videos/pv-sindhu-2023-french-open-knee/",
+    "startSeconds": 1970,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:24:45.500Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1971.020395,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=CBRNZrv7GNk",
+    "path": "/videos/an-se-young-2023-asian-games-knee/",
+    "startSeconds": 0,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:22:34.936Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.017511,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=n_VjzzwVVoo",
+    "path": "/videos/marco-schwarz-2023-bormio-knee/",
+    "startSeconds": 0,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:22:38.447Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.006505,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=pU5QTK8kSB4",
+    "path": "/videos/alexis-pinturault-2024-wengen-knee/",
+    "startSeconds": 20,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:22:41.465Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 21.003134,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=jK2BphKTP6M",
+    "path": "/videos/petra-vlhova-2024-jasna-knee/",
+    "startSeconds": 14,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:22:44.700Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 15.009656,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=-2-Chylawx8",
+    "path": "/videos/wout-van-aert-2024-vuelta-knee/",
+    "startSeconds": 179,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:22:47.666Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 180.005677,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=MtIaPgMih1c",
+    "path": "/videos/kane-williamson-2023-world-cup-thumb/",
+    "startSeconds": 0,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:22:50.891Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.006377,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=uQDKyD-Sk4w",
+    "path": "/videos/hardik-pandya-2023-world-cup-ankle/",
+    "startSeconds": 13,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:22:54.132Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 14.018483,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=5cwk5Y0Iq1E",
+    "path": "/videos/mikaela-shiffrin-2024-cortina-knee/",
+    "startSeconds": 18,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:22:57.468Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 19.012352,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "這部影片未提供字幕"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=dCMckwzPJog",
+    "path": "/videos/jorge-martin-2025-qatar-chest/",
+    "startSeconds": 5,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:23:00.372Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 6.013414,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=FseibZgB1Pk",
+    "path": "/videos/alex-rins-2024-assen-wrist/",
+    "startSeconds": 10,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:26:06.214Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 11.007323,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=GjRtEqAnRNc",
+    "path": "/videos/antoine-dupont-2025-six-nations-knee/",
+    "startSeconds": 18,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:25:01.589Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 19.011178,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=Qyzau4_9NNQ",
+    "path": "/videos/angel-reese-2024-wrist/",
+    "startSeconds": 38,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:23:47.064Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 39.015198,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "這部影片未提供字幕"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=uw0GVL3nfN8",
+    "path": "/videos/juju-watkins-2025-knee/",
+    "startSeconds": 5,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:23:50.122Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 6.012553,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=4WeLwd2-YhA",
+    "path": "/videos/trinity-rodman-2024-back/",
+    "startSeconds": 98,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:23:53.631Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 99.005376,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=DbKcBrl8AOg",
+    "path": "/videos/alex-greenwood-2024-knee/",
+    "startSeconds": 9,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:23:56.709Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 10.007465,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=5HwejN_19pM",
+    "path": "/videos/anthony-richardson-2023-shoulder/",
+    "startSeconds": 20,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:23:59.578Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 21.014505,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=Nawq7KDQAkc",
+    "path": "/videos/chris-godwin-2024-ankle/",
+    "startSeconds": 40,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:24:02.827Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 41.007888,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=I4ll6KgWL6U",
+    "path": "/videos/patrik-laine-2024-knee/",
+    "startSeconds": 39,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:24:06.347Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 40.006462,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=PS2qTdAV2Lc",
+    "path": "/videos/adam-fantilli-2024-calf/",
+    "startSeconds": 102,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:24:09.553Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 103.011439,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "這部影片未提供字幕"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=r6gMIBsHuD8",
+    "path": "/videos/trevor-zegras-2024-ankle/",
+    "startSeconds": 48,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:24:12.671Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 49.017949,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": []
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=mNbDeYmDUbg",
+    "path": "/videos/tua-tagovailoa-2024-concussion/",
+    "startSeconds": 120,
+    "origin": "https://19440fa3.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-12T17:24:16.773Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 121.010567,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  }
+]

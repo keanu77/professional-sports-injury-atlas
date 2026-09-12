@@ -18,6 +18,7 @@ import {
   relatedObservationClips,
 } from "../../lib/videos/observation-guidance";
 import { discoveryFor } from "../../lib/videos/discovery";
+import { observationFootageLabel } from "../../lib/videos/observation-card";
 import {
   captionStatusLabel,
   formatDurationLabel,
@@ -42,6 +43,7 @@ const resourceNote = observationResourceNoteFor(clip.slug);
 const related = relatedObservationClips(clip, allObservationClips);
 const categoryLinks = observationCategoryLinks(clip);
 const isFeatured = discoveryFor(clip.slug).curatedRank !== undefined;
+const footageLabel = observationFootageLabel(clip);
 const watchUrl = new URL(clip.videoUrl);
 if (clip.startSeconds > 0)
   watchUrl.searchParams.set("t", String(clip.startSeconds));
@@ -53,8 +55,12 @@ if (clip.startSeconds > 0)
 >
   <a href="/#videos-heading">← 回到影片圖鑑</a>
   <header class="clip-header">
-    <p class="eyebrow">{clip.sport} / {clip.event}</p><h1>{clip.name}</h1><p>
-      {clip.bodyPart === "小腿／阿基里斯腱" ? "小腿" : clip.bodyPart} · 受傷動作觀察
+    <p class="eyebrow">{clip.sport} / {clip.event}</p><h1>{clip.name}</h1><p
+      data-footage-kind={clip.footageKind}
+    >
+      {clip.bodyPart === "小腿／阿基里斯腱" ? "小腿" : clip.bodyPart} · {
+        footageLabel
+      }
     </p>
   </header>
   <div

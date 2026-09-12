@@ -5,6 +5,7 @@ import batch31Data from "../../data/videos/event-batch-31.v1.json";
 import batch32Data from "../../data/videos/event-batch-32.v1.json";
 import batch34Data from "../../data/videos/event-batch-34.v1.json";
 import recent120Data from "../../data/videos/event-recent-120.v1.json";
+import recent150Data from "../../data/videos/event-recent-150.v1.json";
 import newData from "../../data/videos/event-additions.v1.json";
 import { curation } from "./expansion";
 import data from "../../data/videos/event-updates.v1.json";
@@ -206,6 +207,15 @@ const recent120 = z
   })
   .parse(recent120Data);
 
+const recent150 = z
+  .strictObject({
+    schemaVersion: z.literal(1),
+    decision: z.literal("recent-150-2026-09-13"),
+    checkedAt: z.iso.date(),
+    entries: z.array(eventUpdateEntryInputSchema).length(30),
+  })
+  .parse(recent150Data);
+
 type EventUpdateBatchInput = {
   checkedAt: string;
   entries: readonly z.input<typeof eventUpdateEntryInputSchema>[];
@@ -233,6 +243,7 @@ const normalizedEntries = normalizeEventUpdateBatches([
   batch32,
   batch34,
   recent120,
+  recent150,
 ]).filter((e) => !curation.removedSlugs.some((slug) => slug === e.slug));
 export const eventUpdates = eventUpdatesSchema.parse({
   ...data,

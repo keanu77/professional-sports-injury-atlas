@@ -35,7 +35,7 @@ describe("public discovery editorial coverage", () => {
         )
         .sort(),
     ).toEqual(published);
-    expect(groups.reduce((sum, group) => sum + group.count, 0)).toBe(120);
+    expect(groups.reduce((sum, group) => sum + group.count, 0)).toBe(150);
     expect(groups).toHaveLength(7);
     const curated = discovery.videos
       .filter((item) => item.curatedRank)

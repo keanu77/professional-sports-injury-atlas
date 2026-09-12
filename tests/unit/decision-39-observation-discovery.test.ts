@@ -62,7 +62,7 @@ describe("Decision 39 observation guidance", () => {
   });
 
   it("selects at most three deterministic related videos without self-links", () => {
-    expect(allObservationClips).toHaveLength(113);
+    expect(allObservationClips).toHaveLength(143);
     for (const clip of allObservationClips) {
       const related = relatedObservationClips(clip, allObservationClips);
       expect(related.length, clip.slug).toBeGreaterThan(0);
