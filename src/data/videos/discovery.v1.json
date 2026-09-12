@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-09-06",
+  "reviewedAt": "2026-09-12",
   "classificationBasis": "依既有影片觀察摘要選擇一個主要情境；分類描述影片中的動作，不判定致傷原因。畫面不足者歸其他或畫面未明。",
   "curationBasis": "優先選擇受傷過程清楚、具名傷勢與回場來源完整，並涵蓋不同運動與情境的影片。精選順序由本站編輯安排，不代表熱門程度。",
   "videos": [
@@ -15,6 +15,10 @@
     {
       "slug": "adam-eaton-2017-knee",
       "situation": "running-turning"
+    },
+    {
+      "slug": "aidan-hutchinson-leg-2024",
+      "situation": "collision"
     },
     {
       "slug": "aksel-svindal-kitzbuhel-2016",
@@ -74,6 +78,10 @@
       "situation": "running-turning"
     },
     {
+      "slug": "carolina-marin-acl-2024",
+      "situation": "landing"
+    },
+    {
       "slug": "carolina-marin-indonesia-2019",
       "situation": "landing",
       "curatedRank": 3
@@ -96,6 +104,10 @@
       "curatedRank": 4
     },
     {
+      "slug": "connor-bedard-jaw-2024",
+      "situation": "collision"
+    },
+    {
       "slug": "connor-mcdavid-2019-pcl",
       "situation": "collision"
     },
@@ -110,6 +122,10 @@
     {
       "slug": "dan-jennings-2014-concussion",
       "situation": "ball-impact"
+    },
+    {
+      "slug": "dani-carvajal-knee-2024",
+      "situation": "collision"
     },
     {
       "slug": "david-beckham-2010",
@@ -144,12 +160,24 @@
       "situation": "collision"
     },
     {
+      "slug": "eder-militao-acl-2024",
+      "situation": "landing"
+    },
+    {
       "slug": "edwin-diaz-2023-patellar-tendon",
       "situation": "landing"
     },
     {
       "slug": "fabio-jakobsen-2020-concussion",
       "situation": "collision"
+    },
+    {
+      "slug": "federica-brignone-leg-2025",
+      "situation": "fall"
+    },
+    {
+      "slug": "gavi-acl-2023",
+      "situation": "running-turning"
     },
     {
       "slug": "george-north-2015-concussion",
@@ -188,12 +216,28 @@
       "situation": "running-turning"
     },
     {
+      "slug": "jamal-musiala-ankle-2025",
+      "situation": "collision"
+    },
+    {
       "slug": "jayson-tatum-achilles-rupture-2025",
       "situation": "unclear"
     },
     {
+      "slug": "joe-burrow-wrist-2023",
+      "situation": "collision"
+    },
+    {
+      "slug": "joel-embiid-meniscus-2024",
+      "situation": "collision"
+    },
+    {
       "slug": "john-tavares-2021-concussion",
       "situation": "collision"
+    },
+    {
+      "slug": "jonas-vingegaard-crash-2024",
+      "situation": "fall"
     },
     {
       "slug": "juan-martin-del-potro-2018-knee",
@@ -228,6 +272,10 @@
       "situation": "ball-impact"
     },
     {
+      "slug": "kirk-cousins-achilles-2023",
+      "situation": "running-turning"
+    },
+    {
       "slug": "klay-thompson-2019-acl",
       "situation": "landing"
     },
@@ -238,6 +286,10 @@
     {
       "slug": "kristaps-porzingis-acl-2018",
       "situation": "landing"
+    },
+    {
+      "slug": "kristaps-porzingis-retinaculum-2024",
+      "situation": "collision"
     },
     {
       "slug": "kyle-schwarber-2016-knee",
@@ -317,6 +369,14 @@
       "situation": "collision"
     },
     {
+      "slug": "nick-chubb-knee-2023",
+      "situation": "collision"
+    },
+    {
+      "slug": "novak-djokovic-meniscus-2024",
+      "situation": "unclear"
+    },
+    {
       "slug": "paul-george-leg-fracture-2014",
       "situation": "landing"
     },
@@ -330,6 +390,14 @@
     },
     {
       "slug": "rhys-hoskins-2023-acl",
+      "situation": "running-turning"
+    },
+    {
+      "slug": "rodri-acl-2024",
+      "situation": "running-turning"
+    },
+    {
+      "slug": "ronald-acuna-acl-2024",
       "situation": "running-turning"
     },
     {
@@ -374,6 +442,10 @@
       "situation": "collision"
     },
     {
+      "slug": "ter-stegen-patellar-tendon-2024",
+      "situation": "landing"
+    },
+    {
       "slug": "tim-hudson-2013-ankle",
       "situation": "collision"
     },
@@ -396,6 +468,10 @@
     {
       "slug": "wesley-fofana-2021-leg",
       "situation": "collision"
+    },
+    {
+      "slug": "wout-van-aert-crash-2024",
+      "situation": "fall"
     },
     {
       "slug": "yuzuru-hanyu-2014-collision",

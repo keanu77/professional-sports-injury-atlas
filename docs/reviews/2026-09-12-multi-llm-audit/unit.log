@@ -1,0 +1,12 @@
+
+ RUN  v4.1.10 /private/tmp/atlas-120-review-mel5g1dt
+
+(node:66106) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:66354) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+ Test Files  94 passed (94)
+      Tests  1482 passed (1482)
+   Start at  23:48:44
+   Duration  7.74s (transform 11.47s, setup 0ms, import 22.82s, tests 52.22s, environment 6ms)

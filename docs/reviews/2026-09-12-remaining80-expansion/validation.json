@@ -1,0 +1,211 @@
+{
+  "validatedAt": "2026-09-12T13:47:20.182133+00:00",
+  "scope": "All remaining 80 locally authored; all 101 pages rendered",
+  "newEntries": 80,
+  "newMilestones": 224,
+  "allPublicPages": 101,
+  "allMilestones": 303,
+  "unitTests": {
+    "files": 3,
+    "passed": 59,
+    "command": "npx vitest run tests/unit/event-updates.test.ts tests/unit/case-cross-validation.test.ts tests/unit/decision-18-regression-contract.test.ts"
+  },
+  "astroCheck": {
+    "errors": 0,
+    "warnings": 0,
+    "existingHints": 16
+  },
+  "contentCheck": {
+    "passed": true,
+    "command": "node --import tsx scripts/check-content.ts",
+    "isolatedCleanSnapshot": true
+  },
+  "build": {
+    "passed": true,
+    "mode": "review",
+    "command": "ATLAS_PUBLIC_LAUNCH=decision-21 npm run build:review",
+    "pages": 172
+  },
+  "browser": {
+    "engine": "Chrome",
+    "pages": 101,
+    "widths": [1280, 390],
+    "checks": 202,
+    "passed": 202,
+    "noOverflow": true,
+    "sourceAnchorsValid": true,
+    "nbaClickableLinks": 0,
+    "returnDaysMatchSourceOrRemainAbsent": true,
+    "noPageErrors": true
+  },
+  "manualVisualReview": [
+    "Haliburton mechanism desktop",
+    "Foucher partial-year timeline desktop",
+    "Machado timeline mobile",
+    "Shiffrin mechanism mobile"
+  ],
+  "scopeVerification": {
+    "changedEntries": 80,
+    "unchangedEarlierEntries": 23,
+    "exactRemaining80Scope": true,
+    "batchMetadataUnchanged": true,
+    "slugs": [
+      "lindsey-vonn-schladming-2013",
+      "antoine-dupont-world-cup-2023",
+      "aksel-svindal-kitzbuhel-2016",
+      "mitch-haniger-2017-face",
+      "justin-turner-2023-face",
+      "kevin-pillar-2021-face",
+      "bryce-harper-2022-thumb",
+      "mookie-betts-2024-hand",
+      "chase-headley-2014-face",
+      "curtis-granderson-2013-hand",
+      "matt-shoemaker-2016-head",
+      "ja-happ-2013-head",
+      "dan-jennings-2014-concussion",
+      "stephen-piscotty-2015-concussion",
+      "dustin-pedroia-2017-knee",
+      "aaron-judge-2023-toe",
+      "manny-machado-2013-knee",
+      "samir-ait-said-2016-leg",
+      "sofia-goggia-2022-knee",
+      "yuzuru-hanyu-2014-collision",
+      "aleksander-kilde-2024-shoulder",
+      "liu-xiang-2012-achilles",
+      "fabio-jakobsen-2020-concussion",
+      "mikaela-shiffrin-2024-abdomen",
+      "remco-evenepoel-2020-pelvis",
+      "kyle-schwarber-2016-knee",
+      "bryce-harper-2017-knee",
+      "dustin-fowler-2017-patellar-tendon",
+      "adam-eaton-2017-knee",
+      "chris-bassitt-2021-face",
+      "alex-cobb-2013-concussion",
+      "giancarlo-stanton-2014-face",
+      "charlie-morton-2021-fibula",
+      "tyrese-haliburton-achilles-rupture-2025",
+      "derek-redmond-barcelona-1992",
+      "kerri-strug-atlanta-1996",
+      "julie-foucher-box-jump-2015",
+      "usain-bolt-london-2017",
+      "edwin-diaz-2023-patellar-tendon",
+      "rhys-hoskins-2023-acl",
+      "tim-hudson-2013-ankle",
+      "buster-posey-2011-ankle",
+      "kendrys-morales-2010-ankle",
+      "steven-stamkos-2013-tibia",
+      "connor-mcdavid-2019-pcl",
+      "mikhail-sergachev-2024-leg",
+      "max-pacioretty-2011-concussion",
+      "bethanie-mattek-sands-2017-knee",
+      "harvey-elliott-2021-ankle",
+      "wesley-fofana-2021-leg",
+      "hector-bellerin-2019-knee",
+      "annemiek-van-vleuten-2016-concussion",
+      "rebeca-andrade-2019-knee",
+      "juan-martin-del-potro-2018-knee",
+      "dominic-thiem-2021-wrist",
+      "klay-thompson-2019-acl",
+      "gianmarco-tamberi-2016-ankle",
+      "john-tavares-2021-concussion",
+      "neymar-2023-acl",
+      "cameron-brink-2024-acl",
+      "steve-smith-2019-concussion",
+      "george-north-2015-concussion",
+      "mark-cavendish-2023-clavicle",
+      "demarcus-cousins-achilles-2018",
+      "kristaps-porzingis-acl-2018",
+      "gordon-hayward-ankle-fracture-2017",
+      "dejounte-murray-acl-2018",
+      "kawhi-leonard-acl-2021",
+      "zach-lavine-acl-2017",
+      "shaun-livingston-knee-2007",
+      "alex-oxlade-chamberlain-2018",
+      "david-beckham-2010",
+      "cristiano-ronaldo-2016",
+      "vivianne-miedema-2022",
+      "laurent-koscielny-2018",
+      "andre-gomes-2019",
+      "leah-williamson-2023",
+      "zlatan-ibrahimovic-2017-knee",
+      "victor-oladipo-2019-quadriceps",
+      "serena-williams-2021-hamstring"
+    ]
+  },
+  "snapshot": {
+    "path": "/private/tmp/atlas-all101-review-raase_m_",
+    "commit": "51e19127aeefd66fa68293825e9ff2ebfeaa51d3"
+  },
+  "productAndTestHashes": [
+    {
+      "path": "src/components/cases/EventFollowUp.astro",
+      "sha256": "763212800d082e1d3bd5caaccff6088314322a2a0d13981f93fca06bb29e2ad9",
+      "matchesTestedSnapshot": true
+    },
+    {
+      "path": "src/components/cases/EventMechanism.astro",
+      "sha256": "3cf5af8fdbed53ff41d47fa5cbd224b40a846f524a7067fa02346d6544791355",
+      "matchesTestedSnapshot": true
+    },
+    {
+      "path": "src/components/cases/ReportSourceRefs.astro",
+      "sha256": "2c04cc637b09fca316b76b2ef7c967c9e2386b1b6faea1c5329bad0349fd0967",
+      "matchesTestedSnapshot": true
+    },
+    {
+      "path": "src/data/videos/event-additions.v1.json",
+      "sha256": "71278b5ca0ed1aac6854d2bf4c23f1c9fa19ab7911cb338ad36962447e11f149",
+      "matchesTestedSnapshot": true
+    },
+    {
+      "path": "src/data/videos/event-batch-30.v1.json",
+      "sha256": "f75af4959831287bcc1f309614065c7db5d549530f4f3176cfe88dff61f6e2a3",
+      "matchesTestedSnapshot": true
+    },
+    {
+      "path": "src/data/videos/event-batch-31.v1.json",
+      "sha256": "815ed90c26249fe414d1e0be598f8015e9ae3f89dfbed9508d6a46fe778ac090",
+      "matchesTestedSnapshot": true
+    },
+    {
+      "path": "src/data/videos/event-batch-32.v1.json",
+      "sha256": "0949f036b57ddb3e82ed4c1926c997b6e94cb794ffe4e2f215a0afeadcbe270e",
+      "matchesTestedSnapshot": true
+    },
+    {
+      "path": "src/data/videos/event-batch-34.v1.json",
+      "sha256": "35309899eebd1425268d1ffa807ff1f53ec4c553edb598849ddc6a642c794052",
+      "matchesTestedSnapshot": true
+    },
+    {
+      "path": "src/data/videos/event-updates.v1.json",
+      "sha256": "e19df86259c495b8a779b5bf6e9be845cbeca3b4af6988b56c50123f63817283",
+      "matchesTestedSnapshot": true
+    },
+    {
+      "path": "src/lib/videos/event-updates.ts",
+      "sha256": "ec3431d3cfd38e7a80bc0b86ed73834e333539c7eca72d867ba9f8610025fb4a",
+      "matchesTestedSnapshot": true
+    },
+    {
+      "path": "src/pages/cases/[slug].astro",
+      "sha256": "7530a9422ae5f44b69991cdcc389b1bd0f3c856ee9c0688c7a6349112a462f4c",
+      "matchesTestedSnapshot": true
+    },
+    {
+      "path": "src/pages/videos/[slug].astro",
+      "sha256": "a16d1ae6edf92180daa5e9401baa9d4b38e4b9d31322f238d16d046597b6d8db",
+      "matchesTestedSnapshot": true
+    },
+    {
+      "path": "tests/unit/event-updates.test.ts",
+      "sha256": "9f5bf861cf772a2577402c436ddbdec2281dba6303362eff466c2ef2af576c64",
+      "matchesTestedSnapshot": true
+    }
+  ],
+  "mainHead": "cf186f07794dea522c5cb1601da3a2eef998f5e7",
+  "mainWorktreeCommitted": false,
+  "pushed": false,
+  "deployed": false,
+  "clinicalApproval": false
+}

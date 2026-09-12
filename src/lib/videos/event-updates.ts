@@ -4,11 +4,39 @@ import batchData from "../../data/videos/event-batch-30.v1.json";
 import batch31Data from "../../data/videos/event-batch-31.v1.json";
 import batch32Data from "../../data/videos/event-batch-32.v1.json";
 import batch34Data from "../../data/videos/event-batch-34.v1.json";
+import recent120Data from "../../data/videos/event-recent-120.v1.json";
 import newData from "../../data/videos/event-additions.v1.json";
 import { curation } from "./expansion";
 import data from "../../data/videos/event-updates.v1.json";
 const text = z.string().trim().min(1);
 const https = z.url({ protocol: /^https$/ });
+const citedReportSchema = z.strictObject({
+  text,
+  sourceIndexes: z.array(z.number().int().positive()).min(1),
+});
+const timelineDateSchema = z.union([
+  z.iso.date(),
+  z.string().regex(/^\d{4}-(0[1-9]|1[0-2])$/),
+  z.string().regex(/^\d{4}$/),
+]);
+
+/** Compare date ranges without inventing a day for month/year-only reports. */
+export function timelineDateBounds(date: string): [string, string] {
+  if (date.length === 4) return [`${date}-01-01`, `${date}-12-31`];
+  if (date.length === 7) {
+    const [year, month] = date.split("-").map(Number);
+    const lastDay = new Date(Date.UTC(year!, month!, 0)).getUTCDate();
+    return [`${date}-01`, `${date}-${lastDay}`];
+  }
+  return [date, date];
+}
+
+export function formatTimelineDate(date: string): string {
+  if (date.length === 4) return `${date} 年`;
+  if (date.length === 7)
+    return `${date.slice(0, 4)} 年 ${Number(date.slice(5))} 月`;
+  return date;
+}
 const eventUpdateEntryInputSchema = z.strictObject({
   slug: text,
   videoUrl: https,
@@ -17,6 +45,25 @@ const eventUpdateEntryInputSchema = z.strictObject({
   returnDate: z.iso.date().nullable(),
   returnSummary: text,
   context: text,
+  mechanism: z
+    .strictObject({
+      title: text,
+      summary: citedReportSchema,
+      steps: z.array(text).min(1),
+      explanation: citedReportSchema,
+      research: citedReportSchema.optional(),
+      limitation: text,
+    })
+    .optional(),
+  timeline: z
+    .array(
+      citedReportSchema.extend({
+        date: timelineDateSchema,
+        title: text,
+      }),
+    )
+    .min(1)
+    .optional(),
   checkedAt: z.iso.date().optional(),
   sources: z
     .array(
@@ -46,6 +93,41 @@ export const eventUpdatesSchema = z
     if (value.checkedAt > today)
       ctx.addIssue({ code: "custom", message: "Future verification date" });
     for (const entry of value.entries) {
+      const citedReports = [
+        ...(entry.mechanism
+          ? [
+              entry.mechanism.summary,
+              entry.mechanism.explanation,
+              ...(entry.mechanism.research ? [entry.mechanism.research] : []),
+            ]
+          : []),
+        ...(entry.timeline ?? []),
+      ];
+      if (
+        citedReports.some((report) =>
+          report.sourceIndexes.some((index) => index > entry.sources.length),
+        )
+      )
+        ctx.addIssue({
+          code: "custom",
+          message: `Unknown report source: ${entry.slug}`,
+        });
+      for (const [index, milestone] of (entry.timeline ?? []).entries()) {
+        const [start, end] = timelineDateBounds(milestone.date);
+        const previousStart =
+          index > 0
+            ? timelineDateBounds(entry.timeline![index - 1]!.date)[0]
+            : null;
+        if (
+          (entry.eventDate && end < entry.eventDate) ||
+          start > entry.checkedAt ||
+          (previousStart && end < previousStart)
+        )
+          ctx.addIssue({
+            code: "custom",
+            message: `Invalid timeline date: ${entry.slug}`,
+          });
+      }
       if (slugs.has(entry.slug) || videos.has(entry.videoUrl))
         ctx.addIssue({ code: "custom", message: "Duplicate event update" });
       slugs.add(entry.slug);
@@ -115,6 +197,14 @@ const batch34 = z
     entries: z.array(eventUpdateEntryInputSchema),
   })
   .parse(batch34Data);
+const recent120 = z
+  .strictObject({
+    schemaVersion: z.literal(1),
+    decision: z.literal("recent-120-2026-09-12"),
+    checkedAt: z.iso.date(),
+    entries: z.array(eventUpdateEntryInputSchema).length(19),
+  })
+  .parse(recent120Data);
 
 type EventUpdateBatchInput = {
   checkedAt: string;
@@ -142,6 +232,7 @@ const normalizedEntries = normalizeEventUpdateBatches([
   batch31,
   batch32,
   batch34,
+  recent120,
 ]).filter((e) => !curation.removedSlugs.some((slug) => slug === e.slug));
 export const eventUpdates = eventUpdatesSchema.parse({
   ...data,
@@ -177,6 +268,8 @@ export type ReturnMilestone =
   | "熱身賽"
   | "正式賽"
   | "帶傷出賽"
+  | "術後出賽"
+  | "跨兩次傷害後出賽"
   | "首次出賽"
   | "再次出賽";
 
@@ -184,6 +277,8 @@ const RETURN_MILESTONE_BY_SLUG: Readonly<
   Partial<Record<EventUpdate["slug"], ReturnMilestone>>
 > = {
   "shohei-ohtani-world-series-2024": "帶傷出賽",
+  "klay-thompson-2019-acl": "跨兩次傷害後出賽",
+  "kristaps-porzingis-retinaculum-2024": "術後出賽",
 };
 
 /** Labels the recorded return event without changing or extending its facts. */

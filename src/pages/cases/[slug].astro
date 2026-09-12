@@ -14,6 +14,7 @@ import CaseCard from "../../components/atlas/CaseCard.astro";
 import { hasPublicEmbed, videoFirstCases } from "../../lib/patient/featured";
 import PatientGuide from "../../components/cases/PatientGuide.astro";
 import EventFollowUp from "../../components/cases/EventFollowUp.astro";
+import EventMechanism from "../../components/cases/EventMechanism.astro";
 import { eventUpdateFor } from "../../lib/videos/event-updates";
 import ActualReturn from "../../components/cases/ActualReturn.astro";
 import CaseVideo from "../../components/cases/CaseVideo.astro";
@@ -74,9 +75,15 @@ if (record === undefined) {
   throw new Error(`case route for unknown permitted slug ${String(slug)}`);
 }
 
+const reportedUpdate = eventUpdateFor(
+  record.slug,
+  record.video.canonicalUrl,
+  record.eventDate,
+);
+// Include enriched reports in local review without changing the frozen case record.
 const eventUpdate =
-  buildMode === "public"
-    ? eventUpdateFor(record.slug, record.video.canonicalUrl, record.eventDate)
+  buildMode === "public" || reportedUpdate?.mechanism
+    ? reportedUpdate
     : undefined;
 const injuryLabel =
   findInjury(record.injury.code)?.labelZh ?? record.injury.code;
@@ -156,7 +163,7 @@ if (videoSource === undefined) {
     </section>
 
     {
-      buildMode === "public" && (
+      buildMode === "public" && !eventUpdate?.mechanism && (
         <section class="case-section" data-visible-observation>
           <>
             <h2>受傷當下看什麼</h2>
@@ -165,9 +172,17 @@ if (videoSource === undefined) {
         </section>
       )
     }
+    {
+      eventUpdate?.mechanism && (
+        <>
+          <EventMechanism update={eventUpdate} />
+          <EventFollowUp update={eventUpdate} />
+        </>
+      )
+    }
     <PatientGuide injuryCode={record.injury.code} buildMode={buildMode} />
     {
-      eventUpdate ? (
+      eventUpdate?.mechanism ? null : eventUpdate ? (
         <EventFollowUp update={eventUpdate} />
       ) : (
         <ActualReturn record={record} followUp={followUpEntry?.sidecar} />

@@ -1,0 +1,5300 @@
+{
+  "checkedAt": "2026-09-12",
+  "stage": "final-research-and-product-sync-with-source-level-provenance",
+  "clinicalApproval": false,
+  "candidates": [
+    {
+      "slug": "nick-chubb-knee-2023",
+      "name": "Nick Chubb",
+      "sport": "美式足球",
+      "eventDate": "2023-09-18",
+      "injury": "左膝多韌帶／半月板損傷",
+      "priority": 1,
+      "primarySource": "https://www.clevelandbrowns.com/news/browns-announce-nick-chubb-underwent-successful-knee-surgery",
+      "notes": "已核實事件、2023-09-29 第一階段手術與 2024-10-20 NFL 回場；root 另讀官方全文確認 2023-11-14 第二次手術處理 ACL，兩次手術分列。",
+      "duplicate": false,
+      "videoId": "RdAvC8i0szY",
+      "videoUrl": "https://www.youtube.com/watch?v=RdAvC8i0szY",
+      "videoStatus": "root-preview-native-played-and-visual-review-recorded",
+      "durationSeconds": 274,
+      "startSeconds": 0,
+      "sourceFulltextVerified": false,
+      "sources": [
+        {
+          "title": "Browns announce Nick Chubb underwent successful knee surgery",
+          "url": "https://www.clevelandbrowns.com/news/browns-announce-nick-chubb-underwent-successful-knee-surgery",
+          "publishedAt": "2023-09-30",
+          "verified": true,
+          "claims": [
+            "官方明確連結 9 月 18 日對 Steelers 的膝傷。",
+            "9 月 29 日手術修補內側關節囊、半月板與 MCL；ACL 另次處理。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Nick Chubb reacts to scoring in season debut: It was great to be out there with the guys",
+          "url": "https://www.clevelandbrowns.com/news/nick-chubb-reacts-to-scoring-in-season-debut-it-was-great-to-be-out-there-with-the-guys",
+          "publishedAt": "2024-10-23",
+          "verified": true,
+          "claims": [
+            "球隊回顧對 Bengals 復出；32 碼、1 達陣。",
+            "這是膝傷後首次正式 NFL 比賽。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Nick Chubb makes his season debut against Bengals | 3 Big Takeaways",
+          "url": "https://www.clevelandbrowns.com/news/nick-chubb-makes-his-season-debut-against-bengals-3-big-takeaways",
+          "publishedAt": "2024-10-20",
+          "verified": true,
+          "claims": [
+            "10 月 20 日對 Bengals 首次回場，11 次衝球 22 碼、1 達陣，另 10 碼接球。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Brian Sutterer MD：Nick Chubb Knee Injury is Too Serious for Replay - Doctor Explains",
+          "url": "https://www.youtube.com/watch?v=RdAvC8i0szY",
+          "publishedAt": "2023-09-19",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": false,
+          "verifiedBy": [
+            "root"
+          ],
+          "verificationMethod": "root-video-review-record",
+          "sourceRole": "observation-video",
+          "claims": [
+            "僅用於可見賽事動作與敘事背景；診斷依事件報導。"
+          ],
+          "viewedByResearcher": false
+        },
+        {
+          "title": "AAOS：前十字韌帶傷害",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+          "publishedAt": null,
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": false,
+          "fulltextVerified": false,
+          "verifiedBy": [],
+          "verificationMethod": "product-reference-present-no-fulltext-record-in-this-research-package",
+          "sourceRole": "general-background",
+          "claims": [],
+          "verificationLimit": "本次同步未查核此一般衛教頁全文；不能沿用個案事件報導的全文旗標。"
+        },
+        {
+          "title": "Browns announce Nick Chubb underwent second successful surgery",
+          "url": "https://www.clevelandbrowns.com/news/browns-announce-nick-chubb-underwent-second-successful-surgery",
+          "publishedAt": "2023-11-14",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": true,
+          "verifiedBy": [
+            "root"
+          ],
+          "verificationMethod": "root-web-fulltext-read-attested-in-task-message",
+          "sourceRole": "event-report",
+          "claims": [
+            "2023-11-14 完成第二次膝部手術，修補 ACL。"
+          ],
+          "verificationLimit": "root 已開啟官方公告全文並交付確認；本研究員本次未另開此頁。",
+          "rootFulltextVerificationAttested": true
+        }
+      ],
+      "milestones": [
+        {
+          "date": "2023-09-18",
+          "title": "比賽中膝部重傷",
+          "text": "對 Pittsburgh Steelers 受傷；後續官方報告指出多個膝部結構需要處理。",
+          "sourceIndexes": [
+            0
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2023-09-29",
+          "title": "第一階段手術",
+          "text": "修補內側關節囊、半月板與內側副韌帶；此時 ACL 手術仍在後續計畫。",
+          "sourceIndexes": [
+            0
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2023-11-14",
+          "title": "第二階段 ACL 手術",
+          "text": "球隊公告第二次手術完成，處理左膝前十字韌帶損傷。",
+          "sourceIndexes": [
+            5
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "root"
+          ]
+        },
+        {
+          "date": "2024-10-20",
+          "title": "正式重返 NFL",
+          "text": "對 Bengals 出賽，完成一次達陣；球隊控制下半場使用量。",
+          "sourceIndexes": [
+            2
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        }
+      ],
+      "mechanismNotes": "比賽碰撞是可觀察的事件；不要由影像推定每條韌帶撕裂的先後或等級。",
+      "returnDate": "2024-10-20",
+      "returnSummary": "2024-10-20 對 Bengals 正式重返 NFL，並完成一次達陣。",
+      "textResearchStatus": "selected-case-event-reports-verified-product-synced",
+      "eligibilityReason": "日期在指定窗口內；與既有事件不重複；已讀可靠診斷及後續來源全文，可依所列證據邊界撰寫。",
+      "clinicalApproval": false,
+      "sourceCheckedAt": "2026-09-12",
+      "videoMetadataFile": "/private/tmp/atlas-recent-video-metadata/nick-chubb-knee-2023.json",
+      "initialResearchNotes": "全文已讀；2023-09-29 首次修補內側關節囊、半月板與 MCL；ACL 需第二次手術",
+      "initialResearchSourceFulltextVerified": true,
+      "selectedFor120": true,
+      "initialResearchReturn": {
+        "date": "2024-10-20",
+        "summary": "球隊當日賽後報導確認傷後首次正式 NFL 比賽。"
+      },
+      "initialResearchMilestones": [
+        {
+          "date": "2023-09-18",
+          "title": "比賽中膝部重傷",
+          "text": "對 Pittsburgh Steelers 受傷；後續官方報告指出多個膝部結構需要處理。",
+          "sourceIndexes": [
+            0
+          ]
+        },
+        {
+          "date": "2023-09-29",
+          "title": "第一階段手術",
+          "text": "修補內側關節囊、半月板與內側副韌帶；此時 ACL 手術仍在後續計畫。",
+          "sourceIndexes": [
+            0
+          ]
+        },
+        {
+          "date": "2024-10-20",
+          "title": "正式重返 NFL",
+          "text": "對 Bengals 出賽，完成一次達陣；球隊控制下半場使用量。",
+          "sourceIndexes": [
+            2
+          ]
+        }
+      ],
+      "returnDateMeaning": "documented-return",
+      "publisher": "Brian Sutterer MD",
+      "sourceTitle": "Nick Chubb Knee Injury is Too Serious for Replay - Doctor Explains",
+      "observation": "解說回顧持球遭攔截後的左膝傷勢，包含賽事影像；不是手術紀錄。",
+      "videoVerification": {
+        "researcherViewed": false,
+        "researcherReview": null,
+        "rootVisualReview": {
+          "status": "contact-sheet-and-relevant-sequence",
+          "reviewedBy": "root",
+          "evidenceFile": "docs/reviews/2026-09-12-recent-120/case-review.json",
+          "observationFromFinalProduct": "解說回顧持球遭攔截後的左膝傷勢，包含賽事影像；不是手術紀錄。"
+        },
+        "rootOembed": {
+          "slug": "nick-chubb-knee-2023",
+          "videoId": "RdAvC8i0szY",
+          "checkedAt": "2026-09-12T15:27:57.922790+00:00",
+          "status": "available",
+          "title": "Nick Chubb Knee Injury is Too Serious for Replay - Doctor Explains",
+          "publisher": "Brian Sutterer MD"
+        },
+        "rootNativePlayback": {
+          "url": "https://www.youtube.com/watch?v=RdAvC8i0szY",
+          "path": "/videos/nick-chubb-knee-2023/",
+          "startSeconds": 0,
+          "origin": "https://a4526742.sports-injury-atlas.pages.dev",
+          "checkedAt": "2026-09-12T15:29:10.775Z",
+          "status": "played",
+          "before": {
+            "time": 0,
+            "paused": true,
+            "readyState": 0
+          },
+          "after": {
+            "time": 1.012734,
+            "paused": false,
+            "readyState": 4
+          },
+          "captionControls": [
+            "字幕/CC 已關閉"
+          ]
+        },
+        "nativePlaybackEvidenceFile": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+        "scope": "影片可播放、片段觀察與文字全文查核各自記錄；不表示字幕、版權或臨床簽核。"
+      },
+      "eventReportsFulltextVerified": true,
+      "sourceVerificationCounts": {
+        "eventReportsFulltext": 4,
+        "videoDescriptionsRead": 0,
+        "generalBackgroundWithoutFulltextRecord": 1
+      },
+      "productSnapshot": {
+        "eventDate": "2023-09-18",
+        "injury": "公開報導記載：左膝多韌帶／半月板損傷。",
+        "returnDate": "2024-10-20",
+        "returnSummary": "2024-10-20 對 Bengals 正式重返 NFL，並完成一次達陣。",
+        "videoId": "RdAvC8i0szY",
+        "sourceCount": 6,
+        "timelineCount": 4
+      }
+    },
+    {
+      "slug": "kirk-cousins-achilles-2023",
+      "name": "Kirk Cousins",
+      "sport": "美式足球",
+      "eventDate": "2023-10-29",
+      "injury": "右側阿基里斯腱斷裂",
+      "priority": 2,
+      "primarySource": "https://www.vikings.com/news/kirk-cousins-achilles-injury-updates-2023",
+      "notes": "官方全文確認右阿基里斯腱傷勢、2023-11-01 手術及 2024-09-08 Falcons 正式出賽；回場不等於表現完全恢復。",
+      "duplicate": false,
+      "videoId": "E0mYSZ1jTG4",
+      "videoUrl": "https://www.youtube.com/watch?v=E0mYSZ1jTG4",
+      "videoStatus": "root-preview-native-played-and-visual-review-recorded",
+      "durationSeconds": 211,
+      "startSeconds": 0,
+      "sourceFulltextVerified": false,
+      "sources": [
+        {
+          "title": "Vikings Provide Update on Kirk Cousins; Underwent Successful Surgery",
+          "url": "https://www.vikings.com/news/kirk-cousins-achilles-injury-updates-2023",
+          "publishedAt": "2023-11-01",
+          "verified": true,
+          "claims": [
+            "Week 8 對 Green Bay 非接觸受傷；MRI 確認阿基里斯腱撕裂。",
+            "11 月 1 日由 Chris Coetzee 施行手術。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "What happened in Falcons Week 1 home loss to Steelers",
+          "url": "https://www.atlantafalcons.com/news/week-1-game-recap-pittsburgh-steelers-2024-season-opener",
+          "publishedAt": "2024-09-08",
+          "verified": true,
+          "claims": [
+            "2024 年 9 月 8 日為 Falcons 正式出賽，傳球 155 碼、1 TD、2 INT。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "He really hit the ground running: Terry Fontenot talks Kirk Cousins impact, recovery as offseason workouts continue",
+          "url": "https://www.atlantafalcons.com/news/general-manager-terry-fontenot-update-quarterback-kirk-cousins-draft-week",
+          "publishedAt": "2024-04-23",
+          "verified": true,
+          "claims": [
+            "Falcons 明文確認右側阿基里斯腱手術史；已參與自願迷你訓練營。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Kirk Cousins Suffers Ankle Injury, Leaves Vikings Game at Packers",
+          "url": "https://www.vikings.com/news/kirk-cousins-ankle-injury-packers-week-8",
+          "publishedAt": "2023-10-29",
+          "verified": true,
+          "claims": [
+            "當日 Week 8 對 Packers 受傷退場；當時仍待進一步檢查。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Brian Sutterer MD：Kirk Cousins Ruptures His Achilles - Doctor Explains",
+          "url": "https://www.youtube.com/watch?v=E0mYSZ1jTG4",
+          "publishedAt": "2023-10-29",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": false,
+          "verifiedBy": [
+            "root"
+          ],
+          "verificationMethod": "root-video-review-record",
+          "sourceRole": "observation-video",
+          "claims": [
+            "僅用於可見賽事動作與敘事背景；診斷依事件報導。"
+          ],
+          "viewedByResearcher": false
+        },
+        {
+          "title": "AAOS：阿基里斯腱斷裂",
+          "url": "https://www.orthoinfo.org/diseases--conditions/achilles-tendon-rupture-tear/",
+          "publishedAt": null,
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": false,
+          "fulltextVerified": false,
+          "verifiedBy": [],
+          "verificationMethod": "product-reference-present-no-fulltext-record-in-this-research-package",
+          "sourceRole": "general-background",
+          "claims": [],
+          "verificationLimit": "本次同步未查核此一般衛教頁全文；不能沿用個案事件報導的全文旗標。"
+        }
+      ],
+      "milestones": [
+        {
+          "date": "2023-10-29",
+          "title": "對 Packers 非接觸受傷",
+          "text": "Week 8 比賽離場，之後 MRI 確認阿基里斯腱撕裂。",
+          "sourceIndexes": [
+            0,
+            3
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2023-11-01",
+          "title": "手術修補",
+          "text": "Vikings 公告手術完成。",
+          "sourceIndexes": [
+            0
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-04-23",
+          "title": "球隊公開場上訓練進度",
+          "text": "報導確認已參加 Falcons 自願迷你訓練營，仍與正式出賽不同。",
+          "sourceIndexes": [
+            2
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-09-08",
+          "title": "以 Falcons 球員身分出賽",
+          "text": "NFL 開幕週對 Steelers 完成正式比賽。",
+          "sourceIndexes": [
+            1
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        }
+      ],
+      "mechanismNotes": "官方確認非接觸性事件；影片可觀察移動與無法繼續推蹬，但不可只靠畫面判定斷裂毫秒。",
+      "returnDate": "2024-09-08",
+      "returnSummary": "2024-09-08 代表 Falcons 在 NFL 例行賽對 Steelers 出賽。",
+      "textResearchStatus": "selected-case-event-reports-verified-product-synced",
+      "eligibilityReason": "日期在指定窗口內；與既有事件不重複；已讀可靠診斷及後續來源全文，可依所列證據邊界撰寫。",
+      "clinicalApproval": false,
+      "sourceCheckedAt": "2026-09-12",
+      "videoMetadataFile": "/private/tmp/atlas-recent-video-metadata/kirk-cousins-achilles-2023.json",
+      "initialResearchNotes": "全文已讀；非接觸受傷，MRI 確認；2023-11-01 手術",
+      "initialResearchSourceFulltextVerified": true,
+      "selectedFor120": true,
+      "initialResearchReturn": {
+        "date": "2024-09-08",
+        "summary": "術後已在 2024 年 NFL 開幕週正式出賽；不可等同所有表現已恢復。"
+      },
+      "initialResearchMilestones": [
+        {
+          "date": "2023-10-29",
+          "title": "對 Packers 非接觸受傷",
+          "text": "Week 8 比賽離場，之後 MRI 確認阿基里斯腱撕裂。",
+          "sourceIndexes": [
+            0,
+            3
+          ]
+        },
+        {
+          "date": "2023-11-01",
+          "title": "手術修補",
+          "text": "Vikings 公告手術完成。",
+          "sourceIndexes": [
+            0
+          ]
+        },
+        {
+          "date": "2024-04-23",
+          "title": "球隊公開場上訓練進度",
+          "text": "報導確認已參加 Falcons 自願迷你訓練營，仍與正式出賽不同。",
+          "sourceIndexes": [
+            2
+          ]
+        },
+        {
+          "date": "2024-09-08",
+          "title": "以 Falcons 球員身分出賽",
+          "text": "NFL 開幕週對 Steelers 完成正式比賽。",
+          "sourceIndexes": [
+            1
+          ]
+        }
+      ],
+      "returnDateMeaning": "documented-return",
+      "publisher": "Brian Sutterer MD",
+      "sourceTitle": "Kirk Cousins Ruptures His Achilles - Doctor Explains",
+      "observation": "醫師解說回顧 Cousins 在口袋內移動後單腳跳離的片段。",
+      "videoVerification": {
+        "researcherViewed": false,
+        "researcherReview": null,
+        "rootVisualReview": {
+          "status": "contact-sheet-and-relevant-sequence",
+          "reviewedBy": "root",
+          "evidenceFile": "docs/reviews/2026-09-12-recent-120/case-review.json",
+          "observationFromFinalProduct": "醫師解說回顧 Cousins 在口袋內移動後單腳跳離的片段。"
+        },
+        "rootOembed": {
+          "slug": "kirk-cousins-achilles-2023",
+          "videoId": "E0mYSZ1jTG4",
+          "checkedAt": "2026-09-12T15:27:57.923809+00:00",
+          "status": "available",
+          "title": "Kirk Cousins Ruptures His Achilles - Doctor Explains",
+          "publisher": "Brian Sutterer MD"
+        },
+        "rootNativePlayback": {
+          "url": "https://www.youtube.com/watch?v=E0mYSZ1jTG4",
+          "path": "/videos/kirk-cousins-achilles-2023/",
+          "startSeconds": 0,
+          "origin": "https://a4526742.sports-injury-atlas.pages.dev",
+          "checkedAt": "2026-09-12T15:29:16.305Z",
+          "status": "played",
+          "before": {
+            "time": 0,
+            "paused": true,
+            "readyState": 0
+          },
+          "after": {
+            "time": 1.017126,
+            "paused": false,
+            "readyState": 4
+          },
+          "captionControls": [
+            "字幕/CC 已關閉"
+          ]
+        },
+        "nativePlaybackEvidenceFile": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+        "scope": "影片可播放、片段觀察與文字全文查核各自記錄；不表示字幕、版權或臨床簽核。"
+      },
+      "eventReportsFulltextVerified": true,
+      "sourceVerificationCounts": {
+        "eventReportsFulltext": 4,
+        "videoDescriptionsRead": 0,
+        "generalBackgroundWithoutFulltextRecord": 1
+      },
+      "productSnapshot": {
+        "eventDate": "2023-10-29",
+        "injury": "公開報導記載：右側阿基里斯腱斷裂。",
+        "returnDate": "2024-09-08",
+        "returnSummary": "2024-09-08 代表 Falcons 在 NFL 例行賽對 Steelers 出賽。",
+        "videoId": "E0mYSZ1jTG4",
+        "sourceCount": 6,
+        "timelineCount": 4
+      }
+    },
+    {
+      "slug": "joe-burrow-wrist-2023",
+      "name": "Joe Burrow",
+      "sport": "美式足球",
+      "eventDate": "2023-11-16",
+      "injury": "右手腕韌帶撕裂",
+      "priority": 3,
+      "primarySource": "https://www.nfl.com/news/bengals-qb-joe-burrow-has-torn-wrist-ligament-to-miss-remainder-of-2023-season",
+      "notes": "已核實右手腕韌帶傷勢及手術；root 新增的 Bengals 回場報导已另讀全文，2024-08-10 是季前賽首次出賽。",
+      "duplicate": false,
+      "videoId": "geUMkoM42iE",
+      "videoUrl": "https://www.youtube.com/watch?v=geUMkoM42iE",
+      "videoStatus": "root-preview-native-played-and-visual-review-recorded",
+      "durationSeconds": 531,
+      "startSeconds": 0,
+      "sourceFulltextVerified": false,
+      "sources": [
+        {
+          "title": "Bengals QB Joe Burrow has torn wrist ligament, to miss remainder of 2023 season",
+          "url": "https://www.nfl.com/news/bengals-qb-joe-burrow-has-torn-wrist-ligament-to-miss-remainder-of-2023-season",
+          "publishedAt": "2023-11-17",
+          "verified": true,
+          "claims": [
+            "右手腕韌帶撕裂；MRI 確認，賽季提前結束。",
+            "選手描述先手腕著地，下一次傳球感到異常。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Statement from the Cincinnati Bengals on QB Joe Burrow",
+          "url": "https://www.bengals.com/news/joe-burrow-wrist-surgery-statement-cincinnati-bengals",
+          "publishedAt": "2023-11-27",
+          "verified": true,
+          "claims": [
+            "球團聲明當日手術如期完成，接著開始復健。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Burrow Declared Out Of Ravens Game With Injured Throwing Wrist",
+          "url": "https://www.bengals.com/news/joe-burrow-leaves-game-with-injured-throwing-wrist",
+          "publishedAt": "2023-11-16",
+          "verified": true,
+          "claims": [
+            "11 月 16 日比賽右手腕受傷退場。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Bengals：Joe Burrow and Bengals Starters Score in Preseason Opener",
+          "url": "https://www.bengals.com/news/bucs-win-but-joe-burrow-and-bengals-ones-get-it-done-in-preseason-opener",
+          "publishedAt": "2024-08-10",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": true,
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "verificationMethod": "web-fulltext-read-during-document-sync",
+          "sourceRole": "event-report",
+          "claims": [
+            "2024-08-10 對 Buccaneers 季前賽為 2023-11-16 手腕受傷後首次比賽。"
+          ]
+        },
+        {
+          "title": "Brian Sutterer MD：Joe Burrow Injured in Strange Sequence - Doctor Reacts",
+          "url": "https://www.youtube.com/watch?v=geUMkoM42iE",
+          "publishedAt": "2023-11-17",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": false,
+          "verifiedBy": [
+            "root"
+          ],
+          "verificationMethod": "root-video-review-record",
+          "sourceRole": "observation-video",
+          "claims": [
+            "僅用於可見賽事動作與敘事背景；診斷依事件報導。"
+          ],
+          "viewedByResearcher": false
+        },
+        {
+          "title": "AAOS：手腕韌帶傷害",
+          "url": "https://www.orthoinfo.org/diseases--conditions/wrist-sprains/",
+          "publishedAt": null,
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": false,
+          "fulltextVerified": false,
+          "verifiedBy": [],
+          "verificationMethod": "product-reference-present-no-fulltext-record-in-this-research-package",
+          "sourceRole": "general-background",
+          "claims": [],
+          "verificationLimit": "本次同步未查核此一般衛教頁全文；不能沿用個案事件報導的全文旗標。"
+        }
+      ],
+      "milestones": [
+        {
+          "date": "2023-11-16",
+          "title": "對 Ravens 手腕受傷",
+          "text": "後續診斷為右手腕韌帶撕裂；選手自述前後涉及手腕著地與傳球。",
+          "sourceIndexes": [
+            0,
+            2
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2023-11-17",
+          "title": "MRI 與賽季安排公布",
+          "text": "球隊確認無法繼續 2023 年賽季。",
+          "sourceIndexes": [
+            0
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2023-11-27",
+          "title": "右手腕手術",
+          "text": "Bengals 公告手術完成，接續復健。",
+          "sourceIndexes": [
+            1
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-08-10",
+          "title": "傷後再度出賽",
+          "text": "在季前賽對 Buccaneers 先發，完成一次達陣傳球；球隊確認這是手腕受傷後首次比賽。",
+          "sourceIndexes": [
+            3
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        }
+      ],
+      "mechanismNotes": "應分開描述碰撞後手腕著地與之後傳球不適；不能由單一轉播畫面確定韌帶何時撕裂。未引用可確證特定韌帶名稱的原始資料，不寫成舟月韌帶斷裂。",
+      "returnDate": "2024-08-10",
+      "returnSummary": "2024-08-10 在季前賽對 Buccaneers 傷後首次出賽。",
+      "textResearchStatus": "selected-case-event-reports-verified-product-synced",
+      "eligibilityReason": "日期在指定窗口內；與既有事件不重複；已讀可靠診斷及後續來源全文，可依所列證據邊界撰寫。",
+      "clinicalApproval": false,
+      "sourceCheckedAt": "2026-09-12",
+      "videoMetadataFile": "/private/tmp/atlas-recent-video-metadata/joe-burrow-wrist-2023.json",
+      "initialResearchNotes": "全文已讀；選手自述前一球手腕著地，下一次傳球感到 pop；不精確斷言同一畫面",
+      "initialResearchSourceFulltextVerified": true,
+      "selectedFor120": true,
+      "initialResearchReturn": {
+        "date": null,
+        "summary": "此輪未確證實際重返正式比賽日期；不可把手術、訓練或預測期限當成回場。"
+      },
+      "initialResearchMilestones": [
+        {
+          "date": "2023-11-16",
+          "title": "對 Ravens 手腕受傷",
+          "text": "後續診斷為右手腕韌帶撕裂；選手自述前後涉及手腕著地與傳球。",
+          "sourceIndexes": [
+            0,
+            2
+          ]
+        },
+        {
+          "date": "2023-11-17",
+          "title": "MRI 與賽季安排公布",
+          "text": "球隊確認無法繼續 2023 年賽季。",
+          "sourceIndexes": [
+            0
+          ]
+        },
+        {
+          "date": "2023-11-27",
+          "title": "右手腕手術",
+          "text": "Bengals 公告手術完成，接續復健。",
+          "sourceIndexes": [
+            1
+          ]
+        }
+      ],
+      "returnDateMeaning": "first-post-injury-preseason-game",
+      "publisher": "Brian Sutterer MD",
+      "sourceTitle": "Joe Burrow Injured in Strange Sequence - Doctor Reacts",
+      "observation": "解說比較擒抱、傳球及場邊試投片段，需將可能受傷時點與症狀出現時點分開。",
+      "videoVerification": {
+        "researcherViewed": false,
+        "researcherReview": null,
+        "rootVisualReview": {
+          "status": "contact-sheet-and-relevant-sequence",
+          "reviewedBy": "root",
+          "evidenceFile": "docs/reviews/2026-09-12-recent-120/case-review.json",
+          "observationFromFinalProduct": "解說比較擒抱、傳球及場邊試投片段，需將可能受傷時點與症狀出現時點分開。"
+        },
+        "rootOembed": {
+          "slug": "joe-burrow-wrist-2023",
+          "videoId": "geUMkoM42iE",
+          "checkedAt": "2026-09-12T15:27:57.923130+00:00",
+          "status": "available",
+          "title": "Joe Burrow Injured in Strange Sequence - Doctor Reacts",
+          "publisher": "Brian Sutterer MD"
+        },
+        "rootNativePlayback": {
+          "url": "https://www.youtube.com/watch?v=geUMkoM42iE",
+          "path": "/videos/joe-burrow-wrist-2023/",
+          "startSeconds": 0,
+          "origin": "https://a4526742.sports-injury-atlas.pages.dev",
+          "checkedAt": "2026-09-12T15:29:21.285Z",
+          "status": "played",
+          "before": {
+            "time": 0,
+            "paused": true,
+            "readyState": 0
+          },
+          "after": {
+            "time": 1.006247,
+            "paused": false,
+            "readyState": 4
+          },
+          "captionControls": [
+            "字幕/CC 已關閉"
+          ]
+        },
+        "nativePlaybackEvidenceFile": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+        "scope": "影片可播放、片段觀察與文字全文查核各自記錄；不表示字幕、版權或臨床簽核。"
+      },
+      "eventReportsFulltextVerified": true,
+      "sourceVerificationCounts": {
+        "eventReportsFulltext": 4,
+        "videoDescriptionsRead": 0,
+        "generalBackgroundWithoutFulltextRecord": 1
+      },
+      "productSnapshot": {
+        "eventDate": "2023-11-16",
+        "injury": "公開報導記載：右手腕韌帶撕裂。",
+        "returnDate": "2024-08-10",
+        "returnSummary": "2024-08-10 在季前賽對 Buccaneers 傷後首次出賽。",
+        "videoId": "geUMkoM42iE",
+        "sourceCount": 6,
+        "timelineCount": 4
+      }
+    },
+    {
+      "slug": "aidan-hutchinson-leg-2024",
+      "name": "Aidan Hutchinson",
+      "sport": "美式足球",
+      "eventDate": "2024-10-13",
+      "injury": "脛骨與腓骨骨折（本輪側別待官方文字確認）",
+      "priority": 4,
+      "primarySource": "https://www.nfl.com/news/lions-aidan-hutchinson-expected-to-miss-remainder-of-season-following-tibia-surgery",
+      "notes": "已核實當晚手術、脛腓骨骨折、2025-05-22 訓練公開更新及 2025-09-07 NFL 例行賽回場；未取得 2025 player logs，以兩篇球隊全文互證回場。",
+      "duplicate": false,
+      "videoId": "aWo-ur71zvo",
+      "videoUrl": "https://www.youtube.com/watch?v=aWo-ur71zvo",
+      "videoStatus": "root-preview-native-played-and-visual-review-recorded",
+      "durationSeconds": 572,
+      "startSeconds": 0,
+      "sourceFulltextVerified": false,
+      "sources": [
+        {
+          "title": "Campbell provides injury update on Hutchinson",
+          "url": "https://www.detroitlions.com/news/campbell-provides-injury-update-on-hutchinson",
+          "publishedAt": "2024-10-13",
+          "verified": true,
+          "claims": [
+            "對 Dallas 第三節擒殺時受傷；當天在 Dallas 接受手術。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "KEY QUESTIONS: Whats the latest update on Hutchinsons injury?",
+          "url": "https://www.detroitlions.com/news/key-questions-what-s-the-latest-update-on-hutchinson-s-injury",
+          "publishedAt": "2024-10-14",
+          "verified": true,
+          "claims": [
+            "脛骨與腓骨骨折，手術後狀況良好。",
+            "4 至 6 個月屬當時預估，不是實際回場日期。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Hutchinson confirms hes fully cleared for football activity",
+          "url": "https://www.detroitlions.com/news/hutchinson-confirms-he-s-fully-cleared-for-football-activity",
+          "publishedAt": "2025-05-22",
+          "verified": true,
+          "claims": [
+            "已獲許可全面參與球隊訓練；不是確定當日才獲許可，也不是正式回場。",
+            "回顧明確寫 2024 年 10 月 13 日對 Dallas 與隊友 Alim McNeill 碰撞。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "NOTEBOOK: Campbell can't wait to see Hutchinson return to game action",
+          "url": "https://www.detroitlions.com/news/notebook-campbell-can-t-wait-to-see-hutchinson-return-to-game-action",
+          "publishedAt": "2025-09-02",
+          "verified": true,
+          "claims": [
+            "球隊賽前預告指即將對 Packers 首次回到正式比賽；僅此篇不能證明實際出賽。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "FOUR DOWNS: Red zone performance played a big role in Lions' loss to Packers",
+          "url": "https://www.detroitlions.com/news/four-downs-red-zone-performance-played-a-big-role-in-lions-loss-to-packers",
+          "publishedAt": "2025-09-07",
+          "verified": true,
+          "claims": [
+            "賽後文章確認 Hutchinson 對 Packers 實際回歸並描述場上受到包夾；Lions 13 比 27 落敗。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Brian Sutterer MD：Aidan Hutchinson Horrible Leg Injury - Doctor Explains",
+          "url": "https://www.youtube.com/watch?v=aWo-ur71zvo",
+          "publishedAt": "2024-10-13",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": false,
+          "verifiedBy": [
+            "root"
+          ],
+          "verificationMethod": "root-video-review-record",
+          "sourceRole": "observation-video",
+          "claims": [
+            "僅用於可見賽事動作與敘事背景；診斷依事件報導。"
+          ],
+          "viewedByResearcher": false
+        },
+        {
+          "title": "AAOS：骨折與外力",
+          "url": "https://www.orthoinfo.org/diseases--conditions/fractures-broken-bones/",
+          "publishedAt": null,
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": false,
+          "fulltextVerified": false,
+          "verifiedBy": [],
+          "verificationMethod": "product-reference-present-no-fulltext-record-in-this-research-package",
+          "sourceRole": "general-background",
+          "claims": [],
+          "verificationLimit": "本次同步未查核此一般衛教頁全文；不能沿用個案事件報導的全文旗標。"
+        }
+      ],
+      "milestones": [
+        {
+          "date": "2024-10-13",
+          "title": "擒殺過程中小腿受傷",
+          "text": "對 Cowboys 第三節受傷，當天送醫並接受手術。",
+          "sourceIndexes": [
+            0
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-10-14",
+          "title": "球隊確認脛、腓骨骨折",
+          "text": "術後更新說明兩根小腿骨骨折與復原安排。",
+          "sourceIndexes": [
+            1
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2025-05-22",
+          "title": "公開確認全面參與訓練",
+          "text": "選手和球隊確認已全面回到休季訓練；這是公開更新日，非首個獲准或比賽日期。",
+          "sourceIndexes": [
+            2
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2025-09-07",
+          "title": "重返 NFL 例行賽",
+          "text": "對 Packers 實際上場；賽前預告與賽後報導共同確認傷後首次正式回歸。",
+          "sourceIndexes": [
+            3,
+            4
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        }
+      ],
+      "mechanismNotes": "官方回顧指出擒殺過程中與隊友 Alim McNeill 發生碰撞；骨折名稱依醫療更新，不能從外觀推定開放性或血管損傷。",
+      "returnDate": "2025-09-07",
+      "returnSummary": "2025-09-07 對 Packers 重返 NFL 例行賽。",
+      "textResearchStatus": "selected-case-event-reports-verified-product-synced",
+      "eligibilityReason": "日期在指定窗口內；與既有事件不重複；已讀可靠診斷及後續來源全文，可依所列證據邊界撰寫。",
+      "clinicalApproval": false,
+      "sourceCheckedAt": "2026-09-12",
+      "videoMetadataFile": "/private/tmp/atlas-recent-video-metadata/aidan-hutchinson-leg-2024.json",
+      "initialResearchNotes": "全文已讀；當晚手術，後續實際回場待補",
+      "initialResearchSourceFulltextVerified": true,
+      "selectedFor120": true,
+      "initialResearchReturn": {
+        "date": "2025-09-07",
+        "summary": "球隊賽前預告與賽後報導共同確認傷後首次正式 NFL 比賽。2025-05-22 是公開確認已全面訓練，不是正式回場日。"
+      },
+      "initialResearchMilestones": [
+        {
+          "date": "2024-10-13",
+          "title": "擒殺過程中小腿受傷",
+          "text": "對 Cowboys 第三節受傷，當天送醫並接受手術。",
+          "sourceIndexes": [
+            0
+          ]
+        },
+        {
+          "date": "2024-10-14",
+          "title": "球隊確認脛、腓骨骨折",
+          "text": "術後更新說明兩根小腿骨骨折與復原安排。",
+          "sourceIndexes": [
+            1
+          ]
+        },
+        {
+          "date": "2025-05-22",
+          "title": "公開確認全面參與訓練",
+          "text": "選手和球隊確認已全面回到休季訓練；這是公開更新日，非首個獲准或比賽日期。",
+          "sourceIndexes": [
+            2
+          ]
+        },
+        {
+          "date": "2025-09-07",
+          "title": "正式 NFL 回場",
+          "text": "傷後首次正式出賽，對 Packers；Lions 13 比 27 落敗。",
+          "sourceIndexes": [
+            3,
+            4
+          ]
+        }
+      ],
+      "returnDateMeaning": "documented-return",
+      "publisher": "Brian Sutterer MD",
+      "sourceTitle": "Aidan Hutchinson Horrible Leg Injury - Doctor Explains",
+      "observation": "醫師解說回顧擒抱過程的小腿接觸，包含受傷重播。",
+      "videoVerification": {
+        "researcherViewed": false,
+        "researcherReview": null,
+        "rootVisualReview": {
+          "status": "contact-sheet-and-relevant-sequence",
+          "reviewedBy": "root",
+          "evidenceFile": "docs/reviews/2026-09-12-recent-120/case-review.json",
+          "observationFromFinalProduct": "醫師解說回顧擒抱過程的小腿接觸，包含受傷重播。"
+        },
+        "rootOembed": {
+          "slug": "aidan-hutchinson-leg-2024",
+          "videoId": "aWo-ur71zvo",
+          "checkedAt": "2026-09-12T15:27:57.923042+00:00",
+          "status": "available",
+          "title": "Aidan Hutchinson Horrible Leg Injury - Doctor Explains",
+          "publisher": "Brian Sutterer MD"
+        },
+        "rootNativePlayback": {
+          "url": "https://www.youtube.com/watch?v=aWo-ur71zvo",
+          "path": "/videos/aidan-hutchinson-leg-2024/",
+          "startSeconds": 0,
+          "origin": "https://a4526742.sports-injury-atlas.pages.dev",
+          "checkedAt": "2026-09-12T15:29:25.484Z",
+          "status": "played",
+          "before": {
+            "time": 0,
+            "paused": true,
+            "readyState": 0
+          },
+          "after": {
+            "time": 1.018908,
+            "paused": false,
+            "readyState": 4
+          },
+          "captionControls": [
+            "字幕/CC 已關閉"
+          ]
+        },
+        "nativePlaybackEvidenceFile": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+        "scope": "影片可播放、片段觀察與文字全文查核各自記錄；不表示字幕、版權或臨床簽核。"
+      },
+      "eventReportsFulltextVerified": true,
+      "sourceVerificationCounts": {
+        "eventReportsFulltext": 5,
+        "videoDescriptionsRead": 0,
+        "generalBackgroundWithoutFulltextRecord": 1
+      },
+      "productSnapshot": {
+        "eventDate": "2024-10-13",
+        "injury": "公開報導記載：脛骨與腓骨骨折。",
+        "returnDate": "2025-09-07",
+        "returnSummary": "2025-09-07 對 Packers 重返 NFL 例行賽。",
+        "videoId": "aWo-ur71zvo",
+        "sourceCount": 7,
+        "timelineCount": 4
+      }
+    },
+    {
+      "slug": "gavi-acl-2023",
+      "name": "Gavi",
+      "sport": "足球",
+      "eventDate": "2023-11-19",
+      "injury": "右膝 ACL 完全撕裂合併外側半月板損傷",
+      "priority": 5,
+      "primarySource": "https://www.fcbarcelona.com/en/news/3790503/injury-update-on-gavi/amp",
+      "notes": "官方全文已確認右 ACL 與外側半月板傷勢、2023-11-28 手術及 2024-10-20 回場；報導標題的 348 天不是從國家隊受傷日計算。",
+      "duplicate": false,
+      "videoId": "1HEC31qHp90",
+      "videoUrl": "https://www.youtube.com/watch?v=1HEC31qHp90",
+      "videoStatus": "root-preview-native-played-and-visual-review-recorded",
+      "durationSeconds": 120,
+      "startSeconds": 48,
+      "sourceFulltextVerified": false,
+      "sources": [
+        {
+          "title": "Injury update on Gavi",
+          "url": "https://www.fcbarcelona.com/en/news/3790503/injury-update-on-gavi/amp",
+          "publishedAt": "2023-11-20",
+          "verified": true,
+          "claims": [
+            "右膝 ACL 完全斷裂與外側半月板損傷。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Gavi operation successful",
+          "url": "https://www.fcbarcelona.com/en/news/3799154/gavi-operation-successful",
+          "publishedAt": "2023-11-28",
+          "verified": true,
+          "claims": [
+            "11 月 19 日 Spain 對 Georgia 受傷；11 月 28 日 ACL 手術及半月板縫合完成。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Gavi returns after 348 days out",
+          "url": "https://www.fcbarcelona.com/en/football/first-team/news/4152481/gavi-returns-after-248-days-out",
+          "publishedAt": "2024-10-20",
+          "verified": true,
+          "claims": [
+            "對 Sevilla 第 83 分鐘替補回場。",
+            "標題 348 天是距前次 Barcelona 出賽，不是距 11 月 19 日受傷。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "RTVE Noticias：GAVI se ROMPE el LIGAMENTO y el MENISCO en el ESPAÑA-GEORGIA y dice ADIÓS a la TEMPORADA | RTVE",
+          "url": "https://www.youtube.com/watch?v=1HEC31qHp90",
+          "publishedAt": "2023-11-20",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": false,
+          "verifiedBy": [
+            "root"
+          ],
+          "verificationMethod": "root-video-review-record",
+          "sourceRole": "observation-video",
+          "claims": [
+            "僅用於可見賽事動作與敘事背景；診斷依事件報導。"
+          ],
+          "viewedByResearcher": false
+        },
+        {
+          "title": "AAOS：前十字韌帶傷害",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+          "publishedAt": null,
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": false,
+          "fulltextVerified": false,
+          "verifiedBy": [],
+          "verificationMethod": "product-reference-present-no-fulltext-record-in-this-research-package",
+          "sourceRole": "general-background",
+          "claims": [],
+          "verificationLimit": "本次同步未查核此一般衛教頁全文；不能沿用個案事件報導的全文旗標。"
+        }
+      ],
+      "milestones": [
+        {
+          "date": "2023-11-19",
+          "title": "國家隊比賽右膝受傷",
+          "text": "Spain 對 Georgia 比賽中退場。",
+          "sourceIndexes": [
+            1
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2023-11-20",
+          "title": "球隊公布檢查結果",
+          "text": "右膝 ACL 完全斷裂，合併外側半月板損傷。",
+          "sourceIndexes": [
+            0
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2023-11-28",
+          "title": "韌帶手術與半月板縫合",
+          "text": "球團公告手術完成。",
+          "sourceIndexes": [
+            1
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-10-20",
+          "title": "重返 Barcelona 正式比賽",
+          "text": "對 Sevilla 第 83 分鐘替補上場。",
+          "sourceIndexes": [
+            2
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        }
+      ],
+      "mechanismNotes": "跳起與落地、隨後無法繼續比賽可由影像核對；ACL 與半月板診斷必須引用球隊檢查，勿把兩段動作指定為唯一撕裂瞬間。",
+      "returnDate": "2024-10-20",
+      "returnSummary": "2024-10-20 對 Sevilla 替補上場，重返俱樂部正式賽。",
+      "textResearchStatus": "selected-case-event-reports-verified-product-synced",
+      "eligibilityReason": "日期在指定窗口內；與既有事件不重複；已讀可靠診斷及後續來源全文，可依所列證據邊界撰寫。",
+      "clinicalApproval": false,
+      "sourceCheckedAt": "2026-09-12",
+      "videoMetadataFile": "/private/tmp/atlas-recent-video-metadata/gavi-acl-2023.json",
+      "initialResearchNotes": "全文已讀；另球隊 Gavi operation successful 確證事件日與手術",
+      "initialResearchSourceFulltextVerified": true,
+      "selectedFor120": true,
+      "initialResearchReturn": {
+        "date": "2024-10-20",
+        "summary": "已重返正式俱樂部比賽；勿套用官方標題的 348 天作為傷後天數。"
+      },
+      "initialResearchMilestones": [
+        {
+          "date": "2023-11-19",
+          "title": "國家隊比賽右膝受傷",
+          "text": "Spain 對 Georgia 比賽中退場。",
+          "sourceIndexes": [
+            1
+          ]
+        },
+        {
+          "date": "2023-11-20",
+          "title": "球隊公布檢查結果",
+          "text": "右膝 ACL 完全斷裂，合併外側半月板損傷。",
+          "sourceIndexes": [
+            0
+          ]
+        },
+        {
+          "date": "2023-11-28",
+          "title": "韌帶手術與半月板縫合",
+          "text": "球團公告手術完成。",
+          "sourceIndexes": [
+            1
+          ]
+        },
+        {
+          "date": "2024-10-20",
+          "title": "重返 Barcelona 正式比賽",
+          "text": "對 Sevilla 第 83 分鐘替補上場。",
+          "sourceIndexes": [
+            2
+          ]
+        }
+      ],
+      "returnDateMeaning": "documented-return",
+      "publisher": "RTVE Noticias",
+      "sourceTitle": "GAVI se ROMPE el LIGAMENTO y el MENISCO en el ESPAÑA-GEORGIA y dice ADIÓS a la TEMPORADA | RTVE",
+      "observation": "RTVE 新聞整理 Gavi 在西班牙對喬治亞的受傷與離場，並引述俱樂部診斷。",
+      "videoVerification": {
+        "researcherViewed": false,
+        "researcherReview": null,
+        "rootVisualReview": {
+          "status": "contact-sheet-and-relevant-sequence",
+          "reviewedBy": "root",
+          "evidenceFile": "docs/reviews/2026-09-12-recent-120/case-review.json",
+          "observationFromFinalProduct": "RTVE 新聞整理 Gavi 在西班牙對喬治亞的受傷與離場，並引述俱樂部診斷。"
+        },
+        "rootOembed": {
+          "slug": "gavi-acl-2023",
+          "videoId": "1HEC31qHp90",
+          "checkedAt": "2026-09-12T15:27:57.978206+00:00",
+          "status": "available",
+          "title": "GAVI se ROMPE el LIGAMENTO y el MENISCO en el ESPAÑA-GEORGIA y dice ADIÓS a la TEMPORADA | RTVE",
+          "publisher": "RTVE Noticias"
+        },
+        "rootNativePlayback": {
+          "url": "https://www.youtube.com/watch?v=1HEC31qHp90",
+          "path": "/videos/gavi-acl-2023/",
+          "startSeconds": 48,
+          "origin": "https://a4526742.sports-injury-atlas.pages.dev",
+          "checkedAt": "2026-09-12T15:29:29.679Z",
+          "status": "played",
+          "before": {
+            "time": 0,
+            "paused": true,
+            "readyState": 0
+          },
+          "after": {
+            "time": 49.00752,
+            "paused": false,
+            "readyState": 4
+          },
+          "captionControls": [
+            "字幕/CC 已關閉"
+          ]
+        },
+        "nativePlaybackEvidenceFile": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+        "scope": "影片可播放、片段觀察與文字全文查核各自記錄；不表示字幕、版權或臨床簽核。"
+      },
+      "eventReportsFulltextVerified": true,
+      "sourceVerificationCounts": {
+        "eventReportsFulltext": 3,
+        "videoDescriptionsRead": 0,
+        "generalBackgroundWithoutFulltextRecord": 1
+      },
+      "productSnapshot": {
+        "eventDate": "2023-11-19",
+        "injury": "公開報導記載：右膝 ACL 完全撕裂合併外側半月板損傷。",
+        "returnDate": "2024-10-20",
+        "returnSummary": "2024-10-20 對 Sevilla 替補上場，重返俱樂部正式賽。",
+        "videoId": "1HEC31qHp90",
+        "sourceCount": 5,
+        "timelineCount": 4
+      }
+    },
+    {
+      "slug": "ter-stegen-patellar-tendon-2024",
+      "name": "Marc-André ter Stegen",
+      "sport": "足球",
+      "eventDate": "2024-09-22",
+      "injury": "右膝髕腱完全斷裂",
+      "priority": 6,
+      "primarySource": "https://www.fcbarcelona.com/en/news/4127804/marc-ter-stegen-injury-news/amp",
+      "notes": "官方全文已確認右髕腱完全斷裂、2024-09-23 手術及 2025-05-03 正式回場；最終動作片 ZRP1PfMv6ds 由研究員實看，root 另做預覽原生播放驗證。",
+      "duplicate": false,
+      "videoId": "ZRP1PfMv6ds",
+      "videoUrl": "https://www.youtube.com/watch?v=ZRP1PfMv6ds",
+      "videoStatus": "root-preview-native-played-and-visual-review-recorded",
+      "durationSeconds": 169,
+      "startSeconds": 21,
+      "sourceFulltextVerified": false,
+      "sources": [
+        {
+          "title": "Marc ter Stegen injury news",
+          "url": "https://www.fcbarcelona.com/en/news/4127804/marc-ter-stegen-injury-news/amp",
+          "publishedAt": "2024-09-23",
+          "verified": true,
+          "claims": [
+            "右膝髕腱手術完成。",
+            "球隊描述對 Villarreal 接球後落地不順。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Ter Stegen returns after 223 days out",
+          "url": "https://www.fcbarcelona.com/en/news/4257640/ter-stegen-returns-after-223-days-out",
+          "publishedAt": "2025-05-03",
+          "verified": true,
+          "claims": [
+            "對 Valladolid 先發並完成 2 比 1 勝仗。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Marc-André ter Stegen continues recovery",
+          "url": "https://www.fcbarcelona.com/en/football/first-team/news/4236807/marcandr-ter-stegen-continues-recovery",
+          "publishedAt": "2025-03-22",
+          "verified": true,
+          "claims": [
+            "回顧明確確認右膝髕腱完全斷裂；接高球時與對手接觸，失衡後落地。",
+            "受傷隔日手術，之後持續在球團醫療團隊監督下復健。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "El Día Después por Movistar Plus：El Día Después (23/09/2024): La lesión de Ter Stegen",
+          "url": "https://www.youtube.com/watch?v=ZRP1PfMv6ds",
+          "publishedAt": "2024-09-23",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": false,
+          "verifiedBy": [
+            "root"
+          ],
+          "verificationMethod": "root-video-review-record",
+          "sourceRole": "observation-video",
+          "claims": [
+            "僅用於可見賽事動作與敘事背景；診斷依事件報導。"
+          ],
+          "viewedByResearcher": true
+        },
+        {
+          "title": "AAOS：髕腱斷裂",
+          "url": "https://www.orthoinfo.org/diseases--conditions/patellar-tendon-tear/",
+          "publishedAt": null,
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": false,
+          "fulltextVerified": false,
+          "verifiedBy": [],
+          "verificationMethod": "product-reference-present-no-fulltext-record-in-this-research-package",
+          "sourceRole": "general-background",
+          "claims": [],
+          "verificationLimit": "本次同步未查核此一般衛教頁全文；不能沿用個案事件報導的全文旗標。"
+        }
+      ],
+      "milestones": [
+        {
+          "date": "2024-09-22",
+          "title": "撲接高球後右膝受傷",
+          "text": "對 Villarreal 比賽，接球後落地不順並退場。",
+          "sourceIndexes": [
+            0,
+            2
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-09-23",
+          "title": "右膝髕腱手術",
+          "text": "Barcelona 公告手術完成。",
+          "sourceIndexes": [
+            0
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2025-03-22",
+          "title": "球團公開復健進度",
+          "text": "球團回顧傷勢並確認持續接受醫療團隊監督下的復健。",
+          "sourceIndexes": [
+            2
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2025-05-03",
+          "title": "回到正式比賽先發",
+          "text": "對 Valladolid 先發，球隊 2 比 1 獲勝。",
+          "sourceIndexes": [
+            1
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        }
+      ],
+      "mechanismNotes": "球團回顧指出接高球時與對手接觸、失衡後落地，因此不宜標成完全非接觸；右膝髕腱完全斷裂依官方文字。",
+      "returnDate": "2025-05-03",
+      "returnSummary": "2025-05-03 對 Valladolid 先發，重返俱樂部正式賽。",
+      "textResearchStatus": "selected-case-event-reports-verified-product-synced",
+      "eligibilityReason": "日期在指定窗口內；與既有事件不重複；已讀可靠診斷及後續來源全文，可依所列證據邊界撰寫。",
+      "clinicalApproval": false,
+      "sourceCheckedAt": "2026-09-12",
+      "videoMetadataFile": "/private/tmp/atlas-terstegen-motion/ZRP1PfMv6ds.info.json",
+      "supersededVideoId": "xaw39GPRs8s",
+      "initialResearchNotes": "全文已讀；接傳中球落地受傷；2024-09-23 手術，完全斷裂診斷待補原始公告",
+      "initialResearchSourceFulltextVerified": true,
+      "selectedFor120": true,
+      "initialResearchReturn": {
+        "date": "2025-05-03",
+        "summary": "先前進入盃賽名單不等於出賽；此場先發可確認實際回場。"
+      },
+      "initialResearchMilestones": [
+        {
+          "date": "2024-09-22",
+          "title": "撲接高球後右膝受傷",
+          "text": "對 Villarreal 比賽，接球後落地不順並退場。",
+          "sourceIndexes": [
+            0,
+            2
+          ]
+        },
+        {
+          "date": "2024-09-23",
+          "title": "右膝髕腱手術",
+          "text": "Barcelona 公告手術完成。",
+          "sourceIndexes": [
+            0
+          ]
+        },
+        {
+          "date": "2025-03-22",
+          "title": "球團公開復健進度",
+          "text": "球團回顧傷勢並確認持續接受醫療團隊監督下的復健。",
+          "sourceIndexes": [
+            2
+          ]
+        },
+        {
+          "date": "2025-05-03",
+          "title": "回到正式比賽先發",
+          "text": "對 Valladolid 先發，球隊 2 比 1 獲勝。",
+          "sourceIndexes": [
+            1
+          ]
+        }
+      ],
+      "returnDateMeaning": "documented-return",
+      "publisher": "El Día Después por Movistar Plus",
+      "sourceTitle": "El Día Después (23/09/2024): La lesión de Ter Stegen",
+      "observation": "Movistar Plus 的賽事重播呈現接高球、接觸後落地與倒地；診斷另由俱樂部公告確認。",
+      "videoVerification": {
+        "researcherViewed": true,
+        "researcherReview": {
+          "id": "ZRP1PfMv6ds",
+          "title": "El Día Después (23/09/2024): La lesión de Ter Stegen",
+          "channel": "El Día Después por Movistar Plus",
+          "channel_id": "UCTizbQ7IDPngI50uyI3pcbA",
+          "channel_url": "https://www.youtube.com/channel/UCTizbQ7IDPngI50uyI3pcbA",
+          "duration": 169,
+          "upload_date": "20240923",
+          "availability": "public",
+          "age_limit": 0,
+          "playable_in_embed": true,
+          "webpage_url": "https://www.youtube.com/watch?v=ZRP1PfMv6ds",
+          "startSeconds": 21,
+          "observedMotionWindows": [
+            {
+              "fromSeconds": 21.5,
+              "toSeconds": 24,
+              "description": "較近角度的起跳接球、落地及倒下。"
+            },
+            {
+              "fromSeconds": 25.5,
+              "toSeconds": 29.5,
+              "description": "廣角重播傳中、空中接球、落地及倒下。"
+            }
+          ],
+          "checkedAt": "2026-09-12",
+          "verification": "yt-dlp 成功下載 360p video-only MP4，ffmpeg 成功解碼並以接觸圖人工目視確認連續動作。尚未測試網站原生 iframe 播放。",
+          "clinicalLimit": "能確認可見動作；不能由轉播確認髕腱斷裂的精確瞬間。",
+          "rightsLimit": "未宣稱有下載後重新發布的授權；暫存影片僅供此次查核。",
+          "evidencePaths": [
+            "/private/tmp/atlas-terstegen-motion/ZRP1PfMv6ds.mp4",
+            "/private/tmp/atlas-terstegen-motion/ZRP1PfMv6ds.info.json",
+            "/private/tmp/atlas-terstegen-motion/ZRP1PfMv6ds-sheet.jpg",
+            "/private/tmp/atlas-terstegen-motion/ZRP1PfMv6ds-motion-16-30.jpg"
+          ]
+        },
+        "rootVisualReview": {
+          "status": "contact-sheet-and-relevant-sequence",
+          "reviewedBy": "root",
+          "evidenceFile": "docs/reviews/2026-09-12-recent-120/case-review.json",
+          "observationFromFinalProduct": "Movistar Plus 的賽事重播呈現接高球、接觸後落地與倒地；診斷另由俱樂部公告確認。"
+        },
+        "rootOembed": {
+          "slug": "ter-stegen-patellar-tendon-2024",
+          "videoId": "ZRP1PfMv6ds",
+          "checkedAt": "2026-09-12T15:27:57.978088+00:00",
+          "status": "available",
+          "title": "El Día Después (23/09/2024): La lesión de Ter Stegen",
+          "publisher": "El Día Después por Movistar Plus"
+        },
+        "rootNativePlayback": {
+          "url": "https://www.youtube.com/watch?v=ZRP1PfMv6ds",
+          "path": "/videos/ter-stegen-patellar-tendon-2024/",
+          "startSeconds": 21,
+          "origin": "https://a4526742.sports-injury-atlas.pages.dev",
+          "checkedAt": "2026-09-12T15:29:35.432Z",
+          "status": "played",
+          "before": {
+            "time": 0,
+            "paused": true,
+            "readyState": 0
+          },
+          "after": {
+            "time": 22.017979,
+            "paused": false,
+            "readyState": 4
+          },
+          "captionControls": [
+            "字幕/CC 已關閉"
+          ]
+        },
+        "nativePlaybackEvidenceFile": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+        "scope": "影片可播放、片段觀察與文字全文查核各自記錄；不表示字幕、版權或臨床簽核。"
+      },
+      "eventReportsFulltextVerified": true,
+      "sourceVerificationCounts": {
+        "eventReportsFulltext": 3,
+        "videoDescriptionsRead": 0,
+        "generalBackgroundWithoutFulltextRecord": 1
+      },
+      "productSnapshot": {
+        "eventDate": "2024-09-22",
+        "injury": "公開報導記載：右膝髕腱完全斷裂。",
+        "returnDate": "2025-05-03",
+        "returnSummary": "2025-05-03 對 Valladolid 先發，重返俱樂部正式賽。",
+        "videoId": "ZRP1PfMv6ds",
+        "sourceCount": 5,
+        "timelineCount": 4
+      }
+    },
+    {
+      "slug": "rodri-acl-2024",
+      "name": "Rodri",
+      "sport": "足球",
+      "eventDate": "2024-09-22",
+      "injury": "右膝 ACL 與半月板損傷",
+      "priority": 7,
+      "primarySource": "https://www.mancity.com/news/mens/newcastle-united-v-manchester-city-pep-guardiola-injury-update-63863036",
+      "notes": "官方全文確認右膝 ACL 與半月板傷勢、手術及 2025-05-20 回場；角球爭位有接觸，不標成完全非接觸。",
+      "duplicate": false,
+      "videoId": "HgrqAWPBSTk",
+      "videoUrl": "https://www.youtube.com/watch?v=HgrqAWPBSTk",
+      "videoStatus": "root-preview-native-played-and-visual-review-recorded",
+      "durationSeconds": 64,
+      "startSeconds": 0,
+      "sourceFulltextVerified": false,
+      "sources": [
+        {
+          "title": "Injury update: Rodri",
+          "url": "https://live.mancity.com/news/mens/injury-update-rodri-63862763",
+          "publishedAt": null,
+          "verified": true,
+          "claims": [
+            "球隊確認對 Arsenal 比賽時傷及右膝韌帶。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Injury update: Rodri ruled out for season, says boss",
+          "url": "https://www.mancity.com/news/mens/newcastle-united-v-manchester-city-pep-guardiola-injury-update-63863036",
+          "publishedAt": "2024-09-27",
+          "verified": true,
+          "claims": [
+            "Guardiola 說當日上午已完成手術，涉及 ACL 與部分半月板。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Perfect Etihad ending for De Bruyne after vital Bournemouth victory",
+          "url": "https://live.mancity.com/news/mens/manchester-city-bournemouth-202425-match-report-63883362",
+          "publishedAt": "2025-05-20",
+          "verified": true,
+          "claims": [
+            "Rodri 第 83 分鐘替補上場，完成傷後重返正式比賽。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Video 4Football：Rodri Injury against Arsenal 🤕",
+          "url": "https://www.youtube.com/watch?v=HgrqAWPBSTk",
+          "publishedAt": "2024-09-22",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": false,
+          "verifiedBy": [
+            "root"
+          ],
+          "verificationMethod": "root-video-review-record",
+          "sourceRole": "observation-video",
+          "claims": [
+            "僅用於可見賽事動作與敘事背景；診斷依事件報導。"
+          ],
+          "viewedByResearcher": false
+        },
+        {
+          "title": "AAOS：前十字韌帶傷害",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+          "publishedAt": null,
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": false,
+          "fulltextVerified": false,
+          "verifiedBy": [],
+          "verificationMethod": "product-reference-present-no-fulltext-record-in-this-research-package",
+          "sourceRole": "general-background",
+          "claims": [],
+          "verificationLimit": "本次同步未查核此一般衛教頁全文；不能沿用個案事件報導的全文旗標。"
+        }
+      ],
+      "milestones": [
+        {
+          "date": "2024-09-22",
+          "title": "對 Arsenal 右膝受傷",
+          "text": "2 比 2 比賽的上半場受傷退場，球團之後確認韌帶受損。",
+          "sourceIndexes": [
+            0
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-09-27",
+          "title": "手術完成",
+          "text": "教練表示手術涉及 ACL 與半月板；當時預期該季無法再出賽。",
+          "sourceIndexes": [
+            1
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2025-05-20",
+          "title": "正式回場對 Bournemouth",
+          "text": "第 83 分鐘替補出賽。",
+          "sourceIndexes": [
+            2
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        }
+      ],
+      "mechanismNotes": "比賽有爭位與身體接觸，不能籠統列為完全非接觸性。可描述受傷動作與退場，精確受力路徑保持推論。",
+      "returnDate": "2025-05-20",
+      "returnSummary": "2025-05-20 對 Bournemouth 替補上場，重返英超正式賽。",
+      "textResearchStatus": "selected-case-event-reports-verified-product-synced",
+      "eligibilityReason": "日期在指定窗口內；與既有事件不重複；已讀可靠診斷及後續來源全文，可依所列證據邊界撰寫。",
+      "clinicalApproval": false,
+      "sourceCheckedAt": "2026-09-12",
+      "videoMetadataFile": "/private/tmp/atlas-recent-video-metadata/rodri-acl-2024.json",
+      "initialResearchNotes": "全文已讀；教練確認 ACL 與半月板手術；右側另球團初始公告確認",
+      "initialResearchSourceFulltextVerified": true,
+      "selectedFor120": true,
+      "initialResearchReturn": {
+        "date": "2025-05-20",
+        "summary": "球團賽後報導確認傷後首度回場；不應把 2024 年預期整季缺陣寫成最後實際結果。"
+      },
+      "initialResearchMilestones": [
+        {
+          "date": "2024-09-22",
+          "title": "對 Arsenal 右膝受傷",
+          "text": "2 比 2 比賽的上半場受傷退場，球團之後確認韌帶受損。",
+          "sourceIndexes": [
+            0
+          ]
+        },
+        {
+          "date": "2024-09-27",
+          "title": "手術完成",
+          "text": "教練表示手術涉及 ACL 與半月板；當時預期該季無法再出賽。",
+          "sourceIndexes": [
+            1
+          ]
+        },
+        {
+          "date": "2025-05-20",
+          "title": "正式回場對 Bournemouth",
+          "text": "第 83 分鐘替補出賽。",
+          "sourceIndexes": [
+            2
+          ]
+        }
+      ],
+      "returnDateMeaning": "documented-return",
+      "publisher": "Video 4Football",
+      "sourceTitle": "Rodri Injury against Arsenal 🤕",
+      "observation": "賽事片段呈現角球爭位時的倒地與離場，不包含手術或 MRI 畫面。",
+      "videoVerification": {
+        "researcherViewed": false,
+        "researcherReview": null,
+        "rootVisualReview": {
+          "status": "contact-sheet-and-relevant-sequence",
+          "reviewedBy": "root",
+          "evidenceFile": "docs/reviews/2026-09-12-recent-120/case-review.json",
+          "observationFromFinalProduct": "賽事片段呈現角球爭位時的倒地與離場，不包含手術或 MRI 畫面。"
+        },
+        "rootOembed": {
+          "slug": "rodri-acl-2024",
+          "videoId": "HgrqAWPBSTk",
+          "checkedAt": "2026-09-12T15:27:57.977945+00:00",
+          "status": "available",
+          "title": "Rodri Injury against Arsenal 🤕",
+          "publisher": "Video 4Football"
+        },
+        "rootNativePlayback": {
+          "url": "https://www.youtube.com/watch?v=HgrqAWPBSTk",
+          "path": "/videos/rodri-acl-2024/",
+          "startSeconds": 0,
+          "origin": "https://a4526742.sports-injury-atlas.pages.dev",
+          "checkedAt": "2026-09-12T15:29:39.285Z",
+          "status": "played",
+          "before": {
+            "time": 0,
+            "paused": true,
+            "readyState": 0
+          },
+          "after": {
+            "time": 1.014718,
+            "paused": false,
+            "readyState": 4
+          },
+          "captionControls": [
+            "字幕/CC 已關閉"
+          ]
+        },
+        "nativePlaybackEvidenceFile": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+        "scope": "影片可播放、片段觀察與文字全文查核各自記錄；不表示字幕、版權或臨床簽核。"
+      },
+      "eventReportsFulltextVerified": true,
+      "sourceVerificationCounts": {
+        "eventReportsFulltext": 3,
+        "videoDescriptionsRead": 0,
+        "generalBackgroundWithoutFulltextRecord": 1
+      },
+      "productSnapshot": {
+        "eventDate": "2024-09-22",
+        "injury": "公開報導記載：右膝 ACL 與半月板損傷。",
+        "returnDate": "2025-05-20",
+        "returnSummary": "2025-05-20 對 Bournemouth 替補上場，重返英超正式賽。",
+        "videoId": "HgrqAWPBSTk",
+        "sourceCount": 5,
+        "timelineCount": 3
+      }
+    },
+    {
+      "slug": "dani-carvajal-knee-2024",
+      "name": "Dani Carvajal",
+      "sport": "足球",
+      "eventDate": "2024-10-05",
+      "injury": "右膝 ACL、外側副韌帶及膕肌腱斷裂",
+      "priority": 8,
+      "primarySource": "https://www.realmadrid.com/en-US/news/football/first-team/medical-reports/parte-medico-de-carvajal-11-10-2024",
+      "notes": "初診 ACL、外側副韌帶與膕肌腱傷勢及 2024-10-11 手術均已讀全文；root 新增的兩篇回場文已再次核實，2025-07-09 第 71 分鐘替補。",
+      "duplicate": false,
+      "videoId": "nBC7o7Iz0RM",
+      "videoUrl": "https://www.youtube.com/watch?v=nBC7o7Iz0RM",
+      "videoStatus": "root-preview-native-played-and-visual-review-recorded",
+      "durationSeconds": 146,
+      "startSeconds": 0,
+      "sourceFulltextVerified": false,
+      "sources": [
+        {
+          "title": "Carvajal medical report",
+          "url": "https://www.realmadrid.com/en-US/news/football/first-team/medical-reports/parte-medico-de-carvajal-11-10-2024",
+          "publishedAt": "2024-10-11",
+          "verified": true,
+          "claims": [
+            "右膝 ACL 手術與後外側不穩定處理，由 Manuel Leyes 執刀。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Carvajal medical report",
+          "url": "https://www.realmadrid.com/en-US/news/football/first-team/medical-reports/parte-medico-de-carvajal-06-10-2024",
+          "publishedAt": "2024-10-06",
+          "verified": true,
+          "claims": [
+            "右腿 ACL、外側副韌帶與膕肌腱斷裂。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "El Madrid gana al Villarreal con dos grandes goles de Valverde y Vini Jr.",
+          "url": "https://www.realmadrid.com/es-ES/noticias/futbol/primer-equipo/cronicas/cronica-del-real-madrid-villarreal-05-10-2024",
+          "publishedAt": "2024-10-05",
+          "verified": true,
+          "claims": [
+            "官方當日賽後報告確認末段 Carvajal 受傷離場。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Real Madrid：El regreso de Carvajal y Militão",
+          "url": "https://www.realmadrid.com/es-ES/noticias/futbol/primer-equipo/actualidad/el-regreso-de-carvajal-y-militao-10-07-2025",
+          "publishedAt": "2025-07-10",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": true,
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "verificationMethod": "web-fulltext-read-during-document-sync",
+          "sourceRole": "event-report",
+          "claims": [
+            "世俱盃準決賽兩人實際回場；Carvajal 第 71 分鐘、Militão 第 64 分鐘替補。",
+            "此文刊登 2025-07-10；比賽日須與 7 月 9 日的同場報導互證。"
+          ]
+        },
+        {
+          "title": "Real Madrid：Militão spielt acht Monate später wieder",
+          "url": "https://www.realmadrid.com/de-DE/news/fussball/erste-mannshaft/latest-news/militao-reaparece-8-meses-despues-09-07-2025",
+          "publishedAt": "2025-07-09",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": true,
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "verificationMethod": "web-fulltext-read-during-document-sync",
+          "sourceRole": "event-report",
+          "claims": [
+            "2025-07-09 世俱盃準決賽對 PSG，Militão 第 64 分鐘替補回場。"
+          ]
+        },
+        {
+          "title": "El Día Después por Movistar Plus：El Día Después (07/10/2024): Una noche fatídica para Carvajal",
+          "url": "https://www.youtube.com/watch?v=nBC7o7Iz0RM",
+          "publishedAt": "2024-10-07",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": false,
+          "verifiedBy": [
+            "root"
+          ],
+          "verificationMethod": "root-video-review-record",
+          "sourceRole": "observation-video",
+          "claims": [
+            "僅用於可見賽事動作與敘事背景；診斷依事件報導。"
+          ],
+          "viewedByResearcher": false
+        },
+        {
+          "title": "AAOS：前十字韌帶傷害",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+          "publishedAt": null,
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": false,
+          "fulltextVerified": false,
+          "verifiedBy": [],
+          "verificationMethod": "product-reference-present-no-fulltext-record-in-this-research-package",
+          "sourceRole": "general-background",
+          "claims": [],
+          "verificationLimit": "本次同步未查核此一般衛教頁全文；不能沿用個案事件報導的全文旗標。"
+        }
+      ],
+      "milestones": [
+        {
+          "date": "2024-10-05",
+          "title": "對 Villarreal 膝部受傷",
+          "text": "比賽末段受傷退場；精確多韌帶診斷另由隔日球團公告確認。",
+          "sourceIndexes": [
+            2
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-10-06",
+          "title": "多韌帶與膕肌腱損傷診斷公布",
+          "text": "球團確認右腿 ACL、外側副韌帶及膕肌腱斷裂。",
+          "sourceIndexes": [
+            1
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-10-11",
+          "title": "右膝手術",
+          "text": "球團公告完成 ACL 手術與後外側不穩定處理。",
+          "sourceIndexes": [
+            0
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2025-07-09",
+          "title": "傷後再度出賽",
+          "text": "在世俱盃對 Paris Saint-Germain 的準決賽，第 71 分鐘替補出賽。",
+          "sourceIndexes": [
+            3,
+            4
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        }
+      ],
+      "mechanismNotes": "爭球與膝部受力可由影像核對；右膝 ACL、外側副韌帶與膕肌腱斷裂來自球團 10 月 6 日檢查公告，不由影片推定各結構破壞順序。",
+      "returnDate": "2025-07-09",
+      "returnSummary": "2025-07-09 在世俱盃準決賽對 PSG 替補出賽。",
+      "textResearchStatus": "selected-case-event-reports-verified-product-synced",
+      "eligibilityReason": "日期在指定窗口內；與既有事件不重複；已讀可靠診斷及後續來源全文，可依所列證據邊界撰寫。",
+      "clinicalApproval": false,
+      "sourceCheckedAt": "2026-09-12",
+      "videoMetadataFile": "/private/tmp/atlas-recent-video-metadata/dani-carvajal-knee-2024.json",
+      "initialResearchNotes": "全文已讀；2024-10-11 手術；完整初診 LCL 與膕肌腱待開全文",
+      "initialResearchSourceFulltextVerified": true,
+      "selectedFor120": true,
+      "initialResearchReturn": {
+        "date": null,
+        "summary": "此輪未確證實際重返正式比賽日期；不可把手術、訓練或預測期限當成回場。"
+      },
+      "initialResearchMilestones": [
+        {
+          "date": "2024-10-05",
+          "title": "對 Villarreal 膝部受傷",
+          "text": "比賽末段受傷退場；精確多韌帶診斷另由隔日球團公告確認。",
+          "sourceIndexes": [
+            2
+          ]
+        },
+        {
+          "date": "2024-10-06",
+          "title": "多韌帶與膕肌腱損傷診斷公布",
+          "text": "球團確認右腿 ACL、外側副韌帶及膕肌腱斷裂。",
+          "sourceIndexes": [
+            1
+          ]
+        },
+        {
+          "date": "2024-10-11",
+          "title": "右膝手術",
+          "text": "球團公告完成 ACL 手術與後外側不穩定處理。",
+          "sourceIndexes": [
+            0
+          ]
+        }
+      ],
+      "returnDateMeaning": "documented-return",
+      "publisher": "El Día Después por Movistar Plus",
+      "sourceTitle": "El Día Después (07/10/2024): Una noche fatídica para Carvajal",
+      "observation": "Movistar 的賽事回顧呈現爭球、受傷及場上反應；醫療結論另有官方公告。",
+      "videoVerification": {
+        "researcherViewed": false,
+        "researcherReview": null,
+        "rootVisualReview": {
+          "status": "contact-sheet-and-relevant-sequence",
+          "reviewedBy": "root",
+          "evidenceFile": "docs/reviews/2026-09-12-recent-120/case-review.json",
+          "observationFromFinalProduct": "Movistar 的賽事回顧呈現爭球、受傷及場上反應；醫療結論另有官方公告。"
+        },
+        "rootOembed": {
+          "slug": "dani-carvajal-knee-2024",
+          "videoId": "nBC7o7Iz0RM",
+          "checkedAt": "2026-09-12T15:27:57.977303+00:00",
+          "status": "available",
+          "title": "El Día Después (07/10/2024): Una noche fatídica para Carvajal",
+          "publisher": "El Día Después por Movistar Plus"
+        },
+        "rootNativePlayback": {
+          "url": "https://www.youtube.com/watch?v=nBC7o7Iz0RM",
+          "path": "/videos/dani-carvajal-knee-2024/",
+          "startSeconds": 0,
+          "origin": "https://a4526742.sports-injury-atlas.pages.dev",
+          "checkedAt": "2026-09-12T15:29:44.015Z",
+          "status": "played",
+          "before": {
+            "time": 0,
+            "paused": true,
+            "readyState": 0
+          },
+          "after": {
+            "time": 1.01593,
+            "paused": false,
+            "readyState": 4
+          },
+          "captionControls": [
+            "字幕/CC 已關閉"
+          ]
+        },
+        "nativePlaybackEvidenceFile": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+        "scope": "影片可播放、片段觀察與文字全文查核各自記錄；不表示字幕、版權或臨床簽核。"
+      },
+      "eventReportsFulltextVerified": true,
+      "sourceVerificationCounts": {
+        "eventReportsFulltext": 5,
+        "videoDescriptionsRead": 0,
+        "generalBackgroundWithoutFulltextRecord": 1
+      },
+      "productSnapshot": {
+        "eventDate": "2024-10-05",
+        "injury": "公開報導記載：右膝 ACL、外側副韌帶及膕肌腱斷裂。",
+        "returnDate": "2025-07-09",
+        "returnSummary": "2025-07-09 在世俱盃準決賽對 PSG 替補出賽。",
+        "videoId": "nBC7o7Iz0RM",
+        "sourceCount": 7,
+        "timelineCount": 4
+      }
+    },
+    {
+      "slug": "jamal-musiala-ankle-2025",
+      "name": "Jamal Musiala",
+      "sport": "足球",
+      "eventDate": "2025-07-05",
+      "injury": "踝關節骨折脫位合併腓骨骨折（所引球團公告未註明側別）",
+      "priority": 9,
+      "primarySource": "https://fcbayern.com/en/news/2025/07/jamal-musiala-diagnosis",
+      "notes": "官方診斷、2025-07-07 手術與 2026-01-17 回場全文已核實；最終影片是 AHzOcxBu0Fk（GoalBlitz），root 實看與預覽原生播放，本研究員未實看此片。",
+      "duplicate": false,
+      "videoId": "AHzOcxBu0Fk",
+      "videoUrl": "https://www.youtube.com/watch?v=AHzOcxBu0Fk",
+      "videoStatus": "root-preview-native-played-and-visual-review-recorded",
+      "durationSeconds": 10,
+      "startSeconds": 0,
+      "sourceFulltextVerified": false,
+      "sources": [
+        {
+          "title": "Jamal Musiala sidelined for long period",
+          "url": "https://fcbayern.com/en/news/2025/07/jamal-musiala-diagnosis",
+          "publishedAt": "2025-07-06",
+          "verified": true,
+          "claims": [
+            "對 PSG 受傷；腓骨骨折合併踝關節骨折脫位。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Jamal Musiala erfolgreich operiert",
+          "url": "https://fcbayern.com/de/news/2025/07/jamal-musiala-erfolgreich-operiert",
+          "publishedAt": "2025-07-07",
+          "verified": true,
+          "claims": [
+            "手術完成；翌日開始復健是計畫，不當成已發生。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Jamal Musiala marks injury comeback with assist against RB Leipzig",
+          "url": "https://fcbayern.com/en/news/2026/01/jamal-musiala-marks-injury-comeback-with-assist-against-rb-leipzig",
+          "publishedAt": "2026-01-17",
+          "verified": true,
+          "claims": [
+            "對 Leipzig 5 比 1 勝仗，第 87 分鐘替補，第 88 分鐘助攻。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "FIFA Club World Cup 2025: Paris Saint-Germain v. FC Bayern München — Full-time match report",
+          "url": "https://fdp.fifa.org/assetspublic/ce233/r10589/pdf/FullTimeMatchReport-English.pdf",
+          "publishedAt": "2025-07-05",
+          "verified": true,
+          "claims": [
+            "官方賽事報告日期 2025-07-05，Musiala 中場被換下。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "pdf-report-text-read"
+        },
+        {
+          "title": "GoalBlitz⚽️：💔 Jamal Musiala HORRIFIC Injury | Full Incident & Reaction | [PSG vs BAYERN] 2025",
+          "url": "https://www.youtube.com/watch?v=AHzOcxBu0Fk",
+          "publishedAt": "2025-07-06",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": false,
+          "verifiedBy": [
+            "root"
+          ],
+          "verificationMethod": "root-video-review-record",
+          "sourceRole": "observation-video",
+          "claims": [
+            "僅用於可見賽事動作與敘事背景；診斷依事件報導。"
+          ],
+          "viewedByResearcher": false
+        },
+        {
+          "title": "AAOS：骨折與外力",
+          "url": "https://www.orthoinfo.org/diseases--conditions/fractures-broken-bones/",
+          "publishedAt": null,
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": false,
+          "fulltextVerified": false,
+          "verifiedBy": [],
+          "verificationMethod": "product-reference-present-no-fulltext-record-in-this-research-package",
+          "sourceRole": "general-background",
+          "claims": [],
+          "verificationLimit": "本次同步未查核此一般衛教頁全文；不能沿用個案事件報導的全文旗標。"
+        }
+      ],
+      "milestones": [
+        {
+          "date": "2025-07-05",
+          "title": "世俱盃對 PSG 踝部受傷",
+          "text": "比賽中受傷，後續檢查確認骨折脫位。",
+          "sourceIndexes": [
+            0,
+            3
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2025-07-06",
+          "title": "診斷公布",
+          "text": "球團確認腓骨骨折合併踝關節骨折脫位。",
+          "sourceIndexes": [
+            0
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2025-07-07",
+          "title": "接受手術",
+          "text": "Bayern 公告手術完成，將進入復健。",
+          "sourceIndexes": [
+            1
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2026-01-17",
+          "title": "正式回場並送出助攻",
+          "text": "對 Leipzig 替補出場，隨即助攻；這是實際比賽里程碑。",
+          "sourceIndexes": [
+            2
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        }
+      ],
+      "mechanismNotes": "影像可觀察爭球碰撞與踝部受力；骨折脫位來自球隊檢查。不可由畫面確定韌帶、血管狀態或預後。",
+      "returnDate": "2026-01-17",
+      "returnSummary": "2026-01-17 對 RB Leipzig 替補上場，回場後送出助攻。",
+      "textResearchStatus": "selected-case-event-reports-verified-product-synced",
+      "eligibilityReason": "日期在指定窗口內；與既有事件不重複；已讀可靠診斷及後續來源全文，可依所列證據邊界撰寫。",
+      "clinicalApproval": false,
+      "sourceCheckedAt": "2026-09-12",
+      "videoMetadataFile": null,
+      "initialResearchNotes": "全文已讀；2025-07-07 手術公告已定位，待開全文",
+      "initialResearchSourceFulltextVerified": true,
+      "selectedFor120": true,
+      "initialResearchReturn": {
+        "date": "2026-01-17",
+        "summary": "球團賽後報導確認實際回場。"
+      },
+      "initialResearchMilestones": [
+        {
+          "date": "2025-07-05",
+          "title": "世俱盃對 PSG 踝部受傷",
+          "text": "比賽中受傷，後續檢查確認骨折脫位。",
+          "sourceIndexes": [
+            0,
+            3
+          ]
+        },
+        {
+          "date": "2025-07-06",
+          "title": "診斷公布",
+          "text": "球團確認腓骨骨折合併踝關節骨折脫位。",
+          "sourceIndexes": [
+            0
+          ]
+        },
+        {
+          "date": "2025-07-07",
+          "title": "接受手術",
+          "text": "Bayern 公告手術完成，將進入復健。",
+          "sourceIndexes": [
+            1
+          ]
+        },
+        {
+          "date": "2026-01-17",
+          "title": "正式回場並送出助攻",
+          "text": "對 Leipzig 替補出場，隨即助攻；這是實際比賽里程碑。",
+          "sourceIndexes": [
+            2
+          ]
+        }
+      ],
+      "returnDateMeaning": "documented-return",
+      "supersededVideoId": "rrDgqODjb8Y",
+      "publisher": "GoalBlitz⚽️",
+      "sourceTitle": "💔 Jamal Musiala HORRIFIC Injury | Full Incident & Reaction | [PSG vs BAYERN] 2025",
+      "observation": "DAZN 比賽精華包含拜仁與巴黎的爭球場面；受傷段落須與後續官方診斷一起閱讀。",
+      "videoVerification": {
+        "researcherViewed": false,
+        "researcherReview": null,
+        "rootVisualReview": {
+          "status": "contact-sheet-and-relevant-sequence",
+          "reviewedBy": "root",
+          "evidenceFile": "docs/reviews/2026-09-12-recent-120/case-review.json",
+          "observationFromFinalProduct": "DAZN 比賽精華包含拜仁與巴黎的爭球場面；受傷段落須與後續官方診斷一起閱讀。"
+        },
+        "rootOembed": {
+          "slug": "jamal-musiala-ankle-2025",
+          "videoId": "AHzOcxBu0Fk",
+          "checkedAt": "2026-09-12T15:27:58.024946+00:00",
+          "status": "available",
+          "title": "💔 Jamal Musiala HORRIFIC Injury | Full Incident & Reaction | [PSG vs BAYERN] 2025",
+          "publisher": "GoalBlitz⚽️"
+        },
+        "rootNativePlayback": {
+          "url": "https://www.youtube.com/watch?v=AHzOcxBu0Fk",
+          "path": "/videos/jamal-musiala-ankle-2025/",
+          "startSeconds": 0,
+          "origin": "https://a4526742.sports-injury-atlas.pages.dev",
+          "checkedAt": "2026-09-12T15:29:48.544Z",
+          "status": "played",
+          "before": {
+            "time": 0,
+            "paused": true,
+            "readyState": 0
+          },
+          "after": {
+            "time": 1.007615,
+            "paused": false,
+            "readyState": 4
+          },
+          "captionControls": [
+            "這部影片未提供字幕"
+          ]
+        },
+        "nativePlaybackEvidenceFile": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+        "scope": "影片可播放、片段觀察與文字全文查核各自記錄；不表示字幕、版權或臨床簽核。"
+      },
+      "videoMetadataRecord": "docs/reviews/2026-09-12-recent-120/oembed.json#AHzOcxBu0Fk",
+      "videoReplacementReason": "最終片為 GoalBlitz 的 10 秒賽事片段，取代初稿影片；root 實看及 native played，本研究員未觀看。",
+      "eventReportsFulltextVerified": true,
+      "sourceVerificationCounts": {
+        "eventReportsFulltext": 4,
+        "videoDescriptionsRead": 0,
+        "generalBackgroundWithoutFulltextRecord": 1
+      },
+      "productSnapshot": {
+        "eventDate": "2025-07-05",
+        "injury": "公開報導記載：踝關節骨折脫位合併腓骨骨折。",
+        "returnDate": "2026-01-17",
+        "returnSummary": "2026-01-17 對 RB Leipzig 替補上場，回場後送出助攻。",
+        "videoId": "AHzOcxBu0Fk",
+        "sourceCount": 6,
+        "timelineCount": 4
+      }
+    },
+    {
+      "slug": "eder-militao-acl-2024",
+      "name": "Éder Militão",
+      "sport": "足球",
+      "eventDate": "2024-11-09",
+      "injury": "右膝 ACL 完全撕裂及兩側半月板損傷",
+      "priority": 10,
+      "primarySource": "https://www.realmadrid.com/es-ES/noticias/futbol/primer-equipo/partes-medicos/parte-medico-09-11-2024",
+      "notes": "初診法文及手術英文公告均已取得全文；root 新增兩篇回場文再次核實 2025-07-09 第 64 分鐘替補。早期英文 timeout 已被可讀來源取代。",
+      "duplicate": false,
+      "videoId": "mmngoDkXwxc",
+      "videoUrl": "https://www.youtube.com/watch?v=mmngoDkXwxc",
+      "videoStatus": "root-preview-native-played-and-visual-review-recorded",
+      "durationSeconds": 61,
+      "startSeconds": 0,
+      "sourceFulltextVerified": false,
+      "sources": [
+        {
+          "title": "Communiqué médical de Militão",
+          "url": "https://www.realmadrid.com/fr-FR/actualites/football/equipe-premiere/rapports-medicaux/parte-medico-09-11-2024",
+          "publishedAt": "2024-11-09",
+          "verified": true,
+          "claims": [
+            "右膝 ACL 完全斷裂，合併兩側半月板損傷。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Militão medical report",
+          "url": "https://www.realmadrid.com/en-US/news/football/first-team/medical-reports/parte-medico-19-11-2024",
+          "publishedAt": "2024-11-19",
+          "verified": true,
+          "claims": [
+            "右膝 ACL 手術完成，由 Manuel Leyes 執刀。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Real Madrid：El regreso de Carvajal y Militão",
+          "url": "https://www.realmadrid.com/es-ES/noticias/futbol/primer-equipo/actualidad/el-regreso-de-carvajal-y-militao-10-07-2025",
+          "publishedAt": "2025-07-10",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": true,
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "verificationMethod": "web-fulltext-read-during-document-sync",
+          "sourceRole": "event-report",
+          "claims": [
+            "世俱盃準決賽兩人實際回場；Carvajal 第 71 分鐘、Militão 第 64 分鐘替補。",
+            "此文刊登 2025-07-10；比賽日須與 7 月 9 日的同場報導互證。"
+          ]
+        },
+        {
+          "title": "Real Madrid：Militão spielt acht Monate später wieder",
+          "url": "https://www.realmadrid.com/de-DE/news/fussball/erste-mannshaft/latest-news/militao-reaparece-8-meses-despues-09-07-2025",
+          "publishedAt": "2025-07-09",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": true,
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "verificationMethod": "web-fulltext-read-during-document-sync",
+          "sourceRole": "event-report",
+          "claims": [
+            "2025-07-09 世俱盃準決賽對 PSG，Militão 第 64 分鐘替補回場。"
+          ]
+        },
+        {
+          "title": "Video 4Football：Eder Militao CRAZY Injury against Osasuna 🤕",
+          "url": "https://www.youtube.com/watch?v=mmngoDkXwxc",
+          "publishedAt": "2024-11-09",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": false,
+          "verifiedBy": [
+            "root"
+          ],
+          "verificationMethod": "root-video-review-record",
+          "sourceRole": "observation-video",
+          "claims": [
+            "僅用於可見賽事動作與敘事背景；診斷依事件報導。"
+          ],
+          "viewedByResearcher": false
+        },
+        {
+          "title": "AAOS：前十字韌帶傷害",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+          "publishedAt": null,
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": false,
+          "fulltextVerified": false,
+          "verifiedBy": [],
+          "verificationMethod": "product-reference-present-no-fulltext-record-in-this-research-package",
+          "sourceRole": "general-background",
+          "claims": [],
+          "verificationLimit": "本次同步未查核此一般衛教頁全文；不能沿用個案事件報導的全文旗標。"
+        }
+      ],
+      "milestones": [
+        {
+          "date": "2024-11-09",
+          "title": "右膝受傷與診斷公布",
+          "text": "球團確認右膝 ACL 完全斷裂，合併內、外側半月板損傷。",
+          "sourceIndexes": [
+            0
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-11-19",
+          "title": "右膝 ACL 手術",
+          "text": "球隊公告完成手術，將開始復原。",
+          "sourceIndexes": [
+            1
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2025-07-09",
+          "title": "傷後再度出賽",
+          "text": "在世俱盃對 Paris Saint-Germain 的準決賽，第 64 分鐘替補出賽。",
+          "sourceIndexes": [
+            2,
+            3
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        }
+      ],
+      "mechanismNotes": "這是 2024 年右膝事件，不能混用 2023 年左膝 ACL 傷勢或影片。不可由畫面自行判定兩個半月板都在同一瞬間受損。",
+      "returnDate": "2025-07-09",
+      "returnSummary": "2025-07-09 在世俱盃準決賽對 PSG 替補出賽。",
+      "textResearchStatus": "selected-case-event-reports-verified-product-synced",
+      "eligibilityReason": "日期在指定窗口內；與既有事件不重複；已讀可靠診斷及後續來源全文，可依所列證據邊界撰寫。",
+      "clinicalApproval": false,
+      "sourceCheckedAt": "2026-09-12",
+      "videoMetadataFile": "/private/tmp/atlas-recent-video-metadata/eder-militao-acl-2024.json",
+      "initialResearchNotes": "搜尋取得公告摘要；open timeout，需重試其他語系後才算全文確證",
+      "initialResearchSourceFulltextVerified": true,
+      "selectedFor120": true,
+      "initialResearchReturn": {
+        "date": null,
+        "summary": "此輪未確證實際重返正式比賽日期；不可把手術、訓練或預測期限當成回場。"
+      },
+      "initialResearchMilestones": [
+        {
+          "date": "2024-11-09",
+          "title": "右膝受傷與診斷公布",
+          "text": "球團確認右膝 ACL 完全斷裂，合併內、外側半月板損傷。",
+          "sourceIndexes": [
+            0
+          ]
+        },
+        {
+          "date": "2024-11-19",
+          "title": "右膝 ACL 手術",
+          "text": "球隊公告完成手術，將開始復原。",
+          "sourceIndexes": [
+            1
+          ]
+        }
+      ],
+      "returnDateMeaning": "documented-return",
+      "publisher": "Video 4Football",
+      "sourceTitle": "Eder Militao CRAZY Injury against Osasuna 🤕",
+      "observation": "賽事片段呈現禁區內受傷及離場；應辨認本次是右膝事件。",
+      "videoVerification": {
+        "researcherViewed": false,
+        "researcherReview": null,
+        "rootVisualReview": {
+          "status": "contact-sheet-and-relevant-sequence",
+          "reviewedBy": "root",
+          "evidenceFile": "docs/reviews/2026-09-12-recent-120/case-review.json",
+          "observationFromFinalProduct": "賽事片段呈現禁區內受傷及離場；應辨認本次是右膝事件。"
+        },
+        "rootOembed": {
+          "slug": "eder-militao-acl-2024",
+          "videoId": "mmngoDkXwxc",
+          "checkedAt": "2026-09-12T15:27:58.024833+00:00",
+          "status": "available",
+          "title": "Eder Militao CRAZY Injury against Osasuna 🤕",
+          "publisher": "Video 4Football"
+        },
+        "rootNativePlayback": {
+          "url": "https://www.youtube.com/watch?v=mmngoDkXwxc",
+          "path": "/videos/eder-militao-acl-2024/",
+          "startSeconds": 0,
+          "origin": "https://a4526742.sports-injury-atlas.pages.dev",
+          "checkedAt": "2026-09-12T15:29:51.987Z",
+          "status": "played",
+          "before": {
+            "time": 0,
+            "paused": true,
+            "readyState": 0
+          },
+          "after": {
+            "time": 1.015691,
+            "paused": false,
+            "readyState": 4
+          },
+          "captionControls": [
+            "字幕/CC 已關閉"
+          ]
+        },
+        "nativePlaybackEvidenceFile": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+        "scope": "影片可播放、片段觀察與文字全文查核各自記錄；不表示字幕、版權或臨床簽核。"
+      },
+      "eventReportsFulltextVerified": true,
+      "sourceVerificationCounts": {
+        "eventReportsFulltext": 4,
+        "videoDescriptionsRead": 0,
+        "generalBackgroundWithoutFulltextRecord": 1
+      },
+      "productSnapshot": {
+        "eventDate": "2024-11-09",
+        "injury": "公開報導記載：右膝 ACL 完全撕裂及兩側半月板損傷。",
+        "returnDate": "2025-07-09",
+        "returnSummary": "2025-07-09 在世俱盃準決賽對 PSG 替補出賽。",
+        "videoId": "mmngoDkXwxc",
+        "sourceCount": 6,
+        "timelineCount": 3
+      }
+    },
+    {
+      "slug": "carolina-marin-acl-2024",
+      "name": "Carolina Marín",
+      "sport": "羽球",
+      "eventDate": "2024-08-04",
+      "injury": "右膝 ACL 移植物斷裂，合併內、外側半月板損傷",
+      "priority": 11,
+      "primarySource": "https://www.badminton.es/news/154258/Parte-medico-Carolina-Marin-Se-confirma-la-rotura-del-ligamento-cruzado-anterior-de-la-rodilla-derecha",
+      "notes": "官方全文確認本次右 ACL 移植物及內外側半月板傷勢、2024-08-07 手術與 2026-03-26 退休；沒有據此填造回場日。",
+      "duplicate": false,
+      "videoId": "Hk46I0O_mjU",
+      "videoUrl": "https://www.youtube.com/watch?v=Hk46I0O_mjU",
+      "videoStatus": "root-preview-native-played-and-visual-review-recorded",
+      "durationSeconds": 131,
+      "startSeconds": 12,
+      "sourceFulltextVerified": false,
+      "sources": [
+        {
+          "title": "Parte médico - Carolina Marín: Se confirma la rotura del ligamento cruzado anterior de la rodilla derecha",
+          "url": "https://www.badminton.es/news/154258/Parte-medico-Carolina-Marin-Se-confirma-la-rotura-del-ligamento-cruzado-anterior-de-la-rodilla-derecha",
+          "publishedAt": "2024-08-05",
+          "verified": true,
+          "claims": [
+            "右膝 ACL 移植物斷裂，內外側半月板損傷。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Carolina Marín, operada con éxito de la rodilla lesionada en los Juegos Olímpicos de París 2024",
+          "url": "https://www.badminton.es/news/154265/Carolina-Marin-operada-con-exito-de-la-rodilla-lesionada-en-los-Juegos-Olimpicos-de-Paris-2024",
+          "publishedAt": "2024-08-07",
+          "verified": true,
+          "claims": [
+            "8 月 7 日 Manuel Leyes 執刀手術完成。",
+            "報導描述巴黎奧運側向移動後落地受傷。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Carolina Marín anuncia su retirada del bádminton",
+          "url": "https://www.badminton.es/news/163011/Carolina-Marin-anuncia-su-retirada-del-badminton",
+          "publishedAt": "2026-03-26",
+          "verified": true,
+          "claims": [
+            "宣布退出職業羽球，不參加 Huelva 2026 歐錦賽。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "LaVanguardia：Carolina Marín se quiebra la rodilla y abandona los Juegos entre lágrimas",
+          "url": "https://www.youtube.com/watch?v=Hk46I0O_mjU",
+          "publishedAt": "2024-08-04",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": false,
+          "verifiedBy": [
+            "root"
+          ],
+          "verificationMethod": "root-video-review-record",
+          "sourceRole": "observation-video",
+          "claims": [
+            "僅用於可見賽事動作與敘事背景；診斷依事件報導。"
+          ],
+          "viewedByResearcher": false
+        },
+        {
+          "title": "AAOS：前十字韌帶傷害",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+          "publishedAt": null,
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": false,
+          "fulltextVerified": false,
+          "verifiedBy": [],
+          "verificationMethod": "product-reference-present-no-fulltext-record-in-this-research-package",
+          "sourceRole": "general-background",
+          "claims": [],
+          "verificationLimit": "本次同步未查核此一般衛教頁全文；不能沿用個案事件報導的全文旗標。"
+        }
+      ],
+      "milestones": [
+        {
+          "date": "2024-08-04",
+          "title": "巴黎奧運準決賽右膝受傷",
+          "text": "比賽中受傷，無法完成比賽。",
+          "sourceIndexes": [
+            1
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-08-05",
+          "title": "協會公布檢查結果",
+          "text": "右膝 ACL 移植物斷裂，合併內外側半月板損傷。",
+          "sourceIndexes": [
+            0
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-08-07",
+          "title": "右膝手術",
+          "text": "協會公告手術完成。",
+          "sourceIndexes": [
+            1
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2026-03-26",
+          "title": "宣布結束職業生涯",
+          "text": "協會確認退出職業羽球，也不會參加 Huelva 歐錦賽。",
+          "sourceIndexes": [
+            2
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        }
+      ],
+      "mechanismNotes": "這是 2024 年右膝再傷，與本站 2019 年事件不同。可描述跳躍、側移與落地；斷裂結構依協會檢查，不由影片自行診斷。",
+      "returnDate": null,
+      "returnSummary": "2026-03-26 宣布結束職業生涯；本頁沒有列出傷後正式回場日期。",
+      "textResearchStatus": "selected-case-event-reports-verified-product-synced",
+      "eligibilityReason": "日期在指定窗口內；與既有事件不重複；已讀可靠診斷及後續來源全文，可依所列證據邊界撰寫。",
+      "clinicalApproval": false,
+      "sourceCheckedAt": "2026-09-12",
+      "videoMetadataFile": "/private/tmp/atlas-recent-video-metadata/carolina-marin-acl-2024.json",
+      "initialResearchNotes": "全文已讀；與現有 2019 同膝事件不同；2024-08-07 手術全文也已讀",
+      "initialResearchSourceFulltextVerified": true,
+      "selectedFor120": true,
+      "initialResearchReturn": {
+        "date": null,
+        "summary": "2026 年 3 月 26 日官方宣布退役；未設實際回場日期。"
+      },
+      "initialResearchMilestones": [
+        {
+          "date": "2024-08-04",
+          "title": "巴黎奧運準決賽右膝受傷",
+          "text": "比賽中受傷，無法完成比賽。",
+          "sourceIndexes": [
+            1
+          ]
+        },
+        {
+          "date": "2024-08-05",
+          "title": "協會公布檢查結果",
+          "text": "右膝 ACL 移植物斷裂，合併內外側半月板損傷。",
+          "sourceIndexes": [
+            0
+          ]
+        },
+        {
+          "date": "2024-08-07",
+          "title": "右膝手術",
+          "text": "協會公告手術完成。",
+          "sourceIndexes": [
+            1
+          ]
+        },
+        {
+          "date": "2026-03-26",
+          "title": "宣布結束職業生涯",
+          "text": "協會確認退出職業羽球，也不會參加 Huelva 歐錦賽。",
+          "sourceIndexes": [
+            2
+          ]
+        }
+      ],
+      "returnDateMeaning": "no-return-record-retirement-reported",
+      "publisher": "LaVanguardia",
+      "sourceTitle": "Carolina Marín se quiebra la rodilla y abandona los Juegos entre lágrimas",
+      "observation": "La Vanguardia 新聞呈現巴黎奧運受傷、嘗試續賽與退場的過程。",
+      "videoVerification": {
+        "researcherViewed": false,
+        "researcherReview": null,
+        "rootVisualReview": {
+          "status": "contact-sheet-and-relevant-sequence",
+          "reviewedBy": "root",
+          "evidenceFile": "docs/reviews/2026-09-12-recent-120/case-review.json",
+          "observationFromFinalProduct": "La Vanguardia 新聞呈現巴黎奧運受傷、嘗試續賽與退場的過程。"
+        },
+        "rootOembed": {
+          "slug": "carolina-marin-acl-2024",
+          "videoId": "Hk46I0O_mjU",
+          "checkedAt": "2026-09-12T15:27:58.020113+00:00",
+          "status": "available",
+          "title": "Carolina Marín se quiebra la rodilla y abandona los Juegos entre lágrimas",
+          "publisher": "La Vanguardia"
+        },
+        "rootNativePlayback": {
+          "url": "https://www.youtube.com/watch?v=Hk46I0O_mjU",
+          "path": "/videos/carolina-marin-acl-2024/",
+          "startSeconds": 12,
+          "origin": "https://a4526742.sports-injury-atlas.pages.dev",
+          "checkedAt": "2026-09-12T15:29:56.405Z",
+          "status": "played",
+          "before": {
+            "time": 0,
+            "paused": true,
+            "readyState": 0
+          },
+          "after": {
+            "time": 13.00822,
+            "paused": false,
+            "readyState": 4
+          },
+          "captionControls": [
+            "這部影片未提供字幕"
+          ]
+        },
+        "nativePlaybackEvidenceFile": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+        "scope": "影片可播放、片段觀察與文字全文查核各自記錄；不表示字幕、版權或臨床簽核。"
+      },
+      "eventReportsFulltextVerified": true,
+      "sourceVerificationCounts": {
+        "eventReportsFulltext": 3,
+        "videoDescriptionsRead": 0,
+        "generalBackgroundWithoutFulltextRecord": 1
+      },
+      "productSnapshot": {
+        "eventDate": "2024-08-04",
+        "injury": "公開報導記載：右膝 ACL 移植物斷裂，合併內、外側半月板損傷。",
+        "returnDate": null,
+        "returnSummary": "2026-03-26 宣布結束職業生涯；本頁沒有列出傷後正式回場日期。",
+        "videoId": "Hk46I0O_mjU",
+        "sourceCount": 5,
+        "timelineCount": 4
+      }
+    },
+    {
+      "slug": "jonas-vingegaard-crash-2024",
+      "name": "Jonas Vingegaard",
+      "sport": "自行車",
+      "eventDate": "2024-04-04",
+      "injury": "鎖骨與多根肋骨骨折、肺挫傷及氣胸（公告未註明側別）",
+      "priority": 12,
+      "primarySource": "https://www.teamvismaleaseabike.com/news/news/update-jonas-vingegaard/",
+      "notes": "車隊全文及 RTVE 已確認胸部傷勢、住院與出院後續；2024-06-29 完成環法第一站已有正式結果。此日期代表已參賽，未藉完整賽歷證明它是最早回場。",
+      "duplicate": false,
+      "videoId": "r58I6buCUA0",
+      "videoUrl": "https://www.youtube.com/watch?v=r58I6buCUA0",
+      "videoStatus": "root-preview-native-played-and-visual-review-recorded",
+      "durationSeconds": 90,
+      "startSeconds": 0,
+      "sourceFulltextVerified": false,
+      "sources": [
+        {
+          "title": "Update | Jonas Vingegaard",
+          "url": "https://www.teamvismaleaseabike.com/news/news/update-jonas-vingegaard/",
+          "publishedAt": "2024-04-05",
+          "verified": true,
+          "claims": [
+            "鎖骨與多根肋骨骨折；追加檢查確認肺挫傷與氣胸。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Jonas Vingegaard recibe el alta hospitalaria tras 12 días ingresado",
+          "url": "https://www.rtve.es/deportes/20240416/jonas-vingegaard-recibe-alta-hospitalaria-tras-12-dias-ingresado/16063129.shtml",
+          "publishedAt": "2024-04-16",
+          "verified": true,
+          "claims": [
+            "4 月 4 日 Itzulia 第四站事故；住院 12 天後 4 月 16 日出院。",
+            "已接受鎖骨手術；文中不給手術精確日期。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Van Aert third in tough opening stage Tour de France",
+          "url": "https://www.teamvismaleaseabike.com/race-report/news/van-aert-third-in-tough-opening-stage-tour-de-france/",
+          "publishedAt": "2024-06-29",
+          "verified": true,
+          "claims": [
+            "2024 Tour de France 第一站，Vingegaard 完賽第 16 名。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "FloBikes：Remco Evenepoel, Jonas Vingegaard, Primoz Roglic in Serious Tour of Basque Country Crash",
+          "url": "https://www.youtube.com/watch?v=r58I6buCUA0",
+          "publishedAt": "2024-04-04",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": false,
+          "verifiedBy": [
+            "root"
+          ],
+          "verificationMethod": "root-video-review-record",
+          "sourceRole": "observation-video",
+          "claims": [
+            "僅用於可見賽事動作與敘事背景；診斷依事件報導。"
+          ],
+          "viewedByResearcher": false
+        },
+        {
+          "title": "MedlinePlus：氣胸",
+          "url": "https://www.medlineplus.gov/ency/article/000087.htm",
+          "publishedAt": null,
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": false,
+          "fulltextVerified": false,
+          "verifiedBy": [],
+          "verificationMethod": "product-reference-present-no-fulltext-record-in-this-research-package",
+          "sourceRole": "general-background",
+          "claims": [],
+          "verificationLimit": "本次同步未查核此一般衛教頁全文；不能沿用個案事件報導的全文旗標。"
+        }
+      ],
+      "milestones": [
+        {
+          "date": "2024-04-04",
+          "title": "Itzulia 第四站摔車",
+          "text": "重大摔車後住院，後續檢查確認胸部與骨骼損傷。",
+          "sourceIndexes": [
+            1
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-04-05",
+          "title": "追加檢查確認胸部傷勢",
+          "text": "車隊公布肺挫傷、氣胸，另有鎖骨與多根肋骨骨折。",
+          "sourceIndexes": [
+            0
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-04-16",
+          "title": "出院繼續復原",
+          "text": "RTVE 引述車隊公布出院，並確認先前接受鎖骨手術。",
+          "sourceIndexes": [
+            1
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-06-29",
+          "title": "已重返環法正式賽事",
+          "text": "完成環法第一站，列第 16 名；以官方賽後結果證實參賽。",
+          "sourceIndexes": [
+            2
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        }
+      ],
+      "mechanismNotes": "高速過彎、離開路面與碰撞環境可觀察；胸部傷勢須以車隊醫療更新為準。不能只靠倒地姿勢估計撞擊力、骨折側別或氣胸嚴重度。",
+      "returnDate": "2024-06-29",
+      "returnSummary": "2024-06-29 已參加環法自行車賽，完成第一站正式賽事。 本研究確認已參賽，未以完整賽歷確證最早回場。",
+      "textResearchStatus": "selected-case-event-reports-verified-product-synced",
+      "eligibilityReason": "日期在指定窗口內；與既有事件不重複；已讀可靠診斷及後續來源全文，可依所列證據邊界撰寫。",
+      "clinicalApproval": false,
+      "sourceCheckedAt": "2026-09-12",
+      "videoMetadataFile": "/private/tmp/atlas-recent-video-metadata/jonas-vingegaard-crash-2024.json",
+      "initialResearchNotes": "全文已讀；4 月 5 日更新追加肺傷；後續手術／回場待補",
+      "initialResearchSourceFulltextVerified": true,
+      "selectedFor120": true,
+      "initialResearchReturn": {
+        "date": null,
+        "summary": "2024-06-29 已完成正式環法賽事；此輪未用完整賽歷確證它是否最早正式回場，returnDate 保留 null。"
+      },
+      "initialResearchMilestones": [
+        {
+          "date": "2024-04-04",
+          "title": "Itzulia 第四站摔車",
+          "text": "重大摔車後住院，後續檢查確認胸部與骨骼損傷。",
+          "sourceIndexes": [
+            1
+          ]
+        },
+        {
+          "date": "2024-04-05",
+          "title": "追加檢查確認胸部傷勢",
+          "text": "車隊公布肺挫傷、氣胸，另有鎖骨與多根肋骨骨折。",
+          "sourceIndexes": [
+            0
+          ]
+        },
+        {
+          "date": "2024-04-16",
+          "title": "出院繼續復原",
+          "text": "RTVE 引述車隊公布出院，並確認先前接受鎖骨手術。",
+          "sourceIndexes": [
+            1
+          ]
+        },
+        {
+          "date": "2024-06-29",
+          "title": "已重返環法正式賽事",
+          "text": "完成環法第一站，列第 16 名；以官方賽後結果證實參賽。",
+          "sourceIndexes": [
+            2
+          ]
+        }
+      ],
+      "returnDateMeaning": "documented-competition-participation-first-return-not-proven",
+      "publisher": "FloBikes",
+      "sourceTitle": "Remco Evenepoel, Jonas Vingegaard, Primoz Roglic in Serious Tour of Basque Country Crash",
+      "observation": "FloBikes 的事故回顧呈現集團摔車與救援；多名選手的診斷需分別閱讀。",
+      "videoVerification": {
+        "researcherViewed": false,
+        "researcherReview": null,
+        "rootVisualReview": {
+          "status": "contact-sheet-and-relevant-sequence",
+          "reviewedBy": "root",
+          "evidenceFile": "docs/reviews/2026-09-12-recent-120/case-review.json",
+          "observationFromFinalProduct": "FloBikes 的事故回顧呈現集團摔車與救援；多名選手的診斷需分別閱讀。"
+        },
+        "rootOembed": {
+          "slug": "jonas-vingegaard-crash-2024",
+          "videoId": "r58I6buCUA0",
+          "checkedAt": "2026-09-12T15:27:58.025167+00:00",
+          "status": "available",
+          "title": "Remco Evenepoel, Jonas Vingegaard, Primoz Roglic in Serious Tour of Basque Country Crash",
+          "publisher": "FloBikes"
+        },
+        "rootNativePlayback": {
+          "url": "https://www.youtube.com/watch?v=r58I6buCUA0",
+          "path": "/videos/jonas-vingegaard-crash-2024/",
+          "startSeconds": 0,
+          "origin": "https://a4526742.sports-injury-atlas.pages.dev",
+          "checkedAt": "2026-09-12T15:30:00.916Z",
+          "status": "played",
+          "before": {
+            "time": 0,
+            "paused": true,
+            "readyState": 0
+          },
+          "after": {
+            "time": 1.008355,
+            "paused": false,
+            "readyState": 4
+          },
+          "captionControls": [
+            "字幕/CC 已關閉"
+          ]
+        },
+        "nativePlaybackEvidenceFile": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+        "scope": "影片可播放、片段觀察與文字全文查核各自記錄；不表示字幕、版權或臨床簽核。"
+      },
+      "eventReportsFulltextVerified": true,
+      "sourceVerificationCounts": {
+        "eventReportsFulltext": 3,
+        "videoDescriptionsRead": 0,
+        "generalBackgroundWithoutFulltextRecord": 1
+      },
+      "productSnapshot": {
+        "eventDate": "2024-04-04",
+        "injury": "公開報導記載：鎖骨與多根肋骨骨折、肺挫傷及氣胸。",
+        "returnDate": "2024-06-29",
+        "returnSummary": "2024-06-29 已參加環法自行車賽，完成第一站正式賽事。",
+        "videoId": "r58I6buCUA0",
+        "sourceCount": 5,
+        "timelineCount": 4
+      }
+    },
+    {
+      "slug": "wout-van-aert-crash-2024",
+      "name": "Wout van Aert",
+      "sport": "自行車",
+      "eventDate": "2024-03-27",
+      "injury": "鎖骨、肋骨與胸骨骨折（車隊公告未完整註明側別）",
+      "priority": 13,
+      "primarySource": "https://www.cyclingnews.com/news/wout-van-aert-jasper-stuyven-complete-successful-fracture-surgery-after-dwars-door-vlaanderen-crash/",
+      "notes": "車隊原文已確認多處骨折、2024-03-28 手術及 2024-05-23 環挪威首次回場；不再是只有搜尋摘要的候選。",
+      "duplicate": false,
+      "videoId": "x4QE1G_VXxw",
+      "videoUrl": "https://www.youtube.com/watch?v=x4QE1G_VXxw",
+      "videoStatus": "root-preview-native-played-and-visual-review-recorded",
+      "durationSeconds": 188,
+      "startSeconds": 0,
+      "sourceFulltextVerified": false,
+      "sources": [
+        {
+          "title": "Update Wout van Aert",
+          "url": "https://www.teamvismaleaseabike.nl/nieuws/nieuws/update-wout-van-aert-2/",
+          "publishedAt": "2024-03-28",
+          "verified": true,
+          "claims": [
+            "周四完成手術；鎖骨、肋骨及胸骨骨折。",
+            "當時無法確定恢復需要多久。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Van Aert experiences successful comeback in Tour of Norway, strong performance Lemmen",
+          "url": "https://www.teamvismaleaseabike.com/race-report/news/van-aert-experiences-succesful-comeback-in-tour-of-norway-strong-performance-lemmen/",
+          "publishedAt": "2024-05-23",
+          "verified": true,
+          "claims": [
+            "Dwars door Vlaanderen 事故後首次正式參賽，完成挪威賽第一站。",
+            "選手指出競賽狀態仍有距離。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Wout van Aert: Visma-Lease a Bike star to miss Tour of Flanders and Paris-Roubaix through injury",
+          "url": "https://www.bbc.co.uk/sport/cycling/68680056",
+          "publishedAt": "2024-03-27",
+          "verified": true,
+          "claims": [
+            "當日 Dwars door Vlaanderen 高速摔車受傷。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "TNT Sports Cycling：💥 HUGE CRASH in Dwars door Vlaanderen wipes out Wout van Aert, Mads Pedersen and Biniam Girmay 🤕",
+          "url": "https://www.youtube.com/watch?v=x4QE1G_VXxw",
+          "publishedAt": "2024-03-27",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": false,
+          "verifiedBy": [
+            "root"
+          ],
+          "verificationMethod": "root-video-review-record",
+          "sourceRole": "observation-video",
+          "claims": [
+            "僅用於可見賽事動作與敘事背景；診斷依事件報導。"
+          ],
+          "viewedByResearcher": false
+        },
+        {
+          "title": "AAOS：骨折與外力",
+          "url": "https://www.orthoinfo.org/diseases--conditions/fractures-broken-bones/",
+          "publishedAt": null,
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": false,
+          "fulltextVerified": false,
+          "verifiedBy": [],
+          "verificationMethod": "product-reference-present-no-fulltext-record-in-this-research-package",
+          "sourceRole": "general-background",
+          "claims": [],
+          "verificationLimit": "本次同步未查核此一般衛教頁全文；不能沿用個案事件報導的全文旗標。"
+        }
+      ],
+      "milestones": [
+        {
+          "date": "2024-03-27",
+          "title": "Dwars door Vlaanderen 摔車",
+          "text": "事故導致多處骨折，退出春季賽事。",
+          "sourceIndexes": [
+            0,
+            2
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-03-28",
+          "title": "完成手術",
+          "text": "車隊確認鎖骨、肋骨與胸骨骨折，手術後進入復原。",
+          "sourceIndexes": [
+            0
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-05-23",
+          "title": "重返正式賽事",
+          "text": "完成 Tour of Norway 第一站；車隊明確稱為事故後首次參賽。",
+          "sourceIndexes": [
+            1
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        }
+      ],
+      "mechanismNotes": "集團內高速摔車與碰撞地面可觀察；勿由受傷外觀推算骨折數量或每處損傷的力學次序。",
+      "returnDate": "2024-05-23",
+      "returnSummary": "2024-05-23 重返環挪威正式賽事，選手表示競賽狀態仍在恢復。",
+      "textResearchStatus": "selected-case-event-reports-verified-product-synced",
+      "eligibilityReason": "日期在指定窗口內；與既有事件不重複；已讀可靠診斷及後續來源全文，可依所列證據邊界撰寫。",
+      "clinicalApproval": false,
+      "sourceCheckedAt": "2026-09-12",
+      "videoMetadataFile": "/private/tmp/atlas-recent-video-metadata/wout-van-aert-crash-2024.json",
+      "initialResearchNotes": "搜尋定位引述車隊，待官方全文",
+      "initialResearchSourceFulltextVerified": true,
+      "selectedFor120": true,
+      "initialResearchReturn": {
+        "date": "2024-05-23",
+        "summary": "已回到正式公路賽；選手同時表示尚未恢復以往競賽狀態。"
+      },
+      "initialResearchMilestones": [
+        {
+          "date": "2024-03-27",
+          "title": "Dwars door Vlaanderen 摔車",
+          "text": "事故導致多處骨折，退出春季賽事。",
+          "sourceIndexes": [
+            0,
+            2
+          ]
+        },
+        {
+          "date": "2024-03-28",
+          "title": "完成手術",
+          "text": "車隊確認鎖骨、肋骨與胸骨骨折，手術後進入復原。",
+          "sourceIndexes": [
+            0
+          ]
+        },
+        {
+          "date": "2024-05-23",
+          "title": "重返正式賽事",
+          "text": "完成 Tour of Norway 第一站；車隊明確稱為事故後首次參賽。",
+          "sourceIndexes": [
+            1
+          ]
+        }
+      ],
+      "returnDateMeaning": "documented-return",
+      "publisher": "TNT Sports Cycling",
+      "sourceTitle": "💥 HUGE CRASH in Dwars door Vlaanderen wipes out Wout van Aert, Mads Pedersen and Biniam Girmay 🤕",
+      "observation": "TNT Sports Cycling 呈現集團摔車與 Van Aert 離場的畫面。",
+      "videoVerification": {
+        "researcherViewed": false,
+        "researcherReview": null,
+        "rootVisualReview": {
+          "status": "contact-sheet-and-relevant-sequence",
+          "reviewedBy": "root",
+          "evidenceFile": "docs/reviews/2026-09-12-recent-120/case-review.json",
+          "observationFromFinalProduct": "TNT Sports Cycling 呈現集團摔車與 Van Aert 離場的畫面。"
+        },
+        "rootOembed": {
+          "slug": "wout-van-aert-crash-2024",
+          "videoId": "x4QE1G_VXxw",
+          "checkedAt": "2026-09-12T15:27:58.058347+00:00",
+          "status": "available",
+          "title": "💥 HUGE CRASH in Dwars door Vlaanderen wipes out Wout van Aert, Mads Pedersen and Biniam Girmay 🤕",
+          "publisher": "TNT Sports Cycling"
+        },
+        "rootNativePlayback": {
+          "url": "https://www.youtube.com/watch?v=x4QE1G_VXxw",
+          "path": "/videos/wout-van-aert-crash-2024/",
+          "startSeconds": 0,
+          "origin": "https://a4526742.sports-injury-atlas.pages.dev",
+          "checkedAt": "2026-09-12T15:30:04.878Z",
+          "status": "played",
+          "before": {
+            "time": 0,
+            "paused": true,
+            "readyState": 0
+          },
+          "after": {
+            "time": 1.009699,
+            "paused": false,
+            "readyState": 4
+          },
+          "captionControls": [
+            "字幕/CC 已關閉"
+          ]
+        },
+        "nativePlaybackEvidenceFile": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+        "scope": "影片可播放、片段觀察與文字全文查核各自記錄；不表示字幕、版權或臨床簽核。"
+      },
+      "eventReportsFulltextVerified": true,
+      "sourceVerificationCounts": {
+        "eventReportsFulltext": 3,
+        "videoDescriptionsRead": 0,
+        "generalBackgroundWithoutFulltextRecord": 1
+      },
+      "productSnapshot": {
+        "eventDate": "2024-03-27",
+        "injury": "公開報導記載：鎖骨、肋骨與胸骨骨折。",
+        "returnDate": "2024-05-23",
+        "returnSummary": "2024-05-23 重返環挪威正式賽事，選手表示競賽狀態仍在恢復。",
+        "videoId": "x4QE1G_VXxw",
+        "sourceCount": 5,
+        "timelineCount": 3
+      }
+    },
+    {
+      "slug": "ronald-acuna-acl-2024",
+      "name": "Ronald Acuña Jr.",
+      "sport": "棒球",
+      "eventDate": "2024-05-26",
+      "injury": "左膝 ACL 完全撕裂",
+      "priority": 14,
+      "primarySource": "https://www.mlb.com/mets/news/ronald-acuna-jr-exits-game-vs-pirates",
+      "notes": "MLB 初診與回場全文已核實，本次為 2024 左 ACL，與既有 2021 右 ACL 事件不同；2025-05-23 為 MLB 回場。",
+      "duplicate": false,
+      "videoId": "S2NsAbb8MNg",
+      "videoUrl": "https://www.youtube.com/watch?v=S2NsAbb8MNg",
+      "videoStatus": "root-preview-native-played-and-visual-review-recorded",
+      "durationSeconds": 199,
+      "startSeconds": 14,
+      "sourceFulltextVerified": false,
+      "sources": [
+        {
+          "title": "Acuña has torn ACL, will miss rest of season",
+          "url": "https://www.mlb.com/mets/news/ronald-acuna-jr-exits-game-vs-pirates",
+          "publishedAt": "2024-05-27",
+          "verified": true,
+          "claims": [
+            "5 月 26 日跑壘受傷；MRI 確认左 ACL 完全撕裂。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Acuña homers on first pitch of return to Braves lineup",
+          "url": "https://www.mlb.com/news/ronald-acuna-jr-makes-2025-season-debut",
+          "publishedAt": "2025-05-24",
+          "verified": true,
+          "claims": [
+            "5 月 23 日重返 MLB，首球全壘打。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "ESPN MLB：Braves star Ronald Acuña Jr. is out for the season with a torn ACL | ESPN MLB",
+          "url": "https://www.youtube.com/watch?v=S2NsAbb8MNg",
+          "publishedAt": "2024-05-26",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": false,
+          "verifiedBy": [
+            "root"
+          ],
+          "verificationMethod": "root-video-review-record",
+          "sourceRole": "observation-video",
+          "claims": [
+            "僅用於可見賽事動作與敘事背景；診斷依事件報導。"
+          ],
+          "viewedByResearcher": false
+        },
+        {
+          "title": "AAOS：前十字韌帶傷害",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+          "publishedAt": null,
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": false,
+          "fulltextVerified": false,
+          "verifiedBy": [],
+          "verificationMethod": "product-reference-present-no-fulltext-record-in-this-research-package",
+          "sourceRole": "general-background",
+          "claims": [],
+          "verificationLimit": "本次同步未查核此一般衛教頁全文；不能沿用個案事件報導的全文旗標。"
+        }
+      ],
+      "milestones": [
+        {
+          "date": "2024-05-26",
+          "title": "對 Pirates 跑壘受傷",
+          "text": "左膝受傷退場，之後 MRI 確認 ACL 完全撕裂。",
+          "sourceIndexes": [
+            0
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-05-27",
+          "title": "確定賽季提前結束",
+          "text": "官方報導公布左膝 ACL 診斷。",
+          "sourceIndexes": [
+            0
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2025-05-23",
+          "title": "正式重返 MLB",
+          "text": "對 Padres 的首次打席擊出全壘打。",
+          "sourceIndexes": [
+            1
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        }
+      ],
+      "mechanismNotes": "2024 年是左膝，與本站 2021 年右膝 ACL 不同。起跑、回轉與膝部受力可觀察，但不能由影片推定原先韌帶狀態或鞋、場地是肇因。",
+      "returnDate": "2025-05-23",
+      "returnSummary": "2025-05-23 正式重返 MLB，回場的第一球即擊出全壘打。",
+      "textResearchStatus": "selected-case-event-reports-verified-product-synced",
+      "eligibilityReason": "日期在指定窗口內；與既有事件不重複；已讀可靠診斷及後續來源全文，可依所列證據邊界撰寫。",
+      "clinicalApproval": false,
+      "sourceCheckedAt": "2026-09-12",
+      "videoMetadataFile": "/private/tmp/atlas-recent-video-metadata/ronald-acuna-acl-2024.json",
+      "initialResearchNotes": "搜尋定位，待全文；與現有 2021 右膝事件不同",
+      "initialResearchSourceFulltextVerified": true,
+      "selectedFor120": true,
+      "initialResearchReturn": {
+        "date": "2025-05-23",
+        "summary": "此為 MLB 回場；小聯盟復健賽應另列，不當成同一日期。"
+      },
+      "initialResearchMilestones": [
+        {
+          "date": "2024-05-26",
+          "title": "對 Pirates 跑壘受傷",
+          "text": "左膝受傷退場，之後 MRI 確認 ACL 完全撕裂。",
+          "sourceIndexes": [
+            0
+          ]
+        },
+        {
+          "date": "2024-05-27",
+          "title": "確定賽季提前結束",
+          "text": "官方報導公布左膝 ACL 診斷。",
+          "sourceIndexes": [
+            0
+          ]
+        },
+        {
+          "date": "2025-05-23",
+          "title": "正式重返 MLB",
+          "text": "對 Padres 的首次打席擊出全壘打。",
+          "sourceIndexes": [
+            1
+          ]
+        }
+      ],
+      "returnDateMeaning": "documented-return",
+      "publisher": "ESPN MLB",
+      "sourceTitle": "Braves star Ronald Acuña Jr. is out for the season with a torn ACL | ESPN MLB",
+      "observation": "ESPN MLB 的傷勢報導回顧二壘附近的跑壘動作與退場。",
+      "videoVerification": {
+        "researcherViewed": false,
+        "researcherReview": null,
+        "rootVisualReview": {
+          "status": "contact-sheet-and-relevant-sequence",
+          "reviewedBy": "root",
+          "evidenceFile": "docs/reviews/2026-09-12-recent-120/case-review.json",
+          "observationFromFinalProduct": "ESPN MLB 的傷勢報導回顧二壘附近的跑壘動作與退場。"
+        },
+        "rootOembed": {
+          "slug": "ronald-acuna-acl-2024",
+          "videoId": "S2NsAbb8MNg",
+          "checkedAt": "2026-09-12T15:27:58.069761+00:00",
+          "status": "available",
+          "title": "Braves star Ronald Acuña Jr. is out for the season with a torn ACL | ESPN MLB",
+          "publisher": "ESPN MLB"
+        },
+        "rootNativePlayback": {
+          "url": "https://www.youtube.com/watch?v=S2NsAbb8MNg",
+          "path": "/videos/ronald-acuna-acl-2024/",
+          "startSeconds": 14,
+          "origin": "https://a4526742.sports-injury-atlas.pages.dev",
+          "checkedAt": "2026-09-12T15:31:35.667Z",
+          "status": "played",
+          "before": {
+            "time": 0,
+            "paused": true,
+            "readyState": 0
+          },
+          "after": {
+            "time": 15.0128,
+            "paused": false,
+            "readyState": 4
+          },
+          "captionControls": [
+            "字幕/CC 已關閉"
+          ]
+        },
+        "nativePlaybackEvidenceFile": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+        "scope": "影片可播放、片段觀察與文字全文查核各自記錄；不表示字幕、版權或臨床簽核。"
+      },
+      "eventReportsFulltextVerified": true,
+      "sourceVerificationCounts": {
+        "eventReportsFulltext": 2,
+        "videoDescriptionsRead": 0,
+        "generalBackgroundWithoutFulltextRecord": 1
+      },
+      "productSnapshot": {
+        "eventDate": "2024-05-26",
+        "injury": "公開報導記載：左膝 ACL 完全撕裂。",
+        "returnDate": "2025-05-23",
+        "returnSummary": "2025-05-23 正式重返 MLB，回場的第一球即擊出全壘打。",
+        "videoId": "S2NsAbb8MNg",
+        "sourceCount": 4,
+        "timelineCount": 3
+      }
+    },
+    {
+      "slug": "novak-djokovic-meniscus-2024",
+      "name": "Novak Djokovic",
+      "sport": "網球",
+      "eventDate": "2024-06-03",
+      "injury": "右膝內側半月板損傷",
+      "priority": 15,
+      "primarySource": "https://www.atptour.com/en/news/djokovic-roland-garros-2024-withdrawal",
+      "notes": "法網主辦單位與選手官網全文已取得，確認右膝內側半月板傷勢及 2024-07-02 術後首戰；先前 ATP 403 不再代表此例未有全文證據。",
+      "duplicate": false,
+      "videoId": "mF6QEVNcgD4",
+      "videoUrl": "https://www.youtube.com/watch?v=mF6QEVNcgD4",
+      "videoStatus": "root-preview-native-played-and-visual-review-recorded",
+      "durationSeconds": 194,
+      "startSeconds": 0,
+      "sourceFulltextVerified": false,
+      "sources": [
+        {
+          "title": "Novak Djokovic déclare forfait",
+          "url": "https://www.rolandgarros.com/fr-fr/article/novak-djokovic-declare-forfait-quarts-finale-2024",
+          "publishedAt": "2024-06-04",
+          "verified": true,
+          "claims": [
+            "6 月 3 日對 Cerundolo 後右膝不適；6 月 4 日 MRI 確認右內側半月板損傷並退賽。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Novak breezes through opening round at Wimbledon",
+          "url": "https://novakdjokovic.com/en/news/tennis/novak-breezes-through-opening-round-at-wimbledon/",
+          "publishedAt": "2024-07-02",
+          "verified": true,
+          "claims": [
+            "官方個人網站確認膝部手術後首戰，三盤擊敗 Vit Kopriva。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Tennis Channel：Novak Djokovic withdraws from Roland Garros with knee injury | The Break",
+          "url": "https://www.youtube.com/watch?v=mF6QEVNcgD4",
+          "publishedAt": "2024-06-04",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": false,
+          "verifiedBy": [
+            "root"
+          ],
+          "verificationMethod": "root-video-review-record",
+          "sourceRole": "observation-video",
+          "claims": [
+            "僅用於可見賽事動作與敘事背景；診斷依事件報導。"
+          ],
+          "viewedByResearcher": false
+        },
+        {
+          "title": "AAOS：半月板損傷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/meniscus-tears/",
+          "publishedAt": null,
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": false,
+          "fulltextVerified": false,
+          "verifiedBy": [],
+          "verificationMethod": "product-reference-present-no-fulltext-record-in-this-research-package",
+          "sourceRole": "general-background",
+          "claims": [],
+          "verificationLimit": "本次同步未查核此一般衛教頁全文；不能沿用個案事件報導的全文旗標。"
+        }
+      ],
+      "milestones": [
+        {
+          "date": "2024-06-03",
+          "title": "法網第四輪右膝症狀加劇",
+          "text": "對 Cerundolo 比賽期間出現右膝問題，仍完成比賽。",
+          "sourceIndexes": [
+            0
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-06-04",
+          "title": "公布膝傷並退出法網",
+          "text": "主辦單位公布右膝內側半月板損傷。",
+          "sourceIndexes": [
+            0
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-07-02",
+          "title": "手術後重返溫布頓",
+          "text": "選手官網確認為膝部手術後首戰，三盤獲勝。",
+          "sourceIndexes": [
+            1
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        }
+      ],
+      "mechanismNotes": "這是明確比賽中症狀加劇事件；先前曾有膝部不適，不宜宣稱影片中的一次滑動造成全部半月板損傷。手術確切術式與日期未在此兩來源完整公開，不自行補寫。",
+      "returnDate": "2024-07-02",
+      "returnSummary": "2024-07-02 在溫布頓首輪出賽，為膝部手術後首場比賽。",
+      "textResearchStatus": "selected-case-event-reports-verified-product-synced",
+      "eligibilityReason": "日期在指定窗口內；與既有事件不重複；已讀可靠診斷及後續來源全文，可依所列證據邊界撰寫。",
+      "clinicalApproval": false,
+      "sourceCheckedAt": "2026-09-12",
+      "videoMetadataFile": "/private/tmp/atlas-recent-video-metadata/novak-djokovic-meniscus-2024.json",
+      "initialResearchNotes": "搜尋定位 ATP，open 403；需替代法網官方全文；既往不適與本場惡化應分開",
+      "initialResearchSourceFulltextVerified": true,
+      "selectedFor120": true,
+      "initialResearchReturn": {
+        "date": "2024-07-02",
+        "summary": "選手官網確認為膝部手術後首場比賽；不能把短期回場速度套用到所有半月板手術。"
+      },
+      "initialResearchMilestones": [
+        {
+          "date": "2024-06-03",
+          "title": "法網第四輪右膝症狀加劇",
+          "text": "對 Cerundolo 比賽期間出現右膝問題，仍完成比賽。",
+          "sourceIndexes": [
+            0
+          ]
+        },
+        {
+          "date": "2024-06-04",
+          "title": "MRI 後退出法網",
+          "text": "主辦單位公布右膝內側半月板損傷。",
+          "sourceIndexes": [
+            0
+          ]
+        },
+        {
+          "date": "2024-07-02",
+          "title": "手術後重返溫布頓",
+          "text": "選手官網確認為膝部手術後首戰，三盤獲勝。",
+          "sourceIndexes": [
+            1
+          ]
+        }
+      ],
+      "returnDateMeaning": "documented-return",
+      "publisher": "Tennis Channel",
+      "sourceTitle": "Novak Djokovic withdraws from Roland Garros with knee injury | The Break",
+      "observation": "Tennis Channel 以新聞與照片整理法網退賽、膝部處理；此片沒有完整受傷動作，不據此判定精確機轉。",
+      "videoVerification": {
+        "researcherViewed": false,
+        "researcherReview": null,
+        "rootVisualReview": {
+          "status": "contact-sheet-and-relevant-sequence",
+          "reviewedBy": "root",
+          "evidenceFile": "docs/reviews/2026-09-12-recent-120/case-review.json",
+          "observationFromFinalProduct": "Tennis Channel 以新聞與照片整理法網退賽、膝部處理；此片沒有完整受傷動作，不據此判定精確機轉。"
+        },
+        "rootOembed": {
+          "slug": "novak-djokovic-meniscus-2024",
+          "videoId": "mF6QEVNcgD4",
+          "checkedAt": "2026-09-12T15:27:58.069583+00:00",
+          "status": "available",
+          "title": "Novak Djokovic withdraws from Roland Garros with knee injury | The Break",
+          "publisher": "Tennis Channel"
+        },
+        "rootNativePlayback": {
+          "url": "https://www.youtube.com/watch?v=mF6QEVNcgD4",
+          "path": "/videos/novak-djokovic-meniscus-2024/",
+          "startSeconds": 0,
+          "origin": "https://a4526742.sports-injury-atlas.pages.dev",
+          "checkedAt": "2026-09-12T15:30:31.336Z",
+          "status": "played",
+          "before": {
+            "time": 0,
+            "paused": true,
+            "readyState": 0
+          },
+          "after": {
+            "time": 1.015261,
+            "paused": false,
+            "readyState": 4
+          },
+          "captionControls": [
+            "字幕/CC 已關閉"
+          ]
+        },
+        "nativePlaybackEvidenceFile": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+        "scope": "影片可播放、片段觀察與文字全文查核各自記錄；不表示字幕、版權或臨床簽核。"
+      },
+      "eventReportsFulltextVerified": true,
+      "sourceVerificationCounts": {
+        "eventReportsFulltext": 2,
+        "videoDescriptionsRead": 0,
+        "generalBackgroundWithoutFulltextRecord": 1
+      },
+      "productSnapshot": {
+        "eventDate": "2024-06-03",
+        "injury": "公開報導記載：右膝內側半月板損傷。",
+        "returnDate": "2024-07-02",
+        "returnSummary": "2024-07-02 在溫布頓首輪出賽，為膝部手術後首場比賽。",
+        "videoId": "mF6QEVNcgD4",
+        "sourceCount": 4,
+        "timelineCount": 3
+      }
+    },
+    {
+      "slug": "kristaps-porzingis-retinaculum-2024",
+      "name": "Kristaps Porziņģis",
+      "sport": "籃球",
+      "eventDate": "2024-06-09",
+      "injury": "左側內側支持帶撕裂，合併脛後肌腱脫位",
+      "priority": 16,
+      "primarySource": "https://www.nba.com/celtics/news/press-release-20240611-kristaps-porzingis-injury-update",
+      "notes": "診斷、手術及術後回場報導已讀全文；新增 root Pass 2 的 Game 5 文章並再次核實。2024-06-17 帶傷參賽與 2024-11-25 術後回場分開。 root 另讀 PMC1888604 原始論文，只作支持帶固定肌腱的一般解剖說明，不推論個案術式。",
+      "duplicate": false,
+      "videoId": "0xVAWNzYcKE",
+      "videoUrl": "https://www.youtube.com/watch?v=0xVAWNzYcKE",
+      "videoStatus": "root-preview-native-played-and-visual-review-recorded",
+      "durationSeconds": 614,
+      "startSeconds": 0,
+      "sourceFulltextVerified": true,
+      "sources": [
+        {
+          "title": "Celtics Kristaps Porzingis misses Game 3 with left leg injury",
+          "url": "https://www.nba.com/news/nba-finals-porzingis-out-game-3",
+          "publishedAt": "2024-06-13",
+          "verified": true,
+          "claims": [
+            "左內側支持帶撕裂、脛後肌腱脫位。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Celtics Kristaps Porzingis has surgery, will miss 2024 Olympics",
+          "url": "https://www.nba.com/news/celtics-kristaps-porzingis-offseason-surgery",
+          "publishedAt": "2024-06-27",
+          "verified": true,
+          "claims": [
+            "6 月 27 日手術；先前總冠軍賽 Game 5 曾再上場。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Celtics Kristaps Porziņģis makes season debut vs. Clippers",
+          "url": "https://www.nba.com/news/kristaps-porzingis-season-debut-2024-25",
+          "publishedAt": "2024-11-26",
+          "verified": true,
+          "claims": [
+            "11 月 25 日季初首度出賽，16 分、6 籃板。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Brian Sutterer MD：Porzingis Has Injury Nobody’s Heard of and Luka Doncic Needs Pain Shots - Doctor Explains",
+          "url": "https://www.youtube.com/watch?v=0xVAWNzYcKE",
+          "publishedAt": "2024-06-11",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": false,
+          "verifiedBy": [
+            "root"
+          ],
+          "verificationMethod": "root-video-review-record",
+          "sourceRole": "observation-video",
+          "claims": [
+            "僅用於可見賽事動作與敘事背景；診斷依事件報導。"
+          ],
+          "viewedByResearcher": false
+        },
+        {
+          "title": "NBA：Porzingis 於總冠軍賽第五戰再上場",
+          "url": "https://www.nba.com/news/kristaps-porzingis-status-game-5-nba-finals",
+          "publishedAt": "2024-06-17",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": true,
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "verificationMethod": "web-fulltext-read-during-document-sync",
+          "sourceRole": "event-report",
+          "claims": [
+            "2024-06-17 總冠軍賽第五戰實際出賽，早於手術。"
+          ],
+          "rootFulltextVerificationAttested": true
+        },
+        {
+          "title": "Iowa Orthopaedic Journal：脛後肌腱脫位的文獻回顧與兩個案例",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1888604/",
+          "publishedAt": null,
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": true,
+          "verifiedBy": [
+            "root"
+          ],
+          "verificationMethod": "root-web-fulltext-read-attested-in-task-message",
+          "sourceRole": "general-anatomy",
+          "claims": [
+            "支持帶協助將脛後肌腱維持在內踝後方的位置。"
+          ],
+          "verificationLimit": "root 已開啟原始論文全文；只支持一般解剖，不用來推論 Porziņģis 個別手術方式。本研究員本次未另開此頁。",
+          "rootFulltextVerificationAttested": true
+        }
+      ],
+      "milestones": [
+        {
+          "date": "2024-06-09",
+          "title": "總冠軍賽 Game 2 左腿受傷",
+          "text": "左側支持帶與脛後肌腱傷勢後續經官方確認。",
+          "sourceIndexes": [
+            0
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-06-17",
+          "title": "手術前帶傷參加第五戰",
+          "text": "曾參與總冠軍賽第五戰；之後才接受手術，須與術後回場分開。",
+          "sourceIndexes": [
+            4
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-06-27",
+          "title": "接受手術修補",
+          "text": "NBA 引述球隊聲明手術完成。",
+          "sourceIndexes": [
+            1
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-11-25",
+          "title": "術後重返 NBA",
+          "text": "對 Clippers 出賽，NBA 報導確認季初首秀。",
+          "sourceIndexes": [
+            2
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        }
+      ],
+      "mechanismNotes": "不可與四月底右小腿拉傷混用，也不同於本站 2018 年 ACL 傷。受傷後曾繼續打球，影像不一定能定位肌腱脫位的精確瞬間。",
+      "returnDate": "2024-11-25",
+      "returnSummary": "2024-11-25 對 Clippers 術後首次出賽；較早的總冠軍賽第五戰是在手術前帶傷上場。",
+      "textResearchStatus": "selected-case-event-reports-verified-product-synced",
+      "returnDateMeaning": "first-postoperative-nba-game-with-earlier-preoperative-appearance",
+      "eligibilityReason": "日期在指定窗口內；與既有事件不重複；已讀可靠診斷及後續來源全文，可依所列證據邊界撰寫。",
+      "clinicalApproval": false,
+      "sourceCheckedAt": "2026-09-12",
+      "videoMetadataFile": "/private/tmp/atlas-recent-video-metadata/kristaps-porzingis-retinaculum-2024.json",
+      "initialResearchNotes": "搜尋定位球團公告精確 3Q3:27，待全文；與現有 2018 ACL 不同",
+      "initialResearchSourceFulltextVerified": true,
+      "selectedFor120": true,
+      "initialResearchReturn": {
+        "date": "2024-11-25",
+        "summary": "11 月 25 日為術後首次 NBA 出賽；6 月總冠軍 Game 5 曾帶傷上場，不能混為術後復出。"
+      },
+      "initialResearchMilestones": [
+        {
+          "date": "2024-06-09",
+          "title": "總冠軍賽 Game 2 左腿受傷",
+          "text": "左側支持帶與脛後肌腱傷勢後續經官方確認。",
+          "sourceIndexes": [
+            0
+          ]
+        },
+        {
+          "date": "2024-06-27",
+          "title": "接受手術修補",
+          "text": "NBA 引述球隊聲明手術完成。",
+          "sourceIndexes": [
+            1
+          ]
+        },
+        {
+          "date": "2024-11-25",
+          "title": "術後重返 NBA",
+          "text": "對 Clippers 出賽，NBA 報導確認季初首秀。",
+          "sourceIndexes": [
+            2
+          ]
+        }
+      ],
+      "publisher": "Brian Sutterer MD",
+      "sourceTitle": "Porzingis Has Injury Nobody’s Heard of and Luka Doncic Needs Pain Shots - Doctor Explains",
+      "observation": "醫師解說同時談 Porziņģis 與 Dončić，本站個案只採 Porziņģis 的事件與另列官方公告。",
+      "videoVerification": {
+        "researcherViewed": false,
+        "researcherReview": null,
+        "rootVisualReview": {
+          "status": "contact-sheet-and-relevant-sequence",
+          "reviewedBy": "root",
+          "evidenceFile": "docs/reviews/2026-09-12-recent-120/case-review.json",
+          "observationFromFinalProduct": "醫師解說同時談 Porziņģis 與 Dončić，本站個案只採 Porziņģis 的事件與另列官方公告。"
+        },
+        "rootOembed": {
+          "slug": "kristaps-porzingis-retinaculum-2024",
+          "videoId": "0xVAWNzYcKE",
+          "checkedAt": "2026-09-12T15:27:58.075317+00:00",
+          "status": "available",
+          "title": "Porzingis Has Injury Nobody’s Heard of and Luka Doncic Needs Pain Shots - Doctor Explains",
+          "publisher": "Brian Sutterer MD"
+        },
+        "rootNativePlayback": {
+          "url": "https://www.youtube.com/watch?v=0xVAWNzYcKE",
+          "path": "/videos/kristaps-porzingis-retinaculum-2024/",
+          "startSeconds": 0,
+          "origin": "https://a4526742.sports-injury-atlas.pages.dev",
+          "checkedAt": "2026-09-12T15:30:35.826Z",
+          "status": "played",
+          "before": {
+            "time": 0,
+            "paused": true,
+            "readyState": 0
+          },
+          "after": {
+            "time": 1.015514,
+            "paused": false,
+            "readyState": 4
+          },
+          "captionControls": [
+            "字幕/CC 已關閉"
+          ]
+        },
+        "nativePlaybackEvidenceFile": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+        "scope": "影片可播放、片段觀察與文字全文查核各自記錄；不表示字幕、版權或臨床簽核。"
+      },
+      "eventReportsFulltextVerified": true,
+      "sourceVerificationCounts": {
+        "eventReportsFulltext": 4,
+        "videoDescriptionsRead": 0,
+        "generalBackgroundWithoutFulltextRecord": 0
+      },
+      "productSnapshot": {
+        "eventDate": "2024-06-09",
+        "injury": "公開報導記載：左側內側支持帶撕裂，合併脛後肌腱脫位。",
+        "returnDate": "2024-11-25",
+        "returnSummary": "2024-11-25 對 Clippers 術後首次出賽；較早的總冠軍賽第五戰是在手術前帶傷上場。",
+        "videoId": "0xVAWNzYcKE",
+        "sourceCount": 6,
+        "timelineCount": 4
+      }
+    },
+    {
+      "slug": "joel-embiid-meniscus-2024",
+      "name": "Joel Embiid",
+      "sport": "籃球",
+      "eventDate": "2024-01-30",
+      "injury": "左膝外側半月板損傷",
+      "priority": 17,
+      "primarySource": "https://www.nba.com/news/joel-embiid-procedure-left-knee",
+      "notes": "兩篇 NBA 診斷與手術文章已讀全文；2024-04-02 回場另採 NBA 官方影片文字說明，未把讀影片說明算成觀看全片。既有膝部問題與此次接觸因果分開。",
+      "duplicate": false,
+      "videoId": "xI6yz7rFdrE",
+      "videoUrl": "https://www.youtube.com/watch?v=xI6yz7rFdrE",
+      "videoStatus": "root-preview-native-played-and-visual-review-recorded",
+      "durationSeconds": 405,
+      "startSeconds": 35,
+      "sourceFulltextVerified": false,
+      "sources": [
+        {
+          "title": "76ers center Joel Embiid has surgery on left knee, will be reevaluated in 4 weeks",
+          "url": "https://www.nba.com/news/joel-embiid-procedure-left-knee",
+          "publishedAt": "2024-02-06",
+          "verified": true,
+          "claims": [
+            "左膝外側半月板手術，2 月 6 日完成。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Joel Embiid SHINES IN HIS RETURN! | April 2, 2024",
+          "url": "https://www.youtube.com/watch?v=CcwMZ3GIauI",
+          "publishedAt": "2024-04-02",
+          "verified": true,
+          "claims": [
+            "NBA 官方影片說明確認回場，24 分、6 籃板、7 助攻。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "return-video-description",
+          "fulltextVerified": false,
+          "verificationMethod": "publisher-video-description-read",
+          "viewedByResearcher": false
+        },
+        {
+          "title": "Sixers star Joel Embiid to miss games with injured meniscus",
+          "url": "https://www.nba.com/news/sixers-star-joel-embiid-to-miss-games-with-injured-meniscus",
+          "publishedAt": "2024-02-02",
+          "verified": true,
+          "claims": [
+            "前一週二（1 月 30 日）Kuminga 落在左腿後受傷。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Brian Sutterer MD：Doctor Reacts to Joel Embiid Knee Injury vs Warriors",
+          "url": "https://www.youtube.com/watch?v=xI6yz7rFdrE",
+          "publishedAt": "2024-01-31",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": false,
+          "verifiedBy": [
+            "root"
+          ],
+          "verificationMethod": "root-video-review-record",
+          "sourceRole": "observation-video",
+          "claims": [
+            "僅用於可見賽事動作與敘事背景；診斷依事件報導。"
+          ],
+          "viewedByResearcher": false
+        },
+        {
+          "title": "AAOS：半月板損傷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/meniscus-tears/",
+          "publishedAt": null,
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": false,
+          "fulltextVerified": false,
+          "verifiedBy": [],
+          "verificationMethod": "product-reference-present-no-fulltext-record-in-this-research-package",
+          "sourceRole": "general-background",
+          "claims": [],
+          "verificationLimit": "本次同步未查核此一般衛教頁全文；不能沿用個案事件報導的全文旗標。"
+        }
+      ],
+      "milestones": [
+        {
+          "date": "2024-01-30",
+          "title": "對 Warriors 左膝受傷退場",
+          "text": "比賽中受傷，MRI 之後確認半月板問題。",
+          "sourceIndexes": [
+            2
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-02-06",
+          "title": "左膝外側半月板手術",
+          "text": "球隊公布手術完成；四週後重新評估是計畫。",
+          "sourceIndexes": [
+            0
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-04-02",
+          "title": "正式回場對 Thunder",
+          "text": "NBA 官方賽事影像確認他已出賽。",
+          "sourceIndexes": [
+            1
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        }
+      ],
+      "mechanismNotes": "可以描述爭球時碰撞與膝部被壓到的事件；賽前已有膝部不適，不能把全部半月板病變歸因於單次碰撞。所引公告未具體說明切除或縫合，不自行推定。",
+      "returnDate": "2024-04-02",
+      "returnSummary": "2024-04-02 對 Thunder 重返 NBA 例行賽，繳出 24 分、6 籃板與 7 助攻。",
+      "textResearchStatus": "selected-case-event-reports-verified-product-synced",
+      "eligibilityReason": "日期在指定窗口內；與既有事件不重複；已讀可靠診斷及後續來源全文，可依所列證據邊界撰寫。",
+      "clinicalApproval": false,
+      "sourceCheckedAt": "2026-09-12",
+      "videoMetadataFile": "/private/tmp/atlas-recent-video-metadata/joel-embiid-meniscus-2024.json",
+      "initialResearchNotes": "搜尋定位，待全文；已有膝部問題，不把所有傷害因果歸於 Kuminga 碰撞",
+      "initialResearchSourceFulltextVerified": true,
+      "selectedFor120": true,
+      "initialResearchReturn": {
+        "date": "2024-04-02",
+        "summary": "NBA 官方賽事內容確認實際回場；不代表左膝問題從此完全解決。"
+      },
+      "initialResearchMilestones": [
+        {
+          "date": "2024-01-30",
+          "title": "對 Warriors 左膝受傷退場",
+          "text": "比賽中受傷，MRI 之後確認半月板問題。",
+          "sourceIndexes": [
+            2
+          ]
+        },
+        {
+          "date": "2024-02-06",
+          "title": "左膝外側半月板手術",
+          "text": "球隊公布手術完成；四週後重新評估是計畫。",
+          "sourceIndexes": [
+            0
+          ]
+        },
+        {
+          "date": "2024-04-02",
+          "title": "正式回場對 Thunder",
+          "text": "NBA 官方賽事影像確認他已出賽。",
+          "sourceIndexes": [
+            1
+          ]
+        }
+      ],
+      "returnDateMeaning": "documented-return",
+      "publisher": "Brian Sutterer MD",
+      "sourceTitle": "Doctor Reacts to Joel Embiid Knee Injury vs Warriors",
+      "observation": "醫師回顧勇士對 76 人的爭球與膝部接觸片段；確認診斷以後續報導為準。",
+      "videoVerification": {
+        "researcherViewed": false,
+        "researcherReview": null,
+        "rootVisualReview": {
+          "status": "contact-sheet-and-relevant-sequence",
+          "reviewedBy": "root",
+          "evidenceFile": "docs/reviews/2026-09-12-recent-120/case-review.json",
+          "observationFromFinalProduct": "醫師回顧勇士對 76 人的爭球與膝部接觸片段；確認診斷以後續報導為準。"
+        },
+        "rootOembed": {
+          "slug": "joel-embiid-meniscus-2024",
+          "videoId": "xI6yz7rFdrE",
+          "checkedAt": "2026-09-12T15:27:58.102591+00:00",
+          "status": "available",
+          "title": "Doctor Reacts to Joel Embiid Knee Injury vs Warriors",
+          "publisher": "Brian Sutterer MD"
+        },
+        "rootNativePlayback": {
+          "url": "https://www.youtube.com/watch?v=xI6yz7rFdrE",
+          "path": "/videos/joel-embiid-meniscus-2024/",
+          "startSeconds": 35,
+          "origin": "https://a4526742.sports-injury-atlas.pages.dev",
+          "checkedAt": "2026-09-12T15:30:39.993Z",
+          "status": "played",
+          "before": {
+            "time": 0,
+            "paused": true,
+            "readyState": 0
+          },
+          "after": {
+            "time": 36.004774,
+            "paused": false,
+            "readyState": 4
+          },
+          "captionControls": [
+            "字幕/CC 已關閉"
+          ]
+        },
+        "nativePlaybackEvidenceFile": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+        "scope": "影片可播放、片段觀察與文字全文查核各自記錄；不表示字幕、版權或臨床簽核。"
+      },
+      "eventReportsFulltextVerified": true,
+      "sourceVerificationCounts": {
+        "eventReportsFulltext": 2,
+        "videoDescriptionsRead": 1,
+        "generalBackgroundWithoutFulltextRecord": 1
+      },
+      "productSnapshot": {
+        "eventDate": "2024-01-30",
+        "injury": "公開報導記載：左膝外側半月板損傷。",
+        "returnDate": "2024-04-02",
+        "returnSummary": "2024-04-02 對 Thunder 重返 NBA 例行賽，繳出 24 分、6 籃板與 7 助攻。",
+        "videoId": "xI6yz7rFdrE",
+        "sourceCount": 5,
+        "timelineCount": 3
+      }
+    },
+    {
+      "slug": "connor-bedard-jaw-2024",
+      "name": "Connor Bedard",
+      "sport": "冰球",
+      "eventDate": "2024-01-05",
+      "injury": "下顎骨折（所引公告未註明側別與骨折型態）",
+      "priority": 18,
+      "primarySource": null,
+      "notes": "NHL 與球隊原文已確認 2024-01-05 受傷、2024-01-08 下顎骨折手術及 2024-02-15 回場。",
+      "duplicate": false,
+      "videoId": "bLxN2RZYgds",
+      "videoUrl": "https://www.youtube.com/watch?v=bLxN2RZYgds",
+      "videoStatus": "root-preview-native-played-and-visual-review-recorded",
+      "durationSeconds": 435,
+      "startSeconds": 100,
+      "sourceFulltextVerified": false,
+      "sources": [
+        {
+          "title": "Bedard out 6-8 weeks for Blackhawks after surgery on broken jaw",
+          "url": "https://www.nhl.com/news/connor-bedard-injury-status-out-6-8-weeks-after-surgery-on-broken-jaw",
+          "publishedAt": "2024-01-12",
+          "verified": true,
+          "claims": [
+            "1 月 5 日遭撞擊；1 月 8 日下顎骨折手術。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "RECAP: Bedard Return Spoiled by Crosby, Penguins",
+          "url": "https://www.nhl.com/blackhawks/news/recap-bedard-return-spoiled-by-crosby-penguins",
+          "publishedAt": "2024-02-16",
+          "verified": true,
+          "claims": [
+            "2 月 15 日回場，對 Penguins 有一次助攻。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "SPORTSNET：Breaking Down Devil's Brendan Smith Big Hit On Blackhawks' Connor Bedard | To the Point",
+          "url": "https://www.youtube.com/watch?v=bLxN2RZYgds",
+          "publishedAt": "2024-01-07",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": false,
+          "verifiedBy": [
+            "root"
+          ],
+          "verificationMethod": "root-video-review-record",
+          "sourceRole": "observation-video",
+          "claims": [
+            "僅用於可見賽事動作與敘事背景；診斷依事件報導。"
+          ],
+          "viewedByResearcher": false
+        },
+        {
+          "title": "MedlinePlus：下顎骨折",
+          "url": "https://www.medlineplus.gov/ency/article/000019.htm",
+          "publishedAt": null,
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": false,
+          "fulltextVerified": false,
+          "verifiedBy": [],
+          "verificationMethod": "product-reference-present-no-fulltext-record-in-this-research-package",
+          "sourceRole": "general-background",
+          "claims": [],
+          "verificationLimit": "本次同步未查核此一般衛教頁全文；不能沿用個案事件報導的全文旗標。"
+        }
+      ],
+      "milestones": [
+        {
+          "date": "2024-01-05",
+          "title": "對 Devils 遭撞擊退場",
+          "text": "與 Brendan Smith 碰撞後，隨即離場處理。",
+          "sourceIndexes": [
+            0
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-01-08",
+          "title": "下顎骨折手術",
+          "text": "NHL 後續報導確認手術日期。",
+          "sourceIndexes": [
+            0
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2024-02-15",
+          "title": "重返 NHL 正式比賽",
+          "text": "對 Penguins 出賽並有助攻。",
+          "sourceIndexes": [
+            1
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        }
+      ],
+      "mechanismNotes": "可觀察迎面身體碰撞與退場；下顎骨折依醫療消息，不能推定是否腦震盪、牙齒損傷或骨折移位。",
+      "returnDate": "2024-02-15",
+      "returnSummary": "2024-02-15 對 Penguins 重返 NHL 正式賽，並送出一次助攻。",
+      "textResearchStatus": "selected-case-event-reports-verified-product-synced",
+      "eligibilityReason": "日期在指定窗口內；與既有事件不重複；已讀可靠診斷及後續來源全文，可依所列證據邊界撰寫。",
+      "clinicalApproval": false,
+      "sourceCheckedAt": "2026-09-12",
+      "videoMetadataFile": "/private/tmp/atlas-recent-video-metadata/connor-bedard-jaw-2024.json",
+      "initialResearchNotes": "已搜尋定位官方生涯紀錄回溯；初始診斷與復出全文待補",
+      "initialResearchSourceFulltextVerified": true,
+      "selectedFor120": true,
+      "initialResearchReturn": {
+        "date": "2024-02-15",
+        "summary": "隊方賽後報導確認回場；不採用原先 6 至 8 週預估當作實際結果。"
+      },
+      "initialResearchMilestones": [
+        {
+          "date": "2024-01-05",
+          "title": "對 Devils 遭撞擊退場",
+          "text": "與 Brendan Smith 碰撞後，隨即離場處理。",
+          "sourceIndexes": [
+            0
+          ]
+        },
+        {
+          "date": "2024-01-08",
+          "title": "下顎骨折手術",
+          "text": "NHL 後續報導確認手術日期。",
+          "sourceIndexes": [
+            0
+          ]
+        },
+        {
+          "date": "2024-02-15",
+          "title": "重返 NHL 正式比賽",
+          "text": "對 Penguins 出賽並有助攻。",
+          "sourceIndexes": [
+            1
+          ]
+        }
+      ],
+      "returnDateMeaning": "documented-return",
+      "publisher": "SPORTSNET",
+      "sourceTitle": "Breaking Down Devil's Brendan Smith Big Hit On Blackhawks' Connor Bedard | To the Point",
+      "observation": "Sportsnet 節目重播並討論 Smith 與 Bedard 的碰撞，需和同節目的其他事件區分。",
+      "videoVerification": {
+        "researcherViewed": false,
+        "researcherReview": null,
+        "rootVisualReview": {
+          "status": "contact-sheet-and-relevant-sequence",
+          "reviewedBy": "root",
+          "evidenceFile": "docs/reviews/2026-09-12-recent-120/case-review.json",
+          "observationFromFinalProduct": "Sportsnet 節目重播並討論 Smith 與 Bedard 的碰撞，需和同節目的其他事件區分。"
+        },
+        "rootOembed": {
+          "slug": "connor-bedard-jaw-2024",
+          "videoId": "bLxN2RZYgds",
+          "checkedAt": "2026-09-12T15:27:58.259770+00:00",
+          "status": "available",
+          "title": "Breaking Down Devil's Brendan Smith Big Hit On Blackhawks' Connor Bedard | To the Point",
+          "publisher": "SPORTSNET"
+        },
+        "rootNativePlayback": {
+          "url": "https://www.youtube.com/watch?v=bLxN2RZYgds",
+          "path": "/videos/connor-bedard-jaw-2024/",
+          "startSeconds": 100,
+          "origin": "https://a4526742.sports-injury-atlas.pages.dev",
+          "checkedAt": "2026-09-12T15:30:45.238Z",
+          "status": "played",
+          "before": {
+            "time": 0,
+            "paused": true,
+            "readyState": 0
+          },
+          "after": {
+            "time": 101.020289,
+            "paused": false,
+            "readyState": 4
+          },
+          "captionControls": [
+            "字幕/CC 已開啟"
+          ]
+        },
+        "nativePlaybackEvidenceFile": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+        "scope": "影片可播放、片段觀察與文字全文查核各自記錄；不表示字幕、版權或臨床簽核。"
+      },
+      "eventReportsFulltextVerified": true,
+      "sourceVerificationCounts": {
+        "eventReportsFulltext": 2,
+        "videoDescriptionsRead": 0,
+        "generalBackgroundWithoutFulltextRecord": 1
+      },
+      "productSnapshot": {
+        "eventDate": "2024-01-05",
+        "injury": "公開報導記載：下顎骨折。",
+        "returnDate": "2024-02-15",
+        "returnSummary": "2024-02-15 對 Penguins 重返 NHL 正式賽，並送出一次助攻。",
+        "videoId": "bLxN2RZYgds",
+        "sourceCount": 4,
+        "timelineCount": 3
+      }
+    },
+    {
+      "slug": "federica-brignone-leg-2025",
+      "name": "Federica Brignone",
+      "sport": "高山滑雪",
+      "eventDate": "2025-04-03",
+      "injury": "左脛骨平台與腓骨頭多碎片移位骨折",
+      "priority": 19,
+      "primarySource": "https://www.fisi.org/aggiornamento-sulle-condizioni-di-federica-brignone/",
+      "notes": "FISI 原文已確認骨折、2025-04-03 首次手術、2025-07-29 關節鏡鬆解及 2026-01-20 世界盃回場；本次已讀來源未支持另加 ACL 診斷。",
+      "duplicate": false,
+      "videoId": "KTaglqZADPw",
+      "videoUrl": "https://www.youtube.com/watch?v=KTaglqZADPw",
+      "videoStatus": "root-preview-native-played-and-visual-review-recorded",
+      "durationSeconds": 44,
+      "startSeconds": 0,
+      "sourceFulltextVerified": false,
+      "sources": [
+        {
+          "title": "Aggiornamento sulle condizioni di Federica Brignone",
+          "url": "https://www.fisi.org/aggiornamento-sulle-condizioni-di-federica-brignone/",
+          "publishedAt": "2025-04-03",
+          "verified": true,
+          "claims": [
+            "左脛骨平台與腓骨頭移位、多碎片骨折。",
+            "義大利錦標賽 Alpe Lusia 大曲道第二趟摔倒，CT 確認。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Perfettamente riuscita lartroscopia a cui è stata sottoposta Federica Brignone. Domani riprenderà il percorso riabilitativo",
+          "url": "https://www.fisi.org/perfettamente-riuscita-lartroscopia-a-cui-e-stata-sottoposta-federica-brignone-domani-riprendera-il-percorso-riabilitativo/",
+          "publishedAt": "2025-07-29",
+          "verified": true,
+          "claims": [
+            "7 月 29 日左膝關節鏡鬆解術改善活動度。",
+            "回顧確認第一次手術為 4 月 3 日。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Strabiliante Brignone! Che rientro, Federica: 6/a nel gigante di Kronplatz. Vince Scheib, Della Mea 10/a",
+          "url": "https://www.fisi.org/strabiliante-brignone-che-rientro-federica-6-a-nel-gs-di-kronplatz-vince-scheib-della-mea-10-a/",
+          "publishedAt": "2026-01-20",
+          "verified": true,
+          "claims": [
+            "重返世界盃 Kronplatz 大曲道，獲第六名。"
+          ],
+          "checkedAt": "2026-09-12",
+          "introducedBy": "recent_case_candidates",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ],
+          "sourceRole": "event-report",
+          "fulltextVerified": true,
+          "verificationMethod": "web-fulltext-read"
+        },
+        {
+          "title": "Amanti dello sci alpino：Video integrale della caduta di Federica Brignone nel Gigante in val di Fassa",
+          "url": "https://www.youtube.com/watch?v=KTaglqZADPw",
+          "publishedAt": "2025-04-03",
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": true,
+          "fulltextVerified": false,
+          "verifiedBy": [
+            "root"
+          ],
+          "verificationMethod": "root-video-review-record",
+          "sourceRole": "observation-video",
+          "claims": [
+            "僅用於可見賽事動作與敘事背景；診斷依事件報導。"
+          ],
+          "viewedByResearcher": false
+        },
+        {
+          "title": "AAOS：骨折與外力",
+          "url": "https://www.orthoinfo.org/diseases--conditions/fractures-broken-bones/",
+          "publishedAt": null,
+          "introducedBy": "root",
+          "checkedAt": "2026-09-12",
+          "verified": false,
+          "fulltextVerified": false,
+          "verifiedBy": [],
+          "verificationMethod": "product-reference-present-no-fulltext-record-in-this-research-package",
+          "sourceRole": "general-background",
+          "claims": [],
+          "verificationLimit": "本次同步未查核此一般衛教頁全文；不能沿用個案事件報導的全文旗標。"
+        }
+      ],
+      "milestones": [
+        {
+          "date": "2025-04-03",
+          "title": "義大利錦標賽摔倒並接受處理",
+          "text": "CT 確認左脛骨平台與腓骨頭多碎片移位骨折；後續 FISI 文章確認同日首次手術。",
+          "sourceIndexes": [
+            0,
+            1
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2025-07-29",
+          "title": "左膝關節鏡鬆解術",
+          "text": "FISI 公告另次手術以改善關節活動度，接續復健。",
+          "sourceIndexes": [
+            1
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        },
+        {
+          "date": "2026-01-20",
+          "title": "重返世界盃正式比賽",
+          "text": "Kronplatz 大曲道第六名；FISI 賽後報導確認回場。",
+          "sourceIndexes": [
+            2
+          ],
+          "sourceIndexBase": 0,
+          "verificationStatus": "sources-read",
+          "syncedFrom": "product-timeline-with-research-source-index-remap",
+          "verifiedBy": [
+            "recent_case_candidates"
+          ]
+        }
+      ],
+      "mechanismNotes": "高速轉彎、雪板與身體分離方向可供觀察；骨折範圍來自 CT 公告。初始所引公告不含 ACL 診斷，不因媒体說法自行加入 ACL 斷裂。",
+      "returnDate": "2026-01-20",
+      "returnSummary": "2026-01-20 重返世界盃，在 Kronplatz 大曲道獲得第六名。",
+      "textResearchStatus": "selected-case-event-reports-verified-product-synced",
+      "eligibilityReason": "日期在指定窗口內；與既有事件不重複；已讀可靠診斷及後續來源全文，可依所列證據邊界撰寫。",
+      "clinicalApproval": false,
+      "sourceCheckedAt": "2026-09-12",
+      "videoMetadataFile": "/private/tmp/atlas-recent-video-metadata/federica-brignone-leg-2025.json",
+      "initialResearchNotes": "全文已讀；後續手術公告及 ACL 合併傷待補",
+      "initialResearchSourceFulltextVerified": true,
+      "selectedFor120": true,
+      "initialResearchReturn": {
+        "date": "2026-01-20",
+        "summary": "已重返世界盃並獲第六名；不以一次成績聲稱關節完全恢復。"
+      },
+      "initialResearchMilestones": [
+        {
+          "date": "2025-04-03",
+          "title": "義大利錦標賽摔倒並接受處理",
+          "text": "CT 確認左脛骨平台與腓骨頭多碎片移位骨折；後續 FISI 文章確認同日首次手術。",
+          "sourceIndexes": [
+            0,
+            1
+          ]
+        },
+        {
+          "date": "2025-07-29",
+          "title": "左膝關節鏡鬆解術",
+          "text": "FISI 公告另次手術以改善關節活動度，接續復健。",
+          "sourceIndexes": [
+            1
+          ]
+        },
+        {
+          "date": "2026-01-20",
+          "title": "重返世界盃正式比賽",
+          "text": "Kronplatz 大曲道第六名；FISI 賽後報導確認回場。",
+          "sourceIndexes": [
+            2
+          ]
+        }
+      ],
+      "returnDateMeaning": "documented-return",
+      "publisher": "Amanti dello sci alpino",
+      "sourceTitle": "Video integrale della caduta di Federica Brignone nel Gigante in val di Fassa",
+      "observation": "片段記錄大曲道摔倒與後續救援；確切骨折與合併傷勢另以義大利滑雪協會公告為準。",
+      "videoVerification": {
+        "researcherViewed": false,
+        "researcherReview": null,
+        "rootVisualReview": {
+          "status": "contact-sheet-and-relevant-sequence",
+          "reviewedBy": "root",
+          "evidenceFile": "docs/reviews/2026-09-12-recent-120/case-review.json",
+          "observationFromFinalProduct": "片段記錄大曲道摔倒與後續救援；確切骨折與合併傷勢另以義大利滑雪協會公告為準。"
+        },
+        "rootOembed": {
+          "slug": "federica-brignone-leg-2025",
+          "videoId": "KTaglqZADPw",
+          "checkedAt": "2026-09-12T15:27:58.259718+00:00",
+          "status": "available",
+          "title": "Video integrale della caduta di Federica Brignone nel Gigante in val di Fassa",
+          "publisher": "Amanti dello sci alpino"
+        },
+        "rootNativePlayback": {
+          "url": "https://www.youtube.com/watch?v=KTaglqZADPw",
+          "path": "/videos/federica-brignone-leg-2025/",
+          "startSeconds": 0,
+          "origin": "https://a4526742.sports-injury-atlas.pages.dev",
+          "checkedAt": "2026-09-12T15:30:49.973Z",
+          "status": "played",
+          "before": {
+            "time": 0,
+            "paused": true,
+            "readyState": 0
+          },
+          "after": {
+            "time": 1.014958,
+            "paused": false,
+            "readyState": 4
+          },
+          "captionControls": [
+            "字幕/CC 已關閉"
+          ]
+        },
+        "nativePlaybackEvidenceFile": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+        "scope": "影片可播放、片段觀察與文字全文查核各自記錄；不表示字幕、版權或臨床簽核。"
+      },
+      "eventReportsFulltextVerified": true,
+      "sourceVerificationCounts": {
+        "eventReportsFulltext": 3,
+        "videoDescriptionsRead": 0,
+        "generalBackgroundWithoutFulltextRecord": 1
+      },
+      "productSnapshot": {
+        "eventDate": "2025-04-03",
+        "injury": "公開報導記載：左脛骨平台與腓骨頭多碎片移位骨折。",
+        "returnDate": "2026-01-20",
+        "returnSummary": "2026-01-20 重返世界盃，在 Kronplatz 大曲道獲得第六名。",
+        "videoId": "KTaglqZADPw",
+        "sourceCount": 5,
+        "timelineCount": 3
+      }
+    },
+    {
+      "slug": "antoine-dupont-acl-2025",
+      "name": "Antoine Dupont",
+      "sport": "橄欖球",
+      "eventDate": "2025-03-08",
+      "injury": "右膝 ACL 斷裂",
+      "priority": 20,
+      "primarySource": "https://www.sixnationsrugby.com/en/m6n/news/when-serin-replaced-dupont-96-years-ago-france-rugby",
+      "notes": "備選未納入本次 120 例；此條沒有完成診斷、後續及影片查核，早期線索見 initialResearchNotes。",
+      "duplicate": false,
+      "videoId": null,
+      "videoUrl": null,
+      "videoStatus": "pending",
+      "durationSeconds": null,
+      "startSeconds": null,
+      "sourceFulltextVerified": false,
+      "textResearchStatus": "backup-not-selected",
+      "eligibilityReason": "保留候選；目前 19 優先案例已足，不以未補齊的診斷或日期湊數。",
+      "initialResearchNotes": "備選；與現有 2023 顏面骨折不同；待全文及手術／回場",
+      "initialResearchSourceFulltextVerified": false,
+      "selectedFor120": false,
+      "eventReportsFulltextVerified": false,
+      "verificationStatus": "backup-not-completed-or-selected"
+    },
+    {
+      "slug": "deshaun-watson-achilles-2024",
+      "name": "Deshaun Watson",
+      "sport": "美式足球",
+      "eventDate": "2024-10-20",
+      "injury": "右側阿基里斯腱斷裂",
+      "priority": 21,
+      "primarySource": "https://www.clevelandbrowns.com/news/deshaun-watson-underwent-2nd-surgery-to-repair-achilles-tendon-rupture",
+      "notes": "備選未納入本次 120 例；此條沒有完成診斷、後續及影片查核，早期線索見 initialResearchNotes。",
+      "duplicate": false,
+      "videoId": null,
+      "videoUrl": null,
+      "videoStatus": "pending",
+      "durationSeconds": null,
+      "startSeconds": null,
+      "sourceFulltextVerified": false,
+      "textResearchStatus": "backup-not-selected",
+      "eligibilityReason": "保留候選；目前 19 優先案例已足，不以未補齊的診斷或日期湊數。",
+      "initialResearchNotes": "全文內容已由搜尋完整取得，待 open；10 月 25 日初次手術，2025-01-09 再斷裂重修",
+      "initialResearchSourceFulltextVerified": false,
+      "selectedFor120": false,
+      "eventReportsFulltextVerified": false,
+      "verificationStatus": "backup-not-completed-or-selected"
+    },
+    {
+      "slug": "tank-dell-knee-2024",
+      "name": "Tank Dell",
+      "sport": "美式足球",
+      "eventDate": "2024-12-21",
+      "injury": "膝脫位合併 ACL 撕裂；左側待補",
+      "priority": 22,
+      "primarySource": "https://www.houstontexans.com/news/transcripts-12-23-2024-press-conferences",
+      "notes": "備選未納入本次 120 例；此條沒有完成診斷、後續及影片查核，早期線索見 initialResearchNotes。",
+      "duplicate": false,
+      "videoId": null,
+      "videoUrl": null,
+      "videoStatus": "pending",
+      "durationSeconds": null,
+      "startSeconds": null,
+      "sourceFulltextVerified": false,
+      "textResearchStatus": "backup-not-selected",
+      "eligibilityReason": "保留候選；目前 19 優先案例已足，不以未補齊的診斷或日期湊數。",
+      "initialResearchNotes": "備選；教練正式逐字稿已定位，待全文；比賽中與隊友碰撞",
+      "initialResearchSourceFulltextVerified": false,
+      "selectedFor120": false,
+      "eventReportsFulltextVerified": false,
+      "verificationStatus": "backup-not-completed-or-selected"
+    },
+    {
+      "slug": "dan-sheehan-knee-2024",
+      "name": "Dan Sheehan",
+      "sport": "橄欖球",
+      "eventDate": "2024-07-06",
+      "injury": "左膝損傷；ACL 需後續球團確證",
+      "priority": 23,
+      "primarySource": "https://www.irishrugby.ie/2024/07/08/ireland-squad-update-11/",
+      "notes": "備選未納入本次 120 例；此條沒有完成診斷、後續及影片查核，早期線索見 initialResearchNotes。",
+      "duplicate": false,
+      "videoId": null,
+      "videoUrl": null,
+      "videoStatus": "pending",
+      "durationSeconds": null,
+      "startSeconds": null,
+      "sourceFulltextVerified": false,
+      "textResearchStatus": "backup-not-selected",
+      "eligibilityReason": "保留候選；目前 19 優先案例已足，不以未補齊的診斷或日期湊數。",
+      "initialResearchNotes": "備選；官方初始只公開左膝傷，不能依媒體疑似改成確定 ACL",
+      "initialResearchSourceFulltextVerified": false,
+      "selectedFor120": false,
+      "eventReportsFulltextVerified": false,
+      "verificationStatus": "backup-not-completed-or-selected"
+    },
+    {
+      "slug": "petra-vlhova-knee-2024",
+      "name": "Petra Vlhová",
+      "sport": "高山滑雪",
+      "eventDate": "2024-01-20",
+      "injury": "膝傷；左 ACL 需初診全文",
+      "priority": 24,
+      "primarySource": "https://www.fis-ski.com/alpine-skiing/news/2024-25/petra-vlhova-back-on-skis-for-the-first-time-since-surgery",
+      "notes": "備選未納入本次 120 例；此條沒有完成診斷、後續及影片查核，早期線索見 initialResearchNotes。",
+      "duplicate": false,
+      "videoId": null,
+      "videoUrl": null,
+      "videoStatus": "pending",
+      "durationSeconds": null,
+      "startSeconds": null,
+      "sourceFulltextVerified": false,
+      "textResearchStatus": "backup-not-selected",
+      "eligibilityReason": "保留候選；目前 19 優先案例已足，不以未補齊的診斷或日期湊數。",
+      "initialResearchNotes": "備選；FIS 全文已讀 2024-08-21 恢復滑雪，但不能當正式回場",
+      "initialResearchSourceFulltextVerified": false,
+      "selectedFor120": false,
+      "eventReportsFulltextVerified": false,
+      "verificationStatus": "backup-not-completed-or-selected"
+    }
+  ],
+  "researchSummary": {
+    "candidateCount": 24,
+    "selectedNewCaseCount": 19,
+    "backupCount": 5,
+    "eventReportFulltextEntries": 63,
+    "uniqueFulltextEventReportUrls": 61,
+    "officialVideoDescriptionEntries": 1,
+    "observationVideoEntries": 19,
+    "generalBackgroundEntriesWithoutFulltextRecord": 18,
+    "uniqueGeneralBackgroundUrlsWithoutFulltextRecord": 8,
+    "currentMilestoneCount": 68,
+    "researcherViewedObservationVideoCount": 1,
+    "rootMatchingVisualReviewCount": 19,
+    "rootNativePlayedCount": 19,
+    "rootOnlyFulltextEventReportEntries": 1,
+    "rootOnlyFulltextGeneralAnatomyEntries": 1
+  },
+  "schemaVersion": 2,
+  "dateWindow": {
+    "from": "2023-09-12",
+    "through": "2026-09-12"
+  },
+  "verificationDefinitions": {
+    "sourceFulltextVerified": "所有非影片文字來源（含產品新增一般衛教來源）均有本研究包中的全文查核紀錄；有未知則 false。",
+    "eventReportsFulltextVerified": "僅指 sources 中 sourceRole=event-report 的個案事件、診斷與後續原始報導；不涵蓋一般衛教頁或影片。",
+    "verified": "按 verificationMethod 所列範圍核實；影片可見動作、說明文字、全文與播放不可互換。",
+    "sourceIndexes": "本文件 milestones 的 sourceIndexes 為 0-based；產品 timeline 原始為 1-based，已按 URL 對應轉換。",
+    "unknown": "沒有本研究包的查核紀錄不等於來源錯誤，不自動標為已核實。",
+    "clinicalApproval": "所有候選仍 false；本文件不承擔臨床、權利或部署核准。"
+  },
+  "syncProvenance": {
+    "syncedAt": "2026-09-12",
+    "syncedBy": "recent_case_candidates",
+    "baseResearch": "/private/tmp/atlas-recent-candidates.json",
+    "followupResearch": "/private/tmp/atlas-recent-followup.json",
+    "rootAddedEventSourcesRereadByResearcher": [
+      "https://www.bengals.com/news/bucs-win-but-joe-burrow-and-bengals-ones-get-it-done-in-preseason-opener",
+      "https://www.realmadrid.com/es-ES/noticias/futbol/primer-equipo/actualidad/el-regreso-de-carvajal-y-militao-10-07-2025",
+      "https://www.realmadrid.com/de-DE/news/fussball/erste-mannshaft/latest-news/militao-reaparece-8-meses-despues-09-07-2025",
+      "https://www.nba.com/news/kristaps-porzingis-status-game-5-nba-finals"
+    ],
+    "scope": "只同步兩份研究文件；沒有修改產品、case-review、README 或簽核台帳。",
+    "inputs": [
+      {
+        "path": "src/data/videos/event-recent-120.v1.json",
+        "sha256": "786c64250b4786fca1c05345c4dd4e52e94d13b91acb606bd78ee83545e05827"
+      },
+      {
+        "path": "src/data/videos/recent-120.v1.json",
+        "sha256": "5707d320176ebce77865b490ed8ec4176b2cd9e5ae6b2ea688ba823d365f4c88"
+      },
+      {
+        "path": "docs/reviews/2026-09-12-recent-120/case-review.json",
+        "sha256": "0fa181da4c6c5f73de752c72e00c57114307fc02bdeac17fa703618e48b3aaae"
+      },
+      {
+        "path": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+        "sha256": "2e0c68b73467a801375672a5a936e069831a2d6ea2bf528678dfd1d468240942"
+      },
+      {
+        "path": "docs/reviews/2026-09-12-recent-120/oembed.json",
+        "sha256": "97c2d4cc2457852cfeb9e6a3db3461a5e27265449d5302a5a099c55ed29c5bce"
+      },
+      {
+        "path": "/private/tmp/atlas-recent-candidates.json",
+        "sha256": "81b69907aed0714955a67d043be71f897d1812af60232db5a08e1bd5b7b5f9a4"
+      },
+      {
+        "path": "/private/tmp/atlas-recent-followup.json",
+        "sha256": "2ec3b5d2508f6328ca7e616d50e27dce3e14cb41c12654557712fc9bf94912be"
+      }
+    ],
+    "rootAddedFulltextSourcesAttestedNotRereadByResearcher": [
+      "https://www.clevelandbrowns.com/news/browns-announce-nick-chubb-underwent-second-successful-surgery",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC1888604/"
+    ],
+    "postSyncEditorialNote": "root於格式整理後重算inputs，並使case-review的全文旗標採同一定義；產品實質內容不變。"
+  }
+}

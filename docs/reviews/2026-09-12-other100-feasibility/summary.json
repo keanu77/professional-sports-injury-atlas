@@ -1,0 +1,22 @@
+{
+  "scope": "all public cases excluding Tatum",
+  "total": 100,
+  "casePages": 6,
+  "videoPages": 94,
+  "hasEventUpdate": 100,
+  "hasReturnDate": 90,
+  "noReturnDate": 10,
+  "noEventDate": 1,
+  "unclearSituation": 8,
+  "headNeckCategory": 20,
+  "sourceReferences": 288,
+  "sourceReferencesWithoutPublishedDate": 50,
+  "existingStructuredMechanism": 0,
+  "existingStructuredTimeline": 0,
+  "handlingGroups": {
+    "3｜另設後續／未知結局敘事": 10,
+    "2｜一般逐案查核": 80,
+    "1｜優先代表案例": 10
+  },
+  "classificationMeaning": "Editorial workflow proposal, not source verification or medical approval."
+}

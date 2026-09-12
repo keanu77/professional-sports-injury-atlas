@@ -47,7 +47,18 @@ export function loadVideoThumbnails(root: string): {
         ...JSON.parse(
           readFileSync(join(root, "src/data/videos/batch-34.v1.json"), "utf8"),
         ).clips,
-      ].map((clip: { videoId: string }) => clip.videoId),
+        ...JSON.parse(
+          readFileSync(
+            join(root, "src/data/videos/recent-120.v1.json"),
+            "utf8",
+          ),
+        ).clips,
+      ]
+        .filter(
+          (clip: { slug: string }) =>
+            !curation.removedSlugs.includes(clip.slug),
+        )
+        .map((clip: { videoId: string }) => clip.videoId),
     ]);
     if (
       manifest.schemaVersion !== 1 ||

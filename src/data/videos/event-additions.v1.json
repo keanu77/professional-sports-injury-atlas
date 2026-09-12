@@ -26,6 +26,65 @@
           "title": "MLB：4 月 28 日回歸賽後報導",
           "url": "https://www.mlb.com/news/ronald-acuna-jr-returns-from-knee-injury",
           "publishedAt": "2022-04-29"
+        },
+        {
+          "title": "公開比賽片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=C4xerhbFNnc",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：前十字韌帶的功能與常見受傷情境",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+          "publishedAt": null
+        },
+        {
+          "title": "MLB：7 月 21 日右膝手術公告報導",
+          "url": "https://www.mlb.com/es/news/ronald-acuna-jr-fue-operado-de-la-rodilla-derecha",
+          "publishedAt": "2021-07-22"
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "mechanism": {
+        "title": "外野追球後跳起，落地支撐與身體動量交會",
+        "summary": {
+          "text": "Acuña 在外野追球跳起，落地後失去支撐。理解這類事件，應先看接球、落地與接著倒下的順序，不能僅憑最後倒在圍牆附近，就認定圍牆撞擊是唯一原因。",
+          "sourceIndexes": [4]
+        },
+        "steps": [
+          "追逐飛球後起跳，準備接球。",
+          "落地時支撐腳需要承受身體下降與移動的力量。",
+          "接著失去支撐並停止比賽，細部診斷另由檢查確認。"
+        ],
+        "explanation": {
+          "text": "ACL 參與膝部的前後與旋轉穩定。跳躍落地或突然改變方向，都可能增加它的負荷；但從轉播畫面看不到韌帶，也不能直接量出某一次落地的致傷力量。",
+          "sourceIndexes": [5]
+        },
+        "limitation": "本頁為 2021 年右膝事件。小聯盟復健賽與 MLB 回歸分開列出；任何後來其他膝傷，也不能直接視為這次手術失敗。"
+      },
+      "timeline": [
+        {
+          "date": "2021-07-10",
+          "title": "對馬林魚受傷",
+          "text": "右膝 ACL 撕裂，球季提前結束。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2021-07-21",
+          "title": "接受右膝手術",
+          "text": "勇士隔日公布手術完成。",
+          "sourceIndexes": [6]
+        },
+        {
+          "date": "2022-04-19",
+          "title": "先在 3A 參加復健賽",
+          "text": "代表 Gwinnett 出賽，三打數一支二壘安打；這是小聯盟復健賽節點。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2022-04-28",
+          "title": "重返 MLB",
+          "text": "對小熊回場；恢復大聯盟出賽不等於每項功能都已回到傷前。",
+          "sourceIndexes": [3]
         }
       ]
     },
@@ -57,6 +116,60 @@
           "title": "美國滑雪隊：世界盃實際復出",
           "url": "https://www.usskiandsnowboard.org/news/vonn-returns-world-cup-tour",
           "publishedAt": "2013-12-06"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=0TwnwjFJzUo",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：前十字韌帶與急停、轉向及落地",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+          "publishedAt": null
+        }
+      ],
+      "mechanism": {
+        "title": "高速滑行後落地，膝部承受壓力與方向變化",
+        "summary": {
+          "text": "Vonn 在世錦賽超級大迴轉經過跳躍段後摔倒。美國滑雪隊確認右膝有韌帶與骨頭的合併傷勢，因此不能把這段跌倒只解釋成單一韌帶扭傷。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "滑行經過跳躍段，短暫離開雪面。",
+          "重新接觸雪面時需要承重並控制方向。",
+          "接著摔倒，現場醫療人員進行救援。"
+        ],
+        "explanation": {
+          "text": "ACL 參與膝部的前後與旋轉穩定。落地或方向突然改變時，膝部可能承受過大負荷；本例另有 MCL 與骨折，代表後續照護需考量多種組織。",
+          "sourceIndexes": [6, 1]
+        },
+        "limitation": "無法從遠景確定每條韌帶受傷的先後或精確力量。11 月訓練另有再傷，不能將受傷至復出的時間當成一次順利復健的標準。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2013-02-05",
+          "title": "右膝合併傷勢",
+          "text": "隊醫確認 ACL、MCL 撕裂及外側脛骨平台骨折。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2013-02-10",
+          "title": "接受手術",
+          "text": "美國滑雪隊公布手術完成。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2013-11-20",
+          "title": "公布訓練再傷",
+          "text": "公告記載前一天摔倒，右膝 ACL 再有部分撕裂。",
+          "sourceIndexes": [3]
+        },
+        {
+          "date": "2013-12-06",
+          "title": "重返世界盃",
+          "text": "Lake Louise 滑降賽第 40 名；重新出賽與競技表現分開記錄。",
+          "sourceIndexes": [4]
         }
       ]
     },
@@ -83,6 +196,54 @@
           "title": "南非橄欖球協會：八強實際賽事",
           "url": "https://springboks.rugby/news-features/articles/2023/10/15/boks-victorious-in-paris-thriller",
           "publishedAt": "2023-10-15"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=LOaTNtmSxUY",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：外力、骨折與恢復",
+          "url": "https://www.orthoinfo.org/diseases--conditions/fractures-broken-bones/",
+          "publishedAt": null
+        }
+      ],
+      "mechanism": {
+        "title": "近身對抗時頭面部相撞，外力直接作用於臉部",
+        "summary": {
+          "text": "Dupont 與對手發生頭面部碰撞，隨後扶住臉部接受查看。本例確認的傷勢是右側顏面骨折；頭部碰撞本身不足以同時確認腦震盪。",
+          "sourceIndexes": [4, 1]
+        },
+        "steps": [
+          "近身爭球，兩人的頭部接近。",
+          "頭面部發生直接碰撞。",
+          "隨後停止比賽接受檢查，細部傷勢另由醫療資料確認。"
+        ],
+        "explanation": {
+          "text": "直接撞擊可以使骨頭承受超過強度的外力，造成骨折。顏面骨傷與腦部功能受影響是不同層次的問題，需各自評估。",
+          "sourceIndexes": [5, 1]
+        },
+        "limitation": "公開資料不等於完整病歷；本頁不從撞擊畫面推定腦震盪、所有骨折位置或對手意圖。短期復出也不是顏面骨已完全癒合的證明。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2023-09-21",
+          "title": "世界盃碰撞受傷",
+          "text": "右側顏面骨折。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2023-09-27",
+          "title": "官方文件記載後續處置",
+          "text": "World Rugby 文件引述隊醫與本人證言，記載已接受手術；不把文件日期當手術日。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2023-10-15",
+          "title": "八強賽重返比賽",
+          "text": "代表法國對南非正式出賽；出賽名單預告另由實際賽報核對。",
+          "sourceIndexes": [3]
         }
       ]
     },
@@ -109,6 +270,48 @@
           "title": "SRF：復出賽事與本人訪問",
           "url": "https://www.srf.ch/sport/ski-alpin/weltcup-maenner/weltcup-maenner-rueckkehrer-svindal-ueberstrahlt-alle-ausser-jansrud",
           "publishedAt": "2016-12-02"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=vM_UU11MMH0",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：前十字韌帶與急停、轉向及落地",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+          "publishedAt": null
+        }
+      ],
+      "mechanism": {
+        "title": "滑降失衡後翻倒，膝部受到複雜外力",
+        "summary": {
+          "text": "Svindal 高速滑降時失去平衡，接著摔倒並滑向防護網。觀察重點是滑雪板、下肢與軀幹的方向如何分開；短片無法指定 ACL 在哪一刻撕裂。",
+          "sourceIndexes": [4, 1]
+        },
+        "steps": [
+          "沿賽道高速滑降。",
+          "失去平衡，身體與滑雪板的方向改變。",
+          "摔倒後滑向場邊防護網，停止比賽。"
+        ],
+        "explanation": {
+          "text": "ACL 協助控制膝部前後位移與旋轉。腳部受滑雪板限制、身體仍有動量時，膝部可能承受扭轉負荷；這是受力解釋，並非本例關節力量的量測。",
+          "sourceIndexes": [5, 1]
+        },
+        "limitation": "不能把最後撞到防護網，直接當成韌帶受傷的唯一時點。右膝診斷依具名隊方說明，回場成績不代表所有功能測試皆已恢復。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2016-01-23",
+          "title": "Kitzbühel 摔倒受傷",
+          "text": "挪威隊主管向媒體確認右膝 ACL 撕裂。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2016-12-02",
+          "title": "世界盃復出登上頒獎台",
+          "text": "Val d’Isère 超級大迴轉取得第 2 名。這是正式出賽與成績紀錄。",
+          "sourceIndexes": [2, 3]
         }
       ]
     },
@@ -130,6 +333,54 @@
           "title": "NHL：第 5 戰實際復出報導",
           "url": "https://www.nhl.com/news/sidney-crosby-returns-penguins-fail-to-eliminate-capitals-289315778",
           "publishedAt": "2017-05-07"
+        },
+        {
+          "title": "公開比賽影片：動作觀察依據",
+          "url": "https://www.youtube.com/watch?v=YjDF1Saryg4",
+          "publishedAt": null
+        },
+        {
+          "title": "CDC：頭部突然加速與腦震盪",
+          "url": "https://www.cdc.gov/heads-up/about/index.html",
+          "publishedAt": "2025-01-07"
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "mechanism": {
+        "title": "頭部受到碰撞，腦部也跟著快速移動",
+        "summary": {
+          "text": "這段攻門過程中，Crosby 的頭部受到球桿碰撞後倒地。後續腦震盪診斷由教練向外界確認。",
+          "sourceIndexes": [3, 1]
+        },
+        "steps": [
+          "攻門時與防守球員發生接觸。",
+          "球桿碰到頭部，隨後倒地。",
+          "停止比賽，接受腦震盪評估。"
+        ],
+        "explanation": {
+          "text": "頭部或身體受到撞擊，可能使腦部在顱內快速移動、旋轉，干擾腦功能。這是腦震盪的基本機轉；外表沒有明顯傷口，也不能據此排除。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "影片不能顯示腦內變化，也不能判斷症狀持續多久、是否已恢復。多次接觸中哪一次造成主要傷害，無法由轉播單獨確定。"
+      },
+      "timeline": [
+        {
+          "date": "2017-05-01",
+          "title": "季後賽第 3 戰受傷",
+          "text": "頭部碰撞後離場。",
+          "sourceIndexes": [3]
+        },
+        {
+          "date": "2017-05-02",
+          "title": "確認腦震盪",
+          "text": "球隊宣布缺席第 4 戰。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2017-05-06",
+          "title": "第 5 戰回場",
+          "text": "對首都人重返比賽。",
+          "sourceIndexes": [2]
         }
       ]
     }

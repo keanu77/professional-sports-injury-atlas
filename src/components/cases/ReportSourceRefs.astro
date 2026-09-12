@@ -1,0 +1,31 @@
+---
+interface Props {
+  slug: string;
+  indexes: number[];
+}
+const { slug, indexes } = Astro.props;
+---
+
+<span class="report-refs">
+  {
+    indexes.map((index) => (
+      <a
+        href={`#event-source-${slug}-${index}`}
+        aria-label={`查看來源 ${index}`}
+      >
+        [{index}]
+      </a>
+    ))
+  }
+</span>
+<style>
+  .report-refs {
+    white-space: nowrap;
+    margin-inline-start: 0.35rem;
+  }
+  a {
+    display: inline-block;
+    padding: 0.15rem 0.25rem;
+    font-size: 0.85rem;
+  }
+</style>

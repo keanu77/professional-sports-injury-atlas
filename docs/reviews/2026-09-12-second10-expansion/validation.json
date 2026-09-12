@@ -1,0 +1,129 @@
+{
+  "checkedAt": "2026-09-12",
+  "scope": "Second ten data-only expansion; 20 of other 100 plus Tatum",
+  "clinicalApproval": false,
+  "deployed": false,
+  "rootHead": "cf186f07794dea522c5cb1601da3a2eef998f5e7",
+  "testedSnapshot": "1e3f9b5b2bc6e889e25584cdd3fb4921186d27e3",
+  "snapshotPath": "/private/tmp/atlas-second10-review-8yuj9u8p",
+  "preview": "http://127.0.0.1:14327/",
+  "unitTests": {
+    "files": 3,
+    "passed": 59,
+    "command": "npx vitest run tests/unit/event-updates.test.ts tests/unit/case-cross-validation.test.ts tests/unit/decision-18-regression-contract.test.ts"
+  },
+  "astroCheck": {
+    "errors": 0,
+    "warnings": 0,
+    "existingHints": 16
+  },
+  "contentCheck": {
+    "passed": true,
+    "environment": "Clean isolated snapshot; existing dirty-tree checks remain enabled"
+  },
+  "reviewBuild": {
+    "passed": true,
+    "pages": 172,
+    "videoPages": 94,
+    "mode": "review",
+    "flag": "ATLAS_PUBLIC_LAUNCH=decision-21"
+  },
+  "browserChecks": {
+    "pages": 11,
+    "widths": [390, 1280],
+    "passed": 22,
+    "externalRequestsBlocked": true,
+    "videoPlaybackTest": false,
+    "manualScreenshotsReviewed": [
+      "shohei-ohtani-world-series-2024-timeline-390",
+      "markelle-fultz-orlando-2021-timeline-390",
+      "anfernee-simons-ankle-sprain-2023-mechanism-1280",
+      "mohamed-salah-final-2018-mechanism-390"
+    ]
+  },
+  "scopeComparison": {
+    "baseline": "3f43572b3583628c6ec779d42320c8adc2222e0a",
+    "changedEntries": [
+      "anfernee-simons-ankle-sprain-2023",
+      "carolina-marin-indonesia-2019",
+      "giannis-east-final-2021",
+      "kyrie-irving-ankle-sprain-2021",
+      "lamelo-ball-ankle-sprain-2023",
+      "lamelo-ball-ankle-sprain-2025",
+      "markelle-fultz-orlando-2021",
+      "mohamed-salah-final-2018",
+      "ronald-acuna-miami-2021",
+      "shohei-ohtani-world-series-2024"
+    ],
+    "allOtherEntriesAndBatchMetadataUnchanged": true,
+    "eventIdentitiesAndReturnDatesUnchanged": true
+  },
+  "productFileHashes": [
+    {
+      "path": "src/components/cases/EventFollowUp.astro",
+      "sha256": "763212800d082e1d3bd5caaccff6088314322a2a0d13981f93fca06bb29e2ad9",
+      "matchesTestedSnapshot": true
+    },
+    {
+      "path": "src/components/cases/EventMechanism.astro",
+      "sha256": "3cf5af8fdbed53ff41d47fa5cbd224b40a846f524a7067fa02346d6544791355",
+      "matchesTestedSnapshot": true
+    },
+    {
+      "path": "src/components/cases/ReportSourceRefs.astro",
+      "sha256": "2c04cc637b09fca316b76b2ef7c967c9e2386b1b6faea1c5329bad0349fd0967",
+      "matchesTestedSnapshot": true
+    },
+    {
+      "path": "src/data/videos/event-additions.v1.json",
+      "sha256": "d39f3e13c7acfd3e320659d6478bb27c68b31ed7fee6982af50eb0c4a106656d",
+      "matchesTestedSnapshot": true
+    },
+    {
+      "path": "src/data/videos/event-batch-30.v1.json",
+      "sha256": "28be60c6dbea721d7ce43e639646752adc1005b2a63413d25bf52517469beadf",
+      "matchesTestedSnapshot": true
+    },
+    {
+      "path": "src/data/videos/event-batch-31.v1.json",
+      "sha256": "546d539417d69b887ecf84c109f16ba0af920ba088224f10fef3fd783ad74144",
+      "matchesTestedSnapshot": true
+    },
+    {
+      "path": "src/data/videos/event-batch-34.v1.json",
+      "sha256": "7bf88d044d0cd4a4fc16bb0b739c8e01505dd265cc4ef7964dbe0530b9f07e27",
+      "matchesTestedSnapshot": true
+    },
+    {
+      "path": "src/data/videos/event-updates.v1.json",
+      "sha256": "9a47b3c5dda3722ea2f5373ae0d8520675da5311fab6eab1174bd177181aeb5e",
+      "matchesTestedSnapshot": true
+    },
+    {
+      "path": "src/lib/videos/event-updates.ts",
+      "sha256": "ec3431d3cfd38e7a80bc0b86ed73834e333539c7eca72d867ba9f8610025fb4a",
+      "matchesTestedSnapshot": true
+    },
+    {
+      "path": "src/pages/cases/[slug].astro",
+      "sha256": "7530a9422ae5f44b69991cdcc389b1bd0f3c856ee9c0688c7a6349112a462f4c",
+      "matchesTestedSnapshot": true
+    },
+    {
+      "path": "src/pages/videos/[slug].astro",
+      "sha256": "a16d1ae6edf92180daa5e9401baa9d4b38e4b9d31322f238d16d046597b6d8db",
+      "matchesTestedSnapshot": true
+    },
+    {
+      "path": "tests/unit/event-updates.test.ts",
+      "sha256": "9f5bf861cf772a2577402c436ddbdec2281dba6303362eff466c2ef2af576c64",
+      "matchesTestedSnapshot": true
+    }
+  ],
+  "limitations": [
+    "Historical source entries were retained; some direct pages are inaccessible. See case-review notes.",
+    "Video source research sampled public watch-page frames; no new embed or rights approval was performed.",
+    "Final documentation and handoff were written after product snapshot build; product file hashes are verified separately.",
+    "No full unit-suite rerun for this data-only batch. First-batch suite results are not counted as this run."
+  ]
+}

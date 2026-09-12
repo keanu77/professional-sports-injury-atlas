@@ -1,0 +1,1962 @@
+[
+  {
+    "path": "src/content.config.ts",
+    "sha256": "549bc745fad484bc3313f74878c0585429c1a2d817c4c3bf7bcb3d40cc75de1a"
+  },
+  {
+    "path": "src/styles/global.css",
+    "sha256": "2f16e4a62d7b5150bc7a149bde8ec1eaf3badf5928fbcf30f0fa7bb2be9dba64"
+  },
+  {
+    "path": "src/styles/tokens.css",
+    "sha256": "1d5326289c227a37644b204a39bfda69eb82dbbd80928a9f3b8f49539a2bcc5a"
+  },
+  {
+    "path": "src/styles/layout.css",
+    "sha256": "72cb8882023a44b08bd4ffee23003bab6d08e05696120a5f24d59000d1fcbd28"
+  },
+  {
+    "path": "src/styles/components.css",
+    "sha256": "ecddd9fd5227f17a77b8a6f0871709b020ebaf88fb626ca6a102c3ec897cf647"
+  },
+  {
+    "path": "src/layouts/BaseLayout.astro",
+    "sha256": "a2448295d7c4ea1a5bd02bfc66d61df96778020e454b29c2b85e1750a1de5eb8"
+  },
+  {
+    "path": "src/scripts/video-discovery.ts",
+    "sha256": "b400d50cb1600dde0d7cdadab19c49ad44c1195e4abfd0b232b607d6cd0627f2"
+  },
+  {
+    "path": "src/scripts/contributions.ts",
+    "sha256": "3f7da186df72f5c03b44fd20fe962be787add4cc402361538d17f19474862d05"
+  },
+  {
+    "path": "src/scripts/case-filters.ts",
+    "sha256": "d07458aea2a8b19f3531e5908b1c6cb205297464e8b2e2885e80ab337f6ca395"
+  },
+  {
+    "path": "src/scripts/preferences.ts",
+    "sha256": "bd0fbaec6b8a5e5613ffeb969ab4cbd8440d3841f6bd36311ad2b1daaf9caab2"
+  },
+  {
+    "path": "src/scripts/video-player.ts",
+    "sha256": "04c1bc354c7b0d077af98190bdb3a81a6c2ba46f3a7aefc76da8c73dd7487573"
+  },
+  {
+    "path": "src/scripts/home-categories.ts",
+    "sha256": "9aa3d670049b8c2a35ef9c1b99b108e26975fcace4afc6d780c4b3d83b956b08"
+  },
+  {
+    "path": "src/lib/medical-notice.ts",
+    "sha256": "a4749440a3facb585aaa297fec21a2af219630e4034089a7071c3ec9e083876e"
+  },
+  {
+    "path": "src/data/professional-course-links.v1.json",
+    "sha256": "1df8ebc762e6cee1d5b43000ea1dfebb82a75a50cd942274db7ee2f952a906e4"
+  },
+  {
+    "path": "src/data/patient-related-articles.v1.json",
+    "sha256": "19b19f610fcffbd9809d8abf4aab55004c96b40f83dada3c6e0156cad5f9be07"
+  },
+  {
+    "path": "src/data/review-fixtures.ts",
+    "sha256": "ebade43dc0e838147439ca6817436fdf1a0f86b2b6cb588c6d60e97c1376ec16"
+  },
+  {
+    "path": "src/data/public-domain.v1.json",
+    "sha256": "8d8128cc22da7848bf25b031a9ca0dd09119306240709e120481e3a9eb52b856"
+  },
+  {
+    "path": "src/data/brand-asset-policy.v1.json",
+    "sha256": "a757ee37b0d33ffe558e3394e6498b59a6f3388b61038a8bcda069d0e951e40e"
+  },
+  {
+    "path": "src/data/public-launch.v1.json",
+    "sha256": "ca7eb9b28f30aaa82539e1a3702add95dd9f9e3c601ea13c20d9060e9a7e66a1"
+  },
+  {
+    "path": "src/data/site-governance.v1.json",
+    "sha256": "8aebcdf9bc4b00f26b183eb2dd828904ab83a4ff607c9579ab3054bd0d1ee7d5"
+  },
+  {
+    "path": "src/pages/source-policy.astro",
+    "sha256": "40604fcc0a348a77504410b92f70cd8812e8ac40c31b0f0cd180dc9524c918de"
+  },
+  {
+    "path": "src/pages/contribute.astro",
+    "sha256": "7942b9875a044d6782df767243ffa84d20484add0754c9307b16b6dba2e94cc1"
+  },
+  {
+    "path": "src/pages/404.astro",
+    "sha256": "3b1440ab93590120a3fe195d6da5b3c01066985a3e7c72febf254f2a0073c7c6"
+  },
+  {
+    "path": "src/pages/about.astro",
+    "sha256": "ee91ba7d6afc61622d3d2f61a0b3716fcc344a846ca6dd815f74c63ae1a64308"
+  },
+  {
+    "path": "src/pages/privacy.astro",
+    "sha256": "2d947cfa5156b522882381106f4d74a885c0cb245e860ebaa9d4847676b790ea"
+  },
+  {
+    "path": "src/pages/favicon.svg.ts",
+    "sha256": "fb4729ce150213a0ff12e993f928230a5cdab2e67dd3a38ce491f70a7cfd3a72"
+  },
+  {
+    "path": "src/pages/index.astro",
+    "sha256": "a75e46bf82f59f94c5997e2413fd5654df896e5b18cfe0b997440e3e356eb261"
+  },
+  {
+    "path": "src/pages/favicon.ico.ts",
+    "sha256": "f9c9318bd4222614ed7a8237a677e6949983176f106df00de118caff1c1123e6"
+  },
+  {
+    "path": "src/pages/robots.txt.ts",
+    "sha256": "9a3318d2e1583fef83fd1ec38faa18d64b7f5b1c9e8e07440e822bbc109b83bb"
+  },
+  {
+    "path": "src/pages/preferences-init.js.ts",
+    "sha256": "b1ec27357b6f29603afb3fce6dec38d215b9e5c51d8bd720b67f3ad5bf27ddea"
+  },
+  {
+    "path": "src/pages/credits-notices.astro",
+    "sha256": "a39dc622ec2082fef2989f90c21550bde2512bb8adea2494b761ea5b63e2bdc8"
+  },
+  {
+    "path": "src/routes/public-sitemap.ts",
+    "sha256": "763215795f424ea34e524381cfd1b19e0191063091459abc39f514a3d1972ca6"
+  },
+  {
+    "path": "src/pages/body-parts/[part].astro",
+    "sha256": "e4bb2f8c3437e7d6f0604c1f6af943a13fdb867d4f62480525c4ffdf807b59d5"
+  },
+  {
+    "path": "src/pages/case-index/manifest.json.ts",
+    "sha256": "a44801aa1dcbbd176af137b818f57f0638ded0e637ea65b5e405e3a499cce714"
+  },
+  {
+    "path": "src/pages/leagues/[league].astro",
+    "sha256": "1046bbb3ad3b09fffb9bba9ee95ef46a671b301ed455ec08927e75bb16dbf7e0"
+  },
+  {
+    "path": "src/pages/cases/[slug].astro",
+    "sha256": "7530a9422ae5f44b69991cdcc389b1bd0f3c856ee9c0688c7a6349112a462f4c"
+  },
+  {
+    "path": "src/pages/updates/[quarter].astro",
+    "sha256": "4af279c9a90055951bab0847bac40ab93f225a3719557946b14eeb676a10552a"
+  },
+  {
+    "path": "src/pages/sports/[sport].astro",
+    "sha256": "af7516f10011a16a8a72b9fe8241c3e9f67f0625ff9408fae97a48bfddfe4ebd"
+  },
+  {
+    "path": "src/pages/situations/[situation].astro",
+    "sha256": "438710a917944d1d02ca0765c392072ed3bb9718887a42f2df4ec24d24757e4b"
+  },
+  {
+    "path": "src/pages/videos/[slug].astro",
+    "sha256": "a16d1ae6edf92180daa5e9401baa9d4b38e4b9d31322f238d16d046597b6d8db"
+  },
+  {
+    "path": "src/pages/injuries/[injury].astro",
+    "sha256": "9a66459b13bea95c32244911499c9849a29ddf517bbb71aab9d18fcc4ce4a487"
+  },
+  {
+    "path": "src/pages/review/[lab].astro",
+    "sha256": "b8377ccfa9bb2cd1295d58aa7f567097124cf45966d116e88b73b0846fc03ade"
+  },
+  {
+    "path": "src/pages/review/[artifact].json.ts",
+    "sha256": "20e16effdb49d8ddc136b0831f5bbdd55a9d895feee4d5932d650b17026f1ece"
+  },
+  {
+    "path": "src/pages/review/fixtures/[fixture].astro",
+    "sha256": "5f3ae8e6f0cc742d3146c8aa2286c9af09c66fd9774e60a2e27c005341d76c14"
+  },
+  {
+    "path": "src/pages/injuries/[injury]/page/[page].astro",
+    "sha256": "fddbeb91e4658d4b1f41518fc92386da1678cf44059c72ebd514ab6580802275"
+  },
+  {
+    "path": "src/pages/leagues/[league]/page/[page].astro",
+    "sha256": "9b4b557b3592d430fa133687a8a9b12092d61137486aafdfc6a94780d889fb5a"
+  },
+  {
+    "path": "src/pages/case-index/[injury]/[page].json.ts",
+    "sha256": "4b2d3067a876494e495694f2227398a7d2dea44c7ae65681edeb2d5de20bef88"
+  },
+  {
+    "path": "src/assets/heroes/provenance.json",
+    "sha256": "45ea1a2efee5293e87e49fa61daab65124325d054012b760239a7385473a7f0b"
+  },
+  {
+    "path": "src/assets/players/player-photo-registry.v6.json",
+    "sha256": "16851aaa3d1dd223f20f102ef543f104a23ee61335a796f4b70cbe75d76d5cf0"
+  },
+  {
+    "path": "src/assets/players/player-photo-registry.v7.json",
+    "sha256": "77a146729b95802fbe978bc8a4360ed54929121936a04454afe49998ea93b0c4"
+  },
+  {
+    "path": "src/assets/players/player-photo-registry.v1.json",
+    "sha256": "770a7e6d7f13ecd0dda17a629b13f179357b9c64ebc268404a5640ad9aa08eec"
+  },
+  {
+    "path": "src/assets/players/player-photo-registry.v2.json",
+    "sha256": "0fa9a14660d798b32586047eaec1a0fc14912ca8710aaccc83963ac4f9dc28d0"
+  },
+  {
+    "path": "src/assets/players/player-photo-registry.v3.json",
+    "sha256": "d91e97aa34e347375dd5ca14cf961208ae4b2c43cc8a90a01bea49f1172a3c05"
+  },
+  {
+    "path": "src/assets/players/player-photo-registry.v8.json",
+    "sha256": "908ccc9c1d9aeee56c907a476701c8875914af5090614c36271a76447057084a"
+  },
+  {
+    "path": "src/assets/players/player-photo-registry.v4.json",
+    "sha256": "ef7149b57ab5d08a328a0a7ed88177fc4d6a35af998bcfd95a0ec318bcf345b5"
+  },
+  {
+    "path": "src/assets/players/player-photo-registry.v5.json",
+    "sha256": "26129455fe5b9297c44ac91c3be1fc1678a928cf77bd12d00695614fe5df3985"
+  },
+  {
+    "path": "src/assets/videos/provenance.json",
+    "sha256": "caf3104a59d88529040abfa22a681a4d453ecfdfe70b994e24111ba043212f67"
+  },
+  {
+    "path": "src/assets/heroes/provenance/acl.md",
+    "sha256": "5c321ea2e9def23f7ff795706e7716001509c5e2bb0a5fda08f4b0fd9173b347"
+  },
+  {
+    "path": "src/assets/heroes/provenance/home.md",
+    "sha256": "e849ce692cc7470121bc2d531f0bce168c2b0973fbd0751cc8d5d29bf4b85c13"
+  },
+  {
+    "path": "src/assets/heroes/provenance/achilles-rupture.md",
+    "sha256": "0fb37948063c1eadaeec88891c4e2c5ea9ddff9401284ee80c3013698c35d2a2"
+  },
+  {
+    "path": "src/assets/heroes/provenance/ankle-sprain.md",
+    "sha256": "0adda9b30318918c1bce39e42f81f195ab41d4882dd39631a5339c1924664858"
+  },
+  {
+    "path": "src/data/generated/rtp-course-summaries.v1.json",
+    "sha256": "b10fb2d4a9787743ffa3aff9350ca8658494ddaf4c074fc835dc47aee8826036"
+  },
+  {
+    "path": "src/data/patient-guides/ankle-sprain.json",
+    "sha256": "224d837b2fd9249b84981840ea5ad06ab9eaa720c4c0ba04d3908649780cc584"
+  },
+  {
+    "path": "src/data/patient-guides/acl.json",
+    "sha256": "c4afe13275fb84b500bcde143fa5797e9f2a5b92c89cbfdf81c81295763bd076"
+  },
+  {
+    "path": "src/data/patient-guides/achilles-rupture.json",
+    "sha256": "f583849eb7be12f44c2e2d120b9f53f34947aa316d2d4f12196c5d86c95bedcb"
+  },
+  {
+    "path": "src/data/videos/event-additions.v1.json",
+    "sha256": "71278b5ca0ed1aac6854d2bf4c23f1c9fa19ab7911cb338ad36962447e11f149"
+  },
+  {
+    "path": "src/data/videos/event-batch-34.v1.json",
+    "sha256": "35309899eebd1425268d1ffa807ff1f53ec4c553edb598849ddc6a642c794052"
+  },
+  {
+    "path": "src/data/videos/expansion.v1.json",
+    "sha256": "4203d2b1876c09d381604dd7cb86ea0993ba312017b46b7ea5983d327e27d65f"
+  },
+  {
+    "path": "src/data/videos/observation-resources.v1.json",
+    "sha256": "1843f1efb027bf423653eb092a93fe331af0245141a54cc9a3222c704312b92b"
+  },
+  {
+    "path": "src/data/videos/discovery.v1.json",
+    "sha256": "f35039eb139772b5281d054c1a1e8fc6afd2dab7bdbbca4c721b10cc0caada61"
+  },
+  {
+    "path": "src/data/videos/batch-34.v1.json",
+    "sha256": "0f5b77f79be769f2f9f59d994dd7d9cc6a6e744ab125aace49ed756001c26cc1"
+  },
+  {
+    "path": "src/data/videos/additions.v1.json",
+    "sha256": "7d27ab5b87ce915a4f90e064fffa954fd5346c3d5311a1a3f5c20f4e4ac350c8"
+  },
+  {
+    "path": "src/data/videos/batch-30.v1.json",
+    "sha256": "c49aab15091fd13c21a46bc14d346e165c5167b4d2dfd813fe9b5b49db7a58c2"
+  },
+  {
+    "path": "src/data/videos/event-batch-32.v1.json",
+    "sha256": "0949f036b57ddb3e82ed4c1926c997b6e94cb794ffe4e2f215a0afeadcbe270e"
+  },
+  {
+    "path": "src/data/videos/recent-120.v1.json",
+    "sha256": "5707d320176ebce77865b490ed8ec4176b2cd9e5ae6b2ea688ba823d365f4c88"
+  },
+  {
+    "path": "src/data/videos/batch-31.v1.json",
+    "sha256": "9b93e0f19e42752d2f737726cadef7783495c8c7a939a29bd0eb18e39d94c9d9"
+  },
+  {
+    "path": "src/data/videos/event-updates.v1.json",
+    "sha256": "e19df86259c495b8a779b5bf6e9be845cbeca3b4af6988b56c50123f63817283"
+  },
+  {
+    "path": "src/data/videos/curation.v1.json",
+    "sha256": "a9dbffa8f339f504c4922ddd878b93cb5d379bc77e71e2e3d3a827ded2398043"
+  },
+  {
+    "path": "src/data/videos/event-batch-31.v1.json",
+    "sha256": "815ed90c26249fe414d1e0be598f8015e9ae3f89dfbed9508d6a46fe778ac090"
+  },
+  {
+    "path": "src/data/videos/event-batch-30.v1.json",
+    "sha256": "f75af4959831287bcc1f309614065c7db5d549530f4f3176cfe88dff61f6e2a3"
+  },
+  {
+    "path": "src/data/videos/batch-32.v1.json",
+    "sha256": "9b1a33a2d62f61275d3063a2d59ddfba77d1c3f4ef9c6e385f698a06bda91389"
+  },
+  {
+    "path": "src/data/videos/event-recent-120.v1.json",
+    "sha256": "2574ac6175033965fe6cd87c758fbf1edc9d49cf35bed12077c7af86f8063042"
+  },
+  {
+    "path": "src/data/taxonomy/competitions.ts",
+    "sha256": "7c8164c166cafda300faab22d1b87705febbe604c337c77fdbd0d288554b61a3"
+  },
+  {
+    "path": "src/data/taxonomy/leagues.ts",
+    "sha256": "fd4bc5d206bfcb51fd9aa6ab99ca7a2374bc7a06bf32d538cdc5f28f5ea6b202"
+  },
+  {
+    "path": "src/data/taxonomy/mechanisms.ts",
+    "sha256": "435b39434dc2948efa2ca5ccabad98c4afbc1894bdc9021798f113461b7d3372"
+  },
+  {
+    "path": "src/data/taxonomy/injuries.ts",
+    "sha256": "340e94f20421f86d5191617630af1b561027b0653341c037ca4324d8e549c48b"
+  },
+  {
+    "path": "src/data/taxonomy/video-providers.ts",
+    "sha256": "940c48bc748c691b511363c078dfd5b8658bb74e7c3ba9aeab54684073b22cb0"
+  },
+  {
+    "path": "src/data/taxonomy/sports.ts",
+    "sha256": "ee7288eb010dc024356ea583615bec45b45b41bef90494aad8a8a92d3871e2c6"
+  },
+  {
+    "path": "src/lib/research/validation.ts",
+    "sha256": "6903a124bb8a7e1faec4d3b136247f4c98187dd0c617a49e571f8778dfa6d2b2"
+  },
+  {
+    "path": "src/lib/research/candidate-manifest.ts",
+    "sha256": "222630c944416ac12df130d92257e72a610164c6e8a1c26b389742dc40c0b7ee"
+  },
+  {
+    "path": "src/lib/research/csv.ts",
+    "sha256": "5b58892fda7afe12e0a2fe89304199b79f9bba4ccc174b28d461c06e646d0149"
+  },
+  {
+    "path": "src/lib/research/link-verification.ts",
+    "sha256": "8bc775c6bdd41f7a85f359ab624c140bcb31490004f48bb77dd91bade251c7d0"
+  },
+  {
+    "path": "src/lib/research/candidate-contract.ts",
+    "sha256": "a92f9182c925006ec00362e19e7047a9883cfdac3fd0a17f12573acac33c10e3"
+  },
+  {
+    "path": "src/lib/ui/editorial-images.ts",
+    "sha256": "0beff61f477a295fce67b3a0daedbb7f27bc4b995c61dad3fa3e225bb5db0603"
+  },
+  {
+    "path": "src/lib/ui/image-renditions.ts",
+    "sha256": "6c7b7a53ee47d1fbedfb0b0054f595898974ce8969cc608c43b360e7af339224"
+  },
+  {
+    "path": "src/lib/ui/video-thumbnails.ts",
+    "sha256": "7154a65d527f0b7e3c47b53b73c40a2dc29bdaca24fa954bea29968b29a0639a"
+  },
+  {
+    "path": "src/lib/ui/public-security-policy.ts",
+    "sha256": "82633da209bcac8877be20177015da1fb35cd67f870f8679796c3fb618f86735"
+  },
+  {
+    "path": "src/lib/releases/history.ts",
+    "sha256": "e4ddb23ea2bc43284d9b831b7794e21eff481a0d1be35b0eb69d922bcaa4cdcc"
+  },
+  {
+    "path": "src/lib/video/availability.ts",
+    "sha256": "65f58c8713d6c87ca54f95de5db15312adc986365b48c9b8f7c64499b6cda5b1"
+  },
+  {
+    "path": "src/lib/video/contribution-context.ts",
+    "sha256": "74d691e5efb711a9ebc9d7aab56b6467980b7ae55c7ce6b2cb322e39b38de730"
+  },
+  {
+    "path": "src/lib/video/contribution-content.ts",
+    "sha256": "39a42840e7d1190f32dd21cdaea4f19511b3a280c15b4c8806864be3792a4db5"
+  },
+  {
+    "path": "src/lib/video/contributions.ts",
+    "sha256": "556897a0eb43bb815939af8405d3fa4b873e3a12388ce323cda9361e8a788ac5"
+  },
+  {
+    "path": "src/lib/video/play-guard.ts",
+    "sha256": "38ada50859034b161eaa255999822b96f9a190e8e34ea27e4b99dc4f431ddea2"
+  },
+  {
+    "path": "src/lib/video/youtube-api-adapter.ts",
+    "sha256": "17d034da08e2c0f333ed08c50556cc74bd20f519f252c28c5174f53e8d67a75c"
+  },
+  {
+    "path": "src/lib/video/player-state.ts",
+    "sha256": "0acebd6bca8998ed1259d401a41012b549433f0ee1bca13b6b4e2c165c8f63b0"
+  },
+  {
+    "path": "src/lib/video/health-monitor.ts",
+    "sha256": "29e372691ccae142a3ab83f138f5e132cfe55fdb46e1159991a22e2c504b6b8e"
+  },
+  {
+    "path": "src/lib/video/contribution-limits.ts",
+    "sha256": "70385d15684d0ba836b992e4bb72064ad53c8e068e06e08056770f9f633c6c22"
+  },
+  {
+    "path": "src/lib/video/playback-tracking.ts",
+    "sha256": "485ca7963302e09505241f505e40f03fa7998422803aff5dc8dc73549fe17a9e"
+  },
+  {
+    "path": "src/lib/video/play-counts.ts",
+    "sha256": "f72966d96da7e8ce8c6a94d6a4b449d67a05c6b6f6366fb5c9cf0a645b374274"
+  },
+  {
+    "path": "src/lib/video/youtube.ts",
+    "sha256": "890be786a3381b9e5492f83f3134e63c84a9bfcc150e9d8d9bc6daa15f7f0cce"
+  },
+  {
+    "path": "src/lib/video/play-rate-limit.ts",
+    "sha256": "818b1360ea4b12098768b6607a091dc351c4a67dfead36a065275d0ab1f97767"
+  },
+  {
+    "path": "src/lib/video/facade.ts",
+    "sha256": "062afef6d2a8cbea030035ae457a8a6b32940430d8bb64a7b3b69ca8c2a67781"
+  },
+  {
+    "path": "src/lib/contracts/decision-18-follow-up-research-record.ts",
+    "sha256": "3e94497754a431226d9466310ef79b49401ad55cbed10226b1aacaee81d2ccd2"
+  },
+  {
+    "path": "src/lib/contracts/player-photo.ts",
+    "sha256": "8986d33f7db7f7b4756735bd1fbd24d4865a52b5cbb22b5c8b8bc07635ff13dd"
+  },
+  {
+    "path": "src/lib/contracts/cross-validation.ts",
+    "sha256": "69c8c2d759ce4b836bdbfd0c57faae59024ac8ed92fd4a4180edcb80d3158205"
+  },
+  {
+    "path": "src/lib/contracts/case.ts",
+    "sha256": "292acf826a8fb2a26aea7d2cb83df430d72256a5ee6900acdc035443527bfc4f"
+  },
+  {
+    "path": "src/lib/contracts/player-photo-registry-v5.ts",
+    "sha256": "f4654726f844461302439b15c1cb9711934a5c08b41a652a2ef8eaf44151ac0d"
+  },
+  {
+    "path": "src/lib/contracts/case-follow-up-research-v2.ts",
+    "sha256": "a6625068703885320a54f49a150a897adce447ad21f1004bfe52cd6fde523981"
+  },
+  {
+    "path": "src/lib/contracts/decision-15-photo-contract.ts",
+    "sha256": "0295b55c57ccc2f7550dab41d4a4f6eca119cc909207cce7765af98a49a1992f"
+  },
+  {
+    "path": "src/lib/contracts/canonical.ts",
+    "sha256": "b75327e075747b24f9ac587c5716a27a4726a703c58180f2dc30deed63e63045"
+  },
+  {
+    "path": "src/lib/contracts/taxonomy.ts",
+    "sha256": "093b2c2ed13de152b178842a872e53a641cefba5d037f2a8110eb08299625584"
+  },
+  {
+    "path": "src/lib/contracts/injury-overview.ts",
+    "sha256": "6cf38e26f5f065375aa5b97b863d6a82e8ef9b42f3e4ddf6ad538ada7eb63b03"
+  },
+  {
+    "path": "src/lib/contracts/release-history.ts",
+    "sha256": "a582bcf82170c380f24bf55cd6f1f8918311e3c4c70ec3be4042bcd6b6536dfc"
+  },
+  {
+    "path": "src/lib/contracts/decision-14-photo-contract.ts",
+    "sha256": "bfcafb1b56cd77bdd8af375871461f0eaf9c5acf0ec8e2e252bdc69c0f4d7036"
+  },
+  {
+    "path": "src/lib/contracts/player-photo-registry-v4.ts",
+    "sha256": "153362a50894e2c188ab4dded9990c19b894422bbbe6259ab178d869663d4e7f"
+  },
+  {
+    "path": "src/lib/contracts/player-photo-registry-v7.ts",
+    "sha256": "3bab72d89533bcfb598b32cd0a68d2dcc27335a54b1df818ed0f381c79995c00"
+  },
+  {
+    "path": "src/lib/contracts/player-photo-registry-v6.ts",
+    "sha256": "cfdb2745385df1d6af5426df90995658d36e9df17b89c774f07c8cebc0d68e31"
+  },
+  {
+    "path": "src/lib/contracts/site-governance.ts",
+    "sha256": "14f28a17e53fe191ebb4cd240906fb0c6738d3ff9d4a8b8710d4147fe63b33f4"
+  },
+  {
+    "path": "src/lib/contracts/decision-17-regression-contract.ts",
+    "sha256": "f99b3130baaacc3c98732a133a54987a373cb31c3331c21153c44b99ea7996ac"
+  },
+  {
+    "path": "src/lib/contracts/decision-18-regression-contract.ts",
+    "sha256": "bb61c8b48573b3c60904aa637738244e348b6b284e6fe85f70b3b405de45c193"
+  },
+  {
+    "path": "src/lib/contracts/source-manifest-registry.ts",
+    "sha256": "5609a342a06f540f7a074f3868ae250b6adb5ad81a04bf66c8a9f0d8cc8c03c6"
+  },
+  {
+    "path": "src/lib/contracts/decision-16-rendition-contract.ts",
+    "sha256": "ea9f3ce3c47b6681c94f13b7a097cd2e27ade7c24a83d698593fecc5c5bcf9ac"
+  },
+  {
+    "path": "src/lib/contracts/case-follow-up.ts",
+    "sha256": "dae16a9c98c7c56a75294e858053dc244bf273e40043a9fcfdc3a36cd3f1094a"
+  },
+  {
+    "path": "src/lib/contracts/decision-18-follow-up-batch.ts",
+    "sha256": "39112bb52af92edacbe0afe60357c6eeadadc250f9d9292175649ea4da116082"
+  },
+  {
+    "path": "src/lib/contracts/update.ts",
+    "sha256": "24828b2fd16028a6c09cac04f4d98b51843c4ac886db881f3d6076d1e790ebe5"
+  },
+  {
+    "path": "src/lib/contracts/player-photo-registry-v8.ts",
+    "sha256": "95153c25e42f149de1e30994db22b6914dfd2e7813adf295cf081c9ed49e18fd"
+  },
+  {
+    "path": "src/lib/cases/follow-up-research-v2-digest.ts",
+    "sha256": "8b074b06d8492d7b3cef51a6bf748d094ddc35cbe894d0f92a1bf6f3c50bdf35"
+  },
+  {
+    "path": "src/lib/cases/follow-up-digest.ts",
+    "sha256": "8a5432e57791a364546ac6f81ffc0bec6656ff1ac73e13f7eb8f9aa52033b491"
+  },
+  {
+    "path": "src/lib/cases/canonical-json.ts",
+    "sha256": "fd49ca5b1e4d7872f7fa6cc711e6944c729eb7ba4a135272cbc9f30fa784b535"
+  },
+  {
+    "path": "src/lib/cases/search-index.ts",
+    "sha256": "80ffff64ebc45204ef9d21ec6dc22a4ef9a293ef5a8def586c7772a55770508a"
+  },
+  {
+    "path": "src/lib/cases/pagination.ts",
+    "sha256": "d7be888c62db2d4e55d038ea498f75aeec0d91bc0f00e26148879315b06ea737"
+  },
+  {
+    "path": "src/lib/cases/injury-overview-digest.ts",
+    "sha256": "9ee206d79914cc640804c7eed1db7cda9718da80e0501a30034fe3e24f341416"
+  },
+  {
+    "path": "src/lib/cases/decision-18-follow-up-generation.ts",
+    "sha256": "be7ab15345ea19027eeeb46a61d62aac1a261c4e2b03cd83638e691935993033"
+  },
+  {
+    "path": "src/lib/cases/update-digest.ts",
+    "sha256": "06630a652484ffac145fcd349306c137c8931ccce9062771f4cfa76b063c69ff"
+  },
+  {
+    "path": "src/lib/cases/review-validation.ts",
+    "sha256": "8475e502b2249d5c3999583e4821d954ccb5a8edb068cbc43a0a119c32c6e528"
+  },
+  {
+    "path": "src/lib/cases/follow-up-presentation.ts",
+    "sha256": "fa3f738bda5e49a7058476674fc298d6ebdef031e0e697c8358659c7837eab08"
+  },
+  {
+    "path": "src/lib/cases/selectors.ts",
+    "sha256": "567cc708ed8d3b28944986c0c553d75e84e177f835cb4353195f27151e33e4c0"
+  },
+  {
+    "path": "src/lib/cases/follow-up-loader.ts",
+    "sha256": "811c9bdcae59f1ea39cce8dcddd9e891422ea7eaee2088040fb3ca659089ba62"
+  },
+  {
+    "path": "src/lib/cases/video-source.ts",
+    "sha256": "558ddf94b591f143cc9d9d24fce99356414009260bbc57bedc961ae42a6da939"
+  },
+  {
+    "path": "src/lib/cases/decision-18-follow-up-corpus.ts",
+    "sha256": "c05907d6e90db223ccd8828a279b7cdf7eff53731def733f840480bf1ee9e85c"
+  },
+  {
+    "path": "src/lib/cases/decision-18-transitional-follow-up-loader.ts",
+    "sha256": "c1c940ec489f964ffbcf2ab600d4a27f10af431def24ff7308901ee54d2c30ab"
+  },
+  {
+    "path": "src/lib/cases/follow-up-approval-ledger.ts",
+    "sha256": "aafcb42ae57cd7a4c12c567e0418155c6955962cdddfda0a12248f9a744bdb6c"
+  },
+  {
+    "path": "src/lib/cases/follow-up-research-v2-validation.ts",
+    "sha256": "aaa92bd5cb6b4105876bb0fec3cb255ba2219e27e1832fe79d98a18a998c8bc2"
+  },
+  {
+    "path": "src/lib/cases/decision-18-follow-up-batch.ts",
+    "sha256": "a39755b275d4afbe9e3903e3fe4e518e29bb5262ec8eb7a3702a71df67948cdf"
+  },
+  {
+    "path": "src/lib/cases/digest.ts",
+    "sha256": "0e32538c6eff4b472209f9149666ff120d33b9c1df62c90ee66359b315dfe154"
+  },
+  {
+    "path": "src/lib/videos/public-video-ids.ts",
+    "sha256": "efc24c7d224ae4631e4622e2c94c80f7863f3e7a8f7f412a95def15855a4e4a8"
+  },
+  {
+    "path": "src/lib/videos/expansion.ts",
+    "sha256": "ba618730edd647551c43492aafcdd0e62fcbe9b339530d666abe66640e17fa09"
+  },
+  {
+    "path": "src/lib/videos/event-updates.ts",
+    "sha256": "0688c14def6b6d233707ea53128ae1743337fc319d2db053014ec0ca6f1e920c"
+  },
+  {
+    "path": "src/lib/videos/discovery.ts",
+    "sha256": "d80cac67e5ba69ffd9acf67ece04af0c523374ab639ec0a61a5aab28b52d9588"
+  },
+  {
+    "path": "src/lib/videos/sports.ts",
+    "sha256": "9f02152be199527066626934f0606400d22652593c09b7b3d7f8e2a76667d699"
+  },
+  {
+    "path": "src/lib/videos/body-parts.ts",
+    "sha256": "81bbf8c8b97d8e7a3790d574b86a8cc2b5424e41ef6ae5b0b9fbac0de90ed945"
+  },
+  {
+    "path": "src/lib/videos/observation-guidance.ts",
+    "sha256": "5fc19580496152911db146902f7cafd039480ae52d7c2e3fffe706b54b71b318"
+  },
+  {
+    "path": "src/lib/videos/observation-card.ts",
+    "sha256": "52a3da406172d1f260a922b186f2489315fecd65d5446266050ba97b44304200"
+  },
+  {
+    "path": "src/lib/rights/photo-credits.ts",
+    "sha256": "4b9a8aa6fbcdab3b9f7e5369a83481ab7b163da9ba382963be1abeae34a8d0eb"
+  },
+  {
+    "path": "src/lib/rights/nba-link-policy.ts",
+    "sha256": "4af1098f12c4e3f424a190fe5ec83a2d806ccc24d713074015721ad4edc78e73"
+  },
+  {
+    "path": "src/lib/patient/public-launch.ts",
+    "sha256": "9209647abeb05cc804f3a1f1b4d4dc8b21aa1d0bc4e522258a2bb321e69c7d05"
+  },
+  {
+    "path": "src/lib/patient/actual-return.ts",
+    "sha256": "2f6eb92f5c575852c3adae1f12602496295a1e6ab797ed3a5d15eeb00e66e491"
+  },
+  {
+    "path": "src/lib/patient/public-domain.ts",
+    "sha256": "5100c9359c0a00f83dd79372ab4bcac1f2db6db579dfcb7a6ced51128673b14c"
+  },
+  {
+    "path": "src/lib/patient/guides.ts",
+    "sha256": "75b8a44583fb3a1464a9d7ce7ff5f46e0918cc0909f1366cb0201d07a6c8a154"
+  },
+  {
+    "path": "src/lib/patient/featured.ts",
+    "sha256": "bd3a178402b2c3ea88630027a95488509c9c95c4c536ab8d924a790705b003f4"
+  },
+  {
+    "path": "src/lib/rtp/course-link-decision.ts",
+    "sha256": "151d4c7c3a6ff1e46854b059b2a34849a202d4d881cb46d42246565994e25333"
+  },
+  {
+    "path": "src/lib/rtp/course-links.ts",
+    "sha256": "ae51a7d78a4c09ecfbfb2b26a37fe856c077a45ff0d679038e06068fe102eff8"
+  },
+  {
+    "path": "src/lib/governance/build-mode.ts",
+    "sha256": "26b269d636f780e5dc057d6c034b3fd29ada6f5399eabff0b698e700bf3605d1"
+  },
+  {
+    "path": "src/lib/governance/private-review-limits.ts",
+    "sha256": "7065d9c1d118e4706c1491fb875660feb617848197b989432ce9a6a3afb2dd49"
+  },
+  {
+    "path": "src/lib/governance/medical-review-decision.ts",
+    "sha256": "2358b90572d3de4b2d0408653a595f3e5070169b4b1c7dc6c2ace7589ea45e9c"
+  },
+  {
+    "path": "src/lib/governance/review-set.ts",
+    "sha256": "3e669ffc36b5cceb9e6cd4fd7de4d83b5232944a2555eedbb31eeacd679879d1"
+  },
+  {
+    "path": "src/lib/governance/video-rights-decision.ts",
+    "sha256": "0e4c1bef6d5d0615c1758e8ce027093ad3476f50a8c7e884f71925b59570676a"
+  },
+  {
+    "path": "src/lib/governance/release-gate.ts",
+    "sha256": "d6cf890f9b081d6610e26a516ec7280eedc9644feae8468e1aeee12a06a05891"
+  },
+  {
+    "path": "src/lib/governance/sitemap.ts",
+    "sha256": "74418be1ce7396e734935a7f44123c7ab44467b4c46890c15df43fad227f4dcd"
+  },
+  {
+    "path": "src/lib/governance/site-digest.ts",
+    "sha256": "97497e5dc418d88f6f842e1019717b30efd1f6460277219851d0e92056361956"
+  },
+  {
+    "path": "src/lib/governance/artifact-manifest.ts",
+    "sha256": "10b114629c440d60c08fb6a7d8e15fb509e0e684e1f381edfa78e92af3c00c15"
+  },
+  {
+    "path": "src/lib/governance/served-artifact-receipt.ts",
+    "sha256": "bbf1eb2d0233b9ad687ac237bfcff4f82ff0c6b0817e0fcf53f898cadeee1bc7"
+  },
+  {
+    "path": "src/lib/external/verification.ts",
+    "sha256": "28eaf2d0ed4a9ea844b25fe181d16ebe52e16cf549f737e6171caed3ebce8d46"
+  },
+  {
+    "path": "src/lib/routes/static-paths.ts",
+    "sha256": "aef4e90ea37b08407906037d4eea2997dec8f29ee39223900826dfc3c0b0ed46"
+  },
+  {
+    "path": "src/components/layout/ReviewBanner.astro",
+    "sha256": "42ca01c4e4c551fb8c76457af9140b9bf580e420698bbed60fa5cf07b72bcc6d"
+  },
+  {
+    "path": "src/components/layout/FontScaleControl.astro",
+    "sha256": "7e7c1f24871101a5505fe8ef7edfdf9f841705ce4b6a87e552959643eda51e43"
+  },
+  {
+    "path": "src/components/layout/SiteFooter.astro",
+    "sha256": "e1a06b28de13cb8abe3ac9f42468c117d1f14c8b82727804e0e8bce5365261ee"
+  },
+  {
+    "path": "src/components/layout/ThemeToggle.astro",
+    "sha256": "1e99dd276e07be532f0b302d6d467b218bf99033d21dd91f311851a25106212b"
+  },
+  {
+    "path": "src/components/layout/SiteHeader.astro",
+    "sha256": "b648e302c8584ffba17bf235620c3b3d16ca80fe9e6aebfb5c2026cc044b6931"
+  },
+  {
+    "path": "src/components/cases/CaseCover.astro",
+    "sha256": "49375a88dda3ec8f576bb94988b4399b2c95012fe2e838ae86fcc3e420a26bf2"
+  },
+  {
+    "path": "src/components/cases/VideoThumbnail.astro",
+    "sha256": "a2b44fb6644a4f0e3ed80e51bbc1fdb78edde18e4a8f98cc2b75c72e4f76af50"
+  },
+  {
+    "path": "src/components/cases/PatientGuide.astro",
+    "sha256": "6d437d00a5a5548f9e71b65dac8ab09c206bb009af896af478034ec1dbc7ca28"
+  },
+  {
+    "path": "src/components/cases/ReviewDigestDisclosure.astro",
+    "sha256": "aa3ab47c669438dd53bbfb20d3d4a89d8f3adf02aea9cf3827dc6421b653c643"
+  },
+  {
+    "path": "src/components/cases/RtpCourseLink.astro",
+    "sha256": "9509ccfe5c014f4df7b7b0b6b2e7a56e057c79fea901b62a9995fc701e15eb73"
+  },
+  {
+    "path": "src/components/cases/ActualReturn.astro",
+    "sha256": "a4f84dcaf5d0f9ed11410609382ff4928e0186386d5fde70a93e600bdd788755"
+  },
+  {
+    "path": "src/components/cases/FollowUpReports.astro",
+    "sha256": "97dcd5de7f97e50df95073b13089764cc5bd9fa5c3e8c91b76f6561b5a2f283e"
+  },
+  {
+    "path": "src/components/cases/ProfessionalNotes.astro",
+    "sha256": "6761dd7bd9a20b2b5674bb77937f0390eb5b927f60bd3af6604e251fe60d9e07"
+  },
+  {
+    "path": "src/components/cases/ReviewBadge.astro",
+    "sha256": "f551995fe5a11e3e228c371d665045baf4767916681f361f553d1b822cb966c0"
+  },
+  {
+    "path": "src/components/cases/ReportSourceRefs.astro",
+    "sha256": "2c04cc637b09fca316b76b2ef7c967c9e2386b1b6faea1c5329bad0349fd0967"
+  },
+  {
+    "path": "src/components/cases/EventFollowUp.astro",
+    "sha256": "763212800d082e1d3bd5caaccff6088314322a2a0d13981f93fca06bb29e2ad9"
+  },
+  {
+    "path": "src/components/cases/CaseVideo.astro",
+    "sha256": "5089f3c5c2da7219d5a98c48425831f3887fa75c3165f0874448edccaa278099"
+  },
+  {
+    "path": "src/components/cases/EventMechanism.astro",
+    "sha256": "3cf5af8fdbed53ff41d47fa5cbd224b40a846f524a7067fa02346d6544791355"
+  },
+  {
+    "path": "src/components/notices/MedicalNotice.astro",
+    "sha256": "f9d8c9e4abaa2adc86874ae757c3d14112d9a65701027c07633359c32a66cc44"
+  },
+  {
+    "path": "src/components/injuries/InjuryOverview.astro",
+    "sha256": "3bb8fe440f01812c1fb8a02aae60a317a1091b35031254708fa3579c150b46e5"
+  },
+  {
+    "path": "src/components/citations/ExternalSourceCitation.astro",
+    "sha256": "b7e1055813f478d5dd72417a9d3450dd47ca91ad875820cb0e3add9a432fe52b"
+  },
+  {
+    "path": "src/components/atlas/EditorialHero.astro",
+    "sha256": "0afc2ffe663d5aa6b3914556cb42a2fa5565208a252202185ebe14eaaa8f2e9c"
+  },
+  {
+    "path": "src/components/atlas/SportNav.astro",
+    "sha256": "57946fac6bc8c383daa81b6051a173a680b4685ec930ddcccdf492037d9956af"
+  },
+  {
+    "path": "src/components/atlas/InjuryCard.astro",
+    "sha256": "649ba24fe020cd52ddca1857ea68607d6c2f82e359c9fe12bbd9457412ac7a98"
+  },
+  {
+    "path": "src/components/atlas/SituationNav.astro",
+    "sha256": "5f32a67634e914f89f5f63a6347aca1d981fb9786b544ba2c03e25fec97cc57a"
+  },
+  {
+    "path": "src/components/atlas/EmptyState.astro",
+    "sha256": "987ea0e843fa7cccb894f5cabdf791ea25101ad9a4f44099f5f6cbf624662954"
+  },
+  {
+    "path": "src/components/atlas/ObservationCard.astro",
+    "sha256": "489db057854e7494e49a482eb5b0f185d86a20a0a23c91ce2432c59db62b8f2b"
+  },
+  {
+    "path": "src/components/atlas/CaseFilters.astro",
+    "sha256": "eae79f580f784b549fa8a53d0ad855e2e693cb5c6defc824731ee4153690b5f3"
+  },
+  {
+    "path": "src/components/atlas/CaseCard.astro",
+    "sha256": "0e3e73665a2d1e2a903eaec9e176e4bcf38c2a4a57367fcc5e29ee1f3cb963a7"
+  },
+  {
+    "path": "src/components/atlas/ListingPagination.astro",
+    "sha256": "07bbf13c09f3af85c7d44a28267c2c0f23c616740c55c93ab8363daebd0057ea"
+  },
+  {
+    "path": "src/components/atlas/BodyPartNav.astro",
+    "sha256": "5ee6a2d6219a5d0c8578b71615c26bd6c1324f9a096d55fe81b43a301d82e2e8"
+  },
+  {
+    "path": "src/components/credits/PhotoCredit.astro",
+    "sha256": "10f9777cfd4f9c5de0d84b50d368610f6d8fda6291b744d087e2d601ce44553e"
+  },
+  {
+    "path": "src/content/cases/lamelo-ball-ankle-sprain-2025.json",
+    "sha256": "9f787d71fb6b06e14eb14e9d1bf1fea8025fe5ab9720f9f3717533e1de8a75f6"
+  },
+  {
+    "path": "src/content/cases/ja-morant-ankle-sprain-2020.json",
+    "sha256": "72f3679b0f5ba91fb65a30b63194e916b65640a6abdbfb04b5a701d43f17742c"
+  },
+  {
+    "path": "src/content/cases/anthony-edwards-ankle-sprain-2023.json",
+    "sha256": "c3658572ab987ba166550afe54b76cf916bcaac9228c7eb08a4b86a962662623"
+  },
+  {
+    "path": "src/content/cases/lebron-james-ankle-sprain-2021.json",
+    "sha256": "e8316dd3bb58ababfaa6fe19c05d75aaac7934918deb5fc82118d86cff62e2ac"
+  },
+  {
+    "path": "src/content/cases/brandon-clarke-achilles-rupture-2023.json",
+    "sha256": "c06df42c4470b2e13a517b2aab82d1cbe91aec9b487318c6c6f6419150e46168"
+  },
+  {
+    "path": "src/content/cases/kyrie-irving-ankle-sprain-2021.json",
+    "sha256": "0589174cf2b6235cb16c15c6cee0f56da92bc1f60f06ca5b4df4ad09680344e6"
+  },
+  {
+    "path": "src/content/cases/cj-mccollum-ankle-sprain-2020.json",
+    "sha256": "1ecae81a15f6134cfb6f7bc7e8a8a1d79f193126d20196042f8d2bd6d9c409b6"
+  },
+  {
+    "path": "src/content/cases/kevin-durant-ankle-sprain-2024.json",
+    "sha256": "2403c1427a7796f6c2c1f506ffb7930d657a93b7baeab73b9fcd2854f961f05e"
+  },
+  {
+    "path": "src/content/cases/ricky-rubio-acl-2021.json",
+    "sha256": "270e2589d16d757d515dd4285dd9d6ea0688d0e7291e039e462bc0c0dba5cc7d"
+  },
+  {
+    "path": "src/content/cases/lamelo-ball-ankle-sprain-2023.json",
+    "sha256": "0b594716f6eab358a0d9fc297655c8274ee409bebad4d4ec34d9b43deaf1744d"
+  },
+  {
+    "path": "src/content/cases/kevin-durant-achilles-rupture-2019.json",
+    "sha256": "85fad7db7ee71658e74833a9f6220c6c614d3024f0bc6c24f11c6a84cd0d7824"
+  },
+  {
+    "path": "src/content/cases/anthony-edwards-ankle-sprain-2025.json",
+    "sha256": "d9bd03d8ec6c74c4c8c2a6a802156051ca3a5c999ef87e9cc5f09036d3fe20ed"
+  },
+  {
+    "path": "src/content/cases/lamelo-ball-ankle-sprain-2022.json",
+    "sha256": "c40c4dfc1c663f4477491731ea2b9af885f4a4070ba4d67aefb3823a22aee9d5"
+  },
+  {
+    "path": "src/content/cases/dwight-powell-achilles-rupture-2020.json",
+    "sha256": "347d8e149e499eee9f3f627efa079fd6d1e0c0392973dc98052a510d67539996"
+  },
+  {
+    "path": "src/content/cases/kyrie-irving-acl-2025.json",
+    "sha256": "d67fd06108d8994d7d923e1c0de9bd4e2522bda29da3e59b32c7452d39fe868d"
+  },
+  {
+    "path": "src/content/cases/moritz-wagner-acl-2024.json",
+    "sha256": "43f58a0b7f3965a0da031be9ef9275ba0c89713c35543e000a9071a8ed34f12b"
+  },
+  {
+    "path": "src/content/cases/damian-lillard-achilles-rupture-2025.json",
+    "sha256": "8ce887e115f8dba7225f541cf10b5c7bbccb72d17f55bb8fdae2165c6053d805"
+  },
+  {
+    "path": "src/content/cases/jayson-tatum-achilles-rupture-2025.json",
+    "sha256": "92f41beb8e9819f97319c273e6899140c9453957a1ede8c63f456772d6a55c47"
+  },
+  {
+    "path": "src/content/cases/dejounte-murray-achilles-rupture-2025.json",
+    "sha256": "745ec2361c8e3d5a23160628ed1a01a0b5a5706ba0dc208aa6c72bea0df5a7a5"
+  },
+  {
+    "path": "src/content/cases/danny-green-acl-2022.json",
+    "sha256": "7b30db5ab896ab00c6f81efdda1a835aba2111eed78d97e20089628a81d5a9f9"
+  },
+  {
+    "path": "src/content/cases/tyrese-haliburton-achilles-rupture-2025.json",
+    "sha256": "f56deb443ed9456e0a7afa655d349f827815b5fe677012da6fcc4cc5357873cb"
+  },
+  {
+    "path": "src/content/cases/trae-young-ankle-sprain-2021.json",
+    "sha256": "831f40ca5cf659e98b0d2d44bf1a24cda5c56cd4dedb7e37f72d6209cb9e63bf"
+  },
+  {
+    "path": "src/content/cases/markelle-fultz-acl-2021.json",
+    "sha256": "d210dec9e1a0fd59d36a58648e0c3dcb7dc1f8df9ceaf119951e2abf05d762f0"
+  },
+  {
+    "path": "src/content/cases/anfernee-simons-ankle-sprain-2023.json",
+    "sha256": "ad0867eb761b1022349b672611cba9bff2591a670a441851b46baeb376fd655c"
+  },
+  {
+    "path": "src/content/cases/thomas-bryant-acl-2021.json",
+    "sha256": "a0e6b53e0ca73cbb5e0f116693b889aaa9d7d3e84730116a10d67dc57bb3fb72"
+  },
+  {
+    "path": "src/content/cases/joe-ingles-acl-2022.json",
+    "sha256": "298dc63f859030836e163fe1343e6b9efab1637b4bcd506159ecde0a9b020383"
+  },
+  {
+    "path": "src/content/updates/2026-q3.json",
+    "sha256": "ddf04e5aee0cac066d245534f0d004107cd4aafb0dc792f16032244ee8a30021"
+  },
+  {
+    "path": "src/content/injuries/ankle-sprain.json",
+    "sha256": "9d3a9c7f6d7a01684ea488cf75dee7b6cc6e085750907ca9d0563c5cf8103e5b"
+  },
+  {
+    "path": "src/content/injuries/acl.json",
+    "sha256": "577dd0c5de31ad8084d4e9045decc8d488f8c8f310d00ca5d599eddde9f86903"
+  },
+  {
+    "path": "src/content/injuries/achilles-rupture.json",
+    "sha256": "0ad61708cc2116a668bfc9c19ead49dbd5476453812a8c3216d0229201017138"
+  },
+  {
+    "path": "src/content/follow-ups/lamelo-ball-ankle-sprain-2025.json",
+    "sha256": "5c69073ac00ec63cfa63db0158c61b0e41f8bda1b2428ecb0b8b1fd2c26c622b"
+  },
+  {
+    "path": "src/content/follow-ups/ja-morant-ankle-sprain-2020.json",
+    "sha256": "5611fae21bd6281f74a0c1578d1487af24b5117a322843120683c683fdd1d579"
+  },
+  {
+    "path": "src/content/follow-ups/anthony-edwards-ankle-sprain-2023.json",
+    "sha256": "04253c09d3c2aa2385a44ce5891fc4bff308d9f8bd21c26d5cdeca0c6538c222"
+  },
+  {
+    "path": "src/content/follow-ups/lebron-james-ankle-sprain-2021.json",
+    "sha256": "6741b70137583fd913c987c1f4aad383ebcbd35d0cec6316ac62823ecb2219aa"
+  },
+  {
+    "path": "src/content/follow-ups/brandon-clarke-achilles-rupture-2023.json",
+    "sha256": "89cd315e9f9ddb1492f8b1d6cfc53e3d4d4f0c3ab69e25513943678351303e4f"
+  },
+  {
+    "path": "src/content/follow-ups/kyrie-irving-ankle-sprain-2021.json",
+    "sha256": "d3feca4cb8bdc1e8f6900566f9145c4f25873c8615a396cefc23087b94ebc6f9"
+  },
+  {
+    "path": "src/content/follow-ups/cj-mccollum-ankle-sprain-2020.json",
+    "sha256": "1b82ab432226de41047fd5d162eaaac58997f1befe36f915ed1af197c3a20087"
+  },
+  {
+    "path": "src/content/follow-ups/kevin-durant-ankle-sprain-2024.json",
+    "sha256": "10abc2221d7394585a190f6ef25a0974f301e8a04a4422a31e28aa97c95c0afb"
+  },
+  {
+    "path": "src/content/follow-ups/ricky-rubio-acl-2021.json",
+    "sha256": "54f47cb0eec0cb9d04c50ac73513f3d5c6ffed72bdc1db16b9bba92328ae6efd"
+  },
+  {
+    "path": "src/content/follow-ups/lamelo-ball-ankle-sprain-2023.json",
+    "sha256": "1bcf0f910fdcf9f6540a991309cbd5ee45d4258f4200aac2d21456ee95475065"
+  },
+  {
+    "path": "src/content/follow-ups/kevin-durant-achilles-rupture-2019.json",
+    "sha256": "962b2165fbb6392e5b2a3abfee3be34cac6ebc672b8b8a1b27d1575f13ab2d2f"
+  },
+  {
+    "path": "src/content/follow-ups/anthony-edwards-ankle-sprain-2025.json",
+    "sha256": "8d9026744da94b952045139024634f902de81765e28fdc937379240ddd796f46"
+  },
+  {
+    "path": "src/content/follow-ups/lamelo-ball-ankle-sprain-2022.json",
+    "sha256": "9424c02b12035ba67858bf5aef520ea8baff3d8fa7a022aefc12118d3ce30ea2"
+  },
+  {
+    "path": "src/content/follow-ups/dwight-powell-achilles-rupture-2020.json",
+    "sha256": "8bdd70218453deaf0991235ec209e695bf276921da462b6e7c95816f9505839a"
+  },
+  {
+    "path": "src/content/follow-ups/kyrie-irving-acl-2025.json",
+    "sha256": "a9e818a0fe9687034e388d8dcb0f397ffa68fdf7f2591628963281a6e48bc85f"
+  },
+  {
+    "path": "src/content/follow-ups/moritz-wagner-acl-2024.json",
+    "sha256": "02472c8a2097e992590825cffd47f1a39e1c58d00ecaf7e2bc8ede5983c65c51"
+  },
+  {
+    "path": "src/content/follow-ups/damian-lillard-achilles-rupture-2025.json",
+    "sha256": "579eb06816400c569ad7116aa7ccba7072912cb62d88232f68fbcc1880ae685d"
+  },
+  {
+    "path": "src/content/follow-ups/jayson-tatum-achilles-rupture-2025.json",
+    "sha256": "b6efeb0f72c504c8c1fe24a02e7996a6ee60c957bcfb98b035f0a1846f5d07a7"
+  },
+  {
+    "path": "src/content/follow-ups/dejounte-murray-achilles-rupture-2025.json",
+    "sha256": "affd78f9b5499e9d16aec667522109752632f733f09f9b625c51860fa1156f45"
+  },
+  {
+    "path": "src/content/follow-ups/danny-green-acl-2022.json",
+    "sha256": "84d2473eda1b9d970f1896033cf6393899bbd3c7a736ce2ed0adcede7ac65939"
+  },
+  {
+    "path": "src/content/follow-ups/tyrese-haliburton-achilles-rupture-2025.json",
+    "sha256": "c534036ae2f03fd26214a84d76c15d49f0b4f17164bf77d34fad7b879a5488c3"
+  },
+  {
+    "path": "src/content/follow-ups/trae-young-ankle-sprain-2021.json",
+    "sha256": "5e95becf8b93f45dc69f7abb1b6271e55257a57193764882bda97f1600734bb7"
+  },
+  {
+    "path": "src/content/follow-ups/markelle-fultz-acl-2021.json",
+    "sha256": "e3b1044965d4c8d5fb38babaa499e1da194a31afa621056d170977e145006c61"
+  },
+  {
+    "path": "src/content/follow-ups/anfernee-simons-ankle-sprain-2023.json",
+    "sha256": "cbf14baecf618ca8c7f1d4f0fbfdc4402aba682f935d9523c719abbb640a5bd5"
+  },
+  {
+    "path": "src/content/follow-ups/thomas-bryant-acl-2021.json",
+    "sha256": "9156108a6b391816b3923e967f8d3272a4411230df81464f945a6c5a9dd8c301"
+  },
+  {
+    "path": "src/content/follow-ups/joe-ingles-acl-2022.json",
+    "sha256": "44d9a67d4e990dd1120e09b4002ddca024fe4b58d55c6c7014440106a2d9f7a6"
+  },
+  {
+    "path": "scripts/generate-decision-17-p0-baseline.ts",
+    "sha256": "bb9fb0336e20fb215858a01a2cbf7a47472d11e26daf9c70179d4fd81e4a31ce"
+  },
+  {
+    "path": "scripts/verify-decision-18-professional-safety.ts",
+    "sha256": "5f26ec4c44f57ed8464907c46030a0a61074c8a8a68d5b18cefe81aea1af49d7"
+  },
+  {
+    "path": "scripts/generate-player-photo-registry-v8.ts",
+    "sha256": "6a3e66d69252e810a1d5aefd90ef3b4ccb4ce2a9cdc253a1ee60be1b0bc39107"
+  },
+  {
+    "path": "scripts/verify-external-sources.ts",
+    "sha256": "4e6abd9400c18c67fbe3828afc357f734509feff8029083a8cefc6bc408177e4"
+  },
+  {
+    "path": "scripts/generate-decision-18-p0-baseline.ts",
+    "sha256": "b9a2a6366470791d684c5d0a738e54a38caa683a8ea7819e9a0896cddc9c97d0"
+  },
+  {
+    "path": "scripts/assert-plan-authorized.ts",
+    "sha256": "499dbea87a36ec2e0d5d6487816436ac60a7c1eefc1701fb6879f0c2ad613fa1"
+  },
+  {
+    "path": "scripts/release-check.ts",
+    "sha256": "8aae0966f43a73d23fef69ccf6ee1a8c7839fc1dbb3bc6bae5b34f28dee23b95"
+  },
+  {
+    "path": "scripts/generate-decision-16-p0-baseline.ts",
+    "sha256": "a4e377ca837f710cb837b2b2bb9dad04733f7ae53ef6ed715acb535addbc5e79"
+  },
+  {
+    "path": "scripts/generate-decision-14-p0-baseline.ts",
+    "sha256": "b150a1036fa1840ad24769ae0852acf7d6b00b38580e61dad8b5b0b00b68c85c"
+  },
+  {
+    "path": "scripts/bind-authority-document.ts",
+    "sha256": "eb76d3f74d2efd35fd1c28f37b87e12dd047d0cf22256e9355de085b6595dba4"
+  },
+  {
+    "path": "scripts/generate-player-photo-registry-v2.ts",
+    "sha256": "a5b5f0dc7a442740223d501ef215c2dc8ed9f89e1627983970d8340f748a445d"
+  },
+  {
+    "path": "scripts/generate-decision-13-notice-after-evidence.ts",
+    "sha256": "955ee79d007899ae0043d5d257a3ee8006929d277af6a5223c3c2dfd60592cbd"
+  },
+  {
+    "path": "scripts/export-case-schema.ts",
+    "sha256": "9f6ae1d34f9cbcb3eb409e39c23a281df55dd24fb3672bb29c169b2a9fc81948"
+  },
+  {
+    "path": "scripts/run-lighthouse.ts",
+    "sha256": "68ccb0cc822006e0d67d26dd657d6b5c9ce6a657b7947dcca53e3fba6cdd9e01"
+  },
+  {
+    "path": "scripts/generate-decision-13-cover-baseline.ts",
+    "sha256": "54b80149528927bfecd2aa7c0ecdff8c570ae682f56a804dae1c0e65fa510d6e"
+  },
+  {
+    "path": "scripts/generate-player-photo-registry-v6.ts",
+    "sha256": "5ab3404f81123a325ab7b70686e11e2dbb2b4d2a564595d249740d6c5bf18ccf"
+  },
+  {
+    "path": "scripts/generate-decision-16-rendition.ts",
+    "sha256": "da4220db9cf7e9eb4d20cb890e2b5004c12b769b64a2c041631e07582bcb87f2"
+  },
+  {
+    "path": "scripts/verify-decision-13-clinical-freeze.ts",
+    "sha256": "f5d4ea2a68f7c6b999c9740e8a5607f0aa0b1c563ac18e3eab05ee21edd9d2a3"
+  },
+  {
+    "path": "scripts/verify-brand-assets.ts",
+    "sha256": "287ab44717b60c8d6d4447e44bf295735b055845358662e91a10e79770c7bc94"
+  },
+  {
+    "path": "scripts/verify-public-artifact.ts",
+    "sha256": "50a11755ddba7679ba743de263028e1726ed780f85f799315e80eadcf2b90ed9"
+  },
+  {
+    "path": "scripts/generate-player-photo-registry-v7.ts",
+    "sha256": "1c1835d169cb5d9055b7cbd5f7ddcf31c72156cab8161ae5d5302caffcf3c2c2"
+  },
+  {
+    "path": "scripts/generate-decision-15-p0-baseline.ts",
+    "sha256": "4a7ed62675b37644e35759a57c6a61fdc22adc4cd9defb9eb69fdf9ddb54ac83"
+  },
+  {
+    "path": "scripts/generate-player-photo-registry-v3.ts",
+    "sha256": "ecfa1e18f900f2c67ec97b423537b8b5a15132edfaa0cfeca2d899594dc88d79"
+  },
+  {
+    "path": "scripts/generate-authorized-nba-content.ts",
+    "sha256": "9d43d3f3c3ffb682ea160c80c20ff4734c36f8e63fec7141dbed9de0de75c2df"
+  },
+  {
+    "path": "scripts/generate-decision-13-cover-replacement-evidence.ts",
+    "sha256": "938f793c7b1b78bd2ecb16b2f378c77f03225c2cc662e8b5d173416a6ff014fb"
+  },
+  {
+    "path": "scripts/verify-video-thumbnails.ts",
+    "sha256": "c5b84621431da511c53ff156983c9fa03240dd2479e94b95e8e13ded98ac7d9f"
+  },
+  {
+    "path": "scripts/generate-player-photo-registry-v4.ts",
+    "sha256": "47cb5c73b8fc22379d891acd12eb084159f865474e7e0bc7bbba6be41e25199b"
+  },
+  {
+    "path": "scripts/check-case-authoring-coverage.ts",
+    "sha256": "d77e316af872a2afad9fb91fd466bf25199b1064ae604557b9bc96a6441d0561"
+  },
+  {
+    "path": "scripts/verify-review-artifact.ts",
+    "sha256": "7c806e506c91e46e1f6672665760272658f753d17bd9813bb3e9ce0b7b2375f7"
+  },
+  {
+    "path": "scripts/generate-decision-13-notice-before-evidence.ts",
+    "sha256": "3ae683ec868e7bb9c36cc8f9905ad5c4d56f6a47b7a193d6ab3790bb38e6d54b"
+  },
+  {
+    "path": "scripts/verify-decision-17-follow-up-dom.ts",
+    "sha256": "5508b5ac2a5c0b23c4cac28dd4ffd4a58392fe67287b2890d641695e4157366a"
+  },
+  {
+    "path": "scripts/generate-decision-17-follow-ups.ts",
+    "sha256": "aed8a6dc080f95518b13c9512528b8bc263d6b6cc1ff8001063233db0a2f44b4"
+  },
+  {
+    "path": "scripts/verify-player-photo-assets.ts",
+    "sha256": "773d51caf94afbbc46fa97126397b3bf4718ab8cc2caf71a68011c0fd918b22a"
+  },
+  {
+    "path": "scripts/generate-player-photo-registry-v5.ts",
+    "sha256": "be43a81c9a5b98b8be592dc37d91dfbcebdfb774897106949e6bc29854dd42f5"
+  },
+  {
+    "path": "scripts/import-rtp-catalog.ts",
+    "sha256": "a9c2254ddb6a0248867a8e45c8ef09911ad916fe2ff600b488afd1c29744c865"
+  },
+  {
+    "path": "scripts/validate-plan-execution-decision.ts",
+    "sha256": "4fa67cb67de8d046fbe07ebe5089054bc75b0002b95b4d885b5d6ffe34852c1e"
+  },
+  {
+    "path": "scripts/verify-plan-binding.ts",
+    "sha256": "36c6e1b8aa7b21e3565f5dc81d34416975f70b442d441e58bb47dab5aa25c66d"
+  },
+  {
+    "path": "scripts/generate-decision-18-follow-up-cases.ts",
+    "sha256": "8afbc9196b6108ef973c59e290a64e87da76f300ce0dd27e6f5db54dba88742b"
+  },
+  {
+    "path": "scripts/verify-decision-17-c-digests.ts",
+    "sha256": "75db8e57eca59f04b25734bd101715becb0a97b06a82b5a32bb1da65d2145a0e"
+  },
+  {
+    "path": "scripts/resolve-active-plan.ts",
+    "sha256": "9bd8c63329df4eddf1944b103f804eb9f6e927476a41d841f7ebc827bb5b2e80"
+  },
+  {
+    "path": "scripts/generate-review-set.ts",
+    "sha256": "90d559665b663e13737e77d2a9a912eef237fc49a2a2b99342c672c1eb2a4202"
+  },
+  {
+    "path": "scripts/decision-18-follow-up-batch.ts",
+    "sha256": "ffa328167c3074ab0a138aacf2b23e27a661ef19ba75b1a1e8b861d8dd51c416"
+  },
+  {
+    "path": "scripts/check-nba-embed-batch2-content-correction.ts",
+    "sha256": "6f97eb4b1702adb596d495087268cba4bd0d50959f038ed09e1fca13dd9393ae"
+  },
+  {
+    "path": "scripts/monitor-public-videos.ts",
+    "sha256": "c2cf7d5b5985475c831ba77e03c3101534c5894bc1f8d9957972a652e1457c3a"
+  },
+  {
+    "path": "scripts/check-content.ts",
+    "sha256": "285c66d319f472126529f985a70e436bc612efcf72e2e17c9385bf302963fd0d"
+  },
+  {
+    "path": "scripts/generate-decision-18-follow-up-batch-receipt.ts",
+    "sha256": "5b3d7eeff581370d9c1afff24c59348d9dd5b1610251137db65dc9ec2948a09d"
+  },
+  {
+    "path": "scripts/research/capture-decision-14-erik-drost-evidence.ts",
+    "sha256": "883ca4824818673277bd42ec1d732b2d992bb69ca031055f28e2481870fb2917"
+  },
+  {
+    "path": "scripts/research/decision-17-follow-ups-batch3.ts",
+    "sha256": "fcc138b2dea34fed107bbcaf477fd74400f6bd264dc7df179a4ad67c66f180ca"
+  },
+  {
+    "path": "scripts/research/check-candidate-manifest.ts",
+    "sha256": "856c06f964a777126240b60370e1908423df5db0f28e423d8afacafb2f09f2ff"
+  },
+  {
+    "path": "scripts/research/decision-17-follow-ups-batch2.ts",
+    "sha256": "62da287ba741a736e9cb6c801e467ba75d99a7e5267365b095771187f57c95d3"
+  },
+  {
+    "path": "scripts/research/generate-candidate-manifest.ts",
+    "sha256": "b35d4ab8bc2f5530510f9bc55df770cf9c569522cced37a2ff85f20ed03b9a9b"
+  },
+  {
+    "path": "scripts/research/verify-candidate-links.ts",
+    "sha256": "a5a4281b3c06461e821dc495d374a25843f1bba119f041f292f5c69648fc3fcc"
+  },
+  {
+    "path": "scripts/research/digest-review-set.ts",
+    "sha256": "f95d3911a3a626c740dc0eabffaad4c81cb2a3907d9deab4d14c5e4f9239d908"
+  },
+  {
+    "path": "scripts/research/check-embed-enrichment-correction.ts",
+    "sha256": "e4274276c8d5b6e51910b62b32eb3af74b275ddb208e69c482de758cca54967a"
+  },
+  {
+    "path": "scripts/research/check-embed-enrichment-review-set.ts",
+    "sha256": "1e40c81539ceebae35ab29c8b9ddd87cb5e42c80603933edb62f607c34141718"
+  },
+  {
+    "path": "scripts/research/generate-source-policy-v4.ts",
+    "sha256": "b5bdc85ddee40402f7a544c6e01eda3663248ad8771a5a0d1f7d8da5303974f3"
+  },
+  {
+    "path": "scripts/research/check-candidates.ts",
+    "sha256": "76becc9ec2298248c33989f80528c08e15cc72a114220d7627144e1d75e52b22"
+  },
+  {
+    "path": "scripts/research/generate-source-policy-v5.ts",
+    "sha256": "4f0cff571e1ea5be47b1553132a093be18ff5527f5d69599f04c27f9340421dc"
+  },
+  {
+    "path": "scripts/research/digest-candidate-manifest.ts",
+    "sha256": "b6b29495583f316c294d57745e71490a24def177bc751bfb17d52648f4c81bb3"
+  },
+  {
+    "path": "scripts/research/capture-decision-14-p1-leads.ts",
+    "sha256": "aa518c6293801ab60ab07800fc6a669fb9fa87f3f63068abb8bef6deacae3650"
+  },
+  {
+    "path": "scripts/research/generate-source-policy-v6.ts",
+    "sha256": "3e0467966da279c8525c24c20734ed3b9f80d3b79118856046a6381599ec9a58"
+  },
+  {
+    "path": "scripts/research/check-candidate-verification.ts",
+    "sha256": "faeb4deffdb1abb9f3f714f89a1f4590f4a67cabe5640110199a292d655118fc"
+  },
+  {
+    "path": "scripts/research/generate-source-policy-v7.ts",
+    "sha256": "986f5fbacee3432f2634766edbf083ebe61aa1174686210edc70d04f0303d700"
+  },
+  {
+    "path": "scripts/research/check-source-manifest-registry.ts",
+    "sha256": "a1e55cea98cc9918821aea8febb73cd6461c74e5f8f483824729778e82382426"
+  },
+  {
+    "path": "scripts/research/generate-source-policy-v8.ts",
+    "sha256": "3740e0c6660dcfeb78f3b4706d0898af61605bc31061b15a034c2c3aca5c404d"
+  },
+  {
+    "path": "scripts/research/decision-17-follow-ups-batch1.ts",
+    "sha256": "f95ebe2cb06e71a442374c48f87e6ed9a46d269623c61d12aea77bf60ca31eec"
+  },
+  {
+    "path": "scripts/research/capture-decision-14-sandro-halank-evidence.ts",
+    "sha256": "06c0974f4c3ca26c2c0abd35ce8d355374e914103daf232bcf2f017b1113e69a"
+  },
+  {
+    "path": "scripts/research/generate-source-policy-v9.ts",
+    "sha256": "53463c10ddce7ee95abb270bf862f47d959345a74d70fb5e9a1298ba123f8c15"
+  },
+  {
+    "path": "scripts/research/check-embed-batch2-correction.ts",
+    "sha256": "8e5a975f55a072fb55965300fdf4c9bbe56fb1ac38f593d1c61deac438a16ee4"
+  },
+  {
+    "path": "scripts/research/generate-source-policy-v10.ts",
+    "sha256": "77c123b171254cd808d4aded2d89350eb1c098ca1a5d2e7b1ef173193f212952"
+  },
+  {
+    "path": "scripts/public-launch/check-patient-guides.ts",
+    "sha256": "694f76d8ddf045d1554d10d23bfa264a581bc6cf09972d2ea466613452d24206"
+  },
+  {
+    "path": "scripts/public-launch/check-release.ts",
+    "sha256": "fd85aeb070a6d015546672b054385a8f66adb2575e12af6da0ac422ccdf91cf5"
+  },
+  {
+    "path": "scripts/public-launch/verify-browser.mjs",
+    "sha256": "cc435c28ea18601044f47b9295520005719d1c1fdf6c846ec0cb4ace190c77ad"
+  },
+  {
+    "path": "scripts/public-launch/verify-playback.mjs",
+    "sha256": "b72e094d3c739ace8d4ede23597368294c0b9d1781d93d34b672afb9312ea51c"
+  },
+  {
+    "path": "scripts/public-launch/verify-expansion-playback.mjs",
+    "sha256": "46e4248f2746f309037331e2df6ad05314333281823105ccdcf86bcfbcdefe42"
+  },
+  {
+    "path": "scripts/public-launch/input-tree.ts",
+    "sha256": "f4f4b887e26d4a3db80bfb502293428d62af41aa787956f13816043f942871e9"
+  },
+  {
+    "path": "scripts/public-launch/check-artifact.ts",
+    "sha256": "ace2afc711fe8f921b610e07b35a556e2f442526ffc69edae623c25dd4d967c5"
+  },
+  {
+    "path": "scripts/private-hosting/verify-private-review.ts",
+    "sha256": "e059bdb62331ed995b09f1bd9e2a76ffeb2cdc24ccbdbb6cbd9587b3666d1fc8"
+  },
+  {
+    "path": "scripts/private-hosting/manage-private-review-service.ts",
+    "sha256": "01454de144b82ec7f7838b47af78be2b7fa4bdf0eb7951967ef9836eda90570a"
+  },
+  {
+    "path": "scripts/private-hosting/serve-private-review.ts",
+    "sha256": "42cd9e23bc5eaddef4c95ed59833e4ba006549088d43e7fc039d9d27198a7176"
+  },
+  {
+    "path": "scripts/private-hosting/provision-review-credential.ts",
+    "sha256": "faa05b524f0649b030444f23abdbc1cd1a0ad596d53998f123faf18cf5910c23"
+  },
+  {
+    "path": "scripts/private-hosting/generate-private-dist-manifest.ts",
+    "sha256": "484d2690eb41d0b5c8913e75d1ace4d895b1394a4e0a05173c29238b564cb0fa"
+  },
+  {
+    "path": "tests/unit/decision-18-follow-up-batch-cli.test.ts",
+    "sha256": "8eb765f9e23011cf0e968d43d35741e92983cce672d99c0d6908572c19e0da7b"
+  },
+  {
+    "path": "tests/unit/recent-120.test.ts",
+    "sha256": "d1698e0fb74f455c5e7f777deecb45d4f9500132f2e4651d9aa0b9fc4d809aec"
+  },
+  {
+    "path": "tests/unit/research-source-policy.test.ts",
+    "sha256": "3666c23355695be000b9f9a9188b3359d0b8e816b2e6b9729b30fbe3ded01611"
+  },
+  {
+    "path": "tests/unit/release-transition.test.ts",
+    "sha256": "af826574520f696e033561292444507128df2f10f541321cb5b7a2f0563e5d0c"
+  },
+  {
+    "path": "tests/unit/follow-up-approval-ledger.test.ts",
+    "sha256": "3738201d6dc03e7c471820df48a1149c1baf69cac5e9ca4170d7e439f6ffdbe3"
+  },
+  {
+    "path": "tests/unit/case-digest.test.ts",
+    "sha256": "f7fb63d6d6cc83aa6fc8d2f95e8cf739fefe15b4fac2eaad297167fb5d946eb2"
+  },
+  {
+    "path": "tests/unit/public-video-health.test.ts",
+    "sha256": "6f5cbd60135c9b1b0308899988a32cb17dc4cbfa8dd9132092b60bdada83ec22"
+  },
+  {
+    "path": "tests/unit/video-discovery.test.ts",
+    "sha256": "941930d33147396498fca5e8ff76eb475d297dfd342e8f32b6b48b9a375488f9"
+  },
+  {
+    "path": "tests/unit/decision-39-ux.test.ts",
+    "sha256": "49cbfc9ba4bb8049803bbcdd8657e1804d709aec48698e66f97f26c669c2fff7"
+  },
+  {
+    "path": "tests/unit/photo-credits.test.ts",
+    "sha256": "5aafc4683e8bd2deaa7a1fb20d0b0d22721c5aadfb03b509f6768607da16d0a0"
+  },
+  {
+    "path": "tests/unit/injury-overview-schema.test.ts",
+    "sha256": "965e1243abe5c827f95ff63aac830bb8714f5253f1af696b45311e46e7b549df"
+  },
+  {
+    "path": "tests/unit/real-content-authoring.test.ts",
+    "sha256": "03fe45dfc01dca72cd7583053c7d12e4f39617a5108093d397d57bfea816436b"
+  },
+  {
+    "path": "tests/unit/review-fixture-routes.test.ts",
+    "sha256": "681d47991da1cf0e4671096999bf4aa163c4afd55a2c87dd28d287987b11eadc"
+  },
+  {
+    "path": "tests/unit/video-expansion.test.ts",
+    "sha256": "57d93240026c8c0766707bb2b93352ea3ec8ca813a9e12482adc328a23d86682"
+  },
+  {
+    "path": "tests/unit/player-photo-registry-v4-contract.test.ts",
+    "sha256": "1af82679ac511c8907c04e81d8435facd80e2bfa580fb744e855d11afe00e6c5"
+  },
+  {
+    "path": "tests/unit/case-cross-validation.test.ts",
+    "sha256": "baee58e56d5105a12faa1cd62968967e3994cb7889f09e88d93aaba4ed2c0021"
+  },
+  {
+    "path": "tests/unit/contributions.test.ts",
+    "sha256": "c44e2692e718281f3127fc1514cc654e3d9424e25f837978121840b8480c3de1"
+  },
+  {
+    "path": "tests/unit/editorial-images.test.ts",
+    "sha256": "feed05766fff3c68600afbc130f793fea398b80bca7445e6e5eb0aca9110d431"
+  },
+  {
+    "path": "tests/unit/update-schema.test.ts",
+    "sha256": "b7814e617be1fb3fd20c9ff0b93726bb9fb2461aa5f0a0873792ed709455271d"
+  },
+  {
+    "path": "tests/unit/course-links.test.ts",
+    "sha256": "2ca47ccbda2236da15c3c67e9b727b8c0e92ec5685e2fe6a21aa4c02e9b99298"
+  },
+  {
+    "path": "tests/unit/site-digest.test.ts",
+    "sha256": "6698b85775e35d1e96b88437050eb606841dcfe3d6e99abddace8ae3f0e889fc"
+  },
+  {
+    "path": "tests/unit/research-manifest-transaction.test.ts",
+    "sha256": "f468eafa1a3bfabe0a9e7614f912e288ef927ac7ae1fd6747366f8c446dd834a"
+  },
+  {
+    "path": "tests/unit/artifact-manifest.test.ts",
+    "sha256": "ba836b80efb596b619d7f9b471f756ebabcf8da4284740eb000f8b24a9520bfc"
+  },
+  {
+    "path": "tests/unit/research-manifest.test.ts",
+    "sha256": "f918c83f87d8539be656ca8b5025c2e26d65129e91c93bd6ccfccc84cfe9d6ea"
+  },
+  {
+    "path": "tests/unit/review-set-v2.test.ts",
+    "sha256": "60de4a9b8cf144a5c62b05bc6fd47cc7f16c3be2848892893212a7959e0d50ab"
+  },
+  {
+    "path": "tests/unit/public-launch.test.ts",
+    "sha256": "f0177053f2518004a1ce0ea110c147c63b8cb2ed3f151fdee49c1f4c99fcfa63"
+  },
+  {
+    "path": "tests/unit/search-index.test.ts",
+    "sha256": "4363c0c0a40e58811d77dc59544aa65787ec1fd3644ea600ceefb0a7092b44a6"
+  },
+  {
+    "path": "tests/unit/case-follow-up.test.ts",
+    "sha256": "9237f0c0dd4039b0fdc6e5e4078dd88a275beafc2e536979a9735c5ebc7d6198"
+  },
+  {
+    "path": "tests/unit/decision-18-regression-contract.test.ts",
+    "sha256": "9656285f8e39ec23c7a5f0ca26e6ac8839717fa39d87d8d9f23b6350831222d7"
+  },
+  {
+    "path": "tests/unit/case-selectors.test.ts",
+    "sha256": "dae42ad412817a95c50182fedae23d0d43927763401770c5c8a3afc9a6a072af"
+  },
+  {
+    "path": "tests/unit/video-state.test.ts",
+    "sha256": "67abe9b15583f47c3e17053a7047270016faca6df5e91742c887e55498cbe763"
+  },
+  {
+    "path": "tests/unit/release-history-schema.test.ts",
+    "sha256": "8637ff4c4048bef4e4a941b5ad14a8dd09bc278ef7598c9d86afb9511642e148"
+  },
+  {
+    "path": "tests/unit/decision-17-regression-contract.test.ts",
+    "sha256": "19525ccfed2887793e03fc3d59939d6a1a1397f827c765ebe22ed33921b5c586"
+  },
+  {
+    "path": "tests/unit/player-photo-assets.test.ts",
+    "sha256": "235ec7feecb7477630326147d54ae0cff4cc14adf62d7bcdd10874643daf7597"
+  },
+  {
+    "path": "tests/unit/decision-16-rendition-contract.test.ts",
+    "sha256": "cb24272859a1e927026b4628a98b27e67d848af29cfd911c218fdb5342b96b7d"
+  },
+  {
+    "path": "tests/unit/routes.test.ts",
+    "sha256": "522cf2ddab0713d5c1138500b2f2fe6943240409a39dcdcc38e4400ef75ecf6b"
+  },
+  {
+    "path": "tests/unit/plan-binding.test.ts",
+    "sha256": "4875fd1c64566d93f807da790a018e60fdc25609661de1fb176e46c736ef98ce"
+  },
+  {
+    "path": "tests/unit/nba-link-policy.test.ts",
+    "sha256": "7a5a0a466766265b88cfe7f64946748f28ada2e9721396ffa3b8c59a6380436e"
+  },
+  {
+    "path": "tests/unit/follow-up-presentation.test.ts",
+    "sha256": "5b6545bfba7de30fea9e40246a4b0fd091981fcefdc48ef859ff921a60b0df97"
+  },
+  {
+    "path": "tests/unit/pagination.test.ts",
+    "sha256": "0e7b27561760cc177fecdd16cc867290c519f694af8bfd0726ff3e01a11739fd"
+  },
+  {
+    "path": "tests/unit/decision-39-sitemap.test.ts",
+    "sha256": "35690563af74c53a9c84245c330ee874a2c7074de5864518c29ca378de83faae"
+  },
+  {
+    "path": "tests/unit/video-facade.test.ts",
+    "sha256": "e2fe79f55e176b6fe0574703ce5a6ad6738be1da2c02f9faea896be868bfc891"
+  },
+  {
+    "path": "tests/unit/event-updates.test.ts",
+    "sha256": "6aa597ea0a1ab8599cb014880e66256dbe080b18dcaf3a26485282610a2f8321"
+  },
+  {
+    "path": "tests/unit/decision11-channel-attribution.test.ts",
+    "sha256": "5ded585c8912587097a8b5d52e43757e907e74bdde2cb6d42a1ed60b9e6df2c1"
+  },
+  {
+    "path": "tests/unit/generate-decision-18-follow-up-batch-receipt.test.ts",
+    "sha256": "f6fb0fd9f1806a698185d867321458fa7bef8678f393ebb119382c1f5112235e"
+  },
+  {
+    "path": "tests/unit/decision-39-observation-discovery.test.ts",
+    "sha256": "2d17f9479da984c410b14605c16ce7de53bfe2a3d06b31798a94206d9f825432"
+  },
+  {
+    "path": "tests/unit/release-gate.test.ts",
+    "sha256": "97f895460e4f150bfe3fa128881a77734559e4ea04dabd0807ba8673696f0dfa"
+  },
+  {
+    "path": "tests/unit/research-embed-batch2-correction.test.ts",
+    "sha256": "ec318eca9e0c0e4e764a466351e5c2d5d5c8f3671b03092d9122e7843c9ba25f"
+  },
+  {
+    "path": "tests/unit/player-photo-registry-v5-contract.test.ts",
+    "sha256": "94e9d3b967bbdd8642f90ee1def786657e458ff0103dece953ace795260b2f17"
+  },
+  {
+    "path": "tests/unit/review-artifact-citations.test.ts",
+    "sha256": "7bf6b25a83cc228e3e8573264d2c9997a92ca59bfd83c542f1b7018a84cacba0"
+  },
+  {
+    "path": "tests/unit/medical-notice.test.ts",
+    "sha256": "781575b64e7b943f4fc99c499ebc0dce0dbf262285d8c298220245879ada14a7"
+  },
+  {
+    "path": "tests/unit/research-link-verification.test.ts",
+    "sha256": "45bcdd6000ac691e4ae57b82aa385de700890ecf1752b9632651ce976c36cbc4"
+  },
+  {
+    "path": "tests/unit/private-host-verifier.test.ts",
+    "sha256": "cf980dd38563faaffad9f1278461a1c8a9120cd55430192348e81db6678659ec"
+  },
+  {
+    "path": "tests/unit/nba-embed-batch2-content-correction.test.ts",
+    "sha256": "464fc3c30e6a303eb5f08e73b879c45e7587082542ede4383fb10cff92055a60"
+  },
+  {
+    "path": "tests/unit/decision-18-transitional-consumers.test.ts",
+    "sha256": "3abbe61c57c38e83f608706f76999ad7635a69f3ab410cde237f5c00b3ce9dca"
+  },
+  {
+    "path": "tests/unit/play-counts.test.ts",
+    "sha256": "1f106041fd87471dbbbc62efaf4d8600b60a62fdfcf04a4dbf932b595e501392"
+  },
+  {
+    "path": "tests/unit/private-auth-server.test.ts",
+    "sha256": "cc0b6c64e7f606360f2c1de96c57f80f8c38dce57637308849b3fc0d3e5298a5"
+  },
+  {
+    "path": "tests/unit/case-schema.test.ts",
+    "sha256": "89d3c063bdfa67b012f253bb3dce5d3e853788b19e4bb6e0a77e12a8cf232801"
+  },
+  {
+    "path": "tests/unit/decision-39-security-policy.test.ts",
+    "sha256": "0cbc2b36f6e5025f2eb7b7a92d9a1699efa3a2607e54067dabb5312d74c89bf2"
+  },
+  {
+    "path": "tests/unit/research-candidates.test.ts",
+    "sha256": "b27bd8984ea2a682c9536ffb7c2d53dc714c7b137ba25b4157f3203f9438f882"
+  },
+  {
+    "path": "tests/unit/brand-assets.test.ts",
+    "sha256": "b0d04aea995b10a5d877f4d594c458e5d9f84c97eb8073e8302d784f044d6ab0"
+  },
+  {
+    "path": "tests/unit/decision-15-photo-contract.test.ts",
+    "sha256": "551fbdcf4d2b80d8a8114407b0a45a6bc0705c55a53a1da817c0bd613f694afc"
+  },
+  {
+    "path": "tests/unit/rtp-import.test.ts",
+    "sha256": "a9ec1fe0b38dbc896bcc52cd05d5564400252fe36296c4f0658187554655e655"
+  },
+  {
+    "path": "tests/unit/external-verification.test.ts",
+    "sha256": "6d8e99ce59edad5e26c1fe2f9db553f682205959251d8213361965ce08fe7560"
+  },
+  {
+    "path": "tests/unit/color-contrast.test.ts",
+    "sha256": "d4e80547b494f00ef0802f8781a55f771f8d9b0a0337ecab52c1a188ae15a775"
+  },
+  {
+    "path": "tests/unit/player-photo-registry-v6-contract.test.ts",
+    "sha256": "70f04215e938c8d76f1f66c4f4770ec2395d41eeb5946778415244060eabe5ac"
+  },
+  {
+    "path": "tests/unit/decision-18-transitional-follow-up-loader.test.ts",
+    "sha256": "00e2ae6816038d2c4f55e1e8d248a71401b68de5de25940939921468c3a37f2f"
+  },
+  {
+    "path": "tests/unit/private-host-operations.test.ts",
+    "sha256": "7b078c33ccffe321efc28d9998a156e825498e337a5f2eb3ca01815b24a93c12"
+  },
+  {
+    "path": "tests/unit/patient-experience.test.ts",
+    "sha256": "4e06c152f89a37914b057dd6750a308901f381ab8303e8b0eb159f4f34a28b77"
+  },
+  {
+    "path": "tests/unit/injury-overview-digest.test.ts",
+    "sha256": "0f42407fb1a6963a848bf02cc95af88abe4fe71479237b320eaec76ac1662a20"
+  },
+  {
+    "path": "tests/unit/update-digest.test.ts",
+    "sha256": "9a796193888c8bc85e87c4e4e005b6a6451d40b1a720016b78f27e44811f445a"
+  },
+  {
+    "path": "tests/unit/review-digest-disclosure.test.ts",
+    "sha256": "bc8f8987882fcaed7d55d0d6a60bc1fb55b13e2b15a4e956cb69a5328f20bb9b"
+  },
+  {
+    "path": "tests/unit/contribution-limits.test.ts",
+    "sha256": "f0e89a4c2b2cd8e8de4d07c4d17a5c382c5c7f3f4a33e8afc8d30050dc4d18d7"
+  },
+  {
+    "path": "tests/unit/youtube-url.test.ts",
+    "sha256": "695675b6ddef2e24c969a5717731b4042d246d3403c48f9362a699156d210852"
+  },
+  {
+    "path": "tests/unit/video-source-filter.test.ts",
+    "sha256": "b58f4dd533fbafc5ed3ceb2952df1e843654231b5f7db405b3a61ddc3d22688d"
+  },
+  {
+    "path": "tests/unit/review-artifact-size-guard.test.ts",
+    "sha256": "781e319b4d47446d661e241db4dfb15628647ebcced1ad39bba7a7ad1e42bd92"
+  },
+  {
+    "path": "tests/unit/player-photo-registry-v8-contract.test.ts",
+    "sha256": "0a3cbcb823ff3e58bdc8a38748e41f54bf0adfe04de01f06f690e6a300c3f600"
+  },
+  {
+    "path": "tests/unit/generate-decision-18-follow-up-cases.test.ts",
+    "sha256": "330704854a441cb4b031d4454b4c7c3a1778f1b5f251a222a3dcbbc1255fa88c"
+  },
+  {
+    "path": "tests/unit/indexing-policy.test.ts",
+    "sha256": "61a31cfd4484bcb47911470ac411832d904819a313f37f17d497c2dbcf85c463"
+  },
+  {
+    "path": "tests/unit/site-share-screenshot.test.ts",
+    "sha256": "920864edc269fb06c69c61d8c08c71ef5a71e71ab52729cde710ca02583de9bb"
+  },
+  {
+    "path": "tests/unit/video-sports.test.ts",
+    "sha256": "342d5fdcc4f6136ae86cac8de76a7d458c91124864c68665ede2d23fe153cd13"
+  },
+  {
+    "path": "tests/unit/taxonomy.test.ts",
+    "sha256": "0642d5dad3ad124771e19ad71e0a5b87e0f7353694c0b9d1e6749fe540ca331a"
+  },
+  {
+    "path": "tests/unit/private-dist-manifest.test.ts",
+    "sha256": "95b24928e167812f74676acc93ae6ae4e88ffaf6d6f31e5c9cb1e76d1b347c97"
+  },
+  {
+    "path": "tests/unit/decision-14-photo-contract.test.ts",
+    "sha256": "c4e0a1c84125b368052d6105165cd86ca6432004492f62c11a8e279e967674ba"
+  },
+  {
+    "path": "tests/unit/player-photo-registry-v7-contract.test.ts",
+    "sha256": "6442aa77b496f87ffec242a0834575f0f9340deb0aa07570f6ff5dca202717e7"
+  },
+  {
+    "path": "tests/unit/case-authoring-coverage.test.ts",
+    "sha256": "52a419c2a2ffb731a6bc7c202d75ccc7a68cfcff73faa50d05249f6a4c7b055f"
+  },
+  {
+    "path": "tests/unit/video-thumbnails.test.ts",
+    "sha256": "47f6af22cf32843b035d1786f84687472964c89c9ca8ad4cc23392b0ae5f1e96"
+  },
+  {
+    "path": "tests/unit/decision-39-favicon.test.ts",
+    "sha256": "404279409c7cf0b7209bc5778b6f59323d28512267d9124bce94d2cf31530065"
+  },
+  {
+    "path": "tests/unit/case-follow-up-research-v2.test.ts",
+    "sha256": "f56be5371cca9453ec53eb7ca48c131419d77596274ca37e018836ff7a300d4f"
+  },
+  {
+    "path": "tests/unit/decision-18-follow-up-batch-contract.test.ts",
+    "sha256": "fe2fecfd12eeb5c98baca0ec50e3a6b25384020fc37b5c89519f2783fa9ed615"
+  },
+  {
+    "path": "tests/unit/filtering.test.ts",
+    "sha256": "e6d634b5b6c90d20fccb22136f126599c65578f0b6503108ee1b689bd7e2993e"
+  },
+  {
+    "path": "tests/unit/decision-17-follow-up-corpus.test.ts",
+    "sha256": "57f1b777fbec15dde52e53af416e05f60d4f770313370aedd0eb22b5139c184f"
+  },
+  {
+    "path": "tests/unit/source-manifest-registry.test.ts",
+    "sha256": "0d3916f577fe154d5159be1d52cf85744a0619a4cf1f1a2fa9cb06fa287f61ea"
+  },
+  {
+    "path": "tests/unit/review-set.test.ts",
+    "sha256": "2ed790022decf4802f1cf62b1de7cccfd5b582e010636c0f249f504f0644cf8d"
+  },
+  {
+    "path": "tests/fixtures/research/source-manifest-registry.v1.json",
+    "sha256": "7a8862f18d4508134e5398274889eaada03efa9057dab4b572dab5d8e9f8e45a"
+  },
+  {
+    "path": "tests/fixtures/cases/valid-approved-classic.json",
+    "sha256": "6a60e58b98dd542ef2c1ad1e51def5bf76a4cc1456d4af47a84e82343e860a2c"
+  },
+  {
+    "path": "tests/fixtures/cases/valid-medical-review.json",
+    "sha256": "49119f87bfe6aa5989544a518526f41f2db524c83e13e1c6a8610049eb8925aa"
+  },
+  {
+    "path": "tests/fixtures/updates/valid-baseline.json",
+    "sha256": "6db1ad8a7d2675578db1da4ec11cca5f3f3e5c5f61524074f9e3d91d612ab5b0"
+  },
+  {
+    "path": "tests/fixtures/injuries/valid-medical-review.json",
+    "sha256": "99274a63c1f930f23816e65a8a658636e072cacadfdc121801e52e5c98943088"
+  },
+  {
+    "path": "tests/fixtures/rtp/rtp-catalog.valid.manifest.json",
+    "sha256": "31abe19fdbf84bb5e4b17f60adabbbcdc1f79f350a92ed1bfbc9d56fd13b6fb5"
+  },
+  {
+    "path": "tests/fixtures/rtp/rtp-catalog.valid.json",
+    "sha256": "e0ce4af050c407c20d6c9f619ddf2fa7115c118c9c15ad73560e6394dc7a9277"
+  },
+  {
+    "path": "tests/fixtures/rtp/course-link-decision.valid.json",
+    "sha256": "329f5ecd97b60568ff858d7e45b9b32ed96c1c9c8e000d24cb5f76285cd81ea5"
+  },
+  {
+    "path": "tests/fixtures/research/source-manifests/FICTIONAL-SOURCE-2026-08-06-001.v1.json",
+    "sha256": "5453cce03c2669af706873fa6e0e860208e75ac8cd9461ed1748057f12db6434"
+  },
+  {
+    "path": "tests/fixtures/research/reviews/source-batches/FICTIONAL-SOURCE-2026-08-06-001-source-review-decision.v1.json",
+    "sha256": "7277a541c96d459ca87f7976d8cc852ef3faf2634968321e2518edda0d454446"
+  },
+  {
+    "path": "functions/api/contributions.ts",
+    "sha256": "b18b6ff249e203d201bb2e0ead6b1340f8a022d6838e6cbeab477e465024535c"
+  },
+  {
+    "path": "functions/api/plays.ts",
+    "sha256": "ef971293bf75090635ea3a517268812a851ccdf8041219c6284fdc753ceae8bd"
+  },
+  {
+    "path": "functions/api/popular.ts",
+    "sha256": "33bd3d2f3c3fa71f2726615af4d00e46a0cc2ddafe65980b59ed4b90a952b7f9"
+  },
+  {
+    "path": "migrations/0003_play_guards.sql",
+    "sha256": "e13e2d2cf5b4c788aeb05e0d8ea7f6c01a9d1d15b20964b1abd8e0398c4de16e"
+  },
+  {
+    "path": "migrations/0001_play_events.sql",
+    "sha256": "44ec3bfd0953f56524e677ffd1098e09d889a382fa28ab059126062419d573b5"
+  },
+  {
+    "path": "migrations/0002_contribution_limits.sql",
+    "sha256": "8ecdf11b77c672284228a3cd507c3e19ef6f46a37cc33976ce6b4f7c2987be5b"
+  },
+  {
+    "path": "package.json",
+    "sha256": "78acb973149d240a23bf6363a28c0bb3d88e5dba966df2ab3791059a7a16544f"
+  },
+  {
+    "path": "package-lock.json",
+    "sha256": "b5b10ba9dd3751571560abe6b92b473f235576e0bf80c74ffd580661bd8cfc6e"
+  },
+  {
+    "path": "astro.config.mjs",
+    "sha256": "ea7c7c13cd8406a366d304348165756d65b07f5fa5b2336dd89d4b444acf912d"
+  },
+  {
+    "path": "tsconfig.json",
+    "sha256": "c10c898c0cc090101dddba0ebaf0a3e185a117d9c7f9c4aeb0319bab3c8e5e53"
+  },
+  {
+    "path": "wrangler.jsonc",
+    "sha256": "c8dc6d5015d600d4ae1bf2a90e4981b919ae45dae0eaf2e72310a2af892efd2f"
+  },
+  {
+    "path": "vitest.config.ts",
+    "sha256": "2be95a42a0e9f93fb7ccd5845339bd46dca650bda6493cdb567bf40e43469360"
+  },
+  {
+    "path": "docs/reviews/2026-09-12-recent-120/thumbnail-capture.json",
+    "sha256": "292b878bcb0b6077a64bc3b4ae0f2bc01dcf60748cafe041114cbcf43bd64971"
+  },
+  {
+    "path": "docs/reviews/2026-09-12-recent-120/source-research.json",
+    "sha256": "ba172bf7c1158b14466bd4eb52dbbf3c9c34fd7e0941b2d9d69a729bf858aec2"
+  },
+  {
+    "path": "docs/reviews/2026-09-12-recent-120/case-review.json",
+    "sha256": "26f713e48ceff46bbb2c3d2d7516d77ca3d0eca439178d62f4cee6c46b199ae6"
+  },
+  {
+    "path": "docs/reviews/2026-09-12-recent-120/README.md",
+    "sha256": "ce227aa7e00d9eccc1954f1127c5b79b54981d7615868316f7a4460ae118b450"
+  },
+  {
+    "path": "docs/reviews/2026-09-12-first10-expansion/case-review.json",
+    "sha256": "88ccb00e91cfb3b32e5ff457f6a893fa8081c13ff31e0d1e1fcd8effbe3f0ca0"
+  },
+  {
+    "path": "docs/reviews/2026-09-12-first10-expansion/README.md",
+    "sha256": "b6fe7659891799f1791b8527a53abb774b3fbe2f7d3dcae001834c04e8431b1b"
+  },
+  {
+    "path": "docs/reviews/2026-09-12-first10-expansion/validation.json",
+    "sha256": "ebd38268a563441558e74e6d9b36f059bdc751c53b03bd98dcfd5e20ca6a9b03"
+  },
+  {
+    "path": "docs/reviews/2026-09-12-first10-expansion/progress.json",
+    "sha256": "da76a9c518cbf871d1fbf2077cf5cfd1fc98f34ed13150e0e174554c9412ea0d"
+  },
+  {
+    "path": "docs/reviews/2026-09-12-first10-expansion/layout-results.json",
+    "sha256": "915794e251ee5c4cc08becc99b1339ba11d1aa9ae48f143cfc1e824266637e92"
+  },
+  {
+    "path": "docs/reviews/2026-09-12-second10-expansion/case-review.json",
+    "sha256": "6efb7dcaef2e2005109fbf4e68e74d6b1906581030d2ec5a464f6170596e6163"
+  },
+  {
+    "path": "docs/reviews/2026-09-12-second10-expansion/README.md",
+    "sha256": "53573b9f36d43313c447a95497e2ea1951287bf45c807adf53a19b1c518c41e1"
+  },
+  {
+    "path": "docs/reviews/2026-09-12-second10-expansion/validation.json",
+    "sha256": "8578710ec05460c6287985066a17680bf411f3d0d0fe810650825aa806eb3b8a"
+  },
+  {
+    "path": "docs/reviews/2026-09-12-second10-expansion/progress.json",
+    "sha256": "5b8168ac6630157c1313501f280b1c5f1db38467ff6546334b44eff3f33e39f3"
+  },
+  {
+    "path": "docs/reviews/2026-09-12-second10-expansion/layout-results.json",
+    "sha256": "e039e01e69f1c721a60d0386eda48bbbc5ff75279ac8213ef61dcc363a72f3b5"
+  },
+  {
+    "path": "docs/reviews/2026-09-12-remaining80-expansion/case-review.json",
+    "sha256": "7c5088aeb7b383b63cf05dfe0b2c6f0f1bfb0197ea4e21377da499b6a1e3b302"
+  },
+  {
+    "path": "docs/reviews/2026-09-12-remaining80-expansion/README.md",
+    "sha256": "31ced3e6d8ed5439d08135e5513449e0371430ffed092579ca51ada5e4264d3d"
+  },
+  {
+    "path": "docs/reviews/2026-09-12-remaining80-expansion/baseline.json",
+    "sha256": "bb762db147ca7d2b04c064a5d770f5995228ddb93b677be5fcdcd5ca55f39ff2"
+  },
+  {
+    "path": "docs/reviews/2026-09-12-remaining80-expansion/validation.json",
+    "sha256": "64d9ac42920ee47e7263f4a070306aa5fc43afab1b150ccb8e0c24bf0ba9ad01"
+  },
+  {
+    "path": "docs/reviews/2026-09-12-remaining80-expansion/progress.json",
+    "sha256": "fcd369a7228593548b64cfbe066bc19313136684fc6d86903681413b348f58aa"
+  },
+  {
+    "path": "docs/reviews/2026-09-12-remaining80-expansion/layout-results.json",
+    "sha256": "5a6bbb2e64cf8b61a970b09d3c5031fb41fc128324ae2c33ebbbbfdcb28289a5"
+  }
+]

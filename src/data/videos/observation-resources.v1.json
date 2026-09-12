@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-09-08",
+  "checkedAt": "2026-09-12",
   "resources": {
     "acl": {
       "kind": "article",
@@ -499,6 +499,82 @@
     "chien-ming-wang-2008-foot": {
       "resources": ["peroneal"],
       "note": "主站尚未配對到 Lisfranc 專文，以下為合併肌腱傷勢的延伸閱讀。"
+    },
+    "nick-chubb-knee-2023": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "kirk-cousins-achilles-2023": {
+      "resources": ["achilles"],
+      "note": ""
+    },
+    "joe-burrow-wrist-2023": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供一般運動醫學背景，並非這位選手的個別治療紀錄。"
+    },
+    "aidan-hutchinson-leg-2024": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供一般運動醫學背景，並非這位選手的個別治療紀錄。"
+    },
+    "gavi-acl-2023": {
+      "resources": ["acl", "football-acl"],
+      "note": ""
+    },
+    "ter-stegen-patellar-tendon-2024": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供一般運動醫學背景，並非這位選手的個別治療紀錄。"
+    },
+    "rodri-acl-2024": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "dani-carvajal-knee-2024": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "jamal-musiala-ankle-2025": {
+      "resources": ["ankle-fracture"],
+      "note": ""
+    },
+    "eder-militao-acl-2024": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "carolina-marin-acl-2024": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "jonas-vingegaard-crash-2024": {
+      "resources": ["cycling"],
+      "note": ""
+    },
+    "wout-van-aert-crash-2024": {
+      "resources": ["cycling"],
+      "note": ""
+    },
+    "ronald-acuna-acl-2024": {
+      "resources": ["acl"],
+      "note": ""
+    },
+    "novak-djokovic-meniscus-2024": {
+      "resources": ["meniscus"],
+      "note": ""
+    },
+    "kristaps-porzingis-retinaculum-2024": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供一般運動醫學背景，並非這位選手的個別治療紀錄。"
+    },
+    "joel-embiid-meniscus-2024": {
+      "resources": ["meniscus"],
+      "note": ""
+    },
+    "connor-bedard-jaw-2024": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供一般運動醫學背景，並非這位選手的個別治療紀錄。"
+    },
+    "federica-brignone-leg-2025": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供一般運動醫學背景，並非這位選手的個別治療紀錄。"
     }
   }
 }

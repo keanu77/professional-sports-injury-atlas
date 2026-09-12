@@ -1,0 +1,17 @@
+{
+  "reason": "Previously excluded videos; private archive only, never bundled in the public site",
+  "assets": [
+    {
+      "videoId": "tEHP_6GA6ZA",
+      "path": "src/assets/videos/tEHP_6GA6ZA.jpg",
+      "source": "https://i.ytimg.com/vi/tEHP_6GA6ZA/hqdefault.jpg",
+      "sha256": "1ba220b0aa87d48c9831592677d71992b32ca94fcc8106be53d05893c772474a"
+    },
+    {
+      "videoId": "qwuEydc9qXQ",
+      "path": "src/assets/videos/qwuEydc9qXQ.jpg",
+      "source": "https://i.ytimg.com/vi/qwuEydc9qXQ/hqdefault.jpg",
+      "sha256": "7b7027ce87f58f7fb9af853a821f98c8a894dbcee64fec26bff3aa8138b075d8"
+    }
+  ]
+}

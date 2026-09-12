@@ -11,7 +11,7 @@ const FEATURED = [
   "lindsey-vonn-schladming-2013",
 ];
 
-test("all 94 observation pages expose general guidance, text highlights, related videos, and category routes", async ({
+test("all 113 observation pages expose general guidance, text highlights, related videos, and category routes", async ({
   request,
 }) => {
   test.skip(!PUBLIC_LAUNCH, "Observation routes belong to the public launch");
@@ -23,7 +23,7 @@ test("all 94 observation pages expose general guidance, text highlights, related
       ),
     ),
   ];
-  expect(observationPaths).toHaveLength(94);
+  expect(observationPaths).toHaveLength(113);
   const categoryRoutes = new Set<string>();
 
   for (const path of observationPaths) {

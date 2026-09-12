@@ -136,6 +136,14 @@ const list = (path: string): string[] =>
     const full = join(path, name);
     return statSync(full).isDirectory() ? list(full) : [full];
   });
+const removedVideoIds = expansion.clips
+  .filter((clip) => curation.removedSlugs.some((slug) => slug === clip.slug))
+  .map((clip) => clip.videoId);
+for (const path of list("dist"))
+  assert.ok(
+    !removedVideoIds.some((id) => path.includes(id)),
+    `Removed video asset exists: ${path}`,
+  );
 const htmlFiles = list("dist").filter((path) => path.endsWith(".html"));
 const cases = htmlFiles.filter((path) => path.startsWith("dist/cases/"));
 assert.deepEqual(
@@ -215,7 +223,9 @@ for (const item of [
   );
   assert.ok(
     html.includes(`data-event-follow-up="${item.slug}"`) &&
-      html.includes("查看傷勢與回場來源"),
+      html.includes(`data-event-mechanism="${item.slug}"`) &&
+      html.includes("data-recovery-timeline") &&
+      html.includes("查看機轉、傷勢與回場來源"),
     `Missing sourced event report: ${item.slug}`,
   );
 }
@@ -247,13 +257,16 @@ writeFileSync("dist/_headers", PUBLIC_HEADERS);
 // Removed Pages assets can remain in CDN cache. Redirect before asset lookup.
 writeFileSync(
   "dist/_redirects",
-  curation.removedSlugs
-    .flatMap((slug) =>
+  [
+    ...curation.removedSlugs.flatMap((slug) =>
       ["", "/", "/index.html"].map(
         (suffix) => `/videos/${slug}${suffix} /removed-video/ 302`,
       ),
-    )
-    .join("\n") + "\n",
+    ),
+    // Retire the exact cover URLs found in the preceding public artifact.
+    "/_astro/qwuEydc9qXQ.3iGMs2YR.jpg /removed-video/ 302",
+    "/_astro/tEHP_6GA6ZA.CTFwOaes.jpg /removed-video/ 302",
+  ].join("\n") + "\n",
 );
 const receipt = {
   schemaVersion: 1,

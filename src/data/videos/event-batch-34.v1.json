@@ -26,6 +26,60 @@
           "title": "MLB：Haniger 傷後實際比賽紀錄",
           "url": "https://www.mlb.com/news/mariners-activate-outfielder-mitch-haniger-c249408366",
           "publishedAt": "2017-08-19"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=Pi6Pku8QVXY",
+          "publishedAt": null
+        },
+        {
+          "title": "CDC：腦震盪的受傷方式",
+          "url": "https://www.cdc.gov/heads-up/about/index.html",
+          "publishedAt": null
+        }
+      ],
+      "mechanism": {
+        "title": "球撞擊臉部，同一事件可有骨折、傷口與腦震盪",
+        "summary": {
+          "text": "Haniger 打擊時遭投球擊中臉部，隨後退出比賽。球團公布腦震盪、鼻骨骨折及上唇撕裂傷；三者是同次事件中不同層次的傷害。",
+          "sourceIndexes": [4, 1]
+        },
+        "steps": [
+          "準備打擊。",
+          "投球直接撞擊臉部。",
+          "停止比賽，接受顏面與頭部評估。"
+        ],
+        "explanation": {
+          "text": "顏面撞擊可直接傷及局部組織，也可能使頭部快速移動而影響腦部功能。看見骨折不代表一定有腦震盪，本例兩者皆有球團資料支持。",
+          "sourceIndexes": [5, 1]
+        },
+        "limitation": "不能用傷口癒合程度代替腦震盪恢復評估，也不從短片推定長期後遺症。小聯盟復健賽早於 MLB 回歸。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2017-07-29",
+          "title": "打擊時臉部受傷",
+          "text": "投球撞擊後退場。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2017-08-01",
+          "title": "球團補充傷勢",
+          "text": "腦震盪、鼻骨骨折及上唇撕裂傷。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2017-08-12",
+          "title": "3A 復健賽回場",
+          "text": "代表 Tacoma 出賽。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2017-08-19",
+          "title": "重返大聯盟",
+          "text": "移出傷兵名單後恢復 MLB 出賽。",
+          "sourceIndexes": [2, 3]
         }
       ]
     },
@@ -47,6 +101,54 @@
           "title": "MLB：Turner 春訓復出賽報",
           "url": "https://www.mlb.com/news/justin-turner-returns-to-red-sox-lineup-after-hbp",
           "publishedAt": "2023-03-20"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=szivDYWhjXM",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：直接撞擊與軟組織挫傷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/muscle-contusion-bruise/",
+          "publishedAt": null
+        }
+      ],
+      "mechanism": {
+        "title": "臉部遭球擊中，但傷口不等同骨折",
+        "summary": {
+          "text": "Turner 在打擊區遭投球擊中臉部後倒地，隨後由人員協助離場。公開報導記載撕裂傷需要縫合，檢查未發現骨折。",
+          "sourceIndexes": [3, 1]
+        },
+        "steps": [
+          "在打擊區面對投球。",
+          "球直接撞擊臉部。",
+          "倒地後接受處置，後續檢查區分軟組織與骨性傷害。"
+        ],
+        "explanation": {
+          "text": "直接撞擊可使局部軟組織受損，但不一定同時骨折。傷口外觀、流血量與骨頭狀況不能互相取代，仍需檢查釐清。",
+          "sourceIndexes": [4, 1]
+        },
+        "limitation": "本頁不因撞擊外觀嚴重就增加骨折或腦震盪診斷。恢復輕量活動、打擊練習與對外春訓不同。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2023-03-06",
+          "title": "打擊時顏面受傷",
+          "text": "撕裂傷接受縫合，報導未發現骨折。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2023-03-12",
+          "title": "恢復輕量棒球活動",
+          "text": "報導記載傷後活動進展，仍不算正式出賽。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2023-03-20",
+          "title": "春訓對外回場",
+          "text": "對 Pirates 恢復出賽。",
+          "sourceIndexes": [2]
         }
       ]
     },
@@ -73,6 +175,48 @@
           "title": "MLB 官方資料：Pillar 生涯與復出紀錄",
           "url": "https://www.mlb.com/player/kevin-pillar-607680",
           "publishedAt": null
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=c_laCIZqsPM",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：外力、骨折與恢復",
+          "url": "https://www.orthoinfo.org/diseases--conditions/fractures-broken-bones/",
+          "publishedAt": null
+        }
+      ],
+      "mechanism": {
+        "title": "投球擊中臉部後鼻骨骨折，回場時仍需防護",
+        "summary": {
+          "text": "Pillar 打擊時遭球擊中臉部後倒地。球團確認多處鼻骨骨折並接受手術；復出時使用防護，是後續處理的一部分，不能倒推碰撞當下的傷勢輕重。",
+          "sourceIndexes": [4, 1]
+        },
+        "steps": [
+          "在打擊區面對投球。",
+          "球直接撞擊臉部。",
+          "倒地後接受處置，鼻部傷勢另經檢查確認。"
+        ],
+        "explanation": {
+          "text": "鼻骨承受直接撞擊可能骨折，也可能合併附近軟組織損傷。是否需要手術及何時能打擊，不能只看表面的腫脹是否消退。",
+          "sourceIndexes": [5, 1]
+        },
+        "limitation": "本例不新增未確認的腦震盪診斷。回場仍有防護與角色安排，不代表鼻骨已完全癒合。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2021-05-17",
+          "title": "顏面遭球擊中",
+          "text": "後續確認多處鼻骨骨折。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2021-05-31",
+          "title": "直接回到大聯盟",
+          "text": "術後未經小聯盟復健賽，對 Diamondbacks 先代守再打擊，並使用臉部防護。",
+          "sourceIndexes": [2, 3]
         }
       ]
     },
@@ -99,6 +243,54 @@
           "title": "MLB：Harper 首場復健賽",
           "url": "https://www.mlb.com/phillies/news/bryce-harper-homers-twice-in-rehab-game",
           "publishedAt": "2022-08-24"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=4ekUPuhJEYI",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：外力、骨折與恢復",
+          "url": "https://www.orthoinfo.org/diseases--conditions/fractures-broken-bones/",
+          "publishedAt": null
+        }
+      ],
+      "mechanism": {
+        "title": "球擊中握棒的左手，拇指承受直接撞擊",
+        "summary": {
+          "text": "Harper 打擊時遭投球打中左手，隨即蹲下並握住手部。這次確認的是左拇指骨折，與同時存在的手肘問題分開處理。",
+          "sourceIndexes": [4, 1]
+        },
+        "steps": [
+          "雙手握棒，準備打擊。",
+          "投球直接撞擊左手。",
+          "隨即停止動作，查看並保護手部。"
+        ],
+        "explanation": {
+          "text": "手指在直接撞擊下可能骨折。握棒、接球與投球對手部的需求不同，能恢復某一角色，不等於每一種使用方式都已恢復。",
+          "sourceIndexes": [5, 1]
+        },
+        "limitation": "骨折位置與手術依公開報導，不從握手反應自行分型。指定打擊復健賽不能證明守備或手肘傷勢同時痊癒。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2022-06-25",
+          "title": "左手遭球擊中",
+          "text": "確認左拇指骨折。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2022-06-29",
+          "title": "接受拇指手術",
+          "text": "後續開始恢復手部功能。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2022-08-23",
+          "title": "3A 指定打擊回場",
+          "text": "代表 Lehigh Valley 參加復健賽。",
+          "sourceIndexes": [3]
         }
       ]
     },
@@ -125,6 +317,48 @@
           "title": "MLB：Betts 8 月 12 日比賽紀錄",
           "url": "https://www.mlb.com/video/mookie-betts-homers-11-on-a-fly-ball-to-left-field-enrique-hernandez-scor",
           "publishedAt": "2024-08-12"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=wglRV7rAQ2Q",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：外力、骨折與恢復",
+          "url": "https://www.orthoinfo.org/diseases--conditions/fractures-broken-bones/",
+          "publishedAt": null
+        }
+      ],
+      "mechanism": {
+        "title": "左手遭球擊中，是否需要手術由骨折檢查決定",
+        "summary": {
+          "text": "Betts 被投球打中左手後倒地並退場。球隊確認骨折，採非手術治療；疼痛反應不能決定某個骨折一定需要開刀。",
+          "sourceIndexes": [4, 1]
+        },
+        "steps": [
+          "在打擊區準備擊球。",
+          "投球撞擊左手。",
+          "倒地後退出比賽，接受檢查。"
+        ],
+        "explanation": {
+          "text": "骨頭受撞擊後是否移位、是否穩定，會影響處理方式。相似的被球擊中畫面可以有不同骨折，不能直接複製另一位選手的手術與回場時程。",
+          "sourceIndexes": [5, 1]
+        },
+        "limitation": "本頁保留左手骨折的公開範圍，不另指定未核實骨頭名稱。回場改守右外野，與原先角色分開說明。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2024-06-16",
+          "title": "左手受傷退場",
+          "text": "球隊確認骨折，表示不需手術。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-08-12",
+          "title": "重返大聯盟",
+          "text": "對 Brewers 回場，沒有先參加小聯盟復健賽，改守右外野。",
+          "sourceIndexes": [2, 3]
         }
       ]
     },
@@ -151,6 +385,48 @@
           "title": "MLB 官方資料：Headley 2014 逐場紀錄",
           "url": "https://statsapi.mlb.com/api/v1/people/452104/stats?stats=gameLog&group=hitting&season=2014&gameType=R",
           "publishedAt": null
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=0iPz58nL0L8",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：直接撞擊與軟組織挫傷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/muscle-contusion-bruise/",
+          "publishedAt": null
+        }
+      ],
+      "mechanism": {
+        "title": "下巴被球擊中，需要縫合不表示骨頭一定斷裂",
+        "summary": {
+          "text": "Headley 打擊時被投球打中下巴，倒地後接受醫療人員檢查。公開報導記載縫合處置，當時檢查未發現骨折。",
+          "sourceIndexes": [4, 1]
+        },
+        "steps": [
+          "準備打擊。",
+          "投球撞擊下巴。",
+          "倒地後由醫療人員查看，傷口與骨頭分別評估。"
+        ],
+        "explanation": {
+          "text": "撞擊可以傷及皮膚與軟組織，而不一定造成骨折。能否出賽仍需結合傷口與功能，不能僅以流血量或倒地時間推估傷勢。",
+          "sourceIndexes": [5, 1]
+        },
+        "limitation": "未公開確認的下顎骨折或腦震盪不予補寫。獲准出賽與實際上場不同，日期採逐場紀錄。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2014-09-11",
+          "title": "下巴受傷",
+          "text": "接受縫合，球隊表示未發現骨折。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2014-09-15",
+          "title": "實際恢復出賽",
+          "text": "對 Rays 回到大聯盟比賽；由賽報與逐場紀錄核對。",
+          "sourceIndexes": [2, 3]
         }
       ]
     },
@@ -177,6 +453,48 @@
           "title": "MLB 官方資料：Granderson 復健賽紀錄",
           "url": "https://www.mlb.com/player/curtis-granderson-434158",
           "publishedAt": null
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=22U4bCbhtig",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：外力、骨折與恢復",
+          "url": "https://www.orthoinfo.org/diseases--conditions/fractures-broken-bones/",
+          "publishedAt": null
+        }
+      ],
+      "mechanism": {
+        "title": "球打中手後仍跑壘，不能因此排除掌骨骨折",
+        "summary": {
+          "text": "Granderson 左手遭投球擊中後曾留在場上跑壘，之後檢查確認第五掌骨骨折。能跑壘主要反映下肢活動，不能用來判定手部骨頭是否完整。",
+          "sourceIndexes": [4, 1]
+        },
+        "steps": [
+          "打擊時左手遭球擊中。",
+          "曾留在場上跑壘。",
+          "手部經檢查後退場，確認骨折。"
+        ],
+        "explanation": {
+          "text": "掌骨可能因直接撞擊而受傷。手部的握力及擊球需求，與跑步不同；受傷後仍能完成不直接使用患手的動作，不代表手傷輕微。",
+          "sourceIndexes": [5, 1]
+        },
+        "limitation": "這是 2013 年 5 月左手事件，與同年春訓右前臂骨折分開。不把模擬賽當成最早對外復健賽。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2013-05-24",
+          "title": "左手遭球擊中",
+          "text": "第五掌骨骨折，檢查後退場。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2013-07-25",
+          "title": "高階 1A 復健賽回場",
+          "text": "代表 Tampa 出賽；賽報在隔天發布。",
+          "sourceIndexes": [2]
         }
       ]
     },
@@ -208,6 +526,54 @@
           "title": "洛杉磯時報：Shoemaker 傷後首場春訓賽報",
           "url": "https://www.latimes.com/sports/angels/la-sp-angels-20170303-story.html",
           "publishedAt": "2017-03-03"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=a1Malj3Fqm8",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：外力、骨折與恢復",
+          "url": "https://www.orthoinfo.org/diseases--conditions/fractures-broken-bones/",
+          "publishedAt": null
+        }
+      ],
+      "mechanism": {
+        "title": "頭部遭平飛球擊中，能走出場也不能排除深層傷勢",
+        "summary": {
+          "text": "Shoemaker 被平飛球打中頭部後蹲跪在投手丘，之後由人員攙扶離場。檢查確認顱骨骨折與血腫，需要手術止血。",
+          "sourceIndexes": [5, 1]
+        },
+        "steps": [
+          "投球後遭回擊球撞到頭部。",
+          "蹲跪在投手丘，接受場上查看。",
+          "在協助下離場，進一步檢查發現深層傷勢。"
+        ],
+        "explanation": {
+          "text": "直接撞擊可能造成骨頭損傷。頭部外傷還需另行評估內部狀況；能說話或在協助下走動，無法替代影像與後續觀察。",
+          "sourceIndexes": [6, 1]
+        },
+        "limitation": "本例顱骨骨折與血腫由醫療報導確認，不僅依影片稱為腦震盪。手術範圍與出血精確位置未在本頁延伸推定。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2016-09-04",
+          "title": "投球後頭部受傷",
+          "text": "檢查確認顱骨骨折與血腫。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2016-09-05",
+          "title": "手術止血報導",
+          "text": "MLB 公布後續手術處置；此為報導日期。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2017-03-03",
+          "title": "春訓先發回場",
+          "text": "對 Brewers 正式春訓出賽，早於此的練投不列入。",
+          "sourceIndexes": [3, 4]
         }
       ]
     },
@@ -239,6 +605,54 @@
           "title": "MLB：Happ 復健起始日期",
           "url": "https://www.mlb.com/news/happ-only-a-few-rehab-starts-away-from-return/c-55320522",
           "publishedAt": "2013-07-30"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=g1fZXmVr_oA",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：外力、骨折與恢復",
+          "url": "https://www.orthoinfo.org/diseases--conditions/fractures-broken-bones/",
+          "publishedAt": null
+        }
+      ],
+      "mechanism": {
+        "title": "頭部被球擊中後倒地，膝傷也影響後續恢復",
+        "summary": {
+          "text": "Happ 遭平飛球打中頭部側面後倒地，以擔架離場。報導確認左耳後方小骨折，另有右膝韌帶扭傷；延長復健的問題不只在頭部。",
+          "sourceIndexes": [5, 1]
+        },
+        "steps": [
+          "投球後頭部遭平飛球撞擊。",
+          "倒地時下肢支撐也受到影響。",
+          "以擔架離場，頭部與膝部傷勢分別接受評估。"
+        ],
+        "explanation": {
+          "text": "一次撞擊可有直接受傷部位，也有倒地時的其他傷害。頭部骨折與膝部韌帶扭傷需要分開理解，不能把整段休賽都歸因於最顯眼的撞擊。",
+          "sourceIndexes": [6, 1]
+        },
+        "limitation": "本例報導未發現腦震盪，不從擔架畫面自行補上診斷。右膝傷勢與新人聯盟復健賽日期均另有來源支持。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2013-05-07",
+          "title": "投球後頭部與膝部受傷",
+          "text": "左耳後方顱骨小骨折，另有右膝韌帶扭傷。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2013-06-01",
+          "title": "復健更新",
+          "text": "報導指出右膝仍影響回場進度，頭部檢查未發現腦震盪。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2013-07-13",
+          "title": "新人聯盟復健賽登板",
+          "text": "代表 GCL Blue Jays 出賽，早於大聯盟回歸。",
+          "sourceIndexes": [2, 3]
         }
       ]
     },
@@ -270,6 +684,54 @@
           "title": "MLB：Jennings 生涯與復健紀錄",
           "url": "https://www.mlb.com/player/dan-jennings-543359",
           "publishedAt": null
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=wVj6I9Q5IvE",
+          "publishedAt": null
+        },
+        {
+          "title": "CDC：腦震盪的受傷方式",
+          "url": "https://www.cdc.gov/heads-up/about/index.html",
+          "publishedAt": null
+        }
+      ],
+      "mechanism": {
+        "title": "平飛球撞擊後站立不穩，後續出賽要看實際紀錄",
+        "summary": {
+          "text": "Jennings 投球後遭平飛球擊中頭部側面，站立不穩並接受協助。MLB 確認腦震盪，復出進度需區分傳接球、復健賽與大聯盟登板。",
+          "sourceIndexes": [5, 1]
+        },
+        "steps": [
+          "投球後遭平飛球撞擊頭部。",
+          "站立與平衡受到影響。",
+          "由醫療人員協助離場，之後接受評估。"
+        ],
+        "explanation": {
+          "text": "頭部快速受力可以影響腦部功能，平衡變化是需要留意的表現。確切診斷仍需醫療評估，不能由單一失衡畫面推算嚴重度或恢復天數。",
+          "sourceIndexes": [6, 1]
+        },
+        "limitation": "移出傷兵名單不代表當天已實際登板。9 月 1 日名單異動與 9 月 2 日 MLB 出賽分開。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2014-08-07",
+          "title": "頭部受傷",
+          "text": "後續報導確認腦震盪。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2014-08-19",
+          "title": "新人聯盟先回場",
+          "text": "GCL Marlins 復健賽登板。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2014-09-02",
+          "title": "實際恢復 MLB 登板",
+          "text": "前一天移出傷兵名單，本日才有大聯盟投球紀錄。",
+          "sourceIndexes": [3, 4]
         }
       ]
     },
@@ -301,6 +763,54 @@
           "title": "MLB 官方資料：Piscotty 2015 逐場紀錄",
           "url": "https://statsapi.mlb.com/api/v1/people/572039/stats?stats=gameLog&group=hitting&season=2015&gameType=R",
           "publishedAt": null
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=qLR_C8wg68E",
+          "publishedAt": null
+        },
+        {
+          "title": "CDC：腦震盪的受傷方式",
+          "url": "https://www.cdc.gov/heads-up/about/index.html",
+          "publishedAt": null
+        }
+      ],
+      "mechanism": {
+        "title": "追球相撞造成頭部外力，症狀與出賽分開追蹤",
+        "summary": {
+          "text": "Piscotty 追接外野飛球時與隊友相撞，頭部受碰撞後倒地。後續資料記載頭部挫傷與腦震盪；回到球隊休息區或比賽，不等於所有不適同時消失。",
+          "sourceIndexes": [5, 1]
+        },
+        "steps": [
+          "追接外野飛球，與隊友路線接近。",
+          "發生碰撞，頭部受到外力。",
+          "倒地後接受場上醫療處理。"
+        ],
+        "explanation": {
+          "text": "直接頭部撞擊或身體突然減速，都可能影響腦部功能。局部挫傷與腦震盪可以同時存在，但需各有依據，不能只看表面腫脹判斷。",
+          "sourceIndexes": [6, 1]
+        },
+        "limitation": "本頁不由影片認定隊友責任。後來頸部痠痛的回顧與首次復賽分開，避免把實際出賽寫成完全沒有症狀。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2015-09-28",
+          "title": "外野碰撞受傷",
+          "text": "後續記載頭部挫傷與腦震盪。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2015-10-04",
+          "title": "大聯盟回場",
+          "text": "完成腦震盪檢測後，在對 Braves 雙重賽第一場出賽。",
+          "sourceIndexes": [2, 4]
+        },
+        {
+          "date": "2016-01-17",
+          "title": "回顧後續不適",
+          "text": "報導提及之後仍曾有頸部痠痛；屬回顧日期。",
+          "sourceIndexes": [3]
         }
       ]
     },
@@ -332,6 +842,60 @@
           "title": "MLB：Pedroia 後續膝部治療歷程",
           "url": "https://www.mlb.com/news/dustin-pedroia-taking-break-from-injury-rehab",
           "publishedAt": "2019-05-27"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=rbAYcXPhIUE",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：膝部韌帶、半月板與常見外傷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/common-knee-injuries/",
+          "publishedAt": null
+        }
+      ],
+      "mechanism": {
+        "title": "二壘接球與滑壘者接觸，膝踝症狀需後續檢查",
+        "summary": {
+          "text": "Pedroia 在二壘接球時與滑壘跑者接觸，之後跛行接受協助。球隊當時安排左膝與左踝檢查、逐日觀察，沒有足夠資料由影片指定全部組織損傷。",
+          "sourceIndexes": [5, 1]
+        },
+        "steps": [
+          "在二壘接球，準備處理跑者。",
+          "與滑壘跑者發生接觸。",
+          "步態出現變化，接受查看。"
+        ],
+        "explanation": {
+          "text": "下肢在承重時受到外力，可能影響膝踝的多種組織。疼痛與跛行不是某一條韌帶的專屬表現，需要檢查及後續症狀變化才能釐清。",
+          "sourceIndexes": [6, 1]
+        },
+        "limitation": "之後仍有膝部問題與手術，但不能把整段職涯病程都歸因於這一次接觸，也不能由片段判定對手意圖。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2017-04-21",
+          "title": "二壘接觸後受傷",
+          "text": "左下肢不適退場。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2017-04-24",
+          "title": "膝踝檢查與觀察",
+          "text": "球隊採逐日觀察，追蹤左膝與左踝症狀。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2017-04-27",
+          "title": "恢復 MLB 出賽",
+          "text": "對 Yankees 回場。",
+          "sourceIndexes": [3]
+        },
+        {
+          "date": "2017",
+          "title": "球季後仍接受膝部手術",
+          "text": "後續回顧記載膝部問題持續；不視為單一接觸的因果證明。",
+          "sourceIndexes": [4]
         }
       ]
     },
@@ -358,6 +922,48 @@
           "title": "MLB 官方資料：Judge 2023 逐場紀錄",
           "url": "https://statsapi.mlb.com/api/v1/people/592450/stats?stats=gameLog&group=hitting&season=2023&gameType=R",
           "publishedAt": null
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=jhBAzccW-Oc",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：大拇趾關節的韌帶與過度負荷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/turf-toe/",
+          "publishedAt": null
+        }
+      ],
+      "mechanism": {
+        "title": "追球撞開圍欄，大拇趾的承重與推蹬受到影響",
+        "summary": {
+          "text": "Judge 追接右外野飛球後撞上牛棚圍欄，門被撞開、身體跨入牛棚區域。後續報導確認右大拇趾韌帶撕裂；不能只看上半身撞門，就忽略腳部受力。",
+          "sourceIndexes": [4, 2]
+        },
+        "steps": [
+          "高速追球並完成接球。",
+          "身體撞上圍欄門，腳部支撐環境改變。",
+          "後續出現大拇趾傷勢，影響比賽安排。"
+        ],
+        "explanation": {
+          "text": "大拇趾關節周圍的韌帶協助承重與推蹬。腳部受阻、腳趾被迫過度活動時可能受傷；本例沒有量測拇趾角度，不能直接指定完整的草皮趾分級。",
+          "sourceIndexes": [5, 2]
+        },
+        "limitation": "不從撞門片段確定腳趾接觸的精確位置。復出先擔任指定打擊，並不表示跑壘、外野守備或疼痛已全部恢復。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2023-06-03",
+          "title": "外野追球受傷",
+          "text": "撞上牛棚圍欄，後續確認右大拇趾韌帶撕裂。",
+          "sourceIndexes": [1, 2]
+        },
+        {
+          "date": "2023-07-28",
+          "title": "指定打擊回場",
+          "text": "對 Orioles 恢復出賽；尚未完全恢復，逐步安排守備與指定打擊。",
+          "sourceIndexes": [2, 3]
         }
       ]
     },
@@ -389,6 +995,60 @@
           "title": "MLB：Machado 首場延長春訓賽報",
           "url": "https://www.mlb.com/news/machado-plays-first-extended-spring-game/c-72643480",
           "publishedAt": "2014-04-19"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=gQ0WzuOYh_A",
+          "publishedAt": null
+        },
+        {
+          "title": "HSS：內側髕股韌帶維持髕骨穩定的功能",
+          "url": "https://www.hss.edu/health-library/conditions-and-treatments/mpfl-reconstruction",
+          "publishedAt": null
+        }
+      ],
+      "mechanism": {
+        "title": "踩上一壘後左膝受傷，這次是髕骨的穩定韌帶",
+        "summary": {
+          "text": "Machado 跑向一壘、踩上壘包後倒地抱膝。MRI 確認的是左膝內側髕股韌帶撕裂，ACL 與 MCL 未撕裂，不能因畫面類似就套用 ACL 診斷。",
+          "sourceIndexes": [5, 1]
+        },
+        "steps": [
+          "衝向一壘，腳踩上壘包。",
+          "身體仍向前，膝部支撐改變。",
+          "倒地抱住左膝，接受擔架協助。"
+        ],
+        "explanation": {
+          "text": "內側髕股韌帶協助限制髕骨向外偏移，與膝內的 ACL 功能不同。髕骨被拉離正常軌道時可能傷及這條韌帶；本頁不從短片推定移位角度。",
+          "sourceIndexes": [6, 1]
+        },
+        "limitation": "本例採 MRI 的組織區分。延長春訓出賽早於小聯盟復健賽與 MLB 回歸，不以較晚日期替代最早已核得的比賽。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2013-09-23",
+          "title": "跑壘膝部受傷",
+          "text": "踩上一壘後倒地。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2013-09-24",
+          "title": "MRI 釐清韌帶傷型",
+          "text": "內側髕股韌帶撕裂，未見 ACL、MCL 撕裂。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2013-10-14",
+          "title": "膝部手術",
+          "text": "後續接受韌帶重建；早期的非手術評估與最後處置分開記錄。",
+          "sourceIndexes": [3]
+        },
+        {
+          "date": "2014-04-19",
+          "title": "延長春訓先回場",
+          "text": "已有對外比賽出場紀錄。",
+          "sourceIndexes": [4]
         }
       ]
     },
@@ -409,9 +1069,63 @@
           "title": "Le Parisien：選手確認 INSEP 首次正式選拔",
           "url": "https://www.leparisien.fr/sports/samir-ait-said-ma-blessure-est-oubliee-19-08-2017-7200957.php",
           "publishedAt": "2017-08-19"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=Bt7EHTIivuA",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：外力、骨折與恢復",
+          "url": "https://www.orthoinfo.org/diseases--conditions/fractures-broken-bones/",
+          "publishedAt": null
         }
       ],
-      "returnSummary": "2017-08-18 先參加法國隊選拔；9 月重返巴黎國際賽。"
+      "returnSummary": "2017-08-18 先參加法國隊選拔；9 月重返巴黎國際賽。",
+      "mechanism": {
+        "title": "跳馬落地後小腿骨折，落地負荷不只影響韌帶",
+        "summary": {
+          "text": "Aït Saïd 跳馬落地後倒在墊上，醫療人員進場處理。國際體操總會回顧確認左脛骨與腓骨骨折；不能把所有跳躍落地傷都歸成膝韌帶撕裂。",
+          "sourceIndexes": [3, 1]
+        },
+        "steps": [
+          "助跑、跳馬，身體騰空。",
+          "落地時下肢需要承接下降力量。",
+          "倒在墊上，停止比賽並接受協助。"
+        ],
+        "explanation": {
+          "text": "落地的壓力、彎折或扭轉可作用在小腿骨。外力超過骨頭能承受的範圍時可能骨折，但跳躍高度與鏡頭外觀不足以量出實際力量。",
+          "sourceIndexes": [4, 1]
+        },
+        "limitation": "公開影片不是完整影像檢查，不自行追加血管、神經損傷。之後吊環出賽不等於跳馬及所有器械皆已恢復。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2016-08-06",
+          "title": "里約跳馬受傷",
+          "text": "左脛骨與腓骨骨折。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2016-08",
+          "title": "在里約接受手術",
+          "text": "國際體操總會回顧手術歷程；未補造確切手術日。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2017-08-18",
+          "title": "法國隊正式選拔回場",
+          "text": "在 INSEP 參加選拔，早於國際賽回歸。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2017-09",
+          "title": "重返巴黎國際賽",
+          "text": "以吊環項目出賽，與恢復全部器械分開看待。",
+          "sourceIndexes": [1]
+        }
+      ]
     },
     {
       "slug": "sofia-goggia-2022-knee",
@@ -430,9 +1144,51 @@
           "title": "FISI：北京奧運滑降銀牌後訪談",
           "url": "https://www.fisi.org/goggia-questa-medaglia-ha-un-valore-incredibile-avrei-firmato-per-largento/",
           "publishedAt": "2022-02-15"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=QDOJL9lwYdI",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：膝部韌帶、半月板與常見外傷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/common-knee-injuries/",
+          "publishedAt": null
         }
       ],
-      "returnSummary": "2022-02-15 北京奧運滑降復出，獲銀牌。"
+      "returnSummary": "2022-02-15 北京奧運滑降復出，獲銀牌。",
+      "mechanism": {
+        "title": "高速過彎翻倒，膝部出現韌帶與骨頭合併傷勢",
+        "summary": {
+          "text": "Goggia 高速過彎後失衡，滑雪板與身體翻轉並滑出賽道。義大利總會公布左膝扭傷、曾手術十字韌帶部分受損，另有小範圍腓骨骨折及肌腱肌肉問題。",
+          "sourceIndexes": [3, 1]
+        },
+        "steps": [
+          "高速滑行過彎。",
+          "失去平衡，身體與滑雪板方向改變。",
+          "翻倒滑出賽道，接受檢查。"
+        ],
+        "explanation": {
+          "text": "腳部受到滑雪板限制、身體仍在移動時，膝部可承受較大扭轉與牽拉。這種外力可能影響多種組織，但每一項診斷仍需檢查支持。",
+          "sourceIndexes": [4, 1]
+        },
+        "limitation": "不能從短期復出獲牌推論韌帶與骨折已完全癒合，也不能將這個人的決策當成所有選手的回場時程。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2022-01-23",
+          "title": "Cortina 摔倒受傷",
+          "text": "檢查確認左膝合併傷勢；總會公告沒有把它簡化成單一韌帶問題。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2022-02-15",
+          "title": "奧運滑降帶傷復出",
+          "text": "北京奧運獲銀牌，是個人競賽結果，並非所有組織已恢復的證明。",
+          "sourceIndexes": [2]
+        }
+      ]
     },
     {
       "slug": "yuzuru-hanyu-2014-collision",
@@ -451,9 +1207,57 @@
           "title": "AFP／L’Équipe：NHK 盃短曲實際出賽",
           "url": "https://www.lequipe.fr/Patinage-artistique/Actualites/Hanyu-nerveux-5e/518299",
           "publishedAt": "2014-11-28"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=Jf84VzlzLhI",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：直接撞擊與軟組織挫傷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/muscle-contusion-bruise/",
+          "publishedAt": null
         }
       ],
-      "returnSummary": "當天曾繼續自由滑；11 月 28 日再參加 NHK 盃。"
+      "returnSummary": "當天曾繼續自由滑；11 月 28 日再參加 NHK 盃。",
+      "mechanism": {
+        "title": "共用冰面熱身相撞，當天續賽不等於沒有受傷",
+        "summary": {
+          "text": "羽生結弦在賽前熱身時與另一名選手的滑行路線交會，兩人相撞倒地。後續報導記載多處挫傷與踝部扭傷，不能僅憑頭部碰撞就確認腦震盪。",
+          "sourceIndexes": [3, 1]
+        },
+        "steps": [
+          "兩人在共用冰面滑行熱身。",
+          "路線交會，身體發生碰撞。",
+          "倒地後接受處理，當天仍曾繼續自由滑。"
+        ],
+        "explanation": {
+          "text": "碰撞及跌落冰面可讓不同部位承受外力，造成軟組織挫傷。若涉及頭部，仍需另外評估腦部功能；傷口與腦震盪不能畫上等號。",
+          "sourceIndexes": [4, 1]
+        },
+        "limitation": "本頁沒有確認腦震盪，不自行補上診斷。當天帶傷比賽不換算成零天康復，之後 NHK 盃另列為賽事節點。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2014-11-08",
+          "title": "熱身碰撞後仍參賽",
+          "text": "接受處理後繼續自由滑；不是傷勢恢復的證明。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2014-11-10",
+          "title": "公開傷勢報導",
+          "text": "頭部、下巴與大腿挫傷，另有踝部扭傷。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2014-11-28",
+          "title": "後續 NHK 盃出賽",
+          "text": "已有另一場正式賽事紀錄；不將其反推為完全康復日期。",
+          "sourceIndexes": [2]
+        }
+      ]
     },
     {
       "slug": "aleksander-kilde-2024-shoulder",
@@ -472,9 +1276,51 @@
           "title": "FIS：Copper Mountain 復出賽報",
           "url": "https://www.fis-ski.com/alpine-skiing/news/2025-26/odermatt-begins-super-g-title-defence-with-victory-at-copper-mountain",
           "publishedAt": "2025-11-27"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=D0VibSVWwBA",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：肩關節脫臼與穩定結構",
+          "url": "https://www.orthoinfo.org/diseases--conditions/dislocated-shoulder/",
+          "publishedAt": null
         }
       ],
-      "returnSummary": "2025-11-27 在 Copper Mountain 超級大迴轉重返世界盃。"
+      "returnSummary": "2025-11-27 在 Copper Mountain 超級大迴轉重返世界盃。",
+      "mechanism": {
+        "title": "滑出賽道撞網，肩部與小腿受到不同傷害",
+        "summary": {
+          "text": "Kilde 接近終點時失去平衡，滑出賽道撞上防護網並接受救援。公開隊醫說明包含肩關節脫臼及小腿割傷，需要將兩者分開理解。",
+          "sourceIndexes": [3, 1]
+        },
+        "steps": [
+          "接近終點，仍維持高速滑行。",
+          "失去平衡後滑出賽道。",
+          "撞上防護網，接受現場救援。"
+        ],
+        "explanation": {
+          "text": "摔倒撞擊或手臂受到牽拉，都可能使肩關節離開正常位置。小腿割傷則是另一種直接外傷，不能從肩部機轉推定其深度與傷口範圍。",
+          "sourceIndexes": [4, 1]
+        },
+        "limitation": "未公開的肩部韌帶、神經或小腿組織細節不予增加。回到訓練與世界盃正式出賽分開。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2024-01-13",
+          "title": "Wengen 摔倒受傷",
+          "text": "隊醫確認肩關節脫臼及小腿割傷，當季提前結束。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2025-11-27",
+          "title": "重返世界盃",
+          "text": "Copper Mountain 超級大迴轉正式出賽，FIS 賽報確認回歸。",
+          "sourceIndexes": [2]
+        }
+      ]
     },
     {
       "slug": "liu-xiang-2012-achilles",
@@ -493,9 +1339,51 @@
           "title": "World Athletics：退役與未再參賽紀錄",
           "url": "https://worldathletics.org/news/news/liu-xiang-retires",
           "publishedAt": "2015-04-07"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=Pa50gXELqp0",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：阿基里斯腱的功能與斷裂",
+          "url": "https://www.orthoinfo.org/diseases--conditions/achilles-tendon-rupture-tear/",
+          "publishedAt": null
         }
       ],
-      "returnSummary": "此後未再參賽，2015-04-07 宣布退役。"
+      "returnSummary": "此後未再參賽，2015-04-07 宣布退役。",
+      "mechanism": {
+        "title": "起跑跨欄階段受傷，撞欄順序不等於肌腱斷裂順序",
+        "summary": {
+          "text": "劉翔起跑後在第一個欄架附近倒地，之後以單腳移動離開跑道。世界田徑總會記載阿基里斯腱斷裂；不能只看碰到欄架，就認定是欄架把肌腱撞斷。",
+          "sourceIndexes": [3, 1]
+        },
+        "steps": [
+          "起跑加速，準備跨越第一個欄架。",
+          "在欄架前後倒地，原本動作中斷。",
+          "之後以單腳移動，離開跑道。"
+        ],
+        "explanation": {
+          "text": "阿基里斯腱協助傳遞小腿推蹬力量，起跑與跨欄都會使用。肌腱受傷可先使動作失敗，倒地或碰欄也可能接著出現；短片不足以定位確切先後。",
+          "sourceIndexes": [4, 1]
+        },
+        "limitation": "本頁不把一般跨欄機轉當成個人力量量測。世界田徑總會記載此後未再比賽，退役日仍不是回場日。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2012-08-07",
+          "title": "倫敦奧運預賽受傷",
+          "text": "阿基里斯腱斷裂，未能完成比賽。",
+          "sourceIndexes": [1, 2]
+        },
+        {
+          "date": "2015-04-07",
+          "title": "宣布退役",
+          "text": "世界田徑總會回顧，倫敦受傷後未再恢復競賽；保留回場日期空白，退役日不列為回場。",
+          "sourceIndexes": [2]
+        }
+      ]
     },
     {
       "slug": "fabio-jakobsen-2020-concussion",
@@ -514,9 +1402,57 @@
           "title": "Cyclingnews：環土耳其首站實際復出",
           "url": "https://www.cyclingnews.com/news/fabio-jakobsen-makes-emotional-return-to-racing-at-tour-of-turkey/",
           "publishedAt": "2021-04-11"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=RvDqK9NnqyI",
+          "publishedAt": null
+        },
+        {
+          "title": "CDC：腦震盪的受傷方式",
+          "url": "https://www.cdc.gov/heads-up/about/index.html",
+          "publishedAt": null
         }
       ],
-      "returnSummary": "2021-04-11 於環土耳其賽第一站恢復比賽。"
+      "returnSummary": "2021-04-11 於環土耳其賽第一站恢復比賽。",
+      "mechanism": {
+        "title": "衝刺撞入護欄後翻落，頭面部受到多重外力",
+        "summary": {
+          "text": "Jakobsen 終點衝刺時與旁邊車手接近，撞入場邊護欄並翻落。後續由選手透過車隊說明嚴重腦震盪與顏面手術，採後續資訊補充早期報導。",
+          "sourceIndexes": [3, 1]
+        },
+        "steps": [
+          "接近終點，集團高速衝刺。",
+          "偏向場邊並撞入護欄。",
+          "翻落後波及其他車手，接受緊急救援。"
+        ],
+        "explanation": {
+          "text": "高速摔車可使頭部突然減速、轉動或直接受撞，影響腦部功能；顏面也可能受到直接創傷。一次事件可涉及多種傷害，不能僅依最先一則新聞定論。",
+          "sourceIndexes": [4, 1]
+        },
+        "limitation": "本頁不由影片推定長期神經後遺症或每次撞擊的傷害比例。首站完成賽事，不等於衝刺競技能力完全恢復。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2020-08-05",
+          "title": "終點衝刺摔車",
+          "text": "撞入護欄後接受緊急救援。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2020-08-18",
+          "title": "選手補充傷勢",
+          "text": "透過車隊公布曾有嚴重腦震盪，並需多次顏面處置；採此後續說明。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2021-04-11",
+          "title": "環土耳其賽復出",
+          "text": "第 1 站完成比賽，先記錄競賽參與。",
+          "sourceIndexes": [2]
+        }
+      ]
     },
     {
       "slug": "mikaela-shiffrin-2024-abdomen",
@@ -535,9 +1471,57 @@
           "title": "FIS：Courchevel 首場復出及名次",
           "url": "https://www.fis-ski.com/alpine-skiing/news/2024-25/-the-sky-is-the-limit-now-ljutic-decimates-field-to-claim-third-slalom-win-in-four",
           "publishedAt": "2025-01-30"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=nFbLC6Dv6Xk",
+          "publishedAt": null
+        },
+        {
+          "title": "MedlinePlus：穿刺傷與深層組織",
+          "url": "https://www.medlineplus.gov/ency/article/000043.htm",
+          "publishedAt": null
         }
       ],
-      "returnSummary": "2025-01-30 於 Courchevel 曲道復出，排名第 10。"
+      "returnSummary": "2025-01-30 於 Courchevel 曲道復出，排名第 10。",
+      "mechanism": {
+        "title": "摔倒碰撞後出現腹部穿刺傷，不能只當作瘀青",
+        "summary": {
+          "text": "Shiffrin 接近終點失衡，倒地後碰過旗門並滑向防護網。美國滑雪隊確認右側腹部穿刺傷及嚴重肌肉創傷，但沒有足夠畫面指定究竟是哪個物件刺入。",
+          "sourceIndexes": [3, 1]
+        },
+        "steps": [
+          "接近終點時失去平衡。",
+          "倒地後與賽道設施接觸，繼續滑動。",
+          "接受檢查後確認腹部穿刺與肌肉傷害。"
+        ],
+        "explanation": {
+          "text": "穿刺傷可以由皮膚表面延伸到更深組織，外觀看起來的傷口大小不能代表深度。這與單純撞擊瘀青不同，需依檢查確認涉及的結構。",
+          "sourceIndexes": [4, 1]
+        },
+        "limitation": "本頁不猜測致傷物件，也不增加未公開的內臟損傷。先回到曲道比賽，不能視為大迴轉與其他項目同時恢復。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2024-11-30",
+          "title": "Killington 摔倒受傷",
+          "text": "右側腹部穿刺傷與肌肉創傷。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-12-01",
+          "title": "球隊公布傷勢更新",
+          "text": "已離開醫院，後續進入恢復與復健；不是比賽回歸。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2025-01-30",
+          "title": "曲道世界盃復出",
+          "text": "Courchevel 第 10 名；FIS 記錄為傷後首次正式比賽。",
+          "sourceIndexes": [2]
+        }
+      ]
     },
     {
       "slug": "remco-evenepoel-2020-pelvis",
@@ -561,9 +1545,51 @@
           "title": "Giro d’Italia：環義大利首站官方賽報",
           "url": "https://www.giroditalia.it/news/la-migliore-inaugurazione",
           "publishedAt": "2021-05-08"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=o8mXn1hwdtA",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：外力、骨折與恢復",
+          "url": "https://www.orthoinfo.org/diseases--conditions/fractures-broken-bones/",
+          "publishedAt": null
         }
       ],
-      "returnSummary": "2021-05-08 於環義大利賽第一站個人計時賽復出。"
+      "returnSummary": "2021-05-08 於環義大利賽第一站個人計時賽復出。",
+      "mechanism": {
+        "title": "下坡撞上橋牆後墜落，身體承受連續衝擊",
+        "summary": {
+          "text": "Evenepoel 下坡過彎時撞上橋側矮牆，翻越護欄落到橋下。車隊公布骨盆骨折與右肺挫傷；這是連續衝擊事件，不能只以最後落地姿勢解釋全部傷害。",
+          "sourceIndexes": [4, 1]
+        },
+        "steps": [
+          "下坡過彎，接近橋側矮牆。",
+          "撞牆後身體翻越護欄。",
+          "墜落橋下，接受救援與醫療檢查。"
+        ],
+        "explanation": {
+          "text": "撞牆與墜落可將外力傳到身體多個區域，骨盆可能因此骨折。不同部位的撞擊及內部傷勢需要分別評估，短片無法量測落地力量。",
+          "sourceIndexes": [5, 1]
+        },
+        "limitation": "本頁不估算墜落高度、骨折穩定度或肺傷嚴重程度。室內騎乘、道路訓練與環義大利計時賽出賽分開記錄。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2020-08-15",
+          "title": "環倫巴底賽墜落受傷",
+          "text": "車隊公布骨盆骨折及右肺挫傷，當季停止參賽。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2021-05-08",
+          "title": "環義大利首站復出",
+          "text": "個人計時賽已有正式成績；傷前後的訓練不列為比賽回場。",
+          "sourceIndexes": [2, 3]
+        }
+      ]
     },
     {
       "slug": "chien-ming-wang-2008-foot",
@@ -592,9 +1618,57 @@
           "title": "MLB StatsAPI：2009 年春訓逐場紀錄，首場為 3 月 2 日",
           "url": "https://statsapi.mlb.com/api/v1/people/425426/stats?stats=gameLog&group=pitching&season=2009&gameType=S",
           "publishedAt": null
+        },
+        {
+          "title": "公開比賽影片：動作觀察依據",
+          "url": "https://www.youtube.com/watch?v=blRqsO9--38",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：Lisfranc 足部中段傷害",
+          "url": "https://www.orthoinfo.org/diseases--conditions/lisfranc-midfoot-injury",
+          "publishedAt": null
         }
       ],
-      "returnSummary": "2009-03-02 春訓對太空人投兩局無失分，為足傷後首次比賽登板。"
+      "returnSummary": "2009-03-02 春訓對太空人投兩局無失分，為足傷後首次比賽登板。",
+      "checkedAt": "2026-09-12",
+      "mechanism": {
+        "title": "跑壘時足部受傷，問題位在足部中段",
+        "summary": {
+          "text": "王建民繞過三壘跑向本壘時步態改變，得分後需要攙扶。影像檢查公告記載右足 Lisfranc 韌帶扭傷及腓骨長肌腱部分撕裂，不能只用「扭到腳踝」概括。",
+          "sourceIndexes": [5, 2]
+        },
+        "steps": [
+          "繞過三壘，持續跑向本壘。",
+          "途中步態改變，無法正常跑動。",
+          "離場後接受足部檢查，確認受傷構造。"
+        ],
+        "explanation": {
+          "text": "Lisfranc 韌帶位在足部中段，協助維持足弓與骨頭排列。足部承重、扭轉或推蹬時都會承受負荷；這類傷害可能涉及中足穩定性，而不只是表面疼痛。",
+          "sourceIndexes": [6]
+        },
+        "limitation": "影片不足以看清哪一步、哪個角度拉傷韌帶，因此不斷言是踩三壘壘包造成。公開資料未提供完整手術紀錄，不補寫未確認的手術方式。"
+      },
+      "timeline": [
+        {
+          "date": "2008-06-15",
+          "title": "跑壘受傷",
+          "text": "美國當地對太空人比賽；台灣日期為 6 月 16 日。",
+          "sourceIndexes": [5, 1]
+        },
+        {
+          "date": "2008-06-16",
+          "title": "檢查後保護足部",
+          "text": "轉載的洋基公告記載，預計至少六週使用拐杖與保護靴。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2009-03-02",
+          "title": "春訓首次登板",
+          "text": "對太空人投兩局無失分，為足傷後首次比賽登板。",
+          "sourceIndexes": [3, 4]
+        }
+      ]
     }
   ]
 }

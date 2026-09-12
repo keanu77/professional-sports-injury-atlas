@@ -1,16 +1,19 @@
 ---
 import {
   classifyReturnMilestone,
+  formatTimelineDate,
   returnDays,
   type EventUpdate,
 } from "../../lib/videos/event-updates";
 import { externalUrlPresentationFor } from "../../lib/rights/nba-link-policy";
+import ReportSourceRefs from "./ReportSourceRefs.astro";
 interface Props {
   update: EventUpdate;
 }
 const { update } = Astro.props;
 const days = returnDays(update);
 const milestone = classifyReturnMilestone(update);
+const multipleInjuries = milestone === "跨兩次傷害後出賽";
 ---
 
 <section
@@ -20,12 +23,21 @@ const milestone = classifyReturnMilestone(update);
 >
   <h2>傷勢與後續</h2>
   <p>{update.injury}</p>
-  <h3>傷後多久再出賽？</h3>
+  <h3>
+    {
+      days === null
+        ? "後續出賽狀況"
+        : multipleInjuries
+          ? "跨兩次傷害後重返賽場"
+          : "傷後多久再出賽？"
+    }
+  </h3>
   {
     days !== null && (
       <p class="return-days">
         <span>
-          距受傷 <strong>{days} 天</strong>
+          {multipleInjuries ? "跨兩次傷害的間隔" : "距受傷"}{" "}
+          <strong>{days} 天</strong>
         </span>
         <span class="return-milestone" data-return-milestone>
           里程碑：{milestone}
@@ -38,23 +50,61 @@ const milestone = classifyReturnMilestone(update);
     update.eventDate && update.returnDate && (
       <p class="event-dates">
         <time datetime={update.eventDate}>{update.eventDate}</time> 受傷 →{" "}
-        <time datetime={update.returnDate}>{update.returnDate}</time> 再次出賽
+        <time datetime={update.returnDate}>{update.returnDate}</time>{" "}
+        {milestone}
       </p>
     )
   }
   <p>{update.context}</p>
+  {
+    update.timeline && (
+      <section aria-labelledby={`timeline-${update.slug}`}>
+        <h3 id={`timeline-${update.slug}`}>受傷後的發展</h3>
+        <ol class="recovery-timeline" data-recovery-timeline>
+          {update.timeline.map((milestone) => (
+            <li>
+              {milestone.date.length === 4 ? (
+                <span class="timeline-date">
+                  {formatTimelineDate(milestone.date)}
+                </span>
+              ) : (
+                <time datetime={milestone.date}>
+                  {formatTimelineDate(milestone.date)}
+                </time>
+              )}
+              <h4>{milestone.title}</h4>
+              <p>
+                {milestone.text}
+                <ReportSourceRefs
+                  slug={update.slug}
+                  indexes={milestone.sourceIndexes}
+                />
+              </p>
+            </li>
+          ))}
+        </ol>
+      </section>
+    )
+  }
   <p class="event-note">出賽不等於完全康復；日期差不是個人的回場期限。</p>
-  <details>
-    <summary>查看傷勢與回場來源</summary>
+  <details open={Boolean(update.mechanism || update.timeline)}>
+    <summary
+      >{
+        update.mechanism ? "查看機轉、傷勢與回場來源" : "查看傷勢與回場來源"
+      }</summary
+    >
     <p class="event-note">
-      依公開報導整理 · 查核日期 <time datetime={update.checkedAt}
+      依公開報導整理 · 內容整理日期 <time datetime={update.checkedAt}
         >{update.checkedAt}</time
       >
     </p>
-    <ul>
+    <p class="event-note">
+      時間軸記錄所列來源的已知進展，並非完整病歷或持續更新的近況；整理日期不代表每筆來源與影片均於當日重新查核。
+    </p>
+    <ol>
       {
-        update.sources.map((source) => (
-          <li>
+        update.sources.map((source, index) => (
+          <li id={`event-source-${update.slug}-${index + 1}`} tabindex="-1">
             {externalUrlPresentationFor(source.url) === "clickable-link" ? (
               <a href={source.url} target="_blank" rel="noopener noreferrer">
                 {source.title}
@@ -71,12 +121,13 @@ const milestone = classifyReturnMilestone(update);
           </li>
         ))
       }
-    </ul>
+    </ol>
   </details>
 </section>
 <style>
   .event-follow-up {
-    margin: 1.5rem 0;
+    margin: 1.5rem auto;
+    max-inline-size: 52rem;
     padding: 1.4rem;
     background: var(--color-surface-raised);
     border: 1px solid var(--hairline);
@@ -129,7 +180,46 @@ const milestone = classifyReturnMilestone(update);
     display: block;
     overflow-wrap: anywhere;
   }
-  ul {
+  ol {
     padding-left: 1.2rem;
+  }
+  .recovery-timeline {
+    list-style: none;
+    padding-left: 0.8rem;
+  }
+  .recovery-timeline li {
+    position: relative;
+    border-left: 2px solid var(--hairline);
+    padding: 0 0 1rem 1.25rem;
+    margin: 0;
+    color: var(--color-ink);
+    font-size: 1rem;
+  }
+  .recovery-timeline li::before {
+    content: "";
+    position: absolute;
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 50%;
+    background: var(--color-brand-primary);
+    left: -0.39rem;
+    top: 0.3rem;
+  }
+  .recovery-timeline time,
+  .timeline-date {
+    color: var(--color-ink-muted);
+    font-size: 0.85rem;
+  }
+  h4 {
+    font: 700 1rem/1.5 var(--font-body);
+    margin: 0.25rem 0;
+  }
+  li[id] {
+    scroll-margin-top: 6rem;
+  }
+  @media (max-width: 40rem) {
+    .event-follow-up {
+      padding: 1.1rem;
+    }
   }
 </style>

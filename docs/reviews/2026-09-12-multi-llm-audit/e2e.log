@@ -1,0 +1,52 @@
+
+Running 36 tests using 2 workers
+
+(node:70294) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:70293) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chrome] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-observation-pages.spec.ts:14:1 › all 113 observation pages expose general guidance, text highlights, related videos, and category routes (431ms)
+  ✓   3 [chrome] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-observation-pages.spec.ts:63:1 › the six featured observations identify their reviewed main-site resources (1.0s)
+  ✓   2 [chrome] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-ux.spec.ts:7:3 › Decision 39 compact mobile discovery › shows one category at a time on mobile and all categories on desktop (1.5s)
+  ✓   4 [chrome] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-observation-pages.spec.ts:86:1 › sharing metadata, favicons, and home heading hierarchy are complete (1.3s)
+  -   6 [chrome] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-observation-pages.spec.ts:184:1 › review output stays noindex and does not publish a sitemap
+  ✓   5 [chrome] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-ux.spec.ts:47:3 › Decision 39 compact mobile discovery › keeps the 320px 150% header compact while all controls remain reachable (1.4s)
+(node:70503) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   7 [chrome] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-ux.spec.ts:87:3 › Decision 39 compact mobile discovery › offers a direct keyboard-accessible jump to the video collection (323ms)
+  ✓   9 [chrome] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-ux.spec.ts:100:3 › Decision 39 compact mobile discovery › reveals and scrolls to hashed categories on load, hash change, and return links (415ms)
+  ✓   8 [mobile-chrome] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-observation-pages.spec.ts:14:1 › all 113 observation pages expose general guidance, text highlights, related videos, and category routes (447ms)
+  ✓  10 [chrome] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-ux.spec.ts:148:1 › home category routes remain available without JavaScript (168ms)
+  ✓  12 [chrome] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-ux.spec.ts:178:1 › mobile contribution and author links remain tabbable without JavaScript (262ms)
+  ✓  11 [mobile-chrome] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-observation-pages.spec.ts:63:1 › the six featured observations identify their reviewed main-site resources (740ms)
+  ✓  13 [chrome] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-ux.spec.ts:209:1 › observation cards expose concise governed metadata on home and category pages (1.1s)
+  ✓  15 [chrome] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-ux.spec.ts:239:1 › return-day callouts name the governed milestone beside the day count (208ms)
+(node:70598) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  14 [mobile-chrome] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-observation-pages.spec.ts:86:1 › sharing metadata, favicons, and home heading hierarchy are complete (1.3s)
+  -  17 [mobile-chrome] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-observation-pages.spec.ts:184:1 › review output stays noindex and does not publish a sitemap
+(node:70619) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  18 [webkit] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-observation-pages.spec.ts:14:1 › all 113 observation pages expose general guidance, text highlights, related videos, and category routes (424ms)
+  ✓  16 [mobile-chrome] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-ux.spec.ts:7:3 › Decision 39 compact mobile discovery › shows one category at a time on mobile and all categories on desktop (1.4s)
+  ✓  19 [webkit] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-observation-pages.spec.ts:63:1 › the six featured observations identify their reviewed main-site resources (1.2s)
+  ✓  20 [mobile-chrome] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-ux.spec.ts:47:3 › Decision 39 compact mobile discovery › keeps the 320px 150% header compact while all controls remain reachable (1.4s)
+  ✓  22 [mobile-chrome] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-ux.spec.ts:87:3 › Decision 39 compact mobile discovery › offers a direct keyboard-accessible jump to the video collection (357ms)
+  ✓  23 [mobile-chrome] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-ux.spec.ts:100:3 › Decision 39 compact mobile discovery › reveals and scrolls to hashed categories on load, hash change, and return links (410ms)
+  ✓  24 [mobile-chrome] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-ux.spec.ts:148:1 › home category routes remain available without JavaScript (165ms)
+  ✓  25 [mobile-chrome] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-ux.spec.ts:178:1 › mobile contribution and author links remain tabbable without JavaScript (264ms)
+  ✓  21 [webkit] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-observation-pages.spec.ts:86:1 › sharing metadata, favicons, and home heading hierarchy are complete (1.5s)
+  -  27 [webkit] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-observation-pages.spec.ts:184:1 › review output stays noindex and does not publish a sitemap
+  ✓  26 [mobile-chrome] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-ux.spec.ts:209:1 › observation cards expose concise governed metadata on home and category pages (1.1s)
+  ✓  29 [mobile-chrome] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-ux.spec.ts:239:1 › return-day callouts name the governed milestone beside the day count (204ms)
+  ✓  28 [webkit] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-ux.spec.ts:7:3 › Decision 39 compact mobile discovery › shows one category at a time on mobile and all categories on desktop (1.4s)
+  ✓  30 [webkit] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-ux.spec.ts:47:3 › Decision 39 compact mobile discovery › keeps the 320px 150% header compact while all controls remain reachable (1.4s)
+  ✓  31 [webkit] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-ux.spec.ts:87:3 › Decision 39 compact mobile discovery › offers a direct keyboard-accessible jump to the video collection (371ms)
+  ✓  32 [webkit] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-ux.spec.ts:100:3 › Decision 39 compact mobile discovery › reveals and scrolls to hashed categories on load, hash change, and return links (628ms)
+  ✓  33 [webkit] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-ux.spec.ts:148:1 › home category routes remain available without JavaScript (282ms)
+  ✓  34 [webkit] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-ux.spec.ts:178:1 › mobile contribution and author links remain tabbable without JavaScript (326ms)
+  ✓  35 [webkit] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-ux.spec.ts:209:1 › observation cards expose concise governed metadata on home and category pages (1.0s)
+  ✓  36 [webkit] › ../../../../../private/tmp/atlas-120-review-mel5g1dt/e2e/decision-39-ux.spec.ts:239:1 › return-day callouts name the governed milestone beside the day count (285ms)
+
+  3 skipped
+  33 passed (16.6s)

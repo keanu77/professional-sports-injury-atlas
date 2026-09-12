@@ -1,0 +1,73 @@
+{
+  "checkedAt": "2026-09-12",
+  "inputTreeDigest": "0f8afbb2d2be6d8e58e6f6e7eb0f62cc2aeae9e2f39c11134e89390a5abe1017",
+  "isolatedSnapshot": "/private/tmp/atlas-120-review-mel5g1dt",
+  "unit": {
+    "files": 94,
+    "passed": 1482,
+    "failed": 0,
+    "node": "24.14.0"
+  },
+  "astro": {
+    "errors": 0,
+    "warnings": 0,
+    "existingHints": 16
+  },
+  "content": "passed",
+  "changedSourceFormatting": {
+    "checkedFiles": 34,
+    "status": "passed"
+  },
+  "wholeRepositoryFormatting": {
+    "status": "pre-existing-failures",
+    "historicalFiles": 132,
+    "note": "完整格式檢查的132筆歷史文件／證據格式問題未擴散修改；保存凍結核准與證據雜湊。此次source/test均通過。"
+  },
+  "build": {
+    "htmlPages": 164,
+    "publicCases": 120,
+    "clinicalCasePages": 7,
+    "observationPages": 113,
+    "localLinks": 3760,
+    "removedVideoAssets": 0
+  },
+  "layout": {
+    "widths": [
+      390,
+      1280
+    ],
+    "pages": 120,
+    "checks": 240,
+    "passed": 240
+  },
+  "keyboardSources": {
+    "chrome": 12,
+    "webkit": 3,
+    "allExpandedVisibleFocused": true
+  },
+  "endToEnd": {
+    "projects": [
+      "chrome",
+      "mobile-chrome",
+      "webkit"
+    ],
+    "passed": 33,
+    "failed": 0,
+    "skipped": 3,
+    "skipReason": "public launch mode intentionally skips three copies of review-only cases-index test"
+  },
+  "nativePlayback": {
+    "newVideos": 19,
+    "played": 19,
+    "ownedPreview": "https://a4526742.sports-injury-atlas.pages.dev",
+    "proof": "../2026-09-12-recent-120/playback.preview.json",
+    "retry": "Acuña first attempt timeout, successful individual retry retained alongside original proof"
+  },
+  "clinicalApproval": false,
+  "limitations": [
+    "沒有重新逐格觀看既有80支完整影片或逐一重新取得其全部引用全文。",
+    "agy讀取共享程式與4個代表例；不是逐例醫學驗證。",
+    "WebKit automation不是iOS/Safari實機測試。",
+    "3個review-only測試在public模式依原設計跳過；未送信或提交投稿。"
+  ]
+}

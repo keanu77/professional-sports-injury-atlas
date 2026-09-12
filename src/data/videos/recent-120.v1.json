@@ -1,0 +1,637 @@
+{
+  "schemaVersion": 1,
+  "decision": "recent-120-2026-09-12",
+  "authorizationQuote": "我們先做120個個案後再來審查",
+  "authorizedAt": "2026-09-12T15:20:48Z",
+  "scope": "nineteen-recent-observation-cases",
+  "clips": [
+    {
+      "slug": "nick-chubb-knee-2023",
+      "videoId": "RdAvC8i0szY",
+      "name": "Nick Chubb",
+      "sport": "美式足球",
+      "event": "NFL 布朗對鋼人",
+      "bodyPart": "膝部",
+      "observation": "解說回顧持球遭攔截後的左膝傷勢，包含賽事影像；不是手術紀錄。",
+      "eventDate": "2023-09-18",
+      "returnDate": "2024-10-20",
+      "returnText": "2024-10-20 對 Bengals 正式重返 NFL，並完成一次達陣。",
+      "videoUrl": "https://www.youtube.com/watch?v=RdAvC8i0szY",
+      "publisher": "Brian Sutterer MD",
+      "sourceTitle": "Nick Chubb Knee Injury is Too Serious for Replay - Doctor Explains",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 274,
+      "sources": [
+        {
+          "title": "Browns announce Nick Chubb underwent successful knee surgery",
+          "url": "https://www.clevelandbrowns.com/news/browns-announce-nick-chubb-underwent-successful-knee-surgery"
+        },
+        {
+          "title": "Nick Chubb reacts to scoring in season debut: It was great to be out there with the guys",
+          "url": "https://www.clevelandbrowns.com/news/nick-chubb-reacts-to-scoring-in-season-debut-it-was-great-to-be-out-there-with-the-guys"
+        },
+        {
+          "title": "Nick Chubb makes his season debut against Bengals | 3 Big Takeaways",
+          "url": "https://www.clevelandbrowns.com/news/nick-chubb-makes-his-season-debut-against-bengals-3-big-takeaways"
+        }
+      ]
+    },
+    {
+      "slug": "kirk-cousins-achilles-2023",
+      "videoId": "E0mYSZ1jTG4",
+      "name": "Kirk Cousins",
+      "sport": "美式足球",
+      "event": "NFL 維京人對包裝工",
+      "bodyPart": "小腿／阿基里斯腱",
+      "observation": "醫師解說回顧 Cousins 在口袋內移動後單腳跳離的片段。",
+      "eventDate": "2023-10-29",
+      "returnDate": "2024-09-08",
+      "returnText": "2024-09-08 代表 Falcons 在 NFL 例行賽對 Steelers 出賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=E0mYSZ1jTG4",
+      "publisher": "Brian Sutterer MD",
+      "sourceTitle": "Kirk Cousins Ruptures His Achilles - Doctor Explains",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 211,
+      "sources": [
+        {
+          "title": "Vikings Provide Update on Kirk Cousins; Underwent Successful Surgery",
+          "url": "https://www.vikings.com/news/kirk-cousins-achilles-injury-updates-2023"
+        },
+        {
+          "title": "What happened in Falcons Week 1 home loss to Steelers",
+          "url": "https://www.atlantafalcons.com/news/week-1-game-recap-pittsburgh-steelers-2024-season-opener"
+        },
+        {
+          "title": "He really hit the ground running: Terry Fontenot talks Kirk Cousins impact, recovery as offseason workouts continue",
+          "url": "https://www.atlantafalcons.com/news/general-manager-terry-fontenot-update-quarterback-kirk-cousins-draft-week"
+        },
+        {
+          "title": "Kirk Cousins Suffers Ankle Injury, Leaves Vikings Game at Packers",
+          "url": "https://www.vikings.com/news/kirk-cousins-ankle-injury-packers-week-8"
+        }
+      ]
+    },
+    {
+      "slug": "joe-burrow-wrist-2023",
+      "videoId": "geUMkoM42iE",
+      "name": "Joe Burrow",
+      "sport": "美式足球",
+      "event": "NFL 孟加拉虎對烏鴉",
+      "bodyPart": "手腕",
+      "observation": "解說比較擒抱、傳球及場邊試投片段，需將可能受傷時點與症狀出現時點分開。",
+      "eventDate": "2023-11-16",
+      "returnDate": "2024-08-10",
+      "returnText": "2024-08-10 在季前賽對 Buccaneers 傷後首次出賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=geUMkoM42iE",
+      "publisher": "Brian Sutterer MD",
+      "sourceTitle": "Joe Burrow Injured in Strange Sequence - Doctor Reacts",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 531,
+      "sources": [
+        {
+          "title": "Bengals QB Joe Burrow has torn wrist ligament, to miss remainder of 2023 season",
+          "url": "https://www.nfl.com/news/bengals-qb-joe-burrow-has-torn-wrist-ligament-to-miss-remainder-of-2023-season"
+        },
+        {
+          "title": "Statement from the Cincinnati Bengals on QB Joe Burrow",
+          "url": "https://www.bengals.com/news/joe-burrow-wrist-surgery-statement-cincinnati-bengals"
+        },
+        {
+          "title": "Burrow Declared Out Of Ravens Game With Injured Throwing Wrist",
+          "url": "https://www.bengals.com/news/joe-burrow-leaves-game-with-injured-throwing-wrist"
+        },
+        {
+          "title": "Bengals：Joe Burrow and Bengals Starters Score in Preseason Opener",
+          "url": "https://www.bengals.com/news/bucs-win-but-joe-burrow-and-bengals-ones-get-it-done-in-preseason-opener"
+        }
+      ]
+    },
+    {
+      "slug": "aidan-hutchinson-leg-2024",
+      "videoId": "aWo-ur71zvo",
+      "name": "Aidan Hutchinson",
+      "sport": "美式足球",
+      "event": "NFL 雄獅對牛仔",
+      "bodyPart": "小腿／阿基里斯腱",
+      "observation": "醫師解說回顧擒抱過程的小腿接觸，包含受傷重播。",
+      "eventDate": "2024-10-13",
+      "returnDate": "2025-09-07",
+      "returnText": "2025-09-07 對 Packers 重返 NFL 例行賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=aWo-ur71zvo",
+      "publisher": "Brian Sutterer MD",
+      "sourceTitle": "Aidan Hutchinson Horrible Leg Injury - Doctor Explains",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 572,
+      "sources": [
+        {
+          "title": "Campbell provides injury update on Hutchinson",
+          "url": "https://www.detroitlions.com/news/campbell-provides-injury-update-on-hutchinson"
+        },
+        {
+          "title": "KEY QUESTIONS: Whats the latest update on Hutchinsons injury?",
+          "url": "https://www.detroitlions.com/news/key-questions-what-s-the-latest-update-on-hutchinson-s-injury"
+        },
+        {
+          "title": "Hutchinson confirms hes fully cleared for football activity",
+          "url": "https://www.detroitlions.com/news/hutchinson-confirms-he-s-fully-cleared-for-football-activity"
+        },
+        {
+          "title": "NOTEBOOK: Campbell can't wait to see Hutchinson return to game action",
+          "url": "https://www.detroitlions.com/news/notebook-campbell-can-t-wait-to-see-hutchinson-return-to-game-action"
+        },
+        {
+          "title": "FOUR DOWNS: Red zone performance played a big role in Lions' loss to Packers",
+          "url": "https://www.detroitlions.com/news/four-downs-red-zone-performance-played-a-big-role-in-lions-loss-to-packers"
+        }
+      ]
+    },
+    {
+      "slug": "gavi-acl-2023",
+      "videoId": "1HEC31qHp90",
+      "name": "Gavi",
+      "sport": "足球",
+      "event": "歐洲盃資格賽 西班牙對喬治亞",
+      "bodyPart": "膝部",
+      "observation": "RTVE 新聞整理 Gavi 在西班牙對喬治亞的受傷與離場，並引述俱樂部診斷。",
+      "eventDate": "2023-11-19",
+      "returnDate": "2024-10-20",
+      "returnText": "2024-10-20 對 Sevilla 替補上場，重返俱樂部正式賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=1HEC31qHp90",
+      "publisher": "RTVE Noticias",
+      "sourceTitle": "GAVI se ROMPE el LIGAMENTO y el MENISCO en el ESPAÑA-GEORGIA y dice ADIÓS a la TEMPORADA | RTVE",
+      "captionStatus": "not-verified",
+      "startSeconds": 48,
+      "durationSeconds": 120,
+      "sources": [
+        {
+          "title": "Injury update on Gavi",
+          "url": "https://www.fcbarcelona.com/en/news/3790503/injury-update-on-gavi/amp"
+        },
+        {
+          "title": "Gavi operation successful",
+          "url": "https://www.fcbarcelona.com/en/news/3799154/gavi-operation-successful"
+        },
+        {
+          "title": "Gavi returns after 348 days out",
+          "url": "https://www.fcbarcelona.com/en/football/first-team/news/4152481/gavi-returns-after-248-days-out"
+        }
+      ]
+    },
+    {
+      "slug": "ter-stegen-patellar-tendon-2024",
+      "videoId": "ZRP1PfMv6ds",
+      "name": "Marc-André ter Stegen",
+      "sport": "足球",
+      "event": "西甲 巴塞隆納對比利亞雷亞爾",
+      "bodyPart": "膝部",
+      "observation": "Movistar Plus 的賽事重播呈現接高球、接觸後落地與倒地；診斷另由俱樂部公告確認。",
+      "eventDate": "2024-09-22",
+      "returnDate": "2025-05-03",
+      "returnText": "2025-05-03 對 Valladolid 先發，重返俱樂部正式賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=ZRP1PfMv6ds",
+      "publisher": "El Día Después por Movistar Plus",
+      "sourceTitle": "El Día Después (23/09/2024): La lesión de Ter Stegen",
+      "captionStatus": "not-verified",
+      "startSeconds": 21,
+      "durationSeconds": 169,
+      "sources": [
+        {
+          "title": "Marc ter Stegen injury news",
+          "url": "https://www.fcbarcelona.com/en/news/4127804/marc-ter-stegen-injury-news/amp"
+        },
+        {
+          "title": "Ter Stegen returns after 223 days out",
+          "url": "https://www.fcbarcelona.com/en/news/4257640/ter-stegen-returns-after-223-days-out"
+        },
+        {
+          "title": "Marc-André ter Stegen continues recovery",
+          "url": "https://www.fcbarcelona.com/en/football/first-team/news/4236807/marcandr-ter-stegen-continues-recovery"
+        }
+      ]
+    },
+    {
+      "slug": "rodri-acl-2024",
+      "videoId": "HgrqAWPBSTk",
+      "name": "Rodri",
+      "sport": "足球",
+      "event": "英超 曼城對兵工廠",
+      "bodyPart": "膝部",
+      "observation": "賽事片段呈現角球爭位時的倒地與離場，不包含手術或 MRI 畫面。",
+      "eventDate": "2024-09-22",
+      "returnDate": "2025-05-20",
+      "returnText": "2025-05-20 對 Bournemouth 替補上場，重返英超正式賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=HgrqAWPBSTk",
+      "publisher": "Video 4Football",
+      "sourceTitle": "Rodri Injury against Arsenal 🤕",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 64,
+      "sources": [
+        {
+          "title": "Injury update: Rodri",
+          "url": "https://live.mancity.com/news/mens/injury-update-rodri-63862763"
+        },
+        {
+          "title": "Injury update: Rodri ruled out for season, says boss",
+          "url": "https://www.mancity.com/news/mens/newcastle-united-v-manchester-city-pep-guardiola-injury-update-63863036"
+        },
+        {
+          "title": "Perfect Etihad ending for De Bruyne after vital Bournemouth victory",
+          "url": "https://live.mancity.com/news/mens/manchester-city-bournemouth-202425-match-report-63883362"
+        }
+      ]
+    },
+    {
+      "slug": "dani-carvajal-knee-2024",
+      "videoId": "nBC7o7Iz0RM",
+      "name": "Dani Carvajal",
+      "sport": "足球",
+      "event": "西甲 皇家馬德里對比利亞雷亞爾",
+      "bodyPart": "膝部",
+      "observation": "Movistar 的賽事回顧呈現爭球、受傷及場上反應；醫療結論另有官方公告。",
+      "eventDate": "2024-10-05",
+      "returnDate": "2025-07-09",
+      "returnText": "2025-07-09 在世俱盃準決賽對 PSG 替補出賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=nBC7o7Iz0RM",
+      "publisher": "El Día Después por Movistar Plus",
+      "sourceTitle": "El Día Después (07/10/2024): Una noche fatídica para Carvajal",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 146,
+      "sources": [
+        {
+          "title": "Carvajal medical report",
+          "url": "https://www.realmadrid.com/en-US/news/football/first-team/medical-reports/parte-medico-de-carvajal-11-10-2024"
+        },
+        {
+          "title": "Carvajal medical report",
+          "url": "https://www.realmadrid.com/en-US/news/football/first-team/medical-reports/parte-medico-de-carvajal-06-10-2024"
+        },
+        {
+          "title": "El Madrid gana al Villarreal con dos grandes goles de Valverde y Vini Jr.",
+          "url": "https://www.realmadrid.com/es-ES/noticias/futbol/primer-equipo/cronicas/cronica-del-real-madrid-villarreal-05-10-2024"
+        },
+        {
+          "title": "Real Madrid：El regreso de Carvajal y Militão",
+          "url": "https://www.realmadrid.com/es-ES/noticias/futbol/primer-equipo/actualidad/el-regreso-de-carvajal-y-militao-10-07-2025"
+        },
+        {
+          "title": "Real Madrid：Militão spielt acht Monate später wieder",
+          "url": "https://www.realmadrid.com/de-DE/news/fussball/erste-mannshaft/latest-news/militao-reaparece-8-meses-despues-09-07-2025"
+        }
+      ]
+    },
+    {
+      "slug": "jamal-musiala-ankle-2025",
+      "videoId": "AHzOcxBu0Fk",
+      "name": "Jamal Musiala",
+      "sport": "足球",
+      "event": "世界俱樂部盃 拜仁慕尼黑對巴黎聖日耳曼",
+      "bodyPart": "腳踝",
+      "observation": "DAZN 比賽精華包含拜仁與巴黎的爭球場面；受傷段落須與後續官方診斷一起閱讀。",
+      "eventDate": "2025-07-05",
+      "returnDate": "2026-01-17",
+      "returnText": "2026-01-17 對 RB Leipzig 替補上場，回場後送出助攻。",
+      "videoUrl": "https://www.youtube.com/watch?v=AHzOcxBu0Fk",
+      "publisher": "GoalBlitz⚽️",
+      "sourceTitle": "💔 Jamal Musiala HORRIFIC Injury | Full Incident & Reaction | [PSG vs BAYERN] 2025",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 10,
+      "sources": [
+        {
+          "title": "Jamal Musiala sidelined for long period",
+          "url": "https://fcbayern.com/en/news/2025/07/jamal-musiala-diagnosis"
+        },
+        {
+          "title": "Jamal Musiala erfolgreich operiert",
+          "url": "https://fcbayern.com/de/news/2025/07/jamal-musiala-erfolgreich-operiert"
+        },
+        {
+          "title": "Jamal Musiala marks injury comeback with assist against RB Leipzig",
+          "url": "https://fcbayern.com/en/news/2026/01/jamal-musiala-marks-injury-comeback-with-assist-against-rb-leipzig"
+        },
+        {
+          "title": "FIFA Club World Cup 2025: Paris Saint-Germain v. FC Bayern München — Full-time match report",
+          "url": "https://fdp.fifa.org/assetspublic/ce233/r10589/pdf/FullTimeMatchReport-English.pdf"
+        }
+      ]
+    },
+    {
+      "slug": "eder-militao-acl-2024",
+      "videoId": "mmngoDkXwxc",
+      "name": "Éder Militão",
+      "sport": "足球",
+      "event": "西甲 皇家馬德里對奧薩蘇納",
+      "bodyPart": "膝部",
+      "observation": "賽事片段呈現禁區內受傷及離場；應辨認本次是右膝事件。",
+      "eventDate": "2024-11-09",
+      "returnDate": "2025-07-09",
+      "returnText": "2025-07-09 在世俱盃準決賽對 PSG 替補出賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=mmngoDkXwxc",
+      "publisher": "Video 4Football",
+      "sourceTitle": "Eder Militao CRAZY Injury against Osasuna 🤕",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 61,
+      "sources": [
+        {
+          "title": "Communiqué médical de Militão",
+          "url": "https://www.realmadrid.com/fr-FR/actualites/football/equipe-premiere/rapports-medicaux/parte-medico-09-11-2024"
+        },
+        {
+          "title": "Militão medical report",
+          "url": "https://www.realmadrid.com/en-US/news/football/first-team/medical-reports/parte-medico-19-11-2024"
+        },
+        {
+          "title": "Real Madrid：El regreso de Carvajal y Militão",
+          "url": "https://www.realmadrid.com/es-ES/noticias/futbol/primer-equipo/actualidad/el-regreso-de-carvajal-y-militao-10-07-2025"
+        },
+        {
+          "title": "Real Madrid：Militão spielt acht Monate später wieder",
+          "url": "https://www.realmadrid.com/de-DE/news/fussball/erste-mannshaft/latest-news/militao-reaparece-8-meses-despues-09-07-2025"
+        }
+      ]
+    },
+    {
+      "slug": "carolina-marin-acl-2024",
+      "videoId": "Hk46I0O_mjU",
+      "name": "Carolina Marín",
+      "sport": "羽球",
+      "event": "巴黎奧運 羽球女單準決賽",
+      "bodyPart": "膝部",
+      "observation": "La Vanguardia 新聞呈現巴黎奧運受傷、嘗試續賽與退場的過程。",
+      "eventDate": "2024-08-04",
+      "returnDate": null,
+      "returnText": "2026-03-26 宣布結束職業生涯；本頁沒有列出傷後正式回場日期。",
+      "videoUrl": "https://www.youtube.com/watch?v=Hk46I0O_mjU",
+      "publisher": "LaVanguardia",
+      "sourceTitle": "Carolina Marín se quiebra la rodilla y abandona los Juegos entre lágrimas",
+      "captionStatus": "not-verified",
+      "startSeconds": 12,
+      "durationSeconds": 131,
+      "sources": [
+        {
+          "title": "Parte médico - Carolina Marín: Se confirma la rotura del ligamento cruzado anterior de la rodilla derecha",
+          "url": "https://www.badminton.es/news/154258/Parte-medico-Carolina-Marin-Se-confirma-la-rotura-del-ligamento-cruzado-anterior-de-la-rodilla-derecha"
+        },
+        {
+          "title": "Carolina Marín, operada con éxito de la rodilla lesionada en los Juegos Olímpicos de París 2024",
+          "url": "https://www.badminton.es/news/154265/Carolina-Marin-operada-con-exito-de-la-rodilla-lesionada-en-los-Juegos-Olimpicos-de-Paris-2024"
+        },
+        {
+          "title": "Carolina Marín anuncia su retirada del bádminton",
+          "url": "https://www.badminton.es/news/163011/Carolina-Marin-anuncia-su-retirada-del-badminton"
+        }
+      ]
+    },
+    {
+      "slug": "jonas-vingegaard-crash-2024",
+      "videoId": "r58I6buCUA0",
+      "name": "Jonas Vingegaard",
+      "sport": "自行車",
+      "event": "環巴斯克自行車賽 第四站",
+      "bodyPart": "軀幹",
+      "observation": "FloBikes 的事故回顧呈現集團摔車與救援；多名選手的診斷需分別閱讀。",
+      "eventDate": "2024-04-04",
+      "returnDate": "2024-06-29",
+      "returnText": "2024-06-29 已參加環法自行車賽，完成第一站正式賽事。",
+      "videoUrl": "https://www.youtube.com/watch?v=r58I6buCUA0",
+      "publisher": "FloBikes",
+      "sourceTitle": "Remco Evenepoel, Jonas Vingegaard, Primoz Roglic in Serious Tour of Basque Country Crash",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 90,
+      "sources": [
+        {
+          "title": "Update | Jonas Vingegaard",
+          "url": "https://www.teamvismaleaseabike.com/news/news/update-jonas-vingegaard/"
+        },
+        {
+          "title": "Jonas Vingegaard recibe el alta hospitalaria tras 12 días ingresado",
+          "url": "https://www.rtve.es/deportes/20240416/jonas-vingegaard-recibe-alta-hospitalaria-tras-12-dias-ingresado/16063129.shtml"
+        },
+        {
+          "title": "Van Aert third in tough opening stage Tour de France",
+          "url": "https://www.teamvismaleaseabike.com/race-report/news/van-aert-third-in-tough-opening-stage-tour-de-france/"
+        }
+      ]
+    },
+    {
+      "slug": "wout-van-aert-crash-2024",
+      "videoId": "x4QE1G_VXxw",
+      "name": "Wout van Aert",
+      "sport": "自行車",
+      "event": "Dwars door Vlaanderen 自行車賽",
+      "bodyPart": "軀幹",
+      "observation": "TNT Sports Cycling 呈現集團摔車與 Van Aert 離場的畫面。",
+      "eventDate": "2024-03-27",
+      "returnDate": "2024-05-23",
+      "returnText": "2024-05-23 重返環挪威正式賽事，選手表示競賽狀態仍在恢復。",
+      "videoUrl": "https://www.youtube.com/watch?v=x4QE1G_VXxw",
+      "publisher": "TNT Sports Cycling",
+      "sourceTitle": "💥 HUGE CRASH in Dwars door Vlaanderen wipes out Wout van Aert, Mads Pedersen and Biniam Girmay 🤕",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 188,
+      "sources": [
+        {
+          "title": "Update Wout van Aert",
+          "url": "https://www.teamvismaleaseabike.nl/nieuws/nieuws/update-wout-van-aert-2/"
+        },
+        {
+          "title": "Van Aert experiences successful comeback in Tour of Norway, strong performance Lemmen",
+          "url": "https://www.teamvismaleaseabike.com/race-report/news/van-aert-experiences-succesful-comeback-in-tour-of-norway-strong-performance-lemmen/"
+        },
+        {
+          "title": "Wout van Aert: Visma-Lease a Bike star to miss Tour of Flanders and Paris-Roubaix through injury",
+          "url": "https://www.bbc.co.uk/sport/cycling/68680056"
+        }
+      ]
+    },
+    {
+      "slug": "ronald-acuna-acl-2024",
+      "videoId": "S2NsAbb8MNg",
+      "name": "Ronald Acuña Jr.",
+      "sport": "棒球",
+      "event": "MLB 勇士對海盜",
+      "bodyPart": "膝部",
+      "observation": "ESPN MLB 的傷勢報導回顧二壘附近的跑壘動作與退場。",
+      "eventDate": "2024-05-26",
+      "returnDate": "2025-05-23",
+      "returnText": "2025-05-23 正式重返 MLB，回場的第一球即擊出全壘打。",
+      "videoUrl": "https://www.youtube.com/watch?v=S2NsAbb8MNg",
+      "publisher": "ESPN MLB",
+      "sourceTitle": "Braves star Ronald Acuña Jr. is out for the season with a torn ACL | ESPN MLB",
+      "captionStatus": "not-verified",
+      "startSeconds": 14,
+      "durationSeconds": 199,
+      "sources": [
+        {
+          "title": "Acuña has torn ACL, will miss rest of season",
+          "url": "https://www.mlb.com/mets/news/ronald-acuna-jr-exits-game-vs-pirates"
+        },
+        {
+          "title": "Acuña homers on first pitch of return to Braves lineup",
+          "url": "https://www.mlb.com/news/ronald-acuna-jr-makes-2025-season-debut"
+        }
+      ]
+    },
+    {
+      "slug": "novak-djokovic-meniscus-2024",
+      "videoId": "mF6QEVNcgD4",
+      "name": "Novak Djokovic",
+      "sport": "網球",
+      "event": "法國網球公開賽 男單第四輪",
+      "bodyPart": "膝部",
+      "observation": "Tennis Channel 以新聞與照片整理法網退賽、膝部處理；此片沒有完整受傷動作，不據此判定精確機轉。",
+      "eventDate": "2024-06-03",
+      "returnDate": "2024-07-02",
+      "returnText": "2024-07-02 在溫布頓首輪出賽，為膝部手術後首場比賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=mF6QEVNcgD4",
+      "publisher": "Tennis Channel",
+      "sourceTitle": "Novak Djokovic withdraws from Roland Garros with knee injury | The Break",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 194,
+      "sources": [
+        {
+          "title": "Novak Djokovic déclare forfait",
+          "url": "https://www.rolandgarros.com/fr-fr/article/novak-djokovic-declare-forfait-quarts-finale-2024"
+        },
+        {
+          "title": "Novak breezes through opening round at Wimbledon",
+          "url": "https://novakdjokovic.com/en/news/tennis/novak-breezes-through-opening-round-at-wimbledon/"
+        }
+      ]
+    },
+    {
+      "slug": "kristaps-porzingis-retinaculum-2024",
+      "videoId": "0xVAWNzYcKE",
+      "name": "Kristaps Porziņģis",
+      "sport": "籃球",
+      "event": "NBA 總冠軍賽 第二戰 塞爾提克對獨行俠",
+      "bodyPart": "腳踝",
+      "observation": "醫師解說同時談 Porziņģis 與 Dončić，本站個案只採 Porziņģis 的事件與另列官方公告。",
+      "eventDate": "2024-06-09",
+      "returnDate": "2024-11-25",
+      "returnText": "2024-11-25 對 Clippers 術後首次出賽；較早的總冠軍賽第五戰是在手術前帶傷上場。",
+      "videoUrl": "https://www.youtube.com/watch?v=0xVAWNzYcKE",
+      "publisher": "Brian Sutterer MD",
+      "sourceTitle": "Porzingis Has Injury Nobody’s Heard of and Luka Doncic Needs Pain Shots - Doctor Explains",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 614,
+      "sources": [
+        {
+          "title": "Celtics Kristaps Porzingis misses Game 3 with left leg injury",
+          "url": "https://www.nba.com/news/nba-finals-porzingis-out-game-3"
+        },
+        {
+          "title": "Celtics Kristaps Porzingis has surgery, will miss 2024 Olympics",
+          "url": "https://www.nba.com/news/celtics-kristaps-porzingis-offseason-surgery"
+        },
+        {
+          "title": "Celtics Kristaps Porziņģis makes season debut vs. Clippers",
+          "url": "https://www.nba.com/news/kristaps-porzingis-season-debut-2024-25"
+        }
+      ]
+    },
+    {
+      "slug": "joel-embiid-meniscus-2024",
+      "videoId": "xI6yz7rFdrE",
+      "name": "Joel Embiid",
+      "sport": "籃球",
+      "event": "NBA 76 人對勇士",
+      "bodyPart": "膝部",
+      "observation": "醫師回顧勇士對 76 人的爭球與膝部接觸片段；確認診斷以後續報導為準。",
+      "eventDate": "2024-01-30",
+      "returnDate": "2024-04-02",
+      "returnText": "2024-04-02 對 Thunder 重返 NBA 例行賽，繳出 24 分、6 籃板與 7 助攻。",
+      "videoUrl": "https://www.youtube.com/watch?v=xI6yz7rFdrE",
+      "publisher": "Brian Sutterer MD",
+      "sourceTitle": "Doctor Reacts to Joel Embiid Knee Injury vs Warriors",
+      "captionStatus": "not-verified",
+      "startSeconds": 35,
+      "durationSeconds": 405,
+      "sources": [
+        {
+          "title": "76ers center Joel Embiid has surgery on left knee, will be reevaluated in 4 weeks",
+          "url": "https://www.nba.com/news/joel-embiid-procedure-left-knee"
+        },
+        {
+          "title": "Joel Embiid SHINES IN HIS RETURN! | April 2, 2024",
+          "url": "https://www.youtube.com/watch?v=CcwMZ3GIauI"
+        },
+        {
+          "title": "Sixers star Joel Embiid to miss games with injured meniscus",
+          "url": "https://www.nba.com/news/sixers-star-joel-embiid-to-miss-games-with-injured-meniscus"
+        }
+      ]
+    },
+    {
+      "slug": "connor-bedard-jaw-2024",
+      "videoId": "bLxN2RZYgds",
+      "name": "Connor Bedard",
+      "sport": "冰球",
+      "event": "NHL 黑鷹對魔鬼",
+      "bodyPart": "頭頸部",
+      "observation": "Sportsnet 節目重播並討論 Smith 與 Bedard 的碰撞，需和同節目的其他事件區分。",
+      "eventDate": "2024-01-05",
+      "returnDate": "2024-02-15",
+      "returnText": "2024-02-15 對 Penguins 重返 NHL 正式賽，並送出一次助攻。",
+      "videoUrl": "https://www.youtube.com/watch?v=bLxN2RZYgds",
+      "publisher": "SPORTSNET",
+      "sourceTitle": "Breaking Down Devil's Brendan Smith Big Hit On Blackhawks' Connor Bedard | To the Point",
+      "captionStatus": "not-verified",
+      "startSeconds": 100,
+      "durationSeconds": 435,
+      "sources": [
+        {
+          "title": "Bedard out 6-8 weeks for Blackhawks after surgery on broken jaw",
+          "url": "https://www.nhl.com/news/connor-bedard-injury-status-out-6-8-weeks-after-surgery-on-broken-jaw"
+        },
+        {
+          "title": "RECAP: Bedard Return Spoiled by Crosby, Penguins",
+          "url": "https://www.nhl.com/blackhawks/news/recap-bedard-return-spoiled-by-crosby-penguins"
+        }
+      ]
+    },
+    {
+      "slug": "federica-brignone-leg-2025",
+      "videoId": "KTaglqZADPw",
+      "name": "Federica Brignone",
+      "sport": "高山滑雪",
+      "event": "義大利高山滑雪錦標賽 大曲道",
+      "bodyPart": "膝部",
+      "observation": "片段記錄大曲道摔倒與後續救援；確切骨折與合併傷勢另以義大利滑雪協會公告為準。",
+      "eventDate": "2025-04-03",
+      "returnDate": "2026-01-20",
+      "returnText": "2026-01-20 重返世界盃，在 Kronplatz 大曲道獲得第六名。",
+      "videoUrl": "https://www.youtube.com/watch?v=KTaglqZADPw",
+      "publisher": "Amanti dello sci alpino",
+      "sourceTitle": "Video integrale della caduta di Federica Brignone nel Gigante in val di Fassa",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 44,
+      "sources": [
+        {
+          "title": "Aggiornamento sulle condizioni di Federica Brignone",
+          "url": "https://www.fisi.org/aggiornamento-sulle-condizioni-di-federica-brignone/"
+        },
+        {
+          "title": "Perfettamente riuscita lartroscopia a cui è stata sottoposta Federica Brignone. Domani riprenderà il percorso riabilitativo",
+          "url": "https://www.fisi.org/perfettamente-riuscita-lartroscopia-a-cui-e-stata-sottoposta-federica-brignone-domani-riprendera-il-percorso-riabilitativo/"
+        },
+        {
+          "title": "Strabiliante Brignone! Che rientro, Federica: 6/a nel gigante di Kronplatz. Vince Scheib, Della Mea 10/a",
+          "url": "https://www.fisi.org/strabiliante-brignone-che-rientro-federica-6-a-nel-gs-di-kronplatz-vince-scheib-della-mea-10-a/"
+        }
+      ]
+    }
+  ]
+}

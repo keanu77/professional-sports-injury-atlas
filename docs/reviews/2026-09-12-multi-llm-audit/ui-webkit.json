@@ -1,0 +1,186 @@
+[
+  {
+    "route": "/videos/gavi-acl-2023/",
+    "width": 390,
+    "overflow": false,
+    "referenceRects": [
+      {
+        "width": 27.671875,
+        "height": 29.25
+      },
+      {
+        "width": 24.421875,
+        "height": 29.25
+      },
+      {
+        "width": 26.953125,
+        "height": 29.25
+      }
+    ],
+    "mechanism": {
+      "width": 358,
+      "height": 772.28125,
+      "top": 1020.53125,
+      "fontSize": "16px"
+    },
+    "paragraph": {
+      "width": 320.8125,
+      "height": 21.59375,
+      "top": 1054.71875,
+      "fontSize": "12px"
+    },
+    "video": {
+      "width": 340,
+      "height": 275.25,
+      "top": 303.5625,
+      "fontSize": "16px"
+    },
+    "button": {
+      "width": 340,
+      "height": 72,
+      "top": 506.8125,
+      "fontSize": "13.6px"
+    },
+    "highlights": {
+      "width": 358,
+      "height": 287.8125,
+      "top": 692.71875,
+      "fontSize": "16px"
+    },
+    "sources": {
+      "width": 320.8125,
+      "height": 474.15625,
+      "top": 2952.75,
+      "fontSize": "16px"
+    },
+    "heading": "傷後多久再出賽？",
+    "sourceLists": 1,
+    "closedReference": {
+      "open": true,
+      "hash": "#event-source-gavi-acl-2023-4",
+      "active": "event-source-gavi-acl-2023-4",
+      "targetVisible": true
+    }
+  },
+  {
+    "route": "/videos/carolina-marin-acl-2024/",
+    "width": 390,
+    "overflow": false,
+    "referenceRects": [
+      {
+        "width": 27.671875,
+        "height": 29.25
+      },
+      {
+        "width": 24.421875,
+        "height": 29.25
+      },
+      {
+        "width": 26.953125,
+        "height": 29.25
+      }
+    ],
+    "mechanism": {
+      "width": 358,
+      "height": 801.078125,
+      "top": 1020.53125,
+      "fontSize": "16px"
+    },
+    "paragraph": {
+      "width": 320.8125,
+      "height": 21.59375,
+      "top": 1054.71875,
+      "fontSize": "12px"
+    },
+    "video": {
+      "width": 340,
+      "height": 275.25,
+      "top": 303.5625,
+      "fontSize": "16px"
+    },
+    "button": {
+      "width": 340,
+      "height": 72,
+      "top": 506.8125,
+      "fontSize": "13.6px"
+    },
+    "highlights": {
+      "width": 358,
+      "height": 287.8125,
+      "top": 692.71875,
+      "fontSize": "16px"
+    },
+    "sources": {
+      "width": 320.8125,
+      "height": 577.71875,
+      "top": 2911.84375,
+      "fontSize": "16px"
+    },
+    "heading": "後續出賽狀況",
+    "sourceLists": 1,
+    "closedReference": {
+      "open": true,
+      "hash": "#event-source-carolina-marin-acl-2024-4",
+      "active": "event-source-carolina-marin-acl-2024-4",
+      "targetVisible": true
+    }
+  },
+  {
+    "route": "/cases/jayson-tatum-achilles-rupture-2025/",
+    "width": 390,
+    "overflow": false,
+    "referenceRects": [
+      {
+        "width": 27.671875,
+        "height": 29.25
+      },
+      {
+        "width": 27.671875,
+        "height": 29.25
+      },
+      {
+        "width": 27.328125,
+        "height": 29.25
+      }
+    ],
+    "mechanism": {
+      "width": 358,
+      "height": 1123.078125,
+      "top": 712.171875,
+      "fontSize": "16px"
+    },
+    "paragraph": {
+      "width": 320.8125,
+      "height": 21.59375,
+      "top": 746.359375,
+      "fontSize": "12px"
+    },
+    "video": {
+      "width": 324,
+      "height": 182.25,
+      "top": 392.125,
+      "fontSize": "16px"
+    },
+    "button": {
+      "width": 324,
+      "height": 182.25,
+      "top": 392.125,
+      "fontSize": "16px"
+    },
+    "highlights": null,
+    "sources": {
+      "width": 320.8125,
+      "height": 1414.4375,
+      "top": 3584.8125,
+      "fontSize": "16px"
+    },
+    "heading": "傷後多久再出賽？",
+    "sourceLists": 1,
+    "closedReference": {
+      "open": true,
+      "hash": "#event-source-jayson-tatum-achilles-rupture-2025-4",
+      "active": "event-source-jayson-tatum-achilles-rupture-2025-4",
+      "targetVisible": true
+    }
+  }
+]

@@ -40,8 +40,8 @@ describe("Decision 39 observation card metadata", () => {
     expect(observationCardMetadata(clip!)).toEqual(expected);
   });
 
-  it("keeps all 94 card labels non-empty and years governed", () => {
-    expect(allObservationClips).toHaveLength(94);
+  it("keeps all 113 card labels non-empty and years governed", () => {
+    expect(allObservationClips).toHaveLength(113);
 
     for (const clip of allObservationClips) {
       const metadata = observationCardMetadata(clip);
@@ -55,6 +55,7 @@ describe("Decision 39 observation card metadata", () => {
 describe("Decision 39 return milestone labels", () => {
   it.each([
     ["mitch-haniger-2017-face", "復健賽"],
+    ["klay-thompson-2019-acl", "跨兩次傷害後出賽"],
     ["chien-ming-wang-2008-foot", "春訓"],
     ["john-tavares-2021-concussion", "季前賽"],
     ["shohei-ohtani-world-series-2024", "帶傷出賽"],

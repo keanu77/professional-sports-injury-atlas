@@ -1,0 +1,101 @@
+---
+import type { EventUpdate } from "../../lib/videos/event-updates";
+import ReportSourceRefs from "./ReportSourceRefs.astro";
+interface Props {
+  update: EventUpdate;
+}
+const { update } = Astro.props;
+const mechanism = update.mechanism;
+---
+
+{
+  mechanism && (
+    <section
+      class="event-mechanism"
+      data-event-mechanism={update.slug}
+      aria-labelledby={`event-mechanism-${update.slug}`}
+    >
+      <p class="eyebrow">受傷機轉重點</p>
+      <h2 id={`event-mechanism-${update.slug}`}>{mechanism.title}</h2>
+      <p>
+        {mechanism.summary.text}
+        <ReportSourceRefs
+          slug={update.slug}
+          indexes={mechanism.summary.sourceIndexes}
+        />
+      </p>
+      <ol class="mechanism-steps" aria-label="動作與事件重點">
+        {mechanism.steps.map((step) => (
+          <li>{step}</li>
+        ))}
+      </ol>
+      <p>
+        {mechanism.explanation.text}
+        <ReportSourceRefs
+          slug={update.slug}
+          indexes={mechanism.explanation.sourceIndexes}
+        />
+      </p>
+      {mechanism.research && (
+        <p class="research-note">
+          {mechanism.research.text}
+          <ReportSourceRefs
+            slug={update.slug}
+            indexes={mechanism.research.sourceIndexes}
+          />
+        </p>
+      )}
+      <p class="limitation">
+        <strong>影片分析的限制：</strong>
+        {mechanism.limitation}
+      </p>
+    </section>
+  )
+}
+<style>
+  .event-mechanism {
+    margin-block: 1.5rem;
+    margin-inline: auto;
+    max-inline-size: 52rem;
+    padding: 1.4rem;
+    border: 1px solid var(--hairline);
+    border-top: 3px solid var(--color-brand-primary);
+    border-radius: var(--radius-card);
+    background: var(--color-surface-raised);
+    min-width: 0;
+  }
+  h2 {
+    font: 700 clamp(1.25rem, 3vw, 1.5rem)/1.5 var(--font-display);
+    margin: 0.4rem 0 1rem;
+  }
+  p {
+    margin-block: 0.85rem;
+  }
+  .mechanism-steps {
+    padding: 1rem 1rem 1rem 2.5rem;
+    background: var(--color-surface-muted);
+    border-radius: var(--radius-card);
+  }
+  li {
+    padding-inline-start: 0.25rem;
+    margin-block: 0.65rem;
+  }
+  li::marker {
+    color: var(--color-brand-primary-hover);
+    font-weight: 700;
+  }
+  .research-note,
+  .limitation {
+    font-size: 0.95rem;
+  }
+  .limitation {
+    border-top: 1px solid var(--hairline);
+    padding-top: 1rem;
+    color: var(--color-ink-muted);
+  }
+  @media (max-width: 40rem) {
+    .event-mechanism {
+      padding: 1.1rem;
+    }
+  }
+</style>

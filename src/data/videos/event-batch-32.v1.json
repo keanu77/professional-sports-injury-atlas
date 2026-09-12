@@ -25,9 +25,57 @@
           "title": "MLB：Schwarber 秋季聯盟首場出賽",
           "url": "https://www.mlb.com/news/kyle-schwarber-could-return-for-world-series-c206863450",
           "publishedAt": "2016-10-22"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=9JoITljMoU0",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：膝部韌帶、半月板與常見外傷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/common-knee-injuries/",
+          "publishedAt": null
         }
       ],
-      "returnSummary": "2016-10-22 先在亞利桑那秋季聯盟擔任指定打擊。"
+      "returnSummary": "2016-10-22 先在亞利桑那秋季聯盟擔任指定打擊。",
+      "mechanism": {
+        "title": "追球與隊友相撞，膝踝同時承受外力",
+        "summary": {
+          "text": "Schwarber 追接左中外野飛球時與隊友相撞倒地，隨後需要協助離場。檢查確認膝部多條韌帶受傷，另有踝扭傷，不宜當成單純落地型 ACL 案例。",
+          "sourceIndexes": [4, 1]
+        },
+        "steps": [
+          "向左中外野追接飛球。",
+          "與隊友相撞，身體與下肢方向受到干擾。",
+          "倒地後無法繼續，接受協助。"
+        ],
+        "explanation": {
+          "text": "碰撞可以使膝部同時承受側向與旋轉負荷。多條韌帶及腳踝一起受傷時，治療與回場需考量整體支撐功能，而不只是一條 ACL。",
+          "sourceIndexes": [5, 1]
+        },
+        "limitation": "不能只靠接觸畫面分配責任或估算各組織受力。秋季聯盟及世界大賽的指定打擊出賽，不等於外野守備已恢復。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2016-04-07",
+          "title": "外野碰撞受傷",
+          "text": "左膝 ACL、LCL 撕裂，另有左踝扭傷。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2016-04-19",
+          "title": "手術更新",
+          "text": "MLB 報導膝部韌帶手術完成。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2016-10-22",
+          "title": "秋季聯盟先回場",
+          "text": "擔任指定打擊，早於世界大賽復出。",
+          "sourceIndexes": [3]
+        }
+      ]
     },
     {
       "slug": "bryce-harper-2017-knee",
@@ -46,9 +94,57 @@
           "title": "MLB：Harper 傷後首次復出賽報",
           "url": "https://www.mlb.com/news/nationals-reinstate-bryce-harper-from-dl-c256195038",
           "publishedAt": "2017-09-26"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=5STUOgvQWgQ",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：膝部韌帶、半月板與常見外傷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/common-knee-injuries/",
+          "publishedAt": null
         }
       ],
-      "returnSummary": "2017-09-26 對費城人恢復大聯盟出賽。"
+      "returnSummary": "2017-09-26 對費城人恢復大聯盟出賽。",
+      "mechanism": {
+        "title": "踩一壘後滑倒，膝過伸不等同韌帶斷裂",
+        "summary": {
+          "text": "Harper 衝過一壘時踩上壘包後滑倒，抱住膝部接受協助。後續 MRI 未發現韌帶或肌腱損傷，不能因畫面驚險就自行改成 ACL 斷裂。",
+          "sourceIndexes": [3, 1]
+        },
+        "steps": [
+          "快速衝向一壘。",
+          "踩上壘包後滑倒，膝部支撐方向改變。",
+          "抱住膝部，接受場上協助。"
+        ],
+        "explanation": {
+          "text": "膝蓋向後超過原本範圍稱為過伸，描述的是受力與動作。實際受傷可能涉及不同組織，需結合檢查；本例報導為骨挫傷及小腿拉傷。",
+          "sourceIndexes": [4, 1]
+        },
+        "limitation": "本例的陰性 MRI 結果不能推廣成所有膝過伸都安全。2017 年膝傷與 2022 年拇指骨折分開記錄。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2017-08-12",
+          "title": "跑壘滑倒受傷",
+          "text": "左膝過伸後退場。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2017-08-13",
+          "title": "MRI 釐清傷勢",
+          "text": "骨挫傷，未見韌帶或肌腱損傷。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2017-09-26",
+          "title": "重返大聯盟",
+          "text": "對 Phillies 恢復出賽，之後仍逐步增加負荷。",
+          "sourceIndexes": [2]
+        }
+      ]
     },
     {
       "slug": "dustin-fowler-2017-patellar-tendon",
@@ -67,9 +163,51 @@
           "title": "MLB：Fowler 傷後首場春訓賽報",
           "url": "https://www.mlb.com/news/dustin-fowler-back-in-game-action-for-a-s-c267212032",
           "publishedAt": "2018-02-25"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=GfnIhZIzIE8",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：髕腱與膝部伸直功能",
+          "url": "https://www.orthoinfo.org/diseases--conditions/patellar-tendon-tear/",
+          "publishedAt": null
         }
       ],
-      "returnSummary": "2018-02-25 代表運動家於春訓對皇家恢復出賽。"
+      "returnSummary": "2018-02-25 代表運動家於春訓對皇家恢復出賽。",
+      "mechanism": {
+        "title": "追界外球撞上設施，膝前方肌腱受到直接外傷",
+        "summary": {
+          "text": "Fowler 追接右外野界外球時撞上場邊設施，接著無法正常站立。MLB 確認右膝髕腱開放性斷裂，這是有直接撞擊與傷口的肌腱事件。",
+          "sourceIndexes": [3, 1]
+        },
+        "steps": [
+          "追接右外野界外飛球。",
+          "膝部接近並撞到場邊設施。",
+          "無法維持站立，接受協助離場。"
+        ],
+        "explanation": {
+          "text": "髕腱將伸膝力量傳到小腿。除了起跳落地的拉力，膝前方直接撞擊或深層傷口也可能傷及髕腱；不能把所有肌腱斷裂都解釋成非接觸推蹬。",
+          "sourceIndexes": [4, 1]
+        },
+        "limitation": "開放性斷裂依醫療報導，不以畫面中的血量判定。設施責任與精確致傷物件，不能僅由短片推定。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2017-06-29",
+          "title": "大聯盟初登場受傷",
+          "text": "右髕腱開放性斷裂，當晚需立即手術。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2018-02-25",
+          "title": "代表運動家春訓回場",
+          "text": "對 Royals 恢復出賽，早於之後的小聯盟及 MLB 例行賽。",
+          "sourceIndexes": [2]
+        }
+      ]
     },
     {
       "slug": "adam-eaton-2017-knee",
@@ -99,6 +237,54 @@
           "title": "MLB：Eaton 大聯盟春訓首場賽報",
           "url": "https://www.mlb.com/news/nationals-adam-eaton-homers-in-2018-debut-c268948342",
           "publishedAt": "2018-03-17"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=J1iIgGSiSFc",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：膝部韌帶、半月板與常見外傷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/common-knee-injuries/",
+          "publishedAt": null
+        }
+      ],
+      "mechanism": {
+        "title": "衝上一壘後支撐改變，膝與踝出現合併傷勢",
+        "summary": {
+          "text": "Eaton 衝向一壘、踩上壘包後倒地，由人員攙扶離場。球隊確認左膝 ACL 與半月板撕裂，另有高位踝扭傷，需要將不同組織一起看待。",
+          "sourceIndexes": [5, 1]
+        },
+        "steps": [
+          "快速衝向一壘。",
+          "踩上壘包，身體仍持續向前。",
+          "支撐中斷後倒地，無法繼續比賽。"
+        ],
+        "explanation": {
+          "text": "腳部受到支撐面限制、身體仍有動量時，膝踝可能同時承受旋轉與牽拉。哪個組織受傷、是否合併半月板損傷，仍需醫療檢查確認。",
+          "sourceIndexes": [6, 1]
+        },
+        "limitation": "不能單看踩壘動作判定某一角度是唯一病因。更早的小聯盟熱身賽日期未明，3 月 17 日僅列為已核得的大聯盟春訓節點。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2017-04-28",
+          "title": "跑壘膝踝受傷",
+          "text": "左膝 ACL、半月板及高位踝扭傷。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2017-05-10",
+          "title": "手術後復健展望",
+          "text": "報導記載膝部手術及預估復健時間；預估不等於實際復賽日。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2018-03-17",
+          "title": "大聯盟春訓出賽",
+          "text": "此前已有小聯盟熱身賽；最早日期未確認，因此不計算首次回場天數。",
+          "sourceIndexes": [3, 4]
         }
       ]
     },
@@ -125,6 +311,54 @@
           "title": "MLB：Bassitt 復出前模擬賽紀錄",
           "url": "https://www.mlb.com/news/chris-bassitt-to-return-for-athletics-on-thursday",
           "publishedAt": "2021-09-22"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=8rQjyuPU_gM",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：外力、骨折與恢復",
+          "url": "https://www.orthoinfo.org/diseases--conditions/fractures-broken-bones/",
+          "publishedAt": null
+        }
+      ],
+      "mechanism": {
+        "title": "投球後遭平飛球擊中，顏面骨承受集中撞擊",
+        "summary": {
+          "text": "Bassitt 投球後被回擊的平飛球打中臉部，隨即倒地。球團確認右側顴骨區移位性骨折；球速或痛苦反應不能代替骨折位置的影像判讀。",
+          "sourceIndexes": [4, 1]
+        },
+        "steps": [
+          "投球後準備防守。",
+          "回擊平飛球直接撞到臉部。",
+          "倒地後由醫療人員協助。"
+        ],
+        "explanation": {
+          "text": "球的撞擊把外力集中到顏面接觸區域，可能傷及骨頭與周圍軟組織。是否移位或需要手術，需依檢查，不能只看表面傷口。",
+          "sourceIndexes": [5, 1]
+        },
+        "limitation": "不能由顏面骨折直接追加腦震盪或眼球損傷診斷。牛棚、模擬賽與對外正式先發是不同階段。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2021-08-17",
+          "title": "平飛球擊中臉部",
+          "text": "後續確認右側顏面骨折。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2021-09-22",
+          "title": "術後回場安排",
+          "text": "球隊報導回顧已接受手術及訓練進展，宣布預計先發；此時仍是安排。",
+          "sourceIndexes": [3]
+        },
+        {
+          "date": "2021-09-23",
+          "title": "實際恢復先發",
+          "text": "對 Mariners 完成三局投球。",
+          "sourceIndexes": [2]
         }
       ]
     },
@@ -156,6 +390,48 @@
           "title": "MLB：Cobb 生涯與復健賽紀錄",
           "url": "https://www.mlb.com/player/alex-cobb-502171",
           "publishedAt": null
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=ggGrmIf-SQE",
+          "publishedAt": null
+        },
+        {
+          "title": "CDC：腦震盪的受傷方式",
+          "url": "https://www.cdc.gov/heads-up/about/index.html",
+          "publishedAt": null
+        }
+      ],
+      "mechanism": {
+        "title": "平飛球撞擊頭部，倒地反應需與腦震盪評估對照",
+        "summary": {
+          "text": "Cobb 投球後遭平飛球打中頭部右側，倒地後以擔架離場。MLB 報導確認腦震盪；擔架處置本身不能用來判定腦震盪的嚴重度。",
+          "sourceIndexes": [5, 1]
+        },
+        "steps": [
+          "投球後面向擊球方向。",
+          "平飛球直接撞擊頭部。",
+          "倒地後接受醫療協助並離場。"
+        ],
+        "explanation": {
+          "text": "頭部受撞可能使腦部快速移動並影響功能。表面有沒有傷口、是否很快站起，都不能單獨判定有無腦震盪；診斷需要後續評估。",
+          "sourceIndexes": [6, 1]
+        },
+        "limitation": "回場採小聯盟復健賽。首場因手指水泡退場，不能把這次退場誤寫成腦震盪復發。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2013-06-15",
+          "title": "頭部遭平飛球擊中",
+          "text": "後續確認腦震盪。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2013-07-23",
+          "title": "復健賽先登板",
+          "text": "Class A Charlotte 出賽，僅投兩球便因手指水泡退場。",
+          "sourceIndexes": [2, 3]
         }
       ]
     },
@@ -192,6 +468,54 @@
           "title": "MLB 官方資料：Stanton 2015 春訓逐場紀錄",
           "url": "https://statsapi.mlb.com/api/v1/people/519317/stats?stats=gameLog&group=hitting&season=2015&gameType=S",
           "publishedAt": null
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=W5Bg3oaHI8I",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：外力、骨折與恢復",
+          "url": "https://www.orthoinfo.org/diseases--conditions/fractures-broken-bones/",
+          "publishedAt": null
+        }
+      ],
+      "mechanism": {
+        "title": "打擊時球直接擊中臉部，骨頭與牙齒皆可能受傷",
+        "summary": {
+          "text": "Stanton 打擊時遭投球擊中臉部後倒地，醫療人員進場協助。報導確認多處顏面骨折及牙齒損傷，不宜僅以表面的流血描述全部傷害。",
+          "sourceIndexes": [6, 1]
+        },
+        "steps": [
+          "在打擊區準備擊球。",
+          "投球直接接觸臉部。",
+          "倒地後接受現場處置並離場。"
+        ],
+        "explanation": {
+          "text": "直接撞擊可以同時影響顏面骨、牙齒及周邊軟組織。受傷範圍需要檢查確認，不能由球碰到臉部的單一畫面判斷全部深層損傷。",
+          "sourceIndexes": [7, 1]
+        },
+        "limitation": "沒有公開確認的腦震盪、眼球傷勢或後遺症不予補寫。2015 年隊內模擬賽與對紅雀春訓分開列出。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2014-09-11",
+          "title": "顏面遭投球擊中",
+          "text": "多處骨折與牙齒損傷。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2015-02-28",
+          "title": "參加隊內模擬賽",
+          "text": "屬恢復打擊的過程，不列為對外回場日。",
+          "sourceIndexes": [3]
+        },
+        {
+          "date": "2015-03-05",
+          "title": "春訓對外出賽",
+          "text": "對 Cardinals 恢復比賽。",
+          "sourceIndexes": [2, 5]
         }
       ]
     },
@@ -218,6 +542,48 @@
           "title": "MLB 官方資料：Morton 2022 春訓逐場紀錄",
           "url": "https://statsapi.mlb.com/api/v1/people/450203/stats?stats=gameLog&group=pitching&season=2022&gameType=S",
           "publishedAt": null
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=2UZJNvs7G_o",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：外力、骨折與恢復",
+          "url": "https://www.orthoinfo.org/diseases--conditions/fractures-broken-bones/",
+          "publishedAt": null
+        }
+      ],
+      "mechanism": {
+        "title": "回擊球打中小腿，還能投球也可能已骨折",
+        "summary": {
+          "text": "Morton 被回擊球打中小腿後曾繼續投球，之後確認右腓骨骨折。這個案例可用來理解：受傷後仍做得出動作，與骨頭是否完整並不是同一件事。",
+          "sourceIndexes": [4, 1]
+        },
+        "steps": [
+          "投球後遭回擊球直接撞到小腿。",
+          "曾繼續投球，肢體仍可完成部分動作。",
+          "後續無法完成比賽，檢查確認骨折。"
+        ],
+        "explanation": {
+          "text": "骨頭可因直接撞擊受傷。疼痛及活動能力不一定與損傷程度完全一致，仍能踩地或投球不能排除骨折；精確斷裂時點也不能由轉播直接定位。",
+          "sourceIndexes": [5, 1]
+        },
+        "limitation": "不把帶傷投球當成安全建議，也不聲稱已由影片確認哪一球造成骨折擴大。回場採翌年春訓，練投另行看待。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2021-10-26",
+          "title": "世界大賽第 1 戰受傷",
+          "text": "小腿遭回擊球撞擊後，確認右腓骨骨折。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2022-03-27",
+          "title": "春訓先發回場",
+          "text": "對 Rays 正式春訓出賽；此前練投不列入回場日。",
+          "sourceIndexes": [2, 3]
         }
       ]
     }

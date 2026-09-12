@@ -1,0 +1,105 @@
+{
+  "snapshotPath": "/private/tmp/atlas-first10-review-kj3oi4ga",
+  "snapshotCommit": "3f43572b3583628c6ec779d42320c8adc2222e0a",
+  "codeAndDataFiles": [
+    {
+      "path": "src/components/cases/EventFollowUp.astro",
+      "sha256": "763212800d082e1d3bd5caaccff6088314322a2a0d13981f93fca06bb29e2ad9"
+    },
+    {
+      "path": "src/components/cases/EventMechanism.astro",
+      "sha256": "3cf5af8fdbed53ff41d47fa5cbd224b40a846f524a7067fa02346d6544791355"
+    },
+    {
+      "path": "src/components/cases/ReportSourceRefs.astro",
+      "sha256": "2c04cc637b09fca316b76b2ef7c967c9e2386b1b6faea1c5329bad0349fd0967"
+    },
+    {
+      "path": "src/data/videos/event-additions.v1.json",
+      "sha256": "e12e637b85865287c63358cdacfe3e0209ad2a325d9c1ba1eb9735960916a173"
+    },
+    {
+      "path": "src/data/videos/event-batch-30.v1.json",
+      "sha256": "28be60c6dbea721d7ce43e639646752adc1005b2a63413d25bf52517469beadf"
+    },
+    {
+      "path": "src/data/videos/event-batch-31.v1.json",
+      "sha256": "546d539417d69b887ecf84c109f16ba0af920ba088224f10fef3fd783ad74144"
+    },
+    {
+      "path": "src/data/videos/event-batch-34.v1.json",
+      "sha256": "7bf88d044d0cd4a4fc16bb0b739c8e01505dd265cc4ef7964dbe0530b9f07e27"
+    },
+    {
+      "path": "src/data/videos/event-updates.v1.json",
+      "sha256": "c617ec70a7a19b9647aad997fd20188a44b86593f47b7ab01714a7bc68fa30c5"
+    },
+    {
+      "path": "src/lib/videos/event-updates.ts",
+      "sha256": "ec3431d3cfd38e7a80bc0b86ed73834e333539c7eca72d867ba9f8610025fb4a"
+    },
+    {
+      "path": "src/pages/cases/[slug].astro",
+      "sha256": "7530a9422ae5f44b69991cdcc389b1bd0f3c856ee9c0688c7a6349112a462f4c"
+    },
+    {
+      "path": "src/pages/videos/[slug].astro",
+      "sha256": "a16d1ae6edf92180daa5e9401baa9d4b38e4b9d31322f238d16d046597b6d8db"
+    },
+    {
+      "path": "tests/unit/event-updates.test.ts",
+      "sha256": "9f5bf861cf772a2577402c436ddbdec2281dba6303362eff466c2ef2af576c64"
+    }
+  ],
+  "matchesWorkspace": true,
+  "checkedAt": "2026-09-12",
+  "contentCheck": "passed in clean isolated snapshot",
+  "astroCheck": {
+    "errors": 0,
+    "warnings": 0,
+    "existingHints": 16
+  },
+  "typescript": "passed",
+  "unitTests": {
+    "files": 93,
+    "tests": 1473,
+    "result": "all passed across initial run and environment-specific retries",
+    "initial": {
+      "filesPassed": 88,
+      "testsPassed": 1436,
+      "testsFailed": 13,
+      "filesFailed": 5
+    },
+    "socketRetry": {
+      "files": 3,
+      "tests": 51,
+      "result": "passed with local listen permission"
+    },
+    "pinnedNodeRetry": {
+      "node": "24.14.0",
+      "files": 2,
+      "tests": 24,
+      "result": "passed"
+    }
+  },
+  "build": {
+    "mode": "review",
+    "ATLAS_PUBLIC_LAUNCH": "decision-21",
+    "pages": 172
+  },
+  "changedEventSlugs": [
+    "aaron-rodgers-2023-achilles",
+    "beth-mead-2022",
+    "chien-ming-wang-2008-foot",
+    "derrick-rose-acl-2012",
+    "jamal-murray-acl-2021",
+    "jayson-tatum-achilles-rupture-2025",
+    "kevin-durant-achilles-rupture-2019",
+    "kobe-bryant-2013-achilles",
+    "paul-george-leg-fracture-2014",
+    "sidney-crosby-concussion-2017",
+    "zverev-roland-garros-2022"
+  ],
+  "eventBindingsAndReturnDatesUnchanged": true,
+  "deploymentPerformed": false
+}

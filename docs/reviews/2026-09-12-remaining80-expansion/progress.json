@@ -1,0 +1,719 @@
+{
+  "checkedAt": "2026-09-12",
+  "scope": "Other 100 excluding Tatum",
+  "completedLocally": 100,
+  "remaining": 0,
+  "entries": [
+    {
+      "slug": "tyrese-haliburton-achilles-rupture-2025",
+      "athlete": "Tyrese Haliburton",
+      "route": "https://injury.sportsmedicine.tw/cases/tyrese-haliburton-achilles-rupture-2025/",
+      "batch": "3｜另設後續／未知結局敘事",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "lamelo-ball-ankle-sprain-2025",
+      "athlete": "LaMelo Ball",
+      "route": "https://injury.sportsmedicine.tw/cases/lamelo-ball-ankle-sprain-2025/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "lamelo-ball-ankle-sprain-2023",
+      "athlete": "LaMelo Ball",
+      "route": "https://injury.sportsmedicine.tw/cases/lamelo-ball-ankle-sprain-2023/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "anfernee-simons-ankle-sprain-2023",
+      "athlete": "Anfernee Simons",
+      "route": "https://injury.sportsmedicine.tw/cases/anfernee-simons-ankle-sprain-2023/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "kyrie-irving-ankle-sprain-2021",
+      "athlete": "Kyrie Irving",
+      "route": "https://injury.sportsmedicine.tw/cases/kyrie-irving-ankle-sprain-2021/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "kevin-durant-achilles-rupture-2019",
+      "athlete": "Kevin Durant",
+      "route": "https://injury.sportsmedicine.tw/cases/kevin-durant-achilles-rupture-2019/",
+      "batch": "1｜優先代表案例",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "zverev-roland-garros-2022",
+      "athlete": "Alexander Zverev",
+      "route": "https://injury.sportsmedicine.tw/videos/zverev-roland-garros-2022/",
+      "batch": "1｜優先代表案例",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "derek-redmond-barcelona-1992",
+      "athlete": "Derek Redmond",
+      "route": "https://injury.sportsmedicine.tw/videos/derek-redmond-barcelona-1992/",
+      "batch": "3｜另設後續／未知結局敘事",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "kerri-strug-atlanta-1996",
+      "athlete": "Kerri Strug",
+      "route": "https://injury.sportsmedicine.tw/videos/kerri-strug-atlanta-1996/",
+      "batch": "3｜另設後續／未知結局敘事",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "carolina-marin-indonesia-2019",
+      "athlete": "Carolina Marín",
+      "route": "https://injury.sportsmedicine.tw/videos/carolina-marin-indonesia-2019/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "julie-foucher-box-jump-2015",
+      "athlete": "Julie Foucher",
+      "route": "https://injury.sportsmedicine.tw/videos/julie-foucher-box-jump-2015/",
+      "batch": "3｜另設後續／未知結局敘事",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "shohei-ohtani-world-series-2024",
+      "athlete": "大谷翔平 Shohei Ohtani",
+      "route": "https://injury.sportsmedicine.tw/videos/shohei-ohtani-world-series-2024/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "usain-bolt-london-2017",
+      "athlete": "Usain Bolt",
+      "route": "https://injury.sportsmedicine.tw/videos/usain-bolt-london-2017/",
+      "batch": "3｜另設後續／未知結局敘事",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "mohamed-salah-final-2018",
+      "athlete": "Mohamed Salah",
+      "route": "https://injury.sportsmedicine.tw/videos/mohamed-salah-final-2018/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "giannis-east-final-2021",
+      "athlete": "Giannis Antetokounmpo",
+      "route": "https://injury.sportsmedicine.tw/videos/giannis-east-final-2021/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "markelle-fultz-orlando-2021",
+      "athlete": "Markelle Fultz",
+      "route": "https://injury.sportsmedicine.tw/videos/markelle-fultz-orlando-2021/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "ronald-acuna-miami-2021",
+      "athlete": "Ronald Acuña Jr.",
+      "route": "https://injury.sportsmedicine.tw/videos/ronald-acuna-miami-2021/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "lindsey-vonn-schladming-2013",
+      "athlete": "Lindsey Vonn",
+      "route": "https://injury.sportsmedicine.tw/videos/lindsey-vonn-schladming-2013/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "antoine-dupont-world-cup-2023",
+      "athlete": "Antoine Dupont",
+      "route": "https://injury.sportsmedicine.tw/videos/antoine-dupont-world-cup-2023/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "aksel-svindal-kitzbuhel-2016",
+      "athlete": "Aksel Lund Svindal",
+      "route": "https://injury.sportsmedicine.tw/videos/aksel-svindal-kitzbuhel-2016/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "sidney-crosby-concussion-2017",
+      "athlete": "Sidney Crosby",
+      "route": "https://injury.sportsmedicine.tw/videos/sidney-crosby-concussion-2017/",
+      "batch": "1｜優先代表案例",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "klay-thompson-2019-acl",
+      "athlete": "Klay Thompson",
+      "route": "https://injury.sportsmedicine.tw/videos/klay-thompson-2019-acl/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "kobe-bryant-2013-achilles",
+      "athlete": "Kobe Bryant",
+      "route": "https://injury.sportsmedicine.tw/videos/kobe-bryant-2013-achilles/",
+      "batch": "1｜優先代表案例",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "gianmarco-tamberi-2016-ankle",
+      "athlete": "Gianmarco Tamberi",
+      "route": "https://injury.sportsmedicine.tw/videos/gianmarco-tamberi-2016-ankle/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "john-tavares-2021-concussion",
+      "athlete": "John Tavares",
+      "route": "https://injury.sportsmedicine.tw/videos/john-tavares-2021-concussion/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "neymar-2023-acl",
+      "athlete": "Neymar",
+      "route": "https://injury.sportsmedicine.tw/videos/neymar-2023-acl/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "cameron-brink-2024-acl",
+      "athlete": "Cameron Brink",
+      "route": "https://injury.sportsmedicine.tw/videos/cameron-brink-2024-acl/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "steve-smith-2019-concussion",
+      "athlete": "Steve Smith",
+      "route": "https://injury.sportsmedicine.tw/videos/steve-smith-2019-concussion/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "george-north-2015-concussion",
+      "athlete": "George North",
+      "route": "https://injury.sportsmedicine.tw/videos/george-north-2015-concussion/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "mark-cavendish-2023-clavicle",
+      "athlete": "Mark Cavendish",
+      "route": "https://injury.sportsmedicine.tw/videos/mark-cavendish-2023-clavicle/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "derrick-rose-acl-2012",
+      "athlete": "Derrick Rose",
+      "route": "https://injury.sportsmedicine.tw/videos/derrick-rose-acl-2012/",
+      "batch": "1｜優先代表案例",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "demarcus-cousins-achilles-2018",
+      "athlete": "DeMarcus Cousins",
+      "route": "https://injury.sportsmedicine.tw/videos/demarcus-cousins-achilles-2018/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "kristaps-porzingis-acl-2018",
+      "athlete": "Kristaps Porzingis",
+      "route": "https://injury.sportsmedicine.tw/videos/kristaps-porzingis-acl-2018/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "gordon-hayward-ankle-fracture-2017",
+      "athlete": "Gordon Hayward",
+      "route": "https://injury.sportsmedicine.tw/videos/gordon-hayward-ankle-fracture-2017/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "jamal-murray-acl-2021",
+      "athlete": "Jamal Murray",
+      "route": "https://injury.sportsmedicine.tw/videos/jamal-murray-acl-2021/",
+      "batch": "1｜優先代表案例",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "dejounte-murray-acl-2018",
+      "athlete": "Dejounte Murray",
+      "route": "https://injury.sportsmedicine.tw/videos/dejounte-murray-acl-2018/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "kawhi-leonard-acl-2021",
+      "athlete": "Kawhi Leonard",
+      "route": "https://injury.sportsmedicine.tw/videos/kawhi-leonard-acl-2021/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "paul-george-leg-fracture-2014",
+      "athlete": "Paul George",
+      "route": "https://injury.sportsmedicine.tw/videos/paul-george-leg-fracture-2014/",
+      "batch": "1｜優先代表案例",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "zach-lavine-acl-2017",
+      "athlete": "Zach LaVine",
+      "route": "https://injury.sportsmedicine.tw/videos/zach-lavine-acl-2017/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "shaun-livingston-knee-2007",
+      "athlete": "Shaun Livingston",
+      "route": "https://injury.sportsmedicine.tw/videos/shaun-livingston-knee-2007/",
+      "batch": "3｜另設後續／未知結局敘事",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "alex-oxlade-chamberlain-2018",
+      "athlete": "Alex Oxlade-Chamberlain",
+      "route": "https://injury.sportsmedicine.tw/videos/alex-oxlade-chamberlain-2018/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "david-beckham-2010",
+      "athlete": "David Beckham",
+      "route": "https://injury.sportsmedicine.tw/videos/david-beckham-2010/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "cristiano-ronaldo-2016",
+      "athlete": "Cristiano Ronaldo",
+      "route": "https://injury.sportsmedicine.tw/videos/cristiano-ronaldo-2016/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "vivianne-miedema-2022",
+      "athlete": "Vivianne Miedema",
+      "route": "https://injury.sportsmedicine.tw/videos/vivianne-miedema-2022/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "laurent-koscielny-2018",
+      "athlete": "Laurent Koscielny",
+      "route": "https://injury.sportsmedicine.tw/videos/laurent-koscielny-2018/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "andre-gomes-2019",
+      "athlete": "André Gomes",
+      "route": "https://injury.sportsmedicine.tw/videos/andre-gomes-2019/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "beth-mead-2022",
+      "athlete": "Beth Mead",
+      "route": "https://injury.sportsmedicine.tw/videos/beth-mead-2022/",
+      "batch": "1｜優先代表案例",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "leah-williamson-2023",
+      "athlete": "Leah Williamson",
+      "route": "https://injury.sportsmedicine.tw/videos/leah-williamson-2023/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "zlatan-ibrahimovic-2017-knee",
+      "athlete": "Zlatan Ibrahimovic",
+      "route": "https://injury.sportsmedicine.tw/videos/zlatan-ibrahimovic-2017-knee/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "victor-oladipo-2019-quadriceps",
+      "athlete": "Victor Oladipo",
+      "route": "https://injury.sportsmedicine.tw/videos/victor-oladipo-2019-quadriceps/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "serena-williams-2021-hamstring",
+      "athlete": "Serena Williams",
+      "route": "https://injury.sportsmedicine.tw/videos/serena-williams-2021-hamstring/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "edwin-diaz-2023-patellar-tendon",
+      "athlete": "Edwin Díaz",
+      "route": "https://injury.sportsmedicine.tw/videos/edwin-diaz-2023-patellar-tendon/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "rhys-hoskins-2023-acl",
+      "athlete": "Rhys Hoskins",
+      "route": "https://injury.sportsmedicine.tw/videos/rhys-hoskins-2023-acl/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "tim-hudson-2013-ankle",
+      "athlete": "Tim Hudson",
+      "route": "https://injury.sportsmedicine.tw/videos/tim-hudson-2013-ankle/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "buster-posey-2011-ankle",
+      "athlete": "Buster Posey",
+      "route": "https://injury.sportsmedicine.tw/videos/buster-posey-2011-ankle/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "kendrys-morales-2010-ankle",
+      "athlete": "Kendrys Morales",
+      "route": "https://injury.sportsmedicine.tw/videos/kendrys-morales-2010-ankle/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "steven-stamkos-2013-tibia",
+      "athlete": "Steven Stamkos",
+      "route": "https://injury.sportsmedicine.tw/videos/steven-stamkos-2013-tibia/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "connor-mcdavid-2019-pcl",
+      "athlete": "Connor McDavid",
+      "route": "https://injury.sportsmedicine.tw/videos/connor-mcdavid-2019-pcl/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "mikhail-sergachev-2024-leg",
+      "athlete": "Mikhail Sergachev",
+      "route": "https://injury.sportsmedicine.tw/videos/mikhail-sergachev-2024-leg/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "max-pacioretty-2011-concussion",
+      "athlete": "Max Pacioretty",
+      "route": "https://injury.sportsmedicine.tw/videos/max-pacioretty-2011-concussion/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "bethanie-mattek-sands-2017-knee",
+      "athlete": "Bethanie Mattek-Sands",
+      "route": "https://injury.sportsmedicine.tw/videos/bethanie-mattek-sands-2017-knee/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "aaron-rodgers-2023-achilles",
+      "athlete": "Aaron Rodgers",
+      "route": "https://injury.sportsmedicine.tw/videos/aaron-rodgers-2023-achilles/",
+      "batch": "1｜優先代表案例",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "harvey-elliott-2021-ankle",
+      "athlete": "Harvey Elliott",
+      "route": "https://injury.sportsmedicine.tw/videos/harvey-elliott-2021-ankle/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "wesley-fofana-2021-leg",
+      "athlete": "Wesley Fofana",
+      "route": "https://injury.sportsmedicine.tw/videos/wesley-fofana-2021-leg/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "hector-bellerin-2019-knee",
+      "athlete": "Héctor Bellerín",
+      "route": "https://injury.sportsmedicine.tw/videos/hector-bellerin-2019-knee/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "annemiek-van-vleuten-2016-concussion",
+      "athlete": "Annemiek van Vleuten",
+      "route": "https://injury.sportsmedicine.tw/videos/annemiek-van-vleuten-2016-concussion/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "rebeca-andrade-2019-knee",
+      "athlete": "Rebeca Andrade",
+      "route": "https://injury.sportsmedicine.tw/videos/rebeca-andrade-2019-knee/",
+      "batch": "3｜另設後續／未知結局敘事",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "juan-martin-del-potro-2018-knee",
+      "athlete": "Juan Martín del Potro",
+      "route": "https://injury.sportsmedicine.tw/videos/juan-martin-del-potro-2018-knee/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "dominic-thiem-2021-wrist",
+      "athlete": "Dominic Thiem",
+      "route": "https://injury.sportsmedicine.tw/videos/dominic-thiem-2021-wrist/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "kyle-schwarber-2016-knee",
+      "athlete": "Kyle Schwarber",
+      "route": "https://injury.sportsmedicine.tw/videos/kyle-schwarber-2016-knee/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "bryce-harper-2017-knee",
+      "athlete": "Bryce Harper",
+      "route": "https://injury.sportsmedicine.tw/videos/bryce-harper-2017-knee/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "dustin-fowler-2017-patellar-tendon",
+      "athlete": "Dustin Fowler",
+      "route": "https://injury.sportsmedicine.tw/videos/dustin-fowler-2017-patellar-tendon/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "adam-eaton-2017-knee",
+      "athlete": "Adam Eaton",
+      "route": "https://injury.sportsmedicine.tw/videos/adam-eaton-2017-knee/",
+      "batch": "3｜另設後續／未知結局敘事",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "chris-bassitt-2021-face",
+      "athlete": "Chris Bassitt",
+      "route": "https://injury.sportsmedicine.tw/videos/chris-bassitt-2021-face/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "alex-cobb-2013-concussion",
+      "athlete": "Alex Cobb",
+      "route": "https://injury.sportsmedicine.tw/videos/alex-cobb-2013-concussion/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "giancarlo-stanton-2014-face",
+      "athlete": "Giancarlo Stanton",
+      "route": "https://injury.sportsmedicine.tw/videos/giancarlo-stanton-2014-face/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "charlie-morton-2021-fibula",
+      "athlete": "Charlie Morton",
+      "route": "https://injury.sportsmedicine.tw/videos/charlie-morton-2021-fibula/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "mitch-haniger-2017-face",
+      "athlete": "Mitch Haniger",
+      "route": "https://injury.sportsmedicine.tw/videos/mitch-haniger-2017-face/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "justin-turner-2023-face",
+      "athlete": "Justin Turner",
+      "route": "https://injury.sportsmedicine.tw/videos/justin-turner-2023-face/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "kevin-pillar-2021-face",
+      "athlete": "Kevin Pillar",
+      "route": "https://injury.sportsmedicine.tw/videos/kevin-pillar-2021-face/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "bryce-harper-2022-thumb",
+      "athlete": "Bryce Harper",
+      "route": "https://injury.sportsmedicine.tw/videos/bryce-harper-2022-thumb/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "mookie-betts-2024-hand",
+      "athlete": "Mookie Betts",
+      "route": "https://injury.sportsmedicine.tw/videos/mookie-betts-2024-hand/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "chase-headley-2014-face",
+      "athlete": "Chase Headley",
+      "route": "https://injury.sportsmedicine.tw/videos/chase-headley-2014-face/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "curtis-granderson-2013-hand",
+      "athlete": "Curtis Granderson",
+      "route": "https://injury.sportsmedicine.tw/videos/curtis-granderson-2013-hand/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "matt-shoemaker-2016-head",
+      "athlete": "Matt Shoemaker",
+      "route": "https://injury.sportsmedicine.tw/videos/matt-shoemaker-2016-head/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "ja-happ-2013-head",
+      "athlete": "J.A. Happ",
+      "route": "https://injury.sportsmedicine.tw/videos/ja-happ-2013-head/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "dan-jennings-2014-concussion",
+      "athlete": "Dan Jennings",
+      "route": "https://injury.sportsmedicine.tw/videos/dan-jennings-2014-concussion/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "stephen-piscotty-2015-concussion",
+      "athlete": "Stephen Piscotty",
+      "route": "https://injury.sportsmedicine.tw/videos/stephen-piscotty-2015-concussion/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "dustin-pedroia-2017-knee",
+      "athlete": "Dustin Pedroia",
+      "route": "https://injury.sportsmedicine.tw/videos/dustin-pedroia-2017-knee/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "aaron-judge-2023-toe",
+      "athlete": "Aaron Judge",
+      "route": "https://injury.sportsmedicine.tw/videos/aaron-judge-2023-toe/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "manny-machado-2013-knee",
+      "athlete": "Manny Machado",
+      "route": "https://injury.sportsmedicine.tw/videos/manny-machado-2013-knee/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "samir-ait-said-2016-leg",
+      "athlete": "Samir Aït Saïd",
+      "route": "https://injury.sportsmedicine.tw/videos/samir-ait-said-2016-leg/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "sofia-goggia-2022-knee",
+      "athlete": "Sofia Goggia",
+      "route": "https://injury.sportsmedicine.tw/videos/sofia-goggia-2022-knee/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "yuzuru-hanyu-2014-collision",
+      "athlete": "羽生結弦 Yuzuru Hanyu",
+      "route": "https://injury.sportsmedicine.tw/videos/yuzuru-hanyu-2014-collision/",
+      "batch": "3｜另設後續／未知結局敘事",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "aleksander-kilde-2024-shoulder",
+      "athlete": "Aleksander Aamodt Kilde",
+      "route": "https://injury.sportsmedicine.tw/videos/aleksander-kilde-2024-shoulder/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "liu-xiang-2012-achilles",
+      "athlete": "劉翔 Liu Xiang",
+      "route": "https://injury.sportsmedicine.tw/videos/liu-xiang-2012-achilles/",
+      "batch": "3｜另設後續／未知結局敘事",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "fabio-jakobsen-2020-concussion",
+      "athlete": "Fabio Jakobsen",
+      "route": "https://injury.sportsmedicine.tw/videos/fabio-jakobsen-2020-concussion/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "mikaela-shiffrin-2024-abdomen",
+      "athlete": "Mikaela Shiffrin",
+      "route": "https://injury.sportsmedicine.tw/videos/mikaela-shiffrin-2024-abdomen/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "remco-evenepoel-2020-pelvis",
+      "athlete": "Remco Evenepoel",
+      "route": "https://injury.sportsmedicine.tw/videos/remco-evenepoel-2020-pelvis/",
+      "batch": "2｜一般逐案查核",
+      "status": "local-summary-completed"
+    },
+    {
+      "slug": "chien-ming-wang-2008-foot",
+      "athlete": "王建民 Chien-Ming Wang",
+      "route": "https://injury.sportsmedicine.tw/videos/chien-ming-wang-2008-foot/",
+      "batch": "1｜優先代表案例",
+      "status": "local-summary-completed"
+    }
+  ],
+  "includingTatum": {
+    "completedLocally": 101,
+    "total": 101
+  },
+  "latestReview": "docs/reviews/2026-09-12-remaining80-expansion/README.md",
+  "newlyAuthored": 80,
+  "remainingToAuthor": 0,
+  "remainingToFinish": 0,
+  "status": "local-editorial-draft-validated",
+  "deployed": false,
+  "clinicalApproval": false
+}

@@ -24,7 +24,7 @@
           "publishedAt": "2023-03-01"
         },
         {
-          "title": "NBA：3 月 1 日再傷後的賽事報導",
+          "title": "NBA：2023-03-03 拓荒者對老鷹賽事頁",
           "url": "https://www.nba.com/game/por-vs-atl-0022200947",
           "publishedAt": "2023-03-03"
         },
@@ -32,6 +32,75 @@
           "title": "NBA：3 月 10 日再次復出賽事",
           "url": "https://www.nba.com/game/por-vs-phi-0022200998",
           "publishedAt": "2023-03-10"
+        },
+        {
+          "title": "公開比賽片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=8TIJGIRP634",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：踝扭傷的受力、韌帶與分級",
+          "url": "https://www.orthoinfo.org/diseases--conditions/sprained-ankle",
+          "publishedAt": null
+        },
+        {
+          "title": "拓荒者：2 月 16 日 MRI 醫療公告",
+          "url": "https://www.nba.com/blazers/news/anfernee-simons-medical-update",
+          "publishedAt": "2023-02-16"
+        },
+        {
+          "title": "ClutchPoints：首次復出當場再傷，引述賽後消息",
+          "url": "https://clutchpoints.com/nba/portland-trail-blazers/bad-luck-blazers-anfernee-simons-shares-troubling-injury-update-after-loss-to-pelicans",
+          "publishedAt": "2023-03-02"
+        },
+        {
+          "title": "拓荒者：3 月 10 日回歸與賽後訪談介紹",
+          "url": "https://www.nba.com/blazers/news/tough-loss-in-philly-and-a-conversation-with-simons-on-the-brief-case",
+          "publishedAt": "2023-03-11"
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "mechanism": {
+        "title": "切入起跳後落地，腳踝無法繼續正常承重",
+        "summary": {
+          "text": "片段呈現 Simons 從外圍切入、起跳出手，落地後停止比賽。理解本例時，重點在落地承重的轉換；被協助離場的畫面本身，無法告訴我們是哪條韌帶受傷。",
+          "sourceIndexes": [5]
+        },
+        "steps": [
+          "運球切入禁區後起跳出手。",
+          "雙腳回到地面，腳踝開始承受落地力量。",
+          "接著停止比賽並接受協助，檢查結果見下方時間軸。"
+        ],
+        "explanation": {
+          "text": "踝扭傷是穩定關節的韌帶受傷。一般的二級分級表示部分纖維撕裂，但分級仍不能指出個別選手傷到的全部組織；需要結合檢查，不能單靠落地姿勢判讀。",
+          "sourceIndexes": [6]
+        },
+        "limitation": "本頁不從轉播角度判定確切接觸點。首次復出後再傷，也不能單靠日期認定醫療判斷錯誤或復健不足。"
+      },
+      "timeline": [
+        {
+          "date": "2023-02-14",
+          "title": "對巫師受傷",
+          "text": "第三節末段腳踝受傷離場。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2023-02-16",
+          "title": "MRI 確認分級",
+          "text": "球隊公布右踝二級扭傷。",
+          "sourceIndexes": [7]
+        },
+        {
+          "date": "2023-03-01",
+          "title": "首次復出，同場再傷",
+          "text": "官方紀錄確認出賽；賽後報導記載同一右踝傷勢加劇，提前退場。",
+          "sourceIndexes": [2, 8]
+        },
+        {
+          "date": "2023-03-10",
+          "title": "再次回到比賽",
+          "text": "對七六人再度出賽；這與 3 月 1 日首次復出是兩個節點。",
+          "sourceIndexes": [9]
         }
       ]
     },
@@ -41,8 +110,74 @@
       "eventDate": "2025-05-12",
       "injury": "右阿基里斯腱斷裂；塞爾提克於 2025-05-13 公布已接受修補手術。",
       "returnDate": "2026-03-06",
-      "returnSummary": "2026-03-06 對獨行俠正式復出。",
-      "context": "這是實際出賽紀錄，與先前預告的復出計畫分開核對。",
+      "returnSummary": "2026-03-06 對獨行俠完成傷後首場正式比賽，距受傷約 10 個月。",
+      "context": "回到比賽（Return to Play）是一個里程碑；恢復原有表現（Return to Performance）還需要觀察後續的出賽負荷與場上表現，不能只靠復出日期判斷。",
+      "checkedAt": "2026-09-12",
+      "mechanism": {
+        "title": "準備向前加速時，阿基里斯腱承受快速拉力",
+        "summary": {
+          "text": "Tatum 在第四節追球起步時倒地。波士頓大學物理治療師 Dan Sieczkiewicz 分析公開影片：他想往前衝，右腳卻先向後踏，再準備蹬地。這符合非接觸、起步加速型的受傷機轉。",
+          "sourceIndexes": [4]
+        },
+        "steps": [
+          "右腳先向身體重心後方踏一步，準備把身體往前推，這類動作稱為 false step。",
+          "前腳掌承重、身體往前，腳踝進入背屈，也就是小腿向腳背靠近。",
+          "小腿肌同時用力收縮準備推蹬，阿基里斯腱在這個過程承受快速增加的張力。"
+        ],
+        "explanation": {
+          "text": "阿基里斯腱把小腿肌的力量傳到腳跟，幫助推地。依上述分析，肌腱斷裂後無法正常傳力，可以解釋他為何突然失去推蹬、接著倒地；但轉播影片無法確認斷裂的精確瞬間。",
+          "sourceIndexes": [4, 6]
+        },
+        "research": {
+          "text": "2026 年的 NBA 影片研究整理 27 起斷裂事件，74% 發生在起步或加速階段；其中 17 例可做逐格動作分析。2022 年研究也描述了向後踏步後向前推進、腳踝背屈的型態。這些是群體觀察，不能當作 Tatum 個人的關節角度或肌腱受力量測。",
+          "sourceIndexes": [5, 6]
+        },
+        "limitation": "受訪治療師並非 Tatum 的醫療團隊。機轉說明是依公開影片與研究整理，不能據此認定疲勞是致傷原因，也不能推論他受傷前已有肌腱病變。"
+      },
+      "timeline": [
+        {
+          "date": "2025-05-12",
+          "title": "東區準決賽第 4 戰受傷",
+          "text": "對尼克的比賽末段追球時倒地，隨後離場。",
+          "sourceIndexes": [4]
+        },
+        {
+          "date": "2025-05-13",
+          "title": "接受右阿基里斯腱修補手術",
+          "text": "球團公布手術完成，當時未訂回場日期。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2025-09-30",
+          "title": "傷後約 4 個半月：場上訓練報導",
+          "text": "公開影片已見跑步、重量訓練與投籃；仍屬復健進展。",
+          "sourceIndexes": [7]
+        },
+        {
+          "date": "2026-01-20",
+          "title": "約一小時場上訓練的報導",
+          "text": "The Athletic 報導他已進行約一小時的場上訓練。",
+          "sourceIndexes": [8]
+        },
+        {
+          "date": "2026-02-09",
+          "title": "進入五對五訓練的報導",
+          "text": "The Athletic 引述消息來源，稱他已與教練進行五對五訓練。",
+          "sourceIndexes": [9]
+        },
+        {
+          "date": "2026-03-06",
+          "title": "傷後 298 天：正式復出",
+          "text": "對獨行俠得到 15 分、12 籃板、7 助攻。訓練進展與正式比賽的日期分開記錄。",
+          "sourceIndexes": [2, 3]
+        },
+        {
+          "date": "2026-05-02",
+          "title": "因左膝僵硬缺席季後賽第 7 戰",
+          "text": "對七六人的缺陣原因為左膝僵硬，這項報導不能當作右阿基里斯腱再次斷裂的證據。",
+          "sourceIndexes": [10]
+        }
+      ],
       "sources": [
         {
           "title": "NBA：手術更新",
@@ -58,6 +193,41 @@
           "title": "NBA：復出官方計分",
           "url": "https://statsdmz.nba.com/pdfs/20260306/20260306_DALBOS_book.pdf",
           "publishedAt": "2026-03-06"
+        },
+        {
+          "title": "Boston University（2025）：物理治療師的影片分析，非當事人治療紀錄",
+          "url": "https://www.bu.edu/articles/2025/jayson-tatum-achilles-injury-and-recovery/",
+          "publishedAt": "2025-05-19"
+        },
+        {
+          "title": "Köyağasıoğlu、Lima（2026）：NBA 阿基里斯腱斷裂逐格影片研究（27 例；17 例可分析動作）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41451611/",
+          "publishedAt": "2025-12-26"
+        },
+        {
+          "title": "Petway 等（2022）：NBA 阿基里斯腱斷裂的 false-step 機轉研究",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36265841/",
+          "publishedAt": "2022-10-20"
+        },
+        {
+          "title": "NBA（2025）：傷後四個多月的場上訓練更新",
+          "url": "https://www.nba.com/news/jayson-tatum-back-on-the-court-4-months-after-achilles-rupture",
+          "publishedAt": "2025-09-30"
+        },
+        {
+          "title": "The Athletic／NBA 轉載（2026）：約一小時場上訓練",
+          "url": "https://www.nba.com/news/the-athletic-jayson-tatums-achilles-recovery-continues-with-hour-long-workout",
+          "publishedAt": "2026-01-20"
+        },
+        {
+          "title": "The Athletic／NBA 轉載（2026）：消息來源稱已進入五對五訓練",
+          "url": "https://www.nba.com/news/the-athletic-celtics-jayson-tatum-progresses-to-5-on-5-workouts-in-achilles-recovery-source",
+          "publishedAt": "2026-02-09"
+        },
+        {
+          "title": "AP／NBA 轉載（2026）：左膝僵硬，缺席對七六人第 7 戰",
+          "url": "https://www.nba.com/news/jayson-tatum-knee-out-against-76ers-in-game-7",
+          "publishedAt": "2026-05-03"
         }
       ]
     },
@@ -84,6 +254,69 @@
           "title": "籃網：12 月 13 日季前賽紀錄",
           "url": "https://www.nba.com/nets/news/recap/2020/12/13/nets-119-wizards-114-kevin-durant-kyrie-irving-sharp-in-preseason-opener",
           "publishedAt": "2020-12-13"
+        },
+        {
+          "title": "公開比賽影片：動作觀察依據",
+          "url": "https://www.youtube.com/watch?v=YcSOLHMsJYw",
+          "publishedAt": null
+        },
+        {
+          "title": "研究：NBA 球員阿基里斯腱斷裂的動作機轉",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36265841/",
+          "publishedAt": "2022-10-20"
+        },
+        {
+          "title": "AAOS：阿基里斯腱的結構與推蹬功能",
+          "url": "https://www.orthoinfo.org/diseases--conditions/achilles-tendon-rupture-tear/",
+          "publishedAt": null
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "mechanism": {
+        "title": "運球變向、準備推蹬時失去支撐",
+        "summary": {
+          "text": "公開報導記載 Durant 運球變向時受傷，診斷為右阿基里斯腱斷裂。觀察這類動作時，重點在於踩地承重與推蹬的轉換。",
+          "sourceIndexes": [1, 5]
+        },
+        "steps": [
+          "運球準備變向。",
+          "可能受力：腳踩地承重，身體準備移向另一方向。",
+          "肌腱受傷後，動作中斷。"
+        ],
+        "explanation": {
+          "text": "阿基里斯腱把小腿的力量傳到腳跟。腳仍踩在地上、身體開始前移時，腳踝可能一面往上彎，小腿一面出力推蹬，讓肌腱快速承受拉力；這是理解本例的可能力學過程。",
+          "sourceIndexes": [5, 6]
+        },
+        "limitation": "機轉說明結合公開報導與一般研究，沒有量到 Durant 的肌腱張力或斷裂瞬間。先前小腿拉傷是背景資料，不能直接證明它造成這次斷裂。",
+        "research": {
+          "text": "NBA 影片研究發現，起步前腳先往後踩、接著推蹬，是阿基里斯腱斷裂常見的動作之一。研究描述的是一組球員，不能代替 Durant 本人的檢查。",
+          "sourceIndexes": [5]
+        }
+      },
+      "timeline": [
+        {
+          "date": "2019-06-10",
+          "title": "總冠軍賽受傷",
+          "text": "第 5 戰第二節受傷離場。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2019-06-12",
+          "title": "接受手術",
+          "text": "右阿基里斯腱手術修補。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2020-12-13",
+          "title": "季前賽回場",
+          "text": "代表籃網參加季前賽。",
+          "sourceIndexes": [3]
+        },
+        {
+          "date": "2020-12-22",
+          "title": "正式賽回歸",
+          "text": "在例行賽對勇士出賽。",
+          "sourceIndexes": [2]
         }
       ]
     },
@@ -105,6 +338,48 @@
           "title": "NBA：重返賽場及缺賽背景",
           "url": "https://www.nba.com/news/kyrie-irving-enjoys-return-months-uncertainty",
           "publishedAt": "2022-01-06"
+        },
+        {
+          "title": "公開比賽片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=FQAPZASQyX0",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：踝扭傷的受力、韌帶與分級",
+          "url": "https://www.orthoinfo.org/diseases--conditions/sprained-ankle",
+          "publishedAt": null
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "mechanism": {
+        "title": "籃下落地時腳踝翻轉，接觸細節仍須謹慎判讀",
+        "summary": {
+          "text": "Irving 在籃下得分後落地、腳踝翻轉。分析這類動作，重點是落腳空間和承重方向的變化，不能只看到跌倒，就把跌倒本身當成受傷原因。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "在籃下完成進攻動作。",
+          "落地時腳踝翻轉，原本的承重方向受到干擾。",
+          "隨後停止比賽；診斷需與後續醫療資訊對照。"
+        ],
+        "explanation": {
+          "text": "落地時若腳部突然偏轉，韌帶會承受拉力。這種受力可以形成扭傷；但疼痛表情或躺地時間，無法代替韌帶分級與穩定度檢查。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "本頁依賽事日期記為第 4 戰，原片標題誤寫第 3 戰。影片不能證明對手意圖；也不能把後來整段缺賽時間都算成踝傷恢復期。"
+      },
+      "timeline": [
+        {
+          "date": "2021-06-13",
+          "title": "東區準決賽受傷",
+          "text": "第 4 戰右踝扭傷退場。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2022-01-05",
+          "title": "再次正式出賽",
+          "text": "對溜馬回場；此前缺賽另有疫苗規定與球隊安排的因素。",
+          "sourceIndexes": [2]
         }
       ]
     },
@@ -126,6 +401,54 @@
           "title": "NBA：1 月 12 日復出報導",
           "url": "https://www.nba.com/news/hornets-lamelo-ball-returns-from-injury",
           "publishedAt": "2024-01-13"
+        },
+        {
+          "title": "NBA：上籃落地受傷的初報",
+          "url": "https://www.nba.com/news/hornets-lamelo-ball-out-right-ankle-strain",
+          "publishedAt": "2023-11-27"
+        },
+        {
+          "title": "AAOS：踝扭傷的受力、韌帶與分級",
+          "url": "https://www.orthoinfo.org/diseases--conditions/sprained-ankle",
+          "publishedAt": null
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "mechanism": {
+        "title": "上籃落地後右踝受傷，短片不足以還原接觸細節",
+        "summary": {
+          "text": "NBA 初報描述 Ball 上籃落地後受傷。短片有動作重播，但不足以確認每個接觸細節，因此不把踩到誰、腳往哪一側翻，寫成已確定的致傷動作。",
+          "sourceIndexes": [3]
+        },
+        "steps": [
+          "事件發生在上籃後的落地階段。",
+          "落地時的腳部接觸與翻轉細節，現有短片不足以確認。",
+          "隨後由他人協助離場，細部傷勢另看球隊檢查公告。"
+        ],
+        "explanation": {
+          "text": "落地時腳部若突然扭轉，穩定腳踝的韌帶可能被過度拉扯。但「踝扭傷」這個診斷本身，不能反推出他一定踩到別人的腳，或一定傷到外側的某條韌帶。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "這次是右踝，與 2025 年的左踝扭傷分開記錄。也不能把其他年份的手術，當成本次扭傷的治療。"
+      },
+      "timeline": [
+        {
+          "date": "2023-11-26",
+          "title": "對魔術受傷",
+          "text": "上籃落地後退場。",
+          "sourceIndexes": [3]
+        },
+        {
+          "date": "2023-11-30",
+          "title": "後續檢查釐清傷勢",
+          "text": "黃蜂公布 MRI 確認右踝扭傷；採後續公告補充初報。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-01-12",
+          "title": "對馬刺復出",
+          "text": "傷後首場正式出賽。",
+          "sourceIndexes": [2]
         }
       ]
     },
@@ -147,6 +470,54 @@
           "title": "黃蜂：正式復出賽後報導",
           "url": "https://www.nba.com/hornets/news/hornets-end-homestand-in-dramatic-fashion",
           "publishedAt": "2025-02-07"
+        },
+        {
+          "title": "公開比賽片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=zZdndTqOexc",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：踝扭傷的受力、韌帶與分級",
+          "url": "https://www.orthoinfo.org/diseases--conditions/sprained-ankle",
+          "publishedAt": null
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "mechanism": {
+        "title": "倒退移動時踩到別人的腳，腳踝支撐突然改變",
+        "summary": {
+          "text": "NBA 報導描述 Ball 投進三分球後倒退，踩到他人腳部。這類接觸會讓腳底的支撐突然改變；觀察重點是踩下去時，腳與小腿是否仍能維持原來的方向。",
+          "sourceIndexes": [1, 4]
+        },
+        "steps": [
+          "投籃後倒退，準備回防。",
+          "腳踩到他人的腳部，支撐面突然改變。",
+          "接著停止移動；影片能呈現事件順序，不能量出韌帶受傷程度。"
+        ],
+        "explanation": {
+          "text": "腳踝韌帶幫助骨頭維持位置。踩地時若腳突然翻轉，韌帶可能被拉過原本能承受的範圍，形成扭傷。這說明了可能的受力方式，沒有指定 Ball 傷到哪一條韌帶。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "本次為左踝事件。公開公告未提供細部分級，不能因為回場較快就判定是輕傷，也不能從一次踩腳認定對方有意致傷。"
+      },
+      "timeline": [
+        {
+          "date": "2025-01-27",
+          "title": "對湖人受傷",
+          "text": "左踝事件發生於這場比賽。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2025-01-30",
+          "title": "球隊公布檢查結果",
+          "text": "MRI 確認左踝扭傷。此處記錄公告日期。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2025-02-07",
+          "title": "重返正式比賽",
+          "text": "對馬刺出賽，此前缺席五場。",
+          "sourceIndexes": [2]
         }
       ]
     },
@@ -168,6 +539,59 @@
           "title": "NBA：2026–27 球季回歸展望",
           "url": "https://www.nba.com/news/2026-comeback-players-to-watch",
           "publishedAt": "2026-08-24"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=azQpbyDBktk",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：阿基里斯腱的功能與斷裂",
+          "url": "https://www.orthoinfo.org/diseases--conditions/achilles-tendon-rupture-tear/",
+          "publishedAt": null
+        },
+        {
+          "title": "Associated Press（KSL 刊載）：總冠軍賽倒地與手術報導",
+          "url": "https://www.ksl.com/article/51334269",
+          "publishedAt": "2025-06-23"
+        }
+      ],
+      "mechanism": {
+        "title": "總冠軍賽倒地受傷，從肌腱功能理解推蹬的影響",
+        "summary": {
+          "text": "AP 報導 Haliburton 在總冠軍賽第 7 戰第一節倒地，之後確認右阿基里斯腱傷勢。本頁短片主要呈現他由他人協助離場；起步、踩地與斷裂的精確順序，無法由這段畫面完整還原。",
+          "sourceIndexes": [5, 1, 3]
+        },
+        "steps": [
+          "總冠軍賽第 7 戰第一節在場上倒地。",
+          "受傷後無法繼續完成比賽。",
+          "短片呈現由他人協助離場；肌腱診斷另依球隊公告。"
+        ],
+        "explanation": {
+          "text": "阿基里斯腱把小腿肌的力量傳到腳跟，協助踮腳、起跳與加速。推蹬時的快速拉力可以使肌腱受傷；但本頁沒有量測他的踝角度或肌腱張力。",
+          "sourceIndexes": [4, 1]
+        },
+        "limitation": "本頁只用一般肌腱功能解釋可能的推蹬問題，沒有把未看清的踩地或加速動作寫成事實。先前不適與疲勞不能直接認定為斷裂原因，訓練進展也不當作正式復賽。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2025-06-22",
+          "title": "總冠軍賽第 7 戰受傷",
+          "text": "右阿基里斯腱事件導致退場。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2025-06-23",
+          "title": "接受手術",
+          "text": "溜馬公布右阿基里斯腱修補手術完成。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2026-08-24",
+          "title": "仍是回歸展望",
+          "text": "NBA 記載他缺席 2025–26 球季；下一季展望不列為已復賽。",
+          "sourceIndexes": [2]
         }
       ]
     },
@@ -178,7 +602,7 @@
       "injury": "據本人聲明，右踝三條外側韌帶撕裂，並於傷後接受手術。",
       "returnDate": "2022-12-31",
       "returnSummary": "2022-12-31 在 United Cup 對 Jiří Lehečka 重返正式賽。",
-      "context": "表演賽與正式賽分開計算；ATP 後續訪談也確認此場為傷後首場正式比賽。",
+      "context": "復原期間曾因骨水腫延後回歸。這裡採正式賽日期；先前的表演賽、練習與恢復比賽表現，屬於不同階段。",
       "sources": [
         {
           "title": "AP：本人傷勢與手術聲明",
@@ -194,6 +618,65 @@
           "title": "ATP：本人回顧首次復出",
           "url": "https://www.atptour.com/en/news/zverev-lehecka-dubai-2023-monday",
           "publishedAt": "2023-02-27"
+        },
+        {
+          "title": "AAOS：腳踝內翻與外側韌帶傷害",
+          "url": "https://www.orthoinfo.org/diseases--conditions/sprained-ankle",
+          "publishedAt": null
+        },
+        {
+          "title": "ATP：回顧法網受傷動作與復原過程",
+          "url": "https://www.atptour.com/en/news/zverev-roland-garros-2023-feature",
+          "publishedAt": "2023-05-29"
+        },
+        {
+          "title": "ATP：Zverev 回顧骨水腫造成的復出延遲",
+          "url": "https://www.atptour.com/en/news/zverev-united-cup-2023-return-preview",
+          "publishedAt": "2022-12-29"
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "mechanism": {
+        "title": "向側邊追球時翻踝，外側韌帶受到拉扯",
+        "summary": {
+          "text": "ATP 回顧，Zverev 向右追 Nadal 的正拍球時翻踝倒地。本人後來公布右踝三條外側韌帶撕裂，並接受手術。",
+          "sourceIndexes": [5, 1]
+        },
+        "steps": [
+          "向右側移，追趕來球。",
+          "右腳翻折，身體失去支撐。",
+          "倒地後退出比賽，傷後確認韌帶傷勢。"
+        ],
+        "explanation": {
+          "text": "腳掌突然往內翻時，腳踝外側韌帶會被拉長；若超過可承受的範圍，就可能撕裂。這能解釋翻踝與外側韌帶受傷的關係，傷到幾條仍須靠檢查確認。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "動作描述依 ATP 回顧整理。未取得個人影像檢查可供判讀，因此不另推定骨折、精確翻踝角度或每條韌帶的撕裂程度。"
+      },
+      "timeline": [
+        {
+          "date": "2022-06-03",
+          "title": "法網準決賽受傷",
+          "text": "側移追球時翻踝，退出比賽。",
+          "sourceIndexes": [5]
+        },
+        {
+          "date": "2022-06-07",
+          "title": "公布手術消息",
+          "text": "本人表示右踝三條外側韌帶撕裂，已接受手術。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2022-09",
+          "title": "復原遇到骨水腫",
+          "text": "ATP 回顧他因骨水腫再度延後復出。",
+          "sourceIndexes": [6]
+        },
+        {
+          "date": "2022-12-31",
+          "title": "重返正式賽",
+          "text": "在 United Cup 對 Lehečka 出賽。",
+          "sourceIndexes": [2, 3]
         }
       ]
     },
@@ -210,6 +693,48 @@
           "title": "Derek Redmond：本人運動生涯回顧",
           "url": "https://derekredmond.com/about-derek/",
           "publishedAt": null
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=t2G8KVzTwfw",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：大腿後側肌群拉傷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/hamstring-muscle-injuries/",
+          "publishedAt": null
+        }
+      ],
+      "mechanism": {
+        "title": "高速跑動中大腿後側受傷，步伐突然中斷",
+        "summary": {
+          "text": "Redmond 在 400 公尺準決賽衝刺途中停下、扶住大腿後側，後來由父親陪同走向終點。本人回顧確認是大腿後側肌群撕裂。",
+          "sourceIndexes": [2, 1]
+        },
+        "steps": [
+          "比賽中持續高速跑動。",
+          "大腿後側出現問題，無法維持衝刺步伐。",
+          "之後勉強移動，由父親陪同完成走向終點的過程。"
+        ],
+        "explanation": {
+          "text": "大腿後側肌群協助髖部伸展與膝部彎曲。高速跑動時，它需要在承受負荷下控制腿的擺動；突然超過組織能承受的拉力，可能造成撕裂。",
+          "sourceIndexes": [3, 1]
+        },
+        "limitation": "影片不能指定是哪一條肌肉、哪個位置或多少比例撕裂。走到終點與之後轉往其他運動，皆不能用來推算原項目的首次復賽日。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "1992-08-03",
+          "title": "奧運準決賽受傷",
+          "text": "衝刺時大腿後側肌群撕裂；父親陪同走向終點。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "1994",
+          "title": "生涯轉向",
+          "text": "本人回顧記載，傷後兩年被告知難再跑步，後來轉往籃球等運動；未提供傷後第一場比賽日期。",
+          "sourceIndexes": [1]
         }
       ]
     },
@@ -231,6 +756,54 @@
           "title": "Kerri Strug：本人年表",
           "url": "https://www.kerristrug.info/chronology-2/",
           "publishedAt": null
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=Bwa5Bf656As",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：踝扭傷與韌帶受力",
+          "url": "https://www.orthoinfo.org/diseases--conditions/sprained-ankle",
+          "publishedAt": null
+        }
+      ],
+      "mechanism": {
+        "title": "跳馬落地後左踝受傷，第二跳是在帶傷下完成",
+        "summary": {
+          "text": "Strug 在跳馬落地後左踝受傷，同場仍再次跳馬。這個案例的機轉重點在落地承重；完成第二跳的表現，不能反過來證明韌帶沒有受傷。",
+          "sourceIndexes": [3, 1]
+        },
+        "steps": [
+          "跳馬騰空後落地，腳踝承受下降力量。",
+          "左踝受傷後仍準備再次助跑起跳。",
+          "第二跳完成後需要協助，後續退出其他決賽。"
+        ],
+        "explanation": {
+          "text": "踝部韌帶維持關節穩定。落地時若腳部翻轉，韌帶可能被拉過可承受的範圍；疼痛下仍做得出動作，與韌帶是否完整是不同問題。",
+          "sourceIndexes": [4, 1]
+        },
+        "limitation": "三級扭傷採同期具名隊醫報導，沒有從影片自行分級，也未指定所有受傷韌帶。這段比賽不是帶傷續賽的安全示範。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "1996-07-23",
+          "title": "跳馬落地受傷",
+          "text": "左踝受傷後仍完成同場第二跳。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "1996-07-24",
+          "title": "同期傷勢報導",
+          "text": "報導引述隊醫：左踝三級扭傷。此為報導日期。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "1996",
+          "title": "退出其餘奧運決賽",
+          "text": "本人年表記載，因傷未參加全能、跳馬及自由體操決賽；未核得其後首次正式復賽日。",
+          "sourceIndexes": [2]
         }
       ]
     },
@@ -246,12 +819,71 @@
         {
           "title": "西班牙羽球協會：醫療公告",
           "url": "https://www.badminton.es/news/125348/Parte-Medico-de-Carolina-Marin",
-          "publishedAt": null
+          "publishedAt": "2019-01-28"
         },
         {
           "title": "RTVE：越南公開賽實際復出及本人訪問",
           "url": "https://www.rtve.es/deportes/20190911/carolina-marin-partido-regreso-vietnam/1979042.shtml",
           "publishedAt": "2019-09-11"
+        },
+        {
+          "title": "公開比賽片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=nfpXC98FLuE",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：前十字韌帶的功能與常見受傷情境",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+          "publishedAt": null
+        },
+        {
+          "title": "德國羽球協會：中國公開賽奪冠",
+          "url": "https://www.badminton.de/news/badminton/china-open-das-perfekte-comeback/",
+          "publishedAt": null
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "mechanism": {
+        "title": "跳躍擊球後落地，支撐膝承受快速負荷",
+        "summary": {
+          "text": "Marín 在印尼大師賽決賽跳躍擊球、落地後倒下。西班牙羽球協會確認右膝前十字韌帶斷裂。這個案例可用來理解落地承重與膝部穩定之間的關係。",
+          "sourceIndexes": [3, 1]
+        },
+        "steps": [
+          "跳起擊球，身體離開地面。",
+          "落腳承重時，膝部需要同時處理下降力量與身體方向的改變。",
+          "接著倒地、接受協助；斷裂的精確瞬間無法只靠轉播畫面定位。"
+        ],
+        "explanation": {
+          "text": "前十字韌帶幫助限制小腿骨向前滑動，也參與控制旋轉。落地或突然改變方向，都可能讓它承受較大負荷；這是一般力學說明，並非對 Marín 膝部力量的實測。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "本次記錄只處理 2019 年右膝事件。影片不能確認所有合併傷勢，也不能把之後其他年份的膝傷直接歸因於這次手術。"
+      },
+      "timeline": [
+        {
+          "date": "2019-01-27",
+          "title": "印尼大師賽決賽受傷",
+          "text": "落地後膝部不適，未能完成決賽。",
+          "sourceIndexes": [3, 1]
+        },
+        {
+          "date": "2019-01-28",
+          "title": "協會公布醫療處置",
+          "text": "公告確認右膝 ACL 斷裂，並報告已接受重建手術；此處採公告日期。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2019-09-11",
+          "title": "越南公開賽首次復出",
+          "text": "首輪落敗。本人表示膝部感受良好，但比賽專注與信心仍需調整。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2019-09-22",
+          "title": "中國公開賽奪冠",
+          "text": "傷後再度奪冠，是競技表現的一個節點，不能代替完整的膝部功能評估。",
+          "sourceIndexes": [5]
         }
       ]
     },
@@ -273,6 +905,54 @@
           "title": "CrossFit Games：選手歷年正式成績",
           "url": "https://games.crossfit.com/athlete/46243",
           "publishedAt": null
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=4y-1D7jTW_4",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：阿基里斯腱的功能與斷裂",
+          "url": "https://www.orthoinfo.org/diseases--conditions/achilles-tendon-rupture-tear/",
+          "publishedAt": null
+        }
+      ],
+      "mechanism": {
+        "title": "連續跳箱的落地與反彈，反覆要求腳踝推蹬",
+        "summary": {
+          "text": "Foucher 在 2015 年區域賽連續跳箱時動作中斷，後續報導記載阿基里斯腱受傷。觀察重點是每一次落地後，腳踝又需立即產生下一次跳起的力量。",
+          "sourceIndexes": [3, 1]
+        },
+        "steps": [
+          "連續完成跳箱動作。",
+          "落地承重後，接續準備再次推蹬。",
+          "動作中斷，後續活動方式改變。"
+        ],
+        "explanation": {
+          "text": "阿基里斯腱傳遞小腿肌的推蹬力量。連續跳躍需要反覆承受拉力；這可解釋跳箱中的負荷來源，但不能因此斷定重複次數或某種跳法就是她受傷的唯一原因。",
+          "sourceIndexes": [4, 1]
+        },
+        "limitation": "本頁未確認受傷的確切日期與斷裂分級，因此保留年份，不補造回場天數。後來仍有競賽紀錄，不能寫成從此未再參賽。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2015",
+          "title": "區域賽跳箱受傷",
+          "text": "公開報導記載阿基里斯腱傷勢；確切受傷日尚未確認。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2016",
+          "title": "已有後續競賽紀錄",
+          "text": "CrossFit 官方資料列有 Open 與 Central 個人組成績；無法據此定位最早復賽日。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2017",
+          "title": "參加團體組",
+          "text": "官方資料列有 Central 團體組成績，與原本個人組分開看待。",
+          "sourceIndexes": [2]
         }
       ]
     },
@@ -331,6 +1011,70 @@
           "title": "AP：第 3 戰帶傷出賽報導",
           "url": "https://apnews.com/article/311bc657971726bc04028326dcf1cf72",
           "publishedAt": "2024-10-28"
+        },
+        {
+          "title": "公開比賽片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=hxcRVu1-T-c",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：肩關節脫臼與關節唇的穩定作用",
+          "url": "https://www.orthoinfo.org/diseases--conditions/dislocated-shoulder/",
+          "publishedAt": null
+        },
+        {
+          "title": "MLB：2025 年春訓首場比賽紀錄",
+          "url": "https://www.mlb.com/stories/game/778861",
+          "publishedAt": "2025-02-28"
+        },
+        {
+          "title": "MLB：世界大賽帶傷出賽的後續報導",
+          "url": "https://www.mlb.com/news/shohei-ohtani-playing-through-shoulder-injury-in-world-series",
+          "publishedAt": "2024-10-30"
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "mechanism": {
+        "title": "滑壘時上肢承受外力，肩部穩定結構受傷",
+        "summary": {
+          "text": "這次事件發生在盜壘滑向二壘時，接著大谷留在壘旁接受協助。理解這類肩傷時，可注意身體滑動、手臂接觸地面，以及上肢是否跟得上軀幹的移動。",
+          "sourceIndexes": [4]
+        },
+        "steps": [
+          "加速跑壘後滑向二壘。",
+          "滑壘期間上肢與地面接觸，身體仍有移動的慣性。",
+          "隨後肩部出現不適；細部傷勢以季後手術公告補充。"
+        ],
+        "explanation": {
+          "text": "肩關節像球放在較淺的碗裡，周圍的關節唇與韌帶協助穩定。滑壘時若手臂受阻、身體繼續移動，外力可能把關節推離原位並傷及穩定組織；這是可能的受力解釋。",
+          "sourceIndexes": [5]
+        },
+        "limitation": "不能單靠影片分辨半脫位與完全脫臼，也不能指定關節唇撕裂的型態。2024 年帶傷打擊、季後左肩手術與右手投球的恢復，是不同的紀錄。"
+      },
+      "timeline": [
+        {
+          "date": "2024-10-26",
+          "title": "世界大賽第 2 戰受傷",
+          "text": "滑壘後左肩受傷。",
+          "sourceIndexes": [4, 1]
+        },
+        {
+          "date": "2024-10-28",
+          "title": "帶傷以指定打擊出賽",
+          "text": "第 3 戰仍上場打擊；這不是肩部痊癒或投手復出的證明。",
+          "sourceIndexes": [2, 7]
+        },
+        {
+          "date": "2024-11-05",
+          "title": "接受左肩手術",
+          "text": "道奇公告關節鏡修補肩關節唇撕裂。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2025-02-28",
+          "title": "季後手術後的春訓出賽",
+          "text": "春訓首戰首打席全壘打；此處記錄打者出賽。",
+          "sourceIndexes": [6]
         }
       ]
     },
@@ -347,6 +1091,53 @@
           "title": "World Athletics：最後一戰與田徑退休專訪",
           "url": "https://worldathletics.org/competitions/world-athletics-championships/london-2017-7093740/news/feature/usain-bolt-world-champs-london-2017",
           "publishedAt": "2017-08-14"
+        },
+        {
+          "title": "公開賽事片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=12UNVAkLlmY",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：大腿後側肌群拉傷",
+          "url": "https://www.orthoinfo.org/diseases--conditions/hamstring-muscle-injuries/",
+          "publishedAt": null
+        },
+        {
+          "title": "世界田徑總會：Bolt 告別倫敦賽場的回顧",
+          "url": "https://worldathletics.org/news/feature/usain-bolt-world-champs-london-2017",
+          "publishedAt": "2017-08-14"
+        }
+      ],
+      "mechanism": {
+        "title": "接棒後衝刺突然中斷，大腿後側無法維持負荷",
+        "summary": {
+          "text": "Bolt 在倫敦世錦賽 4×100 公尺接力接棒後加速，隨後減速、倒地。世界田徑總會的回顧記載為大腿後側肌群撕裂，未完成原定的最後一場比賽。",
+          "sourceIndexes": [2, 4]
+        },
+        "steps": [
+          "接棒後開始加速。",
+          "衝刺步伐突然中斷，無法維持速度。",
+          "隨後倒地，接力未能完成。"
+        ],
+        "explanation": {
+          "text": "衝刺時大腿後側肌群要快速控制腿部擺動，在收縮與拉長之間承受負荷。突然的高負荷可能造成肌肉或肌腱交界受傷；不能只靠倒地畫面判斷是哪一處纖維撕裂。",
+          "sourceIndexes": [3, 4]
+        },
+        "limitation": "沒有足夠資料把等待時間、天氣或疲勞寫成確定病因。他原已規劃告別田徑；退役與傷後痊癒、首次跨運動比賽是不同問題。"
+      },
+      "checkedAt": "2026-09-12",
+      "timeline": [
+        {
+          "date": "2017-08-12",
+          "title": "接力決賽受傷",
+          "text": "大腿後側肌群撕裂，未能完成最後一棒。",
+          "sourceIndexes": [4]
+        },
+        {
+          "date": "2017-08-14",
+          "title": "官方回顧告別田徑",
+          "text": "世界田徑總會記載其退役及告別活動；走上跑道致意並不是康復後復賽。",
+          "sourceIndexes": [4]
         }
       ]
     },
@@ -368,6 +1159,48 @@
           "title": "Liverpool：世界盃實際復出報導",
           "url": "https://www.liverpoolfc.com/news/first-team/305043-mohamed-salah-goal-egypt-world-cup",
           "publishedAt": "2018-06-19"
+        },
+        {
+          "title": "公開比賽片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=mi7fXtGTwbc",
+          "publishedAt": null
+        },
+        {
+          "title": "AAFP：急性肩傷的受力情境與鑑別",
+          "url": "https://www.aafp.org/afp/2023/0500/acute-shoulder-injuries",
+          "publishedAt": "2023-05-01"
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "mechanism": {
+        "title": "爭球後倒地，肩部承受碰撞與牽拉",
+        "summary": {
+          "text": "Salah 與 Ramos 爭球後倒地，隨後因肩部受傷退場。Liverpool 當晚的更新仍在釐清肩部或鎖骨問題，沒有提供足以確認細部傷型的資料。",
+          "sourceIndexes": [1, 3]
+        },
+        "steps": [
+          "與對手近身爭球，上肢與身體發生接觸。",
+          "兩人倒向地面，肩部可能同時承受牽拉與落地外力。",
+          "接受查看後仍無法繼續比賽；外觀不足以確認是哪個組織受傷。"
+        ],
+        "explanation": {
+          "text": "爭球跌倒的外力，可以直接作用在肩膀，也可能經手臂傳到肩部。相似畫面可能涉及不同的關節、韌帶或骨頭；因此本頁保留「肩傷」，不把可能性寫成確定診斷。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "這是依事件與一般肩部力學整理的說明，不能用來判定對手意圖。未確認的分級、手術或完整復健課表不列入個人病程。"
+      },
+      "timeline": [
+        {
+          "date": "2018-05-26",
+          "title": "歐冠決賽肩傷退場",
+          "text": "爭球倒地後接受查看，仍無法繼續比賽；球隊表示需進一步檢查。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2018-06-19",
+          "title": "代表埃及重返比賽",
+          "text": "此前錯過世界盃首場對烏拉圭；對俄羅斯先發並踢進十二碼，是傷後首次出賽。",
+          "sourceIndexes": [2]
         }
       ]
     },
@@ -389,6 +1222,54 @@
           "title": "NBA：總決賽第 1 戰賽後紀錄",
           "url": "https://www.nba.com/news/inside-the-box-score-2021-nba-finals-game-1",
           "publishedAt": "2021-07-07"
+        },
+        {
+          "title": "公開比賽片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=ctiT9toFmio",
+          "publishedAt": null
+        },
+        {
+          "title": "Cleveland Clinic：膝過伸與韌帶斷裂的差別",
+          "url": "https://my.clevelandclinic.org/health/diseases/22481-hyperextended-knee",
+          "publishedAt": "2022-02-16"
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "mechanism": {
+        "title": "落地時膝蓋向後過伸，實際損傷仍要看檢查",
+        "summary": {
+          "text": "本頁片段呈現 Giannis 在籃下跳起防守、落地後倒下。分析重點是落地時膝部的支撐方向；「過伸」描述膝蓋向後超過原本活動範圍的受力情境。",
+          "sourceIndexes": [3, 4]
+        },
+        "steps": [
+          "在籃下跳起防守。",
+          "落地時膝部向後過伸，穩定組織承受外力。",
+          "隨即倒地，無法繼續完成這場比賽。"
+        ],
+        "explanation": {
+          "text": "膝過伸可能拉傷韌帶或其他組織，但不是每次過伸都會造成韌帶斷裂。動作看起來驚險，仍不能單憑畫面認定 ACL 已斷；檢查結果才用來釐清傷害程度。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "一般膝過伸的可能後果，不等於 Giannis 本人的全部診斷。也不能拿他的回場速度，作為 ACL 重建後的復出標準。"
+      },
+      "timeline": [
+        {
+          "date": "2021-06-29",
+          "title": "東區決賽第 4 戰受傷",
+          "text": "左膝過伸後退場。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2021-06-30",
+          "title": "後續檢查更新",
+          "text": "NBA 報導 MRI 未見結構損傷。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2021-07-06",
+          "title": "總冠軍賽第 1 戰復出",
+          "text": "重新出賽，得到 20 分、17 籃板。",
+          "sourceIndexes": [2]
         }
       ]
     },
@@ -415,6 +1296,70 @@
           "title": "NBA：傷後回歸比賽報導",
           "url": "https://www.nba.com/news/magic-guard-markelle-fultz-will-return-from-acl-injury-against-pacers",
           "publishedAt": null
+        },
+        {
+          "title": "公開比賽片段：事件順序的觀察依據",
+          "url": "https://www.youtube.com/watch?v=b2vVxFhpEv0",
+          "publishedAt": null
+        },
+        {
+          "title": "AAOS：前十字韌帶的功能與常見受傷情境",
+          "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+          "publishedAt": null
+        },
+        {
+          "title": "Hoops Rumors：引述球隊手術公告的報導",
+          "url": "https://www.hoopsrumors.com/2021/01/markelle-fultz-undergoes-surgery-to-repair-torn-acl.html",
+          "publishedAt": "2021-01-21"
+        },
+        {
+          "title": "魔術：與 Lakeland 訓練的復健進展",
+          "url": "https://www.nba.com/magic/orlando-magic-markelle-fultz-jonathan-isaac-injury-update-rehab-process-story-20211126",
+          "publishedAt": "2021-11-27"
+        }
+      ],
+      "checkedAt": "2026-09-12",
+      "mechanism": {
+        "title": "切入時支撐腿改變，膝部需要控制前進與轉向",
+        "summary": {
+          "text": "Fultz 運球切入時倒地。觀察這段短片，重點在腳踩住地面後，身體仍繼續前進的支撐轉換；後續確認的傷勢不能讓我們倒推每個關節的精確角度。",
+          "sourceIndexes": [4, 1]
+        },
+        "steps": [
+          "運球切入，身體持續向前。",
+          "腳踩地承重，膝部需要控制身體方向的變化。",
+          "支撐改變後倒地，接著停止比賽。"
+        ],
+        "explanation": {
+          "text": "ACL 幫助控制小腿骨向前滑動與旋轉。急停、變向時，即使沒有直接撞到膝蓋，也可能讓韌帶承受過大負荷；這是理解切入傷害的機轉，並非證明 Fultz 的個人動作有錯。",
+          "sourceIndexes": [5]
+        },
+        "limitation": "短片不能確認斷裂的精確時點、合併傷勢或致傷力量。本頁的訓練節點只採公開報導，不把一般 ACL 復健流程寫成他的實際課表。"
+      },
+      "timeline": [
+        {
+          "date": "2021-01-06",
+          "title": "對騎士受傷",
+          "text": "球隊確認左膝 ACL 斷裂。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2021-01-20",
+          "title": "接受手術",
+          "text": "隔日報導引述球隊公告，記載已完成左膝手術。",
+          "sourceIndexes": [6]
+        },
+        {
+          "date": "2021-11",
+          "title": "進入更多場上對抗訓練",
+          "text": "球隊報導已與 Lakeland 訓練；這是復健進展，並非正式賽回歸。",
+          "sourceIndexes": [7]
+        },
+        {
+          "date": "2022-02-28",
+          "title": "對溜馬正式復出",
+          "text": "出賽約 16 分鐘，得到 10 分、6 助攻。",
+          "sourceIndexes": [2, 3]
         }
       ]
     }
