@@ -1,0 +1,109 @@
+{
+  "change": "本站熱門只顯示近30天實際播放排行前10名",
+  "sourceCommit": "3cbb26cf61268ffd60064f886c0868c54c24bba2",
+  "production": "https://injury.sportsmedicine.tw/",
+  "deployment": "https://1cf3b175.sports-injury-atlas.pages.dev",
+  "unitTestsPassed": 11,
+  "astroCheck": {
+    "errors": 0,
+    "warnings": 0,
+    "existingHints": 16
+  },
+  "releasePublic": "passed: 164 HTML pages / 120 cases / 3760 local links",
+  "localSmoke": {
+    "origin": "http://127.0.0.1:14331",
+    "checkedAt": "2026-09-12T16:04:32.600Z",
+    "apiItems": 42,
+    "results": [
+      {
+        "width": 390,
+        "popularCount": 10,
+        "lastRank": "近 30 天播放第十名",
+        "allCount": 120,
+        "shownIds": [
+          "azQpbyDBktk",
+          "hxcRVu1-T-c",
+          "nfpXC98FLuE",
+          "dnEbS6xmiLA",
+          "mi7fXtGTwbc",
+          "zZdndTqOexc",
+          "12UNVAkLlmY",
+          "C4xerhbFNnc",
+          "xSUKd03LJwE",
+          "7tpaxZTTi2w"
+        ],
+        "overflow": false
+      },
+      {
+        "width": 1280,
+        "popularCount": 10,
+        "lastRank": "近 30 天播放第十名",
+        "allCount": 120,
+        "shownIds": [
+          "azQpbyDBktk",
+          "hxcRVu1-T-c",
+          "nfpXC98FLuE",
+          "dnEbS6xmiLA",
+          "mi7fXtGTwbc",
+          "zZdndTqOexc",
+          "12UNVAkLlmY",
+          "C4xerhbFNnc",
+          "xSUKd03LJwE",
+          "7tpaxZTTi2w"
+        ],
+        "overflow": false
+      }
+    ]
+  },
+  "liveSmoke": {
+    "origin": "https://injury.sportsmedicine.tw",
+    "checkedAt": "2026-09-12T16:05:30.806Z",
+    "apiItems": 42,
+    "results": [
+      {
+        "width": 390,
+        "popularCount": 10,
+        "lastRank": "近 30 天播放第十名",
+        "allCount": 120,
+        "shownIds": [
+          "azQpbyDBktk",
+          "hxcRVu1-T-c",
+          "nfpXC98FLuE",
+          "dnEbS6xmiLA",
+          "mi7fXtGTwbc",
+          "zZdndTqOexc",
+          "12UNVAkLlmY",
+          "C4xerhbFNnc",
+          "xSUKd03LJwE",
+          "7tpaxZTTi2w"
+        ],
+        "overflow": false
+      },
+      {
+        "width": 1280,
+        "popularCount": 10,
+        "lastRank": "近 30 天播放第十名",
+        "allCount": 120,
+        "shownIds": [
+          "azQpbyDBktk",
+          "hxcRVu1-T-c",
+          "nfpXC98FLuE",
+          "dnEbS6xmiLA",
+          "mi7fXtGTwbc",
+          "zZdndTqOexc",
+          "12UNVAkLlmY",
+          "C4xerhbFNnc",
+          "xSUKd03LJwE",
+          "7tpaxZTTi2w"
+        ],
+        "overflow": false
+      }
+    ]
+  },
+  "liveHash": {
+    "status": 200,
+    "homeMatchesBuild": true,
+    "sha256": "1b7c78408109e9de0bb7851993b95797261180e046a0460aa26119acf0e5efe8"
+  },
+  "scope": "只限制熱門頁籤顯示數量；全部影片仍120，API及統計計算不變。"
+}
