@@ -73,5 +73,14 @@
     "A layout run overlapped a rebuild and returned one transient 404; the final complete 300-check run used a stable artifact.",
     "Native playback can vary over time; first attempts and retries retained.",
     "No contribution form or email was sent."
-  ]
+  ],
+  "popularTop10": {
+    "widths": [
+      390,
+      1280
+    ],
+    "popularCount": 10,
+    "allCount": 150,
+    "proof": "popular-top10.local.json"
+  }
 }

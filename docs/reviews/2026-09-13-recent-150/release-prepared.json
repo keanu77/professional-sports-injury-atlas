@@ -1,0 +1,34 @@
+{
+  "preparedAt": "2026-09-12T17:33:24.536967+00:00",
+  "status": "authorized-ready-to-push-and-deploy",
+  "sourceCommit": "4d7ec5972968f488532dbd291fde7d4fe348a535",
+  "repository": "keanu77/professional-sports-injury-atlas",
+  "repositoryVisibility": "private",
+  "branch": "main",
+  "deploymentProject": "sports-injury-atlas",
+  "productionOrigin": "https://injury.sportsmedicine.tw",
+  "localPreview": "http://127.0.0.1:14334/",
+  "inputTreeDigest": "7b54f81e8836faf0e13300b7585eb2a4bf163451f6315984df99c9f690910a97",
+  "htmlPages": 195,
+  "allHtmlMatchesValidatedSnapshot": true,
+  "gitPushed": false,
+  "productionDeployed": false,
+  "approvalReview": {
+    "rejectedAction": "git push origin main",
+    "reason": "Pushing the large private source change to origin/main is sensitive code egress to a destination whose ownership is not established by trusted user content, and the user only broadly authorized continuation rather than this exact export.",
+    "resolvedBy": "User explicitly authorized push and update in the same session."
+  },
+  "previousGoodProduction": {
+    "id": "1cf3b175-a434-475e-8819-7fd7510fd70e",
+    "url": "https://1cf3b175.sports-injury-atlas.pages.dev",
+    "sourceCommit": "3cbb26cf61268ffd60064f886c0868c54c24bba2"
+  },
+  "clinicalApproval": false,
+  "authorization": {
+    "quote": "授權推送跟更新",
+    "recordedAt": "2026-09-12T17:34:29.445928+00:00",
+    "repository": "keanu77/professional-sports-injury-atlas",
+    "productionProject": "sports-injury-atlas",
+    "productionOrigin": "https://injury.sportsmedicine.tw"
+  }
+}
