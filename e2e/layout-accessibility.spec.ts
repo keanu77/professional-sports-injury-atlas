@@ -134,7 +134,7 @@ test.describe("layout accessibility", () => {
       ["Instagram", "https://www.instagram.com/ethan77wu/"],
       ["GitHub", "https://github.com/keanu77"],
       ["LINE", "https://line.me/R/ti/p/@521cvffb"],
-      ["RSS", "https://blog.sportsmedicine.tw/feeds/posts/default?alt=rss"],
+      ["個人網站", "https://sportsmedicine.tw/"],
     ] as const;
     await expect(follow.getByRole("link")).toHaveCount(expected.length);
     for (const [name, href] of expected) {
@@ -213,7 +213,7 @@ test.describe("layout accessibility", () => {
       { path: "/", hero: "video-grid" },
       { path: "/injuries/ankle-sprain/", hero: "band" },
       {
-        path: "/cases/anthony-edwards-ankle-sprain-2023/",
+        path: "/cases/kevin-durant-achilles-rupture-2019/",
         hero: "case",
       },
     ] as const;
@@ -221,7 +221,8 @@ test.describe("layout accessibility", () => {
     for (const width of [320, 768, 1280, 1536]) {
       await page.setViewportSize({ width, height: 900 });
       for (const target of targets) {
-        await page.goto(target.path);
+        const response = await page.goto(target.path);
+        expect([200, 304], target.path).toContain(response?.status());
         const geometry = await page.evaluate(() => {
           const root = document.documentElement;
           const main = document.querySelector("main");

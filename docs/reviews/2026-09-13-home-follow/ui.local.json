@@ -1,0 +1,47 @@
+{
+  "origin": "http://127.0.0.1:14339",
+  "checkedAt": "2026-09-13T04:24:46.308Z",
+  "results": [
+    {
+      "width": 320,
+      "fontScale": 1.5,
+      "links": 6,
+      "targetSize": 44,
+      "keyboard": true,
+      "aboveTitle": true,
+      "overflow": false,
+      "axeViolations": 0
+    },
+    {
+      "width": 390,
+      "fontScale": 1,
+      "links": 6,
+      "targetSize": 44,
+      "keyboard": true,
+      "aboveTitle": true,
+      "overflow": false,
+      "axeViolations": 0
+    },
+    {
+      "width": 768,
+      "fontScale": 1,
+      "links": 6,
+      "targetSize": 44,
+      "keyboard": true,
+      "aboveTitle": true,
+      "overflow": false,
+      "axeViolations": 0
+    },
+    {
+      "width": 1280,
+      "fontScale": 1,
+      "links": 6,
+      "targetSize": 44,
+      "keyboard": true,
+      "aboveTitle": true,
+      "overflow": false,
+      "axeViolations": 0
+    }
+  ],
+  "noJavaScript": true
+}

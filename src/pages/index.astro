@@ -1,4 +1,5 @@
 ---
+import FollowLinks from "../components/layout/FollowLinks.astro";
 import SituationNav from "../components/atlas/SituationNav.astro";
 import { discoveryFor, videosBySituation } from "../lib/videos/discovery";
 import { parseYouTubeVideoId } from "../lib/video/youtube";
@@ -38,11 +39,14 @@ const videoCount = featured.length + clips.length;
   artifactDigest={computeRenderedSetDigest(permitted)}
 >
   <header class="video-intro">
-    <nav class="content-trail" aria-label="麵包屑">
-      <a href="https://sportsmedicine.tw/content/">分享資訊</a>
-      <span aria-hidden="true">/</span>
-      <span aria-current="page">影片圖鑑</span>
-    </nav>
+    <div class="home-intro-topline">
+      <nav class="content-trail" aria-label="麵包屑">
+        <a href="https://sportsmedicine.tw/content/">分享資訊</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">影片圖鑑</span>
+      </nav>
+      <FollowLinks placement="home" />
+    </div>
     <h1>運動傷害影片圖鑑</h1>
     <p>
       從落地不穩、急停轉向，到碰撞與球體撞擊，用真實影片認識運動傷害可能發生的過程。
@@ -418,6 +422,19 @@ const videoCount = featured.length + clips.length;
       var(--color-brand-50),
       var(--color-surface)
     );
+  }
+  .home-intro-topline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 1.5rem;
+  }
+  @media (max-width: 40rem) {
+    .home-intro-topline {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
   .content-trail {
     display: flex;

@@ -1,0 +1,44 @@
+{
+  "checkedAt": "2026-09-13T04:29:30.279218+00:00",
+  "status": "local-verified",
+  "node": "24.14.0",
+  "scope": "Add existing six follow links above homepage heading, aligned right on desktop and above heading on mobile. Reuse footer destinations and icons.",
+  "typeCheck": {
+    "errors": 0,
+    "warnings": 0,
+    "existingHints": 16
+  },
+  "unit": {
+    "passed": 1493,
+    "files": 96
+  },
+  "endToEnd": {
+    "passed": 75,
+    "failed": 0,
+    "skipped": 0,
+    "projects": ["chrome", "mobile-chrome", "webkit"],
+    "specs": [
+      "layout-accessibility.spec.ts",
+      "decision-39-ux.spec.ts",
+      "video-search.spec.ts"
+    ]
+  },
+  "publicReleaseGate": true,
+  "builtPages": 195,
+  "testedArtifactFiles": 489,
+  "inputTreeDigest": "72763dfefe1b97e0ce443556de511a97ec7710a57c0331498f7399952c77f7c6",
+  "homepageSha256": "68830c9c72ddd41f5bfb8fb4e7bbb484adf598878ae6d6f1b170c127a0df0f62",
+  "uiEvidence": "ui.local.json",
+  "playbackRefresh": {
+    "batch": "decision-27",
+    "passed": 5,
+    "evidence": "playback.refresh.json",
+    "previous": "playback.previous.json"
+  },
+  "newClinicalOrRightsApproval": false,
+  "notes": [
+    "Used a clean isolated checkout because the existing handoff changes were uncommitted. Initial sandbox test failures were socket permission failures and dirty-tree governance checks.",
+    "Corrected stale footer RSS expectation to the existing personal website link. Template test now uses a publicly available Durant route, with 200/304 status assertion to reject missing pages.",
+    "Initial browser runs exposed the stale case route and normal WebKit 304 caching. Final complete 75-test run passed."
+  ]
+}

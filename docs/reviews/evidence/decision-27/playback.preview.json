@@ -3,8 +3,8 @@
     "url": "https://www.youtube.com/watch?v=hxcRVu1-T-c",
     "path": "/videos/shohei-ohtani-world-series-2024/",
     "startSeconds": 0,
-    "origin": "https://decision-27-preview.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T03:46:56.332Z",
+    "origin": "https://044c5edc.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-13T04:20:58.812Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -12,7 +12,7 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.009562,
+      "time": 1.014898,
       "paused": false,
       "readyState": 4
     },
@@ -24,8 +24,8 @@
     "url": "https://www.youtube.com/watch?v=12UNVAkLlmY",
     "path": "/videos/usain-bolt-london-2017/",
     "startSeconds": 30,
-    "origin": "https://decision-27-preview.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T03:47:00.342Z",
+    "origin": "https://044c5edc.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-13T04:21:03.317Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -33,7 +33,7 @@
       "readyState": 0
     },
     "after": {
-      "time": 31.007743,
+      "time": 31.014882,
       "paused": false,
       "readyState": 4
     },
@@ -45,8 +45,8 @@
     "url": "https://www.youtube.com/watch?v=mi7fXtGTwbc",
     "path": "/videos/mohamed-salah-final-2018/",
     "startSeconds": 0,
-    "origin": "https://decision-27-preview.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T03:47:04.216Z",
+    "origin": "https://044c5edc.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-13T04:21:07.162Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -54,7 +54,7 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.004448,
+      "time": 1.005732,
       "paused": false,
       "readyState": 4
     },
@@ -66,8 +66,8 @@
     "url": "https://www.youtube.com/watch?v=ctiT9toFmio",
     "path": "/videos/giannis-east-final-2021/",
     "startSeconds": 0,
-    "origin": "https://decision-27-preview.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T03:47:07.919Z",
+    "origin": "https://044c5edc.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-13T04:21:10.915Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -75,7 +75,7 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.015987,
+      "time": 1.011704,
       "paused": false,
       "readyState": 4
     },
@@ -87,8 +87,8 @@
     "url": "https://www.youtube.com/watch?v=b2vVxFhpEv0",
     "path": "/videos/markelle-fultz-orlando-2021/",
     "startSeconds": 0,
-    "origin": "https://decision-27-preview.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T03:47:11.600Z",
+    "origin": "https://044c5edc.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-13T04:21:14.654Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -96,7 +96,7 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.018215,
+      "time": 1.010499,
       "paused": false,
       "readyState": 4
     },
