@@ -1,0 +1,66 @@
+{
+  "origin": "http://127.0.0.1:14337",
+  "checkedAt": "2026-09-13T02:07:51.924Z",
+  "results": [
+    {
+      "width": 320,
+      "fontScale": 1.5,
+      "all": 150,
+      "curated": 10,
+      "chineseMatches": 1,
+      "englishMatches": 1,
+      "injuryMatches": 26,
+      "popular": null,
+      "querySent": false,
+      "queryStored": false,
+      "overflow": false,
+      "a11yViolations": 0,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "fontScale": 1,
+      "all": 150,
+      "curated": 10,
+      "chineseMatches": 1,
+      "englishMatches": 1,
+      "injuryMatches": 26,
+      "popular": null,
+      "querySent": false,
+      "queryStored": false,
+      "overflow": false,
+      "a11yViolations": 0,
+      "errors": []
+    },
+    {
+      "width": 768,
+      "fontScale": 1,
+      "all": 150,
+      "curated": 10,
+      "chineseMatches": 1,
+      "englishMatches": 1,
+      "injuryMatches": 26,
+      "popular": null,
+      "querySent": false,
+      "queryStored": false,
+      "overflow": false,
+      "a11yViolations": 0,
+      "errors": []
+    },
+    {
+      "width": 1280,
+      "fontScale": 1,
+      "all": 150,
+      "curated": 10,
+      "chineseMatches": 1,
+      "englishMatches": 1,
+      "injuryMatches": 26,
+      "popular": null,
+      "querySent": false,
+      "queryStored": false,
+      "overflow": false,
+      "a11yViolations": 0,
+      "errors": []
+    }
+  ]
+}

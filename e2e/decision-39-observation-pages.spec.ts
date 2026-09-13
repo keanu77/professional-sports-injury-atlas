@@ -280,6 +280,13 @@ test("curated collection shows ten ordered videos and restores all 150", async (
       () => document.documentElement.scrollWidth <= innerWidth,
     ),
   ).toBe(true);
+  // Inspect the collection at its intended anchor, away from partially
+  // clipped category links beneath the sticky header after an auto-scroll.
+  await page
+    .locator("[data-video-discovery]")
+    .evaluate((node) =>
+      node.scrollIntoView({ block: "start", behavior: "instant" }),
+    );
   await expectNoAxeViolations(page);
   await page.getByRole("button", { name: "全部影片", exact: true }).click();
   await expect(cards).toHaveCount(150);

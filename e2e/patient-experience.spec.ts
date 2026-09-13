@@ -1,15 +1,21 @@
 import { expect, test } from "@playwright/test";
 import { expectNoAxeViolations } from "./helpers/a11y";
 
-test("video collection is directly browsable without search or filters", async ({
+test("video collection is directly browsable before using optional search", async ({
   page,
 }) => {
   await page.goto("/");
-  await expect(page.locator("[data-featured-card]:visible")).toHaveCount(5);
+  const expectedCount =
+    process.env.ATLAS_PUBLIC_LAUNCH === "decision-21" ? 150 : 5;
+  await expect(page.locator("[data-featured-card]:visible")).toHaveCount(
+    expectedCount,
+  );
   await expect(page.locator('[data-atlas-stat="videos"]')).toHaveText(
     String(await page.locator("[data-featured-card]:visible").count()),
   );
-  await expect(page.getByRole("searchbox")).toHaveCount(0);
+  await expect(
+    page.getByRole("searchbox", { name: "搜尋球員或關鍵字" }),
+  ).toBeVisible();
   await expect(page.getByRole("combobox")).toHaveCount(0);
   await expectNoAxeViolations(page);
   await page.locator("[data-featured-card] a").first().click();
@@ -26,12 +32,24 @@ test("case opens with video, concise care, and a separately attributed athlete r
   await expect(guide).toContainText("先做這幾件事");
   await expect(guide).toContainText("這些狀況別等");
   await expect(guide).toContainText("大約多久能回場");
-  await expect(page.locator("[data-actual-return]")).toContainText("24");
-  await expect(page.locator("[data-actual-return]")).toContainText(
-    "不一定是首次復出",
-  );
+  const actualReturn = page.locator("[data-actual-return]");
+  if (process.env.ATLAS_PUBLIC_LAUNCH === "decision-21") {
+    await expect(actualReturn).toContainText("距受傷 15 天");
+    await expect(actualReturn).toContainText("里程碑：首次出賽");
+    await expect(actualReturn).toContainText("3 月 10 日是再次復出");
+  } else {
+    await expect(actualReturn).toContainText("24");
+    await expect(actualReturn).toContainText("不一定是首次復出");
+  }
   await expect(page.locator("[data-professional-notes]")).not.toBeVisible();
-  await page.getByText("深入了解這次受傷", { exact: true }).click();
+  await page
+    .getByText(
+      process.env.ATLAS_PUBLIC_LAUNCH === "decision-21"
+        ? "原始事件紀錄與詳細說明"
+        : "深入了解這次受傷",
+      { exact: true },
+    )
+    .click();
   await expect(page.locator("[data-professional-notes]")).toBeVisible();
   await expectNoAxeViolations(page);
 });

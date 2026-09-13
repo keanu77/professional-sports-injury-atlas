@@ -1,0 +1,67 @@
+{
+  "checkedAt": "2026-09-13T02:10:43.684545+00:00",
+  "node": "24.14.0",
+  "sourceSnapshot": "d5f677f3bd4322f8a351bea7baa82b051ee9fe2e",
+  "changedSourceAndTestFilesMatchSnapshot": 10,
+  "inputTreeDigest": "ae9090880d608a9ad8df89a4b6051d391bca510bbc50c5c44644b318d25bbe65",
+  "typecheck": {
+    "errors": 0,
+    "warnings": 0,
+    "existingHints": 16
+  },
+  "unit": {
+    "files": 96,
+    "passed": 1493,
+    "failed": 0
+  },
+  "endToEnd": {
+    "passed": 66,
+    "skipped": 3,
+    "failed": 0,
+    "projects": ["chrome", "mobile-chrome", "webkit"],
+    "skipReason": "Three existing review-only noindex assertions do not apply to public output.",
+    "stats": {
+      "startTime": "2026-09-13T02:09:46.186Z",
+      "duration": 34053.061,
+      "expected": 66,
+      "skipped": 3,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "format": {
+    "changedCodeAndGateFiles": 10,
+    "passed": true
+  },
+  "releasePublic": {
+    "passed": true,
+    "htmlPages": 195,
+    "localLinks": 4494
+  },
+  "nativeCorePlayback": {
+    "passed": 5,
+    "proof": "core-playback.refresh.json",
+    "origin": "https://injury.sportsmedicine.tw",
+    "timing": "Before the search-only release; approved IDs and URLs unchanged."
+  },
+  "localUI": {
+    "widths": [320, 390, 768, 1280],
+    "fontScaleAt320": 1.5,
+    "curatedCount": 10,
+    "allCount": 150,
+    "injuryQueryMatches": 26,
+    "proof": "ui.local.json",
+    "passed": true
+  },
+  "dependenciesChanged": false,
+  "environmentVariablesChanged": false,
+  "migrationsChanged": false,
+  "clinicalApproval": false,
+  "notes": [
+    "Search uses existing published names and fields; no nickname dictionary or fuzzy matching.",
+    "Search input was verified absent from network requests, URL and local/session storage.",
+    "Earlier runs exposed obsolete patient return/disclosure assertions and a viewport-specific sticky-header obstruction during Axe; final tests use current content and the collection anchor without disabling rules.",
+    "An intermediate run with an obsolete disclosure label was intentionally stopped; only the final complete run is claimed.",
+    "No forms or test emails were submitted."
+  ]
+}
