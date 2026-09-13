@@ -1,0 +1,14 @@
+{
+  "recordedAt": "2026-09-13T02:13:10.315394+00:00",
+  "initialFeatureCommit": "ebe6d11406ebafb48f95f1317fd19b3cd69c5339",
+  "rootBuildFailure": "Decision 23 playback proof crossed seven days; check-release exited before Astro build.",
+  "prematureDeploymentUrl": "https://613b5723.sports-injury-atlas.pages.dev",
+  "impact": "The deployment command was issued before the failed build result was handled. It uploaded the unchanged prior artifact, not the new search feature.",
+  "origin": "https://injury.sportsmedicine.tw",
+  "previousHomepageSha256": "3fe6270bb84431f05080600dad3a5a673f6c2646ad1c63355eadc14ac64c5b97",
+  "liveHomepageObservedSha256": "3fe6270bb84431f05080600dad3a5a673f6c2646ad1c63355eadc14ac64c5b97",
+  "liveHomepageMatchesPreviouslyVerifiedRelease": true,
+  "searchWasPresent": false,
+  "mitigation": "Refreshed the seven active video proofs. Subsequent deployment command requires successful release gate, a clean pushed commit, equality of every artifact file with the tested snapshot, and a search marker before upload.",
+  "finalSearchDeployment": "Recorded separately in release.json after production verification."
+}

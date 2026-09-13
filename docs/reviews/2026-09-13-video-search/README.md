@@ -18,6 +18,8 @@
 
 發布 gate 的五個核心影片證據滿七天，因此在搜尋功能發布前，以正式域名 `https://injury.sportsmedicine.tw` 的原生播放器重新檢查相同影片，全部成功播放、時間前進、readyState 4，字幕按鈕可切至開啟。原始與新證據分別保留於 `core-playback.previous.json`、`core-playback.refresh.json`，並更新 gate 使用的 `docs/reviews/evidence/decision-21/playback.chrome.v1.json`。
 
+隔離建置完成後，Decision 23 的七支仍在站上影片也跨過七日期限；已以先前正式部署 `https://f0cd3f0d.sports-injury-atlas.pages.dev` 重新通過原生播放。新舊證據為 `expansion-playback.refresh.json` 與 `expansion-playback.previous.json`；兩筆已撤片歷史證據維持不變。
+
 這只是既有影片當時的播放／字幕控制可用性檢查，不是新增醫療、字幕翻譯品質或權利簽核。本次沒有修改影片 URL、起播時間、精選名單或臨床資料。
 
 ## 發布

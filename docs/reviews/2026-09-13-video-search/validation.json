@@ -63,5 +63,14 @@
     "Earlier runs exposed obsolete patient return/disclosure assertions and a viewport-specific sticky-header obstruction during Axe; final tests use current content and the collection anchor without disabling rules.",
     "An intermediate run with an obsolete disclosure label was intentionally stopped; only the final complete run is claimed.",
     "No forms or test emails were submitted."
-  ]
+  ],
+  "additionalPlaybackRefresh": {
+    "passed": 7,
+    "proof": "expansion-playback.refresh.json",
+    "previousProof": "expansion-playback.previous.json",
+    "origin": "https://f0cd3f0d.sports-injury-atlas.pages.dev",
+    "reason": "The original Decision 23 proofs crossed seven days between the passing isolated build and the later root release check.",
+    "sourceInputsChanged": false,
+    "removedVideoProofsPreserved": 2
+  }
 }
