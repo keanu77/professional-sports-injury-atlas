@@ -9,6 +9,10 @@ const FEATURED = [
   "chris-bassitt-2021-face",
   "antoine-dupont-world-cup-2023",
   "lindsey-vonn-schladming-2013",
+  "kobe-bryant-2013-achilles",
+  "mohamed-salah-final-2018",
+  "dominic-thiem-2021-wrist",
+  "anthony-richardson-2023-shoulder",
 ];
 
 test("all 143 observation pages expose general guidance, text highlights, related videos, and category routes", async ({
@@ -60,7 +64,7 @@ test("all 143 observation pages expose general guidance, text highlights, relate
   }
 });
 
-test("the six featured observations identify their reviewed main-site resources", async ({
+test("the ten featured observations identify their reviewed main-site resources", async ({
   page,
 }) => {
   test.skip(!PUBLIC_LAUNCH, "Observation routes belong to the public launch");
@@ -243,4 +247,42 @@ test("review output stays noindex and does not publish a sitemap", async ({
     "User-agent: *\nDisallow: /\n",
   );
   expect((await request.get("/sitemap.xml")).status()).toBe(404);
+});
+
+test("curated collection shows ten ordered videos and restores all 150", async ({
+  page,
+}) => {
+  test.skip(!PUBLIC_LAUNCH, "Curated collection belongs to the public launch");
+  await page.goto("/");
+  const cards = page.locator("[data-discovery-slug]:visible");
+  await expect(cards).toHaveCount(150);
+  await page.getByRole("button", { name: "精選影片", exact: true }).click();
+  await expect(cards).toHaveCount(10);
+  await expect(page.locator("[data-discovery-status]")).toContainText(
+    "精選 10 支",
+  );
+  expect(
+    await cards.evaluateAll((nodes) =>
+      nodes.map((node) => node.getAttribute("data-curated-rank")),
+    ),
+  ).toEqual(Array.from({ length: 10 }, (_, index) => String(index + 1)));
+  expect(
+    await cards.evaluateAll((nodes) =>
+      nodes.map((node) => node.getAttribute("data-discovery-slug")),
+    ),
+  ).toEqual([...FEATURED]);
+  await expect(
+    page.locator('[data-discovery-slug="kobe-bryant-2013-achilles"] a'),
+  ).toHaveAttribute("href", "/videos/kobe-bryant-2013-achilles/");
+  await expect(page.locator("iframe")).toHaveCount(0);
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+  await expectNoAxeViolations(page);
+  await page.getByRole("button", { name: "全部影片", exact: true }).click();
+  await expect(cards).toHaveCount(150);
+  await page.getByRole("button", { name: "精選影片", exact: true }).click();
+  await expect(cards).toHaveCount(10);
 });

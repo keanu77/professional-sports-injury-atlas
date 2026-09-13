@@ -1,0 +1,314 @@
+{
+  "reviewedAt": "2026-09-13T00:34:39.023626+00:00",
+  "request": "目前應該是六個，你可以重新評估放入10個",
+  "previousCount": 6,
+  "targetCount": 10,
+  "catalogCount": 150,
+  "criteria": [
+    "事件前後或重播畫面可辨識",
+    "傷勢與實際回場有具名來源，保留推測限制",
+    "增加運動、身體部位與觀察情境的多樣性",
+    "本站原生播放器重新驗證成功"
+  ],
+  "selected": [
+    {
+      "rank": 1,
+      "slug": "ronald-acuna-miami-2021",
+      "name": "Ronald Acuña Jr.",
+      "sport": "棒球",
+      "bodyPart": "膝部",
+      "situation": "landing",
+      "action": "retained",
+      "reason": "外野跳起與落地的事件順序清楚，能搭配復健賽與大聯盟回場的差別。",
+      "videoUrl": "https://www.youtube.com/watch?v=C4xerhbFNnc",
+      "startSeconds": 0,
+      "returnDate": "2022-04-19",
+      "sourceCount": 6,
+      "sourceUrls": [
+        "https://www.mlb.com/news/ronald-acuna-jr-injured",
+        "https://www.milb.com/gwinnett/news/acuna-doubles-in-return-but-stripers-lose-2-0-in-jacksonville",
+        "https://www.mlb.com/news/ronald-acuna-jr-returns-from-knee-injury",
+        "https://www.youtube.com/watch?v=C4xerhbFNnc",
+        "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+        "https://www.mlb.com/es/news/ronald-acuna-jr-fue-operado-de-la-rodilla-derecha"
+      ]
+    },
+    {
+      "rank": 2,
+      "slug": "zverev-roland-garros-2022",
+      "name": "Alexander Zverev",
+      "sport": "網球",
+      "bodyPart": "腳踝",
+      "situation": "running-turning",
+      "action": "retained",
+      "reason": "側移回球與腳踝支撐的觀察入口，具賽事主辦及實際回場來源。",
+      "videoUrl": "https://www.youtube.com/watch?v=7tpaxZTTi2w",
+      "startSeconds": 1340,
+      "returnDate": "2022-12-31",
+      "sourceCount": 6,
+      "sourceUrls": [
+        "https://apnews.com/article/french-open-rafael-nadal-winter-olympics-sports-f15fb9c8f926017f38c089aa5fe554f3",
+        "https://www.atptour.com/en/news/czech-republic-germany-united-cup-2023-saturday",
+        "https://www.atptour.com/en/news/zverev-lehecka-dubai-2023-monday",
+        "https://www.orthoinfo.org/diseases--conditions/sprained-ankle",
+        "https://www.atptour.com/en/news/zverev-roland-garros-2023-feature",
+        "https://www.atptour.com/en/news/zverev-united-cup-2023-return-preview"
+      ]
+    },
+    {
+      "rank": 3,
+      "slug": "carolina-marin-indonesia-2019",
+      "name": "Carolina Marín",
+      "sport": "羽球",
+      "bodyPart": "膝部",
+      "situation": "landing",
+      "action": "retained",
+      "reason": "補足羽球跳躍落地情境，保留協會與實際復賽資料。",
+      "videoUrl": "https://www.youtube.com/watch?v=nfpXC98FLuE",
+      "startSeconds": 35,
+      "returnDate": "2019-09-11",
+      "sourceCount": 5,
+      "sourceUrls": [
+        "https://www.badminton.es/news/125348/Parte-Medico-de-Carolina-Marin",
+        "https://www.rtve.es/deportes/20190911/carolina-marin-partido-regreso-vietnam/1979042.shtml",
+        "https://www.youtube.com/watch?v=nfpXC98FLuE",
+        "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+        "https://www.badminton.de/news/badminton/china-open-das-perfekte-comeback/"
+      ]
+    },
+    {
+      "rank": 4,
+      "slug": "chris-bassitt-2021-face",
+      "name": "Chris Bassitt",
+      "sport": "棒球",
+      "bodyPart": "頭頸部",
+      "situation": "ball-impact",
+      "action": "retained",
+      "reason": "呈現球體撞擊及場上處理，有 MLB 傷勢及再登板紀錄。",
+      "videoUrl": "https://www.youtube.com/watch?v=8rQjyuPU_gM",
+      "startSeconds": 0,
+      "returnDate": "2021-09-23",
+      "sourceCount": 5,
+      "sourceUrls": [
+        "https://www.mlb.com/news/chris-bassitt-hit-in-face-with-line-drive",
+        "https://www.mlb.com/news/chris-bassitt-sharp-in-return-but-a-s-wild-card-hopes-dim",
+        "https://www.mlb.com/news/chris-bassitt-to-return-for-athletics-on-thursday",
+        "https://www.youtube.com/watch?v=8rQjyuPU_gM",
+        "https://www.orthoinfo.org/diseases--conditions/fractures-broken-bones/"
+      ]
+    },
+    {
+      "rank": 5,
+      "slug": "antoine-dupont-world-cup-2023",
+      "name": "Antoine Dupont",
+      "sport": "橄欖球",
+      "bodyPart": "頭頸部",
+      "situation": "collision",
+      "action": "retained",
+      "reason": "短片含近身接觸重播，臉部傷勢採具名來源，避免僅憑撞頭畫面診斷腦震盪。",
+      "videoUrl": "https://www.youtube.com/watch?v=LOaTNtmSxUY",
+      "startSeconds": 0,
+      "returnDate": "2023-10-15",
+      "sourceCount": 5,
+      "sourceUrls": [
+        "https://resources.worldrugby-rims.pulselive.com/worldrugby/document/2023/09/27/c960a19f-e04d-4a7c-88ea-540524fd06e8/230927-RWC23-Disciplinary-Decision-Johan-Deysel-Namibia-.pdf",
+        "https://www.rugbyworldcup.com/news/877678/france-announce-squad-to-play-south-africa",
+        "https://springboks.rugby/news-features/articles/2023/10/15/boks-victorious-in-paris-thriller",
+        "https://www.youtube.com/watch?v=LOaTNtmSxUY",
+        "https://www.orthoinfo.org/diseases--conditions/fractures-broken-bones/"
+      ]
+    },
+    {
+      "rank": 6,
+      "slug": "lindsey-vonn-schladming-2013",
+      "name": "Lindsey Vonn",
+      "sport": "高山滑雪",
+      "bodyPart": "膝部",
+      "situation": "landing",
+      "action": "retained",
+      "reason": "補足高速滑雪摔落，來源保留手術、訓練再傷與正式回場的不同階段。",
+      "videoUrl": "https://www.youtube.com/watch?v=0TwnwjFJzUo",
+      "startSeconds": 0,
+      "returnDate": "2013-12-06",
+      "sourceCount": 6,
+      "sourceUrls": [
+        "https://www.usskiandsnowboard.org/news/vonn-crashes-world-super-g",
+        "https://www.usskiandsnowboard.org/news/optimistic-outlook-lindsey-vonn",
+        "https://www.usskiandsnowboard.org/news/lindsey-vonn-injury-update",
+        "https://www.usskiandsnowboard.org/news/vonn-returns-world-cup-tour",
+        "https://www.youtube.com/watch?v=0TwnwjFJzUo",
+        "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/"
+      ]
+    },
+    {
+      "rank": 7,
+      "slug": "kobe-bryant-2013-achilles",
+      "name": "Kobe Bryant",
+      "sport": "籃球",
+      "bodyPart": "小腿／阿基里斯腱",
+      "situation": "running-turning",
+      "action": "added",
+      "reason": "切入與後續跌倒／重播可辨識，補入籃球與阿基里斯腱情境；頁面已有醫療團隊、手術及實際回場來源。",
+      "videoUrl": "https://www.youtube.com/watch?v=5KlgfpqWCkY",
+      "startSeconds": 33,
+      "returnDate": "2013-12-08",
+      "sourceCount": 9,
+      "sourceUrls": [
+        "https://www.nba.com/lakers/news/130413vittikobebryant",
+        "https://www.nba.com/lakers/news/130412bryanttearsachilles",
+        "https://www.nba.com/raptors/game/0021300303",
+        "https://www.nbcsports.com/nba/news/kobe-is-back-but-loss-to-raptors-shows-lakers-still-have-a-lot-of-work-to-do",
+        "https://www.nba.com/lakers/news/131118_bryant",
+        "https://www.cbsnews.com/losangeles/news/bryant-recovering-after-successful-surgery-to-repair-torn-achilles-tendon/",
+        "https://www.youtube.com/watch?v=5KlgfpqWCkY",
+        "https://pubmed.ncbi.nlm.nih.gov/36265841/",
+        "https://www.orthoinfo.org/diseases--conditions/achilles-tendon-rupture-tear/"
+      ]
+    },
+    {
+      "rank": 8,
+      "slug": "mohamed-salah-final-2018",
+      "name": "Mohamed Salah",
+      "sport": "足球",
+      "bodyPart": "肩部",
+      "situation": "collision",
+      "action": "added",
+      "reason": "爭球、手臂接觸與倒地片段可觀察，補入足球肩傷；傷勢維持球隊公布的範圍。",
+      "videoUrl": "https://www.youtube.com/watch?v=mi7fXtGTwbc",
+      "startSeconds": 0,
+      "returnDate": "2018-06-19",
+      "sourceCount": 4,
+      "sourceUrls": [
+        "https://www.liverpoolfc.com/news/first-team/303499-mohamed-salah-liverpool-fc-injury-update",
+        "https://www.liverpoolfc.com/news/first-team/305043-mohamed-salah-goal-egypt-world-cup",
+        "https://www.youtube.com/watch?v=mi7fXtGTwbc",
+        "https://www.aafp.org/afp/2023/0500/acute-shoulder-injuries"
+      ]
+    },
+    {
+      "rank": 9,
+      "slug": "dominic-thiem-2021-wrist",
+      "name": "Dominic Thiem",
+      "sport": "網球",
+      "bodyPart": "手腕",
+      "situation": "racket-swing",
+      "action": "added",
+      "reason": "Tennis TV 片段由指定秒數進入正拍擊球後停止動作，補足揮拍與手腕情境。",
+      "videoUrl": "https://www.youtube.com/watch?v=dnEbS6xmiLA",
+      "startSeconds": 172,
+      "returnDate": "2022-03-29",
+      "sourceCount": 4,
+      "sourceUrls": [
+        "https://www.oetv.at/news-detail/dominic-thiem-beim-comeback-mit-auftaktniederlage-in-marbella",
+        "https://www.bbc.co.uk/sport/tennis/57600746",
+        "https://www.youtube.com/watch?v=dnEbS6xmiLA",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2577486/"
+      ]
+    },
+    {
+      "rank": 10,
+      "slug": "anthony-richardson-2023-shoulder",
+      "name": "Anthony Richardson",
+      "sport": "美式足球",
+      "bodyPart": "肩部",
+      "situation": "collision",
+      "action": "added",
+      "reason": "慢動作重播補入美式足球擒抱與肩部著地；診斷與手術採球隊公告，保留解說者非主治醫師的限制。",
+      "videoUrl": "https://www.youtube.com/watch?v=5HwejN_19pM",
+      "startSeconds": 20,
+      "returnDate": "2024-08-11",
+      "sourceCount": 4,
+      "sourceUrls": [
+        "https://www.nfl.com/news/colts-qb-anthony-richardson-suffers-right-shoulder-injury-vs-titans",
+        "https://www.colts.com/news/anthony-richardson-successful-shoulder-surgery-update-shane-steichen",
+        "https://www.colts.com/news/colts-loss-broncos-anthony-richardson-kenny-moore-first-preaseason-game",
+        "https://www.orthoinfo.org/diseases--conditions/shoulder-separation/"
+      ]
+    }
+  ],
+  "sportsCount": 8,
+  "bodyPartsCount": 6,
+  "nativePlayback": "playback.production.json",
+  "notSelected": [
+    {
+      "slug": "jayson-tatum-achilles-rupture-2025",
+      "reason": "雖然個案說明完整，抽看現有 22 秒短片以受傷後處理為主；本輪以切入動作及重播較可辨識的 Kobe 取代候選位置。原個案不改。"
+    },
+    {
+      "slug": "shohei-ohtani-world-series-2024",
+      "reason": "具名來源完整，但目前精選已有兩個棒球案例；本輪優先補足球與美式足球。"
+    },
+    {
+      "slug": "carlos-alcaraz-2024-rio-ankle",
+      "reason": "官方影片清楚，但與 Zverev 同為網球腳踝；選擇 Thiem 增加揮拍／手腕情境。"
+    },
+    {
+      "slug": "usain-bolt-london-2017",
+      "reason": "事件可辨識，但既有資料沒有可列的傷後正式復賽日期，與本輪選片重點較不吻合。"
+    }
+  ],
+  "reviewScope": "核對既有目錄／來源綁定，重新播放全部入選 10 支；人工檢視新增候選及 Tatum 的時間點截圖。沒有重新逐格審查全部 150 支或重新取得所有來源全文。",
+  "clinicalApproval": false,
+  "screenshots": [
+    {
+      "path": "anthony-richardson-2023-shoulder-13.jpg",
+      "sha256": "b92c702e8a3d038aa490299ea68acaa3e0193c79de2a0198ee4116f1089754d3"
+    },
+    {
+      "path": "anthony-richardson-2023-shoulder-2.jpg",
+      "sha256": "f7900c91a675e266f5939294e3ae7adbb73b82072c3c9a87d1164b3aae77ec29"
+    },
+    {
+      "path": "anthony-richardson-2023-shoulder-7.jpg",
+      "sha256": "efb9bddc1cc961c552a43a33a7567332ff6db06aba87a15e6526eb4b4c347c17"
+    },
+    {
+      "path": "dominic-thiem-2021-wrist-13.jpg",
+      "sha256": "3b160fb846a42eeb419002b6d7dcf1a1924f21164dd1e59d83a77f6db18a618c"
+    },
+    {
+      "path": "dominic-thiem-2021-wrist-2.jpg",
+      "sha256": "6b9d9a0eb15694fe51e7e5404b7241542cde8ec242cb3ed97a340d7f42d09f83"
+    },
+    {
+      "path": "dominic-thiem-2021-wrist-7.jpg",
+      "sha256": "36b4471466cc16b5ba6ad86d01b747efad60be4e366d0f36435945c878a84025"
+    },
+    {
+      "path": "jayson-tatum-achilles-rupture-2025-13.jpg",
+      "sha256": "854d198109109245a40f3d6493af266dce3e3d1f6ea4855cb2d1c70fba5b735d"
+    },
+    {
+      "path": "jayson-tatum-achilles-rupture-2025-2.jpg",
+      "sha256": "6c21e6310a5df47c3ce6f5264e4d6d2e95852ea63f079460173ad55d9ef64431"
+    },
+    {
+      "path": "jayson-tatum-achilles-rupture-2025-7.jpg",
+      "sha256": "08102f0e626aaa24e5a6e65aff7bd9085f9a62d72130449e54ae1ba265a14f11"
+    },
+    {
+      "path": "kobe-bryant-2013-achilles-13.jpg",
+      "sha256": "fa88a451d71c52f6944184ceff06bd83aa116a11f1e996f6d0587097e245d575"
+    },
+    {
+      "path": "kobe-bryant-2013-achilles-2.jpg",
+      "sha256": "c79f39099a521867bc8bc7ec17b205635777f4ddb51d3d95b9aad94dbe2b86ea"
+    },
+    {
+      "path": "kobe-bryant-2013-achilles-7.jpg",
+      "sha256": "20d7f09c56c8523c38773c1de1d41925d50e058d9278a431f5fac431fcb59b74"
+    },
+    {
+      "path": "mohamed-salah-final-2018-13.jpg",
+      "sha256": "662c544c5de4f822c98bd52249645f2ec69ac8e6679e5bafa6275e6d8fca76b2"
+    },
+    {
+      "path": "mohamed-salah-final-2018-2.jpg",
+      "sha256": "4432731f914c3d88beaa7784619318451c8561a305c018fc70686557c43e7093"
+    },
+    {
+      "path": "mohamed-salah-final-2018-7.jpg",
+      "sha256": "7e17d38daa3d4b96d5121933714a61f735ff3da64800d880fe050b4f828a6449"
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+[
+  {
+    "url": "https://www.youtube.com/watch?v=C4xerhbFNnc",
+    "path": "/videos/ronald-acuna-miami-2021/",
+    "startSeconds": 0,
+    "origin": "https://injury.sportsmedicine.tw",
+    "checkedAt": "2026-09-13T00:30:16.945Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.017913,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=7tpaxZTTi2w",
+    "path": "/videos/zverev-roland-garros-2022/",
+    "startSeconds": 1340,
+    "origin": "https://injury.sportsmedicine.tw",
+    "checkedAt": "2026-09-13T00:30:21.394Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1341.023276,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "這部影片未提供字幕"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=nfpXC98FLuE",
+    "path": "/videos/carolina-marin-indonesia-2019/",
+    "startSeconds": 35,
+    "origin": "https://injury.sportsmedicine.tw",
+    "checkedAt": "2026-09-13T00:30:25.478Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 36.021064,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=8rQjyuPU_gM",
+    "path": "/videos/chris-bassitt-2021-face/",
+    "startSeconds": 0,
+    "origin": "https://injury.sportsmedicine.tw",
+    "checkedAt": "2026-09-13T00:30:29.456Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.016259,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=LOaTNtmSxUY",
+    "path": "/videos/antoine-dupont-world-cup-2023/",
+    "startSeconds": 0,
+    "origin": "https://injury.sportsmedicine.tw",
+    "checkedAt": "2026-09-13T00:30:33.849Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.008812,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "這部影片未提供字幕"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=0TwnwjFJzUo",
+    "path": "/videos/lindsey-vonn-schladming-2013/",
+    "startSeconds": 0,
+    "origin": "https://injury.sportsmedicine.tw",
+    "checkedAt": "2026-09-13T00:30:38.022Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.021782,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=5KlgfpqWCkY",
+    "path": "/videos/kobe-bryant-2013-achilles/",
+    "startSeconds": 33,
+    "origin": "https://injury.sportsmedicine.tw",
+    "checkedAt": "2026-09-13T00:32:31.159Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 34.008745,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ],
+    "sampledFrames": [
+      {
+        "path": "docs/reviews/2026-09-13-curated-10/kobe-bryant-2013-achilles-2.jpg",
+        "time": 36.239064
+      },
+      {
+        "path": "docs/reviews/2026-09-13-curated-10/kobe-bryant-2013-achilles-7.jpg",
+        "time": 40
+      },
+      {
+        "path": "docs/reviews/2026-09-13-curated-10/kobe-bryant-2013-achilles-13.jpg",
+        "time": 46
+      }
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=mi7fXtGTwbc",
+    "path": "/videos/mohamed-salah-final-2018/",
+    "startSeconds": 0,
+    "origin": "https://injury.sportsmedicine.tw",
+    "checkedAt": "2026-09-13T00:30:50.549Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.014268,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "這部影片未提供字幕"
+    ],
+    "sampledFrames": [
+      {
+        "path": "docs/reviews/2026-09-13-curated-10/mohamed-salah-final-2018-2.jpg",
+        "time": 3.236553
+      },
+      {
+        "path": "docs/reviews/2026-09-13-curated-10/mohamed-salah-final-2018-7.jpg",
+        "time": 7
+      },
+      {
+        "path": "docs/reviews/2026-09-13-curated-10/mohamed-salah-final-2018-13.jpg",
+        "time": 13
+      }
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=dnEbS6xmiLA",
+    "path": "/videos/dominic-thiem-2021-wrist/",
+    "startSeconds": 172,
+    "origin": "https://injury.sportsmedicine.tw",
+    "checkedAt": "2026-09-13T00:30:59.023Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 173.00708,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ],
+    "sampledFrames": [
+      {
+        "path": "docs/reviews/2026-09-13-curated-10/dominic-thiem-2021-wrist-2.jpg",
+        "time": 175.228767
+      },
+      {
+        "path": "docs/reviews/2026-09-13-curated-10/dominic-thiem-2021-wrist-7.jpg",
+        "time": 179
+      },
+      {
+        "path": "docs/reviews/2026-09-13-curated-10/dominic-thiem-2021-wrist-13.jpg",
+        "time": 185
+      }
+    ]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=5HwejN_19pM",
+    "path": "/videos/anthony-richardson-2023-shoulder/",
+    "startSeconds": 20,
+    "origin": "https://injury.sportsmedicine.tw",
+    "checkedAt": "2026-09-13T00:31:07.546Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 21.027169,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": [
+      "字幕/CC 已關閉"
+    ],
+    "sampledFrames": [
+      {
+        "path": "docs/reviews/2026-09-13-curated-10/anthony-richardson-2023-shoulder-2.jpg",
+        "time": 23.210064
+      },
+      {
+        "path": "docs/reviews/2026-09-13-curated-10/anthony-richardson-2023-shoulder-7.jpg",
+        "time": 27
+      },
+      {
+        "path": "docs/reviews/2026-09-13-curated-10/anthony-richardson-2023-shoulder-13.jpg",
+        "time": 33
+      }
+    ]
+  }
+]

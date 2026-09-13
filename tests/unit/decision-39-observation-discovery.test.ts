@@ -17,10 +17,14 @@ const featuredSlugs = allObservationClips
 describe("Decision 39 observation guidance", () => {
   it("preserves featured resources while covering all observations", () => {
     expect(featuredSlugs).toEqual([
+      "anthony-richardson-2023-shoulder",
       "antoine-dupont-world-cup-2023",
       "carolina-marin-indonesia-2019",
       "chris-bassitt-2021-face",
+      "dominic-thiem-2021-wrist",
+      "kobe-bryant-2013-achilles",
       "lindsey-vonn-schladming-2013",
+      "mohamed-salah-final-2018",
       "ronald-acuna-miami-2021",
       "zverev-roland-garros-2022",
     ]);

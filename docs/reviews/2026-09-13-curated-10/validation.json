@@ -1,0 +1,65 @@
+{
+  "checkedAt": "2026-09-13T00:37:12.651918+00:00",
+  "node": "24.14.0",
+  "sourceSnapshot": "066ff78a9410605466e766e6bf8ef9ee7006b934",
+  "changedSourceAndTestFilesMatchSnapshot": 5,
+  "inputTreeDigest": "da6d7f9123abb1cba2aa285535035cf8fc977635930f22356630aa0ffd05b68e",
+  "typecheck": {
+    "errors": 0,
+    "warnings": 0,
+    "existingHints": 16
+  },
+  "unit": {
+    "files": 95,
+    "passed": 1490,
+    "failed": 0
+  },
+  "endToEnd": {
+    "passed": 39,
+    "skipped": 3,
+    "failed": 0,
+    "projects": [
+      "chrome",
+      "mobile-chrome",
+      "webkit"
+    ],
+    "skipReason": "Three existing review-only noindex assertions do not apply to public output."
+  },
+  "format": {
+    "changedFiles": 5,
+    "passed": true
+  },
+  "releasePublic": {
+    "passed": true,
+    "htmlPages": 195,
+    "localLinks": 4494
+  },
+  "nativePlayback": {
+    "passed": 10,
+    "proof": "playback.production.json",
+    "origin": "https://injury.sportsmedicine.tw"
+  },
+  "localUI": {
+    "widths": [
+      390,
+      768,
+      1280
+    ],
+    "curatedCount": 10,
+    "allCount": 150,
+    "passed": true,
+    "proof": "ui.local.json"
+  },
+  "dependenciesChanged": false,
+  "environmentVariablesChanged": false,
+  "migrationsChanged": false,
+  "clinicalApproval": false,
+  "limitations": [
+    "Existing six videos were reassessed from documented observations/source bindings and renewed native playback; not a new frame-by-frame review.",
+    "Initial candidate Tatum was playable but omitted after sampled-frame review in favor of Kobe.",
+    "The first targeted unit attempt omitted required binding arguments; the corrected test now checks the actual video URL and event date.",
+    "An initial isolated run treated the local dependency symlink as untracked; local exclude now matches the existing dependency ignore intent.",
+    "Initial E2E attempts used an occupied port and omitted the separate no-JavaScript port variable; the final complete run used 14336 consistently.",
+    "No form submission or test email was sent."
+  ]
+}

@@ -10,6 +10,8 @@ import {
   discoverySchema,
   videosBySituation,
 } from "../../src/lib/videos/discovery";
+import { eventUpdateFor } from "../../src/lib/videos/event-updates";
+import { videosBySport } from "../../src/lib/videos/sports";
 import { readPopularVideos } from "../../src/scripts/video-discovery";
 
 const records = readdirSync("src/content/cases")
@@ -40,20 +42,29 @@ describe("public discovery editorial coverage", () => {
     const curated = discovery.videos
       .filter((item) => item.curatedRank)
       .sort((a, b) => a.curatedRank! - b.curatedRank!);
-    expect(curated.map((item) => item.curatedRank)).toEqual([1, 2, 3, 4, 5, 6]);
+    expect(curated.map((item) => item.curatedRank)).toEqual([
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+    ]);
+    const curatedSlugs = new Set(curated.map((item) => item.slug));
     expect(
-      new Set(
-        curated.map(
-          (item) => clips.find((clip) => clip.slug === item.slug)?.sport,
-        ),
-      ).size,
-    ).toBeGreaterThanOrEqual(5);
-    expect(
-      curated.every(
-        (item) =>
-          clips.find((clip) => clip.slug === item.slug)!.sources.length >= 2,
+      videosBySport(
+        cases.filter((record) => curatedSlugs.has(record.slug)),
+        clips.filter((clip) => curatedSlugs.has(clip.slug)),
       ),
-    ).toBe(true);
+    ).toHaveLength(8);
+    for (const item of curated) {
+      // Editorial choices can include both approved core cases and observations.
+      const clip = clips.find((record) => record.slug === item.slug);
+      const coreCase = cases.find((record) => record.slug === item.slug);
+      const update = eventUpdateFor(
+        item.slug,
+        clip?.videoUrl ?? coreCase!.video.canonicalUrl,
+        clip?.eventDate ?? coreCase!.eventDate,
+      );
+      expect(update?.sources.length, item.slug).toBeGreaterThanOrEqual(2);
+      expect(update?.returnDate, item.slug).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      expect(update?.mechanism?.limitation, item.slug).toBeTruthy();
+    }
   });
   it("keeps ambiguous and future observations out of inferred movement categories", () => {
     expect(discoveryFor("jayson-tatum-achilles-rupture-2025").situation).toBe(

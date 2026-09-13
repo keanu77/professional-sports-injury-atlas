@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-09-12",
+  "reviewedAt": "2026-09-13",
   "classificationBasis": "依既有影片觀察摘要選擇一個主要情境；分類描述影片中的動作，不判定致傷原因。畫面不足者歸其他或畫面未明。",
   "curationBasis": "優先選擇受傷過程清楚、具名傷勢與回場來源完整，並涵蓋不同運動與情境的影片。精選順序由本站編輯安排，不代表熱門程度。",
   "videos": [
@@ -74,7 +74,8 @@
     },
     {
       "slug": "anthony-richardson-2023-shoulder",
-      "situation": "collision"
+      "situation": "collision",
+      "curatedRank": 10
     },
     {
       "slug": "antoine-dupont-2025-six-nations-knee",
@@ -189,7 +190,8 @@
     },
     {
       "slug": "dominic-thiem-2021-wrist",
-      "situation": "racket-swing"
+      "situation": "racket-swing",
+      "curatedRank": 9
     },
     {
       "slug": "dustin-fowler-2017-patellar-tendon",
@@ -353,7 +355,8 @@
     },
     {
       "slug": "kobe-bryant-2013-achilles",
-      "situation": "running-turning"
+      "situation": "running-turning",
+      "curatedRank": 7
     },
     {
       "slug": "kristaps-porzingis-acl-2018",
@@ -442,7 +445,8 @@
     },
     {
       "slug": "mohamed-salah-final-2018",
-      "situation": "collision"
+      "situation": "collision",
+      "curatedRank": 8
     },
     {
       "slug": "mookie-betts-2024-hand",
