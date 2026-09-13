@@ -24,4 +24,6 @@
 
 ## 發布
 
-沿用使用者本對話「授權推送跟更新」，目的地仍是既有私有儲存庫 `keanu77/professional-sports-injury-atlas` 與 Cloudflare Pages `sports-injury-atlas` 的正式站。實際發布完成後以 `release.json`、`live.json`、`ui.production.json` 及 `production-artifact.json` 記錄版本、部署與線上核對。
+沿用使用者本對話「授權推送跟更新」，目的地仍是既有私有儲存庫 `keanu77/professional-sports-injury-atlas` 與 Cloudflare Pages `sports-injury-atlas` 的正式站。已部署並核對 `3448c91b07d4767669615149c009088de99c98a8`，正式部署 ID `044c5edc-1255-4217-8b77-a53fff85da6e`。`release.json`、`live.json`、`ui.production.json` 及 `production-artifact.json` 記錄版本與線上核對：195/195 HTML、150/150 個案頁與本次建置一致；489 成品檔案與測試副本一致。1,493 單元測試與 66 瀏覽器整合測試通過，3 項 review-only 檢查依原設計跳過。
+
+發布期間一次程序提早上傳舊成品，線上首頁仍與前版 SHA-256 一致；已完成後續正確部署與全站核對，經過與防止再次發生的檢查條件保留於 `release-retry.json`。

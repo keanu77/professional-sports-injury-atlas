@@ -10,5 +10,10 @@
   "liveHomepageMatchesPreviouslyVerifiedRelease": true,
   "searchWasPresent": false,
   "mitigation": "Refreshed the seven active video proofs. Subsequent deployment command requires successful release gate, a clean pushed commit, equality of every artifact file with the tested snapshot, and a search marker before upload.",
-  "finalSearchDeployment": "Recorded separately in release.json after production verification."
+  "finalSearchDeployment": {
+    "id": "044c5edc-1255-4217-8b77-a53fff85da6e",
+    "sourceCommit": "3448c91b07d4767669615149c009088de99c98a8",
+    "status": "production-verified",
+    "proof": "release.json"
+  }
 }

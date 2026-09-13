@@ -72,5 +72,13 @@
     "reason": "The original Decision 23 proofs crossed seven days between the passing isolated build and the later root release check.",
     "sourceInputsChanged": false,
     "removedVideoProofsPreserved": 2
+  },
+  "production": {
+    "verified": true,
+    "sourceCommit": "3448c91b07d4767669615149c009088de99c98a8",
+    "deploymentId": "044c5edc-1255-4217-8b77-a53fff85da6e",
+    "htmlMatched": 195,
+    "artifactFilesMatched": 489,
+    "uiProof": "ui.production.json"
   }
 }

@@ -1,0 +1,54 @@
+{
+  "completedAt": "2026-09-13T02:15:55.784851+00:00",
+  "status": "production-verified",
+  "featureCommit": "ebe6d11406ebafb48f95f1317fd19b3cd69c5339",
+  "sourceCommit": "3448c91b07d4767669615149c009088de99c98a8",
+  "repository": "keanu77/professional-sports-injury-atlas",
+  "repositoryVisibility": "private",
+  "branch": "main",
+  "sourcePushVerified": true,
+  "authorization": {
+    "priorPushAndUpdateQuote": "授權推送跟更新",
+    "latestScopeQuote": "可以增加搜尋功能嗎？可以搜尋球員或關鍵字"
+  },
+  "deployment": {
+    "project": "sports-injury-atlas",
+    "id": "044c5edc-1255-4217-8b77-a53fff85da6e",
+    "url": "https://044c5edc.sports-injury-atlas.pages.dev",
+    "origin": "https://injury.sportsmedicine.tw"
+  },
+  "previousGoodDeployment": {
+    "id": "f0cd3f0d-691a-4c75-a2b7-d3c4ece93157",
+    "sourceCommit": "39db166a1bdf33d99ad1cd0dd0d3d851081d0594"
+  },
+  "searchScopes": ["all", "curated", "popular-top-10"],
+  "catalogCount": 150,
+  "curatedCount": 10,
+  "verification": {
+    "unitPassed": 1493,
+    "endToEndPassed": 66,
+    "endToEndSkipped": 3,
+    "liveHtmlMatched": 195,
+    "liveCasePagesMatched": 150,
+    "artifactFilesMatchTestedSnapshot": 489,
+    "nativeCorePlaybackRefreshed": 5,
+    "nativeExpansionPlaybackRefreshed": 7,
+    "uiPassedWidths": [320, 390, 768, 1280],
+    "fontScaleAt320": 1.5,
+    "popularStillTop10": true,
+    "querySentOrStored": false
+  },
+  "inputTreeDigest": "ae9090880d608a9ad8df89a4b6051d391bca510bbc50c5c44644b318d25bbe65",
+  "clinicalApproval": false,
+  "emailSent": false,
+  "proofs": [
+    "validation.json",
+    "live.json",
+    "ui.production.json",
+    "production-artifact.json",
+    "core-playback.refresh.json",
+    "expansion-playback.refresh.json",
+    "release-retry.json"
+  ],
+  "note": "Subsequent documentation commit does not alter rendering inputs and needs no second deployment."
+}

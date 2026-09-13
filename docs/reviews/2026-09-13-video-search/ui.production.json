@@ -1,0 +1,82 @@
+{
+  "origin": "https://injury.sportsmedicine.tw",
+  "checkedAt": "2026-09-13T02:15:22.741Z",
+  "results": [
+    {
+      "width": 320,
+      "fontScale": 1.5,
+      "all": 150,
+      "curated": 10,
+      "chineseMatches": 1,
+      "englishMatches": 1,
+      "injuryMatches": 26,
+      "popular": {
+        "total": 10,
+        "matched": 1,
+        "rank": "近 30 天播放第一名"
+      },
+      "querySent": false,
+      "queryStored": false,
+      "overflow": false,
+      "a11yViolations": 0,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "fontScale": 1,
+      "all": 150,
+      "curated": 10,
+      "chineseMatches": 1,
+      "englishMatches": 1,
+      "injuryMatches": 26,
+      "popular": {
+        "total": 10,
+        "matched": 1,
+        "rank": "近 30 天播放第一名"
+      },
+      "querySent": false,
+      "queryStored": false,
+      "overflow": false,
+      "a11yViolations": 0,
+      "errors": []
+    },
+    {
+      "width": 768,
+      "fontScale": 1,
+      "all": 150,
+      "curated": 10,
+      "chineseMatches": 1,
+      "englishMatches": 1,
+      "injuryMatches": 26,
+      "popular": {
+        "total": 10,
+        "matched": 1,
+        "rank": "近 30 天播放第一名"
+      },
+      "querySent": false,
+      "queryStored": false,
+      "overflow": false,
+      "a11yViolations": 0,
+      "errors": []
+    },
+    {
+      "width": 1280,
+      "fontScale": 1,
+      "all": 150,
+      "curated": 10,
+      "chineseMatches": 1,
+      "englishMatches": 1,
+      "injuryMatches": 26,
+      "popular": {
+        "total": 10,
+        "matched": 1,
+        "rank": "近 30 天播放第一名"
+      },
+      "querySent": false,
+      "queryStored": false,
+      "overflow": false,
+      "a11yViolations": 0,
+      "errors": []
+    }
+  ]
+}
