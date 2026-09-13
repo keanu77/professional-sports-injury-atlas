@@ -1,0 +1,105 @@
+{
+  "origin": "https://injury.sportsmedicine.tw",
+  "checkedAt": "2026-09-13T00:39:00.262Z",
+  "results": [
+    {
+      "width": 390,
+      "initialCount": 150,
+      "curatedCount": 10,
+      "slugs": [
+        "ronald-acuna-miami-2021",
+        "zverev-roland-garros-2022",
+        "carolina-marin-indonesia-2019",
+        "chris-bassitt-2021-face",
+        "antoine-dupont-world-cup-2023",
+        "lindsey-vonn-schladming-2013",
+        "kobe-bryant-2013-achilles",
+        "mohamed-salah-final-2018",
+        "dominic-thiem-2021-wrist",
+        "anthony-richardson-2023-shoulder"
+      ],
+      "ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "popularCount": 10,
+      "allModeRestored": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "width": 768,
+      "initialCount": 150,
+      "curatedCount": 10,
+      "slugs": [
+        "ronald-acuna-miami-2021",
+        "zverev-roland-garros-2022",
+        "carolina-marin-indonesia-2019",
+        "chris-bassitt-2021-face",
+        "antoine-dupont-world-cup-2023",
+        "lindsey-vonn-schladming-2013",
+        "kobe-bryant-2013-achilles",
+        "mohamed-salah-final-2018",
+        "dominic-thiem-2021-wrist",
+        "anthony-richardson-2023-shoulder"
+      ],
+      "ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "popularCount": 10,
+      "allModeRestored": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "width": 1280,
+      "initialCount": 150,
+      "curatedCount": 10,
+      "slugs": [
+        "ronald-acuna-miami-2021",
+        "zverev-roland-garros-2022",
+        "carolina-marin-indonesia-2019",
+        "chris-bassitt-2021-face",
+        "antoine-dupont-world-cup-2023",
+        "lindsey-vonn-schladming-2013",
+        "kobe-bryant-2013-achilles",
+        "mohamed-salah-final-2018",
+        "dominic-thiem-2021-wrist",
+        "anthony-richardson-2023-shoulder"
+      ],
+      "ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "popularCount": 10,
+      "allModeRestored": true,
+      "overflow": false,
+      "errors": []
+    }
+  ]
+}

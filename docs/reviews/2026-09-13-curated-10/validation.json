@@ -61,5 +61,12 @@
     "An initial isolated run treated the local dependency symlink as untracked; local exclude now matches the existing dependency ignore intent.",
     "Initial E2E attempts used an occupied port and omitted the separate no-JavaScript port variable; the final complete run used 14336 consistently.",
     "No form submission or test email was sent."
-  ]
+  ],
+  "production": {
+    "verified": true,
+    "sourceCommit": "39db166a1bdf33d99ad1cd0dd0d3d851081d0594",
+    "deploymentId": "f0cd3f0d-691a-4c75-a2b7-d3c4ece93157",
+    "htmlMatched": 195,
+    "uiProof": "ui.production.json"
+  }
 }

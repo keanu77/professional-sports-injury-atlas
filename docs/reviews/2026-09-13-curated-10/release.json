@@ -1,0 +1,55 @@
+{
+  "completedAt": "2026-09-13T00:39:52.513421+00:00",
+  "status": "production-verified",
+  "sourceCommit": "39db166a1bdf33d99ad1cd0dd0d3d851081d0594",
+  "repository": "keanu77/professional-sports-injury-atlas",
+  "repositoryVisibility": "private",
+  "branch": "main",
+  "sourcePushVerified": true,
+  "authorization": {
+    "priorPushAndUpdateQuote": "授權推送跟更新",
+    "latestScopeQuote": "目前應該是六個，你可以重新評估放入10個"
+  },
+  "deployment": {
+    "project": "sports-injury-atlas",
+    "id": "f0cd3f0d-691a-4c75-a2b7-d3c4ece93157",
+    "url": "https://f0cd3f0d.sports-injury-atlas.pages.dev",
+    "origin": "https://injury.sportsmedicine.tw"
+  },
+  "previousGoodDeployment": {
+    "id": "463f01a7-0bec-4128-b12f-10ec8bcc7faf",
+    "sourceCommit": "75f2d005d64f484fbcb15d466164be3d5a793213"
+  },
+  "curatedCount": 10,
+  "catalogCount": 150,
+  "retained": 6,
+  "added": 4,
+  "verification": {
+    "unitPassed": 1490,
+    "endToEndPassed": 39,
+    "endToEndSkipped": 3,
+    "liveHtmlMatched": 195,
+    "liveCasePagesMatched": 150,
+    "artifactFilesMatchTestedSnapshot": 489,
+    "nativeSelectedPlaybackPassed": 10,
+    "nativePlaybackTiming": "Verified on the production origin before the ranking-only deployment; source video IDs, paths and start times are unchanged.",
+    "uiPassedWidths": [
+      390,
+      768,
+      1280
+    ],
+    "popularStillTop10": true
+  },
+  "inputTreeDigest": "da6d7f9123abb1cba2aa285535035cf8fc977635930f22356630aa0ffd05b68e",
+  "clinicalApproval": false,
+  "emailSent": false,
+  "proofs": [
+    "selection.json",
+    "validation.json",
+    "playback.production.json",
+    "live.json",
+    "ui.production.json",
+    "production-artifact.json"
+  ],
+  "note": "Subsequent documentation commit does not alter rendering inputs and needs no second deployment."
+}
