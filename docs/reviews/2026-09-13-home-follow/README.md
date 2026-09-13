@@ -11,4 +11,4 @@
 - 既有 Decision 27 五支播放證據已過期，使用既有正式 HTTPS 頁面重新驗證實際播放及時間進度；新舊紀錄均保留。沒有新增醫療或素材權利簽核。
 - 既有測試曾錯誤期待 RSS 與未公開的 Edwards 2023 路徑；已同步為原有個人網站及可公開的 Durant 案例，並接受正常 200／304 回應。沒有移除幾何斷點檢查。
 
-詳細紀錄：`validation.json`、`ui.local.json`；視覺檢視：`1280-dark.png`、`390-dark.png`、`320-light.png`。正式部署及線上核對結果於完成後記錄於 `release.json`。
+詳細紀錄：`validation.json`、`ui.local.json`；視覺檢視：`1280-dark.png`、`390-dark.png`、`320-light.png`。正式部署與線上核對結果見 `release.json`：production/main `601eab27-5b43-46af-878c-d2ed7b9fdcfb`，195/195 HTML 與測試成品相符（7 核心個案 +143 觀察頁）。正式站 320／390／1280px 的連結、150 支影片、搜尋與精選 10 支均通過。

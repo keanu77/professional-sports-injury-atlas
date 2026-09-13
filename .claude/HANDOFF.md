@@ -1,29 +1,51 @@
-# HANDOFF — 2026-09-13：球員與關鍵字搜尋已上線
+# HANDOFF - 2026-09-13 12:33（台灣時間）
 
 ## 目前狀態
 
-- 專案：`/Users/ethanstudio/Documents/Vibe coding/professional-sports injury`，`main`；私有遠端 `keanu77/professional-sports-injury-atlas`。
-- 正式站：`https://injury.sportsmedicine.tw/`，150 例（7 核心 +143 觀察頁）；精選 10 支、本站熱門前 10 名。
-- 搜尋功能提交：`ebe6d11406ebafb48f95f1317fd19b3cd69c5339`；補齊既有播放證據後，實際部署／已核對推送來源：`3448c91b07d4767669615149c009088de99c98a8`。
-- Cloudflare Pages `sports-injury-atlas` production/main：`044c5edc-1255-4217-8b77-a53fff85da6e`，`https://044c5edc.sports-injury-atlas.pages.dev`。
-- 網站輸入摘要：`ae9090880d608a9ad8df89a4b6051d391bca510bbc50c5c44644b318d25bbe65`。後續文件提交不改變網站成品，不需再次部署。
+- 專案：`/Users/ethanstudio/Documents/Vibe coding/professional-sports injury`；`main`；遠端 `keanu77/professional-sports-injury-atlas` 仍為私有。
+- 首頁六個追蹤連結已發布：桌機位於標題區右上方，手機位於標題上方。首頁與頁尾共用相同目的地／圖示；點擊範圍至少 44 × 44px。
+- 實際網站來源／已推送提交：`6e685ea026bdcd9a1cd1f0dbcd579882906adfea`。後續文件提交不改網站內容；目前 HEAD 請以 `git log` 核對。
+- 正式站：`https://injury.sportsmedicine.tw/`；150 例（7 核心 +143 觀察頁）、精選 10 支、本站熱門前 10 名、首頁姓名／關鍵字搜尋。
+- Cloudflare Pages `sports-injury-atlas` production/main：`601eab27-5b43-46af-878c-d2ed7b9fdcfb`，`https://601eab27.sports-injury-atlas.pages.dev`。
+- 正式首頁 SHA-256：`68830c9c72ddd41f5bfb8fb4e7bbb484adf598878ae6d6f1b170c127a0df0f62`。195/195 HTML 與已驗證成品一致；首頁六個圖示、搜尋與精選皆確認生效。
+- 本次需求完成，沒有待發布的功能。沿用使用者「授權推送跟更新」與首頁位置要求，沒有重新申請發布許可。
 
-## 本輪完成
+## 本次驗證
 
-- 首頁即時搜尋姓名、傷勢、運動、賽事及已有日期；多個空格分隔條件皆須符合，英文忽略大小寫、重音與全形差異。
-- 搜尋範圍隨全部／精選／熱門切換，保留查詢；顯示結果數、零結果提示、清除／Escape，以及「改查全部影片」。熱門保留原名次，只查前 10 名。
-- 中文輸入法、過時排行回應、API 錯誤、無 JavaScript 備援皆有測試。搜尋字串不寫入 URL、儲存空間或 API；沒有新後端或依賴。
-- 精選 10 支名單維持前次發布；150 例原有影片 URL、臨床／來源內容與起播秒數沒有修改。沒有新增中文譯名／暱稱詞典或模糊搜尋。
-- Node 24.14.0；1,493 單元測試、66 瀏覽器整合測試、Astro check、變更檔格式、正式發布 gate 通過；3 項 review-only 測試依原設計跳過。
-- 正式 195/195 HTML（含 150/150 個案頁）與建置相符；489 成品檔與測試副本一致。正式 320px／150% 字級、390／768／1280px 深淺色、搜尋與精選／熱門操作通過，無水平溢出或 Axe 違規。
-- 五支核心播放／字幕控制與七支 Decision 23 既有影片的播放證據因七日效期而更新；新舊紀錄保留。這不是新的臨床、字幕品質或權利簽核。
-- 發布時曾提早上傳與前版完全相同的舊成品（`613b5723`）；已以正確搜尋版取代並完整核對。原因及強制建置／成品比對條件記於 `release-retry.json`。
-- 證據：`docs/reviews/2026-09-13-video-search/README.md`、`validation.json`、`release.json`、`live.json`、`ui.production.json`。
+- Node 24.14.0；Astro 0 errors／0 warnings（16 個既有 hints）；1,493 單元測試；Chrome／手機 Chrome／WebKit 共 75 項整合測試全數通過。
+- 原工作目錄有前次未提交 handoff，故使用乾淨隔離副本驗證。正式發布時副本切換至確切來源提交，重新通過 `release:public`，489 個成品逐檔匹配測試版才推送、部署。
+- 本機 320px（150% 字級）、390／768／1280px 深淺色無水平溢出與 Axe 違規；六個圖示、44px 點擊範圍、鍵盤順序、停用 JavaScript 通過。
+- 正式站另核對 320px（150%）、390／1280px 的圖示位置、150 支影片、Kobe 搜尋及精選 10 支；所有 HTML 含 7 核心案例與 143 觀察頁完全相符。
+- Decision 27 五支既有影片的七日播放證據已更新，保留新舊實際播放紀錄；未新增醫療、字幕品質或素材權利簽核。
+- 既有排版測試的 RSS 期待與未公開 Edwards 2023 路徑過時，改為原有個人網站與公開 Durant 頁，檢查正常 200／304 回應；沒有移除斷點幾何檢查。
 
-## 接續與邊界
+## 之前已完成
 
-- 本輪完成。下次先核對 Git 狀態、最近提交與正式部署。沿用已授權的推送／更新目的地；不公開儲存庫來源。
-- 下次發布須重新評估所有影片證據的七日效期：Decision 27 等後續批次仍是 2026-09-06 的原證據，將於 09-13 各原驗證時段到期。勿只檢查五支核心影片。
-- 隔離預覽 `http://127.0.0.1:14337/`，來源 `/private/tmp/atlas-search-review-anfds_x2/dist`；測試同步設定 baseURL 與 `ATLAS_E2E_PORT=14337`。其他原有服務未動。
-- 前一已驗證部署：`f0cd3f0d-691a-4c75-a2b7-d3c4ece93157`（精選 10 支、未有搜尋）。前次交接存於 `docs/handoffs/2026-09-13-before-video-search.md`。
-- 無依賴、環境變數、migration 變更；未送出表單或測試信。沒有啟動 200 例擴充。
+- 9/12–9/13：101 →120 →150 例，機轉與後續紀錄整理、一般民眾版閱讀、分類／手機導覽、近 30 天實際播放熱門前 10 名、精選 6 →10，以及姓名／關鍵字搜尋。
+- 搜尋隨全部／精選／熱門切換保留查詢，支援中文輸入法、延遲排行回應、清除／Escape、零結果與 API 錯誤；關鍵字不送出或儲存。沒有中文別名詞典或拼字容錯。
+- 已另建乾淨 MIT 公開範本 `keanu77/sports-injury-atlas-starter`，來源 `22de8f38a84f0b24b45e5263e1bf19090b357b0f`。原專案仍私人；公開範本僅使用虛構示例。
+- GitHub 個人首頁 `keanu77/keanu77` 在既有「運動傷害影片圖鑑」列的來源欄放入「公開範本（MIT）」；來源提交 `64d0ec5ae32903d320bb97202a3e999247022ba9`。不要另加獨立 starter 區塊。
+
+## 下一個 Session
+
+1. 先核對 `git status --short --branch`、`git log -3 --oneline` 與遠端；本文件不能代替 Git 真實狀態。
+2. 讀 `docs/reviews/2026-09-13-home-follow/release.json`、`validation.json`，確認本次來源與正式部署。
+3. 等使用者的新需求；不要因續接而重新部署已完成內容。
+
+## 下次發布注意事項
+
+- 固定 Node 24.14.0。`mise exec node@24.14.0 -- npm run release:public` 要求乾淨已提交狀態與正確輸入摘要。
+- 輸入摘要：`72763dfefe1b97e0ce443556de511a97ec7710a57c0331498f7399952c77f7c6`；更新摘要不能取代核准或真實驗證。
+- 播放證據均有七日效期：Decision 27 已於 9/13 12:21 更新；Decision 28、30、31、32、34 的既有證據將分別從 9/13 15:21、16:57、17:39、18:19、19:34 起到期，依每筆 checkedAt 核對。不是網站目前故障。
+- 順序固定：建置成功 → 成品與測試版逐檔一致 → 新功能標記存在 → 推送核對 → 部署。不得因建置失敗而上傳舊 dist。先前搜尋發布曾發生舊成品事件，已完成處理，見搜尋 release-retry 記錄。
+- 本次隔離副本 `/private/tmp/atlas-home-follow-review-01t4w7g_`；14339 預覽已停止。本機原 repo 的 dist 曾被失敗建置部分更新，請不要直接部署它。無新增依賴、環境變數或 migration，未送出表單或訊息。
+- 前一部署：`044c5edc-1255-4217-8b77-a53fff85da6e`（搜尋版）。
+
+## 關鍵檔案
+
+- `src/components/layout/FollowLinks.astro`：共用六個追蹤連結、圖示、首頁尺寸與排列。
+- `src/pages/index.astro`：首頁標題區追蹤連結、搜尋與影片卡片；`src/components/layout/SiteFooter.astro`：共用頁尾入口。
+- `src/scripts/video-discovery.ts`、`src/lib/videos/search.ts`、`search-index.ts`：搜尋與範圍互動；`src/data/videos/discovery.v1.json`：精選順序。
+- `docs/reviews/2026-09-13-home-follow/README.md`：本次驗證、畫面與正式發布證據。
+- `docs/reviews/2026-09-13-video-search/README.md`、`2026-09-13-curated-10/README.md`、`2026-09-13-recent-150/README.md`：前次功能發布紀錄。
+- 交接封存：`docs/handoffs/2026-09-13-before-home-follow.md` 與 `2026-09-13-before-session-handoff.md`。

@@ -1,0 +1,39 @@
+{
+  "origin": "https://injury.sportsmedicine.tw",
+  "checkedAt": "2026-09-13T04:31:29.599Z",
+  "results": [
+    {
+      "width": 1280,
+      "fontScale": "1",
+      "followLinks": 6,
+      "targetSize": 44,
+      "aboveTitle": true,
+      "overflow": false,
+      "catalogCount": 150,
+      "search": true,
+      "curatedCount": 10
+    },
+    {
+      "width": 390,
+      "fontScale": "1",
+      "followLinks": 6,
+      "targetSize": 44,
+      "aboveTitle": true,
+      "overflow": false,
+      "catalogCount": 150,
+      "search": true,
+      "curatedCount": 10
+    },
+    {
+      "width": 320,
+      "fontScale": "1.5",
+      "followLinks": 6,
+      "targetSize": 44,
+      "aboveTitle": true,
+      "overflow": false,
+      "catalogCount": 150,
+      "search": true,
+      "curatedCount": 10
+    }
+  ]
+}
