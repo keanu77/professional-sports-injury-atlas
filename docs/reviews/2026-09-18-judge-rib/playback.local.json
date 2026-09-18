@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-09-18",
+  "origin": "http://127.0.0.1:14318",
+  "path": "/videos/aaron-judge-2026-rib/",
+  "url": "https://www.youtube.com/watch?v=-M5v2OSrnEY",
+  "browser": "Edge",
+  "status": "played",
+  "before": {
+    "time": 21.445271,
+    "duration": 275.001,
+    "paused": false,
+    "readyState": 4
+  },
+  "after": {
+    "time": 44.488634,
+    "duration": 275.001,
+    "paused": false,
+    "readyState": 4
+  },
+  "layout": [
+    { "width": 390, "scrollWidth": 390 },
+    { "width": 1280, "scrollWidth": 1280 }
+  ],
+  "captionQuality": "not-verified",
+  "publicReleaseEvidence": false
+}
