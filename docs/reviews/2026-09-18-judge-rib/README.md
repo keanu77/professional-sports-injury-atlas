@@ -41,10 +41,10 @@ HTTPS 測試頁：https://895a4d88.sports-injury-atlas.pages.dev/videos/aaron-ju
 - 更新 83 支既有影片的真實播放證據。原紀錄保存為 `playback.previous-*.json`，本輪結果為 `playback.refresh-*.json`；未修改歷史 checkedAt 偽裝新驗證。
 - 初始重驗工具另選中兩個早已撤下的 observation slug，回報 Unknown video slug；它們不在目前公開片單，沒有重新發布，也沒有變更撤片政策。
 
-## 尚待解除的發布阻擋
+## 已解除的發布阻擋
 
 既有 Samir Aït Saïd 案例 `/videos/samir-ait-said-2016-leg/` 的 Olympic Games 影片 `Bt7EHTIivuA` 在兩次自動測試皆因播放器失敗而銷毀 iframe（保留初次與 `playback.samir-retry.json`）。人工瀏覽器亦確認本站顯示播放失敗；原 YouTube 頁明確顯示「使用 VPN 或 Proxy 時無法播放」，並說明該頻道的區域限制。
 
-未更動 VPN／Proxy 系統設定、未繞過 YouTube 地區限制、未放寬七日播放證據發布閘門、未擅自撤下或更換這支舊影片。已請使用者暫停 VPN／Proxy 後告知，以便重新實測。Decision 34 中該片仍保留原過期紀錄，不能宣告正式發布完成。
+使用者回覆「我會關閉 VPN／Proxy，請再驗證」後，於 2026-09-18T14:47:31.510Z 重驗成功。`playback.samir-after-vpn.json` 記錄從 58 秒指定片段正常播放至 59.012551 秒，paused=false、readyState=4；Decision 34 對應證據已更新。未由代理更動系統網路設定、未繞過 YouTube 限制、未放寬七日播放證據發布閘門、未撤下或更換舊影片。
 
-恢復後：只需重驗 Samir 並保存成功證據 → 乾淨提交 → `npm run release:public` → 核對成品與測試版內容 → 推送核對 → 部署 main → 正式域名內容、搜尋及新片播放驗證。不要直接把目前測試版當作已通過完整 release gate 的正式版。
+接續：乾淨提交 → `npm run release:public` → 核對成品與測試版內容 → 推送核對 → 部署 main → 正式域名內容、搜尋及新片播放驗證。正式發布完成前，測試版不當作正式版。

@@ -269,8 +269,8 @@
     "url": "https://www.youtube.com/watch?v=Bt7EHTIivuA",
     "path": "/videos/samir-ait-said-2016-leg/",
     "startSeconds": 58,
-    "origin": "https://c55f1068.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T11:35:25.894Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:47:31.510Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -278,7 +278,7 @@
       "readyState": 0
     },
     "after": {
-      "time": 59.006049,
+      "time": 59.012551,
       "paused": false,
       "readyState": 4
     },
