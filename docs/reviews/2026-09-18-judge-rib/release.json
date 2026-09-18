@@ -1,0 +1,43 @@
+{
+  "status": "production-verified",
+  "checkedAt": "2026-09-18T15:04:33Z",
+  "sourceCommit": "1bea30a48237eb43cd5717f39d091d1914eece0a",
+  "repository": "keanu77/professional-sports-injury-atlas",
+  "branch": "main",
+  "sourcePushVerified": true,
+  "authorizationQuote": "完成這個影片跟介紹上線",
+  "deployment": {
+    "project": "sports-injury-atlas",
+    "id": "4b8d4357-dd07-4de3-bca2-49a328af7a91",
+    "url": "https://4b8d4357.sports-injury-atlas.pages.dev",
+    "origin": "https://injury.sportsmedicine.tw",
+    "caseUrl": "https://injury.sportsmedicine.tw/videos/aaron-judge-2026-rib/"
+  },
+  "previousDeployment": "601eab27-5b43-46af-878c-d2ed7b9fdcfb",
+  "inputTreeDigest": "1044c4c4acb7d30d27059991e9974550c686b74c0b9e616449fe1bf002805240",
+  "verification": {
+    "publicReleaseGate": "passed",
+    "artifactFilesMatchTestedSnapshot": 491,
+    "fileListDigest": "d72261010bf5c22a0ad123595973f2296e24fc0b6bef5d43f80b59ca2e6fb412",
+    "liveHtmlMatched": 196,
+    "catalogCount": 151,
+    "publicCasePlayback": "played",
+    "homeSearch": "Judge 肋骨 returns one result linked to the new case",
+    "publicApiGet": "popular 200; plays/contributions 405 as designed",
+    "d1PendingMigrations": 0,
+    "newDependencies": false,
+    "newEnvironmentVariables": false,
+    "newMigrations": false
+  },
+  "limitations": [
+    "Direct D1 sqlite_master schema/index inspection returned Cloudflare API 7403; migration listing and database-backed popular API passed, and no database code or migration changed.",
+    "No contribution form or test email was submitted.",
+    "Playback reflects the checked time and environment, not a guarantee against future YouTube restrictions."
+  ],
+  "proofs": [
+    "live.json",
+    "playback.production.json",
+    "playback.samir-after-vpn.json"
+  ],
+  "note": "Subsequent documentation-only commits do not change rendering inputs and need no redeployment."
+}

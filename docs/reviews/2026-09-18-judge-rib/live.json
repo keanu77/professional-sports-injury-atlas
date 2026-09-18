@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-09-18T14:59:10.436Z",
+  "origin": "https://injury.sportsmedicine.tw",
+  "sourceCommit": "1bea30a48237eb43cd5717f39d091d1914eece0a",
+  "htmlPages": 196,
+  "matched": 196,
+  "failed": [],
+  "resultsDigest": "57b025e14e4cf4e4a019166d2339e1da1a9b813df55c15168658e5585e76f8ba",
+  "keyPages": [
+    {
+      "path": "/",
+      "status": 200,
+      "expected": "b576d2aba1f6af5b6f6e5e93da729b43f65a9e6cec3a14e26755a11a7b9480db",
+      "actual": "b576d2aba1f6af5b6f6e5e93da729b43f65a9e6cec3a14e26755a11a7b9480db",
+      "matches": true
+    },
+    {
+      "path": "/videos/aaron-judge-2026-rib/",
+      "status": 200,
+      "expected": "6f3d9c3a8eafcf04f9b1dfc5fcf9e1034da9a78bd6594bb437121091f060a727",
+      "actual": "6f3d9c3a8eafcf04f9b1dfc5fcf9e1034da9a78bd6594bb437121091f060a727",
+      "matches": true
+    }
+  ]
+}

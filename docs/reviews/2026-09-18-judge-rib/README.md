@@ -26,9 +26,9 @@
 
 ## 交付狀態
 
-本機功能分支 `feat/aaron-judge-rib`。使用者新增目標「完成這個影片跟介紹上線」後，已準備公開成品並部署至 HTTPS 測試分支；尚未推送 GitHub 主分支、尚未切換正式站。
+使用者新增目標「完成這個影片跟介紹上線」後，已推送 GitHub main 並完成正式部署。正式案例：https://injury.sportsmedicine.tw/videos/aaron-judge-2026-rib/ 。
 
-HTTPS 測試頁：https://895a4d88.sports-injury-atlas.pages.dev/videos/aaron-judge-2026-rib/ 。Cloudflare Pages 預覽分支 `judge-rib-preview`，來源提交 `caf556723f6b4d7f4434465f97a8f5fcf2d399f8`。正式站仍為部署 `601eab27-5b43-46af-878c-d2ed7b9fdcfb`。
+HTTPS 測試頁：https://895a4d88.sports-injury-atlas.pages.dev/videos/aaron-judge-2026-rib/ 。Cloudflare Pages 預覽分支 `judge-rib-preview`，來源提交 `caf556723f6b4d7f4434465f97a8f5fcf2d399f8`。正式部署為 `4b8d4357-dd07-4de3-bca2-49a328af7a91`，來源提交 `1bea30a48237eb43cd5717f39d091d1914eece0a`。前一正式部署 `601eab27-5b43-46af-878c-d2ed7b9fdcfb` 保留作為回復基準。
 
 ## 本輪發布準備（2026-09-18）
 
@@ -47,4 +47,14 @@ HTTPS 測試頁：https://895a4d88.sports-injury-atlas.pages.dev/videos/aaron-ju
 
 使用者回覆「我會關閉 VPN／Proxy，請再驗證」後，於 2026-09-18T14:47:31.510Z 重驗成功。`playback.samir-after-vpn.json` 記錄從 58 秒指定片段正常播放至 59.012551 秒，paused=false、readyState=4；Decision 34 對應證據已更新。未由代理更動系統網路設定、未繞過 YouTube 限制、未放寬七日播放證據發布閘門、未撤下或更換舊影片。
 
-接續：乾淨提交 → `npm run release:public` → 核對成品與測試版內容 → 推送核對 → 部署 main → 正式域名內容、搜尋及新片播放驗證。正式發布完成前，測試版不當作正式版。
+## 正式發布驗證
+
+- `npm run release:public` 完整通過：151 個事件綁定、全部公開影片七日播放證據、原有臨床與患者說明核准、輸入摘要和公開成品檢查均保留。
+- 491 個發布檔案的有序路徑／SHA-256 清單與已測試成品完全一致，清單摘要為 `d72261010bf5c22a0ad123595973f2296e24fc0b6bef5d43f80b59ca2e6fb412`。
+- GitHub main 推送後以 `ls-remote` 確認 `1bea30a48237eb43cd5717f39d091d1914eece0a`；Cloudflare production/main 顯示相同來源提交。
+- 正式域名 196/196 HTML 的 SHA-256 與建置一致，包含首頁、新案例與所有既有案例；摘要與關鍵頁證據見 `live.json`。
+- 正式網域新影片成功播放，見 `playback.production.json`；另以 Edge 人工操作確認 275.001 秒影片正常播放至 16.559213 秒、paused=false、readyState=4。
+- 正式首頁顯示 151 支；搜尋「Judge 肋骨」只找到新案例，且連結可開啟。醫學說明、來源、歷史年份區分與時間軸均已隨相同成品上線。
+- 依 deploy／verify-deploy 流程以唯讀方式交叉檢查既有 API 與環境。`/api/popular` 回傳 200 與有效統計，並非缺 D1 的 503 降級；播放及貢獻 API 的 GET／OPTIONS 405 符合原有同源 POST-only 設計，無新增 OAuth、env 或 migration。
+- D1 production 的遠端 migration 清單回報 `No migrations to apply`。額外 `sqlite_master` schema/index 逐項查詢遭 Cloudflare API 7403 拒絕，因此未宣稱完成直接結構稽核；本次無資料庫程式或 migration 變更，runtime 查詢已正常通過。
+- 沒有送出貢獻表單或測試郵件，沒有調整平台環境變數、資料庫 schema、VPN 或權限。後續文件提交不改網站輸入，無須再次部署。

@@ -13,3 +13,10 @@
 - [x] Update catalog-size assertions to 151 videos / 144 observations. Test duplicate rejection, event binding, date uncertainty, and search coverage.
 - [x] Run Prettier on changed files, Astro check, content check, unit suite, thumbnail/brand verification, and a local build with observation pages enabled.
 - [x] Inspect the local page and search, verify actual YouTube playback, and record results and deployment status.
+
+Follow-up authorized goal:「完成這個影片跟介紹上線」
+
+- [x] Refresh expired playback evidence without changing release requirements.
+- [x] Pass `release:public` and match all 491 files to the tested artifact.
+- [x] Push the verified source to GitHub main and deploy Cloudflare production.
+- [x] Verify the live HTML, new video playback, home search, and existing API health.

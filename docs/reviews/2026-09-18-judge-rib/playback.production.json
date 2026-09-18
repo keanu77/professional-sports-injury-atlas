@@ -1,0 +1,21 @@
+[
+  {
+    "url": "https://www.youtube.com/watch?v=-M5v2OSrnEY",
+    "path": "/videos/aaron-judge-2026-rib/",
+    "startSeconds": 0,
+    "origin": "https://injury.sportsmedicine.tw",
+    "checkedAt": "2026-09-18T15:02:40.189Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.014243,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已開啟"]
+  }
+]
