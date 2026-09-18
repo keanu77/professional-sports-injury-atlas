@@ -1,0 +1,344 @@
+[
+  {
+    "url": "https://www.youtube.com/watch?v=aVmzQYIwTfc",
+    "path": "/videos/edwin-diaz-2023-patellar-tendon/",
+    "startSeconds": 6,
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:30:55.692Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 7.014585,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["這部影片未提供字幕"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=9c2i7OQerbY",
+    "path": "/videos/rhys-hoskins-2023-acl/",
+    "startSeconds": 30,
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:31:03.329Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 31.01882,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已開啟"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=q9WIUVebPf8",
+    "path": "/videos/tim-hudson-2013-ankle/",
+    "startSeconds": 0,
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:31:11.422Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.003681,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=KK-tjBfB9ys",
+    "path": "/videos/buster-posey-2011-ankle/",
+    "startSeconds": 5,
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:31:18.968Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 6.020028,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=CHU789PuCWg",
+    "path": "/videos/kendrys-morales-2010-ankle/",
+    "startSeconds": 19,
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:31:26.455Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 20.010334,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=WC6e9OaS8WM",
+    "path": "/videos/steven-stamkos-2013-tibia/",
+    "startSeconds": 0,
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:31:34.040Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.010264,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["這部影片未提供字幕"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=bni6Jp6p4P8",
+    "path": "/videos/connor-mcdavid-2019-pcl/",
+    "startSeconds": 10,
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:31:42.290Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 11.009427,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=EScFb5vASZ8",
+    "path": "/videos/mikhail-sergachev-2024-leg/",
+    "startSeconds": 0,
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:31:50.823Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.014657,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=jimZ1tSdPY0",
+    "path": "/videos/max-pacioretty-2011-concussion/",
+    "startSeconds": 0,
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:32:00.073Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.014077,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["這部影片未提供字幕"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=WJseH_HrC7o",
+    "path": "/videos/bethanie-mattek-sands-2017-knee/",
+    "startSeconds": 46,
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:32:12.414Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 47.013645,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=RDSkmfmqNic",
+    "path": "/videos/aaron-rodgers-2023-achilles/",
+    "startSeconds": 8,
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:32:22.033Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 9.013342,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=ZrJ_d7oyhN8",
+    "path": "/videos/harvey-elliott-2021-ankle/",
+    "startSeconds": 25,
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:32:30.673Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 26.013173,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=UxS0YVftoWs",
+    "path": "/videos/wesley-fofana-2021-leg/",
+    "startSeconds": 14,
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:32:40.737Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 15.025277,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["這部影片未提供字幕"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=Pzul0WT-LJs",
+    "path": "/videos/hector-bellerin-2019-knee/",
+    "startSeconds": 0,
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:32:49.036Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.005589,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["這部影片未提供字幕"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=02FgIaR6WZ4",
+    "path": "/videos/annemiek-van-vleuten-2016-concussion/",
+    "startSeconds": 0,
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:32:55.948Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.0064,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["這部影片未提供字幕"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=G9_DOWNXdjc",
+    "path": "/videos/rebeca-andrade-2019-knee/",
+    "startSeconds": 0,
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:33:04.076Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.003841,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["這部影片未提供字幕"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=P-bLI8A0q2k",
+    "path": "/videos/juan-martin-del-potro-2018-knee/",
+    "startSeconds": 12,
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:33:12.182Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 13.010685,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=dnEbS6xmiLA",
+    "path": "/videos/dominic-thiem-2021-wrist/",
+    "startSeconds": 172,
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:33:20.892Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 173.005855,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  }
+]

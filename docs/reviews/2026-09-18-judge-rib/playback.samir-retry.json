@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://www.youtube.com/watch?v=Bt7EHTIivuA",
+    "path": "/videos/samir-ait-said-2016-leg/",
+    "startSeconds": 58,
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:35:34.378Z",
+    "status": "unverified",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "error": "frame.waitForFunction: Execution context was destroyed, most likely because of a navigation."
+  }
+]

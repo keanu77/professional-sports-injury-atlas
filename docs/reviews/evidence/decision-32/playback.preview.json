@@ -3,8 +3,8 @@
     "url": "https://www.youtube.com/watch?v=9JoITljMoU0",
     "path": "/videos/kyle-schwarber-2016-knee/",
     "startSeconds": 0,
-    "origin": "https://d2a560b0.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T10:19:35.927Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:30:56.284Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -12,20 +12,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.005668,
+      "time": 1.012728,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=5STUOgvQWgQ",
     "path": "/videos/bryce-harper-2017-knee/",
     "startSeconds": 0,
-    "origin": "https://d2a560b0.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T10:19:39.160Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:31:03.875Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -33,20 +31,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.005513,
+      "time": 1.009725,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=GfnIhZIzIE8",
     "path": "/videos/dustin-fowler-2017-patellar-tendon/",
     "startSeconds": 0,
-    "origin": "https://d2a560b0.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T10:19:42.156Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:31:11.285Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -54,20 +50,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.010391,
+      "time": 1.010106,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=J1iIgGSiSFc",
     "path": "/videos/adam-eaton-2017-knee/",
     "startSeconds": 0,
-    "origin": "https://d2a560b0.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T10:19:45.090Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:31:18.776Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -75,20 +69,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.018304,
+      "time": 1.015817,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=8rQjyuPU_gM",
     "path": "/videos/chris-bassitt-2021-face/",
     "startSeconds": 0,
-    "origin": "https://d2a560b0.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T10:19:48.007Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:31:25.760Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -96,20 +88,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.018326,
+      "time": 1.00848,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=ggGrmIf-SQE",
     "path": "/videos/alex-cobb-2013-concussion/",
     "startSeconds": 0,
-    "origin": "https://d2a560b0.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T10:19:50.865Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:31:34.199Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -117,20 +107,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.006544,
+      "time": 1.020781,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "這部影片未提供字幕"
-    ]
+    "captionControls": []
   },
   {
     "url": "https://www.youtube.com/watch?v=W5Bg3oaHI8I",
     "path": "/videos/giancarlo-stanton-2014-face/",
     "startSeconds": 0,
-    "origin": "https://d2a560b0.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T10:19:53.695Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:31:42.192Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -138,20 +126,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.013222,
+      "time": 1.011549,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=2UZJNvs7G_o",
     "path": "/videos/charlie-morton-2021-fibula/",
     "startSeconds": 24,
-    "origin": "https://d2a560b0.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T10:19:56.736Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:31:50.814Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -159,12 +145,10 @@
       "readyState": 0
     },
     "after": {
-      "time": 25.010122,
+      "time": 25.006887,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   }
 ]

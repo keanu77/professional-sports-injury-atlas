@@ -3,8 +3,8 @@
     "url": "https://www.youtube.com/watch?v=3vHr8d5UQro",
     "path": "/videos/klay-thompson-2019-acl/",
     "startSeconds": 0,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:57:40.346Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:30:55.433Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -12,20 +12,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.003698,
+      "time": 1.021229,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=5KlgfpqWCkY",
     "path": "/videos/kobe-bryant-2013-achilles/",
     "startSeconds": 33,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:57:44.863Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:31:04.001Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -33,20 +31,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 34.007179,
+      "time": 34.017404,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=blW4L9jn6iM",
     "path": "/videos/gianmarco-tamberi-2016-ankle/",
     "startSeconds": 10,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:57:48.929Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:31:12.040Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -54,20 +50,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 11.011483,
+      "time": 11.019494,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=Gnhby06KpyQ",
     "path": "/videos/john-tavares-2021-concussion/",
     "startSeconds": 92,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:57:52.364Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:31:20.037Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -75,20 +69,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 93.030512,
+      "time": 93.016975,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已開啟"
-    ]
+    "captionControls": ["字幕/CC 已開啟"]
   },
   {
     "url": "https://www.youtube.com/watch?v=YfynOcvpQfY",
     "path": "/videos/neymar-2023-acl/",
     "startSeconds": 0,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:57:55.910Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:31:29.461Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -96,20 +88,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.004057,
+      "time": 1.009813,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=Ue0VBshhwX8",
     "path": "/videos/cameron-brink-2024-acl/",
     "startSeconds": 0,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:57:59.594Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:31:36.993Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -117,20 +107,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.018609,
+      "time": 1.013771,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=A_Wnlt1RP38",
     "path": "/videos/steve-smith-2019-concussion/",
     "startSeconds": 150,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:58:02.754Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:31:45.124Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -138,20 +126,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 151.020866,
+      "time": 151.019221,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "這部影片未提供字幕"
-    ]
+    "captionControls": ["這部影片未提供字幕"]
   },
   {
     "url": "https://www.youtube.com/watch?v=5EclrKrPNvI",
     "path": "/videos/george-north-2015-concussion/",
     "startSeconds": 119,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:58:06.776Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:31:53.298Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -159,20 +145,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 120.018473,
+      "time": 120.015358,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=O3IZGzHla4U",
     "path": "/videos/mark-cavendish-2023-clavicle/",
     "startSeconds": 0,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:58:10.565Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:32:01.538Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -180,20 +164,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.014787,
+      "time": 1.013582,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=jo1UlzDeY-o",
     "path": "/videos/derrick-rose-acl-2012/",
     "startSeconds": 0,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:58:14.461Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:32:09.944Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -201,20 +183,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.018503,
+      "time": 1.015575,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=LZTOTwvfli0",
     "path": "/videos/demarcus-cousins-achilles-2018/",
     "startSeconds": 10,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:58:17.383Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:32:18.713Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -222,20 +202,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 11.006127,
+      "time": 11.018268,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=qAZG23aT4IY",
     "path": "/videos/kristaps-porzingis-acl-2018/",
     "startSeconds": 33,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:58:20.431Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:32:28.710Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -243,20 +221,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 34.023102,
+      "time": 34.012476,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "這部影片未提供字幕"
-    ]
+    "captionControls": ["這部影片未提供字幕"]
   },
   {
     "url": "https://www.youtube.com/watch?v=HhuFTOZt6TU",
     "path": "/videos/gordon-hayward-ankle-fracture-2017/",
     "startSeconds": 22,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:58:23.683Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:32:38.294Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -264,20 +240,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 23.009804,
+      "time": 23.020749,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=yDDkfhw1Qd0",
     "path": "/videos/jamal-murray-acl-2021/",
     "startSeconds": 0,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:58:27.225Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:32:46.302Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -285,20 +259,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.006447,
+      "time": 1.016729,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=Ajto95dt2yQ",
     "path": "/videos/dejounte-murray-acl-2018/",
     "startSeconds": 0,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:58:30.097Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:32:54.380Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -306,20 +278,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.016603,
+      "time": 1.010024,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "這部影片未提供字幕"
-    ]
+    "captionControls": ["這部影片未提供字幕"]
   },
   {
     "url": "https://www.youtube.com/watch?v=iwZgXGRJENE",
     "path": "/videos/kawhi-leonard-acl-2021/",
     "startSeconds": 0,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:58:33.281Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:33:01.453Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -327,20 +297,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.019429,
+      "time": 1.004139,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=Qoy8tUXsqQs",
     "path": "/videos/paul-george-leg-fracture-2014/",
     "startSeconds": 0,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:58:36.380Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:33:09.233Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -348,20 +316,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.007989,
+      "time": 1.012233,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=g4CkpVi5Iqk",
     "path": "/videos/zach-lavine-acl-2017/",
     "startSeconds": 0,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:58:39.382Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:33:17.128Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -369,20 +335,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.005942,
+      "time": 1.014951,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=cWGLRqXsT54",
     "path": "/videos/shaun-livingston-knee-2007/",
     "startSeconds": 0,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:58:42.430Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:33:26.293Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -390,20 +354,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.011808,
+      "time": 1.005893,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=rPYOGKhlzag",
     "path": "/videos/alex-oxlade-chamberlain-2018/",
     "startSeconds": 0,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:58:45.416Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:33:34.661Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -411,20 +373,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.008308,
+      "time": 1.017369,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=cgOemKqIzEE",
     "path": "/videos/david-beckham-2010/",
     "startSeconds": 0,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:58:48.398Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:33:45.002Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -432,20 +392,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.015427,
+      "time": 1.015393,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "這部影片未提供字幕"
-    ]
+    "captionControls": ["這部影片未提供字幕"]
   },
   {
     "url": "https://www.youtube.com/watch?v=wgPxm0RKJAk",
     "path": "/videos/cristiano-ronaldo-2016/",
     "startSeconds": 0,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:58:51.356Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:33:52.601Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -453,20 +411,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.017977,
+      "time": 1.008614,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=YXpvkHw2BP8",
     "path": "/videos/vivianne-miedema-2022/",
     "startSeconds": 0,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:58:54.500Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:34:01.454Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -474,20 +430,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.008971,
+      "time": 1.015953,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=4--y5nQdVE0",
     "path": "/videos/laurent-koscielny-2018/",
     "startSeconds": 40,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:58:58.863Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:34:09.979Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -495,20 +449,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 41.011623,
+      "time": 41.013595,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=8_d9ITG6Rmk",
     "path": "/videos/andre-gomes-2019/",
     "startSeconds": 0,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:59:01.814Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:34:19.114Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -516,20 +468,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.007996,
+      "time": 1.017103,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "這部影片未提供字幕"
-    ]
+    "captionControls": ["這部影片未提供字幕"]
   },
   {
     "url": "https://www.youtube.com/watch?v=Kxz1vhDq94Y",
     "path": "/videos/beth-mead-2022/",
     "startSeconds": 0,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:59:04.994Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:34:28.134Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -537,20 +487,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.004442,
+      "time": 1.011175,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=TygjH39bmfU",
     "path": "/videos/leah-williamson-2023/",
     "startSeconds": 0,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:59:08.113Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:34:36.917Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -558,20 +506,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.006375,
+      "time": 1.018938,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=AzVEucCufd0",
     "path": "/videos/zlatan-ibrahimovic-2017-knee/",
     "startSeconds": 0,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:59:11.258Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:34:44.963Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -579,20 +525,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.015132,
+      "time": 1.008236,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=qGFHQQWFhWg",
     "path": "/videos/victor-oladipo-2019-quadriceps/",
     "startSeconds": 0,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:59:14.205Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:34:53.472Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -600,20 +544,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.006073,
+      "time": 1.008402,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=pi0rz4KrTAM",
     "path": "/videos/serena-williams-2021-hamstring/",
     "startSeconds": 0,
-    "origin": "https://6bb1bd96.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-06T08:59:18.670Z",
+    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-18T14:35:01.812Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -621,12 +563,10 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.004264,
+      "time": 1.013287,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "這部影片未提供字幕"
-    ]
+    "captionControls": ["這部影片未提供字幕"]
   }
 ]

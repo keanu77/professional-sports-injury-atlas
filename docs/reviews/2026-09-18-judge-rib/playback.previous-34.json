@@ -1,0 +1,439 @@
+[
+  {
+    "url": "https://www.youtube.com/watch?v=Pi6Pku8QVXY",
+    "path": "/videos/mitch-haniger-2017-face/",
+    "startSeconds": 0,
+    "origin": "https://c55f1068.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:34:32.234Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.020064,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=szivDYWhjXM",
+    "path": "/videos/justin-turner-2023-face/",
+    "startSeconds": 0,
+    "origin": "https://c55f1068.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:34:38.892Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.018617,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=c_laCIZqsPM",
+    "path": "/videos/kevin-pillar-2021-face/",
+    "startSeconds": 0,
+    "origin": "https://c55f1068.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:34:42.636Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.015572,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已開啟"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=4ekUPuhJEYI",
+    "path": "/videos/bryce-harper-2022-thumb/",
+    "startSeconds": 8,
+    "origin": "https://c55f1068.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:34:46.293Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 9.015906,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=wglRV7rAQ2Q",
+    "path": "/videos/mookie-betts-2024-hand/",
+    "startSeconds": 0,
+    "origin": "https://c55f1068.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:34:49.727Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.017174,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=0iPz58nL0L8",
+    "path": "/videos/chase-headley-2014-face/",
+    "startSeconds": 0,
+    "origin": "https://c55f1068.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:34:53.125Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.010867,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=22U4bCbhtig",
+    "path": "/videos/curtis-granderson-2013-hand/",
+    "startSeconds": 0,
+    "origin": "https://c55f1068.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:34:56.492Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.017805,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=a1Malj3Fqm8",
+    "path": "/videos/matt-shoemaker-2016-head/",
+    "startSeconds": 0,
+    "origin": "https://c55f1068.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:35:00.540Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.014762,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=g1fZXmVr_oA",
+    "path": "/videos/ja-happ-2013-head/",
+    "startSeconds": 0,
+    "origin": "https://c55f1068.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:35:04.167Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.003163,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=wVj6I9Q5IvE",
+    "path": "/videos/dan-jennings-2014-concussion/",
+    "startSeconds": 0,
+    "origin": "https://c55f1068.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:35:07.837Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.011045,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=qLR_C8wg68E",
+    "path": "/videos/stephen-piscotty-2015-concussion/",
+    "startSeconds": 0,
+    "origin": "https://c55f1068.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:35:11.553Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.01728,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=rbAYcXPhIUE",
+    "path": "/videos/dustin-pedroia-2017-knee/",
+    "startSeconds": 0,
+    "origin": "https://c55f1068.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:35:15.160Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.011916,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=jhBAzccW-Oc",
+    "path": "/videos/aaron-judge-2023-toe/",
+    "startSeconds": 0,
+    "origin": "https://c55f1068.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:35:18.881Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.018301,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=gQ0WzuOYh_A",
+    "path": "/videos/manny-machado-2013-knee/",
+    "startSeconds": 0,
+    "origin": "https://c55f1068.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:35:22.282Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.013357,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=Bt7EHTIivuA",
+    "path": "/videos/samir-ait-said-2016-leg/",
+    "startSeconds": 58,
+    "origin": "https://c55f1068.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:35:25.894Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 59.006049,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已開啟"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=QDOJL9lwYdI",
+    "path": "/videos/sofia-goggia-2022-knee/",
+    "startSeconds": 0,
+    "origin": "https://c55f1068.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:35:29.493Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.017067,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["這部影片未提供字幕"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=Jf84VzlzLhI",
+    "path": "/videos/yuzuru-hanyu-2014-collision/",
+    "startSeconds": 0,
+    "origin": "https://c55f1068.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:35:33.280Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.010745,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=D0VibSVWwBA",
+    "path": "/videos/aleksander-kilde-2024-shoulder/",
+    "startSeconds": 0,
+    "origin": "https://c55f1068.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:35:36.825Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.005116,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["這部影片未提供字幕"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=Pa50gXELqp0",
+    "path": "/videos/liu-xiang-2012-achilles/",
+    "startSeconds": 0,
+    "origin": "https://c55f1068.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:35:40.582Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.015394,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["這部影片未提供字幕"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=RvDqK9NnqyI",
+    "path": "/videos/fabio-jakobsen-2020-concussion/",
+    "startSeconds": 0,
+    "origin": "https://c55f1068.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:35:44.481Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.003511,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=nFbLC6Dv6Xk",
+    "path": "/videos/mikaela-shiffrin-2024-abdomen/",
+    "startSeconds": 100,
+    "origin": "https://c55f1068.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:35:47.917Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 101.007543,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=o8mXn1hwdtA",
+    "path": "/videos/remco-evenepoel-2020-pelvis/",
+    "startSeconds": 0,
+    "origin": "https://c55f1068.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:35:51.293Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.013407,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=blRqsO9--38",
+    "path": "/videos/chien-ming-wang-2008-foot/",
+    "startSeconds": 0,
+    "origin": "https://c55f1068.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T11:35:54.813Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.004854,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  }
+]

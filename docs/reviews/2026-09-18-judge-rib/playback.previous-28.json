@@ -1,0 +1,97 @@
+[
+  {
+    "url": "https://www.youtube.com/watch?v=C4xerhbFNnc",
+    "path": "/videos/ronald-acuna-miami-2021/",
+    "startSeconds": 0,
+    "origin": "https://decision-28-preview.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T07:21:59.053Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.016361,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=0TwnwjFJzUo",
+    "path": "/videos/lindsey-vonn-schladming-2013/",
+    "startSeconds": 0,
+    "origin": "https://decision-28-preview.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T07:22:02.862Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.022745,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=LOaTNtmSxUY",
+    "path": "/videos/antoine-dupont-world-cup-2023/",
+    "startSeconds": 0,
+    "origin": "https://decision-28-preview.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T07:22:07.965Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.014346,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["這部影片未提供字幕"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=vM_UU11MMH0",
+    "path": "/videos/aksel-svindal-kitzbuhel-2016/",
+    "startSeconds": 0,
+    "origin": "https://decision-28-preview.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T07:22:12.087Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.007675,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=YjDF1Saryg4",
+    "path": "/videos/sidney-crosby-concussion-2017/",
+    "startSeconds": 0,
+    "origin": "https://decision-28-preview.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-06T07:22:15.131Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.013812,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  }
+]
