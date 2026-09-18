@@ -5,6 +5,12 @@
   "capturedAt": "2026-09-06T02:49:09.221221+00:00",
   "assets": [
     {
+      "videoId": "-M5v2OSrnEY",
+      "path": "src/assets/videos/-M5v2OSrnEY.jpg",
+      "source": "https://i.ytimg.com/vi/-M5v2OSrnEY/hqdefault.jpg",
+      "sha256": "7eb0ae2153e1e3ccf990eb92e2cfe6588211e722e78a2f68c66370b98c412aed"
+    },
+    {
       "videoId": "8TIJGIRP634",
       "path": "src/assets/videos/8TIJGIRP634.jpg",
       "source": "https://i.ytimg.com/vi/8TIJGIRP634/hqdefault.jpg",

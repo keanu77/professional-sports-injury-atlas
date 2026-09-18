@@ -124,6 +124,10 @@
     }
   },
   "entries": {
+    "aaron-judge-2026-rib": {
+      "resources": ["overview"],
+      "note": "主題總覽提供一般運動傷害資訊；第一肋骨的研究與胸部傷害處理來源請見本頁，不以其他部位的復健時程代用。"
+    },
     "zverev-roland-garros-2022": {
       "resources": ["ankle", "cai"],
       "note": ""

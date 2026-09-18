@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "decision": "judge-rib-2026-09-18",
+  "authorizationQuote": "我想新增Aaron judge injury rib影片跟相關資訊到這個網站",
+  "clips": [
+    {
+      "slug": "aaron-judge-2026-rib",
+      "videoId": "-M5v2OSrnEY",
+      "name": "Aaron Judge",
+      "sport": "棒球",
+      "event": "2026 洋基右側第一肋骨疲勞性骨折",
+      "bodyPart": "軀幹",
+      "observation": "CBS Sports 的 2026 年傷勢新聞解說，介紹 Aaron Judge（賈吉）的肋骨骨折與缺陣影響。這是新聞分析，不能用來確認骨折瞬間；影片標題的 4–6 週須搭配球隊原公告理解為影像複查時程。",
+      "footageKind": "news-analysis",
+      "eventDate": "2026-04-26",
+      "returnDate": "2026-09-08",
+      "returnText": "2026-09-08 回到 MLB 例行賽，對洛磯先發守右外野；4 月 26 日僅為回溯的可能受傷日期，不計算確定的復原天數。",
+      "videoUrl": "https://www.youtube.com/watch?v=-M5v2OSrnEY",
+      "publisher": "CBS Sports",
+      "sourceTitle": "Aaron Judge out at least 4-6 weeks with stress fracture in rib | Can the Yankees still win the AL?",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 275,
+      "sources": [
+        {
+          "title": "洋基官方：第一肋骨傷勢公告",
+          "url": "https://www.mlb.com/press-release/update-on-of-aaron-judge"
+        },
+        {
+          "title": "MLB：Judge 說明可能受傷經過",
+          "url": "https://www.mlb.com/news/aaron-judge-discusses-fractured-rib-move-to-injured-list"
+        },
+        {
+          "title": "AP／ABC News：2026-09-08 重返例行賽",
+          "url": "https://www-cdn.abcnews.com/Sports/wireStory/aaron-judge-returns-yankees-after-99-day-absence-136284464"
+        }
+      ]
+    }
+  ]
+}

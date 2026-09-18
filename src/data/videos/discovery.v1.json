@@ -5,6 +5,10 @@
   "curationBasis": "優先選擇受傷過程清楚、具名傷勢與回場來源完整，並涵蓋不同運動與情境的影片。精選順序由本站編輯安排，不代表熱門程度。",
   "videos": [
     {
+      "slug": "aaron-judge-2026-rib",
+      "situation": "unclear"
+    },
+    {
       "slug": "aaron-judge-2023-toe",
       "situation": "collision"
     },

@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "decision": "judge-rib-2026-09-18",
+  "checkedAt": "2026-09-18",
+  "entries": [
+    {
+      "slug": "aaron-judge-2026-rib",
+      "videoUrl": "https://www.youtube.com/watch?v=-M5v2OSrnEY",
+      "eventDate": "2026-04-26",
+      "eventDateCertainty": "reported",
+      "injury": "洋基公布右側第一肋骨疲勞性骨折（stress fracture）。",
+      "returnDate": "2026-09-08",
+      "returnSummary": "AP 報導 Judge 於 2026-09-08 對洛磯的 MLB 例行賽先發守右外野、打第三棒；自 5 月 31 日最後出賽後缺席 84 場。這是實際出賽紀錄，並非一般患者的回場標準。",
+      "context": "4 月 26 日是球員回溯的可能受傷起點，因此不呈現確定的傷後天數。2019／2020 年舊傷另列於歷史背景來源，與本頁的 2026 年事件分開。",
+      "mechanism": {
+        "title": "第一肋骨傷勢：可能的飛撲起點與後續負荷",
+        "summary": {
+          "text": "Judge 回溯休士頓系列賽的一次飛撲，認為閃避隊友時的動作可能是起點；此為球員陳述，不能從新聞影片確定骨折發生時刻。",
+          "sourceIndexes": [2]
+        },
+        "steps": [
+          "先區分新聞解說與受傷瞬間：主影片屬前者。",
+          "球員回溯的可能動作為外野飛撲並閃避隊友，日期不是直接影像診斷。",
+          "傷勢名稱以球隊醫療公告為依據，後續進展分別看影像評估與正式出賽紀錄。"
+        ],
+        "explanation": {
+          "text": "第一肋骨與肩帶周圍肌肉的拉力有關。棒球揮棒相關的個案報告提出，反覆肌肉牽拉與剪力可能形成疲勞性骨折；一次撞擊造成的外傷性骨折則是另一種機制。這些一般原理不能直接判定 Judge 的個別成因。",
+          "sourceIndexes": [6, 7]
+        },
+        "research": {
+          "text": "揮棒研究只有兩個個案；外傷性第一肋骨研究為 14 例病例系列。它們支持將肋骨列入肩胸痛的鑑別診斷，但不足以制定人人適用的休息週數，或把肩部疼痛直接診斷為骨折。",
+          "sourceIndexes": [6, 7]
+        },
+        "limitation": "未取得 Judge 的完整影像與病歷，不能判定骨折型態、是否與舊傷相同位置或是否需手術。2019-09-18 的 MLB 飛撲影片是歷史背景，不能當作 2026 年畫面；2020 年曾公開的併發狀況也不能套用到本次。"
+      },
+      "timeline": [
+        {
+          "date": "2026-04-26",
+          "title": "回溯的可能受傷起點",
+          "text": "事後報導將可能起點指向休士頓的一次飛撲；這天不是確診日。",
+          "sourceIndexes": [2, 5]
+        },
+        {
+          "date": "2026-06-05",
+          "title": "官方公告傷勢與複查計畫",
+          "text": "右側第一肋骨疲勞性骨折；先休息、限制活動，約 4–6 週後重新影像評估。複查時間不等於可復賽時間。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2026-07-18",
+          "title": "仍未獲准恢復棒球活動",
+          "text": "MLB 報導影像有癒合進展，但尚不足以恢復棒球活動。",
+          "sourceIndexes": [3]
+        },
+        {
+          "date": "2026-08-05",
+          "title": "開始輕度活動",
+          "text": "獲准跑步與輕度上肢阻力訓練；這個階段仍與正式復賽不同。",
+          "sourceIndexes": [4]
+        },
+        {
+          "date": "2026-09-08",
+          "title": "重返 MLB 例行賽",
+          "text": "對洛磯先發出賽，結束本次缺陣；未先進行小聯盟復健賽。",
+          "sourceIndexes": [5]
+        }
+      ],
+      "sources": [
+        {
+          "title": "洋基官方：右側第一肋骨疲勞性骨折及複查計畫",
+          "url": "https://www.mlb.com/press-release/update-on-of-aaron-judge",
+          "publishedAt": "2026-06-05"
+        },
+        {
+          "title": "MLB：Judge 回溯可能的飛撲受傷經過",
+          "url": "https://www.mlb.com/news/aaron-judge-discusses-fractured-rib-move-to-injured-list",
+          "publishedAt": "2026-06-05"
+        },
+        {
+          "title": "MLB：影像有癒合，但尚未恢復棒球活動",
+          "url": "https://www.mlb.com/yankees/news/aaron-judge-rib-injury-update-not-cleared-for-baseball-activities",
+          "publishedAt": "2026-07-18"
+        },
+        {
+          "title": "MLB：獲准開始輕度活動",
+          "url": "https://www.mlb.com/news/aaron-judge-positive-update-in-rehab-from-rib-injury",
+          "publishedAt": "2026-08-05"
+        },
+        {
+          "title": "AP／ABC News：Judge 於 2026-09-08 重返洋基例行賽",
+          "url": "https://www-cdn.abcnews.com/Sports/wireStory/aaron-judge-returns-yankees-after-99-day-absence-136284464",
+          "publishedAt": "2026-09-08"
+        },
+        {
+          "title": "Kawashima 等：揮棒相關第一肋骨疲勞性骨折兩例（PMID 26657823）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26657823/",
+          "publishedAt": null
+        },
+        {
+          "title": "Marcussen 等：運動員外傷性第一肋骨骨折病例系列（PMID 30015636）",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30015636/",
+          "publishedAt": null
+        },
+        {
+          "title": "歷史背景｜MLB：2020 年肋骨傷勢報導",
+          "url": "https://www.mlb.com/news/aaron-judge-fractured-rib-yankees",
+          "publishedAt": "2020-03-07"
+        },
+        {
+          "title": "歷史影片｜MLB：2019-09-18 對天使飛撲，非 2026 年事件",
+          "url": "https://www.mlb.com/yankees/video/judge-almost-snags-fly-ball/",
+          "publishedAt": "2019-09-18"
+        },
+        {
+          "title": "MLB 官方影片：Boone 說明 2026 年 Judge 肋骨傷勢",
+          "url": "https://www.mlb.com/video/aaron-boone-on-judge-can-t-mitigate-all-risk",
+          "publishedAt": "2026-06-05"
+        }
+      ]
+    }
+  ]
+}

@@ -47,7 +47,7 @@ const multipleInjuries = milestone === "跨兩次傷害後出賽";
   }
   <p>{update.returnSummary}</p>
   {
-    update.eventDate && update.returnDate && (
+    days !== null && update.eventDate && update.returnDate && (
       <p class="event-dates">
         <time datetime={update.eventDate}>{update.eventDate}</time> 受傷 →{" "}
         <time datetime={update.returnDate}>{update.returnDate}</time>{" "}

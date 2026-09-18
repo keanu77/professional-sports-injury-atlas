@@ -6,6 +6,7 @@ import batch32Data from "../../data/videos/batch-32.v1.json";
 import batch34Data from "../../data/videos/batch-34.v1.json";
 import recent120Data from "../../data/videos/recent-120.v1.json";
 import recent150Data from "../../data/videos/recent-150.v1.json";
+import judgeRibData from "../../data/videos/judge-rib.v1.json";
 import data from "../../data/videos/expansion.v1.json";
 import launchData from "../../data/public-launch.v1.json";
 import curationData from "../../data/videos/curation.v1.json";
@@ -393,7 +394,7 @@ export const recent150Schema = z
     }
   });
 export const recent150 = recent150Schema.parse(recent150Data);
-export const allObservationClips: ObservationClip[] = [
+const priorObservationClips: ObservationClip[] = [
   ...expansion.clips,
   ...additions.clips,
   ...curation.clips,
@@ -404,6 +405,52 @@ export const allObservationClips: ObservationClip[] = [
   ...recent120.clips,
   ...recent150.clips,
 ].filter((c) => !curation.removedSlugs.some((slug) => slug === c.slug));
+export const judgeRibSchema = z
+  .strictObject({
+    schemaVersion: z.literal(1),
+    decision: z.literal("judge-rib-2026-09-18"),
+    authorizationQuote: z.literal(
+      "我想新增Aaron judge injury rib影片跟相關資訊到這個網站",
+    ),
+    clips: z.array(observationClipSchema).length(1),
+  })
+  .superRefine((value, ctx) => {
+    const combined = additionsSchema.safeParse({
+      ...additions,
+      clips: [
+        ...additions.clips,
+        ...curation.clips,
+        ...batch30.clips,
+        ...batch31.clips,
+        ...batch32.clips,
+        ...batch34.clips,
+        ...recent120.clips,
+        ...recent150.clips,
+        ...value.clips,
+      ],
+    });
+    if (!combined.success)
+      ctx.addIssue({
+        code: "custom",
+        message: "Invalid or duplicate Judge video",
+      });
+    const clip = value.clips[0]!;
+    if (
+      clip.slug !== "aaron-judge-2026-rib" ||
+      priorObservationClips.some(
+        (prior) => observationEventKey(prior) === observationEventKey(clip),
+      )
+    )
+      ctx.addIssue({
+        code: "custom",
+        message: "Invalid or duplicate Judge event",
+      });
+  });
+export const judgeRib = judgeRibSchema.parse(judgeRibData);
+export const allObservationClips: ObservationClip[] = [
+  ...priorObservationClips,
+  ...judgeRib.clips,
+];
 export const expansionEnabled = () =>
   process.env.ATLAS_PUBLIC_LAUNCH === "decision-21";
 export function captionsOptionalFor(videoUrl: string): boolean {

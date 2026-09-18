@@ -6,6 +6,7 @@ import batch32Data from "../../data/videos/event-batch-32.v1.json";
 import batch34Data from "../../data/videos/event-batch-34.v1.json";
 import recent120Data from "../../data/videos/event-recent-120.v1.json";
 import recent150Data from "../../data/videos/event-recent-150.v1.json";
+import judgeRibData from "../../data/videos/event-judge-rib.v1.json";
 import newData from "../../data/videos/event-additions.v1.json";
 import { curation } from "./expansion";
 import data from "../../data/videos/event-updates.v1.json";
@@ -42,6 +43,7 @@ const eventUpdateEntryInputSchema = z.strictObject({
   slug: text,
   videoUrl: https,
   eventDate: z.iso.date().nullable(),
+  eventDateCertainty: z.enum(["confirmed", "reported"]).optional(),
   injury: text,
   returnDate: z.iso.date().nullable(),
   returnSummary: text,
@@ -216,6 +218,15 @@ const recent150 = z
   })
   .parse(recent150Data);
 
+const judgeRib = z
+  .strictObject({
+    schemaVersion: z.literal(1),
+    decision: z.literal("judge-rib-2026-09-18"),
+    checkedAt: z.iso.date(),
+    entries: z.array(eventUpdateEntryInputSchema).length(1),
+  })
+  .parse(judgeRibData);
+
 type EventUpdateBatchInput = {
   checkedAt: string;
   entries: readonly z.input<typeof eventUpdateEntryInputSchema>[];
@@ -244,6 +255,7 @@ const normalizedEntries = normalizeEventUpdateBatches([
   batch34,
   recent120,
   recent150,
+  judgeRib,
 ]).filter((e) => !curation.removedSlugs.some((slug) => slug === e.slug));
 export const eventUpdates = eventUpdatesSchema.parse({
   ...data,
@@ -265,7 +277,9 @@ export function eventUpdateFor(
   return entry;
 }
 export function returnDays(entry: EventUpdate): number | null {
-  return entry.eventDate && entry.returnDate
+  return entry.eventDate &&
+    entry.returnDate &&
+    entry.eventDateCertainty !== "reported"
     ? Math.round(
         (Date.parse(entry.returnDate) - Date.parse(entry.eventDate)) / 86400000,
       )

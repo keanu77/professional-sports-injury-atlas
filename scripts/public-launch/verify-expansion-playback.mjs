@@ -29,6 +29,9 @@ const recent120 = JSON.parse(
 const recent150 = JSON.parse(
   fs.readFileSync("src/data/videos/recent-150.v1.json", "utf8"),
 );
+const judgeRib = JSON.parse(
+  fs.readFileSync("src/data/videos/judge-rib.v1.json", "utf8"),
+);
 const allItems = [
   ...expansion.cases.map((c) => ({
     ...c,
@@ -45,6 +48,7 @@ const allItems = [
     ...batch34.clips,
     ...recent120.clips,
     ...recent150.clips,
+    ...judgeRib.clips,
   ]
     .filter((c) => !curation.removedSlugs.includes(c.slug))
     .map((c) => ({

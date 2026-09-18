@@ -4,6 +4,7 @@ import batch32Data from "../../src/data/videos/batch-32.v1.json";
 import batch34Data from "../../src/data/videos/batch-34.v1.json";
 import recent120Data from "../../src/data/videos/recent-120.v1.json";
 import recent150Data from "../../src/data/videos/recent-150.v1.json";
+import judgeRibData from "../../src/data/videos/judge-rib.v1.json";
 import curation from "../../src/data/videos/curation.v1.json";
 import {
   cpSync,
@@ -41,6 +42,7 @@ function fixture() {
     "src/data/videos/batch-34.v1.json",
     "src/data/videos/recent-120.v1.json",
     "src/data/videos/recent-150.v1.json",
+    "src/data/videos/judge-rib.v1.json",
   ])
     cpSync(path, join(root, path));
   expect(loadVideoThumbnails(root).issues).toEqual([]);
@@ -58,7 +60,8 @@ test("all selected video covers have matching local provenance", () => {
       batch32Data.clips.length +
       batch34Data.clips.length +
       recent120Data.clips.length +
-      recent150Data.clips.length,
+      recent150Data.clips.length +
+      judgeRibData.clips.length,
   );
 });
 test("changed cover bytes fail closed", () => {

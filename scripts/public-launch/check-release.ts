@@ -10,7 +10,7 @@ import {
   scanBrandAssets,
   validateBrandAssetPolicy,
 } from "../verify-brand-assets";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { loadContentCollections, runContentCheck } from "../check-content";
 import {
@@ -173,6 +173,11 @@ const recent150Proof = JSON.parse(
     "utf8",
   ),
 );
+const judgeRibProofPath =
+  "docs/reviews/2026-09-18-judge-rib/playback.preview.json";
+const judgeRibProof = existsSync(judgeRibProofPath)
+  ? JSON.parse(readFileSync(judgeRibProofPath, "utf8"))
+  : [];
 for (const item of [...expansion.cases, ...allObservationClips]) {
   const proof = [
     ...additional,
@@ -184,6 +189,7 @@ for (const item of [...expansion.cases, ...allObservationClips]) {
     ...batch34Proof,
     ...recent120Proof,
     ...recent150Proof,
+    ...judgeRibProof,
   ].find((p: { url: string }) => p.url === item.videoUrl);
   assert.ok(
     proof &&
