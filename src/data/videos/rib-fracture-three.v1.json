@@ -5,22 +5,22 @@
   "clips": [
     {
       "slug": "fernando-alonso-2016-rib",
-      "videoId": "x45fLUTHCuk",
+      "videoId": "HiLO6a9crD4",
       "name": "Fernando Alonso",
       "sport": "賽車",
       "event": "2016 F1 澳洲站事故後肋骨骨折與氣胸",
       "bodyPart": "軀幹",
-      "observation": "FORMULA 1 官方回顧 Alonso 在澳洲站碰撞、撞牆及翻滾的畫面。後續公開傷勢為肋骨骨折（rib fracture）合併氣胸；能自行離開車體不代表沒有胸部傷害。影片可用來觀察事故順序，不能辨認哪根肋骨受傷。",
-      "footageKind": "injury-motion",
+      "observation": "Times Of India 於 2016-03-21 發布的澳洲站事故早期新聞，以照片與旁白回顧事件，不是完整事故動作影像。影片當時稱他「未受傷」，但後續 F1 報導確認肋骨骨折（rib fracture）與氣胸；本頁採用後續傷勢資訊，不能以能自行走離現場排除胸部傷害。",
+      "footageKind": "news-analysis",
       "eventDate": "2016-03-20",
       "returnDate": "2016-04-17",
       "returnText": "2016-04-17 完成中國站正賽，名列第十二；4 月 15 日練習後通過醫療複檢，與正賽復出是不同里程碑。",
-      "videoUrl": "https://www.youtube.com/watch?v=x45fLUTHCuk",
-      "publisher": "FORMULA 1",
-      "sourceTitle": "Alonso And Gutierrez Crash | Australian Grand Prix 2016",
+      "videoUrl": "https://www.youtube.com/watch?v=HiLO6a9crD4",
+      "publisher": "Times Of India",
+      "sourceTitle": "F1 Melbourne Australian Grand Prix | Fernando Alonso Walks Away From Horrifying Crash",
       "captionStatus": "not-verified",
       "startSeconds": 0,
-      "durationSeconds": 68,
+      "durationSeconds": 73,
       "sources": [
         {
           "title": "F1：Alonso 說明肋骨骨折、氣胸與缺賽原因",
@@ -29,6 +29,10 @@
         {
           "title": "F1：2016 中國站正式賽果",
           "url": "https://www.formula1.com/en/results/2016/races/940/china/race-result"
+        },
+        {
+          "title": "FORMULA 1 官方事故影片（僅於 YouTube 觀看；禁止站外嵌入）",
+          "url": "https://www.youtube.com/watch?v=x45fLUTHCuk"
         }
       ]
     },

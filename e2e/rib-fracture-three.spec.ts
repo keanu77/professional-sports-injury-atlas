@@ -5,8 +5,8 @@ const cases = [
   [
     "fernando-alonso-2016-rib",
     "Fernando Alonso",
-    "x45fLUTHCuk",
-    "injury-motion",
+    "HiLO6a9crD4",
+    "news-analysis",
     "2016-04-17",
   ],
   [
@@ -51,6 +51,14 @@ for (const [slug, name, id, kind, returned] of cases) {
     );
     await expect(page.locator("[data-rib-injury-care]")).toContainText("咳血");
     await expect(page.locator("iframe")).toHaveCount(0);
+    if (slug === "fernando-alonso-2016-rib") {
+      await expect(page.locator("[data-video-text-highlights]")).toContainText(
+        "未受傷",
+      );
+      await expect(page.locator("[data-video-text-highlights]")).toContainText(
+        "後續",
+      );
+    }
     if (slug === "drew-brees-2020-rib")
       await expect(page.locator(".return-days")).toHaveCount(0);
     if (slug === "tua-tagovailoa-2021-rib")

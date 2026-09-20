@@ -32,6 +32,9 @@ const recent150 = JSON.parse(
 const judgeRib = JSON.parse(
   fs.readFileSync("src/data/videos/judge-rib.v1.json", "utf8"),
 );
+const ribFractureThree = JSON.parse(
+  fs.readFileSync("src/data/videos/rib-fracture-three.v1.json", "utf8"),
+);
 const allItems = [
   ...expansion.cases.map((c) => ({
     ...c,
@@ -49,6 +52,7 @@ const allItems = [
     ...recent120.clips,
     ...recent150.clips,
     ...judgeRib.clips,
+    ...ribFractureThree.clips,
   ]
     .filter((c) => !curation.removedSlugs.includes(c.slug))
     .map((c) => ({
@@ -58,23 +62,25 @@ const allItems = [
 ];
 const items = process.argv[4]
   ? allItems.filter((item) =>
-      process.argv[4] === "--recent-150"
-        ? recent150.clips.some((c) => c.slug === item.slug)
-        : process.argv[4] === "--recent-120"
-          ? recent120.clips.some((c) => c.slug === item.slug)
-          : process.argv[4] === "--batch-34"
-            ? batch34.clips.some((c) => c.slug === item.slug)
-            : process.argv[4] === "--batch-32"
-              ? batch32.clips.some((c) => c.slug === item.slug)
-              : process.argv[4] === "--batch-31"
-                ? batch31.clips.some((c) => c.slug === item.slug)
-                : process.argv[4] === "--batch-30"
-                  ? batch30.clips.some((c) => c.slug === item.slug)
-                  : process.argv[4] === "--curation"
-                    ? curation.clips.some((c) => c.slug === item.slug)
-                    : process.argv[4] === "--additions"
-                      ? additions.clips.some((c) => c.slug === item.slug)
-                      : item.slug === process.argv[4],
+      process.argv[4] === "--rib-fracture-three"
+        ? ribFractureThree.clips.some((c) => c.slug === item.slug)
+        : process.argv[4] === "--recent-150"
+          ? recent150.clips.some((c) => c.slug === item.slug)
+          : process.argv[4] === "--recent-120"
+            ? recent120.clips.some((c) => c.slug === item.slug)
+            : process.argv[4] === "--batch-34"
+              ? batch34.clips.some((c) => c.slug === item.slug)
+              : process.argv[4] === "--batch-32"
+                ? batch32.clips.some((c) => c.slug === item.slug)
+                : process.argv[4] === "--batch-31"
+                  ? batch31.clips.some((c) => c.slug === item.slug)
+                  : process.argv[4] === "--batch-30"
+                    ? batch30.clips.some((c) => c.slug === item.slug)
+                    : process.argv[4] === "--curation"
+                      ? curation.clips.some((c) => c.slug === item.slug)
+                      : process.argv[4] === "--additions"
+                        ? additions.clips.some((c) => c.slug === item.slug)
+                        : item.slug === process.argv[4],
     )
   : allItems;
 if (items.length === 0) throw new Error("Unknown video slug");

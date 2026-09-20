@@ -449,7 +449,7 @@ export const judgeRibSchema = z
   });
 export const judgeRib = judgeRibSchema.parse(judgeRibData);
 const ribSelections = new Map([
-  ["fernando-alonso-2016-rib", "x45fLUTHCuk"],
+  ["fernando-alonso-2016-rib", "HiLO6a9crD4"],
   ["drew-brees-2020-rib", "_jrPqJow81Q"],
   ["tua-tagovailoa-2021-rib", "JckTrmIPRK8"],
 ]);

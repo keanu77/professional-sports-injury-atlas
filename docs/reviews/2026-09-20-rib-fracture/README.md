@@ -58,3 +58,15 @@ No player restriction was bypassed, no substitute video was chosen, and no succe
 ### Other remaining release checks
 
 The fresh release check also failed on expired seven-day playback evidence for `CASE-NBAANKLE-2023-004`; additional historical batches contain expired evidence. These records must be genuinely reverified before release, not timestamp-refreshed. Brees and Tua still need their owned-HTTPS actual-playback evidence. Production deployment and GitHub push remain pending; the pre-existing `.claude/HANDOFF.md` remains untouched.
+
+## Approved replacement search
+
+User choice: `1尋找同事件、可合法嵌入的替代影片（建議）`.
+
+Selected candidate: [Times Of India — F1 Melbourne Australian Grand Prix | Fernando Alonso Walks Away From Horrifying Crash](https://www.youtube.com/watch?v=HiLO6a9crD4), published March 21, 2016. The visible channel is verified, its description identifies the official Times Of India channel, and YouTube oEmbed independently matches title/publisher. The official Share → Embed preview loaded and advanced to 23 seconds, unlike the FOM-blocked original. Watch-page media duration was 73.401 seconds. This establishes current platform embed availability, not a separately negotiated license or a guarantee of future availability; use only the unmodified platform player, without downloading or rehosting footage.
+
+Search also surfaced broadcast reuploads (`5BLKOa-PjtU`, `rnonH9mLKvA`) without verified rights provenance; these were rejected. The [Global News report](https://globalnews.ca/video/2589353/f1-driver-fernando-alonso-involved-in-spectacular-crash-in-australia/) is a same-event publisher source, but its non-YouTube player would require a provider integration; it was not substituted.
+
+The selected clip is early photo/voiceover news, not continuous injury-action footage. Its early claim of being unharmed is explicitly contextualized against later F1 injury reporting in the card/page and mechanism limitations. The native player, thumbnail, event binding and allowlist use `HiLO6a9crD4`; the blocked official F1 video remains an external source link only. The original thumbnail was moved to `x45fLUTHCuk.previous.jpg` in this review folder (original hash above), not lost or included in production assets.
+
+Two regression tests failed on the old publisher/video binding before replacement, then the focused 15 tests and brand/thumbnail validation passed. The existing playback verification script initially rejected the three-case batch as an unknown slug; it now includes the batch and an explicit `--rib-fracture-three` selector. Owned-HTTPS verification remains required before any successful release claim.

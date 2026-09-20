@@ -19,8 +19,8 @@ import {
 const selections = [
   [
     "fernando-alonso-2016-rib",
-    "x45fLUTHCuk",
-    "injury-motion",
+    "HiLO6a9crD4",
+    "news-analysis",
     "automobile-racing",
     "2016-04-17",
   ],
@@ -41,6 +41,25 @@ const selections = [
 ] as const;
 
 describe("three rib fracture observation cases", () => {
+  it("uses the approved Alonso news replacement without presenting early reassurance as a diagnosis", () => {
+    const clip = ribFractureThree.clips.find(
+      (c) => c.slug === "fernando-alonso-2016-rib",
+    )!;
+    expect(clip.publisher).toBe("Times Of India");
+    expect(clip.observation).toContain("2016-03-21");
+    expect(clip.observation).toContain("未受傷");
+    expect(clip.observation).toContain("後續");
+    expect(publicVideoIds.has("x45fLUTHCuk")).toBe(false);
+    expect(
+      clip.sources.some(
+        (s) => s.url === "https://www.youtube.com/watch?v=x45fLUTHCuk",
+      ),
+    ).toBe(true);
+    const rejected = structuredClone(ribFractureThree);
+    rejected.clips[0]!.videoId = "x45fLUTHCuk";
+    rejected.clips[0]!.videoUrl = "https://www.youtube.com/watch?v=x45fLUTHCuk";
+    expect(ribFractureThreeSchema.safeParse(rejected).success).toBe(false);
+  });
   it("rejects duplicate selections, mismatched URLs and invalid timecodes", () => {
     for (const mutate of [
       (copy: typeof ribFractureThree) => {
