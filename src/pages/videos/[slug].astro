@@ -19,6 +19,7 @@ import {
 } from "../../lib/videos/observation-guidance";
 import { discoveryFor } from "../../lib/videos/discovery";
 import { observationFootageLabel } from "../../lib/videos/observation-card";
+import { observationProviderFor } from "../../lib/videos/observation-provider";
 import {
   captionStatusLabel,
   formatDurationLabel,
@@ -44,8 +45,9 @@ const related = relatedObservationClips(clip, allObservationClips);
 const categoryLinks = observationCategoryLinks(clip);
 const isFeatured = discoveryFor(clip.slug).curatedRank !== undefined;
 const footageLabel = observationFootageLabel(clip);
+const provider = observationProviderFor(clip.provider);
 const watchUrl = new URL(clip.videoUrl);
-if (clip.startSeconds > 0)
+if (provider === "youtube" && clip.startSeconds > 0)
   watchUrl.searchParams.set("t", String(clip.startSeconds));
 ---
 
@@ -74,21 +76,41 @@ if (clip.startSeconds > 0)
       aria-label={`${clip.name}影片`}
       data-video-embed
       data-video-scope={clip.slug}
-      data-video-id={clip.videoId}
+      data-video-provider={provider}
+      data-video-id={provider === "youtube" ? clip.videoId : undefined}
+      data-video-key={provider === "mlb" ? clip.videoId : undefined}
       data-video-start={clip.startSeconds}
       data-video-title={`${clip.name}：${clip.event}`}
     >
       <div data-video-stage>
         <div class="clip-facade" data-video-facade>
-          <VideoThumbnail videoId={clip.videoId} priority />
+          {
+            provider === "youtube" ? (
+              <VideoThumbnail videoId={clip.videoId} priority />
+            ) : (
+              <div class="provider-facade" data-observation-provider="mlb">
+                <span>MLB 官方影片</span>
+                <strong>
+                  {clip.name}：{clip.event}
+                </strong>
+                <p>播放器尚未載入，不會在此時連線至第三方影音服務。</p>
+              </div>
+            )
+          }
           <button
             type="button"
             data-video-load
             hidden
             aria-describedby={`video-status-${clip.slug}`}
           >
-            <span aria-hidden="true">▶</span> 載入 YouTube 播放器
-            <small>點擊後才會連線至 YouTube</small>
+            <span aria-hidden="true">▶</span> 載入 {
+              provider === "mlb" ? "MLB 官方影片" : "YouTube 播放器"
+            }
+            <small
+              >點擊後才會連線至 {
+                provider === "mlb" ? "Streamable" : "YouTube"
+              }</small
+            >
           </button>
         </div>
         <p data-video-failure hidden>
@@ -405,6 +427,30 @@ if (clip.startSeconds > 0)
   }
   .clip-facade[hidden] {
     display: none;
+  }
+  .provider-facade {
+    display: grid;
+    align-content: center;
+    min-height: 16rem;
+    padding: 1.5rem;
+    background: var(--color-brand-900);
+    color: white;
+  }
+  .provider-facade span {
+    color: var(--color-brand-accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .provider-facade strong {
+    margin-top: 0.5rem;
+    font: 700 1.2rem/1.4 var(--font-display);
+  }
+  .provider-facade p {
+    margin-bottom: 0;
+    color: white;
+    font-size: 0.85rem;
   }
   .clip-facade button {
     display: block;

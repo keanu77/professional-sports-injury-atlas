@@ -8,6 +8,7 @@ import {
   relatedObservationClips,
 } from "../../src/lib/videos/observation-guidance";
 import { SPORTS } from "../../src/lib/videos/sports";
+import { NERVE_CATEGORIES } from "../../src/lib/videos/nerve-categories";
 
 const featuredSlugs = allObservationClips
   .filter((clip) => discoveryFor(clip.slug).curatedRank !== undefined)
@@ -66,7 +67,7 @@ describe("Decision 39 observation guidance", () => {
   });
 
   it("selects at most three deterministic related videos without self-links", () => {
-    expect(allObservationClips).toHaveLength(147);
+    expect(allObservationClips).toHaveLength(151);
     for (const clip of allObservationClips) {
       const related = relatedObservationClips(clip, allObservationClips);
       expect(related.length, clip.slug).toBeGreaterThan(0);
@@ -106,17 +107,23 @@ describe("Decision 39 observation guidance", () => {
     expect(priorities).toEqual([...priorities].sort());
   });
 
-  it("returns the three existing category routes for every observation", () => {
+  it("returns the three base routes and an optional named nerve category", () => {
     const validRoutes = new Set([
       ...BODY_PARTS.map((item) => `/body-parts/${item.code}/`),
       ...SPORTS.map((item) => `/sports/${item.code}/`),
       ...SITUATIONS.map((item) => `/situations/${item.code}/`),
+      ...NERVE_CATEGORIES.map((item) => `/nerve-injuries/${item.code}/`),
     ]);
     for (const clip of allObservationClips) {
       const links = observationCategoryLinks(clip);
-      expect(links).toHaveLength(3);
+      expect(links).toHaveLength(clip.nerveCategory ? 4 : 3);
       expect(new Set(links.map((link) => link.kind))).toEqual(
-        new Set(["body-part", "sport", "situation"]),
+        new Set([
+          "body-part",
+          "sport",
+          "situation",
+          ...(clip.nerveCategory ? ["nerve"] : []),
+        ]),
       );
       for (const link of links) expect(validRoutes.has(link.href)).toBe(true);
     }

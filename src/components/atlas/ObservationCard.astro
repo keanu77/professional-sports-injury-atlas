@@ -10,12 +10,24 @@ interface Props {
 }
 const { clip } = Astro.props;
 const metadata = observationCardMetadata(clip);
+const isMlb = clip.provider === "mlb";
 ---
 
 <a class="observation-card" href={`/videos/${clip.slug}/`}>
-  <VideoThumbnail videoId={clip.videoId}>
-    <span slot="media-action" class="play" aria-hidden="true">▶</span>
-  </VideoThumbnail>
+  {
+    isMlb ? (
+      <div class="provider-facade" data-observation-provider="mlb">
+        <span>MLB 官方影片</span>
+        <strong>前往案例頁後，可選擇載入播放器</strong>
+      </div>
+    ) : (
+      <VideoThumbnail videoId={clip.videoId}>
+        <span slot="media-action" class="play" aria-hidden="true">
+          ▶
+        </span>
+      </VideoThumbnail>
+    )
+  }
   <div class="observation-copy">
     <p>{clip.event}</p><h3>{clip.name}</h3>
     <ul class="observation-metadata" data-observation-metadata>
@@ -53,6 +65,25 @@ const metadata = observationCardMetadata(clip);
     border-radius: 50%;
     background: var(--color-brand-accent);
     color: var(--color-brand-900);
+  }
+  .provider-facade {
+    display: grid;
+    align-content: center;
+    min-height: 11rem;
+    padding: 1.5rem;
+    background: var(--color-brand-900);
+    color: white;
+  }
+  .provider-facade span {
+    color: var(--color-brand-accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .provider-facade strong {
+    margin-top: 0.5rem;
+    font: 700 1.1rem/1.4 var(--font-display);
   }
   .observation-copy {
     padding: 1.2rem;

@@ -8,6 +8,7 @@ import recent120Data from "../../data/videos/recent-120.v1.json";
 import recent150Data from "../../data/videos/recent-150.v1.json";
 import judgeRibData from "../../data/videos/judge-rib.v1.json";
 import ribFractureData from "../../data/videos/rib-fracture-three.v1.json";
+import nerveFourData from "../../data/videos/nerve-four.v1.json";
 import data from "../../data/videos/expansion.v1.json";
 import launchData from "../../data/public-launch.v1.json";
 import curationData from "../../data/videos/curation.v1.json";
@@ -19,14 +20,23 @@ const url = z.url({ protocol: /^https$/ });
 const day = z.iso.date().nullable();
 export const observationClipSchema = z.strictObject({
   slug: z.string().regex(/^[a-z0-9-]+$/),
-  videoId: z.string().regex(/^[\w-]{11}$/),
+  videoId: z.union([
+    z.string().regex(/^[\w-]{11}$/),
+    z.literal("zack-kelly-leaves-with-injury"),
+  ]),
+  provider: z.enum(["youtube", "mlb"]).optional(),
+  nerveCategory: z.enum(["peripheral-nerve", "brachial-plexus"]).optional(),
+  eventYear: z
+    .string()
+    .regex(/^\d{4}$/)
+    .optional(),
   name: z.string().min(1),
   sport: z.string().min(1),
   event: z.string().min(1),
   bodyPart: z.string().min(1),
   observation: z.string().min(1),
   footageKind: z
-    .enum(["injury-motion", "aftermath", "news-analysis"])
+    .enum(["injury-motion", "aftermath", "news-analysis", "athlete-interview"])
     .optional(),
   eventDate: day,
   returnDate: day,
@@ -493,10 +503,91 @@ export const ribFractureThreeSchema = z
     }
   });
 export const ribFractureThree = ribFractureThreeSchema.parse(ribFractureData);
+const nerveSelections = new Map([
+  [
+    "jaylon-smith-2016-peroneal-nerve",
+    { id: "O5keKcfVyZM", category: "peripheral-nerve", provider: "youtube" },
+  ],
+  [
+    "zack-kelly-2023-ulnar-nerve",
+    {
+      id: "zack-kelly-leaves-with-injury",
+      category: "peripheral-nerve",
+      provider: "mlb",
+    },
+  ],
+  [
+    "ryan-crouser-2024-ulnar-nerve",
+    { id: "Cuw96lZ9aYI", category: "peripheral-nerve", provider: "youtube" },
+  ],
+  [
+    "rob-horne-2018-brachial-plexus",
+    { id: "wgZZoWIR7rQ", category: "brachial-plexus", provider: "youtube" },
+  ],
+]);
+export const nerveFourSchema = z
+  .strictObject({
+    schemaVersion: z.literal(1),
+    decision: z.literal("nerve-four-2026-09-21"),
+    authorizationQuote: z.literal("請你開始新增影片到網站"),
+    clips: z.array(observationClipSchema).length(4),
+  })
+  .superRefine((value, ctx) => {
+    const previous = [
+      ...priorObservationClips,
+      ...judgeRib.clips,
+      ...ribFractureThree.clips,
+    ];
+    const slugs = new Set(previous.map((c) => c.slug));
+    const ids = new Set([
+      ...previous.map((c) => c.videoId),
+      ...[...launchData.cases, ...expansion.cases].map((c) =>
+        parseYouTubeVideoId(c.videoUrl),
+      ),
+    ]);
+    const events = new Set(previous.map(observationEventKey));
+    for (const clip of value.clips) {
+      const selection = nerveSelections.get(clip.slug);
+      const canonical =
+        clip.provider === "mlb"
+          ? clip.videoUrl ===
+              "https://www.mlb.com/redsox/video/zack-kelly-leaves-with-injury" &&
+            clip.startSeconds === 0
+          : parseYouTubeVideoId(clip.videoUrl) === clip.videoId;
+      if (
+        !selection ||
+        selection.id !== clip.videoId ||
+        selection.category !== clip.nerveCategory ||
+        selection.provider !== clip.provider ||
+        !canonical ||
+        slugs.has(clip.slug) ||
+        ids.has(clip.videoId) ||
+        (observationEventKey(clip) !== null &&
+          events.has(observationEventKey(clip))) ||
+        clip.startSeconds >= clip.durationSeconds ||
+        clip.sources.length === 0 ||
+        (clip.eventYear &&
+          clip.eventDate &&
+          clip.eventYear !== clip.eventDate.slice(0, 4)) ||
+        (clip.returnDate &&
+          (!clip.eventDate || clip.returnDate < clip.eventDate))
+      ) {
+        ctx.addIssue({
+          code: "custom",
+          message: `Invalid or duplicate nerve case: ${clip.slug}`,
+        });
+      }
+      slugs.add(clip.slug);
+      ids.add(clip.videoId);
+      events.add(observationEventKey(clip));
+    }
+  });
+export const nerveFour = nerveFourSchema.parse(nerveFourData);
 export const allObservationClips: ObservationClip[] = [
   ...priorObservationClips,
   ...judgeRib.clips,
   ...ribFractureThree.clips,
+  ...nerveFour.clips,
 ];
 export const expansionEnabled = () =>
   process.env.ATLAS_PUBLIC_LAUNCH === "decision-21";

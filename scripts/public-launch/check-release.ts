@@ -183,6 +183,11 @@ const ribFractureProofPath =
 const ribFractureProof = existsSync(ribFractureProofPath)
   ? JSON.parse(readFileSync(ribFractureProofPath, "utf8"))
   : [];
+const nerveFourProofPath =
+  "docs/reviews/2026-09-21-nerve-four/playback.preview.json";
+const nerveFourProof = existsSync(nerveFourProofPath)
+  ? JSON.parse(readFileSync(nerveFourProofPath, "utf8"))
+  : [];
 for (const item of [...expansion.cases, ...allObservationClips]) {
   const proof = [
     ...additional,
@@ -196,6 +201,7 @@ for (const item of [...expansion.cases, ...allObservationClips]) {
     ...recent150Proof,
     ...judgeRibProof,
     ...ribFractureProof,
+    ...nerveFourProof,
   ].find((p: { url: string }) => p.url === item.videoUrl);
   assert.ok(
     proof &&

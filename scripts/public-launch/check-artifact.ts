@@ -51,7 +51,9 @@ assert.deepEqual(
     ...selected.map((record) =>
       new URL(record.video.canonicalUrl).searchParams.get("v"),
     ),
-    ...allObservationClips.map((clip) => clip.videoId),
+    ...allObservationClips
+      .filter((clip) => clip.provider !== "mlb")
+      .map((clip) => clip.videoId),
   ].sort(),
   "Statistics allowlist must match the actual public video collection",
 );
@@ -228,6 +230,16 @@ for (const item of [
       html.includes("查看機轉、傷勢與回場來源"),
     `Missing sourced event report: ${item.slug}`,
   );
+  if ("provider" in item && item.provider === "mlb") {
+    assert.ok(
+      html.includes('data-video-provider="mlb"') &&
+        html.includes('data-video-key="zack-kelly-leaves-with-injury"') &&
+        html.includes("播放器尚未載入，不會在此時連線至第三方影音服務。") &&
+        html.includes("點擊後才會連線至 Streamable") &&
+        !html.includes("streamable.com/m/"),
+      `MLB facade must require consent and must not expose an eager embed: ${item.slug}`,
+    );
+  }
 }
 assert.equal(
   readFileSync("dist/robots.txt", "utf8"),

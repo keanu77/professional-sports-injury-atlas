@@ -40,8 +40,8 @@ describe("Decision 39 observation card metadata", () => {
     expect(observationCardMetadata(clip!)).toEqual(expected);
   });
 
-  it("keeps all 147 card labels non-empty and years governed", () => {
-    expect(allObservationClips).toHaveLength(147);
+  it("keeps all 151 card labels non-empty and years governed", () => {
+    expect(allObservationClips).toHaveLength(151);
 
     for (const clip of allObservationClips) {
       const metadata = observationCardMetadata(clip);

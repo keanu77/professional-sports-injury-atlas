@@ -124,6 +124,22 @@
     }
   },
   "entries": {
+    "jaylon-smith-2016-peroneal-nerve": {
+      "resources": ["overview"],
+      "note": "延伸閱讀是一般運動醫學總覽，不是腓神經損傷的個別治療指引。"
+    },
+    "zack-kelly-2023-ulnar-nerve": {
+      "resources": ["overview"],
+      "note": "總覽文章不能取代尺神經與肘部症狀的個別評估。"
+    },
+    "ryan-crouser-2024-ulnar-nerve": {
+      "resources": ["overview"],
+      "note": "選手採用的處置並非每位尺神經症狀患者都適用；此連結僅為主題總覽。"
+    },
+    "rob-horne-2018-brachial-plexus": {
+      "resources": ["overview"],
+      "note": "此連結不是臂神經叢撕脫傷的復健處方；應由醫療團隊個別評估。"
+    },
     "fernando-alonso-2016-rib": {
       "resources": ["overview"],
       "note": "胸部傷害的一般資訊與警訊請見本頁來源，不以其他部位的復健時程代用。"

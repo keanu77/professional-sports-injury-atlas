@@ -5,6 +5,7 @@ import { BODY_PARTS, videosByBodyPart } from "./body-parts";
 import { discoveryFor, SITUATIONS } from "./discovery";
 import type { ObservationClip } from "./expansion";
 import { SPORTS, videosBySport } from "./sports";
+import { NERVE_CATEGORIES } from "./nerve-categories";
 
 export interface ObservationResource {
   kind: "article" | "topic-overview";
@@ -85,7 +86,7 @@ export function relatedObservationClips(
 }
 
 export interface ObservationCategoryLink {
-  kind: "body-part" | "sport" | "situation";
+  kind: "body-part" | "sport" | "situation" | "nerve";
   label: string;
   href: string;
 }
@@ -107,6 +108,13 @@ export function observationCategoryLinks(
     throw new Error(`Missing observation category route: ${clip.slug}`);
   }
   return [
+    ...NERVE_CATEGORIES.filter(
+      (category) => category.code === clip.nerveCategory,
+    ).map((category) => ({
+      kind: "nerve" as const,
+      label: category.label,
+      href: `/nerve-injuries/${category.code}/`,
+    })),
     {
       kind: "body-part",
       label: `受傷部位：${bodyPart.label}`,

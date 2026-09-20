@@ -10,6 +10,9 @@ const output = resolve(
 const artifact = await monitorPublicVideos(
   eventUpdates.entries.map((entry) => ({
     slug: entry.slug,
+    provider: entry.videoUrl.startsWith("https://www.mlb.com/")
+      ? ("mlb" as const)
+      : ("youtube" as const),
     videoUrl: entry.videoUrl,
     sourceUrls: entry.sources.map((source) => source.url),
   })),

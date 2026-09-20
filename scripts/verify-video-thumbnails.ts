@@ -68,10 +68,17 @@ export function loadVideoThumbnails(root: string): {
             "utf8",
           ),
         ).clips,
+        ...JSON.parse(
+          readFileSync(
+            join(root, "src/data/videos/nerve-four.v1.json"),
+            "utf8",
+          ),
+        ).clips,
       ]
         .filter(
-          (clip: { slug: string }) =>
-            !curation.removedSlugs.includes(clip.slug),
+          (clip: { slug: string; provider?: string }) =>
+            !curation.removedSlugs.includes(clip.slug) &&
+            clip.provider !== "mlb",
         )
         .map((clip: { videoId: string }) => clip.videoId),
     ]);

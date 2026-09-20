@@ -10,9 +10,9 @@ const input = {
 
 describe("public video health monitoring", () => {
   it("covers every governed public video without requiring network at import", () => {
-    expect(eventUpdates.entries).toHaveLength(154);
+    expect(eventUpdates.entries).toHaveLength(158);
     expect(new Set(eventUpdates.entries.map((entry) => entry.slug)).size).toBe(
-      154,
+      158,
     );
   });
 
@@ -110,6 +110,41 @@ describe("public video health monitoring", () => {
       indeterminateSources: 1,
       unavailableMetadata: 0,
       indeterminateMetadata: 0,
+    });
+  });
+
+  it("checks the approved MLB canonical page without calling YouTube services", async () => {
+    const urls: string[] = [];
+    const artifact = await monitorPublicVideos(
+      [
+        {
+          slug: "zack-kelly-ulnar-nerve-2023",
+          provider: "mlb",
+          videoUrl:
+            "https://www.mlb.com/redsox/video/zack-kelly-leaves-with-injury",
+          sourceUrls: ["https://example.org/report"],
+        },
+      ],
+      {
+        youtubeApiKey: "must-not-be-used",
+        fetchImpl: async (request) => {
+          urls.push(String(request));
+          return new Response("source", { status: 200 });
+        },
+      },
+    );
+    expect(urls).toEqual([
+      "https://example.org/report",
+      "https://www.mlb.com/redsox/video/zack-kelly-leaves-with-injury",
+    ]);
+    expect(artifact.videos[0]).toMatchObject({
+      provider: "mlb",
+      videoId: "zack-kelly-leaves-with-injury",
+      youtubeMetadata: { status: "available" },
+      embedCapability: {
+        status: "not-checked",
+        basis: "non-youtube-provider",
+      },
     });
   });
 });

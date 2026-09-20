@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "decision": "nerve-four-2026-09-21",
+  "checkedAt": "2026-09-20",
+  "entries": [
+    {
+      "slug": "jaylon-smith-2016-peroneal-nerve",
+      "videoUrl": "https://www.youtube.com/watch?v=O5keKcfVyZM",
+      "eventDate": "2016-01-01",
+      "returnDate": "2017-09-10",
+      "injury": "球隊公開報導：左膝韌帶傷合併腓神經損傷（peroneal nerve injury）。",
+      "returnSummary": "2017 年 NFL 例行賽初登場；不代表神經已完全恢復。",
+      "context": "本頁日期差計算至 NFL 例行賽初登場，而非首次恢復訓練或季前賽，也不是神經恢復所需天數。2019 年影片回顧的是 2016 年事件。",
+      "timeline": [
+        {
+          "date": "2016-01-01",
+          "title": "大學碗賽受傷",
+          "text": "Fiesta Bowl 對 Ohio State 時左膝受傷，後續球隊報導提及腓神經損傷。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2016",
+          "title": "復健階段",
+          "text": "未在新人球季出賽；球隊記錄膝傷伴隨神經問題與足部支具使用。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2017-09-10",
+          "title": "NFL 例行賽初登場",
+          "text": "對 Giants 完成 NFL 例行賽初登場；出賽不代表神經已完全恢復。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Dallas Cowboys：Jaylon Smith 膝傷與腓神經損傷",
+          "url": "https://www.dallascowboys.com/news/cowboys-believe-cornerstone-talent-jaylon-smith-worth-potential-redshirt--403206",
+          "publishedAt": "2016-04-30"
+        },
+        {
+          "title": "Dallas Cowboys：Jaylon Smith 完成 NFL 初登場",
+          "url": "https://www.dallascowboys.com/news/jaylon-smith-worked-21-months-for-his-nfl-debut-and-i-m-back-he-says-439921",
+          "publishedAt": "2017-09-10"
+        }
+      ]
+    },
+    {
+      "slug": "zack-kelly-2023-ulnar-nerve",
+      "videoUrl": "https://www.mlb.com/redsox/video/zack-kelly-leaves-with-injury",
+      "eventDate": "2023-04-12",
+      "returnDate": null,
+      "injury": "球隊公告：右肘尺神經轉位修正手術（ulnar nerve transposition revision）。",
+      "returnSummary": "此頁不將名單啟用或復健賽日期當成神經康復日期。",
+      "context": "早期退場片段與後續手術公告分開解讀；不由疼痛表情推定神經斷裂。球員頁與公告的手術日記載不同，時間軸僅標示月份。",
+      "timeline": [
+        {
+          "date": "2023-04-12",
+          "title": "比賽中退場",
+          "text": "右肘不適後退場；影片不是神經診斷工具。",
+          "sourceIndexes": [3]
+        },
+        {
+          "date": "2023-05",
+          "title": "球隊公布手術",
+          "text": "尺神經轉位修正；兩個官方來源對手術日記載不一致，僅列月份。",
+          "sourceIndexes": [1, 2]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Boston Red Sox：Kelly 尺神經轉位修正手術公告",
+          "url": "https://www.mlb.com/press-release/press-release-zack-kelly-undergoes-successful-surgery",
+          "publishedAt": "2023-05-03"
+        },
+        {
+          "title": "MLB：Zack Kelly 2023 年球員紀錄",
+          "url": "https://www.mlb.com/player/zack-kelly-677161",
+          "publishedAt": null
+        },
+        {
+          "title": "Zack Kelly leaves with injury",
+          "url": "https://www.mlb.com/redsox/video/zack-kelly-leaves-with-injury",
+          "publishedAt": "2023-04-12"
+        }
+      ]
+    },
+    {
+      "slug": "ryan-crouser-2024-ulnar-nerve",
+      "videoUrl": "https://www.youtube.com/watch?v=Cuw96lZ9aYI",
+      "eventDate": null,
+      "returnDate": null,
+      "injury": "公開報導：右側投擲肘尺神經問題（ulnar nerve injury / entrapment）。",
+      "returnSummary": "後續重返比賽不等於尺神經完全康復；未核定單一回場日期。",
+      "context": "肘部神經問題與後來胸肌受傷是不同事件。來源僅支持肘傷發生於 2024 年 3 月，不補寫確切日期，也不計算康復天數。",
+      "timeline": [
+        {
+          "date": "2024-03",
+          "title": "肘部神經問題",
+          "text": "NBC 本人專訪報導右側投擲肘神經卡壓；未提供可核定的受傷日。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-06-21",
+          "title": "本人談傷勢",
+          "text": "在美國奧運選拔賽資格賽後，接受 CITIUS MAG 訪問說明肘部狀況。",
+          "sourceIndexes": [3]
+        },
+        {
+          "date": "2024",
+          "title": "後續參賽",
+          "text": "巴黎奧運的報導回顧尺神經與胸肌兩次傷勢；比賽成果不等於神經痊癒證據。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "sources": [
+        {
+          "title": "NBC Olympics：Crouser 談 2024 年肘部與胸肌傷勢",
+          "url": "https://www.nbcolympics.com/news/ryan-crouser-olympic-gold-injuries",
+          "publishedAt": null
+        },
+        {
+          "title": "NBC Olympics：Crouser 尺神經傷勢與巴黎奧運",
+          "url": "https://www.nbcolympics.com/news/legendary-status-us-shot-putter-ryan-crouser-wins-unprecedented-third-gold-medal",
+          "publishedAt": null
+        },
+        {
+          "title": "Olympic Champion Ryan Crouser Explains Elbow Injury and Operation After Shot Put Qualifying Round",
+          "url": "https://www.youtube.com/watch?v=Cuw96lZ9aYI",
+          "publishedAt": "2024-06-21"
+        }
+      ]
+    },
+    {
+      "slug": "rob-horne-2018-brachial-plexus",
+      "videoUrl": "https://www.youtube.com/watch?v=wgZZoWIR7rQ",
+      "eventDate": "2018-04-14",
+      "returnDate": null,
+      "injury": "本人公開說明：臂神經叢撕脫傷（brachial plexus avulsion），伴右上肢癱瘓。",
+      "returnSummary": "2018 年宣布因傷退休；不是等待復賽的案例。",
+      "context": "因傷退休不是完成復健後回場。神經叢涉及多條神經的網絡，不應將此重度案例類推為常見、短暫的手臂麻痛。",
+      "timeline": [
+        {
+          "date": "2018-04-14",
+          "title": "對 Leicester 比賽受傷",
+          "text": "本頁回顧該場比賽事件；所選影片為後續本人訪談。",
+          "sourceIndexes": [2, 3]
+        },
+        {
+          "date": "2018-04-21",
+          "title": "宣布退休",
+          "text": "球隊公布右上肢神經傷害導致職業生涯結束。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2018-07",
+          "title": "本人說明診斷",
+          "text": "公開訪談說明臂神經叢撕脫傷、右上肢癱瘓與後續生活調整。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Rugby Australia：Horne 本人說明臂神經叢撕脫傷",
+          "url": "https://www.rugby.com.au/news/2018/07/22/horne-injury-testimonial",
+          "publishedAt": "2018-07-18"
+        },
+        {
+          "title": "Northampton Saints：Horne 因神經傷害退休",
+          "url": "https://www.northamptonsaints.co.uk/news/rob-horne-retires-from-professional-rugby-through-injury",
+          "publishedAt": "2018-04-21"
+        },
+        {
+          "title": "Northampton Saints：Horne 受傷翌日更新",
+          "url": "https://www.northamptonsaints.co.uk/news/rob-horne-injury-update",
+          "publishedAt": "2018-04-15"
+        }
+      ]
+    }
+  ]
+}

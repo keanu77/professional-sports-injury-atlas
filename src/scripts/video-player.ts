@@ -7,8 +7,9 @@ import {
 } from "../lib/video/youtube-api-adapter";
 import { buildPrivacyEnhancedEmbedUrl } from "../lib/video/youtube";
 import { createPlaybackTracker } from "../lib/video/playback-tracking";
+import { observationEmbedFor } from "../lib/videos/observation-provider";
 
-type PlayerState = "idle" | "loading" | "ready" | "failed";
+type PlayerState = "idle" | "loading" | "requested" | "ready" | "failed";
 
 interface VideoController {
   state: PlayerState;
@@ -72,33 +73,54 @@ function setupEmbed(root: HTMLElement): void {
     if (status !== null)
       status.textContent =
         "播放器載入或播放失敗。可重新載入，或使用下方原始影片連結。";
-    button.setAttribute("aria-label", "重新載入 YouTube 播放器");
+    button.setAttribute(
+      "aria-label",
+      root.dataset.videoProvider === "mlb"
+        ? "重新開啟 MLB 官方影片播放器框架"
+        : "重新載入 YouTube 播放器",
+    );
     button.focus();
   };
 
   button.addEventListener("click", () => {
-    if (controller.state === "loading" || controller.state === "ready") return;
+    if (
+      controller.state === "loading" ||
+      controller.state === "requested" ||
+      controller.state === "ready"
+    )
+      return;
     const videoId = root.dataset.videoId ?? "";
+    const provider = root.dataset.videoProvider ?? "youtube";
     let embedSrc: string;
     try {
-      embedSrc = buildPrivacyEnhancedEmbedUrl(
-        "youtube",
-        videoId,
-        window.location.origin,
-      );
+      if (provider === "mlb") {
+        const embed = observationEmbedFor("mlb", root.dataset.videoKey ?? "");
+        if (embed === null) return;
+        embedSrc = embed.src;
+      } else {
+        embedSrc = buildPrivacyEnhancedEmbedUrl(
+          "youtube",
+          videoId,
+          window.location.origin,
+        );
+      }
     } catch {
       return;
     }
 
     controller.state = "loading";
     root.dataset.videoState = "loading";
-    if (status !== null) status.textContent = "正在載入 YouTube 播放器…";
+    if (status !== null)
+      status.textContent =
+        provider === "mlb"
+          ? "正在開啟 MLB 官方影片播放器框架…"
+          : "正在載入 YouTube 播放器…";
     if (failureNote !== null) failureNote.hidden = true;
 
     const iframe = document.createElement("iframe");
     activeIframe = iframe;
     const start = Number(root.dataset.videoStart ?? 0);
-    if (Number.isSafeInteger(start) && start > 0) {
+    if (provider === "youtube" && Number.isSafeInteger(start) && start > 0) {
       const url = new URL(embedSrc);
       url.searchParams.set("start", String(start));
       embedSrc = url.href;
@@ -110,10 +132,21 @@ function setupEmbed(root: HTMLElement): void {
     iframe.allow = "encrypted-media; picture-in-picture; fullscreen";
     iframe.allowFullscreen = true;
     iframe.className = "case-video-frame";
+    if (provider === "mlb")
+      iframe.addEventListener("error", () => fail(iframe), { once: true });
 
     facade.hidden = true;
     stage.prepend(iframe);
     iframe.focus();
+
+    if (provider === "mlb") {
+      controller.state = "requested";
+      root.dataset.videoState = "requested";
+      if (status !== null)
+        status.textContent =
+          "已開啟 MLB 官方影片播放器框架；若無法播放，請使用下方原始影片連結。";
+      return;
+    }
 
     loadIframeApi()
       .then((namespace) => {

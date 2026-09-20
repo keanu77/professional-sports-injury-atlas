@@ -1,4 +1,8 @@
 import { parseYouTubeVideoId } from "./youtube";
+import {
+  observationCanonicalUrlFor,
+  observationEmbedFor,
+} from "../videos/observation-provider";
 
 export type HealthReason =
   | "ok"
@@ -6,7 +10,8 @@ export type HealthReason =
   | "network-error"
   | "invalid-response"
   | "response-too-large"
-  | "youtube-api-key-unavailable";
+  | "youtube-api-key-unavailable"
+  | "non-youtube-provider";
 
 export interface AvailabilityResult {
   status: "available" | "unavailable" | "indeterminate";
@@ -16,19 +21,22 @@ export interface AvailabilityResult {
 
 export interface EmbedCapabilityResult {
   status: "embeddable" | "not-embeddable" | "not-checked" | "indeterminate";
-  basis: "youtube-data-api" | "youtube-api-key-unavailable";
+  basis:
+    "youtube-data-api" | "youtube-api-key-unavailable" | "non-youtube-provider";
   httpStatus: number | null;
   reason: HealthReason;
 }
 
 export interface PublicVideoHealthInput {
   slug: string;
+  provider?: "youtube" | "mlb";
   videoUrl: string;
   sourceUrls: readonly string[];
 }
 
 export interface PublicVideoHealthResult {
   slug: string;
+  provider: "youtube" | "mlb";
   videoId: string;
   sourceAvailability: Array<{ url: string; result: AvailabilityResult }>;
   youtubeMetadata: AvailabilityResult;
@@ -274,14 +282,37 @@ export async function monitorPublicVideos(
   );
   const videos = await Promise.all(
     inputs.map(async (item) => {
-      const videoId = parseYouTubeVideoId(item.videoUrl);
-      if (!videoId) throw new Error(`Invalid governed video URL: ${item.slug}`);
+      const provider = item.provider ?? "youtube";
+      const videoId =
+        provider === "youtube"
+          ? parseYouTubeVideoId(item.videoUrl)
+          : (new URL(item.videoUrl).pathname
+              .split("/")
+              .filter(Boolean)
+              .at(-1) ?? null);
+      if (
+        !videoId ||
+        (provider === "mlb" &&
+          (observationEmbedFor("mlb", videoId) === null ||
+            observationCanonicalUrlFor("mlb", videoId) !== item.videoUrl))
+      )
+        throw new Error(`Invalid governed video URL: ${item.slug}`);
       const [youtubeMetadata, embedCapability] = await Promise.all([
-        checkMetadata(item.videoUrl),
-        checkEmbed(videoId),
+        provider === "youtube"
+          ? checkMetadata(item.videoUrl)
+          : checkSource(item.videoUrl),
+        provider === "youtube"
+          ? checkEmbed(videoId)
+          : Promise.resolve<EmbedCapabilityResult>({
+              status: "not-checked",
+              basis: "non-youtube-provider",
+              httpStatus: null,
+              reason: "non-youtube-provider",
+            }),
       ]);
       return {
         slug: item.slug,
+        provider,
         videoId,
         sourceAvailability: item.sourceUrls.map((url) => ({
           url,

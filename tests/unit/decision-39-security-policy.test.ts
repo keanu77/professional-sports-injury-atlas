@@ -78,6 +78,7 @@ describe("controlled early preferences and public CSP", () => {
     ]);
     expect(directives["frame-src"]).toEqual([
       "https://www.youtube-nocookie.com",
+      "https://streamable.com",
       "https://challenges.cloudflare.com",
     ]);
     expect(directives["connect-src"]).toEqual(["'self'"]);

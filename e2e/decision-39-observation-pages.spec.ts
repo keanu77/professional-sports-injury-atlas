@@ -15,7 +15,7 @@ const FEATURED = [
   "anthony-richardson-2023-shoulder",
 ];
 
-test("all 147 observation pages expose general guidance, text highlights, related videos, and category routes", async ({
+test("all 151 observation pages expose general guidance, text highlights, related videos, and category routes", async ({
   request,
 }) => {
   test.skip(!PUBLIC_LAUNCH, "Observation routes belong to the public launch");
@@ -27,7 +27,7 @@ test("all 147 observation pages expose general guidance, text highlights, relate
       ),
     ),
   ];
-  expect(observationPaths).toHaveLength(147);
+  expect(observationPaths).toHaveLength(151);
   const categoryRoutes = new Set<string>();
 
   for (const path of observationPaths) {
@@ -252,13 +252,13 @@ test("review output stays noindex and does not publish a sitemap", async ({
   expect((await request.get("/sitemap.xml")).status()).toBe(404);
 });
 
-test("curated collection shows ten ordered videos and restores all 154", async ({
+test("curated collection shows ten ordered videos and restores all 158", async ({
   page,
 }) => {
   test.skip(!PUBLIC_LAUNCH, "Curated collection belongs to the public launch");
   await page.goto("/");
   const cards = page.locator("[data-discovery-slug]:visible");
-  await expect(cards).toHaveCount(154);
+  await expect(cards).toHaveCount(158);
   await page.getByRole("button", { name: "精選影片", exact: true }).click();
   await expect(cards).toHaveCount(10);
   await expect(page.locator("[data-discovery-status]")).toContainText(
@@ -292,7 +292,7 @@ test("curated collection shows ten ordered videos and restores all 154", async (
     );
   await expectNoAxeViolations(page);
   await page.getByRole("button", { name: "全部影片", exact: true }).click();
-  await expect(cards).toHaveCount(154);
+  await expect(cards).toHaveCount(158);
   await page.getByRole("button", { name: "精選影片", exact: true }).click();
   await expect(cards).toHaveCount(10);
 });

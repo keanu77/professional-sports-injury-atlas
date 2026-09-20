@@ -1,0 +1,91 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ObservationCard from "../../components/atlas/ObservationCard.astro";
+import MedicalNotice from "../../components/notices/MedicalNotice.astro";
+import { observationClips } from "../../lib/videos/expansion";
+import { videosByNerveCategory } from "../../lib/videos/nerve-categories";
+
+export function getStaticPaths() {
+  const groups = videosByNerveCategory(observationClips());
+  return groups.map((group) => ({
+    params: { category: group.code },
+    props: { group, groups },
+  }));
+}
+const { group, groups } = Astro.props;
+---
+
+<BaseLayout
+  title={`${group.label}案例影片｜運動傷害影片圖鑑`}
+  description={group.description}
+>
+  <a href="/#nerve-topics-heading">← 神經傷害專題</a>
+  <h1>{group.label}案例影片</h1>
+  <p>{group.description}</p>
+  <p>{group.count} 支影片 · 傷勢依公開來源，不能由影片自行診斷。</p>
+  <nav aria-label="神經傷害分類">
+    <ul>
+      {
+        groups.map((item) => (
+          <li>
+            <a
+              href={`/nerve-injuries/${item.code}/`}
+              aria-current={item.code === group.code ? "page" : undefined}
+            >
+              {item.label} · {item.count} 支
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+  <ol
+    class="nerve-grid"
+    data-nerve-category={group.code}
+    aria-label={`${group.label}影片`}
+  >
+    {
+      group.clips.map((clip) => (
+        <li>
+          <ObservationCard clip={clip} />
+        </li>
+      ))
+    }
+  </ol>
+  <MedicalNotice variant="compact" />
+</BaseLayout>
+<style>
+  h1 {
+    font-family: var(--font-display);
+    margin-top: 1.5rem;
+  }
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+  }
+  nav a {
+    display: inline-block;
+    padding-block: 0.75rem;
+  }
+  .nerve-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    padding: 0;
+    margin: 2rem 0;
+    list-style: none;
+  }
+  @media (max-width: 60rem) {
+    .nerve-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 40rem) {
+    .nerve-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

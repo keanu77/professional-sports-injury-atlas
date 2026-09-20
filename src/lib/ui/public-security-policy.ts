@@ -4,7 +4,7 @@ export const PUBLIC_CSP = [
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data:",
   "font-src 'self'",
-  "frame-src https://www.youtube-nocookie.com https://challenges.cloudflare.com",
+  "frame-src https://www.youtube-nocookie.com https://streamable.com https://challenges.cloudflare.com",
   "connect-src 'self'",
   "object-src 'none'",
   "base-uri 'self'",

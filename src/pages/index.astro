@@ -7,6 +7,7 @@ import SportNav from "../components/atlas/SportNav.astro";
 import { videosBySport } from "../lib/videos/sports";
 import BodyPartNav from "../components/atlas/BodyPartNav.astro";
 import { videosByBodyPart } from "../lib/videos/body-parts";
+import { videosByNerveCategory } from "../lib/videos/nerve-categories";
 import { isLaunchEnabled } from "../lib/patient/public-launch";
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -29,6 +30,7 @@ const clips = observationClips();
 const bodyParts = videosByBodyPart(featured, clips);
 const sports = videosBySport(featured, clips);
 const situations = videosBySituation(featured, clips);
+const nerveCategories = videosByNerveCategory(clips);
 const videoCount = featured.length + clips.length;
 ---
 
@@ -136,6 +138,23 @@ const videoCount = featured.length + clips.length;
       </section>
     )
   }
+  {
+    nerveCategories.length > 0 && (
+      <section aria-labelledby="nerve-topics-heading" class="nerve-topics">
+        <h2 id="nerve-topics-heading">神經傷害專題</h2>
+        <p>依公開來源具名的神經分類，並區分受傷畫面與本人訪談。</p>
+        <ul>
+          {nerveCategories.map((category) => (
+            <li>
+              <a href={`/nerve-injuries/${category.code}/`}>
+                {category.label} · {category.count} 支
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
   <section
     id="videos-heading"
     aria-labelledby="video-list-heading"
@@ -238,7 +257,7 @@ const videoCount = featured.length + clips.length;
             data-featured-card
             data-discovery-slug={clip.slug}
             data-search-text={observationVideoSearchText(clip)}
-            data-video-id={clip.videoId}
+            data-video-id={clip.provider === "mlb" ? undefined : clip.videoId}
             data-curated-rank={discoveryFor(clip.slug).curatedRank}
           >
             <span class="popular-count" data-popular-count hidden />

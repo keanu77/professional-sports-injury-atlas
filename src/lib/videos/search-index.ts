@@ -46,6 +46,8 @@ export function observationVideoSearchText(clip: ObservationClip): string {
       clip.bodyPart,
       clip.event,
       clip.eventDate,
+      clip.eventYear,
+      clip.nerveCategory,
       clip.observation,
       update?.injury,
     ]

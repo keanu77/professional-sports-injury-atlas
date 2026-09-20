@@ -5,6 +5,7 @@ import type { ObservationClip } from "./expansion";
 export const BODY_PARTS = [
   { code: "head-neck", label: "頭頸部" },
   { code: "shoulder", label: "肩部" },
+  { code: "elbow", label: "肘部" },
   { code: "wrist", label: "手腕" },
   { code: "hand", label: "手部" },
   { code: "trunk", label: "軀幹" },
@@ -24,6 +25,7 @@ const injuryParts: Record<string, BodyPartCode> = {
 const observationParts: Record<string, BodyPartCode> = {
   頭頸部: "head-neck",
   肩部: "shoulder",
+  肘部: "elbow",
   手腕: "wrist",
   手部: "hand",
   軀幹: "trunk",

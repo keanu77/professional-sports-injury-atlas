@@ -6,9 +6,11 @@ export function observationFootageLabel(
 ): string {
   return clip.footageKind === "news-analysis"
     ? "傷勢新聞與說明"
-    : clip.footageKind === "aftermath"
-      ? "受傷後處理與續賽"
-      : "受傷動作觀察";
+    : clip.footageKind === "athlete-interview"
+      ? "選手訪談與傷勢說明"
+      : clip.footageKind === "aftermath"
+        ? "受傷後處理與續賽"
+        : "受傷動作觀察";
 }
 
 export interface ObservationCardMetadata {
@@ -19,11 +21,11 @@ export interface ObservationCardMetadata {
 
 /** Builds display-only card facts without inferring a diagnosis or event date. */
 export function observationCardMetadata(
-  clip: Pick<ObservationClip, "sport" | "bodyPart" | "eventDate">,
+  clip: Pick<ObservationClip, "sport" | "bodyPart" | "eventDate" | "eventYear">,
 ): ObservationCardMetadata {
   return {
     sport: clip.sport,
     bodyPart: clip.bodyPart,
-    eventYear: clip.eventDate?.slice(0, 4) ?? "日期未核定",
+    eventYear: clip.eventYear ?? clip.eventDate?.slice(0, 4) ?? "日期未核定",
   };
 }

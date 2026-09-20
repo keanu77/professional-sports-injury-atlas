@@ -4,11 +4,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout
   title="隱私與播放設定｜運動傷害影片圖鑑"
-  description="瀏覽偏好、YouTube 影片播放與網站託管的資料處理說明。"
+  description="瀏覽偏好、YouTube 與 MLB／Streamable 影片播放及網站託管的資料處理說明。"
 >
   <h1>隱私與播放設定</h1>
   <p>
-    本站不提供會員註冊，也不要求填寫姓名或健康資料。本站不使用廣告追蹤；「本站熱門」只統計站內影片的實際開始播放次數。
+    本站不提供會員註冊，也不要求填寫姓名或健康資料。本站不使用廣告追蹤；「本站熱門」只統計本站
+    YouTube 播放器回報的實際開始播放次數。
   </p>
   <section aria-labelledby="playback-heading">
     <h2 id="playback-heading">點選後才連線到 YouTube</h2>
@@ -28,6 +29,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </p>
     <p>
       你可以只閱讀文字而不載入影片。若選擇「觀看原始影片」，會離開本站，改由該平台的設定與政策適用。
+    </p>
+  </section>
+  <section aria-labelledby="mlb-playback-heading">
+    <h2 id="mlb-playback-heading">MLB 官方影片：點選後才連線到 Streamable</h2>
+    <p>
+      MLB 案例先顯示本站文字封面；點選「載入 MLB 官方影片」後，才開啟 MLB 提供的
+      Streamable 播放器。 這不是 YouTube
+      的隱私加強保護模式，第三方服務適用自己的<a
+        href="https://streamable.com/privacy">隱私政策</a
+      >。 你也可以不載入影片，只閱讀文字與來源。
+    </p>
+    <p>
+      MLB 影片不計入本站播放統計；開啟播放器框架不代表影片已成功播放。
+      若嵌入無法播放，可以使用案例頁的 MLB 原始影片連結。
     </p>
   </section>
   <section aria-labelledby="statistics-heading">
@@ -102,5 +117,5 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       >說明處理方式。
     </p>
   </section>
-  <p>更新日期：2026 年 9 月 6 日。</p>
+  <p>更新日期：2026 年 9 月 21 日。</p>
 </BaseLayout>

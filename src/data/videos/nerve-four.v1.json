@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "decision": "nerve-four-2026-09-21",
+  "authorizationQuote": "請你開始新增影片到網站",
+  "clips": [
+    {
+      "provider": "youtube",
+      "nerveCategory": "peripheral-nerve",
+      "captionStatus": "not-verified",
+      "startSeconds": 235,
+      "returnDate": "2017-09-10",
+      "slug": "jaylon-smith-2016-peroneal-nerve",
+      "videoId": "O5keKcfVyZM",
+      "name": "Jaylon Smith",
+      "sport": "美式足球",
+      "event": "2016 Fiesta Bowl｜腓神經損傷",
+      "bodyPart": "膝部",
+      "eventDate": "2016-01-01",
+      "returnText": "2017 年 NFL 例行賽初登場；不代表神經已完全恢復。",
+      "footageKind": "injury-motion",
+      "observation": "NFL Films 紀錄片約 4:00 重播 2016 年膝部受傷，之後有本人談垂足的片段。球隊報導具名為腓神經（peroneal nerve）損傷；畫面不能判定神經損傷程度。這是周邊神經損傷案例，並非 2019 年的新傷。",
+      "videoUrl": "https://www.youtube.com/watch?v=O5keKcfVyZM",
+      "publisher": "NFL Films",
+      "sourceTitle": "Jaylon Smith's INCREDIBLE Journey Back from Devastating Injury | Films Presents",
+      "durationSeconds": 660,
+      "sources": [
+        {
+          "title": "Dallas Cowboys：Jaylon Smith 膝傷與腓神經損傷",
+          "url": "https://www.dallascowboys.com/news/cowboys-believe-cornerstone-talent-jaylon-smith-worth-potential-redshirt--403206"
+        },
+        {
+          "title": "Dallas Cowboys：Jaylon Smith 完成 NFL 初登場",
+          "url": "https://www.dallascowboys.com/news/jaylon-smith-worked-21-months-for-his-nfl-debut-and-i-m-back-he-says-439921"
+        }
+      ]
+    },
+    {
+      "provider": "mlb",
+      "nerveCategory": "peripheral-nerve",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "returnDate": null,
+      "slug": "zack-kelly-2023-ulnar-nerve",
+      "videoId": "zack-kelly-leaves-with-injury",
+      "name": "Zack Kelly",
+      "sport": "棒球",
+      "event": "2023 紅襪對光芒｜右肘尺神經",
+      "bodyPart": "肘部",
+      "eventDate": "2023-04-12",
+      "returnText": "此頁不將名單啟用或復健賽日期當成神經康復日期。",
+      "footageKind": "injury-motion",
+      "observation": "官方片段記錄投球後右肘不適退場。尺神經（ulnar nerve）的資訊來自後續球隊手術公告，不能單靠這段影片診斷神經病變，也不應把尺神經手術寫成韌帶重建。",
+      "videoUrl": "https://www.mlb.com/redsox/video/zack-kelly-leaves-with-injury",
+      "publisher": "MLB / Boston Red Sox",
+      "sourceTitle": "Zack Kelly leaves with injury",
+      "durationSeconds": 44,
+      "sources": [
+        {
+          "title": "Boston Red Sox：Kelly 尺神經轉位修正手術公告",
+          "url": "https://www.mlb.com/press-release/press-release-zack-kelly-undergoes-successful-surgery"
+        },
+        {
+          "title": "MLB：Zack Kelly 2023 年球員紀錄",
+          "url": "https://www.mlb.com/player/zack-kelly-677161"
+        }
+      ]
+    },
+    {
+      "provider": "youtube",
+      "nerveCategory": "peripheral-nerve",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "returnDate": null,
+      "slug": "ryan-crouser-2024-ulnar-nerve",
+      "videoId": "Cuw96lZ9aYI",
+      "name": "Ryan Crouser",
+      "sport": "田徑",
+      "event": "2024 鉛球｜投擲肘尺神經問題",
+      "bodyPart": "肘部",
+      "eventDate": null,
+      "eventYear": "2024",
+      "returnText": "後續重返比賽不等於尺神經完全康復；未核定單一回場日期。",
+      "footageKind": "athlete-interview",
+      "observation": "CITIUS MAG 本人訪談，談 2024 年肘部傷勢與處置，不是受傷瞬間。報導具名為投擲肘尺神經（ulnar nerve）問題，屬周邊神經案例；之後的胸肌受傷另行區分，不把兩次傷勢混成同一診斷。",
+      "videoUrl": "https://www.youtube.com/watch?v=Cuw96lZ9aYI",
+      "publisher": "CITIUS MAG",
+      "sourceTitle": "Olympic Champion Ryan Crouser Explains Elbow Injury and Operation After Shot Put Qualifying Round",
+      "durationSeconds": 303,
+      "sources": [
+        {
+          "title": "NBC Olympics：Crouser 談 2024 年肘部與胸肌傷勢",
+          "url": "https://www.nbcolympics.com/news/ryan-crouser-olympic-gold-injuries"
+        },
+        {
+          "title": "NBC Olympics：Crouser 尺神經傷勢與巴黎奧運",
+          "url": "https://www.nbcolympics.com/news/legendary-status-us-shot-putter-ryan-crouser-wins-unprecedented-third-gold-medal"
+        }
+      ]
+    },
+    {
+      "provider": "youtube",
+      "nerveCategory": "brachial-plexus",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "returnDate": null,
+      "slug": "rob-horne-2018-brachial-plexus",
+      "videoId": "wgZZoWIR7rQ",
+      "name": "Rob Horne",
+      "sport": "橄欖球",
+      "event": "2018 Northampton Saints｜臂神經叢撕脫傷",
+      "bodyPart": "肩部",
+      "eventDate": "2018-04-14",
+      "returnText": "2018 年宣布因傷退休；不是等待復賽的案例。",
+      "footageKind": "athlete-interview",
+      "observation": "Northampton Saints 發布的本人長訪談，不是受傷當下畫面。Horne 自述臂神經叢撕脫傷（brachial plexus avulsion）及右上肢癱瘓；本頁獨立歸入神經叢損傷，不當成單一周邊神經損傷，也不與短暫 stinger 畫上等號。",
+      "videoUrl": "https://www.youtube.com/watch?v=wgZZoWIR7rQ",
+      "publisher": "Northampton Saints",
+      "sourceTitle": "Rob Horne: Extended interview",
+      "durationSeconds": 735,
+      "sources": [
+        {
+          "title": "Rugby Australia：Horne 本人說明臂神經叢撕脫傷",
+          "url": "https://www.rugby.com.au/news/2018/07/22/horne-injury-testimonial"
+        },
+        {
+          "title": "Northampton Saints：Horne 因神經傷害退休",
+          "url": "https://www.northamptonsaints.co.uk/news/rob-horne-retires-from-professional-rugby-through-injury"
+        }
+      ]
+    }
+  ]
+}
