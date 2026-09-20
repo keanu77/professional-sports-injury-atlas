@@ -1,0 +1,59 @@
+[
+  {
+    "url": "https://www.youtube.com/watch?v=HiLO6a9crD4",
+    "path": "/videos/fernando-alonso-2016-rib/",
+    "startSeconds": 0,
+    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-20T07:46:15.145Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.020032,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=_jrPqJow81Q",
+    "path": "/videos/drew-brees-2020-rib/",
+    "startSeconds": 0,
+    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-20T07:46:21.627Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.017162,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=JckTrmIPRK8",
+    "path": "/videos/tua-tagovailoa-2021-rib/",
+    "startSeconds": 0,
+    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-20T07:46:28.291Z",
+    "status": "played",
+    "before": {
+      "time": 0,
+      "paused": true,
+      "readyState": 0
+    },
+    "after": {
+      "time": 1.017985,
+      "paused": false,
+      "readyState": 4
+    },
+    "captionControls": ["字幕/CC 已關閉"]
+  }
+]

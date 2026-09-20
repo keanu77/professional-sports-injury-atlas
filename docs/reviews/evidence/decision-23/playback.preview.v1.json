@@ -3,8 +3,8 @@
     "url": "https://www.youtube.com/watch?v=xSUKd03LJwE",
     "path": "/cases/jayson-tatum-achilles-rupture-2025/",
     "startSeconds": 0,
-    "origin": "https://f0cd3f0d.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-13T02:12:28.079Z",
+    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-20T07:50:10.210Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -12,7 +12,7 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.016559,
+      "time": 1.017197,
       "paused": false,
       "readyState": 4
     },
@@ -22,8 +22,8 @@
     "url": "https://www.youtube.com/watch?v=azQpbyDBktk",
     "path": "/cases/tyrese-haliburton-achilles-rupture-2025/",
     "startSeconds": 0,
-    "origin": "https://f0cd3f0d.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-13T02:12:28.063Z",
+    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-20T07:50:17.688Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -31,18 +31,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.01661,
+      "time": 1.00559,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": []
+    "captionControls": ["這部影片未提供字幕"]
   },
   {
     "url": "https://www.youtube.com/watch?v=7tpaxZTTi2w",
     "path": "/videos/zverev-roland-garros-2022/",
     "startSeconds": 1340,
-    "origin": "https://f0cd3f0d.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-13T02:12:34.861Z",
+    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-20T07:50:24.417Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -50,7 +50,7 @@
       "readyState": 0
     },
     "after": {
-      "time": 1341.013881,
+      "time": 1341.006988,
       "paused": false,
       "readyState": 4
     },
@@ -60,8 +60,8 @@
     "url": "https://www.youtube.com/watch?v=t2G8KVzTwfw",
     "path": "/videos/derek-redmond-barcelona-1992/",
     "startSeconds": 15,
-    "origin": "https://f0cd3f0d.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-13T02:12:34.861Z",
+    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-20T07:50:31.874Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -69,7 +69,7 @@
       "readyState": 0
     },
     "after": {
-      "time": 16.018795,
+      "time": 16.012987,
       "paused": false,
       "readyState": 4
     },
@@ -79,8 +79,8 @@
     "url": "https://www.youtube.com/watch?v=Bwa5Bf656As",
     "path": "/videos/kerri-strug-atlanta-1996/",
     "startSeconds": 0,
-    "origin": "https://f0cd3f0d.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-13T02:12:39.395Z",
+    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-20T07:50:40.360Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -88,7 +88,7 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.004741,
+      "time": 1.014301,
       "paused": false,
       "readyState": 4
     },
@@ -98,8 +98,8 @@
     "url": "https://www.youtube.com/watch?v=nfpXC98FLuE",
     "path": "/videos/carolina-marin-indonesia-2019/",
     "startSeconds": 35,
-    "origin": "https://f0cd3f0d.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-13T02:12:39.421Z",
+    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-20T07:50:46.498Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -107,7 +107,7 @@
       "readyState": 0
     },
     "after": {
-      "time": 36.006841,
+      "time": 36.010477,
       "paused": false,
       "readyState": 4
     },
@@ -117,8 +117,8 @@
     "url": "https://www.youtube.com/watch?v=4y-1D7jTW_4",
     "path": "/videos/julie-foucher-box-jump-2015/",
     "startSeconds": 35,
-    "origin": "https://f0cd3f0d.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-13T02:12:43.805Z",
+    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-20T07:50:52.952Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -126,7 +126,7 @@
       "readyState": 0
     },
     "after": {
-      "time": 36.011811,
+      "time": 36.012137,
       "paused": false,
       "readyState": 4
     },

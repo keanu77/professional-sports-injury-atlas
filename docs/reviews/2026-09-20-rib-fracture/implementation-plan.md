@@ -1,5 +1,7 @@
 # Rib Fracture Three Cases Implementation Plan
 
+Editorial implementation record, colocated with its review evidence rather than the platform's authority-controlled plans. The initial candidate examples below are historical: the user subsequently approved a same-event replacement search, and Alonso now uses the official Times Of India news-analysis clip `HiLO6a9crD4`. See README for the restriction and verification history; no authority ledger or release gate is changed by this document relocation.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking.
 
 **Goal:** Add three independently sourced observation pages for Alonso 2016, Brees 2020 and Tua 2021.
@@ -21,18 +23,30 @@ Execution choice is already approved: main agent implements in the current featu
 
 ```ts
 const selections = [
-  ["fernando-alonso-2016-rib", "x45fLUTHCuk", "injury-motion", "automobile-racing"],
+  [
+    "fernando-alonso-2016-rib",
+    "x45fLUTHCuk",
+    "injury-motion",
+    "automobile-racing",
+  ],
   ["drew-brees-2020-rib", "_jrPqJow81Q", "news-analysis", "american-football"],
-  ["tua-tagovailoa-2021-rib", "JckTrmIPRK8", "news-analysis", "american-football"],
+  [
+    "tua-tagovailoa-2021-rib",
+    "JckTrmIPRK8",
+    "news-analysis",
+    "american-football",
+  ],
 ] as const;
 it.each(selections)("integrates %s", (slug, id, kind, sport) => {
-  const clip = allObservationClips.find(c => c.slug === slug);
+  const clip = allObservationClips.find((c) => c.slug === slug);
   expect(clip).toBeDefined();
   expect(clip!.videoId).toBe(id);
   expect(clip!.footageKind).toBe(kind);
   expect(publicVideoIds.has(id)).toBe(true);
   expect(observationVideoSearchText(clip!)).toContain("rib fracture");
-  expect(observationCategoryLinks(clip!).map(x => x.href)).toContain(`/sports/${sport}/`);
+  expect(observationCategoryLinks(clip!).map((x) => x.href)).toContain(
+    `/sports/${sport}/`,
+  );
 });
 ```
 

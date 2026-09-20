@@ -3,8 +3,8 @@
     "url": "https://www.youtube.com/watch?v=hxcRVu1-T-c",
     "path": "/videos/shohei-ohtani-world-series-2024/",
     "startSeconds": 0,
-    "origin": "https://044c5edc.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-13T04:20:58.812Z",
+    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-20T07:50:09.110Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -12,20 +12,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.014898,
+      "time": 1.006843,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=12UNVAkLlmY",
     "path": "/videos/usain-bolt-london-2017/",
     "startSeconds": 30,
-    "origin": "https://044c5edc.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-13T04:21:03.317Z",
+    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-20T07:50:14.902Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -33,20 +31,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 31.014882,
+      "time": 31.013072,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=mi7fXtGTwbc",
     "path": "/videos/mohamed-salah-final-2018/",
     "startSeconds": 0,
-    "origin": "https://044c5edc.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-13T04:21:07.162Z",
+    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-20T07:50:20.527Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -54,20 +50,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.005732,
+      "time": 1.008633,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "這部影片未提供字幕"
-    ]
+    "captionControls": ["這部影片未提供字幕"]
   },
   {
     "url": "https://www.youtube.com/watch?v=ctiT9toFmio",
     "path": "/videos/giannis-east-final-2021/",
     "startSeconds": 0,
-    "origin": "https://044c5edc.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-13T04:21:10.915Z",
+    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-20T07:50:26.129Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -75,20 +69,18 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.011704,
+      "time": 1.021094,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   },
   {
     "url": "https://www.youtube.com/watch?v=b2vVxFhpEv0",
     "path": "/videos/markelle-fultz-orlando-2021/",
     "startSeconds": 0,
-    "origin": "https://044c5edc.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-13T04:21:14.654Z",
+    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
+    "checkedAt": "2026-09-20T07:50:32.258Z",
     "status": "played",
     "before": {
       "time": 0,
@@ -96,12 +88,10 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.010499,
+      "time": 1.015242,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": [
-      "字幕/CC 已關閉"
-    ]
+    "captionControls": ["字幕/CC 已關閉"]
   }
 ]

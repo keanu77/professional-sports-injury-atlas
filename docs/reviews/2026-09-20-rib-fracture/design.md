@@ -1,5 +1,7 @@
 # 肋骨骨折三案例設計
 
+本文件為個案編輯設計紀錄，歸入本次 review 資料夾；不是平台權威契約，也不取代既有綁定與核准。下列候選表保留初始設計；使用者後續同意尋找同事件替代片後，Alonso 改用 Times Of India 的 `HiLO6a9crD4`（新聞分析），原 F1 影片僅保留外連。實際驗證與變更原因見同資料夾 README。
+
 日期：2026-09-20。狀態：使用者已回覆「規格確認，開始實作」。
 
 ## 目標與授權
@@ -17,11 +19,11 @@
 
 ## 案例範圍
 
-| 頁面 slug | 事件 | 候選 YouTube ID | 發布者與內容定位 |
-| --- | --- | --- | --- |
-| `fernando-alonso-2016-rib` | 2016 澳洲站事故 | `x45fLUTHCuk` | FORMULA 1；官方事故畫面 |
-| `drew-brees-2020-rib` | 2020 賽季肋骨傷勢 | `_jrPqJow81Q` | Brian Sutterer MD；第三方醫師分析 |
-| `tua-tagovailoa-2021-rib` | 2021 對 Bills 後肋骨傷勢 | `JckTrmIPRK8` | Brian Sutterer MD；早期第三方醫師分析 |
+| 頁面 slug                  | 事件                     | 候選 YouTube ID | 發布者與內容定位                      |
+| -------------------------- | ------------------------ | --------------- | ------------------------------------- |
+| `fernando-alonso-2016-rib` | 2016 澳洲站事故          | `x45fLUTHCuk`   | FORMULA 1；官方事故畫面               |
+| `drew-brees-2020-rib`      | 2020 賽季肋骨傷勢        | `_jrPqJow81Q`   | Brian Sutterer MD；第三方醫師分析     |
+| `tua-tagovailoa-2021-rib`  | 2021 對 Bills 後肋骨傷勢 | `JckTrmIPRK8`   | Brian Sutterer MD；早期第三方醫師分析 |
 
 候選影片已於研究階段取得 YouTube oEmbed 的名稱及頻道資料；這不等同實際播放、地區可用性或嵌入檢查通過。上述 ID 是待驗證的選定候選，不可用其他年份或其他傷勢影片默默替代。
 

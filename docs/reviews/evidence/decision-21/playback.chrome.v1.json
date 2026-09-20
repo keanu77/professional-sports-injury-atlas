@@ -2,7 +2,7 @@
   {
     "caseId": "CASE-NBAANKLE-2023-004",
     "url": "https://www.youtube.com/watch?v=8TIJGIRP634",
-    "checkedAt": "2026-09-13T01:59:12.998Z",
+    "checkedAt": "2026-09-20T07:50:08.225Z",
     "status": "played",
     "title": "Anfernee Simons helped to locker room after suffering leg injury | NBA on ESPN - YouTube",
     "before": {
@@ -11,7 +11,7 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.009321,
+      "time": 1.003179,
       "paused": false,
       "readyState": 4,
       "tracks": []
@@ -28,7 +28,7 @@
   {
     "caseId": "CASE-NBAACHILLES-2019-005",
     "url": "https://www.youtube.com/watch?v=YcSOLHMsJYw",
-    "checkedAt": "2026-09-13T01:59:16.901Z",
+    "checkedAt": "2026-09-20T07:50:12.766Z",
     "status": "played",
     "title": "Kevin Durant suffers Achilles injury after hot start, exits Game 5 | 2019 NBA Finals Highlights - YouTube",
     "before": {
@@ -37,7 +37,7 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.009906,
+      "time": 1.017383,
       "paused": false,
       "readyState": 4,
       "tracks": []
@@ -54,7 +54,7 @@
   {
     "caseId": "CASE-NBAANKLE-2021-002",
     "url": "https://www.youtube.com/watch?v=FQAPZASQyX0",
-    "checkedAt": "2026-09-13T01:59:20.889Z",
+    "checkedAt": "2026-09-20T07:45:49.772Z",
     "status": "played",
     "title": "Kyrie Irving sustains 2nd quarter ankle injury, out for rest of Game 3 #Shorts - YouTube",
     "before": {
@@ -63,7 +63,7 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.004341,
+      "time": 1.039045,
       "paused": false,
       "readyState": 4,
       "tracks": []
@@ -80,7 +80,7 @@
   {
     "caseId": "CASE-NBAANKLE-2023-008",
     "url": "https://www.youtube.com/watch?v=RDDGpqOvSdg",
-    "checkedAt": "2026-09-13T01:59:24.532Z",
+    "checkedAt": "2026-09-20T07:50:27.047Z",
     "status": "played",
     "title": "LaMelo Ball was helped to the locker room after suffering an apparent injury - YouTube",
     "before": {
@@ -89,7 +89,7 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.01127,
+      "time": 1.006199,
       "paused": false,
       "readyState": 4,
       "tracks": []
@@ -106,7 +106,7 @@
   {
     "caseId": "CASE-NBAANKLE-2025-002",
     "url": "https://www.youtube.com/watch?v=zZdndTqOexc",
-    "checkedAt": "2026-09-13T01:59:28.105Z",
+    "checkedAt": "2026-09-20T07:50:31.794Z",
     "status": "played",
     "title": "LaMelo Ball would go into the locker room after noticeably limping on court. - YouTube",
     "before": {
@@ -115,7 +115,7 @@
       "readyState": 0
     },
     "after": {
-      "time": 1.011375,
+      "time": 1.018303,
       "paused": false,
       "readyState": 4,
       "tracks": []
