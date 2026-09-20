@@ -32,6 +32,22 @@ for (const [slug, name, kind] of cases) {
       kind,
     );
     await expect(page.locator("[data-recovery-timeline]")).toBeVisible();
+    const mechanism = page.locator(`[data-event-mechanism="${slug}"]`);
+    await expect(mechanism).toBeVisible();
+    await expect(mechanism.locator(".limitation")).toContainText(
+      "影片分析的限制",
+    );
+    const citations = mechanism.locator('a[href^="#event-source-"]');
+    expect(await citations.count()).toBeGreaterThan(0);
+    for (const citation of await citations.all()) {
+      const target = await citation.getAttribute("href");
+      expect(target).toMatch(new RegExp(`^#event-source-${slug}-[1-9]\\d*$`));
+      await expect(page.locator(target!)).toHaveCount(1);
+    }
+    await citations.first().click();
+    await expect(
+      page.locator((await citations.first().getAttribute("href"))!),
+    ).toBeVisible();
     await expect(page.locator("iframe")).toHaveCount(0);
     expect(external).toEqual([]);
     if (kind === "athlete-interview")
