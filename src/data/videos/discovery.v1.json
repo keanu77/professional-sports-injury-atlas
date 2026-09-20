@@ -4,6 +4,9 @@
   "classificationBasis": "依既有影片觀察摘要選擇一個主要情境；分類描述影片中的動作，不判定致傷原因。畫面不足者歸其他或畫面未明。",
   "curationBasis": "優先選擇受傷過程清楚、具名傷勢與回場來源完整，並涵蓋不同運動與情境的影片。精選順序由本站編輯安排，不代表熱門程度。",
   "videos": [
+    { "slug": "fernando-alonso-2016-rib", "situation": "collision" },
+    { "slug": "drew-brees-2020-rib", "situation": "collision" },
+    { "slug": "tua-tagovailoa-2021-rib", "situation": "collision" },
     {
       "slug": "aaron-judge-2026-rib",
       "situation": "unclear"

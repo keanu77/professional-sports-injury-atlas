@@ -15,8 +15,8 @@ import { observationResourcesFor } from "../../src/lib/videos/observation-guidan
 describe("the thirty recent cases", () => {
   it("adds distinct dated cases with matching reports, citations, and discovery metadata", () => {
     expect(recent150.clips).toHaveLength(30);
-    expect(allObservationClips).toHaveLength(144);
-    expect(eventUpdates.entries).toHaveLength(151);
+    expect(allObservationClips).toHaveLength(147);
+    expect(eventUpdates.entries).toHaveLength(154);
     for (const clip of recent150.clips) {
       expect(clip.footageKind, clip.slug).toBeDefined();
       const update = eventUpdateFor(clip.slug, clip.videoUrl, clip.eventDate)!;

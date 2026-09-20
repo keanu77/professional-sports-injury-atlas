@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "decision": "rib-fracture-three-2026-09-20",
+  "authorizationQuote": "規格確認，開始實作",
+  "clips": [
+    {
+      "slug": "fernando-alonso-2016-rib",
+      "videoId": "x45fLUTHCuk",
+      "name": "Fernando Alonso",
+      "sport": "賽車",
+      "event": "2016 F1 澳洲站事故後肋骨骨折與氣胸",
+      "bodyPart": "軀幹",
+      "observation": "FORMULA 1 官方回顧 Alonso 在澳洲站碰撞、撞牆及翻滾的畫面。後續公開傷勢為肋骨骨折（rib fracture）合併氣胸；能自行離開車體不代表沒有胸部傷害。影片可用來觀察事故順序，不能辨認哪根肋骨受傷。",
+      "footageKind": "injury-motion",
+      "eventDate": "2016-03-20",
+      "returnDate": "2016-04-17",
+      "returnText": "2016-04-17 完成中國站正賽，名列第十二；4 月 15 日練習後通過醫療複檢，與正賽復出是不同里程碑。",
+      "videoUrl": "https://www.youtube.com/watch?v=x45fLUTHCuk",
+      "publisher": "FORMULA 1",
+      "sourceTitle": "Alonso And Gutierrez Crash | Australian Grand Prix 2016",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 68,
+      "sources": [
+        {
+          "title": "F1：Alonso 說明肋骨骨折、氣胸與缺賽原因",
+          "url": "https://www.formula1.com/en/latest/article/alonso-reveals-injuries-admits-he-could-miss-china.6YXmjCEtcMB1uQctjwADNq"
+        },
+        {
+          "title": "F1：2016 中國站正式賽果",
+          "url": "https://www.formula1.com/en/results/2016/races/940/china/race-result"
+        }
+      ]
+    },
+    {
+      "slug": "drew-brees-2020-rib",
+      "videoId": "_jrPqJow81Q",
+      "name": "Drew Brees",
+      "sport": "美式足球",
+      "event": "2020 Saints 多次碰撞後肋骨骨折與肺部傷勢",
+      "bodyPart": "軀幹",
+      "observation": "Brian Sutterer MD 的第三方醫師解說，討論 Brees 的肋骨骨折（rib fracture）及胸腔傷害。Saints 後續回顧記載他在兩場比賽先後受傷，因此不能把所有骨折歸於影片中的單次撞擊；影片不是球隊醫療公告。",
+      "footageKind": "news-analysis",
+      "eventDate": "2020-11-08",
+      "returnDate": "2020-12-20",
+      "returnText": "2020-12-20 對 Chiefs 重返正式賽，先前缺席四場；11 月 8 日為球隊事後回顧的較早傷勢起點，不計算單一骨折復原天數。",
+      "videoUrl": "https://www.youtube.com/watch?v=_jrPqJow81Q",
+      "publisher": "Brian Sutterer MD",
+      "sourceTitle": "Drew Brees Has Ribs Broken and Lung Punctured after Huge Hit - Doctor Explains NFL Injury",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 453,
+      "sources": [
+        {
+          "title": "Saints：2020 賽季回顧與先後兩場胸部受傷",
+          "url": "https://www.neworleanssaints.com/news/new-orleans-saints-2020-season-recap-drew-brees"
+        },
+        {
+          "title": "Saints：2020-12-20 Brees 復出賽事紀錄",
+          "url": "https://www.neworleanssaints.com/news/game-recap-new-orleans-saints-come-up-short-in-drew-brees-return-fall-to-kansas-"
+        }
+      ]
+    },
+    {
+      "slug": "tua-tagovailoa-2021-rib",
+      "videoId": "JckTrmIPRK8",
+      "name": "Tua Tagovailoa",
+      "sport": "美式足球",
+      "event": "2021 Dolphins 對 Bills 後確認肋骨骨折",
+      "bodyPart": "軀幹",
+      "observation": "Brian Sutterer MD 的早期第三方傷勢分析，發布時資訊仍有限，不能把影片推測當成最終診斷。本頁以海豚隊後續公布的肋骨骨折（rib fracture）為準；此為 2021 年胸部事件，與 2024 年腦震盪不同。",
+      "footageKind": "news-analysis",
+      "eventDate": "2021-09-19",
+      "returnDate": "2021-10-17",
+      "returnText": "2021-10-16 自傷兵名單啟用，翌日於倫敦對 Jaguars 正式出賽；名單啟用不等於已完成比賽。",
+      "videoUrl": "https://www.youtube.com/watch?v=JckTrmIPRK8",
+      "publisher": "Brian Sutterer MD",
+      "sourceTitle": "Doctor Reacts to Tua Tagovailoa PAINFUL RIB INJURY - What Happened?",
+      "captionStatus": "not-verified",
+      "startSeconds": 0,
+      "durationSeconds": 250,
+      "sources": [
+        {
+          "title": "Dolphins：進一步檢查確認肋骨骨折",
+          "url": "https://www.miamidolphins.com/news/the-blitz-thursday-september-23-2021"
+        },
+        {
+          "title": "Dolphins：2021-10-17 倫敦賽出賽紀錄",
+          "url": "https://www.miamidolphins.com/news/miami-dolphins-lose-to-jaguars-23-20-week-6-recap"
+        }
+      ]
+    }
+  ]
+}

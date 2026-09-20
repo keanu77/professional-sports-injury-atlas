@@ -181,7 +181,12 @@ if (clip.startSeconds > 0)
               </a>
             </p>
           </section>
-        ) : clip.slug === "aaron-judge-2026-rib" ? (
+        ) : [
+            "aaron-judge-2026-rib",
+            "fernando-alonso-2016-rib",
+            "drew-brees-2020-rib",
+            "tua-tagovailoa-2021-rib",
+          ].includes(clip.slug) ? (
           <section data-general-guidance data-rib-injury-care>
             <h2>一般人參考：當下怎麼做</h2>
             <h3>胸部傷害與呼吸警訊</h3>
@@ -189,7 +194,7 @@ if (clip.startSeconds > 0)
               先停止會加重疼痛的運動與搬重物，接受醫療評估。保持正常呼吸；不要因怕痛而一直憋氣或長時間不動。
             </p>
             <p>
-              呼吸愈來愈困難、胸痛加劇或咳血，應立即急診就醫；情況危急時叫救護車。
+              嚴重事故後的胸部傷害、呼吸愈來愈困難、胸痛加劇或咳血，應立即急診就醫；情況危急時叫救護車。
             </p>
             <p class="clip-meta">
               處理參考：
@@ -200,7 +205,10 @@ if (clip.startSeconds > 0)
               >
                 NHS 肋骨骨折與挫傷
               </a>
-              。一般肋骨傷害的衛教不能取代運動員第一肋骨疲勞性骨折的個別復健與回場評估。
+              。
+              {clip.slug === "aaron-judge-2026-rib"
+                ? "一般肋骨傷害的衛教不能取代運動員第一肋骨疲勞性骨折的個別復健與回場評估。"
+                : "一般衛教不能取代個別胸部傷害的評估；運動員實際復賽時間不是一般人的回場期限。"}
             </p>
           </section>
         ) : (

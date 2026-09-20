@@ -124,6 +124,18 @@
     }
   },
   "entries": {
+    "fernando-alonso-2016-rib": {
+      "resources": ["overview"],
+      "note": "胸部傷害的一般資訊與警訊請見本頁來源，不以其他部位的復健時程代用。"
+    },
+    "drew-brees-2020-rib": {
+      "resources": ["overview"],
+      "note": "胸部傷害的一般資訊與警訊請見本頁來源；多次受傷不能換算成單一癒合期限。"
+    },
+    "tua-tagovailoa-2021-rib": {
+      "resources": ["overview"],
+      "note": "胸部傷害的一般資訊與警訊請見本頁來源；此案例不是腦震盪或肋軟骨傷勢。"
+    },
     "aaron-judge-2026-rib": {
       "resources": ["overview"],
       "note": "主題總覽提供一般運動傷害資訊；第一肋骨的研究與胸部傷害處理來源請見本頁，不以其他部位的復健時程代用。"

@@ -178,6 +178,11 @@ const judgeRibProofPath =
 const judgeRibProof = existsSync(judgeRibProofPath)
   ? JSON.parse(readFileSync(judgeRibProofPath, "utf8"))
   : [];
+const ribFractureProofPath =
+  "docs/reviews/2026-09-20-rib-fracture/playback.preview.json";
+const ribFractureProof = existsSync(ribFractureProofPath)
+  ? JSON.parse(readFileSync(ribFractureProofPath, "utf8"))
+  : [];
 for (const item of [...expansion.cases, ...allObservationClips]) {
   const proof = [
     ...additional,
@@ -190,6 +195,7 @@ for (const item of [...expansion.cases, ...allObservationClips]) {
     ...recent120Proof,
     ...recent150Proof,
     ...judgeRibProof,
+    ...ribFractureProof,
   ].find((p: { url: string }) => p.url === item.videoUrl);
   assert.ok(
     proof &&

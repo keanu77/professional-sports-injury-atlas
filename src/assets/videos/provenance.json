@@ -5,6 +5,27 @@
   "capturedAt": "2026-09-06T02:49:09.221221+00:00",
   "assets": [
     {
+      "videoId": "x45fLUTHCuk",
+      "path": "src/assets/videos/x45fLUTHCuk.jpg",
+      "source": "https://i.ytimg.com/vi/x45fLUTHCuk/hqdefault.jpg",
+      "sha256": "7c897ff4701b1d886709e08f9c5f187c264e63c9ab65d685857d58e28430288e",
+      "capturedAt": "2026-09-20T06:34:49Z"
+    },
+    {
+      "videoId": "_jrPqJow81Q",
+      "path": "src/assets/videos/_jrPqJow81Q.jpg",
+      "source": "https://i.ytimg.com/vi/_jrPqJow81Q/hqdefault.jpg",
+      "sha256": "4173ae76431e5bda596d80936d6ad8c7dd5c12b4afd4219611630c7a1b8043e4",
+      "capturedAt": "2026-09-20T06:34:49Z"
+    },
+    {
+      "videoId": "JckTrmIPRK8",
+      "path": "src/assets/videos/JckTrmIPRK8.jpg",
+      "source": "https://i.ytimg.com/vi/JckTrmIPRK8/hqdefault.jpg",
+      "sha256": "9424173644198599d637ba6252e141604a12775717a9ceb853542072d7dd7798",
+      "capturedAt": "2026-09-20T06:34:49Z"
+    },
+    {
       "videoId": "-M5v2OSrnEY",
       "path": "src/assets/videos/-M5v2OSrnEY.jpg",
       "source": "https://i.ytimg.com/vi/-M5v2OSrnEY/hqdefault.jpg",

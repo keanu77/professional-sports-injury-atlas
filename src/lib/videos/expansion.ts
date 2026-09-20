@@ -7,6 +7,7 @@ import batch34Data from "../../data/videos/batch-34.v1.json";
 import recent120Data from "../../data/videos/recent-120.v1.json";
 import recent150Data from "../../data/videos/recent-150.v1.json";
 import judgeRibData from "../../data/videos/judge-rib.v1.json";
+import ribFractureData from "../../data/videos/rib-fracture-three.v1.json";
 import data from "../../data/videos/expansion.v1.json";
 import launchData from "../../data/public-launch.v1.json";
 import curationData from "../../data/videos/curation.v1.json";
@@ -447,9 +448,55 @@ export const judgeRibSchema = z
       });
   });
 export const judgeRib = judgeRibSchema.parse(judgeRibData);
+const ribSelections = new Map([
+  ["fernando-alonso-2016-rib", "x45fLUTHCuk"],
+  ["drew-brees-2020-rib", "_jrPqJow81Q"],
+  ["tua-tagovailoa-2021-rib", "JckTrmIPRK8"],
+]);
+export const ribFractureThreeSchema = z
+  .strictObject({
+    schemaVersion: z.literal(1),
+    decision: z.literal("rib-fracture-three-2026-09-20"),
+    authorizationQuote: z.literal("規格確認，開始實作"),
+    clips: z.array(observationClipSchema).length(3),
+  })
+  .superRefine((value, ctx) => {
+    const previous = [...priorObservationClips, ...judgeRib.clips];
+    const slugs = new Set(previous.map((c) => c.slug));
+    const ids = new Set([
+      ...previous.map((c) => c.videoId),
+      ...[...launchData.cases, ...expansion.cases].map((c) =>
+        parseYouTubeVideoId(c.videoUrl),
+      ),
+    ]);
+    const events = new Set(previous.map(observationEventKey));
+    for (const clip of value.clips) {
+      if (
+        ribSelections.get(clip.slug) !== clip.videoId ||
+        slugs.has(clip.slug) ||
+        ids.has(clip.videoId) ||
+        events.has(observationEventKey(clip)) ||
+        parseYouTubeVideoId(clip.videoUrl) !== clip.videoId ||
+        clip.startSeconds >= clip.durationSeconds ||
+        (clip.returnDate &&
+          (!clip.eventDate ||
+            clip.returnDate < clip.eventDate ||
+            clip.sources.length === 0))
+      )
+        ctx.addIssue({
+          code: "custom",
+          message: `Invalid or duplicate rib case: ${clip.slug}`,
+        });
+      slugs.add(clip.slug);
+      ids.add(clip.videoId);
+      events.add(observationEventKey(clip));
+    }
+  });
+export const ribFractureThree = ribFractureThreeSchema.parse(ribFractureData);
 export const allObservationClips: ObservationClip[] = [
   ...priorObservationClips,
   ...judgeRib.clips,
+  ...ribFractureThree.clips,
 ];
 export const expansionEnabled = () =>
   process.env.ATLAS_PUBLIC_LAUNCH === "decision-21";

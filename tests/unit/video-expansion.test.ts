@@ -5,6 +5,7 @@ import batch34Data from "../../src/data/videos/batch-34.v1.json";
 import recent120Data from "../../src/data/videos/recent-120.v1.json";
 import recent150Data from "../../src/data/videos/recent-150.v1.json";
 import judgeRibData from "../../src/data/videos/judge-rib.v1.json";
+import ribFractureThreeData from "../../src/data/videos/rib-fracture-three.v1.json";
 import { readFileSync } from "node:fs";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
@@ -66,7 +67,8 @@ describe("confirmed video expansion", () => {
         batch34Data.clips.length +
         recent120Data.clips.length +
         recent150Data.clips.length +
-        judgeRibData.clips.length,
+        judgeRibData.clips.length +
+        ribFractureThreeData.clips.length,
     );
     expect(
       captionsOptionalFor("https://www.youtube.com/watch?v=unlisted000"),

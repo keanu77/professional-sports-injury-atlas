@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "decision": "rib-fracture-three-2026-09-20",
+  "checkedAt": "2026-09-20",
+  "entries": [
+    {
+      "slug": "fernando-alonso-2016-rib",
+      "videoUrl": "https://www.youtube.com/watch?v=x45fLUTHCuk",
+      "eventDate": "2016-03-20",
+      "injury": "F1 官方報導 Alonso 公開說明肋骨骨折，並曾出現小型氣胸。",
+      "returnDate": "2016-04-17",
+      "returnSummary": "2016-04-17 重返中國站正式賽並完成比賽，名列第十二。此前已在練習後接受複檢；獲准駕駛與實際完成正賽分開記錄。",
+      "context": "澳洲站事故後仍能自行離開車體，後續檢查卻發現胸部傷勢，因此缺席巴林站。回場間隔是個案賽歷，不是一般肋骨骨折的癒合期限。",
+      "mechanism": {
+        "title": "高速事故後，外觀與胸腔傷勢不一定一致",
+        "summary": {
+          "text": "Alonso 與 Gutiérrez 的賽車接觸後撞牆翻滾。F1 後續報導他有肋骨骨折及氣胸，不能以能走離現場排除內部傷害。",
+          "sourceIndexes": [1, 2]
+        },
+        "steps": [
+          "賽車接近彎道時與前車接觸。",
+          "撞牆後在緩衝區翻滾，車手離開車體。",
+          "後續接受胸部檢查，暫停參賽並於復出前複檢。"
+        ],
+        "explanation": {
+          "text": "胸部外傷可能同時涉及肋骨與肺部。氣胸是肺外胸膜腔內積氣，妨礙肺擴張；它不能只靠事故畫面判定，需由醫療檢查評估。",
+          "sourceIndexes": [5]
+        },
+        "limitation": "未取得完整影像與病歷，不能從翻車影像確定骨折位置、數量或哪一次撞擊造成氣胸，也不能將受傷後自行行走視為安全回場的證據。"
+      },
+      "timeline": [
+        {
+          "date": "2016-03-20",
+          "title": "澳洲站事故",
+          "text": "與 Gutiérrez 的車接觸後撞牆翻滾，退出比賽。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2016-03-31",
+          "title": "公開胸部傷勢並缺席巴林站",
+          "text": "說明檢查曾發現氣胸及肋骨骨折；此為公開報導日，不當作最早確診日。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2016-04-15",
+          "title": "中國站練習後通過複檢",
+          "text": "FIA 醫療團隊准許參加其餘賽程；出現異常症狀仍須立即停車。",
+          "sourceIndexes": [3]
+        },
+        {
+          "date": "2016-04-17",
+          "title": "完成正式賽",
+          "text": "中國站正賽完成 56 圈，名列第十二。",
+          "sourceIndexes": [4]
+        }
+      ],
+      "sources": [
+        {
+          "title": "F1：2016 澳洲站事故經過",
+          "url": "https://www.formula1.com/en/latest/article/f1-australia-alonso-crash-gutierrez-video.7GbyqtsGo1XyyvN4AdHmKv",
+          "publishedAt": "2016-03-20"
+        },
+        {
+          "title": "F1：Alonso 公開肋骨骨折與氣胸傷勢",
+          "url": "https://www.formula1.com/en/latest/article/alonso-reveals-injuries-admits-he-could-miss-china.6YXmjCEtcMB1uQctjwADNq",
+          "publishedAt": "2016-03-31"
+        },
+        {
+          "title": "F1：練習後通過 FIA 醫療複檢",
+          "url": "https://www.formula1.com/en/latest/article/alonso-cleared-to-race-in-china.4SS6LH8WfsYNWKKsJ7ktM1.4SS6LH8WfsYNWKKsJ7ktM1",
+          "publishedAt": "2016-04-15"
+        },
+        {
+          "title": "F1：2016 中國站正式賽果",
+          "url": "https://www.formula1.com/en/results/2016/races/940/china/race-result",
+          "publishedAt": "2016-04-17"
+        },
+        {
+          "title": "MedlinePlus：氣胸的成因與評估",
+          "url": "https://medlineplus.gov/ency/article/000087.htm",
+          "publishedAt": null
+        },
+        {
+          "title": "NHS：肋骨骨折與胸部傷害警訊",
+          "url": "https://www.nhs.uk/conditions/broken-or-bruised-ribs/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "drew-brees-2020-rib",
+      "videoUrl": "https://www.youtube.com/watch?v=_jrPqJow81Q",
+      "eventDate": "2020-11-08",
+      "eventDateCertainty": "reported",
+      "injury": "Saints 球隊回顧記載先後兩場比賽的肋骨骨折，以及第二場後的肺部塌陷。",
+      "returnDate": "2020-12-20",
+      "returnSummary": "2020-12-20 對 Chiefs 正式復出，結束四場缺賽。這是實際出賽紀錄，不代表所有骨折同時或完全癒合。",
+      "context": "球隊事後回顧將較早肋傷指向對 Buccaneers 一役，翌週對 49ers 再受傷。由於是分次受傷，本頁不顯示單一精確復原天數。",
+      "mechanism": {
+        "title": "分次受傷，不能把所有骨折歸於同一次撞擊",
+        "summary": {
+          "text": "Saints 的季末回顧區分較早對 Buccaneers 的肋傷，以及對 49ers 後新增的骨折與肺部傷害；主影片是第三方醫師解析，不是完整病歷。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "較早一場比賽後已有肋骨傷勢。",
+          "對 49ers 再遭碰撞，後續出現更複雜的胸部傷情。",
+          "暫停比賽，經名單啟用後再重返正式賽。"
+        ],
+        "explanation": {
+          "text": "氣胸涉及肺外積氣，會影響肺部擴張。骨折和肺部傷勢須分別評估，不能只用肋骨疼痛程度或一次比賽畫面推定胸腔狀況。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "影片中的解剖與機制說明屬教育性分析，不是治療團隊診斷。本頁不推算每根肋骨受傷時間，也不把缺席四場換算成人人適用的回場標準。"
+      },
+      "timeline": [
+        {
+          "date": "2020-11-08",
+          "title": "回顧記載的較早肋傷",
+          "text": "球隊事後回顧記載，對 Buccaneers 的比賽已發生肋骨傷勢。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2020-11-15",
+          "title": "對 49ers 再受傷",
+          "text": "球隊回顧記載新增肋骨骨折及肺部塌陷，不能把兩場傷勢合併為一次受傷。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2020-12-19",
+          "title": "自傷兵名單啟用",
+          "text": "球隊正式公告啟用 Brees；名單異動與翌日出賽分開記錄。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2020-12-20",
+          "title": "重返正式賽",
+          "text": "對 Chiefs 出賽，結束四場缺席。",
+          "sourceIndexes": [3]
+        }
+      ],
+      "sources": [
+        {
+          "title": "Saints：2020 賽季回顧，區分先後兩場胸部受傷",
+          "url": "https://www.neworleanssaints.com/news/new-orleans-saints-2020-season-recap-drew-brees",
+          "publishedAt": "2021-02-01"
+        },
+        {
+          "title": "Saints：2020-12-19 名單啟用公告",
+          "url": "https://www.neworleanssaints.com/news/new-orleans-saints-announce-roster-moves-12192020",
+          "publishedAt": "2020-12-19"
+        },
+        {
+          "title": "Saints：2020-12-20 復出賽事紀錄",
+          "url": "https://www.neworleanssaints.com/news/game-recap-new-orleans-saints-come-up-short-in-drew-brees-return-fall-to-kansas-",
+          "publishedAt": "2020-12-20"
+        },
+        {
+          "title": "MedlinePlus：氣胸的成因與評估",
+          "url": "https://medlineplus.gov/ency/article/000087.htm",
+          "publishedAt": null
+        },
+        {
+          "title": "NHS：肋骨骨折與胸部傷害警訊",
+          "url": "https://www.nhs.uk/conditions/broken-or-bruised-ribs/",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "tua-tagovailoa-2021-rib",
+      "videoUrl": "https://www.youtube.com/watch?v=JckTrmIPRK8",
+      "eventDate": "2021-09-19",
+      "injury": "Dolphins 引述教練確認：進一步檢查後診斷為肋骨骨折。",
+      "returnDate": "2021-10-17",
+      "returnSummary": "2021-10-17 於倫敦對 Jaguars 正式出賽，完成 329 碼傳球；10 月 16 日名單啟用不是正式回場日。",
+      "context": "本頁整理 2021 年肋骨事件，不是 2024 年腦震盪，也不是肋軟骨傷勢。早期影片的推測須搭配後續官方診斷閱讀。",
+      "mechanism": {
+        "title": "早期分析與後續確診，分開閱讀",
+        "summary": {
+          "text": "Dolphins 官網彙整教練 Brian Flores 的說法：進一步檢查確認肋骨骨折。主影片發布較早，只能作為當時資訊有限下的機制與解剖討論。",
+          "sourceIndexes": [2]
+        },
+        "steps": [
+          "在對 Bills 的比賽受傷後退出。",
+          "早期報導與醫師影片先討論可能傷勢。",
+          "球隊更新確診資訊，休養後再由啟用名單進入正式出賽。"
+        ],
+        "explanation": {
+          "text": "胸部撞擊可能造成肋骨骨折或挫傷，兩者都可能使呼吸、咳嗽時疼痛。症狀與影像片段不足以自行確診；一般衛教也不能取代個別運動員的回場評估。",
+          "sourceIndexes": [5]
+        },
+        "limitation": "未取得完整影像與病歷，不指定骨折根數或型態。影片中的早期推測不能覆蓋球隊後續診斷，也不能因沒有公開併發症細節而宣稱已排除所有胸腔傷害。"
+      },
+      "timeline": [
+        {
+          "date": "2021-09-19",
+          "title": "對 Bills 受傷退場",
+          "text": "胸部受傷後未再回場。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2021-09-20",
+          "title": "早期影像報導",
+          "text": "初步 X 光未見骨折。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2021-09-22",
+          "title": "教練公布後續確診",
+          "text": "進一步檢查確認肋骨骨折；球隊翌日彙整此更新，並說明不參加下一場比賽。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2021-10-16",
+          "title": "自傷兵名單啟用",
+          "text": "球隊公告自傷兵名單啟用 Tagovailoa。",
+          "sourceIndexes": [3]
+        },
+        {
+          "date": "2021-10-17",
+          "title": "倫敦正式賽出賽",
+          "text": "對 Jaguars 出賽，完成 329 碼傳球。",
+          "sourceIndexes": [4]
+        }
+      ],
+      "sources": [
+        {
+          "title": "NFL：2021-09-20 初步 X 光結果",
+          "url": "https://www.nfl.com/news/x-rays-on-tua-tagovailoa-s-ribs-negative-dolphins-qb-s-status-for-week-3-tbd",
+          "publishedAt": "2021-09-20"
+        },
+        {
+          "title": "Dolphins：進一步檢查後確認肋骨骨折",
+          "url": "https://www.miamidolphins.com/news/the-blitz-thursday-september-23-2021",
+          "publishedAt": "2021-09-23"
+        },
+        {
+          "title": "Dolphins：2021-10-16 自傷兵名單啟用",
+          "url": "https://www.miamidolphins.com/news/roster-moves-miami-dolphins-activate-qb-tagovailoa-elevate-wr-ford-and-wr-merrit",
+          "publishedAt": "2021-10-16"
+        },
+        {
+          "title": "Dolphins：2021-10-17 倫敦賽紀錄",
+          "url": "https://www.miamidolphins.com/news/miami-dolphins-lose-to-jaguars-23-20-week-6-recap",
+          "publishedAt": "2021-10-17"
+        },
+        {
+          "title": "NHS：肋骨骨折與胸部傷害警訊",
+          "url": "https://www.nhs.uk/conditions/broken-or-bruised-ribs/",
+          "publishedAt": null
+        }
+      ]
+    }
+  ]
+}
