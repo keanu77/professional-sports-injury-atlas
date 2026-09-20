@@ -70,3 +70,11 @@ Files: research records in `docs/reviews/2026-09-21-catalog-200/` only. Do not i
 ## Dependency review
 
 The editorial design is approved. Actual first-batch video selection is not yet complete, so coding 42 case records now would invent verification. Browser availability must be verified before any playback claims. Research and the small truthful-label correction can proceed independently of that external dependency. The detailed integration subplan is written after those inputs exist; no placeholder production code is authorized by this plan.
+
+## Execution checkpoint
+
+- [x] Task 1 visible-label RED/GREEN and both independent reviews completed. Review also identified card/detail machine-readable defaults; these were narrowly corrected to unknown with a failing regression first, then passing tests and repeat spec/quality reviews. Added a missing-type example to existing observation-page E2E.
+- [x] Task 2 initial 14-event research packet and eight YouTube metadata probes saved outside production imports; none are approved for publication.
+- [x] Full unit tests (1,517), Astro check, content check, plan binding, changed-file formatting and review-mode build passed. Static DOM confirms neutral labels and exclusion of candidate routes. Browser E2E not completed.
+- [ ] Task 3 existing-four real playback remains blocked. Edge window was opened with user approval, but runtime selection still fails; no playback evidence, approval rebind, public-mode release or deployment performed.
+- [ ] Batch 1 data integration and subsequent batches remain pending source/footage verification. First-batch 14 is a research count, not an accepted-event count.

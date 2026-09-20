@@ -40,4 +40,4 @@
 
 優先對 Peaty、Louganis、Walsh Jennings、Garnbret、Nadal 核對影片內容、時長和同事件片段。來源與 metadata 均不足以推測這些值。若觀看後無受傷瞬間，準確改標本人訪談／回顧或替換原片，不為了 14 例配額偽造資料。
 
-先完成既有四例的 owned-HTTPS playback，再整合新片。現有工具連線回報無可用瀏覽器；Edge 本身執行中、擴充功能啟用、native-host manifest 檢查正確。不重裝或更改網路，不以測試 mock 代替實播。等待使用者同意開啟指定 Edge 空白視窗重試連線。
+先完成既有四例的 owned-HTTPS playback，再整合新片。現有工具連線回報無可用瀏覽器；Edge 本身執行中、擴充功能啟用、native-host manifest 檢查正確。使用者同意後已成功開啟指定 Edge 空白視窗，但重試仍為 `Browser is not available: edge`。沒有更改網路、擅自重裝或以測試 mock 代替實播。詳見 implementation-status.md。
