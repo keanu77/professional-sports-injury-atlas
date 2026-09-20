@@ -1,16 +1,18 @@
 import type { ObservationClip } from "./expansion";
 
 /** Keep card links and detail headings honest about what the footage shows. */
-export function observationFootageLabel(
-  clip: Pick<ObservationClip, "footageKind">,
-): string {
+export function observationFootageLabel(clip: {
+  footageKind?: ObservationClip["footageKind"];
+}): string {
   return clip.footageKind === "news-analysis"
     ? "傷勢新聞與說明"
     : clip.footageKind === "athlete-interview"
       ? "選手訪談與傷勢說明"
       : clip.footageKind === "aftermath"
         ? "受傷後處理與續賽"
-        : "受傷動作觀察";
+        : clip.footageKind === "injury-motion"
+          ? "受傷動作觀察"
+          : "傷害相關影片（片型待核）";
 }
 
 export interface ObservationCardMetadata {

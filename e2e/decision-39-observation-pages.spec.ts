@@ -110,6 +110,12 @@ test("news, aftermath, and injury footage have consistent card and detail labels
       kind: "injury-motion",
       label: "受傷動作觀察",
     },
+    {
+      slug: "shohei-ohtani-world-series-2024",
+      category: "baseball",
+      kind: "unknown",
+      label: "傷害相關影片（片型待核）",
+    },
   ];
   for (const example of examples) {
     for (const path of ["/", `/sports/${example.category}/`]) {

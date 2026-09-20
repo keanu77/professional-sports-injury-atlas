@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "method": "YouTube public oEmbed metadata only; no audiovisual playback, geographic availability or legal clearance is proven.",
+  "entries": [
+    {
+      "videoId": "7oFg7YmMgtI",
+      "checkedAt": "2026-09-20T23:49:52.347Z",
+      "httpStatus": 200,
+      "title": "How I BROKE My Foot!",
+      "publisher": "Adam Ramsay-Peaty",
+      "publisherUrl": "https://www.youtube.com/@adam_peaty",
+      "error": null,
+      "playbackVerified": false
+    },
+    {
+      "videoId": "qP20D5vQsmM",
+      "checkedAt": "2026-09-20T23:49:52.333Z",
+      "httpStatus": 200,
+      "title": "Greg Louganis' Incredible Gold Medal Comeback - Seoul 1988 Olympics",
+      "publisher": "Olympic Games",
+      "publisherUrl": "https://www.youtube.com/@Olympics",
+      "error": null,
+      "playbackVerified": false
+    },
+    {
+      "videoId": "45KmZUc0CzA",
+      "checkedAt": "2026-09-20T23:49:52.347Z",
+      "httpStatus": 200,
+      "title": "Janja Garnbret Goes Gold at Paris 2024 🥇 👑 | Full Replay all climbs",
+      "publisher": "Olympic Games",
+      "publisherUrl": "https://www.youtube.com/@Olympics",
+      "error": null,
+      "playbackVerified": false
+    },
+    {
+      "videoId": "jr8DBhwEMb0",
+      "checkedAt": "2026-09-20T23:49:52.350Z",
+      "httpStatus": 200,
+      "title": "World Cup Training With A Finger Injury | 3 Days With Shauna Coxsey Ep. 1",
+      "publisher": "EpicTV",
+      "publisherUrl": "https://www.youtube.com/@EpicTV",
+      "error": null,
+      "playbackVerified": false
+    },
+    {
+      "videoId": "NUnMJsabB0Q",
+      "checkedAt": "2026-09-20T23:49:52.353Z",
+      "httpStatus": 401,
+      "title": null,
+      "publisher": null,
+      "publisherUrl": null,
+      "error": "Unauthorized",
+      "playbackVerified": false
+    },
+    {
+      "videoId": "RyWuQ_RW6OA",
+      "checkedAt": "2026-09-20T23:49:52.342Z",
+      "httpStatus": 200,
+      "title": "Gstaad Major: This just might have been Kerri Walsh's greatest comeback!",
+      "publisher": "Beach Volleyball Majors",
+      "publisherUrl": "https://www.youtube.com/@BeachVolleyballMajors",
+      "error": null,
+      "playbackVerified": false
+    },
+    {
+      "videoId": "9vGOrRkqAK4",
+      "checkedAt": "2026-09-20T23:49:52.361Z",
+      "httpStatus": 200,
+      "title": "Rafael Nadal Withdraws from Wimbledon Due to Injury | Press Conference | Wimbledon 2022",
+      "publisher": "Wimbledon",
+      "publisherUrl": "https://www.youtube.com/@Wimbledon",
+      "error": null,
+      "playbackVerified": false
+    },
+    {
+      "videoId": "xBgZKehMBDA",
+      "checkedAt": "2026-09-20T23:49:52.350Z",
+      "httpStatus": 200,
+      "title": "From ACL Injury To PARIS OLYMPICS | Jordyn Poulter Interview (VNL 2024)",
+      "publisher": "Elevate Yourself",
+      "publisherUrl": "https://www.youtube.com/@ElevateYourselfOfficial",
+      "error": null,
+      "playbackVerified": false
+    }
+  ]
+}

@@ -35,7 +35,7 @@ const isMlb = clip.provider === "mlb";
       <li data-observation-body-part>{metadata.bodyPart}</li>
       <li data-observation-event-year>{metadata.eventYear}</li>
     </ul>
-    <span data-observation-footage-kind={clip.footageKind ?? "injury-motion"}>
+    <span data-observation-footage-kind={clip.footageKind ?? "unknown"}>
       {observationFootageLabel(clip)} →
     </span>
   </div>

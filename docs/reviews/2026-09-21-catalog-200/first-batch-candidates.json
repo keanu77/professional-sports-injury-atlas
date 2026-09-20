@@ -1,0 +1,453 @@
+{
+  "schemaVersion": 1,
+  "businessDate": "2026-09-21",
+  "checkedAt": "2026-09-20T23:49:52Z",
+  "authorizationQuote": "核准，照此實作（建議）",
+  "scope": "research-only-not-imported-by-site",
+  "targetNewEvents": 42,
+  "firstBatchResearchCount": 14,
+  "acceptedForPublication": 0,
+  "entries": [
+    {
+      "id": "adam-peaty-2022-foot",
+      "athlete": "Adam Peaty",
+      "country": "GBR",
+      "sport": "游泳",
+      "eventDate": null,
+      "eventYear": "2022",
+      "injury": "陸上訓練足部骨折；不指定骨頭、側別或另立踝部診斷。",
+      "context": "gym-training",
+      "sources": ["https://www.swimming.org/sport/adam-peaty-fractured-foot/"],
+      "videoUrl": "https://www.youtube.com/watch?v=7oFg7YmMgtI",
+      "publisher": "Adam Ramsay-Peaty (@adam_peaty)",
+      "proposedFootageKind": "athlete-interview",
+      "stage": "needs-playback-and-segment-review",
+      "limitations": [
+        "2022-05-11 是公告日，不是確定受傷日；來源說當週稍早。",
+        "不能將陸上訓練骨折解釋為蛙泳特定機轉。"
+      ],
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "remainingChecks": [
+        "Actual audiovisual review and exact selected segment/duration",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source/publisher provenance review"
+      ]
+    },
+    {
+      "id": "greg-louganis-1988-head",
+      "athlete": "Greg Louganis",
+      "country": "USA",
+      "sport": "跳水",
+      "eventDate": null,
+      "eventYear": "1988",
+      "injury": "首爾奧運跳板撞頭；博物館記載頭皮出血與腦震盪。",
+      "context": "competition",
+      "sources": ["https://usopm.org/greg-louganis/"],
+      "videoUrl": "https://www.youtube.com/watch?v=qP20D5vQsmM",
+      "publisher": "Olympic Games",
+      "proposedFootageKind": "injury-motion",
+      "stage": "needs-playback-and-segment-review",
+      "limitations": [
+        "主代理成功讀取博物館全文；研究代理另一次讀取失敗，保留此差異。",
+        "官方影片描述提及撞板，但尚未觀看確認片段；影片型態是暫定。",
+        "歷史續賽情節不得作為當代腦震盪處置建議。"
+      ],
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "remainingChecks": [
+        "Actual audiovisual review and exact selected segment/duration",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source/publisher provenance review"
+      ]
+    },
+    {
+      "id": "janja-garnbret-2024-finger",
+      "athlete": "Janja Garnbret",
+      "country": "SLO",
+      "sport": "運動攀登",
+      "eventDate": "2024-08-10",
+      "eventYear": "2024",
+      "injury": "巴黎奧運決賽手指卡於岩點後疼痛；未確診特定組織傷害。",
+      "context": "competition",
+      "sources": [
+        "https://www.worldclimbing.com/news/garnbret-survives-injury-scare-for-second-olympic-gold"
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=45KmZUc0CzA",
+      "publisher": "Olympic Games",
+      "proposedFootageKind": "injury-motion",
+      "stage": "needs-playback-and-segment-review",
+      "limitations": [
+        "不得寫成骨折、滑車斷裂或脫臼。",
+        "全程回放需要實際定位第四條抱石的相關片段。"
+      ],
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "remainingChecks": [
+        "Actual audiovisual review and exact selected segment/duration",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source/publisher provenance review"
+      ]
+    },
+    {
+      "id": "tom-aspinall-2022-knee",
+      "athlete": "Tom Aspinall",
+      "country": "GBR",
+      "sport": "綜合格鬥",
+      "eventDate": "2022-07-23",
+      "eventYear": "2022",
+      "injury": "右膝傷後手術；UFC 報導 MCL、半月板撕裂及 ACL 受損。",
+      "context": "competition",
+      "sources": [
+        "https://www.ufcespanol.com/news/tom-aspinall-injury-rehab-and-timetable-his-return"
+      ],
+      "videoUrl": "https://www.ufc.com/video/tom-aspinall-sits-down-john-gooden-full-ufc-fight-night-london",
+      "publisher": "UFC",
+      "proposedFootageKind": "athlete-interview",
+      "stage": "needs-supported-video",
+      "limitations": [
+        "ACL damaged 不能自動翻成完全斷裂；既有慢性膝問題不全歸到同一瞬間。",
+        "官方原生播放器尚非網站支援 provider，先找同事件官方 YouTube；不直接擴張 iframe 白名單。"
+      ],
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "remainingChecks": [
+        "Actual audiovisual review and exact selected segment/duration",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source/publisher provenance review"
+      ]
+    },
+    {
+      "id": "jon-jones-2023-pectoral",
+      "athlete": "Jon Jones",
+      "country": "USA",
+      "sport": "綜合格鬥",
+      "eventDate": null,
+      "eventYear": "2023",
+      "injury": "訓練中胸肌受傷，後續 UFC 報導稱胸肌撕裂。",
+      "context": "training",
+      "sources": [
+        "https://www.ufc.com/news/jon-jones-out-sergei-pavlovich-faces-tom-aspinall-interim-title-ufc-295",
+        "https://www.ufc.com/news/jon-jones-new-york-state-mind-ufc-309"
+      ],
+      "videoUrl": "https://twitter.com/danawhite/status/1717042305969090982",
+      "publisher": "Dana White",
+      "proposedFootageKind": "news-analysis",
+      "stage": "needs-supported-video",
+      "limitations": [
+        "2023-10-25 是公告日，不當成受傷日。",
+        "X 原始公告有官方來源鏈，但片中是否含受傷瞬間尚未觀看；不下載重傳。"
+      ],
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "remainingChecks": [
+        "Actual audiovisual review and exact selected segment/duration",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source/publisher provenance review"
+      ]
+    },
+    {
+      "id": "shauna-coxsey-2015-finger",
+      "athlete": "Shauna Coxsey",
+      "country": "GBR",
+      "sport": "運動攀登",
+      "eventDate": null,
+      "eventYear": "2015",
+      "injury": "帶手指傷勢訓練；受傷機轉與解剖診斷尚未確認。",
+      "context": "unverified",
+      "sources": [
+        "https://www.youtube.com/watch?v=jr8DBhwEMb0",
+        "https://www.dailymotion.com/video/x313kop"
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=jr8DBhwEMb0",
+      "publisher": "EpicTV",
+      "proposedFootageKind": "athlete-interview",
+      "stage": "needs-injury-source",
+      "limitations": [
+        "訓練紀錄片證明正在復健，不等於已證明傷勢發生於運動／訓練。",
+        "不可推定 A2 滑車或屈肌腱損傷；發布前需補具體原始傷勢資料。"
+      ],
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "remainingChecks": [
+        "Actual audiovisual review and exact selected segment/duration",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source/publisher provenance review"
+      ]
+    },
+    {
+      "id": "michelle-jenneke-2024-hamstring",
+      "athlete": "Michelle Jenneke",
+      "country": "AUS",
+      "sport": "田徑",
+      "eventDate": "2024-08-07",
+      "eventYear": "2024",
+      "injury": "腿後肌腱完全斷裂；不補寫未公開側別及特定肌腱。",
+      "context": "competition",
+      "sources": [
+        "https://www.olympics.com.au/olympians/michelle-jenneke/",
+        "https://www.athletics.com.au/news/jenneke-back-at-best-ahead-of-perth-track-classic/"
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=NUnMJsabB0Q",
+      "publisher": "NBC Sports",
+      "proposedFootageKind": "injury-motion",
+      "stage": "metadata-unavailable",
+      "alternativeVideoUrl": "https://www.eurosport.de/leichtathletik/olympia-paris-2024/2024/olympia-2024-michelle-jenneke-sturzt-bei-100-m-hurden-mit-vollem-tempo-und-zerstort-in-fuhrung-liegend-guten-vorlauf._vid2209035/video.shtml",
+      "limitations": [
+        "NBC YouTube oEmbed 本次回應 HTTP 401 Unauthorized；不得說成可嵌入或已下架。",
+        "Eurosport 為同事件官方轉播備選，但尚未測播放及嵌入，也不是已支援 provider。",
+        "影片發布日與賽事日不同。"
+      ],
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "remainingChecks": [
+        "Actual audiovisual review and exact selected segment/duration",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source/publisher provenance review"
+      ]
+    },
+    {
+      "id": "beiwen-zhang-2021-achilles",
+      "athlete": "Beiwen Zhang",
+      "country": "USA",
+      "sport": "羽球",
+      "eventDate": "2021-07-29",
+      "eventYear": "2021",
+      "injury": "美國協會確認阿基里斯腱完全撕裂並需手術；不補側別。",
+      "context": "competition",
+      "sources": [
+        "https://usabadminton.org/update-on-beiwen-zhang/",
+        "https://www.nbcolympics.com/news/us-badminton-player-beiwen-zhang-forced-forfeit-after-mid-match-injury"
+      ],
+      "videoUrl": "https://www.nbcolympics.com/videos/us-zhang-forced-forfeit-injury",
+      "publisher": "NBC Olympics",
+      "proposedFootageKind": "injury-motion",
+      "stage": "needs-supported-video",
+      "limitations": [
+        "東京比賽日與美國新聞日期勿混用。",
+        "研究代理讀取協會公告成功；主代理稍早曾逾時。",
+        "官方來源頁可定位，不等於 NBC 播放器可在本站嵌入。"
+      ],
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "remainingChecks": [
+        "Actual audiovisual review and exact selected segment/duration",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source/publisher provenance review"
+      ]
+    },
+    {
+      "id": "macris-carneiro-2021-ankle",
+      "athlete": "Macris Carneiro",
+      "country": "BRA",
+      "sport": "室內排球",
+      "eventDate": "2021-07-29",
+      "eventYear": "2021",
+      "injury": "東京奧運對日本右踝扭傷；不升格為韌帶斷裂。",
+      "context": "competition",
+      "sources": [
+        "https://www.fivb.com/mihajlovics-mettle-shows-as-serbia-top-pool-with-full-points/",
+        "https://ge.globo.com/olimpiadas/noticia/brasil-atropela-o-japao-mas-perde-macris-lesionada-no-volei-feminino.ghtml"
+      ],
+      "videoUrl": "https://ge.globo.com/olimpiadas/noticia/brasil-atropela-o-japao-mas-perde-macris-lesionada-no-volei-feminino.ghtml",
+      "publisher": "Globo / ge",
+      "publisherClipId": "9725772",
+      "proposedFootageKind": "injury-motion",
+      "stage": "needs-supported-video",
+      "limitations": [
+        "研究代理在原始報導找到 clip 9725772；原始影片頁未確定可獨立使用。",
+        "不保存／重傳擷取到的 MP4，不將 contentUrl 當成嵌入權利證明。",
+        "室內排球，不因部分官方 URL 分類錯置而改寫成沙灘排球。"
+      ],
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "remainingChecks": [
+        "Actual audiovisual review and exact selected segment/duration",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source/publisher provenance review"
+      ]
+    },
+    {
+      "id": "kerri-walsh-jennings-2015-shoulder",
+      "athlete": "Kerri Walsh Jennings",
+      "country": "USA",
+      "sport": "沙灘排球",
+      "eventDate": "2015-07-10",
+      "eventYear": "2015",
+      "injury": "Gstaad 比賽右肩脫臼。",
+      "context": "competition",
+      "sources": [
+        "https://www.nbcsports.com/olympics/news/kerri-walsh-jennings-dislocated-shoulder-beach-volleyball-olympics-april-ross-barbara-agatha-gstaad-video"
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=RyWuQ_RW6OA",
+      "publisher": "Beach Volleyball Majors",
+      "proposedFootageKind": "injury-motion",
+      "stage": "needs-playback-and-segment-review",
+      "limitations": [
+        "不與五月另一次脫臼混同，不自行加肩關節唇／關節囊損傷診斷。",
+        "權利來源鏈與影片資訊吻合；实际受傷片段仍待觀看。"
+      ],
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "remainingChecks": [
+        "Actual audiovisual review and exact selected segment/duration",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source/publisher provenance review"
+      ]
+    },
+    {
+      "id": "rafael-nadal-2022-abdominal",
+      "athlete": "Rafael Nadal",
+      "country": "ESP",
+      "sport": "網球",
+      "eventDate": null,
+      "eventYear": "2022",
+      "injury": "腹肌撕裂，2022-07-07 宣布退出溫網四強。",
+      "context": "competition",
+      "sources": [
+        "https://www.usopen.org/en_US/news/articles/2022-07-07/rafael_nadal_withdraws_from_wimbledon_semifinal_due_to_abdominal_injury.html",
+        "https://www.atptour.com/en/news/nadal-nitto-atp-finals-2022-longform"
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=9vGOrRkqAK4",
+      "publisher": "Wimbledon",
+      "proposedFootageKind": "athlete-interview",
+      "stage": "needs-playback-and-segment-review",
+      "limitations": [
+        "7月6日八強症狀不等於首次受傷日。",
+        "與2022年3月肋骨、足部慢性疾病分開；不補確切腹肌名稱、側別或撕裂毫米。",
+        "主代理 US Open 全文開啟為空，改以 ATP 官方年度回顧交叉支持腹肌撕裂與退賽。"
+      ],
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "remainingChecks": [
+        "Actual audiovisual review and exact selected segment/duration",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source/publisher provenance review"
+      ]
+    },
+    {
+      "id": "jordyn-poulter-2022-knee",
+      "athlete": "Jordyn Poulter",
+      "country": "USA",
+      "sport": "室內排球",
+      "eventDate": "2022-12-03",
+      "eventYear": "2022",
+      "injury": "義大利俱樂部比賽膝部多韌帶傷害；不只依影片標題當作確診清單。",
+      "context": "competition",
+      "sources": [
+        "https://usavolleyball.org/story/new-games-same-goals-for-u-s-women-in-paris/",
+        "https://usavolleyball.org/story/wnt-update-cook-plummer-win-club-world-championship-with-conegliano/"
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=xBgZKehMBDA",
+      "publisher": "Elevate Yourself",
+      "proposedFootageKind": "athlete-interview",
+      "stage": "needs-playback-and-segment-review",
+      "limitations": [
+        "這是2022膝傷，不配到2021東京踝伤。",
+        "原創訪談作者非賽會，須審核實際影片內容與片段權利。",
+        "膝部已多，此例可在新運動缺口與上肢優先之間列備選。"
+      ],
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "remainingChecks": [
+        "Actual audiovisual review and exact selected segment/duration",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source/publisher provenance review"
+      ]
+    },
+    {
+      "id": "lena-klingler-2024-knee",
+      "athlete": "Lena Klingler",
+      "country": "GER",
+      "sport": "室內手球",
+      "eventDate": null,
+      "eventYear": "2024",
+      "injury": "2024年1月訓練右膝ACL、MCL及雙側半月板傷害。",
+      "context": "training",
+      "sources": [
+        "https://www.ihf.info/competitions/women/307/the-world-games-2025-beach-handball---women/210827/news/231539"
+      ],
+      "videoUrl": null,
+      "publisher": null,
+      "proposedFootageKind": null,
+      "stage": "needs-video",
+      "limitations": [
+        "未找到合適同事件原始影片。",
+        "來源頁是沙灘手球選手介紹，但受傷活動為室內俱樂部訓練；不能混分類。"
+      ],
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "remainingChecks": [
+        "Actual audiovisual review and exact selected segment/duration",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source/publisher provenance review"
+      ]
+    },
+    {
+      "id": "jim-gottfridsson-2023-hand",
+      "athlete": "Jim Gottfridsson",
+      "country": "SWE",
+      "sport": "手球",
+      "eventDate": "2023-01-25",
+      "eventYear": "2023",
+      "injury": "手球世錦賽左掌骨骨折。",
+      "context": "competition",
+      "sources": [
+        "https://www.ihf.info/competitions/men/308/28th-ihf-mens-world-championship-2023/101253/news/122035",
+        "https://www.aftonbladet.se/sportbladet/a/mQ80v1/jim-gottfridsson-skadad-mot-egypten-handen-lindad"
+      ],
+      "videoUrl": null,
+      "publisher": null,
+      "proposedFootageKind": null,
+      "stage": "needs-video",
+      "limitations": [
+        "原始新聞存在 Viaplay 播放器線索，但未取得可確認的影片頁網址與權利人嵌入方案。"
+      ],
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "remainingChecks": [
+        "Actual audiovisual review and exact selected segment/duration",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source/publisher provenance review"
+      ]
+    }
+  ],
+  "rejectedLeads": [
+    {
+      "athlete": "Sarah Sjöström",
+      "eventYear": "2021",
+      "reason": "Elbow fracture after slipping on ice in daily life, not established sport or training injury.",
+      "source": "https://www.worldaquatics.com/news/2062189/sarah-sjostrom-swe-the-warrior-not-the-worrier"
+    }
+  ],
+  "reserveLeads": [
+    {
+      "athlete": "Andranik Karapetyan",
+      "eventYear": "2016",
+      "injury": "Olympic weightlifting elbow dislocation; exact primary PDF and rights-holder footage still require review.",
+      "source": "https://iwf.sport/wp-content/uploads/2016/10/IWF_138_web.pdf",
+      "videoUrl": null
+    },
+    {
+      "athlete": "Paula Badosa",
+      "eventYear": "2023",
+      "injury": "Spinal stress fracture; official WTA injury text located, injury-specific original video not yet matched.",
+      "source": "https://www.wtatennis.com/news/3487290/badosa-withdraws-from-roland-garros-after-suffering-spine-injury",
+      "videoUrl": null
+    }
+  ]
+}
