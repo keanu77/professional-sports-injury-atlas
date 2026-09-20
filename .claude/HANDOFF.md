@@ -1,51 +1,63 @@
-# HANDOFF - 2026-09-13 12:33（台灣時間）
+# HANDOFF - 2026-09-19 07:14（Asia/Tokyo）
 
-## 目前狀態
+## 進度
 
-- 專案：`/Users/ethanstudio/Documents/Vibe coding/professional-sports injury`；`main`；遠端 `keanu77/professional-sports-injury-atlas` 仍為私有。
-- 首頁六個追蹤連結已發布：桌機位於標題區右上方，手機位於標題上方。首頁與頁尾共用相同目的地／圖示；點擊範圍至少 44 × 44px。
-- 實際網站來源／已推送提交：`6e685ea026bdcd9a1cd1f0dbcd579882906adfea`。後續文件提交不改網站內容；目前 HEAD 請以 `git log` 核對。
-- 正式站：`https://injury.sportsmedicine.tw/`；150 例（7 核心 +143 觀察頁）、精選 10 支、本站熱門前 10 名、首頁姓名／關鍵字搜尋。
-- Cloudflare Pages `sports-injury-atlas` production/main：`601eab27-5b43-46af-878c-d2ed7b9fdcfb`，`https://601eab27.sports-injury-atlas.pages.dev`。
-- 正式首頁 SHA-256：`68830c9c72ddd41f5bfb8fb4e7bbb484adf598878ae6d6f1b170c127a0df0f62`。195/195 HTML 與已驗證成品一致；首頁六個圖示、搜尋與精選皆確認生效。
-- 本次需求完成，沒有待發布的功能。沿用使用者「授權推送跟更新」與首頁位置要求，沒有重新申請發布許可。
+- 使用者目標「完成這個影片跟介紹上線」已完成；goal 狀態為 complete。
+- 正式案例：https://injury.sportsmedicine.tw/videos/aaron-judge-2026-rib/ 。
+- 全站 151 例（7 核心 +144 觀察頁）；精選 10 支、本站熱門前 10 名。沒有待發布功能。
+- 最新提交：`2ef8124faefaa8978f700df4501966ac5cdd17e7`（`docs: record verified Judge rib production release`）。本次 handoff 已以 `git ls-remote origin refs/heads/main` 確認遠端 main 相同。
+- 網站實際來源提交：`1bea30a48237eb43cd5717f39d091d1914eece0a`；其後 `2ef8124` 僅更新文件，不改網站輸入。
 
-## 本次驗證
+## 本次 Session 完成
 
-- Node 24.14.0；Astro 0 errors／0 warnings（16 個既有 hints）；1,493 單元測試；Chrome／手機 Chrome／WebKit 共 75 項整合測試全數通過。
-- 原工作目錄有前次未提交 handoff，故使用乾淨隔離副本驗證。正式發布時副本切換至確切來源提交，重新通過 `release:public`，489 個成品逐檔匹配測試版才推送、部署。
-- 本機 320px（150% 字級）、390／768／1280px 深淺色無水平溢出與 Axe 違規；六個圖示、44px 點擊範圍、鍵盤順序、停用 JavaScript 通過。
-- 正式站另核對 320px（150%）、390／1280px 的圖示位置、150 支影片、Kobe 搜尋及精選 10 支；所有 HTML 含 7 核心案例與 143 觀察頁完全相符。
-- Decision 27 五支既有影片的七日播放證據已更新，保留新舊實際播放紀錄；未新增醫療、字幕品質或素材權利簽核。
-- 既有排版測試的 RSS 期待與未公開 Edwards 2023 路徑過時，改為原有個人網站與公開 Durant 頁，檢查正常 200／304 回應；沒有移除斷點幾何檢查。
+- [x] 從既有 GitHub 專案建立本工作目錄，新增 Aaron Judge 肋骨獨立案例（`be3a299`）。
+- [x] 加入 CBS Sports 影片、MLB／AP 來源、研究解說、復原時間軸、胸部傷害警訊；接入搜尋、分類、縮圖來源與播放統計白名單。
+- [x] 影片為新聞解說，不是確定受傷瞬間。2019／2020 歷史背景、2023 腳趾與 2026 肋骨案例分開；4–6 週是影像複查，不是復賽承諾。回溯的可能起點標為 reported，不計算確定復原天數。
+- [x] 更新過期的實際播放證據，保留先前與失敗紀錄（`b4edf63`、`1bea30a`）；原有核准及七日門檻未放寬。
+- [x] 通過正式發布檢查，推送 GitHub main、部署 Cloudflare production，再核對正式 HTML、播放及搜尋（`2ef8124` 記錄結果）。
+- [x] 使用者反映搜尋找不到：實際頁面為關鍵字 `aaron`、範圍「本站熱門前 10 名」。切換「改查全部影片」後顯示 3 筆（Rodgers、Judge 腳趾、Judge 肋骨）；使用者已回覆「有找到了」。只切換瀏覽器篩選，沒有修改搜尋程式或再次部署。
 
-## 之前已完成
+## 當前狀態
 
-- 9/12–9/13：101 →120 →150 例，機轉與後續紀錄整理、一般民眾版閱讀、分類／手機導覽、近 30 天實際播放熱門前 10 名、精選 6 →10，以及姓名／關鍵字搜尋。
-- 搜尋隨全部／精選／熱門切換保留查詢，支援中文輸入法、延遲排行回應、清除／Escape、零結果與 API 錯誤；關鍵字不送出或儲存。沒有中文別名詞典或拼字容錯。
-- 已另建乾淨 MIT 公開範本 `keanu77/sports-injury-atlas-starter`，來源 `22de8f38a84f0b24b45e5263e1bf19090b357b0f`。原專案仍私人；公開範本僅使用虛構示例。
-- GitHub 個人首頁 `keanu77/keanu77` 在既有「運動傷害影片圖鑑」列的來源欄放入「公開範本（MIT）」；來源提交 `64d0ec5ae32903d320bb97202a3e999247022ba9`。不要另加獨立 starter 區塊。
+- 專案根：`/Users/ethanwu/Documents/Vibe coding/claude/Professional sports injury atlas`。
+- Branch：`feat/aaron-judge-rib`；成果已推送至 origin/main，本機未切回 main。
+- 產生 handoff 前工作樹乾淨；本次唯一新增未提交變更是 `.claude/HANDOFF.md`。此次只寫交接，未 commit、push 或 deploy。
+- 發布前驗證：Node 24.14.0；Astro 0 errors／0 warnings、16 個既有 hints；97 檔／1,496 單元測試通過；桌機 Chrome＋Pixel 7 共 26 項整合測試通過，2 項 review-only 測試依條件略過。
+- `content:check`、`brand:verify`、`plan:verify`、縮圖驗證、`release:public` 通過；上述為本次發布時紀錄，handoff 未重新執行整套測試。
+- 正式成品 491 檔與測試版完全一致；正式站 196/196 HTML SHA-256 與成品一致。新片在正式域名實際播放成功，搜尋 `Judge 肋骨` 找到唯一新案例。
+- 本機預覽 `127.0.0.1:14318` 仍在監聽（本次 lsof 核對 PID 11344）；這是易變狀態，下次先核對，不憑 PID 直接終止程序。
 
-## 下一個 Session
+## 下一個 Session 的前 2 步
 
-1. 先核對 `git status --short --branch`、`git log -3 --oneline` 與遠端；本文件不能代替 Git 真實狀態。
-2. 讀 `docs/reviews/2026-09-13-home-follow/release.json`、`validation.json`，確認本次來源與正式部署。
-3. 等使用者的新需求；不要因續接而重新部署已完成內容。
+1. **執行** `git status --short --branch`、`git log -3 --oneline`、`git ls-remote origin refs/heads/main` — 確認真實工作樹與遠端；保留尚未提交的交接檔。
+2. **讀取** `docs/reviews/2026-09-18-judge-rib/release.json:1`、`README.md:50`、`live.json:1` — 取得已發布版本、驗證範圍與限制。
 
-## 下次發布注意事項
+**無更多任務。** 等待使用者新需求；不要因 resume 而重新部署、重新選片、重開已完成目標或擅自改成全域搜尋。若再反映搜尋找不到，先核對實際關鍵字與範圍，不先猜快取或改程式。
 
-- 固定 Node 24.14.0。`mise exec node@24.14.0 -- npm run release:public` 要求乾淨已提交狀態與正確輸入摘要。
-- 輸入摘要：`72763dfefe1b97e0ce443556de511a97ec7710a57c0331498f7399952c77f7c6`；更新摘要不能取代核准或真實驗證。
-- 播放證據均有七日效期：Decision 27 已於 9/13 12:21 更新；Decision 28、30、31、32、34 的既有證據將分別從 9/13 15:21、16:57、17:39、18:19、19:34 起到期，依每筆 checkedAt 核對。不是網站目前故障。
-- 順序固定：建置成功 → 成品與測試版逐檔一致 → 新功能標記存在 → 推送核對 → 部署。不得因建置失敗而上傳舊 dist。先前搜尋發布曾發生舊成品事件，已完成處理，見搜尋 release-retry 記錄。
-- 本次隔離副本 `/private/tmp/atlas-home-follow-review-01t4w7g_`；14339 預覽已停止。本機原 repo 的 dist 曾被失敗建置部分更新，請不要直接部署它。無新增依賴、環境變數或 migration，未送出表單或訊息。
-- 前一部署：`044c5edc-1255-4217-8b77-a53fff85da6e`（搜尋版）。
+## 已知限制／已解除問題
+
+- 沒有阻擋本次交付的 bug。搜尋目前會限制在所選「全部／精選／熱門」範圍，這是既有設計；`src/scripts/video-discovery.ts:104` 初始預設 all，`:152` 顯示範圍，`:260` 支援改查全部。使用者沒有要求變更此行為。
+- Olympics 的 Samir Aït Saïd 影片 `Bt7EHTIivuA` 曾明確顯示 VPN／Proxy 限制。使用者處理網路後重驗成功；見 `docs/reviews/2026-09-18-judge-rib/playback.samir-after-vpn.json:1`。代理未更改系統網路設定，也沒有撤片或偽造證據。
+- 全庫 `format:check` 有 169 個既有歷史檔案格式問題；本次變更檔案格式通過。不要批次重寫凍結證據。
+- D1 production 的 migration 清單回覆 No migrations to apply，正式 `/api/popular` 為 200 且非降級。額外 sqlite_master schema/index 查詢遭 Cloudflare API 7403 拒絕，未宣稱完整結構稽核；本次無 DB 程式或 migration 變更。
+- 影片播放證據只代表查核時環境，YouTube 之後仍可能變更限制。字幕品質保留 not-verified，沒有新增臨床或權利簽核。
 
 ## 關鍵檔案
 
-- `src/components/layout/FollowLinks.astro`：共用六個追蹤連結、圖示、首頁尺寸與排列。
-- `src/pages/index.astro`：首頁標題區追蹤連結、搜尋與影片卡片；`src/components/layout/SiteFooter.astro`：共用頁尾入口。
-- `src/scripts/video-discovery.ts`、`src/lib/videos/search.ts`、`search-index.ts`：搜尋與範圍互動；`src/data/videos/discovery.v1.json`：精選順序。
-- `docs/reviews/2026-09-13-home-follow/README.md`：本次驗證、畫面與正式發布證據。
-- `docs/reviews/2026-09-13-video-search/README.md`、`2026-09-13-curated-10/README.md`、`2026-09-13-recent-150/README.md`：前次功能發布紀錄。
-- 交接封存：`docs/handoffs/2026-09-13-before-home-follow.md` 與 `2026-09-13-before-session-handoff.md`。
+- `src/data/videos/judge-rib.v1.json:1`、`event-judge-rib.v1.json:1` — 新片與逐項來源／時間軸。
+- `src/lib/videos/expansion.ts:408` — 新批次 schema 與片單整合；`event-updates.ts:279` — reported 日期不計算 returnDays。
+- `src/pages/videos/[slug].astro:185` — 此案例專用的胸部傷害一般處理警訊。
+- `src/lib/videos/search-index.ts:42`、`src/scripts/video-discovery.ts:104` — 搜尋資料與範圍；`e2e/judge-rib.spec.ts:41` — Judge 兩案例搜尋回歸測試。
+- `docs/reviews/2026-09-18-judge-rib/README.md:1`、`release.json:1`、`live.json:1`、`playback.production.json:1` — 發布及驗證證據。
+- `scripts/public-launch/check-release.ts:28`、`check-artifact.ts:1` — 乾淨工作樹、輸入摘要、播放及公開成品門檻。
+
+## 環境／部署注意事項
+
+- Cloudflare Pages：`sports-injury-atlas`，production/main 部署 `4b8d4357-dd07-4de3-bca2-49a328af7a91`；https://4b8d4357.sports-injury-atlas.pages.dev 。
+- 上一良好部署：`601eab27-5b43-46af-878c-d2ed7b9fdcfb`。回復操作需依當時問題與使用者授權決定。
+- 已發布輸入摘要：`1044c4c4acb7d30d27059991e9974550c686b74c0b9e616449fe1bf002805240`；改摘要不能替代真實播放驗證或核准。
+- 固定 Node 24.14.0。本次暫存執行檔仍存在：`/private/tmp/atlas-judge-node.3pGBJs/node-v24.14.0-darwin-arm64/bin/node`。不可假設系統 Node 或下次暫存目錄仍相同。
+- `/private/tmp/atlas-judge.e2e.config.mjs` 為本次測試設定，使用既有 Google Chrome；暫存檔非永久依賴。
+- 下次有新發布需求時，先妥善保存／提交工作樹，再以正確 Node 執行 `npm run release:public`。播放證據有七日效期，依各 checkedAt 判斷，不是假裝網站故障，也不能只改日期。
+- 發布順序：成功公開建置 → 成品與已測試版一致 → 新功能存在 → 推送核對 → 部署 → 正式網域驗證。禁止把 review build 或失敗建置殘留 dist 直接上傳。
+- 需補環境變數：無。需跑 migration：無。未完成部署步驟：無。沒有送出貢獻表單或測試郵件。
