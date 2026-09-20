@@ -1,5 +1,7 @@
 # Named nerve and brachial plexus videos
 
+Editorial implementation plan, not a platform-authority document. Stored with this batch's review records to preserve the existing bound authority-document ledger.
+
 ## Goal
 
 Implement the four selected cases following the user's instruction「請你開始新增影片到網站」on the current branch, preserving existing changes. Prior decisions: no year restriction; prioritize injury footage, then athlete interviews; accept a separate brachial plexus category.
