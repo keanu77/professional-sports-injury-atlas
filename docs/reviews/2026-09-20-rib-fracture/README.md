@@ -35,3 +35,26 @@ The release checker accepts a new `playback.preview.json` only when present and 
 - Desktop Chrome and Pixel 7: 36 regression checks passed (new cases, search, Judge, observation pages); the two review-only noindex checks were skipped in that launch-enabled invocation and then explicitly run without the launch flag, both passed. Total: 38 executed checks passed across the two invocations.
 - Manual local UI check at `http://127.0.0.1:14319`: all three pages rendered their source-linked information and click-to-load controls. Brees and Tua embedded players loaded; actual embedded playback advancement was not verified. Alonso's embedded player failed to load on two attempts and correctly offered retry/original-video fallback. The cause is not established, and this is not proof of production unavailability or a passing playback gate.
 - Remaining release requirement: verify actual embedded playback of all three on an owned HTTPS preview, investigate Alonso's failure if reproduced, then satisfy existing release gates. No preview upload, production deployment, push, or merge was performed.
+
+## HTTPS preview and release diagnosis — subsequent continuation
+
+The user requested continuation. A fresh validation run passed all 1502 unit tests, Astro check (0 errors, 0 warnings, 16 existing hints), content and brand checks. Dependencies, environment bindings and database migrations are unchanged. The existing loopback URL in the original approval contract is historical; the public artifact check confirms no loopback URLs or internal review pages leak into the built HTML.
+
+The rendering input digest was updated in commit `8532566` without changing clinical approval, original approval timestamps, or playback requirements. Public-mode artifact checks passed: 200 pages, 7 core cases, 147 observation pages and 4632 local links. Desktop/mobile public-artifact regression: 36 passed, 2 review-only assertions skipped as intended.
+
+An independent preview was deployed from that commit:
+
+- Immutable deployment: https://7679b6b3.sports-injury-atlas.pages.dev
+- Preview branch: `rib-fracture-preview`
+- Alonso page: https://7679b6b3.sports-injury-atlas.pages.dev/videos/fernando-alonso-2016-rib/
+- Production was not changed; previous good production remains deployment `4b8d4357-dd07-4de3-bca2-49a328af7a91` from `1bea30a`.
+
+### Confirmed Alonso blocker
+
+The browser reproduced the embedded-player failure on the owned HTTPS preview. The original YouTube watch page still played. Opening YouTube's own Share → Embed preview displayed a copyright-owner restriction naming Formula One Management: playback on this website or application is prohibited, and the viewer must watch on YouTube. Thus the selected `x45fLUTHCuk` cannot be treated as a verified native embed in the current environment. The restriction was observed through the official visible player UI, not inferred from an oEmbed result or a generic app error.
+
+No player restriction was bypassed, no substitute video was chosen, and no successful embedded-playback proof was created. Selecting a different Alonso video or changing that case to an external-link presentation requires a user decision and corresponding explicit validation/policy updates.
+
+### Other remaining release checks
+
+The fresh release check also failed on expired seven-day playback evidence for `CASE-NBAANKLE-2023-004`; additional historical batches contain expired evidence. These records must be genuinely reverified before release, not timestamp-refreshed. Brees and Tua still need their owned-HTTPS actual-playback evidence. Production deployment and GitHub push remain pending; the pre-existing `.claude/HANDOFF.md` remains untouched.
