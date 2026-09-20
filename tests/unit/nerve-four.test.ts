@@ -52,6 +52,8 @@ describe("four named nerve cases", () => {
       );
       const update = eventUpdateFor(clip.slug, clip.videoUrl, clip.eventDate)!;
       expect(update).toBeDefined();
+      expect(update.mechanism, clip.slug).toBeDefined();
+      expect(update.mechanism?.limitation).toBeTruthy();
       expect(update.timeline!.length).toBeGreaterThanOrEqual(2);
       expect(update.checkedAt).toBe("2026-09-20");
     }

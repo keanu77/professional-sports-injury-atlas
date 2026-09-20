@@ -276,6 +276,19 @@ const videoCount = featured.length + clips.length;
   import "../scripts/video-discovery";
 </script>
 <style>
+  .nerve-topics ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    padding: 0;
+    list-style: none;
+  }
+  .nerve-topics a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.5rem;
+  }
   [hidden] {
     display: none !important;
   }
