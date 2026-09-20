@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-09-20T07:55:12.763Z",
+  "origin": "https://injury.sportsmedicine.tw",
+  "sourceCommit": "12ad6195f287fe04523cf91a076562d140d6f6f7",
+  "htmlPages": 200,
+  "matched": 200,
+  "failed": [],
+  "releaseReceiptSha256": "3766ffe79ba8a5a61f2f907bd3ce9fddf5d4f70d28ace4b758f7eac38b6f480b",
+  "catalogCount": 154,
+  "manualSearch": {
+    "query": "rib fracture",
+    "scope": "全部影片",
+    "results": [
+      "Aaron Judge",
+      "Fernando Alonso",
+      "Drew Brees",
+      "Tua Tagovailoa"
+    ]
+  },
+  "httpsRedirect": 301,
+  "dnsAddresses": ["104.21.29.176", "172.67.149.144"]
+}

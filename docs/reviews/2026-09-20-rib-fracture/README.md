@@ -80,3 +80,21 @@ Expired evidence was genuinely replayed: 5 original core videos, 7 active Decisi
 The first core run played all five but timed out locating the CC-off button for `RDDGpqOvSdg`; the second run successfully toggled its captions but timed out for `FQAPZASQyX0`. Both complete raw attempts are preserved. The active core proof selects the latest successful actual playback plus caption-on result per video, retaining the first run's successful `FQAPZASQyX0` result. No failed result was relabeled, no date was synthesized and no playback/caption gate was weakened.
 
 The editorial design and implementation plan were relocated into this review folder after `plan:verify` identified them as unbound in the platform-authority directories. These documents do not establish platform authority; the original authority ledger is unchanged, and all 36 bound documents verify successfully. Production release remains pending the clean committed-tree gate and deployment.
+
+## Production deployment — 2026-09-20
+
+The complete `release:public` command passed from a clean validation checkout at `12ad6195f287fe04523cf91a076562d140d6f6f7`, including original clinical approvals, source provenance, input digest, current playback and public-artifact checks. Fresh 1503-unit-test and Astro checks passed at that commit. GitHub `main` and `feat/aaron-judge-rib` were fast-forward pushed without changing the user's working branch or handoff file.
+
+Cloudflare production deployment `9678e5ca-4e58-419a-942e-cbcb2a86565e` serves that source commit at https://injury.sportsmedicine.tw. The generated receipt SHA-256 is `3766ffe79ba8a5a61f2f907bd3ce9fddf5d4f70d28ace4b758f7eac38b6f480b`, unchanged before and after upload. All 200 live HTML documents matched their release-file hashes. `playback.production.json` records all three new videos actually playing on the custom domain. A visible browser search for `rib fracture` in all videos returned Judge, Alonso, Brees and Tua; total catalog count is 154. Playback availability is specific to this time/environment, not a future availability guarantee.
+
+### Live regression test diagnosis
+
+The first extra live run had 32 passes, 2 review-only skips and 4 failures: two device variants of the serial 147-page scan exceeded the local 30-second timeout, and two metadata tests expected the local-only `image/x-icon` response. The same page assertions passed on both devices with a 120-second live-run timeout (actual approximately 30 seconds). No site performance or playback gate was changed.
+
+The icon bytes are identical across local preview, the previous good deployment and production (SHA-256 `639a1b6038c475c892aa1c8aec6b0bd055b18347f89744f304f0f383f94a8f26`). Cloudflare returns `image/vnd.microsoft.icon`, the [IANA-registered ICO type](https://www.iana.org/assignments/media-types/image/vnd.microsoft.icon), rather than Astro preview's `image/x-icon`. The assertion now accepts exactly these two MIME types while retaining the ICO binary structure checks. Both live and local metadata tests passed on desktop/mobile after this test-only correction. Production code/assets were not altered to accommodate the test.
+
+Independent read-only environment and API checks found no new environment variables, dependencies, functions or migrations. `/api/popular` returned 200 with actual data; GET and same/cross-origin OPTIONS on POST-only plays/contributions returned expected 405. No contribution, test email or diagnostic DB write was submitted. Previous good production for rollback: `4b8d4357-dd07-4de3-bca2-49a328af7a91` / source `1bea30a48237eb43cd5717f39d091d1914eece0a`.
+
+Final complete live regression rerun: 36 passed, 2 intentionally skipped review-only assertions, exit 0, desktop Chrome and Pixel 7. The 147-page scans took 28.7 and 37.3 seconds with the documented 120-second live-test budget. Subsequent changes are test/documentation only and do not change the deployed rendering inputs.
+
+Independent D1 check at 07:59 UTC: remote production migration listing exited 0 with no migrations to apply, and the database-backed popular endpoint returned valid current data. Individual schema/index inspection was not repeated because of the previously documented permission limitation; no secret or private row was queried. See `release.json` for the final release summary.

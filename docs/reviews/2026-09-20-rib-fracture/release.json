@@ -1,0 +1,46 @@
+{
+  "status": "production-verified",
+  "checkedAt": "2026-09-20T07:59:06Z",
+  "sourceCommit": "12ad6195f287fe04523cf91a076562d140d6f6f7",
+  "repository": "keanu77/professional-sports-injury-atlas",
+  "branch": "main",
+  "sourcePushVerified": true,
+  "replacementAuthorizationQuote": "1尋找同事件、可合法嵌入的替代影片（建議）",
+  "deployment": {
+    "project": "sports-injury-atlas",
+    "id": "9678e5ca-4e58-419a-942e-cbcb2a86565e",
+    "url": "https://9678e5ca.sports-injury-atlas.pages.dev",
+    "origin": "https://injury.sportsmedicine.tw"
+  },
+  "previousDeployment": "4b8d4357-dd07-4de3-bca2-49a328af7a91",
+  "previousSourceCommit": "1bea30a48237eb43cd5717f39d091d1914eece0a",
+  "inputTreeDigest": "669e8cbd99e96b7953c74ef3b9458ae6a4ad6bb1747fb545e53418e2d98c6165",
+  "releaseReceiptSha256": "3766ffe79ba8a5a61f2f907bd3ce9fddf5d4f70d28ace4b758f7eac38b6f480b",
+  "verification": {
+    "publicReleaseGate": "passed",
+    "unitTestsPassed": 1503,
+    "unitTestFilesPassed": 98,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "existingAstroHints": 16,
+    "liveHtmlMatched": 200,
+    "catalogCount": 154,
+    "newVideosProductionPlayback": "3 played",
+    "liveE2EPassed": 36,
+    "reviewOnlyE2ESkipped": 2,
+    "homeSearch": "rib fracture returns Judge, Alonso, Brees and Tua in all-video scope",
+    "publicApiGet": "popular 200; plays/contributions 405 as designed",
+    "d1PendingMigrations": 0,
+    "newDependencies": false,
+    "newEnvironmentVariables": false,
+    "newMigrations": false
+  },
+  "limitations": [
+    "Alonso replacement is same-event official photo/voiceover news, not continuous crash footage; the page corrects its premature unharmed statement using later F1 sources.",
+    "Native YouTube embed availability does not grant a separate reuse license or guarantee future playback.",
+    "D1 migration listing and the database-backed popular API passed; individual schema/index inspection and secret guard-key verification were not repeated.",
+    "No diagnostic form, email or DB write was submitted."
+  ],
+  "proofs": ["live.json", "playback.preview.json", "playback.production.json"],
+  "note": "Subsequent documentation and E2E-only commits do not change rendering inputs and require no redeployment."
+}

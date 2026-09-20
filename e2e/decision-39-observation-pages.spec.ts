@@ -180,7 +180,10 @@ test("sharing metadata, favicons, and home heading hierarchy are complete", asyn
   expect(svg.headers()["content-type"]).toContain("image/svg+xml");
   const ico = await request.get("/favicon.ico");
   expect(ico.status()).toBe(200);
-  expect(ico.headers()["content-type"]).toContain("image/x-icon");
+  // Astro preview uses x-icon; Cloudflare serves IANA's registered ICO type.
+  expect(ico.headers()["content-type"]).toMatch(
+    /^image\/(?:x-icon|vnd\.microsoft\.icon)(?:;|$)/u,
+  );
   const icoBody = await ico.body();
   expect(icoBody.readUInt16LE(0)).toBe(0);
   expect(icoBody.readUInt16LE(2)).toBe(1);
