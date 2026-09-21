@@ -223,3 +223,13 @@
 | 198 | [Kelly Slater](https://www.youtube.com/watch?v=WhCalbwjLJg)                  | 傷後反應／退場、事後採訪／本人說明                                             | WSL 現場片段記錄 Slater 在 J-Bay 自由練習後接受足部處理及本人說明，當下仍等待 X 光。右足兩根蹠骨骨折來自後續 WSL 傷勢回顧。                                                                                                                                 |
 | 199 | [Sally Fitzgibbons](https://www.youtube.com/watch?v=wTaCr8olPck)             | 傷後反應／退場、事後採訪／本人說明、紀錄片／事件回顧                           | 傷後水中扶耳、醫療建議、包紮及帶傷續賽；未確認耳膜破裂瞬間，不把續賽歸為康復完成。                                                                                                                                                                          |
 | 200 | [Emma Raducanu](https://www.youtube.com/watch?v=ZQL-1NY5erY)                 | 新聞報導                                                                       | Sky 原創新聞呈現 Raducanu 本人的雙手手術聲明，回顧已持續數月的腕／手部問題。她說某個骨頭反覆受傷，並未指明骨名或確認骨折。                                                                                                                                  |
+
+## 發布與驗證
+
+已於 2026-09-21 發布至 https://injury.sportsmedicine.tw/ 。網站程式來源為 `0575bc8c87cab6a7d1769ea9f1bb63bf9a3003fb`，部署為 https://614d79e7.sports-injury-atlas.pages.dev 。後續收尾提交只有文件與證據。
+
+首頁增加類型入口、搜尋類型篩選；8 個類型頁與所有影片頁均顯示分類。132 支影片具多標籤，共 377 筆類別成員，總數維持 200 支不重複影片。21 支另有已觀察的片段連結。
+
+1,540 單元測試、172 桌機／手機 E2E 通過（2 項 review-only 略過）；Astro 0 errors／0 warnings。原有公開發布檢查通過，273／273 正式 HTML 與成品雜湊一致。正式瀏覽器確認 Brees 在受傷瞬間與專業解說各出現 1 支、清除篩選後恢復 200 支，以及雙標籤、0:46 片段連結與播放同意界線。
+
+證據：[驗證摘要](final-validation.json)、[E2E 結果](e2e-results.json)、[成品收據](artifact-receipt.json)、[正式 HTTP](live.json)、[正式瀏覽器](browser.production.json)、[發布紀錄](release.json)。

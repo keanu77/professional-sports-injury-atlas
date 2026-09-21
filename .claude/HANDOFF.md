@@ -1,6 +1,22 @@
-# HANDOFF - 2026-09-21 15:12（Asia/Tokyo）
+# HANDOFF - 2026-09-21 多標籤分類已完成
 
-## 當前任務已完成：200 例已正式上線
+## 當前狀態
+
+- 使用者已採用 `docs/superpowers/specs/2026-09-21-video-type-classification-design.md` 的多標籤方案；200 支影片的分類、首頁入口、搜尋篩選、8 個類型頁及影片頁標籤已完成並正式上線。
+- 正式站 https://injury.sportsmedicine.tw/ ；部署 https://614d79e7.sports-injury-atlas.pages.dev 。已推送 origin/main 的網站來源 `0575bc8c87cab6a7d1769ea9f1bb63bf9a3003fb`；之後收尾提交只補文件。保留本機分支 `feat/aaron-judge-rib`，依使用者偏好未建立 worktree。
+- 不重複影片總數 200（7 核心＋193 觀察）。受傷瞬間 135、傷後反應／退場 120、事後採訪／本人說明 42、新聞報導 30、專業解說 13、復健／回場紀錄 6、紀錄片／事件回顧 12、賽事紀錄／觀賽評論 19。132 支多標籤、377 筆類別成員；21 支有已知片段連結。
+- 依全部 200 列的既有具體觀察、180 列可精確綁定原片的既有審閱、本次 15 支原片取樣及同對話稍早 Brees／Tua 2 筆補看分類。**不是 200 支本次全部重新逐秒觀看**；缺少標籤是未確認，不是宣稱全片不存在。Samir 不列受傷瞬間；Tatum／Haliburton 只列傷後反應；Brees 同列受傷瞬間與專業解說。
+- 1,540 單元測試／104 檔、172 Chrome／Pixel 7 E2E 通過（2 項 review-only 略過）；Astro 0 errors／0 warnings／16 既有 hints。content、39 份 plan binding、變更格式及原有 release:public 全通過。測試成品 616 檔、273 HTML、12,707 站內連結；273／273 正式 HTML 雜湊核對通過。
+- 正式瀏覽器已測 Brees 的專業解說及受傷瞬間篩選各 1 筆、清除搜尋後 135、清除類型後 200、影片頁雙標籤與 0:46 片段連結；未同意前 0 iframe。此分類回歸未重新啟動外部播放器；原有播放證據與七日門檻照常由發布檢查驗證。
+- 資料 `src/data/video-content-types.v1.json`；嚴格 schema／查詢 `src/lib/videos/content-types.ts`；公開檢查要求精確 slug／原片 URL／標籤／片段的可解析證據。新 UI 草案不影響凍結的臨床 foundation authority；未重簽醫療核准、未換片。
+- 所有逐片依據與發布驗證見 `docs/reviews/2026-09-21-video-types/README.md`、`classification-review.json`、`final-validation.json`、`release.json`、`live.json`、`browser.production.json`、`e2e-results.json`、`artifact-receipt.json`。`classification-draft.json` 僅保留早期草稿，不代表最終結果。
+- 本次 14339 預覽已停止、預覽分頁已關閉，保留正式首頁。無環境變數、migration 或後續部署工作。
+- Node 24.14.0 暫存位置 `/private/tmp/atlas-judge-node.3pGBJs/node-v24.14.0-darwin-arm64/bin/node`；下次先確認存在。既有全庫歷史格式問題未批次重排。
+- 此任務已完成；下一次先核對 Git 狀態與使用者新需求，不因 resume 重做選片、醫療簽核、建置或部署。以下均為先前完成事項的歷史紀錄。
+
+## 2026-09-21 15:12 以前的 200 例擴充歷史
+
+### 先前任務已完成：200 例已正式上線
 
 - 使用者要求「先繼續完成到200例擴充」已完成。正式站 https://injury.sportsmedicine.tw/ 為 200 個不同傷害事件：7 核心＋193 觀察頁、30 種運動、14 個部位；相較原正式站 154 例，新增 4 個先前待發布神經案例及本批 42 例。
 - 分支仍 `feat/aaron-judge-rib`。正式程式提交 `fa76f7df1e9de7c46cecae086595b8ca5856851f` 已推送並經 GitHub main 核對；部署 https://dbc83b48.sports-injury-atlas.pages.dev 。此後收尾提交僅文件／證據，不影響網站輸入。

@@ -1,0 +1,2276 @@
+{
+  "sourceCommit": "0575bc8c87cab6a7d1769ea9f1bb63bf9a3003fb",
+  "stats": {
+    "startTime": "2026-09-21T08:52:32.610Z",
+    "duration": 52050.002,
+    "expected": 172,
+    "skipped": 2,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "originalJsonSha256": "c4e7a21ad90a65a3904a4d791e051153de4aad1db42e522823c8cb61225d7499",
+  "tests": [
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "nathan-florence-2023-t12-fracture: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 429,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "billy-kemper-2020-pelvis-knee: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 440,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "missy-franklin-2016-shoulder: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 230,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "gabriel-medina-2025-pectoral-tendon: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 224,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "jj-watt-2019-pectoral: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 248,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "zoey-clark-2023-disc-nerve: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 237,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "chloe-kim-2026-shoulder: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 234,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "adam-peaty-2022-foot: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 242,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "kerri-walsh-jennings-2015-shoulder: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 224,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "rafael-nadal-2022-abdominal: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 242,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "jordyn-poulter-2022-knee: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 230,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "paula-badosa-2023-spinal-stress-fracture: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 227,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "rafael-nadal-2022-rib-stress-fracture: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 243,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "jake-wightman-2023-foot: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 224,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "karsten-warholm-2022-hamstring: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 199,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "molly-seidel-2024-patella: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 198,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "jamahal-hill-2021-elbow: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 208,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "antonio-rodrigo-nogueira-2011-arm: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 214,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "tim-sylvia-2004-arm: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 220,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "ronaldo-jacare-souza-2021-humerus: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 216,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "tom-aspinall-2022-knee: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 194,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "jordan-burroughs-2013-ankle: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 192,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "jofra-archer-2020-elbow-stress-fracture: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 175,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "manny-pacquiao-2015-shoulder: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 202,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "sky-brown-2024-shoulder: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 249,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "tony-hawk-2022-femur: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 288,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "helen-maroulis-2018-concussion: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 231,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "tiger-woods-2008-tibial-stress-fractures: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 263,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "mirabai-chanu-2023-hip: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 247,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "annemiek-van-vleuten-2022-elbow: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 258,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "daniel-andre-tande-2021-clavicle: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 208,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "egan-bernal-2022-training-crash: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 295,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "connor-fields-2021-brain-hemorrhage: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 258,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "novak-djokovic-2017-elbow: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 200,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "kei-nishikori-2017-wrist: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 226,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "bianca-andreescu-2023-ankle: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 225,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "juan-martin-del-potro-2017-wrist-contusion: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 200,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "rafael-nadal-2016-wrist: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 214,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "nikola-karabatic-2020-acl: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 247,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "kelly-slater-2017-foot: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 241,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "sally-fitzgibbons-2015-eardrum: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 393,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "emma-raducanu-2022-2023-wrists: sources, exact footage label and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 391,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "200 unique events remain searchable",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 349,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "/videos/antonio-rodrigo-nogueira-2011-arm/: accessible without horizontal overflow",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 726,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "/sports/mixed-martial-arts/: accessible without horizontal overflow",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 651,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "/sports/surfing/: accessible without horizontal overflow",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 550,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "/sports/wrestling/: accessible without horizontal overflow",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 583,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "/body-parts/arm/: accessible without horizontal overflow",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 459,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "/body-parts/hip-thigh/: accessible without horizontal overflow",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 526,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "nathan-florence-2023-t12-fracture: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 325,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "billy-kemper-2020-pelvis-knee: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 324,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "missy-franklin-2016-shoulder: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 232,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "gabriel-medina-2025-pectoral-tendon: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 224,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "jj-watt-2019-pectoral: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 248,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "zoey-clark-2023-disc-nerve: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 245,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "chloe-kim-2026-shoulder: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 200,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "adam-peaty-2022-foot: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 200,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "kerri-walsh-jennings-2015-shoulder: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 283,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "rafael-nadal-2022-abdominal: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 280,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "jordyn-poulter-2022-knee: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 271,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "paula-badosa-2023-spinal-stress-fracture: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 280,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "rafael-nadal-2022-rib-stress-fracture: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 240,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "jake-wightman-2023-foot: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 254,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "karsten-warholm-2022-hamstring: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 234,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "molly-seidel-2024-patella: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 250,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "jamahal-hill-2021-elbow: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 241,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "antonio-rodrigo-nogueira-2011-arm: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 223,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "tim-sylvia-2004-arm: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 234,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "ronaldo-jacare-souza-2021-humerus: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 261,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "tom-aspinall-2022-knee: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 264,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "jordan-burroughs-2013-ankle: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 248,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "jofra-archer-2020-elbow-stress-fracture: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 226,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "manny-pacquiao-2015-shoulder: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 215,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "sky-brown-2024-shoulder: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 209,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "tony-hawk-2022-femur: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 206,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "helen-maroulis-2018-concussion: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 210,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "tiger-woods-2008-tibial-stress-fractures: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 228,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "mirabai-chanu-2023-hip: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 188,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "annemiek-van-vleuten-2022-elbow: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 242,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "daniel-andre-tande-2021-clavicle: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 214,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "egan-bernal-2022-training-crash: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 239,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "connor-fields-2021-brain-hemorrhage: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 200,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "novak-djokovic-2017-elbow: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 203,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "kei-nishikori-2017-wrist: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 227,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "bianca-andreescu-2023-ankle: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 179,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "juan-martin-del-potro-2017-wrist-contusion: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 210,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "rafael-nadal-2016-wrist: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 221,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "nikola-karabatic-2020-acl: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 251,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "kelly-slater-2017-foot: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 204,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "sally-fitzgibbons-2015-eardrum: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 192,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "emma-raducanu-2022-2023-wrists: sources, exact footage label and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 199,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "200 unique events remain searchable",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 253,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "/videos/antonio-rodrigo-nogueira-2011-arm/: accessible without horizontal overflow",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 578,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "/sports/mixed-martial-arts/: accessible without horizontal overflow",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 526,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "/sports/surfing/: accessible without horizontal overflow",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 508,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "/sports/wrestling/: accessible without horizontal overflow",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 510,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "/body-parts/arm/: accessible without horizontal overflow",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 436,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "/body-parts/hip-thigh/: accessible without horizontal overflow",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 423,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-observation-pages.spec.ts",
+      "title": "all 193 observation pages expose general guidance, text highlights, related videos, and category routes",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 975,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-observation-pages.spec.ts",
+      "title": "the ten featured observations identify their reviewed main-site resources",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 737,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-observation-pages.spec.ts",
+      "title": "news, aftermath, and injury footage have consistent card and detail labels",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 711,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-observation-pages.spec.ts",
+      "title": "sharing metadata, favicons, and home heading hierarchy are complete",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3322,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-observation-pages.spec.ts",
+      "title": "review output stays noindex and does not publish a sitemap",
+      "project": "chrome",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "durationMs": 109,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-observation-pages.spec.ts",
+      "title": "curated collection shows ten ordered videos and restores all 200",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1090,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-observation-pages.spec.ts",
+      "title": "all 193 observation pages expose general guidance, text highlights, related videos, and category routes",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 971,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-observation-pages.spec.ts",
+      "title": "the ten featured observations identify their reviewed main-site resources",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 757,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-observation-pages.spec.ts",
+      "title": "news, aftermath, and injury footage have consistent card and detail labels",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 647,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-observation-pages.spec.ts",
+      "title": "sharing metadata, favicons, and home heading hierarchy are complete",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3070,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-observation-pages.spec.ts",
+      "title": "review output stays noindex and does not publish a sitemap",
+      "project": "mobile-chrome",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "durationMs": 127,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-observation-pages.spec.ts",
+      "title": "curated collection shows ten ordered videos and restores all 200",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1094,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "home category routes remain available without JavaScript",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 345,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "mobile contribution and author links remain tabbable without JavaScript",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 451,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "observation cards expose concise governed metadata on home and category pages",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2397,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "return-day callouts name the governed milestone beside the day count",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 260,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "home category routes remain available without JavaScript",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 225,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "mobile contribution and author links remain tabbable without JavaScript",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 335,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "observation cards expose concise governed metadata on home and category pages",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1932,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "return-day callouts name the governed milestone beside the day count",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 274,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "shows one category at a time on mobile and all categories on desktop",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3230,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "keeps the 320px 150% header compact while all controls remain reachable",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3231,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "offers a direct keyboard-accessible jump to the video collection",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 452,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "reveals and scrolls to hashed categories on load, hash change, and return links",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 550,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "shows one category at a time on mobile and all categories on desktop",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3010,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "keeps the 320px 150% header compact while all controls remain reachable",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3271,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "offers a direct keyboard-accessible jump to the video collection",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 429,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "reveals and scrolls to hashed categories on load, hash change, and return links",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 611,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "Jaylon Smith: sources, footage labels and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 619,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "Zack Kelly: sources, footage labels and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 603,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "Ryan Crouser: sources, footage labels and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 611,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "Rob Horne: sources, footage labels and consent facade",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 681,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "named nerve search finds all four and keeps plexus separate",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 703,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "one nerve entry opens all four cases and preserves anatomical navigation",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1537,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "Kelly loads only the allowlisted iframe after consent, without YouTube telemetry",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 214,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "Jaylon Smith: sources, footage labels and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 571,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "Zack Kelly: sources, footage labels and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 516,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "Ryan Crouser: sources, footage labels and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 574,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "Rob Horne: sources, footage labels and consent facade",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 579,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "named nerve search finds all four and keeps plexus separate",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 589,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "one nerve entry opens all four cases and preserves anatomical navigation",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1453,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "Kelly loads only the allowlisted iframe after consent, without YouTube telemetry",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 227,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "patient-experience.spec.ts",
+      "title": "video collection is directly browsable before using optional search",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3225,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "patient-experience.spec.ts",
+      "title": "case opens with video, concise care, and a separately attributed athlete return",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 666,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "patient-experience.spec.ts",
+      "title": "patient content remains readable without scripts",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 196,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "patient-experience.spec.ts",
+      "title": "video collection is directly browsable before using optional search",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3068,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "patient-experience.spec.ts",
+      "title": "case opens with video, concise care, and a separately attributed athlete return",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 583,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "patient-experience.spec.ts",
+      "title": "patient content remains readable without scripts",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 177,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-search.spec.ts",
+      "title": "searches Chinese and English names, injury keywords and multiple terms",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3969,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-search.spec.ts",
+      "title": "keeps the query when changing scope and can expand beyond curated results",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 375,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-search.spec.ts",
+      "title": "handles IME composition and treats hostile input as plain text without navigation",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 240,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-search.spec.ts",
+      "title": "filters popular ten while retaining original ranks and latest query during a slow response",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 313,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-search.spec.ts",
+      "title": "ignores obsolete popularity results and distinguishes API failure from no search matches",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 354,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-search.spec.ts",
+      "title": "keeps all videos browsable with scripts disabled",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 404,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-search.spec.ts",
+      "title": "searches Chinese and English names, injury keywords and multiple terms",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3485,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-search.spec.ts",
+      "title": "keeps the query when changing scope and can expand beyond curated results",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 342,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-search.spec.ts",
+      "title": "handles IME composition and treats hostile input as plain text without navigation",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 252,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-search.spec.ts",
+      "title": "filters popular ten while retaining original ranks and latest query during a slow response",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 333,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-search.spec.ts",
+      "title": "ignores obsolete popularity results and distinguishes API failure from no search matches",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 364,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-search.spec.ts",
+      "title": "keeps all videos browsable with scripts disabled",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 475,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "combines an exact content type, a query, and the static type page",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1445,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "preserves the original popularity rank after intersecting a content type",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 231,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "handles invalid shared type links and maps each mobile category control to a panel",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1643,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "intersects a content type with curated mode and a Chinese query",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 276,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "does not let a slow popularity response replace a newer mode or type",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 283,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "restores type selections through browser history while retaining existing URL state",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 206,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "keeps static content type routes and observed segment links usable without script or eager embeds",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 128,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "shows reviewed segment links without pre-consent third-party playback",
+      "project": "chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 140,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "combines an exact content type, a query, and the static type page",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1223,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "preserves the original popularity rank after intersecting a content type",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 247,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "handles invalid shared type links and maps each mobile category control to a panel",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1615,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "intersects a content type with curated mode and a Chinese query",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 277,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "does not let a slow popularity response replace a newer mode or type",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 295,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "restores type selections through browser history while retaining existing URL state",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 276,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "keeps static content type routes and observed segment links usable without script or eager embeds",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 129,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "shows reviewed segment links without pre-consent third-party playback",
+      "project": "mobile-chrome",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 183,
+          "errors": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "recordedAt": "2026-09-21T10:34:54.423728+00:00",
+  "status": "deployed-and-production-verified",
+  "sourceCommit": "0575bc8c87cab6a7d1769ea9f1bb63bf9a3003fb",
+  "branch": "feat/aaron-judge-rib",
+  "remoteBranch": "origin/main",
+  "origin": "https://injury.sportsmedicine.tw",
+  "deploymentUrl": "https://614d79e7.sports-injury-atlas.pages.dev",
+  "releaseInputDigest": "d8ce0074f809e5be685bdd4810a143f5a94c2e3cdc7accc2d915c1320c2f68a8",
+  "uniqueVideos": 200,
+  "multiLabelVideos": 132,
+  "categoryMemberships": 377,
+  "categories": [
+    {
+      "code": "injury-moment",
+      "label": "受傷瞬間",
+      "count": 135
+    },
+    {
+      "code": "immediate-aftermath",
+      "label": "傷後反應／退場",
+      "count": 120
+    },
+    {
+      "code": "post-event-interview",
+      "label": "事後採訪／本人說明",
+      "count": 42
+    },
+    {
+      "code": "news-report",
+      "label": "新聞報導",
+      "count": 30
+    },
+    {
+      "code": "expert-analysis",
+      "label": "專業解說",
+      "count": 13
+    },
+    {
+      "code": "rehab-return",
+      "label": "復健／回場紀錄",
+      "count": 6
+    },
+    {
+      "code": "documentary-retrospective",
+      "label": "紀錄片／事件回顧",
+      "count": 12
+    },
+    {
+      "code": "match-record-commentary",
+      "label": "賽事紀錄／觀賽評論",
+      "count": 19
+    }
+  ],
+  "videosWithMarkedSegments": 21,
+  "artifactReceipt": "artifact-receipt.json",
+  "validation": "final-validation.json",
+  "productionHttp": "live.json",
+  "productionBrowser": "browser.production.json",
+  "clinicalApprovalsChanged": false,
+  "sourceVideoBindingsChanged": false,
+  "cleanup": {
+    "localPreview14339Stopped": true,
+    "ownedPreviewTabClosed": true,
+    "productionHomepageLeftOpen": true
+  },
+  "notes": [
+    "The subsequent closeout commit contains documentation and evidence only; production source remains the sourceCommit above.",
+    "No category tag means not confirmed, not proof of absence throughout the full video."
+  ]
+}

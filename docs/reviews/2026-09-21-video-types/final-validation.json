@@ -1,0 +1,62 @@
+{
+  "recordedAt": "2026-09-21T10:34:54.423728+00:00",
+  "sourceCommit": "0575bc8c87cab6a7d1769ea9f1bb63bf9a3003fb",
+  "unitTests": {
+    "passed": 1540,
+    "files": 104
+  },
+  "astroCheck": {
+    "errors": 0,
+    "warnings": 0,
+    "existingHints": 16,
+    "files": 392
+  },
+  "contentCheck": "passed",
+  "planVerify": {
+    "status": "passed",
+    "boundDocuments": 39
+  },
+  "formatCheck": "Changed implementation files passed; historical unrelated formatting was not rewritten.",
+  "publicRelease": "passed with existing clinical, source, rights and seven-day playback gates retained",
+  "e2e": {
+    "passed": 172,
+    "skippedReviewOnly": 2,
+    "failed": 0,
+    "projects": ["chrome", "mobile-chrome"],
+    "evidence": "e2e-results.json"
+  },
+  "artifact": {
+    "files": 616,
+    "htmlPages": 273,
+    "internalLinks": 12707,
+    "allFileHashesRecheckedAtCloseout": true,
+    "evidence": "artifact-receipt.json"
+  },
+  "production": {
+    "matchedHtmlPages": 273,
+    "httpEvidence": "live.json",
+    "interactionEvidence": "browser.production.json"
+  },
+  "editorialScope": {
+    "uniqueVideos": 200,
+    "existingExactVideoReviewMatches": 180,
+    "currentSourceVideoSamples": 15,
+    "earlierSameConversationSupplementalSamples": 2,
+    "all200RewatchedInFull": false,
+    "classificationEvidence": "classification-review.json"
+  },
+  "review": {
+    "spec": "passed",
+    "quality": "passed after fixes; no outstanding critical or important findings",
+    "fixes": [
+      "Bound editorial evidence to exact slug, original URL, tags and segments.",
+      "Kept new UI plans separate from frozen clinical foundation authority.",
+      "Made reviewed footage labels neutral when the legacy field is absent.",
+      "Updated assertions for descriptive card links and multi-label navigation without weakening coverage."
+    ]
+  },
+  "notes": [
+    "An earlier browser run failed before launch because of sandbox EPERM; the final permitted run passed all 172 active tests.",
+    "This task verified classification UI; existing source playback evidence remained subject to the original release gates."
+  ]
+}

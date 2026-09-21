@@ -1,0 +1,86 @@
+{
+  "origin": "https://injury.sportsmedicine.tw",
+  "checkedAt": "2026-09-21T10:23:46.539Z",
+  "sourceCommit": "0575bc8c87cab6a7d1769ea9f1bb63bf9a3003fb",
+  "checks": [
+    {
+      "step": "Search Drew Brees within expert-analysis",
+      "actual": {
+        "iframeCount": 0,
+        "status": "全部影片中找到 1 支符合專業解說、「Drew Brees」的影片。",
+        "type": "expert-analysis",
+        "url": "https://injury.sportsmedicine.tw/?type=expert-analysis#videos-heading",
+        "visibleCards": [
+          {
+            "slug": "drew-brees-2020-rib",
+            "text": "▶2020 Saints 多次碰撞後肋骨骨折與肺部傷勢Drew Brees美式足球軀幹2020受傷瞬間專業解說傷勢新聞與說明 →"
+          }
+        ]
+      }
+    },
+    {
+      "step": "Switch Brees search to injury-moment with keyboard",
+      "actual": {
+        "status": "全部影片中找到 1 支符合專業解說、「Drew Brees」的影片。",
+        "type": "expert-analysis",
+        "url": "https://injury.sportsmedicine.tw/?type=expert-analysis#videos-heading",
+        "visibleSlugs": ["drew-brees-2020-rib"]
+      }
+    },
+    {
+      "step": "Select injury-moment for Drew Brees",
+      "actual": {
+        "status": "全部影片中找到 1 支符合受傷瞬間、「Drew Brees」的影片。",
+        "type": "injury-moment",
+        "url": "https://injury.sportsmedicine.tw/?type=injury-moment#videos-heading",
+        "visibleSlugs": ["drew-brees-2020-rib"]
+      }
+    },
+    {
+      "step": "Clear search and retain injury-moment",
+      "actual": {
+        "status": "全部影片中找到 135 支符合受傷瞬間的影片。",
+        "type": "injury-moment",
+        "visibleCards": 135
+      }
+    },
+    {
+      "step": "Clear type and show all unique videos",
+      "actual": {
+        "iframeCount": 0,
+        "status": "全部 200 支影片。",
+        "type": "",
+        "uniqueSlugs": 200,
+        "visibleCards": 200
+      }
+    },
+    {
+      "step": "Brees detail tags, known segment and consent",
+      "actual": {
+        "iframeCount": 0,
+        "segment": [
+          {
+            "href": "https://www.youtube.com/watch?v=_jrPqJow81Q&t=46",
+            "label": "0:46：受傷瞬間、專業解說"
+          }
+        ],
+        "tags": [
+          {
+            "href": "/video-types/injury-moment/",
+            "label": "受傷瞬間"
+          },
+          {
+            "href": "/video-types/expert-analysis/",
+            "label": "專業解說"
+          }
+        ],
+        "title": "Drew Brees",
+        "url": "https://injury.sportsmedicine.tw/videos/drew-brees-2020-rib/"
+      }
+    }
+  ],
+  "notes": [
+    "Native select keyboard attempts did not change the selected option in browser automation; the supported selectOption action subsequently changed it successfully.",
+    "No external video player was loaded during this classification UI verification."
+  ]
+}
