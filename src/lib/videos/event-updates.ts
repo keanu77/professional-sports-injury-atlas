@@ -253,14 +253,17 @@ const nerveFour = z
   })
   .parse(nerveFourData);
 
-const catalog200 = z
-  .strictObject({
-    schemaVersion: z.literal(1),
-    decision: z.literal("catalog-200-2026-09-21"),
-    checkedAt: z.iso.date(),
-    entries: z.array(eventUpdateEntryInputSchema).length(42),
-  })
-  .parse(catalog200Data);
+export const catalog200EventSchema = z.strictObject({
+  schemaVersion: z.literal(1),
+  decision: z.literal("catalog-200-2026-09-21"),
+  checkedAt: z.iso.date(),
+  entries: z
+    .array(
+      eventUpdateEntryInputSchema.required({ mechanism: true, timeline: true }),
+    )
+    .length(42),
+});
+const catalog200 = catalog200EventSchema.parse(catalog200Data);
 /** Preserve the date of the batch that actually checked each entry. */
 export function normalizeEventUpdateBatches(
   batches: readonly EventUpdateBatchInput[],

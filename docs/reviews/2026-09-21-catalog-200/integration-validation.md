@@ -46,3 +46,16 @@ ATLAS_PUBLIC_LAUNCH=decision-21 ATLAS_E2E_PORT=14323 node node_modules/@playwrig
 ```
 
 The new E2E spec covers all 42 detail routes, exact footage labels/video IDs/starts, working citation anchors, absence of invented return-day counts, and absence of pre-consent iframe or provider requests. It checks 200 unique searchable events and three distinct Rafael Nadal events. Six representative routes cover Nogueira's long name, three new sports, and both new anatomy groups with Axe at each project's viewport and overflow checks at the project viewport plus 320 and 390 pixels. These local checks cannot substitute for actual owned HTTPS provider playback.
+
+The public artifact inspection after checkpoint `111b6df` exposed a missing contract: 35 new entries had no mechanism block, while the existing artifact gate requires a sourced mechanism on every public detail page. The main process explicitly authorized completing this same reviewed content structure in both the selected-case document and the production event batch; the artifact gate was kept unchanged.
+
+The correction adds only those 35 missing `mechanism` fields from the auditor's `/private/tmp/atlas-catalog200-missing-mechanisms.json`. All 35 summaries reuse existing timeline text and source indexes. Thirty-one explanations reuse existing timeline text and indexes; the other four reuse existing observation text with the selected original-video source. The original seven mechanism objects and every other field in both JSON files remain deeply identical to `111b6df`. The comparison record is `/private/tmp/atlas-catalog200-mechanism-preservation.json`; removing only the 35 added fields restores each baseline semantic hash exactly.
+
+The new catalog-200 event schema now requires both mechanism and timeline at load time. The shared input schema and all previous batches retain their prior behavior. E2E assertions require a visible mechanism block bound to each of the 42 slugs, at least two mechanism citations, and working citation targets. No source lookup, playback-proof creation, input-binding update, deployment, or privileged E2E execution was performed for this correction.
+
+Correction validation on 2026-09-21:
+
+- RED: one new presence assertion listed the exact 35 missing slugs. Two removal tests also demonstrated that the previous optional batch schema incorrectly accepted missing mechanism or timeline. The existing six catalog tests continued to pass. Logs: `/private/tmp/atlas-catalog200-mechanism-red.log` and `/private/tmp/atlas-catalog200-mechanism-schema-red.log`.
+- GREEN: 49 tests across `catalog-200`, `event-updates`, `nerve-four`, `video-discovery`, and `video-expansion` passed, including both required-field removal tests. Log: `/private/tmp/atlas-catalog200-mechanism-green.log`.
+- Fresh Astro check: 386 files, 0 errors, 0 warnings, 16 existing hints.
+- Scoped Prettier and `git diff --check` passed. The main process owns the following clean checkpoint, renewed artifact inspection, desktop/Pixel 7 E2E, and owned HTTPS playback.

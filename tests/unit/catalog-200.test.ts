@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import selected from "../../docs/reviews/2026-09-21-catalog-200/selected-cases.json";
 import baseline from "../../docs/reviews/2026-09-21-catalog-200/baseline-before-integration.json";
 import resourceData from "../../src/data/videos/observation-resources.v1.json";
+import catalog200EventData from "../../src/data/videos/event-catalog-200.v1.json";
 import { discoveryFor } from "../../src/lib/videos/discovery";
 import {
   allObservationClips,
@@ -11,6 +12,7 @@ import {
 import {
   eventUpdateFor,
   eventUpdates,
+  catalog200EventSchema,
   returnDays,
 } from "../../src/lib/videos/event-updates";
 import { publicVideoIds } from "../../src/lib/videos/public-video-ids";
@@ -57,6 +59,38 @@ describe("catalog 200 sourced expansion", () => {
       expect(observationCategoryLinks(clip).length).toBe(3);
     }
   });
+  it("provides the sourced mechanism required by every public detail page", () => {
+    const entries = catalog200.clips.map((clip) =>
+      eventUpdateFor(clip.slug, clip.videoUrl, clip.eventDate)!,
+    );
+    expect(
+      entries.filter((entry) => !entry.mechanism).map((entry) => entry.slug),
+    ).toEqual([]);
+    for (const entry of entries) {
+      const mechanism = entry.mechanism!;
+      for (const report of [mechanism.summary, mechanism.explanation]) {
+        expect(report.text.trim().length, entry.slug).toBeGreaterThan(0);
+        expect(report.sourceIndexes.length, entry.slug).toBeGreaterThan(0);
+        for (const index of report.sourceIndexes) {
+          expect(Number.isInteger(index), entry.slug).toBe(true);
+          expect(index, entry.slug).toBeGreaterThan(0);
+          expect(entry.sources[index - 1], entry.slug).toBeDefined();
+        }
+      }
+    }
+  });
+  it.each(["mechanism", "timeline"] as const)(
+    "rejects a catalog-200 batch missing its required %s",
+    (field) => {
+      expect(catalog200EventSchema.safeParse(catalog200EventData).success).toBe(
+        true,
+      );
+      const changed = structuredClone(catalog200EventData);
+      const entry = changed.entries.find((item) => "mechanism" in item)!;
+      Reflect.deleteProperty(entry, field);
+      expect(catalog200EventSchema.safeParse(changed).success).toBe(false);
+    },
+  );
   it("routes every new event to one sport and one anatomical group", () => {
     expect(videosBySport([], allObservationClips)).toHaveLength(30);
     expect(videosByBodyPart([], allObservationClips)).toHaveLength(14);

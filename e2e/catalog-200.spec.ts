@@ -33,6 +33,12 @@ for (const c of selected.clips) {
         String(c.startSeconds),
       );
       await expect(page.locator("[data-recovery-timeline]")).toBeVisible();
+      const mechanism = page.locator("[data-event-mechanism]");
+      await expect(mechanism).toBeVisible();
+      await expect(mechanism).toHaveAttribute("data-event-mechanism", c.slug);
+      expect(
+        await mechanism.locator('a[href^="#event-source-"]').count(),
+      ).toBeGreaterThanOrEqual(2);
       const refs = page.locator('a[href^="#event-source-"]');
       expect(await refs.count()).toBeGreaterThan(0);
       for (const ref of await refs.all())

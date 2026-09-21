@@ -1588,7 +1588,23 @@
           "url": "https://www.youtube.com/watch?v=lqlkP27TXvA",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "巨浪落水與事後骨折更新",
+        "summary": {
+          "text": "巨浪落水後出現背部疼痛；確切發生日未確認。",
+          "sourceIndexes": [1, 2]
+        },
+        "steps": [
+          "先觀看原片中的巨浪落水，再區分後段的本人回顧。",
+          "骨折名稱對照後續傷勢更新，不由落水動作自行判讀。"
+        ],
+        "explanation": {
+          "text": "本人公開更新 T12 椎體壓迫性骨折；六週後複查是當時規畫，不是已完成的康復里程碑。",
+          "sourceIndexes": [1]
+        },
+        "limitation": "落水畫面無法直接判定椎體骨折、受傷分級或癒合情況；確切受傷日未確認。"
+      }
     },
     {
       "slug": "billy-kemper-2020-pelvis-knee",
@@ -1628,7 +1644,23 @@
           "url": "https://www.youtube.com/watch?v=gGGMvPtjtZo",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "同次衝浪事故中的骨盆與膝部傷勢",
+        "summary": {
+          "text": "本人回顧衝浪事故後的骨盆骨折；後續治療醫師另說明膝部多結構損傷。",
+          "sourceIndexes": [1, 2, 3]
+        },
+        "steps": [
+          "所選段落是本人回顧事故的紀錄片訪談。",
+          "骨盆與膝部傷勢依治療醫師說明閱讀，保持同次事故的關聯。"
+        ],
+        "explanation": {
+          "text": "WSL 紀錄片中的本人訪談回顧摩洛哥衝浪事故。",
+          "sourceIndexes": [4]
+        },
+        "limitation": "訪談與落水畫面不能判定各組織受傷的先後、分級或完整恢復日期。"
+      }
     },
     {
       "slug": "missy-franklin-2016-shoulder",
@@ -1675,7 +1707,23 @@
           "url": "https://www.youtube.com/watch?v=WevF13bkLAM",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "持續肩痛、檢查與手術的時間順序",
+        "summary": {
+          "text": "本人表示自 2016 年起持續肩痛；沒有可核定的單一受傷日。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "這段本人訪談回顧持續肩痛，沒有單一受傷瞬間。",
+          "分開閱讀症狀開始、檢查診斷與雙肩手術的時間。"
+        ],
+        "explanation": {
+          "text": "本人公布已接受雙肩手術，當時正恢復游泳，尚未訂出回到比賽的時間。",
+          "sourceIndexes": [1]
+        },
+        "limitation": "公開資料未確認特定滑囊位置、旋轉肌腱傷勢或過度使用病因，不能由游泳身分推定致傷機轉。"
+      }
     },
     {
       "slug": "gabriel-medina-2025-pectoral-tendon",
@@ -1712,7 +1760,23 @@
           "url": "https://www.youtube.com/watch?v=z6KNabUBA88",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "訓練胸部傷勢與肌腱修復紀錄",
+        "summary": {
+          "text": "ge 報導在衝浪訓練動作中左側胸大肌肌腱受傷。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "所選片段是傷後回歸訪談，先辨識其回顧性質。",
+          "側別與肌腱修復採主刀醫師的原始訪問資料。"
+        ],
+        "explanation": {
+          "text": "主刀醫師接受訪問說明已進行肌腱修復；這是手術日期，沒有據此推算回場日。",
+          "sourceIndexes": [1]
+        },
+        "limitation": "本人訪談不能判定完全斷裂、撕裂分級或組織受力，也不能由回歸活動推算首次正式出賽日期。"
+      }
     },
     {
       "slug": "jj-watt-2019-pectoral",
@@ -1759,7 +1823,23 @@
           "url": "https://www.youtube.com/watch?v=D8492O0ciGY",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "擒抱傷後檢查與復訓回顧",
+        "summary": {
+          "text": "球隊記錄 Watt 在第二節擒抱時受傷，賽後接受檢查。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "ESPN 本人專訪回顧比賽受傷與之後處理。",
+          "將回到球隊練習與正式復賽分開閱讀。"
+        ],
+        "explanation": {
+          "text": "球隊報導他在手術與復健後回到練習；練習和正式比賽分開記錄。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "訪談不足以確認未公開的傷側、撕裂程度或附著位置；個人回歸取捨不能當作其他人的回場條件。"
+      }
     },
     {
       "slug": "zoey-clark-2023-disc-nerve",
@@ -1795,7 +1875,23 @@
           "url": "https://www.youtube.com/watch?v=7_GZg1qIZLQ",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "賽後症狀與本人自述的神經受壓",
+        "summary": {
+          "text": "本人回顧 1 月中旬的室內 60 公尺賽後背部症狀，並說明後續 MRI 與神經受壓資訊。",
+          "sourceIndexes": [1, 2]
+        },
+        "steps": [
+          "這段紀錄片是本人對背痛、檢查與復健的事後回顧。",
+          "她提及的 L5/S1 與神經受壓資訊，保留本人自述的歸因。"
+        ],
+        "explanation": {
+          "text": "協會介紹委製的本人紀錄片，記錄這段傷勢與復健經歷。",
+          "sourceIndexes": [1]
+        },
+        "limitation": "未取得影像報告，不能認定該場比賽造成全部病變，也不能將脊椎相關症狀直接分類為具名周邊神經或神經叢損傷。"
+      }
     },
     {
       "slug": "chloe-kim-2026-shoulder",
@@ -1841,7 +1937,23 @@
           "url": "https://www.youtube.com/watch?v=iRo0jHPhr2I",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "肩傷新聞與後續本人更新",
+        "summary": {
+          "text": "本人公布訓練時肩脫臼，後續更新 MRI 顯示盂唇撕裂；確切受傷日留空。",
+          "sourceIndexes": [1, 2]
+        },
+        "steps": [
+          "先辨識 NBC 新聞剪輯中的短暫跌落素材。",
+          "脫臼、盂唇與左側資訊分別對照後續本人公開更新。"
+        ],
+        "explanation": {
+          "text": "在奧運前記者會談肩部狀況並確認左側；不據此推定盂唇已癒合。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "新聞剪輯不是連續事故回放，不能判定盂唇損傷形成的瞬間或癒合情況；公告日期也不是確定受傷日。"
+      }
     },
     {
       "slug": "adam-peaty-2022-foot",
@@ -1877,7 +1989,23 @@
           "url": "https://www.youtube.com/watch?v=7oFg7YmMgtI",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "陸上訓練後的本人敘述與足部骨折",
+        "summary": {
+          "text": "協會記錄足部骨折發生於陸上訓練；未提供可確認的精確受傷日。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "本人訓練日誌的片段是在陸上訓練後回顧翻腳與疼痛。",
+          "足部骨折名稱以協會公告為依據，與口語提到腳踝分開。"
+        ],
+        "explanation": {
+          "text": "公告因足部骨折退出布達佩斯世界游泳錦標賽。",
+          "sourceIndexes": [1]
+        },
+        "limitation": "這不是蛙泳動作受傷的示範；訪談無法指定足骨、骨折型態或另立踝部診斷。"
+      }
     },
     {
       "slug": "kerri-walsh-jennings-2015-shoulder",
@@ -1908,7 +2036,23 @@
           "url": "https://www.youtube.com/watch?v=RyWuQ_RW6OA",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "肩脫臼後的賽事本人回顧",
+        "summary": {
+          "text": "公開報導及賽事本人訪談記錄右肩脫臼與當場續賽；不將續賽當成痊癒。",
+          "sourceIndexes": [1, 2]
+        },
+        "steps": [
+          "原片包含賽後本人訪談及同場比賽片段。",
+          "將當場續賽視為歷史事件紀錄，與肩關節恢復分開。"
+        ],
+        "explanation": {
+          "text": "賽事主辦方的本人訪談中，Walsh Jennings 回顧肩膀脫位及當時對發生過程的不確定。",
+          "sourceIndexes": [2]
+        },
+        "limitation": "本人當時對發生過程仍有不確定性；片段不能判定關節唇、關節囊或其他伴隨組織傷勢。"
+      }
     },
     {
       "slug": "rafael-nadal-2022-abdominal",
@@ -1938,7 +2082,23 @@
           "url": "https://www.youtube.com/watch?v=9vGOrRkqAK4",
           "publishedAt": "2022-07-07"
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "腹肌傷勢與官方退賽說明",
+        "summary": {
+          "text": "在官方記者會自述腹肌撕裂並宣布退賽；此日是公告日，非確定的受傷日。",
+          "sourceIndexes": [1, 2]
+        },
+        "steps": [
+          "觀看官方記者會中本人對腹肌傷勢的說明。",
+          "分開記錄退賽公告日期與未確認的首次受傷日期。"
+        ],
+        "explanation": {
+          "text": "Wimbledon 官方退賽記者會中，Nadal 說明腹肌撕裂與退出準決賽的決定。",
+          "sourceIndexes": [2]
+        },
+        "limitation": "記者會不是受傷瞬間，不能重建腹肌受力、判定撕裂分級，或與同年肋骨及慢性足部問題混為同一傷勢。"
+      }
     },
     {
       "slug": "jordyn-poulter-2022-knee",
@@ -1986,7 +2146,23 @@
           "url": "https://www.youtube.com/watch?v=xBgZKehMBDA",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "膝部多韌帶傷後的本人回顧",
+        "summary": {
+          "text": "USA Volleyball 報導 Poulter 在 Igor Gorgonzola Novara 的比賽中受傷。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "所選片段是在 VNL 期間回顧先前膝傷與復健的本人訪談。",
+          "傷勢名稱採協會的多韌帶描述，不將片名或自動字幕縮寫擴成診斷清單。"
+        ],
+        "explanation": {
+          "text": "協會記錄重返國家隊賽事；所選訪談回顧同一次膝傷，沒有據此認定首次回場日期。",
+          "sourceIndexes": [2, 3]
+        },
+        "limitation": "訪談無法判定每條韌帶的分級或受傷順序；重返國家隊賽事不等同已確認首次回場或完整恢復。"
+      }
     },
     {
       "slug": "paula-badosa-2023-spinal-stress-fracture",
@@ -2033,7 +2209,23 @@
           "url": "https://www.youtube.com/watch?v=X8X7Xg7UwD0",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "脊椎疲勞性骨折與隔年回顧",
+        "summary": {
+          "text": "WTA 引述本人說明脊椎疲勞性骨折發生於羅馬賽期間；確切日留空。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "這段美網記者會回顧的是前一年羅馬賽期間的背傷。",
+          "將原傷勢、退賽公告及隔年談話分開閱讀。"
+        ],
+        "explanation": {
+          "text": "在官方訪談及美網記者會回顧前一年背傷的持續影響。",
+          "sourceIndexes": [2, 3]
+        },
+        "limitation": "未確認椎體節段、側別與確切受傷日；較晚訪談不能當成新骨折，也不能據此判定骨折已癒合。"
+      }
     },
     {
       "slug": "rafael-nadal-2022-rib-stress-fracture",
@@ -2070,7 +2262,23 @@
           "url": "https://www.youtube.com/watch?v=vsc3sE7WwXk",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "肋骨傷勢檢查與回歸訪談",
+        "summary": {
+          "text": "醫師公告將傷勢連到對 Alcaraz 的週六準決賽；不推論單一動作造成整段骨疲勞。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "所選短片是本人在馬德里賽前回顧肋骨傷。",
+          "傷勢位置與檢查結果對照醫師公開說明。"
+        ],
+        "explanation": {
+          "text": "RTVE 報導醫師以 MRI 與 CT 確認左第三肋骨疲勞性裂傷。",
+          "sourceIndexes": [1]
+        },
+        "limitation": "賽事相關發作日期不代表疲勞性病變在單一擊球形成；不能從本人感受推定癒合或通用回場條件。"
+      }
     },
     {
       "slug": "jake-wightman-2023-foot",
@@ -2116,7 +2324,23 @@
           "url": "https://www.youtube.com/watch?v=IpYzdWZ80CE",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "跨欄跳訓練落地的傷後回顧",
+        "summary": {
+          "text": "本人在後續訪談回顧跨欄跳訓練落地受傷；未提供可核定的日、側別與足骨。",
+          "sourceIndexes": [3, 4]
+        },
+        "steps": [
+          "所選片段是本人回顧訓練經過，沒有當下落地影像。",
+          "保留足部傷勢描述，分開看待不同來源的骨折用詞。"
+        ],
+        "explanation": {
+          "text": "CITIUS MAG 訪談談及缺席當屆世錦賽與後續訓練計畫。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "急性落地敘述與疲勞性骨折用詞的關係未釐清，不能確認過度使用機轉、側別、足骨或精確受傷日。"
+      }
     },
     {
       "slug": "karsten-warholm-2022-hamstring",
@@ -2534,7 +2758,23 @@
           "url": "https://www.youtube.com/watch?v=sBzHuGCZdTI",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "踝部骨折與世錦賽經驗回顧",
+        "summary": {
+          "text": "USA Wrestling 記載踝部骨折日期為 8 月 22 日。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "Trackwrestling 本人訪談回顧多年以前的訓練傷勢。",
+          "骨折與日期以協會及本人文章為據，不從片名週數計算康復期。"
+        ],
+        "explanation": {
+          "text": "本人與協會回顧傷後參加世界錦標賽；不據此推定醫學上完全恢復。",
+          "sourceIndexes": [1, 2]
+        },
+        "limitation": "訪談不能補出未公開的傷側、骨頭名稱或固定方式；參加世錦賽不代表骨折已完全恢復。"
+      }
     },
     {
       "slug": "jofra-archer-2020-elbow-stress-fracture",
@@ -2580,7 +2820,23 @@
           "url": "https://www.youtube.com/watch?v=VNo4qQaVNHg",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "右肘公告與多次傷病的回歸訪談",
+        "summary": {
+          "text": "官方公布右肘低程度疲勞性骨折；起始日未明。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "ECB 原創訪談談重返國際賽場，涵蓋多段傷病。",
+          "初次肘部公告與後續再發、手術分別閱讀。"
+        ],
+        "explanation": {
+          "text": "ECB 後續公告記錄第二次肘部手術，屬後續病程。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "不能將全部缺賽時間歸因於單次肘傷，也不能用訪談中的背部傷勢代替肘部診斷；初次發生日仍不明。"
+      }
     },
     {
       "slug": "manny-pacquiao-2015-shoulder",
@@ -2621,7 +2877,23 @@
           "url": "https://www.youtube.com/watch?v=l1dYgS6mqO0",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "賽前肩傷與術後新聞",
+        "summary": {
+          "text": "公開報導指右肩傷勢在對 Mayweather 比賽前的訓練已出現。",
+          "sourceIndexes": [2]
+        },
+        "steps": [
+          "所選影片是 ABS-CBN 對手術與傷後情況的新聞報導。",
+          "將賽前已存在的肩傷與比賽中加劇分開。"
+        ],
+        "explanation": {
+          "text": "AP 報導比賽中肩部傷勢加劇，後續有具名醫師確認手術。",
+          "sourceIndexes": [1, 2]
+        },
+        "limitation": "新聞素材不能判定受傷瞬間、特定肌腱、撕裂面積或分級，也不能推論傷勢造成賽果。"
+      }
     },
     {
       "slug": "sky-brown-2024-shoulder",
@@ -2657,7 +2929,23 @@
           "url": "https://www.youtube.com/watch?v=5qWBA8MuN_4",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "奧運前肩脫臼與賽後訪談",
+        "summary": {
+          "text": "Team GB 記載為巴黎奧運前一週訓練時肩脫臼，日未核定。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "所選是本人奧運賽後訪談，回顧賽前肩傷。",
+          "肩部事件與其他膝傷分開；訪問者自身經驗不是選手病史。"
+        ],
+        "explanation": {
+          "text": "Team GB 以帶傷準備奧運的經過報導她的銅牌；這不是已確認的醫療康復日期。",
+          "sourceIndexes": [1]
+        },
+        "limitation": "訪談不能確定傷側或伴隨組織損傷；完成比賽與獲獎不代表肩關節已恢復，確切受傷日也未核定。"
+      }
     },
     {
       "slug": "tony-hawk-2022-femur",
@@ -2704,7 +2992,23 @@
           "url": "https://www.youtube.com/watch?v=Kvm-WXQ2w2Y",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "滑板事故後的股骨骨折回顧",
+        "summary": {
+          "text": "同期節目介紹將骨折連結至 3 月 7 日的滑板事故。",
+          "sourceIndexes": [3]
+        },
+        "steps": [
+          "Hawk 與 Jason Ellis 在節目中事後回顧滑板事故。",
+          "把本次股骨骨折與片中提到的較早骨盆傷分開。"
+        ],
+        "explanation": {
+          "text": "NPR 本人訪談回顧事故與傷後生活。",
+          "sourceIndexes": [2]
+        },
+        "limitation": "對談無法判定未公開的傷側、骨折型態或完整致傷過程，也不能由後續活動推定骨折癒合。"
+      }
     },
     {
       "slug": "helen-maroulis-2018-concussion",
@@ -2755,7 +3059,23 @@
           "url": "https://www.youtube.com/watch?v=6dGzpQHXQsM",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "腦震盪經驗與多次頭部傷勢",
+        "summary": {
+          "text": "本人在 WGN 訪談中回顧 2018 年 1 月印度角力事件；後續另有腦震盪。",
+          "sourceIndexes": [3]
+        },
+        "steps": [
+          "所選是本人回顧腦震盪對生活與角力影響的訪談。",
+          "辨識最初印度賽事與後來其他腦震盪的時間界線。"
+        ],
+        "explanation": {
+          "text": "UWW 資料記錄 2018 年腦震盪病史。",
+          "sourceIndexes": [1]
+        },
+        "limitation": "訪談不能將所有長期症狀歸因於最初一次事故，也不能把個人續賽或恢復經驗當成一般處置建議。"
+      }
     },
     {
       "slug": "tiger-woods-2008-tibial-stress-fractures",
@@ -2801,7 +3121,23 @@
           "url": "https://www.youtube.com/watch?v=kb_9JHJu1oo",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "賽前脛骨傷勢與帶傷比賽回顧",
+        "summary": {
+          "text": "本人官方年表記載高爾夫訓練時左脛骨兩處疲勞性骨折。",
+          "sourceIndexes": [1, 2]
+        },
+        "steps": [
+          "USGA 影片呈現之後美國公開賽的比賽與疼痛片段。",
+          "左脛骨疲勞性骨折的起始病程以本人官方年表為依據。"
+        ],
+        "explanation": {
+          "text": "USGA 回顧 2008 年美國公開賽經歷；所選影片是後續比賽素材。",
+          "sourceIndexes": [3]
+        },
+        "limitation": "畫面無法指出疲勞性骨折形成瞬間，也不能區分膝部舊傷與脛骨痛的比例；奪冠不是癒合證明。"
+      }
     },
     {
       "slug": "mirabai-chanu-2023-hip",
@@ -2843,7 +3179,23 @@
           "url": "https://www.youtube.com/watch?v=1d3pOYyLQkY",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "亞運傷後新聞與本人回顧",
+        "summary": {
+          "text": "現場報導記錄 Chanu 在女子 49 公斤級賽事受傷。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "先辨識 Oneindia 新聞對試舉受傷與離場的說明。",
+          "受傷區域保留髖部／大腿，不由新聞敘述補出特定組織。"
+        ],
+        "explanation": {
+          "text": "Sports Tak 刊登她談亞運受傷與回歸的訪談。",
+          "sourceIndexes": [2]
+        },
+        "limitation": "新聞並非連續完整的致傷影像，無法指定肌腱、撕裂或脊椎病變，也不能重建病理機轉。"
+      }
     },
     {
       "slug": "annemiek-van-vleuten-2022-elbow",
@@ -2890,7 +3242,23 @@
           "url": "https://www.youtube.com/watch?v=T7-DAQANyho",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "計時賽肘傷與後續參賽回顧",
+        "summary": {
+          "text": "世錦賽混合團體計時賽事故造成肘部骨折。",
+          "sourceIndexes": [1, 2]
+        },
+        "steps": [
+          "所選本人生涯訪談回顧世錦賽肘傷。",
+          "混合團體計時賽事故與之後公路賽分別閱讀。"
+        ],
+        "explanation": {
+          "text": "UCI 將之後公路賽表現與先前肘部骨折明確連結。",
+          "sourceIndexes": [1]
+        },
+        "limitation": "訪談不能指定骨折的骨頭名稱，也不能從帶傷獲勝推論已可安全回場；本次事件與里約事故不同。"
+      }
     },
     {
       "slug": "daniel-andre-tande-2021-clavicle",
@@ -2937,7 +3305,23 @@
           "url": "https://www.youtube.com/watch?v=jQ7oMEGPHXg",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "試跳摔傷後的回歸短訪",
+        "summary": {
+          "text": "FIS 將後續傷勢與 Planica 試跳摔落連結。",
+          "sourceIndexes": [1, 2]
+        },
+        "steps": [
+          "所選 FIS 短訪是傷後本人談回歸心情，沒有試跳事故回放。",
+          "鎖骨骨折及手術採隊醫公告閱讀。"
+        ],
+        "explanation": {
+          "text": "FIS 刊登隊醫對鎖骨手術的後續說明。",
+          "sourceIndexes": [1]
+        },
+        "limitation": "訪談不能提供特定腦傷診斷，醫療誘導昏迷也不等同某種腦部傷勢；返回跳台不代表正式復賽。"
+      }
     },
     {
       "slug": "egan-bernal-2022-training-crash",
@@ -2994,7 +3378,23 @@
           "url": "https://www.youtube.com/watch?v=aXvM23KcbJw",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "同次公路事故的多部位傷勢",
+        "summary": {
+          "text": "報導及官方醫療公告鏈記錄訓練事故後住院。",
+          "sourceIndexes": [4, 5]
+        },
+        "steps": [
+          "INEOS 影片以傷後騎車與本人旁白回顧事故。",
+          "各部位傷勢依球隊、醫院公告的公開轉述閱讀，保持同次事故的關聯。"
+        ],
+        "explanation": {
+          "text": "公開醫療更新記錄脊椎、右股骨、右髕骨等多處傷勢。",
+          "sourceIndexes": [1, 2, 3, 4, 5]
+        },
+        "limitation": "旁白與再次騎車不能證明全部外傷已癒合，亦不足以推定未公開神經損傷；個人急救經歷不是一般操作指引。"
+      }
     },
     {
       "slug": "connor-fields-2021-brain-hemorrhage",
@@ -3041,7 +3441,23 @@
           "url": "https://www.youtube.com/watch?v=kti0XvZn0KQ",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "BMX 腦傷公告與本人長訪談",
+        "summary": {
+          "text": "USA Cycling 醫療公告記錄醫師確認腦出血。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "所選 Podcast 是本人事後回顧東京奧運事故。",
+          "腦出血名稱以協會醫療公告為準，與節目泛談的其他病況分開。"
+        ],
+        "explanation": {
+          "text": "PBS 訪談讓 Fields 本人描述傷後經驗；不是該日首次回場證據。",
+          "sourceIndexes": [2]
+        },
+        "limitation": "公告未細分腦出血類型；主持人病史或片中提及的 CTE 不能轉為選手診斷，恢復自述也不等於完全恢復。"
+      }
     },
     {
       "slug": "novak-djokovic-2017-elbow",
@@ -3087,7 +3503,23 @@
           "url": "https://www.youtube.com/watch?v=8H_0tJAwev8",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "長期肘部症狀與退賽記者會",
+        "summary": {
+          "text": "對 Berdych 的八強賽因肘傷停止比賽；症狀在此前已存在。",
+          "sourceIndexes": [1, 3]
+        },
+        "steps": [
+          "官方記者會由本人說明發球、正拍時的疼痛與退賽。",
+          "把既有症狀、比賽中加劇與結束球季的公告分開。"
+        ],
+        "explanation": {
+          "text": "本人宣布餘下 2017 球季休賽以處理肘傷。",
+          "sourceIndexes": [2, 3]
+        },
+        "limitation": "談到肘部疼痛不足以指定肌腱或韌帶損傷，也不能將退賽日當成最初受傷日。"
+      }
     },
     {
       "slug": "kei-nishikori-2017-wrist",
@@ -3138,7 +3570,23 @@
           "url": "https://www.youtube.com/watch?v=_9PMTWdYX6I",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "腕傷紀錄片與經紀人診斷更新",
+        "summary": {
+          "text": "新聞報導練習中腕部受傷，經紀人確認右腕肌腱撕裂。",
+          "sourceIndexes": [1, 4]
+        },
+        "steps": [
+          "ATP 回歸紀錄由本人回顧前一年訓練腕傷。",
+          "右腕肌腱撕裂採具名經紀人的公開說明。"
+        ],
+        "explanation": {
+          "text": "美國公開賽官方回顧 2017 年腕傷和回歸歷程；首次復賽日期未另核定。",
+          "sourceIndexes": [2]
+        },
+        "limitation": "未公開肌腱名稱、範圍或病理機轉，不能補 ECU 或 TFCC 診斷；本人不手術的選擇不是其他腕傷的治療建議。"
+      }
     },
     {
       "slug": "bianca-andreescu-2023-ankle",
@@ -3185,7 +3633,23 @@
           "url": "https://www.youtube.com/watch?v=4O87O9rHdoE",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "傷後新聞與後續韌帶更新",
+        "summary": {
+          "text": "對 Alexandrova 的比賽因左踝傷退賽。",
+          "sourceIndexes": [2]
+        },
+        "steps": [
+          "Tennis Channel 節目當時討論傷後情況，仍在等待檢查結果。",
+          "將當時新聞與後續本人公布的兩條韌帶撕裂分開。"
+        ],
+        "explanation": {
+          "text": "本人公開兩條左踝韌帶撕裂，WTA 與 Tennis.com 報導。",
+          "sourceIndexes": [1, 3]
+        },
+        "limitation": "主持人意見不能取代診斷，片段無法指定韌帶名稱、分級或推定完整恢復時間。"
+      }
     },
     {
       "slug": "juan-martin-del-potro-2017-wrist-contusion",
@@ -3227,7 +3691,23 @@
           "url": "https://www.youtube.com/watch?v=_qp50gF67sQ",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "跌倒後本人說明與檢查更新",
+        "summary": {
+          "text": "上海八強賽第三盤 2–2 跌倒後左腕不適，之後接受檢查。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "所選本人賽後訪談發生在赴醫院檢查之前。",
+          "腕部挫傷名稱以後續經紀人更新為準。"
+        ],
+        "explanation": {
+          "text": "Jorge Viale 表示檢查為腕部挫傷，已排除更嚴重問題。",
+          "sourceIndexes": [1]
+        },
+        "limitation": "訪談無法自行排除或確認特定組織傷勢；不能把新的腕部不適與早年腕手術或後來膝傷混在一起。"
+      }
     },
     {
       "slug": "rafael-nadal-2016-wrist",
@@ -3257,7 +3737,23 @@
           "url": "https://www.tennis.com/news/articles/watch-nadal-s-open-ending-press-conference",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "既有左腕症狀與退賽公告",
+        "summary": {
+          "text": "官方影片描述表示左腕傷在抵達巴黎前已出現；當天是退賽記者會而非初次受傷。",
+          "sourceIndexes": [1, 2]
+        },
+        "steps": [
+          "所選是官方退賽記者會，回顧抵達巴黎前已有的左腕症狀。",
+          "本人談繼續比賽可能惡化，與已發生組織斷裂分開理解。"
+        ],
+        "explanation": {
+          "text": "Roland-Garros 官方退賽記者會中，Nadal 說明在抵達巴黎前已存在數週的左腕症狀。",
+          "sourceIndexes": [1]
+        },
+        "limitation": "記者會不能指定肌腱或撕裂分級，也不能把公告日當成首次受傷日；與之後肋骨、腹肌事件分開。"
+      }
     },
     {
       "slug": "nikola-karabatic-2020-acl",
@@ -3320,7 +3816,23 @@
           "url": "https://www.youtube.com/watch?v=ApTbpxIuUJ8",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "右膝傷勢公告與術後復健紀錄",
+        "summary": {
+          "text": "同期手術報導記錄右膝 ACL 斷裂發生於 10 月 17 日。",
+          "sourceIndexes": [3]
+        },
+        "steps": [
+          "PSG 原片是手術後復健訓練，沒有比賽受傷瞬間。",
+          "右膝 ACL 診斷與手術依球隊公告和既有手術報導閱讀。"
+        ],
+        "explanation": {
+          "text": "具名手術報導與本人後續訪談記錄右膝手術。",
+          "sourceIndexes": [2, 3]
+        },
+        "limitation": "復健畫面無法重建受傷機轉，展示動作也不是一般復健處方；後來的血栓或肺栓塞不屬比賽當場傷勢。"
+      }
     },
     {
       "slug": "kelly-slater-2017-foot",
@@ -3367,7 +3879,23 @@
           "url": "https://www.youtube.com/watch?v=WhCalbwjLJg",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "自由練習傷後處理與骨折更新",
+        "summary": {
+          "text": "WSL 報導當日上午足部受傷並接受 X 光檢查。",
+          "sourceIndexes": [1, 3]
+        },
+        "steps": [
+          "所選 WSL 片段是自由練習受傷後的處理與本人說明。",
+          "當下仍待 X 光，兩根蹠骨骨折採後續官方回顧。"
+        ],
+        "explanation": {
+          "text": "WSL 明確記錄 2017 年事故為右足兩根蹠骨骨折，並與 2018 年足趾韌帶傷分開。",
+          "sourceIndexes": [2]
+        },
+        "limitation": "片段不能指定第幾根蹠骨或骨折型態，也不能把本人預估週數當成實際回場時間；後來的足趾傷另行區分。"
+      }
     },
     {
       "slug": "sally-fitzgibbons-2015-eardrum",
@@ -3414,7 +3942,23 @@
           "url": "https://www.youtube.com/watch?v=wTaCr8olPck",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "鼓膜傷勢與續賽的賽事回顧",
+        "summary": {
+          "text": "ABC 報導週二第二輪浪中摔落造成鼓膜穿孔；日依當地週日曆對照。",
+          "sourceIndexes": [2]
+        },
+        "steps": [
+          "WSL 回顧中可辨識醫療人員說明、包紮及之後續賽。",
+          "鼓膜傷勢採賽事報導與官方回顧，不從包紮外觀推導其他診斷。"
+        ],
+        "explanation": {
+          "text": "WSL 官方回顧明確指出第二輪末段鼓膜破裂。",
+          "sourceIndexes": [1]
+        },
+        "limitation": "片段未確認傷側，也不能由頭部包紮推定腦震盪；這段續賽經驗不構成帶耳傷參賽的建議。"
+      }
     },
     {
       "slug": "emma-raducanu-2022-2023-wrists",
@@ -3466,7 +4010,23 @@
           "url": "https://www.youtube.com/watch?v=ZQL-1NY5erY",
           "publishedAt": null
         }
-      ]
+      ],
+      "mechanism": {
+        "title": "反覆雙腕症狀與手術聲明",
+        "summary": {
+          "text": "WTA 報導本人稱症狀自 2022 球季末已存在；確切起始日期未核定。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "Sky 新聞呈現本人談持續數月的雙腕／手部問題。",
+          "將反覆腕部病程與同期另行處理的踝部問題分開。"
+        ],
+        "explanation": {
+          "text": "本人公開雙手某骨頭反覆受傷及手術安排，同期踝手術另行區分。",
+          "sourceIndexes": [2]
+        },
+        "limitation": "本人未指定骨頭名稱或確認骨折，不能補寫特定骨折，也不能將反覆病程直接認定為單一過度使用因果機轉。"
+      }
     }
   ],
   "provenance": [
