@@ -7,6 +7,7 @@ import recent150Data from "../../src/data/videos/recent-150.v1.json";
 import judgeRibData from "../../src/data/videos/judge-rib.v1.json";
 import ribFractureData from "../../src/data/videos/rib-fracture-three.v1.json";
 import nerveFourData from "../../src/data/videos/nerve-four.v1.json";
+import catalog200Data from "../../src/data/videos/catalog-200.v1.json";
 import curation from "../../src/data/videos/curation.v1.json";
 import {
   cpSync,
@@ -47,6 +48,7 @@ function fixture() {
     "src/data/videos/judge-rib.v1.json",
     "src/data/videos/rib-fracture-three.v1.json",
     "src/data/videos/nerve-four.v1.json",
+    "src/data/videos/catalog-200.v1.json",
   ])
     cpSync(path, join(root, path));
   expect(loadVideoThumbnails(root).issues).toEqual([]);
@@ -67,7 +69,8 @@ test("all selected video covers have matching local provenance", () => {
       recent150Data.clips.length +
       judgeRibData.clips.length +
       ribFractureData.clips.length +
-      nerveFourData.clips.filter((clip) => clip.provider === "youtube").length,
+      nerveFourData.clips.filter((clip) => clip.provider === "youtube").length +
+      catalog200Data.clips.length,
   );
 });
 test("changed cover bytes fail closed", () => {

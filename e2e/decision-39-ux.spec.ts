@@ -14,8 +14,8 @@ test.describe("Decision 39 compact mobile discovery", () => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto("/");
 
-    await expect(page.locator('[data-atlas-stat="videos"]')).toHaveText("158");
-    await expect(page.locator("[data-featured-card]")).toHaveCount(158);
+    await expect(page.locator('[data-atlas-stat="videos"]')).toHaveText("200");
+    await expect(page.locator("[data-featured-card]")).toHaveCount(200);
 
     const categoryControls = page.locator("[data-home-category-controls]");
     await expect(categoryControls).toBeVisible();

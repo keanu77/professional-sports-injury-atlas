@@ -25,8 +25,8 @@ describe("the nineteen recent cases", () => {
   });
   it("adds distinct dated cases with matching reports, citations, and discovery metadata", () => {
     expect(recent120.clips).toHaveLength(19);
-    expect(allObservationClips).toHaveLength(151);
-    expect(eventUpdates.entries).toHaveLength(158);
+    expect(allObservationClips).toHaveLength(193);
+    expect(eventUpdates.entries).toHaveLength(200);
     for (const clip of recent120.clips) {
       const update = eventUpdateFor(clip.slug, clip.videoUrl, clip.eventDate)!;
       expect(update, clip.slug).toBeDefined();

@@ -1,0 +1,1926 @@
+{
+  "schemaVersion": 1,
+  "decision": "catalog-200-2026-09-21",
+  "checkedAt": "2026-09-21",
+  "entries": [
+    {
+      "slug": "nathan-florence-2023-t12-fracture",
+      "videoUrl": "https://www.youtube.com/watch?v=lqlkP27TXvA",
+      "eventDate": null,
+      "injury": "本人公開說明：第 12 胸椎（T12）椎體壓迫性骨折。",
+      "returnDate": null,
+      "returnSummary": "本人當時提到約六週後影像複查；尚未核定實際回場或骨折癒合日期。",
+      "context": "這是 2023 年 1 月 Jaws 衝浪事件的原片，包含事發影像與事後回顧；骨折資訊採後續公開更新。確切受傷日未確認，保留月份。T12 位於胸椎，不沿用早期報導導言的腰椎用詞。",
+      "timeline": [
+        {
+          "date": "2023-01",
+          "title": "Jaws 衝浪事故",
+          "text": "巨浪落水後出現背部疼痛；確切發生日未確認。",
+          "sourceIndexes": [1, 2]
+        },
+        {
+          "date": "2023-01-19",
+          "title": "後續公布骨折",
+          "text": "本人公開更新 T12 椎體壓迫性骨折；六週後複查是當時規畫，不是已完成的康復里程碑。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "The Inertia：Nathan Florence 本人說明 T12 壓迫性骨折",
+          "url": "https://www.theinertia.com/surf/nathan-florence-broken-back-jaws-surfing-wipeout/",
+          "publishedAt": "2023-01-19"
+        },
+        {
+          "title": "The Inertia：Jaws 事故初期報導與本人原片",
+          "url": "https://www.theinertia.com/surf/xxl-jaws-wipeout-nathan-florence-spinal-x-ray/",
+          "publishedAt": "2023-01-13"
+        },
+        {
+          "title": "INSANE XXL JAWS PADDLE SESSION GOES DOWN",
+          "url": "https://www.youtube.com/watch?v=lqlkP27TXvA",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "billy-kemper-2020-pelvis-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=gGGMvPtjtZo",
+      "eventDate": null,
+      "injury": "治療醫師診所記載：骨盆骨折，合併膝部前十字韌帶（ACL）、內側副韌帶（MCL）與半月板損傷。",
+      "returnDate": null,
+      "returnSummary": "紀錄片回顧復健與重返衝浪的歷程；本頁未核定首次正式比賽回歸日期。",
+      "context": "所選片段是 BILLY 紀錄片第二集的事後本人回顧，前段另有事故影像。事件發生於 2020 年 2 月，精確日期未確認；骨盆與膝部傷勢來自同次事故，不能由落水畫面判定各組織受傷先後。",
+      "timeline": [
+        {
+          "date": "2020-02",
+          "title": "摩洛哥衝浪事故",
+          "text": "本人回顧衝浪事故後的骨盆骨折；後續治療醫師另說明膝部多結構損傷。",
+          "sourceIndexes": [1, 2, 3]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "MASI Clinic：治療醫師說明 Billy Kemper 骨盆及膝傷",
+          "url": "https://masiclinic.com/patient-story/professional-surfer-billy-kemper/",
+          "publishedAt": null
+        },
+        {
+          "title": "Stab：2020 年摩洛哥事故後的本人訪談",
+          "url": "https://stabmag.com/full-frame/sequence-billy-kemper-breaks-his-pelvis-on-mutant-double-up-will-likely-require-medical-transport-to-usa/",
+          "publishedAt": "2020-02-20"
+        },
+        {
+          "title": "OUTRIGGER：Billy Kemper 回顧 2020 年 2 月事故",
+          "url": "https://www.outrigger.com/test/surfers-in-residence/billy-kemper",
+          "publishedAt": null
+        },
+        {
+          "title": "The Session Of A Lifetime Goes Horribly Wrong For Big Wave Champ Billy Kemper | BILLY Chapter 2",
+          "url": "https://www.youtube.com/watch?v=gGGMvPtjtZo",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "missy-franklin-2016-shoulder",
+      "videoUrl": "https://www.youtube.com/watch?v=WevF13bkLAM",
+      "eventDate": null,
+      "injury": "本人公告及公開報導：2016 年起持續肩痛，2017 年診斷滑囊炎並接受雙肩手術。",
+      "returnDate": null,
+      "returnSummary": "當時公告表示已恢復游泳、尚未準備好比賽；本頁未核定單一傷後首次參賽日期。",
+      "context": "所選影片是後續本人訪談，沒有單一受傷瞬間。2016 年代表症狀起始年份，2017 年檢查與手術屬同一病程；未確認特定滑囊位置、旋轉肌腱傷勢或過度使用病因。",
+      "timeline": [
+        {
+          "date": "2016",
+          "title": "肩部症狀開始",
+          "text": "本人表示自 2016 年起持續肩痛；沒有可核定的單一受傷日。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2017-01",
+          "title": "檢查與診斷",
+          "text": "公開報導記載 1 月 MRI 協助診斷滑囊炎。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2017",
+          "title": "接受雙肩手術",
+          "text": "本人公布已接受雙肩手術，當時正恢復游泳，尚未訂出回到比賽的時間。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "Swimming World：Franklin 本人公告與雙肩手術",
+          "url": "https://www.swimmingworldmagazine.com/news/missy-franklin-had-double-shoulder-surgery-out-of-competition-indefinitely/",
+          "publishedAt": null
+        },
+        {
+          "title": "SwimSwam：Missy Franklin 肩部問題原創訪談",
+          "url": "https://swimswam.com/missy-franklin-explains-her-shoulder-problems-gmm-presented-by-swimoutlet-com/",
+          "publishedAt": null
+        },
+        {
+          "title": "Olympic Champion Missy Franklin Explains Her Shoulder Problems: GMM presented by SwimOutlet.com",
+          "url": "https://www.youtube.com/watch?v=WevF13bkLAM",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "gabriel-medina-2025-pectoral-tendon",
+      "videoUrl": "https://www.youtube.com/watch?v=z6KNabUBA88",
+      "eventDate": "2025-01-09",
+      "eventDateCertainty": "confirmed",
+      "injury": "ge 原始報導引述主刀醫師：左側胸大肌肌腱受傷，接受肌腱修復手術。",
+      "returnDate": null,
+      "returnSummary": "回歸訪談顯示他已再次參與巡迴賽活動；本頁未核定首次正式出賽日，不將原先預估休養時間當成實際康復期。",
+      "context": "所選影片是傷後回歸的回顧訪談。ge 明載他於 2025 年 1 月 9 日在 Maresias 衝浪訓練時受傷，1 月 11 日手術；不把影片發布時間當成新傷日期。來源未提供足以補寫完全斷裂或分級的資料。",
+      "timeline": [
+        {
+          "date": "2025-01-09",
+          "title": "Maresias 訓練受傷",
+          "text": "ge 報導在衝浪訓練動作中左側胸大肌肌腱受傷。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2025-01-11",
+          "title": "接受肌腱修復",
+          "text": "主刀醫師接受訪問說明已進行肌腱修復；這是手術日期，沒有據此推算回場日。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "ge／Globo：Medina 訓練傷勢及主刀醫師說明",
+          "url": "https://ge.globo.com/surfe/noticia/2025/01/11/gabriel-medina-sofre-lesao-passa-por-cirurgia-e-vai-perder-temporada.ghtml",
+          "publishedAt": "2025-01-11"
+        },
+        {
+          "title": "Gabriel Medina’s magnificent return to the CT: \"I’ve been here before\" | [Inside Pro Surfing]",
+          "url": "https://www.youtube.com/watch?v=z6KNabUBA88",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "jj-watt-2019-pectoral",
+      "videoUrl": "https://www.youtube.com/watch?v=D8492O0ciGY",
+      "eventDate": "2019-10-27",
+      "eventDateCertainty": "confirmed",
+      "injury": "NFL 公開報導：胸肌撕裂，之後接受手術。",
+      "returnDate": null,
+      "returnSummary": "2019 年 12 月 24 日回到球隊練習；此日期不是首次復賽或胸肌完全恢復的日期。",
+      "context": "所選片段是傷後本人訪談，回顧 2019 年 10 月 27 日的比賽事件。球隊當日記錄胸部傷勢與賽後檢查，後續報導記錄手術及復訓；未公開的側別、撕裂程度與附著位置不補寫。",
+      "timeline": [
+        {
+          "date": "2019-10-27",
+          "title": "對 Raiders 比賽受傷",
+          "text": "球隊記錄 Watt 在第二節擒抱時受傷，賽後接受檢查。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2019-12-24",
+          "title": "回到球隊練習",
+          "text": "球隊報導他在手術與復健後回到練習；練習和正式比賽分開記錄。",
+          "sourceIndexes": [3]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "Houston Texans：Watt 當日公布胸部傷勢",
+          "url": "https://www.houstontexans.com/news/j-j-watt-announces-he-s-done-for-the-season",
+          "publishedAt": "2019-10-27"
+        },
+        {
+          "title": "NFL：Watt 胸肌撕裂及手術安排",
+          "url": "https://www.nfl.com/news/j-j-watt-to-undergo-surgery-on-torn-pec-this-week-0ap3000001070750",
+          "publishedAt": null
+        },
+        {
+          "title": "Houston Texans：Watt 手術後回到練習",
+          "url": "https://www.houstontexans.com/news/j-j-watt-returns-to-practice-for-texans",
+          "publishedAt": "2019-12-24"
+        },
+        {
+          "title": "J.J. Watt exclusive ESPN interview on returning for Texans’ playoff run from injury | NFL on ESPN",
+          "url": "https://www.youtube.com/watch?v=D8492O0ciGY",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "zoey-clark-2023-disc-nerve",
+      "videoUrl": "https://www.youtube.com/watch?v=7_GZg1qIZLQ",
+      "eventDate": null,
+      "injury": "本人自述：MRI 顯示 L5/S1 椎間盤問題並壓迫坐骨神經；本頁未取得影像報告。",
+      "returnDate": null,
+      "returnSummary": "紀錄片記錄物理治療與調整訓練的歷程；未核定單一正式回場日期或神經完全恢復日期。",
+      "context": "所選片段是同年稍後的本人回顧。她說 1 月中旬室內 60 公尺賽後數小時出現嚴重症狀，但已有背部問題；不能據此認定該場比賽造成全部病變。脊椎相關神經症狀也不能直接認定為具名周邊神經或神經叢損傷。",
+      "timeline": [
+        {
+          "date": "2023-01",
+          "title": "室內賽後症狀加劇",
+          "text": "本人回顧 1 月中旬的室內 60 公尺賽後背部症狀，並說明後續 MRI 與神經受壓資訊。",
+          "sourceIndexes": [1, 2]
+        },
+        {
+          "date": "2023-12-13",
+          "title": "協會發布傷後紀錄片",
+          "text": "協會介紹委製的本人紀錄片，記錄這段傷勢與復健經歷。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "Scottish Athletics：Zoey Clark 原創紀錄片與本人傷勢回顧",
+          "url": "https://www.scottishathletics.org.uk/zoey-documentary/",
+          "publishedAt": "2023-12-13"
+        },
+        {
+          "title": "Zoey Clark: Fighting Back - A short documentary",
+          "url": "https://www.youtube.com/watch?v=7_GZg1qIZLQ",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "chloe-kim-2026-shoulder",
+      "videoUrl": "https://www.youtube.com/watch?v=iRo0jHPhr2I",
+      "eventDate": null,
+      "injury": "本人公開更新：左肩脫臼，MRI 顯示盂唇撕裂；側別由後續記者會本人說明。",
+      "returnDate": null,
+      "returnSummary": "本人後續說明備戰與參賽意願；本頁未核定首次回場日，也不將樂觀預期寫成醫師放行。",
+      "context": "所選影片是 2026 年 1 月傷勢公告的新聞剪輯。事件發生於 Laax 訓練，確切受傷日未確認，1 月 8 日公告日不填成受傷日；亦不併入較早 Copper Mountain 的另一場跌落。",
+      "timeline": [
+        {
+          "date": "2026-01",
+          "title": "Laax 訓練肩傷",
+          "text": "本人公布訓練時肩脫臼，後續更新 MRI 顯示盂唇撕裂；確切受傷日留空。",
+          "sourceIndexes": [1, 2]
+        },
+        {
+          "date": "2026-02",
+          "title": "本人說明左側",
+          "text": "在奧運前記者會談肩部狀況並確認左側；不據此推定盂唇已癒合。",
+          "sourceIndexes": [3]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "NBC Olympics：Kim 公布 Laax 訓練肩脫臼",
+          "url": "https://www.nbcolympics.com/news/chloe-kim-announces-she-dislocated-her-shoulder-one-month-2026-milan-cortina-olympics",
+          "publishedAt": "2026-01-08"
+        },
+        {
+          "title": "NBC Olympics：本人更新 MRI 盂唇傷勢",
+          "url": "https://www.nbcolympics.com/news/chloe-kim-says-shes-good-go-milan-cortina-olympics-after-being-diagnosed-torn-labrum",
+          "publishedAt": null
+        },
+        {
+          "title": "NBC Olympics：記者會本人確認左側肩傷",
+          "url": "https://www.nbcolympics.com/news/chloe-kim-says-injured-shoulder-feeling-good-complete-halfpipe-three-peat",
+          "publishedAt": null
+        },
+        {
+          "title": "Olympic gold medalist Chloe Kim announces she dislocated her shoulder",
+          "url": "https://www.youtube.com/watch?v=iRo0jHPhr2I",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "adam-peaty-2022-foot",
+      "videoUrl": "https://www.youtube.com/watch?v=7oFg7YmMgtI",
+      "eventDate": null,
+      "injury": "Swim England 公告：陸上訓練時足部骨折。",
+      "returnDate": null,
+      "returnSummary": "協會當時確認退出 2022 世界游泳錦標賽；本頁未核定傷後首次正式參賽日期。",
+      "context": "這是健身房陸上訓練後的本人敘述，不是蛙泳動作受傷的示範。協會於 2022 年 5 月 11 日表示他在當週稍早受傷，確切受傷日仍留空。",
+      "timeline": [
+        {
+          "date": "2022-05",
+          "title": "陸上訓練受傷",
+          "text": "協會記錄足部骨折發生於陸上訓練；未提供可確認的精確受傷日。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2022-05-11",
+          "title": "公布退出世錦賽",
+          "text": "公告因足部骨折退出布達佩斯世界游泳錦標賽。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "Swim England：Adam Peaty 陸上訓練足部骨折公告",
+          "url": "https://www.swimming.org/sport/adam-peaty-fractured-foot/",
+          "publishedAt": "2022-05-11"
+        },
+        {
+          "title": "How I BROKE My Foot!",
+          "url": "https://www.youtube.com/watch?v=7oFg7YmMgtI",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "kerri-walsh-jennings-2015-shoulder",
+      "videoUrl": "https://www.youtube.com/watch?v=RyWuQ_RW6OA",
+      "eventDate": "2015-07-10",
+      "eventDateCertainty": "confirmed",
+      "injury": "賽事本人訪談與公開報導：Gstaad 比賽右肩脫臼。",
+      "returnDate": null,
+      "returnSummary": "報導記錄當場繼續比賽；這屬帶傷續賽，沒有據此設定康復或回場日期。",
+      "context": "所選影片包含同場賽後本人回顧與比賽片段。事件是 2015 年 7 月 10 日 Gstaad 比賽，與同年 5 月另一次肩脫臼分開；不自行增加關節唇或關節囊診斷。",
+      "timeline": [
+        {
+          "date": "2015-07-10",
+          "title": "Gstaad 比賽肩脫臼",
+          "text": "公開報導及賽事本人訪談記錄右肩脫臼與當場續賽；不將續賽當成痊癒。",
+          "sourceIndexes": [1, 2]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "NBC Sports：Walsh Jennings 在 Gstaad 右肩脫臼與主辦方原片",
+          "url": "https://www.nbcsports.com/olympics/news/kerri-walsh-jennings-dislocated-shoulder-beach-volleyball-olympics-april-ross-barbara-agatha-gstaad-video",
+          "publishedAt": "2015-07-10"
+        },
+        {
+          "title": "Gstaad Major: This just might have been Kerri Walsh’s greatest comeback!",
+          "url": "https://www.youtube.com/watch?v=RyWuQ_RW6OA",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "rafael-nadal-2022-abdominal",
+      "videoUrl": "https://www.youtube.com/watch?v=9vGOrRkqAK4",
+      "eventDate": null,
+      "injury": "Nadal 在官方記者會自述腹肌撕裂，宣布退出溫布頓準決賽。",
+      "returnDate": null,
+      "returnSummary": "本頁記錄因腹肌傷退出準決賽；未核定該次傷勢的單一回場日期。",
+      "context": "2022 年 7 月 7 日是退賽公告日期，7 月 6 日八強中的症狀也不能確認為首次受傷。事件日期留空；與同年 3 月肋骨疲勞性骨折及足部慢性問題分別處理。",
+      "timeline": [
+        {
+          "date": "2022-07-07",
+          "title": "宣布退出溫布頓準決賽",
+          "text": "在官方記者會自述腹肌撕裂並宣布退賽；此日是公告日，非確定的受傷日。",
+          "sourceIndexes": [1, 2]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "ATP Tour：Nadal 2022 年傷勢與賽季回顧",
+          "url": "https://www.atptour.com/en/news/nadal-nitto-atp-finals-2022-longform",
+          "publishedAt": null
+        },
+        {
+          "title": "Rafael Nadal Withdraws from Wimbledon Due to Injury | Press Conference | Wimbledon 2022",
+          "url": "https://www.youtube.com/watch?v=9vGOrRkqAK4",
+          "publishedAt": "2022-07-07"
+        }
+      ]
+    },
+    {
+      "slug": "jordyn-poulter-2022-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=xBgZKehMBDA",
+      "eventDate": "2022-12-03",
+      "eventDateCertainty": "confirmed",
+      "injury": "USA Volleyball 公開報導：義大利俱樂部比賽時膝部多韌帶傷害。",
+      "returnDate": null,
+      "returnSummary": "協會回顧 2023 年復健與 2024 年重返國家隊賽事；未核定首次正式回場日期。",
+      "context": "所選影片為 2024 年 VNL 期間的傷後本人回顧。USA Volleyball 當年報導確認 2022 年 12 月 3 日俱樂部比賽受傷；這次膝傷與 2021 年東京奧運踝傷分開。",
+      "timeline": [
+        {
+          "date": "2022-12-03",
+          "title": "俱樂部比賽受傷",
+          "text": "USA Volleyball 報導 Poulter 在 Igor Gorgonzola Novara 的比賽中受傷。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2023",
+          "title": "膝傷復健",
+          "text": "協會後續回顧，她因 2022 年底膝部多韌帶傷，將 2023 年賽季用於復健。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2024",
+          "title": "國家隊賽事與本人回顧",
+          "text": "協會記錄重返國家隊賽事；所選訪談回顧同一次膝傷，沒有據此認定首次回場日期。",
+          "sourceIndexes": [2, 3]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "USA Volleyball：Poulter 2022 年俱樂部傷勢日期",
+          "url": "https://usavolleyball.org/story/wnt-update-cook-plummer-win-club-world-championship-with-conegliano/",
+          "publishedAt": "2022-12-22"
+        },
+        {
+          "title": "USA Volleyball：2022 年膝部多韌帶傷及巴黎前回顧",
+          "url": "https://usavolleyball.org/story/new-games-same-goals-for-u-s-women-in-paris/",
+          "publishedAt": "2024-07-26"
+        },
+        {
+          "title": "From ACL Injury To PARIS OLYMPICS | Jordyn Poulter Interview (VNL 2024)",
+          "url": "https://www.youtube.com/watch?v=xBgZKehMBDA",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "paula-badosa-2023-spinal-stress-fracture",
+      "videoUrl": "https://www.youtube.com/watch?v=X8X7Xg7UwD0",
+      "eventDate": null,
+      "injury": "WTA 引述本人公告：2023 年羅馬賽期間脊椎疲勞性骨折。",
+      "returnDate": null,
+      "returnSummary": "2024 年美網訪談記錄她重返高層級賽事的經驗；不由訪談日期推定首次回場或骨折癒合時間。",
+      "context": "所選影片是 2024 年美網的本人回顧，對應 2023 年羅馬賽期間的脊椎傷勢。確切受傷日、椎體節段與側別未確認；同年稍後或隔年的其他肌肉傷勢不併入本事件。",
+      "timeline": [
+        {
+          "date": "2023-05",
+          "title": "羅馬賽期間受傷",
+          "text": "WTA 引述本人說明脊椎疲勞性骨折發生於羅馬賽期間；確切日留空。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2023-05-25",
+          "title": "公布退出法網",
+          "text": "因脊椎傷勢宣布退出 Roland-Garros；公告日與受傷日分開。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024",
+          "title": "本人回顧背傷",
+          "text": "在官方訪談及美網記者會回顧前一年背傷的持續影響。",
+          "sourceIndexes": [2, 3]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "WTA：Badosa 公布羅馬賽期間脊椎疲勞性骨折",
+          "url": "https://www.wtatennis.com/news/3487290/badosa-withdraws-from-roland-garros-after-suffering-spine-injury",
+          "publishedAt": "2023-05-25"
+        },
+        {
+          "title": "WTA Insider：本人回顧脊椎傷勢與後續影響",
+          "url": "https://www.wtatennis.com/news/3976620/insider-podcast-badosa-opens-up-about-her-injury-struggle",
+          "publishedAt": "2024-04-21"
+        },
+        {
+          "title": "Paula Badosa Press Conference | 2024 US Open Round 4",
+          "url": "https://www.youtube.com/watch?v=X8X7Xg7UwD0",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "rafael-nadal-2022-rib-stress-fracture",
+      "videoUrl": "https://www.youtube.com/watch?v=vsc3sE7WwXk",
+      "eventDate": "2022-03-19",
+      "eventDateCertainty": "reported",
+      "injury": "RTVE 引述醫師檢查結果：左側第三肋骨疲勞性裂傷。",
+      "returnDate": null,
+      "returnSummary": "本人在馬德里賽前談傷後回歸；本頁未核定首次正式復賽日，當時預估的四至六週不作實際康復天數。",
+      "context": "所選短片是肋骨傷後的本人回顧。醫師公告將傷勢連到 2022 年 3 月 19 日 Indian Wells 對 Alcaraz 的準決賽；日期記錄這次賽事相關發作，不代表疲勞性病變由單一擊球形成。另與同年 7 月腹肌撕裂分開。",
+      "timeline": [
+        {
+          "date": "2022-03-19",
+          "title": "Indian Wells 準決賽相關發作",
+          "text": "醫師公告將傷勢連到對 Alcaraz 的週六準決賽；不推論單一動作造成整段骨疲勞。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2022-03-22",
+          "title": "公布檢查結果",
+          "text": "RTVE 報導醫師以 MRI 與 CT 確認左第三肋骨疲勞性裂傷。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "RTVE：醫師確認 Nadal 左第三肋骨疲勞性裂傷",
+          "url": "https://www.rtve.es/deportes/20220322/tenis-rafa-nadal-lesion-cuatro-seis-semanas-baja/2320460.shtml",
+          "publishedAt": "2022-03-22"
+        },
+        {
+          "title": "Nadal feels physically good after recovery from rib injury to take part in Madrid Open | MMOPEN",
+          "url": "https://www.youtube.com/watch?v=vsc3sE7WwXk",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "jake-wightman-2023-foot",
+      "videoUrl": "https://www.youtube.com/watch?v=IpYzdWZ80CE",
+      "eventDate": null,
+      "injury": "World Athletics 記載足部傷勢；本人訪談回顧跨欄跳訓練落地受傷，確切組織診斷未釐清。",
+      "returnDate": null,
+      "returnSummary": "訪談當時仍在談訓練與未來比賽規畫；本頁未把預定賽程填成實際回場日期。",
+      "context": "所選片段是 2023 年世錦賽期間的本人回顧，不是訓練當下畫面。協會另有疲勞性骨折用詞，但本人描述急性落地事件，兩者關係尚未釐清；不能確認過度使用機轉，確切受傷日、側別與足骨留空。",
+      "timeline": [
+        {
+          "date": "2023-01",
+          "title": "南非訓練受傷",
+          "text": "本人在後續訪談回顧跨欄跳訓練落地受傷；未提供可核定的日、側別與足骨。",
+          "sourceIndexes": [3, 4]
+        },
+        {
+          "date": "2023-08-20",
+          "title": "本人接受傷後訪談",
+          "text": "CITIUS MAG 訪談談及缺席當屆世錦賽與後續訓練計畫。",
+          "sourceIndexes": [3]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "World Athletics：Wightman 因足部傷勢缺席 2023 世錦賽",
+          "url": "https://worldathletics.org/news/news/maurie-plant-meet-melbourne-mile-jake-wightman",
+          "publishedAt": "2023-12-09"
+        },
+        {
+          "title": "Scottish Athletics：回顧 Wightman 的傷勢用詞",
+          "url": "https://www.scottishathletics.org.uk/david-ovens-column/",
+          "publishedAt": "2024-04-05"
+        },
+        {
+          "title": "CITIUS MAG：Jake Wightman 原創傷後訪談",
+          "url": "https://citiusmag.com/podcast/citius-mag-podcast-jake-wightman-2023-world-championships",
+          "publishedAt": "2023-08-20"
+        },
+        {
+          "title": "Jake Wightman On His Return From Injury, Why He Thinks He Can Still Beat Jakob Ingebrigtsen",
+          "url": "https://www.youtube.com/watch?v=IpYzdWZ80CE",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "karsten-warholm-2022-hamstring",
+      "videoUrl": "https://www.youtube.com/watch?v=z7x0dxJf3Zk",
+      "eventDate": "2022-06-05",
+      "returnDate": null,
+      "injury": "World Athletics 報導：右側腿後肌群小範圍撕裂；未具名肌肉或提供分級。",
+      "returnSummary": "後續報導提及備戰世錦賽；本頁未核定實際復賽日，不計算康復天數。",
+      "context": "2022 年 6 月 Rabat 比賽事件與後續新聞分析分開記錄。公開報導中的恢復自述不是影像癒合證據，也不代表適用於其他跑者。",
+      "mechanism": {
+        "title": "新聞分析與後續傷勢報導分開看",
+        "summary": {
+          "text": "World Athletics 記錄他在 Rabat 第一道欄後停止比賽，後續報導為腿後肌群小範圍撕裂。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "本片主要是主持人分析，不用來判讀跑步動作。",
+          "傷勢名稱對照後續 World Athletics 報導。"
+        ],
+        "explanation": {
+          "text": "初期以為是抽筋，後續才辨識為撕裂；兩個時間點的資訊不能混用。",
+          "sourceIndexes": [1]
+        },
+        "limitation": "沒有足夠的受傷動作畫面可重建組織受力，也不能指定哪條肌肉或傷勢分級。"
+      },
+      "timeline": [
+        {
+          "date": "2022-06-05",
+          "title": "Rabat 比賽受傷",
+          "text": "在 400 公尺跨欄開季賽中因右腿不適停止比賽。",
+          "sourceIndexes": [1, 2]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "World Athletics：Warholm 談 Rabat 腿後肌群傷勢",
+          "url": "https://worldathletics.org/news/news/karsten-warholm-400m-hurdles-norway-oregon",
+          "publishedAt": null
+        },
+        {
+          "title": "World Athletics：Oregon 2022 男子 400 公尺跨欄前瞻",
+          "url": "https://worldathletics.org/news/feature/all-eyes-will-be-on-karsten-warholm-in-mens-400m-hurdles-at-wch-oregon22",
+          "publishedAt": null
+        },
+        {
+          "title": "Karsten Warholm Injured, Suspects Hamstring Tear",
+          "url": "https://www.youtube.com/watch?v=z7x0dxJf3Zk",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "molly-seidel-2024-patella",
+      "videoUrl": "https://www.youtube.com/watch?v=F-KkglTfq3Y",
+      "eventDate": null,
+      "returnDate": null,
+      "injury": "iRunFar 原創採訪報導：2024 年初髕骨骨折，與過度使用有關。",
+      "returnSummary": "訪談中的跑步計畫不等於已確認的復賽或骨折癒合日期。",
+      "context": "未取得可核定的受傷日，因此保留年份，不以退賽公告日代替。本例聚焦 2024 年髕骨骨折，與早年的骨盆問題及後來其他膝部不適分開。",
+      "mechanism": {
+        "title": "本人回顧與過度使用相關傷勢",
+        "summary": {
+          "text": "iRunFar 採訪將 2024 年初退賽與過度使用相關的髕骨骨折連結。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "本片是傷後本人訪談，不是單次跌倒或撞擊畫面。",
+          "髕骨診斷採原創文字採訪，不從「膝蓋受傷」推導更多組織診斷。"
+        ],
+        "explanation": {
+          "text": "文字採訪記錄她因此退出 2024 年美國奧運馬拉松選拔賽。",
+          "sourceIndexes": [1]
+        },
+        "limitation": "公開採訪沒有提供完整影像或病歷；不能確認側別、骨折分型，或把此例套用為一般人的康復時程。"
+      },
+      "timeline": [
+        {
+          "date": "2024",
+          "title": "因膝傷退出選拔賽",
+          "text": "iRunFar 回顧她在 2024 年初因髕骨骨折退出奧運馬拉松選拔賽。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "iRunFar：Different Sides of the Same Coin: A Conversation With Molly Seidel",
+          "url": "https://www.irunfar.com/molly-seidel-profile",
+          "publishedAt": "2026-01-07"
+        },
+        {
+          "title": "Molly Seidel on the other side of injury and looking ahead to fall marathon",
+          "url": "https://www.youtube.com/watch?v=F-KkglTfq3Y",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "jamahal-hill-2021-elbow",
+      "videoUrl": "https://www.youtube.com/watch?v=hvH4AnAD5eg",
+      "eventDate": "2021-06-12",
+      "returnDate": null,
+      "injury": "UFC 後續本人採訪文章：對 Paul Craig 比賽時肘關節脫臼；不列為已證實骨折。",
+      "returnSummary": "後續文章談復原與再戰準備；本頁未核定復賽日期或完整恢復時間。",
+      "context": "2021 UFC 263 對 Paul Craig 的事件。影片訪談對象為對手，診斷依後續 UFC 採訪文章；不補側別，也不自行裁定來源對比賽終止方式的不同用語。",
+      "mechanism": {
+        "title": "對手訪談不能取代後續診斷",
+        "summary": {
+          "text": "UFC 後續文章記錄 Hill 在對手施作 armbar 的比賽情境中肘關節脫臼。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "先確認受訪者是 Paul Craig，不是 Jamahal Hill。",
+          "當下說法與後續傷勢記錄分開呈現。"
+        ],
+        "explanation": {
+          "text": "後續採訪使用肘關節脫臼的描述，本頁不沿用賽後現場的骨折猜測。",
+          "sourceIndexes": [1]
+        },
+        "limitation": "這段訪談不足以判定脫臼方向、伴隨韌帶傷勢或是否有骨折，亦非動作教學。"
+      },
+      "timeline": [
+        {
+          "date": "2021-06-12",
+          "title": "UFC 263 比賽事件",
+          "text": "對 Paul Craig 比賽時肘部受傷，後續 UFC 採訪記錄為脫臼。",
+          "sourceIndexes": [1, 2]
+        },
+        {
+          "date": "2021-12-02",
+          "title": "後續本人採訪",
+          "text": "UFC 文章回顧肘脫臼與復原階段，不以報導日當作復賽日。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "UFC：Jamahal Hill Hungrier Than Ever",
+          "url": "https://www.ufc.com/news/jamahal-hill-hungrier-than-ever-light-heavyweight-ufc-fight-night-font-aldo",
+          "publishedAt": "2021-12-02"
+        },
+        {
+          "title": "UFC：Paul Craig 賽後訪談與 UFC 263 事件資料",
+          "url": "https://www.ufc.com/video/paul-craig-post-fight-interview-ufc-263-adesanya-vettori-2-results-recap-interview-winner",
+          "publishedAt": null
+        },
+        {
+          "title": "UFC 263: Paul Craig Octagon Interview",
+          "url": "https://www.youtube.com/watch?v=hvH4AnAD5eg",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "antonio-rodrigo-nogueira-2011-arm",
+      "videoUrl": "https://www.youtube.com/watch?v=XdGi7XI5Y_c",
+      "eventDate": "2011-12-10",
+      "returnDate": null,
+      "injury": "GRACIEMAG 教練原始採訪報導：右肱骨骨折，已接受手術。",
+      "returnSummary": "2011 年 12 月教練談輕量活動；不是完整訓練、復賽或骨折癒合證明。",
+      "context": "本例是 2011 UFC 140 與 Frank Mir 的再戰，不是 2008 年首戰。肱骨屬上臂，保留解剖位置；觀賽評論不作為臨床診斷來源。",
+      "mechanism": {
+        "title": "觀賽反應與上臂骨折資料分開看",
+        "summary": {
+          "text": "UFC 記錄本場降服情境；後續教練原始採訪報導右肱骨骨折及手術。",
+          "sourceIndexes": [1, 2]
+        },
+        "steps": [
+          "本片主要是第三者觀賽反應，不作連續傷害回放。",
+          "骨折部位以教練原始採訪的術後資料為依據。"
+        ],
+        "explanation": {
+          "text": "教練談到的輕量活動僅代表術後復健中的一個階段。",
+          "sourceIndexes": [1]
+        },
+        "limitation": "觀賽反應不能指出骨折瞬間、骨折分型或合併神經傷，也不能以輕量活動推論已可安全對打。"
+      },
+      "timeline": [
+        {
+          "date": "2011-12-10",
+          "title": "UFC 140 手臂受傷",
+          "text": "與 Frank Mir 的再戰中右臂受傷，後續資料具名為肱骨骨折。",
+          "sourceIndexes": [1, 2]
+        },
+        {
+          "date": "2011-12-29",
+          "title": "教練談術後輕量活動",
+          "text": "GRACIEMAG 採訪教練，記錄手術後已開始輕量活動；不列作復賽。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "GRACIEMAG：Luis Dórea 談 Nogueira 肱骨術後復健",
+          "url": "https://www.graciemag.com/minotauro-back-to-light-training/",
+          "publishedAt": "2011-12-29"
+        },
+        {
+          "title": "UFC：UFC 140 Main Card Results — Mir 與 Minotauro 再戰",
+          "url": "https://www.ufc.com/news/ufc-140-main-card-results-two-two-mir-submits-minotauro-rematch",
+          "publishedAt": null
+        },
+        {
+          "title": "UFC：Minotauro Nogueira And The Art Of Never Giving Up",
+          "url": "https://www.ufc.com/news/minotauro-nogueira-and-art-never-giving",
+          "publishedAt": null
+        },
+        {
+          "title": "Full Blast: Munoz & Mitrione - Mir vs Nogueira",
+          "url": "https://www.youtube.com/watch?v=XdGi7XI5Y_c",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "tim-sylvia-2004-arm",
+      "videoUrl": "https://www.youtube.com/watch?v=XEBZ9lSa8fM",
+      "eventDate": "2004-06-19",
+      "returnDate": null,
+      "injury": "UFC 官方回顧：右手臂骨折；來源未指定骨頭或骨折分型。",
+      "returnSummary": "本頁未核定手術、復賽日期或骨折癒合時程。",
+      "context": "事件日期為 2004 年 6 月 19 日，YouTube 之後的上傳日期不是受傷日。手臂骨折採官方回顧，不能從畫面自行補成橈骨、尺骨或肱骨骨折。",
+      "mechanism": {
+        "title": "手臂受控與裁判制止的比賽片段",
+        "summary": {
+          "text": "UFC 回顧記錄 Mir 控制 Sylvia 右臂，裁判因手臂骨折而制止比賽。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "辨識原場比賽與之後重播的順序。",
+          "注意裁判介入停止比賽，不將片段用作模仿或練習依據。"
+        ],
+        "explanation": {
+          "text": "公開資料支持的是右手臂骨折，沒有在此來源指定骨頭。",
+          "sourceIndexes": [1]
+        },
+        "limitation": "動作與變形畫面不能取代影像檢查，也不能判定骨折分型、神經血管狀態或完整治療方式。"
+      },
+      "timeline": [
+        {
+          "date": "2004-06-19",
+          "title": "UFC 48 比賽中受傷",
+          "text": "右手臂在比賽中受傷，裁判制止；UFC 後續回顧記錄為骨折。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "UFC：The 10 Best UFC Heavyweight Title Fights — Mir 對 Sylvia",
+          "url": "https://www.ufc.com/news/10-best-ufc-heavyweight-title-fights-stipe-jones-lesnar-cormier",
+          "publishedAt": null
+        },
+        {
+          "title": "UFC：Former UFC Champ Tim Sylvia Retires At 38",
+          "url": "https://www.ufc.com/news/former-ufc-champ-tim-sylvia-retires-38",
+          "publishedAt": null
+        },
+        {
+          "title": "UFC: Frank Mir vs. Tim Sylvia | June 19, 2004",
+          "url": "https://www.youtube.com/watch?v=XEBZ9lSa8fM",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "ronaldo-jacare-souza-2021-humerus",
+      "videoUrl": "https://www.youtube.com/watch?v=rkiD3kLGIvU",
+      "eventDate": "2021-05-15",
+      "returnDate": null,
+      "injury": "MMA Fighting 採訪 Rickson Moraes 醫師團隊：X 光顯示右肱骨骨折。",
+      "returnSummary": "當時醫療團隊表示預計接受手術；本頁不將手術計畫當成已完成處置或復賽證明。",
+      "context": "2021 年 UFC 262 對 André Muniz 的 MMA 事件。對手的現場敘述不等於醫療診斷，亦不混入早年的柔術賽事；肱骨傷勢保留上臂位置。",
+      "mechanism": {
+        "title": "對手訪談與醫療團隊報導分開呈現",
+        "summary": {
+          "text": "醫師團隊告訴 MMA Fighting，賽後 X 光顯示右肱骨骨折。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "本片受訪者是 André Muniz，並非 Souza。",
+          "骨折位置與處置計畫採醫療團隊的原始採訪。"
+        ],
+        "explanation": {
+          "text": "報導當時說的是預計在接下來數天手術，不能改寫為已完成手術。",
+          "sourceIndexes": [1]
+        },
+        "limitation": "訪談不能重建骨折瞬間、提供骨折分型或證明神經血管狀態正常。"
+      },
+      "timeline": [
+        {
+          "date": "2021-05-15",
+          "title": "UFC 262 手臂受傷",
+          "text": "對 André Muniz 比賽後送醫；後續 X 光資料記錄右肱骨骨折。",
+          "sourceIndexes": [1, 2]
+        },
+        {
+          "date": "2021-05-16",
+          "title": "醫療團隊說明傷勢",
+          "text": "原始採訪報導骨折與預計手術安排，尚非手術完成紀錄。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "MMA Fighting：醫師團隊說明 Souza 右肱骨骨折",
+          "url": "https://www.mmafighting.com/2021/5/16/22438894/jacare-souza-fractured-humerus-ufc-262-loss-undergo-surgery-mma-andre-muniz",
+          "publishedAt": "2021-05-16"
+        },
+        {
+          "title": "UFC：Ronaldo Souza 官方比賽紀錄",
+          "url": "https://www.ufc.com/athlete/ronaldo-souza",
+          "publishedAt": null
+        },
+        {
+          "title": "UFC 262: André Muniz Octagon Interview",
+          "url": "https://www.youtube.com/watch?v=rkiD3kLGIvU",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "tom-aspinall-2022-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=sM8zlrTLroE",
+      "eventDate": "2022-07-23",
+      "returnDate": null,
+      "injury": "UFC 報導：2022 年右膝傷後接受手術，處理內側副韌帶及半月板撕裂、前十字韌帶受損。",
+      "returnSummary": "2022 年秋季報導為復健及恢復部分訓練階段，不是已完成比賽回歸或完全康復。",
+      "context": "2022 年 7 月 23 日對 Curtis Blaydes 比賽的右膝事件，須與本人描述的既有同膝問題分開。影片另談到其他膝部經歷，不將另一膝舊手術混入本次。",
+      "mechanism": {
+        "title": "本人回顧既有膝部問題與本次事件",
+        "summary": {
+          "text": "UFC 報導將本次右膝事件連結到 2022 年 7 月 23 日對 Curtis Blaydes 的比賽。",
+          "sourceIndexes": [1]
+        },
+        "steps": [
+          "本片是本人長訪談，選段從 15:25 開始，不是受傷瞬間回放。",
+          "先分開既有同膝問題、本次比賽加劇與之後手術復健。"
+        ],
+        "explanation": {
+          "text": "文字報導列出手術處理的組織；訪談補充既有病史，不能據此認定每個組織都在同一瞬間全新受傷。",
+          "sourceIndexes": [1, 2]
+        },
+        "limitation": "公開採訪不能判定每項病變的新舊比例或 ACL 損傷分級，也不能從單次動作推論所有術中發現。"
+      },
+      "timeline": [
+        {
+          "date": "2022-07-23",
+          "title": "比賽中右膝受傷",
+          "text": "對 Curtis Blaydes 比賽初段發生右膝傷勢；既有同膝問題另行區分。",
+          "sourceIndexes": [1, 2]
+        },
+        {
+          "date": "2022-10-05",
+          "title": "術後復健與部分訓練",
+          "text": "UFC 採訪記錄手術後正在復健及恢復部分訓練，不列為復賽。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "UFC：Tom Aspinall On Injury, Rehab And The Timetable For His Return",
+          "url": "https://www.ufcespanol.com/news/tom-aspinall-injury-rehab-and-timetable-his-return",
+          "publishedAt": "2022-10-05"
+        },
+        {
+          "title": "Tom Aspinall Talks Octagon Return, Heavyweight Division & More | FULL INTERVIEW w/ John Gooden",
+          "url": "https://www.youtube.com/watch?v=sM8zlrTLroE",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "jordan-burroughs-2013-ankle",
+      "videoUrl": "https://www.youtube.com/watch?v=sBzHuGCZdTI",
+      "eventDate": "2013-08-22",
+      "eventDateCertainty": "confirmed",
+      "injury": "世界錦標賽前訓練中踝部骨折；不補寫側別或骨頭名稱。",
+      "returnDate": null,
+      "returnSummary": "尚未核定傷後首次正式復賽日期；傷後訓練、訪談或後續參賽不代表完全恢復。",
+      "context": "這是 2019 年的事後回顧，對應 2013 年訓練傷勢。USA Wrestling 記載 8 月 22 日骨折、翌日手術；未公開的傷側、骨頭及固定方式不補寫。",
+      "timeline": [
+        {
+          "date": "2013-08-22",
+          "title": "訓練中踝部骨折",
+          "text": "USA Wrestling 記載踝部骨折日期為 8 月 22 日。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2013-09",
+          "title": "世錦賽經驗",
+          "text": "本人與協會回顧傷後參加世界錦標賽；不據此推定醫學上完全恢復。",
+          "sourceIndexes": [1, 2]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "USA Wrestling：Burroughs 傷後世界錦標賽金牌",
+          "url": "https://www.themat.com/news/2013/september/18/jordan-burroughs-strikes-gold--27002",
+          "publishedAt": "2013-09-18"
+        },
+        {
+          "title": "Jordan Burroughs：My Journey to World Championship #3",
+          "url": "https://www.jordanburroughs.com/blog/my-journey-to-world-championship-3",
+          "publishedAt": "2013-09-27"
+        },
+        {
+          "title": "Jordan Burroughs looks back on winning a World title four weeks after breaking his ankle",
+          "url": "https://www.youtube.com/watch?v=sBzHuGCZdTI",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "jofra-archer-2020-elbow-stress-fracture",
+      "videoUrl": "https://www.youtube.com/watch?v=VNo4qQaVNHg",
+      "eventDate": null,
+      "injury": "右肘低程度疲勞性骨折；後續有 2021 年再發與手術紀錄。",
+      "returnDate": null,
+      "returnSummary": "尚未核定傷後首次正式復賽日期；傷後訓練、訪談或後續參賽不代表完全恢復。",
+      "context": "這段 2023 年回歸訪談涵蓋多次傷病。病例以 ECB 於 2020 年 2 月公布的右肘疲勞性骨折為主，2021 年再發與手術另外標明；確切初次發生日不明，也不以後來的背部骨折片段代替肘部傷勢。",
+      "timeline": [
+        {
+          "date": "2020-02",
+          "title": "ECB 確認右肘疲勞性骨折",
+          "text": "官方公布右肘低程度疲勞性骨折；起始日未明。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2021-12-11",
+          "title": "第二次肘部手術",
+          "text": "ECB 後續公告記錄第二次肘部手術，屬後續病程。",
+          "sourceIndexes": [3]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "ECB：Jofra Archer 右肘疲勞性骨折",
+          "url": "https://www.ecb.co.uk/news/1603176",
+          "publishedAt": null
+        },
+        {
+          "title": "ECB：2021 年右肘疲勞性骨折再發",
+          "url": "https://www.ecb.co.uk/news/2207138",
+          "publishedAt": null
+        },
+        {
+          "title": "ECB：Archer 第二次肘部手術",
+          "url": "https://www.ecb.co.uk/news/2424799",
+          "publishedAt": null
+        },
+        {
+          "title": "The Passion Never Went | EXCLUSIVE Jofra Archer Interview | Injuries, Playing For England & Future",
+          "url": "https://www.youtube.com/watch?v=VNo4qQaVNHg",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "manny-pacquiao-2015-shoulder",
+      "videoUrl": "https://www.youtube.com/watch?v=l1dYgS6mqO0",
+      "eventDate": null,
+      "injury": "右肩旋轉肌袖撕裂；具名手術醫師向媒體確認已手術。",
+      "returnDate": null,
+      "returnSummary": "尚未核定傷後首次正式復賽日期；傷後訓練、訪談或後續參賽不代表完全恢復。",
+      "context": "肩傷在 2015 年 5 月 2 日比賽前的訓練已出現，比賽中加劇；初次受傷日不明。所選為傷後手術新聞，不推論傷勢造成賽果，也不指定肌腱、面積或撕裂分級。",
+      "timeline": [
+        {
+          "date": "2015",
+          "title": "賽前訓練肩傷",
+          "text": "公開報導指右肩傷勢在對 Mayweather 比賽前的訓練已出現。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2015-05-02",
+          "title": "比賽中加劇",
+          "text": "AP 報導比賽中肩部傷勢加劇，後續有具名醫師確認手術。",
+          "sourceIndexes": [1, 2]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "ESPN：具名醫師確認 Pacquiao 右肩旋轉肌袖手術",
+          "url": "https://www.espn.com/boxing/story/_/id/12837213/manny-pacquiao-undergoes-surgery-torn-right-rotator-cuff",
+          "publishedAt": null
+        },
+        {
+          "title": "AP／CBS：Pacquiao 肩部手術與傷勢前後",
+          "url": "https://www.cbsnews.com/texas/news/pacquiao-has-shoulder-surgery/",
+          "publishedAt": null
+        },
+        {
+          "title": "Pacquiao undergoes surgery for injured shoulder",
+          "url": "https://www.youtube.com/watch?v=l1dYgS6mqO0",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "sky-brown-2024-shoulder",
+      "videoUrl": "https://www.youtube.com/watch?v=5qWBA8MuN_4",
+      "eventDate": null,
+      "injury": "巴黎奧運前訓練肩關節脫臼；不指定側別或伴隨組織損傷。",
+      "returnDate": null,
+      "returnSummary": "尚未核定傷後首次正式復賽日期；傷後訓練、訪談或後續參賽不代表完全恢復。",
+      "context": "所選是 2024 巴黎奧運賽後回顧，傷勢源於奧運前一週訓練。確切發生日的報導不一致，僅保留 7 月底；4 月膝傷另行區分。獲獎與完成比賽不代表肩關節已恢復。",
+      "timeline": [
+        {
+          "date": "2024-07",
+          "title": "奧運前訓練肩脫臼",
+          "text": "Team GB 記載為巴黎奧運前一週訓練時肩脫臼，日未核定。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-08",
+          "title": "奧運後回顧",
+          "text": "Team GB 以帶傷準備奧運的經過報導她的銅牌；這不是已確認的醫療康復日期。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "Team GB：Brown 肩脫臼一週後獲得奧運銅牌",
+          "url": "https://www.teamgb.com/article/sky-brown-clinches-skateboarding-park-bronze-a-week-after-dislocating-her/2sxKBZ7VwBgITLHPMx1fbD",
+          "publishedAt": null
+        },
+        {
+          "title": "It’s been an insane journey | Sky Brown on winning Olympic bronze after dislocating her shoulder",
+          "url": "https://www.youtube.com/watch?v=5qWBA8MuN_4",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "tony-hawk-2022-femur",
+      "videoUrl": "https://www.youtube.com/watch?v=Kvm-WXQ2w2Y",
+      "eventDate": "2022-03-07",
+      "eventDateCertainty": "reported",
+      "injury": "滑板時股骨骨折；不補寫側別、骨折型態。",
+      "returnDate": null,
+      "returnSummary": "尚未核定傷後首次正式復賽日期；傷後訓練、訪談或後續參賽不代表完全恢復。",
+      "context": "本片由 Hawk 與 Jason Ellis 討論 2022 年 3 月的滑板事故。同期報導將骨折連到 3 月 7 日，日期標為報導所述；未公開的傷側與骨折型態保留不確定性。",
+      "timeline": [
+        {
+          "date": "2022-03-07",
+          "title": "滑板時股骨骨折",
+          "text": "同期節目介紹將骨折連結至 3 月 7 日的滑板事故。",
+          "sourceIndexes": [3]
+        },
+        {
+          "date": "2022-04-05",
+          "title": "本人受訪談骨折",
+          "text": "NPR 本人訪談回顧事故與傷後生活。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "Tony Hawk：本人股骨骨折公告",
+          "url": "https://www.instagram.com/p/Ca295C2vC6B/",
+          "publishedAt": null
+        },
+        {
+          "title": "NPR／GPB：Tony Hawk 本人訪談",
+          "url": "https://www.gpb.org/news/2022/04/05/tony-hawk-plans-keep-skateboarding-until-the-wheels-fall-off",
+          "publishedAt": "2022-04-05"
+        },
+        {
+          "title": "The Inertia：Tony Hawk 與 Jason Ellis 傷後節目介紹",
+          "url": "https://www.theinertia.com/video/tony-hawk-on-his-freshly-broken-femur-and-what-it-means-for-his-skateboarding/",
+          "publishedAt": null
+        },
+        {
+          "title": "Tony Hawk Recounts his Bad Fall at the Ramp; Straight from the Hospital to the Podcast!",
+          "url": "https://www.youtube.com/watch?v=Kvm-WXQ2w2Y",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "helen-maroulis-2018-concussion",
+      "videoUrl": "https://www.youtube.com/watch?v=6dGzpQHXQsM",
+      "eventDate": null,
+      "injury": "2018 年角力相關腦震盪；後續其他腦震盪需分開。",
+      "returnDate": null,
+      "returnSummary": "尚未核定傷後首次正式復賽日期；傷後訓練、訪談或後續參賽不代表完全恢復。",
+      "context": "所選是後續本人回顧，事件月份採本人所述 2018 年 1 月，確切日不明。她後來還有其他腦震盪，不能將全部長期症狀歸因於最初那一次；個人續賽與恢復經驗不作一般處置建議。",
+      "timeline": [
+        {
+          "date": "2018-01",
+          "title": "印度賽事首起腦震盪",
+          "text": "本人在 WGN 訪談中回顧 2018 年 1 月印度角力事件；後續另有腦震盪。",
+          "sourceIndexes": [3]
+        },
+        {
+          "date": "2018",
+          "title": "官方選手資料記錄傷病",
+          "text": "UWW 資料記錄 2018 年腦震盪病史。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "UWW：Helen Maroulis 選手資料",
+          "url": "https://cms.uww.org/athletes/maroulis-helen-louise",
+          "publishedAt": null
+        },
+        {
+          "title": "NBC Sports：Maroulis 本人談腦震盪",
+          "url": "https://www.nbcsports.com/olympics/news/helen-maroulis-wrestling-concussion",
+          "publishedAt": null
+        },
+        {
+          "title": "Awful Announcing：WGN 傷後訪談與原片",
+          "url": "https://awfulannouncing.com/olympics/helen-maroulis-helen-believe-wgn-concussions.html",
+          "publishedAt": null
+        },
+        {
+          "title": "The Players' Tribune：Maroulis Blindsided 本人訪談",
+          "url": "https://www.theplayerstribune.com/posts/helen-maroulis-olympics-womens-wrestling-mental-health-blindsided-podcast",
+          "publishedAt": null
+        },
+        {
+          "title": "Helen | Believe",
+          "url": "https://www.youtube.com/watch?v=6dGzpQHXQsM",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "tiger-woods-2008-tibial-stress-fractures",
+      "videoUrl": "https://www.youtube.com/watch?v=kb_9JHJu1oo",
+      "eventDate": null,
+      "injury": "高爾夫訓練期間左脛骨兩處疲勞性骨折。",
+      "returnDate": null,
+      "returnSummary": "尚未核定傷後首次正式復賽日期；傷後訓練、訪談或後續參賽不代表完全恢復。",
+      "context": "本人官方年表記載 2008 年 5 月高爾夫訓練期間左脛骨兩處疲勞性骨折，確切日不明。所選為之後美國公開賽的比賽回顧；既有 ACL 傷與脛骨傷分開，奪冠不代表骨折已癒合。",
+      "timeline": [
+        {
+          "date": "2008-05",
+          "title": "左脛骨疲勞性骨折",
+          "text": "本人官方年表記載高爾夫訓練時左脛骨兩處疲勞性骨折。",
+          "sourceIndexes": [1, 2]
+        },
+        {
+          "date": "2008-06",
+          "title": "美國公開賽帶傷參賽",
+          "text": "USGA 回顧 2008 年美國公開賽經歷；所選影片是後續比賽素材。",
+          "sourceIndexes": [3]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "Tiger Woods 官方年表：2008 年 5 月左脛骨疲勞性骨折",
+          "url": "https://news.tigerwoods.com/about-tiger/",
+          "publishedAt": null
+        },
+        {
+          "title": "Tiger Woods 官方履歷 PDF",
+          "url": "https://tigerwoods.com/wp-content/uploads/2021/08/TWBio19-20_PDF.pdf",
+          "publishedAt": null
+        },
+        {
+          "title": "USGA：Tiger Woods 2008 美國公開賽紀錄",
+          "url": "https://www.usga.org/content/usga/home-page/members/tiger-woods-the-player-of-record-usga-golf.html",
+          "publishedAt": null
+        },
+        {
+          "title": "Tiger Woods’ 2008 U.S. Open Victory at Torrey Pines | Every Televised Shot | Champion’s Journey",
+          "url": "https://www.youtube.com/watch?v=kb_9JHJu1oo",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "mirabai-chanu-2023-hip",
+      "videoUrl": "https://www.youtube.com/watch?v=1d3pOYyLQkY",
+      "eventDate": "2023-09-30",
+      "eventDateCertainty": "reported",
+      "injury": "亞洲運動會舉重時髖部／大腿區域受傷；不指定組織、撕裂或肌腱病變。",
+      "returnDate": null,
+      "returnSummary": "尚未核定傷後首次正式復賽日期；傷後訓練、訪談或後續參賽不代表完全恢復。",
+      "context": "所選是 2023 年 9 月 30 日亞運女子 49 公斤級賽事的新聞說明，不是可判讀全部致傷過程的連續影像。來源支持髖部／大腿區域受傷，尚不足以指定組織、撕裂或病理機轉。",
+      "timeline": [
+        {
+          "date": "2023-09-30",
+          "title": "亞運舉重時受傷",
+          "text": "現場報導記錄 Chanu 在女子 49 公斤級賽事受傷。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-07-25",
+          "title": "本人回顧亞運傷勢",
+          "text": "Sports Tak 刊登她談亞運受傷與回歸的訪談。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "Indian Express：亞運舉重現場報導",
+          "url": "https://indianexpress.com/article/sports/asian-games/asian-games-weightlifting-no-luck-in-china-but-will-the-paris-olympics-lift-mirabai-chanus-spirits-8963222/",
+          "publishedAt": "2023-09-30"
+        },
+        {
+          "title": "Sports Tak：Mirabai Chanu 本人傷後訪談",
+          "url": "https://thesportstak.com/olympics/video/exclusive-interview-had-doubts-about-my-comeback-mirabai-chanu-ahead-of-paris-olympic-2024-znqg-3028117-2024-07-25",
+          "publishedAt": "2024-07-25"
+        },
+        {
+          "title": "Asian Games 2023 Day 7: Mirabai Chanu injured",
+          "url": "https://www.youtube.com/watch?v=1d3pOYyLQkY",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "annemiek-van-vleuten-2022-elbow",
+      "videoUrl": "https://www.youtube.com/watch?v=T7-DAQANyho",
+      "eventDate": "2022-09-21",
+      "eventDateCertainty": "confirmed",
+      "injury": "2022 世錦賽混合團體計時賽摔車造成肘部骨折；不補寫骨頭名稱。",
+      "returnDate": null,
+      "returnSummary": "尚未核定傷後首次正式復賽日期；傷後訓練、訪談或後續參賽不代表完全恢復。",
+      "context": "所選是 2023 年生涯回顧中的 2022 世錦賽肘傷段落，與 2016 里約摔車分開。賽事與同日報導支持 2022 年 9 月 21 日事故；不補骨頭名稱，也不從帶傷獲勝推論安全回場。",
+      "timeline": [
+        {
+          "date": "2022-09-21",
+          "title": "混合團體計時賽摔車",
+          "text": "世錦賽混合團體計時賽事故造成肘部骨折。",
+          "sourceIndexes": [1, 2]
+        },
+        {
+          "date": "2022-09",
+          "title": "UCI 記錄後續世錦賽表現",
+          "text": "UCI 將之後公路賽表現與先前肘部骨折明確連結。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "UCI：Van Vleuten 帶著肘部骨折參賽",
+          "url": "https://www.uci.org/article/uci-road-world-championships-van-vleuten-wins-against-the-odds/3omY3FTqY5Qim4K5U8KKF3",
+          "publishedAt": null
+        },
+        {
+          "title": "NOS：Van Vleuten 骨折後賽事前景",
+          "url": "https://nos.nl/artikel/2445397-artsen-geven-van-vleuten-sprankje-wk-hoop-ondanks-breuk-ze-zeiden-succes",
+          "publishedAt": "2022-09-21"
+        },
+        {
+          "title": "Cyclingnews：Movistar 退休回顧影片介紹",
+          "url": "https://www.cyclingnews.com/features/saying-goodbye-to-pro-cycling-annemiek-van-vleuten-on-navigating-life-after-sport/",
+          "publishedAt": null
+        },
+        {
+          "title": "Annemiek van Vleuten: The Last Interview | Movistar Team - 2023",
+          "url": "https://www.youtube.com/watch?v=T7-DAQANyho",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "daniel-andre-tande-2021-clavicle",
+      "videoUrl": "https://www.youtube.com/watch?v=jQ7oMEGPHXg",
+      "eventDate": "2021-03-25",
+      "eventDateCertainty": "confirmed",
+      "injury": "Planica 試跳摔落後鎖骨骨折，後續接受鎖骨手術。",
+      "returnDate": null,
+      "returnSummary": "尚未核定傷後首次正式復賽日期；傷後訓練、訪談或後續參賽不代表完全恢復。",
+      "context": "這是傷後本人受訪，不是 2021 年 3 月 25 日試跳摔落的回放。隊醫更新記錄鎖骨手術；醫療誘導昏迷不等同特定腦部診斷。返回跳台、訓練與正式復賽分開看待。",
+      "timeline": [
+        {
+          "date": "2021-03-25",
+          "title": "Planica 試跳事故",
+          "text": "FIS 將後續傷勢與 Planica 試跳摔落連結。",
+          "sourceIndexes": [1, 2]
+        },
+        {
+          "date": "2021-04-10",
+          "title": "鎖骨手術更新",
+          "text": "FIS 刊登隊醫對鎖骨手術的後續說明。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "FIS：Tande 鎖骨手術與隊醫更新",
+          "url": "https://www.fis-ski.com/ski-jumping/news/2020-21/daniel-andre-tande-underwent-collarbone-surgery",
+          "publishedAt": "2021-04-10"
+        },
+        {
+          "title": "FIS：Tande 重返跳台",
+          "url": "https://www.fis-ski.com/ski-jumping/news/2021-22/daniel-andre-tande-is-back-on-the-hill",
+          "publishedAt": null
+        },
+        {
+          "title": "FIS：原創影片頁",
+          "url": "https://www.fis-ski.com/ski-jumping/news/2021-22/daniel-andre-tande-is-back-fis-ski-jumping-jq7omegphxg",
+          "publishedAt": "2021-06-02"
+        },
+        {
+          "title": "Daniel Andre Tande is back! | FIS Ski Jumping",
+          "url": "https://www.youtube.com/watch?v=jQ7oMEGPHXg",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "egan-bernal-2022-training-crash",
+      "videoUrl": "https://www.youtube.com/watch?v=aXvM23KcbJw",
+      "eventDate": "2022-01-24",
+      "eventDateCertainty": "reported",
+      "injury": "訓練碰撞後多處骨折，包括脊椎、右股骨、右髕骨與肋骨，另有胸部／肺部傷勢。",
+      "returnDate": null,
+      "returnSummary": "尚未核定傷後首次正式復賽日期；傷後訓練、訪談或後續參賽不代表完全恢復。",
+      "context": "所選為 2022 年 1 月 24 日訓練碰撞後的回顧影片。脊椎、右股骨、右髕骨、肋骨及胸部傷勢分別描述，不推定未公開的神經損傷；本頁不將再次騎車視為全部外傷已癒合。",
+      "timeline": [
+        {
+          "date": "2022-01-24",
+          "title": "公路訓練碰撞事故",
+          "text": "報導及官方醫療公告鏈記錄訓練事故後住院。",
+          "sourceIndexes": [4, 5]
+        },
+        {
+          "date": "2022-01-25",
+          "title": "球隊與醫院病況更新",
+          "text": "公開醫療更新記錄脊椎、右股骨、右髕骨等多處傷勢。",
+          "sourceIndexes": [1, 2, 3, 4, 5]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "INEOS Grenadiers：原始醫療更新",
+          "url": "https://twitter.com/INEOSGrenadiers/status/1485979969486573576",
+          "publishedAt": null
+        },
+        {
+          "title": "Clínica Universidad de La Sabana：原始醫療公告一",
+          "url": "https://twitter.com/ClinicaUsabana/status/1485781226644549634",
+          "publishedAt": null
+        },
+        {
+          "title": "Clínica Universidad de La Sabana：原始醫療公告二",
+          "url": "https://twitter.com/ClinicaUsabana/status/1485847170867769347",
+          "publishedAt": null
+        },
+        {
+          "title": "Cycling Weekly：INEOS 醫療更新全文轉述",
+          "url": "https://www.cyclingweekly.com/news/ineos-grenadiers-release-update-on-egan-bernal-multiple-fractures-confirmed-as-he-remains-in-icu",
+          "publishedAt": "2022-01-25"
+        },
+        {
+          "title": "AS Colombia：治療醫院與球隊公告來源鏈",
+          "url": "https://colombia.as.com/colombia/2022/01/25/masdeporte/1643121829_501920.html",
+          "publishedAt": "2022-01-25"
+        },
+        {
+          "title": "Egan Bernal: The Best Day of my Life | INEOS Grenadiers behind the scenes",
+          "url": "https://www.youtube.com/watch?v=aXvM23KcbJw",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "connor-fields-2021-brain-hemorrhage",
+      "videoUrl": "https://www.youtube.com/watch?v=kti0XvZn0KQ",
+      "eventDate": "2021-07-30",
+      "eventDateCertainty": "confirmed",
+      "injury": "東京奧運 BMX 準決賽摔車後腦出血；由 USA Cycling 醫療公告確認。",
+      "returnDate": null,
+      "returnSummary": "尚未核定傷後首次正式復賽日期；傷後訓練、訪談或後續參賽不代表完全恢復。",
+      "context": "所選是事故後本人長訪談，事件為 2021 年 7 月 30 日男子 BMX 準決賽摔車。公告沒有細分腦出血類型；個人恢復經驗與醫學上完全恢復不同。",
+      "timeline": [
+        {
+          "date": "2021-07-30",
+          "title": "東京 BMX 準決賽摔車",
+          "text": "USA Cycling 醫療公告記錄醫師確認腦出血。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2022-07-09",
+          "title": "本人回顧事故與恢復",
+          "text": "PBS 訪談讓 Fields 本人描述傷後經驗；不是該日首次回場證據。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "USA Cycling：Connor Fields 醫療更新",
+          "url": "https://usacycling.org/article/medical-update-on-connor-fields-condition",
+          "publishedAt": "2021-07-30"
+        },
+        {
+          "title": "PBS：Connor Fields 本人訪談",
+          "url": "https://www.pbs.org/video/nevada-week-person-connor-fields-wuizzj/",
+          "publishedAt": "2022-07-09"
+        },
+        {
+          "title": "Barry Shore：Connor Fields 原創訪談頁",
+          "url": "https://barryshore.com/the-real-price-of-the-podium-connor-fields-on-recovery-identity-and-the-power-of-choice/",
+          "publishedAt": null
+        },
+        {
+          "title": "The Real Price of the Podium: Connor Fields on Recovery, Identity, and the Power of Choice",
+          "url": "https://www.youtube.com/watch?v=kti0XvZn0KQ",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "novak-djokovic-2017-elbow",
+      "videoUrl": "https://www.youtube.com/watch?v=8H_0tJAwev8",
+      "eventDate": null,
+      "injury": "反覆右肘傷勢，2017 Wimbledon 比賽期間加劇退賽；不補寫組織損傷。",
+      "returnDate": null,
+      "returnSummary": "尚未核定傷後首次正式復賽日期；傷後訓練、訪談或後續參賽不代表完全恢復。",
+      "context": "右肘在 2017 年 Wimbledon 前已困擾一年多。7 月 12 日是比賽中加劇退賽的日期，首次受傷日仍不明；之後結束球季的公告與 2024 年膝傷分開。",
+      "timeline": [
+        {
+          "date": "2017-07-12",
+          "title": "Wimbledon 因肘傷退賽",
+          "text": "對 Berdych 的八強賽因肘傷停止比賽；症狀在此前已存在。",
+          "sourceIndexes": [1, 3]
+        },
+        {
+          "date": "2017-07-26",
+          "title": "宣布結束球季",
+          "text": "本人宣布餘下 2017 球季休賽以處理肘傷。",
+          "sourceIndexes": [2, 3]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "Novak Djokovic 官網：Wimbledon 八強因傷退賽",
+          "url": "https://novakdjokovic.com/en/news/tennis/novak-out-of-wimbledon-after-retiring-injured-in-qf-match-against-berdych/",
+          "publishedAt": "2017-07-12"
+        },
+        {
+          "title": "Novak Djokovic 官網：因肘傷結束 2017 球季",
+          "url": "https://novakdjokovic.com/en/news/media/novak-ends-2017-season-due-to-elbow-injury/",
+          "publishedAt": "2017-07-26"
+        },
+        {
+          "title": "USTA：Djokovic 因肘傷缺席 2017 美國公開賽",
+          "url": "https://www.usopen.org/en_US/news/articles/2017-07-26/djokovic_to_miss_2017_us_open_with_elbow_injury.html",
+          "publishedAt": "2017-07-26"
+        },
+        {
+          "title": "Novak Djokovic Wimbledon 2017 quarter-final press conference",
+          "url": "https://www.youtube.com/watch?v=8H_0tJAwev8",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "kei-nishikori-2017-wrist",
+      "videoUrl": "https://www.youtube.com/watch?v=_9PMTWdYX6I",
+      "eventDate": null,
+      "injury": "訓練相關右腕肌腱撕裂，具名經紀人向 AP 確認。",
+      "returnDate": null,
+      "returnSummary": "尚未核定傷後首次正式復賽日期；傷後訓練、訪談或後續參賽不代表完全恢復。",
+      "context": "所選是 2018 年回顧前一年訓練腕傷的紀錄片。2017 年 8 月 16 日為公告日，確切受傷日未確認；未公開肌腱名稱、範圍與病理機轉，不補 ECU 或 TFCC 診斷。",
+      "timeline": [
+        {
+          "date": "2017-08",
+          "title": "訓練中右腕受傷",
+          "text": "新聞報導練習中腕部受傷，經紀人確認右腕肌腱撕裂。",
+          "sourceIndexes": [1, 4]
+        },
+        {
+          "date": "2018-09-03",
+          "title": "USTA 回顧傷後回歸",
+          "text": "美國公開賽官方回顧 2017 年腕傷和回歸歷程；首次復賽日期未另核定。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "AP／Tennis.com：Nishikori 經紀人確認腕部肌腱撕裂",
+          "url": "https://www.tennis.com/news/articles/kei-nishikori-to-miss-remainder-of-season-with-torn-tendon-in-wrist",
+          "publishedAt": null
+        },
+        {
+          "title": "USTA：Nishikori 的回歸之路",
+          "url": "https://www.usopen.org/en_US/news/articles/2018-09-03/long_road_back_for_kei_nishikori.html",
+          "publishedAt": "2018-09-03"
+        },
+        {
+          "title": "ATP：2018 官方 Media Guide",
+          "url": "https://www.atptour.com/-/media/files/media-guide/2018/2018-atp-media-guide.pdf",
+          "publishedAt": null
+        },
+        {
+          "title": "New York Tennis Magazine：訓練中受傷與退賽公告",
+          "url": "https://newyorktennismagazine.com/article/former-finalist-nishikori-out-us-open-wrist-injury/",
+          "publishedAt": "2017-08-16"
+        },
+        {
+          "title": "Nishikori On The Comeback Trail",
+          "url": "https://www.youtube.com/watch?v=_9PMTWdYX6I",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "bianca-andreescu-2023-ankle",
+      "videoUrl": "https://www.youtube.com/watch?v=4O87O9rHdoE",
+      "eventDate": "2023-03-27",
+      "eventDateCertainty": "confirmed",
+      "injury": "Miami 比賽左踝兩條韌帶撕裂；以本人後續更新為據。",
+      "returnDate": null,
+      "returnSummary": "尚未核定傷後首次正式復賽日期；傷後訓練、訪談或後續參賽不代表完全恢復。",
+      "context": "所選是 2023 年 3 月 27 日比賽後的新聞說明。事件發生日、節目討論與後續診斷更新分開；不以主持人判斷替代診斷，也不自行命名韌帶或指定分級。",
+      "timeline": [
+        {
+          "date": "2023-03-27",
+          "title": "Miami 比賽左踝受傷",
+          "text": "對 Alexandrova 的比賽因左踝傷退賽。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2023-03-29",
+          "title": "本人更新韌帶診斷",
+          "text": "本人公開兩條左踝韌帶撕裂，WTA 與 Tennis.com 報導。",
+          "sourceIndexes": [1, 3]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "WTA：Andreescu 左踝傷勢更新",
+          "url": "https://www.wtatennis.com/news/3123711/andreescu-provides-injury-update-it-could-have-been-much-worse-",
+          "publishedAt": null
+        },
+        {
+          "title": "WTA：Andreescu 因傷退賽，Alexandrova 晉級",
+          "url": "https://www.wtatennis.com/news/3123112/andreescu-retires-due-to-injury-alexandrova-advances-in-miami",
+          "publishedAt": null
+        },
+        {
+          "title": "Tennis.com：本人確認左踝兩條韌帶撕裂",
+          "url": "https://www.tennis.com/news/articles/bianca-andreescu-shares-she-tore-two-ligaments-in-left-ankle-during-miami-injury",
+          "publishedAt": "2023-03-29"
+        },
+        {
+          "title": "Bianca Andreescu Injury Update | Tennis Channel Live",
+          "url": "https://www.youtube.com/watch?v=4O87O9rHdoE",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "juan-martin-del-potro-2017-wrist-contusion",
+      "videoUrl": "https://www.youtube.com/watch?v=_qp50gF67sQ",
+      "eventDate": "2017-10-13",
+      "eventDateCertainty": "confirmed",
+      "injury": "跌倒後左腕挫傷；經紀人表示檢查排除更嚴重問題。",
+      "returnDate": null,
+      "returnSummary": "尚未核定傷後首次正式復賽日期；傷後訓練、訪談或後續參賽不代表完全恢復。",
+      "context": "所選是 2017 年 10 月 13 日上海八強賽後、赴醫院前的本人回顧。挫傷診斷來自之後的檢查更新；與更早腕部手術及 2018 年膝傷分開，不推定新的骨折或肌腱斷裂。",
+      "timeline": [
+        {
+          "date": "2017-10-13",
+          "title": "跌倒後左腕不適",
+          "text": "上海八強賽第三盤 2–2 跌倒後左腕不適，之後接受檢查。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2017-10-13",
+          "title": "經紀人更新檢查結果",
+          "text": "Jorge Viale 表示檢查為腕部挫傷，已排除更嚴重問題。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "AP：del Potro 上海跌倒後左腕挫傷",
+          "url": "https://indianexpress.com/article/sports/tennis/juan-martin-del-potro-has-wrist-placed-in-splint-after-fall-in-shanghai-masters-4889198/",
+          "publishedAt": "2017-10-13"
+        },
+        {
+          "title": "AP／New Indian Express：同一傷勢補充存檔",
+          "url": "https://www.newindianexpress.com/sport/tennis/2017/Oct/14/del-potro-has-wrist-placed-in-splint-after-fall-in-shanghai-masters-1673891.html",
+          "publishedAt": "2017-10-14"
+        },
+        {
+          "title": "Del Potro Opens Up About Wrist Injury Shanghai 2017",
+          "url": "https://www.youtube.com/watch?v=_qp50gF67sQ",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "rafael-nadal-2016-wrist",
+      "videoUrl": "https://www.youtube.com/watch?v=yH1WExdlI4Q",
+      "eventDate": null,
+      "injury": "2016 法網前左腕傷，導致賽中退出後續賽程；組織診斷未細分。",
+      "returnDate": null,
+      "returnSummary": "尚未核定傷後首次正式復賽日期；傷後訓練、訪談或後續參賽不代表完全恢復。",
+      "context": "這是 2016 年 5 月 27 日退賽公告，首次受傷日不明。保留左腕傷的描述，不從各家不同用詞自行指定肌腱或撕裂等級；與 2022 年肋骨及腹肌事件分開。",
+      "timeline": [
+        {
+          "date": "2016-05-27",
+          "title": "宣布退出法網",
+          "text": "官方影片描述表示左腕傷在抵達巴黎前已出現；當天是退賽記者會而非初次受傷。",
+          "sourceIndexes": [1, 2]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "Roland-Garros：Nadal 2016 年本人退賽記者會",
+          "url": "https://www.youtube.com/watch?v=yH1WExdlI4Q",
+          "publishedAt": "2016-05-27"
+        },
+        {
+          "title": "Tennis.com：Nadal 法網退賽記者會與原片",
+          "url": "https://www.tennis.com/news/articles/watch-nadal-s-open-ending-press-conference",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "nikola-karabatic-2020-acl",
+      "videoUrl": "https://www.youtube.com/watch?v=ApTbpxIuUJ8",
+      "eventDate": "2020-10-17",
+      "eventDateCertainty": "confirmed",
+      "injury": "對 Ivry 比賽右膝前十字韌帶斷裂。",
+      "returnDate": null,
+      "returnSummary": "尚未核定傷後首次正式復賽日期；傷後訓練、訪談或後續參賽不代表完全恢復。",
+      "context": "所選是 2021 年術後復健紀錄，對應 2020 年 10 月 17 日對 Ivry 的右膝傷勢及 10 月 28 日手術。後來的血栓與肺栓塞不列為比賽當場傷勢，復健訓練也不代表正式復賽。",
+      "timeline": [
+        {
+          "date": "2020-10-17",
+          "title": "Ivry 比賽右膝受傷",
+          "text": "同期手術報導記錄右膝 ACL 斷裂發生於 10 月 17 日。",
+          "sourceIndexes": [3]
+        },
+        {
+          "date": "2020-10-19",
+          "title": "PSG 公布檢查結果",
+          "text": "球隊公告補充檢查確認右膝前十字韌帶斷裂。",
+          "sourceIndexes": [1, 4, 5]
+        },
+        {
+          "date": "2020-10-28",
+          "title": "接受手術",
+          "text": "具名手術報導與本人後續訪談記錄右膝手術。",
+          "sourceIndexes": [2, 3]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "PSG Handball：2020 年原始醫療公告",
+          "url": "https://twitter.com/psghand/status/1318126808320102401",
+          "publishedAt": "2020-10-19"
+        },
+        {
+          "title": "FFHandball：Nikola Karabatic 本人復健訪談",
+          "url": "https://www.ffhandball.fr/actualite/archives/entretiendulundi-nikola-karabatic/",
+          "publishedAt": null
+        },
+        {
+          "title": "L'Équipe：具名手術醫師與精確受傷日期",
+          "url": "https://www.lequipe.fr/Handball/Actualites/Nikola-karabatic-psg-a-ete-opere-avec-succes-du-genou-droit/1188456",
+          "publishedAt": "2020-10-28"
+        },
+        {
+          "title": "CulturePSG：PSG 原始醫療公告來源鏈",
+          "url": "https://www.culturepsg.com/news/handball/grave-blessure-au-genou-pour-karabatic/34525",
+          "publishedAt": "2020-10-19"
+        },
+        {
+          "title": "Le Dauphiné：PSG 醫療公告逐字轉述",
+          "url": "https://www.ledauphine.com/sport/2020/10/19/rupture-du-ligament-croise-du-genou-droit-pour-nikola-karabatic",
+          "publishedAt": "2020-10-19"
+        },
+        {
+          "title": "Une séance avec Nikola Karabatic",
+          "url": "https://www.youtube.com/watch?v=ApTbpxIuUJ8",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "kelly-slater-2017-foot",
+      "videoUrl": "https://www.youtube.com/watch?v=WhCalbwjLJg",
+      "eventDate": "2017-07-17",
+      "eventDateCertainty": "confirmed",
+      "injury": "J-Bay 自由練習時右足兩根蹠骨骨折。",
+      "returnDate": null,
+      "returnSummary": "尚未核定傷後首次正式復賽日期；傷後訓練、訪談或後續參賽不代表完全恢復。",
+      "context": "2017 年 7 月 17 日事故發生於自由練習，並非第二輪比賽中的受傷。所選為傷後片段；不指定第幾根蹠骨、骨折型態或以本人六週預估當成實際回場時間，亦不併入 2018 年大腳趾傷。",
+      "timeline": [
+        {
+          "date": "2017-07-17",
+          "title": "J-Bay 自由練習事故",
+          "text": "WSL 報導當日上午足部受傷並接受 X 光檢查。",
+          "sourceIndexes": [1, 3]
+        },
+        {
+          "date": "2018-09-19",
+          "title": "官方回顧確認受傷組織",
+          "text": "WSL 明確記錄 2017 年事故為右足兩根蹠骨骨折，並與 2018 年足趾韌帶傷分開。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "WSL：Kelly Slater J-Bay 自由練習受傷",
+          "url": "https://www.worldsurfleague.com/posts/261815/kelly-slater-injured-during-j-bay-freesurf",
+          "publishedAt": "2017-07-17"
+        },
+        {
+          "title": "WSL：Slater 右足傷勢回顧",
+          "url": "https://www.worldsurfleague.com/posts/348066/injury-report-kelly-slaters-foot-woes-persist",
+          "publishedAt": "2018-09-19"
+        },
+        {
+          "title": "Space Coast Daily：WSL 報導與本人公告",
+          "url": "https://spacecoastdaily.com/2017/07/video-cocoa-beach-native-kelly-slater-injures-foot-at-world-surf-league-corona-open-j-bay/",
+          "publishedAt": "2017-07-17"
+        },
+        {
+          "title": "Injury Update: Kelly Slater Breaks Foot During Free Surf Session - Corona Open J-Bay 2017",
+          "url": "https://www.youtube.com/watch?v=WhCalbwjLJg",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "sally-fitzgibbons-2015-eardrum",
+      "videoUrl": "https://www.youtube.com/watch?v=wTaCr8olPck",
+      "eventDate": "2015-06-02",
+      "eventDateCertainty": "reported",
+      "injury": "Fiji Women's Pro 第二輪浪中摔落後鼓膜破裂；不指認傷側或腦震盪。",
+      "returnDate": null,
+      "returnSummary": "尚未核定傷後首次正式復賽日期；傷後訓練、訪談或後續參賽不代表完全恢復。",
+      "context": "事件為 Fiji Women's Pro 第二輪浪中摔落後的鼓膜破裂；當地週二的報導對應 2015 年 6 月 2 日，日期標為報導所述。所選為事後賽事回顧，未確認側別，也不由頭部包紮推定腦震盪。",
+      "timeline": [
+        {
+          "date": "2015-06-02",
+          "title": "Fiji 第二輪鼓膜受傷",
+          "text": "ABC 報導週二第二輪浪中摔落造成鼓膜穿孔；日依當地週日曆對照。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2015-06-08",
+          "title": "WSL 確認同一傷勢",
+          "text": "WSL 官方回顧明確指出第二輪末段鼓膜破裂。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "WSL：Fitzgibbons 第二輪鼓膜破裂",
+          "url": "https://www.worldsurfleague.com/posts/122302/magic-board-2015-fiji-womens-pro-fitzgibbons",
+          "publishedAt": "2015-06-08"
+        },
+        {
+          "title": "ABC：Fitzgibbons 帶傷贏得 Fiji Pro",
+          "url": "https://www.abc.net.au/news/2015-06-04/courage-sally-fitzgibbons-wins-back-to-back-fiji-pros/6521694",
+          "publishedAt": "2015-06-04"
+        },
+        {
+          "title": "Yardbarker：WSL 原創回顧與 exact video embed",
+          "url": "https://www.yardbarker.com/surfing/articles/watch_one_of_the_toughest_performances_ever_sally_fitzgibbons_wins_15_fiji_with_a_busted_ear/s1_15176_40755757",
+          "publishedAt": "2024-08-16"
+        },
+        {
+          "title": "One Of The Toughest Performances Ever - Sally Fitzgibbons Wins ’15 Fiji With A Busted Ear!!",
+          "url": "https://www.youtube.com/watch?v=wTaCr8olPck",
+          "publishedAt": null
+        }
+      ]
+    },
+    {
+      "slug": "emma-raducanu-2022-2023-wrists",
+      "videoUrl": "https://www.youtube.com/watch?v=ZQL-1NY5erY",
+      "eventDate": null,
+      "injury": "反覆雙腕／手部骨傷，2023 年接受手部手術；不指定骨名或骨折。",
+      "returnDate": null,
+      "returnSummary": "尚未核定傷後首次正式復賽日期；傷後訓練、訪談或後續參賽不代表完全恢復。",
+      "context": "這是 2023 年手術公告，回顧 2022–2023 年反覆腕／手部傷勢。首次受傷日不明；同期踝手術另行區分，不將慢性或反覆病程直接認定為過度使用的單一因果機轉。",
+      "timeline": [
+        {
+          "date": "2022",
+          "title": "反覆腕部症狀",
+          "text": "WTA 報導本人稱症狀自 2022 球季末已存在；確切起始日期未核定。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2023-03-22",
+          "title": "Miami 記者會談既有腕傷",
+          "text": "本人談到 Indian Wells 訓練時症狀加劇與處理長期腕傷的需要。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2023-05",
+          "title": "公布手部手術",
+          "text": "本人公開雙手某骨頭反覆受傷及手術安排，同期踝手術另行區分。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "checkedAt": "2026-09-21",
+      "sources": [
+        {
+          "title": "WTA：Raducanu 在 Miami 談腕部問題",
+          "url": "https://www.wtatennis.com/news/3119435/raducanu-addresses-wrist-concerns-after-loss-to-andreescu-in-miami",
+          "publishedAt": "2023-03-22"
+        },
+        {
+          "title": "Sky Sports：Raducanu 本人手術聲明",
+          "url": "https://www.skysports.com/tennis/news/12110/12871946/emma-raducanu-british-no-1-out-of-wimbledon-and-doubt-for-us-open-after-surgery-on-both-hands-and-her-ankle",
+          "publishedAt": "2023-05-04"
+        },
+        {
+          "title": "WTA：Raducanu 傷後回到 Nottingham",
+          "url": "https://www.wtatennis.com/news/4036146/raducanu-returns-to-where-everything-started-in-reflective-mood",
+          "publishedAt": "2024-06-10"
+        },
+        {
+          "title": "Emma Raducanu to miss the French Open & Wimbledon after undergoing surgery on her wrists & ankle",
+          "url": "https://www.youtube.com/watch?v=ZQL-1NY5erY",
+          "publishedAt": null
+        }
+      ]
+    }
+  ]
+}

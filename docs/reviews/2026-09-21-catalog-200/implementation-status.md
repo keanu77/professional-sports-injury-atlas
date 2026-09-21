@@ -1,5 +1,16 @@
 # 200 例擴充進度
 
+## 最新 checkpoint：2026-09-21 13:37（Asia/Tokyo）
+
+- 使用者在異常關閉後明確要求繼續完成 200 例。研究及四神經實播 checkpoint 為 `4c8c8ad`，42 例程式整合進行中。
+- 已完成 42 個原始影片的實際觀看與 metadata 查核；選取資料為 `selected-cases.json`，單批整合計畫為 `integration-plan.md`。42 個事件與原本 158 個事件不重複，預計合計 200。
+- 四個既有神經案例已全部完成 owned HTTPS 實播。Jaylon 的 NFL 原片因嵌入失敗，已經 SPEC／QUALITY 審查替換成 WFAA 原創專題，真實播放紀錄見 `../2026-09-21-nerve-four/playback.preview.json`。
+- 更新後的 158 例公開候選為 `https://eab7e03c.sports-injury-atlas.pages.dev`；1,524 單元測試、content、36 個 plan checks、14 個桌機／Pixel 7 神經案例 E2E 均通過，公開成品 509 檔／208 HTML 已逐檔核對。這些是 158 例版本的驗證，不能代替 200 例最終檢查。
+- 已在匯入前保存 151 observations／158 events 基線；新增批次的六組 unit RED 均按預期失敗。後續為正式資料匯入、GREEN、雙重審查、完整驗證、public200 候選及 42 個本站實播。
+- 2026-09-21T04:28:44Z 透過實際正式首頁 DOM 核對仍為 154 個不同事件、0 個預載 iframe。本次尚未推送或發布 production；下方瀏覽器阻擋及未實播敘述是先前歷史，現已解除。
+
+## 以下為先前階段的歷史紀錄
+
 使用者已核准設計：「核准，照此實作（建議）」。編輯基線與配額見 README.md；本記錄不代表 200 例已完成。
 
 ## 已實作

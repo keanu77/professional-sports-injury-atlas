@@ -10,9 +10,9 @@ const input = {
 
 describe("public video health monitoring", () => {
   it("covers every governed public video without requiring network at import", () => {
-    expect(eventUpdates.entries).toHaveLength(158);
+    expect(eventUpdates.entries).toHaveLength(200);
     expect(new Set(eventUpdates.entries.map((entry) => entry.slug)).size).toBe(
-      158,
+      200,
     );
   });
 

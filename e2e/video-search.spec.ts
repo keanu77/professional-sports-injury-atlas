@@ -14,7 +14,7 @@ test("searches Chinese and English names, injury keywords and multiple terms", a
   page,
 }) => {
   const input = page.getByRole("searchbox", { name: "搜尋球員或關鍵字" });
-  await expect(page.locator(visibleCards)).toHaveCount(158);
+  await expect(page.locator(visibleCards)).toHaveCount(200);
   await input.fill("大谷 棒球");
   await expect(page.locator(visibleCards)).toHaveCount(1);
   await expect(page.locator(visibleCards)).toHaveAttribute(
@@ -38,7 +38,7 @@ test("searches Chinese and English names, injury keywords and multiple terms", a
   ).toBeVisible();
   await page.getByRole("button", { name: "清除搜尋", exact: true }).click();
   await expect(input).toBeFocused();
-  await expect(page.locator(visibleCards)).toHaveCount(158);
+  await expect(page.locator(visibleCards)).toHaveCount(200);
   await expectNoAxeViolations(page);
 });
 
@@ -58,7 +58,7 @@ test("keeps the query when changing scope and can expand beyond curated results"
   await expect(input).toBeFocused();
   await expect(page.locator(visibleCards)).toHaveCount(1);
   await input.press("Escape");
-  await expect(page.locator(visibleCards)).toHaveCount(158);
+  await expect(page.locator(visibleCards)).toHaveCount(200);
   await page.getByRole("button", { name: "精選影片", exact: true }).click();
   await expect(page.locator(visibleCards)).toHaveCount(10);
 });
@@ -74,7 +74,7 @@ test("handles IME composition and treats hostile input as plain text without nav
       new InputEvent("input", { bubbles: true, isComposing: true }),
     );
   });
-  await expect(page.locator(visibleCards)).toHaveCount(158);
+  await expect(page.locator(visibleCards)).toHaveCount(200);
   await input.dispatchEvent("compositionend");
   await expect(page.locator(visibleCards)).toHaveCount(1);
   const url = page.url();
@@ -176,7 +176,7 @@ test("keeps all videos browsable with scripts disabled", async ({
     const page = await context.newPage();
     await page.goto(baseURL!);
     await expect(page.locator("[data-video-search]")).toBeHidden();
-    await expect(page.locator(visibleCards)).toHaveCount(158);
+    await expect(page.locator(visibleCards)).toHaveCount(200);
     await expect(page.locator("[data-discovery-controls]")).toBeHidden();
   } finally {
     await context.close();

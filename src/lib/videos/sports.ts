@@ -19,6 +19,19 @@ export const SPORTS = [
   { code: "motorcycle-racing", label: "機車競速" },
   { code: "automobile-racing", label: "賽車" },
   { code: "crossfit", label: "CrossFit" },
+  { code: "surfing", label: "衝浪" },
+  { code: "swimming", label: "游泳" },
+  { code: "snowboarding", label: "單板滑雪" },
+  { code: "beach-volleyball", label: "沙灘排球" },
+  { code: "indoor-volleyball", label: "室內排球" },
+  { code: "mixed-martial-arts", label: "綜合格鬥" },
+  { code: "wrestling", label: "角力" },
+  { code: "boxing", label: "拳擊" },
+  { code: "skateboarding", label: "滑板" },
+  { code: "golf", label: "高爾夫" },
+  { code: "weightlifting", label: "舉重" },
+  { code: "ski-jumping", label: "跳台滑雪" },
+  { code: "handball", label: "手球" },
 ] as const;
 
 export function videosBySport(

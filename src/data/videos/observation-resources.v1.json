@@ -727,6 +727,174 @@
     "tua-tagovailoa-2024-concussion": {
       "resources": ["overview"],
       "note": "尚未配對到腦震盪的合適主站專文，先提供運動傷害主題總覽；當下處理請參考上方頭部受傷說明。"
+    },
+    "nathan-florence-2023-t12-fracture": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "billy-kemper-2020-pelvis-knee": {
+      "resources": ["overview", "acl"],
+      "note": "延伸閱讀說明一般傷害背景，不代表選手採用相同療程，也不補充來源未確認的診斷。"
+    },
+    "missy-franklin-2016-shoulder": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "gabriel-medina-2025-pectoral-tendon": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "jj-watt-2019-pectoral": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "zoey-clark-2023-disc-nerve": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "chloe-kim-2026-shoulder": {
+      "resources": ["shoulder"],
+      "note": "延伸閱讀說明一般傷害背景，不代表選手採用相同療程，也不補充來源未確認的診斷。"
+    },
+    "adam-peaty-2022-foot": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "kerri-walsh-jennings-2015-shoulder": {
+      "resources": ["shoulder"],
+      "note": "延伸閱讀說明一般傷害背景，不代表選手採用相同療程，也不補充來源未確認的診斷。"
+    },
+    "rafael-nadal-2022-abdominal": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "jordyn-poulter-2022-knee": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "paula-badosa-2023-spinal-stress-fracture": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "rafael-nadal-2022-rib-stress-fracture": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "jake-wightman-2023-foot": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "karsten-warholm-2022-hamstring": {
+      "resources": ["hamstring"],
+      "note": "延伸閱讀說明一般傷害背景，不代表選手採用相同療程，也不補充來源未確認的診斷。"
+    },
+    "molly-seidel-2024-patella": {
+      "resources": ["patella-fracture"],
+      "note": "延伸閱讀說明一般傷害背景，不代表選手採用相同療程，也不補充來源未確認的診斷。"
+    },
+    "jamahal-hill-2021-elbow": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "antonio-rodrigo-nogueira-2011-arm": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "tim-sylvia-2004-arm": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "ronaldo-jacare-souza-2021-humerus": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "tom-aspinall-2022-knee": {
+      "resources": ["meniscus"],
+      "note": "延伸閱讀說明一般傷害背景，不代表選手採用相同療程，也不補充來源未確認的診斷。"
+    },
+    "jordan-burroughs-2013-ankle": {
+      "resources": ["ankle-fracture"],
+      "note": "延伸閱讀說明一般傷害背景，不代表選手採用相同療程，也不補充來源未確認的診斷。"
+    },
+    "jofra-archer-2020-elbow-stress-fracture": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "manny-pacquiao-2015-shoulder": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "sky-brown-2024-shoulder": {
+      "resources": ["shoulder"],
+      "note": "延伸閱讀說明一般傷害背景，不代表選手採用相同療程，也不補充來源未確認的診斷。"
+    },
+    "tony-hawk-2022-femur": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "helen-maroulis-2018-concussion": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "tiger-woods-2008-tibial-stress-fractures": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "mirabai-chanu-2023-hip": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "annemiek-van-vleuten-2022-elbow": {
+      "resources": ["cycling"],
+      "note": "延伸閱讀說明一般傷害背景，不代表選手採用相同療程，也不補充來源未確認的診斷。"
+    },
+    "daniel-andre-tande-2021-clavicle": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "egan-bernal-2022-training-crash": {
+      "resources": ["cycling", "overview"],
+      "note": "延伸閱讀說明一般傷害背景，不代表選手採用相同療程，也不補充來源未確認的診斷。"
+    },
+    "connor-fields-2021-brain-hemorrhage": {
+      "resources": ["cycling", "overview"],
+      "note": "延伸閱讀說明一般傷害背景，不代表選手採用相同療程，也不補充來源未確認的診斷。"
+    },
+    "novak-djokovic-2017-elbow": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "kei-nishikori-2017-wrist": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "bianca-andreescu-2023-ankle": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "juan-martin-del-potro-2017-wrist-contusion": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "rafael-nadal-2016-wrist": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "nikola-karabatic-2020-acl": {
+      "resources": ["acl"],
+      "note": "延伸閱讀說明一般傷害背景，不代表選手採用相同療程，也不補充來源未確認的診斷。"
+    },
+    "kelly-slater-2017-foot": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "sally-fitzgibbons-2015-eardrum": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "emma-raducanu-2022-2023-wrists": {
+      "resources": ["overview"],
+      "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
     }
   }
 }

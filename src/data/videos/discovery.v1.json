@@ -4,13 +4,34 @@
   "classificationBasis": "依既有影片觀察摘要選擇一個主要情境；分類描述影片中的動作，不判定致傷原因。畫面不足者歸其他或畫面未明。",
   "curationBasis": "優先選擇受傷過程清楚、具名傷勢與回場來源完整，並涵蓋不同運動與情境的影片。精選順序由本站編輯安排，不代表熱門程度。",
   "videos": [
-    { "slug": "jaylon-smith-2016-peroneal-nerve", "situation": "collision" },
-    { "slug": "zack-kelly-2023-ulnar-nerve", "situation": "unclear" },
-    { "slug": "ryan-crouser-2024-ulnar-nerve", "situation": "unclear" },
-    { "slug": "rob-horne-2018-brachial-plexus", "situation": "unclear" },
-    { "slug": "fernando-alonso-2016-rib", "situation": "collision" },
-    { "slug": "drew-brees-2020-rib", "situation": "collision" },
-    { "slug": "tua-tagovailoa-2021-rib", "situation": "collision" },
+    {
+      "slug": "jaylon-smith-2016-peroneal-nerve",
+      "situation": "collision"
+    },
+    {
+      "slug": "zack-kelly-2023-ulnar-nerve",
+      "situation": "unclear"
+    },
+    {
+      "slug": "ryan-crouser-2024-ulnar-nerve",
+      "situation": "unclear"
+    },
+    {
+      "slug": "rob-horne-2018-brachial-plexus",
+      "situation": "unclear"
+    },
+    {
+      "slug": "fernando-alonso-2016-rib",
+      "situation": "collision"
+    },
+    {
+      "slug": "drew-brees-2020-rib",
+      "situation": "collision"
+    },
+    {
+      "slug": "tua-tagovailoa-2021-rib",
+      "situation": "collision"
+    },
     {
       "slug": "aaron-judge-2026-rib",
       "situation": "unclear"
@@ -624,6 +645,174 @@
       "slug": "zverev-roland-garros-2022",
       "situation": "running-turning",
       "curatedRank": 2
+    },
+    {
+      "slug": "nathan-florence-2023-t12-fracture",
+      "situation": "fall"
+    },
+    {
+      "slug": "tim-sylvia-2004-arm",
+      "situation": "collision"
+    },
+    {
+      "slug": "billy-kemper-2020-pelvis-knee",
+      "situation": "unclear"
+    },
+    {
+      "slug": "missy-franklin-2016-shoulder",
+      "situation": "unclear"
+    },
+    {
+      "slug": "gabriel-medina-2025-pectoral-tendon",
+      "situation": "unclear"
+    },
+    {
+      "slug": "jj-watt-2019-pectoral",
+      "situation": "unclear"
+    },
+    {
+      "slug": "zoey-clark-2023-disc-nerve",
+      "situation": "unclear"
+    },
+    {
+      "slug": "chloe-kim-2026-shoulder",
+      "situation": "unclear"
+    },
+    {
+      "slug": "adam-peaty-2022-foot",
+      "situation": "unclear"
+    },
+    {
+      "slug": "kerri-walsh-jennings-2015-shoulder",
+      "situation": "unclear"
+    },
+    {
+      "slug": "rafael-nadal-2022-abdominal",
+      "situation": "unclear"
+    },
+    {
+      "slug": "jordyn-poulter-2022-knee",
+      "situation": "unclear"
+    },
+    {
+      "slug": "paula-badosa-2023-spinal-stress-fracture",
+      "situation": "unclear"
+    },
+    {
+      "slug": "rafael-nadal-2022-rib-stress-fracture",
+      "situation": "unclear"
+    },
+    {
+      "slug": "jake-wightman-2023-foot",
+      "situation": "unclear"
+    },
+    {
+      "slug": "karsten-warholm-2022-hamstring",
+      "situation": "unclear"
+    },
+    {
+      "slug": "molly-seidel-2024-patella",
+      "situation": "unclear"
+    },
+    {
+      "slug": "jamahal-hill-2021-elbow",
+      "situation": "unclear"
+    },
+    {
+      "slug": "antonio-rodrigo-nogueira-2011-arm",
+      "situation": "unclear"
+    },
+    {
+      "slug": "ronaldo-jacare-souza-2021-humerus",
+      "situation": "unclear"
+    },
+    {
+      "slug": "tom-aspinall-2022-knee",
+      "situation": "unclear"
+    },
+    {
+      "slug": "jordan-burroughs-2013-ankle",
+      "situation": "unclear"
+    },
+    {
+      "slug": "jofra-archer-2020-elbow-stress-fracture",
+      "situation": "unclear"
+    },
+    {
+      "slug": "manny-pacquiao-2015-shoulder",
+      "situation": "unclear"
+    },
+    {
+      "slug": "sky-brown-2024-shoulder",
+      "situation": "unclear"
+    },
+    {
+      "slug": "tony-hawk-2022-femur",
+      "situation": "unclear"
+    },
+    {
+      "slug": "helen-maroulis-2018-concussion",
+      "situation": "unclear"
+    },
+    {
+      "slug": "tiger-woods-2008-tibial-stress-fractures",
+      "situation": "unclear"
+    },
+    {
+      "slug": "mirabai-chanu-2023-hip",
+      "situation": "unclear"
+    },
+    {
+      "slug": "annemiek-van-vleuten-2022-elbow",
+      "situation": "unclear"
+    },
+    {
+      "slug": "daniel-andre-tande-2021-clavicle",
+      "situation": "unclear"
+    },
+    {
+      "slug": "egan-bernal-2022-training-crash",
+      "situation": "unclear"
+    },
+    {
+      "slug": "connor-fields-2021-brain-hemorrhage",
+      "situation": "unclear"
+    },
+    {
+      "slug": "novak-djokovic-2017-elbow",
+      "situation": "unclear"
+    },
+    {
+      "slug": "kei-nishikori-2017-wrist",
+      "situation": "unclear"
+    },
+    {
+      "slug": "bianca-andreescu-2023-ankle",
+      "situation": "unclear"
+    },
+    {
+      "slug": "juan-martin-del-potro-2017-wrist-contusion",
+      "situation": "unclear"
+    },
+    {
+      "slug": "rafael-nadal-2016-wrist",
+      "situation": "unclear"
+    },
+    {
+      "slug": "nikola-karabatic-2020-acl",
+      "situation": "unclear"
+    },
+    {
+      "slug": "kelly-slater-2017-foot",
+      "situation": "unclear"
+    },
+    {
+      "slug": "sally-fitzgibbons-2015-eardrum",
+      "situation": "unclear"
+    },
+    {
+      "slug": "emma-raducanu-2022-2023-wrists",
+      "situation": "unclear"
     }
   ]
 }

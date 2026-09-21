@@ -40,9 +40,9 @@ describe("four named nerve cases", () => {
       "ryan-crouser-2024-ulnar-nerve",
       "rob-horne-2018-brachial-plexus",
     ]);
-    expect(allObservationClips).toHaveLength(151);
-    expect(eventUpdates.entries).toHaveLength(158);
-    expect(publicVideoIds.size).toBe(157);
+    expect(allObservationClips).toHaveLength(193);
+    expect(eventUpdates.entries).toHaveLength(200);
+    expect(publicVideoIds.size).toBe(199);
     expect(publicVideoIds.has("zack-kelly-leaves-with-injury")).toBe(false);
   });
   it("keeps nerve and plexus browsing distinct", () => {

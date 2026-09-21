@@ -9,6 +9,7 @@ import recent150Data from "../../data/videos/event-recent-150.v1.json";
 import judgeRibData from "../../data/videos/event-judge-rib.v1.json";
 import ribFractureData from "../../data/videos/event-rib-fracture-three.v1.json";
 import nerveFourData from "../../data/videos/event-nerve-four.v1.json";
+import catalog200Data from "../../data/videos/event-catalog-200.v1.json";
 import newData from "../../data/videos/event-additions.v1.json";
 import { curation } from "./expansion";
 import data from "../../data/videos/event-updates.v1.json";
@@ -252,6 +253,14 @@ const nerveFour = z
   })
   .parse(nerveFourData);
 
+const catalog200 = z
+  .strictObject({
+    schemaVersion: z.literal(1),
+    decision: z.literal("catalog-200-2026-09-21"),
+    checkedAt: z.iso.date(),
+    entries: z.array(eventUpdateEntryInputSchema).length(42),
+  })
+  .parse(catalog200Data);
 /** Preserve the date of the batch that actually checked each entry. */
 export function normalizeEventUpdateBatches(
   batches: readonly EventUpdateBatchInput[],
@@ -278,6 +287,7 @@ const normalizedEntries = normalizeEventUpdateBatches([
   judgeRib,
   ribFractureThree,
   nerveFour,
+  catalog200,
 ]).filter((e) => !curation.removedSlugs.some((slug) => slug === e.slug));
 export const eventUpdates = eventUpdatesSchema.parse({
   ...data,

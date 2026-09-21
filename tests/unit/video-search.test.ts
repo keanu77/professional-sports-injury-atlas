@@ -57,7 +57,7 @@ describe("video keyword search", () => {
         text: observationVideoSearchText(clip),
       })),
     ];
-    expect(index).toHaveLength(158);
+    expect(index).toHaveLength(200);
     const find = (query: string) =>
       index
         .filter((entry) =>

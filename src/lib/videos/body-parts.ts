@@ -15,6 +15,8 @@ export const BODY_PARTS = [
   { code: "calf-achilles", label: "小腿與阿基里斯腱" },
   { code: "knee", label: "膝蓋" },
   { code: "posterior-thigh", label: "大腿後側" },
+  { code: "arm", label: "上臂與前臂" },
+  { code: "hip-thigh", label: "髖部與大腿" },
 ] as const;
 export type BodyPartCode = (typeof BODY_PARTS)[number]["code"];
 const injuryParts: Record<string, BodyPartCode> = {
@@ -35,6 +37,9 @@ const observationParts: Record<string, BodyPartCode> = {
   "小腿／阿基里斯腱": "calf-achilles",
   膝部: "knee",
   大腿後側: "posterior-thigh",
+  上臂與前臂: "arm",
+  髖部與大腿: "hip-thigh",
+  小腿: "calf-achilles",
 };
 export function videosByBodyPart(
   records: readonly InjuryCase[],

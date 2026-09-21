@@ -6,7 +6,7 @@ test("video collection is directly browsable before using optional search", asyn
 }) => {
   await page.goto("/");
   const expectedCount =
-    process.env.ATLAS_PUBLIC_LAUNCH === "decision-21" ? 158 : 5;
+    process.env.ATLAS_PUBLIC_LAUNCH === "decision-21" ? 200 : 5;
   await expect(page.locator("[data-featured-card]:visible")).toHaveCount(
     expectedCount,
   );

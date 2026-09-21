@@ -7,6 +7,7 @@ import recent150Data from "../../src/data/videos/recent-150.v1.json";
 import judgeRibData from "../../src/data/videos/judge-rib.v1.json";
 import ribFractureThreeData from "../../src/data/videos/rib-fracture-three.v1.json";
 import nerveFourData from "../../src/data/videos/nerve-four.v1.json";
+import catalog200Data from "../../src/data/videos/catalog-200.v1.json";
 import { readFileSync } from "node:fs";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
@@ -70,7 +71,8 @@ describe("confirmed video expansion", () => {
         recent150Data.clips.length +
         judgeRibData.clips.length +
         ribFractureThreeData.clips.length +
-        nerveFourData.clips.length,
+        nerveFourData.clips.length +
+        catalog200Data.clips.length,
     );
     expect(
       captionsOptionalFor("https://www.youtube.com/watch?v=unlisted000"),

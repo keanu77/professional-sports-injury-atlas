@@ -118,8 +118,8 @@ describe("three rib fracture observation cases", () => {
   );
 
   it("adds exactly three cases and preserves Tua's different injuries", () => {
-    expect(allObservationClips).toHaveLength(151);
-    expect(eventUpdates.entries).toHaveLength(158);
+    expect(allObservationClips).toHaveLength(193);
+    expect(eventUpdates.entries).toHaveLength(200);
     expect(
       allObservationClips
         .filter((c) => c.name === "Tua Tagovailoa")
