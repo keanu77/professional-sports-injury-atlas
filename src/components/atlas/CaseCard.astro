@@ -62,12 +62,12 @@ const leagueLabel =
     >
   </CaseCover>
   <div class="case-card-body">
-    <p class="case-card-eyebrow eyebrow"><span>{injuryLabel}</span></p>
     <h3 class="case-card-title">
       <a href={`/cases/${record.slug}/`}>
-        {record.athlete.name}｜{injuryLabel}
+        {record.athlete.name}
       </a>
     </h3>
+    <p class="case-card-eyebrow"><span>{injuryLabel}</span></p>
     <p class="case-card-facts meta-row">
       {leagueLabel}｜{record.season} 球季｜{record.eventDate}｜
       {record.teamAtEvent.name} 對 {record.opponent.name}
@@ -111,7 +111,7 @@ const leagueLabel =
     margin-bottom: 0;
   }
   .case-card--compact .case-card-facts {
-    font-size: 0.8rem;
+    font-size: 0.875rem;
   }
   .case-card {
     position: relative;
@@ -134,6 +134,7 @@ const leagueLabel =
     display: flex;
     align-items: center;
     margin: 0 0 0.625rem;
+    font: 400 0.875rem/1.6 var(--font-body);
   }
 
   .case-card-eyebrow span {
@@ -148,7 +149,7 @@ const leagueLabel =
     display: -webkit-box;
     overflow: hidden;
     margin: 0 0 0.5rem;
-    font-size: var(--text-card-title);
+    font: 700 var(--text-card-title)/1.5 var(--font-body);
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
   }
@@ -182,6 +183,7 @@ const leagueLabel =
 
   .case-card-facts {
     margin: 0 0 0.625rem;
+    font-size: 0.875rem;
   }
 
   .case-card-confirmation {
@@ -190,6 +192,7 @@ const leagueLabel =
     padding: 2px 10px;
     border: 1px solid var(--hairline);
     border-radius: 2px;
+    font-size: 0.875rem;
   }
 
   .case-card-confirmation[data-confirmation-status="confirmed"] {

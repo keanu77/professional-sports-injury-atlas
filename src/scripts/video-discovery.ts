@@ -1,4 +1,8 @@
 import {
+  readDiscoveryState,
+  writeDiscoveryState,
+} from "../lib/videos/discovery-state";
+import {
   matchesVideoSearch,
   normalizeVideoSearch,
   videoSearchTerms,
@@ -79,6 +83,24 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
   const clearType = root.querySelector<HTMLButtonElement>(
     "[data-video-type-clear]",
   );
+  const sportFilter = root.querySelector<HTMLSelectElement>(
+    "[data-sport-filter]",
+  );
+  const bodyFilter =
+    root.querySelector<HTMLSelectElement>("[data-body-filter]");
+  const clearFacets = root.querySelector<HTMLButtonElement>(
+    "[data-facets-clear]",
+  );
+  const more = root.querySelector<HTMLButtonElement>("[data-discovery-more]");
+  const pagination = root.querySelector<HTMLElement>(
+    "[data-discovery-pagination]",
+  );
+  const pageStatus = root.querySelector<HTMLElement>(
+    "[data-discovery-page-status]",
+  );
+  const fixedType = root.dataset.fixedType ?? "";
+  const pageSize = 24;
+  let visibleLimit = pageSize;
   const searchAll = root.querySelector<HTMLButtonElement>(
     "[data-video-search-all]",
   );
@@ -120,25 +142,52 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
       .filter(Boolean),
   );
 
-  const updateLocation = (replace = false) => {
-    const url = new URL(window.location.href);
-    if (contentType) url.searchParams.set("type", contentType);
-    else url.searchParams.delete("type");
-    window.history[replace ? "replaceState" : "pushState"]({}, "", url);
+  const optionValues = (select: HTMLSelectElement | null) =>
+    new Set(
+      Array.from(select?.options ?? [])
+        .map((option) => option.value)
+        .filter(Boolean),
+    );
+  const urlOptions = {
+    types: knownContentTypes,
+    sports: optionValues(sportFilter),
+    bodies: optionValues(bodyFilter),
+    fixedType,
   };
-
+  const updateLocation = (replace = false) => {
+    const url = writeDiscoveryState(
+      new URL(window.location.href),
+      {
+        query: searchInput?.value ?? "",
+        type: contentType,
+        sport: sportFilter?.value ?? "",
+        body: bodyFilter?.value ?? "",
+        mode,
+      },
+      fixedType,
+    );
+    if (url.href !== window.location.href)
+      window.history[replace ? "replaceState" : "pushState"]({}, "", url);
+  };
   const restoreLocation = () => {
-    const url = new URL(window.location.href);
-    const requestedType = url.searchParams.get("type") ?? "";
-    contentType = knownContentTypes.has(requestedType) ? requestedType : "";
+    const state = readDiscoveryState(new URL(window.location.href), urlOptions);
+    contentType = state.type;
+    mode = state.mode;
+    if (searchInput) searchInput.value = state.query;
     if (typeFilter) typeFilter.value = contentType;
-    if (requestedType !== contentType) updateLocation(true);
+    if (sportFilter) sportFilter.value = state.sport;
+    if (bodyFilter) bodyFilter.value = state.body;
+    visibleLimit = pageSize;
+    updateLocation(true);
   };
 
   const render = () => {
     const query = (searchInput?.value ?? "").trim();
     const terms = videoSearchTerms(query);
     const searching = terms.length > 0;
+    const sport = sportFilter?.value ?? "";
+    const body = bodyFilter?.value ?? "";
+    const narrowed = searching || contentType || sport || body;
     const typeLabel = typeFilter?.selectedOptions[0]?.textContent ?? "全部類型";
     const label =
       mode === "all"
@@ -156,15 +205,18 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
       (card) =>
         matchesVideoSearch(searchText.get(card)!, terms) &&
         (!contentType ||
-          (card.dataset.contentTypes ?? "").split(" ").includes(contentType)),
+          (card.dataset.contentTypes ?? "").split(" ").includes(contentType)) &&
+        (!sport || card.dataset.sport === sport) &&
+        (!body || card.dataset.body === body),
     );
-    const visible = new Set(selected);
+    const displayed = selected.slice(0, visibleLimit);
+    const visible = new Set(displayed);
     for (const card of cards) {
       card.hidden = !visible.has(card);
       const count = card.querySelector<HTMLElement>("[data-popular-count]");
       if (count) count.hidden = true;
     }
-    for (const card of selected) grid.append(card);
+    for (const card of displayed) grid.append(card);
     if (mode === "popular") {
       for (const [index, item] of ranking.entries()) {
         const card = byId.get(item.videoId)!;
@@ -182,17 +234,21 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
       );
     if (scope) scope.textContent = `搜尋範圍：${label}`;
     if (clearSearch) clearSearch.hidden = !query;
-    if (clearType) clearType.hidden = !contentType;
+    if (clearType) clearType.hidden = !contentType || Boolean(fixedType);
+    if (clearFacets) clearFacets.hidden = !(sport || body);
     if (searchAll) searchAll.hidden = !(searching && mode !== "all");
     const unavailable = mode === "popular" && popularityState !== "ready";
     if (empty) {
-      empty.hidden =
-        !(searching || contentType) || selected.length > 0 || unavailable;
+      empty.hidden = !narrowed || selected.length > 0 || unavailable;
       if (!empty.hidden)
         empty.textContent = searching
-          ? `「${typeLabel}」中沒有符合「${query}」的影片；可清除搜尋或影片類型後瀏覽。`
-          : `目前沒有符合「${typeLabel}」的影片；可清除影片類型後瀏覽。`;
+          ? `目前篩選條件中沒有符合「${query}」的影片；可清除搜尋、運動或部位後瀏覽。`
+          : `目前沒有符合篩選條件的影片；可清除運動、部位或影片類型後瀏覽。`;
     }
+    if (pagination) pagination.hidden = unavailable || selected.length === 0;
+    if (more) more.hidden = displayed.length >= selected.length;
+    if (pageStatus)
+      pageStatus.textContent = `已顯示 ${displayed.length} / ${selected.length} 支符合條件的影片`;
     if (mode === "popular" && popularityState === "loading") {
       grid.setAttribute("aria-busy", "true");
       status.textContent = "正在讀取本站近 30 天的熱門排行…";
@@ -202,10 +258,12 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
     if (mode === "popular" && popularityState === "error") {
       status.textContent =
         "目前無法讀取本站熱門，請稍後再試。也可以先看精選或全部影片。";
-    } else if (searching || contentType) {
+    } else if (narrowed) {
       const filters = [
         contentType ? typeLabel : "",
         searching ? `「${query}」` : "",
+        sport ? sportFilter?.selectedOptions[0]?.textContent : "",
+        body ? bodyFilter?.selectedOptions[0]?.textContent : "",
       ]
         .filter(Boolean)
         .join("、");
@@ -228,6 +286,7 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
     pending?.abort();
     pending = undefined;
     mode = next;
+    visibleLimit = pageSize;
     if (mode !== "popular") {
       render();
       return;
@@ -267,12 +326,16 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
   for (const button of buttons)
     button.addEventListener("click", () => {
       const next = button.dataset.discoveryMode;
-      if (next === "all" || next === "curated" || next === "popular")
+      if (next === "all" || next === "curated" || next === "popular") {
         void selectMode(next);
+        updateLocation();
+      }
     });
   searchForm?.addEventListener("submit", (event) => {
     event.preventDefault();
     if (!composing) {
+      visibleLimit = pageSize;
+      updateLocation(true);
       render();
     }
   });
@@ -281,16 +344,22 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
   });
   searchInput?.addEventListener("compositionend", () => {
     composing = false;
+    visibleLimit = pageSize;
+    updateLocation(true);
     render();
   });
   searchInput?.addEventListener("input", (event) => {
     if (!composing && !(event as InputEvent).isComposing) {
+      visibleLimit = pageSize;
+      updateLocation(true);
       render();
     }
   });
   const resetSearch = () => {
     if (!searchInput) return;
     searchInput.value = "";
+    visibleLimit = pageSize;
+    updateLocation();
     render();
     searchInput.focus();
   };
@@ -308,29 +377,56 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
   });
   searchAll?.addEventListener("click", () => {
     void selectMode("all");
+    updateLocation();
     searchInput?.focus();
   });
   typeFilter?.addEventListener("change", () => {
     contentType = typeFilter.value;
+    visibleLimit = pageSize;
     render();
     updateLocation();
   });
   clearType?.addEventListener("click", () => {
-    contentType = "";
+    contentType = fixedType;
+    visibleLimit = pageSize;
     if (typeFilter) typeFilter.value = "";
     render();
     updateLocation();
     typeFilter?.focus();
   });
+  const updateFacets = () => {
+    visibleLimit = pageSize;
+    render();
+    updateLocation();
+  };
+  sportFilter?.addEventListener("change", updateFacets);
+  bodyFilter?.addEventListener("change", updateFacets);
+  clearFacets?.addEventListener("click", () => {
+    if (sportFilter) sportFilter.value = "";
+    if (bodyFilter) bodyFilter.value = "";
+    updateFacets();
+    sportFilter?.focus();
+  });
+  more?.addEventListener("click", () => {
+    const previous = new Set(cards.filter((card) => !card.hidden));
+    visibleLimit += pageSize;
+    render();
+    const firstNew = Array.from(
+      grid.querySelectorAll<HTMLElement>("[data-discovery-slug]"),
+    ).find((card) => !card.hidden && !previous.has(card));
+    firstNew
+      ?.querySelector<HTMLAnchorElement>("h3 a")
+      ?.focus({ preventScroll: true });
+  });
   window.addEventListener("popstate", () => {
     restoreLocation();
-    render();
+    void selectMode(mode);
   });
   controls.hidden = false;
   if (searchForm) searchForm.hidden = false;
   root.dataset.discoveryReady = "true";
   restoreLocation();
-  render();
+  void selectMode(mode);
 }
 
 if (typeof document !== "undefined") {

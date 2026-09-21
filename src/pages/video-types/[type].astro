@@ -1,8 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import CaseCard from "../../components/atlas/CaseCard.astro";
-import ObservationCard from "../../components/atlas/ObservationCard.astro";
+import VideoDiscovery from "../../components/atlas/VideoDiscovery.astro";
 import VideoTypeNav from "../../components/atlas/VideoTypeNav.astro";
 import { contentTypeGroups } from "../../lib/videos/content-types";
 import { observationClips } from "../../lib/videos/expansion";
@@ -36,35 +35,29 @@ const { group, groups } = Astro.props;
   <header class="type-heading">
     <h1>{group.label}</h1><p>{group.count} 支影片 · 以審閱過的影片內容分類。</p>
   </header>
-  <VideoTypeNav types={groups} current={group.id} />
-  <ol
-    class="type-grid"
-    aria-label={`${group.label}影片`}
-    data-video-type-videos={group.id}
-  >
-    {
-      group.cases.map((record, index) => (
-        <li data-featured-card>
-          <CaseCard
-            record={record}
-            showWorkflowBadge={false}
-            compact
-            priority={index === 0}
-          />
-        </li>
-      ))
-    }
-    {
-      group.clips.map((clip) => (
-        <li data-featured-card>
-          <ObservationCard clip={clip} />
-        </li>
-      ))
-    }
-  </ol>
+  <details class="other-types">
+    <summary>切換影片類型</summary><VideoTypeNav
+      types={groups}
+      current={group.id}
+    />
+  </details>
+  <VideoDiscovery
+    featured={group.cases}
+    clips={group.clips}
+    fixedType={group.id}
+    heading={`搜尋${group.label}影片`}
+  />
 </BaseLayout>
 
 <style>
+  .other-types {
+    margin-block: 1rem;
+  }
+  summary {
+    cursor: pointer;
+    min-height: 44px;
+    padding: 0.5rem;
+  }
   .type-heading {
     margin: 1.5rem 0 2rem;
   }

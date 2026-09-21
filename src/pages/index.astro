@@ -1,32 +1,23 @@
 ---
+import VideoDiscovery from "../components/atlas/VideoDiscovery.astro";
 import FollowLinks from "../components/layout/FollowLinks.astro";
 import SituationNav from "../components/atlas/SituationNav.astro";
 import VideoTypeNav from "../components/atlas/VideoTypeNav.astro";
-import { discoveryFor, videosBySituation } from "../lib/videos/discovery";
-import { parseYouTubeVideoId } from "../lib/video/youtube";
+import { videosBySituation } from "../lib/videos/discovery";
 import SportNav from "../components/atlas/SportNav.astro";
 import { videosBySport } from "../lib/videos/sports";
 import BodyPartNav from "../components/atlas/BodyPartNav.astro";
 import { videosByBodyPart } from "../lib/videos/body-parts";
 import { nerveInjuryGroup } from "../lib/videos/nerve-categories";
-import {
-  contentTypeGroups,
-  contentTypesFor,
-} from "../lib/videos/content-types";
+import { contentTypeGroups } from "../lib/videos/content-types";
 import { isLaunchEnabled } from "../lib/patient/public-launch";
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { observationClips } from "../lib/videos/expansion";
-import ObservationCard from "../components/atlas/ObservationCard.astro";
-import CaseCard from "../components/atlas/CaseCard.astro";
 import { permittedCasesForMode } from "../lib/cases/pagination";
 import { resolveBuildMode } from "../lib/governance/build-mode";
 import { computeRenderedSetDigest } from "../lib/routes/static-paths";
 import { hasPublicEmbed, videoFirstCases } from "../lib/patient/featured";
-import {
-  caseVideoSearchText,
-  observationVideoSearchText,
-} from "../lib/videos/search-index";
 const buildMode = resolveBuildMode(process.env.ATLAS_BUILD_MODE);
 const records = (await getCollection("cases")).map((entry) => entry.data);
 const permitted = permittedCasesForMode(buildMode, records);
@@ -56,10 +47,7 @@ const videoCount = featured.length + clips.length;
       <FollowLinks placement="home" />
     </div>
     <h1>運動傷害影片圖鑑</h1>
-    <p>
-      收錄賽事畫面、傷後反應、訪談、新聞報導、專業解說與復健／回場紀錄等真實影片。
-      依部位、運動項目、受傷情境或影片類型選片，了解可見事件與選手實際回場紀錄。
-    </p>
+    <p>從真實賽事、訪談與解說，認識運動傷害與選手回場歷程。</p>
     <dl class="atlas-stats" aria-label="目前收錄內容">
       <div>
         <dt>受傷部位</dt>
@@ -86,217 +74,82 @@ const videoCount = featured.length + clips.length;
     </dl>
     <a class="home-video-cta" href="#videos-heading">直接看全部影片</a>
   </header>
-  {
-    isLaunchEnabled() && (
-      <section class="home-categories" data-home-categories>
-        <div
-          class="home-category-controls"
-          data-home-category-controls
-          hidden
-          aria-label="選擇影片分類"
-        >
-          <button
-            type="button"
-            data-home-category-select="body-parts"
-            aria-expanded="true"
-            aria-controls="home-category-body-parts"
+  <VideoDiscovery featured={featured} clips={clips}>
+    {
+      isLaunchEnabled() && (
+        <section class="home-categories" data-home-categories>
+          <div
+            class="home-category-controls"
+            data-home-category-controls
+            hidden
+            aria-label="選擇影片分類"
           >
-            依受傷部位
-          </button>
-          <button
-            type="button"
-            data-home-category-select="sports"
-            aria-expanded="false"
-            aria-controls="home-category-sports"
-          >
-            依運動項目
-          </button>
-          <button
-            type="button"
-            data-home-category-select="situations"
-            aria-expanded="false"
-            aria-controls="home-category-situations"
-          >
-            依受傷情境
-          </button>
-          <button
-            type="button"
-            data-home-category-select="video-types"
-            aria-expanded="false"
-            aria-controls="home-category-video-types"
-          >
-            依影片類型
-          </button>
-        </div>
-        <div
-          id="home-category-body-parts"
-          data-home-category-panel="body-parts"
-        >
-          <div id="body-parts">
-            <BodyPartNav parts={bodyParts} nerveCount={nerveGroup.count} />
+            <button
+              type="button"
+              data-home-category-select="body-parts"
+              aria-expanded="true"
+              aria-controls="home-category-body-parts"
+            >
+              依受傷部位
+            </button>
+            <button
+              type="button"
+              data-home-category-select="sports"
+              aria-expanded="false"
+              aria-controls="home-category-sports"
+            >
+              依運動項目
+            </button>
+            <button
+              type="button"
+              data-home-category-select="situations"
+              aria-expanded="false"
+              aria-controls="home-category-situations"
+            >
+              依受傷情境
+            </button>
+            <button
+              type="button"
+              data-home-category-select="video-types"
+              aria-expanded="false"
+              aria-controls="home-category-video-types"
+            >
+              依影片類型
+            </button>
           </div>
-        </div>
-        <div
-          id="home-category-video-types"
-          data-home-category-panel="video-types"
-        >
-          <div id="video-types">
-            <VideoTypeNav types={videoTypes} />
-          </div>
-        </div>
-        <div id="home-category-sports" data-home-category-panel="sports">
-          <div id="sports">
-            <SportNav sports={sports} />
-          </div>
-        </div>
-        <div
-          id="home-category-situations"
-          data-home-category-panel="situations"
-        >
-          <div id="situations">
-            <SituationNav situations={situations} />
-          </div>
-        </div>
-      </section>
-    )
-  }
-  <section
-    id="videos-heading"
-    aria-labelledby="video-list-heading"
-    data-featured-videos
-    data-video-discovery
-  >
-    <h2 id="video-list-heading">所有運動傷害影片</h2>
-    <form
-      class="video-search"
-      data-video-search
-      role="search"
-      aria-label="搜尋運動傷害影片"
-      hidden
-    >
-      <label for="video-search-input">搜尋球員或關鍵字</label>
-      <div class="video-search-field">
-        <input
-          id="video-search-input"
-          data-video-search-input
-          type="search"
-          placeholder="例如：大谷、Kobe、前十字韌帶"
-          maxlength="120"
-          autocomplete="off"
-          spellcheck="false"
-          aria-describedby="video-search-help video-search-scope"
-          aria-controls="discovery-videos"
-        />
-        <button type="button" data-video-search-clear hidden>清除搜尋</button>
-      </div>
-      <p id="video-search-help">
-        可搜尋姓名、傷勢、運動或賽事；多個關鍵字以空格分開。
-      </p>
-      <div class="video-type-filter">
-        <label for="video-type-filter">影片類型</label>
-        <select
-          id="video-type-filter"
-          data-video-type-filter
-          aria-controls="discovery-videos"
-        >
-          <option value="">全部類型</option>
-          {
-            videoTypes.map((type) => (
-              <option value={type.id}>{type.label}</option>
-            ))
-          }
-        </select>
-        <button type="button" data-video-type-clear hidden>清除類型</button>
-      </div>
-      <div class="video-search-scope">
-        <p id="video-search-scope" data-video-search-scope>
-          搜尋範圍：全部影片
-        </p>
-        <button type="button" data-video-search-all hidden>改查全部影片</button>
-      </div>
-    </form>
-    <div
-      class="discovery-controls"
-      data-discovery-controls
-      hidden
-      role="group"
-      aria-label="影片選單"
-    >
-      <button
-        type="button"
-        data-discovery-mode="all"
-        aria-pressed="true"
-        aria-controls="discovery-videos">全部影片</button
-      >
-      <button
-        type="button"
-        data-discovery-mode="curated"
-        aria-pressed="false"
-        aria-controls="discovery-videos">精選影片</button
-      >
-      <button
-        type="button"
-        data-discovery-mode="popular"
-        aria-pressed="false"
-        aria-controls="discovery-videos">本站熱門</button
-      >
-    </div>
-    <p
-      class="discovery-status"
-      data-discovery-status
-      role="status"
-      aria-live="polite"
-      aria-atomic="true"
-    >
-    </p>
-    <p class="video-search-empty" data-video-search-empty hidden>
-      試試球員姓氏、英文姓名或其他受傷部位，也可以清除搜尋後瀏覽。
-    </p>
-    <ol class="video-grid" id="discovery-videos" data-discovery-grid>
-      {
-        featured.map((record, index) => (
-          <li
-            data-featured-card
-            data-discovery-slug={record.slug}
-            data-search-text={caseVideoSearchText(record)}
-            data-video-id={parseYouTubeVideoId(record.video.canonicalUrl)}
-            data-content-types={contentTypesFor(
-              record.slug,
-              record.video.canonicalUrl,
-            )
-              .map((type) => type.id)
-              .join(" ")}
-            data-curated-rank={discoveryFor(record.slug).curatedRank}
+          <div
+            id="home-category-body-parts"
+            data-home-category-panel="body-parts"
           >
-            <span class="popular-count" data-popular-count hidden />
-            <CaseCard
-              record={record}
-              showWorkflowBadge={false}
-              compact
-              priority={index === 0}
-            />
-          </li>
-        ))
-      }
-      {
-        clips.map((clip) => (
-          <li
-            data-featured-card
-            data-discovery-slug={clip.slug}
-            data-search-text={observationVideoSearchText(clip)}
-            data-video-id={clip.provider === "mlb" ? undefined : clip.videoId}
-            data-content-types={contentTypesFor(clip.slug, clip.videoUrl)
-              .map((type) => type.id)
-              .join(" ")}
-            data-curated-rank={discoveryFor(clip.slug).curatedRank}
+            <div id="body-parts">
+              <BodyPartNav parts={bodyParts} nerveCount={nerveGroup.count} />
+            </div>
+          </div>
+          <div
+            id="home-category-video-types"
+            data-home-category-panel="video-types"
           >
-            <span class="popular-count" data-popular-count hidden />
-            <ObservationCard clip={clip} />
-          </li>
-        ))
-      }
-    </ol>
-  </section>
+            <div id="video-types">
+              <VideoTypeNav types={videoTypes} />
+            </div>
+          </div>
+          <div id="home-category-sports" data-home-category-panel="sports">
+            <div id="sports">
+              <SportNav sports={sports} />
+            </div>
+          </div>
+          <div
+            id="home-category-situations"
+            data-home-category-panel="situations"
+          >
+            <div id="situations">
+              <SituationNav situations={situations} />
+            </div>
+          </div>
+        </section>
+      )
+    }
+  </VideoDiscovery>
   <p class="home-note">
     影片可能呈現賽事、反應、訪談或回場紀錄；診斷依具名來源。球員的回場紀錄不等於你的恢復時間。
   </p>
@@ -309,91 +162,6 @@ const videoCount = featured.length + clips.length;
   [hidden] {
     display: none !important;
   }
-  .discovery-controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-  .video-search {
-    margin-block-end: 1.5rem;
-    max-width: 44rem;
-  }
-  .video-search label {
-    display: block;
-    margin-block-end: 0.5rem;
-    font-weight: 600;
-  }
-  .video-search-field {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  .video-search input {
-    flex: 1 1 15rem;
-    min-width: 0;
-    width: 100%;
-    min-height: 48px;
-    padding: 0.7rem 0.85rem;
-    border: 1px solid var(--color-ink-muted);
-    border-radius: 0.65rem;
-    background: var(--color-surface-raised);
-    color: var(--color-ink);
-    font: inherit;
-  }
-  .video-search input::placeholder {
-    color: var(--color-ink-muted);
-    opacity: 1;
-  }
-  .video-search button {
-    min-height: 44px;
-    padding: 0.5rem 0.8rem;
-    border: 1px solid var(--color-brand-100);
-    border-radius: 0.65rem;
-    background: var(--color-surface-raised);
-    color: var(--color-brand-primary);
-    font: inherit;
-    cursor: pointer;
-  }
-  .video-type-filter {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .video-type-filter select {
-    min-height: 44px;
-    max-width: 100%;
-    padding: 0.5rem 0.8rem;
-    border: 1px solid var(--color-brand-100);
-    border-radius: 0.65rem;
-    background: var(--color-surface-raised);
-    color: var(--color-ink);
-    font: inherit;
-  }
-  .video-search :is(input, button):focus-visible {
-    outline: 3px solid var(--color-brand-primary);
-    outline-offset: 3px;
-  }
-  .video-search p {
-    margin-block: 0.5rem 0;
-    color: var(--color-ink-muted);
-    font-size: 0.875rem;
-  }
-  .video-search-scope {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .video-search-empty {
-    padding: 1rem;
-    border: 1px solid var(--hairline);
-    border-radius: 0.65rem;
-    color: var(--color-ink-muted);
-  }
-  .discovery-status {
-    overflow-wrap: anywhere;
-  }
   .home-video-cta {
     display: inline-flex;
     align-items: center;
@@ -405,6 +173,13 @@ const videoCount = featured.length + clips.length;
     color: var(--color-on-brand);
     font-weight: 600;
     text-decoration: none;
+  }
+  .home-categories {
+    margin-block: 1.25rem;
+  }
+  .home-category-controls:not([hidden]) {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
   .home-category-controls {
     gap: 0.5rem;
@@ -425,63 +200,9 @@ const videoCount = featured.length + clips.length;
     background: var(--color-brand-primary);
     color: var(--color-on-brand);
   }
-  .discovery-controls button {
-    min-height: 44px;
-    padding: 0.65rem 1.1rem;
-    border: 1px solid var(--color-brand-100);
-    border-radius: 999px;
-    background: var(--color-surface-raised);
-    color: var(--color-brand-primary);
-    font: inherit;
-    font-weight: 600;
-    cursor: pointer;
-  }
-  .discovery-controls button[aria-pressed="true"] {
-    background: var(--color-brand-primary);
-    color: var(--color-on-brand);
-    border-color: var(--color-brand-primary);
-  }
-  .discovery-controls button:focus-visible {
-    outline: 3px solid var(--color-brand-primary);
-    outline-offset: 3px;
-  }
-  .discovery-status {
-    color: var(--color-ink-muted);
-    font-size: 0.875rem;
-    margin-block: 0.75rem 1.25rem;
-  }
-  .discovery-status:empty {
-    display: none;
-  }
-  .video-grid > li {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-  }
-  [data-featured-videos] {
-    scroll-margin-top: 6rem;
-  }
-  [data-featured-videos] > h2 {
-    font: 700 clamp(1.7rem, 3vw, 2.2rem) var(--font-display);
-    margin-block: 0 1rem;
-  }
-  .video-grid > li > :global(.case-card),
-  .video-grid > li > :global(.observation-card) {
-    flex: 1;
-    height: auto;
-  }
-  .popular-count {
-    padding: 0.5rem 0.75rem;
-    background: var(--color-brand-50);
-    border-radius: 0.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--color-brand-900);
-    font-size: 0.875rem;
-    font-weight: 600;
-  }
   .video-intro {
-    margin: -1.5rem calc(50% - 50vw) 4rem;
-    padding: 4rem max(1.5rem, calc((100vw - 77rem) / 2));
+    margin: -1.5rem calc(50% - 50vw) 1.5rem;
+    padding: 1.5rem max(1.5rem, calc((100vw - 77rem) / 2));
     background: linear-gradient(
       135deg,
       var(--color-brand-50),
@@ -526,20 +247,12 @@ const videoCount = featured.length + clips.length;
     margin: 0;
     max-width: 42rem;
   }
-  .video-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.5rem;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
   .atlas-stats {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
     max-width: 32rem;
-    margin: 2rem 0 0;
+    margin: 1rem 0 0;
   }
   .atlas-stats > div {
     border-block-start: 2px solid var(--color-brand-primary);
@@ -571,22 +284,14 @@ const videoCount = featured.length + clips.length;
     font-size: 0.875rem;
     margin-block: 1.5rem;
   }
-  @media (max-width: 60rem) {
-    .video-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
   @media (max-width: 40rem) {
     .home-category-controls:not([hidden]) {
-      display: flex;
-      overflow-x: auto;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       padding-block: 0.25rem;
     }
     .home-category-controls button {
       flex: 0 0 auto;
-    }
-    .video-grid {
-      grid-template-columns: 1fr;
     }
     .video-intro {
       padding: 1.75rem 1rem;

@@ -4,7 +4,7 @@ import { expectNoAxeViolations } from "./helpers/a11y";
 const PUBLIC_LAUNCH = process.env.ATLAS_PUBLIC_LAUNCH === "decision-21";
 
 test.describe("Decision 39 compact mobile discovery", () => {
-  test("shows one category at a time on mobile and all categories on desktop", async ({
+  test("keeps compact category controls and opens one panel at a time on all screens", async ({
     page,
   }) => {
     test.skip(
@@ -22,10 +22,10 @@ test.describe("Decision 39 compact mobile discovery", () => {
     const bodyPartButton = page.getByRole("button", { name: "依受傷部位" });
     const sportButton = page.getByRole("button", { name: "依運動項目" });
     const situationButton = page.getByRole("button", { name: "依受傷情境" });
-    await expect(bodyPartButton).toHaveAttribute("aria-expanded", "true");
+    await expect(bodyPartButton).toHaveAttribute("aria-expanded", "false");
     await expect(sportButton).toHaveAttribute("aria-expanded", "false");
     await expect(situationButton).toHaveAttribute("aria-expanded", "false");
-    await expect(page.locator("#home-category-body-parts")).toBeVisible();
+    await expect(page.locator("#home-category-body-parts")).toBeHidden();
     await expect(page.locator("#home-category-sports")).toBeHidden();
     await expect(page.locator("#home-category-situations")).toBeHidden();
 
@@ -38,10 +38,10 @@ test.describe("Decision 39 compact mobile discovery", () => {
     await expectNoAxeViolations(page);
 
     await page.setViewportSize({ width: 1440, height: 900 });
-    await expect(categoryControls).toBeHidden();
-    await expect(page.locator("#home-category-body-parts")).toBeVisible();
+    await expect(categoryControls).toBeVisible();
+    await expect(page.locator("#home-category-body-parts")).toBeHidden();
     await expect(page.locator("#home-category-sports")).toBeVisible();
-    await expect(page.locator("#home-category-situations")).toBeVisible();
+    await expect(page.locator("#home-category-situations")).toBeHidden();
   });
 
   test("keeps the 320px 150% header compact while all controls remain reachable", async ({

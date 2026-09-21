@@ -37,12 +37,13 @@ const isMlb = clip.provider === "mlb";
     }
   </a>
   <div class="observation-copy">
-    <p>{clip.event}</p><h3>
+    <h3>
       <a
         href={`/videos/${clip.slug}/`}
         aria-label={`${clip.name}｜${clip.event}`}>{clip.name}</a
       >
     </h3>
+    <p class="observation-event">{clip.event}</p>
     <ul class="observation-metadata" data-observation-metadata>
       <li data-observation-sport>{metadata.sport}</li>
       <li data-observation-body-part>{metadata.bodyPart}</li>
@@ -50,8 +51,14 @@ const isMlb = clip.provider === "mlb";
     </ul>
     <VideoTypeTags slug={clip.slug} videoUrl={clip.videoUrl} />
     <span data-observation-footage-kind={clip.footageKind ?? "unknown"}>
-      {observationFootageLabel(clip)} →
+      {observationFootageLabel(clip)}
     </span>
+    <a
+      class="observation-card-link"
+      href={`/videos/${clip.slug}/`}
+      aria-label={`查看 ${clip.name} 的影片與解析`}
+      >查看影片與解析 <span aria-hidden="true">→</span></a
+    >
   </div>
 </article>
 <style>
@@ -106,8 +113,8 @@ const isMlb = clip.provider === "mlb";
     padding: 1.2rem;
   }
   .observation-copy h3 {
-    font: 700 1.2rem/1.5 var(--font-display);
-    margin: 0.4rem 0 0.75rem;
+    font: 700 var(--text-card-title)/1.5 var(--font-body);
+    margin: 0 0 0.5rem;
   }
   .observation-copy h3 a {
     color: var(--color-ink);
@@ -127,7 +134,7 @@ const isMlb = clip.provider === "mlb";
     padding: 0;
     margin: 0 0 0.75rem;
     color: var(--color-ink-muted);
-    font-size: 0.8rem;
+    font-size: 0.875rem;
     list-style: none;
   }
   .observation-metadata li + li::before {
@@ -138,6 +145,29 @@ const isMlb = clip.provider === "mlb";
   .observation-copy > span {
     margin: 0;
     color: var(--color-ink-muted);
-    font-size: 0.8rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+  .observation-copy .observation-event {
+    margin-bottom: 0.625rem;
+  }
+  .observation-copy > span {
+    display: block;
+    margin-top: 0.75rem;
+  }
+  .observation-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    margin-top: 0.25rem;
+    color: var(--color-brand-primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-underline-offset: 0.2em;
+  }
+  .observation-card-link:focus-visible {
+    outline: 3px solid var(--color-brand-primary);
+    outline-offset: 3px;
   }
 </style>

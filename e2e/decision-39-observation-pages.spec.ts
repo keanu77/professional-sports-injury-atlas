@@ -256,13 +256,13 @@ test("review output stays noindex and does not publish a sitemap", async ({
   expect((await request.get("/sitemap.xml")).status()).toBe(404);
 });
 
-test("curated collection shows ten ordered videos and restores all 200", async ({
+test("curated collection shows ten ordered videos and restores the 24-card first batch", async ({
   page,
 }) => {
   test.skip(!PUBLIC_LAUNCH, "Curated collection belongs to the public launch");
   await page.goto("/");
   const cards = page.locator("[data-discovery-slug]:visible");
-  await expect(cards).toHaveCount(200);
+  await expect(cards).toHaveCount(24);
   await page.getByRole("button", { name: "精選影片", exact: true }).click();
   await expect(cards).toHaveCount(10);
   await expect(page.locator("[data-discovery-status]")).toContainText(
@@ -296,7 +296,7 @@ test("curated collection shows ten ordered videos and restores all 200", async (
     );
   await expectNoAxeViolations(page);
   await page.getByRole("button", { name: "全部影片", exact: true }).click();
-  await expect(cards).toHaveCount(200);
+  await expect(cards).toHaveCount(24);
   await page.getByRole("button", { name: "精選影片", exact: true }).click();
   await expect(cards).toHaveCount(10);
 });

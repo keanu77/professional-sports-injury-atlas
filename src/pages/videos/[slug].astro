@@ -162,7 +162,7 @@ if (provider === "youtube" && clip.startSeconds > 0)
         <p>{clip.observation}</p>
         <dl class="text-highlight-meta">
           <div>
-            <dt>關鍵片段</dt>
+            <dt>預設播放起點</dt>
             <dd>{formatDurationLabel(clip.startSeconds)} 附近開始</dd>
           </div>
           <div>
@@ -198,7 +198,7 @@ if (provider === "youtube" && clip.startSeconds > 0)
                       rel="noopener noreferrer"
                     >
                       {formatDurationLabel(segment.startSeconds)}：
-                      {labels.join("、")}
+                      {labels.join("、")}— 在 YouTube 開啟（新分頁）
                     </a>
                   </li>
                 );

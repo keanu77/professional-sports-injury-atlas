@@ -23,6 +23,9 @@ const { types, current } = Astro.props;
       ))
     }
   </ul>
+  <p class="video-type-count-note">
+    同一支影片可有多個類型標籤，各類數量會重複計算。
+  </p>
 </nav>
 
 <style>
@@ -41,6 +44,13 @@ const { types, current } = Astro.props;
     margin: 0;
     padding: 0;
     list-style: none;
+  }
+  .video-type-count-note {
+    margin: 0.75rem 0 0;
+    color: var(--color-ink-muted);
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.6;
   }
   a {
     display: flex;
@@ -66,7 +76,7 @@ const { types, current } = Astro.props;
   }
   span {
     color: var(--color-ink-muted);
-    font-size: 0.8rem;
+    font-size: 0.875rem;
     font-weight: 400;
   }
   @media (max-width: 26rem) {

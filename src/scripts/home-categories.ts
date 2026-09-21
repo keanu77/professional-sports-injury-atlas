@@ -39,24 +39,23 @@ export function initializeHomeCategories(root: HTMLElement): void {
     return;
 
   const media = window.matchMedia(MOBILE_CATEGORY_QUERY);
-  let active = "body-parts";
+  let active = "";
   const render = (): void => {
-    controls.hidden = !media.matches;
+    controls.hidden = false;
     for (const button of buttons) {
       const selected = button.dataset.homeCategorySelect === active;
-      button.setAttribute(
-        "aria-expanded",
-        String(media.matches ? selected : true),
-      );
+      button.setAttribute("aria-expanded", String(selected));
     }
     for (const panel of panels) {
-      panel.hidden =
-        media.matches && panel.dataset.homeCategoryPanel !== active;
+      panel.hidden = panel.dataset.homeCategoryPanel !== active;
     }
   };
   for (const button of buttons) {
     button.addEventListener("click", () => {
-      active = button.dataset.homeCategorySelect ?? active;
+      active =
+        active === button.dataset.homeCategorySelect
+          ? ""
+          : (button.dataset.homeCategorySelect ?? "");
       render();
     });
   }
