@@ -1,6 +1,7 @@
 import { videosByBodyPart } from "../../src/lib/videos/body-parts";
 import { videosBySport } from "../../src/lib/videos/sports";
 import { videosBySituation } from "../../src/lib/videos/discovery";
+import { contentTypeGroups } from "../../src/lib/videos/content-types";
 import { publicVideoIds } from "../../src/lib/videos/public-video-ids";
 import {
   allObservationClips,
@@ -113,6 +114,73 @@ const sports = videosBySport(selected, allObservationClips).map((sport) => ({
     ...sport.clips.map((c) => `/videos/${c.slug}/`),
   ],
 }));
+const contentTypes = contentTypeGroups(selected, allObservationClips).map(
+  (type) => ({
+    code: type.id,
+    label: type.label,
+    count: type.count,
+    paths: [
+      ...type.cases.map((record) => `/cases/${record.slug}/`),
+      ...type.clips.map((clip) => `/videos/${clip.slug}/`),
+    ],
+  }),
+);
+assert.deepEqual(
+  readdirSync("dist/video-types").sort(),
+  contentTypes.map((type) => type.code).sort(),
+  "Video content-type route set mismatch",
+);
+for (const type of contentTypes) {
+  const html = readFileSync(`dist/video-types/${type.code}/index.html`, "utf8");
+  const nodes: any[] = [parse(html)];
+  let grid: any;
+  while (nodes.length) {
+    const node = nodes.pop();
+    if (
+      node.attrs?.some(
+        (attr: { name: string; value: string }) =>
+          attr.name === "data-video-type-videos" && attr.value === type.code,
+      )
+    )
+      grid = node;
+    nodes.push(...(node.childNodes ?? []));
+  }
+  assert.ok(grid, `Missing content-type grid: ${type.code}`);
+  const cards = grid.childNodes.filter((node: any) => node.tagName === "li");
+  assert.equal(
+    cards.length,
+    type.count,
+    `Content-type count mismatch: ${type.code}`,
+  );
+  const paths = cards.map((card: any) => {
+    const descendants = [card];
+    const targets = new Set<string>();
+    while (descendants.length) {
+      const node = descendants.pop();
+      const href = node.attrs?.find(
+        (attr: { name: string }) => attr.name === "href",
+      )?.value;
+      if (
+        node.tagName === "a" &&
+        /^\/(cases|videos)\/[^/]+\/$/.test(href ?? "")
+      )
+        targets.add(href);
+      descendants.push(...(node.childNodes ?? []));
+    }
+    assert.equal(targets.size, 1, `Ambiguous video card: ${type.code}`);
+    return [...targets][0];
+  });
+  assert.equal(
+    new Set(paths).size,
+    paths.length,
+    `Duplicate content-type cards: ${type.code}`,
+  );
+  assert.deepEqual(
+    paths.sort(),
+    [...type.paths].sort(),
+    `Wrong content-type membership: ${type.code}`,
+  );
+}
 assert.deepEqual(
   readdirSync("dist/sports").sort(),
   sports.map((sport) => sport.code).sort(),
@@ -299,6 +367,7 @@ const receipt = {
   bodyParts,
   sports,
   situations,
+  contentTypes,
   htmlPages: htmlFiles.length,
   internalLinks: links,
   files: list("dist")

@@ -3,6 +3,7 @@ const CATEGORY_BY_HASH = new Map([
   ["#body-parts", "body-parts"],
   ["#sports", "sports"],
   ["#situations", "situations"],
+  ["#video-types", "video-types"],
 ]);
 
 export function initializeHomeCategories(root: HTMLElement): void {
@@ -16,7 +17,26 @@ export function initializeHomeCategories(root: HTMLElement): void {
   const panels = Array.from(
     root.querySelectorAll<HTMLElement>("[data-home-category-panel]"),
   );
-  if (!controls || buttons.length !== 3 || panels.length !== 3) return;
+  const buttonIds = buttons.map((button) => button.dataset.homeCategorySelect);
+  const panelIds = panels.map((panel) => panel.dataset.homeCategoryPanel);
+  if (
+    !controls ||
+    buttonIds.some((id) => !id) ||
+    new Set(buttonIds).size !== buttons.length ||
+    new Set(panelIds).size !== panels.length ||
+    buttonIds.length !== panelIds.length ||
+    buttonIds.some((id) => !panelIds.includes(id)) ||
+    buttons.some(
+      (button) =>
+        button.getAttribute("aria-controls") !==
+        panels.find(
+          (panel) =>
+            panel.dataset.homeCategoryPanel ===
+            button.dataset.homeCategorySelect,
+        )?.id,
+    )
+  )
+    return;
 
   const media = window.matchMedia(MOBILE_CATEGORY_QUERY);
   let active = "body-parts";

@@ -73,6 +73,12 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
   const clearSearch = root.querySelector<HTMLButtonElement>(
     "[data-video-search-clear]",
   );
+  const typeFilter = root.querySelector<HTMLSelectElement>(
+    "[data-video-type-filter]",
+  );
+  const clearType = root.querySelector<HTMLButtonElement>(
+    "[data-video-type-clear]",
+  );
   const searchAll = root.querySelector<HTMLButtonElement>(
     "[data-video-search-all]",
   );
@@ -102,16 +108,38 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
     );
   type Mode = "all" | "curated" | "popular";
   let mode: Mode = "all";
+  let contentType = "";
   let popularityState: "idle" | "loading" | "ready" | "error" = "idle";
   let ranking: PopularVideo[] = [];
   let pending: AbortController | undefined;
   let version = 0;
   let composing = false;
+  const knownContentTypes = new Set(
+    Array.from(typeFilter?.options ?? [])
+      .map((option) => option.value)
+      .filter(Boolean),
+  );
+
+  const updateLocation = (replace = false) => {
+    const url = new URL(window.location.href);
+    if (contentType) url.searchParams.set("type", contentType);
+    else url.searchParams.delete("type");
+    window.history[replace ? "replaceState" : "pushState"]({}, "", url);
+  };
+
+  const restoreLocation = () => {
+    const url = new URL(window.location.href);
+    const requestedType = url.searchParams.get("type") ?? "";
+    contentType = knownContentTypes.has(requestedType) ? requestedType : "";
+    if (typeFilter) typeFilter.value = contentType;
+    if (requestedType !== contentType) updateLocation(true);
+  };
 
   const render = () => {
     const query = (searchInput?.value ?? "").trim();
     const terms = videoSearchTerms(query);
     const searching = terms.length > 0;
+    const typeLabel = typeFilter?.selectedOptions[0]?.textContent ?? "全部類型";
     const label =
       mode === "all"
         ? "全部影片"
@@ -124,8 +152,11 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
         : mode === "curated"
           ? curated
           : ranking.map((item) => byId.get(item.videoId)!);
-    const selected = ordered.filter((card) =>
-      matchesVideoSearch(searchText.get(card)!, terms),
+    const selected = ordered.filter(
+      (card) =>
+        matchesVideoSearch(searchText.get(card)!, terms) &&
+        (!contentType ||
+          (card.dataset.contentTypes ?? "").split(" ").includes(contentType)),
     );
     const visible = new Set(selected);
     for (const card of cards) {
@@ -151,9 +182,17 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
       );
     if (scope) scope.textContent = `搜尋範圍：${label}`;
     if (clearSearch) clearSearch.hidden = !query;
+    if (clearType) clearType.hidden = !contentType;
     if (searchAll) searchAll.hidden = !(searching && mode !== "all");
     const unavailable = mode === "popular" && popularityState !== "ready";
-    if (empty) empty.hidden = !searching || selected.length > 0 || unavailable;
+    if (empty) {
+      empty.hidden =
+        !(searching || contentType) || selected.length > 0 || unavailable;
+      if (!empty.hidden)
+        empty.textContent = searching
+          ? `「${typeLabel}」中沒有符合「${query}」的影片；可清除搜尋或影片類型後瀏覽。`
+          : `目前沒有符合「${typeLabel}」的影片；可清除影片類型後瀏覽。`;
+    }
     if (mode === "popular" && popularityState === "loading") {
       grid.setAttribute("aria-busy", "true");
       status.textContent = "正在讀取本站近 30 天的熱門排行…";
@@ -163,8 +202,14 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
     if (mode === "popular" && popularityState === "error") {
       status.textContent =
         "目前無法讀取本站熱門，請稍後再試。也可以先看精選或全部影片。";
-    } else if (searching) {
-      status.textContent = `${label}中找到 ${selected.length} 支符合「${query}」的影片。`;
+    } else if (searching || contentType) {
+      const filters = [
+        contentType ? typeLabel : "",
+        searching ? `「${query}」` : "",
+      ]
+        .filter(Boolean)
+        .join("、");
+      status.textContent = `${label}中找到 ${selected.length} 支符合${filters}的影片。`;
     } else if (mode === "all") {
       status.textContent = `全部 ${cards.length} 支影片。`;
     } else if (mode === "curated") {
@@ -227,7 +272,9 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
     });
   searchForm?.addEventListener("submit", (event) => {
     event.preventDefault();
-    if (!composing) render();
+    if (!composing) {
+      render();
+    }
   });
   searchInput?.addEventListener("compositionstart", () => {
     composing = true;
@@ -237,7 +284,9 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
     render();
   });
   searchInput?.addEventListener("input", (event) => {
-    if (!composing && !(event as InputEvent).isComposing) render();
+    if (!composing && !(event as InputEvent).isComposing) {
+      render();
+    }
   });
   const resetSearch = () => {
     if (!searchInput) return;
@@ -261,9 +310,26 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
     void selectMode("all");
     searchInput?.focus();
   });
+  typeFilter?.addEventListener("change", () => {
+    contentType = typeFilter.value;
+    render();
+    updateLocation();
+  });
+  clearType?.addEventListener("click", () => {
+    contentType = "";
+    if (typeFilter) typeFilter.value = "";
+    render();
+    updateLocation();
+    typeFilter?.focus();
+  });
+  window.addEventListener("popstate", () => {
+    restoreLocation();
+    render();
+  });
   controls.hidden = false;
   if (searchForm) searchForm.hidden = false;
   root.dataset.discoveryReady = "true";
+  restoreLocation();
   render();
 }
 

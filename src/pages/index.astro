@@ -1,6 +1,7 @@
 ---
 import FollowLinks from "../components/layout/FollowLinks.astro";
 import SituationNav from "../components/atlas/SituationNav.astro";
+import VideoTypeNav from "../components/atlas/VideoTypeNav.astro";
 import { discoveryFor, videosBySituation } from "../lib/videos/discovery";
 import { parseYouTubeVideoId } from "../lib/video/youtube";
 import SportNav from "../components/atlas/SportNav.astro";
@@ -8,6 +9,10 @@ import { videosBySport } from "../lib/videos/sports";
 import BodyPartNav from "../components/atlas/BodyPartNav.astro";
 import { videosByBodyPart } from "../lib/videos/body-parts";
 import { nerveInjuryGroup } from "../lib/videos/nerve-categories";
+import {
+  contentTypeGroups,
+  contentTypesFor,
+} from "../lib/videos/content-types";
 import { isLaunchEnabled } from "../lib/patient/public-launch";
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -31,6 +36,7 @@ const bodyParts = videosByBodyPart(featured, clips);
 const sports = videosBySport(featured, clips);
 const situations = videosBySituation(featured, clips);
 const nerveGroup = nerveInjuryGroup(clips);
+const videoTypes = contentTypeGroups(featured, clips);
 const videoCount = featured.length + clips.length;
 ---
 
@@ -51,8 +57,8 @@ const videoCount = featured.length + clips.length;
     </div>
     <h1>運動傷害影片圖鑑</h1>
     <p>
-      從落地不穩、急停轉向，到碰撞與球體撞擊，用真實影片認識運動傷害可能發生的過程。
-      依部位、運動項目或受傷情境選片，了解受傷當下的處理重點與選手實際回場紀錄。
+      收錄賽事畫面、傷後反應、訪談、新聞報導、專業解說與復健／回場紀錄等真實影片。
+      依部位、運動項目、受傷情境或影片類型選片，了解可見事件與選手實際回場紀錄。
     </p>
     <dl class="atlas-stats" aria-label="目前收錄內容">
       <div>
@@ -113,6 +119,14 @@ const videoCount = featured.length + clips.length;
           >
             依受傷情境
           </button>
+          <button
+            type="button"
+            data-home-category-select="video-types"
+            aria-expanded="false"
+            aria-controls="home-category-video-types"
+          >
+            依影片類型
+          </button>
         </div>
         <div
           id="home-category-body-parts"
@@ -120,6 +134,14 @@ const videoCount = featured.length + clips.length;
         >
           <div id="body-parts">
             <BodyPartNav parts={bodyParts} nerveCount={nerveGroup.count} />
+          </div>
+        </div>
+        <div
+          id="home-category-video-types"
+          data-home-category-panel="video-types"
+        >
+          <div id="video-types">
+            <VideoTypeNav types={videoTypes} />
           </div>
         </div>
         <div id="home-category-sports" data-home-category-panel="sports">
@@ -170,6 +192,22 @@ const videoCount = featured.length + clips.length;
       <p id="video-search-help">
         可搜尋姓名、傷勢、運動或賽事；多個關鍵字以空格分開。
       </p>
+      <div class="video-type-filter">
+        <label for="video-type-filter">影片類型</label>
+        <select
+          id="video-type-filter"
+          data-video-type-filter
+          aria-controls="discovery-videos"
+        >
+          <option value="">全部類型</option>
+          {
+            videoTypes.map((type) => (
+              <option value={type.id}>{type.label}</option>
+            ))
+          }
+        </select>
+        <button type="button" data-video-type-clear hidden>清除類型</button>
+      </div>
       <div class="video-search-scope">
         <p id="video-search-scope" data-video-search-scope>
           搜尋範圍：全部影片
@@ -222,6 +260,12 @@ const videoCount = featured.length + clips.length;
             data-discovery-slug={record.slug}
             data-search-text={caseVideoSearchText(record)}
             data-video-id={parseYouTubeVideoId(record.video.canonicalUrl)}
+            data-content-types={contentTypesFor(
+              record.slug,
+              record.video.canonicalUrl,
+            )
+              .map((type) => type.id)
+              .join(" ")}
             data-curated-rank={discoveryFor(record.slug).curatedRank}
           >
             <span class="popular-count" data-popular-count hidden />
@@ -241,6 +285,9 @@ const videoCount = featured.length + clips.length;
             data-discovery-slug={clip.slug}
             data-search-text={observationVideoSearchText(clip)}
             data-video-id={clip.provider === "mlb" ? undefined : clip.videoId}
+            data-content-types={contentTypesFor(clip.slug, clip.videoUrl)
+              .map((type) => type.id)
+              .join(" ")}
             data-curated-rank={discoveryFor(clip.slug).curatedRank}
           >
             <span class="popular-count" data-popular-count hidden />
@@ -251,7 +298,7 @@ const videoCount = featured.length + clips.length;
     </ol>
   </section>
   <p class="home-note">
-    影片呈現受傷過程；診斷依具名來源。球員的回場紀錄不等於你的恢復時間。
+    影片可能呈現賽事、反應、訪談或回場紀錄；診斷依具名來源。球員的回場紀錄不等於你的恢復時間。
   </p>
 </BaseLayout>
 <script>
@@ -306,6 +353,22 @@ const videoCount = featured.length + clips.length;
     color: var(--color-brand-primary);
     font: inherit;
     cursor: pointer;
+  }
+  .video-type-filter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .video-type-filter select {
+    min-height: 44px;
+    max-width: 100%;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid var(--color-brand-100);
+    border-radius: 0.65rem;
+    background: var(--color-surface-raised);
+    color: var(--color-ink);
+    font: inherit;
   }
   .video-search :is(input, button):focus-visible {
     outline: 3px solid var(--color-brand-primary);

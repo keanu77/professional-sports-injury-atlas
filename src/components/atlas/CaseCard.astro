@@ -6,6 +6,7 @@
 import { hasPublicEmbed } from "../../lib/patient/featured";
 import CaseCover from "../cases/CaseCover.astro";
 import ReviewBadge from "../cases/ReviewBadge.astro";
+import VideoTypeTags from "./VideoTypeTags.astro";
 import { findInjury, findLeague } from "../../lib/contracts/taxonomy";
 import type { InjuryCase } from "../../lib/contracts/case";
 import {
@@ -71,6 +72,7 @@ const leagueLabel =
       {leagueLabel}｜{record.season} 球季｜{record.eventDate}｜
       {record.teamAtEvent.name} 對 {record.opponent.name}
     </p>
+    <VideoTypeTags slug={record.slug} videoUrl={record.video.canonicalUrl} />
     {
       !compact && (
         <p

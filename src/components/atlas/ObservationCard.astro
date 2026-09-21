@@ -5,6 +5,7 @@ import {
   observationCardMetadata,
   observationFootageLabel,
 } from "../../lib/videos/observation-card";
+import VideoTypeTags from "./VideoTypeTags.astro";
 interface Props {
   clip: ObservationClip;
 }
@@ -13,33 +14,43 @@ const metadata = observationCardMetadata(clip);
 const isMlb = clip.provider === "mlb";
 ---
 
-<a class="observation-card" href={`/videos/${clip.slug}/`}>
-  {
-    isMlb ? (
-      <div class="provider-facade" data-observation-provider="mlb">
-        <span>MLB 官方影片</span>
-        <strong>前往案例頁後，可選擇載入播放器</strong>
-      </div>
-    ) : (
-      <VideoThumbnail videoId={clip.videoId}>
-        <span slot="media-action" class="play" aria-hidden="true">
-          ▶
-        </span>
-      </VideoThumbnail>
-    )
-  }
+<article class="observation-card" data-observation-card={clip.slug}>
+  <a
+    class="observation-card-media"
+    href={`/videos/${clip.slug}/`}
+    tabindex="-1"
+    aria-hidden="true"
+  >
+    {
+      isMlb ? (
+        <div class="provider-facade" data-observation-provider="mlb">
+          <span>MLB 官方影片</span>
+          <strong>前往案例頁後，可選擇載入播放器</strong>
+        </div>
+      ) : (
+        <VideoThumbnail videoId={clip.videoId}>
+          <span slot="media-action" class="play" aria-hidden="true">
+            ▶
+          </span>
+        </VideoThumbnail>
+      )
+    }
+  </a>
   <div class="observation-copy">
-    <p>{clip.event}</p><h3>{clip.name}</h3>
+    <p>{clip.event}</p><h3>
+      <a href={`/videos/${clip.slug}/`}>{clip.name}</a>
+    </h3>
     <ul class="observation-metadata" data-observation-metadata>
       <li data-observation-sport>{metadata.sport}</li>
       <li data-observation-body-part>{metadata.bodyPart}</li>
       <li data-observation-event-year>{metadata.eventYear}</li>
     </ul>
+    <VideoTypeTags slug={clip.slug} videoUrl={clip.videoUrl} />
     <span data-observation-footage-kind={clip.footageKind ?? "unknown"}>
       {observationFootageLabel(clip)} →
     </span>
   </div>
-</a>
+</article>
 <style>
   .observation-card {
     display: block;
@@ -49,10 +60,13 @@ const isMlb = clip.provider === "mlb";
     overflow: hidden;
     background: var(--color-surface-raised);
     color: var(--color-ink);
-    text-decoration: none;
   }
   .observation-card:hover {
     border-color: var(--color-brand-primary);
+  }
+  .observation-card-media {
+    display: block;
+    color: inherit;
   }
   .play {
     position: absolute;
@@ -91,6 +105,17 @@ const isMlb = clip.provider === "mlb";
   .observation-copy h3 {
     font: 700 1.2rem/1.5 var(--font-display);
     margin: 0.4rem 0 0.75rem;
+  }
+  .observation-copy h3 a {
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+  .observation-copy h3 a:hover {
+    color: var(--color-brand-primary);
+  }
+  .observation-copy h3 a:focus-visible {
+    outline: 3px solid var(--color-brand-primary);
+    outline-offset: 3px;
   }
   .observation-metadata {
     display: flex;

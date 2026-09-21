@@ -1,0 +1,79 @@
+---
+interface Props {
+  types: { id: string; label: string; count: number }[];
+  current?: string;
+}
+const { types, current } = Astro.props;
+---
+
+<nav class="video-type-nav" aria-label="依影片類型看影片" data-video-type-nav>
+  <p>依影片類型</p>
+  <ul>
+    {
+      types.map((type) => (
+        <li>
+          <a
+            href={`/video-types/${type.id}/`}
+            aria-current={current === type.id ? "page" : undefined}
+          >
+            {type.label}
+            <span>{type.count} 支影片</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<style>
+  .video-type-nav {
+    margin: 0 0 2rem;
+  }
+  p {
+    margin: 0 0 0.75rem;
+    color: var(--color-brand-900);
+    font-weight: 600;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 44px;
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--color-brand-100);
+    border-radius: 999px;
+    background: var(--color-surface-raised);
+    color: var(--color-brand-primary);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  a:hover,
+  a[aria-current="page"] {
+    border-color: var(--color-brand-primary);
+    background: var(--color-brand-50);
+  }
+  a:focus-visible {
+    outline: 3px solid var(--color-brand-primary);
+    outline-offset: 3px;
+  }
+  span {
+    color: var(--color-ink-muted);
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+  @media (max-width: 26rem) {
+    a {
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      border-radius: 1rem;
+    }
+  }
+</style>

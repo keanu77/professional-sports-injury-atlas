@@ -1,0 +1,95 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CaseCard from "../../components/atlas/CaseCard.astro";
+import ObservationCard from "../../components/atlas/ObservationCard.astro";
+import VideoTypeNav from "../../components/atlas/VideoTypeNav.astro";
+import { contentTypeGroups } from "../../lib/videos/content-types";
+import { observationClips } from "../../lib/videos/expansion";
+import { hasPublicEmbed, videoFirstCases } from "../../lib/patient/featured";
+import { isLaunchEnabled } from "../../lib/patient/public-launch";
+import { permittedCasesForMode } from "../../lib/cases/pagination";
+
+export async function getStaticPaths() {
+  if (!isLaunchEnabled()) return [];
+  const records = (await getCollection("cases")).map((entry) => entry.data);
+  const groups = contentTypeGroups(
+    videoFirstCases(permittedCasesForMode("public", records)).filter(
+      hasPublicEmbed,
+    ),
+    observationClips(),
+  );
+  return groups.map((group) => ({
+    params: { type: group.id },
+    props: { group, groups },
+  }));
+}
+
+const { group, groups } = Astro.props;
+---
+
+<BaseLayout
+  title={`${group.label}影片｜運動傷害影片圖鑑`}
+  description={`瀏覽${group.label}類型的運動傷害相關影片。`}
+>
+  <a href="/#video-types">← 全部影片類型</a>
+  <header class="type-heading">
+    <h1>{group.label}</h1><p>{group.count} 支影片 · 以審閱過的影片內容分類。</p>
+  </header>
+  <VideoTypeNav types={groups} current={group.id} />
+  <ol
+    class="type-grid"
+    aria-label={`${group.label}影片`}
+    data-video-type-videos={group.id}
+  >
+    {
+      group.cases.map((record, index) => (
+        <li data-featured-card>
+          <CaseCard
+            record={record}
+            showWorkflowBadge={false}
+            compact
+            priority={index === 0}
+          />
+        </li>
+      ))
+    }
+    {
+      group.clips.map((clip) => (
+        <li data-featured-card>
+          <ObservationCard clip={clip} />
+        </li>
+      ))
+    }
+  </ol>
+</BaseLayout>
+
+<style>
+  .type-heading {
+    margin: 1.5rem 0 2rem;
+  }
+  h1 {
+    font-family: var(--font-display);
+  }
+  .type-heading p {
+    color: var(--color-ink-muted);
+  }
+  .type-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  @media (max-width: 60rem) {
+    .type-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 40rem) {
+    .type-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

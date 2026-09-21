@@ -1,0 +1,58 @@
+---
+import { contentTypesFor } from "../../lib/videos/content-types";
+import { isLaunchEnabled } from "../../lib/patient/public-launch";
+
+interface Props {
+  slug: string;
+  videoUrl: string;
+}
+const { slug, videoUrl } = Astro.props;
+const types = contentTypesFor(slug, videoUrl);
+const linksEnabled = isLaunchEnabled();
+---
+
+{
+  types.length > 0 && (
+    <ul class="video-type-tags" aria-label="影片類型">
+      {types.map((type) => (
+        <li>
+          {linksEnabled ? (
+            <a href={`/video-types/${type.id}/`}>{type.label}</a>
+          ) : (
+            <span>{type.label}</span>
+          )}
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+<style>
+  .video-type-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    padding: 0;
+    margin: 0.75rem 0 0;
+    list-style: none;
+  }
+  :is(a, span) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    background: var(--color-brand-50);
+    color: var(--color-brand-primary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  a:focus-visible {
+    outline: 3px solid var(--color-brand-primary);
+    outline-offset: 2px;
+  }
+</style>

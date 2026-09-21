@@ -11,6 +11,7 @@
 import { MECHANISMS } from "../../data/taxonomy/mechanisms";
 import { getCollection, type CollectionEntry } from "astro:content";
 import CaseCard from "../../components/atlas/CaseCard.astro";
+import VideoTypeTags from "../../components/atlas/VideoTypeTags.astro";
 import { hasPublicEmbed, videoFirstCases } from "../../lib/patient/featured";
 import PatientGuide from "../../components/cases/PatientGuide.astro";
 import EventFollowUp from "../../components/cases/EventFollowUp.astro";
@@ -37,6 +38,12 @@ import {
 } from "../../lib/routes/static-paths";
 import { loadReviewFollowUpCorpus } from "../../lib/cases/follow-up-approval-ledger";
 import { FOLLOW_UP_SOURCE_POLICY_V10_BINDING } from "../../lib/contracts/case-follow-up";
+import {
+  contentTypeSegmentsFor,
+  contentTypesFor,
+} from "../../lib/videos/content-types";
+import { parseYouTubeVideoId } from "../../lib/video/youtube";
+import { formatDurationLabel } from "../../lib/video/player-state";
 
 export function validatedFollowUps(
   caseRecords: readonly CollectionEntry<"cases">[],
@@ -89,6 +96,12 @@ const injuryLabel =
   findInjury(record.injury.code)?.labelZh ?? record.injury.code;
 const leagueLabel =
   findLeague(record.league.code)?.labelZh ?? record.league.code;
+const contentTypes = contentTypesFor(record.slug, record.video.canonicalUrl);
+const contentSegments = contentTypeSegmentsFor(
+  record.slug,
+  record.video.canonicalUrl,
+);
+const isYouTubeVideo = parseYouTubeVideoId(record.video.canonicalUrl) !== null;
 const related = videoFirstCases(
   permitted.filter(
     (candidate) =>
@@ -134,6 +147,7 @@ if (videoSource === undefined) {
       <p class="case-facts">
         {record.eventDate}｜{record.teamAtEvent.name} 對 {record.opponent.name}
       </p>
+      <VideoTypeTags slug={record.slug} videoUrl={record.video.canonicalUrl} />
     </header>
     <section aria-labelledby="case-analysis-heading">
       <h2 class="section-title" id="case-analysis-heading">受傷當下的影片</h2>
@@ -160,6 +174,37 @@ if (videoSource === undefined) {
           />
         </div>
       </div>
+      {
+        contentSegments.length > 0 && isYouTubeVideo && (
+          <section class="case-video-segments" data-video-type-segments>
+            <h3>已標記片段</h3>
+            <ul>
+              {contentSegments.map((segment) => {
+                const segmentUrl = new URL(record.video.canonicalUrl);
+                segmentUrl.searchParams.set("t", String(segment.startSeconds));
+                const labels = segment.typeIds
+                  .map(
+                    (typeId) =>
+                      contentTypes.find((type) => type.id === typeId)?.label,
+                  )
+                  .filter((label) => label !== undefined);
+                return (
+                  <li>
+                    <a
+                      href={segmentUrl.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {formatDurationLabel(segment.startSeconds)}：
+                      {labels.join("、")}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        )
+      }
     </section>
 
     {
@@ -326,6 +371,15 @@ if (videoSource === undefined) {
     grid-template-columns: minmax(0, 1fr);
     gap: 1.5rem;
     margin: var(--space-block) 0 0;
+  }
+  .case-video-segments {
+    margin-block-start: 1rem;
+  }
+  .case-video-segments ul {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0;
+    padding-inline-start: 1.25rem;
   }
 
   @media (min-width: 64rem) {

@@ -120,9 +120,7 @@ test("news, aftermath, and injury footage have consistent card and detail labels
   for (const example of examples) {
     for (const path of ["/", `/sports/${example.category}/`]) {
       await page.goto(path);
-      const card = page.locator(
-        `.observation-card[href="/videos/${example.slug}/"]`,
-      );
+      const card = page.locator(`[data-observation-card="${example.slug}"]`);
       await expect(card.locator("[data-observation-footage-kind]")).toHaveText(
         `${example.label} →`,
       );

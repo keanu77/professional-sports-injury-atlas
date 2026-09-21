@@ -272,3 +272,79 @@ for (const item of selectedEvents)
 console.log(
   `Source reporting: ${selectedEvents.length} event bindings validated; original clinical approvals unchanged.`,
 );
+
+const { videoContentTypes, contentTypeEntryFor } =
+  await import("../../src/lib/videos/content-types");
+assert.equal(
+  videoContentTypes.status,
+  "reviewed",
+  "Video types remain a draft",
+);
+assert.deepEqual(
+  videoContentTypes.entries.map((entry) => entry.slug).sort(),
+  selectedEvents.map((entry) => entry.slug).sort(),
+  "Video content-type coverage mismatch",
+);
+for (const item of selectedEvents) {
+  const entry = contentTypeEntryFor(item.slug, item.videoUrl);
+  assert.ok(entry, `Missing exact video content-type binding: ${item.slug}`);
+  assert.ok(
+    Date.parse(entry.reviewedAt) <= Date.now(),
+    `Future content review: ${item.slug}`,
+  );
+  for (const reference of entry.evidenceRefs) {
+    const [file, pointer] = reference.split("#");
+    assert.ok(
+      file.startsWith("docs/reviews/") &&
+        !file.includes("..") &&
+        existsSync(file),
+      `Missing content evidence: ${reference}`,
+    );
+    if (pointer) {
+      assert.ok(
+        pointer.startsWith("/"),
+        `Invalid content evidence pointer: ${reference}`,
+      );
+      let evidence: unknown = JSON.parse(readFileSync(file, "utf8"));
+      for (const part of pointer.slice(1).split("/")) {
+        const key = part.replace(/~1/g, "/").replace(/~0/g, "~");
+        assert.ok(
+          evidence !== null &&
+            typeof evidence === "object" &&
+            Object.hasOwn(evidence, key),
+          `Unresolved content evidence: ${reference}`,
+        );
+        evidence = (evidence as Record<string, unknown>)[key];
+      }
+      const binding = evidence as {
+        slug?: string;
+        videoUrl?: string;
+        tags?: string[];
+        segments?: unknown[];
+      };
+      assert.equal(
+        binding.slug,
+        item.slug,
+        `Content evidence slug mismatch: ${reference}`,
+      );
+      assert.equal(
+        binding.videoUrl,
+        item.videoUrl,
+        `Content evidence URL mismatch: ${reference}`,
+      );
+      assert.deepEqual(
+        binding.tags,
+        entry.tags,
+        `Content labels differ from reviewed evidence: ${reference}`,
+      );
+      assert.deepEqual(
+        binding.segments ?? [],
+        entry.segments ?? [],
+        `Content segments differ from reviewed evidence: ${reference}`,
+      );
+    }
+  }
+}
+console.log(
+  `Video content types: ${selectedEvents.length} reviewed exact video bindings validated.`,
+);

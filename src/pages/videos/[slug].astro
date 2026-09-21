@@ -2,6 +2,7 @@
 import EventFollowUp from "../../components/cases/EventFollowUp.astro";
 import EventMechanism from "../../components/cases/EventMechanism.astro";
 import ObservationCard from "../../components/atlas/ObservationCard.astro";
+import VideoTypeTags from "../../components/atlas/VideoTypeTags.astro";
 import { eventUpdateFor } from "../../lib/videos/event-updates";
 import { externalUrlPresentationFor } from "../../lib/rights/nba-link-policy";
 import VideoThumbnail from "../../components/cases/VideoThumbnail.astro";
@@ -20,6 +21,10 @@ import {
 import { discoveryFor } from "../../lib/videos/discovery";
 import { observationFootageLabel } from "../../lib/videos/observation-card";
 import { observationProviderFor } from "../../lib/videos/observation-provider";
+import {
+  contentTypeSegmentsFor,
+  contentTypesFor,
+} from "../../lib/videos/content-types";
 import {
   captionStatusLabel,
   formatDurationLabel,
@@ -46,6 +51,8 @@ const categoryLinks = observationCategoryLinks(clip);
 const isFeatured = discoveryFor(clip.slug).curatedRank !== undefined;
 const footageLabel = observationFootageLabel(clip);
 const provider = observationProviderFor(clip.provider);
+const contentTypes = contentTypesFor(clip.slug, clip.videoUrl);
+const contentSegments = contentTypeSegmentsFor(clip.slug, clip.videoUrl);
 const watchUrl = new URL(clip.videoUrl);
 if (provider === "youtube" && clip.startSeconds > 0)
   watchUrl.searchParams.set("t", String(clip.startSeconds));
@@ -64,6 +71,7 @@ if (provider === "youtube" && clip.startSeconds > 0)
         footageLabel
       }
     </p>
+    <VideoTypeTags slug={clip.slug} videoUrl={clip.videoUrl} />
   </header>
   <div
     class:list={[
@@ -168,6 +176,37 @@ if (provider === "youtube" && clip.startSeconds > 0)
           文字重點協助理解關鍵畫面，不是完整逐字稿，也不是完整口述影像。
         </p>
       </section>
+      {
+        contentSegments.length > 0 && provider === "youtube" && (
+          <section data-video-type-segments>
+            <h2>已標記片段</h2>
+            <ul class="video-type-segments">
+              {contentSegments.map((segment) => {
+                const segmentUrl = new URL(clip.videoUrl);
+                segmentUrl.searchParams.set("t", String(segment.startSeconds));
+                const labels = segment.typeIds
+                  .map(
+                    (typeId) =>
+                      contentTypes.find((type) => type.id === typeId)?.label,
+                  )
+                  .filter((label) => label !== undefined);
+                return (
+                  <li>
+                    <a
+                      href={segmentUrl.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {formatDurationLabel(segment.startSeconds)}：
+                      {labels.join("、")}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        )
+      }
       {
         eventUpdate?.mechanism && (
           <>
@@ -424,6 +463,12 @@ if (provider === "youtube" && clip.startSeconds > 0)
     position: relative;
     overflow: hidden;
     border-radius: 12px;
+  }
+  .video-type-segments {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0;
+    padding-inline-start: 1.25rem;
   }
   .clip-facade[hidden] {
     display: none;

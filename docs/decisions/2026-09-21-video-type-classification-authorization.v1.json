@@ -1,0 +1,18 @@
+{
+  "authorizedAt": "2026-09-21T08:25:28Z",
+  "authorizedBy": "使用者，明確採用多標籤分類並照草案實作",
+  "closedScopeIds": [
+    "external-account-mutation",
+    "hosting-configuration-mutation",
+    "indexing",
+    "medical-content-authoring",
+    "medical-review-decision"
+  ],
+  "decisionType": "plan-execution",
+  "executionScopeId": "video-type-classification-and-homepage-release",
+  "executionStatus": "authorized",
+  "planPath": "docs/superpowers/plans/2026-09-21-video-type-classification.md",
+  "planSha256": "600b39d46a54f78de7100482b51fdc9b30e906c80b71e37733e9501ab0543499",
+  "role": "video-type-classification",
+  "schemaVersion": 1
+}

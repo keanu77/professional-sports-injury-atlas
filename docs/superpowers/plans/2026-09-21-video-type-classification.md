@@ -10,6 +10,12 @@
 
 User approved the written spec on 2026-09-21. Keep the existing `feat/aaron-judge-rib` branch in this workspace per prior user direction; no new worktree. Root owns editorial data / release; one implementer owns feature code, then independent spec and quality review. No second execution approval is needed.
 
+## Scope and authority
+
+- Execution role: `video-type-classification`; execution scope ID: `video-type-classification-and-homepage-release`; required closed scope IDs: `external-account-mutation`, `hosting-configuration-mutation`, `indexing`, `medical-content-authoring`, `medical-review-decision`.
+
+The user's exact approval is 「採用多標籤分類並照草案實作（建議）」, in response to the linked design. This opens the specified content-type registry, homepage/category implementation, tests and release through the existing deployment. It does not reopen clinical approvals, change source videos, or authorize unrelated hosting/account changes. The binding timestamps record this authorization in the repository; completion evidence is kept separately in `docs/reviews/2026-09-21-video-types/` so the bound plan remains immutable.
+
 ## Task 1: Content analysis and immutable video binding (root)
 
 Files: `docs/reviews/2026-09-21-video-types/`, new `src/data/video-content-types.v1.json`.
