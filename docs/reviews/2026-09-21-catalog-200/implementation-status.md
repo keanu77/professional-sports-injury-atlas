@@ -1,5 +1,13 @@
 # 200 例擴充進度
 
+## 發布前完成檢查：2026-09-21
+
+- 200 個不同事件（7 核心＋193 觀察頁）、30 種運動、14 個部位已完成；來源程式 checkpoint `037a5d8`。新增 42 例皆有來源、機轉與時間軸，缺欄位會被 schema 拒絕。
+- 1,533 單元測試、content、36 份計畫綁定、Astro 0 errors／0 warnings 通過。桌機 Chrome 與 Pixel 7 共 156 項 E2E 通過，2 項 review-only 略過；暫存 port 修正與 JSON import 相容性經查核，未放寬斷言。
+- 公開成品 608 檔全部雜湊核對、265 HTML、6,669 站內連結通過，首頁 200 個唯一事件、0 個預載 iframe。
+- 公開預覽 `https://9df84ef0.sports-injury-atlas.pages.dev` 已完成新增 42／42 支原生影片實播；精確網址、路由、指定時間碼、實際播放進度、readyState 及時長均核對。真實紀錄見 `playback.preview.json`，原片檢視另存 `original-video-review.json`。
+- 此段記錄發布前狀態，正式發布與上線核對另見後續 `release.json`。下方為歷史進度，不代表目前仍缺機轉或播放證據。
+
 ## 成品檢查追加：200 例已匯入，機轉區塊修復中
 
 - 程式 checkpoint `111b6df`：200 個不同事件、193 observations、30 種運動、14 個部位。SPEC／QUALITY 均通過；完整 1,530 單元測試、content、36 份 plan binding、變更格式檢查通過。

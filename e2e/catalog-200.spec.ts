@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { expectNoAxeViolations } from "./helpers/a11y";
-import selected from "../docs/reviews/2026-09-21-catalog-200/selected-cases.json";
+import selected from "../docs/reviews/2026-09-21-catalog-200/selected-cases.json" with { type: "json" };
 
 test.beforeEach(() =>
   test.skip(

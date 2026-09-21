@@ -1,0 +1,41 @@
+{
+  "checkedAt": "2026-09-21T05:56:50.323369+00:00",
+  "sourceCommit": "037a5d8c1fd77ddad15e3a43233b66992e9a182f",
+  "inputTreeDigest": "d611a90ed5d7482d63add89e210b67bf52b663f637c6de45d58333ff1021d666",
+  "unit": {
+    "files": 103,
+    "passed": 1533
+  },
+  "astro": {
+    "errors": 0,
+    "warnings": 0,
+    "existingHints": 16
+  },
+  "contentCheck": "passed",
+  "planBindings": 36,
+  "artifact": {
+    "filesHashVerified": 608,
+    "htmlPages": 265,
+    "uniqueEvents": 200,
+    "bodyParts": 14,
+    "sports": 30,
+    "internalLinks": 6669,
+    "mode": "public",
+    "preactivationIframes": 0
+  },
+  "e2e": {
+    "passed": 156,
+    "skippedReviewOnly": 2,
+    "projects": ["Desktop Chrome", "Pixel 7"],
+    "notes": "Initial run: 150 passed, 2 review-only skipped, 6 failed only because standalone contexts used default port 4321; after correcting temporary config ATLAS_E2E_PORT to 14338, all six passed. Node 24 JSON import attribute was added before successful collection. No site assertions weakened."
+  },
+  "previewOrigin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+  "owned42Playback": {
+    "status": "passed",
+    "count": 42,
+    "proof": "playback.preview.json",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "method": "Actual native video before/after currentTime, paused, readyState and duration through the selected Edge browser; all exact URL/path/start bindings checked."
+  },
+  "productionDeployed": false
+}

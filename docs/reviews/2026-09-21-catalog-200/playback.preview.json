@@ -1,0 +1,842 @@
+[
+  {
+    "url": "https://www.youtube.com/watch?v=lqlkP27TXvA",
+    "path": "/videos/nathan-florence-2023-t12-fracture/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 450,
+    "checkedAt": "2026-09-21T05:49:44.508Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 456.806081,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 939.501,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/lqlkP27TXvA?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=450"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=gGGMvPtjtZo",
+    "path": "/videos/billy-kemper-2020-pelvis-knee/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 740,
+    "checkedAt": "2026-09-21T05:49:44.564Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 746.362833,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 826.241,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/gGGMvPtjtZo?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=740"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=WevF13bkLAM",
+    "path": "/videos/missy-franklin-2016-shoulder/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 130,
+    "checkedAt": "2026-09-21T05:50:02.143Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 131.419694,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 1820.381,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/WevF13bkLAM?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=130"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=z6KNabUBA88",
+    "path": "/videos/gabriel-medina-2025-pectoral-tendon/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 30,
+    "checkedAt": "2026-09-21T05:50:02.202Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 32.722344,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 499.221,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/z6KNabUBA88?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=30"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=D8492O0ciGY",
+    "path": "/videos/jj-watt-2019-pectoral/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 100,
+    "checkedAt": "2026-09-21T05:50:29.071Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 105.302258,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 942.961,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/D8492O0ciGY?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=100"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=7_GZg1qIZLQ",
+    "path": "/videos/zoey-clark-2023-disc-nerve/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 95,
+    "checkedAt": "2026-09-21T05:50:29.129Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 96.839759,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 495.16,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/7_GZg1qIZLQ?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=95"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=iRo0jHPhr2I",
+    "path": "/videos/chloe-kim-2026-shoulder/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 0,
+    "checkedAt": "2026-09-21T05:50:43.929Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 5.116293,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 15.881,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/iRo0jHPhr2I?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=7oFg7YmMgtI",
+    "path": "/videos/adam-peaty-2022-foot/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 690,
+    "checkedAt": "2026-09-21T05:50:51.308Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 694.985383,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 719.641,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/7oFg7YmMgtI?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=690"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=RyWuQ_RW6OA",
+    "path": "/videos/kerri-walsh-jennings-2015-shoulder/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 0,
+    "checkedAt": "2026-09-21T05:50:58.783Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 5.521957,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 38.401,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/RyWuQ_RW6OA?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=9vGOrRkqAK4",
+    "path": "/videos/rafael-nadal-2022-abdominal/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 15,
+    "checkedAt": "2026-09-21T05:51:08.385Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 22.481579,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 678.081,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/9vGOrRkqAK4?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=15"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=xBgZKehMBDA",
+    "path": "/videos/jordyn-poulter-2022-knee/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 15,
+    "checkedAt": "2026-09-21T05:51:14.898Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 18.889478,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 792.281,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/xBgZKehMBDA?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=15"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=X8X7Xg7UwD0",
+    "path": "/videos/paula-badosa-2023-spinal-stress-fracture/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 250,
+    "checkedAt": "2026-09-21T05:51:21.236Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 254.164531,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 410.041,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/X8X7Xg7UwD0?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=250"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=vsc3sE7WwXk",
+    "path": "/videos/rafael-nadal-2022-rib-stress-fracture/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 0,
+    "checkedAt": "2026-09-21T05:51:27.646Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 3.396939,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 42.701,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/vsc3sE7WwXk?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=IpYzdWZ80CE",
+    "path": "/videos/jake-wightman-2023-foot/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 330,
+    "checkedAt": "2026-09-21T05:51:37.241Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 335.75179,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 1645.861,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/IpYzdWZ80CE?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=330"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=z7x0dxJf3Zk",
+    "path": "/videos/karsten-warholm-2022-hamstring/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 15,
+    "checkedAt": "2026-09-21T05:51:44.279Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 19.539171,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 621.481,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/z7x0dxJf3Zk?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=15"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=F-KkglTfq3Y",
+    "path": "/videos/molly-seidel-2024-patella/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 285,
+    "checkedAt": "2026-09-21T05:51:54.496Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 290.77584,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 547.001,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/F-KkglTfq3Y?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=285"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=hvH4AnAD5eg",
+    "path": "/videos/jamahal-hill-2021-elbow/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 63,
+    "checkedAt": "2026-09-21T05:52:10.085Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 74.05868,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 133.201,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/hvH4AnAD5eg?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=63"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=XdGi7XI5Y_c",
+    "path": "/videos/antonio-rodrigo-nogueira-2011-arm/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 120,
+    "checkedAt": "2026-09-21T05:52:17.267Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 124.170679,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 202.241,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/XdGi7XI5Y_c?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=120"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=XEBZ9lSa8fM",
+    "path": "/videos/tim-sylvia-2004-arm/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 530,
+    "checkedAt": "2026-09-21T05:52:28.501Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 538.885706,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 765.721,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/XEBZ9lSa8fM?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=530"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=rkiD3kLGIvU",
+    "path": "/videos/ronaldo-jacare-souza-2021-humerus/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 125,
+    "checkedAt": "2026-09-21T05:52:36.499Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 129.597273,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 207.521,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/rkiD3kLGIvU?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=125"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=sM8zlrTLroE",
+    "path": "/videos/tom-aspinall-2022-knee/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 925,
+    "checkedAt": "2026-09-21T05:52:43.625Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 926.681122,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 2471.641,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/sM8zlrTLroE?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=925"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=sBzHuGCZdTI",
+    "path": "/videos/jordan-burroughs-2013-ankle/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 25,
+    "checkedAt": "2026-09-21T05:52:59.191Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 39.479188,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 536.321,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/sBzHuGCZdTI?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=25"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=VNo4qQaVNHg",
+    "path": "/videos/jofra-archer-2020-elbow-stress-fracture/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 0,
+    "checkedAt": "2026-09-21T05:53:09.587Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 8.752708,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 195.741,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/VNo4qQaVNHg?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=l1dYgS6mqO0",
+    "path": "/videos/manny-pacquiao-2015-shoulder/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 0,
+    "checkedAt": "2026-09-21T05:53:17.131Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 3.491662,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 142.33832199546487,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/l1dYgS6mqO0?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=5qWBA8MuN_4",
+    "path": "/videos/sky-brown-2024-shoulder/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 90,
+    "checkedAt": "2026-09-21T05:53:27.515Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 96.229728,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 296.161,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/5qWBA8MuN_4?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=90"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=Kvm-WXQ2w2Y",
+    "path": "/videos/tony-hawk-2022-femur/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 250,
+    "checkedAt": "2026-09-21T05:53:35.001Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 252.507184,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 3362.561,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/Kvm-WXQ2w2Y?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=250"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=6dGzpQHXQsM",
+    "path": "/videos/helen-maroulis-2018-concussion/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 145,
+    "checkedAt": "2026-09-21T05:53:44.607Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 150.284075,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 212.661,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/6dGzpQHXQsM?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=145"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=kb_9JHJu1oo",
+    "path": "/videos/tiger-woods-2008-tibial-stress-fractures/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 1620,
+    "checkedAt": "2026-09-21T05:53:51.946Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 1624.802276,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 11470.421,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/kb_9JHJu1oo?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=1620"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=1d3pOYyLQkY",
+    "path": "/videos/mirabai-chanu-2023-hip/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 20,
+    "checkedAt": "2026-09-21T05:54:01.532Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 26.812198,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 130.881,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/1d3pOYyLQkY?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=20"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=T7-DAQANyho",
+    "path": "/videos/annemiek-van-vleuten-2022-elbow/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 273,
+    "checkedAt": "2026-09-21T05:54:11.642Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 275.47351,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 478.281,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/T7-DAQANyho?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=273"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=jQ7oMEGPHXg",
+    "path": "/videos/daniel-andre-tande-2021-clavicle/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 0,
+    "checkedAt": "2026-09-21T05:54:22.962Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 9.305216,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 34.701,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/jQ7oMEGPHXg?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=aXvM23KcbJw",
+    "path": "/videos/egan-bernal-2022-training-crash/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 20,
+    "checkedAt": "2026-09-21T05:54:29.792Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 23.609024,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 227.221,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/aXvM23KcbJw?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=20"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=kti0XvZn0KQ",
+    "path": "/videos/connor-fields-2021-brain-hemorrhage/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 1475,
+    "checkedAt": "2026-09-21T05:54:38.685Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 1479.806596,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 3284.221,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/kti0XvZn0KQ?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=1475"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=8H_0tJAwev8",
+    "path": "/videos/novak-djokovic-2017-elbow/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 0,
+    "checkedAt": "2026-09-21T05:54:45.849Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 4.322174,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 114.661,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/8H_0tJAwev8?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=_9PMTWdYX6I",
+    "path": "/videos/kei-nishikori-2017-wrist/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 15,
+    "checkedAt": "2026-09-21T05:54:55.234Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 20.908746,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 224.001,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/_9PMTWdYX6I?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=15"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=4O87O9rHdoE",
+    "path": "/videos/bianca-andreescu-2023-ankle/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 0,
+    "checkedAt": "2026-09-21T05:55:03.436Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 5.557445,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 91.061,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/4O87O9rHdoE?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=_qp50gF67sQ",
+    "path": "/videos/juan-martin-del-potro-2017-wrist-contusion/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 0,
+    "checkedAt": "2026-09-21T05:55:10.799Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 4.716126,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 120.67410430839004,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/_qp50gF67sQ?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=yH1WExdlI4Q",
+    "path": "/videos/rafael-nadal-2016-wrist/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 0,
+    "checkedAt": "2026-09-21T05:55:18.464Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 5.759201,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 208.321,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/yH1WExdlI4Q?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=ApTbpxIuUJ8",
+    "path": "/videos/nikola-karabatic-2020-acl/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 0,
+    "checkedAt": "2026-09-21T05:55:25.376Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 4.026113,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 162.661,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/ApTbpxIuUJ8?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=WhCalbwjLJg",
+    "path": "/videos/kelly-slater-2017-foot/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 25,
+    "checkedAt": "2026-09-21T05:55:34.409Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 31.030971,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 225.721,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/WhCalbwjLJg?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=25"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=wTaCr8olPck",
+    "path": "/videos/sally-fitzgibbons-2015-eardrum/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 45,
+    "checkedAt": "2026-09-21T05:55:44.310Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 52.158154,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 351.461,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/wTaCr8olPck?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=45"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=ZQL-1NY5erY",
+    "path": "/videos/emma-raducanu-2022-2023-wrists/",
+    "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
+    "startSeconds": 25,
+    "checkedAt": "2026-09-21T05:56:10.991Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 48.057179,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 88.041,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/ZQL-1NY5erY?enablejsapi=1&origin=https%3A%2F%2F9df84ef0.sports-injury-atlas.pages.dev&start=25"
+  }
+]
