@@ -48,7 +48,7 @@ test("keeps social links ahead of search, exposes all mobile category controls, 
   await expect(page.locator(visible)).toHaveCount(1);
   await page
     .locator(visible)
-    .getByRole("link", { name: "查看影片與解析 →", exact: true })
+    .getByRole("link", { name: "查看 Drew Brees 的影片與解析", exact: true })
     .click();
   await expect(page).toHaveURL(/\/videos\/drew-brees-2020-rib\/$/);
   await expect(page.getByText("預設播放起點", { exact: true })).toBeVisible();
