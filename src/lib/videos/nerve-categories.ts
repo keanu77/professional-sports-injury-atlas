@@ -15,6 +15,14 @@ export const NERVE_CATEGORIES = [
   },
 ] as const;
 
+/** A combined browsing group; the medical categories remain distinct. */
+export function nerveInjuryGroup(clips: readonly ObservationClip[]) {
+  const selected = clips.filter((clip) =>
+    NERVE_CATEGORIES.some((category) => clip.nerveCategory === category.code),
+  );
+  return { label: "神經損傷", clips: selected, count: selected.length };
+}
+
 export function videosByNerveCategory(clips: readonly ObservationClip[]) {
   return NERVE_CATEGORIES.map((category) => {
     const selected = clips.filter(

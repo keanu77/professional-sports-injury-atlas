@@ -7,7 +7,7 @@ import SportNav from "../components/atlas/SportNav.astro";
 import { videosBySport } from "../lib/videos/sports";
 import BodyPartNav from "../components/atlas/BodyPartNav.astro";
 import { videosByBodyPart } from "../lib/videos/body-parts";
-import { videosByNerveCategory } from "../lib/videos/nerve-categories";
+import { nerveInjuryGroup } from "../lib/videos/nerve-categories";
 import { isLaunchEnabled } from "../lib/patient/public-launch";
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -30,7 +30,7 @@ const clips = observationClips();
 const bodyParts = videosByBodyPart(featured, clips);
 const sports = videosBySport(featured, clips);
 const situations = videosBySituation(featured, clips);
-const nerveCategories = videosByNerveCategory(clips);
+const nerveGroup = nerveInjuryGroup(clips);
 const videoCount = featured.length + clips.length;
 ---
 
@@ -119,7 +119,7 @@ const videoCount = featured.length + clips.length;
           data-home-category-panel="body-parts"
         >
           <div id="body-parts">
-            <BodyPartNav parts={bodyParts} />
+            <BodyPartNav parts={bodyParts} nerveCount={nerveGroup.count} />
           </div>
         </div>
         <div id="home-category-sports" data-home-category-panel="sports">
@@ -135,23 +135,6 @@ const videoCount = featured.length + clips.length;
             <SituationNav situations={situations} />
           </div>
         </div>
-      </section>
-    )
-  }
-  {
-    nerveCategories.length > 0 && (
-      <section aria-labelledby="nerve-topics-heading" class="nerve-topics">
-        <h2 id="nerve-topics-heading">神經傷害專題</h2>
-        <p>依公開來源具名的神經分類，並區分受傷畫面與本人訪談。</p>
-        <ul>
-          {nerveCategories.map((category) => (
-            <li>
-              <a href={`/nerve-injuries/${category.code}/`}>
-                {category.label} · {category.count} 支
-              </a>
-            </li>
-          ))}
-        </ul>
       </section>
     )
   }
@@ -276,19 +259,6 @@ const videoCount = featured.length + clips.length;
   import "../scripts/video-discovery";
 </script>
 <style>
-  .nerve-topics ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 1rem;
-    padding: 0;
-    list-style: none;
-  }
-  .nerve-topics a {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    padding: 0.5rem;
-  }
   [hidden] {
     display: none !important;
   }

@@ -6,24 +6,27 @@ import CaseCard from "../../components/atlas/CaseCard.astro";
 import ObservationCard from "../../components/atlas/ObservationCard.astro";
 import { videosByBodyPart } from "../../lib/videos/body-parts";
 import { observationClips } from "../../lib/videos/expansion";
+import { nerveInjuryGroup } from "../../lib/videos/nerve-categories";
 import { hasPublicEmbed, videoFirstCases } from "../../lib/patient/featured";
 import { isLaunchEnabled } from "../../lib/patient/public-launch";
 import { permittedCasesForMode } from "../../lib/cases/pagination";
 export async function getStaticPaths() {
   if (!isLaunchEnabled()) return [];
   const records = (await getCollection("cases")).map((entry) => entry.data);
+  const clips = observationClips();
+  const nerveCount = nerveInjuryGroup(clips).count;
   const groups = videosByBodyPart(
     videoFirstCases(permittedCasesForMode("public", records)).filter(
       hasPublicEmbed,
     ),
-    observationClips(),
+    clips,
   );
   return groups.map((group) => ({
     params: { part: group.code },
-    props: { group, groups },
+    props: { group, groups, nerveCount },
   }));
 }
-const { group, groups } = Astro.props;
+const { group, groups, nerveCount } = Astro.props;
 ---
 
 <BaseLayout
@@ -36,7 +39,7 @@ const { group, groups } = Astro.props;
       {group.count} 支影片 · 點選影片看受傷與回場重點
     </p>
   </header>
-  <BodyPartNav parts={groups} current={group.code} />
+  <BodyPartNav parts={groups} current={group.code} nerveCount={nerveCount} />
   <ol
     class="part-grid"
     aria-label={`${group.label}影片`}

@@ -9,6 +9,13 @@ const receipt = JSON.parse(
   fs.readFileSync("artifacts/public-launch-receipt.v1.json", "utf8"),
 );
 assert.ok(receipt.sports?.length, "Missing sport classification receipt");
+const nerveFour = JSON.parse(
+  fs.readFileSync("src/data/videos/nerve-four.v1.json", "utf8"),
+);
+const nerveSlugs = new Set(nerveFour.clips.map((clip) => clip.slug));
+const nerveCount = (receipt.clips ?? []).filter((clip) =>
+  nerveSlugs.has(clip.slug),
+).length;
 const videoPaths = [
   ...receipt.cases.map((record) => `/cases/${record.slug}/`),
   ...(receipt.clips ?? []).map((clip) => `/videos/${clip.slug}/`),
@@ -190,13 +197,27 @@ try {
               : kind === "situation"
                 ? "situations"
                 : "body-parts";
+          const expectedNavigation = groups.map(
+            (item) => `/${route}/${item.code}/`,
+          );
+          if (kind === "body-part" && nerveCount > 0)
+            expectedNavigation.push("/nerve-injuries/");
           assert.deepEqual(
             await nav
               .locator("a")
               .evaluateAll((links) => links.map((a) => a.getAttribute("href"))),
-            groups.map((item) => `/${route}/${item.code}/`),
+            expectedNavigation,
             `Classification navigation: ${path}`,
           );
+          if (kind === "body-part" && nerveCount > 0) {
+            const nerveLink = nav.locator('a[href="/nerve-injuries/"]');
+            assert.equal(await nerveLink.count(), 1);
+            assert.ok((await nerveLink.innerText()).includes("神經損傷"));
+            assert.equal(
+              await nerveLink.locator("span").innerText(),
+              `${nerveCount} 支影片`,
+            );
+          }
           assert.equal(
             await nav.locator('[aria-current="page"]').count(),
             current ? 1 : 0,

@@ -74,6 +74,10 @@ test("named nerve search finds all four and keeps plexus separate", async ({
   await search.fill("brachial plexus");
   await expect(page.locator("[data-discovery-slug]:visible")).toHaveCount(1);
   await page.goto("/nerve-injuries/peripheral-nerve/");
+  await expect(page.getByRole("link", { name: "← 神經損傷" })).toHaveAttribute(
+    "href",
+    "/nerve-injuries/",
+  );
   await expect(page.locator("[data-nerve-category] > li")).toHaveCount(3);
   await expect(page.getByRole("link", { name: /神經叢損傷/ })).toBeVisible();
   await page.goto("/nerve-injuries/brachial-plexus/");
@@ -82,6 +86,65 @@ test("named nerve search finds all four and keeps plexus separate", async ({
     "Rob Horne",
   );
   await expectNoAxeViolations(page);
+});
+
+test("one nerve entry opens all four cases and preserves anatomical navigation", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const nav = page.getByRole("navigation", { name: "依受傷部位看影片" });
+  const anatomicalLinks = await nav
+    .locator('a[href^="/body-parts/"]')
+    .evaluateAll((links) =>
+      links.map((link) => ({
+        href: link.getAttribute("href"),
+        text: link.textContent,
+      })),
+    );
+  await expect(page.getByRole("heading", { name: "神經傷害專題" })).toHaveCount(
+    0,
+  );
+  const nerveLink = nav.getByRole("link", { name: "神經損傷 4 支影片" });
+  await expect(nerveLink).toHaveCount(1);
+  await nerveLink.click();
+  await expect(page).toHaveURL(/\/nerve-injuries\/$/);
+  await expect(
+    page.getByRole("heading", { name: "神經損傷案例影片" }),
+  ).toBeVisible();
+  await expect(nav.locator('[aria-current="page"]')).toHaveAttribute(
+    "href",
+    "/nerve-injuries/",
+  );
+  expect(
+    await nav.locator('a[href^="/body-parts/"]').evaluateAll((links) =>
+      links.map((link) => ({
+        href: link.getAttribute("href"),
+        text: link.textContent,
+      })),
+    ),
+  ).toEqual(anatomicalLinks);
+  await expect(page.locator("[data-nerve-videos] > li")).toHaveCount(4);
+  await expect(page.locator("iframe")).toHaveCount(0);
+  await expectNoAxeViolations(page);
+  for (const [slug, name] of cases) {
+    await page
+      .locator(`[data-nerve-videos] a[href="/videos/${slug}/"]`)
+      .click();
+    await expect(
+      page.getByRole("heading", { name, exact: true }),
+    ).toBeVisible();
+    await page.goto("/nerve-injuries/");
+  }
+  for (const part of anatomicalLinks) {
+    await page.goto(part.href!);
+    await expect(
+      nav.getByRole("link", { name: "神經損傷 4 支影片" }),
+    ).toBeVisible();
+    await expect(nav.locator('[aria-current="page"]')).toHaveAttribute(
+      "href",
+      part.href!,
+    );
+  }
 });
 
 test("Kelly loads only the allowlisted iframe after consent, without YouTube telemetry", async ({

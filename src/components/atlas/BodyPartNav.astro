@@ -2,8 +2,10 @@
 interface Props {
   parts: { code: string; label: string; count: number }[];
   current?: string;
+  nerveCount?: number;
+  nerveCurrent?: boolean;
 }
-const { parts, current } = Astro.props;
+const { parts, current, nerveCount = 0, nerveCurrent = false } = Astro.props;
 ---
 
 <nav class="body-part-nav" aria-label="依受傷部位看影片" data-body-part-nav>
@@ -21,6 +23,19 @@ const { parts, current } = Astro.props;
           </a>
         </li>
       ))
+    }
+    {
+      nerveCount > 0 && (
+        <li>
+          <a
+            href="/nerve-injuries/"
+            aria-current={nerveCurrent ? "page" : undefined}
+          >
+            神經損傷
+            <span>{nerveCount} 支影片</span>
+          </a>
+        </li>
+      )
     }
   </ul>
 </nav>

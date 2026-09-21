@@ -1,0 +1,83 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BodyPartNav from "../../components/atlas/BodyPartNav.astro";
+import ObservationCard from "../../components/atlas/ObservationCard.astro";
+import MedicalNotice from "../../components/notices/MedicalNotice.astro";
+import { observationClips } from "../../lib/videos/expansion";
+import { nerveInjuryGroup } from "../../lib/videos/nerve-categories";
+import { videosByBodyPart } from "../../lib/videos/body-parts";
+import { hasPublicEmbed, videoFirstCases } from "../../lib/patient/featured";
+import { isLaunchEnabled } from "../../lib/patient/public-launch";
+import { permittedCasesForMode } from "../../lib/cases/pagination";
+
+export async function getStaticPaths() {
+  if (!isLaunchEnabled()) return [];
+  const records = (await getCollection("cases")).map((entry) => entry.data);
+  const clips = observationClips();
+  const group = nerveInjuryGroup(clips);
+  const bodyParts = videosByBodyPart(
+    videoFirstCases(permittedCasesForMode("public", records)).filter(
+      hasPublicEmbed,
+    ),
+    clips,
+  );
+  return [{ params: { index: undefined }, props: { group, bodyParts } }];
+}
+const { group, bodyParts } = Astro.props;
+---
+
+<BaseLayout
+  title="神經損傷案例影片｜運動傷害影片圖鑑"
+  description="一起瀏覽周邊神經與臂神經叢損傷案例，認識公開來源記載的傷勢與回場歷程。"
+>
+  <a href="/#body-parts">← 全部影片</a>
+  <header class="nerve-heading">
+    <h1>神經損傷案例影片</h1>
+    <p>{group.count} 支影片 · 傷勢依公開來源，不能由影片自行診斷。</p>
+    <p>
+      此處將周邊神經與臂神經叢損傷案例放在一起，方便瀏覽；兩者的解剖範圍與傷勢並不相同。
+      各案例保留原本分類，並區分受傷畫面與本人訪談。
+    </p>
+  </header>
+  <BodyPartNav parts={bodyParts} nerveCount={group.count} nerveCurrent />
+  <ol class="nerve-grid" data-nerve-videos aria-label="神經損傷影片">
+    {
+      group.clips.map((clip) => (
+        <li>
+          <ObservationCard clip={clip} />
+        </li>
+      ))
+    }
+  </ol>
+  <MedicalNotice variant="compact" />
+</BaseLayout>
+<style>
+  .nerve-heading {
+    margin: 1.5rem 0 2rem;
+  }
+  h1 {
+    font-family: var(--font-display);
+  }
+  .nerve-heading p {
+    color: var(--color-ink-muted);
+  }
+  .nerve-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    padding: 0;
+    margin: 2rem 0;
+    list-style: none;
+  }
+  @media (max-width: 60rem) {
+    .nerve-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 40rem) {
+    .nerve-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
