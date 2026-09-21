@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "businessDate": "2026-09-21",
+  "scope": "metadata-only-not-playback-evidence",
+  "method": "YouTube oEmbed JSON requests; no audiovisual or iframe review",
+  "primaryCandidateCount": 6,
+  "alternativeCandidateCount": 2,
+  "rejectedOrUnavailableLeadCount": 2,
+  "entries": [
+    {
+      "id": "iRo0jHPhr2I",
+      "httpStatus": 200,
+      "title": "Olympic gold medalist Chloe Kim announces she dislocated her shoulder",
+      "authorName": "NBC News",
+      "authorUrl": "https://www.youtube.com/@NBCNews",
+      "error": null,
+      "checkedAt": "2026-09-21T00:51:08.910Z",
+      "embeddedPlaybackVerified": false,
+      "role": "primary-candidate"
+    },
+    {
+      "id": "6Pbx-O2G7_Q",
+      "httpStatus": 200,
+      "title": "Eins-gegen-Eins-König und FANLIEBLING | NEVER STOP mit Gisli Kristjansson (Folge 9)",
+      "authorName": "Opel Handball-Bundesliga",
+      "authorUrl": "https://www.youtube.com/@OPELHBL",
+      "error": null,
+      "checkedAt": "2026-09-21T00:51:08.908Z",
+      "embeddedPlaybackVerified": false,
+      "role": "primary-candidate"
+    },
+    {
+      "id": "WevF13bkLAM",
+      "httpStatus": 200,
+      "title": "Olympic Champion Missy Franklin Explains Her Shoulder Problems: GMM presented by SwimOutlet.com",
+      "authorName": "SwimSwam",
+      "authorUrl": "https://www.youtube.com/@SwimSwamTV",
+      "error": null,
+      "checkedAt": "2026-09-21T00:51:08.925Z",
+      "embeddedPlaybackVerified": false,
+      "role": "primary-candidate"
+    },
+    {
+      "id": "z6KNabUBA88",
+      "httpStatus": 200,
+      "title": "Gabriel Medina's magnificent return to the CT: \"I've been here before\" | [Inside Pro Surfing]",
+      "authorName": "World Surf League",
+      "authorUrl": "https://www.youtube.com/@wsl",
+      "error": null,
+      "checkedAt": "2026-09-21T00:51:08.910Z",
+      "embeddedPlaybackVerified": false,
+      "role": "primary-candidate"
+    },
+    {
+      "id": "lqlkP27TXvA",
+      "httpStatus": 200,
+      "title": "INSANE XXL JAWS PADDLE SESSION GOES DOWN",
+      "authorName": "Nathan Florence",
+      "authorUrl": "https://www.youtube.com/@NathanFlorence",
+      "error": null,
+      "checkedAt": "2026-09-21T00:51:08.910Z",
+      "embeddedPlaybackVerified": false,
+      "role": "primary-candidate"
+    },
+    {
+      "id": "gGGMvPtjtZo",
+      "httpStatus": 200,
+      "title": "The Session Of A Lifetime Goes Horribly Wrong For Big Wave Champ Billy Kemper | BILLY Chapter 2",
+      "authorName": "World Surf League",
+      "authorUrl": "https://www.youtube.com/@wsl",
+      "error": null,
+      "checkedAt": "2026-09-21T00:51:08.910Z",
+      "embeddedPlaybackVerified": false,
+      "role": "primary-candidate"
+    },
+    {
+      "id": "gT6mic006pg",
+      "httpStatus": 200,
+      "title": "HOW I BROKE MY BACK AT JAWS FULL BREAKDOWN INJURY UPDATE!",
+      "authorName": "Nathan Florence",
+      "authorUrl": "https://www.youtube.com/@NathanFlorence",
+      "error": null,
+      "checkedAt": "2026-09-21T00:51:08.910Z",
+      "embeddedPlaybackVerified": false,
+      "role": "alternative-athlete-interview"
+    },
+    {
+      "id": "dsUds6bEP5g",
+      "httpStatus": 200,
+      "title": "Big Wave Champ Billy Kemper Talks Devastating Injury And Inspirational Comeback | The Lineup",
+      "authorName": "World Surf League",
+      "authorUrl": "https://www.youtube.com/@wsl",
+      "error": null,
+      "checkedAt": "2026-09-21T00:51:08.910Z",
+      "embeddedPlaybackVerified": false,
+      "role": "alternative-athlete-interview"
+    },
+    {
+      "id": "j9xCJixmLcA",
+      "httpStatus": 403,
+      "title": null,
+      "authorName": null,
+      "authorUrl": null,
+      "error": "Forbidden",
+      "checkedAt": "2026-09-21T00:51:08.910Z",
+      "embeddedPlaybackVerified": false,
+      "role": "unavailable-unconfirmed-publisher-lead"
+    },
+    {
+      "id": "QeaMpqMI_EE",
+      "httpStatus": 200,
+      "title": "Every Single Mark McMorris Run From Natural Selection 2022 from Baldface and Alaska",
+      "authorName": "Red Bull Snow",
+      "authorUrl": "https://www.youtube.com/@RedBullSnow",
+      "error": null,
+      "checkedAt": "2026-09-21T00:51:08.909Z",
+      "embeddedPlaybackVerified": false,
+      "role": "rejected-wrong-event-compilation"
+    }
+  ]
+}

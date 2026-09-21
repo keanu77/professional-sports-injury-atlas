@@ -1,0 +1,712 @@
+{
+  "schemaVersion": 1,
+  "businessDate": "2026-09-21",
+  "scope": "research-only-not-imported-by-site",
+  "authorizationQuote": "核准，照此實作（建議）",
+  "targetNewEvents": 42,
+  "thirdBatchResearchCount": 13,
+  "cumulativeResearchCount": 41,
+  "acceptedForPublication": 0,
+  "entries": [
+    {
+      "id": "joana-heidrich-2022-shoulder",
+      "athlete": "Joana Heidrich",
+      "country": "CHE",
+      "sport": "沙灘排球",
+      "eventYear": "2022",
+      "eventDate": "2022-06-19",
+      "bodyPart": "肩部",
+      "injury": "右肩脫臼；不擴充特定組織診斷。",
+      "context": "competition",
+      "gapTags": ["upper-limb", "dislocation", "beach-volleyball"],
+      "sources": [
+        {
+          "url": "https://www.srf.ch/sport/mehr-sport/beachvolleyball/ausfalldauer-noch-nicht-klar-heidrich-erlitt-strukturelle-schulterschaeden",
+          "publisher": "SRF",
+          "access": "full-text-by-research-agent",
+          "supports": "世錦賽銅牌戰發球時右肩脫臼；2022-06-22 本人訪談及初步檢查報導。"
+        },
+        {
+          "url": "https://www.srf.ch/sport/mehr-sport/beachvolleyball/comeback-nach-horrorverletzung-ready-fuer-alles-was-kommt-heidrich-meldet-sich-zurueck",
+          "publisher": "SRF",
+          "access": "full-text-by-research-agent",
+          "supports": "2023 本人回顧確認受傷日 2022-06-19。"
+        }
+      ],
+      "videoUrl": "https://www.srf.ch/play/tv/sport-clip/video/richtig-schlimm-war-es-als-ich-meine-hand-nicht-mehr-spueren-konnte?urn=urn:srf:video:fc46775b-526f-4d7e-b89e-33a04abb41fb",
+      "publisher": "SRF Sport",
+      "proposedFootageKind": "athlete-interview",
+      "stage": "needs-supported-video",
+      "limitations": [
+        "exact 影片 URL 由 SRF 文章 data-asset 取得，HTTP 200 並核對標題，但未實播。",
+        "本人描述手部麻木，不足以另立具名神經損傷診斷。",
+        "未找到官方 YouTube；SRF 嵌入支援及地區限制尚未核定。"
+      ],
+      "priority": "high-shoulder-if-provider-cleared",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Actual same-event audiovisual review and selected segment/duration",
+        "Final source jurisdiction, original publisher and permitted embed review",
+        "Final clinical/event/anatomical classification review",
+        "Owned-HTTPS embedded playback and normal release approvals"
+      ]
+    },
+    {
+      "id": "gisli-kristjansson-2023-shoulder",
+      "athlete": "Gísli Kristjánsson",
+      "country": "ISL",
+      "sport": "手球",
+      "eventYear": "2023",
+      "eventDate": "2023-06-17",
+      "bodyPart": "肩部",
+      "injury": "右肩脫臼，後接受肩部穩定手術。",
+      "context": "competition",
+      "gapTags": ["upper-limb", "dislocation", "handball"],
+      "sources": [
+        {
+          "url": "https://www.scm-handball.de/scm-news/gisli-kristjansson-an-der-rechten-schulter-operiert/",
+          "publisher": "SC Magdeburg",
+          "access": "full-text-by-research-agent-parent-web-timeout",
+          "supports": "2023-07-06 球隊公告右肩手術及 6 月 17 日歐冠準決賽受傷。"
+        },
+        {
+          "url": "https://ehfel.eurohandball.com/news/en/this-is-me-gisli-kristjansson/",
+          "publisher": "EHF",
+          "access": "full-text-by-research-agent",
+          "supports": "本人回顧 2023 準決賽肩脫位、MRI 與翌日決賽。"
+        },
+        {
+          "url": "https://www.opel-hbl.de/de/hbl/content/never-stop-mit-gisli-kristjansson-ich-will-alles-daf%C3%BCr-tun-dass-wir-jedes-jahr-einen-titel-holen",
+          "publisher": "Handball-Bundesliga",
+          "access": "full-text-via-http-by-research-agent",
+          "supports": "原創紀錄片介紹提及 2023 肩傷，HTML 直接嵌入所列 YouTube ID。"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=6Pbx-O2G7_Q",
+      "publisher": "Opel Handball-Bundesliga",
+      "proposedFootageKind": "athlete-interview",
+      "stage": "needs-playback-and-event-matching",
+      "limitations": [
+        "生涯紀錄片亦談較早肩傷，必須選出 2023-06-17 右肩段落，不能與 2019／2020 事件混用。",
+        "未核對是否含受傷動作。",
+        "翌日參賽不等於復原，不作一般回場建議。"
+      ],
+      "priority": "high-handball-upper-limb",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Actual same-event audiovisual review and selected segment/duration",
+        "Final source jurisdiction, original publisher and permitted embed review",
+        "Final clinical/event/anatomical classification review",
+        "Owned-HTTPS embedded playback and normal release approvals"
+      ]
+    },
+    {
+      "id": "hendrik-pekeler-2022-achilles",
+      "athlete": "Hendrik Pekeler",
+      "country": "DEU",
+      "sport": "手球",
+      "eventYear": "2022",
+      "eventDate": "2022-05-19",
+      "bodyPart": "小腿／阿基里斯腱",
+      "injury": "阿基里斯腱斷裂；側別暫不寫入診斷。",
+      "context": "competition",
+      "gapTags": ["tendon", "handball"],
+      "sources": [
+        {
+          "url": "https://thw-handball.de/weitere/2022/05/thw-abwehrchef-hendrik-pekeler-erfolgreich-operiert/",
+          "publisher": "THW Kiel",
+          "access": "full-text-by-research-agent",
+          "supports": "手術公告稱前晚對 PSG 的歐冠賽右阿基里斯腱斷裂，5 月 20 日手術。"
+        },
+        {
+          "url": "https://thw-handball.de/bundesliga/2022/11/thw-kiel-nimmt-nach-starker-leistung-erlanger-heimfestung-in-nuernberg-ein/",
+          "publisher": "THW Kiel",
+          "access": "search-excerpt-by-research-agent",
+          "supports": "11 月 16 日對 Erlangen 復出並連結此前 PSG 傷勢。"
+        },
+        {
+          "url": "https://sport.sky.de/handball/artikel/handball-hendrik-pekeler-freut-sich-ueber-sein-comeback-beim-thw-kiel/12749219/35576",
+          "publisher": "Sky Sport",
+          "access": "video-page-text-by-research-agent",
+          "supports": "2022-11-16 本人談對 Erlangen 傷後回歸。"
+        }
+      ],
+      "videoUrl": "https://sport.sky.de/handball/artikel/handball-hendrik-pekeler-freut-sich-ueber-sein-comeback-beim-thw-kiel/12749219/35576",
+      "publisher": "Sky Sport",
+      "proposedFootageKind": "athlete-interview",
+      "stage": "needs-supported-video-and-side-reconciliation",
+      "limitations": [
+        "早期球隊比賽報導寫左腳，手術公告與較後訪談寫右側；保留衝突，不能看畫面自行判定。",
+        "不同於 2025 年左側阿基里斯腱事件。",
+        "未實播、未核對確切傷勢敘述；Sky 嵌入及地區限制待核。"
+      ],
+      "priority": "medium-after-side-reconciliation",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Actual same-event audiovisual review and selected segment/duration",
+        "Final source jurisdiction, original publisher and permitted embed review",
+        "Final clinical/event/anatomical classification review",
+        "Owned-HTTPS embedded playback and normal release approvals"
+      ]
+    },
+    {
+      "id": "ayaka-araki-2024-hand",
+      "athlete": "荒木彩花 / Ayaka Araki",
+      "country": "JPN",
+      "sport": "室內排球",
+      "eventYear": "2024",
+      "eventDate": null,
+      "bodyPart": "手部",
+      "injury": "左手第 4 掌骨骨折，接受手術。",
+      "context": "competition-associated",
+      "gapTags": ["upper-limb", "fracture", "volleyball"],
+      "sources": [
+        {
+          "url": "https://saga-springs.co.jp/news/2024/01/11/2025",
+          "publisher": "SAGA久光スプリングス",
+          "access": "full-text-by-research-agent",
+          "supports": "2024-01-11 球隊公告左環指中手骨骨折及手術。"
+        },
+        {
+          "url": "https://sports.yahoo.co.jp/video/player/16746803",
+          "publisher": "SAGA久光スプリングス / SportsNavi",
+          "access": "video-page-text-by-research-agent",
+          "supports": "2024-09-27 本人訪談預告回顧 2023 傷勢與 2024 年 1 月復出戰手骨折。"
+        }
+      ],
+      "videoUrl": "https://sports.yahoo.co.jp/video/player/16746803",
+      "publisher": "SAGA久光スプリングス",
+      "proposedFootageKind": "athlete-interview",
+      "stage": "needs-full-video-and-supported-provider",
+      "limitations": [
+        "目前找到的是官方預告，不是完整訪談；完整版 exact YouTube URL 尚缺。",
+        "2024-01-11 是公告日，受傷日留空。",
+        "掌骨不是指骨；也不可混入 2023 踝傷。"
+      ],
+      "priority": "medium-after-full-video-found",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Actual same-event audiovisual review and selected segment/duration",
+        "Final source jurisdiction, original publisher and permitted embed review",
+        "Final clinical/event/anatomical classification review",
+        "Owned-HTTPS embedded playback and normal release approvals"
+      ]
+    },
+    {
+      "id": "missy-franklin-2016-shoulder",
+      "athlete": "Missy Franklin",
+      "country": "USA",
+      "sport": "游泳",
+      "eventYear": "2016",
+      "eventDate": null,
+      "bodyPart": "肩部",
+      "injury": "雙肩持續疼痛；2017 年報導診斷滑囊炎並接受雙肩手術。",
+      "context": "swimming-associated-persistent-symptoms",
+      "gapTags": ["upper-limb", "persistent-symptoms", "swimming"],
+      "sources": [
+        {
+          "url": "https://www.swimmingworldmagazine.com/news/missy-franklin-had-double-shoulder-surgery-out-of-competition-indefinitely/",
+          "publisher": "Swimming World",
+          "access": "full-relevant-text-parent-rechecked",
+          "supports": "本人公告及發言人回覆：自 2016 肩痛，2017 年 1 月 MRI 後診斷滑囊炎。"
+        },
+        {
+          "url": "https://www.swimmingworldmagazine.com/news/exclusive-the-heart-mind-and-talent-of-missy-franklin//",
+          "publisher": "Swimming World / David Rieder",
+          "access": "full-text-by-research-agent",
+          "supports": "原創訪談提及 2017 年雙肩滑囊炎／疤痕組織手術及逐步恢復。"
+        },
+        {
+          "url": "https://swimswam.com/missy-franklin-explains-her-shoulder-problems-gmm-presented-by-swimoutlet-com/",
+          "publisher": "SwimSwam / Mel Stewart",
+          "access": "full-text-by-research-agent",
+          "supports": "原創肩部問題訪談頁直接嵌入所列 YouTube。"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=WevF13bkLAM",
+      "publisher": "SwimSwam",
+      "proposedFootageKind": "athlete-interview",
+      "stage": "needs-playback-and-same-injury-segment-review",
+      "limitations": [
+        "2016 起始疼痛及 2017 診斷手術視為同一病程，不拆兩例。",
+        "不指定滑囊解剖位置、旋轉肌腱撕裂；不把過度使用當已確認病因。",
+        "未實播，需定位雙肩病程段落；其他個人議題不納入病例。"
+      ],
+      "priority": "high-swimming-upper-limb",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Actual same-event audiovisual review and selected segment/duration",
+        "Final source jurisdiction, original publisher and permitted embed review",
+        "Final clinical/event/anatomical classification review",
+        "Owned-HTTPS embedded playback and normal release approvals"
+      ]
+    },
+    {
+      "id": "gabriel-medina-2025-pectoral-tendon",
+      "athlete": "Gabriel Medina",
+      "country": "BRA",
+      "sport": "衝浪",
+      "eventYear": "2025",
+      "eventDate": "2025-01-09",
+      "bodyPart": "軀幹",
+      "injury": "左側胸大肌肌腱受傷，接受肌腱修復手術。",
+      "context": "surf-training",
+      "gapTags": ["upper-limb-linked", "tendon", "surfing"],
+      "sources": [
+        {
+          "url": "https://ge.globo.com/surfe/noticia/2025/01/11/gabriel-medina-sofre-lesao-passa-por-cirurgia-e-vai-perder-temporada.ghtml",
+          "publisher": "ge / Globo / Breno Dines",
+          "access": "full-text-by-research-agent",
+          "supports": "1 月 9 日 Maresias 訓練受傷，1 月 11 日手術；直接引述主刀 Breno Schor。"
+        },
+        {
+          "url": "https://stabmag.com/news/gabriel-medina-undergoes-surgery-after-pectoral-injury-in-maresias/",
+          "publisher": "Stab",
+          "access": "full-text-by-research-agent",
+          "supports": "同次事故報導並嵌入本人原始公告。"
+        },
+        {
+          "url": "https://www.instagram.com/p/DEsvGi4SCi4/",
+          "publisher": "Gabriel Medina",
+          "access": "unavailable-crosslinked-from-original-report",
+          "supports": "本人公告／受傷動作線索；未直接讀取。"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=z6KNabUBA88",
+      "publisher": "World Surf League",
+      "alternativeVideoUrl": "https://www.instagram.com/p/DEsvGi4SCi4/",
+      "proposedFootageKind": "athlete-interview",
+      "stage": "needs-playback-and-same-injury-segment-review",
+      "limitations": [
+        "WSL 原創回歸影片描述提及 2025 傷勢，仍需視聽選出胸肌傷片段。",
+        "本人 IG 可能有受傷動作但本次無法開啟；不把訪談冒充受傷瞬間。",
+        "不推定完全斷裂、分級或重建術式。",
+        "部分報導日期為 1 月 10 日；此處採 ge 明載 1 月 9 日與本人所述星期四。"
+      ],
+      "priority": "high-surfing-tendon",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Actual same-event audiovisual review and selected segment/duration",
+        "Final source jurisdiction, original publisher and permitted embed review",
+        "Final clinical/event/anatomical classification review",
+        "Owned-HTTPS embedded playback and normal release approvals"
+      ]
+    },
+    {
+      "id": "nathan-florence-2023-t12-fracture",
+      "athlete": "Nathan Florence",
+      "country": "USA",
+      "sport": "衝浪",
+      "eventYear": "2023",
+      "eventDate": null,
+      "bodyPart": "軀幹",
+      "injury": "本人公開說明 T12 椎體壓迫性骨折。",
+      "context": "big-wave-surfing",
+      "gapTags": ["spine", "fracture", "surfing"],
+      "sources": [
+        {
+          "url": "https://www.theinertia.com/surf/nathan-florence-broken-back-jaws-surfing-wipeout/",
+          "publisher": "The Inertia / Alexander Haro",
+          "access": "full-text-parent-rechecked",
+          "supports": "2023-01-19 記者直接詢問本人，並引述 T12 壓迫性骨折更新。"
+        },
+        {
+          "url": "https://www.theinertia.com/surf/xxl-jaws-wipeout-nathan-florence-spinal-x-ray/",
+          "publisher": "The Inertia",
+          "access": "full-text-by-research-agent",
+          "supports": "2023-01-13 初期報導連結本人原片；後被骨折診斷更新。"
+        },
+        {
+          "url": "https://www.surfer.com/news/this-mutant-jaws-wave-broke-nathan-florences-back",
+          "publisher": "SURFER",
+          "access": "full-text-by-research-agent",
+          "supports": "同次 Jaws 原片的片段位置線索；未親自觀看。"
+        },
+        {
+          "url": "https://www.theinertia.com/surf/nathan-florence-explains-exactly-how-he-broke-his-back-at-jaws/",
+          "publisher": "The Inertia",
+          "access": "full-text-by-research-agent",
+          "supports": "2023-02-14 傷後回顧連結本人說明影片。"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=lqlkP27TXvA",
+      "publisher": "Nathan Florence",
+      "alternativeVideoUrl": "https://www.youtube.com/watch?v=gT6mic006pg",
+      "proposedFootageKind": "injury-motion",
+      "stage": "needs-playback-and-segment-review",
+      "limitations": [
+        "SURFER 的約 7:40 只是定位線索，startSeconds 仍 null。",
+        "受傷日僅知 2023 年 1 月、早於 1 月 13 日報導，不填猜測日。",
+        "原報導導言誤稱 lumbar；採本人明述 T12（胸椎），不寫成腰椎骨折。",
+        "早期看似未有骨折的描述，已被後續診斷更新。",
+        "本人認為硬舉保護自己只是個人推測，不作預防結論；六週再照 X 光是當時預估，不是實際痊癒日。"
+      ],
+      "priority": "high-original-injury-footage",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Actual same-event audiovisual review and selected segment/duration",
+        "Final source jurisdiction, original publisher and permitted embed review",
+        "Final clinical/event/anatomical classification review",
+        "Owned-HTTPS embedded playback and normal release approvals"
+      ]
+    },
+    {
+      "id": "billy-kemper-2020-pelvis-knee",
+      "athlete": "Billy Kemper",
+      "country": "USA",
+      "sport": "衝浪",
+      "eventYear": "2020",
+      "eventDate": null,
+      "bodyPart": "骨盆／膝部（待主要部位選定）",
+      "injury": "骨盆骨折，合併 ACL、MCL 與半月板損傷。",
+      "context": "big-wave-surfing-trip",
+      "gapTags": ["fracture", "multiligament", "surfing"],
+      "sources": [
+        {
+          "url": "https://masiclinic.com/patient-story/professional-surfer-billy-kemper/",
+          "publisher": "MASI Clinic / treating surgeon Masi Reynolds",
+          "access": "full-text-parent-rechecked",
+          "supports": "參與治療醫師診所確認骨盆骨折、膝 ACL、MCL 與半月板損傷，連結 WSL 紀錄片。"
+        },
+        {
+          "url": "https://stabmag.com/full-frame/sequence-billy-kemper-breaks-his-pelvis-on-mutant-double-up-will-likely-require-medical-transport-to-usa/",
+          "publisher": "Stab",
+          "access": "full-text-by-research-agent",
+          "supports": "2020-02-20 原始醫院訪談本人確認骨盆骨折；當時韌帶傷仍初步推測。"
+        },
+        {
+          "url": "https://www.outrigger.com/test/surfers-in-residence/billy-kemper",
+          "publisher": "OUTRIGGER / Surfers in Residence",
+          "access": "full-text-by-research-agent",
+          "supports": "本人訪談主辦頁確認 2020 年 2 月摩洛哥事故。"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=gGGMvPtjtZo",
+      "publisher": "World Surf League",
+      "alternativeVideoUrl": "https://www.youtube.com/watch?v=dsUds6bEP5g",
+      "proposedFootageKind": "injury-motion",
+      "stage": "needs-playback-and-segment-review",
+      "limitations": [
+        "BILLY Chapter 2 為同次事故片候選，仍需視聽確認受傷動作。",
+        "早期『昨日』敘述涉及發稿時區，精確受傷日留 null。",
+        "膝部確切診斷以後續治療醫師說明為依據，不用早期猜測。",
+        "不從落水畫面推定所有傷害發生先後，原片其他人生事件不混入醫療案例。"
+      ],
+      "priority": "high-treating-clinician-source",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Actual same-event audiovisual review and selected segment/duration",
+        "Final source jurisdiction, original publisher and permitted embed review",
+        "Final clinical/event/anatomical classification review",
+        "Owned-HTTPS embedded playback and normal release approvals"
+      ]
+    },
+    {
+      "id": "chloe-kim-2026-shoulder",
+      "athlete": "Chloe Kim",
+      "country": "USA",
+      "sport": "單板滑雪",
+      "eventYear": "2026",
+      "eventDate": null,
+      "bodyPart": "肩部",
+      "injury": "左肩脫臼，後續本人更新 MRI 顯示盂唇撕裂。",
+      "context": "training",
+      "gapTags": ["upper-limb", "dislocation", "new-sport"],
+      "sources": [
+        {
+          "url": "https://www.nbcolympics.com/news/chloe-kim-announces-she-dislocated-her-shoulder-one-month-2026-milan-cortina-olympics",
+          "publisher": "NBC Olympics",
+          "access": "full-relevant-text",
+          "supports": "Laax 訓練肩脫臼；公告影片含跌落片段。"
+        },
+        {
+          "url": "https://www.nbcolympics.com/news/chloe-kim-says-shes-good-go-milan-cortina-olympics-after-being-diagnosed-torn-labrum",
+          "publisher": "NBC Olympics quoting athlete update",
+          "access": "full-text-via-http-after-web-timeout",
+          "supports": "本人稱 MRI 顯示盂唇撕裂。"
+        },
+        {
+          "url": "https://www.nbcolympics.com/news/chloe-kim-says-injured-shoulder-feeling-good-complete-halfpipe-three-peat",
+          "publisher": "NBC Olympics news conference report",
+          "access": "full-relevant-text",
+          "supports": "本人記者會確認左側。"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=iRo0jHPhr2I",
+      "publisher": "NBC News",
+      "proposedFootageKind": "news-analysis",
+      "stage": "needs-playback-and-segment-review",
+      "limitations": [
+        "2026-01-08 是公告日，精確受傷日未確認。",
+        "不把 2025 年 12 月 Copper Mountain 跌落混入 Laax 事件。",
+        "YouTube 標題與發布者已核；尚未確定此剪輯中受傷瞬間、本人敘述的比例。",
+        "不補盂唇分型、手術結果或把本人樂觀回歸預估當成醫師核准。"
+      ],
+      "priority": "high-upper-limb-supported-provider-lead",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Actual same-event audiovisual review and selected segment/duration",
+        "Final source jurisdiction, original publisher and permitted embed review",
+        "Final clinical/event/anatomical classification review",
+        "Owned-HTTPS embedded playback and normal release approvals"
+      ]
+    },
+    {
+      "id": "sofia-goggia-2022-hand",
+      "athlete": "Sofia Goggia",
+      "country": "ITA",
+      "sport": "高山滑雪",
+      "eventYear": "2022",
+      "eventDate": "2022-12-16",
+      "bodyPart": "手部",
+      "injury": "左手骨折；FIS 記載兩處骨折及手術固定，不指定骨頭。",
+      "context": "competition",
+      "gapTags": ["upper-limb", "fracture"],
+      "sources": [
+        {
+          "url": "https://www.fis-ski.com/alpine-skiing/news/2022-23/goggia-defies-broken-hand-to-win-st-moritz-downhill",
+          "publisher": "FIS",
+          "access": "full-relevant-text",
+          "supports": "12 月 17 日賽後報導前一天左手骨折、手術及翌日再參賽。"
+        },
+        {
+          "url": "https://www.tntsports.co.uk/alpine-skiing/st-moritz/2022-2023/yeah-i-broke-it-sofia-goggia-confirms-broken-hand-after-clash-with-gate-on-downhill-at-st-moritz_vid1791382/video.shtml",
+          "publisher": "TNT Sports / Eurosport",
+          "access": "full-relevant-text",
+          "supports": "頁面描述同次撞旗門受傷與本人賽後訪談。"
+        }
+      ],
+      "videoUrl": "https://www.tntsports.co.uk/alpine-skiing/st-moritz/2022-2023/yeah-i-broke-it-sofia-goggia-confirms-broken-hand-after-clash-with-gate-on-downhill-at-st-moritz_vid1791382/video.shtml",
+      "publisher": "TNT Sports / Eurosport",
+      "proposedFootageKind": "injury-motion",
+      "stage": "needs-supported-video",
+      "limitations": [
+        "片型僅依權利人描述暫定，未視聽確認。",
+        "影片頁目前顯示 2025 更新日期，不當成受傷日。",
+        "不同於既有 2022 年 1 月膝傷；不混用其診斷。",
+        "不將固定手術或翌日參賽寫成骨折已癒合，不鼓勵帶傷續賽。",
+        "不採搜尋中的 DXSport 搬運影片。"
+      ],
+      "priority": "high-hand-if-provider-cleared",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Actual same-event audiovisual review and selected segment/duration",
+        "Final source jurisdiction, original publisher and permitted embed review",
+        "Final clinical/event/anatomical classification review",
+        "Owned-HTTPS embedded playback and normal release approvals"
+      ]
+    },
+    {
+      "id": "kevin-rolland-2019-pelvis",
+      "athlete": "Kevin Rolland",
+      "country": "FRA",
+      "sport": "自由式滑雪",
+      "eventYear": "2019",
+      "eventDate": "2019-04-30",
+      "bodyPart": "骨盆",
+      "injury": "骨盆骨折及多部位創傷；其他器官細節不作完整確診清單。",
+      "context": "record-attempt",
+      "gapTags": ["fracture", "new-sport", "pelvis"],
+      "sources": [
+        {
+          "url": "https://www.fis-ski.com/freeski-park-and-pipe/news/2019-20/kevin-rolland-returns-to-pipe-11-months-after-accident",
+          "publisher": "FIS",
+          "access": "full-relevant-text",
+          "supports": "2019-04-30 quarterpipe 紀錄挑戰跌落；骨盆骨折手術，2020 年回到雪槽。"
+        },
+        {
+          "url": "https://www.brut.media/fr/videos/sport/sports-de-glisse/du-coma-aux-jo-de-pekin-kevin-rolland-raconte-son-histoire",
+          "publisher": "Brut original athlete interview",
+          "access": "full-relevant-text",
+          "supports": "2022-02-04 本人回顧同次事故；公開網頁包含訪談文字與 Dailymotion x9grstg 播放器 ID。"
+        }
+      ],
+      "videoUrl": "https://www.dailymotion.com/video/x9grstg",
+      "videoProvenanceSource": "https://www.brut.media/fr/videos/sport/sports-de-glisse/du-coma-aux-jo-de-pekin-kevin-rolland-raconte-son-histoire",
+      "publisher": "Brut",
+      "proposedFootageKind": "athlete-interview",
+      "stage": "needs-supported-video",
+      "limitations": [
+        "創紀錄挑戰，不寫成冬奧比賽受傷。",
+        "本人以口語描述多器官受傷，不能逐字翻成所有器官都『骨折』。",
+        "來源對墜落高度有 11／12 公尺差異，草稿不填精確高度。",
+        "Dailymotion 目前不屬本站一般支援 provider；沒有下載或重傳。",
+        "回到雪槽不等於正式賽事復出或全身組織癒合。"
+      ],
+      "priority": "medium-new-sport-if-provider-cleared",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Actual same-event audiovisual review and selected segment/duration",
+        "Final source jurisdiction, original publisher and permitted embed review",
+        "Final clinical/event/anatomical classification review",
+        "Owned-HTTPS embedded playback and normal release approvals"
+      ]
+    },
+    {
+      "id": "mark-mcmorris-2017-multiple-trauma",
+      "athlete": "Mark McMorris",
+      "country": "CAN",
+      "sport": "單板滑雪",
+      "eventYear": "2017",
+      "eventDate": "2017-03-25",
+      "bodyPart": "多部位（待主要部位選定）",
+      "injury": "隊醫說明下顎、左上臂、骨盆及肋骨骨折，合併脾臟與肺部損傷。",
+      "context": "backcountry-filming",
+      "gapTags": ["upper-limb", "fracture", "new-sport", "multiple-trauma"],
+      "sources": [
+        {
+          "url": "https://olympic.ca/2017/03/27/mark-mcmorris-suffers-severe-injuries-on-backcountry-snowboard-trip/",
+          "publisher": "Team Canada quoting team physician Rodney French",
+          "access": "full-relevant-text",
+          "supports": "隊醫公告多部位傷勢；2017-03-27 報導事故發生於週六。"
+        },
+        {
+          "url": "https://www.canadasnowboard.ca/en/news/?id=1203",
+          "publisher": "Canada Snowboard",
+          "access": "search-result-full-interview-excerpt",
+          "supports": "2017 年 8 月本人談五個月復健及準備回到雪上。"
+        },
+        {
+          "url": "https://globalnews.ca/video/3337444/canadian-snowboarder-mark-mcmorris-severely-injured-at-whistler/",
+          "publisher": "Global News",
+          "access": "search-excerpt",
+          "supports": "2017-03-27 同次事故新聞影片。"
+        }
+      ],
+      "videoUrl": "https://globalnews.ca/video/3337444/canadian-snowboarder-mark-mcmorris-severely-injured-at-whistler/",
+      "publisher": "Global News",
+      "proposedFootageKind": "news-analysis",
+      "stage": "needs-supported-video-and-better-athlete-footage",
+      "limitations": [
+        "以 3 月 27 日報導所述週六換算 3 月 25 日；不把公告日當受傷日。",
+        "野外拍攝滑雪情境，非冬奧或 X Games 比賽；不混入 2016 股骨傷。",
+        "原創新聞候選未觀看，不冒充本人訪談。",
+        "Unbroken 舊 Red Bull 原片網址目前 HTTP 404；不能用舊文章『免費可看』當現在可用。",
+        "King Snow 訪談所附 QeaMpqMI_EE 是 2022 比賽集錦，不作此事件影片。"
+      ],
+      "priority": "reserve-original-video-replacement",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Actual same-event audiovisual review and selected segment/duration",
+        "Final source jurisdiction, original publisher and permitted embed review",
+        "Final clinical/event/anatomical classification review",
+        "Owned-HTTPS embedded playback and normal release approvals"
+      ]
+    },
+    {
+      "id": "petra-majdic-2010-rib",
+      "athlete": "Petra Majdič",
+      "country": "SLO",
+      "sport": "越野滑雪",
+      "eventYear": "2010",
+      "eventDate": null,
+      "bodyPart": "軀幹",
+      "injury": "溫哥華冬奧跌落後肋骨骨折；不先指定根數或肺部診斷。",
+      "context": "competition-warm-up",
+      "gapTags": ["rib", "fracture", "new-sport"],
+      "sources": [
+        {
+          "url": "https://stara.olympic.si/en/about-noc-slovenia/history/",
+          "publisher": "Olympic Committee of Slovenia",
+          "access": "full-relevant-section-via-http",
+          "supports": "2010 段落確認溫哥華跌落後多根肋骨骨折。"
+        },
+        {
+          "url": "https://www.sailing.org/2017/06/15/video-santiago-langes-story-of-beating-cancer-then-winning-olympic-gold/",
+          "publisher": "World Sailing",
+          "access": "full-relevant-text",
+          "supports": "官方介紹 Olympic Channel 本人敘述紀錄片系列第 4 集為 Petra Majdic。"
+        },
+        {
+          "url": "https://www.eurosport.de/olympia/olympia-peking/2022/olympia-2010-majdic-und-das-wunder-von-vancouver-mit-vier-gebrochenen-rippen-zu-langlauf-bronze_vid1563475/video.shtml",
+          "publisher": "Eurosport",
+          "access": "search-excerpt-open-geoblocked",
+          "supports": "同次事件回顧片線索。"
+        }
+      ],
+      "videoUrl": "https://www.eurosport.de/olympia/olympia-peking/2022/olympia-2010-majdic-und-das-wunder-von-vancouver-mit-vier-gebrochenen-rippen-zu-langlauf-bronze_vid1563475/video.shtml",
+      "publisher": "Eurosport",
+      "proposedFootageKind": "news-analysis",
+      "stage": "needs-region-access-and-supported-video",
+      "limitations": [
+        "Eurosport 本次網頁轉至 geoblocking；不規避地域限制。",
+        "另一紀錄片 YouTube 線索 j9xCJixmLcA oEmbed HTTP 403，發布頻道未確認，不當作可播放官方影片。",
+        "精確事件日未由已核原始來源確認，留 null。",
+        "不以歷史帶傷奪牌故事作為肋骨傷或氣胸回場建議；肺部診斷仍需更直接來源。"
+      ],
+      "priority": "hold-video-access",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Actual same-event audiovisual review and selected segment/duration",
+        "Final source jurisdiction, original publisher and permitted embed review",
+        "Final clinical/event/anatomical classification review",
+        "Owned-HTTPS embedded playback and normal release approvals"
+      ]
+    }
+  ]
+}
