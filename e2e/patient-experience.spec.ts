@@ -16,7 +16,16 @@ test("video collection is directly browsable before using optional search", asyn
   await expect(
     page.getByRole("searchbox", { name: "搜尋球員或關鍵字" }),
   ).toBeVisible();
-  await expect(page.getByRole("combobox")).toHaveCount(0);
+  if (process.env.ATLAS_PUBLIC_LAUNCH === "decision-21") {
+    const typeFilter = page.getByRole("combobox", {
+      name: "影片類型",
+      exact: true,
+    });
+    await expect(typeFilter).toBeVisible();
+    await expect(typeFilter).toHaveValue("");
+  } else {
+    await expect(page.getByRole("combobox")).toHaveCount(0);
+  }
   await expectNoAxeViolations(page);
   await page.locator("[data-featured-card] a").first().click();
   await expect(page.locator("[data-video-load]")).toBeVisible();

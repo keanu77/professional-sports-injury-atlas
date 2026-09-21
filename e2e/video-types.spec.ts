@@ -13,7 +13,7 @@ test("combines an exact content type, a query, and the static type page", async 
   page,
 }) => {
   await page.goto("/?type=expert-analysis");
-  const filter = page.getByLabel("影片類型");
+  const filter = page.getByRole("combobox", { name: "影片類型", exact: true });
   await expect(filter).toHaveValue("expert-analysis");
   const cards = page.locator(visibleCards);
   await expect(cards).not.toHaveCount(0);
@@ -72,7 +72,9 @@ test("preserves the original popularity rank after intersecting a content type",
     }),
   );
   await page.getByRole("button", { name: "本站熱門", exact: true }).click();
-  await page.getByLabel("影片類型").selectOption("expert-analysis");
+  await page
+    .getByRole("combobox", { name: "影片類型", exact: true })
+    .selectOption("expert-analysis");
   await expect(page.locator(visibleCards)).toHaveCount(1);
   await expect(page.locator("[data-popular-count]:visible")).toHaveText(
     "近 30 天播放第四名",
@@ -84,7 +86,9 @@ test("handles invalid shared type links and maps each mobile category control to
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/?type=not-a-real-type#video-types");
-  await expect(page.getByLabel("影片類型")).toHaveValue("");
+  await expect(
+    page.getByRole("combobox", { name: "影片類型", exact: true }),
+  ).toHaveValue("");
   const controls = page.locator("[data-home-category-select]");
   const panels = page.locator("[data-home-category-panel]");
   expect(await controls.count()).toBe(4);
@@ -102,7 +106,9 @@ test("intersects a content type with curated mode and a Chinese query", async ({
   page,
 }) => {
   await page.goto("/");
-  await page.getByLabel("影片類型").selectOption("injury-moment");
+  await page
+    .getByRole("combobox", { name: "影片類型", exact: true })
+    .selectOption("injury-moment");
   await page.getByRole("button", { name: "精選影片", exact: true }).click();
   await page.getByRole("searchbox").fill("阿基里斯腱");
   const cards = page.locator(visibleCards);
@@ -143,7 +149,9 @@ test("does not let a slow popularity response replace a newer mode or type", asy
   });
   await page.getByRole("button", { name: "本站熱門", exact: true }).click();
   await arrivedAtApi;
-  await page.getByLabel("影片類型").selectOption("expert-analysis");
+  await page
+    .getByRole("combobox", { name: "影片類型", exact: true })
+    .selectOption("expert-analysis");
   await page.getByRole("button", { name: "全部影片", exact: true }).click();
   release();
   const cards = page.locator(visibleCards);
@@ -164,7 +172,7 @@ test("restores type selections through browser history while retaining existing 
   page,
 }) => {
   await page.goto("/?source=atlas#videos-heading");
-  const filter = page.getByLabel("影片類型");
+  const filter = page.getByRole("combobox", { name: "影片類型", exact: true });
   await filter.selectOption("expert-analysis");
   await filter.selectOption("injury-moment");
   expect(page.url()).toContain("source=atlas");

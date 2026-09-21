@@ -128,7 +128,7 @@ test("one nerve entry opens all four cases and preserves anatomical navigation",
   await expectNoAxeViolations(page);
   for (const [slug, name] of cases) {
     await page
-      .locator(`[data-nerve-videos] a[href="/videos/${slug}/"]`)
+      .locator(`[data-nerve-videos] h3 a[href="/videos/${slug}/"]`)
       .click();
     await expect(
       page.getByRole("heading", { name, exact: true }),

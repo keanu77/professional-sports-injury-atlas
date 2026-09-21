@@ -114,7 +114,7 @@ test("news, aftermath, and injury footage have consistent card and detail labels
       slug: "shohei-ohtani-world-series-2024",
       category: "baseball",
       kind: "unknown",
-      label: "傷害相關影片（片型待核）",
+      label: "傷害相關影片",
     },
   ];
   for (const example of examples) {
@@ -279,7 +279,7 @@ test("curated collection shows ten ordered videos and restores all 200", async (
     ),
   ).toEqual([...FEATURED]);
   await expect(
-    page.locator('[data-discovery-slug="kobe-bryant-2013-achilles"] a'),
+    page.locator('[data-discovery-slug="kobe-bryant-2013-achilles"] h3 a'),
   ).toHaveAttribute("href", "/videos/kobe-bryant-2013-achilles/");
   await expect(page.locator("iframe")).toHaveCount(0);
   expect(
