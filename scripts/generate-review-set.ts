@@ -10,6 +10,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { parseStrictJson, sha256Hex } from "../src/lib/contracts/canonical";
+import { SPEC_PATH, CONTROLLER_PATH } from "./verify-plan-binding";
 import { FOLLOW_UP_SOURCE_POLICY_V10_BINDING } from "../src/lib/contracts/case-follow-up";
 import {
   loadReviewFollowUpCorpus,
@@ -309,8 +310,8 @@ const CONTENT_AUTHORITY_PLAN_ROLES = new Set([
 ]);
 
 /**
- * Content-authority snapshot from the plan binding: only the bound spec,
- * controller, platform foundation, active source discovery, active authoring,
+ * Content-authority snapshot from the plan binding: only the original content
+ * spec/controller, platform foundation, active source discovery, active authoring,
  * and authorized content-correction roles (with their execution-decision
  * digests). The mutable whole-file binding and operational hosting, photo,
  * and public roles are excluded.
@@ -336,8 +337,10 @@ export function currentContentAuthoritySnapshotDigest(
   for (const document of binding.documents) {
     if (document.lifecycle !== "active") continue;
     if (
-      document.documentType === "specification" ||
-      document.documentType === "execution-controller"
+      (document.documentType === "specification" &&
+        document.path === SPEC_PATH) ||
+      (document.documentType === "execution-controller" &&
+        document.path === CONTROLLER_PATH)
     ) {
       documents.push({
         role: document.documentType,

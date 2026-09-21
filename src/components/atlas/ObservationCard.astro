@@ -38,7 +38,10 @@ const isMlb = clip.provider === "mlb";
   </a>
   <div class="observation-copy">
     <p>{clip.event}</p><h3>
-      <a href={`/videos/${clip.slug}/`}>{clip.name}</a>
+      <a
+        href={`/videos/${clip.slug}/`}
+        aria-label={`${clip.name}｜${clip.event}`}>{clip.name}</a
+      >
     </h3>
     <ul class="observation-metadata" data-observation-metadata>
       <li data-observation-sport>{metadata.sport}</li>

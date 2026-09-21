@@ -9,6 +9,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { currentContentAuthoritySnapshotDigest } from "../../scripts/generate-review-set";
+import { SPEC_PATH, CONTROLLER_PATH } from "../../scripts/verify-plan-binding";
 import { canonicalJson, sha256Hex } from "../../src/lib/cases/canonical-json";
 import {
   computeCaseContentDigest,
@@ -462,14 +463,14 @@ describe("content-authority snapshot", () => {
       {
         documentType: "specification",
         lifecycle: "active",
-        path: "docs/superpowers/specs/spec.md",
+        path: SPEC_PATH,
         sha256: hex("1"),
         executionAuthorization: null,
       },
       {
         documentType: "execution-controller",
         lifecycle: "active",
-        path: "docs/superpowers/plans/controller.md",
+        path: CONTROLLER_PATH,
         sha256: hex("2"),
         executionAuthorization: null,
       },
@@ -492,6 +493,18 @@ describe("content-authority snapshot", () => {
     try {
       writeBinding();
       const baseline = currentContentAuthoritySnapshotDigest(root);
+
+      // UI specifications must not reopen or invalidate existing clinical review.
+      documents.push({
+        documentType: "specification",
+        lifecycle: "active",
+        path: "docs/superpowers/specs/video-type-navigation.md",
+        sha256: hex("a"),
+        executionAuthorization: null,
+      });
+      writeBinding();
+      expect(currentContentAuthoritySnapshotDigest(root)).toBe(baseline);
+      documents.pop();
 
       documents.push(
         plan(
@@ -544,6 +557,12 @@ describe("content-authority snapshot", () => {
       documents[4].executionAuthorization.decisionSha256 = hex("b");
       writeBinding();
       expect(currentContentAuthoritySnapshotDigest(root)).not.toBe(corrected);
+      const changedDecision = currentContentAuthoritySnapshotDigest(root);
+      documents[0].sha256 = hex("c");
+      writeBinding();
+      expect(currentContentAuthoritySnapshotDigest(root)).not.toBe(
+        changedDecision,
+      );
     } finally {
       rmSync(root, { recursive: true, force: true });
     }

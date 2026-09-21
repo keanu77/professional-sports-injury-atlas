@@ -295,6 +295,10 @@ for (const item of selectedEvents) {
   for (const reference of entry.evidenceRefs) {
     const [file, pointer] = reference.split("#");
     assert.ok(
+      pointer && reference.split("#").length === 2,
+      `Content evidence must identify an exact row: ${reference}`,
+    );
+    assert.ok(
       file.startsWith("docs/reviews/") &&
         !file.includes("..") &&
         existsSync(file),

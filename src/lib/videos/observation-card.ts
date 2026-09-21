@@ -1,8 +1,11 @@
 import type { ObservationClip } from "./expansion";
+import { contentTypesFor } from "./content-types";
 
 /** Keep card links and detail headings honest about what the footage shows. */
 export function observationFootageLabel(clip: {
   footageKind?: ObservationClip["footageKind"];
+  slug?: string;
+  videoUrl?: string;
 }): string {
   return clip.footageKind === "news-analysis"
     ? "傷勢新聞與說明"
@@ -12,7 +15,11 @@ export function observationFootageLabel(clip: {
         ? "受傷後處理與續賽"
         : clip.footageKind === "injury-motion"
           ? "受傷動作觀察"
-          : "傷害相關影片（片型待核）";
+          : clip.slug &&
+              clip.videoUrl &&
+              contentTypesFor(clip.slug, clip.videoUrl).length > 0
+            ? "傷害相關影片"
+            : "傷害相關影片（片型待核）";
 }
 
 export interface ObservationCardMetadata {

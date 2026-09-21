@@ -16,6 +16,20 @@ describe("observation footage labels", () => {
     expect(observationFootageLabel({})).toBe("傷害相關影片（片型待核）");
   });
 
+  it("does not call a reviewed exact source pending merely because its legacy field is absent", () => {
+    const clip = {
+      slug: "kobe-bryant-2013-achilles",
+      videoUrl: "https://www.youtube.com/watch?v=5KlgfpqWCkY",
+    };
+    expect(observationFootageLabel(clip)).toBe("傷害相關影片");
+    expect(
+      observationFootageLabel({
+        ...clip,
+        videoUrl: "https://www.youtube.com/watch?v=unreviewed",
+      }),
+    ).toBe("傷害相關影片（片型待核）");
+  });
+
   it.each([
     ["injury-motion", "受傷動作觀察"],
     ["aftermath", "受傷後處理與續賽"],
