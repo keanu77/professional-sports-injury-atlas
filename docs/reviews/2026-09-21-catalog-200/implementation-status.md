@@ -26,6 +26,14 @@
 
 ## 外部阻擋與完成界線
 
+### 後續追加：合併神經導覽
+
+使用者指定將「周邊神經損傷」「神經叢損傷」合併為「神經損傷」，放在「依受傷部位看影片」。已在本機完成：移除首頁獨立專題、新增 `/nerve-injuries/` 四例合併頁，保留原始診斷資料、解剖部位與舊 subtype 網址。沒有新增病例或重複計數。
+
+本機提交 `6ce0c2b`：完整單元測試 102 files / 1,523 tests 通過；Astro check、內容檢查、計畫綁定與本次程式格式檢查通過；review build 235 頁。靜態 DOM 確認單一入口、4 個不同案例、12 個部位頁導覽一致，首頁仍為 12 個解剖部位／158 支影片／17 種運動。獨立規格與品質審查通過。細節見 nerve-navigation-plan.md。尚未推送、部署或完成瀏覽器實播；不將靜態檢查視為 E2E。
+
+### 既有瀏覽器阻擋紀錄（本次未重試）
+
 瀏覽器原有 binding 回報 unavailable，官方故障排除列出可用瀏覽器為空。只讀檢查確認 Edge 正在執行、擴充功能已安裝啟用、native-host manifest 正確。使用者核准「可以，開啟並重試（建議）」後，官方 `open-chrome-window.js --browser edge` 成功開啟 Default profile 的 about:blank 新視窗。等待後以同一 runtime 選取 Edge 仍回報 `Browser is not available: edge`。
 
 未擅自修改設定、重裝、替換瀏覽器或透過其他工具繞過連線。官方故障排除下一步是由使用者在 ChatGPT 外掛介面重新安裝 Browser 外掛，不是再重裝 Edge；真正的工具連線恢復前不能完成實播及發布。

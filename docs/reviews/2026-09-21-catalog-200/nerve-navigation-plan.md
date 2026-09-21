@@ -21,7 +21,9 @@ Files: `src/lib/videos/nerve-categories.ts`, `src/components/atlas/BodyPartNav.a
 ```ts
 expect(nerveInjuryGroup(nerveFour.clips).count).toBe(4);
 expect(nerveInjuryGroup([]).count).toBe(0);
-expect(videosByNerveCategory(nerveFour.clips).map(g => g.count)).toEqual([3, 1]);
+expect(videosByNerveCategory(nerveFour.clips).map((g) => g.count)).toEqual([
+  3, 1,
+]);
 ```
 
 - [ ] Test that the homepage standalone section is absent, the shared body-part nav includes exactly one supplementary nerve link when its count is positive, and the new combined page renders the accepted clips with no eager embed.
@@ -30,8 +32,9 @@ expect(videosByNerveCategory(nerveFour.clips).map(g => g.count)).toEqual([3, 1])
 
 ```ts
 export function nerveInjuryGroup(clips: readonly ObservationClip[]) {
-  const selected = clips.filter(clip =>
-    NERVE_CATEGORIES.some(category => category.code === clip.nerveCategory));
+  const selected = clips.filter((clip) =>
+    NERVE_CATEGORIES.some((category) => category.code === clip.nerveCategory),
+  );
   return { label: "神經損傷", clips: selected, count: selected.length };
 }
 ```
@@ -39,7 +42,18 @@ export function nerveInjuryGroup(clips: readonly ObservationClip[]) {
 - [ ] Extend BodyPartNav with optional `nerveCount` and `nerveCurrent` props (default 0/false) and render the supplemental item only when positive, reusing the existing pill styles and aria-current pattern.
 
 ```astro
-{nerveCount > 0 && <li><a href="/nerve-injuries/" aria-current={nerveCurrent ? "page" : undefined}>神經損傷<span>{nerveCount} 支影片</span></a></li>}
+{
+  nerveCount > 0 && (
+    <li>
+      <a
+        href="/nerve-injuries/"
+        aria-current={nerveCurrent ? "page" : undefined}
+      >
+        神經損傷<span>{nerveCount} 支影片</span>
+      </a>
+    </li>
+  )
+}
 ```
 
 - [ ] Pass counts computed from `observationClips()` on homepage and body-part pages. Remove standalone homepage section, imports and unused styles; do not change the body-part registry or overall counts.
@@ -68,3 +82,15 @@ Review generated HTML for one `/nerve-injuries/` link within homepage body-part 
 ## Self-review
 
 The request is only navigation consolidation. No new candidate videos, clinical claims, authorizations, player/network settings, public releases or body-part taxonomy changes are included. Diagnostic metadata remains separate; old URLs continue working.
+
+## Execution checkpoint
+
+- Implementation checkpoint: `6ce0c2b`; plan checkpoint: `98eb75a`. Current branch retained; no push or deployment.
+- All implementation steps above completed, including six new regression tests (RED 6/6 expected failures before implementation, GREEN 6/6; focused suite 10/10).
+- Independent specification review and subsequent code-quality review both approved, without material findings.
+- Full unit suite initially had three dirty-worktree governance failures; after the local checkpoint, all 102 files / 1,523 tests passed. The governance policy was not modified.
+- Astro check: zero errors, zero warnings, 16 existing hints. All nine changed code/test files passed Prettier; `git diff --check` passed. Content check and 36-document plan binding passed after checkpoint.
+- Launch-enabled review build passed with 235 pages (not 235 cases). This private review artifact must not be deployed publicly.
+- Separate launch-disabled review build passed with 45 pages; its generated output has neither the combined nerve index nor the homepage nerve entry. Output: `/private/tmp/atlas-nerve-navigation-disabled-6ce0c2b`; launch-enabled `dist` was preserved.
+- Rendered HTML checks passed: one nerve link inside homepage BodyPartNav, no standalone nerve section, four unique combined cases, 12 anatomical pages with the supplemental link and correct current-page marking, preserved subtype counts 3/1 and backlinks, unchanged stats 12 body parts / 158 videos / 17 sports, no initial iframe on checked pages, valid internal links on homepage/combined/four case pages.
+- E2E assertions were added but browser interaction and remote embedded playback were not run or claimed. Existing actual-playback release requirements remain in force.
