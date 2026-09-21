@@ -134,6 +134,613 @@
       },
       "visualNotes": "15.881-second original NBC News short, completed once and replayed. Narrated injury announcement with short training fall excerpt; classify news, not continuous injury-motion footage.",
       "ownedHttpsPlayback": false
+    },
+    {
+      "id": "adam-peaty-2022-foot",
+      "url": "https://www.youtube.com/watch?v=7oFg7YmMgtI",
+      "publisher": "Adam Ramsay-Peaty",
+      "title": "How I BROKE My Foot!",
+      "durationSeconds": 719,
+      "startSeconds": 690,
+      "footageKind": "athlete-interview",
+      "checkedAt": "2026-09-21T03:20:54.821Z",
+      "observedMedia": {
+        "time": 697.64,
+        "duration": 719.641,
+        "paused": false,
+        "readyState": 1
+      },
+      "visualNotes": "Athlete vlog day of gym injury; description explicitly links foot fracture and missed World Championships. At11:40 describes ankle roll and pain before diagnosis. Screenshot confirms first-person post-training commentary. Source afterward establishes foot fracture; not swimming-mechanism footage.",
+      "ownedHttpsPlayback": false
+    },
+    {
+      "id": "kerri-walsh-jennings-2015-shoulder",
+      "url": "https://www.youtube.com/watch?v=RyWuQ_RW6OA",
+      "publisher": "Beach Volleyball Majors",
+      "title": "Gstaad Major: This just might have been Kerri Walsh’s greatest comeback!",
+      "durationSeconds": 38,
+      "startSeconds": 0,
+      "footageKind": "athlete-interview",
+      "checkedAt": "2026-09-21T03:20:54.821Z",
+      "observedMedia": {
+        "time": 38.401,
+        "duration": 38.401,
+        "paused": true,
+        "readyState": 4
+      },
+      "visualNotes": "Original event interview at0:00-0:18 explains shoulder coming out and uncertainty whether on swing/missed ball; later match continuation. Do not assert exact injury instant or advise reduction/continuing play.",
+      "ownedHttpsPlayback": false
+    },
+    {
+      "id": "rafael-nadal-2022-abdominal",
+      "url": "https://www.youtube.com/watch?v=9vGOrRkqAK4",
+      "publisher": "Wimbledon",
+      "title": "Rafael Nadal Withdraws from Wimbledon Due to Injury | Press Conference | Wimbledon 2022",
+      "durationSeconds": 678,
+      "startSeconds": 15,
+      "footageKind": "athlete-interview",
+      "checkedAt": "2026-09-21T03:20:54.821Z",
+      "observedMedia": {
+        "time": 26.697036,
+        "duration": 678.081,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "Official Wimbledon press conference; athlete states abdominal muscle tear and withdrawal at0:20-0:48; scene verified. Precise onset unknown.",
+      "ownedHttpsPlayback": false
+    },
+    {
+      "id": "jordyn-poulter-2022-knee",
+      "url": "https://www.youtube.com/watch?v=xBgZKehMBDA",
+      "publisher": "Elevate Yourself",
+      "title": "From ACL Injury To PARIS OLYMPICS | Jordyn Poulter Interview (VNL 2024)",
+      "durationSeconds": 792,
+      "startSeconds": 15,
+      "footageKind": "athlete-interview",
+      "checkedAt": "2026-09-21T03:20:54.821Z",
+      "observedMedia": {
+        "time": 25.108986,
+        "duration": 792.281,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "Original on-site athlete interview; 0:32-0:38 identifies December2022 multiligament knee injury and rehabilitation. Do not expand auto-caption ligament abbreviations into diagnosis list.",
+      "ownedHttpsPlayback": false
+    },
+    {
+      "id": "paula-badosa-2023-spinal-stress-fracture",
+      "url": "https://www.youtube.com/watch?v=X8X7Xg7UwD0",
+      "publisher": "US Open Tennis Championships",
+      "title": "Paula Badosa Press Conference | 2024 US Open Round 4",
+      "durationSeconds": 410,
+      "startSeconds": 250,
+      "footageKind": "athlete-interview",
+      "checkedAt": "2026-09-21T03:25:18.729Z",
+      "observedMedia": {
+        "time": 291.061604,
+        "duration": 410.041,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "2024 official press conference, athlete seen discussing back injury response at4:27. Retrospective after2023 injury, not a new2024 fracture or injury instant.",
+      "ownedHttpsPlayback": false
+    },
+    {
+      "id": "rafael-nadal-2022-rib-stress-fracture",
+      "url": "https://www.youtube.com/watch?v=vsc3sE7WwXk",
+      "publisher": "CGTN Sports Scene",
+      "title": "Nadal feels physically good after recovery from rib injury to take part in Madrid Open | MMOPEN",
+      "durationSeconds": 42,
+      "startSeconds": 0,
+      "footageKind": "athlete-interview",
+      "checkedAt": "2026-09-21T03:25:18.729Z",
+      "observedMedia": {
+        "time": 42.701,
+        "duration": 42.701,
+        "paused": true,
+        "readyState": 4
+      },
+      "visualNotes": "Short press-conference interview about rib injury and Madrid return; athlete reports doctors/tests. Individual self-report does not establish generally risk-free return. Separate from later abdominal tear.",
+      "ownedHttpsPlayback": false
+    },
+    {
+      "id": "karsten-warholm-2022-hamstring",
+      "url": "https://www.youtube.com/watch?v=z7x0dxJf3Zk",
+      "publisher": "FloTrack",
+      "title": "Karsten Warholm Injured, Suspects Hamstring Tear",
+      "durationSeconds": 621,
+      "startSeconds": 15,
+      "footageKind": "news-analysis",
+      "checkedAt": "2026-09-21T03:25:18.729Z",
+      "observedMedia": {
+        "time": 107.998321,
+        "duration": 621.481,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "Original FloTrack presenter analysis, NOT athlete interview; discusses Rabat event and initial suspected hamstring tear. Use subsequent sourced diagnosis, do not repeat presenter speculation as clinical fact.",
+      "ownedHttpsPlayback": false
+    },
+    {
+      "id": "jake-wightman-2023-foot",
+      "url": "https://www.youtube.com/watch?v=IpYzdWZ80CE",
+      "publisher": "CITIUS MAG",
+      "title": "Jake Wightman On His Return From Injury, Why He Thinks He Can Still Beat Jakob Ingebrigtsen",
+      "durationSeconds": 1645,
+      "startSeconds": 330,
+      "footageKind": "athlete-interview",
+      "checkedAt": "2026-09-21T03:25:18.729Z",
+      "observedMedia": {
+        "time": 386.582319,
+        "duration": 1645.861,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "Athlete describes January South Africa training and hurdle-hop landing at5:35-6:28; original interview screenshot confirms identity. Do not label as overuse or specify conflicted tissue diagnosis.",
+      "ownedHttpsPlayback": false
+    },
+    {
+      "id": "molly-seidel-2024-patella",
+      "url": "https://www.youtube.com/watch?v=F-KkglTfq3Y",
+      "publisher": "FloTrack",
+      "title": "Molly Seidel on the other side of injury and looking ahead to fall marathon",
+      "durationSeconds": 547,
+      "startSeconds": 285,
+      "footageKind": "athlete-interview",
+      "checkedAt": "2026-09-21T03:25:18.729Z",
+      "observedMedia": {
+        "time": 101.152521,
+        "duration": 547.001,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "Original athlete interview; transcript4:58 says broke knee and January preceding Olympic trials. Patella diagnosis attributed to original iRunFar interview, not inferred from video.",
+      "ownedHttpsPlayback": false
+    },
+    {
+      "id": "hvH4AnAD5eg",
+      "url": "https://www.youtube.com/watch?v=hvH4AnAD5eg",
+      "publisher": "UFC",
+      "title": "UFC 263: Paul Craig Octagon Interview",
+      "durationSeconds": 133,
+      "startSeconds": 63,
+      "footageKind": "news-analysis",
+      "checkedAt": "2026-09-21T03:45:03.275Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 80.335973,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "同場勝方 Paul Craig 接受 Joe Rogan 訪談，約1:03起談 armbar；看到的是訪談畫面，不是 Hill 本人受訪。主播當下說 broken 不採為診斷，後續 UFC 本人訪談確認肘脫臼。"
+    },
+    {
+      "id": "XdGi7XI5Y_c",
+      "url": "https://www.youtube.com/watch?v=XdGi7XI5Y_c",
+      "publisher": "UFC",
+      "title": "Full Blast: Munoz & Mitrione - Mir vs Nogueira",
+      "durationSeconds": 202,
+      "startSeconds": 120,
+      "footageKind": "news-analysis",
+      "checkedAt": "2026-09-21T03:45:03.275Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 132.511,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "Full Blast 分割畫面為 Munoz/Mitrione 觀賽反應，2:00–2:24評論降服及手臂傷勢；不是受傷本人訪談，不能標成清楚比賽傷害回放。骨折位置依後續教練原訪談，不沿用節目猜測肩脫臼。"
+    },
+    {
+      "id": "XEBZ9lSa8fM",
+      "url": "https://www.youtube.com/watch?v=XEBZ9lSa8fM",
+      "publisher": "UFC FIGHT PASS",
+      "title": "UFC: Frank Mir vs. Tim Sylvia | June 19, 2004",
+      "durationSeconds": 765,
+      "startSeconds": 530,
+      "footageKind": "injury-motion",
+      "checkedAt": "2026-09-21T03:45:03.275Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 550.961855,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "完整 UFC 48 原場比賽與重播，8:50起討論並重播手臂受控、裁判制止片段。畫面不能指定骨頭；右臂骨折由 UFC 事後官方回顧確認。"
+    },
+    {
+      "id": "rkiD3kLGIvU",
+      "url": "https://www.youtube.com/watch?v=rkiD3kLGIvU",
+      "publisher": "UFC",
+      "title": "UFC 262: André Muniz Octagon Interview",
+      "durationSeconds": 207,
+      "startSeconds": 125,
+      "footageKind": "news-analysis",
+      "checkedAt": "2026-09-21T03:45:03.275Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 139.477647,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "勝方 André Muniz 賽後訪談，2:09–2:31談聽到手臂聲響而鬆手；截圖為訪談並無清晰傷害回放。不是 Souza 本人訪談；骨折診斷採醫療團隊原始採訪。"
+    },
+    {
+      "id": "sM8zlrTLroE",
+      "url": "https://www.youtube.com/watch?v=sM8zlrTLroE",
+      "publisher": "UFC",
+      "title": "Tom Aspinall Talks Octagon Return, Heavyweight Division & More | FULL INTERVIEW w/ John Gooden",
+      "durationSeconds": 2471,
+      "startSeconds": 925,
+      "footageKind": "athlete-interview",
+      "checkedAt": "2026-09-21T03:46:54.611Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 997.430705,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "UFC John Gooden 本人專訪。15:33起談早於 UFC 的同膝問題及2022受傷、手術；不可將所有韌帶問題說成單次踢擊全新造成。與另一膝的舊手術不同。"
+    },
+    {
+      "id": "sBzHuGCZdTI",
+      "url": "https://www.youtube.com/watch?v=sBzHuGCZdTI",
+      "publisher": "Trackwrestling .com",
+      "title": "Jordan Burroughs looks back on winning a World title four weeks after breaking his ankle",
+      "durationSeconds": 536,
+      "startSeconds": 25,
+      "footageKind": "athlete-interview",
+      "checkedAt": "2026-09-21T03:46:54.611Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 48.804326,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "原創現場訪談，0:07明指2013，0:36本人談踝骨折與手術。回顧而非受傷瞬間；個人帶傷參賽不當作治療建議。"
+    },
+    {
+      "id": "VNo4qQaVNHg",
+      "url": "https://www.youtube.com/watch?v=VNo4qQaVNHg",
+      "publisher": "England & Wales Cricket Board",
+      "title": "The Passion Never Went | EXCLUSIVE Jofra Archer Interview | Injuries, Playing For England & Future",
+      "durationSeconds": 195,
+      "startSeconds": 0,
+      "footageKind": "athlete-interview",
+      "captionStatus": "unavailable",
+      "checkedAt": "2026-09-21T03:46:54.611Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 18.732335,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "ECB 傷後復出原創本人訪談；2023返回國際比賽的回顧涵蓋多段傷勢，不把整段缺賽歸因於單一2020肘傷。無可見字幕按鈕，未逐字核實語音；臨床診斷來自另列ECB醫療公告。"
+    },
+    {
+      "id": "l1dYgS6mqO0",
+      "url": "https://www.youtube.com/watch?v=l1dYgS6mqO0",
+      "publisher": "ABS-CBN News",
+      "title": "Pacquiao undergoes surgery for injured shoulder",
+      "durationSeconds": 142,
+      "startSeconds": 0,
+      "footageKind": "news-analysis",
+      "captionStatus": "unavailable",
+      "checkedAt": "2026-09-21T03:46:54.611Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 23.552515,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "ABS-CBN 原創肩傷手術新聞，畫面為傷後抵達等新聞素材。影片說明明列右肩旋轉肌袖在 Mayweather 比賽加劇；沒有受傷當下可判讀機轉的鏡頭。"
+    },
+    {
+      "id": "5qWBA8MuN_4",
+      "url": "https://www.youtube.com/watch?v=5qWBA8MuN_4",
+      "publisher": "Sky Sports News",
+      "title": "It’s been an insane journey | Sky Brown on winning Olympic bronze after dislocating her shoulder",
+      "durationSeconds": 296,
+      "startSeconds": 90,
+      "footageKind": "athlete-interview",
+      "checkedAt": "2026-09-21T03:47:31.217Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 104.973746,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "約1:33起記者問肩傷影響，Sky 本人1:47–2:02談原先脫臼、預賽再跌及預計手術。2024巴黎賽後採訪；不把記者自述滑雪脫臼史當成選手病史。"
+    },
+    {
+      "id": "Kvm-WXQ2w2Y",
+      "url": "https://www.youtube.com/watch?v=Kvm-WXQ2w2Y",
+      "publisher": "Hawk vs Wolf",
+      "title": "Tony Hawk Recounts his Bad Fall at the Ramp; Straight from the Hospital to the Podcast!",
+      "durationSeconds": 3362,
+      "startSeconds": 250,
+      "footageKind": "athlete-interview",
+      "checkedAt": "2026-09-21T03:47:31.217Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 264.677805,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "本人節目與 Jason Ellis 回顧坡道失誤；4:23–4:44描述落地與腿部異常；19:22具名 femur。不是2022受傷動作連續鏡頭，也不混入20:01所提2004骨盆舊傷。"
+    },
+    {
+      "id": "6dGzpQHXQsM",
+      "url": "https://www.youtube.com/watch?v=6dGzpQHXQsM",
+      "publisher": "WGN News",
+      "title": "Helen | Believe",
+      "durationSeconds": 212,
+      "startSeconds": 145,
+      "footageKind": "athlete-interview",
+      "checkedAt": "2026-09-21T03:48:52.650Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 168.525169,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "WGN 原創本人視訊訪談，2:29起談腦傷影響；新聞開頭說2016兩年後受傷。紀錄片/訪談跨越多次腦震盪，事件本頁只記2018初次，不將後續所有症狀歸因於單次事故。"
+    },
+    {
+      "id": "1d3pOYyLQkY",
+      "url": "https://www.youtube.com/watch?v=1d3pOYyLQkY",
+      "publisher": "Oneindia Hindi",
+      "title": "Asian Games 2023 Day 7: Mirabai Chanu injured",
+      "durationSeconds": 130,
+      "startSeconds": 20,
+      "footageKind": "news-analysis",
+      "checkedAt": "2026-09-21T03:48:52.650Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 77.2938,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "Oneindia 原創 Hindi 主播報導，0:25–0:52討論最後試舉傷勢與協助離場。畫面為主播分析；不從其敘述推斷脊椎傷或韌帶斷裂，傷勢部位採原始現場採訪所述髖/大腿。"
+    },
+    {
+      "id": "T7-DAQANyho",
+      "url": "https://www.youtube.com/watch?v=T7-DAQANyho",
+      "publisher": "Movistar Team",
+      "title": "Annemiek van Vleuten: The Last Interview | Movistar Team - 2023",
+      "durationSeconds": 478,
+      "startSeconds": 273,
+      "footageKind": "athlete-interview",
+      "checkedAt": "2026-09-21T03:49:32.660Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 299.795864,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "本人隊伍專訪4:38–4:54明指Wollongong帶肘骨折奪冠；2023回顧的是2022世錦賽，不是新肘傷。個人帶傷比賽不代表安全回場條件。"
+    },
+    {
+      "id": "jQ7oMEGPHXg",
+      "url": "https://www.youtube.com/watch?v=jQ7oMEGPHXg",
+      "publisher": "FIS Ski Jumping",
+      "title": "Daniel Andre Tande is back! | FIS Ski Jumping",
+      "durationSeconds": 34,
+      "startSeconds": 0,
+      "footageKind": "athlete-interview",
+      "captionStatus": "unavailable",
+      "checkedAt": "2026-09-21T03:49:32.660Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 14.204255,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "FIS 官方傷後回歸短訪，畫面是選手坐在沙發受訪；說明明列Planica季末摔傷。未取得字幕，傷勢診斷採FIS鎖骨手術公告，不由昏迷推定特定腦傷。"
+    },
+    {
+      "id": "aXvM23KcbJw",
+      "url": "https://www.youtube.com/watch?v=aXvM23KcbJw",
+      "publisher": "INEOS Grenadiers / Netcompany INEOS",
+      "title": "Egan Bernal: The Best Day of my Life | INEOS Grenadiers behind the scenes",
+      "durationSeconds": 227,
+      "startSeconds": 20,
+      "footageKind": "athlete-interview",
+      "checkedAt": "2026-09-21T03:49:32.660Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 36.852121,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "隊伍原創傷後騎車與本人旁白，0:21起談公路事故、呼吸困難及股骨處置；2:02談重返騎車。將多處外傷記為一個2022訓練事故，不把自述急救動作做一般人操作指引。"
+    },
+    {
+      "id": "kti0XvZn0KQ",
+      "url": "https://www.youtube.com/watch?v=kti0XvZn0KQ",
+      "publisher": "Barry Shore",
+      "title": "The Real Price of the Podium: Connor Fields on Recovery, Identity, and the Power of Choice",
+      "durationSeconds": 3284,
+      "startSeconds": 1475,
+      "footageKind": "athlete-interview",
+      "checkedAt": "2026-09-21T03:50:53.557Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 1500.044655,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "原創Podcast本人訪談24:43起明指2021東京摔車及多處傷勢，25:01談腦傷及昏迷。勿把主持人4分鐘左右的癱瘓疾病史當成Connor病史；不從提及CTE推定選手CTE。"
+    },
+    {
+      "id": "8H_0tJAwev8",
+      "url": "https://www.youtube.com/watch?v=8H_0tJAwev8",
+      "publisher": "Wimbledon",
+      "title": "Novak Djokovic Wimbledon 2017 quarter-final press conference",
+      "durationSeconds": 114,
+      "startSeconds": 0,
+      "footageKind": "athlete-interview",
+      "checkedAt": "2026-09-21T03:50:53.557Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 24.346043,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "官方退賽記者會開頭本人澄清是肘、不是肩，已困擾一年半；0:48指出發球與正拍疼痛。慢性問題在2017賽事加劇，不假定7月12日才首次受傷或特定韌帶/骨傷。"
+    },
+    {
+      "id": "_9PMTWdYX6I",
+      "url": "https://www.youtube.com/watch?v=_9PMTWdYX6I",
+      "publisher": "ATP Tour",
+      "title": "Nishikori On The Comeback Trail",
+      "durationSeconds": 224,
+      "startSeconds": 15,
+      "footageKind": "athlete-interview",
+      "checkedAt": "2026-09-21T03:50:53.557Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 46.760636,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "ATP原創回歸紀錄0:08說去年8月腕傷停賽，0:21本人談復健及選擇不手術；非手術建議，也非2018新傷。"
+    },
+    {
+      "id": "4O87O9rHdoE",
+      "url": "https://www.youtube.com/watch?v=4O87O9rHdoE",
+      "publisher": "Tennis Channel",
+      "title": "Bianca Andreescu Injury Update | Tennis Channel Live",
+      "durationSeconds": 91,
+      "startSeconds": 0,
+      "footageKind": "news-analysis",
+      "checkedAt": "2026-09-21T03:55:56.558Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 20.935287,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "Tennis Channel 原創演播室討論與選手傷後貼文，報導當時仍等待檢查結果；不得以主持人看法判斷韌帶。兩條韌帶資訊來自後续WTA本人更新。"
+    },
+    {
+      "id": "_qp50gF67sQ",
+      "url": "https://www.youtube.com/watch?v=_qp50gF67sQ",
+      "publisher": "ATP Tour",
+      "title": "Del Potro Opens Up About Wrist Injury Shanghai 2017",
+      "durationSeconds": 120,
+      "startSeconds": 0,
+      "footageKind": "athlete-interview",
+      "checkedAt": "2026-09-21T03:55:56.558Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 20.961004,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "原創賽後採訪本人0:11–0:33談跌倒手腕落地、等待MRI。診斷挫傷採後續AP經紀人說法；不以當下不確定性推斷骨折。"
+    },
+    {
+      "id": "yH1WExdlI4Q",
+      "url": "https://www.youtube.com/watch?v=yH1WExdlI4Q",
+      "publisher": "Roland-Garros",
+      "title": "Rafael Nadal Withdraws from 2016 Roland-Garros",
+      "durationSeconds": 208,
+      "startSeconds": 0,
+      "footageKind": "athlete-interview",
+      "checkedAt": "2026-09-21T03:55:56.558Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 20.95993,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "官方退賽本人記者會，0:10–0:30明指手腕數週症狀且抵達巴黎前已有痛。1:36 not broken/繼續打可能惡化不能當作已斷裂。影片是公告不是受傷當下。"
+    },
+    {
+      "id": "ApTbpxIuUJ8",
+      "url": "https://www.youtube.com/watch?v=ApTbpxIuUJ8",
+      "publisher": "PSG HANDBALL",
+      "title": "Une séance avec Nikola Karabatic",
+      "durationSeconds": 162,
+      "startSeconds": 0,
+      "footageKind": "aftermath",
+      "checkedAt": "2026-09-21T03:57:07.206Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 69.073199,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "PSG官方2021術後復健訓練紀錄，69秒看到敏捷梯訓練；沒有2020比賽受傷瞬間。節目說明明列膝部術後復健，不能將展示動作直接當成一般人復健處方。"
+    },
+    {
+      "id": "WhCalbwjLJg",
+      "url": "https://www.youtube.com/watch?v=WhCalbwjLJg",
+      "publisher": "World Surf League",
+      "title": "Injury Update: Kelly Slater Breaks Foot During Free Surf Session - Corona Open J-Bay 2017",
+      "durationSeconds": 225,
+      "startSeconds": 25,
+      "footageKind": "aftermath",
+      "checkedAt": "2026-09-21T03:57:07.206Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 66.804701,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "WSL同日傷後現場本人說明和足部冰敷，0:04明列free surf，非Round2比賽中受傷。當下等待X光；兩根蹠骨骨折來自後續WSL報導。"
+    },
+    {
+      "id": "wTaCr8olPck",
+      "url": "https://www.youtube.com/watch?v=wTaCr8olPck",
+      "publisher": "World Surf League",
+      "title": "One Of The Toughest Performances Ever - Sally Fitzgibbons Wins ’15 Fiji With A Busted Ear!!",
+      "durationSeconds": 351,
+      "startSeconds": 45,
+      "footageKind": "news-analysis",
+      "checkedAt": "2026-09-21T03:57:07.206Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 56.861917,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "WSL 2015 Fiji 回顧，0:56–1:35醫療人員談鼓膜破裂並建議停賽；後續影片回顧包紮與帶傷比賽。不得把媒體讚揚韌性轉成鼓勵續賽，亦不推論腦震盪。"
+    },
+    {
+      "id": "ZQL-1NY5erY",
+      "url": "https://www.youtube.com/watch?v=ZQL-1NY5erY",
+      "publisher": "Sky Sports News",
+      "title": "Emma Raducanu to miss the French Open & Wimbledon after undergoing surgery on her wrists & ankle",
+      "durationSeconds": 88,
+      "startSeconds": 25,
+      "footageKind": "news-analysis",
+      "checkedAt": "2026-09-21T03:58:49.209Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 52.420157,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "Sky原創新聞呈現本人手術聲明，0:32–0:58明列雙手骨傷持續約十個月。本頁只记雙腕/手傷，與同期踝手術分開；公告日期不是首次受傷日，未指認骨名。"
+    },
+    {
+      "id": "kb_9JHJu1oo",
+      "url": "https://www.youtube.com/watch?v=kb_9JHJu1oo",
+      "publisher": "United States Golf Association (USGA)",
+      "title": "Tiger Woods’ 2008 U.S. Open Victory at Torrey Pines | Every Televised Shot | Champion’s Journey",
+      "durationSeconds": 11470,
+      "startSeconds": 1620,
+      "footageKind": "aftermath",
+      "checkedAt": "2026-09-21T03:58:49.209Z",
+      "ownedHttpsPlayback": false,
+      "sourcePlayback": {
+        "time": 1645.018898,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "USGA官方2008美國公開賽逐球回顧；27:08播報員及本人談下肢疼痛，之後繼續賽事。疲勞性骨折發生於賽前，不能把任一揮桿標成骨折瞬間，也無法僅依畫面區分膝部旧傷與脛骨痛來源。"
     }
   ]
 }

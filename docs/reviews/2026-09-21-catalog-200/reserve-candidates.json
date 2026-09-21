@@ -1,0 +1,2196 @@
+{
+  "schemaVersion": 1,
+  "businessDate": "2026-09-21",
+  "checkedAt": "2026-09-21T03:44:23Z",
+  "scope": "research-only-not-imported-by-site",
+  "authorizationQuote": "請將已研究的21個候選依 first/second candidates 既有結構正式保存",
+  "authorizationSource": "scoped-parent-task-2026-09-21",
+  "targetNewEvents": 42,
+  "reserveResearchCount": 21,
+  "firstReserveBatchCount": 12,
+  "secondReserveBatchCount": 9,
+  "acceptedForPublication": 0,
+  "actualPlaybackVerifiedCount": 0,
+  "embeddedPlaybackVerifiedCount": 0,
+  "sourceStructureReference": "second-batch-candidates.json",
+  "reviewNotice": "所有 21 案僅為來源研究候選。未觀看選定片段，未核播放、字幕、片長、timecode 或 footageKind，不能直接發布或當成已通過 schema 的整合資料。proposedFootageKind 只是選片線索。",
+  "excludedFromCount": [
+    "Janja Garnbret 2023 toe injury: video injury-segment correspondence not established"
+  ],
+  "entries": [
+    {
+      "id": "jordan-burroughs-2013-ankle",
+      "athlete": "Jordan Burroughs",
+      "country": "USA",
+      "sport": "角力",
+      "bodyPart": "踝部",
+      "eventDate": "2013-08-22",
+      "eventYear": "2013",
+      "eventDateCertainty": "confirmed",
+      "dateNote": "USA Wrestling 直接記載 8 月 22 日骨折，翌日手術。",
+      "injury": "世界錦標賽前訓練中踝部骨折；不補寫側別或骨頭名稱。",
+      "context": "training",
+      "gapTags": ["rare-sport"],
+      "sources": [
+        {
+          "title": "USA Wrestling：Burroughs 傷後世界錦標賽金牌",
+          "url": "https://www.themat.com/news/2013/september/18/jordan-burroughs-strikes-gold--27002",
+          "publisher": "USA Wrestling",
+          "access": "web-research-excerpt",
+          "supports": "記載 2013-08-22 踝部骨折與翌日手術，之後參加世錦賽。",
+          "publishedAt": "2013-09-18"
+        },
+        {
+          "title": "Jordan Burroughs：My Journey to World Championship #3",
+          "url": "https://www.jordanburroughs.com/blog/my-journey-to-world-championship-3",
+          "publisher": "Jordan Burroughs",
+          "access": "web-research-excerpt",
+          "supports": "本人回顧訓練營骨折及世錦賽經驗。",
+          "publishedAt": "2013-09-27"
+        }
+      ],
+      "limitations": [
+        "2019 年訪談回顧 2013 年受傷，不是 2019 年新傷。",
+        "影片標題的 four weeks 不作為已核實的復健期或首次回場日期。",
+        "不推定腓骨、脛骨、傷側或內固定方式。"
+      ],
+      "event": "2013 世錦賽前訓練｜踝部骨折",
+      "narrative": "USA Wrestling 報導 Burroughs 於 8 月 22 日訓練時踝部骨折，隨後接受手術；本人以文章回顧帶傷準備世界錦標賽的經過。",
+      "primarySourceIndexes": [1, 2],
+      "videoUrl": "https://www.youtube.com/watch?v=sBzHuGCZdTI",
+      "publisher": "Trackwrestling .com",
+      "sourceTitle": "Jordan Burroughs looks back on winning a World title four weeks after breaking his ankle",
+      "videoPublishedAt": "2019-07-03",
+      "videoProvenanceNote": "原創／官方發佈線索；尚未完成實際視聽、嵌入及最終權利查核。",
+      "proposedFootageKind": "athlete-interview",
+      "footageKind": null,
+      "alternativeVideos": [],
+      "stage": "awaiting-main-workflow-actual-review",
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "actualPlaybackVerified": false,
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "captionStatus": "not-verified",
+      "startSeconds": null,
+      "durationSeconds": null,
+      "returnDate": null,
+      "returnDateReviewStatus": "not-independently-verified",
+      "countryAndPublisherReview": {
+        "athleteCountry": "USA",
+        "publisher": "Trackwrestling .com",
+        "taiwanAthleteExcluded": true,
+        "taiwanOriginSourceExcluded": true,
+        "status": "research-screened-final-provenance-review-pending",
+        "note": "候選均為非台灣選手，保留官方／本人／具名原始新聞來源。此紀錄不是最終權利審查或播放證據。"
+      },
+      "timelineDraft": [
+        {
+          "date": "2013-08-22",
+          "title": "訓練中踝部骨折",
+          "text": "USA Wrestling 記載踝部骨折日期為 8 月 22 日。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2013-09",
+          "title": "世錦賽經驗",
+          "text": "本人與協會回顧傷後參加世界錦標賽；不據此推定醫學上完全恢復。",
+          "sourceIndexes": [1, 2]
+        }
+      ],
+      "remainingChecks": [
+        "Main workflow actual audiovisual review: confirm same injury event and content",
+        "Verify original publisher, source jurisdiction and rights/provenance",
+        "Set footageKind only after watching the selected material",
+        "Measure actual startSeconds and durationSeconds; null is not zero",
+        "Confirm captions and owned-HTTPS embedded playback under current release requirements",
+        "Final clinical attribution, event-date, return-date and duplicate-event review",
+        "Only then construct and validate production-schema data"
+      ]
+    },
+    {
+      "id": "jofra-archer-2020-elbow-stress-fracture",
+      "athlete": "Jofra Archer",
+      "country": "GBR",
+      "sport": "板球",
+      "bodyPart": "肘部",
+      "eventDate": null,
+      "eventYear": "2020",
+      "dateNote": "2020 年 2 月為 ECB 確認診斷月份，非確定初次受傷日期。",
+      "injury": "右肘低程度疲勞性骨折；後續有 2021 年再發與手術紀錄。",
+      "context": "overuse-reported",
+      "gapTags": ["overuse", "upper-limb", "rare-sport"],
+      "sources": [
+        {
+          "title": "ECB：Jofra Archer 右肘疲勞性骨折",
+          "url": "https://www.ecb.co.uk/news/1603176",
+          "publisher": "England and Wales Cricket Board",
+          "access": "web-research-excerpt",
+          "supports": "2020 年 2 月官方確認 low-grade stress fracture of right elbow。",
+          "publishedAt": null
+        },
+        {
+          "title": "ECB：2021 年右肘疲勞性骨折再發",
+          "url": "https://www.ecb.co.uk/news/2207138",
+          "publisher": "England and Wales Cricket Board",
+          "access": "web-research-excerpt",
+          "supports": "後續肘部疲勞性骨折再發；不能當作 2020 年初次發生日。",
+          "publishedAt": null
+        },
+        {
+          "title": "ECB：Archer 第二次肘部手術",
+          "url": "https://www.ecb.co.uk/news/2424799",
+          "publisher": "England and Wales Cricket Board",
+          "access": "web-research-excerpt",
+          "supports": "記載 2021-12-11 第二次肘部手術。",
+          "publishedAt": null
+        }
+      ],
+      "limitations": [
+        "訪談涵蓋多次傷病，必須定位右肘相關段落；不得以 2022 年背部疲勞性骨折片段代替。",
+        "不能自行指定肘部哪根骨頭、骨折分期或病理原因。",
+        "2021 年再發與 2020 年初次診斷需要清楚區分。"
+      ],
+      "event": "2020 板球投球肘｜右肘疲勞性骨折",
+      "narrative": "ECB 於 2020 年 2 月公布 Archer 右肘低程度疲勞性骨折；本事件以該次肘傷為主，2021 年再發僅列後續背景。",
+      "primarySourceIndexes": [1],
+      "videoUrl": "https://www.youtube.com/watch?v=VNo4qQaVNHg",
+      "publisher": "England & Wales Cricket Board",
+      "sourceTitle": "The Passion Never Went | EXCLUSIVE Jofra Archer Interview | Injuries, Playing For England & Future",
+      "videoPublishedAt": "2023-02-04",
+      "videoProvenanceNote": "原創／官方發佈線索；尚未完成實際視聽、嵌入及最終權利查核。",
+      "proposedFootageKind": "athlete-interview",
+      "footageKind": null,
+      "alternativeVideos": [],
+      "stage": "awaiting-main-workflow-actual-review",
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "actualPlaybackVerified": false,
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "captionStatus": "not-verified",
+      "startSeconds": null,
+      "durationSeconds": null,
+      "returnDate": null,
+      "returnDateReviewStatus": "not-independently-verified",
+      "countryAndPublisherReview": {
+        "athleteCountry": "GBR",
+        "publisher": "England & Wales Cricket Board",
+        "taiwanAthleteExcluded": true,
+        "taiwanOriginSourceExcluded": true,
+        "status": "research-screened-final-provenance-review-pending",
+        "note": "候選均為非台灣選手，保留官方／本人／具名原始新聞來源。此紀錄不是最終權利審查或播放證據。"
+      },
+      "timelineDraft": [
+        {
+          "date": "2020-02",
+          "title": "ECB 確認右肘疲勞性骨折",
+          "text": "官方公布右肘低程度疲勞性骨折；起始日未明。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2021-12-11",
+          "title": "第二次肘部手術",
+          "text": "ECB 後續公告記錄第二次肘部手術，屬後續病程。",
+          "sourceIndexes": [3]
+        }
+      ],
+      "remainingChecks": [
+        "Main workflow actual audiovisual review: confirm same injury event and content",
+        "Verify original publisher, source jurisdiction and rights/provenance",
+        "Set footageKind only after watching the selected material",
+        "Measure actual startSeconds and durationSeconds; null is not zero",
+        "Confirm captions and owned-HTTPS embedded playback under current release requirements",
+        "Final clinical attribution, event-date, return-date and duplicate-event review",
+        "Only then construct and validate production-schema data"
+      ]
+    },
+    {
+      "id": "manny-pacquiao-2015-shoulder",
+      "athlete": "Manny Pacquiao",
+      "country": "PHL",
+      "sport": "拳擊",
+      "bodyPart": "肩部",
+      "eventDate": null,
+      "eventYear": "2015",
+      "dateNote": "訓練中起始日未確定；2015-05-02 與 Mayweather 比賽為加劇情境，不能作初次受傷日。",
+      "injury": "右肩旋轉肌袖撕裂；具名手術醫師向媒體確認已手術。",
+      "context": "training-with-competition-aggravation",
+      "gapTags": ["upper-limb", "rare-sport"],
+      "sources": [
+        {
+          "title": "ESPN：具名醫師確認 Pacquiao 右肩旋轉肌袖手術",
+          "url": "https://www.espn.com/boxing/story/_/id/12837213/manny-pacquiao-undergoes-surgery-torn-right-rotator-cuff",
+          "publisher": "ESPN",
+          "access": "web-research-excerpt-limited-use",
+          "supports": "具名手術醫師直接確認右肩旋轉肌袖撕裂與手術。",
+          "publishedAt": null
+        },
+        {
+          "title": "AP／CBS：Pacquiao 肩部手術與傷勢前後",
+          "url": "https://www.cbsnews.com/texas/news/pacquiao-has-shoulder-surgery/",
+          "publisher": "Associated Press via CBS",
+          "access": "web-research-excerpt",
+          "supports": "報導賽前三週訓練受傷，5 月 2 日比賽第四回合加劇。",
+          "publishedAt": null
+        }
+      ],
+      "limitations": [
+        "只記錄受傷事件與已公開診斷；不對該場賽果作因果推論。",
+        "5 月 2 日不是已證實的初次受傷日。",
+        "不指定撕裂肌腱名稱、面積、分級或手術技術。"
+      ],
+      "event": "2015 Mayweather 賽前訓練與比賽｜右肩旋轉肌袖",
+      "narrative": "手術醫師向 ESPN 確認右肩旋轉肌袖修補；AP 報導把傷勢區分為賽前三週訓練出現、5 月 2 日比賽中加劇。",
+      "primarySourceIndexes": [1, 2],
+      "videoUrl": "https://www.youtube.com/watch?v=l1dYgS6mqO0",
+      "publisher": "ABS-CBN News",
+      "sourceTitle": "Pacquiao undergoes surgery for injured shoulder",
+      "videoPublishedAt": "2015-05-06",
+      "videoProvenanceNote": "原創／官方發佈線索；尚未完成實際視聽、嵌入及最終權利查核。",
+      "proposedFootageKind": "news-analysis",
+      "footageKind": null,
+      "alternativeVideos": [
+        {
+          "url": "https://www.youtube.com/watch?v=ikNu_jQYFyg",
+          "publisher": "ABS-CBN News",
+          "title": "Pacquiao shoulder surgery news report（標題待最終核對）",
+          "proposedFootageKind": "news-analysis",
+          "publishedAt": null,
+          "reviewNote": "原創／官方發佈線索；尚未完成實際視聽、嵌入及最終權利查核。",
+          "footageKind": null,
+          "startSeconds": null,
+          "durationSeconds": null,
+          "actualPlaybackVerified": false,
+          "embeddedPlaybackVerified": false
+        }
+      ],
+      "stage": "awaiting-main-workflow-actual-review",
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "actualPlaybackVerified": false,
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "captionStatus": "not-verified",
+      "startSeconds": null,
+      "durationSeconds": null,
+      "returnDate": null,
+      "returnDateReviewStatus": "not-independently-verified",
+      "countryAndPublisherReview": {
+        "athleteCountry": "PHL",
+        "publisher": "ABS-CBN News",
+        "taiwanAthleteExcluded": true,
+        "taiwanOriginSourceExcluded": true,
+        "status": "research-screened-final-provenance-review-pending",
+        "note": "候選均為非台灣選手，保留官方／本人／具名原始新聞來源。此紀錄不是最終權利審查或播放證據。"
+      },
+      "timelineDraft": [
+        {
+          "date": "2015",
+          "title": "賽前訓練肩傷",
+          "text": "公開報導指右肩傷勢在對 Mayweather 比賽前的訓練已出現。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2015-05-02",
+          "title": "比賽中加劇",
+          "text": "AP 報導比賽中肩部傷勢加劇，後續有具名醫師確認手術。",
+          "sourceIndexes": [1, 2]
+        }
+      ],
+      "remainingChecks": [
+        "Main workflow actual audiovisual review: confirm same injury event and content",
+        "Verify original publisher, source jurisdiction and rights/provenance",
+        "Set footageKind only after watching the selected material",
+        "Measure actual startSeconds and durationSeconds; null is not zero",
+        "Confirm captions and owned-HTTPS embedded playback under current release requirements",
+        "Final clinical attribution, event-date, return-date and duplicate-event review",
+        "Only then construct and validate production-schema data"
+      ]
+    },
+    {
+      "id": "sky-brown-2024-shoulder",
+      "athlete": "Sky Brown",
+      "country": "GBR",
+      "sport": "滑板",
+      "bodyPart": "肩部",
+      "eventDate": null,
+      "eventYear": "2024",
+      "dateNote": "2024 年 7 月底；媒體對 Sunday/Monday 敘述不同，不填日。",
+      "injury": "巴黎奧運前訓練肩關節脫臼；不指定側別或伴隨組織損傷。",
+      "context": "training",
+      "gapTags": ["rare-sport", "upper-limb"],
+      "sources": [
+        {
+          "title": "Team GB：Brown 肩脫臼一週後獲得奧運銅牌",
+          "url": "https://www.teamgb.com/article/sky-brown-clinches-skateboarding-park-bronze-a-week-after-dislocating-her/2sxKBZ7VwBgITLHPMx1fbD",
+          "publisher": "Team GB",
+          "access": "full-text",
+          "supports": "官方報導奧運前訓練肩關節脫臼，另區分 4 月 MCL 傷。",
+          "publishedAt": null
+        }
+      ],
+      "limitations": [
+        "不得把 4 月 MCL 傷或舊滑板事故合併成肩部脫臼事件。",
+        "不以奧運銅牌反推安全回場、完全恢復或適當治療時程。",
+        "確切受傷日存在報導差異，保留 null。"
+      ],
+      "event": "2024 巴黎奧運前訓練｜肩關節脫臼",
+      "narrative": "Team GB 報導 Brown 在巴黎奧運前一週的訓練中肩關節脫臼；其 2024 年 4 月膝部傷勢是另一事件。",
+      "primarySourceIndexes": [1],
+      "videoUrl": "https://www.youtube.com/watch?v=5qWBA8MuN_4",
+      "publisher": "Sky Sports News",
+      "sourceTitle": "It's been an insane journey | Sky Brown on winning Olympic bronze after dislocating her shoulder",
+      "videoPublishedAt": "2024-08-07",
+      "videoProvenanceNote": "原創／官方發佈線索；尚未完成實際視聽、嵌入及最終權利查核。",
+      "proposedFootageKind": "athlete-interview",
+      "footageKind": null,
+      "alternativeVideos": [
+        {
+          "url": "https://www.youtube.com/watch?v=wWlvUFWwgYc",
+          "publisher": "Sky News",
+          "title": "Sky Brown 奧運後訪談（原始標題待核）",
+          "proposedFootageKind": "athlete-interview",
+          "publishedAt": null,
+          "reviewNote": "原創／官方發佈線索；尚未完成實際視聽、嵌入及最終權利查核。",
+          "footageKind": null,
+          "startSeconds": null,
+          "durationSeconds": null,
+          "actualPlaybackVerified": false,
+          "embeddedPlaybackVerified": false
+        }
+      ],
+      "stage": "awaiting-main-workflow-actual-review",
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "actualPlaybackVerified": false,
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "captionStatus": "not-verified",
+      "startSeconds": null,
+      "durationSeconds": null,
+      "returnDate": null,
+      "returnDateReviewStatus": "not-independently-verified",
+      "countryAndPublisherReview": {
+        "athleteCountry": "GBR",
+        "publisher": "Sky Sports News",
+        "taiwanAthleteExcluded": true,
+        "taiwanOriginSourceExcluded": true,
+        "status": "research-screened-final-provenance-review-pending",
+        "note": "候選均為非台灣選手，保留官方／本人／具名原始新聞來源。此紀錄不是最終權利審查或播放證據。"
+      },
+      "timelineDraft": [
+        {
+          "date": "2024-07",
+          "title": "奧運前訓練肩脫臼",
+          "text": "Team GB 記載為巴黎奧運前一週訓練時肩脫臼，日未核定。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-08",
+          "title": "奧運後回顧",
+          "text": "Team GB 以帶傷準備奧運的經過報導她的銅牌；這不是已確認的醫療康復日期。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "remainingChecks": [
+        "Main workflow actual audiovisual review: confirm same injury event and content",
+        "Verify original publisher, source jurisdiction and rights/provenance",
+        "Set footageKind only after watching the selected material",
+        "Measure actual startSeconds and durationSeconds; null is not zero",
+        "Confirm captions and owned-HTTPS embedded playback under current release requirements",
+        "Final clinical attribution, event-date, return-date and duplicate-event review",
+        "Only then construct and validate production-schema data"
+      ]
+    },
+    {
+      "id": "tony-hawk-2022-femur",
+      "athlete": "Tony Hawk",
+      "country": "USA",
+      "sport": "滑板",
+      "bodyPart": "髖部與大腿",
+      "eventDate": "2022-03-07",
+      "eventYear": "2022",
+      "eventDateCertainty": "reported",
+      "dateNote": "原始本人公告與 3 月新聞連結至 2022-03-07 滑板事故。",
+      "injury": "滑板時股骨骨折；不補寫側別、骨折型態。",
+      "context": "skateboarding",
+      "gapTags": ["rare-sport"],
+      "sources": [
+        {
+          "title": "Tony Hawk：本人股骨骨折公告",
+          "url": "https://www.instagram.com/p/Ca295C2vC6B/",
+          "publisher": "Tony Hawk",
+          "access": "primary-url-located-fetch-unavailable",
+          "supports": "原始公告網址已定位；本輪未成功獨立讀取全文。",
+          "publishedAt": null
+        },
+        {
+          "title": "NPR／GPB：Tony Hawk 本人訪談",
+          "url": "https://www.gpb.org/news/2022/04/05/tony-hawk-plans-keep-skateboarding-until-the-wheels-fall-off",
+          "publisher": "NPR via Georgia Public Broadcasting",
+          "access": "interview-transcript",
+          "supports": "本人談滑板事故、股骨骨折與後續生活。",
+          "publishedAt": "2022-04-05"
+        },
+        {
+          "title": "The Inertia：Tony Hawk 與 Jason Ellis 傷後節目介紹",
+          "url": "https://www.theinertia.com/video/tony-hawk-on-his-freshly-broken-femur-and-what-it-means-for-his-skateboarding/",
+          "publisher": "The Inertia",
+          "access": "full-text-and-exact-embed-extraction",
+          "supports": "報導 3 月 7 日事故並嵌入 Hawk vs Wolf 原創節目；exact YouTube URL 由 HTML 取出。",
+          "publishedAt": null
+        }
+      ],
+      "limitations": [
+        "不能使用 2020 年 GQ 泛傷勢訪談代替本次 2022 年事故。",
+        "本人 Instagram 全文未成功獨立取讀；日期以 NPR／同期節目介紹交叉審閱。",
+        "尚未看影片，不聲稱有受傷瞬間。"
+      ],
+      "event": "2022 滑板事故｜股骨骨折",
+      "narrative": "Hawk 的原創訪談與 NPR 本人訪談把 2022 年 3 月滑板事故連結至股骨骨折；所選 Hawk vs Wolf 影片由他與 Jason Ellis 討論當次傷勢。",
+      "primarySourceIndexes": [1, 2],
+      "videoUrl": "https://www.youtube.com/watch?v=Kvm-WXQ2w2Y",
+      "publisher": "Hawk vs Wolf",
+      "sourceTitle": "Hawk vs Wolf：Tony Hawk 談 2022 年股骨骨折（編輯標籤；原標題待核）",
+      "videoPublishedAt": null,
+      "videoProvenanceNote": "原創／官方發佈線索；尚未完成實際視聽、嵌入及最終權利查核。",
+      "proposedFootageKind": "athlete-interview",
+      "footageKind": null,
+      "alternativeVideos": [],
+      "stage": "awaiting-main-workflow-actual-review",
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "actualPlaybackVerified": false,
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "captionStatus": "not-verified",
+      "startSeconds": null,
+      "durationSeconds": null,
+      "returnDate": null,
+      "returnDateReviewStatus": "not-independently-verified",
+      "countryAndPublisherReview": {
+        "athleteCountry": "USA",
+        "publisher": "Hawk vs Wolf",
+        "taiwanAthleteExcluded": true,
+        "taiwanOriginSourceExcluded": true,
+        "status": "research-screened-final-provenance-review-pending",
+        "note": "候選均為非台灣選手，保留官方／本人／具名原始新聞來源。此紀錄不是最終權利審查或播放證據。"
+      },
+      "timelineDraft": [
+        {
+          "date": "2022-03-07",
+          "title": "滑板時股骨骨折",
+          "text": "同期節目介紹將骨折連結至 3 月 7 日的滑板事故。",
+          "sourceIndexes": [3]
+        },
+        {
+          "date": "2022-04-05",
+          "title": "本人受訪談骨折",
+          "text": "NPR 本人訪談回顧事故與傷後生活。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "remainingChecks": [
+        "Main workflow actual audiovisual review: confirm same injury event and content",
+        "Verify original publisher, source jurisdiction and rights/provenance",
+        "Set footageKind only after watching the selected material",
+        "Measure actual startSeconds and durationSeconds; null is not zero",
+        "Confirm captions and owned-HTTPS embedded playback under current release requirements",
+        "Final clinical attribution, event-date, return-date and duplicate-event review",
+        "Only then construct and validate production-schema data"
+      ]
+    },
+    {
+      "id": "helen-maroulis-2018-concussion",
+      "athlete": "Helen Maroulis",
+      "country": "USA",
+      "sport": "角力",
+      "bodyPart": "頭部",
+      "eventDate": null,
+      "eventYear": "2018",
+      "dateNote": "本人描述首起為 2018 年 1 月印度賽事；缺乏精確受傷日。",
+      "injury": "2018 年角力相關腦震盪；後續其他腦震盪需分開。",
+      "context": "competition",
+      "gapTags": ["rare-sport"],
+      "sources": [
+        {
+          "title": "UWW：Helen Maroulis 選手資料",
+          "url": "https://cms.uww.org/athletes/maroulis-helen-louise",
+          "publisher": "United World Wrestling",
+          "access": "web-research-excerpt",
+          "supports": "選手資料記錄 2018 年嚴重腦震盪。",
+          "publishedAt": null
+        },
+        {
+          "title": "NBC Sports：Maroulis 本人談腦震盪",
+          "url": "https://www.nbcsports.com/olympics/news/helen-maroulis-wrestling-concussion",
+          "publisher": "NBC Sports",
+          "access": "web-research-excerpt-limited-use",
+          "supports": "本人受訪談 2018 年腦震盪及回歸。",
+          "publishedAt": null
+        },
+        {
+          "title": "Awful Announcing：WGN 傷後訪談與原片",
+          "url": "https://awfulannouncing.com/olympics/helen-maroulis-helen-believe-wgn-concussions.html",
+          "publisher": "Awful Announcing",
+          "access": "full-text-and-exact-video-link",
+          "supports": "逐字引述 WGN 訪談中首起印度腦震盪與後續其他事故；原創 WGN 影片連結由此取得。",
+          "publishedAt": null
+        },
+        {
+          "title": "The Players' Tribune：Maroulis Blindsided 本人訪談",
+          "url": "https://www.theplayerstribune.com/posts/helen-maroulis-olympics-womens-wrestling-mental-health-blindsided-podcast",
+          "publisher": "The Players' Tribune",
+          "access": "web-research-excerpt",
+          "supports": "本人談角力受傷經驗的補充訪談線索；音訊不可冒充影片。",
+          "publishedAt": null
+        }
+      ],
+      "limitations": [
+        "影片涵蓋不只一次腦震盪，必須分辨 2018 年 1 月印度事故與後續事件。",
+        "第三方文字列出的訪談時間位置不是本代理觀看驗證，未轉填為 startSeconds。",
+        "不將歷史續賽或個人恢復經驗當作臨床建議。"
+      ],
+      "event": "2018 年 1 月印度角力賽｜腦震盪",
+      "narrative": "UWW 選手資料與本人訪談記錄 2018 年腦震盪；WGN 訪談回顧在印度發生的首起事故及之後的經過，需定位本事件相關片段。",
+      "primarySourceIndexes": [1, 2, 4],
+      "videoUrl": "https://www.youtube.com/watch?v=6dGzpQHXQsM",
+      "publisher": "WGN News",
+      "sourceTitle": "Helen Maroulis 談 Helen | Believe 與腦震盪（編輯標籤；原標題待核）",
+      "videoPublishedAt": null,
+      "videoProvenanceNote": "原創／官方發佈線索；尚未完成實際視聽、嵌入及最終權利查核。",
+      "proposedFootageKind": "athlete-interview",
+      "footageKind": null,
+      "alternativeVideos": [],
+      "stage": "awaiting-main-workflow-actual-review",
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "actualPlaybackVerified": false,
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "captionStatus": "not-verified",
+      "startSeconds": null,
+      "durationSeconds": null,
+      "returnDate": null,
+      "returnDateReviewStatus": "not-independently-verified",
+      "countryAndPublisherReview": {
+        "athleteCountry": "USA",
+        "publisher": "WGN News",
+        "taiwanAthleteExcluded": true,
+        "taiwanOriginSourceExcluded": true,
+        "status": "research-screened-final-provenance-review-pending",
+        "note": "候選均為非台灣選手，保留官方／本人／具名原始新聞來源。此紀錄不是最終權利審查或播放證據。"
+      },
+      "timelineDraft": [
+        {
+          "date": "2018-01",
+          "title": "印度賽事首起腦震盪",
+          "text": "本人在 WGN 訪談中回顧 2018 年 1 月印度角力事件；後續另有腦震盪。",
+          "sourceIndexes": [3]
+        },
+        {
+          "date": "2018",
+          "title": "官方選手資料記錄傷病",
+          "text": "UWW 資料記錄 2018 年腦震盪病史。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "remainingChecks": [
+        "Main workflow actual audiovisual review: confirm same injury event and content",
+        "Verify original publisher, source jurisdiction and rights/provenance",
+        "Set footageKind only after watching the selected material",
+        "Measure actual startSeconds and durationSeconds; null is not zero",
+        "Confirm captions and owned-HTTPS embedded playback under current release requirements",
+        "Final clinical attribution, event-date, return-date and duplicate-event review",
+        "Only then construct and validate production-schema data"
+      ]
+    },
+    {
+      "id": "tiger-woods-2008-tibial-stress-fractures",
+      "athlete": "Tiger Woods",
+      "country": "USA",
+      "sport": "高爾夫",
+      "bodyPart": "膝部與小腿",
+      "eventDate": null,
+      "eventYear": "2008",
+      "dateNote": "本人年表記載 May 2008；無確切日，使用月份而不造日。",
+      "injury": "高爾夫訓練期間左脛骨兩處疲勞性骨折。",
+      "context": "golf-training-overuse",
+      "gapTags": ["overuse", "rare-sport"],
+      "sources": [
+        {
+          "title": "Tiger Woods 官方年表：2008 年 5 月左脛骨疲勞性骨折",
+          "url": "https://news.tigerwoods.com/about-tiger/",
+          "publisher": "Tiger Woods",
+          "access": "full-text",
+          "supports": "明確記載 May 2008: Double stress fracture of left tibia while golf training。",
+          "publishedAt": null
+        },
+        {
+          "title": "Tiger Woods 官方履歷 PDF",
+          "url": "https://tigerwoods.com/wp-content/uploads/2021/08/TWBio19-20_PDF.pdf",
+          "publisher": "Tiger Woods",
+          "access": "web-research-excerpt",
+          "supports": "本人官方履歷年表補充同一 2008 年傷勢。",
+          "publishedAt": null
+        },
+        {
+          "title": "USGA：Tiger Woods 2008 美國公開賽紀錄",
+          "url": "https://www.usga.org/content/usga/home-page/members/tiger-woods-the-player-of-record-usga-golf.html",
+          "publisher": "USGA",
+          "access": "web-research-excerpt",
+          "supports": "2008 年公開賽帶傷參賽背景。",
+          "publishedAt": null
+        }
+      ],
+      "limitations": [
+        "影片呈現帶傷比賽或事後回顧，不能稱為疲勞性骨折瞬間。",
+        "既有 ACL 傷與 2008 年 5 月脛骨疲勞性骨折分開，不能視為同一瞬間造成。",
+        "不以奪冠、持續參賽反推骨折程度、治療合適性或完全恢復。"
+      ],
+      "event": "2008 高爾夫訓練｜左脛骨疲勞性骨折",
+      "narrative": "Woods 本人官方年表記錄 2008 年 5 月高爾夫訓練期間左脛骨兩處疲勞性骨折。USGA 影片是之後美國公開賽的比賽與回顧素材，不能當作骨折發生瞬間。",
+      "primarySourceIndexes": [1, 2],
+      "videoUrl": "https://www.youtube.com/watch?v=kb_9JHJu1oo",
+      "publisher": "United States Golf Association (USGA)",
+      "sourceTitle": "Tiger Woods' 2008 U.S. Open Victory at Torrey Pines | Every Televised Shot | Champion's Journey",
+      "videoPublishedAt": null,
+      "videoProvenanceNote": "原創／官方發佈線索；尚未完成實際視聽、嵌入及最終權利查核。",
+      "proposedFootageKind": "aftermath",
+      "footageKind": null,
+      "alternativeVideos": [
+        {
+          "url": "https://www.youtube.com/watch?v=aJ9JuExKH7c",
+          "publisher": "United States Golf Association (USGA)",
+          "title": "2008 U.S. Open playoff（原始標題待最終核對）",
+          "proposedFootageKind": "aftermath",
+          "publishedAt": null,
+          "reviewNote": "原創／官方發佈線索；尚未完成實際視聽、嵌入及最終權利查核。",
+          "footageKind": null,
+          "startSeconds": null,
+          "durationSeconds": null,
+          "actualPlaybackVerified": false,
+          "embeddedPlaybackVerified": false
+        }
+      ],
+      "stage": "awaiting-main-workflow-actual-review",
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "actualPlaybackVerified": false,
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "captionStatus": "not-verified",
+      "startSeconds": null,
+      "durationSeconds": null,
+      "returnDate": null,
+      "returnDateReviewStatus": "not-independently-verified",
+      "countryAndPublisherReview": {
+        "athleteCountry": "USA",
+        "publisher": "United States Golf Association (USGA)",
+        "taiwanAthleteExcluded": true,
+        "taiwanOriginSourceExcluded": true,
+        "status": "research-screened-final-provenance-review-pending",
+        "note": "候選均為非台灣選手，保留官方／本人／具名原始新聞來源。此紀錄不是最終權利審查或播放證據。"
+      },
+      "timelineDraft": [
+        {
+          "date": "2008-05",
+          "title": "左脛骨疲勞性骨折",
+          "text": "本人官方年表記載高爾夫訓練時左脛骨兩處疲勞性骨折。",
+          "sourceIndexes": [1, 2]
+        },
+        {
+          "date": "2008-06",
+          "title": "美國公開賽帶傷參賽",
+          "text": "USGA 回顧 2008 年美國公開賽經歷；所選影片是後續比賽素材。",
+          "sourceIndexes": [3]
+        }
+      ],
+      "remainingChecks": [
+        "Main workflow actual audiovisual review: confirm same injury event and content",
+        "Verify original publisher, source jurisdiction and rights/provenance",
+        "Set footageKind only after watching the selected material",
+        "Measure actual startSeconds and durationSeconds; null is not zero",
+        "Confirm captions and owned-HTTPS embedded playback under current release requirements",
+        "Final clinical attribution, event-date, return-date and duplicate-event review",
+        "Only then construct and validate production-schema data"
+      ]
+    },
+    {
+      "id": "mirabai-chanu-2023-hip",
+      "athlete": "Mirabai Chanu",
+      "country": "IND",
+      "sport": "舉重",
+      "bodyPart": "髖部與大腿",
+      "eventDate": "2023-09-30",
+      "eventYear": "2023",
+      "eventDateCertainty": "reported",
+      "dateNote": "亞洲運動會女子 49 公斤級賽事與同日新聞相符。",
+      "injury": "亞洲運動會舉重時髖部／大腿區域受傷；不指定組織、撕裂或肌腱病變。",
+      "context": "competition",
+      "gapTags": ["weightlifting", "rare-sport"],
+      "sources": [
+        {
+          "title": "Indian Express：亞運舉重現場報導",
+          "url": "https://indianexpress.com/article/sports/asian-games/asian-games-weightlifting-no-luck-in-china-but-will-the-paris-olympics-lift-mirabai-chanus-spirits-8963222/",
+          "publisher": "The Indian Express",
+          "access": "web-research-excerpt",
+          "supports": "現場報導 2023-09-30 女子 49 公斤級受傷及離場。",
+          "publishedAt": "2023-09-30"
+        },
+        {
+          "title": "Sports Tak：Mirabai Chanu 本人傷後訪談",
+          "url": "https://thesportstak.com/olympics/video/exclusive-interview-had-doubts-about-my-comeback-mirabai-chanu-ahead-of-paris-olympic-2024-znqg-3028117-2024-07-25",
+          "publisher": "Sports Tak",
+          "access": "web-research-excerpt",
+          "supports": "本人談亞運髖部傷勢及巴黎奧運前回歸疑慮。",
+          "publishedAt": "2024-07-25"
+        }
+      ],
+      "limitations": [
+        "不推論髖肌腱撕裂、髖夾擠或疲勞性損傷。",
+        "OneIndia 原創新聞的個別競賽影像授權來源需最終查核。",
+        "長訪談備選的發佈者仍未確認，索引章節不是已核時間碼。"
+      ],
+      "event": "2023 杭州亞運女子 49 公斤級｜髖部受傷",
+      "narrative": "現場新聞及 Chanu 本人後續訪談將髖部傷勢連結至 2023 年 9 月 30 日亞運舉重賽事；公開資料不足以指定受傷肌肉或肌腱。",
+      "primarySourceIndexes": [1, 2],
+      "videoUrl": "https://www.youtube.com/watch?v=1d3pOYyLQkY",
+      "publisher": "OneIndia Hindi",
+      "sourceTitle": "Mirabai Chanu 2023 亞運受傷報導（編輯標籤；原標題待核）",
+      "videoPublishedAt": "2023-09-30",
+      "videoProvenanceNote": "原創／官方發佈線索；尚未完成實際視聽、嵌入及最終權利查核。",
+      "proposedFootageKind": "news-analysis",
+      "footageKind": null,
+      "alternativeVideos": [
+        {
+          "url": "https://www.youtube.com/watch?v=VA9NGSFwp4Q",
+          "publisher": "publisher-unconfirmed",
+          "title": "खेल से अलग क्या-क्या झेलना पड़ता है...Mirabai Chanu से Olympics से लेकर Manipur Violence तक पर बात",
+          "proposedFootageKind": "athlete-interview",
+          "publishedAt": null,
+          "reviewNote": "索引章節提及 hip injury，但發布者未完成確認、章節位置未實際觀看；不得優先取代已識別新聞發布者。",
+          "footageKind": null,
+          "startSeconds": null,
+          "durationSeconds": null,
+          "actualPlaybackVerified": false,
+          "embeddedPlaybackVerified": false
+        }
+      ],
+      "stage": "awaiting-main-workflow-actual-review",
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "actualPlaybackVerified": false,
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "captionStatus": "not-verified",
+      "startSeconds": null,
+      "durationSeconds": null,
+      "returnDate": null,
+      "returnDateReviewStatus": "not-independently-verified",
+      "countryAndPublisherReview": {
+        "athleteCountry": "IND",
+        "publisher": "OneIndia Hindi",
+        "taiwanAthleteExcluded": true,
+        "taiwanOriginSourceExcluded": true,
+        "status": "research-screened-final-provenance-review-pending",
+        "note": "候選均為非台灣選手，保留官方／本人／具名原始新聞來源。此紀錄不是最終權利審查或播放證據。"
+      },
+      "timelineDraft": [
+        {
+          "date": "2023-09-30",
+          "title": "亞運舉重時受傷",
+          "text": "現場報導記錄 Chanu 在女子 49 公斤級賽事受傷。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2024-07-25",
+          "title": "本人回顧亞運傷勢",
+          "text": "Sports Tak 刊登她談亞運受傷與回歸的訪談。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "remainingChecks": [
+        "Main workflow actual audiovisual review: confirm same injury event and content",
+        "Verify original publisher, source jurisdiction and rights/provenance",
+        "Set footageKind only after watching the selected material",
+        "Measure actual startSeconds and durationSeconds; null is not zero",
+        "Confirm captions and owned-HTTPS embedded playback under current release requirements",
+        "Final clinical attribution, event-date, return-date and duplicate-event review",
+        "Only then construct and validate production-schema data"
+      ]
+    },
+    {
+      "id": "annemiek-van-vleuten-2022-elbow",
+      "athlete": "Annemiek van Vleuten",
+      "country": "NED",
+      "sport": "自行車",
+      "bodyPart": "肘部",
+      "eventDate": "2022-09-21",
+      "eventYear": "2022",
+      "eventDateCertainty": "confirmed",
+      "dateNote": "世錦賽混合團體計時賽事故日，由賽事與 NOS 同日記錄對照。",
+      "injury": "2022 世錦賽混合團體計時賽摔車造成肘部骨折；不補寫骨頭名稱。",
+      "context": "competition",
+      "gapTags": ["upper-limb"],
+      "sources": [
+        {
+          "title": "UCI：Van Vleuten 帶著肘部骨折參賽",
+          "url": "https://www.uci.org/article/uci-road-world-championships-van-vleuten-wins-against-the-odds/3omY3FTqY5Qim4K5U8KKF3",
+          "publisher": "Union Cycliste Internationale",
+          "access": "full-text",
+          "supports": "明確傷勢來自混合團體計時賽摔車；之後公路賽獲勝。",
+          "publishedAt": null
+        },
+        {
+          "title": "NOS：Van Vleuten 骨折後賽事前景",
+          "url": "https://nos.nl/artikel/2445397-artsen-geven-van-vleuten-sprankje-wk-hoop-ondanks-breuk-ze-zeiden-succes",
+          "publisher": "NOS",
+          "access": "web-research-excerpt",
+          "supports": "2022-09-21 骨折事故日期與當時評估。",
+          "publishedAt": "2022-09-21"
+        },
+        {
+          "title": "Cyclingnews：Movistar 退休回顧影片介紹",
+          "url": "https://www.cyclingnews.com/features/saying-goodbye-to-pro-cycling-annemiek-van-vleuten-on-navigating-life-after-sport/",
+          "publisher": "Cyclingnews",
+          "access": "full-text-and-exact-embed-extraction",
+          "supports": "文本提及影片中回顧世錦賽肘部骨折；HTML 提供 exact YouTube embed。",
+          "publishedAt": null
+        }
+      ],
+      "limitations": [
+        "與既有 2016 年里約摔車腦震盪事件不同。",
+        "需定位 2022 世錦賽肘傷片段，不能把全生涯回顧當成該場事故影像。",
+        "不從骨折後獲勝推論回場安全或完全癒合。"
+      ],
+      "event": "2022 世錦賽混合團體計時賽｜肘部骨折",
+      "narrative": "UCI 明確指出 Van Vleuten 在世錦賽混合團體計時賽摔車後肘部骨折，之後的公路賽勝利與受傷事件分屬不同賽程。",
+      "primarySourceIndexes": [1],
+      "videoUrl": "https://www.youtube.com/watch?v=T7-DAQANyho",
+      "publisher": "Movistar Team",
+      "sourceTitle": "Annemiek van Vleuten 傷勢與生涯回顧（編輯標籤；原標題待核）",
+      "videoPublishedAt": null,
+      "videoProvenanceNote": "原創／官方發佈線索；尚未完成實際視聽、嵌入及最終權利查核。",
+      "proposedFootageKind": "athlete-interview",
+      "footageKind": null,
+      "alternativeVideos": [],
+      "stage": "awaiting-main-workflow-actual-review",
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "actualPlaybackVerified": false,
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "captionStatus": "not-verified",
+      "startSeconds": null,
+      "durationSeconds": null,
+      "returnDate": null,
+      "returnDateReviewStatus": "not-independently-verified",
+      "countryAndPublisherReview": {
+        "athleteCountry": "NED",
+        "publisher": "Movistar Team",
+        "taiwanAthleteExcluded": true,
+        "taiwanOriginSourceExcluded": true,
+        "status": "research-screened-final-provenance-review-pending",
+        "note": "候選均為非台灣選手，保留官方／本人／具名原始新聞來源。此紀錄不是最終權利審查或播放證據。"
+      },
+      "timelineDraft": [
+        {
+          "date": "2022-09-21",
+          "title": "混合團體計時賽摔車",
+          "text": "世錦賽混合團體計時賽事故造成肘部骨折。",
+          "sourceIndexes": [1, 2]
+        },
+        {
+          "date": "2022-09",
+          "title": "UCI 記錄後續世錦賽表現",
+          "text": "UCI 將之後公路賽表現與先前肘部骨折明確連結。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "remainingChecks": [
+        "Main workflow actual audiovisual review: confirm same injury event and content",
+        "Verify original publisher, source jurisdiction and rights/provenance",
+        "Set footageKind only after watching the selected material",
+        "Measure actual startSeconds and durationSeconds; null is not zero",
+        "Confirm captions and owned-HTTPS embedded playback under current release requirements",
+        "Final clinical attribution, event-date, return-date and duplicate-event review",
+        "Only then construct and validate production-schema data"
+      ]
+    },
+    {
+      "id": "daniel-andre-tande-2021-clavicle",
+      "athlete": "Daniel Andre Tande",
+      "country": "NOR",
+      "sport": "跳台滑雪",
+      "bodyPart": "肩部",
+      "eventDate": "2021-03-25",
+      "eventYear": "2021",
+      "eventDateCertainty": "confirmed",
+      "dateNote": "FIS 將事故連結至 2021-03-25 Planica 試跳。",
+      "injury": "Planica 試跳摔落後鎖骨骨折，後續接受鎖骨手術。",
+      "context": "competition-trial-jump",
+      "gapTags": ["rare-sport", "upper-limb"],
+      "sources": [
+        {
+          "title": "FIS：Tande 鎖骨手術與隊醫更新",
+          "url": "https://www.fis-ski.com/ski-jumping/news/2020-21/daniel-andre-tande-underwent-collarbone-surgery",
+          "publisher": "International Ski and Snowboard Federation",
+          "access": "full-text",
+          "supports": "隊醫更新確認鎖骨手術及 Planica 事故後病程。",
+          "publishedAt": "2021-04-10"
+        },
+        {
+          "title": "FIS：Tande 重返跳台",
+          "url": "https://www.fis-ski.com/ski-jumping/news/2021-22/daniel-andre-tande-is-back-on-the-hill",
+          "publisher": "International Ski and Snowboard Federation",
+          "access": "full-text",
+          "supports": "官方回歸報導明確連結 3 月 25 日 Planica 事故。",
+          "publishedAt": null
+        },
+        {
+          "title": "FIS：原創影片頁",
+          "url": "https://www.fis-ski.com/ski-jumping/news/2021-22/daniel-andre-tande-is-back-fis-ski-jumping-jq7omegphxg",
+          "publisher": "International Ski and Snowboard Federation",
+          "access": "exact-embed-extraction",
+          "supports": "官方 HTML 嵌入影片 jQ7oMEGPHXg，確認大小寫精確的 YouTube ID。",
+          "publishedAt": "2021-06-02"
+        }
+      ],
+      "limitations": [
+        "不能從醫療誘導昏迷自行推定特定腦部診斷或腦損傷分級。",
+        "回到跳台、恢復訓練與首次正式復賽不是同一日期。",
+        "原始 FIS 影片大小寫依 HTML 確認，不依 URL slug 自行小寫化。"
+      ],
+      "event": "2021 Planica 試跳｜鎖骨骨折",
+      "narrative": "FIS 刊登隊醫對 Tande 在 Planica 試跳摔落後的鎖骨手術更新，並報導他之後返回跳台。",
+      "primarySourceIndexes": [1, 2],
+      "videoUrl": "https://www.youtube.com/watch?v=jQ7oMEGPHXg",
+      "publisher": "FIS Ski Jumping",
+      "sourceTitle": "Daniel Andre Tande is back! | FIS Ski Jumping",
+      "videoPublishedAt": "2021-06-02",
+      "videoProvenanceNote": "原創／官方發佈線索；尚未完成實際視聽、嵌入及最終權利查核。",
+      "proposedFootageKind": "aftermath",
+      "footageKind": null,
+      "alternativeVideos": [],
+      "stage": "awaiting-main-workflow-actual-review",
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "actualPlaybackVerified": false,
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "captionStatus": "not-verified",
+      "startSeconds": null,
+      "durationSeconds": null,
+      "returnDate": null,
+      "returnDateReviewStatus": "not-independently-verified",
+      "countryAndPublisherReview": {
+        "athleteCountry": "NOR",
+        "publisher": "FIS Ski Jumping",
+        "taiwanAthleteExcluded": true,
+        "taiwanOriginSourceExcluded": true,
+        "status": "research-screened-final-provenance-review-pending",
+        "note": "候選均為非台灣選手，保留官方／本人／具名原始新聞來源。此紀錄不是最終權利審查或播放證據。"
+      },
+      "timelineDraft": [
+        {
+          "date": "2021-03-25",
+          "title": "Planica 試跳事故",
+          "text": "FIS 將後續傷勢與 Planica 試跳摔落連結。",
+          "sourceIndexes": [1, 2]
+        },
+        {
+          "date": "2021-04-10",
+          "title": "鎖骨手術更新",
+          "text": "FIS 刊登隊醫對鎖骨手術的後續說明。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "remainingChecks": [
+        "Main workflow actual audiovisual review: confirm same injury event and content",
+        "Verify original publisher, source jurisdiction and rights/provenance",
+        "Set footageKind only after watching the selected material",
+        "Measure actual startSeconds and durationSeconds; null is not zero",
+        "Confirm captions and owned-HTTPS embedded playback under current release requirements",
+        "Final clinical attribution, event-date, return-date and duplicate-event review",
+        "Only then construct and validate production-schema data"
+      ]
+    },
+    {
+      "id": "egan-bernal-2022-training-crash",
+      "athlete": "Egan Bernal",
+      "country": "COL",
+      "sport": "自行車",
+      "bodyPart": "軀幹與下肢",
+      "eventDate": "2022-01-24",
+      "eventYear": "2022",
+      "eventDateCertainty": "reported",
+      "dateNote": "事故日為 2022-01-24；部分隔日英文報導星期文字有誤，不用其星期推日。",
+      "injury": "訓練碰撞後多處骨折，包括脊椎、右股骨、右髕骨與肋骨，另有胸部／肺部傷勢。",
+      "context": "training",
+      "gapTags": ["multi-trauma"],
+      "sources": [
+        {
+          "title": "INEOS Grenadiers：原始醫療更新",
+          "url": "https://twitter.com/INEOSGrenadiers/status/1485979969486573576",
+          "publisher": "INEOS Grenadiers",
+          "access": "primary-url-located-not-independently-readable",
+          "supports": "團隊原始醫療公告網址由報導 HTML 精確取出；未獨立讀取推文全文。",
+          "publishedAt": null
+        },
+        {
+          "title": "Clínica Universidad de La Sabana：原始醫療公告一",
+          "url": "https://twitter.com/ClinicaUsabana/status/1485781226644549634",
+          "publisher": "Clínica Universidad de La Sabana",
+          "access": "primary-url-located-not-independently-readable",
+          "supports": "治療醫院原始公告網址，從醫療報導 HTML 精確取出。",
+          "publishedAt": null
+        },
+        {
+          "title": "Clínica Universidad de La Sabana：原始醫療公告二",
+          "url": "https://twitter.com/ClinicaUsabana/status/1485847170867769347",
+          "publisher": "Clínica Universidad de La Sabana",
+          "access": "primary-url-located-not-independently-readable",
+          "supports": "治療醫院另一原始公告網址，未聲稱已獨立讀取全文。",
+          "publishedAt": null
+        },
+        {
+          "title": "Cycling Weekly：INEOS 醫療更新全文轉述",
+          "url": "https://www.cyclingweekly.com/news/ineos-grenadiers-release-update-on-egan-bernal-multiple-fractures-confirmed-as-he-remains-in-icu",
+          "publisher": "Cycling Weekly",
+          "access": "full-text",
+          "supports": "可讀到團隊關於脊椎、右股骨、右髕骨、肋骨與肺傷的更新；文章星期字樣存在錯誤。",
+          "publishedAt": "2022-01-25"
+        },
+        {
+          "title": "AS Colombia：治療醫院與球隊公告來源鏈",
+          "url": "https://colombia.as.com/colombia/2022/01/25/masdeporte/1643121829_501920.html",
+          "publisher": "AS Colombia",
+          "access": "exact-source-link-extraction",
+          "supports": "HTML 提供上述三個官方社群醫療公告的原始連結。",
+          "publishedAt": "2022-01-25"
+        }
+      ],
+      "limitations": [
+        "三個原始推文網址已定位，但全文證據主要來自具名官方公告的媒體轉述，不能標示所有原文已讀。",
+        "不把多個骨折寫成單一骨折，也不推定未公開的神經損傷。",
+        "2022-01-25 報導的星期文字不一致；eventDate 使用交叉確認的 1 月 24 日。"
+      ],
+      "event": "2022 哥倫比亞公路訓練事故｜多處骨折",
+      "narrative": "INEOS 團隊醫療更新與治療醫院公告記錄 Bernal 公路訓練碰撞後的多處傷勢；不同骨折與胸部傷勢保留為同一事故的已公開病況。",
+      "primarySourceIndexes": [1, 2, 3],
+      "videoUrl": "https://www.youtube.com/watch?v=aXvM23KcbJw",
+      "publisher": "INEOS Grenadiers（頻道現名 Netcompany INEOS）",
+      "sourceTitle": "Egan Bernal: The Best Day of my Life",
+      "videoPublishedAt": "2022-04-21",
+      "videoProvenanceNote": "原創／官方發佈線索；尚未完成實際視聽、嵌入及最終權利查核。",
+      "proposedFootageKind": "athlete-interview",
+      "footageKind": null,
+      "alternativeVideos": [],
+      "stage": "awaiting-main-workflow-actual-review",
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "actualPlaybackVerified": false,
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "captionStatus": "not-verified",
+      "startSeconds": null,
+      "durationSeconds": null,
+      "returnDate": null,
+      "returnDateReviewStatus": "not-independently-verified",
+      "countryAndPublisherReview": {
+        "athleteCountry": "COL",
+        "publisher": "INEOS Grenadiers（頻道現名 Netcompany INEOS）",
+        "taiwanAthleteExcluded": true,
+        "taiwanOriginSourceExcluded": true,
+        "status": "research-screened-final-provenance-review-pending",
+        "note": "候選均為非台灣選手，保留官方／本人／具名原始新聞來源。此紀錄不是最終權利審查或播放證據。"
+      },
+      "timelineDraft": [
+        {
+          "date": "2022-01-24",
+          "title": "公路訓練碰撞事故",
+          "text": "報導及官方醫療公告鏈記錄訓練事故後住院。",
+          "sourceIndexes": [4, 5]
+        },
+        {
+          "date": "2022-01-25",
+          "title": "球隊與醫院病況更新",
+          "text": "公開醫療更新記錄脊椎、右股骨、右髕骨等多處傷勢。",
+          "sourceIndexes": [1, 2, 3, 4, 5]
+        }
+      ],
+      "remainingChecks": [
+        "Main workflow actual audiovisual review: confirm same injury event and content",
+        "Verify original publisher, source jurisdiction and rights/provenance",
+        "Set footageKind only after watching the selected material",
+        "Measure actual startSeconds and durationSeconds; null is not zero",
+        "Confirm captions and owned-HTTPS embedded playback under current release requirements",
+        "Final clinical attribution, event-date, return-date and duplicate-event review",
+        "Only then construct and validate production-schema data"
+      ]
+    },
+    {
+      "id": "connor-fields-2021-brain-hemorrhage",
+      "athlete": "Connor Fields",
+      "country": "USA",
+      "sport": "BMX 自行車",
+      "bodyPart": "頭部",
+      "eventDate": "2021-07-30",
+      "eventYear": "2021",
+      "eventDateCertainty": "confirmed",
+      "dateNote": "東京奧運男子 BMX 準決賽事故日；USA Cycling 醫療公告以美國發布時間記錄。",
+      "injury": "東京奧運 BMX 準決賽摔車後腦出血；由 USA Cycling 醫療公告確認。",
+      "context": "competition",
+      "gapTags": ["rare-sport"],
+      "sources": [
+        {
+          "title": "USA Cycling：Connor Fields 醫療更新",
+          "url": "https://usacycling.org/article/medical-update-on-connor-fields-condition",
+          "publisher": "USA Cycling",
+          "access": "full-text",
+          "supports": "醫療更新直接確認腦出血，連結東京 BMX 準決賽事故。",
+          "publishedAt": "2021-07-30"
+        },
+        {
+          "title": "PBS：Connor Fields 本人訪談",
+          "url": "https://www.pbs.org/video/nevada-week-person-connor-fields-wuizzj/",
+          "publisher": "PBS／Nevada Week",
+          "access": "interview-transcript",
+          "supports": "本人訪談逐字稿談東京事故、頭部與其他傷勢及恢復。",
+          "publishedAt": "2022-07-09"
+        },
+        {
+          "title": "Barry Shore：Connor Fields 原創訪談頁",
+          "url": "https://barryshore.com/the-real-price-of-the-podium-connor-fields-on-recovery-identity-and-the-power-of-choice/",
+          "publisher": "Barry Shore",
+          "access": "full-text-and-exact-embed-extraction",
+          "supports": "原創節目頁 exact embed 指向 kti0XvZn0KQ，談 Fields 事故與恢復。",
+          "publishedAt": null
+        }
+      ],
+      "limitations": [
+        "Barry Shore 頁另含不相關 skincare 影片 dkRJDXDR6ac，不得誤取。",
+        "不自行將腦出血分為硬膜下、蛛網膜下或其他未公開類型。",
+        "受訪者個人恢復經驗不當作一般臨床建議。"
+      ],
+      "event": "2021 東京奧運 BMX 準決賽｜腦出血",
+      "narrative": "USA Cycling 發布醫療更新表示醫師確認 Fields 在東京 BMX 準決賽摔車後腦出血；本人後續訪談談事故與恢復經驗。",
+      "primarySourceIndexes": [1, 2],
+      "videoUrl": "https://www.youtube.com/watch?v=kti0XvZn0KQ",
+      "publisher": "Barry Shore",
+      "sourceTitle": "The Real Price of the Podium: Connor Fields on Recovery, Identity, and the Power of Choice",
+      "videoPublishedAt": null,
+      "videoProvenanceNote": "原創節目頁與 oEmbed 確認標題及作者；oEmbed 僅作 metadata，不作播放證據。",
+      "proposedFootageKind": "athlete-interview",
+      "footageKind": null,
+      "alternativeVideos": [],
+      "stage": "awaiting-main-workflow-actual-review",
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "actualPlaybackVerified": false,
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "captionStatus": "not-verified",
+      "startSeconds": null,
+      "durationSeconds": null,
+      "returnDate": null,
+      "returnDateReviewStatus": "not-independently-verified",
+      "countryAndPublisherReview": {
+        "athleteCountry": "USA",
+        "publisher": "Barry Shore",
+        "taiwanAthleteExcluded": true,
+        "taiwanOriginSourceExcluded": true,
+        "status": "research-screened-final-provenance-review-pending",
+        "note": "候選均為非台灣選手，保留官方／本人／具名原始新聞來源。此紀錄不是最終權利審查或播放證據。"
+      },
+      "timelineDraft": [
+        {
+          "date": "2021-07-30",
+          "title": "東京 BMX 準決賽摔車",
+          "text": "USA Cycling 醫療公告記錄醫師確認腦出血。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2022-07-09",
+          "title": "本人回顧事故與恢復",
+          "text": "PBS 訪談讓 Fields 本人描述傷後經驗；不是該日首次回場證據。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "remainingChecks": [
+        "Main workflow actual audiovisual review: confirm same injury event and content",
+        "Verify original publisher, source jurisdiction and rights/provenance",
+        "Set footageKind only after watching the selected material",
+        "Measure actual startSeconds and durationSeconds; null is not zero",
+        "Confirm captions and owned-HTTPS embedded playback under current release requirements",
+        "Final clinical attribution, event-date, return-date and duplicate-event review",
+        "Only then construct and validate production-schema data"
+      ]
+    },
+    {
+      "id": "novak-djokovic-2017-elbow",
+      "athlete": "Novak Djokovic",
+      "country": "SRB",
+      "sport": "網球",
+      "bodyPart": "肘部",
+      "eventDate": null,
+      "eventYear": "2017",
+      "dateNote": "右肘已疼痛一年多，首次受傷日不明；2017-07-12 為 Wimbledon 加劇退賽，不當作初次受傷日。",
+      "injury": "反覆右肘傷勢，2017 Wimbledon 比賽期間加劇退賽；不補寫組織損傷。",
+      "context": "chronic-with-competition-aggravation",
+      "gapTags": ["upper-limb", "persistent-injury"],
+      "sources": [
+        {
+          "title": "Novak Djokovic 官網：Wimbledon 八強因傷退賽",
+          "url": "https://novakdjokovic.com/en/news/tennis/novak-out-of-wimbledon-after-retiring-injured-in-qf-match-against-berdych/",
+          "publisher": "Novak Djokovic",
+          "access": "web-research-excerpt",
+          "supports": "記錄 2017-07-12 對 Berdych 因肘傷退賽。",
+          "publishedAt": "2017-07-12"
+        },
+        {
+          "title": "Novak Djokovic 官網：因肘傷結束 2017 球季",
+          "url": "https://novakdjokovic.com/en/news/media/novak-ends-2017-season-due-to-elbow-injury/",
+          "publisher": "Novak Djokovic",
+          "access": "web-research-excerpt",
+          "supports": "本人公告提早結束球季以處理肘部傷勢。",
+          "publishedAt": "2017-07-26"
+        },
+        {
+          "title": "USTA：Djokovic 因肘傷缺席 2017 美國公開賽",
+          "url": "https://www.usopen.org/en_US/news/articles/2017-07-26/djokovic_to_miss_2017_us_open_with_elbow_injury.html",
+          "publisher": "US Open／USTA",
+          "access": "web-research-excerpt",
+          "supports": "記錄肘部症狀已持續約一年半。",
+          "publishedAt": "2017-07-26"
+        }
+      ],
+      "limitations": [
+        "eventDate null 指初次受傷日未明；可在時間軸明列 2017-07-12 為症狀加劇退賽日。",
+        "不要自行命名尺側副韌帶、肌腱炎或疲勞性骨折。",
+        "與既有 2024 年膝部半月板事件不同。"
+      ],
+      "event": "2017 Wimbledon｜右肘傷勢加劇退賽",
+      "narrative": "Djokovic 本人官網記錄 Wimbledon 對 Berdych 比賽因肘傷退賽，後續宣布提早結束 2017 球季；既有長期肘部症狀不等於 7 月 12 日才受傷。",
+      "primarySourceIndexes": [1, 2],
+      "videoUrl": "https://www.youtube.com/watch?v=8H_0tJAwev8",
+      "publisher": "Wimbledon",
+      "sourceTitle": "Novak Djokovic Wimbledon 2017 quarter-final press conference",
+      "videoPublishedAt": "2017-07-12",
+      "videoProvenanceNote": "原創／官方發佈線索；尚未完成實際視聽、嵌入及最終權利查核。",
+      "proposedFootageKind": "athlete-interview",
+      "footageKind": null,
+      "alternativeVideos": [],
+      "stage": "awaiting-main-workflow-actual-review",
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "actualPlaybackVerified": false,
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "captionStatus": "not-verified",
+      "startSeconds": null,
+      "durationSeconds": null,
+      "returnDate": null,
+      "returnDateReviewStatus": "not-independently-verified",
+      "countryAndPublisherReview": {
+        "athleteCountry": "SRB",
+        "publisher": "Wimbledon",
+        "taiwanAthleteExcluded": true,
+        "taiwanOriginSourceExcluded": true,
+        "status": "research-screened-final-provenance-review-pending",
+        "note": "候選均為非台灣選手，保留官方／本人／具名原始新聞來源。此紀錄不是最終權利審查或播放證據。"
+      },
+      "timelineDraft": [
+        {
+          "date": "2017-07-12",
+          "title": "Wimbledon 因肘傷退賽",
+          "text": "對 Berdych 的八強賽因肘傷停止比賽；症狀在此前已存在。",
+          "sourceIndexes": [1, 3]
+        },
+        {
+          "date": "2017-07-26",
+          "title": "宣布結束球季",
+          "text": "本人宣布餘下 2017 球季休賽以處理肘傷。",
+          "sourceIndexes": [2, 3]
+        }
+      ],
+      "remainingChecks": [
+        "Main workflow actual audiovisual review: confirm same injury event and content",
+        "Verify original publisher, source jurisdiction and rights/provenance",
+        "Set footageKind only after watching the selected material",
+        "Measure actual startSeconds and durationSeconds; null is not zero",
+        "Confirm captions and owned-HTTPS embedded playback under current release requirements",
+        "Final clinical attribution, event-date, return-date and duplicate-event review",
+        "Only then construct and validate production-schema data"
+      ]
+    },
+    {
+      "id": "kei-nishikori-2017-wrist",
+      "athlete": "Kei Nishikori",
+      "country": "JPN",
+      "sport": "網球",
+      "bodyPart": "腕部與手部",
+      "eventDate": null,
+      "eventYear": "2017",
+      "dateNote": "2017 年 8 月訓練受傷；8/16 為消息公告日，未核定精確受傷日。",
+      "injury": "訓練相關右腕肌腱撕裂，具名經紀人向 AP 確認。",
+      "context": "training",
+      "gapTags": ["upper-limb"],
+      "sources": [
+        {
+          "title": "AP／Tennis.com：Nishikori 經紀人確認腕部肌腱撕裂",
+          "url": "https://www.tennis.com/news/articles/kei-nishikori-to-miss-remainder-of-season-with-torn-tendon-in-wrist",
+          "publisher": "Associated Press via Tennis.com",
+          "access": "web-research-excerpt",
+          "supports": "引述經紀人確認右腕肌腱撕裂並退出球季後段。",
+          "publishedAt": null
+        },
+        {
+          "title": "USTA：Nishikori 的回歸之路",
+          "url": "https://www.usopen.org/en_US/news/articles/2018-09-03/long_road_back_for_kei_nishikori.html",
+          "publisher": "US Open／USTA",
+          "access": "web-research-excerpt",
+          "supports": "官方回顧 2017 年腕傷導致季末缺賽及後續復出。",
+          "publishedAt": "2018-09-03"
+        },
+        {
+          "title": "ATP：2018 官方 Media Guide",
+          "url": "https://www.atptour.com/-/media/files/media-guide/2018/2018-atp-media-guide.pdf",
+          "publisher": "ATP Tour",
+          "access": "web-research-excerpt",
+          "supports": "記錄 2017 Montreal 後因右腕問題未再參賽。",
+          "publishedAt": null
+        },
+        {
+          "title": "New York Tennis Magazine：訓練中受傷與退賽公告",
+          "url": "https://newyorktennismagazine.com/article/former-finalist-nishikori-out-us-open-wrist-injury/",
+          "publisher": "New York Tennis Magazine",
+          "access": "web-research-excerpt",
+          "supports": "記錄於練習中受傷，週三 8/16 公告；不等於事故當日。",
+          "publishedAt": "2017-08-16"
+        }
+      ],
+      "limitations": [
+        "肌腱名稱、撕裂範圍與病理機轉未公開，不自行補入 ECU 或 TFCC。",
+        "確切訓練受傷日未核定。",
+        "2018 年紀錄片是 2017 年腕傷後的回歸，需核對同事件片段。"
+      ],
+      "event": "2017 年 8 月訓練｜右腕肌腱傷",
+      "narrative": "AP 報導引述 Nishikori 經紀人確認右腕肌腱撕裂；USTA 及 ATP 官方資料記錄他因該傷缺席 2017 球季後段。",
+      "primarySourceIndexes": [1, 2, 3],
+      "videoUrl": "https://www.youtube.com/watch?v=_9PMTWdYX6I",
+      "publisher": "ATP Tour",
+      "sourceTitle": "Nishikori On The Comeback Trail",
+      "videoPublishedAt": "2018-03-07",
+      "videoProvenanceNote": "原創／官方發佈線索；尚未完成實際視聽、嵌入及最終權利查核。",
+      "proposedFootageKind": "athlete-interview",
+      "footageKind": null,
+      "alternativeVideos": [],
+      "stage": "awaiting-main-workflow-actual-review",
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "actualPlaybackVerified": false,
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "captionStatus": "not-verified",
+      "startSeconds": null,
+      "durationSeconds": null,
+      "returnDate": null,
+      "returnDateReviewStatus": "not-independently-verified",
+      "countryAndPublisherReview": {
+        "athleteCountry": "JPN",
+        "publisher": "ATP Tour",
+        "taiwanAthleteExcluded": true,
+        "taiwanOriginSourceExcluded": true,
+        "status": "research-screened-final-provenance-review-pending",
+        "note": "候選均為非台灣選手，保留官方／本人／具名原始新聞來源。此紀錄不是最終權利審查或播放證據。"
+      },
+      "timelineDraft": [
+        {
+          "date": "2017-08",
+          "title": "訓練中右腕受傷",
+          "text": "新聞報導練習中腕部受傷，經紀人確認右腕肌腱撕裂。",
+          "sourceIndexes": [1, 4]
+        },
+        {
+          "date": "2018-09-03",
+          "title": "USTA 回顧傷後回歸",
+          "text": "美國公開賽官方回顧 2017 年腕傷和回歸歷程；首次復賽日期未另核定。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "remainingChecks": [
+        "Main workflow actual audiovisual review: confirm same injury event and content",
+        "Verify original publisher, source jurisdiction and rights/provenance",
+        "Set footageKind only after watching the selected material",
+        "Measure actual startSeconds and durationSeconds; null is not zero",
+        "Confirm captions and owned-HTTPS embedded playback under current release requirements",
+        "Final clinical attribution, event-date, return-date and duplicate-event review",
+        "Only then construct and validate production-schema data"
+      ]
+    },
+    {
+      "id": "bianca-andreescu-2023-ankle",
+      "athlete": "Bianca Andreescu",
+      "country": "CAN",
+      "sport": "網球",
+      "bodyPart": "踝部",
+      "eventDate": "2023-03-27",
+      "eventYear": "2023",
+      "eventDateCertainty": "confirmed",
+      "dateNote": "Miami 當地 Monday night；3/28 為部分報導發布日。",
+      "injury": "Miami 比賽左踝兩條韌帶撕裂；以本人後續更新為據。",
+      "context": "competition",
+      "gapTags": [],
+      "sources": [
+        {
+          "title": "WTA：Andreescu 左踝傷勢更新",
+          "url": "https://www.wtatennis.com/news/3123711/andreescu-provides-injury-update-it-could-have-been-much-worse-",
+          "publisher": "WTA",
+          "access": "search-excerpt-full-page-fetch-failed",
+          "supports": "搜尋可讀摘要明確指出本人在週三更新左踝兩條韌帶撕裂。",
+          "publishedAt": null
+        },
+        {
+          "title": "WTA：Andreescu 因傷退賽，Alexandrova 晉級",
+          "url": "https://www.wtatennis.com/news/3123112/andreescu-retires-due-to-injury-alexandrova-advances-in-miami",
+          "publisher": "WTA",
+          "access": "web-research-excerpt",
+          "supports": "Miami 當地週一晚間比賽左踝受傷退賽。",
+          "publishedAt": null
+        },
+        {
+          "title": "Tennis.com：本人確認左踝兩條韌帶撕裂",
+          "url": "https://www.tennis.com/news/articles/bianca-andreescu-shares-she-tore-two-ligaments-in-left-ankle-during-miami-injury",
+          "publisher": "Tennis.com",
+          "access": "web-research-excerpt",
+          "supports": "轉述本人 2023-03-29 更新，並包含 Tennis Channel Live 影片。",
+          "publishedAt": "2023-03-29"
+        }
+      ],
+      "limitations": [
+        "不自行命名受傷韌帶、給予 Grade 3 或加入影像檢查所未載的診斷。",
+        "WTA 診斷更新全文開啟有一次失敗，研究依可讀搜尋摘要與交叉報導，不標記為全部全文成功。",
+        "影片上架與本人診斷公告同為 3/29，仍需核對片中是初步傷情或後續確認。"
+      ],
+      "event": "2023 Miami 對 Alexandrova｜左踝韌帶傷",
+      "narrative": "Andreescu 在 Miami 對 Alexandrova 的比賽因左踝傷退賽，後由本人更新確認兩條韌帶撕裂；WTA 官方報導保留事件及診斷更新的時間差。",
+      "primarySourceIndexes": [1, 2],
+      "videoUrl": "https://www.youtube.com/watch?v=4O87O9rHdoE",
+      "publisher": "Tennis Channel",
+      "sourceTitle": "Bianca Andreescu Injury Update | Tennis Channel Live",
+      "videoPublishedAt": "2023-03-29",
+      "videoProvenanceNote": "原創／官方發佈線索；尚未完成實際視聽、嵌入及最終權利查核。",
+      "proposedFootageKind": "news-analysis",
+      "footageKind": null,
+      "alternativeVideos": [
+        {
+          "url": "https://www.youtube.com/watch?v=kbrUI3aX2Nc",
+          "publisher": "Open Court / OpenCourt.ca",
+          "title": "Bianca Andreescu's devastating injury in Miami",
+          "proposedFootageKind": "injury-motion",
+          "publishedAt": "2023-03-27",
+          "reviewNote": "影片描述自述由 Miami 現場記者拍攝；仍需原創攝影權利與視聽確認，主選優先 Tennis Channel。",
+          "footageKind": null,
+          "startSeconds": null,
+          "durationSeconds": null,
+          "actualPlaybackVerified": false,
+          "embeddedPlaybackVerified": false
+        }
+      ],
+      "stage": "awaiting-main-workflow-actual-review",
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "actualPlaybackVerified": false,
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "captionStatus": "not-verified",
+      "startSeconds": null,
+      "durationSeconds": null,
+      "returnDate": null,
+      "returnDateReviewStatus": "not-independently-verified",
+      "countryAndPublisherReview": {
+        "athleteCountry": "CAN",
+        "publisher": "Tennis Channel",
+        "taiwanAthleteExcluded": true,
+        "taiwanOriginSourceExcluded": true,
+        "status": "research-screened-final-provenance-review-pending",
+        "note": "候選均為非台灣選手，保留官方／本人／具名原始新聞來源。此紀錄不是最終權利審查或播放證據。"
+      },
+      "timelineDraft": [
+        {
+          "date": "2023-03-27",
+          "title": "Miami 比賽左踝受傷",
+          "text": "對 Alexandrova 的比賽因左踝傷退賽。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2023-03-29",
+          "title": "本人更新韌帶診斷",
+          "text": "本人公開兩條左踝韌帶撕裂，WTA 與 Tennis.com 報導。",
+          "sourceIndexes": [1, 3]
+        }
+      ],
+      "remainingChecks": [
+        "Main workflow actual audiovisual review: confirm same injury event and content",
+        "Verify original publisher, source jurisdiction and rights/provenance",
+        "Set footageKind only after watching the selected material",
+        "Measure actual startSeconds and durationSeconds; null is not zero",
+        "Confirm captions and owned-HTTPS embedded playback under current release requirements",
+        "Final clinical attribution, event-date, return-date and duplicate-event review",
+        "Only then construct and validate production-schema data"
+      ]
+    },
+    {
+      "id": "juan-martin-del-potro-2017-wrist-contusion",
+      "athlete": "Juan Martín del Potro",
+      "country": "ARG",
+      "sport": "網球",
+      "bodyPart": "腕部與手部",
+      "eventDate": "2017-10-13",
+      "eventYear": "2017",
+      "eventDateCertainty": "confirmed",
+      "dateNote": "Shanghai 對 Troicki 八強賽，當地週五 10/13，與 ATP 當日記者會一致。",
+      "injury": "跌倒後左腕挫傷；經紀人表示檢查排除更嚴重問題。",
+      "context": "competition",
+      "gapTags": ["upper-limb"],
+      "sources": [
+        {
+          "title": "AP：del Potro 上海跌倒後左腕挫傷",
+          "url": "https://indianexpress.com/article/sports/tennis/juan-martin-del-potro-has-wrist-placed-in-splint-after-fall-in-shanghai-masters-4889198/",
+          "publisher": "Associated Press via The Indian Express",
+          "access": "full-text",
+          "supports": "現場採訪與具名經紀人診斷轉述；第三盤 2–2 跌倒，左腕挫傷。",
+          "publishedAt": "2017-10-13"
+        },
+        {
+          "title": "AP／New Indian Express：同一傷勢補充存檔",
+          "url": "https://www.newindianexpress.com/sport/tennis/2017/Oct/14/del-potro-has-wrist-placed-in-splint-after-fall-in-shanghai-masters-1673891.html",
+          "publisher": "Associated Press via The New Indian Express",
+          "access": "web-research-excerpt",
+          "supports": "同一 AP 報導的可讀存檔；不是獨立第二臨床證據。",
+          "publishedAt": "2017-10-14"
+        }
+      ],
+      "limitations": [
+        "經紀人提供的是挫傷，不可寫成新骨折或肌腱斷裂。",
+        "不混入 2014–2015 腕部手術或既有 2018 膝傷案例。",
+        "本人記者會在赴醫院檢查前，片中可能只有不適描述；診斷須歸因後續 AP 經紀人更新。"
+      ],
+      "event": "2017 Shanghai 對 Troicki｜左腕挫傷",
+      "narrative": "AP 現場報導指出 del Potro 在第三盤 2–2 跌倒，以左手腕撐地；經紀人 Jorge Viale 後續表示檢查顯示腕部挫傷並排除更嚴重問題。",
+      "primarySourceIndexes": [1],
+      "videoUrl": "https://www.youtube.com/watch?v=_qp50gF67sQ",
+      "publisher": "ATP Tour",
+      "sourceTitle": "Del Potro Opens Up About Wrist Injury Shanghai 2017",
+      "videoPublishedAt": "2017-10-13",
+      "videoProvenanceNote": "原創／官方發佈線索；尚未完成實際視聽、嵌入及最終權利查核。",
+      "proposedFootageKind": "athlete-interview",
+      "footageKind": null,
+      "alternativeVideos": [],
+      "stage": "awaiting-main-workflow-actual-review",
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "actualPlaybackVerified": false,
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "captionStatus": "not-verified",
+      "startSeconds": null,
+      "durationSeconds": null,
+      "returnDate": null,
+      "returnDateReviewStatus": "not-independently-verified",
+      "countryAndPublisherReview": {
+        "athleteCountry": "ARG",
+        "publisher": "ATP Tour",
+        "taiwanAthleteExcluded": true,
+        "taiwanOriginSourceExcluded": true,
+        "status": "research-screened-final-provenance-review-pending",
+        "note": "候選均為非台灣選手，保留官方／本人／具名原始新聞來源。此紀錄不是最終權利審查或播放證據。"
+      },
+      "timelineDraft": [
+        {
+          "date": "2017-10-13",
+          "title": "跌倒後左腕不適",
+          "text": "上海八強賽第三盤 2–2 跌倒後左腕不適，之後接受檢查。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2017-10-13",
+          "title": "經紀人更新檢查結果",
+          "text": "Jorge Viale 表示檢查為腕部挫傷，已排除更嚴重問題。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "remainingChecks": [
+        "Main workflow actual audiovisual review: confirm same injury event and content",
+        "Verify original publisher, source jurisdiction and rights/provenance",
+        "Set footageKind only after watching the selected material",
+        "Measure actual startSeconds and durationSeconds; null is not zero",
+        "Confirm captions and owned-HTTPS embedded playback under current release requirements",
+        "Final clinical attribution, event-date, return-date and duplicate-event review",
+        "Only then construct and validate production-schema data"
+      ]
+    },
+    {
+      "id": "rafael-nadal-2016-wrist",
+      "athlete": "Rafael Nadal",
+      "country": "ESP",
+      "sport": "網球",
+      "bodyPart": "腕部與手部",
+      "eventDate": null,
+      "eventYear": "2016",
+      "dateNote": "左腕傷在抵達巴黎前已出現；2016-05-27 為法網退賽公告日。",
+      "injury": "2016 法網前左腕傷，導致賽中退出後續賽程；組織診斷未細分。",
+      "context": "pre-existing-with-competition-withdrawal",
+      "gapTags": ["upper-limb"],
+      "sources": [
+        {
+          "title": "Roland-Garros：Nadal 2016 年本人退賽記者會",
+          "url": "https://www.youtube.com/watch?v=yH1WExdlI4Q",
+          "publisher": "Roland-Garros",
+          "access": "official-video-description-not-playback",
+          "supports": "官方影片發佈描述明確 left wrist injury sustained shortly before arrival in Paris；影片語音尚未觀看核實。",
+          "publishedAt": "2016-05-27"
+        },
+        {
+          "title": "Tennis.com：Nadal 法網退賽記者會與原片",
+          "url": "https://www.tennis.com/news/articles/watch-nadal-s-open-ending-press-conference",
+          "publisher": "Tennis.com",
+          "access": "web-research-excerpt",
+          "supports": "原始官方記者會與退賽情境的補充來源。",
+          "publishedAt": null
+        }
+      ],
+      "limitations": [
+        "不得把『繼續比賽可能斷裂』改成已經斷裂。",
+        "不從不同新聞診斷用詞自行指定肌腱或撕裂等級，保留左腕傷。",
+        "5/27 是公告日，eventDate null；不得與 2022 肋骨或腹肌傷混合。"
+      ],
+      "event": "2016 Roland-Garros｜左腕傷退賽",
+      "narrative": "Roland-Garros 官方公布 Nadal 因在抵達巴黎前已出現的左腕傷退出賽事，並發佈本人記者會。",
+      "primarySourceIndexes": [1],
+      "videoUrl": "https://www.youtube.com/watch?v=yH1WExdlI4Q",
+      "publisher": "Roland-Garros",
+      "sourceTitle": "Rafael Nadal Withdraws from 2016 Roland-Garros",
+      "videoPublishedAt": "2016-05-27",
+      "videoProvenanceNote": "發布者為官方 Roland-Garros，標題依官方影片描述整理；實際頁面標題與視聽仍待主流程確認。",
+      "proposedFootageKind": "athlete-interview",
+      "footageKind": null,
+      "alternativeVideos": [
+        {
+          "url": "https://www.youtube.com/watch?v=RjySTIy8bmU",
+          "publisher": "FRANCE 24",
+          "title": "Roland Garros: Rafael Nadal withdraws due to wrist injury",
+          "proposedFootageKind": "news-analysis",
+          "publishedAt": "2016-05-27",
+          "reviewNote": "原創／官方發佈線索；尚未完成實際視聽、嵌入及最終權利查核。",
+          "footageKind": null,
+          "startSeconds": null,
+          "durationSeconds": null,
+          "actualPlaybackVerified": false,
+          "embeddedPlaybackVerified": false
+        }
+      ],
+      "stage": "awaiting-main-workflow-actual-review",
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "actualPlaybackVerified": false,
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "captionStatus": "not-verified",
+      "startSeconds": null,
+      "durationSeconds": null,
+      "returnDate": null,
+      "returnDateReviewStatus": "not-independently-verified",
+      "countryAndPublisherReview": {
+        "athleteCountry": "ESP",
+        "publisher": "Roland-Garros",
+        "taiwanAthleteExcluded": true,
+        "taiwanOriginSourceExcluded": true,
+        "status": "research-screened-final-provenance-review-pending",
+        "note": "候選均為非台灣選手，保留官方／本人／具名原始新聞來源。此紀錄不是最終權利審查或播放證據。"
+      },
+      "timelineDraft": [
+        {
+          "date": "2016-05-27",
+          "title": "宣布退出法網",
+          "text": "官方影片描述表示左腕傷在抵達巴黎前已出現；當天是退賽記者會而非初次受傷。",
+          "sourceIndexes": [1, 2]
+        }
+      ],
+      "remainingChecks": [
+        "Main workflow actual audiovisual review: confirm same injury event and content",
+        "Verify original publisher, source jurisdiction and rights/provenance",
+        "Set footageKind only after watching the selected material",
+        "Measure actual startSeconds and durationSeconds; null is not zero",
+        "Confirm captions and owned-HTTPS embedded playback under current release requirements",
+        "Final clinical attribution, event-date, return-date and duplicate-event review",
+        "Only then construct and validate production-schema data"
+      ]
+    },
+    {
+      "id": "nikola-karabatic-2020-acl",
+      "athlete": "Nikola Karabatic",
+      "country": "FRA",
+      "sport": "手球",
+      "bodyPart": "膝部",
+      "eventDate": "2020-10-17",
+      "eventYear": "2020",
+      "eventDateCertainty": "confirmed",
+      "dateNote": "當年手術報導明確記載 10/17 Ivry 賽事；2023 回顧文另有 10/10 誤載，不採用。",
+      "injury": "對 Ivry 比賽右膝前十字韌帶斷裂。",
+      "context": "competition",
+      "gapTags": ["rare-sport"],
+      "sources": [
+        {
+          "title": "PSG Handball：2020 年原始醫療公告",
+          "url": "https://twitter.com/psghand/status/1318126808320102401",
+          "publisher": "PSG Handball",
+          "access": "primary-url-located-not-independently-readable",
+          "supports": "官方原始推文 URL 自同期報導 exact embed 取出；右膝 ACL 診斷全文透過同期新聞轉述查核。",
+          "publishedAt": "2020-10-19"
+        },
+        {
+          "title": "FFHandball：Nikola Karabatic 本人復健訪談",
+          "url": "https://www.ffhandball.fr/actualite/archives/entretiendulundi-nikola-karabatic/",
+          "publisher": "Fédération Française de Handball",
+          "access": "full-text",
+          "supports": "本人談右膝十字韌帶手術與復健；記錄手術日 2020-10-28。",
+          "publishedAt": null
+        },
+        {
+          "title": "L'Équipe：具名手術醫師與精確受傷日期",
+          "url": "https://www.lequipe.fr/Handball/Actualites/Nikola-karabatic-psg-a-ete-opere-avec-succes-du-genou-droit/1188456",
+          "publisher": "L'Équipe",
+          "access": "full-text",
+          "supports": "明確 2020-10-17 右膝 ACL 斷裂，10/28 由 Dr Bohu 手術。",
+          "publishedAt": "2020-10-28"
+        },
+        {
+          "title": "CulturePSG：PSG 原始醫療公告來源鏈",
+          "url": "https://www.culturepsg.com/news/handball/grave-blessure-au-genou-pour-karabatic/34525",
+          "publisher": "CulturePSG",
+          "access": "full-text-and-exact-source-link-extraction",
+          "supports": "引述 PSG 檢查確認右膝 ACL 斷裂並嵌入原始推文。",
+          "publishedAt": "2020-10-19"
+        },
+        {
+          "title": "Le Dauphiné：PSG 醫療公告逐字轉述",
+          "url": "https://www.ledauphine.com/sport/2020/10/19/rupture-du-ligament-croise-du-genou-droit-pour-nikola-karabatic",
+          "publisher": "Le Dauphiné Libéré",
+          "access": "web-research-excerpt",
+          "supports": "完整轉述 PSG 對 Ivry 賽後補充檢查確認右膝 ACL 斷裂。",
+          "publishedAt": "2020-10-19"
+        }
+      ],
+      "limitations": [
+        "PSG 原片是術後復健訓練紀錄，未觀看前不聲稱有受傷動作或本人訪談。",
+        "血栓／肺栓塞是後續病程，不能從比賽畫面推定，草稿不列為當場傷勢。",
+        "復健訓練不等於已首次正式復賽。"
+      ],
+      "event": "2020 PSG 對 Ivry｜右膝 ACL 斷裂",
+      "narrative": "PSG 公告補充檢查確認 Karabatic 右膝前十字韌帶斷裂；法國手總本人訪談與具名醫師手術報導記錄 10 月 28 日手術。",
+      "primarySourceIndexes": [1, 2, 3],
+      "videoUrl": "https://www.youtube.com/watch?v=ApTbpxIuUJ8",
+      "publisher": "PSG HANDBALL",
+      "sourceTitle": "Une séance avec Nikola Karabatic",
+      "videoPublishedAt": "2021-01-13",
+      "videoProvenanceNote": "原創／官方發佈線索；尚未完成實際視聽、嵌入及最終權利查核。",
+      "proposedFootageKind": "aftermath",
+      "footageKind": null,
+      "alternativeVideos": [],
+      "stage": "awaiting-main-workflow-actual-review",
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "actualPlaybackVerified": false,
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "captionStatus": "not-verified",
+      "startSeconds": null,
+      "durationSeconds": null,
+      "returnDate": null,
+      "returnDateReviewStatus": "not-independently-verified",
+      "countryAndPublisherReview": {
+        "athleteCountry": "FRA",
+        "publisher": "PSG HANDBALL",
+        "taiwanAthleteExcluded": true,
+        "taiwanOriginSourceExcluded": true,
+        "status": "research-screened-final-provenance-review-pending",
+        "note": "候選均為非台灣選手，保留官方／本人／具名原始新聞來源。此紀錄不是最終權利審查或播放證據。"
+      },
+      "timelineDraft": [
+        {
+          "date": "2020-10-17",
+          "title": "Ivry 比賽右膝受傷",
+          "text": "同期手術報導記錄右膝 ACL 斷裂發生於 10 月 17 日。",
+          "sourceIndexes": [3]
+        },
+        {
+          "date": "2020-10-19",
+          "title": "PSG 公布檢查結果",
+          "text": "球隊公告補充檢查確認右膝前十字韌帶斷裂。",
+          "sourceIndexes": [1, 4, 5]
+        },
+        {
+          "date": "2020-10-28",
+          "title": "接受手術",
+          "text": "具名手術報導與本人後續訪談記錄右膝手術。",
+          "sourceIndexes": [2, 3]
+        }
+      ],
+      "remainingChecks": [
+        "Main workflow actual audiovisual review: confirm same injury event and content",
+        "Verify original publisher, source jurisdiction and rights/provenance",
+        "Set footageKind only after watching the selected material",
+        "Measure actual startSeconds and durationSeconds; null is not zero",
+        "Confirm captions and owned-HTTPS embedded playback under current release requirements",
+        "Final clinical attribution, event-date, return-date and duplicate-event review",
+        "Only then construct and validate production-schema data"
+      ]
+    },
+    {
+      "id": "kelly-slater-2017-foot",
+      "athlete": "Kelly Slater",
+      "country": "USA",
+      "sport": "衝浪",
+      "bodyPart": "足部",
+      "eventDate": "2017-07-17",
+      "eventYear": "2017",
+      "eventDateCertainty": "confirmed",
+      "dateNote": "WSL 原始全文明確 Monday July 17 2017 且受傷當日上午。",
+      "injury": "J-Bay 自由練習時右足兩根蹠骨骨折。",
+      "context": "free-surf-training",
+      "gapTags": ["rare-sport"],
+      "sources": [
+        {
+          "title": "WSL：Kelly Slater J-Bay 自由練習受傷",
+          "url": "https://www.worldsurfleague.com/posts/261815/kelly-slater-injured-during-j-bay-freesurf",
+          "publisher": "World Surf League",
+          "access": "full-text",
+          "supports": "明確記錄 2017-07-17 上午自由練習事故、足部受傷及 X 光。",
+          "publishedAt": "2017-07-17"
+        },
+        {
+          "title": "WSL：Slater 右足傷勢回顧",
+          "url": "https://www.worldsurfleague.com/posts/348066/injury-report-kelly-slaters-foot-woes-persist",
+          "publisher": "World Surf League",
+          "access": "full-text",
+          "supports": "明確 2017 J-Bay 事故造成右足兩根蹠骨骨折；另區分 2018 turf toe。",
+          "publishedAt": "2018-09-19"
+        },
+        {
+          "title": "Space Coast Daily：WSL 報導與本人公告",
+          "url": "https://spacecoastdaily.com/2017/07/video-cocoa-beach-native-kelly-slater-injures-foot-at-world-surf-league-corona-open-j-bay/",
+          "publisher": "Space Coast Daily quoting WSL／Kelly Slater",
+          "access": "full-text",
+          "supports": "同日引述本人受傷過程與 WSL 右足蹠骨骨折資訊。",
+          "publishedAt": "2017-07-17"
+        }
+      ],
+      "limitations": [
+        "不把 2018 年右大腳趾韌帶傷（turf toe）併為 2017 蹠骨骨折。",
+        "本人最初估計六週不是已核實回場時間。",
+        "未從 X 光圖片自行指定第幾根蹠骨或骨折型態。"
+      ],
+      "event": "2017 J-Bay 自由練習｜右足蹠骨骨折",
+      "narrative": "WSL 同日報導 Slater 在 Jeffreys Bay 自由練習時足部受傷並接受 X 光檢查；後續官方回顧確認右足兩根蹠骨骨折。",
+      "primarySourceIndexes": [1, 2],
+      "videoUrl": "https://www.youtube.com/watch?v=WhCalbwjLJg",
+      "publisher": "World Surf League",
+      "sourceTitle": "Injury Update: Kelly Slater Breaks Foot During Free Surf Session - Corona Open J-Bay 2017",
+      "videoPublishedAt": "2017-07-17",
+      "videoProvenanceNote": "原創／官方發佈線索；尚未完成實際視聽、嵌入及最終權利查核。",
+      "proposedFootageKind": "news-analysis",
+      "footageKind": null,
+      "alternativeVideos": [
+        {
+          "url": "https://www.youtube.com/watch?v=Hx1a3pk_3zQ",
+          "publisher": "World Surf League",
+          "title": "Kelly Slater's Foot Injury is Worse Than Expected",
+          "proposedFootageKind": "news-analysis",
+          "publishedAt": "2017-07-19",
+          "reviewNote": "原創／官方發佈線索；尚未完成實際視聽、嵌入及最終權利查核。",
+          "footageKind": null,
+          "startSeconds": null,
+          "durationSeconds": null,
+          "actualPlaybackVerified": false,
+          "embeddedPlaybackVerified": false
+        }
+      ],
+      "stage": "awaiting-main-workflow-actual-review",
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "actualPlaybackVerified": false,
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "captionStatus": "not-verified",
+      "startSeconds": null,
+      "durationSeconds": null,
+      "returnDate": null,
+      "returnDateReviewStatus": "not-independently-verified",
+      "countryAndPublisherReview": {
+        "athleteCountry": "USA",
+        "publisher": "World Surf League",
+        "taiwanAthleteExcluded": true,
+        "taiwanOriginSourceExcluded": true,
+        "status": "research-screened-final-provenance-review-pending",
+        "note": "候選均為非台灣選手，保留官方／本人／具名原始新聞來源。此紀錄不是最終權利審查或播放證據。"
+      },
+      "timelineDraft": [
+        {
+          "date": "2017-07-17",
+          "title": "J-Bay 自由練習事故",
+          "text": "WSL 報導當日上午足部受傷並接受 X 光檢查。",
+          "sourceIndexes": [1, 3]
+        },
+        {
+          "date": "2018-09-19",
+          "title": "官方回顧確認受傷組織",
+          "text": "WSL 明確記錄 2017 年事故為右足兩根蹠骨骨折，並與 2018 年足趾韌帶傷分開。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "remainingChecks": [
+        "Main workflow actual audiovisual review: confirm same injury event and content",
+        "Verify original publisher, source jurisdiction and rights/provenance",
+        "Set footageKind only after watching the selected material",
+        "Measure actual startSeconds and durationSeconds; null is not zero",
+        "Confirm captions and owned-HTTPS embedded playback under current release requirements",
+        "Final clinical attribution, event-date, return-date and duplicate-event review",
+        "Only then construct and validate production-schema data"
+      ]
+    },
+    {
+      "id": "sally-fitzgibbons-2015-eardrum",
+      "athlete": "Sally Fitzgibbons",
+      "country": "AUS",
+      "sport": "衝浪",
+      "bodyPart": "頭部",
+      "eventDate": "2015-06-02",
+      "eventYear": "2015",
+      "eventDateCertainty": "reported",
+      "dateNote": "ABC 2015-06-04 當地報導為週二 Round 2 受傷，對應 Fiji 6/2；WSL 發布日期使用美國日期時可能早一天。",
+      "injury": "Fiji Women's Pro 第二輪浪中摔落後鼓膜破裂；不指認傷側或腦震盪。",
+      "context": "competition",
+      "gapTags": ["rare-sport", "ear"],
+      "sources": [
+        {
+          "title": "WSL：Fitzgibbons 第二輪鼓膜破裂",
+          "url": "https://www.worldsurfleague.com/posts/122302/magic-board-2015-fiji-womens-pro-fitzgibbons",
+          "publisher": "World Surf League",
+          "access": "full-text",
+          "supports": "明確第二輪末段鼓膜破裂及後續比賽。",
+          "publishedAt": "2015-06-08"
+        },
+        {
+          "title": "ABC：Fitzgibbons 帶傷贏得 Fiji Pro",
+          "url": "https://www.abc.net.au/news/2015-06-04/courage-sally-fitzgibbons-wins-back-to-back-fiji-pros/6521694",
+          "publisher": "Australian Broadcasting Corporation",
+          "access": "full-text",
+          "supports": "同時引述本人與現場處置，記錄週二第二輪摔落造成鼓膜穿孔。",
+          "publishedAt": "2015-06-04"
+        },
+        {
+          "title": "Yardbarker：WSL 原創回顧與 exact video embed",
+          "url": "https://www.yardbarker.com/surfing/articles/watch_one_of_the_toughest_performances_ever_sally_fitzgibbons_wins_15_fiji_with_a_busted_ear/s1_15176_40755757",
+          "publisher": "World Surf League syndicated by Yardbarker",
+          "access": "full-text-and-exact-embed-extraction",
+          "supports": "署名 WSL 並嵌入 wTaCr8olPck，原創回顧明確是 2015 Fiji 耳膜事件。",
+          "publishedAt": "2024-08-16"
+        }
+      ],
+      "limitations": [
+        "頭部為導覽大分類，診斷是耳膜傷，不可推為腦震盪。",
+        "未確認側別，不能依畫面頭部包紮位置推定。",
+        "歷史上違反休賽建議繼續參賽的經過不能當作當代醫療建議。",
+        "受傷日以當地 Fiji 週二描述推得，標記 reported 而不是直接逐日官方醫療紀錄。"
+      ],
+      "event": "2015 Fiji Women's Pro 第二輪｜鼓膜破裂",
+      "narrative": "WSL 確認 Fitzgibbons 在 Fiji Women's Pro 第二輪末段鼓膜破裂；ABC 現場報導與本人引述說明同一事故發生於週二。",
+      "primarySourceIndexes": [1, 2],
+      "videoUrl": "https://www.youtube.com/watch?v=wTaCr8olPck",
+      "publisher": "World Surf League",
+      "sourceTitle": "One Of The Toughest Performances Ever - Sally Fitzgibbons Wins ’15 Fiji With A Busted Ear!!",
+      "videoPublishedAt": "2024-08-16",
+      "videoProvenanceNote": "原創 WSL 署名頁、exact embed 與 oEmbed 確認標題／作者；未作播放證據。",
+      "proposedFootageKind": "news-analysis",
+      "footageKind": null,
+      "alternativeVideos": [],
+      "stage": "awaiting-main-workflow-actual-review",
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "actualPlaybackVerified": false,
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "captionStatus": "not-verified",
+      "startSeconds": null,
+      "durationSeconds": null,
+      "returnDate": null,
+      "returnDateReviewStatus": "not-independently-verified",
+      "countryAndPublisherReview": {
+        "athleteCountry": "AUS",
+        "publisher": "World Surf League",
+        "taiwanAthleteExcluded": true,
+        "taiwanOriginSourceExcluded": true,
+        "status": "research-screened-final-provenance-review-pending",
+        "note": "候選均為非台灣選手，保留官方／本人／具名原始新聞來源。此紀錄不是最終權利審查或播放證據。"
+      },
+      "timelineDraft": [
+        {
+          "date": "2015-06-02",
+          "title": "Fiji 第二輪鼓膜受傷",
+          "text": "ABC 報導週二第二輪浪中摔落造成鼓膜穿孔；日依當地週日曆對照。",
+          "sourceIndexes": [2]
+        },
+        {
+          "date": "2015-06-08",
+          "title": "WSL 確認同一傷勢",
+          "text": "WSL 官方回顧明確指出第二輪末段鼓膜破裂。",
+          "sourceIndexes": [1]
+        }
+      ],
+      "remainingChecks": [
+        "Main workflow actual audiovisual review: confirm same injury event and content",
+        "Verify original publisher, source jurisdiction and rights/provenance",
+        "Set footageKind only after watching the selected material",
+        "Measure actual startSeconds and durationSeconds; null is not zero",
+        "Confirm captions and owned-HTTPS embedded playback under current release requirements",
+        "Final clinical attribution, event-date, return-date and duplicate-event review",
+        "Only then construct and validate production-schema data"
+      ]
+    },
+    {
+      "id": "emma-raducanu-2022-2023-wrists",
+      "athlete": "Emma Raducanu",
+      "country": "GBR",
+      "sport": "網球",
+      "bodyPart": "腕部與手部",
+      "eventDate": null,
+      "eventYear": "2023",
+      "dateNote": "2022–2023 年反覆傷勢；WTA 稱 2022 季末開始，本人手術聲明稱過去十個月；不精算起始日。",
+      "injury": "反覆雙腕／手部骨傷，2023 年接受手部手術；不指定骨名或骨折。",
+      "context": "recurrent-training-and-competition-related",
+      "gapTags": ["upper-limb", "persistent-injury"],
+      "sources": [
+        {
+          "title": "WTA：Raducanu 在 Miami 談腕部問題",
+          "url": "https://www.wtatennis.com/news/3119435/raducanu-addresses-wrist-concerns-after-loss-to-andreescu-in-miami",
+          "publisher": "WTA",
+          "access": "full-text",
+          "supports": "本人記者會稱 2022 季末開始、2023 Indian Wells 訓練加劇；需長期處理方案。",
+          "publishedAt": "2023-03-22"
+        },
+        {
+          "title": "Sky Sports：Raducanu 本人手術聲明",
+          "url": "https://www.skysports.com/tennis/news/12110/12871946/emma-raducanu-british-no-1-out-of-wimbledon-and-doubt-for-us-open-after-surgery-on-both-hands-and-her-ankle",
+          "publisher": "Sky Sports",
+          "access": "full-text",
+          "supports": "完整引述本人 recurring injury to a bone of both hands；5 月手術公告，另有踝部手術。",
+          "publishedAt": "2023-05-04"
+        },
+        {
+          "title": "WTA：Raducanu 傷後回到 Nottingham",
+          "url": "https://www.wtatennis.com/news/4036146/raducanu-returns-to-where-everything-started-in-reflective-mood",
+          "publisher": "WTA",
+          "access": "web-research-excerpt",
+          "supports": "本人回顧雙腕及踝部手術後回歸。",
+          "publishedAt": "2024-06-10"
+        }
+      ],
+      "limitations": [
+        "5 月 3 日是公告日，不能作初次受傷日。",
+        "本人說某骨頭反覆受傷，不等於已證實骨折、壓力骨折或特定腕骨病變。",
+        "同期踝部手術是另一部位／事件，不併入此雙腕事件。",
+        "慢性與反覆病程不自行認定過度使用的單一因果機轉。"
+      ],
+      "event": "2022–2023 反覆雙腕與手部骨傷",
+      "narrative": "WTA 本人記者會記錄腕部問題在 2022 球季末已存在，2023 Indian Wells 訓練時再加劇；本人 5 月聲明描述雙手某骨頭反覆受傷與手術安排。",
+      "primarySourceIndexes": [1, 2],
+      "videoUrl": "https://www.youtube.com/watch?v=ZQL-1NY5erY",
+      "publisher": "Sky Sports News",
+      "sourceTitle": "Emma Raducanu to miss the French Open & Wimbledon after undergoing surgery on her wrists & ankle",
+      "videoPublishedAt": "2023-05-03",
+      "videoProvenanceNote": "原創／官方發佈線索；尚未完成實際視聽、嵌入及最終權利查核。",
+      "proposedFootageKind": "news-analysis",
+      "footageKind": null,
+      "alternativeVideos": [
+        {
+          "url": "https://www.youtube.com/watch?v=tC7NqjmvAT8",
+          "publisher": "Sky Sports",
+          "title": "Emma Raducanu REACTS to coming back to tennis after surgery",
+          "proposedFootageKind": "athlete-interview",
+          "publishedAt": "2024-02-11",
+          "reviewNote": "原創／官方發佈線索；尚未完成實際視聽、嵌入及最終權利查核。",
+          "footageKind": null,
+          "startSeconds": null,
+          "durationSeconds": null,
+          "actualPlaybackVerified": false,
+          "embeddedPlaybackVerified": false
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=eT-tFWZe94g",
+          "publisher": "CGTN Sports Scene",
+          "title": "FILE: Emma Raducanu to miss Wimbledon and French Open after wrist surgery",
+          "proposedFootageKind": "news-analysis",
+          "publishedAt": "2023-05-03",
+          "reviewNote": "oEmbed 僅確認標題與發布者；原始素材權利待核，已找到 Sky 原創報導故不優先。",
+          "footageKind": null,
+          "startSeconds": null,
+          "durationSeconds": null,
+          "actualPlaybackVerified": false,
+          "embeddedPlaybackVerified": false
+        }
+      ],
+      "stage": "awaiting-main-workflow-actual-review",
+      "sourceReviewStatus": "research-checked-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "actualPlaybackVerified": false,
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "captionStatus": "not-verified",
+      "startSeconds": null,
+      "durationSeconds": null,
+      "returnDate": null,
+      "returnDateReviewStatus": "not-independently-verified",
+      "countryAndPublisherReview": {
+        "athleteCountry": "GBR",
+        "publisher": "Sky Sports News",
+        "taiwanAthleteExcluded": true,
+        "taiwanOriginSourceExcluded": true,
+        "status": "research-screened-final-provenance-review-pending",
+        "note": "候選均為非台灣選手，保留官方／本人／具名原始新聞來源。此紀錄不是最終權利審查或播放證據。"
+      },
+      "timelineDraft": [
+        {
+          "date": "2022",
+          "title": "反覆腕部症狀",
+          "text": "WTA 報導本人稱症狀自 2022 球季末已存在；確切起始日期未核定。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2023-03-22",
+          "title": "Miami 記者會談既有腕傷",
+          "text": "本人談到 Indian Wells 訓練時症狀加劇與處理長期腕傷的需要。",
+          "sourceIndexes": [1]
+        },
+        {
+          "date": "2023-05",
+          "title": "公布手部手術",
+          "text": "本人公開雙手某骨頭反覆受傷及手術安排，同期踝手術另行區分。",
+          "sourceIndexes": [2]
+        }
+      ],
+      "remainingChecks": [
+        "Main workflow actual audiovisual review: confirm same injury event and content",
+        "Verify original publisher, source jurisdiction and rights/provenance",
+        "Set footageKind only after watching the selected material",
+        "Measure actual startSeconds and durationSeconds; null is not zero",
+        "Confirm captions and owned-HTTPS embedded playback under current release requirements",
+        "Final clinical attribution, event-date, return-date and duplicate-event review",
+        "Only then construct and validate production-schema data"
+      ]
+    }
+  ]
+}
