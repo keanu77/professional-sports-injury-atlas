@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "businessDate": "2026-09-21",
+  "scope": "metadata-only-not-playback-evidence",
+  "method": "YouTube oEmbed JSON requests; no iframe or audiovisual review",
+  "entries": [
+    {
+      "id": "X8X7Xg7UwD0",
+      "httpStatus": 200,
+      "title": "Paula Badosa Press Conference | 2024 US Open Round 4",
+      "authorName": "US Open Tennis Championships",
+      "authorUrl": "https://www.youtube.com/@usopen",
+      "checkedAt": "2026-09-21T00:27:55.125Z",
+      "embeddedPlaybackVerified": false
+    },
+    {
+      "id": "D8492O0ciGY",
+      "httpStatus": 200,
+      "title": "J.J. Watt exclusive ESPN interview on returning for Texans' playoff run from injury | NFL on ESPN",
+      "authorName": "ESPN",
+      "authorUrl": "https://www.youtube.com/@espn",
+      "checkedAt": "2026-09-21T00:27:55.123Z",
+      "embeddedPlaybackVerified": false
+    },
+    {
+      "id": "vsc3sE7WwXk",
+      "httpStatus": 200,
+      "title": "Nadal feels 'physically good' after recovery from rib injury to take part in Madrid Open | MMOPEN",
+      "authorName": "CGTN Sports Scene",
+      "authorUrl": "https://www.youtube.com/@cgtnsportsscene",
+      "checkedAt": "2026-09-21T00:27:55.136Z",
+      "embeddedPlaybackVerified": false
+    },
+    {
+      "id": "z7x0dxJf3Zk",
+      "httpStatus": 200,
+      "title": "Karsten Warholm Injured, Suspects Hamstring Tear",
+      "authorName": "FloTrack",
+      "authorUrl": "https://www.youtube.com/@FloTrack",
+      "checkedAt": "2026-09-21T00:27:55.157Z",
+      "embeddedPlaybackVerified": false
+    },
+    {
+      "id": "7_GZg1qIZLQ",
+      "httpStatus": 200,
+      "title": "Zoey Clark: Fighting Back - A short documentary",
+      "authorName": "scottishathletics",
+      "authorUrl": "https://www.youtube.com/@scottishathletics",
+      "checkedAt": "2026-09-21T00:27:55.160Z",
+      "embeddedPlaybackVerified": false
+    },
+    {
+      "id": "IpYzdWZ80CE",
+      "httpStatus": 200,
+      "title": "Jake Wightman On His Return From Injury, Why He Thinks He Can Still Beat Jakob Ingebrigtsen",
+      "authorName": "CITIUS MAG",
+      "authorUrl": "https://www.youtube.com/@CitiusMag",
+      "checkedAt": "2026-09-21T00:27:55.162Z",
+      "embeddedPlaybackVerified": false
+    },
+    {
+      "id": "F-KkglTfq3Y",
+      "httpStatus": 200,
+      "title": "Molly Seidel on the other side of injury and looking ahead to fall marathon",
+      "authorName": "FloTrack",
+      "authorUrl": "https://www.youtube.com/@FloTrack",
+      "checkedAt": "2026-09-21T00:27:55.132Z",
+      "embeddedPlaybackVerified": false
+    },
+    {
+      "id": "hvH4AnAD5eg",
+      "httpStatus": 200,
+      "title": "UFC 263: Paul Craig Octagon Interview",
+      "authorName": "UFC",
+      "authorUrl": "https://www.youtube.com/@ufc",
+      "checkedAt": "2026-09-21T00:27:55.123Z",
+      "embeddedPlaybackVerified": false
+    },
+    {
+      "id": "XdGi7XI5Y_c",
+      "httpStatus": 200,
+      "title": "Full Blast: Munoz & Mitrione - Mir vs Nogueira",
+      "authorName": "UFC",
+      "authorUrl": "https://www.youtube.com/@ufc",
+      "checkedAt": "2026-09-21T00:27:55.145Z",
+      "embeddedPlaybackVerified": false
+    },
+    {
+      "id": "XEBZ9lSa8fM",
+      "httpStatus": 200,
+      "title": "UFC: Frank Mir vs. Tim Sylvia | June 19, 2004",
+      "authorName": "UFC FIGHT PASS",
+      "authorUrl": "https://www.youtube.com/@UFCFightPass",
+      "checkedAt": "2026-09-21T00:27:55.148Z",
+      "embeddedPlaybackVerified": false
+    },
+    {
+      "id": "rkiD3kLGIvU",
+      "httpStatus": 200,
+      "title": "UFC 262: André Muniz Octagon Interview",
+      "authorName": "UFC",
+      "authorUrl": "https://www.youtube.com/@ufc",
+      "checkedAt": "2026-09-21T00:27:55.157Z",
+      "embeddedPlaybackVerified": false
+    }
+  ]
+}

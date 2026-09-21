@@ -1,0 +1,693 @@
+{
+  "schemaVersion": 1,
+  "businessDate": "2026-09-21",
+  "authorizationQuote": "核准，照此實作（建議）",
+  "scope": "research-only-not-imported-by-site",
+  "targetNewEvents": 42,
+  "secondBatchResearchCount": 14,
+  "cumulativeResearchCount": 28,
+  "acceptedForPublication": 0,
+  "entries": [
+    {
+      "id": "paula-badosa-2023-spinal-stress-fracture",
+      "athlete": "Paula Badosa",
+      "country": "ESP",
+      "sport": "網球",
+      "eventDate": null,
+      "eventYear": "2023",
+      "bodyPart": "軀幹",
+      "injury": "脊椎疲勞性骨折",
+      "context": "competition-associated-onset",
+      "gapTags": ["overuse"],
+      "sources": [
+        {
+          "url": "https://www.wtatennis.com/news/3487290/badosa-withdraws-from-roland-garros-after-suffering-spine-injury",
+          "publisher": "WTA",
+          "access": "full-text",
+          "supports": "2023 年羅馬賽期間出現脊椎疲勞性骨折；5 月 25 日公告退出法網。",
+          "publishedAt": "2023-05-25"
+        },
+        {
+          "url": "https://www.wtatennis.com/news/3976620/insider-podcast-badosa-opens-up-about-her-injury-struggle",
+          "publisher": "WTA",
+          "access": "full-text",
+          "supports": "2024 年本人訪談談持續背部問題；該篇也明確區分另一次內收肌傷。",
+          "publishedAt": "2024-04-21"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=X8X7Xg7UwD0",
+      "publisher": "US Open Tennis Championships",
+      "proposedFootageKind": "athlete-interview",
+      "stage": "needs-same-injury-segment-review",
+      "limitations": [
+        "已找到官方記者會，但尚未核對談 2023 年骨折的確切片段；不能只因同一選手就視作傷勢影片。",
+        "公告日不是受傷日；不推定 L4、跌倒導致骨折或已完全癒合。",
+        "WTA Insider 是音訊，不冒充影片；2024 年內收肌傷不併入本事件。"
+      ],
+      "priority": "high-overuse-if-video-matches",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Confirm same-event audiovisual content and exact selected segment/duration",
+        "Confirm original publisher, source jurisdiction and permitted supported embed",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source-based clinical and event-deduplication review"
+      ]
+    },
+    {
+      "id": "jj-watt-2019-pectoral",
+      "athlete": "J.J. Watt",
+      "country": "USA",
+      "sport": "美式足球",
+      "eventDate": "2019-10-27",
+      "eventYear": "2019",
+      "bodyPart": "軀幹",
+      "injury": "胸肌撕裂",
+      "context": "competition",
+      "gapTags": ["muscle-tendon", "upper-limb-linked"],
+      "sources": [
+        {
+          "url": "https://www.houstontexans.com/news/j-j-watt-announces-he-s-done-for-the-season",
+          "publisher": "Houston Texans",
+          "access": "full-text",
+          "supports": "對 Raiders 比賽第二節擒抱後胸肌受傷退場。",
+          "publishedAt": "2019-10-27"
+        },
+        {
+          "url": "https://www.houstontexans.com/news/j-j-watt-returns-to-practice-for-texans",
+          "publisher": "Houston Texans",
+          "access": "full-text",
+          "supports": "手術後於 2019 年 12 月 24 日恢復球隊訓練；不是當天復賽。",
+          "publishedAt": "2019-12-24"
+        },
+        {
+          "url": "https://www.nfl.com/_amp/j-j-watt-to-undergo-surgery-on-torn-pec-this-week-0ap3000001070750",
+          "publisher": "NFL",
+          "access": "search-excerpt",
+          "supports": "胸肌撕裂，預定手術。",
+          "publishedAt": "2019-10-28"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=D8492O0ciGY",
+      "publisher": "ESPN",
+      "proposedFootageKind": "athlete-interview",
+      "stage": "needs-playback-and-segment-review",
+      "limitations": [
+        "ESPN 影片說明明確提及本次胸肌傷勢及復健，但未視聽核對。",
+        "不補寫肌腱附著點、傷勢分級；不把選手承擔再傷風險的決定當作一般回場建議。"
+      ],
+      "priority": "high-original-injury-interview",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Confirm same-event audiovisual content and exact selected segment/duration",
+        "Confirm original publisher, source jurisdiction and permitted supported embed",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source-based clinical and event-deduplication review"
+      ]
+    },
+    {
+      "id": "rafael-nadal-2022-rib-stress-fracture",
+      "athlete": "Rafael Nadal",
+      "country": "ESP",
+      "sport": "網球",
+      "eventDate": "2022-03-19",
+      "eventYear": "2022",
+      "bodyPart": "軀幹",
+      "injury": "左側第三肋骨疲勞性骨裂",
+      "context": "competition-associated-onset",
+      "gapTags": ["overuse", "rib"],
+      "sources": [
+        {
+          "url": "https://www.rtve.es/deportes/20220322/tenis-rafa-nadal-lesion-cuatro-seis-semanas-baja/2320460.shtml",
+          "publisher": "RTVE citing team physician Ángel Ruiz Cotorro",
+          "access": "full-text",
+          "supports": "刊載隊醫聲明：影像檢查後確認左第三肋骨應力性骨裂，連結 Indian Wells 對 Alcaraz 準決賽。",
+          "publishedAt": "2022-03-22"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=vsc3sE7WwXk",
+      "publisher": "CGTN Sports Scene",
+      "proposedFootageKind": "athlete-interview",
+      "stage": "needs-playback-and-provenance-review",
+      "limitations": [
+        "影片是 2022 年 5 月 Madrid 回歸前訪談，非骨折瞬間。",
+        "發布者為 CGTN Sports Scene，不是標題中的 Madrid 主辦方；需最終原創／使用權來源確認。",
+        "eventDate 指隊醫聲明連結的準決賽日，不代表可確認微損傷最初發生日。",
+        "與首批 2022 年 7 月腹肌傷分開；隊醫 4–6 週預估不當成已證明康復時間。"
+      ],
+      "priority": "reserve-after-sport-diversity",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Confirm same-event audiovisual content and exact selected segment/duration",
+        "Confirm original publisher, source jurisdiction and permitted supported embed",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source-based clinical and event-deduplication review"
+      ]
+    },
+    {
+      "id": "shohei-ohtani-2023-ucl",
+      "athlete": "Shohei Ohtani",
+      "country": "JPN",
+      "sport": "棒球",
+      "eventDate": "2023-08-23",
+      "eventYear": "2023",
+      "bodyPart": "肘部",
+      "injury": "右肘尺側副韌帶撕裂",
+      "context": "pitching",
+      "gapTags": ["upper-limb", "elbow-ligament"],
+      "sources": [
+        {
+          "url": "https://www.mlb.com/news/shohei-ohtani-has-tear-in-ucl",
+          "publisher": "MLB",
+          "access": "full-text",
+          "supports": "2023 年右肘 UCL 撕裂。",
+          "publishedAt": "2023-08-24"
+        },
+        {
+          "url": "https://www.mlb.com/video/shohei-ohtani-leaves-with-injury-x0759",
+          "publisher": "MLB",
+          "access": "search-excerpt",
+          "supports": "2023-08-23 投球退場影片；頁面時長 46 秒。",
+          "publishedAt": "2023-08-23"
+        }
+      ],
+      "videoUrl": "https://www.mlb.com/video/shohei-ohtani-leaves-with-injury-x0759",
+      "publisher": "MLB",
+      "proposedFootageKind": "aftermath",
+      "stage": "needs-supported-video",
+      "limitations": [
+        "本站 MLB 允許清單目前僅 Zack Kelly；不能擅自把本片視為已支援或嵌入通過。",
+        "退場日期不證明韌帶在該一球才開始受損；不能從畫面診斷撕裂。",
+        "與 2018 年肘傷及既有 2024 年左肩傷是不同事件；打擊回歸與投球回歸不能共用同一日期。"
+      ],
+      "priority": "high-upper-limb-if-provider-cleared",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Confirm same-event audiovisual content and exact selected segment/duration",
+        "Confirm original publisher, source jurisdiction and permitted supported embed",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source-based clinical and event-deduplication review"
+      ]
+    },
+    {
+      "id": "karsten-warholm-2022-hamstring",
+      "athlete": "Karsten Warholm",
+      "country": "NOR",
+      "sport": "田徑",
+      "eventYear": "2022",
+      "eventDate": "2022-06-05",
+      "bodyPart": "大腿後側",
+      "injury": "右側腿後肌群小範圍撕裂；不指定肌肉或分級。",
+      "context": "competition",
+      "gapTags": ["muscle-tendon"],
+      "sources": [
+        {
+          "url": "https://worldathletics.org/news/news/karsten-warholm-400m-hurdles-norway-oregon",
+          "publisher": "World Athletics",
+          "access": "full-text-by-research-agent",
+          "supports": "第一道欄後右腿不適；後續辨識為小範圍腿後肌群撕裂。"
+        },
+        {
+          "url": "https://worldathletics.org/news/feature/all-eyes-will-be-on-karsten-warholm-in-mens-400m-hurdles-at-wch-oregon22",
+          "publisher": "World Athletics",
+          "access": "search-excerpt-by-research-agent",
+          "supports": "Rabat 傷勢事件日期來源；全文仍待最終複核。"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=z7x0dxJf3Zk",
+      "publisher": "FloTrack",
+      "proposedFootageKind": "news-analysis",
+      "videoProvenanceSource": "https://www.flotrack.org/video/7820408-karsten-warholm-injured-suspects-hamstring-tear",
+      "alternativeVideoUrl": "https://www.nbcsports.com/olympics/news/karsten-warholm-rabat-diamond-league-hurdles",
+      "stage": "needs-playback-and-segment-review",
+      "limitations": [
+        "影片為原創分析；不假定含受傷瞬間。",
+        "診斷用後續 World Athletics 報導，不用影片標題的初步懷疑代替。"
+      ],
+      "priority": "high-muscle",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Confirm same-event audiovisual content and exact selected segment/duration",
+        "Confirm original publisher, source jurisdiction and permitted supported embed",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source-based clinical and event-deduplication review"
+      ]
+    },
+    {
+      "id": "dina-asher-smith-2021-hamstring",
+      "athlete": "Dina Asher-Smith",
+      "country": "GBR",
+      "sport": "田徑",
+      "eventYear": "2021",
+      "eventDate": null,
+      "bodyPart": "大腿後側",
+      "injury": "英國錦標賽 100 公尺期間腿後肌群撕裂；不指定側別、肌肉或分級。",
+      "context": "competition",
+      "gapTags": ["muscle-tendon"],
+      "sources": [
+        {
+          "url": "https://worldathletics.org/news/feature/british-star-dina-asher-smith-back-for-another-run-at-a-world-athletics-championships-gold-medal-in-oregon",
+          "publisher": "World Athletics",
+          "access": "full-text-by-research-agent",
+          "supports": "本人回顧英國錦標賽腿後肌傷，以及東京 200 公尺退賽。"
+        }
+      ],
+      "videoUrl": "https://www.tntsports.co.uk/athletics/tokyo-2020/2021/tokyo-2020-olympics-absolute-sheds-of-tears-dina-asher-smith-opens-up-on-injury-heartache_vid1516648/video.shtml",
+      "publisher": "Eurosport / TNT Sports",
+      "proposedFootageKind": "athlete-interview",
+      "stage": "needs-supported-video",
+      "limitations": [
+        "東京時的本人訪談，不是受傷瞬間；精確受傷日期未核。",
+        "影片頁目前顯示的 2025 日期不作為事件日期。",
+        "尚無可信官方 YouTube 對應；不可繞過平台限制。"
+      ],
+      "priority": "high-athlete-interview-if-provider-cleared",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Confirm same-event audiovisual content and exact selected segment/duration",
+        "Confirm original publisher, source jurisdiction and permitted supported embed",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source-based clinical and event-deduplication review"
+      ]
+    },
+    {
+      "id": "zoey-clark-2023-disc-nerve",
+      "athlete": "Zoey Clark",
+      "country": "GBR",
+      "sport": "田徑",
+      "eventYear": "2023",
+      "eventDate": null,
+      "bodyPart": "軀幹",
+      "injury": "本人自述椎間盤突出及神經受壓症狀；未取得影像報告。",
+      "context": "competition-aftermath",
+      "gapTags": ["spine", "neurologic-differential"],
+      "sources": [
+        {
+          "url": "https://www.scottishathletics.org.uk/zoey-documentary/",
+          "publisher": "Scottish Athletics",
+          "access": "full-text-parent-rechecked",
+          "supports": "本人回顧 2023 年 1 月中旬室內賽後症狀，協會委製紀錄片並嵌入官方影片。"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=7_GZg1qIZLQ",
+      "publisher": "Scottish Athletics",
+      "proposedFootageKind": "athlete-interview",
+      "alternativeVideoUrl": "https://vimeo.com/890426406",
+      "stage": "needs-medical-scope-and-playback-review",
+      "limitations": [
+        "須歸因為本人自述，不補脊椎節段、側別或手術適應症。",
+        "椎間盤相關神經症狀不能直接歸為具名周邊神經損傷或神經叢損傷；nerveCategory 暫不賦值。",
+        "比賽後出現症狀，不證明該比賽造成全部病變；不逕列過度使用。"
+      ],
+      "priority": "high-original-documentary-medical-review",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Confirm same-event audiovisual content and exact selected segment/duration",
+        "Confirm original publisher, source jurisdiction and permitted supported embed",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source-based clinical and event-deduplication review"
+      ]
+    },
+    {
+      "id": "jake-wightman-2023-foot",
+      "athlete": "Jake Wightman",
+      "country": "GBR",
+      "sport": "田徑",
+      "eventYear": "2023",
+      "eventDate": null,
+      "bodyPart": "足部",
+      "injury": "足部傷勢；疲勞性骨折與急性訓練傷的描述待釐清。",
+      "context": "training",
+      "gapTags": ["foot"],
+      "sources": [
+        {
+          "url": "https://worldathletics.org/news/news/maurie-plant-meet-melbourne-mile-jake-wightman",
+          "publisher": "World Athletics",
+          "access": "search-excerpt",
+          "supports": "因足部傷勢缺席 2023 世錦賽。"
+        },
+        {
+          "url": "https://www.scottishathletics.org.uk/david-ovens-column/",
+          "publisher": "Scottish Athletics",
+          "access": "full-text-by-research-agent",
+          "supports": "協會回顧使用 stress fracture 一詞。"
+        },
+        {
+          "url": "https://www.standard.co.uk/sport/athletics/jake-wightman-1500m-injury-b1092289.html",
+          "publisher": "The Standard",
+          "access": "search-excerpt",
+          "supports": "另有本人描述跨欄跳訓練時翻足的報導，需要核對。"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=IpYzdWZ80CE",
+      "publisher": "CITIUS MAG",
+      "proposedFootageKind": "athlete-interview",
+      "stage": "needs-conflicting-source-reconciliation",
+      "limitations": [
+        "不將本例計入已確認過度使用數。",
+        "未確認特定足骨、側別、確切受傷日；影片身份與原片同傷勢片段待核。"
+      ],
+      "priority": "hold-mechanism-conflict",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Confirm same-event audiovisual content and exact selected segment/duration",
+        "Confirm original publisher, source jurisdiction and permitted supported embed",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source-based clinical and event-deduplication review"
+      ]
+    },
+    {
+      "id": "molly-seidel-2024-patella",
+      "athlete": "Molly Seidel",
+      "country": "USA",
+      "sport": "田徑",
+      "eventYear": "2024",
+      "eventDate": null,
+      "bodyPart": "膝部",
+      "injury": "髕骨骨折；原創採訪描述與過度使用有關。",
+      "context": "overuse-reported",
+      "gapTags": ["overuse"],
+      "sources": [
+        {
+          "url": "https://www.irunfar.com/molly-seidel-profile",
+          "publisher": "iRunFar",
+          "access": "full-relevant-text-parent-rechecked",
+          "supports": "原創採訪記載 2024 年初因過度使用相關髕骨骨折退賽。"
+        },
+        {
+          "url": "https://www.instagram.com/reel/C2znjZfrplK/",
+          "publisher": "Molly Seidel",
+          "access": "unavailable-not-reviewed",
+          "supports": "原始公告線索；本次未直接讀取，不作已核內容。"
+        },
+        {
+          "url": "https://www.nbcsports.com/olympics/news/molly-seidel-marathon-olympic-trials-withdraw",
+          "publisher": "NBC Sports",
+          "access": "full-text-by-research-agent",
+          "supports": "提供本人公告來源鏈。"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=F-KkglTfq3Y",
+      "publisher": "FloTrack",
+      "videoProvenanceSource": "https://www.flotrack.org/video/12444837-molly-seidel-on-the-other-side-of-injury-and-looking-ahead-to-fall-marathon",
+      "proposedFootageKind": "athlete-interview",
+      "stage": "needs-primary-post-and-playback-review",
+      "limitations": [
+        "2024-02-01 是公告日，不填為受傷日。",
+        "髕腱部分撕裂在取得本人原始資料前不寫入確認診斷；不補側別。"
+      ],
+      "priority": "high-overuse-after-primary-review",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Confirm same-event audiovisual content and exact selected segment/duration",
+        "Confirm original publisher, source jurisdiction and permitted supported embed",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source-based clinical and event-deduplication review"
+      ]
+    },
+    {
+      "id": "jamahal-hill-2021-elbow",
+      "athlete": "Jamahal Hill",
+      "country": "USA",
+      "sport": "綜合格鬥",
+      "eventYear": "2021",
+      "eventDate": "2021-06-12",
+      "bodyPart": "肘部",
+      "injury": "肘關節脫臼；不是已證實骨折。",
+      "context": "competition",
+      "gapTags": ["upper-limb", "dislocation"],
+      "sources": [
+        {
+          "url": "https://www.ufc.com/news/jamahal-hill-hungrier-than-ever-light-heavyweight-ufc-fight-night-font-aldo",
+          "publisher": "UFC",
+          "access": "full-text-by-research-agent",
+          "supports": "對 Paul Craig 比賽中肘脫臼。"
+        },
+        {
+          "url": "https://www.ufc.com/video/paul-craig-post-fight-interview-ufc-263-adesanya-vettori-2-results-recap-interview-winner",
+          "publisher": "UFC",
+          "access": "search-excerpt",
+          "supports": "UFC 263 日期 2021-06-12。"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=hvH4AnAD5eg",
+      "publisher": "UFC",
+      "proposedFootageKind": "athlete-interview",
+      "interviewSubject": "Paul Craig (opponent; not injured athlete)",
+      "alternativeVideoUrl": "https://www.youtube.com/watch?v=9Ds2st7_E7U",
+      "stage": "needs-injury-footage-or-injured-athlete-video",
+      "limitations": [
+        "訪談對象是對手，不是 Hill；不符合優先的受傷本人訪談條件，先作備選。",
+        "來源對比賽結果 technical submission/TKO 措辭不同；不自行統一。",
+        "不補側別或從畫面判斷骨折。"
+      ],
+      "priority": "reserve-opponent-interview",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Confirm same-event audiovisual content and exact selected segment/duration",
+        "Confirm original publisher, source jurisdiction and permitted supported embed",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source-based clinical and event-deduplication review"
+      ]
+    },
+    {
+      "id": "antonio-rodrigo-nogueira-2011-arm",
+      "athlete": "Antônio Rodrigo Nogueira",
+      "country": "BRA",
+      "sport": "綜合格鬥",
+      "eventYear": "2011",
+      "eventDate": "2011-12-10",
+      "bodyPart": "上臂／前臂（待部位分類）",
+      "injury": "右手臂骨折；不補骨折分型。",
+      "context": "competition",
+      "gapTags": ["upper-limb", "fracture"],
+      "sources": [
+        {
+          "url": "https://www.ufc.com/news/minotauro-nogueira-and-art-never-giving",
+          "publisher": "UFC",
+          "access": "full-text-by-research-agent",
+          "supports": "本人採訪回顧 UFC 140 手臂骨折。"
+        },
+        {
+          "url": "https://www.ufc.com/news/ufc-140-main-card-results-two-two-mir-submits-minotauro-rematch",
+          "publisher": "UFC",
+          "access": "full-text-by-research-agent-official-japanese-response",
+          "supports": "2011-12-10 對 Frank Mir，右臂 kimura 情境。"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=XdGi7XI5Y_c",
+      "publisher": "UFC",
+      "videoProvenanceSource": "https://www.ufc.com/video/36802",
+      "proposedFootageKind": "news-analysis",
+      "stage": "needs-playback-and-segment-review",
+      "limitations": [
+        "Full Blast 是第三者觀看比賽的回顧節目，不標為 Nogueira 本人訪談。",
+        "需確認含足夠的同場原片；不混同 2008 年首戰。",
+        "既有 bodyPart 沒有上臂／前臂，不為符合 schema 而硬塞肘部。"
+      ],
+      "priority": "medium-upper-limb-after-segment-review",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Confirm same-event audiovisual content and exact selected segment/duration",
+        "Confirm original publisher, source jurisdiction and permitted supported embed",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source-based clinical and event-deduplication review"
+      ]
+    },
+    {
+      "id": "tim-sylvia-2004-arm",
+      "athlete": "Tim Sylvia",
+      "country": "USA",
+      "sport": "綜合格鬥",
+      "eventYear": "2004",
+      "eventDate": "2004-06-19",
+      "bodyPart": "上臂／前臂（待部位分類）",
+      "injury": "右手臂骨折；不指定骨頭或分型。",
+      "context": "competition",
+      "gapTags": ["upper-limb", "fracture"],
+      "sources": [
+        {
+          "url": "https://www.ufc.com/news/10-best-ufc-heavyweight-title-fights-stipe-jones-lesnar-cormier",
+          "publisher": "UFC",
+          "access": "full-relevant-section-by-research-agent",
+          "supports": "UFC 48 日期、右臂及因骨折停賽。"
+        },
+        {
+          "url": "https://www.ufc.com/news/former-ufc-champ-tim-sylvia-retires-38",
+          "publisher": "UFC",
+          "access": "full-text-by-research-agent",
+          "supports": "本人回顧手臂骨折。"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=XEBZ9lSa8fM",
+      "publisher": "UFC FIGHT PASS",
+      "proposedFootageKind": "injury-motion",
+      "stage": "needs-playback-and-segment-review",
+      "limitations": [
+        "僅由同場比賽身份暫列受傷動作；未觀看確認。",
+        "2025-11-13 是影片上傳日，不是受傷日。",
+        "原片可能含明顯肢體變形，觀看後決定是否加內容提醒；不付費、不下載重傳。",
+        "未確認具體骨頭前不硬指定部位。"
+      ],
+      "priority": "high-original-fight-if-playable",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Confirm same-event audiovisual content and exact selected segment/duration",
+        "Confirm original publisher, source jurisdiction and permitted supported embed",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source-based clinical and event-deduplication review"
+      ]
+    },
+    {
+      "id": "rich-franklin-2010-arm",
+      "athlete": "Rich Franklin",
+      "country": "USA",
+      "sport": "綜合格鬥",
+      "eventYear": "2010",
+      "eventDate": "2010-06-12",
+      "bodyPart": "上臂／前臂（待部位分類）",
+      "injury": "左手臂骨折；不補特定骨頭。",
+      "context": "competition",
+      "gapTags": ["upper-limb", "fracture"],
+      "sources": [
+        {
+          "url": "https://www.ufc.com/news/franklin-survives-broken-arm-kos-liddell-ufc-115-main-event",
+          "publisher": "UFC",
+          "access": "full-text-by-research-agent",
+          "supports": "UFC 115 對 Chuck Liddell，第一回合踢擊後左手臂骨折。"
+        }
+      ],
+      "videoUrl": "https://www.ufc.com/video/45642",
+      "publisher": "UFC",
+      "proposedFootageKind": "injury-motion",
+      "stage": "needs-supported-video",
+      "limitations": [
+        "官方原生影片頁非已支援 provider，尚無可靠官方 YouTube 對應。",
+        "2010-06-13 報導所述事件為 6 月 12 日；不把公告日當受傷日。",
+        "未觀看確認受傷動作片段；較低優先，避免格鬥過度集中。"
+      ],
+      "priority": "reserve-provider-and-sport-balance",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Confirm same-event audiovisual content and exact selected segment/duration",
+        "Confirm original publisher, source jurisdiction and permitted supported embed",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source-based clinical and event-deduplication review"
+      ]
+    },
+    {
+      "id": "ronaldo-jacare-souza-2021-humerus",
+      "athlete": "Ronaldo Jacaré Souza",
+      "country": "BRA",
+      "sport": "綜合格鬥",
+      "eventYear": "2021",
+      "eventDate": "2021-05-15",
+      "bodyPart": "上臂（待新增分類）",
+      "injury": "右肱骨骨折；醫師團隊經媒體說明需手術。",
+      "context": "competition",
+      "gapTags": ["upper-limb", "fracture"],
+      "sources": [
+        {
+          "url": "https://www.mmafighting.com/2021/5/16/22438894/jacare-souza-fractured-humerus-ufc-262-loss-undergo-surgery-mma-andre-muniz",
+          "publisher": "MMA Fighting interviewing physician Rickson Moraes team",
+          "access": "full-text-by-research-agent",
+          "supports": "醫師團隊原始訪談：右肱骨骨折。"
+        },
+        {
+          "url": "https://www.ufc.com/athlete/ronaldo-souza",
+          "publisher": "UFC",
+          "access": "relevant-history-search-excerpt",
+          "supports": "UFC 262 對 André Muniz 日期 2021-05-15。"
+        }
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=rkiD3kLGIvU",
+      "publisher": "UFC",
+      "proposedFootageKind": "athlete-interview",
+      "interviewSubject": "André Muniz (opponent; not injured athlete)",
+      "alternativeVideoUrl": "https://www.youtube.com/watch?v=KyxIvmy1ikc",
+      "stage": "needs-injury-footage-or-injured-athlete-video",
+      "limitations": [
+        "目前是對手訪談，不是 Souza 本人；尋找原始比賽重播或本人影片後再決選。",
+        "不得把早年對 Roger Gracie 的柔術傷混入本場 MMA 事件。",
+        "不把肱骨骨折強行歸入肘部，也不補傷勢分型。"
+      ],
+      "priority": "reserve-opponent-interview",
+      "sourceReviewStatus": "research-not-final-clinical-approval",
+      "rightsStatus": "provenance-lead-not-final-clearance",
+      "embeddedPlaybackVerified": false,
+      "acceptedForPublication": false,
+      "startSeconds": null,
+      "durationSeconds": null,
+      "remainingChecks": [
+        "Confirm same-event audiovisual content and exact selected segment/duration",
+        "Confirm original publisher, source jurisdiction and permitted supported embed",
+        "Owned-HTTPS embedded playback within existing release window",
+        "Final source-based clinical and event-deduplication review"
+      ]
+    }
+  ]
+}
