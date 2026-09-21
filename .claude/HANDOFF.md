@@ -1,4 +1,18 @@
-# HANDOFF - 2026-09-21 多標籤分類已完成
+# HANDOFF - 2026-09-22 UI/UX 優化已完成
+
+## 當前狀態
+
+- 使用者「社群追蹤入口一樣在前面，其他依你的建議去修改」已完成。社群入口保留最前，搜尋前移、手機 2×2 分類、複合篩選、24 支分批載入、網址分享、卡片與播放起點文案均已上線。
+- 正式站 https://injury.sportsmedicine.tw/ ；部署 https://4d4f7271.sports-injury-atlas.pages.dev 。已推送 origin/main 的網站來源 `9a4810b4e832d98d5411532c8f7698281370ea15`；此後僅補文件。保留本機分支 `feat/aaron-judge-rib`。
+- 全站仍為 200 支不同事件影片（7 核心＋193 觀察）、8 個影片類型。交叉篩選完整資料後才取前 24 支，每次增加 24 支；無 JavaScript 保留全部卡片。類型頁固定所屬類型，可再用關鍵字／運動／部位篩選，全部／精選／熱門僅在首頁。
+- 單元測試 1,543／105 檔通過（在 `8058b23`，最後僅補呈現與 E2E）；最終成品 180 E2E 通過、2 項 review-only 略過；Astro 0 errors／0 warnings／16 既有 hints。content、42 份 plan binding、變更格式、原有 release:public 全通過。獨立規格與品質審查通過。
+- 成品 618 檔、273 HTML、14,430 站內連結；正式站 273／273 HTML 雜湊一致。390px 正式瀏覽器：社群入口 y=127、搜尋 y=671、無水平溢出、初始 24→載入 48；Brees 四條件搜尋及新分頁分享還原均正確，未同意前 0 iframe。
+- 證據：`docs/reviews/2026-09-21-catalog-ux/README.md`、`release.json`、`final-validation.json`、`live.json`、`browser.production.json`、`e2e-results.json`、`artifact-receipt.json`。UI 計畫與授權已有精確綁定，完成紀錄獨立存放，不重寫已綁定文件。
+- 本機預覽 14339 已停止，預覽與分享測試分頁已關閉，保留正式首頁。無新增依賴、環境變數、migration 或未完成部署。既有影片與臨床核准未改，本輪 UI 驗證未重新播放外部影片；七日播放門檻照常驗證。
+- Node 24.14.0 暫存位置 `/private/tmp/atlas-judge-node.3pGBJs/node-v24.14.0-darwin-arm64/bin/node`；下次確認存在。此環境 Node 網路請求需 `--use-env-proxy`；最初直接連線失敗並非網站故障，未更改系統網路設定。
+- 任務已完成。下次先核對 Git 與新需求；不要因 resume 重做選片、分類、醫療簽核、建置或部署。以下為先前完成的歷史。
+
+## 2026-09-21 多標籤分類完成歷史
 
 ## 當前狀態
 

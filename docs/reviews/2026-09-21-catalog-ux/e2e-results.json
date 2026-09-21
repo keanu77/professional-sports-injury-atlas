@@ -1,0 +1,2949 @@
+{
+  "sourceCommit": "9a4810b4e832d98d5411532c8f7698281370ea15",
+  "stats": {
+    "startTime": "2026-09-21T13:18:23.646Z",
+    "duration": 50273.138,
+    "expected": 180,
+    "skipped": 2,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "tests": [
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "nathan-florence-2023-t12-fracture: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 345,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "billy-kemper-2020-pelvis-knee: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 347,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "missy-franklin-2016-shoulder: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 213,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "gabriel-medina-2025-pectoral-tendon: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 233,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "jj-watt-2019-pectoral: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 231,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "zoey-clark-2023-disc-nerve: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 230,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "chloe-kim-2026-shoulder: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 237,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "adam-peaty-2022-foot: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 223,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "kerri-walsh-jennings-2015-shoulder: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 262,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "rafael-nadal-2022-abdominal: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 235,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "jordyn-poulter-2022-knee: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 234,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "paula-badosa-2023-spinal-stress-fracture: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 241,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "rafael-nadal-2022-rib-stress-fracture: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 225,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "jake-wightman-2023-foot: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 242,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "karsten-warholm-2022-hamstring: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 232,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "molly-seidel-2024-patella: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 258,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "jamahal-hill-2021-elbow: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 241,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "antonio-rodrigo-nogueira-2011-arm: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 236,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "tim-sylvia-2004-arm: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 221,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "ronaldo-jacare-souza-2021-humerus: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 210,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "tom-aspinall-2022-knee: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 235,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "jordan-burroughs-2013-ankle: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 258,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "jofra-archer-2020-elbow-stress-fracture: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 250,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "manny-pacquiao-2015-shoulder: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 244,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "sky-brown-2024-shoulder: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 216,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "tony-hawk-2022-femur: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 216,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "helen-maroulis-2018-concussion: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 206,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "tiger-woods-2008-tibial-stress-fractures: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 239,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "mirabai-chanu-2023-hip: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 208,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "annemiek-van-vleuten-2022-elbow: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 210,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "daniel-andre-tande-2021-clavicle: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 299,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "egan-bernal-2022-training-crash: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 287,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "connor-fields-2021-brain-hemorrhage: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 255,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "novak-djokovic-2017-elbow: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 233,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "kei-nishikori-2017-wrist: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 238,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "bianca-andreescu-2023-ankle: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 255,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "juan-martin-del-potro-2017-wrist-contusion: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 212,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "rafael-nadal-2016-wrist: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 240,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "nikola-karabatic-2020-acl: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 285,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "kelly-slater-2017-foot: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 266,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "sally-fitzgibbons-2015-eardrum: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 257,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "emma-raducanu-2022-2023-wrists: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 234,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "200 unique events remain searchable",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 254,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "/videos/antonio-rodrigo-nogueira-2011-arm/: accessible without horizontal overflow",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 634,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "/sports/mixed-martial-arts/: accessible without horizontal overflow",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 675,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "/sports/surfing/: accessible without horizontal overflow",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 648,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "/sports/wrestling/: accessible without horizontal overflow",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 550,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "/body-parts/arm/: accessible without horizontal overflow",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 520,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "/body-parts/hip-thigh/: accessible without horizontal overflow",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 499,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "nathan-florence-2023-t12-fracture: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 406,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "billy-kemper-2020-pelvis-knee: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 336,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "missy-franklin-2016-shoulder: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 264,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "gabriel-medina-2025-pectoral-tendon: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 280,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "jj-watt-2019-pectoral: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 496,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "zoey-clark-2023-disc-nerve: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 494,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "chloe-kim-2026-shoulder: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 294,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "adam-peaty-2022-foot: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 282,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "kerri-walsh-jennings-2015-shoulder: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 246,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "rafael-nadal-2022-abdominal: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 234,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "jordyn-poulter-2022-knee: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 257,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "paula-badosa-2023-spinal-stress-fracture: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 249,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "rafael-nadal-2022-rib-stress-fracture: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 239,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "jake-wightman-2023-foot: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 241,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "karsten-warholm-2022-hamstring: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 200,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "molly-seidel-2024-patella: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 210,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "jamahal-hill-2021-elbow: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 271,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "antonio-rodrigo-nogueira-2011-arm: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 243,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "tim-sylvia-2004-arm: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 228,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "ronaldo-jacare-souza-2021-humerus: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 203,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "tom-aspinall-2022-knee: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 222,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "jordan-burroughs-2013-ankle: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 230,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "jofra-archer-2020-elbow-stress-fracture: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 239,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "manny-pacquiao-2015-shoulder: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 238,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "sky-brown-2024-shoulder: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 238,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "tony-hawk-2022-femur: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 239,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "helen-maroulis-2018-concussion: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 218,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "tiger-woods-2008-tibial-stress-fractures: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 204,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "mirabai-chanu-2023-hip: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 204,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "annemiek-van-vleuten-2022-elbow: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 208,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "daniel-andre-tande-2021-clavicle: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 219,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "egan-bernal-2022-training-crash: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 258,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "connor-fields-2021-brain-hemorrhage: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 273,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "novak-djokovic-2017-elbow: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 295,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "kei-nishikori-2017-wrist: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 261,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "bianca-andreescu-2023-ankle: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 220,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "juan-martin-del-potro-2017-wrist-contusion: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 216,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "rafael-nadal-2016-wrist: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 238,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "nikola-karabatic-2020-acl: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 234,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "kelly-slater-2017-foot: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 233,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "sally-fitzgibbons-2015-eardrum: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 221,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "emma-raducanu-2022-2023-wrists: sources, exact footage label and consent facade",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 218,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "200 unique events remain searchable",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 295,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "/videos/antonio-rodrigo-nogueira-2011-arm/: accessible without horizontal overflow",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 638,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "/sports/mixed-martial-arts/: accessible without horizontal overflow",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 569,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "/sports/surfing/: accessible without horizontal overflow",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 550,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "/sports/wrestling/: accessible without horizontal overflow",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 555,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "/body-parts/arm/: accessible without horizontal overflow",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 492,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-200.spec.ts",
+      "title": "/body-parts/hip-thigh/: accessible without horizontal overflow",
+      "suite": ["catalog-200.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 486,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-ux.spec.ts",
+      "title": "keeps social links ahead of search, exposes all mobile category controls, and paginates",
+      "suite": ["catalog-ux.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1757,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-ux.spec.ts",
+      "title": "shares full search state and restores filters across history",
+      "suite": ["catalog-ux.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 385,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-ux.spec.ts",
+      "title": "narrows a fixed type category by sport and body while keeping all static members",
+      "suite": ["catalog-ux.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 270,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-ux.spec.ts",
+      "title": "loads all remaining batches without duplicates and restores pagination after clearing query",
+      "suite": ["catalog-ux.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2052,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-ux.spec.ts",
+      "title": "keeps social links ahead of search, exposes all mobile category controls, and paginates",
+      "suite": ["catalog-ux.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1737,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-ux.spec.ts",
+      "title": "shares full search state and restores filters across history",
+      "suite": ["catalog-ux.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 393,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-ux.spec.ts",
+      "title": "narrows a fixed type category by sport and body while keeping all static members",
+      "suite": ["catalog-ux.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 238,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "catalog-ux.spec.ts",
+      "title": "loads all remaining batches without duplicates and restores pagination after clearing query",
+      "suite": ["catalog-ux.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2070,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-observation-pages.spec.ts",
+      "title": "all 193 observation pages expose general guidance, text highlights, related videos, and category routes",
+      "suite": ["decision-39-observation-pages.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 809,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-observation-pages.spec.ts",
+      "title": "the ten featured observations identify their reviewed main-site resources",
+      "suite": ["decision-39-observation-pages.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 859,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-observation-pages.spec.ts",
+      "title": "news, aftermath, and injury footage have consistent card and detail labels",
+      "suite": ["decision-39-observation-pages.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 631,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-observation-pages.spec.ts",
+      "title": "sharing metadata, favicons, and home heading hierarchy are complete",
+      "suite": ["decision-39-observation-pages.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1271,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-observation-pages.spec.ts",
+      "title": "review output stays noindex and does not publish a sitemap",
+      "suite": ["decision-39-observation-pages.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "durationMs": 137,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-observation-pages.spec.ts",
+      "title": "curated collection shows ten ordered videos and restores the 24-card first batch",
+      "suite": ["decision-39-observation-pages.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1163,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-observation-pages.spec.ts",
+      "title": "all 193 observation pages expose general guidance, text highlights, related videos, and category routes",
+      "suite": ["decision-39-observation-pages.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 741,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-observation-pages.spec.ts",
+      "title": "the ten featured observations identify their reviewed main-site resources",
+      "suite": ["decision-39-observation-pages.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 836,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-observation-pages.spec.ts",
+      "title": "news, aftermath, and injury footage have consistent card and detail labels",
+      "suite": ["decision-39-observation-pages.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 811,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-observation-pages.spec.ts",
+      "title": "sharing metadata, favicons, and home heading hierarchy are complete",
+      "suite": ["decision-39-observation-pages.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1259,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-observation-pages.spec.ts",
+      "title": "review output stays noindex and does not publish a sitemap",
+      "suite": ["decision-39-observation-pages.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "durationMs": 111,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-observation-pages.spec.ts",
+      "title": "curated collection shows ten ordered videos and restores the 24-card first batch",
+      "suite": ["decision-39-observation-pages.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1137,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "home category routes remain available without JavaScript",
+      "suite": ["decision-39-ux.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 267,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "mobile contribution and author links remain tabbable without JavaScript",
+      "suite": ["decision-39-ux.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 312,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "observation cards expose concise governed metadata on home and category pages",
+      "suite": ["decision-39-ux.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2407,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "return-day callouts name the governed milestone beside the day count",
+      "suite": ["decision-39-ux.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 291,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "home category routes remain available without JavaScript",
+      "suite": ["decision-39-ux.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 271,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "mobile contribution and author links remain tabbable without JavaScript",
+      "suite": ["decision-39-ux.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 301,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "observation cards expose concise governed metadata on home and category pages",
+      "suite": ["decision-39-ux.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2384,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "return-day callouts name the governed milestone beside the day count",
+      "suite": ["decision-39-ux.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 277,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "keeps compact category controls and opens one panel at a time on all screens",
+      "suite": [
+        "decision-39-ux.spec.ts",
+        "Decision 39 compact mobile discovery"
+      ],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1315,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "keeps the 320px 150% header compact while all controls remain reachable",
+      "suite": [
+        "decision-39-ux.spec.ts",
+        "Decision 39 compact mobile discovery"
+      ],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1300,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "offers a direct keyboard-accessible jump to the video collection",
+      "suite": [
+        "decision-39-ux.spec.ts",
+        "Decision 39 compact mobile discovery"
+      ],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 253,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "reveals and scrolls to hashed categories on load, hash change, and return links",
+      "suite": [
+        "decision-39-ux.spec.ts",
+        "Decision 39 compact mobile discovery"
+      ],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1104,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "keeps compact category controls and opens one panel at a time on all screens",
+      "suite": [
+        "decision-39-ux.spec.ts",
+        "Decision 39 compact mobile discovery"
+      ],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1334,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "keeps the 320px 150% header compact while all controls remain reachable",
+      "suite": [
+        "decision-39-ux.spec.ts",
+        "Decision 39 compact mobile discovery"
+      ],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1283,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "offers a direct keyboard-accessible jump to the video collection",
+      "suite": [
+        "decision-39-ux.spec.ts",
+        "Decision 39 compact mobile discovery"
+      ],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 270,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "decision-39-ux.spec.ts",
+      "title": "reveals and scrolls to hashed categories on load, hash change, and return links",
+      "suite": [
+        "decision-39-ux.spec.ts",
+        "Decision 39 compact mobile discovery"
+      ],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1131,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "Jaylon Smith: sources, footage labels and consent facade",
+      "suite": ["nerve-four.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 564,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "Zack Kelly: sources, footage labels and consent facade",
+      "suite": ["nerve-four.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 559,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "Ryan Crouser: sources, footage labels and consent facade",
+      "suite": ["nerve-four.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 560,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "Rob Horne: sources, footage labels and consent facade",
+      "suite": ["nerve-four.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 617,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "named nerve search finds all four and keeps plexus separate",
+      "suite": ["nerve-four.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 634,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "one nerve entry opens all four cases and preserves anatomical navigation",
+      "suite": ["nerve-four.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1479,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "Kelly loads only the allowlisted iframe after consent, without YouTube telemetry",
+      "suite": ["nerve-four.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 243,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "Jaylon Smith: sources, footage labels and consent facade",
+      "suite": ["nerve-four.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 550,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "Zack Kelly: sources, footage labels and consent facade",
+      "suite": ["nerve-four.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 550,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "Ryan Crouser: sources, footage labels and consent facade",
+      "suite": ["nerve-four.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 604,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "Rob Horne: sources, footage labels and consent facade",
+      "suite": ["nerve-four.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 636,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "named nerve search finds all four and keeps plexus separate",
+      "suite": ["nerve-four.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 648,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "one nerve entry opens all four cases and preserves anatomical navigation",
+      "suite": ["nerve-four.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1496,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "nerve-four.spec.ts",
+      "title": "Kelly loads only the allowlisted iframe after consent, without YouTube telemetry",
+      "suite": ["nerve-four.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 217,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "patient-experience.spec.ts",
+      "title": "video collection is directly browsable before using optional search",
+      "suite": ["patient-experience.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1320,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "patient-experience.spec.ts",
+      "title": "case opens with video, concise care, and a separately attributed athlete return",
+      "suite": ["patient-experience.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 655,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "patient-experience.spec.ts",
+      "title": "patient content remains readable without scripts",
+      "suite": ["patient-experience.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 199,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "patient-experience.spec.ts",
+      "title": "video collection is directly browsable before using optional search",
+      "suite": ["patient-experience.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1387,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "patient-experience.spec.ts",
+      "title": "case opens with video, concise care, and a separately attributed athlete return",
+      "suite": ["patient-experience.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 641,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "patient-experience.spec.ts",
+      "title": "patient content remains readable without scripts",
+      "suite": ["patient-experience.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 185,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-search.spec.ts",
+      "title": "searches Chinese and English names, injury keywords and multiple terms",
+      "suite": ["video-search.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1274,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-search.spec.ts",
+      "title": "keeps the query when changing scope and can expand beyond curated results",
+      "suite": ["video-search.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 320,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-search.spec.ts",
+      "title": "handles IME composition and treats hostile input as plain text without navigation",
+      "suite": ["video-search.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 244,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-search.spec.ts",
+      "title": "filters popular ten while retaining original ranks and latest query during a slow response",
+      "suite": ["video-search.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1167,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-search.spec.ts",
+      "title": "ignores obsolete popularity results and distinguishes API failure from no search matches",
+      "suite": ["video-search.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 360,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-search.spec.ts",
+      "title": "keeps all videos browsable with scripts disabled",
+      "suite": ["video-search.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 366,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-search.spec.ts",
+      "title": "searches Chinese and English names, injury keywords and multiple terms",
+      "suite": ["video-search.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1372,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-search.spec.ts",
+      "title": "keeps the query when changing scope and can expand beyond curated results",
+      "suite": ["video-search.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 343,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-search.spec.ts",
+      "title": "handles IME composition and treats hostile input as plain text without navigation",
+      "suite": ["video-search.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 231,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-search.spec.ts",
+      "title": "filters popular ten while retaining original ranks and latest query during a slow response",
+      "suite": ["video-search.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 326,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-search.spec.ts",
+      "title": "ignores obsolete popularity results and distinguishes API failure from no search matches",
+      "suite": ["video-search.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 438,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-search.spec.ts",
+      "title": "keeps all videos browsable with scripts disabled",
+      "suite": ["video-search.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 508,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "combines an exact content type, a query, and the static type page",
+      "suite": ["video-types.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 332,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "preserves the original popularity rank after intersecting a content type",
+      "suite": ["video-types.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 258,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "handles invalid shared type links and maps each mobile category control to a panel",
+      "suite": ["video-types.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2087,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "intersects a content type with curated mode and a Chinese query",
+      "suite": ["video-types.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 276,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "does not let a slow popularity response replace a newer mode or type",
+      "suite": ["video-types.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 255,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "restores type selections through browser history while retaining existing URL state",
+      "suite": ["video-types.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 198,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "keeps static content type routes and observed segment links usable without script or eager embeds",
+      "suite": ["video-types.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 141,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "shows reviewed segment links without pre-consent third-party playback",
+      "suite": ["video-types.spec.ts"],
+      "project": "chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 144,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "combines an exact content type, a query, and the static type page",
+      "suite": ["video-types.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 408,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "preserves the original popularity rank after intersecting a content type",
+      "suite": ["video-types.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 285,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "handles invalid shared type links and maps each mobile category control to a panel",
+      "suite": ["video-types.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2078,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "intersects a content type with curated mode and a Chinese query",
+      "suite": ["video-types.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 262,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "does not let a slow popularity response replace a newer mode or type",
+      "suite": ["video-types.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 290,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "restores type selections through browser history while retaining existing URL state",
+      "suite": ["video-types.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 192,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "keeps static content type routes and observed segment links usable without script or eager embeds",
+      "suite": ["video-types.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 138,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "file": "video-types.spec.ts",
+      "title": "shows reviewed segment links without pre-consent third-party playback",
+      "suite": ["video-types.spec.ts"],
+      "project": "mobile-chrome",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 140,
+          "retry": 0,
+          "errors": []
+        }
+      ]
+    }
+  ]
+}

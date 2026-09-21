@@ -1,0 +1,31 @@
+{
+  "recordedAt": "2026-09-21T15:12:44.641008+00:00",
+  "status": "deployed-and-production-verified",
+  "sourceCommit": "9a4810b4e832d98d5411532c8f7698281370ea15",
+  "branch": "feat/aaron-judge-rib",
+  "remoteBranch": "origin/main",
+  "origin": "https://injury.sportsmedicine.tw",
+  "deploymentUrl": "https://4d4f7271.sports-injury-atlas.pages.dev",
+  "releaseInputDigest": "f5ff2c5ed2850eb14ec2779cfb1c332f42c7a4b2f29b34c3f55112ee6b2d6869",
+  "authorization": "../../decisions/2026-09-21-catalog-ux-authorization.v1.json",
+  "uniqueVideos": 200,
+  "socialFollowEntryRemainsFirst": true,
+  "initialVisibleVideos": 24,
+  "loadMoreIncrement": 24,
+  "artifactReceipt": "artifact-receipt.json",
+  "validation": "final-validation.json",
+  "productionHttp": "live.json",
+  "productionBrowser": "browser.production.json",
+  "clinicalApprovalsChanged": false,
+  "sourceVideoBindingsChanged": false,
+  "cleanup": {
+    "localPreview14339Stopped": true,
+    "ownedPreviewTabClosed": true,
+    "ownedShareTestTabClosed": true,
+    "productionHomepageLeftOpen": true
+  },
+  "notes": [
+    "Subsequent closeout commits contain documentation only; the deployed source is identified above.",
+    "No dependencies, hosting configuration, environment variables or migrations changed."
+  ]
+}

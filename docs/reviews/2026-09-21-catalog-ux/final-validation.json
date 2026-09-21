@@ -1,0 +1,60 @@
+{
+  "recordedAt": "2026-09-21T15:12:44.641008+00:00",
+  "sourceCommit": "9a4810b4e832d98d5411532c8f7698281370ea15",
+  "unitTests": {
+    "passed": 1543,
+    "files": 105,
+    "testedCommit": "8058b2358509c9866a2a0e13cf5b6008acf82b6a",
+    "subsequentChanges": "Final commit adds category-count explanation text, its typography and E2E assertions; discovery state logic is unchanged."
+  },
+  "astroCheck": {
+    "files": 396,
+    "errors": 0,
+    "warnings": 0,
+    "existingHints": 16
+  },
+  "contentCheck": "passed",
+  "planVerify": {
+    "status": "passed",
+    "boundDocuments": 42
+  },
+  "formatCheck": "Changed implementation files passed; unrelated historical formatting retained.",
+  "publicRelease": "passed with existing clinical, source, rights and seven-day playback gates retained",
+  "e2e": {
+    "passed": 180,
+    "skippedReviewOnly": 2,
+    "failed": 0,
+    "flaky": 0,
+    "projects": ["chrome", "mobile-chrome"],
+    "evidence": "e2e-results.json"
+  },
+  "artifact": {
+    "files": 618,
+    "htmlPages": 273,
+    "internalLinks": 14430,
+    "allFileHashesRecheckedBeforeDeployment": true,
+    "evidence": "artifact-receipt.json"
+  },
+  "production": {
+    "matchedHtmlPages": 273,
+    "httpEvidence": "live.json",
+    "interactionEvidence": "browser.production.json"
+  },
+  "review": {
+    "spec": "passed",
+    "quality": "passed after descriptive CTA locator correction",
+    "outstandingImportantFindings": 0
+  },
+  "planCompletion": {
+    "task1Presentation": "complete",
+    "task2DiscoveryAndLayout": "complete",
+    "task3VerificationAndReview": "complete",
+    "task4Release": "complete"
+  },
+  "notes": [
+    "The final E2E run exercised the exact public artifact subsequently deployed.",
+    "One production HTTP request initially failed at the network transport; its successful targeted retry and original failure are retained in live.json.",
+    "The browser checked interface behavior without activating external players; original playback gates remained in force.",
+    "No Lighthouse, PageSpeed or measured loading-performance claim is made."
+  ]
+}

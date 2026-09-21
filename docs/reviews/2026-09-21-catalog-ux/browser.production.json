@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-09-21T14:51:59.339Z",
+  "origin": "https://injury.sportsmedicine.tw",
+  "sourceCommit": "9a4810b4e832d98d5411532c8f7698281370ea15",
+  "checks": [
+    {
+      "iframeCount": 0,
+      "overflow": 0,
+      "searchY": 671,
+      "socialY": 127,
+      "step": "390px homepage",
+      "totalCards": 200,
+      "visibleCards": 24,
+      "width": 390
+    },
+    {
+      "pageStatus": "已顯示 48 / 200 支符合條件的影片",
+      "step": "Load more",
+      "visibleCards": 48
+    },
+    {
+      "query": "Drew Brees",
+      "slugs": ["drew-brees-2020-rib"],
+      "status": "全部影片中找到 1 支符合專業解說、「Drew Brees」、美式足球、軀幹的影片。",
+      "step": "Brees four-way filter",
+      "url": "https://injury.sportsmedicine.tw/?q=Drew+Brees&type=expert-analysis&sport=american-football&body=trunk"
+    },
+    {
+      "body": "trunk",
+      "query": "Drew Brees",
+      "sport": "american-football",
+      "status": "全部影片中找到 1 支符合專業解說、「Drew Brees」、美式足球、軀幹的影片。",
+      "step": "Open shared URL in a fresh tab",
+      "type": "expert-analysis",
+      "visibleCards": 1
+    }
+  ]
+}
