@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "scope": "original-source-video-review-not-owned-https-release-proof",
+  "entries": [
+    {
+      "id": "nathan-florence-2023-t12-fracture",
+      "url": "https://www.youtube.com/watch?v=lqlkP27TXvA",
+      "publisher": "Nathan Florence",
+      "title": "INSANE XXL JAWS PADDLE SESSION GOES DOWN",
+      "durationSeconds": 940,
+      "startSeconds": 450,
+      "footageKind": "injury-motion",
+      "checkedAt": "2026-09-21T03:02:25.818Z",
+      "sourcePlayback": {
+        "before": {
+          "time": 454.742024,
+          "paused": false,
+          "readyState": 1
+        },
+        "after": {
+          "time": 467.779864,
+          "paused": true,
+          "readyState": 4
+        }
+      },
+      "visualNotes": "Jaws wave and wipeout sequence around 7:40; later first-person injury account in transcript 10:48 onward, diagnosis from subsequent first-person report.",
+      "transcript": "/var/folders/0y/8m87c3_x2dzf77761jrjkswh0000gn/T/browser-use/exports/youtube-lqlkP27TXvA-7e314c9d-daed-4bb7-a76a-777e3267d679.txt",
+      "ownedHttpsPlayback": false
+    },
+    {
+      "id": "billy-kemper-2020-pelvis-knee",
+      "url": "https://www.youtube.com/watch?v=gGGMvPtjtZo",
+      "publisher": "World Surf League",
+      "title": "The Session Of A Lifetime Goes Horribly Wrong For Big Wave Champ Billy Kemper | BILLY Chapter 2",
+      "durationSeconds": 826,
+      "startSeconds": 740,
+      "footageKind": "athlete-interview",
+      "checkedAt": "2026-09-21T03:06:06.677Z",
+      "observedMedia": {
+        "time": 771.338984,
+        "duration": 826.241,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "WSL documentary; accident sequence precedes first-person recollection around 12:28. At 12:51 interview visible. Injuries attributed separately to treating clinician.",
+      "ownedHttpsPlayback": false
+    },
+    {
+      "id": "missy-franklin-2016-shoulder",
+      "url": "https://www.youtube.com/watch?v=WevF13bkLAM",
+      "publisher": "SwimSwam",
+      "title": "Olympic Champion Missy Franklin Explains Her Shoulder Problems: GMM presented by SwimOutlet.com",
+      "durationSeconds": 1820,
+      "startSeconds": 130,
+      "footageKind": "athlete-interview",
+      "checkedAt": "2026-09-21T03:06:06.677Z",
+      "observedMedia": {
+        "time": 208.781727,
+        "duration": 1820.381,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "Original interviewer and athlete; transcript at 2:54 identifies 2016 shoulder injury and bilateral surgeries. Preserve self-report; avoid interpreting transcription error as failed surgery.",
+      "ownedHttpsPlayback": false
+    },
+    {
+      "id": "gabriel-medina-2025-pectoral-tendon",
+      "url": "https://www.youtube.com/watch?v=z6KNabUBA88",
+      "publisher": "World Surf League",
+      "title": "Gabriel Medina’s magnificent return to the CT: \"I’ve been here before\" | [Inside Pro Surfing]",
+      "durationSeconds": 499,
+      "startSeconds": 30,
+      "footageKind": "athlete-interview",
+      "checkedAt": "2026-09-21T03:06:06.677Z",
+      "observedMedia": {
+        "time": 90.222072,
+        "duration": 499.221,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "Original WSL interview: 0:32 identifies 2025 season injury; 0:43 athlete describes chest muscle injury. Return retrospective, not whole-video injury footage.",
+      "ownedHttpsPlayback": false
+    },
+    {
+      "id": "jj-watt-2019-pectoral",
+      "url": "https://www.youtube.com/watch?v=D8492O0ciGY",
+      "publisher": "ESPN",
+      "title": "J.J. Watt exclusive ESPN interview on returning for Texans’ playoff run from injury | NFL on ESPN",
+      "durationSeconds": 942,
+      "startSeconds": 100,
+      "footageKind": "athlete-interview",
+      "checkedAt": "2026-09-21T03:06:06.677Z",
+      "observedMedia": {
+        "time": 93.824384,
+        "duration": 942.961,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "Original ESPN interview with Lisa Salters; transcript 1:54-3:13 covers tackle, pectoral injury and subsequent surgery. His personal risk decision is not return-to-play advice.",
+      "ownedHttpsPlayback": false
+    },
+    {
+      "id": "zoey-clark-2023-disc-nerve",
+      "url": "https://www.youtube.com/watch?v=7_GZg1qIZLQ",
+      "publisher": "scottishathletics",
+      "title": "Zoey Clark: Fighting Back - A short documentary",
+      "durationSeconds": 495,
+      "startSeconds": 95,
+      "footageKind": "athlete-interview",
+      "checkedAt": "2026-09-21T03:06:59.756Z",
+      "observedMedia": {
+        "time": 113.622445,
+        "duration": 495.16,
+        "paused": false,
+        "readyState": 4
+      },
+      "visualNotes": "Athlete interview observed; 1:47-2:38 transcript explicitly describes January indoor-season symptoms, MRI and nerve symptoms. Remains attributed self-report, not independently confirmed peripheral nerve category.",
+      "ownedHttpsPlayback": false
+    },
+    {
+      "id": "chloe-kim-2026-shoulder",
+      "url": "https://www.youtube.com/watch?v=iRo0jHPhr2I",
+      "publisher": "NBC News",
+      "title": "Olympic gold medalist Chloe Kim announces she dislocated her shoulder",
+      "durationSeconds": 15,
+      "startSeconds": 0,
+      "footageKind": "news-analysis",
+      "checkedAt": "2026-09-21T03:06:59.756Z",
+      "observedMedia": {
+        "time": 15.881,
+        "duration": 15.881,
+        "paused": true,
+        "readyState": 4
+      },
+      "visualNotes": "15.881-second original NBC News short, completed once and replayed. Narrated injury announcement with short training fall excerpt; classify news, not continuous injury-motion footage.",
+      "ownedHttpsPlayback": false
+    }
+  ]
+}
