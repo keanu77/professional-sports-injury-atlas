@@ -169,6 +169,9 @@ const bodyBySlug = new Map(
     aria-atomic="true"
   >
   </p>
+  <p class="discovery-count-note">
+    同片可屬於多個類型；各類數量不相加，影片總數不重複計算。
+  </p>
   <p class="video-search-empty" data-video-search-empty hidden>
     試試球員姓氏、英文姓名或其他受傷部位，也可以清除搜尋後瀏覽。
   </p>
@@ -239,6 +242,10 @@ const bodyBySlug = new Map(
   import "../../scripts/video-discovery";
 </script>
 <style>
+  .discovery-count-note {
+    color: var(--color-ink-muted);
+    font-size: 0.875rem;
+  }
   [hidden] {
     display: none !important;
   }

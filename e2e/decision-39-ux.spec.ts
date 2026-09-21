@@ -218,6 +218,16 @@ test("observation cards expose concise governed metadata on home and category pa
   ]) {
     const response = await page.goto(path);
     expect(response?.status()).toBe(200);
+    if (path === "/") {
+      const more = page.getByRole("button", {
+        name: "載入更多影片",
+        exact: true,
+      });
+      while (await more.isVisible()) await more.click();
+      await expect(page.locator("[data-discovery-slug]:visible")).toHaveCount(
+        200,
+      );
+    }
     const cards = page.locator(".observation-card");
     expect(await cards.count()).toBeGreaterThan(0);
     for (let index = 0; index < (await cards.count()); index += 1) {

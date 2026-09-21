@@ -93,6 +93,13 @@ test("handles invalid shared type links and maps each mobile category control to
   const panels = page.locator("[data-home-category-panel]");
   expect(await controls.count()).toBe(4);
   expect(await panels.count()).toBe(4);
+  await expect(
+    page.locator("[data-home-category-panel='video-types']"),
+  ).toBeVisible();
+  await page.getByRole("button", { name: "依影片類型", exact: true }).click();
+  await expect(
+    page.locator("[data-home-category-panel='video-types']"),
+  ).toBeHidden();
   await page.getByRole("button", { name: "依影片類型", exact: true }).click();
   await expect(
     page.locator("[data-home-category-panel='video-types']"),

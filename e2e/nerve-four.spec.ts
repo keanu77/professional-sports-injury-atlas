@@ -92,6 +92,7 @@ test("one nerve entry opens all four cases and preserves anatomical navigation",
   page,
 }) => {
   await page.goto("/");
+  await page.getByRole("button", { name: "依受傷部位", exact: true }).click();
   const nav = page.getByRole("navigation", { name: "依受傷部位看影片" });
   const anatomicalLinks = await nav
     .locator('a[href^="/body-parts/"]')

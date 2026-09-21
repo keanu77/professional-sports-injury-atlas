@@ -8,10 +8,10 @@ test("video collection is directly browsable before using optional search", asyn
   const expectedCount =
     process.env.ATLAS_PUBLIC_LAUNCH === "decision-21" ? 200 : 5;
   await expect(page.locator("[data-featured-card]:visible")).toHaveCount(
-    expectedCount,
+    Math.min(24, expectedCount),
   );
   await expect(page.locator('[data-atlas-stat="videos"]')).toHaveText(
-    String(await page.locator("[data-featured-card]:visible").count()),
+    String(await page.locator("[data-featured-card]").count()),
   );
   await expect(
     page.getByRole("searchbox", { name: "搜尋球員或關鍵字" }),
@@ -27,7 +27,7 @@ test("video collection is directly browsable before using optional search", asyn
     await expect(page.getByRole("combobox")).toHaveCount(0);
   }
   await expectNoAxeViolations(page);
-  await page.locator("[data-featured-card] a").first().click();
+  await page.locator("[data-featured-card]:visible a").first().click();
   await expect(page.locator("[data-video-load]")).toBeVisible();
 });
 

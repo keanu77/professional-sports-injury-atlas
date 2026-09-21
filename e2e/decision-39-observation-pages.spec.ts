@@ -38,7 +38,7 @@ test("all 193 observation pages expose general guidance, text highlights, relate
     expect(html, slug).toContain("data-video-text-highlights");
     expect(html, slug).toContain("data-general-guidance");
     expect(html, slug).toContain("一般人參考：當下怎麼做");
-    expect(html, slug).toContain("關鍵片段");
+    expect(html, slug).toContain("預設播放起點");
     expect(html, slug).toContain("字幕狀態");
     expect(html, slug).toContain("不是完整逐字稿");
     expect(html, slug).toContain("data-related-observations");
@@ -119,10 +119,10 @@ test("news, aftermath, and injury footage have consistent card and detail labels
   ];
   for (const example of examples) {
     for (const path of ["/", `/sports/${example.category}/`]) {
-      await page.goto(path);
+      await page.goto(path === "/" ? `/?q=${example.slug}` : path);
       const card = page.locator(`[data-observation-card="${example.slug}"]`);
       await expect(card.locator("[data-observation-footage-kind]")).toHaveText(
-        `${example.label} →`,
+        example.label,
       );
       await expect(
         card.locator("[data-observation-footage-kind]"),
@@ -174,7 +174,9 @@ test("sharing metadata, favicons, and home heading hierarchy are complete", asyn
   expect(
     await page.locator("#video-list-heading").evaluate((node) => node.tagName),
   ).toBe("H2");
-  await expect(page.locator(".observation-card h3").first()).toBeVisible();
+  await expect(
+    page.locator(".observation-card:visible h3").first(),
+  ).toBeVisible();
   await expect(
     page.getByRole("link", { name: "直接看全部影片" }),
   ).toHaveAttribute("href", "#videos-heading");
