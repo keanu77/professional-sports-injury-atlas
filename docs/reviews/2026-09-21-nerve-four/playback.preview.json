@@ -1,0 +1,56 @@
+[
+  {
+    "url": "https://www.youtube.com/watch?v=Cuw96lZ9aYI",
+    "path": "/videos/ryan-crouser-2024-ulnar-nerve/",
+    "origin": "https://3e4bd441.sports-injury-atlas.pages.dev",
+    "startSeconds": 0,
+    "checkedAt": "2026-09-21T03:53:34.179Z",
+    "status": "played",
+    "before": {
+      "paused": false,
+      "readyState": 4,
+      "time": 39.06308
+    },
+    "after": {
+      "paused": false,
+      "readyState": 4,
+      "time": 58.543546
+    }
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=wgZZoWIR7rQ",
+    "path": "/videos/rob-horne-2018-brachial-plexus/",
+    "origin": "https://3e4bd441.sports-injury-atlas.pages.dev",
+    "startSeconds": 0,
+    "checkedAt": "2026-09-21T03:54:48.799Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "paused": false,
+      "readyState": 4,
+      "time": 29.816252
+    }
+  },
+  {
+    "url": "https://www.mlb.com/redsox/video/zack-kelly-leaves-with-injury",
+    "path": "/videos/zack-kelly-2023-ulnar-nerve/",
+    "origin": "https://3e4bd441.sports-injury-atlas.pages.dev",
+    "startSeconds": 0,
+    "checkedAt": "2026-09-21T04:03:37.095Z",
+    "status": "played",
+    "before": {
+      "paused": false,
+      "readyState": 4,
+      "time": 4.057061
+    },
+    "after": {
+      "paused": false,
+      "readyState": 4,
+      "time": 39.054405
+    }
+  }
+]

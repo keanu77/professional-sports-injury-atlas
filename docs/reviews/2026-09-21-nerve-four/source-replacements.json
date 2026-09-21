@@ -1,0 +1,28 @@
+[
+  {
+    "slug": "jaylon-smith-2016-peroneal-nerve",
+    "previousVideo": "https://www.youtube.com/watch?v=O5keKcfVyZM",
+    "observedFailure": "Owned HTTPS fresh page and retry loaded iframe API scripts but player failed and removed iframe; original YouTube watch page played. No specific provider error code captured.",
+    "replacement": "https://www.youtube.com/watch?v=GCWl3Qk3fEQ",
+    "publisher": "WFAA",
+    "title": "Cowboys Jaylon Smith overcomes injury that almost ended his career",
+    "durationSeconds": 237,
+    "startSeconds": 60,
+    "footageKind": "news-analysis",
+    "checkedAt": "2026-09-21T04:01:56.954Z",
+    "originalSourceMedia": {
+      "time": 79.681853,
+      "paused": false,
+      "readyState": 4
+    },
+    "notes": "WFAA original report names January1 2016 injury, ACL/MCL and nerve damage at1:11–1:16; footage around1:19 is aftermath and rehab crossfade. Named peroneal diagnosis retained from Cowboys. Owned HTTPS replacement playback pending.",
+    "previousThumbnail": {
+      "videoId": "O5keKcfVyZM",
+      "path": "src/assets/videos/O5keKcfVyZM.jpg",
+      "source": "https://i.ytimg.com/vi/O5keKcfVyZM/hqdefault.jpg",
+      "sha256": "ab9d4eb0034553e8aadc756c8cf7ab1abaf295e9cb9baebd509349fd7f62aa8d",
+      "capturedAt": "2026-09-20T15:40:30Z",
+      "archivedPath": "docs/reviews/2026-09-21-nerve-four/jaylon-previous-thumbnail.jpg"
+    }
+  }
+]

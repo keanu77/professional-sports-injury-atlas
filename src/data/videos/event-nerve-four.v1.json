@@ -5,7 +5,7 @@
   "entries": [
     {
       "slug": "jaylon-smith-2016-peroneal-nerve",
-      "videoUrl": "https://www.youtube.com/watch?v=O5keKcfVyZM",
+      "videoUrl": "https://www.youtube.com/watch?v=GCWl3Qk3fEQ",
       "eventDate": "2016-01-01",
       "returnDate": "2017-09-10",
       "injury": "球隊公開報導：左膝韌帶傷合併腓神經損傷（peroneal nerve injury）。",
@@ -18,7 +18,7 @@
           "sourceIndexes": [1]
         },
         "steps": [
-          "先辨識紀錄片中的比賽回放與後續訪談。",
+          "先辨識新聞專題中的傷後畫面、復健紀錄與本人訪談。",
           "再將事件畫面與球隊公開的神經傷勢紀錄對照。"
         ],
         "explanation": {
@@ -57,6 +57,11 @@
           "title": "Dallas Cowboys：Jaylon Smith 完成 NFL 初登場",
           "url": "https://www.dallascowboys.com/news/jaylon-smith-worked-21-months-for-his-nfl-debut-and-i-m-back-he-says-439921",
           "publishedAt": "2017-09-10"
+        },
+        {
+          "title": "WFAA：Jaylon Smith 傷後復健原創專題",
+          "url": "https://www.youtube.com/watch?v=GCWl3Qk3fEQ",
+          "publishedAt": "2019-01-03"
         }
       ]
     },

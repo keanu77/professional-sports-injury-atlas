@@ -18,6 +18,21 @@ import {
 } from "../../src/lib/videos/observation-guidance";
 
 describe("four named nerve cases", () => {
+  it("binds Jaylon's playable original report and rejects the unavailable embed", () => {
+    const clip = nerveFour.clips.find((c) => c.name === "Jaylon Smith")!;
+    expect(clip.videoId).toBe("GCWl3Qk3fEQ");
+    expect(clip.publisher).toBe("WFAA");
+    expect(clip.footageKind).toBe("news-analysis");
+    expect(clip.startSeconds).toBe(60);
+    expect(clip.durationSeconds).toBe(237);
+    expect(
+      eventUpdateFor(clip.slug, clip.videoUrl, clip.eventDate),
+    ).toBeDefined();
+    const obsolete = structuredClone(nerveFour);
+    obsolete.clips[0]!.videoId = "O5keKcfVyZM";
+    obsolete.clips[0]!.videoUrl = "https://www.youtube.com/watch?v=O5keKcfVyZM";
+    expect(nerveFourSchema.safeParse(obsolete).success).toBe(false);
+  });
   it("admits exactly the selected four, preserving the previous catalog", () => {
     expect(nerveFour.clips.map((c) => c.slug)).toEqual([
       "jaylon-smith-2016-peroneal-nerve",

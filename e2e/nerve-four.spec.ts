@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 import { expectNoAxeViolations } from "./helpers/a11y";
 
 const cases = [
-  ["jaylon-smith-2016-peroneal-nerve", "Jaylon Smith", "injury-motion"],
+  ["jaylon-smith-2016-peroneal-nerve", "Jaylon Smith", "news-analysis"],
   ["zack-kelly-2023-ulnar-nerve", "Zack Kelly", "injury-motion"],
   ["ryan-crouser-2024-ulnar-nerve", "Ryan Crouser", "athlete-interview"],
   ["rob-horne-2018-brachial-plexus", "Rob Horne", "athlete-interview"],

@@ -506,7 +506,7 @@ export const ribFractureThree = ribFractureThreeSchema.parse(ribFractureData);
 const nerveSelections = new Map([
   [
     "jaylon-smith-2016-peroneal-nerve",
-    { id: "O5keKcfVyZM", category: "peripheral-nerve", provider: "youtube" },
+    { id: "GCWl3Qk3fEQ", category: "peripheral-nerve", provider: "youtube" },
   ],
   [
     "zack-kelly-2023-ulnar-nerve",
