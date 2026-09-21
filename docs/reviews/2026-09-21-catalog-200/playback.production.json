@@ -1,0 +1,42 @@
+[
+  {
+    "url": "https://www.youtube.com/watch?v=lqlkP27TXvA",
+    "path": "/videos/nathan-florence-2023-t12-fracture/",
+    "origin": "https://injury.sportsmedicine.tw",
+    "startSeconds": 450,
+    "checkedAt": "2026-09-21T06:10:41.444Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 470.191211,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 939.501,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/lqlkP27TXvA?enablejsapi=1&origin=https%3A%2F%2Finjury.sportsmedicine.tw&start=450"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=ZQL-1NY5erY",
+    "path": "/videos/emma-raducanu-2022-2023-wrists/",
+    "origin": "https://injury.sportsmedicine.tw",
+    "startSeconds": 25,
+    "checkedAt": "2026-09-21T06:10:41.494Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "time": 45.233199,
+      "paused": false,
+      "readyState": 4
+    },
+    "playerDurationSeconds": 88.041,
+    "iframeSrc": "https://www.youtube-nocookie.com/embed/ZQL-1NY5erY?enablejsapi=1&origin=https%3A%2F%2Finjury.sportsmedicine.tw&start=25"
+  }
+]

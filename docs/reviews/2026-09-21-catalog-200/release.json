@@ -1,0 +1,83 @@
+{
+  "status": "production-verified",
+  "checkedAt": "2026-09-21T06:17:15.081Z",
+  "sourceCommit": "fa76f7df1e9de7c46cecae086595b8ca5856851f",
+  "repository": "keanu77/professional-sports-injury-atlas",
+  "branch": "main",
+  "sourcePushVerified": true,
+  "authorizationQuote": "我想請你先繼續完成到200例擴充",
+  "deployment": {
+    "project": "sports-injury-atlas",
+    "url": "https://dbc83b48.sports-injury-atlas.pages.dev",
+    "origin": "https://injury.sportsmedicine.tw"
+  },
+  "inputTreeDigest": "d611a90ed5d7482d63add89e210b67bf52b663f637c6de45d58333ff1021d666",
+  "counts": {
+    "productionBefore": 154,
+    "previouslyPendingNerveCases": 4,
+    "newBatch": 42,
+    "productionAfter": 200,
+    "coreCases": 7,
+    "observations": 193,
+    "sports": 30,
+    "anatomicalGroups": 14
+  },
+  "verification": {
+    "publicReleaseGate": "passed",
+    "unitFiles": 103,
+    "unitTestsPassed": 1533,
+    "astroErrors": 0,
+    "astroWarnings": 0,
+    "existingAstroHints": 16,
+    "contentCheck": "passed",
+    "planBindings": 36,
+    "scopedFormatCheck": "passed",
+    "e2ePassed": 156,
+    "e2eSkippedReviewOnly": 2,
+    "e2eProjects": ["Desktop Chrome", "Pixel 7"],
+    "artifactFilesMatchTestedSnapshot": 608,
+    "fileListDigest": "caea3b06e0121a289fb34bc4f77e6bf199fd6f61b008a6696d7b972fbeee5d5d",
+    "liveHtmlMatched": 265,
+    "internalLinksValidated": 6669,
+    "actualHomepageEventPaths": 200,
+    "homepagePreactivationIframes": 0,
+    "originalSourceVideosReviewed": 42,
+    "newBatchOwnedHttpsPlayback": 42,
+    "pendingNerveOwnedHttpsPlayback": 4,
+    "productionPlaybackSamples": 2,
+    "homeSearch": {
+      "Rafael Nadal": [
+        "rafael-nadal-2022-abdominal",
+        "rafael-nadal-2022-rib-stress-fracture",
+        "rafael-nadal-2016-wrist"
+      ],
+      "Nathan Florence": ["nathan-florence-2023-t12-fracture"]
+    },
+    "popularApi": "GET succeeded with non-degraded JSON items",
+    "previous158EventRecordsPreserved": true,
+    "originalClinicalApprovalsPreserved": true,
+    "newDependencies": false,
+    "newEnvironmentVariables": false,
+    "newMigrations": false
+  },
+  "resolvedIssues": [
+    "The public artifact gate caught 35 absent mechanism sections. Added sourced mechanisms and required mechanism/timeline fields for this batch without weakening the gate.",
+    "Added Node 24 JSON import attribute to the E2E spec. Six standalone no-JavaScript tests initially used the wrong temporary port; all six passed after correcting the temporary configuration.",
+    "Initial GitHub push failed with HTTP 400. Retried using command-scoped HTTP/1.1 and a 64 MiB post buffer; main was independently confirmed at the release source commit. No persistent Git configuration changed."
+  ],
+  "limitations": [
+    "The 200 count represents distinct injury-event pages, including public-report observations; it is not a claim of 200 independently confirmed clinical diagnoses.",
+    "All 42 new clips played on the byte-identical owned HTTPS candidate; two were additionally sampled on the production custom domain. Playback reflects the check time and environment.",
+    "Original historical approval/research snapshots were preserved. No new clinical sign-off or video-rights authorization is implied.",
+    "Format validation covered changed files; the pre-existing repository-wide historical formatting backlog was not rewritten."
+  ],
+  "proofs": [
+    "final-validation.json",
+    "live.json",
+    "playback.preview.json",
+    "playback.production.json",
+    "original-video-review.json",
+    "../2026-09-21-nerve-four/playback.preview.json"
+  ],
+  "note": "Subsequent documentation-only commits do not change rendering inputs and require no redeployment."
+}

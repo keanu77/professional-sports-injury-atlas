@@ -37,5 +37,11 @@
     "origin": "https://9df84ef0.sports-injury-atlas.pages.dev",
     "method": "Actual native video before/after currentTime, paused, readyState and duration through the selected Edge browser; all exact URL/path/start bindings checked."
   },
-  "productionDeployed": false
+  "productionDeployed": true,
+  "productionVerification": {
+    "record": "release.json",
+    "htmlMatched": 265,
+    "uniqueEvents": 200,
+    "playbackSamples": 2
+  }
 }

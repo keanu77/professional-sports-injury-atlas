@@ -1,5 +1,7 @@
 # Professional Sports Injury Atlas
 
+目前公開站：https://injury.sportsmedicine.tw/ 。2026-09-21 已完成 200 個不同傷害事件（7 核心＋193 觀察頁）、30 種運動、14 個部位；發布與驗證紀錄見 [200 例 release.json](docs/reviews/2026-09-21-catalog-200/release.json)。下方初始 bootstrap／review-only 說明保留為歷史，不代表目前尚未取得公開發布授權。
+
 獨立的職業運動傷害影片圖鑑（injury-first、NBA 內容先行、多運動可擴充）。本 repository 由
 2026-08-06 G0 bootstrap decision 授權建立，目前僅包含平台底座：strict 資料契約、逐案例
 digest、fail-closed 發布治理、review-only build 與虛構測試 fixtures。

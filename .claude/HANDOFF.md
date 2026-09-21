@@ -1,16 +1,17 @@
-# HANDOFF - 2026-09-21 13:26（Asia/Tokyo）
+# HANDOFF - 2026-09-21 15:12（Asia/Tokyo）
 
-## 目前進行中：擴充到 200 個不同傷害事件
+## 當前任務已完成：200 例已正式上線
 
-- 使用者在 VS Code 異常關閉後要求恢復進度，並明確指示「先繼續完成到200例擴充」。任務尚未完成，不能依下方歷史交接停止工作。
-- 分支仍為 `feat/aaron-judge-rib`，目前程式碼 checkpoint `ef27942`。本機 158 例；本次尚未推送或部署 production，正式站最後核對為 154 例。
-- 已完整觀看並記錄 42 個新增原片；研究紀錄在 `docs/reviews/2026-09-21-catalog-200/original-video-review.json`。目標合計 7 核心 +193 觀察頁 =200，不按多部位重複計數。
-- 四個既有神經案例的 owned HTTPS 實播全部完成，真實 before/after 紀錄在 `docs/reviews/2026-09-21-nerve-four/playback.preview.json`。Jaylon 原 NFL 影片嵌入失敗，已經雙重審查改成 WFAA `GCWl3Qk3fEQ`，實際播至 63.97 秒。其餘三例未改影片。
-- 更新後公開候選：`https://eab7e03c.sports-injury-atlas.pages.dev`；隔離成品 `/private/tmp/atlas-public-candidate-ef27942/dist`，509 檔、208 HTML、158 例。這是預覽候選，不是 production 發布。
-- 當前程式檢查：1,524 單元測試、content、36 個 plan checks 全通過；Astro 0 errors／0 warnings／16 既有 hints；更新後神經案例 E2E 桌機／Pixel 7 共 14/14 通過。此數字是 158 例替換版本，不能當作尚未匯入的 200 例驗證。
-- 單批 42 例選取資料與執行計畫正從 `/private/tmp/atlas-catalog-selected42.json`、`/private/tmp/atlas-catalog-integration-plan.md` 移回研究資料夾；以工作樹與最新 Git 記錄確認落盤狀態。42 官方縮圖及精確雜湊已在 `/private/tmp/atlas-catalog200-thumbnails/` 備齊。
-- 下一步：checkpoint 研究資料與四例播放證據 → 按 integration-plan test-first 匯入 42 例 → 獨立 SPEC / QUALITY review → 完整驗證與 public200 preview → 42 例本站真實播放 → 原有 release gates → 發布及 production 驗證。維持所有來源、核准、七日播放與乾淨工作樹門檻。
-- 沿用下方 Node 24 路徑；暫存路徑下次必須先確認存在。不得以 HTTP 200／oEmbed 成功替代實際播放，不得上傳 review-mode dist。
+- 使用者要求「先繼續完成到200例擴充」已完成。正式站 https://injury.sportsmedicine.tw/ 為 200 個不同傷害事件：7 核心＋193 觀察頁、30 種運動、14 個部位；相較原正式站 154 例，新增 4 個先前待發布神經案例及本批 42 例。
+- 分支仍 `feat/aaron-judge-rib`。正式程式提交 `fa76f7df1e9de7c46cecae086595b8ca5856851f` 已推送並經 GitHub main 核對；部署 https://dbc83b48.sports-injury-atlas.pages.dev 。此後收尾提交僅文件／證據，不影響網站輸入。
+- 全部 42 新原片已觀看；42／42 在 HTTPS 預覽實播，4／4 神經案例實播完成。正式域名另抽查 Nathan Florence 與 Emma Raducanu，均實際播放成功。預覽與最終發布的 608 檔完全一致，265／265 正式 HTML 雜湊相符，首頁實際 200 個唯一事件且無預載 iframe。
+- 1,533 單元測試、156 桌機 Chrome／Pixel 7 E2E 通過（2 項 review-only 略過）；Astro 0 errors／0 warnings／16 既有 hints；content、36 份 plan binding、變更檔格式、原有 release:public 全通過。六項 no-JavaScript 測試的暫存 port 問題已修正後全過，沒有放寬 assertions。
+- 新批次 42 例都具來源、機轉、時間軸；35 個初期缺少的機轉已按既有已查核文字補齊，schema 現拒絕新批次缺機轉／時間軸。原 158 例、7 核心臨床核准、既有王建民保留。未知片型使用中性標籤，訪談不冒充受傷瞬間。
+- 初次 Git push HTTP 400 已解決：僅該次命令設定 HTTP/1.1 與 64 MiB buffer 成功，未改永久 Git 設定。正式熱門 API 正常，無新依賴、環境變數或 migration。
+- 證據目錄 `docs/reviews/2026-09-21-catalog-200/`：`release.json`、`live.json`、`final-validation.json`、`playback.preview.json`、`playback.production.json`、`original-video-review.json`。
+- 本次本機預覽 14338 已停止，瀏覽器保留正式首頁。影片外部限制可能隨時間改變；本次 200 例是事件頁計數，不是 200 個完整臨床確診病例。未為此重簽醫療或影片權利核准。
+- Node 24.14.0：`/private/tmp/atlas-judge-node.3pGBJs/node-v24.14.0-darwin-arm64/bin/node`；暫存路徑下次先確認存在。既有全庫歷史格式問題未批次重排。
+- 沒有剩餘 200 例工作，無須重新研究、換片、部署或重跑全部檢查。若使用者反映找不到，先確認搜尋字及「全部／精選／熱門」範圍。
 
 ## 以下是 2026-09-19 已完成的 Judge 任務歷史，並非當前進度
 
