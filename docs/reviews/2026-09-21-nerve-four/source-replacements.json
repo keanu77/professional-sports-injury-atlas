@@ -15,7 +15,7 @@
       "paused": false,
       "readyState": 4
     },
-    "notes": "WFAA original report names January1 2016 injury, ACL/MCL and nerve damage at1:11–1:16; footage around1:19 is aftermath and rehab crossfade. Named peroneal diagnosis retained from Cowboys. Owned HTTPS replacement playback pending.",
+    "notes": "WFAA original report names January1 2016 injury, ACL/MCL and nerve damage at1:11–1:16; footage around1:19 is aftermath and rehab crossfade. Named peroneal diagnosis retained from Cowboys. Owned HTTPS replacement playback completed; see playback.preview.json for exact browser-observed states.",
     "previousThumbnail": {
       "videoId": "O5keKcfVyZM",
       "path": "src/assets/videos/O5keKcfVyZM.jpg",
@@ -23,6 +23,7 @@
       "sha256": "ab9d4eb0034553e8aadc756c8cf7ab1abaf295e9cb9baebd509349fd7f62aa8d",
       "capturedAt": "2026-09-20T15:40:30Z",
       "archivedPath": "docs/reviews/2026-09-21-nerve-four/jaylon-previous-thumbnail.jpg"
-    }
+    },
+    "ownedPlaybackEvidence": "docs/reviews/2026-09-21-nerve-four/playback.preview.json"
   }
 ]

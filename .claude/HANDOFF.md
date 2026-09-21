@@ -1,4 +1,18 @@
-# HANDOFF - 2026-09-19 07:14（Asia/Tokyo）
+# HANDOFF - 2026-09-21 13:26（Asia/Tokyo）
+
+## 目前進行中：擴充到 200 個不同傷害事件
+
+- 使用者在 VS Code 異常關閉後要求恢復進度，並明確指示「先繼續完成到200例擴充」。任務尚未完成，不能依下方歷史交接停止工作。
+- 分支仍為 `feat/aaron-judge-rib`，目前程式碼 checkpoint `ef27942`。本機 158 例；本次尚未推送或部署 production，正式站最後核對為 154 例。
+- 已完整觀看並記錄 42 個新增原片；研究紀錄在 `docs/reviews/2026-09-21-catalog-200/original-video-review.json`。目標合計 7 核心 +193 觀察頁 =200，不按多部位重複計數。
+- 四個既有神經案例的 owned HTTPS 實播全部完成，真實 before/after 紀錄在 `docs/reviews/2026-09-21-nerve-four/playback.preview.json`。Jaylon 原 NFL 影片嵌入失敗，已經雙重審查改成 WFAA `GCWl3Qk3fEQ`，實際播至 63.97 秒。其餘三例未改影片。
+- 更新後公開候選：`https://eab7e03c.sports-injury-atlas.pages.dev`；隔離成品 `/private/tmp/atlas-public-candidate-ef27942/dist`，509 檔、208 HTML、158 例。這是預覽候選，不是 production 發布。
+- 當前程式檢查：1,524 單元測試、content、36 個 plan checks 全通過；Astro 0 errors／0 warnings／16 既有 hints；更新後神經案例 E2E 桌機／Pixel 7 共 14/14 通過。此數字是 158 例替換版本，不能當作尚未匯入的 200 例驗證。
+- 單批 42 例選取資料與執行計畫正從 `/private/tmp/atlas-catalog-selected42.json`、`/private/tmp/atlas-catalog-integration-plan.md` 移回研究資料夾；以工作樹與最新 Git 記錄確認落盤狀態。42 官方縮圖及精確雜湊已在 `/private/tmp/atlas-catalog200-thumbnails/` 備齊。
+- 下一步：checkpoint 研究資料與四例播放證據 → 按 integration-plan test-first 匯入 42 例 → 獨立 SPEC / QUALITY review → 完整驗證與 public200 preview → 42 例本站真實播放 → 原有 release gates → 發布及 production 驗證。維持所有來源、核准、七日播放與乾淨工作樹門檻。
+- 沿用下方 Node 24 路徑；暫存路徑下次必須先確認存在。不得以 HTTP 200／oEmbed 成功替代實際播放，不得上傳 review-mode dist。
+
+## 以下是 2026-09-19 已完成的 Judge 任務歷史，並非當前進度
 
 ## 進度
 

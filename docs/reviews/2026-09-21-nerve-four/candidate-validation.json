@@ -1,0 +1,33 @@
+{
+  "status": "public-preview-candidate-only",
+  "sourceCommit": "ef2794232006d8e75b06daae6965926353b72419",
+  "inputTreeDigest": "c80dddd05ee82f7028ce585e95d5578a7a2950f894434fe7e0146570c7238b49",
+  "htmlPages": 208,
+  "coreCases": 7,
+  "observations": 151,
+  "catalogTotal": 158,
+  "internalLinks": 4841,
+  "filesVerified": 509,
+  "releaseGatePassed": false,
+  "replacementOwnedPlaybackVerified": false,
+  "checkedAt": "2026-09-21T04:25:48.407Z",
+  "unit": {
+    "filesPassed": 102,
+    "testsPassed": 1524
+  },
+  "content": "passed",
+  "plan": {
+    "passed": true,
+    "boundDocuments": 36
+  },
+  "astro": "root fresh check reused:0 errors0 warnings16existinghints",
+  "e2e": {
+    "passed": 14,
+    "skipped": 0,
+    "projects": ["Desktop Chrome", "Pixel7"],
+    "config": "/private/tmp/atlas-public-candidate-ef27942/e2e.config.mjs",
+    "localOrigin": "http://127.0.0.1:14328",
+    "note": "local regression; MLB fixture is not remote playback"
+  },
+  "priorWorkspaceDistAndReceiptRestored": true
+}

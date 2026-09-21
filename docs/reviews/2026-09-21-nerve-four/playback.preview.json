@@ -52,5 +52,23 @@
       "readyState": 4,
       "time": 39.054405
     }
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=GCWl3Qk3fEQ",
+    "path": "/videos/jaylon-smith-2016-peroneal-nerve/",
+    "origin": "https://eab7e03c.sports-injury-atlas.pages.dev",
+    "startSeconds": 60,
+    "checkedAt": "2026-09-21T04:24:08.573Z",
+    "status": "played",
+    "before": {
+      "paused": true,
+      "readyState": 0,
+      "time": 0
+    },
+    "after": {
+      "paused": false,
+      "readyState": 4,
+      "time": 63.97083
+    }
   }
 ]
