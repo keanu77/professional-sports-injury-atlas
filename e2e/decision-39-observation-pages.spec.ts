@@ -177,9 +177,10 @@ test("sharing metadata, favicons, and home heading hierarchy are complete", asyn
   await expect(
     page.locator(".observation-card:visible h3").first(),
   ).toBeVisible();
-  await expect(
-    page.getByRole("link", { name: "直接看全部影片" }),
-  ).toHaveAttribute("href", "#videos-heading");
+  await expect(page.getByRole("link", { name: "開始找影片" })).toHaveAttribute(
+    "href",
+    "#videos-heading",
+  );
 
   const svg = await request.get("/favicon.svg");
   expect(svg.status()).toBe(200);

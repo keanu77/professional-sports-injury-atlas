@@ -14,3 +14,6 @@ research/.source-batch-tmp/
 research/.source-batch-registry.lock
 
 artifacts/public-launch-receipt.v1.json
+
+# Local image candidates and design comparisons; chosen assets live in src/assets.
+/output/

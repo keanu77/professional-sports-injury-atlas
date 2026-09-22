@@ -1,4 +1,6 @@
 ---
+import { Picture } from "astro:assets";
+import heroImage from "../assets/hero/a-v2-fluid-burst.png";
 import VideoDiscovery from "../components/atlas/VideoDiscovery.astro";
 import FollowLinks from "../components/layout/FollowLinks.astro";
 import SituationNav from "../components/atlas/SituationNav.astro";
@@ -38,41 +40,73 @@ const videoCount = featured.length + clips.length;
   artifactDigest={computeRenderedSetDigest(permitted)}
 >
   <header class="video-intro">
-    <div class="home-intro-topline">
-      <nav class="content-trail" aria-label="麵包屑">
-        <a href="https://sportsmedicine.tw/content/">分享資訊</a>
-        <span aria-hidden="true">/</span>
-        <span aria-current="page">影片圖鑑</span>
-      </nav>
-      <FollowLinks placement="home" />
+    <div class="video-intro-inner">
+      <div class="home-intro-topline">
+        <nav class="content-trail" aria-label="麵包屑">
+          <a href="https://sportsmedicine.tw/content/">分享資訊</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">影片圖鑑</span>
+        </nav>
+        <FollowLinks placement="home" />
+      </div>
+      <div class="home-hero-stage">
+        <div class="home-hero-art" aria-hidden="true">
+          <Picture
+            src={heroImage}
+            formats={["avif"]}
+            fallbackFormat="webp"
+            widths={[480, 640, 960, 1280, 1672]}
+            sizes="(max-width: 40rem) 80vw, (min-width: 77rem) 48rem, 58vw"
+            quality={72}
+            alt=""
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+            class="home-hero-image"
+            pictureAttributes={{ class: "home-hero-picture" }}
+          />
+        </div>
+        <div class="home-hero-copy">
+          <p class="home-hero-eyebrow">看懂受傷，了解回場</p>
+          <h1>運動傷害影片圖鑑</h1>
+          <p class="home-hero-intro">
+            從真實賽事、訪談與解說，認識運動傷害與選手回場歷程。
+          </p>
+          <dl class="atlas-stats" aria-label="目前收錄內容">
+            <div>
+              <dt>受傷部位</dt>
+              <dd>
+                <strong data-atlas-stat="body-parts">{bodyParts.length}</strong
+                ><span>個</span>
+              </dd>
+            </div>
+            <div>
+              <dt>收錄影片</dt>
+              <dd>
+                <strong data-atlas-stat="videos">{videoCount}</strong><span
+                  >支</span
+                >
+              </dd>
+            </div>
+            <div>
+              <dt>運動項目</dt>
+              <dd>
+                <strong data-atlas-stat="sports">{sports.length}</strong><span
+                  >種</span
+                >
+              </dd>
+            </div>
+          </dl>
+          <div class="home-hero-actions">
+            <a class="home-video-cta" href="#videos-heading">開始找影片</a>
+            <a class="home-video-secondary" href="/video-types/injury-moment/"
+              >看受傷瞬間 <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+        <small class="home-hero-caption">AI 合成情境圖 · 非實際賽事畫面</small>
+      </div>
     </div>
-    <h1>運動傷害影片圖鑑</h1>
-    <p>從真實賽事、訪談與解說，認識運動傷害與選手回場歷程。</p>
-    <dl class="atlas-stats" aria-label="目前收錄內容">
-      <div>
-        <dt>受傷部位</dt>
-        <dd>
-          <strong data-atlas-stat="body-parts">{bodyParts.length}</strong><span
-            >個</span
-          >
-        </dd>
-      </div>
-      <div>
-        <dt>受傷影片</dt>
-        <dd>
-          <strong data-atlas-stat="videos">{videoCount}</strong><span>支</span>
-        </dd>
-      </div>
-      <div>
-        <dt>運動項目</dt>
-        <dd>
-          <strong data-atlas-stat="sports">{sports.length}</strong><span
-            >種</span
-          >
-        </dd>
-      </div>
-    </dl>
-    <a class="home-video-cta" href="#videos-heading">直接看全部影片</a>
   </header>
   <VideoDiscovery featured={featured} clips={clips}>
     {
@@ -166,13 +200,24 @@ const videoCount = featured.length + clips.length;
     display: inline-flex;
     align-items: center;
     min-height: 44px;
-    margin-block-start: 1.5rem;
     padding: 0.65rem 1rem;
     border-radius: 999px;
     background: var(--color-brand-primary);
     color: var(--color-on-brand);
     font-weight: 600;
     text-decoration: none;
+  }
+  .home-video-secondary {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--color-brand-primary);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .home-video-secondary span {
+    margin-inline-start: 0.35rem;
   }
   .home-categories {
     margin-block: 1.25rem;
@@ -201,13 +246,19 @@ const videoCount = featured.length + clips.length;
     color: var(--color-on-brand);
   }
   .video-intro {
+    color-scheme: dark;
     margin: -1.5rem calc(50% - 50vw) 1.5rem;
-    padding: 1.5rem max(1.5rem, calc((100vw - 77rem) / 2));
     background: linear-gradient(
       135deg,
       var(--color-brand-50),
       var(--color-surface)
     );
+    overflow: hidden;
+  }
+  .video-intro-inner {
+    max-width: 77rem;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
   }
   .home-intro-topline {
     display: flex;
@@ -215,6 +266,7 @@ const videoCount = featured.length + clips.length;
     align-items: center;
     justify-content: space-between;
     gap: 1rem 1.5rem;
+    min-height: 4.5rem;
   }
   @media (max-width: 40rem) {
     .home-intro-topline {
@@ -236,23 +288,79 @@ const videoCount = featured.length + clips.length;
   .content-trail [aria-current] {
     color: var(--color-brand-primary);
   }
+  .home-hero-stage {
+    position: relative;
+    min-height: 20.5rem;
+    isolation: isolate;
+  }
+  .home-hero-art {
+    position: absolute;
+    z-index: -2;
+    inset: 0 0 0 34%;
+  }
+  .home-hero-art::after {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        90deg,
+        var(--color-brand-50) 0%,
+        color-mix(in srgb, var(--color-brand-50) 86%, transparent) 17%,
+        transparent 48%
+      ),
+      linear-gradient(
+        0deg,
+        var(--color-brand-50),
+        transparent 18%,
+        transparent 88%,
+        var(--color-brand-50)
+      );
+    content: "";
+    pointer-events: none;
+  }
+  .home-hero-art :global(.home-hero-picture) {
+    position: absolute;
+    inset: 0;
+    display: block;
+  }
+  .home-hero-art :global(.home-hero-image) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: right center;
+  }
+  .home-hero-copy {
+    position: relative;
+    z-index: 1;
+    width: min(52%, 38rem);
+    padding-block: 1.2rem 2rem;
+  }
+  .home-hero-eyebrow {
+    margin: 0 0 0.35rem;
+    color: var(--color-brand-primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
   h1 {
     font: 700 clamp(2.25rem, 4vw, 3rem)/1.3 var(--font-display);
-    margin: 1rem 0;
+    margin: 0 0 0.7rem;
     letter-spacing: -0.025em;
   }
-  .video-intro > p {
-    font-size: 1.125rem;
+  .home-hero-intro {
+    font-size: 1.0625rem;
+    line-height: 1.7;
     color: var(--color-ink-muted);
     margin: 0;
-    max-width: 42rem;
+    max-width: 31rem;
   }
   .atlas-stats {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
     max-width: 32rem;
-    margin: 1rem 0 0;
+    margin: 1rem 0;
   }
   .atlas-stats > div {
     border-block-start: 2px solid var(--color-brand-primary);
@@ -279,6 +387,23 @@ const videoCount = featured.length + clips.length;
     font-size: 0.875rem;
     color: var(--color-ink-muted);
   }
+  .home-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1.1rem;
+  }
+  .home-hero-caption {
+    position: absolute;
+    right: 0;
+    bottom: 0.65rem;
+    z-index: 1;
+    padding: 0.2rem 0.45rem;
+    border-radius: 0.25rem;
+    background: color-mix(in srgb, var(--color-surface) 82%, transparent);
+    color: var(--color-ink-muted);
+    font-size: 0.6875rem;
+  }
   .home-note {
     color: var(--color-ink-muted);
     font-size: 0.875rem;
@@ -294,14 +419,76 @@ const videoCount = featured.length + clips.length;
       flex: 0 0 auto;
     }
     .video-intro {
-      padding: 1.75rem 1rem;
       margin-bottom: 1.75rem;
     }
-    .video-intro > p {
-      font-size: 1rem;
+    .video-intro-inner {
+      padding-inline: 1rem;
+    }
+    .home-intro-topline {
+      min-height: auto;
+      padding-block: 0.75rem;
+    }
+    .home-hero-stage {
+      min-height: 18.25rem;
+    }
+    .home-hero-art {
+      inset: 0 -1rem auto 20%;
+      height: 11.25rem;
+      opacity: 0.72;
+    }
+    .home-hero-art::after {
+      background:
+        linear-gradient(
+          90deg,
+          var(--color-brand-50),
+          color-mix(in srgb, var(--color-brand-50) 62%, transparent) 30%,
+          transparent 85%
+        ),
+        linear-gradient(0deg, var(--color-brand-50), transparent 72%);
+    }
+    .home-hero-art :global(.home-hero-image) {
+      object-position: right top;
+    }
+    .home-hero-copy {
+      width: 100%;
+      padding-block: 0.7rem 1.8rem;
+    }
+    .home-hero-eyebrow {
+      max-width: 55%;
+      font-size: 0.6875rem;
+    }
+    h1 {
+      max-width: 70%;
+      font-size: clamp(1.75rem, 9vw, 2.25rem);
+      line-height: 1.25;
+    }
+    .home-hero-intro {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      text-shadow: 0 1px 10px var(--color-brand-50);
     }
     .atlas-stats {
-      margin-block-start: 1.25rem;
+      gap: 0.65rem;
+      margin-block: 0.85rem;
+    }
+    .atlas-stats > div {
+      padding-block-start: 0.45rem;
+    }
+    .atlas-stats dt,
+    .atlas-stats span {
+      font-size: 0.75rem;
+    }
+    .atlas-stats strong {
+      font-size: clamp(1.4rem, 7vw, 1.8rem);
+    }
+    .home-video-cta,
+    .home-video-secondary {
+      font-size: 0.8125rem;
+    }
+    .home-hero-caption {
+      right: 0;
+      bottom: 0.45rem;
+      font-size: 0.625rem;
     }
   }
 </style>

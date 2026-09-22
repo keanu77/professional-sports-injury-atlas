@@ -88,9 +88,41 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
   );
   const bodyFilter =
     root.querySelector<HTMLSelectElement>("[data-body-filter]");
-  const clearFacets = root.querySelector<HTMLButtonElement>(
-    "[data-facets-clear]",
+  const clearSport =
+    root.querySelector<HTMLButtonElement>("[data-sport-clear]");
+  const clearBody = root.querySelector<HTMLButtonElement>("[data-body-clear]");
+  const activeFilters = root.querySelector<HTMLElement>(
+    "[data-active-filters]",
   );
+  const advancedToggle = root.querySelector<HTMLButtonElement>(
+    "[data-advanced-toggle]",
+  );
+  const advancedFilters = root.querySelector<HTMLElement>(
+    "[data-advanced-filters]",
+  );
+  const advancedCount = root.querySelector<HTMLElement>(
+    "[data-advanced-count]",
+  );
+  const narrowLayout = window.matchMedia("(max-width: 47.999rem)");
+  let advancedOpen = false;
+  const syncAdvancedFilters = () => {
+    if (!advancedToggle || !advancedFilters) return;
+    const open = !narrowLayout.matches || advancedOpen;
+    const moveFromToggle =
+      !narrowLayout.matches && document.activeElement === advancedToggle;
+    advancedToggle.hidden = !narrowLayout.matches;
+    if (!open && advancedFilters.contains(document.activeElement)) {
+      advancedToggle.focus({ preventScroll: true });
+    }
+    advancedFilters.hidden = !open;
+    advancedToggle.setAttribute("aria-expanded", String(open));
+    if (moveFromToggle) sportFilter?.focus({ preventScroll: true });
+  };
+  advancedToggle?.addEventListener("click", () => {
+    advancedOpen = !advancedOpen;
+    syncAdvancedFilters();
+  });
+  narrowLayout.addEventListener("change", syncAdvancedFilters);
   const more = root.querySelector<HTMLButtonElement>("[data-discovery-more]");
   const pagination = root.querySelector<HTMLElement>(
     "[data-discovery-pagination]",
@@ -234,8 +266,38 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
       );
     if (scope) scope.textContent = `搜尋範圍：${label}`;
     if (clearSearch) clearSearch.hidden = !query;
-    if (clearType) clearType.hidden = !contentType || Boolean(fixedType);
-    if (clearFacets) clearFacets.hidden = !(sport || body);
+    const updateChip = (
+      button: HTMLButtonElement | null,
+      value: string,
+      label: string,
+    ) => {
+      if (!button) return;
+      button.hidden = !value;
+      button.textContent = `${label} ×`;
+      button.setAttribute("aria-label", `移除${label}`);
+    };
+    updateChip(clearType, fixedType ? "" : contentType, `類型：${typeLabel}`);
+    updateChip(
+      clearSport,
+      sport,
+      `運動：${sportFilter?.selectedOptions[0]?.textContent ?? ""}`,
+    );
+    updateChip(
+      clearBody,
+      body,
+      `部位：${bodyFilter?.selectedOptions[0]?.textContent ?? ""}`,
+    );
+    if (activeFilters)
+      activeFilters.hidden = !(sport || body || (contentType && !fixedType));
+    const selectedFacets = Number(Boolean(sport)) + Number(Boolean(body));
+    if (advancedCount) {
+      advancedCount.textContent = String(selectedFacets);
+      advancedCount.hidden = !selectedFacets;
+    }
+    advancedToggle?.setAttribute(
+      "aria-label",
+      selectedFacets ? `更多篩選（已選 ${selectedFacets} 項）` : "更多篩選",
+    );
     if (searchAll) searchAll.hidden = !(searching && mode !== "all");
     const unavailable = mode === "popular" && popularityState !== "ready";
     if (empty) {
@@ -401,12 +463,15 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
   };
   sportFilter?.addEventListener("change", updateFacets);
   bodyFilter?.addEventListener("change", updateFacets);
-  clearFacets?.addEventListener("click", () => {
-    if (sportFilter) sportFilter.value = "";
-    if (bodyFilter) bodyFilter.value = "";
+  const removeFacet = (select: HTMLSelectElement | null) => {
+    if (!select) return;
+    select.value = "";
     updateFacets();
-    sportFilter?.focus();
-  });
+    if (advancedFilters?.hidden) advancedToggle?.focus({ preventScroll: true });
+    else select.focus({ preventScroll: true });
+  };
+  clearSport?.addEventListener("click", () => removeFacet(sportFilter));
+  clearBody?.addEventListener("click", () => removeFacet(bodyFilter));
   more?.addEventListener("click", () => {
     const previous = new Set(cards.filter((card) => !card.hidden));
     visibleLimit += pageSize;
@@ -424,6 +489,7 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
   });
   controls.hidden = false;
   if (searchForm) searchForm.hidden = false;
+  syncAdvancedFilters();
   root.dataset.discoveryReady = "true";
   restoreLocation();
   void selectMode(mode);

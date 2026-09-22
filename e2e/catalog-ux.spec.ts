@@ -1,4 +1,12 @@
-import { expect, test } from "@playwright/test";
+import { expect, test, type Page } from "@playwright/test";
+async function openFacets(page: Page) {
+  const toggle = page.locator("[data-advanced-toggle]");
+  if (
+    (await toggle.isVisible()) &&
+    (await toggle.getAttribute("aria-expanded")) === "false"
+  )
+    await toggle.click();
+}
 const visible = "[data-discovery-slug]:visible";
 test.beforeEach(() =>
   test.skip(
@@ -66,6 +74,7 @@ test("shares full search state and restores filters across history", async ({
   await page
     .getByRole("combobox", { name: "影片類型", exact: true })
     .selectOption("expert-analysis");
+  await openFacets(page);
   await page
     .getByRole("combobox", { name: "運動項目", exact: true })
     .selectOption("american-football");
@@ -78,6 +87,7 @@ test("shares full search state and restores filters across history", async ({
   await page.reload();
   await expect(page.getByRole("searchbox")).toHaveValue("Drew Brees");
   await expect(page.locator(visible)).toHaveCount(1);
+  await openFacets(page);
   await page
     .getByRole("combobox", { name: "受傷部位", exact: true })
     .selectOption("ankle");
@@ -101,9 +111,11 @@ test("narrows a fixed type category by sport and body while keeping all static m
   await page.goto("/video-types/injury-moment/");
   await expect(page.locator("[data-discovery-slug]")).toHaveCount(135);
   await expect(page.locator(visible)).toHaveCount(24);
+  await openFacets(page);
   await page
     .getByRole("combobox", { name: "運動項目", exact: true })
     .selectOption("basketball");
+  await openFacets(page);
   await page
     .getByRole("combobox", { name: "受傷部位", exact: true })
     .selectOption("ankle");
@@ -123,9 +135,7 @@ test("narrows a fixed type category by sport and body while keeping all static m
     ),
   ).toBe(true);
   await page.reload();
-  await expect(
-    page.getByRole("combobox", { name: "受傷部位", exact: true }),
-  ).toHaveValue("ankle");
+  await expect(page.locator("[data-body-filter]")).toHaveValue("ankle");
   await expect(page.locator("iframe")).toHaveCount(0);
 });
 

@@ -34,7 +34,9 @@ test("combines an exact content type, a query, and the static type page", async 
   );
   await page.getByRole("button", { name: "清除搜尋", exact: true }).click();
   await expect(filter).toHaveValue("expert-analysis");
-  await page.getByRole("button", { name: "清除類型", exact: true }).click();
+  await page
+    .getByRole("button", { name: "移除類型：專業解說", exact: true })
+    .click();
   await expect(filter).toHaveValue("");
   await page.goto("/video-types/expert-analysis/");
   await expect(

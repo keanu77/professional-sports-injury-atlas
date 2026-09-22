@@ -89,7 +89,7 @@ test.describe("Decision 39 compact mobile discovery", () => {
   }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto("/");
-    const cta = page.getByRole("link", { name: "直接看全部影片" });
+    const cta = page.getByRole("link", { name: "開始找影片" });
     await expect(cta).toHaveAttribute("href", "#videos-heading");
     await cta.focus();
     await page.keyboard.press("Enter");

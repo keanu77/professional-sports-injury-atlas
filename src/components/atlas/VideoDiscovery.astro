@@ -61,76 +61,109 @@ const bodyBySlug = new Map(
     aria-label="搜尋運動傷害影片"
     hidden
   >
-    <label for="video-search-input">搜尋球員或關鍵字</label>
-    <div class="video-search-field">
-      <input
-        id="video-search-input"
-        data-video-search-input
-        type="search"
-        placeholder="例如：大谷、Kobe、前十字韌帶"
-        maxlength="120"
-        autocomplete="off"
-        spellcheck="false"
-        aria-describedby="video-search-help video-search-scope"
-        aria-controls="discovery-videos"
-      />
-      <button type="button" data-video-search-clear hidden>清除搜尋</button>
-    </div>
-    <p id="video-search-help">
-      可搜尋姓名、傷勢、運動或賽事；多個關鍵字以空格分開。
-    </p>
-    <div class="video-type-filter" hidden={Boolean(fixedType)}>
-      <label for="video-type-filter">影片類型</label>
-      <select
-        id="video-type-filter"
-        data-video-type-filter
-        aria-controls="discovery-videos"
+    <div class:list={["discovery-filter-grid", { "fixed-type": fixedType }]}>
+      <div class="discovery-keyword">
+        <label for="video-search-input">搜尋球員或關鍵字</label>
+        <div class="video-search-field">
+          <input
+            id="video-search-input"
+            data-video-search-input
+            type="search"
+            placeholder="例如：大谷、Kobe、前十字韌帶"
+            maxlength="120"
+            autocomplete="off"
+            spellcheck="false"
+            aria-describedby="video-search-help video-search-scope"
+            aria-controls="discovery-videos"
+          />
+          <button type="button" data-video-search-clear hidden>清除搜尋</button>
+        </div>
+      </div>
+      <div class="video-type-filter" hidden={Boolean(fixedType)}>
+        <label for="video-type-filter">影片類型</label>
+        <select
+          id="video-type-filter"
+          data-video-type-filter
+          aria-controls="discovery-videos"
+        >
+          <option value="">全部類型</option>
+          {
+            videoTypes.map((type) => (
+              <option value={type.id}>{type.label}</option>
+            ))
+          }
+        </select>
+      </div>
+      <button
+        class="discovery-advanced-toggle"
+        type="button"
+        data-advanced-toggle
+        aria-expanded="false"
+        aria-controls="discovery-advanced"
+        hidden
       >
-        <option value="">全部類型</option>
-        {
-          videoTypes.map((type) => (
-            <option value={type.id}>{type.label}</option>
-          ))
-        }
-      </select>
-      <button type="button" data-video-type-clear hidden>清除類型</button>
-    </div>
-    <div class="discovery-facets">
-      <div>
-        <label for="video-sport-filter">運動項目</label>
-        <select
-          id="video-sport-filter"
-          data-sport-filter
-          aria-controls="discovery-videos"
-        >
-          <option value="">全部運動</option>
-          {
-            sports.map((sport) => (
-              <option value={sport.code}>{sport.label}</option>
-            ))
-          }
-        </select>
+        更多篩選 <span data-advanced-count hidden aria-hidden="true"></span>
+        <span class="disclosure-chevron" aria-hidden="true">⌄</span>
+      </button>
+      <div
+        class="discovery-facets"
+        id="discovery-advanced"
+        data-advanced-filters
+      >
+        <div>
+          <label for="video-sport-filter">運動項目</label>
+          <select
+            id="video-sport-filter"
+            data-sport-filter
+            aria-controls="discovery-videos"
+          >
+            <option value="">全部運動</option>
+            {
+              sports.map((sport) => (
+                <option value={sport.code}>{sport.label}</option>
+              ))
+            }
+          </select>
+        </div>
+        <div>
+          <label for="video-body-filter">受傷部位</label>
+          <select
+            id="video-body-filter"
+            data-body-filter
+            aria-controls="discovery-videos"
+          >
+            <option value="">全部部位</option>
+            {
+              bodyParts.map((part) => (
+                <option value={part.code}>{part.label}</option>
+              ))
+            }
+          </select>
+        </div>
       </div>
-      <div>
-        <label for="video-body-filter">受傷部位</label>
-        <select
-          id="video-body-filter"
-          data-body-filter
-          aria-controls="discovery-videos"
-        >
-          <option value="">全部部位</option>
-          {
-            bodyParts.map((part) => (
-              <option value={part.code}>{part.label}</option>
-            ))
-          }
-        </select>
-      </div>
-      <button type="button" data-facets-clear hidden>清除運動與部位</button>
     </div>
-    <div class="video-search-scope">
-      <p id="video-search-scope" data-video-search-scope>搜尋範圍：全部影片</p>
-      <button type="button" data-video-search-all hidden>改查全部影片</button>
+    <div class="discovery-search-meta">
+      <p id="video-search-help">
+        可搜尋姓名、傷勢或賽事；多個關鍵字以空格分開。
+      </p>
+      <div class="video-search-scope">
+        <p id="video-search-scope" data-video-search-scope>
+          搜尋範圍：全部影片
+        </p>
+        <button type="button" data-video-search-all hidden>改查全部影片</button>
+      </div>
+    </div>
+    <div
+      class="discovery-active-filters"
+      data-active-filters
+      role="group"
+      aria-label="已選篩選條件"
+      hidden
+    >
+      <span>已選條件</span>
+      <button type="button" data-video-type-clear hidden></button>
+      <button type="button" data-sport-clear hidden></button>
+      <button type="button" data-body-clear hidden></button>
     </div>
   </form>
   <div
@@ -255,13 +288,25 @@ const bodyBySlug = new Map(
     gap: 0.75rem;
   }
   .video-search {
-    margin-block-end: 1.5rem;
-    max-width: 44rem;
+    margin-block-end: 1rem;
+  }
+  .discovery-filter-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr) minmax(0, 2fr);
+    gap: 0.875rem;
+    align-items: start;
+  }
+  .discovery-filter-grid.fixed-type {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .discovery-filter-grid > div {
+    min-width: 0;
   }
   .video-search label {
     display: block;
-    margin-block-end: 0.5rem;
+    margin-block-end: 0.4rem;
     font-weight: 600;
+    font-size: 0.875rem;
   }
   .video-search-field {
     display: flex;
@@ -295,13 +340,11 @@ const bodyBySlug = new Map(
     cursor: pointer;
   }
   .video-type-filter {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.5rem;
+    min-width: 0;
   }
   .video-type-filter select {
-    min-height: 44px;
+    width: 100%;
+    min-height: 48px;
     max-width: 100%;
     padding: 0.5rem 0.8rem;
     border: 1px solid var(--color-brand-100);
@@ -310,7 +353,7 @@ const bodyBySlug = new Map(
     color: var(--color-ink);
     font: inherit;
   }
-  .video-search :is(input, button):focus-visible {
+  .video-search :is(input, button, select):focus-visible {
     outline: 3px solid var(--color-brand-primary);
     outline-offset: 3px;
   }
@@ -324,6 +367,46 @@ const bodyBySlug = new Map(
     flex-wrap: wrap;
     align-items: center;
     gap: 0.5rem;
+  }
+  .discovery-search-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0 1rem;
+  }
+  .discovery-active-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    margin-block-start: 0.75rem;
+    font-size: 0.875rem;
+  }
+  .discovery-active-filters > span {
+    color: var(--color-ink-muted);
+  }
+  .discovery-active-filters button {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    border-radius: 999px;
+    text-align: start;
+    background: var(--color-brand-50);
+  }
+  .video-search .discovery-advanced-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    align-self: end;
+    min-height: 48px;
+    white-space: nowrap;
+    font-size: 0.875rem;
+  }
+  .disclosure-chevron {
+    display: inline-block;
+  }
+  .discovery-advanced-toggle[aria-expanded="true"] .disclosure-chevron {
+    transform: rotate(180deg);
   }
   .video-search-empty {
     padding: 1rem;
@@ -357,7 +440,7 @@ const bodyBySlug = new Map(
   .discovery-status {
     color: var(--color-ink-muted);
     font-size: 0.875rem;
-    margin-block: 0.75rem 1.25rem;
+    margin-block: 0.75rem 0.5rem;
   }
   .discovery-status:empty {
     display: none;
@@ -398,19 +481,16 @@ const bodyBySlug = new Map(
     list-style: none;
   }
   .discovery-facets {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    align-items: end;
-    margin-top: 0.75rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.875rem;
   }
   .discovery-facets > div {
-    flex: 1 1 10rem;
     min-width: 0;
   }
   .discovery-facets select {
     width: 100%;
-    min-height: 44px;
+    min-height: 48px;
     padding: 0.55rem;
     font: inherit;
     color: var(--color-ink);
@@ -445,16 +525,45 @@ const bodyBySlug = new Map(
     align-items: center;
   }
   @media (max-width: 60rem) {
+    .discovery-filter-grid {
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    }
+    .discovery-facets {
+      grid-column: 1 / -1;
+    }
+    .discovery-filter-grid.fixed-type {
+      grid-template-columns: 1fr;
+    }
     .video-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 47.999rem) {
+    .discovery-filter-grid,
+    .discovery-filter-grid.fixed-type {
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 0.75rem;
+    }
+    .discovery-keyword {
+      grid-column: 1 / -1;
+    }
+    .fixed-type .discovery-advanced-toggle {
+      grid-column: 1 / -1;
+      justify-self: start;
+    }
+    .discovery-search-meta {
+      gap: 0;
+    }
+    .discovery-controls {
+      gap: 0.5rem;
+    }
+    .discovery-controls button {
+      padding: 0.5rem 0.85rem;
     }
   }
   @media (max-width: 40rem) {
     .video-grid {
       grid-template-columns: 1fr;
-    }
-    .discovery-facets > div {
-      flex-basis: calc(50% - 0.5rem);
     }
   }
 </style>
