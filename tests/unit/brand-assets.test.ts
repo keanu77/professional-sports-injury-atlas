@@ -11,6 +11,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { afterEach, describe, expect, it } from "vitest";
 import {
+  HOME_HERO_A2_PATH,
   scanBrandAssets,
   scanShareAlikeCompositeRisks,
   validateBrandAssetPolicy,
@@ -125,6 +126,35 @@ afterEach(() => {
 });
 
 describe("brand-asset scan", () => {
+  it("admits only the selected A2 bytes at the exact homepage asset path", () => {
+    const root = makeRoot();
+    const selected = readFileSync(join(REPO_ROOT, HOME_HERO_A2_PATH));
+    writeInto(root, HOME_HERO_A2_PATH, selected);
+    expect(scanBrandAssets(root)).toEqual([]);
+    writeInto(root, "src/assets/hero/unselected.png", selected);
+    expect(scanBrandAssets(root)).toEqual([
+      expect.objectContaining({
+        code: "brand-image-asset",
+        path: "src/assets/hero/unselected.png",
+      }),
+    ]);
+  });
+
+  it("rejects changed A2 image bytes even at the selected path", () => {
+    const root = makeRoot();
+    const changed = Buffer.from(
+      readFileSync(join(REPO_ROOT, HOME_HERO_A2_PATH)),
+    );
+    changed[changed.length - 1] ^= 1;
+    writeInto(root, HOME_HERO_A2_PATH, changed);
+    expect(scanBrandAssets(root)).toEqual([
+      expect.objectContaining({
+        code: "brand-image-asset",
+        path: HOME_HERO_A2_PATH,
+      }),
+    ]);
+  });
+
   it("accepts a clean text-only tree with plain editorial league names", () => {
     const root = makeRoot();
     writeInto(

@@ -3,7 +3,8 @@
  * empty league/team/logo allowlist. Raster exceptions are limited to two
  * exact governed inventories, plus Decision 25 local video covers: generated injury-theme images beneath
  * `src/assets/heroes/` and licensed Commons player photos beneath
- * `src/assets/players/`. Arbitrary assets, source intermediates, authored
+ * `src/assets/players/`, and the exact user-selected A2 homepage artwork.
+ * Arbitrary assets, source intermediates, authored
  * `<img>` tags, remote thumbnails/logos, trademark-like names, and claims of
  * official partnership/authorization still fail closed.
  */
@@ -35,6 +36,21 @@ export function isApprovedSiteShareScreenshot(root: string): boolean {
     existsSync(path) &&
     createHash("sha256").update(readFileSync(path)).digest("hex") ===
       SITE_SHARE_SCREENSHOT_SHA256
+  );
+}
+
+// User selected A2 in the 2026-09-22 home-hero-discovery authorization.
+// This is a decorative generated scene, not a player photograph or case cover.
+// The exact generation prompt and selection are retained beside the asset.
+export const HOME_HERO_A2_PATH = "src/assets/hero/a-v2-fluid-burst.png";
+const HOME_HERO_A2_SHA256 =
+  "4f69801a5502989f822487d996228d717fe8ca39298d80bcaab4bc33779eb945";
+function isApprovedHomeHero(root: string): boolean {
+  const path = join(root, HOME_HERO_A2_PATH);
+  return (
+    existsSync(path) &&
+    createHash("sha256").update(readFileSync(path)).digest("hex") ===
+      HOME_HERO_A2_SHA256
   );
 }
 
@@ -668,6 +684,7 @@ export function scanBrandAssets(root: string): ValidationIssue[] {
     : { allowedPaths: [], issues: [] };
   const videoThumbnails = loadVideoThumbnails(root);
   const governedPaths = new Set([
+    ...(isApprovedHomeHero(root) ? [HOME_HERO_A2_PATH] : []),
     ...(isApprovedSiteShareScreenshot(root)
       ? [SITE_SHARE_SCREENSHOT_PATH]
       : []),
