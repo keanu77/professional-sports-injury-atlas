@@ -405,6 +405,9 @@ const videoCount = featured.length + clips.length;
     font-size: 0.875rem;
     margin-block: 1.5rem;
   }
+  .video-intro + :global([data-featured-videos]) {
+    margin-block-start: 1.5rem;
+  }
   @media (max-width: 40rem) {
     .home-category-controls:not([hidden]) {
       display: grid;
