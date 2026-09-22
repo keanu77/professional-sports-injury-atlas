@@ -12,6 +12,9 @@ test.describe("Decision 39 compact mobile discovery", () => {
       "Three category routes belong to the public launch",
     );
     await page.setViewportSize({ width: 390, height: 844 });
+    // Audit the settled keyboard navigation state, not an intermediate
+    // smooth-scroll frame where the sticky header passes over social links.
+    await page.emulateMedia({ reducedMotion: "reduce" });
     await page.goto("/");
 
     await expect(page.locator('[data-atlas-stat="videos"]')).toHaveText("200");
