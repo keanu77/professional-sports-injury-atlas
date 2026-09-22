@@ -3,7 +3,7 @@
  * empty league/team/logo allowlist. Raster exceptions are limited to two
  * exact governed inventories, plus Decision 25 local video covers: generated injury-theme images beneath
  * `src/assets/heroes/` and licensed Commons player photos beneath
- * `src/assets/players/`, and the exact user-selected A2 homepage artwork.
+ * `src/assets/players/`, and the exact user-selected homepage artwork.
  * Arbitrary assets, source intermediates, authored
  * `<img>` tags, remote thumbnails/logos, trademark-like names, and claims of
  * official partnership/authorization still fail closed.
@@ -39,18 +39,19 @@ export function isApprovedSiteShareScreenshot(root: string): boolean {
   );
 }
 
-// User selected A2 in the 2026-09-22 home-hero-discovery authorization.
+// User replaced A2 with the attached original A image on 2026-09-22.
+// See docs/reviews/2026-09-22-home-hero-image-swap/authorization.md.
 // This is a decorative generated scene, not a player photograph or case cover.
 // The exact generation prompt and selection are retained beside the asset.
-export const HOME_HERO_A2_PATH = "src/assets/hero/a-v2-fluid-burst.png";
-const HOME_HERO_A2_SHA256 =
-  "4f69801a5502989f822487d996228d717fe8ca39298d80bcaab4bc33779eb945";
+export const HOME_HERO_PATH = "src/assets/hero/a-all-sport-burst.png";
+const HOME_HERO_SHA256 =
+  "3ef27311614a5df79b2731d3ec3f9576c09a3275de53250ee2a0c8be94318cc2";
 function isApprovedHomeHero(root: string): boolean {
-  const path = join(root, HOME_HERO_A2_PATH);
+  const path = join(root, HOME_HERO_PATH);
   return (
     existsSync(path) &&
     createHash("sha256").update(readFileSync(path)).digest("hex") ===
-      HOME_HERO_A2_SHA256
+      HOME_HERO_SHA256
   );
 }
 
@@ -684,7 +685,7 @@ export function scanBrandAssets(root: string): ValidationIssue[] {
     : { allowedPaths: [], issues: [] };
   const videoThumbnails = loadVideoThumbnails(root);
   const governedPaths = new Set([
-    ...(isApprovedHomeHero(root) ? [HOME_HERO_A2_PATH] : []),
+    ...(isApprovedHomeHero(root) ? [HOME_HERO_PATH] : []),
     ...(isApprovedSiteShareScreenshot(root)
       ? [SITE_SHARE_SCREENSHOT_PATH]
       : []),

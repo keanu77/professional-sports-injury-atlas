@@ -1,6 +1,6 @@
 ---
 import { Picture } from "astro:assets";
-import heroImage from "../assets/hero/a-v2-fluid-burst.png";
+import heroImage from "../assets/hero/a-all-sport-burst.png";
 import VideoDiscovery from "../components/atlas/VideoDiscovery.astro";
 import FollowLinks from "../components/layout/FollowLinks.astro";
 import SituationNav from "../components/atlas/SituationNav.astro";
@@ -104,7 +104,6 @@ const videoCount = featured.length + clips.length;
             >
           </div>
         </div>
-        <small class="home-hero-caption">AI 合成情境圖 · 非實際賽事畫面</small>
       </div>
     </div>
   </header>
@@ -389,17 +388,6 @@ const videoCount = featured.length + clips.length;
     align-items: center;
     gap: 0.5rem 1.1rem;
   }
-  .home-hero-caption {
-    position: absolute;
-    right: 0;
-    bottom: 0.65rem;
-    z-index: 1;
-    padding: 0.2rem 0.45rem;
-    border-radius: 0.25rem;
-    background: color-mix(in srgb, var(--color-surface) 82%, transparent);
-    color: var(--color-ink-muted);
-    font-size: 0.6875rem;
-  }
   .home-note {
     color: var(--color-ink-muted);
     font-size: 0.875rem;
@@ -484,15 +472,6 @@ const videoCount = featured.length + clips.length;
     .home-video-cta,
     .home-video-secondary {
       font-size: 0.8125rem;
-    }
-    .home-hero-caption {
-      position: relative;
-      display: block;
-      width: fit-content;
-      margin-inline-start: auto;
-      right: auto;
-      bottom: auto;
-      font-size: 0.625rem;
     }
   }
 </style>

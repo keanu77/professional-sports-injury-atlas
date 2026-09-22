@@ -8,7 +8,7 @@ test.beforeEach(() =>
   ),
 );
 
-test("A2 artwork loads with a modern format and leaves discovery reachable on narrow screens", async ({
+test("Selected artwork loads with a modern format and leaves discovery reachable on narrow screens", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
@@ -27,12 +27,10 @@ test("A2 artwork loads with a modern format and leaves discovery reachable on na
     (img: HTMLImageElement) => img.currentSrc,
   );
   expect(imageUrl).toMatch(/\.(avif|webp)$/);
+  expect(imageUrl).toContain("a-all-sport-burst.");
   const response = await page.request.get(imageUrl);
   expect(response.ok()).toBe(true);
   expect((await response.body()).length).toBeLessThan(400_000);
-  await expect(page.locator(".home-hero-caption")).toContainText(
-    "非實際賽事畫面",
-  );
   const geometry = await page.evaluate(() => {
     const top = (s: string) =>
       document.querySelector(s)!.getBoundingClientRect().top + scrollY;
@@ -125,20 +123,6 @@ test("hero and discovery remain usable with enlarged text in both themes", async
         () => document.documentElement.scrollWidth - innerWidth,
       ),
     ).toBeLessThanOrEqual(1);
-    const overlaps = await page.evaluate(() => {
-      const caption = document
-        .querySelector(".home-hero-caption")!
-        .getBoundingClientRect();
-      const actions = document
-        .querySelector(".home-hero-actions")!
-        .getBoundingClientRect();
-      return (
-        caption.top < actions.bottom &&
-        caption.right > actions.left &&
-        caption.left < actions.right
-      );
-    });
-    expect(overlaps).toBe(false);
     await expectNoAxeViolations(page);
     if (theme === 0) await page.locator("[data-theme-toggle]").click();
   }
