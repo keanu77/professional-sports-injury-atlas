@@ -1,0 +1,36 @@
+{
+  "sourceCommit": "ac38ad98a60279f9bc9598c789cd9b0c9d1aa895",
+  "deploymentUrl": "https://af901f14.sports-injury-atlas.pages.dev",
+  "productionUrl": "https://injury.sportsmedicine.tw/",
+  "checkedAt": "2026-09-22T07:40:24.920Z",
+  "selectedAsset": "src/assets/hero/a-all-sport-burst.png",
+  "sha256": "3ef27311614a5df79b2731d3ec3f9576c09a3275de53250ee2a0c8be94318cc2",
+  "removedText": "AI 合成情境圖 · 非實際賽事畫面",
+  "astro": {
+    "errors": 0,
+    "warnings": 0,
+    "existingHints": 16
+  },
+  "unit": {
+    "scope": "brand-assets.test.ts",
+    "passed": 29
+  },
+  "e2e": {
+    "scope": "home-hero.spec.ts, catalog-ux.spec.ts; Chrome and Pixel 7",
+    "stats": {
+      "startTime": "2026-09-22T07:34:43.269Z",
+      "duration": 11595.464,
+      "expected": 16,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "releaseGates": "Original release eligibility and public artifact validators passed; 45 document bindings verified.",
+  "production": {
+    "htmlMatches": 273,
+    "newImageAssetsMatch": 10,
+    "failures": 0
+  },
+  "inputTreeDigest": "87e20443a95c2da836ee88ecb27308bb852ae02507066a5436f211e2fc4b5e1b"
+}

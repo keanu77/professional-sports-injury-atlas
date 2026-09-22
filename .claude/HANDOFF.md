@@ -1,4 +1,18 @@
-# HANDOFF - 2026-09-22 A2 首頁發布完成
+# HANDOFF - 2026-09-22 首頁圖片替換完成
+
+最新狀態優先於下方歷史紀錄：使用者改選 `a-all-sport-burst.png`，並要求刪除「AI 合成情境圖 · 非實際賽事畫面」。兩項均已完成且正式驗證，無待辦。
+
+- 正式來源：`ac38ad98a60279f9bc9598c789cd9b0c9d1aa895`；部署 https://af901f14.sports-injury-atlas.pages.dev ，網站 https://injury.sportsmedicine.tw/ 。
+- 圖片：`src/assets/hero/a-all-sport-burst.png`；原圖說與CSS已移除，內部生成來源保留。A2舊資產已從production來源移除，原本機候選仍在output。
+- 原有首頁版型、社群最前面、手機篩選與200影片資料不變。
+- 本輪Astro0錯誤／警告、29資產單元及16相關Chrome／Pixel7 E2E通過；273頁與10新圖片資源283／283正式雜湊相同。未重跑無關完整測試；下面1,545／188是上一版的歷史紀錄。
+- 核准與發布證據：`docs/reviews/2026-09-22-home-hero-image-swap/README.md`、`authorization.md`、`release.json`、`live.json`。
+- 發布輸入摘要：`87e20443a95c2da836ee88ecb27308bb852ae02507066a5436f211e2fc4b5e1b`。既有門檻保留；14339預覽已停、瀏覽器尺寸已恢復。其後只提交收尾文件，不改動成品。
+- 下次先核對Git status／log／origin main，再依新的使用者指示工作；不可把下方A2／圖說記載視為最新設計。
+
+---
+
+# 先前 A2 首頁發布紀錄（下列圖片與圖說設定已被本次更新取代）
 
 ## 目前狀態
 
