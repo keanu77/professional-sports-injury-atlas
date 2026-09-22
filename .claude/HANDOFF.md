@@ -1,69 +1,65 @@
-# HANDOFF - 2026-09-22 首頁圖片替換完成
+# HANDOFF - 2026-09-22 19:13 JST
 
-最新狀態優先於下方歷史紀錄：使用者改選 `a-all-sport-burst.png`，並要求刪除「AI 合成情境圖 · 非實際賽事畫面」。兩項均已完成且正式驗證，無待辦。
+## 進度
 
-- 正式來源：`ac38ad98a60279f9bc9598c789cd9b0c9d1aa895`；部署 https://af901f14.sports-injury-atlas.pages.dev ，網站 https://injury.sportsmedicine.tw/ 。
-- 圖片：`src/assets/hero/a-all-sport-burst.png`；原圖說與CSS已移除，內部生成來源保留。A2舊資產已從production來源移除，原本機候選仍在output。
-- 原有首頁版型、社群最前面、手機篩選與200影片資料不變。
-- 本輪Astro0錯誤／警告、29資產單元及16相關Chrome／Pixel7 E2E通過；273頁與10新圖片資源283／283正式雜湊相同。未重跑無關完整測試；下面1,545／188是上一版的歷史紀錄。
-- 核准與發布證據：`docs/reviews/2026-09-22-home-hero-image-swap/README.md`、`authorization.md`、`release.json`、`live.json`。
-- 發布輸入摘要：`87e20443a95c2da836ee88ecb27308bb852ae02507066a5436f211e2fc4b5e1b`。既有門檻保留；14339預覽已停、瀏覽器尺寸已恢復。其後只提交收尾文件，不改動成品。
-- 下次先核對Git status／log／origin main，再依新的使用者指示工作；不可把下方A2／圖說記載視為最新設計。
+**目前任務全部完成並上線，無待辦開發或部署。** 最新設計採使用者附的原始 A 圖 `a-all-sport-burst.png`；已刪除「AI 合成情境圖 · 非實際賽事畫面」及圖說樣式。不要恢復先前 A2 圖或圖說。
 
----
+- 最新發布證據 commit：`021970d2ce517d5ec006ed749104fae56ea72de9` — `docs: record verified homepage image replacement`；其後為交接文件提交，最新 HEAD 請以 `git log -1` 核對。
+- 正式網站來源 commit：`ac38ad98a60279f9bc9598c789cd9b0c9d1aa895`；之後只補驗證文件。
+- 整理交接前已核對 origin/main 與本機 HEAD 同為 `021970d2ce517d5ec006ed749104fae56ea72de9`。
+- 使用者既定要求：「社群追蹤入口一樣在前面」。維持目前最前方入口。
 
-# 先前 A2 首頁發布紀錄（下列圖片與圖說設定已被本次更新取代）
+## 本次 Session 完成
 
-## 目前狀態
+- [x] 首頁多運動主視覺、手機適配與搜尋區精簡（起始提交 `4fc85b0`，完整版本 `710a721`）。
+- [x] 依後續指示換成附圖原始 A，並移除圖說（`ac38ad9`）；圖片來源紀錄與精確 SHA-256 准入規則同步更新。
+- [x] 桌機／手機驗證、發布及正式資源核對完成，證據提交 `021970d`。
+- [x] 保留 200 支不同事件、8 類多標籤、30 種運動、14 個部位、每批 24 支；搜尋／類型／運動／部位、網址／歷史、IME、熱門資料競態保護與 no-JS 靜態卡片均保留。
 
-**使用者指定的「A2 首頁配置＋手機適配＋搜尋區精簡」已完成並上線。沒有未完成的開發或部署。**
+## 當前狀態
 
-- 正式站：https://injury.sportsmedicine.tw/
-- 網站來源提交：`710a721e469da411f927c415685fbb14e0029490`。
-- Cloudflare Pages `sports-injury-atlas`，部署：https://d5c27656.sports-injury-atlas.pages.dev
-- 專案與 branch 維持原工作目錄、`feat/aaron-judge-rib`；來源已推送至 origin/main，後續收尾文件提交不改變成品。
-- 使用者要求「社群追蹤入口一樣在前面」仍然適用。
+- 專案：`/Users/ethanwu/Documents/Vibe coding/claude/Professional sports injury atlas`。
+- Branch：`feat/aaron-judge-rib`；沿用現有工作目錄，不另建 worktree。
+- 寫入交接前工作樹乾淨；本次文件提交範圍僅 `.claude/HANDOFF.md`，使用者後續明確要求 commit and push。下次以 Git status 與 origin/main 核對同步狀態；本次未重新 build 或 deploy。
+- Build／Test：最近發布版本通過；**本次 handoff 沒有重跑測試或線上全面驗證**，下列結果來自已提交的發布證據。
+- 最新換圖版本：Astro 397 檔，0 errors／0 warnings／16 既有 hints；29 項圖片資產單元測試、16 項 Chrome／Pixel 7 相關 E2E 通過，無失敗／略過。45 份文件綁定、原有發布與成品檢查通過。
+- 正式驗證於 `2026-09-22T07:40:24.920Z`：273 HTML＋10 新圖片衍生資源，共 283／283 SHA-256 相同；390px 指定圖片載入、圖說不存在、無橫向溢出、初始24支、搜尋 y≈641。
+- 前一版完整 UI 回歸：1,545 項單元、188 項 E2E 通過，2 項 review-only 略過；這是換圖前的完整回歸，**不能說成換圖後重新跑了全部**。
+- 本次檢查 ports 14339／14340 無監聽程序；沒有待清理的已知本機預覽。
 
-## 這輪完成
+## 下一個 Session 的前 2 步
 
-- 首頁採用 A2 青藍水光爆發多運動圖；桌機右側完整人物構圖，手機局部圖、深色文字背景。深淺色均可使用，標示 AI 情境圖。
-- 「收錄影片」統計、「開始找影片」及「看受傷瞬間」入口。
-- 桌機搜尋／類型／運動／部位一列；手機後兩者收合於「更多篩選」。已選條件可直接移除、網址與返回操作還原、移除與跨尺寸保留可見焦點。
-- 保留 200 支不同事件、8 類多標籤、30 運動、14 部位與每批 24 支；IME、熱門競態保護、no-JS 全部靜態卡片及原有內容均保留。
-- 只發布選定 A2。原稿 `output/imagegen/2026-09-22-hero-options/`、候選 D2/E2/F2 與原型 `output/design/` 留本機，`/output/` 已忽略。
-- 資產例外綁定 A2 的精確路徑＋SHA-256，保留生成提示／核准紀錄；未放寬其他圖片、來源或臨床檢查。
+1. **執行** `git status --short --branch`、`git log -3 --oneline`、`git ls-remote origin refs/heads/main` — 核對實際進度，保留本次交接檔與使用者後續修改。
+2. **讀取** `docs/reviews/2026-09-22-home-hero-image-swap/README.md:1`、`release.json:1` 與使用者新需求 — 只處理新指示，不重做已完成的選圖、分類或部署。
 
-## 驗證證據
+**無更多任務。** 不因 resume 自行重跑建置、重新簽署醫療核准或重部署。原 A2 規格與舊交接屬於歷史紀錄；本次直接指示優先，見 `authorization.md:1`。
 
-完整索引：`docs/reviews/2026-09-22-home-hero/README.md`。
+## 已知 Blocker／限制
 
-- Astro 397 檔、0 errors／0 warnings、16 既有 hints。
-- 單元 1,545 項／105 檔通過；最終桌機 Chrome／Pixel 7 E2E 188 通過、2 review-only 略過。
-- content、45 文件綁定、變更格式、原有發布門檻通過。規格及品質審查完成。
-- 公開成品 628 檔、273 HTML、14,431 站內連結。正式站 **273 HTML＋352 公開資源，625／625 雜湊相同**；三個 Cloudflare 設定檔不是公開資源，其預期 404 記錄單列在 live.json。
-- 正式 390px 搜尋 y≈665，0 橫向溢出，初始24支、A2已載入、0預先iframe。分享網址還原 Brees＋專業解說＋美式足球＋軀幹唯一結果；移除部位後焦點回到可見「更多篩選」。
-- 320px／150% 與 1024px／150%、深淺色及圖說位置通過。未測 PageSpeed 分數，不宣稱 SEO 排名提升。
-- 本次沒有重新逐秒看完200支影片；原有來源、臨床核准及七日播放門檻保留。
-
-## 下次前兩步
-
-1. `git status --short --branch`、`git log -3 --oneline`、`git ls-remote origin refs/heads/main` 核對本機與遠端；保留使用者後續修改。
-2. 讀本輪 README、release.json 與新需求，僅處理使用者新指示。不要因 resume 重做選片、分類、重簽核准或部署。
+- 無阻擋交付的已知 bug。沒有 migration、環境變數或部署步驟待補。
+- 不把本次 UI／換圖驗證說成重新逐秒觀看全部200支影片；來源、醫療資料與原有七日播放門檻未變更。
+- 未量測 PageSpeed 分數或 SEO 排名；不宣稱此類提升。
+- 歷史完整成品包含3個 Cloudflare 部署設定檔；它們不是公開網址，不應要求 `/_headers`、`/_redirects`、`/_routes.json` 回傳200。一般公開資源及HTML仍需正確核對。
 
 ## 關鍵檔案
 
-- `src/pages/index.astro`：主視覺、統計與入口。
-- `src/assets/hero/a-v2-fluid-burst.png`、`provenance.json`：A2 與生成來源。
-- `src/components/atlas/VideoDiscovery.astro`、`src/scripts/video-discovery.ts`：首頁／8類型頁共用篩選。
-- `scripts/verify-brand-assets.ts`、`tests/unit/brand-assets.test.ts`：A2精確檔案准入與拒絕測試。
-- `e2e/home-hero.spec.ts`、`catalog-ux.spec.ts`：主視覺、篩選／焦點／字級回歸。
-- `docs/superpowers/specs/2026-09-22-home-hero-discovery-design.md`、對應 plans 文件及 authorization：核准範圍。綁定文件不可改寫；收尾紀錄另存。
-- 原始較早交接 `docs/handoffs/2026-09-22.md` 與 Git 歷史僅供追溯，不視為待辦。
+- `src/pages/index.astro:3`、`:55` — 目前圖片 import 與響應式 Picture；圖說已移除。
+- `src/assets/hero/a-all-sport-burst.png` — 選定圖片；`src/assets/hero/provenance.json:1` — 生成來源與使用者新指示。
+- `scripts/verify-brand-assets.ts:46` — 只允許目前圖片精確路徑與雜湊。
+- `src/components/atlas/VideoDiscovery.astro:52`、`src/scripts/video-discovery.ts:67` — 首頁／8類型頁共用搜尋與手機篩選。
+- `e2e/home-hero.spec.ts:11`、`e2e/catalog-ux.spec.ts:1` — 圖片、字級、篩選與分享回歸。
+- `docs/reviews/2026-09-22-home-hero-image-swap/README.md:1`、`authorization.md:1`、`release.json:1`、`live.json:1`、`browser-live.json:1` — 最新核准與正式驗證證據。
+- `docs/reviews/2026-09-22-home-hero/README.md:1` — 前一版完整 UI 檢查，僅供追溯。
+- `output/imagegen/2026-09-22-hero-options/` — 本機原圖與 A2／D2／E2／F2 候選；`/output/` 被 Git 忽略，未選圖片不發布。
 
-## 環境提醒
+## 環境／部署注意事項
 
-- 固定 Node v24.14.0：`/private/tmp/atlas-judge-node.3pGBJs/node-v24.14.0-darwin-arm64/bin/node`。直接呼叫此 binary；npm 子程序曾意外使用系統 v26，造成嚴格版本測試失敗。
-- Node 正式站驗證使用 `--use-env-proxy`。本機 socket 測試與瀏覽器可能需要沙箱外權限。
-- 原有發布器與內容檢查要求乾淨已提交工作樹；不要降低門檻。此次來源輸入摘要 `b289d15d6170dba398a048d074e363706eded86773c10c900819283a500c5337`。
-- Git push 若遭 HTTP transport 問題，既有單次參數：`git -c http.version=HTTP/1.1 -c http.postBuffer=67108864 push origin HEAD:main`。
-- 本輪臨時預覽 ports14339／14340 已清理，瀏覽器恢復尺寸；正式首頁分頁保留供查看。無 migration、環境變數或其他待部署步驟。
+- 正式站：https://injury.sportsmedicine.tw/ 。既有 Cloudflare Pages：`sports-injury-atlas`。
+- 最新部署：https://af901f14.sports-injury-atlas.pages.dev 。
+- 目前輸入摘要：`87e20443a95c2da836ee88ecb27308bb852ae02507066a5436f211e2fc4b5e1b`。
+- 圖片 SHA-256：`3ef27311614a5df79b2731d3ec3f9576c09a3275de53250ee2a0c8be94318cc2`。
+- 固定 Node v24.14.0：`/private/tmp/atlas-judge-node.3pGBJs/node-v24.14.0-darwin-arm64/bin/node`；下次先確認此暫存執行檔仍存在。直接呼叫 binary，避免 npm 子程序意外使用系統 v26。
+- 發布器與內容檢查要求乾淨且已提交的工作樹。維持既有門檻，不能只改摘要替代來源／臨床／播放證據。
+- Node 正式站唯讀驗證使用 `--use-env-proxy`；本機 socket／Chrome 測試可能需要沙箱外權限。
+- Git push 的既有 transport workaround：`git -c http.version=HTTP/1.1 -c http.postBuffer=67108864 push origin HEAD:main`；不需更改全域設定。
+- 歷史交接可查 Git `021970d` 與 `docs/handoffs/2026-09-22.md:1`；歷史任務不是現有待辦。
