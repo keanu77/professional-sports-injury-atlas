@@ -248,11 +248,7 @@ const videoCount = featured.length + clips.length;
   .video-intro {
     color-scheme: dark;
     margin: -1.5rem calc(50% - 50vw) 1.5rem;
-    background: linear-gradient(
-      135deg,
-      var(--color-brand-50),
-      var(--color-surface)
-    );
+    background: var(--color-brand-50);
     overflow: hidden;
   }
   .video-intro-inner {
@@ -419,7 +415,7 @@ const videoCount = featured.length + clips.length;
       flex: 0 0 auto;
     }
     .video-intro {
-      margin-bottom: 1.75rem;
+      margin-bottom: 0.5rem;
     }
     .video-intro-inner {
       padding-inline: 1rem;
@@ -430,6 +426,7 @@ const videoCount = featured.length + clips.length;
     }
     .home-hero-stage {
       min-height: 18.25rem;
+      padding-block-end: 0.5rem;
     }
     .home-hero-art {
       inset: 0 -1rem auto 20%;
@@ -451,7 +448,7 @@ const videoCount = featured.length + clips.length;
     }
     .home-hero-copy {
       width: 100%;
-      padding-block: 0.7rem 1.8rem;
+      padding-block: 0.7rem 0.5rem;
     }
     .home-hero-eyebrow {
       max-width: 55%;
@@ -486,8 +483,12 @@ const videoCount = featured.length + clips.length;
       font-size: 0.8125rem;
     }
     .home-hero-caption {
-      right: 0;
-      bottom: 0.45rem;
+      position: relative;
+      display: block;
+      width: fit-content;
+      margin-inline-start: auto;
+      right: auto;
+      bottom: auto;
       font-size: 0.625rem;
     }
   }
