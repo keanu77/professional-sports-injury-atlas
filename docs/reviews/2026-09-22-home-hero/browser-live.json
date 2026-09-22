@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-09-22T06:57:55.108Z",
+  "restored": {
+    "chips": ["移除類型：專業解說", "移除運動：美式足球", "移除部位：軀幹"],
+    "expanded": "false",
+    "iframeCount": 0,
+    "query": "Drew Brees",
+    "results": ["drew-brees-2020-rib"],
+    "selectedType": "expert-analysis",
+    "url": "https://injury.sportsmedicine.tw/?q=Drew+Brees&type=expert-analysis&sport=american-football&body=trunk"
+  },
+  "removed": {
+    "expanded": "false",
+    "focus": "更多篩選（已選 1 項）",
+    "results": 1,
+    "url": "https://injury.sportsmedicine.tw/?q=Drew+Brees&type=expert-analysis&sport=american-football"
+  }
+}

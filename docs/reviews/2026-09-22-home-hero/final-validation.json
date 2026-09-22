@@ -1,0 +1,95 @@
+{
+  "sourceCommit": "710a721e469da411f927c415685fbb14e0029490",
+  "inputTreeDigest": "e7bb80570c278253463d5cbe307a7ded0f13ec4e5c9f11c809ca8602fcc634c2",
+  "astro": {
+    "files": 397,
+    "errors": 0,
+    "warnings": 0,
+    "existingHints": 16
+  },
+  "unit": {
+    "files": 105,
+    "passed": 1545
+  },
+  "e2e": {
+    "startTime": "2026-09-22T06:49:46.614Z",
+    "duration": 52406.775,
+    "expected": 188,
+    "skipped": 2,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "artifact": {
+    "htmlPages": 273,
+    "files": 628,
+    "internalLinks": 14431
+  },
+  "imageRenditions": [
+    {
+      "path": "a-v2-fluid-burst.ChqWD2on_ZSDvhw.avif",
+      "width": 480,
+      "bytes": 43588
+    },
+    {
+      "path": "a-v2-fluid-burst.ChqWD2on_2lhJK.avif",
+      "width": 640,
+      "bytes": 74846
+    },
+    {
+      "path": "a-v2-fluid-burst.ChqWD2on_1bUa55.avif",
+      "width": 960,
+      "bytes": 161210
+    },
+    {
+      "path": "a-v2-fluid-burst.ChqWD2on_Z1yHM7F.avif",
+      "width": 1280,
+      "bytes": 253966
+    },
+    {
+      "path": "a-v2-fluid-burst.ChqWD2on_rre9D.avif",
+      "width": 1672,
+      "bytes": 369112
+    },
+    {
+      "path": "a-v2-fluid-burst.ChqWD2on_pJtjn.webp",
+      "width": 480,
+      "bytes": 35046
+    },
+    {
+      "path": "a-v2-fluid-burst.ChqWD2on_1lJhlE.webp",
+      "width": 640,
+      "bytes": 61238
+    },
+    {
+      "path": "a-v2-fluid-burst.ChqWD2on_2vj9FY.webp",
+      "width": 960,
+      "bytes": 132418
+    },
+    {
+      "path": "a-v2-fluid-burst.ChqWD2on_Z1o78Uc.webp",
+      "width": 1280,
+      "bytes": 213624
+    },
+    {
+      "path": "a-v2-fluid-burst.ChqWD2on_C2Rm7.webp",
+      "width": 1672,
+      "bytes": 321124
+    }
+  ],
+  "geometry": {
+    "desktop1440": {
+      "searchY": 634.9453125,
+      "firstCardsY": 955.296875,
+      "overflow": 0
+    },
+    "mobile390": {
+      "searchY": 665.4296875,
+      "firstCardsY": 1196.953125,
+      "overflow": 0
+    },
+    "mobile320Font150": {
+      "overflow": 0
+    }
+  },
+  "scope": "A2 hero and responsive discovery; existing video/medical records unchanged; no PageSpeed score measured."
+}

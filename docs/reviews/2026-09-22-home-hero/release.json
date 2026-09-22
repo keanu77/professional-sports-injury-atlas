@@ -1,0 +1,14 @@
+{
+  "sourceCommit": "710a721e469da411f927c415685fbb14e0029490",
+  "deploymentUrl": "https://d5c27656.sports-injury-atlas.pages.dev",
+  "productionUrl": "https://injury.sportsmedicine.tw",
+  "productionVerifiedAt": "2026-09-22T06:57:53.107Z",
+  "publicHtmlMatched": 273,
+  "publicAssetsMatched": 352,
+  "renderingInputDigest": "e7bb80570c278253463d5cbe307a7ded0f13ec4e5c9f11c809ca8602fcc634c2",
+  "deployment": "wrangler pages deploy dist --project-name=sports-injury-atlas --branch=main",
+  "specReview": "passed after shrinkable search tracks and dark hero backdrop fixes",
+  "qualityReview": "passed including exact A2 path/byte registration",
+  "userAuthorization": "A2 首頁配置＋手機適配＋搜尋區精簡",
+  "preservedRequirement": "社群追蹤入口一樣在前面"
+}
