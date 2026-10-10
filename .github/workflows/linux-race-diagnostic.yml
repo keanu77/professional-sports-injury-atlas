@@ -1,0 +1,50 @@
+name: Linux race baseline diagnostic
+on:
+  push:
+    branches: [diagnostic/source-health-linux-race]
+permissions:
+  contents: read
+jobs:
+  baseline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.14.0
+          cache: npm
+      - run: npm ci
+      - name: Record inode allocation behavior in a disposable directory
+        run: |
+          node --input-type=module <<'NODE' | tee inode-probe.json
+          import { mkdtempSync, writeFileSync, lstatSync, unlinkSync, renameSync, rmSync } from 'node:fs';
+          import { tmpdir, platform, release } from 'node:os';
+          import { join } from 'node:path';
+          const dir = mkdtempSync(join(tmpdir(), 'atlas-inode-probe-'));
+          const rows = [];
+          try {
+            for (let i = 0; i < 32; i++) {
+              const target = join(dir, `access-${i}`);
+              writeFileSync(target, 'original', {mode: 0o600});
+              const before = lstatSync(target).ino;
+              unlinkSync(target);
+              writeFileSync(target, 'racing replacement', {mode: 0o600});
+              const afterUnlink = lstatSync(target).ino;
+              renameSync(target, `${target}.held`);
+              writeFileSync(target, 'racing replacement', {mode: 0o600});
+              const afterRename = lstatSync(target).ino;
+              rows.push({before, afterUnlink, afterRename, unlinkReused: before === afterUnlink, renameDistinct: afterUnlink !== afterRename});
+            }
+            console.log(JSON.stringify({platform:platform(),kernel:release(),node:process.version,rows},null,2));
+          } finally { rmSync(dir,{recursive:true,force:true}); }
+          NODE
+      - name: Run the unmodified main race regression
+        run: npm run test:unit -- tests/unit/private-host-operations.test.ts -t 'restores the prior Keychain verifier if access-file replacement races' 2>&1 | tee baseline-race.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: linux-race-baseline
+          path: |
+            inode-probe.json
+            baseline-race.log
