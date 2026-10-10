@@ -16,6 +16,8 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 24.14.0
@@ -26,10 +28,14 @@ jobs:
       - run: npm run content:check
       - run: npm run test:coverage
       - run: npm run build:review
+        if: ${{ !cancelled() }}
       - run: npm run brand:verify
+        if: ${{ !cancelled() }}
       - run: npm run verify:review-artifact
+        if: ${{ !cancelled() }}
       # Keep the known legacy formatting gate visible after functional checks.
       - run: npm run format:check
+        if: ${{ !cancelled() }}
 
   monitor:
     runs-on: ubuntu-latest

@@ -1,0 +1,1486 @@
+{
+  "schemaVersion": 2,
+  "scope": "public-video-source-health",
+  "checkedAt": "2026-10-10T14:14:34.500Z",
+  "requestUserAgent": "SportsInjuryAtlasHealth/1.0 (+https://github.com/keanu77/professional-sports-injury-atlas)",
+  "overallStatus": "failed",
+  "playbackVerification": "not-performed",
+  "summary": {
+    "embedChecksCompleted": 0,
+    "embedChecksIndeterminate": 0,
+    "embedChecksSkipped": 200,
+    "embedMarkupPresent": 199,
+    "indeterminateMetadata": 0,
+    "indeterminateSources": 126,
+    "notEmbeddable": 0,
+    "sourceReasons": {
+      "access-challenge": 19,
+      "access-denied": 93,
+      "network-error": 3,
+      "not-found": 1,
+      "ok": 665,
+      "timeout": 11
+    },
+    "sourceUrls": 792,
+    "unavailableMetadata": 0,
+    "unavailableSources": 1,
+    "videos": 200
+  },
+  "environment": "Mac Studio; external requests are location- and client-dependent",
+  "baseline": {
+    "commit": "cc0b2feb0aac30747b7ed334ea722fb402dedbbb",
+    "checkedAt": "2026-10-10T14:02:59.748Z",
+    "summary": {
+      "embedChecksSkipped": 200,
+      "indeterminateMetadata": 0,
+      "indeterminateSources": 42,
+      "notEmbeddable": 0,
+      "sourceUrls": 793,
+      "unavailableMetadata": 0,
+      "unavailableSources": 17,
+      "videos": 200
+    }
+  },
+  "videoCoverage": {
+    "youtubeOembedValid": 199,
+    "youtubeIframeMarkupPresent": 199,
+    "mlbCanonicalPageAvailable": 1,
+    "youtubeApiNotCheckedMissingKey": 199,
+    "mlbEmbedNotCheckedUnsupported": 1,
+    "actualPlaybackTests": 0
+  },
+  "unavailableOrIndeterminateSources": [
+    {
+      "url": "https://apnews.com/article/311bc657971726bc04028326dcf1cf72",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://apnews.com/article/311bc657971726bc04028326dcf1cf72",
+        "httpStatus": 403,
+        "reason": "access-challenge",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://apnews.com/article/d7d9233c6efe8052b5fc86463b3a2f52",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://apnews.com/article/d7d9233c6efe8052b5fc86463b3a2f52",
+        "httpStatus": 403,
+        "reason": "access-challenge",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://apnews.com/article/french-open-rafael-nadal-winter-olympics-sports-f15fb9c8f926017f38c089aa5fe554f3",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://apnews.com/article/french-open-rafael-nadal-winter-olympics-sports-f15fb9c8f926017f38c089aa5fe554f3",
+        "httpStatus": 403,
+        "reason": "access-challenge",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://cricketarchive.com/Archive/Scorecards/1091/1091840.html",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://cricketarchive.com/Archive/Scorecards/1091/1091840.html",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://es.motorsport.com/motogp/news/declaraciones-alex-rins-problema-mecanico-sprint-austria/10645329/",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://es.motorsport.com/motogp/news/declaraciones-alex-rins-problema-mecanico-sprint-austria/10645329/",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://fcbayern.com/de/news/2025/07/jamal-musiala-erfolgreich-operiert",
+      "result": {
+        "attempts": 2,
+        "finalUrl": null,
+        "httpStatus": null,
+        "reason": "timeout",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://fcbayern.com/en/news/2025/07/jamal-musiala-diagnosis",
+      "result": {
+        "attempts": 2,
+        "finalUrl": null,
+        "httpStatus": null,
+        "reason": "timeout",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://fcbayern.com/en/news/2026/01/jamal-musiala-marks-injury-comeback-with-assist-against-rb-leipzig",
+      "result": {
+        "attempts": 2,
+        "finalUrl": null,
+        "httpStatus": null,
+        "reason": "timeout",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://jr.nba.com/paul-george-teaches-you-to-never-give-up/",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://jr.nba.com/paul-george-teaches-you-to-never-give-up/",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://live.mancity.com/news/mens/injury-update-rodri-63862763",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://live.mancity.com/news/mens/injury-update-rodri-63862763",
+        "httpStatus": 403,
+        "reason": "access-challenge",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://live.mancity.com/news/mens/manchester-city-bournemouth-202425-match-report-63883362",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://live.mancity.com/news/mens/manchester-city-bournemouth-202425-match-report-63883362",
+        "httpStatus": 403,
+        "reason": "access-challenge",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://medium.com/@CrossFit/mind-games-566b14576fa4",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://medium.com/@CrossFit/mind-games-566b14576fa4",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://sport.orf.at/stories/3120575/",
+      "result": {
+        "attempts": 2,
+        "finalUrl": null,
+        "httpStatus": null,
+        "reason": "network-error",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://sport.orf.at/stories/3135813/",
+      "result": {
+        "attempts": 2,
+        "finalUrl": null,
+        "httpStatus": null,
+        "reason": "network-error",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://statsdmz.nba.com/pdfs/20221003/20221003_OKCDEN.pdf",
+      "result": {
+        "attempts": 2,
+        "finalUrl": null,
+        "httpStatus": null,
+        "reason": "timeout",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://statsdmz.nba.com/pdfs/20221019/20221019_DENUTA.pdf",
+      "result": {
+        "attempts": 2,
+        "finalUrl": null,
+        "httpStatus": null,
+        "reason": "timeout",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://statsdmz.nba.com/pdfs/20221020/20221020_LACLAL.pdf",
+      "result": {
+        "attempts": 2,
+        "finalUrl": null,
+        "httpStatus": null,
+        "reason": "timeout",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://statsdmz.nba.com/pdfs/20230301/20230301_NOPPOR_book.pdf",
+      "result": {
+        "attempts": 2,
+        "finalUrl": null,
+        "httpStatus": null,
+        "reason": "timeout",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://statsdmz.nba.com/pdfs/20260306/20260306_DALBOS_book.pdf",
+      "result": {
+        "attempts": 2,
+        "finalUrl": null,
+        "httpStatus": null,
+        "reason": "timeout",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.atptour.com/-/media/files/media-guide/2018/2018-atp-media-guide.pdf",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.atptour.com/-/media/files/media-guide/2018/2018-atp-media-guide.pdf",
+        "httpStatus": 403,
+        "reason": "access-challenge",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.atptour.com/en/news/czech-republic-germany-united-cup-2023-saturday",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.atptour.com/en/news/czech-republic-germany-united-cup-2023-saturday",
+        "httpStatus": 403,
+        "reason": "access-challenge",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.atptour.com/en/news/nadal-nitto-atp-finals-2022-longform",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.atptour.com/en/news/nadal-nitto-atp-finals-2022-longform",
+        "httpStatus": 403,
+        "reason": "access-challenge",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.atptour.com/en/news/zverev-lehecka-dubai-2023-monday",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.atptour.com/en/news/zverev-lehecka-dubai-2023-monday",
+        "httpStatus": 403,
+        "reason": "access-challenge",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.atptour.com/en/news/zverev-roland-garros-2023-feature",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.atptour.com/en/news/zverev-roland-garros-2023-feature",
+        "httpStatus": 403,
+        "reason": "access-challenge",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.atptour.com/en/news/zverev-united-cup-2023-return-preview",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.atptour.com/en/news/zverev-united-cup-2023-return-preview",
+        "httpStatus": 403,
+        "reason": "access-challenge",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.cbf.com.br/selecao-brasileira/noticias/detalhes/selecao-masculina/nota-oficial-sobre-a-lesao-do-atacante-da-selecao-brasileira-neymar-jr",
+      "result": {
+        "attempts": 2,
+        "finalUrl": null,
+        "httpStatus": null,
+        "reason": "network-error",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.gpb.org/news/2022/04/05/tony-hawk-plans-keep-skateboarding-until-the-wheels-fall-off",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.gpb.org/news/2022/04/05/tony-hawk-plans-keep-skateboarding-until-the-wheels-fall-off",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.leparisien.fr/sports/samir-ait-said-ma-blessure-est-oubliee-19-08-2017-7200957.php",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.leparisien.fr/sports/samir-ait-said-ma-blessure-est-oubliee-19-08-2017-7200957.php",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.lequipe.fr/Handball/Actualites/Nikola-karabatic-psg-a-ete-opere-avec-succes-du-genou-droit/1188456",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.lequipe.fr/Handball/Actualites/Nikola-karabatic-psg-a-ete-opere-avec-succes-du-genou-droit/1188456",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.lequipe.fr/Patinage-artistique/Actualites/Hanyu-nerveux-5e/518299",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.lequipe.fr/Patinage-artistique/Actualites/Hanyu-nerveux-5e/518299",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.lequipe.fr/Rugby/Actualites/Antoine-dupont-a-fait-son-retour-en-competition-officielle-apres-266-jours-d-absence/1613363",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.lequipe.fr/Rugby/Actualites/Antoine-dupont-a-fait-son-retour-en-competition-officielle-apres-266-jours-d-absence/1613363",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.liverpoolfc.com/news/watch-harvey-elliotts-goal-and-assists-friendly",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.liverpoolfc.com/news/watch-harvey-elliotts-goal-and-assists-friendly",
+        "httpStatus": 404,
+        "reason": "not-found",
+        "status": "unavailable"
+      }
+    },
+    {
+      "url": "https://www.mancity.com/matchday/fixtures/womens/2024/uwcl/man-city-v-st-polten-12-dec-2024",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.mancity.com/matchday/fixtures/womens/2024/uwcl/man-city-v-st-polten-12-dec-2024",
+        "httpStatus": 403,
+        "reason": "access-challenge",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.mancity.com/news/mens/newcastle-united-v-manchester-city-pep-guardiola-injury-update-63863036",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.mancity.com/news/mens/newcastle-united-v-manchester-city-pep-guardiola-injury-update-63863036",
+        "httpStatus": 403,
+        "reason": "access-challenge",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.mancity.com/news/womens/alex-greenwood-injury-update-63870188",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.mancity.com/news/womens/alex-greenwood-injury-update-63870188",
+        "httpStatus": 403,
+        "reason": "access-challenge",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.mancity.com/news/womens/leicester-man-city-wsl-match-report-63881362",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.mancity.com/news/womens/leicester-man-city-wsl-match-report-63881362",
+        "httpStatus": 403,
+        "reason": "access-challenge",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/blazers/news/anfernee-simons-medical-update",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/blazers/news/anfernee-simons-medical-update",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/blazers/news/tough-loss-in-philly-and-a-conversation-with-simons-on-the-brief-case",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/blazers/news/tough-loss-in-philly-and-a-conversation-with-simons-on-the-brief-case",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/bulls/game/0021700632",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/bulls/game/0021700632",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/bulls/news/bulls-rose-undergoes-successful-surgery.html",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/bulls/news/bulls-rose-undergoes-successful-surgery.html",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/bulls/news/memorable-moments-2013.html",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/bulls/news/memorable-moments-2013.html",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/bulls/news/smith_130211.html",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/bulls/news/smith_130211.html",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/celtics/game/0011800002-celtics-vs-hornets-chapel-hill-nc-09-28-2018",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/celtics/game/0011800002-celtics-vs-hornets-chapel-hill-nc-09-28-2018",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/celtics/news/sidebar/post-101717-celtics-lose-hayward-to-gruesome-leg-injury",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/celtics/news/sidebar/post-101717-celtics-lose-hayward-to-gruesome-leg-injury",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/clippers/news/livingston_update_070227.html",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/clippers/news/livingston_update_070227.html",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/game/gsw-vs-bkn-0022000001",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/game/gsw-vs-bkn-0022000001",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/game/mia-vs-nyk-0020800007/box-score",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/game/mia-vs-nyk-0020800007/box-score",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/game/por-vs-atl-0022200947",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/game/por-vs-atl-0022200947",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/game/por-vs-phi-0022200998",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/game/por-vs-phi-0022200998",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/heat/news/sas-mia-game-preview-1901008",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/heat/news/sas-mia-game-preview-1901008",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/hornets/news/charlotte-hornets-injury-update-6",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/hornets/news/charlotte-hornets-injury-update-6",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/hornets/news/hornets-end-homestand-in-dramatic-fashion",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/hornets/news/hornets-end-homestand-in-dramatic-fashion",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/lakers/news/130412bryanttearsachilles",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/lakers/news/130412bryanttearsachilles",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/lakers/news/130413vittikobebryant",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/lakers/news/130413vittikobebryant",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/lakers/news/131118_bryant",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/lakers/news/131118_bryant",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/magic/news/magic-teammates-confident-markelle-fultz-will-overcome-latest-setback-20210106",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/magic/news/magic-teammates-confident-markelle-fultz-will-overcome-latest-setback-20210106",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/magic/orlando-magic-markelle-fultz-jonathan-isaac-injury-update-rehab-process-story-20211126",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/magic/orlando-magic-markelle-fultz-jonathan-isaac-injury-update-rehab-process-story-20211126",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/nets/news/recap/2020/12/13/nets-119-wizards-114-kevin-durant-kyrie-irving-sharp-in-preseason-opener",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/nets/news/recap/2020/12/13/nets-119-wizards-114-kevin-durant-kyrie-irving-sharp-in-preseason-opener",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/18-6",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/18-6",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/2026-comeback-players-to-watch",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/2026-comeback-players-to-watch",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/about-last-night-1-18-19-2",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/about-last-night-1-18-19-2",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/ben-simmons-kawhi-leonard-jamal-murray-make-long-awaited-returns",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/ben-simmons-kawhi-leonard-jamal-murray-make-long-awaited-returns",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/blazers-anfernee-simons-injury-update",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/blazers-anfernee-simons-injury-update",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/celtics-jayson-tatum-surgery-ruptured-right-achilles",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/celtics-jayson-tatum-surgery-ruptured-right-achilles",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/celtics-kristaps-porzingis-offseason-surgery",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/celtics-kristaps-porzingis-offseason-surgery",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/dejounte-murray-leaves-game-knee-injury",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/dejounte-murray-leaves-game-knee-injury",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/derrick-rose-back-in-chicago",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/derrick-rose-back-in-chicago",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/giannis-antetokounmpo-exits-game-4-with-hyperextended-left-knee",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/giannis-antetokounmpo-exits-game-4-with-hyperextended-left-knee",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/hornets-lamelo-ball-injury-update",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/hornets-lamelo-ball-injury-update",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/hornets-lamelo-ball-out-right-ankle-strain",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/hornets-lamelo-ball-out-right-ankle-strain",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/hornets-lamelo-ball-returns-from-injury",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/hornets-lamelo-ball-returns-from-injury",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/inside-the-box-score-2021-nba-finals-game-1",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/inside-the-box-score-2021-nba-finals-game-1",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/jamal-murray-out-indefinitely-with-torn-acl-in-left-knee",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/jamal-murray-out-indefinitely-with-torn-acl-in-left-knee",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/jayson-tatum-back-on-the-court-4-months-after-achilles-rupture",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/jayson-tatum-back-on-the-court-4-months-after-achilles-rupture",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/jayson-tatum-expected-debut-vs-mavs",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/jayson-tatum-expected-debut-vs-mavs",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/jayson-tatum-knee-out-against-76ers-in-game-7",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/jayson-tatum-knee-out-against-76ers-in-game-7",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/joel-embiid-procedure-left-knee",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/joel-embiid-procedure-left-knee",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/kawhi-leonard-has-surgery-to-repair-partially-torn-acl",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/kawhi-leonard-has-surgery-to-repair-partially-torn-acl",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/klay-thompson-return-feature",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/klay-thompson-return-feature",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/kristaps-porzingis-season-debut-2024-25",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/kristaps-porzingis-season-debut-2024-25",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/kristaps-porzingis-status-game-5-nba-finals",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/kristaps-porzingis-status-game-5-nba-finals",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/kyrie-irving-enjoys-return-months-uncertainty",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/kyrie-irving-enjoys-return-months-uncertainty",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/kyrie-irving-exits-game-4-with-right-ankle-sprain",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/kyrie-irving-exits-game-4-with-right-ankle-sprain",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/magic-guard-markelle-fultz-will-return-from-acl-injury-against-pacers",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/magic-guard-markelle-fultz-will-return-from-acl-injury-against-pacers",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/minnesota-playoff-hopes-take-big-hit-lavine-injury",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/minnesota-playoff-hopes-take-big-hit-lavine-injury",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/nba-finals-porzingis-out-game-3",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/nba-finals-porzingis-out-game-3",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/new-york-knicks-kristaps-porzingis-has-successful-surgery-torn-acl",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/new-york-knicks-kristaps-porzingis-has-successful-surgery-torn-acl",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/new-york-knicks-kristaps-porzingis-leaves-game-injury",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/new-york-knicks-kristaps-porzingis-leaves-game-injury",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/nuggets-guard-jamal-murray-remains-out-indefinitely-after-knee-surgery",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/nuggets-guard-jamal-murray-remains-out-indefinitely-after-knee-surgery",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/oladipo-caps-emotional-week-winning-return",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/oladipo-caps-emotional-week-winning-return",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/porzingis-1st-quarter-preseason-debut",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/porzingis-1st-quarter-preseason-debut",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/report-klay-thompson-out-for-season-with-torn-achilles",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/report-klay-thompson-out-for-season-with-torn-achilles",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/sixers-star-joel-embiid-to-miss-games-with-injured-meniscus",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/sixers-star-joel-embiid-to-miss-games-with-injured-meniscus",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/spurs-dejounte-murray-torn-acl",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/spurs-dejounte-murray-torn-acl",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/the-athletic-celtics-jayson-tatum-progresses-to-5-on-5-workouts-in-achilles-recovery-source",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/the-athletic-celtics-jayson-tatum-progresses-to-5-on-5-workouts-in-achilles-recovery-source",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/the-athletic-jayson-tatums-achilles-recovery-continues-with-hour-long-workout",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/the-athletic-jayson-tatums-achilles-recovery-continues-with-hour-long-workout",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/victor-oladipo-to-have-knee-surgery",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/victor-oladipo-to-have-knee-surgery",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/news/warriors-durant-achilles-injury-update",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/news/warriors-durant-achilles-injury-update",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/pacers/news/george-follows-perfect-script",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/pacers/news/george-follows-perfect-script",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/pacers/news/indiana-pacers-medical-update-tyrese-haliburton-250623",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/pacers/news/indiana-pacers-medical-update-tyrese-haliburton-250623",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/pacers/news/pacers-press-conference-paul-george",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/pacers/news/pacers-press-conference-paul-george",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/pacers/news/victor-oladipo-update-190123",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/pacers/news/victor-oladipo-update-190123",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/pacers/rewind-pacers-heat-150405",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/pacers/rewind-pacers-heat-150405",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/pelicans/news/demarcus-cousins-medical-update",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/pelicans/news/demarcus-cousins-medical-update",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/raptors/game/0021300303",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/raptors/game/0021300303",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/timberwolves/lavine-making-progress-rehab-acl-injury",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/timberwolves/lavine-making-progress-rehab-acl-injury",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/timberwolves/zach-lavine-injury-update-02-04-2017",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/timberwolves/zach-lavine-injury-update-02-04-2017",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.nba.com/watch/video/markelle-fultz-checks-in",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.nba.com/watch/video/markelle-fultz-checks-in",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.outrigger.com/test/surfers-in-residence/billy-kemper",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.outrigger.com/test/surfers-in-residence/billy-kemper",
+        "httpStatus": 403,
+        "reason": "access-challenge",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.procyclingstats.com/race/tour-of-turkey/2023/stage-1",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.procyclingstats.com/race/tour-of-turkey/2023/stage-1",
+        "httpStatus": 403,
+        "reason": "access-challenge",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.theinertia.com/surf/nathan-florence-broken-back-jaws-surfing-wipeout/",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.theinertia.com/surf/nathan-florence-broken-back-jaws-surfing-wipeout/",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.theinertia.com/surf/xxl-jaws-wipeout-nathan-florence-spinal-x-ray/",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.theinertia.com/surf/xxl-jaws-wipeout-nathan-florence-spinal-x-ray/",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.theinertia.com/video/tony-hawk-on-his-freshly-broken-femur-and-what-it-means-for-his-skateboarding/",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.theinertia.com/video/tony-hawk-on-his-freshly-broken-femur-and-what-it-means-for-his-skateboarding/",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.tvanouvelles.ca/2011/03/09/vertebre-fracturee-pour-pacioretty",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.tvanouvelles.ca/2011/03/09/vertebre-fracturee-pour-pacioretty",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.usga.org/content/usga/home-page/members/tiger-woods-the-player-of-record-usga-golf.html",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.usga.org/content/usga/home-page/members/tiger-woods-the-player-of-record-usga-golf.html",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.usopen.org/en_US/news/articles/2017-07-26/djokovic_to_miss_2017_us_open_with_elbow_injury.html",
+      "result": {
+        "attempts": 2,
+        "finalUrl": null,
+        "httpStatus": null,
+        "reason": "timeout",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.usopen.org/en_US/news/articles/2018-09-03/long_road_back_for_kei_nishikori.html",
+      "result": {
+        "attempts": 2,
+        "finalUrl": null,
+        "httpStatus": null,
+        "reason": "timeout",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.usopen.org/en_US/news/articles/2021-08-25/serena_williams_pulls_out_of_2021_us_open_with_torn_hamstring.html",
+      "result": {
+        "attempts": 2,
+        "finalUrl": null,
+        "httpStatus": null,
+        "reason": "timeout",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.usskiandsnowboard.org/news/first-weekend-american-2024-25-world-cups-wraps",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.usskiandsnowboard.org/news/first-weekend-american-2024-25-world-cups-wraps",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.usskiandsnowboard.org/news/lindsey-vonn-injury-update",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.usskiandsnowboard.org/news/lindsey-vonn-injury-update",
+        "httpStatus": 403,
+        "reason": "access-challenge",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.usskiandsnowboard.org/news/optimistic-outlook-lindsey-vonn",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.usskiandsnowboard.org/news/optimistic-outlook-lindsey-vonn",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.usskiandsnowboard.org/news/shiffrin-returns-win-clinches-slalom-crystal-globe",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.usskiandsnowboard.org/news/shiffrin-returns-win-clinches-slalom-crystal-globe",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.usskiandsnowboard.org/news/vonn-crashes-world-super-g",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.usskiandsnowboard.org/news/vonn-crashes-world-super-g",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.usskiandsnowboard.org/news/vonn-returns-world-cup-tour",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.usskiandsnowboard.org/news/vonn-returns-world-cup-tour",
+        "httpStatus": 403,
+        "reason": "access-challenge",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.wnba.com/game/las-vs-con-1022400082",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.wnba.com/game/las-vs-con-1022400082",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.wnba.com/game/las-vs-nyl-1022400088",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.wnba.com/game/las-vs-nyl-1022400088",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.wnba.com/game/lva-vs-las-1022500169",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.wnba.com/game/lva-vs-las-1022500169",
+        "httpStatus": 403,
+        "reason": "access-denied",
+        "status": "indeterminate"
+      }
+    }
+  ],
+  "verifiedRepairAndRetainedUrls": [
+    {
+      "url": "https://www.dewittdailynews.com/aaron-judge-returns-to-yankees-after-99-day-absence-caused-by-broken-rib/",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.dewittdailynews.com/aaron-judge-returns-to-yankees-after-99-day-absence-caused-by-broken-rib/",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    },
+    {
+      "url": "https://www.arsenal.com/news/report-arsenal-women-2-1-aston-villa-women-asbEn9x4Cl61",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.arsenal.com/news/report-arsenal-women-2-1-aston-villa-women-asbEn9x4Cl61",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    },
+    {
+      "url": "https://legacy.liverpoolfc.com/news/first-team/299392-alex-oxlade-chamberlain-injury-update-jurgen-klopp",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://legacy.liverpoolfc.com/news/first-team/299392-alex-oxlade-chamberlain-injury-update-jurgen-klopp",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    },
+    {
+      "url": "https://legacy.liverpoolfc.com/news/first-team/303499-mohamed-salah-liverpool-fc-injury-update",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://legacy.liverpoolfc.com/news/first-team/303499-mohamed-salah-liverpool-fc-injury-update",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    },
+    {
+      "url": "https://legacy.liverpoolfc.com/news/first-team/305043-mohamed-salah-goal-egypt-world-cup",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://legacy.liverpoolfc.com/news/first-team/305043-mohamed-salah-goal-egypt-world-cup",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    },
+    {
+      "url": "https://legacy.liverpoolfc.com/news/first-team/305536-alex-oxlade-chamberlain-knee-injury-rehabilitation",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://legacy.liverpoolfc.com/news/first-team/305536-alex-oxlade-chamberlain-knee-injury-rehabilitation",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    },
+    {
+      "url": "https://legacy.liverpoolfc.com/news/first-team/340949-alex-oxlade-chamberlain-fitness-update",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://legacy.liverpoolfc.com/news/first-team/340949-alex-oxlade-chamberlain-fitness-update",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    },
+    {
+      "url": "https://legacy.liverpoolfc.com/news/first-team/347685-jurgen-klopp-liverpool-huddersfield-reaction",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://legacy.liverpoolfc.com/news/first-team/347685-jurgen-klopp-liverpool-huddersfield-reaction",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    },
+    {
+      "url": "https://legacy.liverpoolfc.com/news/first-team/443363-harvey-elliott-undergoes-successful-ankle-surgery",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://legacy.liverpoolfc.com/news/first-team/443363-harvey-elliott-undergoes-successful-ankle-surgery",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    },
+    {
+      "url": "https://www.arsenal.com/news/match-report-wolves-2-2-arsenal-u-23s-abevG1Z7KSU6",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.arsenal.com/news/match-report-wolves-2-2-arsenal-u-23s-abevG1Z7KSU6",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    },
+    {
+      "url": "https://www.wtatennis.com/news/3123711/andreescu-provides-injury-update-praying-for-nothing-serious",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.wtatennis.com/news/3123711/andreescu-provides-injury-update-praying-for-nothing-serious",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    },
+    {
+      "url": "https://www.tennis.com/news/articles/kei-nishikori-to-miss-remainder-of-season-with-torn-tendon-in-wrist",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.tennis.com/news/articles/kei-nishikori-to-miss-remainder-of-season-with-torn-tendon-in-wrist",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    },
+    {
+      "url": "https://www.badminton.es/news/125348/Parte-Medico-de-Carolina-Marin",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.badminton.es/news/125348/Parte-Medico-de-Carolina-Marin",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    },
+    {
+      "url": "https://www.badminton.es/news/154258/Parte-medico-Carolina-Marin-Se-confirma-la-rotura-del-ligamento-cruzado-anterior-de-la-rodilla-derecha",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.badminton.es/news/154258/Parte-medico-Carolina-Marin-Se-confirma-la-rotura-del-ligamento-cruzado-anterior-de-la-rodilla-derecha",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    },
+    {
+      "url": "https://www.badminton.es/news/154265/Carolina-Marin-operada-con-exito-de-la-rodilla-lesionada-en-los-Juegos-Olimpicos-de-Paris-2024",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.badminton.es/news/154265/Carolina-Marin-operada-con-exito-de-la-rodilla-lesionada-en-los-Juegos-Olimpicos-de-Paris-2024",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    },
+    {
+      "url": "https://www.badminton.es/news/163011/Carolina-Marin-anuncia-su-retirada-del-badminton",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.badminton.es/news/163011/Carolina-Marin-anuncia-su-retirada-del-badminton",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    }
+  ]
+}
