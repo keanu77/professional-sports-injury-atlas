@@ -1988,7 +1988,7 @@
           "date": "2017-08",
           "title": "訓練中右腕受傷",
           "text": "新聞報導練習中腕部受傷，經紀人確認右腕肌腱撕裂。",
-          "sourceIndexes": [1, 4]
+          "sourceIndexes": [1]
         },
         {
           "date": "2018-09-03",
@@ -2015,11 +2015,6 @@
           "publishedAt": null
         },
         {
-          "title": "New York Tennis Magazine：訓練中受傷與退賽公告",
-          "url": "https://newyorktennismagazine.com/article/former-finalist-nishikori-out-us-open-wrist-injury/",
-          "publishedAt": "2017-08-16"
-        },
-        {
           "title": "Nishikori On The Comeback Trail",
           "url": "https://www.youtube.com/watch?v=_9PMTWdYX6I",
           "publishedAt": null
@@ -2029,7 +2024,7 @@
         "title": "腕傷紀錄片與經紀人診斷更新",
         "summary": {
           "text": "新聞報導練習中腕部受傷，經紀人確認右腕肌腱撕裂。",
-          "sourceIndexes": [1, 4]
+          "sourceIndexes": [1]
         },
         "steps": [
           "ATP 回歸紀錄由本人回顧前一年訓練腕傷。",
@@ -2069,7 +2064,7 @@
       "sources": [
         {
           "title": "WTA：Andreescu 左踝傷勢更新",
-          "url": "https://www.wtatennis.com/news/3123711/andreescu-provides-injury-update-it-could-have-been-much-worse-",
+          "url": "https://www.wtatennis.com/news/3123711/andreescu-provides-injury-update-praying-for-nothing-serious",
           "publishedAt": null
         },
         {

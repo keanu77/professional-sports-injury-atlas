@@ -2,6 +2,8 @@ name: Public video health
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [main]
   schedule:
     - cron: "17 2 * * 1"
 
@@ -9,6 +11,26 @@ permissions:
   contents: read
 
 jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.14.0
+          cache: npm
+      - run: npm ci
+      - run: npm run plan:verify
+      - run: npm run check
+      - run: npm run content:check
+      - run: npm run test:coverage
+      - run: npm run build:review
+      - run: npm run brand:verify
+      - run: npm run verify:review-artifact
+      # Keep the known legacy formatting gate visible after functional checks.
+      - run: npm run format:check
+
   monitor:
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -16,7 +38,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 24.14.0
           cache: npm
       - run: npm ci
       - name: Check public video and source health
@@ -28,6 +50,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: public-video-health
-          path: artifacts/public-video-health.v1.json
+          path: artifacts/public-video-health.v2.json
           if-no-files-found: error
           retention-days: 30
