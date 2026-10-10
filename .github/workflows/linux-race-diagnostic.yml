@@ -4,6 +4,9 @@ on:
     branches: [diagnostic/source-health-linux-race]
 permissions:
   contents: read
+defaults:
+  run:
+    shell: bash
 jobs:
   baseline:
     runs-on: ubuntu-latest
