@@ -427,7 +427,7 @@ describe("repaired source evidence", () => {
     expect(entry.mechanism!.limitation).toContain("不能補 ECU 或 TFCC");
   });
 
-  it("leaves the unresolved Elliott source visible instead of silently dropping its evidence", () => {
+  it("preserves Elliott's closed-door return milestone with its verified original report", () => {
     const entry = eventUpdates.entries.find(
       (v) => v.slug === "harvey-elliott-2021-ankle",
     )!;
@@ -435,7 +435,12 @@ describe("repaired source evidence", () => {
     expect(
       milestone.sourceIndexes.map((i) => entry.sources[i - 1]!.url),
     ).toContain(
-      "https://www.liverpoolfc.com/news/watch-harvey-elliotts-goal-and-assists-friendly",
+      "https://www.liverpoolecho.co.uk/sport/football/football-news/harvey-elliott-liverpool-game-breaking-22917827",
+    );
+    expect(entry.sources[1]!.publishedAt).toBe("2022-01-29");
+    expect(entry.returnDate).toBe("2022-01-29");
+    expect(entry.returnSummary).toBe(
+      "2022-01-29 先於對 Wrexham 的閉門友誼賽回場。",
     );
     expect(entry.context).toContain("不等同一軍正式賽事復出");
   });

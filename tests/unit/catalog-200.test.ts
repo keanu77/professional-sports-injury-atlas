@@ -40,6 +40,9 @@ function withRepairedCitations<
         ...source,
         ...(repair ? { url: repair.newUrl } : {}),
         ...(repair?.newTitle ? { title: repair.newTitle } : {}),
+        ...(repair?.newPublishedAt && "publishedAt" in source
+          ? { publishedAt: repair.newPublishedAt }
+          : {}),
       },
     ];
   });

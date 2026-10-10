@@ -99,6 +99,16 @@
       "newHttpStatus": 200,
       "action": "consolidate",
       "evidence": "Existing source #1 is the original AP report (Howard Fendrich, 2017-08-16), explicitly quoting agent Olivier van Lindonk about right-wrist tendon tear during practice. Remove redundant dead source #4 and remap citations; clinical text unchanged."
+    },
+    {
+      "oldUrl": "https://www.liverpoolfc.com/news/watch-harvey-elliotts-goal-and-assists-friendly",
+      "newUrl": "https://www.liverpoolecho.co.uk/sport/football/football-news/harvey-elliott-liverpool-game-breaking-22917827",
+      "oldHttpStatus": 404,
+      "newHttpStatus": 200,
+      "action": "replace",
+      "newTitle": "Liverpool Echo：1 月 29 日對 Wrexham 閉門賽回場",
+      "newPublishedAt": "2022-01-29",
+      "evidence": "Original reporting by Tom Cavilla (Liverpool Echo), published 2022-01-29T14:11:21Z: Elliott played 60 minutes in a behind-closed-doors U23 match against Wrexham that day, with a goal and assist, while working toward first-team return. Live articleBody independently read by two agents; return date, context, clinical facts, timeline and source-index bindings unchanged."
     }
   ],
   "retainedUrls": [
@@ -131,11 +141,5 @@
       "evidence": "Federation original article text verified with an honest descriptive monitor User-Agent; no source substitution."
     }
   ],
-  "unresolvedUrls": [
-    {
-      "url": "https://www.liverpoolfc.com/news/watch-harvey-elliotts-goal-and-assists-friendly",
-      "httpStatus": 404,
-      "note": "Live request still fails; searchable article text exists but no equivalent live primary-source replacement verified. Retain the uncertainty and the reference."
-    }
-  ]
+  "unresolvedUrls": []
 }

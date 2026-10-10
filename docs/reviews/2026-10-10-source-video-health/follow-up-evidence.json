@@ -1,0 +1,262 @@
+{
+  "checkedAt": "2026-10-10",
+  "elliott": {
+    "oldUrl": "https://www.liverpoolfc.com/news/watch-harvey-elliotts-goal-and-assists-friendly",
+    "oldStatus": 404,
+    "newUrl": "https://www.liverpoolecho.co.uk/sport/football/football-news/harvey-elliott-liverpool-game-breaking-22917827",
+    "newStatus": 200,
+    "author": "Tom Cavilla",
+    "publishedAt": "2022-01-29T14:11:21Z",
+    "localHtmlSha256": "bd5ff9065a02c5673d20bbf99c747f0eed86183887b14882166a5c720a1ea029",
+    "claimSupport": "Same-day closed-door U23 match against Wrexham; 60 minutes, a goal and assist; preparation toward first-team return.",
+    "clinicalAndTimelineFieldsChanged": false
+  },
+  "linuxBaseline": {
+    "runUrl": "https://github.com/keanu77/professional-sports-injury-atlas/actions/runs/38060897997",
+    "diagnosticCommit": "2230c6ddab088f8667be482aa8be5fae8646a22e",
+    "codeBase": "cc0b2feb0aac30747b7ed334ea722fb402dedbbb",
+    "onlyChangeFromBase": "diagnostic workflow; test and production code unchanged",
+    "test": "restores the prior Keychain verifier if access-file replacement races",
+    "result": "failed: expected function to throw the rollback error",
+    "probe": {
+      "platform": "linux",
+      "kernel": "6.17.0-1022-azure",
+      "node": "v24.14.0",
+      "rows": [
+        {
+          "before": 96283,
+          "afterUnlink": 96283,
+          "afterRename": 96284,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96285,
+          "afterUnlink": 96285,
+          "afterRename": 96286,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96287,
+          "afterUnlink": 96287,
+          "afterRename": 96288,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96289,
+          "afterUnlink": 96289,
+          "afterRename": 96290,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96291,
+          "afterUnlink": 96291,
+          "afterRename": 96292,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96293,
+          "afterUnlink": 96293,
+          "afterRename": 96294,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96295,
+          "afterUnlink": 96295,
+          "afterRename": 96296,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96297,
+          "afterUnlink": 96297,
+          "afterRename": 96298,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96299,
+          "afterUnlink": 96299,
+          "afterRename": 96300,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96301,
+          "afterUnlink": 96301,
+          "afterRename": 96302,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96303,
+          "afterUnlink": 96303,
+          "afterRename": 96304,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96305,
+          "afterUnlink": 96305,
+          "afterRename": 96306,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96307,
+          "afterUnlink": 96307,
+          "afterRename": 96308,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96309,
+          "afterUnlink": 96309,
+          "afterRename": 96310,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96311,
+          "afterUnlink": 96311,
+          "afterRename": 96312,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96313,
+          "afterUnlink": 96313,
+          "afterRename": 96314,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96315,
+          "afterUnlink": 96315,
+          "afterRename": 96316,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96317,
+          "afterUnlink": 96317,
+          "afterRename": 96318,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96319,
+          "afterUnlink": 96319,
+          "afterRename": 96320,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96321,
+          "afterUnlink": 96321,
+          "afterRename": 96322,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96323,
+          "afterUnlink": 96323,
+          "afterRename": 96324,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96325,
+          "afterUnlink": 96325,
+          "afterRename": 96326,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96327,
+          "afterUnlink": 96327,
+          "afterRename": 96328,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96329,
+          "afterUnlink": 96329,
+          "afterRename": 96330,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96331,
+          "afterUnlink": 96331,
+          "afterRename": 96332,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96333,
+          "afterUnlink": 96333,
+          "afterRename": 96334,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96335,
+          "afterUnlink": 96335,
+          "afterRename": 96336,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96337,
+          "afterUnlink": 96337,
+          "afterRename": 96338,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96339,
+          "afterUnlink": 96339,
+          "afterRename": 96340,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96341,
+          "afterUnlink": 96341,
+          "afterRename": 96342,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96343,
+          "afterUnlink": 96343,
+          "afterRename": 96344,
+          "unlinkReused": true,
+          "renameDistinct": true
+        },
+        {
+          "before": 96345,
+          "afterUnlink": 96345,
+          "afterRename": 96346,
+          "unlinkReused": true,
+          "renameDistinct": true
+        }
+      ]
+    }
+  },
+  "macProbe": {
+    "platform": "darwin",
+    "kernel": "27.0.0",
+    "node": "v24.14.0",
+    "trials": 32,
+    "unlinkReused": 0,
+    "renameDistinct": 32
+  },
+  "fixScope": "Test fixture only: hold original inode by renaming the file, create a distinct replacement, then assert distinct identity outside the caught callback. Preserve rollback and file-content assertions; no production or OS permission/credential changes."
+}

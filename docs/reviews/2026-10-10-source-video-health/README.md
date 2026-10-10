@@ -1,5 +1,11 @@
 # Source and video health repair — 2026-10-10
 
+**Follow-up:** Elliott now has a verified original replacement and the Linux
+race fixture has a minimal test-only correction. There are now **13 repaired
+source URLs**. Read [follow-up.md](follow-up.md) and the final-head CI results in
+the draft PR. The run counts below describe the initial `285acbd` evidence and
+are preserved as recorded snapshots.
+
 Base: `cc0b2feb0aac30747b7ed334ea722fb402dedbbb` (`main`, reconfirmed during
 this session). Implementation: `7c409d6`. Work was performed in an independent
 Mac Studio checkout; the original project was left untouched. This is a draft
@@ -131,10 +137,9 @@ HTTP retrieval; the independent web reader was blocked for those hosts.
 
 ## Remaining decisions
 
-1. Keep the draft blocked on the unresolved Elliott source until a suitable
-   primary replacement is available or an editor decides how to handle that
-   claim. The 126 indeterminate sources require access-aware review, not mass
-   deletion or an unavailable label.
+1. Elliott's original reporting replacement is now verified (see follow-up).
+   Access-restricted sources still require access-aware review, not mass deletion
+   or an unavailable label. Use the final-head artifact for current counts.
 2. Separately authorize use/configuration of an approved YouTube API key if
    API embed coverage is required; actual playback needs its own browser and
    region-aware verification, including MLB.
