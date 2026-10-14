@@ -123,7 +123,7 @@ test.describe("layout accessibility", () => {
     await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
   });
 
-  test("renders the six public follow links from the main site", async ({
+  test("renders the seven public follow links from the main site", async ({
     page,
   }) => {
     await page.goto("/");
@@ -132,6 +132,7 @@ test.describe("layout accessibility", () => {
       ["衛教部落格", "https://blog.sportsmedicine.tw/"],
       ["Facebook", "https://www.facebook.com/EthanWuMD/"],
       ["Instagram", "https://www.instagram.com/ethan77wu/"],
+      ["YouTube", "https://www.youtube.com/@sportsmedicinetw"],
       ["GitHub", "https://github.com/keanu77"],
       ["LINE", "https://line.me/R/ti/p/@521cvffb"],
       ["個人網站", "https://sportsmedicine.tw/"],
