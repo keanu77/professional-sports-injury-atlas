@@ -109,7 +109,7 @@ const DECISION_16_SHARP_DECODE_EVAL = String.raw`
 import { createHash } from "node:crypto";
 import sharp from "sharp";
 try {
-  if (sharp.versions.sharp !== "0.35.3") process.exit(2);
+  if (sharp.versions.sharp !== "0.35.5") process.exit(2);
   const chunks = [];
   for await (const chunk of process.stdin) chunks.push(chunk);
   const inputBytes = Buffer.concat(chunks);

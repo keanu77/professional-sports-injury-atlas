@@ -11,7 +11,7 @@ import { issue, type ValidationIssue } from "./canonical";
 export const DECISION_17_CLINICAL_AGGREGATE_SHA256 =
   "bb02fb617055d836eae29daec6994e499586779a4073fde91213d9e5f7ea2e73" as const;
 export const DECISION_17_PLAYER_PHOTO_REGISTRY_V8_SHA256 =
-  "908ccc9c1d9aeee56c907a476701c8875914af5090614c36271a76447057084a" as const;
+  "43e3c2c7f2e1b5e28b5b0238de99e5ebf902c1c166a2c29fcc0473e40e1a43cd" as const;
 export const DECISION_17_COVER_ASSET_LEDGER_SHA256 =
   "625b47f92ad0e4706872e92ea7c7fd92e25c4dfd21dd219feb59154571db15dd" as const;
 
