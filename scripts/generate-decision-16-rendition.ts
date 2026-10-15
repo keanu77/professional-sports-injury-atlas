@@ -30,7 +30,7 @@ import {
 
 const ROOT = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const REQUIRED_NODE_VERSION = "v24.14.0";
-const REQUIRED_SHARP_VERSION = "0.35.3";
+const REQUIRED_SHARP_VERSION = "0.35.5";
 const CREATOR_NOTICE = "Erik Drost";
 
 interface MetadataInventory {
