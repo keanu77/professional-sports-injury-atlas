@@ -1,0 +1,336 @@
+{
+  "audit": "2026-10-19 UX audit / Pass 1 performance candidates",
+  "status": "candidate_for_adversarial_review",
+  "scope": "Read-only source and public HTTP audit; no browser drivers, build, code changes or deployment",
+  "baseline": {
+    "production_sha": "ac38ad9 (parent verified)",
+    "local_sha": "cc0b2fe (parent verified; later docs only)",
+    "excluded": "origin/main 3be60d2 dependency patch, already known and not redeployed"
+  },
+  "method": {
+    "observed_at_utc": "2026-10-19T15:10:50Z onward",
+    "network": "curl --compressed GET from this machine; HTTP/2; several independent asset GETs ran concurrently; one repeated popular GET",
+    "limits": [
+      "No browser network waterfall, CPU profile, field data, LCP, INP, CLS or FPS measured.",
+      "CLI TTFB includes this host/network path and is not a browser performance score.",
+      "HTML element counts are static parsed document counts before browser enhancement; image tags are not equivalent to image requests.",
+      "No medical content recommendations or third-party playback validation."
+    ]
+  },
+  "measurements": {
+    "home": {
+      "url": "https://injury.sportsmedicine.tw/",
+      "http": 200,
+      "wire_bytes": 72425,
+      "decoded_html_bytes": 571598,
+      "html_elements": 5028,
+      "discovery_cards": 200,
+      "inline_css_bytes": 41223,
+      "standalone_css_gzip_bytes": 7075,
+      "images": 200,
+      "eager_high_images": 2,
+      "initial_iframes": 0,
+      "cache_control": "public, max-age=0, must-revalidate",
+      "cf_cache_status": "DYNAMIC",
+      "cli_ttfb_seconds": 0.676992
+    },
+    "clip": {
+      "url": "https://injury.sportsmedicine.tw/videos/zverev-roland-garros-2022/",
+      "wire_bytes": 13641,
+      "decoded_html_bytes": 58046,
+      "inline_css_bytes": 26762,
+      "html_elements": 345,
+      "initial_iframes": 0
+    },
+    "case": {
+      "url": "https://injury.sportsmedicine.tw/cases/tyrese-haliburton-achilles-rupture-2025/",
+      "wire_bytes": 16364,
+      "decoded_html_bytes": 70523,
+      "inline_css_bytes": 36142,
+      "html_elements": 354,
+      "initial_iframes": 0
+    },
+    "assets": {
+      "discovery_core_decoded_bytes": 8904,
+      "discovery_core_gzip_bytes": 3715,
+      "layout_core_decoded_bytes": 2565,
+      "layout_core_gzip_bytes": 1066,
+      "home_entry_decoded_bytes": 1450,
+      "home_entry_gzip_bytes": 643,
+      "player_core_gzip_bytes": 2361,
+      "hero_640_avif_bytes": 51244,
+      "hero_960_avif_bytes": 108010,
+      "first_card_webp_bytes": 25224,
+      "hashed_asset_cache_control": "public, max-age=31536000, immutable",
+      "preferences_init_decoded_bytes": 448,
+      "preferences_init_gzip_bytes": 274,
+      "preferences_init_live_cache_control": "public, max-age=14400, must-revalidate",
+      "preferences_init_cli_ttfb_seconds": 0.882275
+    },
+    "popular": {
+      "url": "https://injury.sportsmedicine.tw/api/popular",
+      "http": 200,
+      "wire_bytes": 654,
+      "decoded_bytes": 1976,
+      "items": 53,
+      "generated_at": "2026-10-19T15:00:00.000Z",
+      "first_cf_cache_status": "DYNAMIC",
+      "repeat_cf_cache_status": "DYNAMIC",
+      "first_max_age_seconds": 2918,
+      "repeat_max_age_seconds": 2898,
+      "cli_ttfb_seconds": [
+        1.247652,
+        0.96053
+      ]
+    }
+  },
+  "findings": [
+    {
+      "id": "PERF-01",
+      "priority": "P1",
+      "title": "首頁的載入更多沒有減少首次 HTML 與 DOM 成本",
+      "files": [
+        {
+          "path": "src/components/atlas/VideoDiscovery.astro",
+          "lines": "218-263"
+        },
+        {
+          "path": "src/scripts/video-discovery.ts",
+          "lines": "134-143,244-251,475-484"
+        }
+      ],
+      "evidence_type": "live HTTP measurement plus source",
+      "evidence": [
+        "正式首頁 HTML 571,598 bytes / gzip 72,425 bytes，含 200 cards、5,028 elements。",
+        "元件對全部 featured/clips 輸出完整卡片；客戶端 pageSize=24 只使用 hidden 切換，載入更多並未向伺服器增量取卡。"
+      ],
+      "impact": "每次首次開啟仍須傳輸、解析並建立全部 200 張卡片；資料量增加時持續放大。未證明目前有 long task 或不良 LCP。",
+      "recommendation": "保留前 24 張 SSR 與可爬取的靜態分頁，將搜尋所需的精簡索引和其餘卡片內容分開；顯示更多時才建立需要的卡片。先比對完整HTML、精簡索引與模板方案的總傳輸量。",
+      "acceptance": [
+        "首頁初始最多 24 張完整影片卡，未顯示卡片不以完整隱藏 DOM 存在。",
+        "停用 JS 仍可透過語意分頁到達所有 200 支影片。",
+        "完整查詢、類型/部位/運動、熱門/精選及分享 URL 結果與現在一致。",
+        "以相同裝置與網路條件證明 HTML bytes 和初始元素數下降，LCP/搜尋互動不退步。"
+      ]
+    },
+    {
+      "id": "PERF-02",
+      "priority": "P2",
+      "title": "搜尋每次輸入都掃描全部卡片並重新 append 顯示卡",
+      "files": [
+        {
+          "path": "src/scripts/video-discovery.ts",
+          "lines": "216-251,404-418"
+        }
+      ],
+      "evidence_type": "source-confirmed operations; user-visible latency unmeasured",
+      "evidence": [
+        "每個非 IME composing 的 input 都同步 render。",
+        "每次 render 對全部 200 卡寫 hidden、查找熱門標籤，並對 displayed 卡逐一 grid.append，即使結果/排序未變。",
+        "正規化搜尋文字已預先建立 Map，IME 已有防護，並非每鍵重新正規化全部全文。"
+      ],
+      "impact": "搜尋計算本身簡單；主要可省的是未變更 DOM 的查詢、屬性更新與節點移動。在低階裝置或更多影片時較可能影響流暢度，現階段未實測卡頓。",
+      "recommendation": "先保留文字搜尋邏輯，快取卡片參照與目前顯示/排序狀態，只改變有差異的卡片；若 trace 顯示連續輸入有成本，再以 requestAnimationFrame 合併同幀更新。",
+      "acceptance": [
+        "查詢字串改變但顯示卡和排序不變時，不搬動卡片節點。",
+        "IME 組字、清除、Esc、更多影片焦點及 popstate 保持正確。",
+        "用 200 張現況資料和較大測試資料錄製輸入 trace，確認 DOM 更新次數下降，且沒有新增搜尋延遲。"
+      ]
+    },
+    {
+      "id": "PERF-03",
+      "priority": "P2",
+      "title": "首屏偏好初始化用額外的 parser-blocking 外部請求",
+      "files": [
+        {
+          "path": "src/layouts/BaseLayout.astro",
+          "lines": "205"
+        },
+        {
+          "path": "src/pages/preferences-init.js.ts",
+          "lines": "3-10"
+        },
+        {
+          "path": "src/lib/ui/public-security-policy.ts",
+          "lines": "19-24"
+        }
+      ],
+      "evidence_type": "live script/header measurement plus source; paint penalty unmeasured",
+      "evidence": [
+        "首頁及兩個影片頁都在 head 載入沒有 defer/async 的 /preferences-init.js。",
+        "腳本只有 448 bytes（gzip 274 bytes）；單次獨立 curl TTFB 0.882275 秒，但不是瀏覽器延誤測量。",
+        "正式回應 max-age=14400,must-revalidate，與原碼 max-age=0 不同；不能說現況每頁都重驗。"
+      ],
+      "impact": "冷載入仍需要額外的同步請求，才能繼續解析主體；這是為了避免主題與字級閃動的既有取捨。",
+      "recommendation": "優先評估以精確 CSP hash 允許這段固定 pre-paint inline 程式，或至少版本化路徑與 immutable 快取。不可直接改成 defer 而引入主題/字級閃動；先查清正式 CDN 為何覆寫 max-age。",
+      "acceptance": [
+        "冷載入不再等待獨立的 preferences 請求，或有量測支持保留外部腳本的取捨。",
+        "已儲存亮/暗模式與 0.875–1.5 字級在首次繪製前套用，localStorage 不可用時仍可讀。",
+        "維持禁止 unsafe-inline executable scripts 的 CSP 意圖，以 hash 或等效明確授權達成。"
+      ]
+    },
+    {
+      "id": "PERF-04",
+      "priority": "P2",
+      "title": "首頁第一張列表縮圖與主視覺同時使用 high priority",
+      "files": [
+        {
+          "path": "src/pages/index.astro",
+          "lines": "54-64"
+        },
+        {
+          "path": "src/components/atlas/VideoDiscovery.astro",
+          "lines": "236-241"
+        },
+        {
+          "path": "src/components/cases/VideoThumbnail.astro",
+          "lines": "18-25"
+        }
+      ],
+      "evidence_type": "live markup/assets plus source; fold position pending parent visual audit",
+      "evidence": [
+        "首頁 hero 與首卡縮圖皆 eager/high；縮圖實測 25,224 bytes。",
+        "hero AVIF 640w 為 51,244 bytes、960w 為 108,010 bytes。",
+        "首卡位於 hero、搜尋、分類導覽之後；是否落在常用 viewport 首屏外須視覺驗證。"
+      ],
+      "impact": "若首卡在首屏外，這 25 KB 的高優先請求可能與 hero 競爭；未實測優先順序造成的 LCP 退步。",
+      "recommendation": "若桌機/手機視覺確認首卡在首屏外，讓該縮圖恢復 lazy/default；保留詳情頁主要 facade 的 eager/high。不要一概移除所有頁面的 priority。",
+      "acceptance": [
+        "於 390×844 和 1440×900 記錄首卡位置與實際網路優先權。",
+        "首頁只有真正在首屏且重要的圖片採 high priority。",
+        "首屏外縮圖不阻塞 hero，點擊搜尋跳至結果後仍及時顯示縮圖。"
+      ]
+    },
+    {
+      "id": "PERF-05",
+      "priority": "P2",
+      "title": "全量 inline CSS 的取捨值得以跨頁瀏覽重新測量",
+      "files": [
+        {
+          "path": "astro.config.mjs",
+          "lines": "44-47"
+        },
+        {
+          "path": "src/layouts/BaseLayout.astro",
+          "lines": "14-22"
+        }
+      ],
+      "evidence_type": "live HTML measurement; proposed improvement requires A/B trace",
+      "evidence": [
+        "inlineStylesheets 設為 always，為避免 CSS 阻塞請求的刻意設計。",
+        "首頁 inline CSS 41,223 bytes，案例頁 36,142 bytes，觀察影片頁 26,762 bytes；分別單獨 gzip 約 7,075/6,897/5,430 bytes。",
+        "三頁 HTML 皆 max-age=0,must-revalidate；相同樣式會隨不同 HTML 再傳。實際節省不是三個獨立 gzip 值直接相加。"
+      ],
+      "impact": "首次開啟可能受益於少一次請求，連續逛多支影片卻重複傳輸共用 CSS。現有 CSS 不算巨大，不建議未量測就全面外拆。",
+      "recommendation": "測量小量 critical CSS inline + 版本化共用 CSS 的方案，與現況比較冷訪首頁及首頁→影片→另一影片三頁路徑；只有結果更好才實作。",
+      "acceptance": [
+        "同一網路與裝置下比較冷訪和至少三頁連續瀏覽總 bytes、FCP/LCP。",
+        "若拆分，第二個詳情頁復用 immutable CSS，且無 FOUC、CSP 或主題退步。",
+        "若沒有實質改善，保留現有 inline 策略並記錄量測理由。"
+      ]
+    },
+    {
+      "id": "PERF-06",
+      "priority": "P2",
+      "title": "熱門排行每小時不變但跨訪客仍重跑 D1 聚合",
+      "files": [
+        {
+          "path": "src/lib/video/play-counts.ts",
+          "lines": "124-152"
+        },
+        {
+          "path": "src/scripts/video-discovery.ts",
+          "lines": "346-376"
+        },
+        {
+          "path": "functions/api/popular.ts",
+          "lines": "1"
+        }
+      ],
+      "evidence_type": "live repeated HTTP plus source",
+      "evidence": [
+        "兩次 GET 都是 cf-cache-status DYNAMIC，generatedAt 固定為整點，Cache-Control max-age 隨整點倒數。",
+        "popularPlays 每個通過 limiter 的 GET 都呼叫 PLAYBACK_DB.prepare(POPULAR_PLAYS).bind(...).all()；沒有應用層共用結果快取。",
+        "目前回應 53 筆、1,976 bytes 解壓/654 bytes gzip，很小；前端只在熱門模式才取資料，瀏覽器也有 max-age，不是每次切換一定打 origin。"
+      ],
+      "impact": "對新的訪客/冷快取，同一小時會重跑相同30天聚合。現在流量小，屬成本與擴充性改善，不能推論已造成容量問題。",
+      "recommendation": "保留整點 cutoff 與錯誤 no-store，評估按 cutoff 共用快取成功排行，或預計算每小時快照；先定義快取更新、公開影片白名單變更及 rate-limit 邊界。",
+      "acceptance": [
+        "同一 completed-hour 的後續冷訪客 GET 能重用成功結果，D1 聚合執行次數顯著降低。",
+        "整點後更新為新 cutoff；錯誤和 rate-limited 回應不得污染共用快取。",
+        "排行仍只含已公開影片，前10名/排序/篩選語意不變。"
+      ]
+    },
+    {
+      "id": "PERF-07",
+      "priority": "P2",
+      "title": "互動程式由極小入口再發現共用 chunk，多一層冷載入依賴",
+      "files": [
+        {
+          "path": "src/components/atlas/VideoDiscovery.astro",
+          "lines": "274-276"
+        },
+        {
+          "path": "src/pages/index.astro",
+          "lines": "190-193"
+        },
+        {
+          "path": "src/components/cases/CaseVideo.astro",
+          "lines": "356-360"
+        },
+        {
+          "path": "src/pages/videos/[slug].astro",
+          "lines": "426-429"
+        }
+      ],
+      "evidence_type": "live HTML and module bodies; browser waterfall unmeasured",
+      "evidence": [
+        "首頁 HTML 無 modulepreload；VideoDiscovery 入口只有 38 bytes，內容 import ./video-discovery.D0AHfKxu.js。首頁另一入口也 import 相同 chunk，ES modules 會去重，不是執行兩遍。",
+        "真正搜尋 chunk gzip 3,715 bytes；影片頁入口 import ./video-player.CuArQTPi.js，播放器核心 gzip 2,361 bytes。",
+        "初始 HTML 將搜尋與載入播放器按鈕設 hidden，必須等 module 初始化才顯示。"
+      ],
+      "impact": "程式總量很小，冷載入時的額外依賴發現往返可能比解析成本更明顯；尚未以瀏覽器 waterfall 量測互動可用時間。",
+      "recommendation": "用瀏覽器 trace 確認 wrapper→core 的延遲；若顯著，採 bundler 支援的 modulepreload 或簡化入口，避免手工硬編譯 hash。",
+      "acceptance": [
+        "冷載入核心互動 chunk 在父入口完成之前已被預載或直接發現。",
+        "紀錄搜尋表單/播放按鈕可用時間改善，不新增第三方播放請求。",
+        "保持單次初始化與 CSP；無重複下載/執行。"
+      ]
+    }
+  ],
+  "positive_controls": [
+    "主搜尋與播放器 gzip 分別只有 3.7 KB、2.4 KB，沒有證據支持換框架或導入大型搜尋服務。",
+    "首頁主要圖片已有 AVIF/WebP 與 responsive srcset；縮圖有 width/height 與固定容器比例。",
+    "兩個抽樣影片頁初始 HTML 無 iframe；原碼需明確點擊才連線 YouTube/Streamable。",
+    "版本化 /_astro 資產為一年 immutable；CJK 字型檔雖留在 public/fonts，tokens 實際字型堆疊未引用 Noto Serif TC，不能把檔案大小當成每頁下載量。",
+    "首頁搜尋預先正規化文字、處理中文 IME；熱門 API 不在一般首頁載入時呼叫。",
+    "全域 prefers-reduced-motion 已關閉動畫與 smooth scrolling，不存在無條件大型動畫的原碼證據。"
+  ],
+  "excluded_candidates": [
+    {
+      "candidate": "case-filters.ts 的 sequential shards/競態",
+      "reason": "CaseFilters 僅在 review mode 渲染（injuries/[injury].astro:112-117；leagues/[league].astro:63-67），不是本輪公開站使用者的搜尋路徑，故不列正式站問題。"
+    },
+    {
+      "candidate": "未使用 Noto Serif TC 的字型下載",
+      "reason": "@font-face 宣告與 public 檔案存在不等於實際下載；tokens 已使用原生 CJK sans，未取得瀏覽器字型請求證據。"
+    },
+    {
+      "candidate": "首頁兩處 import 同一搜尋模組造成重複執行",
+      "reason": "ES module 按 URL 去重且 initializeVideoDiscovery 有 discoveryReady guard；只提出依賴發現層數，不宣稱重複執行。"
+    }
+  ],
+  "reproduction": [
+    "curl -sS --compressed -D /tmp/atlas-home.headers https://injury.sportsmedicine.tw/ -o /tmp/atlas-home.html -w 'http=%{http_code} bytes=%{size_download} ttfb=%{time_starttransfer} total=%{time_total}\\n'",
+    "以 Python html.parser 計數 start tags、data-discovery-slug、img、iframe、script[src]；累計 style text 的 UTF-8 bytes；用 wc -c 對比解壓 HTML。",
+    "從當次 HTML 解析實際 /_astro URLs，再逐一 curl --compressed；hash 隨部署改變，勿固定本次 hash 作長期測試。",
+    "對 /api/popular 做兩次 GET 比較 generatedAt、Cache-Control、CF-Cache-Status；不要 POST /api/plays，以免寫入統計。",
+    "未使用 Playwright 或其他瀏覽器驅動；視覺與互動時間由主 agent 的 UI 審查補驗。"
+  ],
+  "memory_used": {
+    "file": "MEMORY.md",
+    "lines": "513-532",
+    "purpose": "提醒歷史 release 與播放證據不可當現況；所有本報告 HTTP 數據重新取得",
+    "rollout_id": "01a0992b-90e2-7d61-b175-f0f89d5de10d"
+  }
+}

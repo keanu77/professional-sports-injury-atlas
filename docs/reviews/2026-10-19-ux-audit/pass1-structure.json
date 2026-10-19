@@ -1,0 +1,382 @@
+{
+  "audit": "pass1-structure",
+  "date": "2026-10-19",
+  "source_head": "cc0b2fe",
+  "scope": "唯讀資訊架構、公開內容呈現、導航、metadata、重複 UI 與未使用程式追查；不評審醫療事實，不部署、不修改產品程式。",
+  "verification": {
+    "method": [
+      "逐行閱讀列出的 Astro / TS consumers",
+      "跨 src、scripts、tests、e2e、config 以元件名稱、CSS/data selector 兩種模式交叉搜尋",
+      "以現有 tsx runtime 直接執行 public selector 與 grouping / related functions，未寫入產物"
+    ],
+    "measured_public_inventory": {
+      "core_cases": 7,
+      "observation_clips": 193,
+      "total": 200,
+      "knee_category": 66,
+      "baseball_category": 33,
+      "body_parts": 14,
+      "sports": 30
+    },
+    "not_done": [
+      "未操作瀏覽器，視覺嚴重度由主 agent 現場複核",
+      "未執行完整 build / E2E；下方測試問題是原始碼契約衝突，不宣稱已跑失敗",
+      "未量測搜尋排名、流量、轉換率或使用者研究"
+    ]
+  },
+  "findings": [
+    {
+      "id": "STR-01",
+      "priority": "P1",
+      "kind": "ux_gap",
+      "confidence": 0.99,
+      "title": "分類頁失去首頁的搜尋、交叉篩選與分批瀏覽",
+      "evidence": [
+        {
+          "file": "src/pages/body-parts/[part].astro",
+          "lines": "36-67",
+          "detail": "分類導航後直接 map 全部 cases/clips 成 ol；無 VideoDiscovery。公開膝部分類共有 66 張。"
+        },
+        {
+          "file": "src/pages/sports/[sport].astro",
+          "lines": "33-64",
+          "detail": "相同長列表模板；棒球分類共有 33 張。"
+        },
+        {
+          "file": "src/pages/situations/[situation].astro",
+          "lines": "33-64",
+          "detail": "相同長列表模板。"
+        },
+        {
+          "file": "src/pages/video-types/[type].astro",
+          "lines": "44-49",
+          "detail": "影片類型分類已共用 VideoDiscovery，與其他三種分類互動能力不同。"
+        },
+        {
+          "file": "src/scripts/video-discovery.ts",
+          "lines": "134-135,236-244",
+          "detail": "首頁與影片類型頁已有每批24張及複合篩選。"
+        }
+      ],
+      "impact": "使用者先點部位或運動後，無法在同一範圍輸入球員或再選另一分類；大分類尤其需要反覆捲動。",
+      "recommendation": "讓四種分類共用列表殼與 query state，增加 fixedBody/fixedSport/fixedSituation 等範圍，保留分類頁網址與無 JS 列表。亦可把分類入口導至具 URL 狀態的統一搜尋頁。",
+      "acceptance": [
+        "膝部分類可在66張中用球員名稱縮小結果並複合選運動。",
+        "首頁與四種分類使用相同清除條件、結果數與每批24張行為。",
+        "返回／重新載入保留範圍，分類頁的直接連結與無 JS 內容仍可用。"
+      ],
+      "tradeoff": "現行靜態分類頁簡單且無 JS 可用；這是工作流程補齊，不是現有導航失效。"
+    },
+    {
+      "id": "STR-02",
+      "priority": "P2",
+      "kind": "design_tradeoff",
+      "confidence": 0.99,
+      "title": "同一列表的7筆核心案例與193筆影片採兩套卡片語言",
+      "evidence": [
+        {
+          "file": "src/components/atlas/VideoDiscovery.astro",
+          "lines": "218-260",
+          "detail": "先 render CaseCard 再 render ObservationCard，兩套卡片混在同一 ol。"
+        },
+        {
+          "file": "src/components/atlas/CaseCard.astro",
+          "lines": "65-99,209-225",
+          "detail": "姓名＋傷種 pill＋球季/完整日期/雙方球隊；下方「觀看影片與回場重點」是 p；hover 使用陰影；播放標記2.75rem。"
+        },
+        {
+          "file": "src/components/atlas/ObservationCard.astro",
+          "lines": "40-60,74-91",
+          "detail": "姓名＋事件＋運動/部位/年；下方「查看影片與解析」是 anchor；hover只換邊框；播放標記3rem。"
+        },
+        {
+          "file": "src/components/cases/CaseCover.astro",
+          "lines": "79-86",
+          "detail": "公開核心案例同樣使用 VideoThumbnail，不應誤報為目前仍採球員照片。"
+        }
+      ],
+      "impact": "相近的觀看任務卻有不同欄位密度、點擊區與提示，視覺差異反映內部資料模型，使用者未必理解。",
+      "recommendation": "建立共用 VideoCard 外觀與資料轉接層，統一標題、事件、運動/部位/年份、片型、CTA、hover與焦點規則；仍保留不同內容來源和治理邏輯。核心案例如要突出，採明確內容標籤。",
+      "acceptance": [
+        "200張卡片共用一致欄位順序、CTA語意、縮圖比例與焦點樣式。",
+        "以有雙方球隊資訊、單一年份、長事件名稱與MLB facade四種資料驗證不溢出。",
+        "不合併或繞過既有公開許可 selector。"
+      ],
+      "tradeoff": "兩種資料深度確實不同，允許專用資訊；建議統一公共外觀，並非強迫同一內容schema。"
+    },
+    {
+      "id": "STR-03",
+      "priority": "P2",
+      "kind": "ux_gap",
+      "confidence": 0.98,
+      "title": "核心案例詳頁缺少其他影片已有的返回與分類續看入口",
+      "evidence": [
+        {
+          "file": "src/pages/cases/[slug].astro",
+          "lines": "138-151,322-344",
+          "detail": "article直接從醫療提醒與標題開始；結尾只有同傷種核心案例。未輸出麵包屑、返回搜尋或部位/運動分類。"
+        },
+        {
+          "file": "src/pages/videos/[slug].astro",
+          "lines": "65,397-422",
+          "detail": "有「回到影片圖鑑」，並在推薦區後提供部位/運動/情境入口。"
+        },
+        {
+          "file": "src/components/layout/SiteHeader.astro",
+          "lines": "41-63",
+          "detail": "共用主導航提供首頁，無詳頁內容定位或分類入口。"
+        }
+      ],
+      "impact": "從搜尋結果或外部分享進核心案例後，接續探索的路徑較弱；影片和案例兩種詳頁的行為不一致。",
+      "recommendation": "共用詳頁導航殼：頂部首頁／分類／目前項目、返回搜尋結果（有已知上下文時）、底部依分類續看。長文可加影片、傷勢與後續、一般人參考、來源的頁內跳轉，依實際區塊生成。",
+      "acceptance": [
+        "兩種詳頁都能在頂部返回影片清單，在底部轉往相關分類。",
+        "返回搜尋帶回原query/filter，不以history.back作唯一出口。",
+        "直接開啟分享網址仍有可用的固定導航；頁內連結無不存在的錨點。"
+      ],
+      "tradeoff": "共用首頁連結目前可用；這是旅程連續性改善，不是死路或404。"
+    },
+    {
+      "id": "STR-04",
+      "priority": "P2",
+      "kind": "design_tradeoff",
+      "confidence": 0.99,
+      "title": "相關內容被資料來源分隔，且影片推薦反覆優先字母較前的項目",
+      "evidence": [
+        {
+          "file": "src/pages/cases/[slug].astro",
+          "lines": "105-113",
+          "detail": "只從 permitted core cases 中選同 injury code，最多3筆。"
+        },
+        {
+          "file": "src/pages/videos/[slug].astro",
+          "lines": "49",
+          "detail": "只對 allObservationClips 選推薦，不會帶到核心案例。"
+        },
+        {
+          "file": "src/lib/videos/observation-guidance.ts",
+          "lines": "58-85",
+          "detail": "同部位最高優先，次情境/運動；同分以slug字元排序，固定取前三。直接執行函式：Carolina Marin、Giannis、Markelle Fultz、Ronald Acuna 的膝部影片均推薦 adam-eaton-2017-knee、aksel-svindal-kitzbuhel-2016、alex-greenwood-2024-knee。"
+        }
+      ],
+      "impact": "影片庫雖達200筆，相關內容仍形成小圈，無法讓深度案例和一般影片互相導流，重複推薦降低探索多樣性。",
+      "recommendation": "以共用可公開影片索引產生推薦，明列推薦理由；依同部位＋同運動／情境／片型組合排序，再由編輯精選或日期作穩定tie-break。避免隨機重排破壞測試與回看。",
+      "acceptance": [
+        "核心與影片兩種詳頁均可推薦另一種內容，且所有網址實際存在。",
+        "抽查同部位的4筆不同運動影片，推薦理由明確、至少部分結果因運動或情境而不同。",
+        "不推薦自身、同影片重複項或不具公開許可項。"
+      ],
+      "tradeoff": "現行規則確定、易驗證且不會隨機跳動；字母序是產品排序取捨，非計算錯誤。"
+    },
+    {
+      "id": "STR-05",
+      "priority": "P2",
+      "kind": "design_tradeoff",
+      "confidence": 0.99,
+      "title": "「全部影片」的預設順序由資料儲存方式決定，沒有可理解的排序提示",
+      "evidence": [
+        {
+          "file": "src/components/atlas/VideoDiscovery.astro",
+          "lines": "218-260",
+          "detail": "核心案例先於所有clips。"
+        },
+        {
+          "file": "src/lib/patient/featured.ts",
+          "lines": "23-28",
+          "detail": "核心案例內部按eventDate倒序。"
+        },
+        {
+          "file": "src/lib/videos/expansion.ts",
+          "lines": "1170-1175",
+          "detail": "clips依歷次batch陣列相接。"
+        },
+        {
+          "file": "src/scripts/video-discovery.ts",
+          "lines": "230-235",
+          "detail": "all模式維持DOM cards順序，沒有全庫日期或新增時間排序。"
+        },
+        {
+          "file": "src/components/atlas/VideoDiscovery.astro",
+          "lines": "169-195",
+          "detail": "可選全部、精選、本站熱門，沒有最新事件／最近收錄排序。"
+        }
+      ],
+      "impact": "首頁前段集中7筆NBA核心案例，新增片可能長期位於尾端；使用者無法從「全部」推斷順序。",
+      "recommendation": "定義並標示預設排序；提供最近收錄、事件時間或編輯精選。若要最近收錄，先增加獨立 addedAt，勿把事件日期或內容整理日當作收錄日。",
+      "acceptance": [
+        "200筆資料用同一排序規則，而不是先cases再clips。",
+        "日期未知項有明確固定fallback，sort參數可分享與返回恢復。",
+        "顯示的「最近收錄」與資料新增時間一致，不偽造時效性。"
+      ],
+      "tradeoff": "先呈現資料較完整的核心案例可能是刻意選擇；若保留應使用「編輯推薦順序」等可理解名稱。"
+    },
+    {
+      "id": "STR-06",
+      "priority": "P2",
+      "kind": "design_tradeoff",
+      "confidence": 0.99,
+      "title": "所有詳頁共用同一張首頁截圖，分享預覽無法辨識個別內容",
+      "evidence": [
+        {
+          "file": "src/layouts/BaseLayout.astro",
+          "lines": "43-51,93-97,153-170",
+          "detail": "layout沒有分享圖props；og/twitter image固定 injury-atlas-home-20260907.png，alt固定網站名；標題與描述則已逐頁傳入。"
+        }
+      ],
+      "impact": "分享不同球員或事件時預覽圖相同，縮小頁面辨識度；這不等於目前SEO失敗。",
+      "recommendation": "新增可選逐頁分享圖介面與預設fallback，用站方可授權的純文字版型呈現姓名、事件/部位與年份；保留目前使用者指定首頁截圖，變更須確認該設計取捨。",
+      "acceptance": [
+        "首頁仍使用指定圖，兩筆不同詳頁輸出不同且與頁面標題一致的分享圖。",
+        "圖片URL可公開讀取，尺寸與meta吻合，alt描述頁面內容。",
+        "不直接將受既有權利限制的球員照片或影片畫面用於分享圖。"
+      ],
+      "tradeoff": "原始碼註解明確說目前是使用者提供的首頁截圖；此項屬新設計建議，不當成錯誤或擅自替換。"
+    },
+    {
+      "id": "STR-07",
+      "priority": "P2",
+      "kind": "maintenance_confirmed",
+      "confidence": 0.99,
+      "title": "有可確認的未使用 scoped CSS 與已退出渲染流程的舊卡片",
+      "evidence": [
+        {
+          "file": "src/pages/video-types/[type].astro",
+          "lines": "70-86",
+          "detail": ".type-grid三段scoped樣式仍在，但本頁已改用VideoDiscovery；元件實際class是video-grid。"
+        },
+        {
+          "file": "src/pages/cases/[slug].astro",
+          "lines": "391-393",
+          "detail": ".case-notes-column在本頁不存在；同名class只在review/fixtures/[fixture].astro:240，無法消費另一route的scoped CSS。"
+        },
+        {
+          "file": "src/components/atlas/InjuryCard.astro",
+          "lines": "1-165",
+          "detail": "全專案可執行程式中沒有import或render consumer；首頁已不render此元件。"
+        },
+        {
+          "file": "scripts/verify-brand-assets.ts",
+          "lines": "124-129,571-603",
+          "detail": "唯一元件檔名引用是權利驗證allowlist，這是掃描許可清單，不是runtime consumer。"
+        },
+        {
+          "file": "src/styles/global.css",
+          "lines": "99-112",
+          "detail": "仍保留injury-card-title的全域selector；e2e另有舊data selector依賴，見STR-08。"
+        }
+      ],
+      "impact": "增加閱讀與維護成本，容易讓後續設計誤以為這些UI仍是公開流程；未聲稱有可量測效能收益。",
+      "recommendation": "小範圍清理確認無效的scoped樣式；對InjuryCard先確認是否需作歷史教材保留，若刪除，精準同步allowlist、全域樣式與舊測試，不刪其共享圖片/helper。",
+      "acceptance": [
+        "class名稱搜尋與class/dynamic DOM mutation搜尋均無遺留依賴。",
+        "typecheck、build、brand verify及受影響E2E通過。",
+        "公開畫面與review fixture無視覺差異；歷史治理JSON不因清理被任意修改。"
+      ],
+      "consumer_trace": {
+        "patterns": [
+          "InjuryCard|components/atlas/InjuryCard，再搜injury-card|data-injury-card",
+          "type-grid|case-notes-column，再搜class/classList/querySelector/createElement與近似token"
+        ],
+        "scope": "src、scripts、tests、e2e、public、astro.config.mjs、package.json；另搜尋import.meta.glob，唯一元件內glob是VideoThumbnail的圖片檔，不會動態匯入InjuryCard。",
+        "limit": "未執行全庫knip/depcheck，不將其他歷史治理資料或共享image資產宣稱為dead code。"
+      }
+    },
+    {
+      "id": "STR-08",
+      "priority": "P1",
+      "kind": "test_contract_conflict",
+      "confidence": 0.99,
+      "title": "無JavaScript測試仍期待已移除首頁卡片，與目前導航測試矛盾",
+      "evidence": [
+        {
+          "file": "e2e/no-javascript.spec.ts",
+          "lines": "16-25",
+          "detail": "禁用JS後斷言首頁有3張data-injury-card。"
+        },
+        {
+          "file": "e2e/atlas-navigation.spec.ts",
+          "lines": "19-27",
+          "detail": "同一路徑首頁明確斷言data-injury-card為0，測試名稱也說目錄已移除。"
+        },
+        {
+          "file": "playwright.config.ts",
+          "lines": "11-24",
+          "detail": "兩者都在e2e目錄並使用同一review build/preview，不是刻意測兩個產品版本。"
+        },
+        {
+          "file": "src/pages/index.astro",
+          "lines": "110-185",
+          "detail": "目前模板以VideoDiscovery為主，無InjuryCard/無noscript分支render該卡。"
+        }
+      ],
+      "impact": "現有測試契約無法共同代表目前首頁，後續設計調整可能被過時預期阻擋；不宣稱本次已實際執行並觀察失敗。",
+      "recommendation": "把no-JS首頁驗收改成現在真正承諾的可讀影片列表、分類連結與外部影片入口；保留無JS回退測試，另建立public launch模式最小旅程測試避免只測歷史review。",
+      "acceptance": [
+        "在同一全新review artifact上，兩個首頁測試與no-JS流程都通過。",
+        "public模式驗證7＋193內容、分類及兩種詳頁的無JS入口。",
+        "測試名稱、註解與實際產品導航一致，沒有僅刪除assert來消除失敗。"
+      ]
+    },
+    {
+      "id": "STR-09",
+      "priority": "P2",
+      "kind": "information_architecture_tradeoff",
+      "confidence": 0.96,
+      "title": "舊傷種總覽仍公開生成，但與目前部位影片庫的數量與入口未接合",
+      "evidence": [
+        {
+          "file": "src/pages/injuries/[injury].astro",
+          "lines": "42-61,95-108",
+          "detail": "三個傷種頁仍固定生成，只從permitted core cases計數；本次selector可得achilles3、ankle4、acl0。"
+        },
+        {
+          "file": "src/lib/routes/static-paths.ts",
+          "lines": "42-44",
+          "detail": "三種傷種route永遠存在，即使沒有核心案例。"
+        },
+        {
+          "file": "src/components/atlas/InjuryCard.astro",
+          "lines": "39-40",
+          "detail": "舊入口僅存在於已無render consumer的卡片；src內其他injuries href主要是傷種頁本身分頁。"
+        },
+        {
+          "file": "astro.config.mjs",
+          "lines": "25-35",
+          "detail": "public sitemap來自全部build頁面；src/lib/governance/sitemap.ts:3-8僅排review和404，不排injuries。"
+        },
+        {
+          "file": "src/pages/body-parts/[part].astro",
+          "lines": "18-23,38-39",
+          "detail": "新部位頁合併核心與clips；小腿/阿基里斯腱22、膝66，與舊傷種頁不是相同收錄範圍。"
+        }
+      ],
+      "impact": "從搜尋引擎進入舊傷種頁者看到極少或零案例，從主站導航進來卻看到較大的影片庫；範圍差異需要被解釋。",
+      "recommendation": "明確決定三個傷種頁的產品角色：保留作深度衛教總覽並標註核心案例範圍，加入對應部位影片庫連結；或策劃正式退場方案。不要把不同醫療傷種與部位視為同義而直接批次redirect。",
+      "acceptance": [
+        "三個傷種頁都清楚區分衛教總覽、核心案例數與較廣的影片庫範圍。",
+        "從公開導航能找到保留的總覽；從總覽可到相關影片庫。",
+        "canonical、sitemap、內部連結與保留/退場策略一致，舊分享網址有合理結果。"
+      ],
+      "tradeoff": "部位不等於確診傷種，數量不應硬湊一致；此項要求範圍可理解，並不推斷所有同部位影片的診斷。"
+    }
+  ],
+  "follow_up_candidates_not_promoted": [
+    {
+      "candidate": "載入更多後的返回位置",
+      "file": "src/scripts/video-discovery.ts",
+      "lines": "134-135,204-214,475-488",
+      "reason": "visibleLimit只存記憶體、restoreLocation重設24；已請主agent檢查瀏覽器返回/bfcache行為。沒有互動證據，不列為已確認使用者可重現bug。"
+    },
+    {
+      "candidate": "增加結構化資料",
+      "reason": "未找到公開VideoObject/BreadcrumbList輸出，但未查核搜尋引擎當期規範或測得搜尋問題；不將缺少schema標成SEO bug。"
+    }
+  ],
+  "positive_observations": [
+    "既有搜尋query、type、sport、body、mode會寫入URL，並處理popstate。",
+    "公開案例selector與observation資料界線明確；改善UI不應移除許可與來源治理。",
+    "BaseLayout已有逐頁title/description/canonical、zh-Hant、OG與Twitter基本meta。",
+    "回場區有來源與資料整理日期，並區分一般人參考與選手里程碑；本次只評估呈現與可發現性，不對醫療內容背書。"
+  ],
+  "memory_note": "MEMORY.md僅用於定位歷史專案，未使用歷史版本/發布數字作現況證據；所有inventory來自本次執行。"
+}

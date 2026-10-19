@@ -63,6 +63,9 @@ function setupEmbed(root: HTMLElement): void {
 
   const fail = (iframe: HTMLIFrameElement): void => {
     if (activeIframe !== iframe) return;
+    // Removing the focused iframe moves focus to the document body. Capture
+    // ownership first so a delayed error never pulls a reader back here.
+    const restoreFocus = stage.contains(document.activeElement);
     activeIframe = null;
     iframe.remove();
     controller.player = null;
@@ -79,7 +82,7 @@ function setupEmbed(root: HTMLElement): void {
         ? "重新開啟 MLB 官方影片播放器框架"
         : "重新載入 YouTube 播放器",
     );
-    button.focus();
+    if (restoreFocus) button.focus();
   };
 
   button.addEventListener("click", () => {

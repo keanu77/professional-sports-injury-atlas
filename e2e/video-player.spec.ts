@@ -192,7 +192,7 @@ interface StubLog {
 
 async function stubYouTubeRoutes(
   page: Page,
-  options: { failApi?: boolean } = {},
+  options: { failApi?: boolean; apiResponseGate?: Promise<void> } = {},
 ): Promise<StubLog> {
   const log: StubLog = { youtubeRequests: [], unmocked: [] };
   await page.route("**/*", async (route) => {
@@ -203,6 +203,7 @@ async function stubYouTubeRoutes(
     }
     log.youtubeRequests.push(url.href);
     if (url.href === IFRAME_API_URL) {
+      await options.apiResponseGate;
       if (options.failApi === true) {
         await route.abort("failed");
         return;
@@ -766,6 +767,84 @@ test.describe("click-to-load player", () => {
     await expectNoAxeViolations(page);
   });
 
+  test("shows loading feedback in the existing live region while the API is pending", async ({
+    page,
+  }) => {
+    let releaseApi!: () => void;
+    const apiResponseGate = new Promise<void>((resolve) => {
+      releaseApi = resolve;
+    });
+    await stubYouTubeRoutes(page, { apiResponseGate });
+    await page.goto(LAB_PATH);
+    const card = reviewCard(page);
+    await card.locator("[data-video-load]").click();
+    try {
+      await expect(card).toHaveAttribute("data-video-state", "loading");
+      const status = card.locator("[data-video-status]");
+      await expect(status).toHaveCount(1);
+      await expect(status).toBeVisible();
+      await expect(status).toContainText("正在載入 YouTube 播放器");
+      const statusBox = await status.boundingBox();
+      expect(statusBox).not.toBeNull();
+      expect(statusBox!.width).toBeGreaterThan(100);
+      expect(statusBox!.height).toBeGreaterThan(16);
+      await expect(status).toHaveAttribute("role", "status");
+      await expect(status).toHaveAttribute("aria-live", "polite");
+      await expect(card.locator("[data-video-source-link]")).toBeVisible();
+    } finally {
+      releaseApi();
+    }
+    await expect(card).toHaveAttribute("data-video-state", "ready");
+    await expect(card.locator("[data-video-status]")).toContainText(
+      "播放器已載入",
+    );
+  });
+
+  test("a delayed API failure preserves focus after the reader leaves the player", async ({
+    page,
+  }) => {
+    let releaseApi!: () => void;
+    const apiResponseGate = new Promise<void>((resolve) => {
+      releaseApi = resolve;
+    });
+    await stubYouTubeRoutes(page, { failApi: true, apiResponseGate });
+    await page.goto(LAB_PATH);
+    const card = reviewCard(page);
+    const button = card.locator("[data-video-load]");
+    const outsideControl = page.getByRole("button", { name: "深色模式" });
+    await button.click();
+    try {
+      await expect(card).toHaveAttribute("data-video-state", "loading");
+      await outsideControl.focus();
+      await expect(outsideControl).toBeFocused();
+    } finally {
+      releaseApi();
+    }
+    await expect(card).toHaveAttribute("data-video-state", "failed");
+    await expect(card.locator("iframe")).toHaveCount(0);
+    await expect(button).toBeVisible();
+    await expect(outsideControl).toBeFocused();
+    await expect(card.locator("[data-video-status]")).toBeVisible();
+    await expect(card.locator("[data-video-status]")).toContainText("播放失敗");
+  });
+
+  test("a playback error preserves focus on the original source link", async ({
+    page,
+  }) => {
+    await stubYouTubeRoutes(page);
+    await page.goto(LAB_PATH);
+    const card = reviewCard(page);
+    await card.locator("[data-video-load]").click();
+    await expect(card).toHaveAttribute("data-video-state", "ready");
+    const source = card.locator("[data-video-source-link]");
+    await source.focus();
+    await page.evaluate(() =>
+      (window as any).__playerEvents[0].onError({ data: 150 }),
+    );
+    await expect(card).toHaveAttribute("data-video-state", "failed");
+    await expect(source).toBeFocused();
+  });
+
   test("playback error after readiness restores a retry and ignores stale player events", async ({
     page,
   }) => {
@@ -775,6 +854,7 @@ test.describe("click-to-load player", () => {
     const button = card.locator("[data-video-load]");
     await button.click();
     await expect(card).toHaveAttribute("data-video-state", "ready");
+    await expect(card.locator("iframe")).toBeFocused();
     await page.evaluate(() =>
       (window as any).__playerEvents[0].onError({ data: 150 }),
     );

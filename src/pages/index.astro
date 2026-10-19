@@ -99,15 +99,22 @@ const videoCount = featured.length + clips.length;
           </dl>
           <div class="home-hero-actions">
             <a class="home-video-cta" href="#videos-heading">開始找影片</a>
-            <a class="home-video-secondary" href="/video-types/injury-moment/"
-              >看受傷瞬間 <span aria-hidden="true">↗</span></a
-            >
+            {
+              isLaunchEnabled() && (
+                <a
+                  class="home-video-secondary"
+                  href="/video-types/injury-moment/"
+                >
+                  看受傷瞬間 <span aria-hidden="true">↗</span>
+                </a>
+              )
+            }
           </div>
         </div>
       </div>
     </div>
   </header>
-  <VideoDiscovery featured={featured} clips={clips}>
+  <VideoDiscovery featured={featured} clips={clips} priorityFirst={false}>
     {
       isLaunchEnabled() && (
         <section class="home-categories" data-home-categories>
@@ -219,30 +226,37 @@ const videoCount = featured.length + clips.length;
     margin-inline-start: 0.35rem;
   }
   .home-categories {
-    margin-block: 1.25rem;
+    margin-block: 0.75rem;
   }
   .home-category-controls:not([hidden]) {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
   .home-category-controls {
-    gap: 0.5rem;
-    margin-block-end: 1rem;
+    gap: 0.25rem;
+    margin-block-end: 0.75rem;
+    border-block-end: 1px solid var(--hairline);
   }
   .home-category-controls button {
     min-height: 44px;
     padding: 0.6rem 0.8rem;
-    border: 1px solid var(--color-brand-100);
-    border-radius: 999px;
-    background: var(--color-surface-raised);
-    color: var(--color-brand-primary);
+    border: 0;
+    border-block-end: 3px solid transparent;
+    border-radius: 0;
+    background: transparent;
+    color: var(--color-ink-muted);
     font: inherit;
     font-weight: 600;
+    transition:
+      color 160ms ease,
+      border-color 160ms ease;
   }
   .home-category-controls button[aria-expanded="true"] {
-    border-color: var(--color-brand-primary);
-    background: var(--color-brand-primary);
-    color: var(--color-on-brand);
+    border-block-end-color: var(--color-brand-primary);
+    color: var(--color-brand-primary);
+  }
+  .home-category-controls button:hover {
+    color: var(--color-brand-primary);
   }
   .video-intro {
     color-scheme: dark;
@@ -261,7 +275,7 @@ const videoCount = featured.length + clips.length;
     align-items: center;
     justify-content: space-between;
     gap: 1rem 1.5rem;
-    min-height: 4.5rem;
+    min-height: 3.75rem;
   }
   @media (max-width: 40rem) {
     .home-intro-topline {
@@ -285,7 +299,7 @@ const videoCount = featured.length + clips.length;
   }
   .home-hero-stage {
     position: relative;
-    min-height: 20.5rem;
+    min-height: 18rem;
     isolation: isolate;
   }
   .home-hero-art {
@@ -329,7 +343,7 @@ const videoCount = featured.length + clips.length;
     position: relative;
     z-index: 1;
     width: min(52%, 38rem);
-    padding-block: 1.2rem 2rem;
+    padding-block: 0.75rem 1.25rem;
   }
   .home-hero-eyebrow {
     margin: 0 0 0.35rem;
@@ -353,13 +367,13 @@ const videoCount = featured.length + clips.length;
   .atlas-stats {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
+    gap: 0.8rem;
     max-width: 32rem;
-    margin: 1rem 0;
+    margin: 0.85rem 0;
   }
   .atlas-stats > div {
-    border-block-start: 2px solid var(--color-brand-primary);
-    padding-block-start: 0.75rem;
+    border-block-start: 1px solid var(--hairline);
+    padding-block-start: 0.45rem;
   }
   .atlas-stats dt {
     font-size: 0.875rem;
@@ -374,7 +388,7 @@ const videoCount = featured.length + clips.length;
     color: var(--color-ink);
   }
   .atlas-stats strong {
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-size: clamp(1.5rem, 3vw, 2rem);
     line-height: 1.2;
     font-variant-numeric: tabular-nums;
   }
@@ -416,7 +430,7 @@ const videoCount = featured.length + clips.length;
       padding-block: 0.75rem;
     }
     .home-hero-stage {
-      min-height: 18.25rem;
+      min-height: 17rem;
       padding-block-end: 0.5rem;
     }
     .home-hero-art {

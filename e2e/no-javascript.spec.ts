@@ -20,7 +20,20 @@ test.describe("no-javascript readability", () => {
     page,
   }) => {
     await page.goto("/");
-    await expect(page.locator("[data-injury-card]")).toHaveCount(3);
+    const catalog = page.locator("[data-discovery-grid]");
+    await expect(catalog).toBeVisible();
+    const cards = catalog.locator("[data-discovery-slug]");
+    expect(await cards.count()).toBeGreaterThan(0);
+    await expect(cards.last()).toBeVisible();
+    await expect(catalog.locator("[data-discovery-slug][hidden]")).toHaveCount(
+      0,
+    );
+    await expect(page.locator("[data-video-search]")).toBeHidden();
+    await expect(page.locator("[data-discovery-pagination]")).toBeHidden();
+    await expect(page.locator("[data-injury-card]")).toHaveCount(0);
+    await expect(page.locator("iframe")).toHaveCount(0);
+    const detailLink = cards.first().locator("h3 a");
+    await expect(detailLink).toHaveAttribute("href", /^\/(?:cases|videos)\//u);
 
     await page.goto("/injuries/acl/");
     await expect(page.locator("[data-injury-scope]")).toBeVisible();
@@ -34,6 +47,33 @@ test.describe("no-javascript readability", () => {
         "",
     );
     expect(noscriptText).toContain("進階複合篩選需要 JavaScript");
+  });
+
+  test("category catalogues expose every static card without search scripts", async ({
+    page,
+  }) => {
+    test.skip(
+      process.env.ATLAS_PUBLIC_LAUNCH !== "decision-21",
+      "Public catalogue only",
+    );
+    for (const path of [
+      "/body-parts/knee/",
+      "/sports/baseball/",
+      "/situations/ball-impact/",
+      "/video-types/injury-moment/",
+    ]) {
+      await page.goto(path);
+      const cards = page.locator("[data-discovery-slug]");
+      expect(await cards.count()).toBeGreaterThan(0);
+      await expect(cards.last()).toBeVisible();
+      await expect(page.locator("[data-discovery-slug][hidden]")).toHaveCount(
+        0,
+      );
+      await expect(page.locator("[data-video-search]")).toBeHidden();
+      await expect(
+        page.getByRole("link", { name: /← 全部影片/u }),
+      ).toBeVisible();
+    }
   });
 
   test("fixture case detail keeps the single complete professional-note view readable", async ({

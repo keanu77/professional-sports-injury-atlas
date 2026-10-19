@@ -13,7 +13,7 @@ const linksEnabled = isLaunchEnabled();
 
 {
   types.length > 0 && (
-    <ul class="video-type-tags" aria-label="影片類型">
+    <ul class="video-type-tags" role="list" aria-label="影片類型">
       {types.map((type) => (
         <li>
           {linksEnabled ? (
@@ -31,7 +31,7 @@ const linksEnabled = isLaunchEnabled();
   .video-type-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4rem;
+    gap: 0.25rem 0.5rem;
     padding: 0;
     margin: 0.75rem 0 0;
     list-style: none;
@@ -40,15 +40,16 @@ const linksEnabled = isLaunchEnabled();
     display: inline-flex;
     align-items: center;
     min-height: 44px;
-    padding: 0.2rem 0.55rem;
-    border-radius: 999px;
-    background: var(--color-brand-50);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    background: transparent;
     color: var(--color-brand-primary);
-    font-size: 0.875rem;
-    font-weight: 600;
+    font-size: 0.8125rem;
+    font-weight: 400;
     text-decoration: none;
   }
   a:hover {
+    background: var(--color-brand-50);
     text-decoration: underline;
   }
   a:focus-visible {

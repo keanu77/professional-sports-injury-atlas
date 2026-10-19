@@ -96,6 +96,41 @@ test.describe("layout accessibility", () => {
     }
   });
 
+  test("uses the contrasting on-brand inset focus ring on observation player buttons in both themes", async ({
+    page,
+  }) => {
+    test.skip(
+      process.env.ATLAS_PUBLIC_LAUNCH !== "decision-21",
+      "Observation routes belong to the public launch",
+    );
+    await page.goto("/videos/zverev-roland-garros-2022/");
+    const button = page.locator(".clip-facade [data-video-load]");
+    for (let theme = 0; theme < 2; theme += 1) {
+      await button.focus();
+      await page.keyboard.press("Tab");
+      await page.keyboard.press("Shift+Tab");
+      await expect(button).toBeFocused();
+      const styles = await button.evaluate((element) => {
+        const style = getComputedStyle(element);
+        return {
+          outline: style.outlineStyle,
+          width: style.outlineWidth,
+          offset: style.outlineOffset,
+          outlineColor: style.outlineColor,
+          foreground: style.color,
+          fill: style.backgroundColor,
+        };
+      });
+      expect(styles.outline).toBe("solid");
+      expect(styles.width).toBe("3px");
+      expect(styles.offset).toBe("-4px");
+      expect(styles.outlineColor).toBe(styles.foreground);
+      expect(styles.outlineColor).not.toBe(styles.fill);
+      if (theme === 0)
+        await page.getByRole("button", { name: "深色模式" }).click();
+    }
+  });
+
   test("persists the manual theme choice locally only", async ({ page }) => {
     await page.goto("/");
     const themeToggle = page.getByRole("button", { name: "深色模式" });
@@ -145,14 +180,29 @@ test.describe("layout accessibility", () => {
     }
   });
 
-  test("clamps and persists the font scale between 0.875 and 1.5", async ({
+  test("announces and persists the font scale while keeping limit controls inert and focusable", async ({
     page,
   }) => {
     await page.goto("/");
     await expect(page.locator("html")).toHaveAttribute("data-font-scale", "1");
 
     const increase = page.getByRole("button", { name: "放大字級" });
-    for (let click = 0; click < 6; click += 1) await increase.click();
+    const decrease = page.getByRole("button", { name: "縮小字級" });
+    const status = page.locator("[data-font-scale-status]");
+    await expect(status).toHaveText("目前字級 100%。");
+    await expect(increase).toHaveAttribute("aria-disabled", "false");
+    await expect(decrease).toHaveAttribute("aria-disabled", "false");
+    for (let click = 0; click < 3; click += 1) await increase.click();
+    await expect(page.locator("html")).toHaveAttribute(
+      "data-font-scale",
+      "1.5",
+    );
+    await expect(increase).toHaveAttribute("aria-disabled", "true");
+    await expect(decrease).toHaveAttribute("aria-disabled", "false");
+    await expect(status).toHaveText("目前字級 150%，已達最大字級。");
+    await increase.focus();
+    await increase.press("Enter");
+    await expect(increase).toBeFocused();
     await expect(page.locator("html")).toHaveAttribute(
       "data-font-scale",
       "1.5",
@@ -169,9 +219,20 @@ test.describe("layout accessibility", () => {
       "data-font-scale",
       "1.5",
     );
+    await expect(increase).toHaveAttribute("aria-disabled", "true");
+    await expect(status).toHaveText("目前字級 150%，已達最大字級。");
 
-    const decrease = page.getByRole("button", { name: "縮小字級" });
-    for (let click = 0; click < 8; click += 1) await decrease.click();
+    for (let click = 0; click < 4; click += 1) await decrease.click();
+    await expect(page.locator("html")).toHaveAttribute(
+      "data-font-scale",
+      "0.875",
+    );
+    await expect(decrease).toHaveAttribute("aria-disabled", "true");
+    await expect(increase).toHaveAttribute("aria-disabled", "false");
+    await expect(status).toHaveText("目前字級 87.5%，已達最小字級。");
+    await decrease.focus();
+    await decrease.press("Enter");
+    await expect(decrease).toBeFocused();
     await expect(page.locator("html")).toHaveAttribute(
       "data-font-scale",
       "0.875",

@@ -288,6 +288,34 @@ describe("whole-site palette migration", () => {
   });
 });
 
+describe("observation player keyboard focus", () => {
+  const route = readFileSync(
+    new URL("../../src/pages/videos/[slug].astro", import.meta.url),
+    "utf8",
+  );
+
+  it("binds the inset focus ring to the on-brand foreground on its actual fill", () => {
+    expect(route).toMatch(
+      /\.clip-facade button\s*\{[^}]*background:\s*var\(--color-brand-primary\)/,
+    );
+    expect(route).toMatch(
+      /\.clip-facade button:focus-visible\s*\{[^}]*outline:\s*3px solid var\(--color-on-brand\)/,
+    );
+  });
+
+  for (const theme of [0, 1] as const) {
+    it(`${theme === 0 ? "light" : "dark"}: the inset ring contrasts at least 3:1 with the button fill`, () => {
+      // --color-on-brand is asserted above as --color-surface-raised.
+      expect(
+        contrastRatio(
+          token("color-surface-raised", theme),
+          token("color-brand-primary", theme),
+        ),
+      ).toBeGreaterThanOrEqual(3);
+    });
+  }
+});
+
 describe("governed case cover", () => {
   const component = readFileSync(
     new URL("../../src/components/cases/CaseCover.astro", import.meta.url),

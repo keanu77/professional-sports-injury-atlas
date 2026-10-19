@@ -16,6 +16,7 @@ import "@fontsource/fraunces/latin-700.css";
 import "@fontsource/inter/latin-400.css";
 import "@fontsource/inter/latin-600.css";
 import { getImage } from "astro:assets";
+import { getCollection } from "astro:content";
 import "../styles/tokens.css";
 import "../styles/global.css";
 import "../styles/layout.css";
@@ -39,6 +40,11 @@ import {
   CASE_HERO_QUALITY,
   caseHeroWidthsFor,
 } from "../lib/ui/image-renditions";
+import {
+  detailShareCatalog,
+  HOME_SHARE_IMAGE,
+  shareImageForPage,
+} from "../lib/social/catalog";
 
 interface Props {
   title: string;
@@ -90,11 +96,24 @@ const canonicalUrl =
     governance.indexingAuthorization.status === "authorized")
     ? new URL(Astro.url.pathname, publicSiteUrl).href
     : null;
-// User-provided homepage screenshot, preserved without cropping or re-encoding.
-const shareImageUrl =
+// The homepage keeps the exact user-provided screenshot. Detail artwork is
+// selected from the same public-only catalog as the generated PNG routes.
+const shareImage =
   canonicalUrl === null
     ? null
-    : new URL("/social/injury-atlas-home-20260907.png", canonicalUrl).href;
+    : buildMode === "public" && isLaunchEnabled()
+      ? shareImageForPage(
+          Astro.url.pathname,
+          detailShareCatalog(
+            buildMode,
+            (await getCollection("cases")).map((entry) => entry.data),
+          ),
+        )
+      : HOME_SHARE_IMAGE;
+const shareImageUrl =
+  canonicalUrl === null || shareImage === null
+    ? null
+    : new URL(shareImage.path, canonicalUrl).href;
 
 const bandPreloadWidths = [480, 720, 768, 840, 960, 1280, 1600, 2400];
 const casePreloadWidths =
@@ -150,26 +169,34 @@ const casePreload =
     <meta name="description" content={description} />
     {canonicalUrl !== null && <link rel="canonical" href={canonicalUrl} />}
     {
-      canonicalUrl !== null && shareImageUrl !== null && (
-        <>
-          <meta property="og:type" content="website" />
-          <meta property="og:locale" content="zh_TW" />
-          <meta property="og:title" content={title} />
-          <meta property="og:description" content={description} />
-          <meta property="og:url" content={canonicalUrl} />
-          <meta property="og:image" content={shareImageUrl} />
-          <meta property="og:image:type" content="image/png" />
-          <meta property="og:image:width" content="1380" />
-          <meta property="og:image:height" content="542" />
-          <meta property="og:image:alt" content="運動傷害影片圖鑑" />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content={title} />
-          <meta name="twitter:description" content={description} />
-          <meta name="twitter:url" content={canonicalUrl} />
-          <meta name="twitter:image" content={shareImageUrl} />
-          <meta name="twitter:image:alt" content="運動傷害影片圖鑑" />
-        </>
-      )
+      canonicalUrl !== null &&
+        shareImageUrl !== null &&
+        shareImage !== null && (
+          <>
+            <meta property="og:type" content="website" />
+            <meta property="og:locale" content="zh_TW" />
+            <meta property="og:title" content={title} />
+            <meta property="og:description" content={description} />
+            <meta property="og:url" content={canonicalUrl} />
+            <meta property="og:image" content={shareImageUrl} />
+            <meta property="og:image:type" content="image/png" />
+            <meta
+              property="og:image:width"
+              content={String(shareImage.width)}
+            />
+            <meta
+              property="og:image:height"
+              content={String(shareImage.height)}
+            />
+            <meta property="og:image:alt" content={shareImage.alt} />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content={title} />
+            <meta name="twitter:description" content={description} />
+            <meta name="twitter:url" content={canonicalUrl} />
+            <meta name="twitter:image" content={shareImageUrl} />
+            <meta name="twitter:image:alt" content={shareImage.alt} />
+          </>
+        )
     }
     {
       bandPreloads.length > 0 && (

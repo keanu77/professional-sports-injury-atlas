@@ -10,9 +10,18 @@
  */
 import { MECHANISMS } from "../../data/taxonomy/mechanisms";
 import { getCollection, type CollectionEntry } from "astro:content";
-import CaseCard from "../../components/atlas/CaseCard.astro";
+import DetailNavigation from "../../components/atlas/DetailNavigation.astro";
+import DetailContents from "../../components/atlas/DetailContents.astro";
+import DetailCategories from "../../components/atlas/DetailCategories.astro";
+import RelatedVideos from "../../components/atlas/RelatedVideos.astro";
 import VideoTypeTags from "../../components/atlas/VideoTypeTags.astro";
-import { hasPublicEmbed, videoFirstCases } from "../../lib/patient/featured";
+import { hasPublicEmbed } from "../../lib/patient/featured";
+import { isLaunchEnabled } from "../../lib/patient/public-launch";
+import { observationClips } from "../../lib/videos/expansion";
+import {
+  caseCategoryLinks,
+  relatedVideosFor,
+} from "../../lib/videos/related-videos";
 import PatientGuide from "../../components/cases/PatientGuide.astro";
 import EventFollowUp from "../../components/cases/EventFollowUp.astro";
 import EventMechanism from "../../components/cases/EventMechanism.astro";
@@ -102,15 +111,31 @@ const contentSegments = contentTypeSegmentsFor(
   record.video.canonicalUrl,
 );
 const isYouTubeVideo = parseYouTubeVideoId(record.video.canonicalUrl) !== null;
-const related = videoFirstCases(
-  permitted.filter(
-    (candidate) =>
-      candidate.id !== record.id &&
-      candidate.injury.code === record.injury.code,
-  ),
-)
-  .filter(hasPublicEmbed)
-  .slice(0, 3);
+const related = relatedVideosFor({ kind: "case", record }, [
+  ...permitted
+    .filter(hasPublicEmbed)
+    .map((candidate) => ({ kind: "case" as const, record: candidate })),
+  ...observationClips().map((clip) => ({ kind: "observation" as const, clip })),
+]);
+const categoryLinks = isLaunchEnabled() ? caseCategoryLinks(record) : [];
+const contents = [
+  { id: "case-analysis-heading", label: "受傷影片" },
+  ...(eventUpdate?.mechanism
+    ? [
+        { id: `event-mechanism-${record.slug}`, label: "受傷機轉重點" },
+        { id: "case-follow-up", label: "傷勢與後續" },
+      ]
+    : buildMode === "public"
+      ? [{ id: "case-observation", label: "影片觀察" }]
+      : []),
+  { id: `${record.injury.code}-now`, label: "當下處理" },
+  { id: `${record.injury.code}-urgent`, label: "就醫警訊" },
+  ...(eventUpdate?.mechanism
+    ? []
+    : [{ id: "case-follow-up", label: "傷勢與後續" }]),
+  { id: "case-sources", label: "完整來源" },
+  { id: "related-heading", label: "繼續看" },
+];
 const contentDigest = computeCaseContentDigest(record);
 const renderedSetDigest = computeRenderedSetDigest(permitted);
 const followUpEntry = validatedFollowUps(await getCollection("cases")).find(
@@ -140,6 +165,10 @@ if (videoSource === undefined) {
     data-case-id={record.id}
     data-injury-theme={record.injury.code}
   >
+    <DetailNavigation
+      title={record.athlete.name}
+      category={categoryLinks.find((link) => link.kind === "body-part")}
+    />
     <MedicalNotice variant="compact" />
     <header class="case-heading">
       <p class="eyebrow">{injuryLabel} · {leagueLabel}</p>
@@ -149,6 +178,7 @@ if (videoSource === undefined) {
       </p>
       <VideoTypeTags slug={record.slug} videoUrl={record.video.canonicalUrl} />
     </header>
+    <DetailContents sections={contents} />
     <section aria-labelledby="case-analysis-heading">
       <h2 class="section-title" id="case-analysis-heading">受傷當下的影片</h2>
       <div class="case-detail-grid">
@@ -209,7 +239,11 @@ if (videoSource === undefined) {
 
     {
       buildMode === "public" && !eventUpdate?.mechanism && (
-        <section class="case-section" data-visible-observation>
+        <section
+          class="case-section"
+          id="case-observation"
+          data-visible-observation
+        >
           <>
             <h2>受傷當下看什麼</h2>
             <p>{record.general.whatIsVisible}</p>
@@ -221,16 +255,22 @@ if (videoSource === undefined) {
       eventUpdate?.mechanism && (
         <>
           <EventMechanism update={eventUpdate} />
-          <EventFollowUp update={eventUpdate} />
+          <div id="case-follow-up">
+            <EventFollowUp update={eventUpdate} />
+          </div>
         </>
       )
     }
     <PatientGuide injuryCode={record.injury.code} buildMode={buildMode} />
     {
       eventUpdate?.mechanism ? null : eventUpdate ? (
-        <EventFollowUp update={eventUpdate} />
+        <div id="case-follow-up">
+          <EventFollowUp update={eventUpdate} />
+        </div>
       ) : (
-        <ActualReturn record={record} followUp={followUpEntry?.sidecar} />
+        <div id="case-follow-up">
+          <ActualReturn record={record} followUp={followUpEntry?.sidecar} />
+        </div>
       )
     }
     <details class="case-disclosure">
@@ -276,7 +316,7 @@ if (videoSource === undefined) {
 
       <ProfessionalNotes professional={record.professional} />
     </details>
-    <details class="case-disclosure">
+    <details class="case-disclosure" id="case-sources">
       <summary>後續報導與完整來源</summary>
 
       {
@@ -320,26 +360,9 @@ if (videoSource === undefined) {
     }
 
     <section class="case-section" aria-labelledby="related-heading">
-      <h2 class="section-title" id="related-heading">
-        其他 {injuryLabel} 案例{buildMode === "review" ? "（最多 3 筆）" : ""}
-      </h2>
-      {
-        related.length === 0 ? (
-          <p>目前沒有其他已審查的 {injuryLabel} 案例。</p>
-        ) : (
-          <ol class="case-list">
-            {related.map((candidate) => (
-              <li>
-                <CaseCard
-                  record={candidate}
-                  showWorkflowBadge={false}
-                  compact
-                />
-              </li>
-            ))}
-          </ol>
-        )
-      }
+      <h2 class="section-title" id="related-heading">相關影片</h2>
+      <RelatedVideos matches={related} />
+      {categoryLinks.length > 0 && <DetailCategories links={categoryLinks} />}
     </section>
   </article>
 </BaseLayout>
@@ -388,10 +411,6 @@ if (videoSource === undefined) {
     }
   }
 
-  .case-notes-column {
-    max-width: 42rem;
-  }
-
   .case-confirmation {
     display: inline-block;
     margin: 0.75rem 0 0;
@@ -415,15 +434,6 @@ if (videoSource === undefined) {
 
   .case-section {
     margin-block-start: var(--space-section);
-  }
-
-  .case-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(19rem, 100%), 1fr));
-    gap: 2.5rem 1.5rem;
-    margin: var(--space-block) 0 0;
-    padding: 0;
-    list-style: none;
   }
 
   .source-list li {

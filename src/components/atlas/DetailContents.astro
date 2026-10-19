@@ -1,0 +1,103 @@
+---
+interface Props {
+  sections: { id: string; label: string }[];
+  sidebar?: boolean;
+}
+const { sections, sidebar = false } = Astro.props;
+---
+
+<nav
+  class:list={["detail-contents", { "detail-contents-sidebar": sidebar }]}
+  aria-label="本頁內容"
+  data-detail-contents
+>
+  <p>本頁內容</p>
+  <ol role="list">
+    {
+      sections.map((section) => (
+        <li>
+          <a href={`#${section.id}`}>{section.label}</a>
+        </li>
+      ))
+    }
+  </ol>
+</nav>
+<script>
+  const siteHeader = document.querySelector<HTMLElement>("[data-site-header]");
+  if (siteHeader) {
+    const updateOffset = () =>
+      document.documentElement.style.setProperty(
+        "--detail-header-offset",
+        `${Math.ceil(siteHeader.getBoundingClientRect().height) + 16}px`,
+      );
+    updateOffset();
+    new ResizeObserver(updateOffset).observe(siteHeader);
+  }
+  function revealTarget(hash: string): void {
+    let id: string;
+    try {
+      id = decodeURIComponent(hash.slice(1));
+    } catch {
+      return;
+    }
+    const target = document.getElementById(id);
+    if (!target) return;
+    const disclosure = target.closest("details");
+    if (disclosure) disclosure.open = true;
+    target.tabIndex = -1;
+  }
+  for (const nav of document.querySelectorAll("[data-detail-contents]")) {
+    nav.addEventListener("click", (event) => {
+      const link =
+        event.target instanceof Element
+          ? event.target.closest<HTMLAnchorElement>("a[href^='#']")
+          : null;
+      if (link) revealTarget(link.hash);
+    });
+  }
+  revealTarget(window.location.hash);
+  window.addEventListener("hashchange", () =>
+    revealTarget(window.location.hash),
+  );
+</script>
+<style>
+  :global(main [id]) {
+    scroll-margin-top: var(--detail-header-offset, 8rem);
+  }
+  .detail-contents {
+    min-width: 0;
+    margin-block: 0 1.5rem;
+    padding: 1rem 0;
+    border-block: 1px solid var(--hairline);
+  }
+  p {
+    margin: 0 0 0.5rem;
+    font-weight: 700;
+    font-size: var(--text-meta);
+    color: var(--color-ink-muted);
+  }
+  ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  a {
+    display: block;
+    padding-block: 0.35rem;
+    line-height: 1.5;
+  }
+  @media (min-width: 72rem) {
+    .detail-contents-sidebar {
+      position: sticky;
+      top: var(--detail-header-offset, 8rem);
+      align-self: start;
+    }
+    .detail-contents-sidebar ol {
+      display: grid;
+      gap: 0.4rem;
+    }
+  }
+</style>

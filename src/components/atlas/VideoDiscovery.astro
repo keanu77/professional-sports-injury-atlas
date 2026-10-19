@@ -20,13 +20,24 @@ interface Props {
   clips: ObservationClip[];
   heading?: string;
   fixedType?: string;
+  fixedSport?: string;
+  fixedBody?: string;
+  fixedSituation?: string;
+  scopeLabel?: string;
+  priorityFirst?: boolean;
 }
 const {
   featured,
   clips,
   heading = "所有運動傷害影片",
   fixedType = "",
+  fixedSport = "",
+  fixedBody = "",
+  fixedSituation = "",
+  scopeLabel = "",
+  priorityFirst = true,
 } = Astro.props;
+const scoped = Boolean(fixedType || fixedSport || fixedBody || fixedSituation);
 const videoTypes = contentTypeGroups(featured, clips);
 const sports = videosBySport(featured, clips);
 const bodyParts = videosByBodyPart(featured, clips);
@@ -52,6 +63,10 @@ const bodyBySlug = new Map(
   data-featured-videos
   data-video-discovery
   data-fixed-type={fixedType}
+  data-fixed-sport={fixedSport}
+  data-fixed-body={fixedBody}
+  data-fixed-situation={fixedSituation}
+  data-scope-label={scopeLabel}
 >
   <h2 id="video-list-heading">{heading}</h2>
   <form
@@ -106,11 +121,14 @@ const bodyBySlug = new Map(
         <span class="disclosure-chevron" aria-hidden="true">⌄</span>
       </button>
       <div
-        class="discovery-facets"
+        class:list={[
+          "discovery-facets",
+          { "single-facet": fixedSport || fixedBody },
+        ]}
         id="discovery-advanced"
         data-advanced-filters
       >
-        <div>
+        <div hidden={Boolean(fixedSport)}>
           <label for="video-sport-filter">運動項目</label>
           <select
             id="video-sport-filter"
@@ -125,7 +143,7 @@ const bodyBySlug = new Map(
             }
           </select>
         </div>
-        <div>
+        <div hidden={Boolean(fixedBody)}>
           <label for="video-body-filter">受傷部位</label>
           <select
             id="video-body-filter"
@@ -148,7 +166,7 @@ const bodyBySlug = new Map(
       </p>
       <div class="video-search-scope">
         <p id="video-search-scope" data-video-search-scope>
-          搜尋範圍：全部影片
+          搜尋範圍：{scopeLabel || "全部影片"}
         </p>
         <button type="button" data-video-search-all hidden>改查全部影片</button>
       </div>
@@ -177,18 +195,19 @@ const bodyBySlug = new Map(
       type="button"
       data-discovery-mode="all"
       aria-pressed="true"
-      aria-controls="discovery-videos">全部影片</button
+      aria-controls="discovery-videos"
+      >{scoped ? "分類內全部影片" : "全部影片"}</button
     >
     <button
       type="button"
-      hidden={Boolean(fixedType)}
+      hidden={scoped}
       data-discovery-mode="curated"
       aria-pressed="false"
       aria-controls="discovery-videos">精選影片</button
     >
     <button
       type="button"
-      hidden={Boolean(fixedType)}
+      hidden={scoped}
       data-discovery-mode="popular"
       aria-pressed="false"
       aria-controls="discovery-videos">本站熱門</button
@@ -203,14 +222,23 @@ const bodyBySlug = new Map(
   >
   </p>
   <p class="discovery-count-note">
-    同片可屬於多個類型；各類數量不相加，影片總數不重複計算。
+    全部影片預設依編輯整理順序顯示。類型可重疊，各類數量不相加，影片總數不重複計算。
   </p>
+  <noscript
+    ><p>
+      以下列出{scoped ? "本分類" : "全部"}影片；搜尋與篩選需啟用 JavaScript。
+    </p></noscript
+  >
   <p class="video-search-empty" data-video-search-empty hidden>
     試試球員姓氏、英文姓名或其他受傷部位，也可以清除搜尋後瀏覽。
   </p>
   <slot />
   <ol
     data-video-type-videos={fixedType || undefined}
+    data-body-part-videos={fixedBody || undefined}
+    data-sport-videos={fixedSport || undefined}
+    data-situation-videos={fixedSituation || undefined}
+    aria-label={scopeLabel || "全部運動傷害影片"}
     class="video-grid"
     id="discovery-videos"
     data-discovery-grid
@@ -237,7 +265,7 @@ const bodyBySlug = new Map(
             record={record}
             showWorkflowBadge={false}
             compact
-            priority={index === 0}
+            priority={priorityFirst && index === 0}
           />
         </li>
       ))
@@ -278,6 +306,7 @@ const bodyBySlug = new Map(
   .discovery-count-note {
     color: var(--color-ink-muted);
     font-size: 0.875rem;
+    margin-block: 0.5rem 1rem;
   }
   [hidden] {
     display: none !important;
@@ -285,7 +314,9 @@ const bodyBySlug = new Map(
   .discovery-controls {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
+    gap: 0.5rem;
+    padding-block-start: 0.75rem;
+    border-block-start: 1px solid var(--hairline);
   }
   .video-search {
     margin-block-end: 1rem;
@@ -319,7 +350,7 @@ const bodyBySlug = new Map(
     width: 100%;
     min-height: 48px;
     padding: 0.7rem 0.85rem;
-    border: 1px solid var(--color-ink-muted);
+    border: 2px solid var(--color-brand-primary);
     border-radius: 0.65rem;
     background: var(--color-surface-raised);
     color: var(--color-ink);
@@ -388,7 +419,7 @@ const bodyBySlug = new Map(
   .discovery-active-filters button {
     max-width: 100%;
     overflow-wrap: anywhere;
-    border-radius: 999px;
+    border-radius: 0.65rem;
     text-align: start;
     background: var(--color-brand-50);
   }
@@ -421,12 +452,16 @@ const bodyBySlug = new Map(
     min-height: 44px;
     padding: 0.65rem 1.1rem;
     border: 1px solid var(--color-brand-100);
-    border-radius: 999px;
+    border-radius: 0.65rem;
     background: var(--color-surface-raised);
     color: var(--color-brand-primary);
     font: inherit;
     font-weight: 600;
     cursor: pointer;
+    transition:
+      color 140ms ease,
+      background-color 140ms ease,
+      border-color 140ms ease;
   }
   .discovery-controls button[aria-pressed="true"] {
     background: var(--color-brand-primary);
@@ -487,6 +522,9 @@ const bodyBySlug = new Map(
   }
   .discovery-facets > div {
     min-width: 0;
+  }
+  .discovery-facets.single-facet {
+    grid-template-columns: 1fr;
   }
   .discovery-facets select {
     width: 100%;
@@ -564,6 +602,11 @@ const bodyBySlug = new Map(
   @media (max-width: 40rem) {
     .video-grid {
       grid-template-columns: 1fr;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .discovery-controls button {
+      transition: none;
     }
   }
 </style>

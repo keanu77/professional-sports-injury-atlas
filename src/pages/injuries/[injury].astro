@@ -38,6 +38,7 @@ import {
   rtpCourseSummariesSchema,
 } from "../../lib/rtp/course-links";
 import { overviewImageFor } from "../../lib/ui/editorial-images";
+import { isLaunchEnabled } from "../../lib/patient/public-launch";
 
 export function getStaticPaths(): Array<{ params: { injury: string } }> {
   return injuryRouteParams().map((params) => ({ params }));
@@ -47,6 +48,11 @@ const { injury } = Astro.params;
 const injuryCode = injury as string;
 const buildMode = resolveBuildMode(process.env.ATLAS_BUILD_MODE);
 const injuryLabel = findInjury(injuryCode)?.labelZh ?? injuryCode;
+const bodyLibrary = {
+  acl: { code: "knee", label: "膝蓋" },
+  "ankle-sprain": { code: "ankle", label: "腳踝" },
+  "achilles-rupture": { code: "calf-achilles", label: "小腿與阿基里斯腱" },
+}[injuryCode as "acl" | "ankle-sprain" | "achilles-rupture"];
 
 const caseRecords = (await getCollection("cases")).map((entry) => entry.data);
 const overviewRecords = (await getCollection("injuries")).map(
@@ -108,6 +114,18 @@ const courseBySlug = new Map(
           : `本頁整理 ${injuryLabel} 的教學總覽與已審查案例；目前共有 ${injuryCases.length} 筆已審查顯示案例（${injuryCases.length} reviewed cases）。`
       }
     </p>
+    {
+      isLaunchEnabled() && bodyLibrary && (
+        <aside class="injury-library" aria-label="延伸影片庫">
+          <p>
+            本頁案例限於此傷種；同部位影片庫另收錄其他傷害、訪談與回場紀錄。
+          </p>
+          <a href={`/body-parts/${bodyLibrary.code}/`}>
+            瀏覽{bodyLibrary.label}影片庫 <span aria-hidden="true">→</span>
+          </a>
+        </aside>
+      )
+    }
 
     {
       buildMode === "review" && (
@@ -228,6 +246,25 @@ const courseBySlug = new Map(
 <style>
   .injury-scope {
     margin: 1rem 0 0;
+  }
+  .injury-library {
+    padding: 1rem 1.25rem;
+    margin-block: 1rem;
+    border-inline-start: 3px solid var(--color-brand-primary);
+    background: var(--color-surface-raised);
+  }
+  .injury-library p {
+    margin: 0;
+    color: var(--color-ink-muted);
+    font-size: 0.9375rem;
+  }
+  .injury-library a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    font-weight: 600;
+    text-underline-offset: 0.25em;
   }
 
   .filter-shell,

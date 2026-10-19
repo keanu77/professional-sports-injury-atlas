@@ -1,0 +1,68 @@
+---
+import CaseCard from "./CaseCard.astro";
+import ObservationCard from "./ObservationCard.astro";
+import type { RelatedVideoMatch } from "../../lib/videos/related-videos";
+interface Props {
+  matches: RelatedVideoMatch[];
+}
+const { matches } = Astro.props;
+---
+
+{
+  matches.length > 0 ? (
+    <ol class="related-video-grid" role="list" data-related-observations>
+      {matches.map((match) => (
+        <li data-related-slug={match.slug}>
+          <p class="related-reason" data-related-reason>
+            {match.reasons.join(" · ")}
+          </p>
+          {match.video.kind === "case" ? (
+            <CaseCard
+              record={match.video.record}
+              showWorkflowBadge={false}
+              compact
+            />
+          ) : (
+            <ObservationCard clip={match.video.clip} />
+          )}
+        </li>
+      ))}
+    </ol>
+  ) : (
+    <p>目前沒有其他相符的影片。</p>
+  )
+}
+<style>
+  .related-video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-block: 1.25rem;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  .related-video-grid > li > :global(.catalog-card[data-video-card]) {
+    flex: 1 1 auto;
+    height: auto;
+  }
+  .related-reason {
+    min-height: 3em;
+    margin: 0 0 0.75rem;
+    color: var(--color-ink-muted);
+    font-size: var(--text-meta);
+    line-height: 1.5;
+  }
+  @media (max-width: 55rem) {
+    .related-video-grid {
+      grid-template-columns: 1fr;
+    }
+    .related-reason {
+      min-height: 0;
+    }
+  }
+</style>

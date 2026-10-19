@@ -1,7 +1,9 @@
 import {
+  hasDiscoveryScope,
   readDiscoveryState,
   writeDiscoveryState,
 } from "../lib/videos/discovery-state";
+import { rememberCatalogReturn } from "../lib/ui/catalog-return";
 import {
   matchesVideoSearch,
   normalizeVideoSearch,
@@ -116,7 +118,10 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
     }
     advancedFilters.hidden = !open;
     advancedToggle.setAttribute("aria-expanded", String(open));
-    if (moveFromToggle) sportFilter?.focus({ preventScroll: true });
+    if (moveFromToggle)
+      (root.dataset.fixedSport ? bodyFilter : sportFilter)?.focus({
+        preventScroll: true,
+      });
   };
   advancedToggle?.addEventListener("click", () => {
     advancedOpen = !advancedOpen;
@@ -131,6 +136,12 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
     "[data-discovery-page-status]",
   );
   const fixedType = root.dataset.fixedType ?? "";
+  const fixedSport = root.dataset.fixedSport ?? "";
+  const fixedBody = root.dataset.fixedBody ?? "";
+  const fixedSituation = root.dataset.fixedSituation ?? "";
+  const fixedScope = { fixedType, fixedSport, fixedBody, fixedSituation };
+  const scoped = hasDiscoveryScope(fixedScope);
+  const scopeLabel = root.dataset.scopeLabel || "本分類影片";
   const pageSize = 24;
   let visibleLimit = pageSize;
   const searchAll = root.querySelector<HTMLButtonElement>(
@@ -141,6 +152,27 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
   const cards = Array.from(
     grid.querySelectorAll<HTMLElement>("[data-discovery-slug]"),
   );
+  let domOrder = cards.slice();
+  const popularCounts = new Map(
+    cards.map((card) => [
+      card,
+      card.querySelector<HTMLElement>("[data-popular-count]"),
+    ]),
+  );
+  const setHidden = (element: HTMLElement | null, hidden: boolean) => {
+    if (element && element.hidden !== hidden) element.hidden = hidden;
+  };
+  const setText = (element: HTMLElement | null, text: string) => {
+    if (element && element.textContent !== text) element.textContent = text;
+  };
+  const setAttribute = (
+    element: HTMLElement | null,
+    name: string,
+    value: string,
+  ) => {
+    if (element && element.getAttribute(name) !== value)
+      element.setAttribute(name, value);
+  };
   const buttons = Array.from(
     controls.querySelectorAll<HTMLButtonElement>("button[data-discovery-mode]"),
   );
@@ -184,7 +216,7 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
     types: knownContentTypes,
     sports: optionValues(sportFilter),
     bodies: optionValues(bodyFilter),
-    fixedType,
+    ...fixedScope,
   };
   const updateLocation = (replace = false) => {
     const url = writeDiscoveryState(
@@ -196,7 +228,7 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
         body: bodyFilter?.value ?? "",
         mode,
       },
-      fixedType,
+      fixedScope,
     );
     if (url.href !== window.location.href)
       window.history[replace ? "replaceState" : "pushState"]({}, "", url);
@@ -217,13 +249,19 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
     const query = (searchInput?.value ?? "").trim();
     const terms = videoSearchTerms(query);
     const searching = terms.length > 0;
-    const sport = sportFilter?.value ?? "";
-    const body = bodyFilter?.value ?? "";
-    const narrowed = searching || contentType || sport || body;
+    const sport = fixedSport || sportFilter?.value || "";
+    const body = fixedBody || bodyFilter?.value || "";
+    const narrowed =
+      searching ||
+      (contentType && !fixedType) ||
+      (sport && !fixedSport) ||
+      (body && !fixedBody);
     const typeLabel = typeFilter?.selectedOptions[0]?.textContent ?? "全部類型";
     const label =
       mode === "all"
-        ? "全部影片"
+        ? scoped
+          ? scopeLabel
+          : "全部影片"
         : mode === "curated"
           ? "精選影片"
           : "本站熱門前 10 名";
@@ -243,103 +281,140 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
     );
     const displayed = selected.slice(0, visibleLimit);
     const visible = new Set(displayed);
+    const rankByCard = new Map(
+      mode === "popular"
+        ? ranking.map((item, index) => [byId.get(item.videoId)!, index + 1])
+        : [],
+    );
     for (const card of cards) {
-      card.hidden = !visible.has(card);
-      const count = card.querySelector<HTMLElement>("[data-popular-count]");
-      if (count) count.hidden = true;
+      setHidden(card, !visible.has(card));
+      const count = popularCounts.get(card) ?? null;
+      const rank = visible.has(card) ? rankByCard.get(card) : undefined;
+      setHidden(count, !rank);
+      if (rank) setText(count, rankLabel(rank));
     }
-    for (const card of displayed) grid.append(card);
-    if (mode === "popular") {
-      for (const [index, item] of ranking.entries()) {
-        const card = byId.get(item.videoId)!;
-        const count = card.querySelector<HTMLElement>("[data-popular-count]");
-        if (count && visible.has(card)) {
-          count.textContent = rankLabel(index + 1);
-          count.hidden = false;
-        }
-      }
+    // Filtering and loading more normally preserve relative DOM order. Only
+    // move cards when a mode change actually produces a different visible order.
+    const currentVisibleOrder = domOrder.filter((card) => visible.has(card));
+    if (displayed.some((card, index) => currentVisibleOrder[index] !== card)) {
+      for (const card of displayed) grid.append(card);
+      domOrder = [
+        ...domOrder.filter((card) => !visible.has(card)),
+        ...displayed,
+      ];
     }
     for (const button of buttons)
-      button.setAttribute(
+      setAttribute(
+        button,
         "aria-pressed",
         String(button.dataset.discoveryMode === mode),
       );
-    if (scope) scope.textContent = `搜尋範圍：${label}`;
-    if (clearSearch) clearSearch.hidden = !query;
+    setText(scope, `搜尋範圍：${label}`);
+    setHidden(clearSearch, !query);
     const updateChip = (
       button: HTMLButtonElement | null,
       value: string,
       label: string,
     ) => {
       if (!button) return;
-      button.hidden = !value;
-      button.textContent = `${label} ×`;
-      button.setAttribute("aria-label", `移除${label}`);
+      setHidden(button, !value);
+      setText(button, `${label} ×`);
+      setAttribute(button, "aria-label", `移除${label}`);
     };
     updateChip(clearType, fixedType ? "" : contentType, `類型：${typeLabel}`);
     updateChip(
       clearSport,
-      sport,
+      fixedSport ? "" : sport,
       `運動：${sportFilter?.selectedOptions[0]?.textContent ?? ""}`,
     );
     updateChip(
       clearBody,
-      body,
+      fixedBody ? "" : body,
       `部位：${bodyFilter?.selectedOptions[0]?.textContent ?? ""}`,
     );
-    if (activeFilters)
-      activeFilters.hidden = !(sport || body || (contentType && !fixedType));
-    const selectedFacets = Number(Boolean(sport)) + Number(Boolean(body));
+    setHidden(
+      activeFilters,
+      !(
+        (sport && !fixedSport) ||
+        (body && !fixedBody) ||
+        (contentType && !fixedType)
+      ),
+    );
+    const selectedFacets =
+      Number(Boolean(sport && !fixedSport)) +
+      Number(Boolean(body && !fixedBody));
     if (advancedCount) {
-      advancedCount.textContent = String(selectedFacets);
-      advancedCount.hidden = !selectedFacets;
+      setText(advancedCount, String(selectedFacets));
+      setHidden(advancedCount, !selectedFacets);
     }
-    advancedToggle?.setAttribute(
+    setAttribute(
+      advancedToggle,
       "aria-label",
       selectedFacets ? `更多篩選（已選 ${selectedFacets} 項）` : "更多篩選",
     );
-    if (searchAll) searchAll.hidden = !(searching && mode !== "all");
+    setHidden(searchAll, !(searching && mode !== "all"));
     const unavailable = mode === "popular" && popularityState !== "ready";
     if (empty) {
-      empty.hidden = !narrowed || selected.length > 0 || unavailable;
+      setHidden(empty, !narrowed || selected.length > 0 || unavailable);
       if (!empty.hidden)
-        empty.textContent = searching
-          ? `目前篩選條件中沒有符合「${query}」的影片；可清除搜尋、運動或部位後瀏覽。`
-          : `目前沒有符合篩選條件的影片；可清除運動、部位或影片類型後瀏覽。`;
+        setText(
+          empty,
+          searching
+            ? `目前篩選條件中沒有符合「${query}」的影片；可清除搜尋、運動或部位後瀏覽。`
+            : `目前沒有符合篩選條件的影片；可清除運動、部位或影片類型後瀏覽。`,
+        );
     }
-    if (pagination) pagination.hidden = unavailable || selected.length === 0;
-    if (more) more.hidden = displayed.length >= selected.length;
-    if (pageStatus)
-      pageStatus.textContent = `已顯示 ${displayed.length} / ${selected.length} 支符合條件的影片`;
+    setHidden(pagination, unavailable || selected.length === 0);
+    setHidden(more, displayed.length >= selected.length);
+    setText(
+      pageStatus,
+      `已顯示 ${displayed.length} / ${selected.length} 支符合條件的影片`,
+    );
     if (mode === "popular" && popularityState === "loading") {
-      grid.setAttribute("aria-busy", "true");
-      status.textContent = "正在讀取本站近 30 天的熱門排行…";
+      setAttribute(grid, "aria-busy", "true");
+      setText(status, "正在讀取本站近 30 天的熱門排行…");
       return;
     }
-    grid.removeAttribute("aria-busy");
+    if (grid.hasAttribute("aria-busy")) grid.removeAttribute("aria-busy");
     if (mode === "popular" && popularityState === "error") {
-      status.textContent =
-        "目前無法讀取本站熱門，請稍後再試。也可以先看精選或全部影片。";
+      setText(
+        status,
+        "目前無法讀取本站熱門，請稍後再試。也可以先看精選或全部影片。",
+      );
     } else if (narrowed) {
       const filters = [
-        contentType ? typeLabel : "",
+        contentType && !fixedType ? typeLabel : "",
         searching ? `「${query}」` : "",
-        sport ? sportFilter?.selectedOptions[0]?.textContent : "",
-        body ? bodyFilter?.selectedOptions[0]?.textContent : "",
+        sport && !fixedSport
+          ? sportFilter?.selectedOptions[0]?.textContent
+          : "",
+        body && !fixedBody ? bodyFilter?.selectedOptions[0]?.textContent : "",
       ]
         .filter(Boolean)
         .join("、");
-      status.textContent = `${label}中找到 ${selected.length} 支符合${filters}的影片。`;
+      setText(
+        status,
+        `${label}中找到 ${selected.length} 支符合${filters}的影片。`,
+      );
     } else if (mode === "all") {
-      status.textContent = `全部 ${cards.length} 支影片。`;
+      setText(
+        status,
+        `${scoped ? scopeLabel : "全部"} ${cards.length} 支影片。`,
+      );
     } else if (mode === "curated") {
-      status.textContent = curated.length
-        ? `精選 ${curated.length} 支：以畫面清楚、傷勢與回場資料完整，並涵蓋不同運動的影片為優先。`
-        : "精選影片整理中，可先瀏覽全部影片。";
+      setText(
+        status,
+        curated.length
+          ? `精選 ${curated.length} 支：以畫面清楚、傷勢與回場資料完整，並涵蓋不同運動的影片為優先。`
+          : "精選影片整理中，可先瀏覽全部影片。",
+      );
     } else {
-      status.textContent = ranking.length
-        ? "依本站近 30 天實際播放次數排序，最多顯示前 10 名，每小時整點更新；不包含 YouTube 平台的累計觀看數。"
-        : "截至上一個整點，本站近 30 天尚無播放紀錄；每小時更新。也可以先看精選或全部影片。";
+      setText(
+        status,
+        ranking.length
+          ? "依本站近 30 天實際播放次數排序，最多顯示前 10 名，每小時整點更新；不包含 YouTube 平台的累計觀看數。"
+          : "截至上一個整點，本站近 30 天尚無播放紀錄；每小時更新。也可以先看精選或全部影片。",
+      );
     }
   };
 
@@ -347,7 +422,7 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
     const current = ++version;
     pending?.abort();
     pending = undefined;
-    mode = next;
+    mode = scoped ? "all" : next;
     visibleLimit = pageSize;
     if (mode !== "popular") {
       render();
@@ -443,7 +518,7 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
     searchInput?.focus();
   });
   typeFilter?.addEventListener("change", () => {
-    contentType = typeFilter.value;
+    contentType = fixedType || typeFilter.value;
     visibleLimit = pageSize;
     render();
     updateLocation();
@@ -451,12 +526,14 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
   clearType?.addEventListener("click", () => {
     contentType = fixedType;
     visibleLimit = pageSize;
-    if (typeFilter) typeFilter.value = "";
+    if (typeFilter) typeFilter.value = fixedType;
     render();
     updateLocation();
     typeFilter?.focus();
   });
   const updateFacets = () => {
+    if (fixedSport && sportFilter) sportFilter.value = fixedSport;
+    if (fixedBody && bodyFilter) bodyFilter.value = fixedBody;
     visibleLimit = pageSize;
     render();
     updateLocation();
@@ -472,6 +549,23 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
   };
   clearSport?.addEventListener("click", () => removeFacet(sportFilter));
   clearBody?.addEventListener("click", () => removeFacet(bodyFilter));
+  grid.addEventListener("click", (event) => {
+    const link =
+      event.target instanceof Element
+        ? event.target.closest<HTMLAnchorElement>("a[href]")
+        : null;
+    if (!link || !grid.contains(link)) return;
+    const destination = new URL(link.href);
+    if (
+      destination.origin === window.location.origin &&
+      /^\/(?:cases|videos)\/[a-z0-9-]+\/$/.test(destination.pathname)
+    ) {
+      rememberCatalogReturn(
+        new URL(window.location.href),
+        destination.pathname,
+      );
+    }
+  });
   more?.addEventListener("click", () => {
     const previous = new Set(cards.filter((card) => !card.hidden));
     visibleLimit += pageSize;

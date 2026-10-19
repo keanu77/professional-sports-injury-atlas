@@ -7,7 +7,13 @@ import { hasPublicEmbed } from "../../lib/patient/featured";
 import CaseCover from "../cases/CaseCover.astro";
 import ReviewBadge from "../cases/ReviewBadge.astro";
 import VideoTypeTags from "./VideoTypeTags.astro";
-import { findInjury, findLeague } from "../../lib/contracts/taxonomy";
+import {
+  findInjury,
+  findLeague,
+  findSport,
+} from "../../lib/contracts/taxonomy";
+import { videosByBodyPart } from "../../lib/videos/body-parts";
+import "../../styles/catalog-card.css";
 import type { InjuryCase } from "../../lib/contracts/case";
 import {
   CLASSIC_CASE_LABEL,
@@ -31,10 +37,16 @@ const injuryLabel =
   findInjury(record.injury.code)?.labelZh ?? record.injury.code;
 const leagueLabel =
   findLeague(record.league.code)?.labelZh ?? record.league.code;
+const sportLabel = findSport(record.sport.code)?.labelZh ?? record.sport.code;
+const bodyLabel = videosByBodyPart([record], [])[0]?.label ?? injuryLabel;
 ---
 
 <article
-  class:list={["case-card", { "case-card--compact": compact }]}
+  class:list={[
+    "case-card",
+    { "case-card--compact": compact, "catalog-card": compact },
+  ]}
+  data-video-card={compact ? "case" : undefined}
   data-case-card={record.id}
   data-injury-theme={record.injury.code}
 >
@@ -54,24 +66,41 @@ const leagueLabel =
       aria-label={`查看${record.athlete.name}的${injuryLabel}案例`}
       >{
         hasPublicEmbed(record) && (
-          <span class="card-play" aria-hidden="true">
+          <span class="card-play catalog-card-play" aria-hidden="true">
             ▶
           </span>
         )
       }</a
     >
   </CaseCover>
-  <div class="case-card-body">
-    <h3 class="case-card-title">
+  <div class="case-card-body catalog-card-body">
+    <h3 class="case-card-title catalog-card-title">
       <a href={`/cases/${record.slug}/`}>
         {record.athlete.name}
       </a>
     </h3>
-    <p class="case-card-eyebrow"><span>{injuryLabel}</span></p>
-    <p class="case-card-facts meta-row">
-      {leagueLabel}｜{record.season} 球季｜{record.eventDate}｜
-      {record.teamAtEvent.name} 對 {record.opponent.name}
-    </p>
+    {
+      compact ? (
+        <>
+          <p class="catalog-card-event">{injuryLabel}</p>
+          <ul class="catalog-card-metadata" role="list" aria-label="影片資訊">
+            <li>{sportLabel}</li>
+            <li>{bodyLabel}</li>
+            <li>{record.eventDate.slice(0, 4)}</li>
+          </ul>
+        </>
+      ) : (
+        <>
+          <p class="case-card-eyebrow">
+            <span>{injuryLabel}</span>
+          </p>
+          <p class="case-card-facts meta-row">
+            {leagueLabel}｜{record.season} 球季｜{record.eventDate}｜
+            {record.teamAtEvent.name} 對 {record.opponent.name}
+          </p>
+        </>
+      )
+    }
     <VideoTypeTags slug={record.slug} videoUrl={record.video.canonicalUrl} />
     {
       !compact && (
@@ -94,9 +123,13 @@ const leagueLabel =
     }
     {
       compact && (
-        <p class="watch-label">
-          觀看影片與回場重點 <span aria-hidden="true">↗</span>
-        </p>
+        <a
+          class="watch-label catalog-card-action"
+          href={`/cases/${record.slug}/`}
+          aria-label={`查看 ${record.athlete.name} 的影片與回場重點`}
+        >
+          查看影片與回場重點 <span aria-hidden="true">→</span>
+        </a>
       )
     }
     {showWorkflowBadge && <ReviewBadge record={record} />}

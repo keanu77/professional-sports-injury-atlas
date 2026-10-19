@@ -1,0 +1,936 @@
+{
+  "audit": "2026-10-19 UX audit / independent adversarial Pass 2",
+  "status": "verified_all_five_pass1_files",
+  "scope": "唯讀原碼、consumer、測試原碼、公開HTTP GET與純函式執行；只寫本 JSON；未跑瀏覽器、Playwright、build、部署或修改程式/測試。",
+  "classification_policy": {
+    "confirmed defect": "由原碼/數值證據可確定的缺陷；未跑正式站互動者另註限制",
+    "measured fact with optimization hypothesis": "事實成立，但效能/維護效益須量測",
+    "design proposal": "可取捨的設計建議，並非程式錯誤",
+    "needs reproduction": "確定缺陷的 confidence <0.7，排除於確定問題清單",
+    "false positive": "反證否定原始主張"
+  },
+  "source_pass1_files": [
+    "pass1-performance.json",
+    "pass1-accessibility.json",
+    "pass1-structure.json",
+    "pass1-visual.json",
+    "pass1-security.json"
+  ],
+  "independent_checks": {
+    "color_contrast": {
+      "algorithm": "讀實際 OKLCH tokens，轉 linear sRGB，clip 0–1，依 WCAG relative luminance；非截圖抗鋸齒取樣",
+      "focus_light": 1.3464116130852495,
+      "focus_dark": 1.3425402805660223,
+      "observation_play_light": 5.248474170302556,
+      "observation_play_dark": 1.9690661438648844,
+      "proposed_focus_light": 5.015527178702036,
+      "proposed_focus_dark": 5.2986395281607965,
+      "proposed_play_dark": 7.02781485824973
+    },
+    "http_get_recheck": {
+      "home": {
+        "status": 200,
+        "decoded_bytes": 571598,
+        "html_elements": 5028,
+        "cards": 200,
+        "img": 200,
+        "high_priority_img": 2,
+        "iframe": 0,
+        "inline_css_bytes": 41223,
+        "modulepreload": 0
+      },
+      "observation": {
+        "status": 200,
+        "decoded_bytes": 58046,
+        "html_elements": 345,
+        "inline_css_bytes": 26762,
+        "iframe": 0,
+        "modulepreload": 0
+      },
+      "case": {
+        "status": 200,
+        "decoded_bytes": 70523,
+        "html_elements": 354,
+        "inline_css_bytes": 36142,
+        "iframe": 0,
+        "modulepreload": 0
+      },
+      "preferences": {
+        "status": 200,
+        "decoded_bytes": 448,
+        "cache_control": "public, max-age=14400, must-revalidate",
+        "cf_cache_status": "REVALIDATED"
+      },
+      "popular": {
+        "two_GET_status": [200, 200],
+        "cf_cache_status": ["DYNAMIC", "DYNAMIC"],
+        "items": 53,
+        "decoded_bytes": 1976,
+        "generatedAt": "2026-10-19T15:00:00.000Z",
+        "max_age": [2578, 2577]
+      },
+      "entry_scripts": {
+        "discovery_wrapper_bytes": 38,
+        "discovery_import": "./video-discovery.D0AHfKxu.js",
+        "home_wrapper_import": "./video-discovery.D0AHfKxu.js",
+        "player_wrapper_bytes": 51,
+        "player_import": "./video-player.CuArQTPi.js"
+      },
+      "limitations": "未重測 wire bytes、圖片體積、瀏覽器 waterfall、CWV/INP/FPS；Pass 1 的 wire/圖片/TTFB 值保留其原始來源與限制。Python urllib 首次 sandbox DNS 失敗，許可環境 urllib 403；同許可環境標準 curl GET 成功200，未繞過登入或挑戰。"
+    },
+    "pure_function_execution": {
+      "runtime": "現有 node --import tsx，未安裝套件",
+      "catalog": {
+        "core": 7,
+        "clips": 193,
+        "knee": 66,
+        "baseball": 33,
+        "calf_achilles": 22,
+        "injury_acl": 0,
+        "injury_ankle": 4,
+        "injury_achilles": 3
+      },
+      "recommendation_examples": [
+        "carolina-marin-indonesia-2019",
+        "giannis-east-final-2021",
+        "markelle-fultz-orlando-2021",
+        "ronald-acuna-miami-2021"
+      ],
+      "all_four_results": [
+        "adam-eaton-2017-knee",
+        "aksel-svindal-kitzbuhel-2016",
+        "alex-greenwood-2024-knee"
+      ]
+    },
+    "external_primary_sources": [
+      {
+        "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+        "used_for": "focus indicator 對相鄰底色對比要求，以及非必要圖形例外；不把冗餘播放三角列 fail"
+      },
+      {
+        "url": "https://bugs.webkit.org/show_bug.cgi?id=170179",
+        "used_for": "無標記清單平台風險背景；不足以證明目前 Safari/VoiceOver 實際行為"
+      }
+    ],
+    "browser_evidence_boundary": {
+      "supplied_by": "主 agent 的本輪 UI 審查",
+      "reliable": [
+        "桌面首頁初始首卡不在可視區",
+        "Aaron Judge 初始詳頁為長內容單欄變體"
+      ],
+      "not_verified": [
+        "390px/320px行動視覺",
+        "Safari/VoiceOver清單",
+        "跨斷點焦點交接",
+        "載入更多後焦點bounding box",
+        "慢網路可見等待",
+        "LCP優先權影響"
+      ],
+      "capture_artifacts": "白帶/全黑截圖被辨識為工具不穩定，沒有列為站點問題。"
+    }
+  },
+  "findings": [
+    {
+      "id": "PERF-01",
+      "decision": "keep",
+      "classification": "measured fact with optimization hypothesis",
+      "confidence": 0.99,
+      "priority": "P1",
+      "verified_title": "200 張卡片仍全部出現在首次 HTML 與 DOM",
+      "reason": "重新 GET 正式首頁確認 571598 decoded bytes、5028 HTML elements、200 張卡。VideoDiscovery 完整 map 全部資料；客戶端 visibleLimit=24 只改 hidden。這些成本事實不需要 CWV 才能成立。",
+      "counterevidence_considered": "24 張分批顯示確實降低可見版面量；縮圖多數 lazy，不能把 200 個 img 當成 200 次初始下載。全量 SSR 也保留無 JS 與可搜尋內容。",
+      "source_context_read": [
+        "src/components/atlas/VideoDiscovery.astro:169-276",
+        "src/scripts/video-discovery.ts:126-157,204-261,475-502",
+        "src/pages/index.astro:15-34,110-193"
+      ],
+      "consumer_or_test_review": [
+        "e2e/catalog-ux.spec.ts:18-67,142-165 明確要求 DOM 200/可見24，未量測效能",
+        "e2e/no-javascript.spec.ts:18-37 為過時首頁契約，改分頁前須更新"
+      ],
+      "recommendation": "先以精簡索引、前 24 卡 SSR 和可爬取靜態分頁做有界原型，量測總傳輸/互動成本；必須保留全庫搜尋及無 JS 可達性。",
+      "corrections": [
+        "72425 gzip bytes 為 Pass 1 當次線上值；Pass 2 重測 decoded size 與元素數一致，未重新量測 wire bytes。",
+        "不能寫成目前已卡頓、LCP 不合格，亦不能預報改善毫秒數。"
+      ]
+    },
+    {
+      "id": "PERF-02",
+      "decision": "keep",
+      "classification": "measured fact with optimization hypothesis",
+      "confidence": 0.99,
+      "priority": "P2",
+      "verified_title": "每次輸入都寫入全卡 hidden 並移動可見節點",
+      "reason": "非 composing 的 input 直接 render；render 掃 cards、查熱門節點並 append displayed，顯示結果未變時也做。",
+      "counterevidence_considered": "搜尋文字已預先正規化、IME 有保護，200 張的運算很小；重設相同 hidden 值不必然產生等量 style/layout 工作。",
+      "source_context_read": [
+        "src/scripts/video-discovery.ts:141-157,216-344,388-438,475-502"
+      ],
+      "consumer_or_test_review": [
+        "e2e/catalog-ux.spec.ts:69-165",
+        "e2e/home-hero.spec.ts:56-106"
+      ],
+      "recommendation": "先只略過未變更的 DOM 排序與參照查詢，保留即時回饋；rAF 合併需由輸入 trace 證明必要性。",
+      "corrections": [
+        "將「每次造成重排/卡頓」改成「每次執行 DOM 寫入與 append；layout/INP 影響未量測」。"
+      ]
+    },
+    {
+      "id": "PERF-03",
+      "decision": "keep",
+      "classification": "measured fact with optimization hypothesis",
+      "confidence": 0.99,
+      "priority": "P2",
+      "verified_title": "偏好初始化需要同步外部請求，但有刻意的 pre-paint 安全取捨",
+      "reason": "BaseLayout head 的普通 script 無 async/defer；正式內容 448 bytes。重測 Cache-Control 為 max-age=14400,must-revalidate，CF 為 REVALIDATED。",
+      "counterevidence_considered": "同源外部腳本用來避免主題與字級閃動，並符合現行禁止 executable unsafe-inline 的 CSP。暖快取不必每次重驗。",
+      "source_context_read": [
+        "src/layouts/BaseLayout.astro:138-222",
+        "src/pages/preferences-init.js.ts:1-13",
+        "src/lib/ui/public-security-policy.ts:1-31",
+        "astro.config.mjs:40-58"
+      ],
+      "consumer_or_test_review": [
+        "tests/unit/decision-39-security-policy.test.ts:1-92 明確鎖定 parser-blocking 與 CSP",
+        "src/scripts/preferences.ts:1-95",
+        "e2e/layout-accessibility.spec.ts:99-189"
+      ],
+      "recommendation": "用精確 CSP hash 的固定 inline 或版本化外部檔比較冷載入，再決定；不要直接 defer。",
+      "corrections": [
+        "0.882275 秒是 Pass 1 獨立 curl TTFB，不是瀏覽器 paint penalty。",
+        "原碼 max-age=0 與正式 14400 差異成立；不推論 CDN 覆寫原因。"
+      ]
+    },
+    {
+      "id": "PERF-04",
+      "decision": "reframe",
+      "classification": "measured fact with optimization hypothesis",
+      "confidence": 0.97,
+      "priority": "P2",
+      "verified_title": "首頁首卡在已觀察桌面首屏外，卻與 hero 同為 eager/high",
+      "reason": "正式首頁確有 2 個 high priority img。hero 顯式 high；CaseCard 第一張 priority 傳至 VideoThumbnail。 主 agent 另外確認桌面初始首卡在可視區外；手機仍未驗。",
+      "counterevidence_considered": "fetchpriority 是提示；多張 high 並不自動構成錯誤，首卡也可能因不同視窗/URL 跳轉很快進入畫面。",
+      "source_context_read": [
+        "src/pages/index.astro:42-110",
+        "src/components/atlas/VideoDiscovery.astro:212-263",
+        "src/components/atlas/CaseCard.astro:17-63",
+        "src/components/cases/CaseCover.astro:56-86",
+        "src/components/cases/VideoThumbnail.astro:1-45"
+      ],
+      "consumer_or_test_review": [
+        "e2e/home-hero.spec.ts:11-54 驗 hero，不驗首卡網路競爭",
+        "主 agent 負責 viewport 幾何與瀏覽器優先權"
+      ],
+      "recommendation": "可以先原型移除首頁首卡 high，詳頁 facade 繼續 high；桌面折線已觀察，仍需補行動viewport與waterfall再判效益。",
+      "corrections": [
+        "保留 Pass 1 資產體積作量測值；本輪未獨立再下載圖片。",
+        "不能宣稱首卡已阻塞 hero 或一定改善 LCP。"
+      ]
+    },
+    {
+      "id": "PERF-05",
+      "decision": "keep",
+      "classification": "measured fact with optimization hypothesis",
+      "confidence": 0.99,
+      "priority": "P2",
+      "verified_title": "共用樣式隨頁面重複 inline，是否外拆需跨頁量測",
+      "reason": "重測首頁/觀察/案例 inline CSS 為 41223/26762/36142 bytes，與 Pass 1 一致；astro inlineStylesheets=always。",
+      "counterevidence_considered": "現策略刻意省 render-blocking CSS 往返，壓縮後量小；重複文字與 HTML 共同壓縮，不能把獨立 gzip 的樣式尺寸直接當可省流量。",
+      "source_context_read": [
+        "astro.config.mjs:1-58",
+        "src/layouts/BaseLayout.astro:1-51,138-222"
+      ],
+      "consumer_or_test_review": [
+        "tests/unit/decision-39-security-policy.test.ts:61-92",
+        "e2e/layout-accessibility.spec.ts:99-124,209-220"
+      ],
+      "recommendation": "只做 critical inline + immutable 共用 CSS 的 A/B，測冷首頁與連逛三頁；沒改善就保留。",
+      "corrections": []
+    },
+    {
+      "id": "PERF-06",
+      "decision": "keep",
+      "classification": "measured fact with optimization hypothesis",
+      "confidence": 0.98,
+      "priority": "P2",
+      "verified_title": "熱門 API 在冷訪客請求時重做同整點聚合",
+      "reason": "popularPlays 通過 limiter 後每次 prepare/all；無應用快取。兩次重測皆 DYNAMIC，53 項、1976 decoded bytes、同一 15:00Z cutoff。",
+      "counterevidence_considered": "瀏覽器 max-age 會減少同訪客請求，前端只在熱門模式 fetch；DYNAMIC 本身不足以證明資料庫負載，須結合 handler 原碼。沒有容量危機證據。",
+      "source_context_read": [
+        "src/lib/video/play-counts.ts:1-35,124-156",
+        "functions/api/popular.ts:1",
+        "src/scripts/video-discovery.ts:346-386"
+      ],
+      "consumer_or_test_review": [
+        "tests/unit/play-counts.test.ts:1-110",
+        "src/scripts/video-discovery.ts:16-52 仍過濾已知 ID"
+      ],
+      "recommendation": "有流量需求再按 completed-hour 共用成功快照；保留公開 ID 過濾、整點更新、錯誤 no-store 與 limiter 邊界。",
+      "corrections": []
+    },
+    {
+      "id": "PERF-07",
+      "decision": "keep",
+      "classification": "measured fact with optimization hypothesis",
+      "confidence": 0.98,
+      "priority": "P2",
+      "verified_title": "小入口需再發現共用互動 chunk，實際延遲待 trace",
+      "reason": "重新取得入口確認 discovery wrapper 38 bytes，影片 wrapper 51 bytes；分別 import 共用 core，抽樣三頁 HTML 無 modulepreload。",
+      "counterevidence_considered": "兩入口 import 同一 URL 會被 ES module 去重；initializeVideoDiscovery 又有 guard，不能算重複執行。程式很小且同源暖快取可消除此成本。",
+      "source_context_read": [
+        "src/components/atlas/VideoDiscovery.astro:212-276",
+        "src/pages/index.astro:160-193",
+        "src/components/cases/CaseVideo.astro:332-389",
+        "src/pages/videos/[slug].astro:397-459",
+        "src/scripts/video-discovery.ts:67-72,475-502"
+      ],
+      "consumer_or_test_review": [
+        "tests/unit/decision-39-security-policy.test.ts:61-92",
+        "e2e/home-hero.spec.ts:47-54",
+        "src/scripts/video-player.ts:47-56,175-185"
+      ],
+      "recommendation": "先量測搜尋/播放按鈕可用時間，再採 bundler 支援 preload；不硬編部署 hash。",
+      "corrections": [
+        "只保留依賴發現層數事實，沒有證明它導致使用者可感知延遲。"
+      ]
+    },
+    {
+      "id": "A11Y-01",
+      "decision": "keep",
+      "classification": "confirmed defect",
+      "confidence": 0.99,
+      "priority": "P1",
+      "verified_title": "觀察影片載入按鈕的內縮鍵盤焦點框對比不足",
+      "reason": "focus outline 3px、offset -4px 完全內縮，顏色只比按鈕底色亮/暗一階。獨立重算亮/暗 1.3464116131:1 / 1.3425402806:1，且無第二種焦點指示。",
+      "counterevidence_considered": "按鈕文字本身對比通過，但文字沒有隨 focus 變化，不能取代焦點狀態提示。全域 focus 規則被該 scoped selector 覆寫。",
+      "source_context_read": [
+        "src/pages/videos/[slug].astro:82-155,462-550",
+        "src/styles/tokens.css:9-40",
+        "src/styles/global.css:129-177"
+      ],
+      "consumer_or_test_review": [
+        "tests/unit/color-contrast.test.ts:171-221 未涵蓋 primary-hover 對 primary",
+        "e2e/layout-accessibility.spec.ts:52-76 只驗首頁主題按鈕 outline 存在"
+      ],
+      "recommendation": "以 on-brand 或專用 focus-on-fill token 作內框；亮/暗重算及鍵盤確認完整呈現。",
+      "corrections": [
+        "此為 source/numeric 確認，尚未以正式站鍵盤 focus 截圖驗證。",
+        "on-brand 對 primary 重算為亮 5.0155271787:1、暗 5.2986395282:1。"
+      ]
+    },
+    {
+      "id": "A11Y-02",
+      "decision": "reframe",
+      "classification": "design proposal",
+      "confidence": 0.99,
+      "priority": "P2",
+      "verified_title": "觀察卡播放圖示的深色配色可與案例卡統一",
+      "reason": "深色三角形對橘底重算為 1.9690661439:1；CaseCard 用 on-warm，ObservationCard 用 brand-900，差異確定。",
+      "counterevidence_considered": "媒體連結 aria-hidden/tabindex=-1，三角形 aria-hidden；同卡標題與「查看影片與解析」真連結提供同一目的與可見資訊。這是冗餘裝飾，不足以宣告 WCAG 1.4.11 fail。",
+      "source_context_read": [
+        "src/components/atlas/ObservationCard.astro:17-99",
+        "src/components/atlas/CaseCard.astro:36-75,179-232",
+        "src/styles/tokens.css:18-40,55-74"
+      ],
+      "consumer_or_test_review": [
+        "e2e/decision-39-observation-pages.spec.ts:90-140",
+        "src/components/cases/VideoThumbnail.astro:17-45"
+      ],
+      "recommendation": "作為低成本視覺一致性調整可用 on-warm；併入共用卡片工作，不列為無障礙阻斷。",
+      "corrections": [
+        "3:1 作為這次圖示設計目標，不是此冗餘圖示的強制缺陷判定。",
+        "on-warm 深色對比重算 7.0278148582:1。"
+      ]
+    },
+    {
+      "id": "A11Y-03",
+      "decision": "keep",
+      "classification": "confirmed defect",
+      "confidence": 0.98,
+      "priority": "P2",
+      "verified_title": "延後到來的播放器失敗會把已離開播放器的焦點拉回",
+      "reason": "fail(iframe) 只驗 activeIframe 後無條件 button.focus。使用者離開時 activeIframe 不改變，API/ready 逾時或播放錯誤仍進同一路徑。",
+      "counterevidence_considered": "焦點仍在 iframe 時返還按鈕是正確且已有測試；stale iframe 事件也有防護。修正只應限制已離開區域時的搶焦點。",
+      "source_context_read": [
+        "src/scripts/video-player.ts:19-83,85-176",
+        "src/lib/video/youtube-api-adapter.ts:35-105",
+        "src/components/cases/CaseVideo.astro:277-345",
+        "src/pages/videos/[slug].astro:108-155"
+      ],
+      "consumer_or_test_review": [
+        "e2e/video-player.spec.ts:769-818 只覆蓋仍在播放器的錯誤，沒有使用者先離開情境"
+      ],
+      "recommendation": "移除 iframe 前保存焦點歸屬；只有焦點仍在該播放器時回到重試鈕，其他情況讓 polite status 通知。",
+      "corrections": [
+        "confirmed 是可確定的控制流程；尚未在正式站慢網路用鍵盤重現意外捲動距離。"
+      ]
+    },
+    {
+      "id": "A11Y-04",
+      "decision": "reframe",
+      "classification": "design proposal",
+      "confidence": 0.96,
+      "priority": "P2",
+      "verified_title": "播放器等待期間可增加本站可見載入狀態",
+      "reason": "狀態寫到 sr-only 節點；facade 隱藏、iframe 插入後無本站可見 loading 樣式，程式仍有錯誤與重試流程。",
+      "counterevidence_considered": "第三方 iframe 可能自己畫 loading；不能僅由本站沒有 spinner 推論使用者實際看到空白或不知已生效。MLB requested 也不等於已成功播放。",
+      "source_context_read": [
+        "src/scripts/video-player.ts:85-176",
+        "src/components/cases/CaseVideo.astro:242-345",
+        "src/pages/videos/[slug].astro:82-155",
+        "src/styles/global.css:152-177"
+      ],
+      "consumer_or_test_review": [
+        "e2e/video-player.spec.ts:769-818 有失敗/重試，未測慢載入的可見回饋"
+      ],
+      "recommendation": "延遲第三方回應驗證後增加簡短靜態「正在載入」與原始連結；共用單一 live region，避免重複朗讀。",
+      "corrections": ["不列為「沒有任何載入狀態」或已實測白屏缺陷。"]
+    },
+    {
+      "id": "A11Y-05",
+      "decision": "keep",
+      "classification": "confirmed defect",
+      "confidence": 0.99,
+      "priority": "P2",
+      "verified_title": "字級到達界限時控制項仍可操作且沒有界限回饋",
+      "reason": "步進 clamp 正確，但上下限按鈕未 disabled/aria-disabled，也沒有比例/狀態節點；達界限後重按只寫相同值。",
+      "counterevidence_considered": "已有 87.5%–150% 調整且與瀏覽器字級相乘，不能說不能放大或本站一定要內建 200%。這是操作回饋缺口，不自動定性為 WCAG 失敗。",
+      "source_context_read": [
+        "src/scripts/preferences.ts:10-43,67-95",
+        "src/components/layout/FontScaleControl.astro:1-26",
+        "src/styles/layout.css:146-168"
+      ],
+      "consumer_or_test_review": [
+        "e2e/layout-accessibility.spec.ts:148-207 明確驗 clamp/persist，但不驗界限語意",
+        "src/components/layout/SiteHeader.astro:25-78"
+      ],
+      "recommendation": "同步顯示或宣布比例與界限，採 aria-disabled 或妥善處理 native disabled 焦點；保留狹螢幕與 44px 目標。",
+      "corrections": []
+    },
+    {
+      "id": "A11Y-06",
+      "decision": "keep",
+      "classification": "confirmed defect",
+      "confidence": 0.99,
+      "priority": "P1",
+      "verified_title": "案例卡「觀看影片與回場重點」是假 CTA",
+      "reason": "compact 分支為 p.watch-label，沒有 href 或事件代理；品牌色與箭頭表現成行動入口。圖片絕對定位連結由相對定位的 thumbnail/cover-media 限定，不會覆蓋文字。",
+      "counterevidence_considered": "標題與圖片確實可點，因此不是整張卡無法導航；ObservationCard 的底部 CTA 則是真 a，造成同清單互動不一致。",
+      "source_context_read": [
+        "src/components/atlas/CaseCard.astro:36-112,148-181",
+        "src/components/cases/CaseCover.astro:56-86,112-132,169-195",
+        "src/components/cases/VideoThumbnail.astro:17-45",
+        "src/components/atlas/ObservationCard.astro:40-63"
+      ],
+      "consumer_or_test_review": [
+        "src/components/atlas/VideoDiscovery.astro:218-263 確認 compact consumer",
+        "e2e/catalog-ux.spec.ts:50-67 只點 Observation CTA，未覆蓋此 p"
+      ],
+      "recommendation": "將文案改成有案例名稱的正常連結，或移除行動語氣/箭頭；不以整卡 overlay 擋分類或權利連結。",
+      "corrections": [
+        "Pass 1 引用 CaseCover fallback media；正式核心卡實際多走 VideoThumbnail，但兩者都 position:relative，所以結論不變。"
+      ]
+    },
+    {
+      "id": "A11Y-07",
+      "decision": "defer",
+      "classification": "needs reproduction",
+      "confidence": 0.66,
+      "priority": "P2",
+      "verified_title": "Safari/VoiceOver 無標記清單語意須在當前版本驗證",
+      "reason": "ol.video-grid list-style:none 且未 role=list 確認；WebKit 歷史行為有官方紀錄，但本輪沒有 Safari accessibility tree 或 VoiceOver 證據。",
+      "counterevidence_considered": "HTML 原生 ol/ul 已有語意；平台是否將它當 layout list 是實作啟發法，Axe 不能代替實際 AT 判定，不能只看 CSS 宣告就確診失敗。",
+      "source_context_read": [
+        "src/components/atlas/VideoDiscovery.astro:197-276,448-482",
+        "src/components/atlas/VideoTypeTags.astro:1-58"
+      ],
+      "consumer_or_test_review": [
+        "e2e/helpers/a11y.ts:1-28",
+        "e2e/decision-39-observation-pages.spec.ts:142-179"
+      ],
+      "recommendation": "先在 Safari/VoiceOver 確認清單角色及載入更多後可見項目數；若消失，再針對資料清單加 role=list。",
+      "corrections": [
+        "確定問題的 confidence 下修至 0.66，從確定問題清單排除；保留重現工作。"
+      ]
+    },
+    {
+      "id": "A11Y-08",
+      "decision": "defer",
+      "classification": "needs reproduction",
+      "confidence": 0.66,
+      "priority": "P2",
+      "verified_title": "主選單跨斷點時的焦點可見性尚未重現",
+      "reason": "CSS 48rem 前後隱藏 panel/toggle，preferences 沒 matchMedia change 焦點交接，可形成隱藏焦點的程式條件。",
+      "counterevidence_considered": "沒有實際 browser resize/zoom 後 activeElement 與 bounding box；瀏覽器可能自行調整焦點。一般 resize 不應任意搶焦點。",
+      "source_context_read": [
+        "src/scripts/preferences.ts:98-154",
+        "src/styles/layout.css:74-104,146-175",
+        "src/components/layout/SiteHeader.astro:25-64",
+        "src/scripts/video-discovery.ts:97-125"
+      ],
+      "consumer_or_test_review": [
+        "e2e/home-hero.spec.ts:91-106 僅驗 advanced facets，不驗主選單",
+        "e2e/layout-accessibility.spec.ts:79-96"
+      ],
+      "recommendation": "在桌面 nav link→手機、手機 toggle→桌面兩方向重現；只在焦點將被隱藏時交接。",
+      "corrections": ["確定問題的 confidence 下修至 0.66，從確定問題清單排除。"]
+    },
+    {
+      "id": "A11Y-09",
+      "decision": "defer",
+      "classification": "needs reproduction",
+      "confidence": 0.65,
+      "priority": "P2",
+      "verified_title": "載入更多後的新標題焦點是否可見需幾何證據",
+      "reason": "確有 firstNew h3 a focus({preventScroll:true})；新增圖片在標題前，可能讓標題落視窗外，但只有推論。",
+      "counterevidence_considered": "不是沒有焦點管理；scroll anchoring、按鈕原位置、卡高與引擎都會改變結果，不能把 preventScroll 一律視為錯。",
+      "source_context_read": [
+        "src/scripts/video-discovery.ts:440-502",
+        "src/components/atlas/VideoDiscovery.astro:245-276,475-525",
+        "src/components/atlas/ObservationCard.astro:17-63"
+      ],
+      "consumer_or_test_review": [
+        "e2e/catalog-ux.spec.ts:50-67,142-165 僅驗數量與去重"
+      ],
+      "recommendation": "主 agent 在桌面/手機不同按鈕位置確認新焦點 bounding box，確有離屏才加 block:nearest 捲動且遵守 reduced motion。",
+      "corrections": ["確定問題的 confidence 下修至 0.65，從確定問題清單排除。"]
+    },
+    {
+      "id": "STR-01",
+      "decision": "reframe",
+      "classification": "design proposal",
+      "confidence": 0.99,
+      "priority": "P1",
+      "verified_title": "部位/運動/情境分類可補上分類內搜尋與交叉篩選",
+      "reason": "三種分類直接 map 全部卡；VideoType 分類則使用 VideoDiscovery。獨立跑 selector 確認膝66、棒球33。能力差異確定。",
+      "counterevidence_considered": "現有靜態分類簡單、無 JS 完全可用，所有卡仍可閱讀；缺搜尋是功能取捨，不能說導航失效。",
+      "source_context_read": [
+        "src/pages/body-parts/[part].astro:1-97",
+        "src/pages/sports/[sport].astro:1-94",
+        "src/pages/situations/[situation].astro:1-94",
+        "src/pages/video-types/[type].astro:1-88",
+        "src/scripts/video-discovery.ts:126-157,183-261"
+      ],
+      "consumer_or_test_review": [
+        "e2e/catalog-ux.spec.ts:108-140 只驗 fixed type",
+        "e2e/decision-39-ux.spec.ts:212-250 分類測試只要求可讀卡片 metadata"
+      ],
+      "recommendation": "共用列表殼，明確固定分類 scope，保留分類 URL、無 JS 與返回狀態；與 PERF-01 一起規劃。",
+      "corrections": []
+    },
+    {
+      "id": "STR-02",
+      "decision": "reframe",
+      "classification": "design proposal",
+      "confidence": 0.99,
+      "priority": "P2",
+      "verified_title": "同清單兩套卡片可統一共同欄位與行動語言",
+      "reason": "CaseCard/ObservationCard 欄位密度、播放標記大小、hover 與 CTA 結構不同；混在同 ol 且 7/193 數量獨立確認。",
+      "counterevidence_considered": "核心案例和觀察片資料深度不同，允許專屬資訊；公開 CaseCover 會用本地影片縮圖，不能誤稱仍以球員照片對比影片圖。",
+      "source_context_read": [
+        "src/components/atlas/CaseCard.astro:1-232",
+        "src/components/atlas/ObservationCard.astro:1-173",
+        "src/components/atlas/VideoDiscovery.astro:212-263",
+        "src/components/cases/CaseCover.astro:56-86"
+      ],
+      "consumer_or_test_review": [
+        "e2e/decision-39-ux.spec.ts:212-250",
+        "e2e/decision-39-observation-pages.spec.ts:90-140"
+      ],
+      "recommendation": "統一公共外觀/CTA 與欄位順序，保留兩種資料治理與必要深度差異；假 CTA 修正依 A11Y-06，勿重複算一個 bug。",
+      "corrections": []
+    },
+    {
+      "id": "STR-03",
+      "decision": "reframe",
+      "classification": "design proposal",
+      "confidence": 0.99,
+      "priority": "P2",
+      "verified_title": "核心案例詳頁可補固定返回與分類續看",
+      "reason": "核心案例 article 無頂部返回/麵包屑，底部只同傷種案例；觀察片有回首頁錨點及分類 nav。",
+      "counterevidence_considered": "共用頁首首頁連結始終存在，核心詳頁也有 VideoTypeTags 可到類型分類，並非死路或完全沒有任何分類連結。",
+      "source_context_read": [
+        "src/pages/cases/[slug].astro:99-175,279-345",
+        "src/pages/videos/[slug].astro:61-75,397-424",
+        "src/components/layout/SiteHeader.astro:25-78",
+        "src/components/atlas/VideoTypeTags.astro:14-28"
+      ],
+      "consumer_or_test_review": [
+        "e2e/decision-39-observation-pages.spec.ts:18-65 僅 observation 的分類續看契約",
+        "e2e/atlas-navigation.spec.ts:19-63"
+      ],
+      "recommendation": "補共用詳頁返回/續看殼，有可靠 query context 時才提供返回搜尋；固定首頁/分類出口仍保留。",
+      "corrections": [
+        "不能說案例頁完全沒有分類入口，VideoTypeTags 已提供影片類型連結；缺的是與 observation 對等的部位/運動/情境續看。"
+      ]
+    },
+    {
+      "id": "STR-04",
+      "decision": "reframe",
+      "classification": "design proposal",
+      "confidence": 0.99,
+      "priority": "P2",
+      "verified_title": "相關推薦的同部位優先和 slug tie-break 造成固定前三",
+      "reason": "獨立執行 relatedObservationClips，四個膝部例子確實都回同三支；函式同部位即回0，不再加權運動/情境。兩種詳頁各只推薦自身資料集合。",
+      "counterevidence_considered": "這是可重現且被測試接受的穩定規則，沒有排序運算錯誤；同部位關聯有合理性，不能推論使用者已不滿或推薦無關。",
+      "source_context_read": [
+        "src/lib/videos/observation-guidance.ts:46-134",
+        "src/pages/videos/[slug].astro:32-55,397-424",
+        "src/pages/cases/[slug].astro:76-126,322-345"
+      ],
+      "consumer_or_test_review": [
+        "tests/unit/decision-39-observation-discovery.test.ts:69-131 鎖定穩定/同部位優先，未要求多樣性",
+        "e2e/decision-39-observation-pages.spec.ts:18-65"
+      ],
+      "recommendation": "若重視探索多樣性，採部位+運動/情境複合分數與編輯穩定 tie-break；跨來源推薦仍走公開 selector。",
+      "corrections": []
+    },
+    {
+      "id": "STR-05",
+      "decision": "reframe",
+      "classification": "design proposal",
+      "confidence": 0.99,
+      "priority": "P2",
+      "verified_title": "全部影片預設順序應用使用者能理解的名稱說明",
+      "reason": "首頁先 featured 再 clips；featured 日期倒序，clips batch 串接；all 直接用初始 cards 陣列。獨立執行第一批 core 全是7筆NBA。",
+      "counterevidence_considered": "先呈現資訊較完整核心案例可能正是編輯意圖；標籤「全部」沒有聲稱按日期，不能視為排序錯誤。",
+      "source_context_read": [
+        "src/components/atlas/VideoDiscovery.astro:169-263",
+        "src/scripts/video-discovery.ts:141-162,216-251",
+        "src/lib/patient/featured.ts:1-30",
+        "src/lib/videos/expansion.ts:1140-1200"
+      ],
+      "consumer_or_test_review": [
+        "e2e/catalog-ux.spec.ts:69-105 檢查 mode URL，未宣稱 all 是最新",
+        "src/pages/index.astro:23-34"
+      ],
+      "recommendation": "先標示「編輯推薦順序」或決定真正的全庫排序；若要最近收錄需新增可靠 addedAt，不能挪用事件日期。",
+      "corrections": []
+    },
+    {
+      "id": "STR-06",
+      "decision": "reframe",
+      "classification": "design proposal",
+      "confidence": 0.99,
+      "priority": "P2",
+      "verified_title": "詳頁可以使用內容可辨識的分享圖，但現圖是已指定設計",
+      "reason": "BaseLayout 固定首頁截圖，只有 title/description/canonical 逐頁變動；沒有分享圖 props。",
+      "counterevidence_considered": "原碼與精確 bytes 測試都明示使用者指定 screenshot，現行輸出符合既有契約，沒有 SEO 失敗證據。",
+      "source_context_read": [
+        "src/layouts/BaseLayout.astro:43-97,138-172",
+        "scripts/verify-brand-assets.ts:545-568,618-625"
+      ],
+      "consumer_or_test_review": [
+        "tests/unit/site-share-screenshot.test.ts:1-28",
+        "e2e/decision-39-observation-pages.spec.ts:142-190"
+      ],
+      "recommendation": "若採新分享設計，保留首頁指定圖、為詳頁新增站方可授權文字模板與 fallback，另驗 URL/尺寸；不要擅自換掉原指定圖。",
+      "corrections": []
+    },
+    {
+      "id": "STR-07",
+      "decision": "keep",
+      "classification": "measured fact with optimization hypothesis",
+      "confidence": 0.99,
+      "priority": "P2",
+      "verified_title": "局部 scoped CSS 與 InjuryCard 已無 runtime consumer",
+      "reason": "全文讀 InjuryCard，兩種搜尋交叉確認只有 allowlist 引用，未 import/render；type-grid 只有其三段 scoped CSS，case-notes-column 只有另一 route fixture 實例，不消費此 route scoped CSS。",
+      "counterevidence_considered": "全域 injury-card selector 和 allowlist/舊 E2E 仍有靜態依賴；不等於共享圖庫/helper 都可刪。未用整庫 knip，也未量測 bundle 收益。",
+      "source_context_read": [
+        "src/components/atlas/InjuryCard.astro:1-165",
+        "src/pages/video-types/[type].astro:30-88",
+        "src/pages/cases/[slug].astro:347-427",
+        "scripts/verify-brand-assets.ts:117-153,571-625",
+        "src/styles/global.css:99-115"
+      ],
+      "consumer_or_test_review": [
+        "rg 搜尋 import/元件名、class/data selector、classList/querySelector/createElement 與 import.meta.glob",
+        "e2e/no-javascript.spec.ts:18-37",
+        "e2e/atlas-navigation.spec.ts:19-28"
+      ],
+      "recommendation": "排在可見 UX 修正之後做小範圍維護清理，精準同步 allowlist/測試；不要聲稱能顯著提升速度。",
+      "corrections": []
+    },
+    {
+      "id": "STR-08",
+      "decision": "keep",
+      "classification": "confirmed defect",
+      "confidence": 0.99,
+      "priority": "P1",
+      "verified_title": "首頁無 JS 測試期待已移除卡片，與導航測試互斥",
+      "reason": "同 testDir/baseURL review build：no-javascript 期待 data-injury-card=3；atlas-navigation 期待0。index 在任何分支均沒有 InjuryCard/noscript 渲染，JS 也沒有建立它。",
+      "counterevidence_considered": "兩測試 JS 設定不同本可代表合理漸進增強，但本案沒有以 JS 刪除或無 JS 插入卡片，故差異不能解釋3與0。",
+      "source_context_read": [
+        "e2e/no-javascript.spec.ts:1-62",
+        "e2e/atlas-navigation.spec.ts:1-63",
+        "playwright.config.ts:1-31",
+        "src/pages/index.astro:1-193"
+      ],
+      "consumer_or_test_review": [
+        "src/scripts/home-categories.ts 消費分類面板，非 InjuryCard renderer；全 src 元件/selector 交叉搜尋無動態生產者",
+        "e2e/catalog-ux.spec.ts:18-67 提供目前影片目錄契約"
+      ],
+      "recommendation": "更新 no-JS 驗收為影片列表/分類/原始影片入口，保留無 JS 能力測試；實跑同一 artifact 才能報修復通過。",
+      "corrections": [
+        "這次沒有執行 Playwright，因此寫「測試契約確定衝突」，不寫「本輪 E2E 已跑失敗」。"
+      ]
+    },
+    {
+      "id": "STR-09",
+      "decision": "reframe",
+      "classification": "design proposal",
+      "confidence": 0.98,
+      "priority": "P2",
+      "verified_title": "舊傷種頁的內容範圍需要與新版部位影片庫接合",
+      "reason": "傷種固定3 routes、sitemap 未排除；公開 selector 數確為 acl0/ankle4/achilles3，較廣部位庫 knee66/calf22。首頁不再 render 舊 InjuryCard 導航。",
+      "counterevidence_considered": "傷種不等於部位，不能硬湊數量或直接 redirect；acl0 仍渲染 PatientGuide 及整理中狀態，不是空白頁。公開版目前沒有 review 專業總覽區，不能誤稱兩版相同。",
+      "source_context_read": [
+        "src/pages/injuries/[injury].astro:42-185",
+        "src/lib/routes/static-paths.ts:1-81",
+        "src/lib/governance/sitemap.ts:1-45",
+        "src/lib/videos/body-parts.ts:1-62",
+        "src/components/atlas/InjuryCard.astro:20-54",
+        "astro.config.mjs:7-36"
+      ],
+      "consumer_or_test_review": [
+        "e2e/atlas-navigation.spec.ts:30-47 驗 review 的7/12/7，不是公開0/4/3",
+        "src/lib/cases/pagination.ts:71-79 已追公開 selector",
+        "src/pages/body-parts/[part].astro:13-67"
+      ],
+      "recommendation": "定義保留的衛教/核心案例角色，清楚說明範圍並連到較廣部位庫；如果退場另規劃 canonical/sitemap/舊網址。",
+      "corrections": [
+        "公開 /injuries/ 主要為 PatientGuide 與案例，不直接輸出 review-only InjuryOverviewView；「深度衛教總覽」是未來角色提案。"
+      ]
+    },
+    {
+      "id": "VIS-01",
+      "decision": "keep",
+      "classification": "design proposal",
+      "confidence": 0.96,
+      "priority": "P1",
+      "verified_title": "首頁可原型比較更緊湊的搜尋入口與結果節奏",
+      "reason": "模板與 CSS 確認社群/hero/統計/CTA 在搜尋前；主 agent 的桌面初始可視區未見首卡。這支持比較更緊湊版面，但不是任務成功率證據。",
+      "counterevidence_considered": "已有「開始找影片」錨點 CTA，且 mobile e2e 原碼明確要求搜尋在675px內；未重跑就不能說行動搜尋被藏起來。原主視覺與社群順序是已選定設計，必須保留。",
+      "source_context_read": [
+        "src/pages/index.astro:36-193,247-455",
+        "src/components/atlas/VideoDiscovery.astro:49-217",
+        "src/scripts/home-categories.ts:1-83"
+      ],
+      "consumer_or_test_review": [
+        "e2e/home-hero.spec.ts:11-54,108-134",
+        "e2e/catalog-ux.spec.ts:18-49",
+        "pass1-visual.json 的桌面觀察由主 agent 提供，Pass 2 不操作瀏覽器"
+      ],
+      "recommendation": "以原圖與既定社群順序做緊湊 hero/統計原型，搜尋主要、分類次要；用找片任務與桌面/手機新截圖比較後決定。",
+      "corrections": [
+        "首卡在桌面首屏外已由主 agent 觀察；手機首屏位置、轉換率或尋片效率未取得本輪證據。"
+      ]
+    },
+    {
+      "id": "VIS-02",
+      "decision": "keep",
+      "classification": "design proposal",
+      "confidence": 0.98,
+      "priority": "P1",
+      "verified_title": "詳頁閱讀導航應分別處理一般雙欄與長內容單欄變體",
+      "reason": "完整讀影片詳頁與兩個事件元件後確認長內容串接、來源索引與警訊位置；Aaron Judge 資料有 mechanism，會套用 expanded 單欄。",
+      "counterevidence_considered": "一般 clip-layout 已為 1.2fr/1fr 雙欄；expanded 才是單欄 max52rem。影片文字重點已存在，來源/限制也有就近引註，不能說全站完全缺摘要或閱讀寬度限制。",
+      "source_context_read": [
+        "src/pages/videos/[slug].astro:61-423,430-459",
+        "src/pages/cases/[slug].astro:132-345",
+        "src/components/cases/EventMechanism.astro:1-101",
+        "src/components/cases/EventFollowUp.astro:1-130",
+        "src/data/videos/event-judge-rib.v1.json:1-85"
+      ],
+      "consumer_or_test_review": [
+        "e2e/judge-rib.spec.ts:1-52 明確保護警訊、歷史影片與回場區分",
+        "e2e/decision-39-observation-pages.spec.ts:18-87",
+        "e2e/home-hero.spec.ts:108-134 僅首頁縮放，不代表詳頁驗收"
+      ],
+      "recommendation": "新增由實際區塊產生的頁內導航，兩種詳頁採一致返回/續看；對長內容變體比較窄側欄原型，摘要只能提取已有來源支持內容。",
+      "corrections": [
+        "將「詳頁改雙欄」收窄為「長內容單欄變體試事件摘要/導航側欄」；不能把 Aaron Judge 單一初始畫面泛化為全部193頁。",
+        "既有警訊、引用、限制與日期保持可見；不因摘要增加未審核的醫療結論。"
+      ]
+    },
+    {
+      "id": "VIS-03",
+      "decision": "keep",
+      "classification": "design proposal",
+      "confidence": 0.98,
+      "priority": "P2",
+      "verified_title": "動態重點可放在狀態切換而不是整批卡片動畫",
+      "reason": "搜尋已有 visible/live status、選中 aria-pressed/expanded；播放器已有狀態機；全域 reduced motion 關閉 smooth 並縮短動畫/transition。",
+      "counterevidence_considered": "現況已提供立即狀態回饋，不能稱完全沒有動態/互動。120–180ms 是可試設計參數，沒有實測資料證明優於立即變更。",
+      "source_context_read": [
+        "src/scripts/video-discovery.ts:216-344,388-438",
+        "src/scripts/video-player.ts:85-176",
+        "src/styles/global.css:129-177",
+        "src/pages/index.astro:232-246"
+      ],
+      "consumer_or_test_review": [
+        "e2e/catalog-ux.spec.ts:69-165",
+        "e2e/video-player.spec.ts:769-818",
+        "e2e/home-hero.spec.ts:56-106"
+      ],
+      "recommendation": "優先補可見播放器等待，其他只做輕微狀態色/透明度轉換；結果相同不搬動或重播動畫，reduced motion 即時呈現資訊。",
+      "corrections": [
+        "與 A11Y-04/PERF-02 同工作去重；不是需要新增動畫庫或為美化而增加動作。"
+      ]
+    },
+    {
+      "id": "SEC-01",
+      "decision": "reframe",
+      "classification": "measured fact with optimization hypothesis",
+      "confidence": 0.99,
+      "priority": "P1",
+      "verified_title": "已合併相依套件修補尚未反映在正式發布來源",
+      "reason": "同 session verification 記錄 production ac38ad9、GitHub main 3be60d2；程式解析283筆結果皆match、無重複path。獨立讀本地 origin/main log/package diff 確認 Astro7.1.6→7.2.8、Vitest/coverage4.1.10→4.1.11、fast-uri3.1.6→3.1.8。",
+      "counterevidence_considered": "這是發布來源落差；靜態站的 build/dev dependency 版本不同不等同正式頁面有可利用漏洞。主 agent 查過 Cloudflare/GitHub，本 Pass 2 沒重跑該管理API、沒有漏洞掃描、沒有驗證整個修補內容正確性。",
+      "source_context_read": [
+        "docs/reviews/2026-10-19-live-sync/verification.json:1-130,2250-2315；另程式解析全部283結果的一致性",
+        "package.json:90-136",
+        "git diff --unified=35 cc0b2fe..origin/main -- package.json",
+        "git diff --name-status ac38ad9..origin/main",
+        "scripts/public-launch/check-release.ts:1-115"
+      ],
+      "consumer_or_test_review": [
+        "package.json:108-112 的 release/public build/deploy consumers",
+        "tests/unit/release-gate.test.ts:1-110 僅讀發布驗收架構",
+        "playwright.config.ts:9-31 仍需對新artifact取得實際證據"
+      ],
+      "recommendation": "列為視覺改版發布前置工作：先完整審查 main 真實差異、重建與必要測試/播放門檻，再依授權流程部署並核對正式來源；本輪僅報告。",
+      "corrections": [
+        "不列為新P0或本輪新發現漏洞，標示 confirmed release alignment fact。",
+        "package.json 版本實際在114-135行，Pass 1 的1-110定位未涵蓋它們。",
+        "283項比對證據來自同session主agent，Pass 2只核對報告內部一致性與另外抽樣HTTP，不宣稱獨立重測全部283項。"
+      ]
+    }
+  ],
+  "rejected_interpretations": [
+    {
+      "decision": "reject",
+      "classification": "false positive",
+      "confidence": 0.99,
+      "claim": "播放三角形1.97:1即單獨確診WCAG失敗",
+      "reason": "同資訊已有可見連結，圖示與媒體連結冗餘且 aria-hidden；保留美觀一致性建議。"
+    },
+    {
+      "decision": "reject",
+      "classification": "false positive",
+      "confidence": 0.99,
+      "claim": "200個img意味首屏下載200張，或兩入口import意味搜尋執行兩次",
+      "reason": "多數lazy，實際request未量測；同URL module去重且有初始化guard。"
+    },
+    {
+      "decision": "reject",
+      "classification": "false positive",
+      "confidence": 0.99,
+      "claim": "Noto Serif TC檔案存在所以每頁必下載所有CJK字型",
+      "reason": "目前token堆疊無引用該font-face，不能以資產存在推下載。"
+    },
+    {
+      "decision": "reject",
+      "classification": "false positive",
+      "confidence": 0.99,
+      "claim": "核心詳頁完全沒有返回首頁或分類入口",
+      "reason": "頁首首頁及VideoTypeTags已存在；真正改善是上下文返回及部位/運動/情境續看。"
+    },
+    {
+      "decision": "reject",
+      "classification": "false positive",
+      "confidence": 0.99,
+      "claim": "本站字級上限150%即無法符合文字縮放",
+      "reason": "與瀏覽器字級相乘，未測到縮放被阻擋。"
+    }
+  ],
+  "final_shortlist": [
+    {
+      "rank": 1,
+      "ids": ["A11Y-01"],
+      "action": "修正影片載入按鈕焦點框配色並補實際配對驗收",
+      "type": "confirmed defect"
+    },
+    {
+      "rank": 2,
+      "ids": ["A11Y-06", "STR-02", "A11Y-02"],
+      "action": "先修假 CTA，再統一卡片公共欄位與播放標記",
+      "type": "confirmed defect + design proposal"
+    },
+    {
+      "rank": 3,
+      "ids": ["A11Y-03"],
+      "action": "播放器延後失敗只在焦點仍屬播放器時返還焦點",
+      "type": "confirmed defect"
+    },
+    {
+      "rank": 4,
+      "ids": ["A11Y-05"],
+      "action": "字級界限提供比例和可操作狀態",
+      "type": "confirmed defect"
+    },
+    {
+      "rank": 5,
+      "ids": ["STR-08"],
+      "action": "修正無 JS 首頁測試契約，建立後續改版可依賴的驗收",
+      "type": "confirmed defect"
+    },
+    {
+      "rank": 6,
+      "ids": ["VIS-01", "STR-01", "PERF-01"],
+      "action": "首頁搜尋層級與分類列表共用殼一起原型，連同完整 DOM 成本量測",
+      "type": "design proposal + measured fact with optimization hypothesis"
+    },
+    {
+      "rank": 7,
+      "ids": ["VIS-02", "STR-03", "STR-04"],
+      "action": "兩種詳頁加入一致返回/續看與長文導航，再改善推薦多樣性",
+      "type": "design proposal"
+    },
+    {
+      "rank": 8,
+      "ids": ["PERF-03", "PERF-07", "A11Y-04", "VIS-03"],
+      "action": "量測冷載入互動就緒，改善腳本發現與可見狀態，動態保持克制",
+      "type": "measurement-first optimization + design proposal"
+    }
+  ],
+  "not_claimed": [
+    "本輪沒有測得 Core Web Vitals、FPS、輸入延遲、VoiceOver 結果或正式站鍵盤焦點幾何。",
+    "沒有執行測試套件；讀測試原碼不等於測試通過。",
+    "沒有提供臨床內容/影片授權背書；公開 selector 與治理邊界需保留。"
+  ],
+  "memory_used": {
+    "file": "MEMORY.md",
+    "lines": "513-514",
+    "purpose": "只採用歷史 release/播放證據需重新核對的原則；本報告現況數據都來自本輪原碼或HTTP",
+    "rollout_id": "01a0992b-90e2-7d61-b175-f0f89d5de10d"
+  },
+  "release_prerequisite": {
+    "id": "SEC-01",
+    "status": "verified release gap; not newly confirmed exploitable vulnerability",
+    "action": "在任何改版發布前先審查/驗證 main 修補並依既有授權流程處理來源與正式部署一致性。"
+  },
+  "summary": {
+    "total_pass1_findings": 29,
+    "decisions": {
+      "keep": 15,
+      "reframe": 11,
+      "defer": 3
+    },
+    "classifications": {
+      "measured fact with optimization hypothesis": 9,
+      "confirmed defect": 5,
+      "design proposal": 12,
+      "needs reproduction": 3
+    },
+    "confirmed_defect_ids": [
+      "A11Y-01",
+      "A11Y-03",
+      "A11Y-05",
+      "A11Y-06",
+      "STR-08"
+    ],
+    "deferred_below_threshold": ["A11Y-07", "A11Y-08", "A11Y-09"],
+    "rejected_overinterpretations": 5
+  }
+}

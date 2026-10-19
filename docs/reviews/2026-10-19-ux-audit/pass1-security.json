@@ -1,0 +1,44 @@
+{
+  "audit": "pass1-security",
+  "date": "2026-10-19",
+  "source_head": "cc0b2fe",
+  "scope": "唯讀公開 API、輸入界限、來源/CSP、SQL/HMAC guard 與目前發布差異；非滲透測試與全面漏洞保證。",
+  "findings": [
+    {
+      "id": "SEC-01",
+      "priority": "P1",
+      "kind": "release_alignment",
+      "confidence": 0.99,
+      "title": "已合併的相依套件安全修補尚未到正式站",
+      "evidence": [
+        {
+          "file": "docs/reviews/2026-10-19-live-sync/verification.json",
+          "lines": "1",
+          "detail": "同一 session 重新讀取 GitHub main 與 Cloudflare production。main 3be60d2 已包含 10/15 修補，production 來源 ac38ad9，283 個公開成品仍符合 9/22 發布。"
+        },
+        {
+          "file": "package.json",
+          "lines": "1-110",
+          "detail": "目前本機 Astro7.1.6/Vitest4.1.10；main 改 Astro7.2.8/Vitest4.1.11，另有 lockfile/Sharp 契約/registry 等實際差異，不能只依 PR 舊描述。"
+        }
+      ],
+      "recommendation": "在任何視覺改版發布前先完成 main 差異審查、相依套件與正式建置門檻，依既有流程發佈並再核對 live SHA；此輪不執行同步或部署。",
+      "qualification": "這是已驗證的發布落差；未執行新漏洞掃描或證明現況可被利用，不定為新 P0 漏洞。",
+      "acceptance": [
+        "最新修補所在來源 SHA 與正式部署一致。",
+        "新來源的正式建置、必要測試及既有內容/播放門檻均有新證據。"
+      ]
+    }
+  ],
+  "positive_controls": [
+    "contributions API exact-origin/Fetch-Site、JSON/body12KB限制、固定 upstream、manual redirect、15秒timeout。",
+    "投稿 URL 驗證後不由本站抓取；SQL 參數 bind、D1 交易式限流與 duplicate guard；未讀取金鑰值。",
+    "play API body512B、公開 videoId allowlist、UUIDv4、同源與 DNT/GPC 尊重；錯誤 fail-closed。",
+    "CSP 為明確來源；SVG set:html 來自本地常數。沒有把常數 SVG 或 style unsafe-inline 誤列成已確認 XSS。"
+  ],
+  "limits": [
+    "未對正式站送出測試 POST/壓測/攻擊載荷，未改任何安全設定。",
+    "popular GET limiter 是明確註解的 instance-local best effort，未量測濫用或全球限流，成本改善見 PERF-06。",
+    "在上述有界原碼範圍未確認額外新漏洞，不能代表全站無漏洞。"
+  ]
+}

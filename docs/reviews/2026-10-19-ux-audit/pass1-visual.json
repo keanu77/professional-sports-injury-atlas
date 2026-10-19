@@ -1,0 +1,94 @@
+{
+  "audit": "pass1-visual",
+  "date": "2026-10-19",
+  "source_head": "cc0b2fe",
+  "scope": "桌面正式站首頁與 Aaron Judge 詳頁實看、模板與樣式核對；屬設計建議，不以主觀偏好當成缺陷。手機 DevTools 尺寸設定未取得可靠結果，未宣稱本次手機視覺驗收通過。",
+  "findings": [
+    {
+      "id": "VIS-01",
+      "priority": "P1",
+      "kind": "design_proposal",
+      "confidence": 0.95,
+      "title": "首頁先讓搜尋成為主要工作入口，縮短視覺介紹與結果的距離",
+      "evidence": [
+        {
+          "file": "src/pages/index.astro",
+          "lines": "42-110",
+          "detail": "首頁依序是前方社群、主視覺、標題、三組統計、兩個 CTA，之後才是 VideoDiscovery。桌面截圖中首張卡片不在初始可視區。"
+        },
+        {
+          "file": "src/components/atlas/VideoDiscovery.astro",
+          "lines": "80-217",
+          "detail": "搜尋、進階篩選、全部/精選/熱門、分類入口與結果狀態皆在同一列表上方。"
+        }
+      ],
+      "recommendation": "保留使用者選定原始 A 主視覺、藍色品牌與前方社群入口；壓縮 hero 垂直留白與統計，讓搜尋在常見首屏清楚可見。把查詢/篩選作主要工具、分類瀏覽作次要入口，避免每種控制都同等醒目。先用版面原型比較，不直接假定縮短一定更好。",
+      "acceptance": [
+        "以 390×844 與 1440×900 的全新截圖確認搜尋入口與選定條件不被 hero 擠出主要視線。",
+        "首訪者能辨認球員搜尋、部位篩選與分類頁跳轉的不同用途；用 3 個找片任務驗證。",
+        "不恢復已移除圖說，不更換主視覺或把社群入口移至頁尾。"
+      ]
+    },
+    {
+      "id": "VIS-02",
+      "priority": "P1",
+      "kind": "design_proposal",
+      "confidence": 0.95,
+      "title": "詳頁把影片、事件重點與閱讀導航整理成固定節奏",
+      "evidence": [
+        {
+          "file": "src/pages/videos/[slug].astro",
+          "lines": "63-218",
+          "detail": "Aaron Judge 桌面首屏由姓名標題、事件/類型與大型影片 facade 主導；下方才是事件介紹、傷勢和後續等內容。"
+        },
+        {
+          "file": "src/pages/videos/[slug].astro",
+          "lines": "219-423",
+          "detail": "一般人參考、延伸閱讀、來源、相關影片等區塊依序串在長文中。"
+        }
+      ],
+      "recommendation": "桌面可試影片主欄＋窄側欄（事件摘要/頁內導航），手機依序是簡短標題、影片、三個來源可追溯的閱讀重點、詳文與續看。三重點採「發生什麼／目前知道什麼／一般人如何理解」，不補寫原資料沒有的診斷。頁內導航依現有 section 自動產生。",
+      "acceptance": [
+        "兩種詳頁用同一閱讀順序與返回清單入口；長文不用反覆回頁首找影片。",
+        "警訊與適用範圍保持可見，不能藏在預設折疊區或只留摘要。",
+        "來源、整理日期與具名依據可在正文附近辨識；摘要逐條可回溯正文，不改動既有臨床審查界線。",
+        "桌面閱讀欄避免過寬，手機 320px/390px 與 150% 站內字級不被浮動導航遮擋。"
+      ]
+    },
+    {
+      "id": "VIS-03",
+      "priority": "P2",
+      "kind": "design_proposal",
+      "confidence": 0.94,
+      "title": "用短促狀態回饋交代操作結果，保留克制的動態呈現",
+      "evidence": [
+        {
+          "file": "src/scripts/video-discovery.ts",
+          "lines": "216-251",
+          "detail": "結果是立即 hidden/append 更新；已有 live status，並非無回饋。"
+        },
+        {
+          "file": "src/scripts/video-player.ts",
+          "lines": "111-148",
+          "detail": "播放器狀態已存在，可用同一狀態補可見載入提示。"
+        },
+        {
+          "file": "src/styles/global.css",
+          "lines": "1-220",
+          "detail": "已有 prefers-reduced-motion 處理，無證據顯示需要另添大型動畫庫。"
+        }
+      ],
+      "recommendation": "把視覺回饋集中在三處：選中篩選的狀態變化、結果數更新、播放器等待/成功/失敗。可以試 120–180ms opacity/色彩轉換；是原型起點而非強制標準。維持卡片位置穩定，避免每次輸入讓整批卡片飛入；不加入首頁自動播放、視差或連續漂浮元素。",
+      "acceptance": [
+        "相同結果不重新播放整批進場動畫；載入更多不使既有內容跳位。",
+        "prefers-reduced-motion 使用立即狀態切換，狀態資訊不依賴動畫。",
+        "不引入動畫依賴；加動態前後以實際低階行動裝置確認輸入與捲動。"
+      ]
+    }
+  ],
+  "browser_limits": [
+    "本次手機 emulation 控制無法可靠設定目標寬度，故沒有把 390px、Safari、VoiceOver、慢網路故障列為實測通過。",
+    "部分 native 截圖出現白帶或全黑，是擷取工具不穩定；未當成網站視覺問題。",
+    "未逐支播放 200 支影片，未以測試資料送出投稿或增加播放統計。"
+  ]
+}

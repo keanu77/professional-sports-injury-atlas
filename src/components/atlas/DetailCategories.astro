@@ -1,0 +1,40 @@
+---
+interface Props {
+  links: { kind: string; label: string; href: string }[];
+}
+const { links } = Astro.props;
+---
+
+<nav class="detail-categories" aria-label="這支影片的分類入口">
+  <h3>依分類繼續看</h3>
+  <ul role="list">
+    {
+      links.map((link) => (
+        <li data-category-kind={link.kind}>
+          <a href={link.href}>{link.label}</a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+<style>
+  .detail-categories {
+    margin-block-start: 1.5rem;
+    padding-block-start: 1rem;
+    border-top: 1px solid var(--hairline);
+  }
+  h3 {
+    font-family: var(--font-display);
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    padding: 0;
+    list-style: none;
+  }
+  a {
+    display: inline-block;
+    padding-block: 0.4rem;
+  }
+</style>

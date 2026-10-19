@@ -1,0 +1,109 @@
+/* One public card rhythm for core cases and observation videos. */
+article.catalog-card[data-video-card] {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-card);
+  background: var(--color-surface-raised);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+article.catalog-card[data-video-card]:is(:hover, :focus-within) {
+  border-color: var(--color-brand-primary);
+  box-shadow: 0 4px 16px var(--shadow-stuck);
+}
+
+.catalog-card[data-video-card] .catalog-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1rem 1.15rem;
+}
+
+.catalog-card[data-video-card] .catalog-card-title {
+  margin: 0 0 0.35rem;
+  font: 700 var(--text-card-title)/1.4 var(--font-body);
+}
+
+.catalog-card[data-video-card] .catalog-card-title a {
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.catalog-card[data-video-card] .catalog-card-title a:hover {
+  color: var(--color-brand-primary);
+}
+
+.catalog-card[data-video-card] .catalog-card-event {
+  margin: 0 0 0.65rem;
+  color: var(--color-ink);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.catalog-card[data-video-card] .catalog-card-metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.65rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  color: var(--color-ink-muted);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.catalog-card[data-video-card] .catalog-card-metadata li + li::before {
+  content: "·";
+  margin-inline-end: 0.65rem;
+}
+
+.catalog-card[data-video-card] .catalog-card-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding-block-start: 0.65rem;
+  margin-block-start: auto;
+  color: var(--color-brand-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-underline-offset: 0.25em;
+}
+
+.catalog-card[data-video-card] .catalog-card-action:hover {
+  text-decoration: underline;
+}
+
+.catalog-card[data-video-card] .catalog-card-action:focus-visible {
+  outline: 3px solid var(--color-brand-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.catalog-card[data-video-card] .catalog-card-play {
+  position: absolute;
+  inset-inline-end: 1rem;
+  inset-block-end: 1rem;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: var(--color-brand-accent);
+  color: var(--color-on-warm);
+  font-size: 1rem;
+  box-shadow: 0 2px 8px var(--shadow-stuck);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  article.catalog-card[data-video-card] {
+    transition: none;
+  }
+}

@@ -277,7 +277,7 @@ const coverIdPrefix = `video-cover-${scopeId}`;
     presentation === "click-to-load" && (
       <p
         id={`video-status-${scopeId}`}
-        class="sr-only"
+        class="video-status"
         role="status"
         aria-live="polite"
         aria-atomic="true"
@@ -506,6 +506,20 @@ const coverIdPrefix = `video-cover-${scopeId}`;
 
   .case-video-meta {
     margin-top: 1rem;
+  }
+
+  .video-status {
+    margin: 0;
+  }
+
+  .video-status:not(:empty) {
+    margin-top: 0.75rem;
+    padding: 0.65rem 0.75rem;
+    border-inline-start: 3px solid var(--color-brand-primary);
+    background: var(--color-surface-muted);
+    color: var(--color-ink);
+    font-size: var(--text-meta);
+    line-height: 1.5;
   }
 
   .case-video-title {

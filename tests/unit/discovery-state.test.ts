@@ -52,4 +52,62 @@ describe("shareable discovery state", () => {
     const normalized = writeDiscoveryState(url, state, "injury-moment");
     expect(normalized.search).toBe("?sport=basketball");
   });
+  it.each([
+    {
+      path: "/sports/basketball/",
+      scope: { fixedSport: "basketball" },
+      removed: "sport",
+      retained: "body",
+    },
+    {
+      path: "/body-parts/ankle/",
+      scope: { fixedBody: "ankle" },
+      removed: "body",
+      retained: "sport",
+    },
+    {
+      path: "/situations/landing/",
+      scope: { fixedSituation: "landing" },
+      removed: "situation",
+      retained: "sport",
+    },
+  ])(
+    "keeps $path fixed while retaining independent filters and normalizing history",
+    ({ path, scope, removed, retained }) => {
+      const url = new URL(
+        `${path}?q=跳躍&type=expert-analysis&sport=basketball&body=ankle&mode=popular&ref=lesson#videos-heading`,
+        "https://example.test",
+      );
+      const state = readDiscoveryState(url, { ...options, ...scope });
+      if (scope.fixedSituation) url.searchParams.set("situation", "collision");
+      expect(state.mode).toBe("all");
+      if (scope.fixedSport) expect(state.sport).toBe(scope.fixedSport);
+      if (scope.fixedBody) expect(state.body).toBe(scope.fixedBody);
+      const normalized = writeDiscoveryState(url, state, scope);
+      expect(normalized.pathname).toBe(path);
+      expect(normalized.searchParams.has(removed)).toBe(false);
+      expect(normalized.searchParams.get(retained)).toBe(
+        url.searchParams.get(retained),
+      );
+      expect(normalized.searchParams.get("ref")).toBe("lesson");
+      expect(normalized.hash).toBe("#videos-heading");
+      expect(readDiscoveryState(normalized, { ...options, ...scope })).toEqual(
+        state,
+      );
+      const cleared = writeDiscoveryState(
+        normalized,
+        { query: "", type: "", sport: "", body: "", mode: "all" },
+        scope,
+      );
+      expect(cleared.pathname).toBe(path);
+      expect(cleared.search).toBe("?ref=lesson");
+    },
+  );
+  it("ignores a conflicting fixed dimension from shared URLs", () => {
+    const state = readDiscoveryState(
+      new URL("https://example.test/body-parts/knee/?body=ankle"),
+      { ...options, fixedBody: "knee" },
+    );
+    expect(state.body).toBe("knee");
+  });
 });

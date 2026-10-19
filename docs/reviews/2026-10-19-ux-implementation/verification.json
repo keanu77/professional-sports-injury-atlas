@@ -1,0 +1,101 @@
+{
+  "date": "2026-10-19",
+  "baseCommit": "3be60d27729f6a4f64260ac40590b123a5e46d98",
+  "branch": "feat/aaron-judge-rib",
+  "sourceFileCount": 43,
+  "isolatedCandidate": "/private/tmp/injury-ux-validation-20261019",
+  "candidateCommit": "d5ffbe5ab182aa6e987f8113e40780a61920e92e",
+  "publicPreview": "http://127.0.0.1:4323/",
+  "node": "24.14.0 for full tests/build; 24.19.0 for source type check",
+  "typeCheck": {
+    "files": 411,
+    "errors": 0,
+    "warnings": 0,
+    "hints": 16
+  },
+  "unitTests": {
+    "files": 108,
+    "tests": 1577,
+    "result": "passed"
+  },
+  "targetedFinalTests": {
+    "files": 4,
+    "tests": 74,
+    "result": "passed"
+  },
+  "publicBuild": {
+    "pages": 273,
+    "seconds": 32.26,
+    "sharePNGs": 200
+  },
+  "reviewBuild": {
+    "pages": 45,
+    "seconds": 8.11,
+    "sharePNGs": 0
+  },
+  "contentCheck": "passed: 26 cases, 3 overviews, 1 update",
+  "brandVerification": "passed without rule changes",
+  "dependencyCheck": "npm ls --depth=0 passed; no package changes beyond merged origin/main",
+  "environment": "No added secret or database requirement; build mode and launch are existing variables; optional YouTube key not needed for local validation",
+  "browser": "Native Chrome through cua_repl; E2E specs updated but not executed",
+  "manualChecks": [
+    {
+      "scenario": "desktop scoped search and return",
+      "result": "passed",
+      "evidence": "/sports/baseball/?q=Acuna showed 2 results; opened ronald-acuna-miami-2021 and returned to /sports/baseball/?q=Acuna#videos-heading with search preserved"
+    },
+    {
+      "scenario": "font bounds",
+      "result": "passed",
+      "evidence": "150% maximum and 87.5% minimum announced with corresponding control disabled in AX; restored to 100%"
+    },
+    {
+      "scenario": "mobile scoped filtering",
+      "result": "passed",
+      "evidence": "Chrome iPhone 16 preset confirmed 393 x 852; light theme; More filters expanded body selector; knee produced 2 Acuna results and body=knee URL"
+    },
+    {
+      "scenario": "mobile expanded detail anchor",
+      "result": "passed",
+      "evidence": "Aaron Judge 2026 rib mechanism link moved focus to the rendered heading; screenshot showed heading below sticky header and wrapped text inside viewport"
+    },
+    {
+      "scenario": "desktop related cards",
+      "result": "passed",
+      "evidence": "Aaron Judge related section in light theme showed 3 aligned cards, visible reason labels and CTA, with no observed overlap into following category section"
+    },
+    {
+      "scenario": "homepage live input",
+      "result": "passed",
+      "evidence": "Pasting Tyrese into search yielded 1 result and q=Tyrese; native typeText initially sent only final e, so that automation attempt is not treated as a typing regression"
+    },
+    {
+      "scenario": "core CTA and sources",
+      "result": "passed",
+      "evidence": "Tyrese CTA reached case detail with return context; complete-sources anchor opened disclosure and moved focus to source container"
+    },
+    {
+      "scenario": "share image sample",
+      "result": "passed",
+      "evidence": "Viewed generated Aaron Judge 2023 foot PNG; 1200x630 metadata and visible CJK text"
+    },
+    {
+      "scenario": "final preview state",
+      "result": "passed",
+      "evidence": "Homepage visually inspected; 200 total and 24/200 visible in AX; dark theme and 100% font restored; device toolbar and DevTools closed; final preview remains open at 127.0.0.1:4323"
+    }
+  ],
+  "remainingValidation": [
+    "Safari / VoiceOver",
+    "slow network failure focus and visible-loading timings",
+    "automated browser E2E and Lighthouse",
+    "full fresh public video playback evidence"
+  ],
+  "deferred": [
+    "DOM virtualization and static pagination pending device measurement",
+    "critical CSS and popular API caching pending measurement",
+    "source-derived new clinical summaries and any new medical content",
+    "recently-added ordering requires genuine addedAt data"
+  ],
+  "release": "Original repo not committed or pushed; not deployed; release authorization/input digests and playback gates unchanged"
+}
