@@ -2,6 +2,12 @@
 
 This is a preparation snapshot, not a publication or clinical approval. No real-world audience size or educational outcome was supplied, so launch copy makes neither claim.
 
+## Public repository follow-up
+
+The owner changed the repository to Public on 2026-10-20. Anonymous reads of both READMEs, LICENSE, LICENSE-SCOPE, GIF, and preview image matched the PR files. Private vulnerability reporting was enabled and its public entry point verified. The earlier account-level restriction no longer prevented a GitHub runner from starting.
+
+The first hosted run at `d13eedb` passed type checks but failed one of 1,577 unit tests: a private-review access-file replacement was missed when file identity was reused. The guard only compared device and inode. A new, deterministic in-place-edit regression reproduced the gap locally before the fix and passed after adding size, timestamps, ownership, mode, and link-count comparisons. The suite now contains 1,578 tests. Read the latest [PR #3 checks](https://github.com/keanu77/professional-sports-injury-atlas/pull/3/checks) for the hosted result of the corrected commit; the original preparation results below describe their named commits only.
+
 ## Reproducible setup
 
 An isolated Ubuntu 24.04 ARM64 VM was created with 2 CPUs and 4 GB RAM. It received a full-history Git bundle, not the maintainer's `node_modules`, browser profile, credentials, or home directory. Node 24.14.0 and npm 11.9.0 were installed from the official Node distribution with a verified archive checksum.
@@ -38,8 +44,8 @@ The GIF, full MP4, short MP4, and 1280×640 PNG have sizes and SHA-256 values in
 
 ## Before publishing
 
-1. Review the PR and clear the hosted CI execution restriction; obtain a successful hosted check before merging.
-2. Decide whether to publish this repository with its full history and separately licensed content. Enable GitHub private vulnerability reporting after public visibility is approved and available.
+1. Review the PR and obtain a successful hosted check for its latest commit before merging.
+2. Public visibility and private vulnerability reporting are now enabled. Confirm that the default-branch README and license become visible after merging.
 3. Merge the reviewed changes and retarget the draft v0.1.0 release to the merged commit before publishing it. Move the changelog's unreleased entry to the actual release date.
 4. Upload `docs/media/social-preview-1280x640.png` under Settings → General → Social preview. Inspect the resulting share card.
 5. Use the supplied social drafts only after the repository and license links are publicly accessible.

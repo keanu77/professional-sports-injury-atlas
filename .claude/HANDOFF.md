@@ -34,7 +34,7 @@
 
 ## 當前阻礙與下一步
 
-1. **讀取 PR #3 最新 CI 結果**。先前 Private 時的失敗發生在任何 step 執行前，不能當成 Public 之後的狀態。公開後已重跑 `39297603918`，本次文件提交也會觸發新檢查；以 `gh pr view 3 --json statusCheckRollup,headRefOid` 讀取最新結果，不以本機通過宣稱 GitHub CI 綠燈。
+1. **讀取 PR #3 最新 CI 結果**。Public 後 runner 已能正常執行。`39299450679`（d13eedb）在 1,577 項測試中發現一個 private-host access-file inode 重用問題；已補強 metadata 檢查並新增原地改寫回歸測試，修正前失敗、修正後通過，總數變成 1,578。以 `gh pr view 3 --json statusCheckRollup,headRefOid` 讀取修正提交的最新結果，不以舊失敗或本機通過取代遠端結果。
 2. **CI 綠燈後請使用者審閱並合併 PR**。repo-launch skill `/Users/ethanstudio/.claude/skills/repo-launch/SKILL.md` 明確要求使用者自行合併 PR。Public 已由使用者完成，不再詢問是否要公開；私人漏洞回報已啟用，不需重複設定。
 3. **合併後更新並發布 release**。將 draft v0.1.0 target 改到實際合併 SHA，CHANGELOG 改成實際發布日期。依 skill，Social preview 與社群發文由使用者手動完成；圖片在 `docs/media/social-preview-1280x640.png`，GitHub Settings → General → Social preview。
 
@@ -46,7 +46,7 @@
 
 前輪 200 支影片真實播放、5 支必要字幕、273 HTML、828 public files 比對的結果在 `docs/reviews/2026-10-20-ux-release/`。本次僅做錄影流程，沒有重新宣稱 200 支播放測試。
 
-本輪 Linux 修正會改變 production inputTreeDigest。沒有替新程式碼更新舊 approval、沒有 redeploy；後續若需部署，仍須正常收集並綁定新發布證據，不能只抄新 digest 讓 gate 通過。無 DB migration。
+本輪 Linux 字型與私有審閱憑證輪替修正會改變 production inputTreeDigest。沒有替新程式碼更新舊 approval、沒有 redeploy；後續若需部署，仍須正常收集並綁定新發布證據，不能只抄新 digest 讓 gate 通過。無 DB migration。
 
 原始 A hero 保持 `src/assets/hero/a-all-sport-burst-r2.png`，SHA-256 `3ef27311614a5df79b2731d3ec3f9576c09a3275de53250ee2a0c8be94318cc2`。不改回會命中舊 immutable CDN 的舊檔名。
 

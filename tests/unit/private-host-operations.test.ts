@@ -695,6 +695,35 @@ describe("private-hosting operations", () => {
     expect(updateInputs.every((input) => SAFE_STDIN_RE.test(input))).toBe(true);
   });
 
+  it("restores the prior Keychain verifier if the access file is edited in place", () => {
+    const fixture = operationsFixture();
+    writeFileSync(fixture.accessPath, accessInfo(8), { mode: 0o600 });
+    chmodSync(fixture.accessPath, 0o600);
+    const originalInode = lstatSync(fixture.accessPath).ino;
+    let editedInode: number | undefined;
+    const oldToken = verifierToken(4);
+    const state: SyntheticCredentialState = {
+      token: oldToken,
+      serviceLoaded: true,
+      portClosed: true,
+      calls: [],
+      afterFirstUpdatedRead() {
+        writeFileSync(fixture.accessPath, "concurrent in-place edit");
+        editedInode = lstatSync(fixture.accessPath).ino;
+      },
+    };
+    expect(() =>
+      provisionReviewCredential(
+        credentialDependencies(fixture, state, tty().port),
+      ),
+    ).toThrow(/prior Keychain state was restored/u);
+    expect(editedInode).toBe(originalInode);
+    expect(state.token).toBe(oldToken);
+    expect(readFileSync(fixture.accessPath, "utf8")).toBe(
+      "concurrent in-place edit",
+    );
+  });
+
   it("deletes a newly created Keychain item if first access-file install races", () => {
     const fixture = operationsFixture();
     const state: SyntheticCredentialState = {

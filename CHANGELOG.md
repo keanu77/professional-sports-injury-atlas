@@ -10,6 +10,7 @@ This file describes usable capabilities rather than individual commits. Catalog 
 - Apply MIT to original code and developer documentation, with explicit exclusions for editorial collections, review records, media, and third-party materials.
 - Add contribution and security guidance, issue forms, and PR checks using Node 24.14.0 and Ubuntu 24.04 with full Git history.
 - Fix Linux share-image rendering to use an installed native CJK font and report a clear error when it is absent. macOS retains the existing bundled font path.
+- Preserve the prior private-review credential when the access file changes during rotation, including an in-place edit or immediate inode reuse. The check now compares the inspected file metadata as well as its identity.
 
 ### Existing website capabilities represented by the first release
 
