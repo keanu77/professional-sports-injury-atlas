@@ -2,8 +2,6 @@ name: Public video health
 
 on:
   workflow_dispatch:
-  pull_request:
-    branches: [main]
   schedule:
     - cron: "17 2 * * 1"
 
@@ -11,32 +9,8 @@ permissions:
   contents: read
 
 jobs:
-  checks:
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 24.14.0
-          cache: npm
-      - run: npm ci
-      - run: npm run plan:verify
-      - run: npm run check
-      - run: npm run content:check
-      - run: npm run test:coverage
-      - run: npm run build:review
-        if: ${{ !cancelled() }}
-      - run: npm run brand:verify
-        if: ${{ !cancelled() }}
-      - run: npm run verify:review-artifact
-        if: ${{ !cancelled() }}
-      # Keep the known legacy formatting gate visible after functional checks.
-      - run: npm run format:check
-        if: ${{ !cancelled() }}
-
+  # Live publisher/API availability is operational evidence, not a PR test.
+  # Deterministic monitor tests run with the full suite in ci.yml.
   monitor:
     runs-on: ubuntu-24.04
     timeout-minutes: 20

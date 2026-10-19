@@ -8,9 +8,14 @@ npm run video:health
 npm run video:health -- /tmp/atlas-health.json
 ```
 
-The default output is `artifacts/public-video-health.v2.json`. The weekly,
-manual and pull-request workflow uploads it even when checks fail and writes a
-summary to the Actions run. Request bodies and query strings from final URLs
+The default output is `artifacts/public-video-health.v2.json`. The weekly and manual workflow uploads it even when checks fail and writes a
+summary to the Actions run. Pull requests use `Contributor checks` for the
+full deterministic unit suite (including the health monitor), plan/content
+checks, type checking, review build, brand and artifact validation. Live
+publisher access, API authorization and regional availability are separate
+operational evidence; they are not required to compile or review a contribution.
+The scheduled/manual monitor still exits nonzero for failures or uncertainty;
+its result is never converted to success to make a PR green. Request bodies and query strings from final URLs
 are not retained. Do not log `YOUTUBE_API_KEY` or upload environment files.
 
 ## Interpret each layer separately

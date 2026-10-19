@@ -28,7 +28,10 @@ jobs:
       - name: Install Chinese fonts for share-image rendering
         run: sudo apt-get update && sudo apt-get install -y fonts-noto-cjk
       - run: npm ci
+      - run: npm run plan:verify
       - run: npm run check
+      - run: npm run content:check
       - run: npm run test:unit
       - run: npm run build:review
+      - run: npm run brand:verify
       - run: npm run verify:review-artifact
