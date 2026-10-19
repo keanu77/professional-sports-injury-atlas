@@ -1,8 +1,8 @@
 /** Runs the text renderer with a writable, disposable fontconfig environment. */
 import { execFile } from "node:child_process";
-import { mkdtemp, mkdir, rm, writeFile } from "node:fs/promises";
+import { access, mkdtemp, mkdir, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { join, resolve } from "node:path";
+import { dirname, join, resolve } from "node:path";
 import type { DetailShareCard } from "./catalog";
 
 const escapeXml = (value: string): string =>
@@ -12,11 +12,28 @@ export async function renderDetailShareImage(
   card: DetailShareCard,
   projectRoot: string = process.cwd(),
 ): Promise<Buffer> {
+  // Sharp's Linux font stack does not reliably load the browser WOFF2 subset.
+  // Keep fontconfig isolated, but use Ubuntu's native CJK font on Linux.
+  const fontfile =
+    process.platform === "linux"
+      ? "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc"
+      : resolve(projectRoot, "public/fonts/noto-serif-tc-700.woff2");
+  const fontFamily =
+    process.platform === "linux" ? "Noto Serif CJK TC" : "Noto Serif TC";
+  try {
+    await access(fontfile);
+  } catch {
+    throw new Error(
+      process.platform === "linux"
+        ? "Share image rendering requires fonts-noto-cjk on Linux (Ubuntu: sudo apt-get install fonts-noto-cjk)."
+        : "Share image rendering requires public/fonts/noto-serif-tc-700.woff2.",
+    );
+  }
   const workspace = await mkdtemp(join(tmpdir(), "atlas-text-share-"));
   try {
     const cache = join(workspace, "cache");
     await mkdir(cache);
-    const fonts = resolve(projectRoot, "public/fonts");
+    const fonts = dirname(fontfile);
     const config = join(workspace, "fonts.conf");
     await writeFile(
       config,
@@ -27,7 +44,8 @@ export async function renderDetailShareImage(
         process.execPath,
         [
           resolve(projectRoot, "src/lib/social/render-worker.ts"),
-          join(fonts, "noto-serif-tc-700.woff2"),
+          fontfile,
+          fontFamily,
         ],
         {
           env: {

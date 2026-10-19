@@ -24,6 +24,7 @@ export function escapePangoText(text: string): string {
 async function renderTextCard(
   input: CardText,
   fontfile: string,
+  fontFamily: string,
 ): Promise<Buffer> {
   for (const key of ["title", "subtitle", "category", "label"] as const) {
     if (typeof input[key] !== "string" || input[key].length > 500) {
@@ -40,7 +41,7 @@ async function renderTextCard(
     input: await sharp({
       text: {
         text: `<span foreground="${color}">${escapePangoText(text)}</span>`,
-        font: `Noto Serif TC Bold ${size}`,
+        font: `${fontFamily} Bold ${size}`,
         fontfile,
         width: 1040,
         rgba: true,
@@ -94,5 +95,9 @@ if (
   const card = JSON.parse(Buffer.concat(chunks).toString("utf8")) as CardText;
   const fontfile = process.argv[2];
   if (fontfile === undefined) throw new Error("Missing local CJK font");
-  process.stdout.write(await renderTextCard(card, fontfile));
+  const fontFamily = process.argv[3];
+  if (fontFamily !== "Noto Serif TC" && fontFamily !== "Noto Serif CJK TC") {
+    throw new Error("Unsupported local CJK font family");
+  }
+  process.stdout.write(await renderTextCard(card, fontfile, fontFamily));
 }
