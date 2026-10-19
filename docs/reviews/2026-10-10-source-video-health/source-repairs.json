@@ -1,0 +1,145 @@
+{
+  "checkedAt": "2026-10-10",
+  "baselineCommit": "cc0b2feb0aac30747b7ed334ea722fb402dedbbb",
+  "repairedUrls": [
+    {
+      "oldUrl": "https://www-cdn.abcnews.com/Sports/wireStory/aaron-judge-returns-yankees-after-99-day-absence-136284464",
+      "newUrl": "https://www.dewittdailynews.com/aaron-judge-returns-to-yankees-after-99-day-absence-caused-by-broken-rib/",
+      "oldHttpStatus": 404,
+      "newHttpStatus": 200,
+      "action": "replace",
+      "evidence": "Same AP wire via SRN: September 8 return versus Colorado, RF/third hitter, 84 games missed since May 31, April 26 dive, and no minor-league rehabilitation assignment.",
+      "newTitle": "AP／DeWitt Daily News：Judge 於 2026-09-08 重返洋基例行賽"
+    },
+    {
+      "oldUrl": "https://www.arsenal.com/fixture/women/2023-Oct-15/women-aston-villa-women-match-report",
+      "newUrl": "https://www.arsenal.com/news/report-arsenal-women-2-1-aston-villa-women-asbEn9x4Cl61",
+      "oldHttpStatus": 404,
+      "newHttpStatus": 200,
+      "action": "replace",
+      "evidence": "Same Arsenal match report: Mead entered in minute 87 and assisted Russo on 2023-10-15."
+    },
+    {
+      "oldUrl": "https://www.liverpoolfc.com/news/first-team/299392-alex-oxlade-chamberlain-injury-update-jurgen-klopp",
+      "newUrl": "https://legacy.liverpoolfc.com/news/first-team/299392-alex-oxlade-chamberlain-injury-update-jurgen-klopp",
+      "oldHttpStatus": 404,
+      "newHttpStatus": 200,
+      "action": "replace",
+      "evidence": "Same dated club article and reporting on Liverpool FC official legacy site; body reviewed."
+    },
+    {
+      "oldUrl": "https://www.liverpoolfc.com/news/first-team/303499-mohamed-salah-liverpool-fc-injury-update",
+      "newUrl": "https://legacy.liverpoolfc.com/news/first-team/303499-mohamed-salah-liverpool-fc-injury-update",
+      "oldHttpStatus": 404,
+      "newHttpStatus": 200,
+      "action": "replace",
+      "evidence": "Same dated club article and reporting on Liverpool FC official legacy site; body reviewed."
+    },
+    {
+      "oldUrl": "https://www.liverpoolfc.com/news/first-team/305043-mohamed-salah-goal-egypt-world-cup",
+      "newUrl": "https://legacy.liverpoolfc.com/news/first-team/305043-mohamed-salah-goal-egypt-world-cup",
+      "oldHttpStatus": 404,
+      "newHttpStatus": 200,
+      "action": "replace",
+      "evidence": "Same dated club article and reporting on Liverpool FC official legacy site; body reviewed."
+    },
+    {
+      "oldUrl": "https://www.liverpoolfc.com/news/first-team/305536-alex-oxlade-chamberlain-knee-injury-rehabilitation",
+      "newUrl": "https://legacy.liverpoolfc.com/news/first-team/305536-alex-oxlade-chamberlain-knee-injury-rehabilitation",
+      "oldHttpStatus": 404,
+      "newHttpStatus": 200,
+      "action": "replace",
+      "evidence": "Same dated club article and reporting on Liverpool FC official legacy site; body reviewed."
+    },
+    {
+      "oldUrl": "https://www.liverpoolfc.com/news/first-team/340949-alex-oxlade-chamberlain-fitness-update",
+      "newUrl": "https://legacy.liverpoolfc.com/news/first-team/340949-alex-oxlade-chamberlain-fitness-update",
+      "oldHttpStatus": 404,
+      "newHttpStatus": 200,
+      "action": "replace",
+      "evidence": "Same dated club article and reporting on Liverpool FC official legacy site; body reviewed."
+    },
+    {
+      "oldUrl": "https://www.liverpoolfc.com/news/first-team/347685-jurgen-klopp-liverpool-huddersfield-reaction",
+      "newUrl": "https://legacy.liverpoolfc.com/news/first-team/347685-jurgen-klopp-liverpool-huddersfield-reaction",
+      "oldHttpStatus": 404,
+      "newHttpStatus": 200,
+      "action": "replace",
+      "evidence": "Same dated club article and reporting on Liverpool FC official legacy site; body reviewed."
+    },
+    {
+      "oldUrl": "https://www.liverpoolfc.com/news/first-team/443363-harvey-elliott-undergoes-successful-ankle-surgery",
+      "newUrl": "https://legacy.liverpoolfc.com/news/first-team/443363-harvey-elliott-undergoes-successful-ankle-surgery",
+      "oldHttpStatus": 404,
+      "newHttpStatus": 200,
+      "action": "replace",
+      "evidence": "Same dated club article and reporting on Liverpool FC official legacy site; body reviewed."
+    },
+    {
+      "oldUrl": "https://www.wolves.co.uk/news/under-21/20190920-perry-earns-dramatic-late-draw/",
+      "newUrl": "https://www.arsenal.com/news/match-report-wolves-2-2-arsenal-u-23s-abevG1Z7KSU6",
+      "oldHttpStatus": 404,
+      "newHttpStatus": 200,
+      "action": "replace",
+      "evidence": "Arsenal match report dated 2019-09-20 confirms Bellerin played just over an hour for the U23s, before first-team return.",
+      "newTitle": "Arsenal：9 月 20 日 U23 對 Wolves，Bellerín 傷後出場"
+    },
+    {
+      "oldUrl": "https://www.wtatennis.com/news/3123711/andreescu-provides-injury-update-it-could-have-been-much-worse-",
+      "newUrl": "https://www.wtatennis.com/news/3123711/andreescu-provides-injury-update-praying-for-nothing-serious",
+      "oldHttpStatus": 404,
+      "newHttpStatus": 200,
+      "action": "replace",
+      "evidence": "Same WTA article ID 3123711 and 2023-03-29 update; first-person statement confirms two torn left-ankle ligaments."
+    },
+    {
+      "oldUrl": "https://newyorktennismagazine.com/article/former-finalist-nishikori-out-us-open-wrist-injury/",
+      "newUrl": "https://www.tennis.com/news/articles/kei-nishikori-to-miss-remainder-of-season-with-torn-tendon-in-wrist",
+      "oldHttpStatus": 404,
+      "newHttpStatus": 200,
+      "action": "consolidate",
+      "evidence": "Existing source #1 is the original AP report (Howard Fendrich, 2017-08-16), explicitly quoting agent Olivier van Lindonk about right-wrist tendon tear during practice. Remove redundant dead source #4 and remap citations; clinical text unchanged."
+    },
+    {
+      "oldUrl": "https://www.liverpoolfc.com/news/watch-harvey-elliotts-goal-and-assists-friendly",
+      "newUrl": "https://www.liverpoolecho.co.uk/sport/football/football-news/harvey-elliott-liverpool-game-breaking-22917827",
+      "oldHttpStatus": 404,
+      "newHttpStatus": 200,
+      "action": "replace",
+      "newTitle": "Liverpool Echo：1 月 29 日對 Wrexham 閉門賽回場",
+      "newPublishedAt": "2022-01-29",
+      "evidence": "Original reporting by Tom Cavilla (Liverpool Echo), published 2022-01-29T14:11:21Z: Elliott played 60 minutes in a behind-closed-doors U23 match against Wrexham that day, with a goal and assist, while working toward first-team return. Live articleBody independently read by two agents; return date, context, clinical facts, timeline and source-index bindings unchanged."
+    }
+  ],
+  "retainedUrls": [
+    {
+      "url": "https://www.badminton.es/news/125348/Parte-Medico-de-Carolina-Marin",
+      "defaultUserAgentHttpStatus": 404,
+      "identifiedUserAgentHttpStatus": 200,
+      "action": "retain",
+      "evidence": "Federation original article text verified with an honest descriptive monitor User-Agent; no source substitution."
+    },
+    {
+      "url": "https://www.badminton.es/news/154258/Parte-medico-Carolina-Marin-Se-confirma-la-rotura-del-ligamento-cruzado-anterior-de-la-rodilla-derecha",
+      "defaultUserAgentHttpStatus": 404,
+      "identifiedUserAgentHttpStatus": 200,
+      "action": "retain",
+      "evidence": "Federation original article text verified with an honest descriptive monitor User-Agent; no source substitution."
+    },
+    {
+      "url": "https://www.badminton.es/news/154265/Carolina-Marin-operada-con-exito-de-la-rodilla-lesionada-en-los-Juegos-Olimpicos-de-Paris-2024",
+      "defaultUserAgentHttpStatus": 404,
+      "identifiedUserAgentHttpStatus": 200,
+      "action": "retain",
+      "evidence": "Federation original article text verified with an honest descriptive monitor User-Agent; no source substitution."
+    },
+    {
+      "url": "https://www.badminton.es/news/163011/Carolina-Marin-anuncia-su-retirada-del-badminton",
+      "defaultUserAgentHttpStatus": 404,
+      "identifiedUserAgentHttpStatus": 200,
+      "action": "retain",
+      "evidence": "Federation original article text verified with an honest descriptive monitor User-Agent; no source substitution."
+    }
+  ],
+  "unresolvedUrls": []
+}

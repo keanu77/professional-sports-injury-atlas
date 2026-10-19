@@ -7,9 +7,9 @@ import {
   readFileSync,
   readdirSync,
   realpathSync,
+  renameSync,
   rmSync,
   symlinkSync,
-  unlinkSync,
   writeFileSync,
 } from "node:fs";
 import { tmpdir } from "node:os";
@@ -662,7 +662,9 @@ describe("private-hosting operations", () => {
 
   it("restores the prior Keychain verifier if access-file replacement races", () => {
     const fixture = operationsFixture();
-    writeFileSync(fixture.accessPath, accessInfo(8), { mode: 0o600 });
+    const originalAccess = accessInfo(8);
+    const heldOriginal = `${fixture.accessPath}.before-race`;
+    writeFileSync(fixture.accessPath, originalAccess, { mode: 0o600 });
     chmodSync(fixture.accessPath, 0o600);
     const oldToken = verifierToken(4);
     const state: SyntheticCredentialState = {
@@ -671,7 +673,9 @@ describe("private-hosting operations", () => {
       portClosed: true,
       calls: [],
       afterFirstUpdatedRead() {
-        unlinkSync(fixture.accessPath);
+        // Keep the original inode allocated: unlink + recreate can reuse it
+        // immediately on Linux and fails to simulate a distinct replacement.
+        renameSync(fixture.accessPath, heldOriginal);
         writeFileSync(fixture.accessPath, "racing replacement", {
           mode: 0o600,
         });
@@ -683,7 +687,12 @@ describe("private-hosting operations", () => {
         credentialDependencies(fixture, state, tty().port),
       ),
     ).toThrow(/prior Keychain state was restored/u);
+    expect(lstatSync(fixture.accessPath).ino).not.toBe(
+      lstatSync(heldOriginal).ino,
+    );
     expect(state.token).toBe(oldToken);
+    expect(readFileSync(fixture.accessPath, "utf8")).toBe("racing replacement");
+    expect(readFileSync(heldOriginal, "utf8")).toBe(originalAccess);
     const updateInputs = state.calls
       .filter(
         (call) =>

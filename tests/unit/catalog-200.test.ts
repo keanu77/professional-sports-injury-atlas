@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import selected from "../../docs/reviews/2026-09-21-catalog-200/selected-cases.json";
 import baseline from "../../docs/reviews/2026-09-21-catalog-200/baseline-before-integration.json";
+import repairs from "../../docs/reviews/2026-10-10-source-video-health/source-repairs.json";
 import resourceData from "../../src/data/videos/observation-resources.v1.json";
 import catalog200EventData from "../../src/data/videos/event-catalog-200.v1.json";
 import { discoveryFor } from "../../src/lib/videos/discovery";
@@ -24,9 +25,52 @@ import {
 } from "../../src/lib/videos/observation-guidance";
 import { nerveInjuryGroup } from "../../src/lib/videos/nerve-categories";
 
+// Keep the original review evidence immutable. Apply only the separately
+// documented citation maintenance before comparing every other field exactly.
+function withRepairedCitations<
+  T extends { sources: Array<{ title: string; url: string }> },
+>(original: T): T {
+  const item = structuredClone(original);
+  const indexMap = new Map<number, number>();
+  item.sources = original.sources.flatMap((source) => {
+    const repair = repairs.repairedUrls.find((r) => r.oldUrl === source.url);
+    if (repair?.action === "consolidate") return [];
+    return [
+      {
+        ...source,
+        ...(repair ? { url: repair.newUrl } : {}),
+        ...(repair?.newTitle ? { title: repair.newTitle } : {}),
+        ...(repair?.newPublishedAt && "publishedAt" in source
+          ? { publishedAt: repair.newPublishedAt }
+          : {}),
+      },
+    ];
+  });
+  original.sources.forEach((source, index) => {
+    const repair = repairs.repairedUrls.find((r) => r.oldUrl === source.url);
+    indexMap.set(
+      index + 1,
+      item.sources.findIndex((s) => s.url === (repair?.newUrl ?? source.url)) +
+        1,
+    );
+  });
+  const remap = (value: unknown): void => {
+    if (!value || typeof value !== "object") return;
+    for (const [key, child] of Object.entries(value)) {
+      if (key === "sourceIndexes" && Array.isArray(child)) {
+        Reflect.set(value, key, [
+          ...new Set(child.map((i) => indexMap.get(i))),
+        ]);
+      } else remap(child);
+    }
+  };
+  remap(item);
+  return item;
+}
+
 describe("catalog 200 sourced expansion", () => {
   it("preserves prior events and admits the selected 42 once", () => {
-    expect(catalog200.clips).toEqual(selected.clips);
+    expect(catalog200.clips).toEqual(selected.clips.map(withRepairedCitations));
     expect(catalog200.clips).toHaveLength(42);
     expect(allObservationClips).toHaveLength(193);
     expect(eventUpdates.entries).toHaveLength(200);
@@ -38,17 +82,17 @@ describe("catalog 200 sourced expansion", () => {
     expect(baseline.clips).toHaveLength(151);
     expect(baseline.eventEntries).toHaveLength(158);
     expect(allObservationClips.filter((c) => !added.has(c.slug))).toEqual(
-      baseline.clips,
+      baseline.clips.map(withRepairedCitations),
     );
     expect(eventUpdates.entries.filter((e) => !added.has(e.slug))).toEqual(
-      baseline.eventEntries,
+      baseline.eventEntries.map(withRepairedCitations),
     );
   });
   it("binds every source timeline to its clip and preserves unknown recovery", () => {
     for (const clip of catalog200.clips) {
       const expected = selected.eventEntries.find((e) => e.slug === clip.slug)!;
       const entry = eventUpdateFor(clip.slug, clip.videoUrl, clip.eventDate)!;
-      expect(entry).toEqual(expected);
+      expect(entry).toEqual(withRepairedCitations(expected));
       expect(returnDays(entry)).toBeNull();
       expect(clip.startSeconds).toBeLessThan(clip.durationSeconds);
       expect(entry.sources.length).toBeGreaterThan(0);

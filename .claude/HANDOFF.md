@@ -1,57 +1,35 @@
-# HANDOFF - 2026-10-20 · Repository launch preparation
+# HANDOFF - 2026-10-20 · PR #1 completion
 
-## 目前任務與授權
+## Current task
 
-使用者同意依 `repo-launch` skill 整理 repository，選擇自有程式碼採 MIT，並確認「沒有」可公開提及的實際使用場合與人數。不要寫使用人數、教學成效或虛構臨床故事。第三方影音與醫療編輯內容另有授權範圍。
+The user flagged unfinished PR #1, `fix: repair source citations and diagnose video health uncertainty`. Fix branch: `fix/source-video-health`; isolated checkout: `/private/tmp/injury-pr1-20261020`. The original checkout remains on `feat/repo-launch-20261020` without edits.
 
-先前 Playwright 與網站部署已獲授權並完成。使用者於本輪回覆「我改公開了」；已由 GitHub API 與無登入 HTTP 確認 Public。PR 尚未合併、release 尚未發布，勿把可見性變更當成合併或 release 完成。
+PR #3 is merged into main at `167f29b5061491ab3930f43fc19a5f9068c2974b`. PR #1 now includes that main through merge `9af029d`; CI integration is `11aaf8f`. Do not reuse the old PR #1 conflict or October 10 CI result as current status.
 
-## GitHub 與交付
+## Completed and verified
 
-- 分支：`feat/repo-launch-20261020`，來源 main `7adff42`。
-- Draft PR：<https://github.com/keanu77/professional-sports-injury-atlas/pull/3>。
-- Draft release：`v0.1.0`，<https://github.com/keanu77/professional-sports-injury-atlas/releases/tag/untagged-40d54e1d9fcdd1439985>，target 為 launch 分支；發布前需改到實際合併提交。
-- 最後實作／素材與驗證提交：`12e2eba`；本交接另以文件提交保存。沒有未完成的程式修改。
-- Repository 現為 Public；介紹、homepage 與 11 個 topics 已更新，私人漏洞回報已啟用。main 仍未包含新版 README 與 MIT 文件，需先完成 PR #3 合併。
-- Release 的 5 個附件皆已上傳，遠端大小與 SHA-256 均與本機一致。
-- `docs/launch/verification-2026-10-20.md`：可公開的驗證範圍與待辦。
-- `docs/launch/2026-10-20-圖鑑分享草稿.md`：FB 與 X 草稿，未發布。
-- `docs/media/`：約 26 秒完整 MP4、13 秒短版、3.54 MB GIF、1280×640 PNG（212 KB）、manifest。
+- Preserved 13 citation repairs and the deterministic distinct-inode test fixture. Kept main's metadata race guard and in-place-edit regression.
+- Compared all 10 changed video-data files with main: 34 differences, all within sources or citation indexes. No clinical narrative, return date, timeline text or video identity changes. None of the 13 superseded URLs remains in active video JSON.
+- Consolidated deterministic PR validation in `.github/workflows/ci.yml`: plan, type, content, full unit suite, review build, brand, artifact. Existing main checks remain; no coverage threshold or release gate changed.
+- `public-video-health.yml` remains weekly/manual, with schema-v2 artifact upload even on failure. It does not run as a PR gate. CLI exit 1 (confirmed failure) and 2 (incomplete verification) remain unchanged.
+- Local Node 24.14.0: 1,604 unit tests / 108 files pass; 411-file type check: 0 errors, 0 warnings, 16 hints. Review build: 45 pages. Brand/artifact checks pass: 26 case pages, 962 files. Changed code/workflows pass Prettier and `git diff --check`.
+- Fresh source health (2026-10-19T18:24:35Z, October 20 Taipei): 792 URLs, 660 available, 0 confirmed unavailable, 132 indeterminate; CLI exit 2. 199 YouTube metadata/iframe results and one MLB page available. API flags/playback not verified. 11/13 repair targets available; both Arsenal targets still HTTP 500 in a low-concurrency follow-up. Preserve that uncertainty.
+- Local logs and complete health output: ignored `output/pr1-20261020/`. Current public evidence: `docs/reviews/2026-10-20-pr1/`.
 
-## 已完成與驗證
+## Next actions
 
-雙語 README、MIT LICENSE、LICENSE-SCOPE、第三方與字型授權、CONTRIBUTING、SECURITY、issue/PR templates、Ubuntu 24.04/Node 24.14.0 CI、CHANGELOG 與 release 草稿。
+1. Read `gh pr view 1 --repo keanu77/professional-sports-injury-atlas --json headRefOid,isDraft,mergeable,statusCheckRollup` for the final head and CI; completion is based on that head, not the earlier result.
+2. Read `docs/reviews/2026-10-20-pr1/README.md` and `verification.json` for current source-health scope and uncertainty. HTTP/oEmbed checks do not establish playback. No API key was created or configured in this task.
+3. Once final CI passes, PR #1 is ready for the owner's review/merge. The explicitly invoked repo-launch skill requires owner merge unless later user instructions override it. No production deployment was performed for this PR. Further deployment must bind fresh authorized release evidence to the changed inputs; never rewrite old approvals merely to pass a digest check.
 
-乾淨 Ubuntu 首測發現 Linux 分享圖無法可靠載入既有 WOFF2。`src/lib/social/render.ts` 與 `render-worker.ts` 已改用 `fonts-noto-cjk` 的原生 TTC 與明確缺字型錯誤；macOS 保留既有字型。修正沒有更動醫療文案或公開發布門檻。
+No additional implementation tasks after final-head CI and PR readiness verification.
 
-- 完整候選 `0e8b401`：Ubuntu 型別 0 errors / 0 warnings / 16 hints；108 檔、1,577 項單元通過；review build 45 頁；review artifact 通過。
-- fresh npm ci 9 秒；首次含圖片轉檔 build 179 秒；最後快取 build 約 8 秒。README dev 指令已啟動，首頁 HTTP 200。
-- macOS 型別與六項分享圖測試通過；Ubuntu 中文 PNG 已實際檢視。
-- 候選之後只有素材、文件與交接變更；已比對 production input paths 與 `0e8b401` 無差異。
-- Chrome live 錄影：Acuna 搜尋、事件來源、返回搜尋條件通過，無 page errors，POST 全部攔截，未播放原始影片。
-- 388 個歷史 commits 的 Gitleaks 掃描有 3 個測試 fixture 字串；逐項確認不是正式憑證，沒有新增 scanner finding。不能把模式掃描說成完整隱私／授權保證。
-- 紀錄在 ignored `output/repo-launch-20261020/` 與 `/private/tmp/injury-launch-linux/`。不要將帳務錯誤細節或完整掃描資料推到公開文件。
+## Launch work to retain
 
-## 當前阻礙與下一步
-
-1. **讀取 PR #3 最新 CI 結果**。Public 後 runner 已能正常執行。`39299450679`（d13eedb）在 1,577 項測試中發現一個 private-host access-file inode 重用問題；已補強 metadata 檢查並新增原地改寫回歸測試，修正前失敗、修正後通過，總數變成 1,578。以 `gh pr view 3 --json statusCheckRollup,headRefOid` 讀取修正提交的最新結果，不以舊失敗或本機通過取代遠端結果。
-2. **CI 綠燈後請使用者審閱並合併 PR**。repo-launch skill `/Users/ethanstudio/.claude/skills/repo-launch/SKILL.md` 明確要求使用者自行合併 PR。Public 已由使用者完成，不再詢問是否要公開；私人漏洞回報已啟用，不需重複設定。
-3. **合併後更新並發布 release**。將 draft v0.1.0 target 改到實際合併 SHA，CHANGELOG 改成實際發布日期。依 skill，Social preview 與社群發文由使用者手動完成；圖片在 `docs/media/social-preview-1280x640.png`，GitHub Settings → General → Social preview。
-
-本輪沒有 GitHub Pages 設定；Cloudflare 正式網站就是 Live Demo。不要將含研究與審計資料的 `docs/` 當 Pages 輸出目錄。
-
-## 正式網站狀態與未變更的門檻
-
-前一輪 UX 部署已完成：main / production `7adff42ee523cbbf5fa5eb641a169be1ac427c53`；Cloudflare deployment `a5302076-7b2c-423a-9517-e7be7f7cc1c6`。證據在 `output/deploy-20261020/release-result.json`。公開站仍是 <https://injury.sportsmedicine.tw/>。
-
-前輪 200 支影片真實播放、5 支必要字幕、273 HTML、828 public files 比對的結果在 `docs/reviews/2026-10-20-ux-release/`。本次僅做錄影流程，沒有重新宣稱 200 支播放測試。
-
-本輪 Linux 字型與私有審閱憑證輪替修正會改變 production inputTreeDigest。沒有替新程式碼更新舊 approval、沒有 redeploy；後續若需部署，仍須正常收集並綁定新發布證據，不能只抄新 digest 讓 gate 通過。無 DB migration。
-
-原始 A hero 保持 `src/assets/hero/a-all-sport-burst-r2.png`，SHA-256 `3ef27311614a5df79b2731d3ec3f9576c09a3275de53250ee2a0c8be94318cc2`。不改回會命中舊 immutable CDN 的舊檔名。
-
-## 隔離環境
-
-OrbStack VM `injury-launch-20261020` 已停止並保留，2 CPU / 4 GB，Ubuntu 24.04 ARM64。只掛載 `/private/tmp/injury-launch-linux` 至 `/mnt/launch`，未掛載使用者 home。不要未經同意刪除 VM。驗證 repo 位於 VM `/home/ethanstudio/atlas-launch/repo`。
-
-精確 staging，禁止 `git add -A`。不重複詢問已批准的 MIT、無使用人數與 Playwright 授權。
+- Repository is public; MIT applies to own code only. User confirmed no public usage counts or educational outcomes to claim. Private vulnerability reporting is enabled.
+- Draft `v0.1.0` release and five verified media attachments exist, not published. Before publication, retarget to the chosen merged commit and set the actual CHANGELOG release date.
+- Social preview upload and X/FB posting remain manual under repo-launch. Drafts/media: `docs/launch/2026-10-20-圖鑑分享草稿.md`, `docs/media/`.
+- Previous production revision: `7adff42ee523cbbf5fa5eb641a169be1ac427c53`; this task did not reverify or redeploy that website. Prior 200-video playback evidence is historical, not a new playback run here.
+- Retain the existing hero `src/assets/hero/a-all-sport-burst-r2.png`; do not revert to the old immutable-cache filename.
+- Dedicated Ubuntu VM `injury-launch-20261020` is retained, previously stopped; do not delete without authorization. No migration needed.
+- Exact file staging only; no force push, no `git add -A`, no credentials in chat/artifacts.
