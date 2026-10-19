@@ -30,7 +30,7 @@ npm ci
 npm run dev -- --host 127.0.0.1
 ```
 
-macOS 可省略兩行 `apt-get`。依終端機顯示的網址開啟網站。Repository 尚未公開時，clone 需要獲授權的 GitHub 帳號；線上網站不需帳號。
+macOS 可省略兩行 `apt-get`。依終端機顯示的網址開啟網站。公開 repository 可直接 clone；線上網站與一般本機開發皆不需帳號。
 
 預設啟動的是 **review 模式**，供開發與審閱使用，與線上公開站內容不同。一般本機開發不需 API key。資料來源驗證會使用 Git 歷史，請完整 clone，不要使用 Download ZIP 或 `--depth 1`。完整檢查需要已提交、乾淨的工作樹，見[開發指南](docs/development.md)。
 

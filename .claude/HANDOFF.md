@@ -4,7 +4,7 @@
 
 使用者同意依 `repo-launch` skill 整理 repository，選擇自有程式碼採 MIT，並確認「沒有」可公開提及的實際使用場合與人數。不要寫使用人數、教學成效或虛構臨床故事。第三方影音與醫療編輯內容另有授權範圍。
 
-先前 Playwright 與網站部署已獲授權並完成；本次是 repository 發布準備，尚未公開 repository、合併 PR 或發布 release。不得把這些狀態混在一起。
+先前 Playwright 與網站部署已獲授權並完成。使用者於本輪回覆「我改公開了」；已由 GitHub API 與無登入 HTTP 確認 Public。PR 尚未合併、release 尚未發布，勿把可見性變更當成合併或 release 完成。
 
 ## GitHub 與交付
 
@@ -12,7 +12,7 @@
 - Draft PR：<https://github.com/keanu77/professional-sports-injury-atlas/pull/3>。
 - Draft release：`v0.1.0`，<https://github.com/keanu77/professional-sports-injury-atlas/releases/tag/untagged-40d54e1d9fcdd1439985>，target 為 launch 分支；發布前需改到實際合併提交。
 - 最後實作／素材與驗證提交：`12e2eba`；本交接另以文件提交保存。沒有未完成的程式修改。
-- Repository 保留 Private；介紹、homepage 與 11 個 topics 已更新。
+- Repository 現為 Public；介紹、homepage 與 11 個 topics 已更新，私人漏洞回報已啟用。main 仍未包含新版 README 與 MIT 文件，需先完成 PR #3 合併。
 - Release 的 5 個附件皆已上傳，遠端大小與 SHA-256 均與本機一致。
 - `docs/launch/verification-2026-10-20.md`：可公開的驗證範圍與待辦。
 - `docs/launch/2026-10-20-圖鑑分享草稿.md`：FB 與 X 草稿，未發布。
@@ -34,8 +34,8 @@
 
 ## 當前阻礙與下一步
 
-1. **確認 GitHub Actions 執行限制已解除，再重跑 PR #3**。最新 run `39297283266` / check `118212970770` 在任何 step 執行前失敗；官方註記為帳戶層級限制。細節保存在 ignored `output/repo-launch-20261020/ci-annotations.json`，不要以本機通過宣稱 GitHub CI 綠燈。
-2. **請使用者審閱 PR 與公開範圍**。repo-launch skill `/Users/ethanstudio/.claude/skills/repo-launch/SKILL.md` 明確要求使用者自行合併 PR。完整 Git 歷史含舊決策與審閱紀錄，尚未得到本次最終 Public 可見性確認。公開後啟用 private vulnerability reporting，再驗證回報入口。
+1. **讀取 PR #3 最新 CI 結果**。先前 Private 時的失敗發生在任何 step 執行前，不能當成 Public 之後的狀態。公開後已重跑 `39297603918`，本次文件提交也會觸發新檢查；以 `gh pr view 3 --json statusCheckRollup,headRefOid` 讀取最新結果，不以本機通過宣稱 GitHub CI 綠燈。
+2. **CI 綠燈後請使用者審閱並合併 PR**。repo-launch skill `/Users/ethanstudio/.claude/skills/repo-launch/SKILL.md` 明確要求使用者自行合併 PR。Public 已由使用者完成，不再詢問是否要公開；私人漏洞回報已啟用，不需重複設定。
 3. **合併後更新並發布 release**。將 draft v0.1.0 target 改到實際合併 SHA，CHANGELOG 改成實際發布日期。依 skill，Social preview 與社群發文由使用者手動完成；圖片在 `docs/media/social-preview-1280x640.png`，GitHub Settings → General → Social preview。
 
 本輪沒有 GitHub Pages 設定；Cloudflare 正式網站就是 Live Demo。不要將含研究與審計資料的 `docs/` 當 Pages 輸出目錄。

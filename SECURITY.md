@@ -4,7 +4,7 @@
 
 Do not open a public issue containing a vulnerability, exploit, credential, personal information, or a production data sample.
 
-If **Report a vulnerability** is available under this repository's Security → Advisories page, use that private channel. GitHub provides this feature for public repositories when enabled; do not assume it is enabled merely because this file exists. Otherwise, contact the maintainer through [sportsmedicine.tw/contact](https://sportsmedicine.tw/contact/) with a brief request to arrange a private security report. Do not put secrets or exploit details into that initial form submission.
+Private vulnerability reporting is enabled for this repository. Use **Report a vulnerability** on the [Security → Advisories page](https://github.com/keanu77/professional-sports-injury-atlas/security/advisories). A GitHub account is required to submit a report. If that channel is unavailable, contact the maintainer through [sportsmedicine.tw/contact](https://sportsmedicine.tw/contact/) with a brief request to arrange a private security report. Do not put secrets or exploit details into that initial form submission. Fork maintainers must configure their own reporting channel.
 
 Include the affected URL or commit, expected and observed behavior, minimal reproduction steps, and the potential impact. Use synthetic data and redact credentials. Do not test destructive actions, access other users' data, or send large volumes of traffic to the live site.
 

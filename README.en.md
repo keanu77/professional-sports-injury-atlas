@@ -30,7 +30,7 @@ npm ci
 npm run dev -- --host 127.0.0.1
 ```
 
-On macOS, omit the two `apt-get` commands. Open the URL printed in the terminal. Cloning requires an authorized GitHub account while the repository remains private; the live website does not require an account.
+On macOS, omit the two `apt-get` commands. Open the URL printed in the terminal. The public repository can be cloned directly; neither the live website nor ordinary local development requires an account.
 
 The default is **review mode** for development and review, with different content from the public website. Ordinary local development does not require API keys. Provenance checks depend on Git history, so use a full clone rather than Download ZIP or `--depth 1`. Complete checks need a clean, committed working tree; see the [development guide](docs/development.md).
 
