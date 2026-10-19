@@ -1,0 +1,23 @@
+name: Content correction / 內容與來源修正
+description: Suggest a verifiable correction or report an unavailable video.
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Affected page / 頁面網址
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Current text and proposed correction / 原文與建議修正
+      description: Describe observable facts; do not infer a diagnosis from video alone.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Source URLs and dates / 來源網址與日期
+      description: For a playback problem, include your region, browser, and the error shown. Do not upload downloaded broadcasts or personal medical information.
+    validations:
+      required: true

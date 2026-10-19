@@ -483,6 +483,12 @@ interface AccessInfoTargetState {
   existed: boolean;
   device?: bigint;
   inode?: bigint;
+  size?: bigint;
+  modifiedAt?: bigint;
+  changedAt?: bigint;
+  owner?: bigint;
+  mode?: bigint;
+  linkCount?: bigint;
 }
 
 function inspectAccessInfoTarget(
@@ -532,6 +538,12 @@ function inspectAccessInfoTarget(
     existed: true,
     device: stat.dev,
     inode: stat.ino,
+    size: stat.size,
+    modifiedAt: stat.mtimeNs,
+    changedAt: stat.ctimeNs,
+    owner: stat.uid,
+    mode: stat.mode,
+    linkCount: stat.nlink,
   };
 }
 
@@ -604,7 +616,15 @@ function installStagedAccessInfo(staged: StagedAccessInfo): void {
       current.isSymbolicLink() ||
       !current.isFile() ||
       current.dev !== state.device ||
-      current.ino !== state.inode
+      current.ino !== state.inode ||
+      // An unlinked inode can be reused immediately; an in-place edit also
+      // preserves identity. Recheck the inspected metadata before replacing it.
+      current.size !== state.size ||
+      current.mtimeNs !== state.modifiedAt ||
+      current.ctimeNs !== state.changedAt ||
+      current.uid !== state.owner ||
+      current.mode !== state.mode ||
+      current.nlink !== state.linkCount
     ) {
       fail("local access information changed before replacement");
     }

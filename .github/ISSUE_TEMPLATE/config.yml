@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Suggest a video without GitHub / 網站投稿
+    url: https://injury.sportsmedicine.tw/contribute/
+    about: Submit an original video URL or a sourced correction.
+  - name: Private security contact / 私人安全回報
+    url: https://sportsmedicine.tw/contact/
+    about: Arrange a private report first; do not put secrets or exploit details in the contact form.
