@@ -458,10 +458,9 @@ const bodyBySlug = new Map(
     font: inherit;
     font-weight: 600;
     cursor: pointer;
-    transition:
-      color 140ms ease,
-      background-color 140ms ease,
-      border-color 140ms ease;
+    /* Switch foreground and background together so theme changes never
+       pass through a low-contrast intermediate color pair. */
+    transition: border-color 140ms ease;
   }
   .discovery-controls button[aria-pressed="true"] {
     background: var(--color-brand-primary);
