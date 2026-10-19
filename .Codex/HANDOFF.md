@@ -1,29 +1,7 @@
-# HANDOFF — 2026-10-10
+# HANDOFF - 2026-10-20
 
-## Current work
+Current executable handoff: [`.claude/HANDOFF.md`](../.claude/HANDOFF.md).
 
-- Repository: `keanu77/professional-sports-injury-atlas`.
-- Isolated branch: `fix/source-video-health`; base main `cc0b2feb0aac30747b7ed334ea722fb402dedbbb`.
-- Implementation commit: `7c409d6`; use `git log -1` for the subsequent evidence/workflow commit.
-- Authorized scope: citation and health-check repair, tests, isolated branch push and draft PR. No merge, deployment, new tokens or account/security changes.
-- Original checkout `/Users/ethanstudio/Documents/Vibe coding/professional-sports injury` was preserved.
-- 13 dead references repaired, including Elliott's verified Echo original report; four federation pages retained after identifying the monitor. Initial health snapshots remain unchanged as historical evidence; use the final PR artifact for current counts.
-- 199 YouTube metadata/iframe checks and one MLB page check succeed. API and actual playback remain unverified.
+PR #1 (`fix/source-video-health`) has been reconciled with main `167f29b` after PR #3 merged. Local deterministic validation passes at implementation `11aaf8f`; inspect the PR's final head and current GitHub checks before reporting readiness.
 
-## Validation and blockers
-
-- Node must be 24.14.0. Mac Studio runtime: `/Users/ethanstudio/.local/share/mise/installs/node/24.14.0/bin/node`.
-- 1,571 unit tests, Astro/content checks, review build, brand and artifact checks pass.
-- Existing main failures remain: 164 formatting files; coverage thresholds; 24 of 720 E2E tests fail, 380 skip; Lighthouse homepage identity check.
-- Unchanged main reproduces coverage and the exact E2E failure list. Historical review/clinical/playback approvals remain unchanged.
-- Linux main also reproduces the Keychain race-fixture test failure (diagnostic run `38060897997`). The test now holds the original inode by renaming it before creating a distinct replacement; production security code is unchanged. Read `follow-up.md` for the Linux/Mac evidence and retained rollback assertions.
-- Public release evidence does not cover changed inputs. No production release was attempted.
-- Final PR/CI result is reported in the task's final response; inspect the current branch's PR rather than assuming a green workflow.
-
-## Next steps
-
-1. Run `git status --short --branch` and `gh pr view fix/source-video-health --repo keanu77/professional-sports-injury-atlas --json url,headRefOid,statusCheckRollup` to verify current commit and CI.
-2. Read `docs/reviews/2026-10-10-source-video-health/follow-up.md`, `source-repairs.json` and the PR's final-head health artifact; preserve the closed-door return distinction and access-block uncertainty.
-3. Act only on new owner instructions for API authorization, editorial handling, unrelated baseline gates or release approval. Never paste API keys into chat or replace release evidence merely to pass a digest check.
-
-No further authorized merge or deployment tasks.
+Current evidence is under `docs/reviews/2026-10-20-pr1/`. The October 10 source-health review directory is historical and remains unchanged. The monitor still distinguishes confirmed failure from incomplete verification; it never claims actual playback. No new API authorization, merge or production deployment is part of this repair.

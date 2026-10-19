@@ -1,0 +1,235 @@
+{
+  "verifiedCommit": "11aaf8ff7acd62142203fe6839bcba34d8bac97c",
+  "baseMainCommit": "167f29b5061491ab3930f43fc19a5f9068c2974b",
+  "nodeVersion": "24.14.0",
+  "localChecks": {
+    "planDocuments": 45,
+    "typecheck": {
+      "files": 411,
+      "errors": 0,
+      "warnings": 0,
+      "hints": 16
+    },
+    "unit": {
+      "files": 108,
+      "passed": 1604,
+      "failed": 0
+    },
+    "content": "passed",
+    "reviewBuildPages": 45,
+    "brand": "passed",
+    "reviewArtifact": {
+      "status": "passed",
+      "casePages": 26,
+      "files": 962
+    },
+    "changedCodeFormatting": "passed",
+    "diffCheck": "passed"
+  },
+  "sourceDiff": {
+    "comparedDataFiles": 10,
+    "changedPaths": 34,
+    "changesOutsideSourcesAndCitationIndexes": [],
+    "repairTargets": 13,
+    "obsoleteRepairUrlsRemaining": 0
+  },
+  "health": {
+    "schemaVersion": 2,
+    "checkedAt": "2026-10-19T18:24:35.189Z",
+    "overallStatus": "degraded",
+    "playbackVerification": "not-performed",
+    "summary": {
+      "embedChecksCompleted": 0,
+      "embedChecksIndeterminate": 0,
+      "embedChecksSkipped": 200,
+      "embedMarkupPresent": 199,
+      "indeterminateMetadata": 0,
+      "indeterminateSources": 132,
+      "notEmbeddable": 0,
+      "sourceReasons": {
+        "access-challenge": 18,
+        "access-denied": 92,
+        "http-error": 1,
+        "network-error": 5,
+        "ok": 660,
+        "server-error": 3,
+        "timeout": 13
+      },
+      "sourceUrls": 792,
+      "unavailableMetadata": 0,
+      "unavailableSources": 0,
+      "videos": 200
+    }
+  },
+  "monitorExitCode": 2,
+  "youtubeApiAuthorization": "not-provided-in-this-run",
+  "fullLocalArtifact": {
+    "path": "output/pr1-20261020/public-video-health.v2.json",
+    "sha256": "2d708b0a40be64bdd7ba4f422fbd5ff7deedcef30aa86b12636c231e04b23ff6"
+  },
+  "repairTargets": [
+    {
+      "url": "https://www.dewittdailynews.com/aaron-judge-returns-to-yankees-after-99-day-absence-caused-by-broken-rib/",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.dewittdailynews.com/aaron-judge-returns-to-yankees-after-99-day-absence-caused-by-broken-rib/",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    },
+    {
+      "url": "https://www.arsenal.com/news/report-arsenal-women-2-1-aston-villa-women-asbEn9x4Cl61",
+      "result": {
+        "attempts": 2,
+        "finalUrl": "https://www.arsenal.com/news/report-arsenal-women-2-1-aston-villa-women-asbEn9x4Cl61",
+        "httpStatus": 500,
+        "reason": "server-error",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://legacy.liverpoolfc.com/news/first-team/299392-alex-oxlade-chamberlain-injury-update-jurgen-klopp",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://legacy.liverpoolfc.com/news/first-team/299392-alex-oxlade-chamberlain-injury-update-jurgen-klopp",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    },
+    {
+      "url": "https://legacy.liverpoolfc.com/news/first-team/303499-mohamed-salah-liverpool-fc-injury-update",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://legacy.liverpoolfc.com/news/first-team/303499-mohamed-salah-liverpool-fc-injury-update",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    },
+    {
+      "url": "https://legacy.liverpoolfc.com/news/first-team/305043-mohamed-salah-goal-egypt-world-cup",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://legacy.liverpoolfc.com/news/first-team/305043-mohamed-salah-goal-egypt-world-cup",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    },
+    {
+      "url": "https://legacy.liverpoolfc.com/news/first-team/305536-alex-oxlade-chamberlain-knee-injury-rehabilitation",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://legacy.liverpoolfc.com/news/first-team/305536-alex-oxlade-chamberlain-knee-injury-rehabilitation",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    },
+    {
+      "url": "https://legacy.liverpoolfc.com/news/first-team/340949-alex-oxlade-chamberlain-fitness-update",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://legacy.liverpoolfc.com/news/first-team/340949-alex-oxlade-chamberlain-fitness-update",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    },
+    {
+      "url": "https://legacy.liverpoolfc.com/news/first-team/347685-jurgen-klopp-liverpool-huddersfield-reaction",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://legacy.liverpoolfc.com/news/first-team/347685-jurgen-klopp-liverpool-huddersfield-reaction",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    },
+    {
+      "url": "https://legacy.liverpoolfc.com/news/first-team/443363-harvey-elliott-undergoes-successful-ankle-surgery",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://legacy.liverpoolfc.com/news/first-team/443363-harvey-elliott-undergoes-successful-ankle-surgery",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    },
+    {
+      "url": "https://www.arsenal.com/news/match-report-wolves-2-2-arsenal-u-23s-abevG1Z7KSU6",
+      "result": {
+        "attempts": 2,
+        "finalUrl": null,
+        "httpStatus": null,
+        "reason": "timeout",
+        "status": "indeterminate"
+      }
+    },
+    {
+      "url": "https://www.wtatennis.com/news/3123711/andreescu-provides-injury-update-praying-for-nothing-serious",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.wtatennis.com/news/3123711/andreescu-provides-injury-update-praying-for-nothing-serious",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    },
+    {
+      "url": "https://www.tennis.com/news/articles/kei-nishikori-to-miss-remainder-of-season-with-torn-tendon-in-wrist",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.tennis.com/news/articles/kei-nishikori-to-miss-remainder-of-season-with-torn-tendon-in-wrist",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    },
+    {
+      "url": "https://www.liverpoolecho.co.uk/sport/football/football-news/harvey-elliott-liverpool-game-breaking-22917827",
+      "result": {
+        "attempts": 1,
+        "finalUrl": "https://www.liverpoolecho.co.uk/sport/football/football-news/harvey-elliott-liverpool-game-breaking-22917827",
+        "httpStatus": 200,
+        "reason": "ok",
+        "status": "available"
+      }
+    }
+  ],
+  "repairFollowup": {
+    "checkedAt": "2026-10-19T18:25:22.459Z",
+    "concurrency": 1,
+    "sources": [
+      {
+        "url": "https://www.arsenal.com/news/report-arsenal-women-2-1-aston-villa-women-asbEn9x4Cl61",
+        "result": {
+          "httpStatus": 500,
+          "finalUrl": "https://www.arsenal.com/news/report-arsenal-women-2-1-aston-villa-women-asbEn9x4Cl61",
+          "reason": "server-error",
+          "attempts": 2,
+          "status": "indeterminate"
+        }
+      },
+      {
+        "url": "https://www.arsenal.com/news/match-report-wolves-2-2-arsenal-u-23s-abevG1Z7KSU6",
+        "result": {
+          "httpStatus": 500,
+          "finalUrl": "https://www.arsenal.com/news/match-report-wolves-2-2-arsenal-u-23s-abevG1Z7KSU6",
+          "reason": "server-error",
+          "attempts": 2,
+          "status": "indeterminate"
+        }
+      }
+    ]
+  },
+  "productionDeployed": false,
+  "limitations": [
+    "HTTP success does not revalidate article claims. The October 10 editorial evidence is unchanged.",
+    "132 URLs remain indeterminate; both Arsenal repair targets returned HTTP 500 in the isolated follow-up.",
+    "No YouTube API flags or actual video playback were verified in this run.",
+    "Full npm run verify, legacy coverage/formatting, E2E and Lighthouse were not rerun. Final GitHub CI must be checked on the final PR head."
+  ]
+}
