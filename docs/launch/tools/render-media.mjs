@@ -31,11 +31,27 @@ const probe = (file) =>
 const full = "docs/media/catalog-demo.mp4";
 const short = "docs/media/catalog-demo-short.mp4";
 const gif = "docs/media/catalog-demo.gif";
+const recordedDuration = Number(probe(capture.videoPath).duration);
+const work = "output/repo-launch-20261020/media";
 run([
+  "-loop",
+  "1",
+  "-t",
+  "3",
+  "-i",
+  `${work}/start-card-clean.png`,
   "-i",
   capture.videoPath,
-  "-vf",
-  "fps=30,format=yuv420p",
+  "-loop",
+  "1",
+  "-t",
+  "3",
+  "-i",
+  `${work}/end-card-clean.png`,
+  "-filter_complex",
+  `[0:v]fps=30,format=yuv420p,setsar=1,setpts=PTS-STARTPTS[a];[1:v]trim=start=3:end=${recordedDuration - 3},fps=30,format=yuv420p,setsar=1,setpts=PTS-STARTPTS[b];[2:v]fps=30,format=yuv420p,setsar=1,setpts=PTS-STARTPTS[c];[a][b][c]concat=n=3:v=1:a=0[out]`,
+  "-map",
+  "[out]",
   "-c:v",
   "libx264",
   "-crf",

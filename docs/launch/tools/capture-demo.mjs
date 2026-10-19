@@ -107,9 +107,26 @@ await context.close();
 const videoPath = await video.path();
 
 const artwork = await browser.newPage({
-  viewport: { width: 1280, height: 640 },
+  viewport: { width: 1280, height: 720 },
   deviceScaleFactor: 1,
 });
+await artwork.setContent(
+  card(
+    "從選手名稱，找到事件來源",
+    "實際操作：搜尋 Acuna → 開啟事件 → 查看來源",
+    "injury.sportsmedicine.tw",
+  ),
+);
+await artwork.screenshot({ path: `${work}/start-card-clean.png` });
+await artwork.setContent(
+  card(
+    "查找影片，也回到來源",
+    "教育索引 · 保留資訊來源與未知<br>自有程式碼採 MIT；內容與影音另有授權範圍",
+    "injury.sportsmedicine.tw · github.com/keanu77/professional-sports-injury-atlas",
+  ),
+);
+await artwork.screenshot({ path: `${work}/end-card-clean.png` });
+await artwork.setViewportSize({ width: 1280, height: 640 });
 const home = (await readFile(`${work}/homepage.png`)).toString("base64");
 await artwork.setContent(`<!doctype html><meta charset="utf-8"><style>
 *{box-sizing:border-box}body{margin:0;width:1280px;height:640px;background:#102b34;color:#f2f6f5;font-family:Inter,"PingFang TC",sans-serif;overflow:hidden;padding:58px 60px}
