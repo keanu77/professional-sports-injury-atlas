@@ -1,66 +1,42 @@
 # HANDOFF - 2026-10-20
 
-## 部署進行中
+## 最新授權與版本
 
-使用者已在 2026-10-20 明確授權「請部署」。本輪正在整理具名提交及 Cloudflare 預覽；正式發布仍需通過既有七日播放證據門檻。200 支影片的紀錄均已過期；已詢問是否明確允許既有 Playwright 自動化驗證，尚待回覆。不要重問部署授權。
+使用者已授權「請部署」及「允許，使用 Playwright 完成驗證與部署」。不要再詢問部署或 Playwright 授權。
 
-Cloudflare production 基線仍為 `af901f14-2faf-4a6e-bd0f-30072e4fe2f4`，來源 `ac38ad9`；可作回復基線。官方產物檢查已在相同程式的暫存副本通過：273 頁、7 核心案例、15,112 本機連結。輸入摘要重新計算後綁定現有程式，未變更臨床、來源或播放門檻。
+- 專案：`/Users/ethanstudio/Documents/Vibe coding/professional-sports injury`
+- 發布分支：`feat/atlas-ux-20261020`；基線 main `3be60d2`。
+- 實作提交 `822c2bc`；瀏覽器查核修正 `b4fecdd`。下一次提交綁定本輪播放與測試證據。
+- 本檔於正式部署前寫入；最終部署與 live 比對結果位於 `output/deploy-20261020/release-result.json`。讀到本檔後先讀該檔及 Cloudflare 最新 Production，不可將「部署前」文字當作最新狀態。
 
-下列為上一輪完成時的紀錄；「未要求部署」等敘述由本節的新授權取代。
+## 已完成的變更
 
-## 目前狀態
+共用分類搜尋、24 筆漸進載入與 no-JS 200 筆、共用卡片與真實 CTA、分類返回條件、長文目錄與來源展開、相關影片與理由、播放器錯誤焦點、字級上下限提示、200 張個別分享圖、首頁間距與舊傷種入口。原始 A hero 與社群位置保留，沒有新增臨床結論。
 
-使用者在全站審查後授權「請根據你的建議幫我優化」。主要 UI/UX 實作及有界驗證已完成，保留在原工作樹，尚未 commit/push/deploy。不要再把本輪描述成僅審查或尚未授權實作。
+本輪 E2E 修正：取消篩選按鈕前景／背景過渡以避免主題切換低對比；返回導覽移出 clinical article，醫療提醒重新維持首子元素。測試更新為目前已發布的內容／歷史照片展示，以及新字級與狀態欄位的精確定位。
 
-- cwd：`/Users/ethanstudio/Documents/Vibe coding/professional-sports injury`
-- branch：`feat/aaron-judge-rib`
-- HEAD：`3be60d27729f6a4f64260ac40590b123a5e46d98`；本輪已從 `cc0b2fe` fast-forward 至先前核對的 `origin/main` 安全修補。
-- 實作記錄：`docs/reviews/2026-10-19-ux-implementation/README.md`、`verification.json`、`source-manifest.json`。
-- 先前未提交查核／審查文件保留：`docs/reviews/2026-10-19-live-sync/`、`docs/reviews/2026-10-19-ux-audit/`。
-- 原專案 index 為空；未推送任何候選提交。Git branch 相對其舊 tracking branch 顯示 ahead 42，不能視為本輪新增 42 次提交。
+## 驗證證據
 
-## 已實作
+- `docs/reviews/2026-10-20-ux-release/verification.json`、`playback.all.json`、`source-manifest.json`。
+- 型別 411 檔：0 errors、0 warnings、16 既有 hints。
+- 完整單元 108 檔／1,577 項通過；須使用 Node 24.14.0，且 provenance 測試要求乾淨提交。
+- 公開版桌面／手機 E2E：210 通過、2 個非 launch review 測試略過。
+- Review：176 首輪通過，2 個手機播放器逾時單獨重跑通過；210 個 public-only 按設計略過。
+- 200 支影片全部真實播放通過；5 支必要字幕全部可開啟。影片未替換，觀看統計 POST 被攔截，不污染正式數據。
+- 官方產物檢查：273 頁、7 核心／193 觀察、200 PNG、15,112 本機連結。
+- 沒有宣稱 Safari／Firefox／VoiceOver 或 Lighthouse 通過。
+- 舊實作記錄 `docs/reviews/2026-10-19-ux-implementation/` 是上一輪快照；以本輪 release 來源 manifest 為最後版本。
 
-1. 共用分類搜尋：body-parts、sports、situations、video-types 路由使用 VideoDiscovery，保留 URL／IME／24 筆分批與 no-JS 完整卡片。
-2. 共用卡片：`src/styles/catalog-card.css` 統一核心／觀察卡；CTA 改真實連結，播放對比與輕量 hover；已移除 ObservationCard 舊衝突樣式。
-3. 首頁收緊 hero／統計，分類採底線選取；保留原始 A 圖與前方社群；首頁首列表圖片不再 high priority。
-4. 詳頁新增 DetailNavigation／DetailContents／DetailCategories／RelatedVideos；返回清單保留條件，長文桌面側欄與 sticky header 錨點 offset；來源 details 自動展開。
-5. related-videos helper 綜合同部位／同運動／已知情境並列理由；跨公開核心／觀察影片推薦，排除自身與重複影片。
-6. video-player 失敗僅在焦點仍在 stage 內時移回重試；可見載入狀態；preferences 字級上下限 disabled 語意與 live 百分比提示。
-7. `src/lib/social/` + `src/pages/social/[kind]/[slug].png.ts` 產生公開詳頁文字 PNG；BaseLayout 使用相符 metadata。沒有新增套件、照片合成或品牌規則例外。首頁指定 PNG 不變。
-8. 傷種總覽說明與部位庫入口、非 launch 分類連結 gate、舊 E2E 契約修正。
+## 部署與恢復
 
-## 驗證與預覽
+- 候選播放預覽：`https://700109c4.sports-injury-atlas.pages.dev`（822c2bc），alias `atlas-ux-20261020`。
+- 正式目標：`https://injury.sportsmedicine.tw/`，Cloudflare Pages 專案 `sports-injury-atlas`、branch `main`。
+- 原正式基線／回復點：`af901f14-2faf-4a6e-bd0f-30072e4fe2f4`（來源 `ac38ad9`）。最終 production 以 release-result.json 和 Cloudflare 重查為準。
+- `release:public` 仍要求乾淨提交、新 inputTreeDigest、原始來源／臨床綁定、七日內真實播放。沒有放寬任何門檻。
+- 既有設定及 D1 migrations 本輪未變更；不得不必要地重跑 migration。
+- Astro 7 preview 會背景常駐並讓啟動命令結束，Playwright 需使用已啟動的已知服務或適當 reuseExistingServer。不要把啟動命令結束當服務故障。
+- 保留隔離驗證副本 `/private/tmp/injury-ux-validation-20261019`；本機預覽服務／埠先查是否仍存在，不猜測。
 
-- `npm run check`：411 files，0 errors / 0 warnings / 16 既有 hints。
-- 完整 unit：108 files / 1,577 tests 通過；最終 targeted 4 files / 74 tests 通過。
-- public build：273 HTML、200 詳頁、200 PNG；review build：45 HTML、0 詳頁 PNG。
-- 內容／品牌／依賴／格式檢查通過；public 全頁相對連結、資源、錨點、初始 iframe/inline script、OG 檔案尺寸檢查無問題。review 正常頁面通過，6 個虛構 fixture 連結另列。
-- 原生 Chrome 已實測搜尋 Acuna→詳頁→原條件返回、Tyrese 真實 CTA、來源展開、87.5%／150% 字級回饋；深／淺色及相關卡片排版實看。
-- Chrome iPhone 16 模擬確定為 393×852，手機篩選／URL 狀態與 Aaron Judge 長文錨點實測。未做完整裝置矩陣、Safari／VoiceOver、慢網路故障、E2E、Lighthouse 或全 200 支重播。
-- 預覽 `http://127.0.0.1:4323/` 是靜態 public 成品，沒有 Cloudflare Functions 熱門 API；本機排行失敗是預期限制。
-- 預覽 process 為 `python3 -m http.server 4323 --bind 127.0.0.1 --directory /private/tmp/injury-ux-validation-20261019/dist`。
+## 後續界線
 
-來源 gate 要求乾淨 Git 歷史，因此驗證在獨立 clone `/private/tmp/injury-ux-validation-20261019` 進行；候選 commit `d5ffbe5ab182aa6e987f8113e40780a61920e92e`，43 個程式／測試檔與原工作樹相符。候選只在 /tmp，沒有推送，也沒有改原專案提交。原工作樹直接 build 仍會因 dirty-tree guard 拒絕，不能繞過或寫假摘要。
-
-完整測試／build 使用 `/Users/ethanstudio/.local/share/mise/installs/node/24.14.0/bin`；一般 shell 是 24.19.0，符合 package engine 但歷史圖片測試要求精確 24.14.0。sandbox 的 socket EPERM 需在允許本機 socket 的環境執行單元測試。暫存 clone 使用實體 node_modules，不可用 symlink 造成 dirty path。
-
-## 正式站與發布界線
-
-- 此輪沒有修改線上站。之前 2026-10-19 實查 production `af901f14-2faf-4a6e-bd0f-30072e4fe2f4`，來源 `ac38ad9`；273 HTML + 10 hero 資源共 283 雜湊與 9/22 發布完全一致。
-- 正式站 200 支影片；本機 main 安全修補與本輪 UX 均尚未發布。歷史 150 支記憶不能作為目前數量。
-- `release:public` / `deploy:public` 未執行；來源／臨床／權利／輸入摘要與七日播放證據門檻未放寬。不得把 engineering build 當 release approval。
-- 目前未要求 commit、push 或 deploy。若後續要求發布，先完成既有 gate，再部署及比對 live SHA；不要拿 PR 舊描述或未執行 E2E 當通過證據。
-
-## 下一個 Session 的前 3 步
-
-1. **執行** `git status --short --branch` 並讀 `docs/reviews/2026-10-19-ux-implementation/verification.json`，確認程式與 43 檔 source manifest 是否仍一致，保留先前審查文件。
-2. **依使用者後續要求檢視** `http://127.0.0.1:4323/`；若服務已停止，在暫存 clone 重啟上述靜態預覽。補測 E2E／Safari／VoiceOver 與播放器慢網路焦點，不要重問已授權 UX 實作。
-3. **僅在使用者要求提交／發布時執行** 精確檔案 staging 與現有 release gate；更新輸入綁定／播放證據後再部署，並重新核對正式成品。不得 `git add -A`。
-
-## 保留決定與後續量測
-
-- 原始 A hero：`src/assets/hero/a-all-sport-burst.png`，SHA-256 `3ef27311614a5df79b2731d3ec3f9576c09a3275de53250ee2a0c8be94318cc2`；不恢復舊圖說。
-- 沒有新增醫療結論或 re-author 現有來源重點。
-- DOM 虛擬化／分頁、critical CSS、熱門 API 快取、閱讀進度動態留待量測；沒有宣稱 CWV／SEO 提升。
-- 不同詳頁分享圖已做，最近收錄排序尚需真實 addedAt；不要拿事件年份充當新增時間。
+原始 A hero SHA-256 `3ef27311614a5df79b2731d3ec3f9576c09a3275de53250ee2a0c8be94318cc2`；不恢復舊圖說。DOM 虛擬化、critical CSS、熱門 API 快取及最近收錄排序仍待真實量測／addedAt 資料。沒有宣稱 CWV／SEO 成效提升。精確 staging，禁止 git add -A。

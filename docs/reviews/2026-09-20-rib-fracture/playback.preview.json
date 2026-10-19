@@ -2,58 +2,70 @@
   {
     "url": "https://www.youtube.com/watch?v=HiLO6a9crD4",
     "path": "/videos/fernando-alonso-2016-rib/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-20T07:46:15.145Z",
+    "checkedAt": "2026-10-19T16:52:24.858Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/HiLO6a9crD4?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 1.020032,
+      "time": 1.003604,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 4.398
   },
   {
     "url": "https://www.youtube.com/watch?v=_jrPqJow81Q",
     "path": "/videos/drew-brees-2020-rib/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-20T07:46:21.627Z",
+    "checkedAt": "2026-10-19T16:52:26.545Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/_jrPqJow81Q?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 1.017162,
+      "time": 1.00463,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已開啟"],
+    "elapsedSeconds": 3.633
   },
   {
     "url": "https://www.youtube.com/watch?v=JckTrmIPRK8",
     "path": "/videos/tua-tagovailoa-2021-rib/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-20T07:46:28.291Z",
+    "checkedAt": "2026-10-19T16:52:27.060Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/JckTrmIPRK8?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 1.017985,
+      "time": 1.019529,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 3.38
   }
 ]

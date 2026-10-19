@@ -1,0 +1,2002 @@
+[
+  {
+    "path": "/cases/anfernee-simons-ankle-sprain-2023/",
+    "url": "https://www.youtube.com/watch?v=8TIJGIRP634",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": true,
+    "proofPath": "docs/reviews/evidence/decision-21/playback.chrome.v1.json",
+    "checkedAt": "2026-09-20T07:50:08.225Z",
+    "stale": true
+  },
+  {
+    "path": "/cases/kevin-durant-achilles-rupture-2019/",
+    "url": "https://www.youtube.com/watch?v=YcSOLHMsJYw",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": true,
+    "proofPath": "docs/reviews/evidence/decision-21/playback.chrome.v1.json",
+    "checkedAt": "2026-09-20T07:50:12.766Z",
+    "stale": true
+  },
+  {
+    "path": "/cases/kyrie-irving-ankle-sprain-2021/",
+    "url": "https://www.youtube.com/watch?v=FQAPZASQyX0",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": true,
+    "proofPath": "docs/reviews/evidence/decision-21/playback.chrome.v1.json",
+    "checkedAt": "2026-09-20T07:45:49.772Z",
+    "stale": true
+  },
+  {
+    "path": "/cases/lamelo-ball-ankle-sprain-2023/",
+    "url": "https://www.youtube.com/watch?v=RDDGpqOvSdg",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": true,
+    "proofPath": "docs/reviews/evidence/decision-21/playback.chrome.v1.json",
+    "checkedAt": "2026-09-20T07:50:27.047Z",
+    "stale": true
+  },
+  {
+    "path": "/cases/lamelo-ball-ankle-sprain-2025/",
+    "url": "https://www.youtube.com/watch?v=zZdndTqOexc",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": true,
+    "proofPath": "docs/reviews/evidence/decision-21/playback.chrome.v1.json",
+    "checkedAt": "2026-09-20T07:50:31.794Z",
+    "stale": true
+  },
+  {
+    "path": "/cases/jayson-tatum-achilles-rupture-2025/",
+    "url": "https://www.youtube.com/watch?v=xSUKd03LJwE",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-23/playback.preview.v1.json",
+    "checkedAt": "2026-09-20T07:50:10.210Z",
+    "stale": true
+  },
+  {
+    "path": "/cases/tyrese-haliburton-achilles-rupture-2025/",
+    "url": "https://www.youtube.com/watch?v=azQpbyDBktk",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-23/playback.preview.v1.json",
+    "checkedAt": "2026-09-20T07:50:17.688Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/zverev-roland-garros-2022/",
+    "url": "https://www.youtube.com/watch?v=7tpaxZTTi2w",
+    "provider": "youtube",
+    "startSeconds": 1340,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-23/playback.preview.v1.json",
+    "checkedAt": "2026-09-20T07:50:24.417Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/derek-redmond-barcelona-1992/",
+    "url": "https://www.youtube.com/watch?v=t2G8KVzTwfw",
+    "provider": "youtube",
+    "startSeconds": 15,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-23/playback.preview.v1.json",
+    "checkedAt": "2026-09-20T07:50:31.874Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/kerri-strug-atlanta-1996/",
+    "url": "https://www.youtube.com/watch?v=Bwa5Bf656As",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-23/playback.preview.v1.json",
+    "checkedAt": "2026-09-20T07:50:40.360Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/carolina-marin-indonesia-2019/",
+    "url": "https://www.youtube.com/watch?v=nfpXC98FLuE",
+    "provider": "youtube",
+    "startSeconds": 35,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-23/playback.preview.v1.json",
+    "checkedAt": "2026-09-20T07:50:46.498Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/julie-foucher-box-jump-2015/",
+    "url": "https://www.youtube.com/watch?v=4y-1D7jTW_4",
+    "provider": "youtube",
+    "startSeconds": 35,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-23/playback.preview.v1.json",
+    "checkedAt": "2026-09-20T07:50:52.952Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/shohei-ohtani-world-series-2024/",
+    "url": "https://www.youtube.com/watch?v=hxcRVu1-T-c",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-27/playback.preview.json",
+    "checkedAt": "2026-09-20T07:50:09.110Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/usain-bolt-london-2017/",
+    "url": "https://www.youtube.com/watch?v=12UNVAkLlmY",
+    "provider": "youtube",
+    "startSeconds": 30,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-27/playback.preview.json",
+    "checkedAt": "2026-09-20T07:50:14.902Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/mohamed-salah-final-2018/",
+    "url": "https://www.youtube.com/watch?v=mi7fXtGTwbc",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-27/playback.preview.json",
+    "checkedAt": "2026-09-20T07:50:20.527Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/giannis-east-final-2021/",
+    "url": "https://www.youtube.com/watch?v=ctiT9toFmio",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-27/playback.preview.json",
+    "checkedAt": "2026-09-20T07:50:26.129Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/markelle-fultz-orlando-2021/",
+    "url": "https://www.youtube.com/watch?v=b2vVxFhpEv0",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-27/playback.preview.json",
+    "checkedAt": "2026-09-20T07:50:32.258Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/ronald-acuna-miami-2021/",
+    "url": "https://www.youtube.com/watch?v=C4xerhbFNnc",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-28/playback.preview.json",
+    "checkedAt": "2026-09-18T14:29:19.913Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/lindsey-vonn-schladming-2013/",
+    "url": "https://www.youtube.com/watch?v=0TwnwjFJzUo",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-28/playback.preview.json",
+    "checkedAt": "2026-09-18T14:29:30.611Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/antoine-dupont-world-cup-2023/",
+    "url": "https://www.youtube.com/watch?v=LOaTNtmSxUY",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-28/playback.preview.json",
+    "checkedAt": "2026-09-18T14:29:39.161Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/aksel-svindal-kitzbuhel-2016/",
+    "url": "https://www.youtube.com/watch?v=vM_UU11MMH0",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-28/playback.preview.json",
+    "checkedAt": "2026-09-18T14:29:48.280Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/sidney-crosby-concussion-2017/",
+    "url": "https://www.youtube.com/watch?v=YjDF1Saryg4",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-28/playback.preview.json",
+    "checkedAt": "2026-09-18T14:29:56.413Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/klay-thompson-2019-acl/",
+    "url": "https://www.youtube.com/watch?v=3vHr8d5UQro",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:30:55.433Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/kobe-bryant-2013-achilles/",
+    "url": "https://www.youtube.com/watch?v=5KlgfpqWCkY",
+    "provider": "youtube",
+    "startSeconds": 33,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:31:04.001Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/gianmarco-tamberi-2016-ankle/",
+    "url": "https://www.youtube.com/watch?v=blW4L9jn6iM",
+    "provider": "youtube",
+    "startSeconds": 10,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:31:12.040Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/john-tavares-2021-concussion/",
+    "url": "https://www.youtube.com/watch?v=Gnhby06KpyQ",
+    "provider": "youtube",
+    "startSeconds": 92,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:31:20.037Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/neymar-2023-acl/",
+    "url": "https://www.youtube.com/watch?v=YfynOcvpQfY",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:31:29.461Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/cameron-brink-2024-acl/",
+    "url": "https://www.youtube.com/watch?v=Ue0VBshhwX8",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:31:36.993Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/steve-smith-2019-concussion/",
+    "url": "https://www.youtube.com/watch?v=A_Wnlt1RP38",
+    "provider": "youtube",
+    "startSeconds": 150,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:31:45.124Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/george-north-2015-concussion/",
+    "url": "https://www.youtube.com/watch?v=5EclrKrPNvI",
+    "provider": "youtube",
+    "startSeconds": 119,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:31:53.298Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/mark-cavendish-2023-clavicle/",
+    "url": "https://www.youtube.com/watch?v=O3IZGzHla4U",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:32:01.538Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/derrick-rose-acl-2012/",
+    "url": "https://www.youtube.com/watch?v=jo1UlzDeY-o",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:32:09.944Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/demarcus-cousins-achilles-2018/",
+    "url": "https://www.youtube.com/watch?v=LZTOTwvfli0",
+    "provider": "youtube",
+    "startSeconds": 10,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:32:18.713Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/kristaps-porzingis-acl-2018/",
+    "url": "https://www.youtube.com/watch?v=qAZG23aT4IY",
+    "provider": "youtube",
+    "startSeconds": 33,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:32:28.710Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/gordon-hayward-ankle-fracture-2017/",
+    "url": "https://www.youtube.com/watch?v=HhuFTOZt6TU",
+    "provider": "youtube",
+    "startSeconds": 22,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:32:38.294Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/jamal-murray-acl-2021/",
+    "url": "https://www.youtube.com/watch?v=yDDkfhw1Qd0",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:32:46.302Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/dejounte-murray-acl-2018/",
+    "url": "https://www.youtube.com/watch?v=Ajto95dt2yQ",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:32:54.380Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/kawhi-leonard-acl-2021/",
+    "url": "https://www.youtube.com/watch?v=iwZgXGRJENE",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:33:01.453Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/paul-george-leg-fracture-2014/",
+    "url": "https://www.youtube.com/watch?v=Qoy8tUXsqQs",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:33:09.233Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/zach-lavine-acl-2017/",
+    "url": "https://www.youtube.com/watch?v=g4CkpVi5Iqk",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:33:17.128Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/shaun-livingston-knee-2007/",
+    "url": "https://www.youtube.com/watch?v=cWGLRqXsT54",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:33:26.293Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/alex-oxlade-chamberlain-2018/",
+    "url": "https://www.youtube.com/watch?v=rPYOGKhlzag",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:33:34.661Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/david-beckham-2010/",
+    "url": "https://www.youtube.com/watch?v=cgOemKqIzEE",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:33:45.002Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/cristiano-ronaldo-2016/",
+    "url": "https://www.youtube.com/watch?v=wgPxm0RKJAk",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:33:52.601Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/vivianne-miedema-2022/",
+    "url": "https://www.youtube.com/watch?v=YXpvkHw2BP8",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:34:01.454Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/laurent-koscielny-2018/",
+    "url": "https://www.youtube.com/watch?v=4--y5nQdVE0",
+    "provider": "youtube",
+    "startSeconds": 40,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:34:09.979Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/andre-gomes-2019/",
+    "url": "https://www.youtube.com/watch?v=8_d9ITG6Rmk",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:34:19.114Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/beth-mead-2022/",
+    "url": "https://www.youtube.com/watch?v=Kxz1vhDq94Y",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:34:28.134Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/leah-williamson-2023/",
+    "url": "https://www.youtube.com/watch?v=TygjH39bmfU",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:34:36.917Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/zlatan-ibrahimovic-2017-knee/",
+    "url": "https://www.youtube.com/watch?v=AzVEucCufd0",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:34:44.963Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/victor-oladipo-2019-quadriceps/",
+    "url": "https://www.youtube.com/watch?v=qGFHQQWFhWg",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:34:53.472Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/serena-williams-2021-hamstring/",
+    "url": "https://www.youtube.com/watch?v=pi0rz4KrTAM",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-30/playback.preview.json",
+    "checkedAt": "2026-09-18T14:35:01.812Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/edwin-diaz-2023-patellar-tendon/",
+    "url": "https://www.youtube.com/watch?v=aVmzQYIwTfc",
+    "provider": "youtube",
+    "startSeconds": 6,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-31/playback.preview.json",
+    "checkedAt": "2026-09-18T14:30:55.692Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/rhys-hoskins-2023-acl/",
+    "url": "https://www.youtube.com/watch?v=9c2i7OQerbY",
+    "provider": "youtube",
+    "startSeconds": 30,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-31/playback.preview.json",
+    "checkedAt": "2026-09-18T14:31:03.329Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/tim-hudson-2013-ankle/",
+    "url": "https://www.youtube.com/watch?v=q9WIUVebPf8",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-31/playback.preview.json",
+    "checkedAt": "2026-09-18T14:31:11.422Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/buster-posey-2011-ankle/",
+    "url": "https://www.youtube.com/watch?v=KK-tjBfB9ys",
+    "provider": "youtube",
+    "startSeconds": 5,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-31/playback.preview.json",
+    "checkedAt": "2026-09-18T14:31:18.968Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/kendrys-morales-2010-ankle/",
+    "url": "https://www.youtube.com/watch?v=CHU789PuCWg",
+    "provider": "youtube",
+    "startSeconds": 19,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-31/playback.preview.json",
+    "checkedAt": "2026-09-18T14:31:26.455Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/steven-stamkos-2013-tibia/",
+    "url": "https://www.youtube.com/watch?v=WC6e9OaS8WM",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-31/playback.preview.json",
+    "checkedAt": "2026-09-18T14:31:34.040Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/connor-mcdavid-2019-pcl/",
+    "url": "https://www.youtube.com/watch?v=bni6Jp6p4P8",
+    "provider": "youtube",
+    "startSeconds": 10,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-31/playback.preview.json",
+    "checkedAt": "2026-09-18T14:31:42.290Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/mikhail-sergachev-2024-leg/",
+    "url": "https://www.youtube.com/watch?v=EScFb5vASZ8",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-31/playback.preview.json",
+    "checkedAt": "2026-09-18T14:31:50.823Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/max-pacioretty-2011-concussion/",
+    "url": "https://www.youtube.com/watch?v=jimZ1tSdPY0",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-31/playback.preview.json",
+    "checkedAt": "2026-09-18T14:32:00.073Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/bethanie-mattek-sands-2017-knee/",
+    "url": "https://www.youtube.com/watch?v=WJseH_HrC7o",
+    "provider": "youtube",
+    "startSeconds": 46,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-31/playback.preview.json",
+    "checkedAt": "2026-09-18T14:32:12.414Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/aaron-rodgers-2023-achilles/",
+    "url": "https://www.youtube.com/watch?v=RDSkmfmqNic",
+    "provider": "youtube",
+    "startSeconds": 8,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-31/playback.preview.json",
+    "checkedAt": "2026-09-18T14:32:22.033Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/harvey-elliott-2021-ankle/",
+    "url": "https://www.youtube.com/watch?v=ZrJ_d7oyhN8",
+    "provider": "youtube",
+    "startSeconds": 25,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-31/playback.preview.json",
+    "checkedAt": "2026-09-18T14:32:30.673Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/wesley-fofana-2021-leg/",
+    "url": "https://www.youtube.com/watch?v=UxS0YVftoWs",
+    "provider": "youtube",
+    "startSeconds": 14,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-31/playback.preview.json",
+    "checkedAt": "2026-09-18T14:32:40.737Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/hector-bellerin-2019-knee/",
+    "url": "https://www.youtube.com/watch?v=Pzul0WT-LJs",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-31/playback.preview.json",
+    "checkedAt": "2026-09-18T14:32:49.036Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/annemiek-van-vleuten-2016-concussion/",
+    "url": "https://www.youtube.com/watch?v=02FgIaR6WZ4",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-31/playback.preview.json",
+    "checkedAt": "2026-09-18T14:32:55.948Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/rebeca-andrade-2019-knee/",
+    "url": "https://www.youtube.com/watch?v=G9_DOWNXdjc",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-31/playback.preview.json",
+    "checkedAt": "2026-09-18T14:33:04.076Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/juan-martin-del-potro-2018-knee/",
+    "url": "https://www.youtube.com/watch?v=P-bLI8A0q2k",
+    "provider": "youtube",
+    "startSeconds": 12,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-31/playback.preview.json",
+    "checkedAt": "2026-09-18T14:33:12.182Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/dominic-thiem-2021-wrist/",
+    "url": "https://www.youtube.com/watch?v=dnEbS6xmiLA",
+    "provider": "youtube",
+    "startSeconds": 172,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-31/playback.preview.json",
+    "checkedAt": "2026-09-18T14:33:20.892Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/kyle-schwarber-2016-knee/",
+    "url": "https://www.youtube.com/watch?v=9JoITljMoU0",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-32/playback.preview.json",
+    "checkedAt": "2026-09-18T14:30:56.284Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/bryce-harper-2017-knee/",
+    "url": "https://www.youtube.com/watch?v=5STUOgvQWgQ",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-32/playback.preview.json",
+    "checkedAt": "2026-09-18T14:31:03.875Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/dustin-fowler-2017-patellar-tendon/",
+    "url": "https://www.youtube.com/watch?v=GfnIhZIzIE8",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-32/playback.preview.json",
+    "checkedAt": "2026-09-18T14:31:11.285Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/adam-eaton-2017-knee/",
+    "url": "https://www.youtube.com/watch?v=J1iIgGSiSFc",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-32/playback.preview.json",
+    "checkedAt": "2026-09-18T14:31:18.776Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/chris-bassitt-2021-face/",
+    "url": "https://www.youtube.com/watch?v=8rQjyuPU_gM",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-32/playback.preview.json",
+    "checkedAt": "2026-09-18T14:31:25.760Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/alex-cobb-2013-concussion/",
+    "url": "https://www.youtube.com/watch?v=ggGrmIf-SQE",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-32/playback.preview.json",
+    "checkedAt": "2026-09-18T14:31:34.199Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/giancarlo-stanton-2014-face/",
+    "url": "https://www.youtube.com/watch?v=W5Bg3oaHI8I",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-32/playback.preview.json",
+    "checkedAt": "2026-09-18T14:31:42.192Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/charlie-morton-2021-fibula/",
+    "url": "https://www.youtube.com/watch?v=2UZJNvs7G_o",
+    "provider": "youtube",
+    "startSeconds": 24,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-32/playback.preview.json",
+    "checkedAt": "2026-09-18T14:31:50.814Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/mitch-haniger-2017-face/",
+    "url": "https://www.youtube.com/watch?v=Pi6Pku8QVXY",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-34/playback.preview.json",
+    "checkedAt": "2026-09-18T14:32:01.011Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/justin-turner-2023-face/",
+    "url": "https://www.youtube.com/watch?v=szivDYWhjXM",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-34/playback.preview.json",
+    "checkedAt": "2026-09-18T14:32:12.882Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/kevin-pillar-2021-face/",
+    "url": "https://www.youtube.com/watch?v=c_laCIZqsPM",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-34/playback.preview.json",
+    "checkedAt": "2026-09-18T14:32:21.429Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/bryce-harper-2022-thumb/",
+    "url": "https://www.youtube.com/watch?v=4ekUPuhJEYI",
+    "provider": "youtube",
+    "startSeconds": 8,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-34/playback.preview.json",
+    "checkedAt": "2026-09-18T14:32:29.248Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/mookie-betts-2024-hand/",
+    "url": "https://www.youtube.com/watch?v=wglRV7rAQ2Q",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-34/playback.preview.json",
+    "checkedAt": "2026-09-18T14:32:37.314Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/chase-headley-2014-face/",
+    "url": "https://www.youtube.com/watch?v=0iPz58nL0L8",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-34/playback.preview.json",
+    "checkedAt": "2026-09-18T14:32:45.838Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/curtis-granderson-2013-hand/",
+    "url": "https://www.youtube.com/watch?v=22U4bCbhtig",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-34/playback.preview.json",
+    "checkedAt": "2026-09-18T14:32:53.224Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/matt-shoemaker-2016-head/",
+    "url": "https://www.youtube.com/watch?v=a1Malj3Fqm8",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-34/playback.preview.json",
+    "checkedAt": "2026-09-18T14:33:05.070Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/ja-happ-2013-head/",
+    "url": "https://www.youtube.com/watch?v=g1fZXmVr_oA",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-34/playback.preview.json",
+    "checkedAt": "2026-09-18T14:33:15.895Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/dan-jennings-2014-concussion/",
+    "url": "https://www.youtube.com/watch?v=wVj6I9Q5IvE",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-34/playback.preview.json",
+    "checkedAt": "2026-09-18T14:33:24.358Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/stephen-piscotty-2015-concussion/",
+    "url": "https://www.youtube.com/watch?v=qLR_C8wg68E",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-34/playback.preview.json",
+    "checkedAt": "2026-09-18T14:33:32.384Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/dustin-pedroia-2017-knee/",
+    "url": "https://www.youtube.com/watch?v=rbAYcXPhIUE",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-34/playback.preview.json",
+    "checkedAt": "2026-09-18T14:33:40.743Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/aaron-judge-2023-toe/",
+    "url": "https://www.youtube.com/watch?v=jhBAzccW-Oc",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-34/playback.preview.json",
+    "checkedAt": "2026-09-18T14:33:48.656Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/manny-machado-2013-knee/",
+    "url": "https://www.youtube.com/watch?v=gQ0WzuOYh_A",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-34/playback.preview.json",
+    "checkedAt": "2026-09-18T14:33:57.601Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/samir-ait-said-2016-leg/",
+    "url": "https://www.youtube.com/watch?v=Bt7EHTIivuA",
+    "provider": "youtube",
+    "startSeconds": 58,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-34/playback.preview.json",
+    "checkedAt": "2026-09-18T14:47:31.510Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/sofia-goggia-2022-knee/",
+    "url": "https://www.youtube.com/watch?v=QDOJL9lwYdI",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-34/playback.preview.json",
+    "checkedAt": "2026-09-18T14:34:11.452Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/yuzuru-hanyu-2014-collision/",
+    "url": "https://www.youtube.com/watch?v=Jf84VzlzLhI",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-34/playback.preview.json",
+    "checkedAt": "2026-09-18T14:34:20.415Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/aleksander-kilde-2024-shoulder/",
+    "url": "https://www.youtube.com/watch?v=D0VibSVWwBA",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-34/playback.preview.json",
+    "checkedAt": "2026-09-18T14:34:28.712Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/liu-xiang-2012-achilles/",
+    "url": "https://www.youtube.com/watch?v=Pa50gXELqp0",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-34/playback.preview.json",
+    "checkedAt": "2026-09-18T14:34:36.912Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/fabio-jakobsen-2020-concussion/",
+    "url": "https://www.youtube.com/watch?v=RvDqK9NnqyI",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-34/playback.preview.json",
+    "checkedAt": "2026-09-18T14:34:44.630Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/mikaela-shiffrin-2024-abdomen/",
+    "url": "https://www.youtube.com/watch?v=nFbLC6Dv6Xk",
+    "provider": "youtube",
+    "startSeconds": 100,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-34/playback.preview.json",
+    "checkedAt": "2026-09-18T14:34:53.322Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/remco-evenepoel-2020-pelvis/",
+    "url": "https://www.youtube.com/watch?v=o8mXn1hwdtA",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-34/playback.preview.json",
+    "checkedAt": "2026-09-18T14:35:01.742Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/chien-ming-wang-2008-foot/",
+    "url": "https://www.youtube.com/watch?v=blRqsO9--38",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/evidence/decision-34/playback.preview.json",
+    "checkedAt": "2026-09-18T14:35:13.701Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/nick-chubb-knee-2023/",
+    "url": "https://www.youtube.com/watch?v=RdAvC8i0szY",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+    "checkedAt": "2026-09-20T07:46:01.349Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/kirk-cousins-achilles-2023/",
+    "url": "https://www.youtube.com/watch?v=E0mYSZ1jTG4",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+    "checkedAt": "2026-09-20T07:46:07.784Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/joe-burrow-wrist-2023/",
+    "url": "https://www.youtube.com/watch?v=geUMkoM42iE",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+    "checkedAt": "2026-09-20T07:46:13.609Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/aidan-hutchinson-leg-2024/",
+    "url": "https://www.youtube.com/watch?v=aWo-ur71zvo",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+    "checkedAt": "2026-09-20T07:46:19.551Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/gavi-acl-2023/",
+    "url": "https://www.youtube.com/watch?v=1HEC31qHp90",
+    "provider": "youtube",
+    "startSeconds": 48,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+    "checkedAt": "2026-09-20T07:46:25.390Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/ter-stegen-patellar-tendon-2024/",
+    "url": "https://www.youtube.com/watch?v=ZRP1PfMv6ds",
+    "provider": "youtube",
+    "startSeconds": 21,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+    "checkedAt": "2026-09-20T07:46:30.889Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/rodri-acl-2024/",
+    "url": "https://www.youtube.com/watch?v=HgrqAWPBSTk",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+    "checkedAt": "2026-09-20T07:46:36.620Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/dani-carvajal-knee-2024/",
+    "url": "https://www.youtube.com/watch?v=nBC7o7Iz0RM",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+    "checkedAt": "2026-09-20T07:46:41.863Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/jamal-musiala-ankle-2025/",
+    "url": "https://www.youtube.com/watch?v=AHzOcxBu0Fk",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+    "checkedAt": "2026-09-20T07:46:47.314Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/eder-militao-acl-2024/",
+    "url": "https://www.youtube.com/watch?v=mmngoDkXwxc",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+    "checkedAt": "2026-09-20T07:46:56.398Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/carolina-marin-acl-2024/",
+    "url": "https://www.youtube.com/watch?v=Hk46I0O_mjU",
+    "provider": "youtube",
+    "startSeconds": 12,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+    "checkedAt": "2026-09-20T07:47:01.705Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/jonas-vingegaard-crash-2024/",
+    "url": "https://www.youtube.com/watch?v=r58I6buCUA0",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+    "checkedAt": "2026-09-20T07:47:07.330Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/wout-van-aert-crash-2024/",
+    "url": "https://www.youtube.com/watch?v=x4QE1G_VXxw",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+    "checkedAt": "2026-09-20T07:47:12.472Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/ronald-acuna-acl-2024/",
+    "url": "https://www.youtube.com/watch?v=S2NsAbb8MNg",
+    "provider": "youtube",
+    "startSeconds": 14,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+    "checkedAt": "2026-09-20T07:47:17.781Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/novak-djokovic-meniscus-2024/",
+    "url": "https://www.youtube.com/watch?v=mF6QEVNcgD4",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+    "checkedAt": "2026-09-20T07:47:23.676Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/kristaps-porzingis-retinaculum-2024/",
+    "url": "https://www.youtube.com/watch?v=0xVAWNzYcKE",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+    "checkedAt": "2026-09-20T07:47:29.015Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/joel-embiid-meniscus-2024/",
+    "url": "https://www.youtube.com/watch?v=xI6yz7rFdrE",
+    "provider": "youtube",
+    "startSeconds": 35,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+    "checkedAt": "2026-09-20T07:47:34.361Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/connor-bedard-jaw-2024/",
+    "url": "https://www.youtube.com/watch?v=bLxN2RZYgds",
+    "provider": "youtube",
+    "startSeconds": 100,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+    "checkedAt": "2026-09-20T07:47:39.705Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/federica-brignone-leg-2025/",
+    "url": "https://www.youtube.com/watch?v=KTaglqZADPw",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+    "checkedAt": "2026-09-20T07:47:45.355Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/hubert-hurkacz-2024-wimbledon-knee/",
+    "url": "https://www.youtube.com/watch?v=tnpULHHcX0E",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:46:00.051Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/skye-blakely-2024-achilles/",
+    "url": "https://www.youtube.com/watch?v=o2rT5OH3gWE",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:46:05.942Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/marketa-vondrousova-2024-berlin-hip/",
+    "url": "https://www.youtube.com/watch?v=OxBEhPSt2ew",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:46:12.309Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/shilese-jones-2024-trials-acl/",
+    "url": "https://www.youtube.com/watch?v=zvgsEswg8KA",
+    "provider": "youtube",
+    "startSeconds": 18,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:46:17.857Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/carlos-alcaraz-2024-rio-ankle/",
+    "url": "https://www.youtube.com/watch?v=3SueGOiUU_A",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:46:23.207Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/grigor-dimitrov-2025-wimbledon-pectoral/",
+    "url": "https://www.youtube.com/watch?v=HWKf4g01YWY",
+    "provider": "youtube",
+    "startSeconds": 310,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:46:28.756Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/elaine-thompson-herah-2024-achilles/",
+    "url": "https://www.youtube.com/watch?v=WnWnsmfra-s",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:46:34.551Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/kevin-mayer-2024-paris-hamstring/",
+    "url": "https://www.youtube.com/watch?v=aSlYO9XfYaA",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:46:40.168Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/pv-sindhu-2023-french-open-knee/",
+    "url": "https://www.youtube.com/watch?v=igzfkBo1mpw",
+    "provider": "youtube",
+    "startSeconds": 1970,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:46:45.552Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/an-se-young-2023-asian-games-knee/",
+    "url": "https://www.youtube.com/watch?v=CBRNZrv7GNk",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:46:51.224Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/marco-schwarz-2023-bormio-knee/",
+    "url": "https://www.youtube.com/watch?v=n_VjzzwVVoo",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:46:56.729Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/alexis-pinturault-2024-wengen-knee/",
+    "url": "https://www.youtube.com/watch?v=pU5QTK8kSB4",
+    "provider": "youtube",
+    "startSeconds": 20,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:47:02.434Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/petra-vlhova-2024-jasna-knee/",
+    "url": "https://www.youtube.com/watch?v=jK2BphKTP6M",
+    "provider": "youtube",
+    "startSeconds": 14,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:47:07.896Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/wout-van-aert-2024-vuelta-knee/",
+    "url": "https://www.youtube.com/watch?v=-2-Chylawx8",
+    "provider": "youtube",
+    "startSeconds": 179,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:47:13.186Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/kane-williamson-2023-world-cup-thumb/",
+    "url": "https://www.youtube.com/watch?v=MtIaPgMih1c",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:47:20.154Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/hardik-pandya-2023-world-cup-ankle/",
+    "url": "https://www.youtube.com/watch?v=uQDKyD-Sk4w",
+    "provider": "youtube",
+    "startSeconds": 13,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:47:25.830Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/mikaela-shiffrin-2024-cortina-knee/",
+    "url": "https://www.youtube.com/watch?v=5cwk5Y0Iq1E",
+    "provider": "youtube",
+    "startSeconds": 18,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:47:31.485Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/jorge-martin-2025-qatar-chest/",
+    "url": "https://www.youtube.com/watch?v=dCMckwzPJog",
+    "provider": "youtube",
+    "startSeconds": 5,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:47:37.048Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/alex-rins-2024-assen-wrist/",
+    "url": "https://www.youtube.com/watch?v=FseibZgB1Pk",
+    "provider": "youtube",
+    "startSeconds": 10,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:47:42.620Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/antoine-dupont-2025-six-nations-knee/",
+    "url": "https://www.youtube.com/watch?v=GjRtEqAnRNc",
+    "provider": "youtube",
+    "startSeconds": 18,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:47:48.508Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/angel-reese-2024-wrist/",
+    "url": "https://www.youtube.com/watch?v=Qyzau4_9NNQ",
+    "provider": "youtube",
+    "startSeconds": 38,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:47:54.161Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/juju-watkins-2025-knee/",
+    "url": "https://www.youtube.com/watch?v=uw0GVL3nfN8",
+    "provider": "youtube",
+    "startSeconds": 5,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:47:59.446Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/trinity-rodman-2024-back/",
+    "url": "https://www.youtube.com/watch?v=4WeLwd2-YhA",
+    "provider": "youtube",
+    "startSeconds": 98,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:48:04.921Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/alex-greenwood-2024-knee/",
+    "url": "https://www.youtube.com/watch?v=DbKcBrl8AOg",
+    "provider": "youtube",
+    "startSeconds": 9,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:48:10.764Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/anthony-richardson-2023-shoulder/",
+    "url": "https://www.youtube.com/watch?v=5HwejN_19pM",
+    "provider": "youtube",
+    "startSeconds": 20,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:48:16.525Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/chris-godwin-2024-ankle/",
+    "url": "https://www.youtube.com/watch?v=Nawq7KDQAkc",
+    "provider": "youtube",
+    "startSeconds": 40,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:48:22.153Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/patrik-laine-2024-knee/",
+    "url": "https://www.youtube.com/watch?v=I4ll6KgWL6U",
+    "provider": "youtube",
+    "startSeconds": 39,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:48:28.902Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/adam-fantilli-2024-calf/",
+    "url": "https://www.youtube.com/watch?v=PS2qTdAV2Lc",
+    "provider": "youtube",
+    "startSeconds": 102,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:48:34.363Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/trevor-zegras-2024-ankle/",
+    "url": "https://www.youtube.com/watch?v=r6gMIBsHuD8",
+    "provider": "youtube",
+    "startSeconds": 48,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:48:46.382Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/tua-tagovailoa-2024-concussion/",
+    "url": "https://www.youtube.com/watch?v=mNbDeYmDUbg",
+    "provider": "youtube",
+    "startSeconds": 120,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+    "checkedAt": "2026-09-20T07:48:52.666Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/aaron-judge-2026-rib/",
+    "url": "https://www.youtube.com/watch?v=-M5v2OSrnEY",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-18-judge-rib/playback.preview.json",
+    "checkedAt": "2026-09-18T14:34:09.481Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/fernando-alonso-2016-rib/",
+    "url": "https://www.youtube.com/watch?v=HiLO6a9crD4",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-20-rib-fracture/playback.preview.json",
+    "checkedAt": "2026-09-20T07:46:15.145Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/drew-brees-2020-rib/",
+    "url": "https://www.youtube.com/watch?v=_jrPqJow81Q",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-20-rib-fracture/playback.preview.json",
+    "checkedAt": "2026-09-20T07:46:21.627Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/tua-tagovailoa-2021-rib/",
+    "url": "https://www.youtube.com/watch?v=JckTrmIPRK8",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-20-rib-fracture/playback.preview.json",
+    "checkedAt": "2026-09-20T07:46:28.291Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/jaylon-smith-2016-peroneal-nerve/",
+    "url": "https://www.youtube.com/watch?v=GCWl3Qk3fEQ",
+    "provider": "youtube",
+    "startSeconds": 60,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-nerve-four/playback.preview.json",
+    "checkedAt": "2026-09-21T04:24:08.573Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/zack-kelly-2023-ulnar-nerve/",
+    "url": "https://www.mlb.com/redsox/video/zack-kelly-leaves-with-injury",
+    "provider": "mlb",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-nerve-four/playback.preview.json",
+    "checkedAt": "2026-09-21T04:03:37.095Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/ryan-crouser-2024-ulnar-nerve/",
+    "url": "https://www.youtube.com/watch?v=Cuw96lZ9aYI",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-nerve-four/playback.preview.json",
+    "checkedAt": "2026-09-21T03:53:34.179Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/rob-horne-2018-brachial-plexus/",
+    "url": "https://www.youtube.com/watch?v=wgZZoWIR7rQ",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-nerve-four/playback.preview.json",
+    "checkedAt": "2026-09-21T03:54:48.799Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/nathan-florence-2023-t12-fracture/",
+    "url": "https://www.youtube.com/watch?v=lqlkP27TXvA",
+    "provider": "youtube",
+    "startSeconds": 450,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:49:44.508Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/billy-kemper-2020-pelvis-knee/",
+    "url": "https://www.youtube.com/watch?v=gGGMvPtjtZo",
+    "provider": "youtube",
+    "startSeconds": 740,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:49:44.564Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/missy-franklin-2016-shoulder/",
+    "url": "https://www.youtube.com/watch?v=WevF13bkLAM",
+    "provider": "youtube",
+    "startSeconds": 130,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:50:02.143Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/gabriel-medina-2025-pectoral-tendon/",
+    "url": "https://www.youtube.com/watch?v=z6KNabUBA88",
+    "provider": "youtube",
+    "startSeconds": 30,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:50:02.202Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/jj-watt-2019-pectoral/",
+    "url": "https://www.youtube.com/watch?v=D8492O0ciGY",
+    "provider": "youtube",
+    "startSeconds": 100,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:50:29.071Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/zoey-clark-2023-disc-nerve/",
+    "url": "https://www.youtube.com/watch?v=7_GZg1qIZLQ",
+    "provider": "youtube",
+    "startSeconds": 95,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:50:29.129Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/chloe-kim-2026-shoulder/",
+    "url": "https://www.youtube.com/watch?v=iRo0jHPhr2I",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:50:43.929Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/adam-peaty-2022-foot/",
+    "url": "https://www.youtube.com/watch?v=7oFg7YmMgtI",
+    "provider": "youtube",
+    "startSeconds": 690,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:50:51.308Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/kerri-walsh-jennings-2015-shoulder/",
+    "url": "https://www.youtube.com/watch?v=RyWuQ_RW6OA",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:50:58.783Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/rafael-nadal-2022-abdominal/",
+    "url": "https://www.youtube.com/watch?v=9vGOrRkqAK4",
+    "provider": "youtube",
+    "startSeconds": 15,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:51:08.385Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/jordyn-poulter-2022-knee/",
+    "url": "https://www.youtube.com/watch?v=xBgZKehMBDA",
+    "provider": "youtube",
+    "startSeconds": 15,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:51:14.898Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/paula-badosa-2023-spinal-stress-fracture/",
+    "url": "https://www.youtube.com/watch?v=X8X7Xg7UwD0",
+    "provider": "youtube",
+    "startSeconds": 250,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:51:21.236Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/rafael-nadal-2022-rib-stress-fracture/",
+    "url": "https://www.youtube.com/watch?v=vsc3sE7WwXk",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:51:27.646Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/jake-wightman-2023-foot/",
+    "url": "https://www.youtube.com/watch?v=IpYzdWZ80CE",
+    "provider": "youtube",
+    "startSeconds": 330,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:51:37.241Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/karsten-warholm-2022-hamstring/",
+    "url": "https://www.youtube.com/watch?v=z7x0dxJf3Zk",
+    "provider": "youtube",
+    "startSeconds": 15,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:51:44.279Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/molly-seidel-2024-patella/",
+    "url": "https://www.youtube.com/watch?v=F-KkglTfq3Y",
+    "provider": "youtube",
+    "startSeconds": 285,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:51:54.496Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/jamahal-hill-2021-elbow/",
+    "url": "https://www.youtube.com/watch?v=hvH4AnAD5eg",
+    "provider": "youtube",
+    "startSeconds": 63,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:52:10.085Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/antonio-rodrigo-nogueira-2011-arm/",
+    "url": "https://www.youtube.com/watch?v=XdGi7XI5Y_c",
+    "provider": "youtube",
+    "startSeconds": 120,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:52:17.267Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/tim-sylvia-2004-arm/",
+    "url": "https://www.youtube.com/watch?v=XEBZ9lSa8fM",
+    "provider": "youtube",
+    "startSeconds": 530,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:52:28.501Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/ronaldo-jacare-souza-2021-humerus/",
+    "url": "https://www.youtube.com/watch?v=rkiD3kLGIvU",
+    "provider": "youtube",
+    "startSeconds": 125,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:52:36.499Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/tom-aspinall-2022-knee/",
+    "url": "https://www.youtube.com/watch?v=sM8zlrTLroE",
+    "provider": "youtube",
+    "startSeconds": 925,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:52:43.625Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/jordan-burroughs-2013-ankle/",
+    "url": "https://www.youtube.com/watch?v=sBzHuGCZdTI",
+    "provider": "youtube",
+    "startSeconds": 25,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:52:59.191Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/jofra-archer-2020-elbow-stress-fracture/",
+    "url": "https://www.youtube.com/watch?v=VNo4qQaVNHg",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:53:09.587Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/manny-pacquiao-2015-shoulder/",
+    "url": "https://www.youtube.com/watch?v=l1dYgS6mqO0",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:53:17.131Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/sky-brown-2024-shoulder/",
+    "url": "https://www.youtube.com/watch?v=5qWBA8MuN_4",
+    "provider": "youtube",
+    "startSeconds": 90,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:53:27.515Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/tony-hawk-2022-femur/",
+    "url": "https://www.youtube.com/watch?v=Kvm-WXQ2w2Y",
+    "provider": "youtube",
+    "startSeconds": 250,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:53:35.001Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/helen-maroulis-2018-concussion/",
+    "url": "https://www.youtube.com/watch?v=6dGzpQHXQsM",
+    "provider": "youtube",
+    "startSeconds": 145,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:53:44.607Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/tiger-woods-2008-tibial-stress-fractures/",
+    "url": "https://www.youtube.com/watch?v=kb_9JHJu1oo",
+    "provider": "youtube",
+    "startSeconds": 1620,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:53:51.946Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/mirabai-chanu-2023-hip/",
+    "url": "https://www.youtube.com/watch?v=1d3pOYyLQkY",
+    "provider": "youtube",
+    "startSeconds": 20,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:54:01.532Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/annemiek-van-vleuten-2022-elbow/",
+    "url": "https://www.youtube.com/watch?v=T7-DAQANyho",
+    "provider": "youtube",
+    "startSeconds": 273,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:54:11.642Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/daniel-andre-tande-2021-clavicle/",
+    "url": "https://www.youtube.com/watch?v=jQ7oMEGPHXg",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:54:22.962Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/egan-bernal-2022-training-crash/",
+    "url": "https://www.youtube.com/watch?v=aXvM23KcbJw",
+    "provider": "youtube",
+    "startSeconds": 20,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:54:29.792Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/connor-fields-2021-brain-hemorrhage/",
+    "url": "https://www.youtube.com/watch?v=kti0XvZn0KQ",
+    "provider": "youtube",
+    "startSeconds": 1475,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:54:38.685Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/novak-djokovic-2017-elbow/",
+    "url": "https://www.youtube.com/watch?v=8H_0tJAwev8",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:54:45.849Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/kei-nishikori-2017-wrist/",
+    "url": "https://www.youtube.com/watch?v=_9PMTWdYX6I",
+    "provider": "youtube",
+    "startSeconds": 15,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:54:55.234Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/bianca-andreescu-2023-ankle/",
+    "url": "https://www.youtube.com/watch?v=4O87O9rHdoE",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:55:03.436Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/juan-martin-del-potro-2017-wrist-contusion/",
+    "url": "https://www.youtube.com/watch?v=_qp50gF67sQ",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:55:10.799Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/rafael-nadal-2016-wrist/",
+    "url": "https://www.youtube.com/watch?v=yH1WExdlI4Q",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:55:18.464Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/nikola-karabatic-2020-acl/",
+    "url": "https://www.youtube.com/watch?v=ApTbpxIuUJ8",
+    "provider": "youtube",
+    "startSeconds": 0,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:55:25.376Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/kelly-slater-2017-foot/",
+    "url": "https://www.youtube.com/watch?v=WhCalbwjLJg",
+    "provider": "youtube",
+    "startSeconds": 25,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:55:34.409Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/sally-fitzgibbons-2015-eardrum/",
+    "url": "https://www.youtube.com/watch?v=wTaCr8olPck",
+    "provider": "youtube",
+    "startSeconds": 45,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:55:44.310Z",
+    "stale": true
+  },
+  {
+    "path": "/videos/emma-raducanu-2022-2023-wrists/",
+    "url": "https://www.youtube.com/watch?v=ZQL-1NY5erY",
+    "provider": "youtube",
+    "startSeconds": 25,
+    "captionRequired": false,
+    "proofPath": "docs/reviews/2026-09-21-catalog-200/playback.preview.json",
+    "checkedAt": "2026-09-21T05:56:10.991Z",
+    "stale": true
+  }
+]

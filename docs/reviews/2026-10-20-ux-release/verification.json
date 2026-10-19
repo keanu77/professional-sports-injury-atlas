@@ -1,0 +1,81 @@
+{
+  "deploymentAuthorization": "請部署",
+  "playwrightAuthorization": "允許，使用 Playwright 完成驗證與部署",
+  "baseCommit": "3be60d27729f6a4f64260ac40590b123a5e46d98",
+  "implementationCommits": [
+    "822c2bcf6e9ff04cc52a1a75973d6f0d4c8b3ef1",
+    "b4fecdd124792e04d292dfd5e242d6be64906255"
+  ],
+  "previewOrigin": "https://700109c4.sports-injury-atlas.pages.dev",
+  "rollbackDeployment": "af901f14-2faf-4a6e-bd0f-30072e4fe2f4",
+  "inputTreeDigest": "ff4fd83655fa15b9494ee2f11910730189fc280cc3e950e3008960c5784040c5",
+  "typeCheck": {
+    "files": 411,
+    "errors": 0,
+    "warnings": 0,
+    "existingHints": 16
+  },
+  "unit": {
+    "files": 108,
+    "tests": 1577,
+    "result": "passed"
+  },
+  "publicE2E": {
+    "startTime": "2026-10-19T16:55:58.493Z",
+    "duration": 42473.283,
+    "expected": 210,
+    "skipped": 2,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "reviewE2E": {
+    "initial": {
+      "startTime": "2026-10-19T16:52:10.245Z",
+      "duration": 60078.162000000004,
+      "expected": 176,
+      "skipped": 210,
+      "unexpected": 2,
+      "flaky": 0
+    },
+    "isolatedRetries": {
+      "startTime": "2026-10-19T16:53:33.893Z",
+      "duration": 1599.442,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "finalPassed": 178,
+    "skippedPublicOnly": 210
+  },
+  "playback": {
+    "total": 200,
+    "played": 200,
+    "youtube": 199,
+    "mlb": 1,
+    "requiredCaptions": 5,
+    "captionTogglesPassed": 5,
+    "realMedia": true,
+    "telemetry": "POST /api/plays intercepted; media unmodified"
+  },
+  "publicArtifact": {
+    "pages": 273,
+    "coreCases": 7,
+    "observationVideos": 193,
+    "shareImages": 200,
+    "localLinks": 15112
+  },
+  "fixesDuringRelease": [
+    "Removed discovery button foreground/background transitions that briefly reduced theme-switch contrast",
+    "Moved return navigation outside the clinical article so medical notice remains first child",
+    "Scoped contribution status assertions and respected disabled font limit",
+    "Updated review tests to current historical-photo and sourced-return presentation"
+  ],
+  "limitations": [
+    "YouTube Shorts may serve different controls by browser session; actual caption-on evidence recorded for all five required videos",
+    "Python test server showed intermittent initialization failures; full public suite passed on Astro preview",
+    "Review suite had two mobile timeouts; both passed isolated reruns",
+    "No Safari/Firefox/VoiceOver or Lighthouse claim"
+  ],
+  "productionResult": "../../../output/deploy-20261020/release-result.json"
+}

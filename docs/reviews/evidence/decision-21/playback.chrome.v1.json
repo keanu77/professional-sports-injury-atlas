@@ -1,132 +1,127 @@
 [
   {
-    "caseId": "CASE-NBAANKLE-2023-004",
     "url": "https://www.youtube.com/watch?v=8TIJGIRP634",
-    "checkedAt": "2026-09-20T07:50:08.225Z",
+    "path": "/cases/anfernee-simons-ankle-sprain-2023/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
+    "startSeconds": 0,
+    "checkedAt": "2026-10-19T16:50:16.484Z",
     "status": "played",
-    "title": "Anfernee Simons helped to locker room after suffering leg injury | NBA on ESPN - YouTube",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "caseId": "CASE-NBAANKLE-2023-004",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/8TIJGIRP634?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 1.003179,
+      "time": 1.011741,
       "paused": false,
-      "readyState": 4,
-      "tracks": []
+      "readyState": 4
     },
+    "captionControls": ["字幕/CC 已關閉"],
     "captionToggleAfter": "字幕/CC 已開啟",
-    "captionControls": [
-      {
-        "label": "字幕/CC 已開啟",
-        "title": "字幕/CC 已開啟",
-        "disabled": null
-      }
-    ]
+    "elapsedSeconds": 3.026
   },
   {
-    "caseId": "CASE-NBAACHILLES-2019-005",
     "url": "https://www.youtube.com/watch?v=YcSOLHMsJYw",
-    "checkedAt": "2026-09-20T07:50:12.766Z",
+    "path": "/cases/kevin-durant-achilles-rupture-2019/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
+    "startSeconds": 0,
+    "checkedAt": "2026-10-19T16:50:16.487Z",
     "status": "played",
-    "title": "Kevin Durant suffers Achilles injury after hot start, exits Game 5 | 2019 NBA Finals Highlights - YouTube",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "caseId": "CASE-NBAACHILLES-2019-005",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/YcSOLHMsJYw?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 1.017383,
+      "time": 1.012473,
       "paused": false,
-      "readyState": 4,
-      "tracks": []
+      "readyState": 4
     },
+    "captionControls": ["字幕/CC 已關閉"],
     "captionToggleAfter": "字幕/CC 已開啟",
-    "captionControls": [
-      {
-        "label": "字幕/CC 已開啟",
-        "title": "字幕/CC 已開啟",
-        "disabled": null
-      }
-    ]
+    "elapsedSeconds": 3.027
   },
   {
-    "caseId": "CASE-NBAANKLE-2021-002",
     "url": "https://www.youtube.com/watch?v=FQAPZASQyX0",
-    "checkedAt": "2026-09-20T07:45:49.772Z",
+    "path": "/cases/kyrie-irving-ankle-sprain-2021/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
+    "startSeconds": 0,
+    "checkedAt": "2026-10-19T16:50:16.494Z",
     "status": "played",
-    "title": "Kyrie Irving sustains 2nd quarter ankle injury, out for rest of Game 3 #Shorts - YouTube",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "caseId": "CASE-NBAANKLE-2021-002",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/FQAPZASQyX0?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 1.039045,
+      "time": 1.020374,
       "paused": false,
-      "readyState": 4,
-      "tracks": []
+      "readyState": 4
     },
+    "captionControls": ["字幕/CC 已關閉"],
     "captionToggleAfter": "字幕/CC 已開啟",
-    "captionControls": [
-      {
-        "label": "字幕/CC 已開啟",
-        "title": "字幕/CC 已開啟",
-        "disabled": null
-      }
-    ]
+    "elapsedSeconds": 3.083
   },
   {
-    "caseId": "CASE-NBAANKLE-2023-008",
     "url": "https://www.youtube.com/watch?v=RDDGpqOvSdg",
-    "checkedAt": "2026-09-20T07:50:27.047Z",
+    "path": "/cases/lamelo-ball-ankle-sprain-2023/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
+    "startSeconds": 0,
+    "checkedAt": "2026-10-19T16:50:16.501Z",
     "status": "played",
-    "title": "LaMelo Ball was helped to the locker room after suffering an apparent injury - YouTube",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "caseId": "CASE-NBAANKLE-2023-008",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/RDDGpqOvSdg?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 1.006199,
+      "time": 1.007191,
       "paused": false,
-      "readyState": 4,
-      "tracks": []
+      "readyState": 4
     },
+    "captionControls": ["字幕/CC 已關閉"],
     "captionToggleAfter": "字幕/CC 已開啟",
-    "captionControls": [
-      {
-        "label": "字幕/CC 已開啟",
-        "title": "字幕/CC 已開啟",
-        "disabled": null
-      }
-    ]
+    "elapsedSeconds": 2.981
   },
   {
-    "caseId": "CASE-NBAANKLE-2025-002",
     "url": "https://www.youtube.com/watch?v=zZdndTqOexc",
-    "checkedAt": "2026-09-20T07:50:31.794Z",
+    "path": "/cases/lamelo-ball-ankle-sprain-2025/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
+    "startSeconds": 0,
+    "checkedAt": "2026-10-19T16:56:01.833Z",
     "status": "played",
-    "title": "LaMelo Ball would go into the locker room after noticeably limping on court. - YouTube",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "caseId": "CASE-NBAANKLE-2025-002",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/zZdndTqOexc?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 1.018303,
+      "time": 1.006186,
       "paused": false,
-      "readyState": 4,
-      "tracks": []
+      "readyState": 4
     },
+    "captionControls": ["字幕/CC 已關閉"],
     "captionToggleAfter": "字幕/CC 已開啟",
-    "captionControls": [
-      {
-        "label": "字幕/CC 已開啟",
-        "title": "字幕/CC 已開啟",
-        "disabled": null
-      }
-    ]
+    "elapsedSeconds": 2.689
   }
 ]

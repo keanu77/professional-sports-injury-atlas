@@ -2,135 +2,163 @@
   {
     "url": "https://www.youtube.com/watch?v=xSUKd03LJwE",
     "path": "/cases/jayson-tatum-achilles-rupture-2025/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-20T07:50:10.210Z",
+    "checkedAt": "2026-10-19T16:49:08.889Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/xSUKd03LJwE?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 1.017197,
+      "time": 1.013916,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["這部影片未提供字幕"]
+    "captionControls": ["這部影片未提供字幕"],
+    "elapsedSeconds": 3.152
   },
   {
     "url": "https://www.youtube.com/watch?v=azQpbyDBktk",
     "path": "/cases/tyrese-haliburton-achilles-rupture-2025/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-20T07:50:17.688Z",
+    "checkedAt": "2026-10-19T16:50:19.579Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/azQpbyDBktk?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 1.00559,
+      "time": 1.149951,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["這部影片未提供字幕"]
+    "captionControls": [],
+    "elapsedSeconds": 3.19
   },
   {
     "url": "https://www.youtube.com/watch?v=7tpaxZTTi2w",
     "path": "/videos/zverev-roland-garros-2022/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 1340,
-    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-20T07:50:24.417Z",
+    "checkedAt": "2026-10-19T16:50:19.595Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/7tpaxZTTi2w?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev&start=1340",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 1341.006988,
+      "time": 1341.016923,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["這部影片未提供字幕"]
+    "captionControls": ["這部影片未提供字幕"],
+    "elapsedSeconds": 3.005
   },
   {
     "url": "https://www.youtube.com/watch?v=t2G8KVzTwfw",
     "path": "/videos/derek-redmond-barcelona-1992/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 15,
-    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-20T07:50:31.874Z",
+    "checkedAt": "2026-10-19T16:50:19.609Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/t2G8KVzTwfw?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev&start=15",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 16.012987,
+      "time": 16.010086,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["這部影片未提供字幕"]
+    "captionControls": ["這部影片未提供字幕"],
+    "elapsedSeconds": 2.825
   },
   {
     "url": "https://www.youtube.com/watch?v=Bwa5Bf656As",
     "path": "/videos/kerri-strug-atlanta-1996/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-20T07:50:40.360Z",
+    "checkedAt": "2026-10-19T16:50:22.267Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/Bwa5Bf656As?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 1.014301,
+      "time": 1.009948,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["這部影片未提供字幕"]
+    "captionControls": ["這部影片未提供字幕"],
+    "elapsedSeconds": 2.745
   },
   {
     "url": "https://www.youtube.com/watch?v=nfpXC98FLuE",
     "path": "/videos/carolina-marin-indonesia-2019/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 35,
-    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-20T07:50:46.498Z",
+    "checkedAt": "2026-10-19T16:50:22.374Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/nfpXC98FLuE?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev&start=35",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 36.010477,
+      "time": 36.011107,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 4.062
   },
   {
     "url": "https://www.youtube.com/watch?v=4y-1D7jTW_4",
     "path": "/videos/julie-foucher-box-jump-2015/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 35,
-    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-20T07:50:52.952Z",
+    "checkedAt": "2026-10-19T16:49:23.017Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/4y-1D7jTW_4?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev&start=35",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 36.012137,
+      "time": 36.007618,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["這部影片未提供字幕"]
+    "captionControls": [],
+    "elapsedSeconds": 2.936
   },
   {
     "url": "https://www.youtube.com/watch?v=tEHP_6GA6ZA",
