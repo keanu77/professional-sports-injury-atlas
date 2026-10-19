@@ -20,6 +20,10 @@
     "sha256": "5632db1508162f728ecf9e0b0b70c15fbec858cbce86b92b04f35c01df88786f"
   },
   {
+    "path": "e2e/home-hero.spec.ts",
+    "sha256": "1277137dfe320b54911fd05b4eab18a4ca5a515f90a06ff5bea2a02e593141ac"
+  },
+  {
     "path": "e2e/layout-accessibility.spec.ts",
     "sha256": "ecd186a774721964e9adbcbaa6c98af8e64b87e2a73a27220d55d68e1d31cecb"
   },
@@ -38,6 +42,18 @@
   {
     "path": "e2e/video-player.spec.ts",
     "sha256": "62d9f95ff6ae6e37482d8f87e600fe0cc6aa7cffb0c7d0cd5d13770432b8ed8a"
+  },
+  {
+    "path": "scripts/verify-brand-assets.ts",
+    "sha256": "efce9862c9c42b9d6f1940137651aebf4e458f56bdb703a579cef437109e3bd1"
+  },
+  {
+    "path": "src/assets/hero/a-all-sport-burst-r2.png",
+    "sha256": "3ef27311614a5df79b2731d3ec3f9576c09a3275de53250ee2a0c8be94318cc2"
+  },
+  {
+    "path": "src/assets/hero/provenance.json",
+    "sha256": "d4fca397eb6dc6cbba05933d9f796d024da6f87b9d576ef842813507547710f4"
   },
   {
     "path": "src/components/atlas/CaseCard.astro",
@@ -81,7 +97,7 @@
   },
   {
     "path": "src/data/public-launch.v1.json",
-    "sha256": "f9e10059d678e69e22c65ef876d9fc5b9719273e31845dbee8dacc9d83c7feee"
+    "sha256": "e5792e068e2eb5bb788f149de2f96d58135466b4227080a9da6bf4668ad84fac"
   },
   {
     "path": "src/layouts/BaseLayout.astro",
@@ -125,7 +141,7 @@
   },
   {
     "path": "src/pages/index.astro",
-    "sha256": "0ad89ae4a5d1e22823e1e74d42de38cd3cf384ddef9f9ccea70f7fbb86b29398"
+    "sha256": "f00e7095680421ebe0ef806f350d08f54d8ef4492fba491af06eb60c369772e0"
   },
   {
     "path": "src/pages/injuries/[injury].astro",

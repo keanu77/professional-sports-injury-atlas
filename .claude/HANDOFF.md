@@ -7,7 +7,8 @@
 - 專案：`/Users/ethanstudio/Documents/Vibe coding/professional-sports injury`
 - 發布分支：`feat/atlas-ux-20261020`；基線 main `3be60d2`。
 - 實作提交 `822c2bc`；瀏覽器查核修正 `b4fecdd`。下一次提交綁定本輪播放與測試證據。
-- 本檔於正式部署前寫入；最終部署與 live 比對結果位於 `output/deploy-20261020/release-result.json`。讀到本檔後先讀該檔及 Cloudflare 最新 Production，不可將「部署前」文字當作最新狀態。
+- `6f6a5e9` 已推 main 並部署 `0236233f`，後續確認首頁五個 AVIF 同名網址命中舊 CDN bytes。部署憑證無 Cache Purge 權限，因此將原始 A hero 以相同 SHA-256 改名 `a-all-sport-burst-r2.png`，產生新的衍生圖網址後再次部署。
+- 本檔於最後部署前寫入；最終部署與 live 比對結果位於 `output/deploy-20261020/release-result.json`。讀到本檔後先讀該檔及 Cloudflare 最新 Production，不可將中間部署當作最新狀態。
 
 ## 已完成的變更
 

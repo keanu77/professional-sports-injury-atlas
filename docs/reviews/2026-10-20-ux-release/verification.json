@@ -8,7 +8,7 @@
   ],
   "previewOrigin": "https://700109c4.sports-injury-atlas.pages.dev",
   "rollbackDeployment": "af901f14-2faf-4a6e-bd0f-30072e4fe2f4",
-  "inputTreeDigest": "ff4fd83655fa15b9494ee2f11910730189fc280cc3e950e3008960c5784040c5",
+  "inputTreeDigest": "149d2cff6354966cd3ceb92160f0e0f758b5d5dcc754d013ed4e8abff7b46dcb",
   "typeCheck": {
     "files": 411,
     "errors": 0,
@@ -69,7 +69,8 @@
     "Removed discovery button foreground/background transitions that briefly reduced theme-switch contrast",
     "Moved return navigation outside the clinical article so medical notice remains first child",
     "Scoped contribution status assertions and respected disabled font limit",
-    "Updated review tests to current historical-photo and sourced-return presentation"
+    "Updated review tests to current historical-photo and sourced-return presentation",
+    "Versioned homepage source filename to r2 with identical source SHA-256 after five immutable AVIF URLs served stale CDN bytes; no encoder quality or visual changes"
   ],
   "limitations": [
     "YouTube Shorts may serve different controls by browser session; actual caption-on evidence recorded for all five required videos",
