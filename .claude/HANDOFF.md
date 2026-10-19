@@ -1,43 +1,57 @@
-# HANDOFF - 2026-10-20
+# HANDOFF - 2026-10-20 · Repository launch preparation
 
-## 最新授權與版本
+## 目前任務與授權
 
-使用者已授權「請部署」及「允許，使用 Playwright 完成驗證與部署」。不要再詢問部署或 Playwright 授權。
+使用者同意依 `repo-launch` skill 整理 repository，選擇自有程式碼採 MIT，並確認「沒有」可公開提及的實際使用場合與人數。不要寫使用人數、教學成效或虛構臨床故事。第三方影音與醫療編輯內容另有授權範圍。
 
-- 專案：`/Users/ethanstudio/Documents/Vibe coding/professional-sports injury`
-- 發布分支：`feat/atlas-ux-20261020`；基線 main `3be60d2`。
-- 實作提交 `822c2bc`；瀏覽器查核修正 `b4fecdd`。下一次提交綁定本輪播放與測試證據。
-- `6f6a5e9` 已推 main 並部署 `0236233f`，後續確認首頁五個 AVIF 同名網址命中舊 CDN bytes。部署憑證無 Cache Purge 權限，因此將原始 A hero 以相同 SHA-256 改名 `a-all-sport-burst-r2.png`，產生新的衍生圖網址後再次部署。
-- 本檔於最後部署前寫入；最終部署與 live 比對結果位於 `output/deploy-20261020/release-result.json`。讀到本檔後先讀該檔及 Cloudflare 最新 Production，不可將中間部署當作最新狀態。
+先前 Playwright 與網站部署已獲授權並完成；本次是 repository 發布準備，尚未公開 repository、合併 PR 或發布 release。不得把這些狀態混在一起。
 
-## 已完成的變更
+## GitHub 與交付
 
-共用分類搜尋、24 筆漸進載入與 no-JS 200 筆、共用卡片與真實 CTA、分類返回條件、長文目錄與來源展開、相關影片與理由、播放器錯誤焦點、字級上下限提示、200 張個別分享圖、首頁間距與舊傷種入口。原始 A hero 與社群位置保留，沒有新增臨床結論。
+- 分支：`feat/repo-launch-20261020`，來源 main `7adff42`。
+- Draft PR：<https://github.com/keanu77/professional-sports-injury-atlas/pull/3>。
+- Draft release：`v0.1.0`，<https://github.com/keanu77/professional-sports-injury-atlas/releases/tag/untagged-40d54e1d9fcdd1439985>，target 為 launch 分支；發布前需改到實際合併提交。
+- 最後實作／素材與驗證提交：`12e2eba`；本交接另以文件提交保存。沒有未完成的程式修改。
+- Repository 保留 Private；介紹、homepage 與 11 個 topics 已更新。
+- Release 的 5 個附件皆已上傳，遠端大小與 SHA-256 均與本機一致。
+- `docs/launch/verification-2026-10-20.md`：可公開的驗證範圍與待辦。
+- `docs/launch/2026-10-20-圖鑑分享草稿.md`：FB 與 X 草稿，未發布。
+- `docs/media/`：約 26 秒完整 MP4、13 秒短版、3.54 MB GIF、1280×640 PNG（212 KB）、manifest。
 
-本輪 E2E 修正：取消篩選按鈕前景／背景過渡以避免主題切換低對比；返回導覽移出 clinical article，醫療提醒重新維持首子元素。測試更新為目前已發布的內容／歷史照片展示，以及新字級與狀態欄位的精確定位。
+## 已完成與驗證
 
-## 驗證證據
+雙語 README、MIT LICENSE、LICENSE-SCOPE、第三方與字型授權、CONTRIBUTING、SECURITY、issue/PR templates、Ubuntu 24.04/Node 24.14.0 CI、CHANGELOG 與 release 草稿。
 
-- `docs/reviews/2026-10-20-ux-release/verification.json`、`playback.all.json`、`source-manifest.json`。
-- 型別 411 檔：0 errors、0 warnings、16 既有 hints。
-- 完整單元 108 檔／1,577 項通過；須使用 Node 24.14.0，且 provenance 測試要求乾淨提交。
-- 公開版桌面／手機 E2E：210 通過、2 個非 launch review 測試略過。
-- Review：176 首輪通過，2 個手機播放器逾時單獨重跑通過；210 個 public-only 按設計略過。
-- 200 支影片全部真實播放通過；5 支必要字幕全部可開啟。影片未替換，觀看統計 POST 被攔截，不污染正式數據。
-- 官方產物檢查：273 頁、7 核心／193 觀察、200 PNG、15,112 本機連結。
-- 沒有宣稱 Safari／Firefox／VoiceOver 或 Lighthouse 通過。
-- 舊實作記錄 `docs/reviews/2026-10-19-ux-implementation/` 是上一輪快照；以本輪 release 來源 manifest 為最後版本。
+乾淨 Ubuntu 首測發現 Linux 分享圖無法可靠載入既有 WOFF2。`src/lib/social/render.ts` 與 `render-worker.ts` 已改用 `fonts-noto-cjk` 的原生 TTC 與明確缺字型錯誤；macOS 保留既有字型。修正沒有更動醫療文案或公開發布門檻。
 
-## 部署與恢復
+- 完整候選 `0e8b401`：Ubuntu 型別 0 errors / 0 warnings / 16 hints；108 檔、1,577 項單元通過；review build 45 頁；review artifact 通過。
+- fresh npm ci 9 秒；首次含圖片轉檔 build 179 秒；最後快取 build 約 8 秒。README dev 指令已啟動，首頁 HTTP 200。
+- macOS 型別與六項分享圖測試通過；Ubuntu 中文 PNG 已實際檢視。
+- 候選之後只有素材、文件與交接變更；已比對 production input paths 與 `0e8b401` 無差異。
+- Chrome live 錄影：Acuna 搜尋、事件來源、返回搜尋條件通過，無 page errors，POST 全部攔截，未播放原始影片。
+- 388 個歷史 commits 的 Gitleaks 掃描有 3 個測試 fixture 字串；逐項確認不是正式憑證，沒有新增 scanner finding。不能把模式掃描說成完整隱私／授權保證。
+- 紀錄在 ignored `output/repo-launch-20261020/` 與 `/private/tmp/injury-launch-linux/`。不要將帳務錯誤細節或完整掃描資料推到公開文件。
 
-- 候選播放預覽：`https://700109c4.sports-injury-atlas.pages.dev`（822c2bc），alias `atlas-ux-20261020`。
-- 正式目標：`https://injury.sportsmedicine.tw/`，Cloudflare Pages 專案 `sports-injury-atlas`、branch `main`。
-- 原正式基線／回復點：`af901f14-2faf-4a6e-bd0f-30072e4fe2f4`（來源 `ac38ad9`）。最終 production 以 release-result.json 和 Cloudflare 重查為準。
-- `release:public` 仍要求乾淨提交、新 inputTreeDigest、原始來源／臨床綁定、七日內真實播放。沒有放寬任何門檻。
-- 既有設定及 D1 migrations 本輪未變更；不得不必要地重跑 migration。
-- Astro 7 preview 會背景常駐並讓啟動命令結束，Playwright 需使用已啟動的已知服務或適當 reuseExistingServer。不要把啟動命令結束當服務故障。
-- 保留隔離驗證副本 `/private/tmp/injury-ux-validation-20261019`；本機預覽服務／埠先查是否仍存在，不猜測。
+## 當前阻礙與下一步
 
-## 後續界線
+1. **確認 GitHub Actions 執行限制已解除，再重跑 PR #3**。最新 run `39297283266` / check `118212970770` 在任何 step 執行前失敗；官方註記為帳戶層級限制。細節保存在 ignored `output/repo-launch-20261020/ci-annotations.json`，不要以本機通過宣稱 GitHub CI 綠燈。
+2. **請使用者審閱 PR 與公開範圍**。repo-launch skill `/Users/ethanstudio/.claude/skills/repo-launch/SKILL.md` 明確要求使用者自行合併 PR。完整 Git 歷史含舊決策與審閱紀錄，尚未得到本次最終 Public 可見性確認。公開後啟用 private vulnerability reporting，再驗證回報入口。
+3. **合併後更新並發布 release**。將 draft v0.1.0 target 改到實際合併 SHA，CHANGELOG 改成實際發布日期。依 skill，Social preview 與社群發文由使用者手動完成；圖片在 `docs/media/social-preview-1280x640.png`，GitHub Settings → General → Social preview。
 
-原始 A hero SHA-256 `3ef27311614a5df79b2731d3ec3f9576c09a3275de53250ee2a0c8be94318cc2`；不恢復舊圖說。DOM 虛擬化、critical CSS、熱門 API 快取及最近收錄排序仍待真實量測／addedAt 資料。沒有宣稱 CWV／SEO 成效提升。精確 staging，禁止 git add -A。
+本輪沒有 GitHub Pages 設定；Cloudflare 正式網站就是 Live Demo。不要將含研究與審計資料的 `docs/` 當 Pages 輸出目錄。
+
+## 正式網站狀態與未變更的門檻
+
+前一輪 UX 部署已完成：main / production `7adff42ee523cbbf5fa5eb641a169be1ac427c53`；Cloudflare deployment `a5302076-7b2c-423a-9517-e7be7f7cc1c6`。證據在 `output/deploy-20261020/release-result.json`。公開站仍是 <https://injury.sportsmedicine.tw/>。
+
+前輪 200 支影片真實播放、5 支必要字幕、273 HTML、828 public files 比對的結果在 `docs/reviews/2026-10-20-ux-release/`。本次僅做錄影流程，沒有重新宣稱 200 支播放測試。
+
+本輪 Linux 修正會改變 production inputTreeDigest。沒有替新程式碼更新舊 approval、沒有 redeploy；後續若需部署，仍須正常收集並綁定新發布證據，不能只抄新 digest 讓 gate 通過。無 DB migration。
+
+原始 A hero 保持 `src/assets/hero/a-all-sport-burst-r2.png`，SHA-256 `3ef27311614a5df79b2731d3ec3f9576c09a3275de53250ee2a0c8be94318cc2`。不改回會命中舊 immutable CDN 的舊檔名。
+
+## 隔離環境
+
+OrbStack VM `injury-launch-20261020` 已停止並保留，2 CPU / 4 GB，Ubuntu 24.04 ARM64。只掛載 `/private/tmp/injury-launch-linux` 至 `/mnt/launch`，未掛載使用者 home。不要未經同意刪除 VM。驗證 repo 位於 VM `/home/ethanstudio/atlas-launch/repo`。
+
+精確 staging，禁止 `git add -A`。不重複詢問已批准的 MIT、無使用人數與 Playwright 授權。
