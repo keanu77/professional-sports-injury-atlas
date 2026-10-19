@@ -27,7 +27,9 @@ for (const [status, error, message] of [
     await page.goto("/contribute/");
     await page.getByLabel("補充說明（選填）").fill("請協助查核這個影片");
     await page.getByRole("button", { name: "送出", exact: true }).click();
-    await expect(page.getByRole("status")).toContainText(message);
+    await expect(page.locator("[data-contribution-status]")).toContainText(
+      message,
+    );
     await expect(page.getByLabel("補充說明（選填）")).toHaveValue(
       "請協助查核這個影片",
     );
@@ -86,7 +88,9 @@ test("prefills a correction, preserves text on failure, and allows retry", async
   );
   await page.getByLabel("需要修正的內容與建議").fill("建議重新確認回場日期");
   await page.getByRole("button", { name: "送出", exact: true }).click();
-  await expect(page.getByRole("status")).toContainText("目前無法確認訊息送出");
+  await expect(page.locator("[data-contribution-status]")).toContainText(
+    "目前無法確認訊息送出",
+  );
   await expect(page.getByLabel("需要修正的內容與建議")).toHaveValue(
     "建議重新確認回場日期",
   );
@@ -131,7 +135,7 @@ test("empty and whitespace-only submissions never load Turnstile or contact the 
     await page
       .locator("[data-contribution-form]")
       .evaluate((form: HTMLFormElement) => form.requestSubmit());
-    await expect(page.getByRole("status")).toContainText(
+    await expect(page.locator("[data-contribution-status]")).toContainText(
       "至少提供公開影片網址、補充說明或有效參考來源其中一項",
     );
     expect(challenges).toBe(0);
@@ -177,7 +181,7 @@ test("header and form reflow with large text and pass accessibility in both them
       await page.getByRole("button", { name: "深色模式" }).click();
     await expectNoAxeViolations(page);
   }
-  for (let i = 0; i < 4; i++)
+  for (let i = 0; i < 3; i++)
     await page.getByRole("button", { name: "放大字級" }).click();
   expect(
     await page.evaluate(
@@ -199,7 +203,9 @@ test("preserves input and distinguishes an HTML gateway failure from a disconnec
   await page.goto("/contribute/");
   await page.getByLabel("補充說明（選填）").fill("請確認寄信服務");
   await page.getByRole("button", { name: "送出", exact: true }).click();
-  await expect(page.getByRole("status")).toContainText("寄信服務暫時無法回應");
+  await expect(page.locator("[data-contribution-status]")).toContainText(
+    "寄信服務暫時無法回應",
+  );
   await expect(page.getByLabel("補充說明（選填）")).toHaveValue(
     "請確認寄信服務",
   );

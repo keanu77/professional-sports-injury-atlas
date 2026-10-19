@@ -2,20 +2,24 @@
   {
     "url": "https://www.youtube.com/watch?v=-M5v2OSrnEY",
     "path": "/videos/aaron-judge-2026-rib/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://895a4d88.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:34:09.481Z",
+    "checkedAt": "2026-10-19T16:52:23.726Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/-M5v2OSrnEY?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 1.016583,
+      "time": 1.139573,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已開啟"]
+    "captionControls": ["字幕/CC 已開啟"],
+    "elapsedSeconds": 3.455
   }
 ]

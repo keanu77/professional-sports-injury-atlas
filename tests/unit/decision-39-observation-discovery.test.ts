@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { BODY_PARTS } from "../../src/lib/videos/body-parts";
+import { BODY_PARTS, videosByBodyPart } from "../../src/lib/videos/body-parts";
 import { SITUATIONS, discoveryFor } from "../../src/lib/videos/discovery";
 import { allObservationClips } from "../../src/lib/videos/expansion";
 import {
@@ -82,7 +82,8 @@ describe("Decision 39 observation guidance", () => {
       );
       for (const candidate of related) {
         expect(
-          candidate.bodyPart === clip.bodyPart ||
+          videosByBodyPart([], [candidate])[0]?.code ===
+            videosByBodyPart([], [clip])[0]?.code ||
             discoveryFor(candidate.slug).situation ===
               discoveryFor(clip.slug).situation ||
             candidate.sport === clip.sport,

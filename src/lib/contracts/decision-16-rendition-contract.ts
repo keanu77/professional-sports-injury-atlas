@@ -68,7 +68,7 @@ export const DECISION_16_SHARP_DECODE_CONTRACT = Object.freeze({
   failOn: "warning",
   name: "sharp",
   output: "raw-pixels",
-  version: "0.35.3",
+  version: "0.35.5",
 });
 
 export const DECISION_16_ATTRIBUTION = Object.freeze({
@@ -423,7 +423,7 @@ function validateTransformation(
   if (
     transformation.actor !== "decision-16-rendition-generator" ||
     transformation.createdAt !== DECISION_16_RENDITION_CREATED_AT ||
-    !exact(transformation.tool, { name: "sharp", version: "0.35.3" }) ||
+    !exact(transformation.tool, { name: "sharp", version: "0.35.5" }) ||
     !exact(transformation.resizeOptions, {
       fit: "inside",
       kernel: "lanczos3",

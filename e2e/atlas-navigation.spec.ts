@@ -41,7 +41,7 @@ test.describe("atlas navigation", () => {
         page.getByRole("heading", { level: 2, name: "傷種教學總覽" }),
       ).toBeVisible();
       await expect(
-        page.locator("[data-static-listing] .case-list li"),
+        page.locator("[data-static-listing] .case-list > li"),
       ).toHaveCount(REVIEW_COUNTS[code]!);
     }
     await expectNoAxeViolations(page);

@@ -2,8 +2,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BodyPartNav from "../../components/atlas/BodyPartNav.astro";
-import CaseCard from "../../components/atlas/CaseCard.astro";
-import ObservationCard from "../../components/atlas/ObservationCard.astro";
+import VideoDiscovery from "../../components/atlas/VideoDiscovery.astro";
 import { videosByBodyPart } from "../../lib/videos/body-parts";
 import { observationClips } from "../../lib/videos/expansion";
 import { nerveInjuryGroup } from "../../lib/videos/nerve-categories";
@@ -39,36 +38,21 @@ const { group, groups, nerveCount } = Astro.props;
       {group.count} 支影片 · 點選影片看受傷與回場重點
     </p>
   </header>
-  <BodyPartNav parts={groups} current={group.code} nerveCount={nerveCount} />
-  <ol
-    class="part-grid"
-    aria-label={`${group.label}影片`}
-    data-body-part-videos={group.code}
-  >
-    {
-      group.cases.map((record, index) => (
-        <li data-featured-card>
-          <CaseCard
-            record={record}
-            showWorkflowBadge={false}
-            compact
-            priority={index === 0}
-          />
-        </li>
-      ))
-    }
-    {
-      group.clips.map((clip) => (
-        <li data-featured-card>
-          <ObservationCard clip={clip} />
-        </li>
-      ))
-    }
-  </ol>
+  <details class="other-categories">
+    <summary>切換部位</summary>
+    <BodyPartNav parts={groups} current={group.code} nerveCount={nerveCount} />
+  </details>
+  <VideoDiscovery
+    featured={group.cases}
+    clips={group.clips}
+    fixedBody={group.code}
+    scopeLabel={`${group.label}受傷影片`}
+    heading={`搜尋${group.label}影片`}
+  />
 </BaseLayout>
 <style>
   .part-heading {
-    margin: 1.5rem 0 2rem;
+    margin: 1.25rem 0 1rem;
   }
   h1 {
     font-family: var(--font-display);
@@ -76,22 +60,12 @@ const { group, groups, nerveCount } = Astro.props;
   .part-heading p {
     color: var(--color-ink-muted);
   }
-  .part-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  .other-categories {
+    margin-block: 1rem;
   }
-  @media (max-width: 60rem) {
-    .part-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-  @media (max-width: 40rem) {
-    .part-grid {
-      grid-template-columns: 1fr;
-    }
+  summary {
+    cursor: pointer;
+    min-height: 44px;
+    padding: 0.5rem;
   }
 </style>

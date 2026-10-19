@@ -1,0 +1,69 @@
+---
+interface Props {
+  title: string;
+  category?: { label: string; href: string };
+}
+const { title, category } = Astro.props;
+---
+
+<div class="detail-navigation">
+  <a class="catalog-return" href="/#videos-heading" data-catalog-return
+    >← 回到影片圖鑑</a
+  >
+  <nav aria-label="麵包屑">
+    <ol role="list">
+      <li><a href="/#videos-heading">影片圖鑑</a></li>
+      {
+        category && (
+          <li>
+            <a href={category.href}>{category.label}</a>
+          </li>
+        )
+      }
+      <li aria-current="page">{title}</li>
+    </ol>
+  </nav>
+</div>
+<script>
+  import { readCatalogReturn } from "../../lib/ui/catalog-return";
+  const returnHref = readCatalogReturn(window.location.pathname);
+  if (returnHref) {
+    for (const link of document.querySelectorAll<HTMLAnchorElement>(
+      "[data-catalog-return]",
+    )) {
+      link.href = returnHref;
+      link.textContent = "← 回到剛才的影片列表";
+    }
+  }
+</script>
+<style>
+  .detail-navigation {
+    display: grid;
+    gap: 0.75rem;
+    margin-block: 0.5rem 1.25rem;
+  }
+  .catalog-return {
+    width: fit-content;
+    padding-block: 0.5rem;
+    font-weight: 600;
+  }
+  ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.6rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: var(--text-meta);
+    color: var(--color-ink-muted);
+  }
+  li {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  li + li::before {
+    content: "/";
+    margin-inline-end: 0.6rem;
+    color: var(--color-ink-muted);
+  }
+</style>

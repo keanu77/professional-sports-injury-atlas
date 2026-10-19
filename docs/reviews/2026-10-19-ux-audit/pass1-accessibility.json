@@ -1,0 +1,252 @@
+{
+  "audit": "2026-10-19 accessibility / interaction pass 1",
+  "scope": "唯讀檢查樣式 token、全域與版型樣式、preferences、home-categories、video-discovery、video-player 及其模板；只新增本報告。",
+  "baseline": {
+    "localHead": "cc0b2fe",
+    "codeBaseline": "ac38ad9",
+    "verification": "git diff ac38ad9..HEAD --name-only 僅列 docs 與 HANDOFF；沒有 src 差異。正式站 SHA 由主 agent 驗證，本分工沒有自行操作瀏覽器。"
+  },
+  "evidenceLimits": [
+    "已閱讀相關 e2e 原始碼作為反證，沒有執行 Playwright、Axe 或 VoiceOver，不能宣稱本輪測試通過。",
+    "對比值由實際 tokens.css 的 light-dark OKLCH 值轉為 linear sRGB、超出 sRGB 範圍的通道截至 0–1，再用 WCAG 相對亮度計算；這與既有 color-contrast.test.ts 的算法一致。不是由截圖或抗鋸齒像素估計。",
+    "涉及縮放後焦點、載入更多後可視區與 VoiceOver 的項目明列為待互動驗證；不能將其列成已在正式站重現。",
+    "本檔為 pass 1 候選，仍需主 agent 的 pass 2 對抗驗證。"
+  ],
+  "findings": [
+    {
+      "id": "A11Y-01",
+      "priority": "P1",
+      "title": "觀察影片頁的鍵盤焦點內框對比不足",
+      "confidence": 0.98,
+      "status": "code-and-numeric-confirmed; browser-focus-inspection-pending",
+      "locations": [
+        "src/pages/videos/[slug].astro:500-518",
+        "src/styles/tokens.css:13-17",
+        "tests/unit/color-contrast.test.ts:215-220",
+        "e2e/layout-accessibility.spec.ts:52-76"
+      ],
+      "evidence": "clip-facade button 的背景是 --color-brand-primary；focus-visible 使用 3px --color-brand-primary-hover，outline-offset:-4px 將框線完全放在同色系按鈕內。亮色對比為 1.3464116131:1，暗色為 1.3425402806:1。此狀態沒有其它 focus 專用視覺提示。既有 nonTextPairs 只算 hover 色對 surface / raised，沒有算這個實際內框組合；e2e 只查首頁主題按鈕 outline 非零。",
+      "impact": "鍵盤使用者在載入 YouTube / MLB 影片前，難以看清目前停在哪個控制項。",
+      "recommendation": "保留內框以避免 overflow:hidden 裁切，但改用 --color-on-brand 或另設高對比 focus-on-fill token。",
+      "acceptance": [
+        "兩個主題下以 Tab 到載入按鈕，內框相對實際按鈕背景至少 3:1。",
+        "使用既有 --color-on-brand 時，預期對比亮色 5.0155:1、暗色 5.2986:1。",
+        "焦點指示在 320px、150% 站內字級與 reduced-motion 模式仍完整可見。"
+      ],
+      "reference": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html"
+    },
+    {
+      "id": "A11Y-02",
+      "priority": "P2",
+      "title": "觀察卡片的播放符號在深色模式偏淡",
+      "confidence": 0.98,
+      "status": "code-and-numeric-confirmed",
+      "locations": [
+        "src/components/atlas/ObservationCard.astro:31-35",
+        "src/components/atlas/ObservationCard.astro:81-92",
+        "src/components/atlas/CaseCard.astro:213-224",
+        "src/styles/tokens.css:18-18",
+        "src/styles/tokens.css:40-40",
+        "src/styles/tokens.css:70-70"
+      ],
+      "evidence": "ObservationCard 的播放符號使用 --color-brand-900，圓形背景是 --color-brand-accent。深色實際 sRGB 近似 #bce5f8 / #f47f46，對比 1.9691:1；亮色為 5.2485:1。CaseCard 的相同功能已正確使用 --color-on-warm。",
+      "impact": "預設深色主題下，兩類卡片的播放提示可辨識度不一致，低視力使用者較難辨認三角形。",
+      "recommendation": "ObservationCard 播放符號統一使用 --color-on-warm。",
+      "acceptance": [
+        "深色符號對橘底至少 3:1；採既有 --color-on-warm 預期 7.0278:1。",
+        "亮色與深色的 CaseCard、ObservationCard 播放符號視覺一致。"
+      ],
+      "qualification": "這裡已有相鄰文字連結，而且符號 aria-hidden；可確定是視覺改善，不把它單獨宣稱為無替代資訊的 WCAG 阻斷。"
+    },
+    {
+      "id": "A11Y-03",
+      "priority": "P2",
+      "title": "影片非同步失敗會無條件搶回焦點",
+      "confidence": 0.95,
+      "status": "code-confirmed; delayed-failure-interaction-pending",
+      "locations": [
+        "src/scripts/video-player.ts:64-82",
+        "src/scripts/video-player.ts:19-41",
+        "src/lib/video/youtube-api-adapter.ts:40-40",
+        "e2e/video-player.spec.ts:769-818"
+      ],
+      "evidence": "fail() 在任何有效 iframe 的失敗事件都呼叫 button.focus()，沒有確認 document.activeElement 是否仍在播放器。API 載入與 player ready 各有 8000ms timeout；使用者有時間移到原始連結、其它頁面區塊或另一個控制項。既有測試正確覆蓋 iframe 內失敗需回到重試鈕，但沒有使用者已離開播放器的情境。",
+      "impact": "使用者繼續鍵盤閱讀後，稍後到來的播放器錯誤會把位置移回頁面上方，並可能伴隨意外捲動。",
+      "recommendation": "在移除 iframe 前保存 activeElement；僅在焦點仍由該播放器持有時回到重試鈕。其它情況保留現有焦點，用已存在的 status / 錯誤文字通知。",
+      "acceptance": [
+        "焦點仍在 iframe 時出錯，回到可見重試按鈕。",
+        "載入期間已將焦點移至原始連結或其它控制項時出錯，原焦點與捲動位置不變。",
+        "原有 retry、stale-event 忽略與 source-link fallback 行為全部保留。"
+      ]
+    },
+    {
+      "id": "A11Y-04",
+      "priority": "P2",
+      "title": "載入影片的狀態只有螢幕閱讀器能讀到",
+      "confidence": 0.94,
+      "status": "code-confirmed; slow-network-visual-duration-unmeasured",
+      "locations": [
+        "src/scripts/video-player.ts:111-148",
+        "src/components/cases/CaseVideo.astro:277-285",
+        "src/pages/videos/[slug].astro:128-135",
+        "src/styles/global.css:166-176"
+      ],
+      "evidence": "點擊後立即隱藏 facade，插入 iframe；正在載入 / requested / ready 的狀態寫入 .sr-only 節點。程式已有完整載入狀態與逾時失敗處理，但 src 沒有以 data-video-state=loading 呈現可見載入文字或指示。遠端 iframe 自己可能提供載入畫面，但本站未保證這段等待的可見回饋。",
+      "impact": "慢速網路或第三方阻擋時，看得見畫面的使用者可能不清楚點擊有沒有生效。",
+      "recommendation": "讓同一份狀態在播放器下方顯示，或用保留尺寸的靜態載入占位與短文字；不必加入持續閃動或骨架動畫。",
+      "acceptance": [
+        "以延遲的第三方回應重現等待時，本站有可見的『正在載入』與原始連結。",
+        "成功後載入提示移除；失敗後既有錯誤與重試仍可見。",
+        "狀態只需宣告一次，避免可見節點與 sr-only live region 重複朗讀。"
+      ]
+    },
+    {
+      "id": "A11Y-05",
+      "priority": "P2",
+      "title": "字級步進器到上限或下限時沒有回饋",
+      "confidence": 0.99,
+      "status": "code-confirmed",
+      "locations": [
+        "src/scripts/preferences.ts:67-95",
+        "src/components/layout/FontScaleControl.astro:9-25",
+        "e2e/layout-accessibility.spec.ts:148-189"
+      ],
+      "evidence": "A− / A＋只有固定 aria-label；scale 被 clamp 在 0.875–1.5，但控制項從未設定 disabled / aria-disabled，也沒有當前百分比或狀態文字。既有 e2e 刻意多按 6 / 8 次驗證 clamp 與持久化，沒有要求界限回饋。",
+      "impact": "到達 150% 或 87.5% 後按鈕仍像可繼續操作，尤其無視覺使用者無法辨別是否有動作。",
+      "recommendation": "顯示或宣布當前字級，於上下限提供 disabled / aria-disabled 語意；如採 native disabled，處理好已聚焦按鈕變 disabled 的焦點行為。可將回復預設放入簡短字級選單。",
+      "acceptance": [
+        "每次變更可讀出當前比例；到上限或下限時能得知無法再變更。",
+        "重新整理恢復比例時，按鈕狀態同步正確。",
+        "維持 44px 觸控目標與 320px 版面；不要增加擠壓頁首的新常駐長文字。"
+      ],
+      "qualification": "已有 150% 站內調整、瀏覽器文字比例相乘與 320px e2e；沒有證據支持『不能放大文字』或『必須把本站控制提高到 200% 才合規』。"
+    },
+    {
+      "id": "A11Y-06",
+      "priority": "P2",
+      "title": "案例卡的行動文案看似連結但不可點擊",
+      "confidence": 0.99,
+      "status": "code-confirmed",
+      "locations": [
+        "src/components/atlas/CaseCard.astro:96-112",
+        "src/components/atlas/CaseCard.astro:162-166",
+        "src/components/cases/CaseCover.astro:112-132",
+        "src/components/cases/CaseCover.astro:189-194",
+        "src/components/atlas/ObservationCard.astro:56-60"
+      ],
+      "evidence": "compact CaseCard 的『觀看影片與回場重點 ↗』是 p.watch-label，使用品牌連結色，但沒有 href 或 click handler。media-action 的連結只覆蓋具有 position:relative 的 case-cover-media，並沒有覆蓋卡片文字。相鄰 ObservationCard 的『查看影片與解析 →』則是真正的 a。",
+      "impact": "手機使用者點擊最像行動入口的文案不會導航；同一列表兩種卡片的行為不一致。",
+      "recommendation": "把該文案改為同目的地的正常連結並保留清楚焦點，或移除行動語氣與箭頭，讓標題和圖片承擔入口。前者較符合目前卡片設計。",
+      "acceptance": [
+        "點擊／Enter 行動文案能到正確案例頁，或已不再呈現為行動入口。",
+        "如新增連結，觸控高度至少 44px，名稱能辨別該案例。",
+        "授權連結與影片類型標籤維持原來目的地，不使用覆蓋整卡的連結去擋住它們。"
+      ]
+    },
+    {
+      "id": "A11Y-07",
+      "priority": "P2",
+      "title": "無標記影片列表需確認 Safari 的清單語意",
+      "confidence": 0.86,
+      "status": "code-and-platform-documentation-confirmed; VoiceOver-runtime-unverified",
+      "locations": [
+        "src/components/atlas/VideoDiscovery.astro:212-217",
+        "src/components/atlas/VideoDiscovery.astro:475-482",
+        "src/components/atlas/VideoTypeTags.astro:16-16",
+        "src/components/atlas/VideoTypeTags.astro:31-37",
+        "e2e/helpers/a11y.ts:11-27"
+      ],
+      "evidence": "主要影片集合為 ol.video-grid，list-style:none，沒有 role=list，也不在 nav 內。VideoTypeTags 有相同條件。WebKit 官方說明這類無標記清單可能按版面用途處理；明確 role=list 可保留語意。現有 Axe 掃描不能證明 VoiceOver 清單導覽和項目數宣告可用。",
+      "impact": "Safari / VoiceOver 使用者可能失去『這是一組結果』及清單項目導覽資訊，需以實際版本確認。",
+      "recommendation": "先以 Safari / VoiceOver 或 accessibility tree 檢查結果清單；若語意消失，於需要表示資料集合的 ol / ul 明確加 role=list。導覽中的清單已有平台例外，不做全站無差別改寫。",
+      "acceptance": [
+        "首頁與影片類型頁的可見結果在 Safari / VoiceOver 被辨識為清單與清單項目。",
+        "篩選與載入更多後，隱藏卡片不列入可讀結果；不重複朗讀整批卡片。"
+      ],
+      "reference": "https://bugs.webkit.org/show_bug.cgi?id=170179"
+    },
+    {
+      "id": "A11Y-08",
+      "priority": "P2",
+      "title": "導覽跨斷點隱藏時缺少焦點交接",
+      "confidence": 0.8,
+      "status": "static-risk; browser-reproduction-required",
+      "locations": [
+        "src/scripts/preferences.ts:98-154",
+        "src/styles/layout.css:74-84",
+        "src/styles/layout.css:152-168",
+        "src/scripts/video-discovery.ts:106-125",
+        "e2e/home-hero.spec.ts:91-105"
+      ],
+      "evidence": "主選單僅處理 click / keydown，沒有 matchMedia change。桌面下 data-open=false 的 nav 仍顯示，縮到手機則 display:none；反向切到桌面時 nav-toggle 隱藏。這兩種狀態可能把當前焦點元素隱藏。影片進階篩選已實作 breakpoint 焦點交接，可作為現有模式。",
+      "impact": "鍵盤使用者旋轉平板、調整視窗或瀏覽器縮放跨過斷點時，可能失去可見焦點。尚未在瀏覽器重現，不列為已確認失敗。",
+      "recommendation": "只在當前焦點所屬元素因斷點而隱藏時，把焦點移至選單切換鈕或第一個可見導覽連結；一般 resize 不移動焦點。",
+      "acceptance": [
+        "桌面焦點在首頁連結時縮成手機，焦點停在可見的主選單控制。",
+        "手機焦點在主選單切換鈕時變桌面，焦點轉至可見的導航項目。",
+        "原本在內容區的焦點不受 resize 影響；Escape 與現有選單焦點循環仍正常。"
+      ]
+    },
+    {
+      "id": "A11Y-09",
+      "priority": "P2",
+      "title": "載入更多後的新焦點可能沒有出現在可視區",
+      "confidence": 0.72,
+      "status": "static-risk; browser-geometry-reproduction-required",
+      "locations": [
+        "src/scripts/video-discovery.ts:475-484",
+        "src/components/atlas/VideoDiscovery.astro:265-270",
+        "e2e/catalog-ux.spec.ts:50-54",
+        "e2e/catalog-ux.spec.ts:142-165"
+      ],
+      "evidence": "載入更多已正確尋找第一個新卡片並將焦點移至 h3 a，並非完全缺少焦點處理；但固定使用 preventScroll:true。新卡片標題位於圖片下方，當舊按鈕位於視窗底部或瀏覽器 scroll anchoring 改變位置時，新焦點可能落在可視區外。既有測試只驗數量／去重，未檢查焦點位置。",
+      "impact": "若重現，按鈕操作後雖已載入內容，鍵盤使用者看不到焦點所在，需額外捲動尋找。尚未取得實際 bounding box，不列為已確認失敗。",
+      "recommendation": "由主 agent 在桌面與手機實測第一個新標題是否可見；必要時只將新焦點 scrollIntoView({block:'nearest'})，並遵守 reduced-motion。",
+      "acceptance": [
+        "按鈕在 viewport 中段與底部時各測一次，第一次與最後一批載入後焦點都在可視區且不被 sticky header 擋住。",
+        "保留新舊卡片順序、24 筆批次與去重行為；避免跳到頁首。"
+      ]
+    }
+  ],
+  "retainedCapabilitiesAndRejectedFalsePositives": [
+    {
+      "claim": "網站缺少 reduced-motion",
+      "decision": "排除。global.css:152-163 已取消 smooth scrolling，並把所有 transition / animation 時長縮為 0.01ms；e2e/layout-accessibility.spec.ts:288-301 覆蓋捲動。"
+    },
+    {
+      "claim": "手機篩選收合後看不到條件，也不能清除",
+      "decision": "排除。video-discovery.ts:269-300 與 466-474 已處理 chips、已選數量、移除後焦點。e2e/home-hero.spec.ts:56-88 有直接反證。"
+    },
+    {
+      "claim": "播放器沒有失敗訊息、重試與原始連結",
+      "decision": "排除。video-player.ts:64-82、CaseVideo.astro:179-181/333-345，以及 e2e/video-player.spec.ts:769-818 已處理。A11Y-03 僅針對使用者已離開後的非同步搶焦點。"
+    },
+    {
+      "claim": "meta-en 的全域 opacity 造成低對比",
+      "decision": "排除。唯一實際用處 InjuryCard.astro:49 在 :161-163 把 opacity 覆寫回 1，不能只看全域 CSS。"
+    },
+    {
+      "claim": "深淺兩色主題的本文與品牌標籤普遍低對比",
+      "decision": "排除。實際計算：ink/surface 亮 18.1568、暗 14.5875；ink-muted/raised 亮 8.4352、暗 5.9888；brand-primary/brand-50 亮 4.6105、暗 5.2108。"
+    },
+    {
+      "claim": "篩選欄位淡邊框低於 3:1，所以全部 WCAG 失敗",
+      "decision": "不採此推論。brand-100/surface 確實只有亮 1.1453、暗 1.3619；hairline-strong/surface 為亮 1.8021、暗 2.0089，但已有可辨文字與原生箭頭。W3C 明確指出辨識控制項不一定必須靠整個邊框；未另證明功能辨識失敗，不列合規缺陷。"
+    },
+    {
+      "claim": "網站不支援 320px 與站內 150% 字級",
+      "decision": "排除泛稱。e2e/decision-39-ux.spec.ts:50-87 與 e2e/home-hero.spec.ts:108-134 已直接覆蓋；本分工未執行測試，不把測試原始碼當本輪實測成功。"
+    }
+  ],
+  "sources": [
+    "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+    "https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html",
+    "https://bugs.webkit.org/show_bug.cgi?id=170179"
+  ],
+  "counts": {
+    "P0": 0,
+    "P1": 1,
+    "P2": 8,
+    "browserGeometryCandidates": 2
+  }
+}

@@ -1,11 +1,11 @@
 import { z } from "astro/zod";
 import resourceData from "../../data/videos/observation-resources.v1.json";
-import { compareCodePoints } from "../contracts/canonical";
 import { BODY_PARTS, videosByBodyPart } from "./body-parts";
 import { discoveryFor, SITUATIONS } from "./discovery";
 import type { ObservationClip } from "./expansion";
 import { SPORTS, videosBySport } from "./sports";
 import { NERVE_CATEGORIES } from "./nerve-categories";
+import { relatedVideosFor } from "./related-videos";
 
 export interface ObservationResource {
   kind: "article" | "topic-overview";
@@ -55,34 +55,16 @@ export function observationResourceNoteFor(slug: string): string {
   return resourceRegistry.entries[slug]?.note ?? "";
 }
 
-function relatedPriority(
-  clip: ObservationClip,
-  candidate: ObservationClip,
-): number {
-  if (candidate.bodyPart === clip.bodyPart) return 0;
-  if (
-    discoveryFor(candidate.slug).situation === discoveryFor(clip.slug).situation
-  )
-    return 1;
-  if (candidate.sport === clip.sport) return 2;
-  return 3;
-}
-
 export function relatedObservationClips(
   clip: ObservationClip,
   clips: readonly ObservationClip[],
 ): ObservationClip[] {
-  return clips
-    .filter(
-      (candidate) =>
-        candidate.slug !== clip.slug && relatedPriority(clip, candidate) < 3,
-    )
-    .sort(
-      (left, right) =>
-        relatedPriority(clip, left) - relatedPriority(clip, right) ||
-        compareCodePoints(left.slug, right.slug),
-    )
-    .slice(0, 3);
+  return relatedVideosFor(
+    { kind: "observation", clip },
+    clips.map((candidate) => ({ kind: "observation", clip: candidate })),
+  ).flatMap((match) =>
+    match.video.kind === "observation" ? [match.video.clip] : [],
+  );
 }
 
 export interface ObservationCategoryLink {

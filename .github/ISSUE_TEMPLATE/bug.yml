@@ -1,0 +1,28 @@
+name: Bug report / 功能問題
+description: Report a reproducible interface or software problem.
+body:
+  - type: markdown
+    attributes:
+      value: "Security issue? Follow SECURITY.md instead. Do not include credentials or personal medical information."
+  - type: input
+    id: page
+    attributes:
+      label: Page URL or commit / 頁面或版本
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps, expected result, actual result / 重現步驟與結果
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Browser and device / 瀏覽器與裝置
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Redacted evidence / 去識別化截圖或紀錄

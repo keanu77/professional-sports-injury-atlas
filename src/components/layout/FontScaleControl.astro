@@ -12,6 +12,7 @@
     class="control-button"
     data-font-step="down"
     aria-label="縮小字級"
+    aria-describedby="font-scale-status"
   >
     A−
   </button>
@@ -20,7 +21,23 @@
     class="control-button"
     data-font-step="up"
     aria-label="放大字級"
+    aria-describedby="font-scale-status"
   >
     A＋
   </button>
+  <span
+    id="font-scale-status"
+    class="sr-only"
+    role="status"
+    aria-live="polite"
+    aria-atomic="true"
+    data-font-scale-status></span>
 </div>
+
+<style>
+  .control-button[aria-disabled="true"] {
+    color: var(--color-ink-muted);
+    background: var(--color-surface-muted);
+    cursor: default;
+  }
+</style>

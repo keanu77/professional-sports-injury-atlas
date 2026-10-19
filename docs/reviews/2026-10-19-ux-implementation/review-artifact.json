@@ -1,0 +1,46 @@
+{
+  "mode": "review",
+  "pages": 45,
+  "detailPages": 26,
+  "sharePNGs": 0,
+  "homepageSSRcards": 5,
+  "excludedFictionalFixtureLinks": [
+    [
+      "review/fixtures/league-listing/index.html",
+      "link",
+      "/cases/fictional-player-alpha-acl-2014/",
+      "missing"
+    ],
+    [
+      "review/fixtures/league-listing/index.html",
+      "link",
+      "/cases/fictional-player-alpha-acl-2014/",
+      "missing"
+    ],
+    [
+      "review/fixtures/league-listing/index.html",
+      "link",
+      "/cases/fictional-player-beta-ankle-sprain-2026/",
+      "missing"
+    ],
+    [
+      "review/fixtures/league-listing/index.html",
+      "link",
+      "/cases/fictional-player-beta-ankle-sprain-2026/",
+      "missing"
+    ],
+    [
+      "review/fixtures/case-detail/index.html",
+      "link",
+      "/cases/fictional-player-beta-ankle-sprain-2026/",
+      "missing"
+    ],
+    [
+      "review/fixtures/case-detail/index.html",
+      "link",
+      "/cases/fictional-player-beta-ankle-sprain-2026/",
+      "missing"
+    ]
+  ],
+  "issues": []
+}

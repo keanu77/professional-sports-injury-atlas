@@ -2,8 +2,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SportNav from "../../components/atlas/SportNav.astro";
-import CaseCard from "../../components/atlas/CaseCard.astro";
-import ObservationCard from "../../components/atlas/ObservationCard.astro";
+import VideoDiscovery from "../../components/atlas/VideoDiscovery.astro";
 import { videosBySport } from "../../lib/videos/sports";
 import { observationClips } from "../../lib/videos/expansion";
 import { hasPublicEmbed, videoFirstCases } from "../../lib/patient/featured";
@@ -36,36 +35,21 @@ const { group, groups } = Astro.props;
       {group.count} 支影片 · 點選影片看受傷與回場重點
     </p>
   </header>
-  <SportNav sports={groups} current={group.code} />
-  <ol
-    class="part-grid"
-    aria-label={`${group.label}影片`}
-    data-sport-videos={group.code}
-  >
-    {
-      group.cases.map((record, index) => (
-        <li data-featured-card>
-          <CaseCard
-            record={record}
-            showWorkflowBadge={false}
-            compact
-            priority={index === 0}
-          />
-        </li>
-      ))
-    }
-    {
-      group.clips.map((clip) => (
-        <li data-featured-card>
-          <ObservationCard clip={clip} />
-        </li>
-      ))
-    }
-  </ol>
+  <details class="other-categories">
+    <summary>切換運動項目</summary>
+    <SportNav sports={groups} current={group.code} />
+  </details>
+  <VideoDiscovery
+    featured={group.cases}
+    clips={group.clips}
+    fixedSport={group.code}
+    scopeLabel={`${group.label}受傷影片`}
+    heading={`搜尋${group.label}影片`}
+  />
 </BaseLayout>
 <style>
   .part-heading {
-    margin: 1.5rem 0 2rem;
+    margin: 1.25rem 0 1rem;
   }
   h1 {
     font-family: var(--font-display);
@@ -73,22 +57,12 @@ const { group, groups } = Astro.props;
   .part-heading p {
     color: var(--color-ink-muted);
   }
-  .part-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  .other-categories {
+    margin-block: 1rem;
   }
-  @media (max-width: 60rem) {
-    .part-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-  @media (max-width: 40rem) {
-    .part-grid {
-      grid-template-columns: 1fr;
-    }
+  summary {
+    cursor: pointer;
+    min-height: 44px;
+    padding: 0.5rem;
   }
 </style>

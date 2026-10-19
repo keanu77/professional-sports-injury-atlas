@@ -1,22 +1,27 @@
 ---
 import EventFollowUp from "../../components/cases/EventFollowUp.astro";
 import EventMechanism from "../../components/cases/EventMechanism.astro";
-import ObservationCard from "../../components/atlas/ObservationCard.astro";
+import { getCollection } from "astro:content";
+import DetailNavigation from "../../components/atlas/DetailNavigation.astro";
+import DetailContents from "../../components/atlas/DetailContents.astro";
+import DetailCategories from "../../components/atlas/DetailCategories.astro";
+import RelatedVideos from "../../components/atlas/RelatedVideos.astro";
 import VideoTypeTags from "../../components/atlas/VideoTypeTags.astro";
 import { eventUpdateFor } from "../../lib/videos/event-updates";
 import { externalUrlPresentationFor } from "../../lib/rights/nba-link-policy";
 import VideoThumbnail from "../../components/cases/VideoThumbnail.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import MedicalNotice from "../../components/notices/MedicalNotice.astro";
-import {
-  allObservationClips,
-  observationClips,
-} from "../../lib/videos/expansion";
+import { observationClips } from "../../lib/videos/expansion";
+import { permittedCasesForMode } from "../../lib/cases/pagination";
+import { resolveBuildMode } from "../../lib/governance/build-mode";
+import { hasPublicEmbed } from "../../lib/patient/featured";
+import { isLaunchEnabled } from "../../lib/patient/public-launch";
+import { relatedVideosFor } from "../../lib/videos/related-videos";
 import {
   observationCategoryLinks,
   observationResourcesFor,
   observationResourceNoteFor,
-  relatedObservationClips,
 } from "../../lib/videos/observation-guidance";
 import { discoveryFor } from "../../lib/videos/discovery";
 import { observationFootageLabel } from "../../lib/videos/observation-card";
@@ -46,8 +51,21 @@ const supplementalSources = clip.sources.filter(
 const showVideoSource = !citedUrls.has(clip.videoUrl);
 const resources = observationResourcesFor(clip.slug);
 const resourceNote = observationResourceNoteFor(clip.slug);
-const related = relatedObservationClips(clip, allObservationClips);
-const categoryLinks = observationCategoryLinks(clip);
+const buildMode = resolveBuildMode(process.env.ATLAS_BUILD_MODE);
+const permitted = permittedCasesForMode(
+  buildMode,
+  (await getCollection("cases")).map((entry) => entry.data),
+);
+const related = relatedVideosFor({ kind: "observation", clip }, [
+  ...permitted
+    .filter(hasPublicEmbed)
+    .map((record) => ({ kind: "case" as const, record })),
+  ...observationClips().map((candidate) => ({
+    kind: "observation" as const,
+    clip: candidate,
+  })),
+]);
+const categoryLinks = isLaunchEnabled() ? observationCategoryLinks(clip) : [];
 const isFeatured = discoveryFor(clip.slug).curatedRank !== undefined;
 const footageLabel = observationFootageLabel(clip);
 const provider = observationProviderFor(clip.provider);
@@ -56,13 +74,37 @@ const contentSegments = contentTypeSegmentsFor(clip.slug, clip.videoUrl);
 const watchUrl = new URL(clip.videoUrl);
 if (provider === "youtube" && clip.startSeconds > 0)
   watchUrl.searchParams.set("t", String(clip.startSeconds));
+const contents = [
+  { id: "clip-video", label: "觀看影片" },
+  { id: "clip-highlights", label: "影片文字重點" },
+  ...(eventUpdate?.mechanism
+    ? [
+        { id: `event-mechanism-${clip.slug}`, label: "受傷機轉重點" },
+        { id: "clip-follow-up", label: "傷勢與後續" },
+      ]
+    : []),
+  { id: "clip-guidance", label: "當下處理與警訊" },
+  ...(resources.length > 0
+    ? [{ id: "clip-resources", label: "延伸閱讀" }]
+    : []),
+  ...(eventUpdate?.mechanism
+    ? []
+    : [{ id: "clip-follow-up", label: "傷勢與後續" }]),
+  ...(showVideoSource || supplementalSources.length > 0
+    ? [{ id: "clip-references", label: "事件來源" }]
+    : []),
+  { id: "related-videos-heading", label: "繼續看" },
+];
 ---
 
 <BaseLayout
   title={`${clip.name}｜運動傷害影片圖鑑`}
   description={clip.observation}
 >
-  <a href="/#videos-heading">← 回到影片圖鑑</a>
+  <DetailNavigation
+    title={clip.name}
+    category={categoryLinks.find((link) => link.kind === "body-part")}
+  />
   <header class="clip-header">
     <p class="eyebrow">{clip.sport} / {clip.event}</p><h1>{clip.name}</h1><p
       data-footage-kind={clip.footageKind ?? "unknown"}
@@ -75,351 +117,364 @@ if (provider === "youtube" && clip.startSeconds > 0)
   </header>
   <div
     class:list={[
-      "clip-layout",
-      { "clip-layout-expanded": eventUpdate?.mechanism },
+      "detail-reading-layout",
+      { "detail-reading-expanded": eventUpdate?.mechanism },
     ]}
   >
-    <section
-      class="clip-player"
-      aria-label={`${clip.name}影片`}
-      data-video-embed
-      data-video-scope={clip.slug}
-      data-video-provider={provider}
-      data-video-id={provider === "youtube" ? clip.videoId : undefined}
-      data-video-key={provider === "mlb" ? clip.videoId : undefined}
-      data-video-start={clip.startSeconds}
-      data-video-title={`${clip.name}：${clip.event}`}
-    >
-      <div data-video-stage>
-        <div class="clip-facade" data-video-facade>
-          {
-            provider === "youtube" ? (
-              <VideoThumbnail videoId={clip.videoId} priority />
-            ) : (
-              <div class="provider-facade" data-observation-provider="mlb">
-                <span>MLB 官方影片</span>
-                <strong>
-                  {clip.name}：{clip.event}
-                </strong>
-                <p>播放器尚未載入，不會在此時連線至第三方影音服務。</p>
+    <DetailContents sections={contents} sidebar={!!eventUpdate?.mechanism} />
+    <div class="detail-reading-main">
+      <div
+        class:list={[
+          "clip-layout",
+          { "clip-layout-expanded": eventUpdate?.mechanism },
+        ]}
+      >
+        <section
+          class="clip-player"
+          id="clip-video"
+          aria-label={`${clip.name}影片`}
+          data-video-embed
+          data-video-scope={clip.slug}
+          data-video-provider={provider}
+          data-video-id={provider === "youtube" ? clip.videoId : undefined}
+          data-video-key={provider === "mlb" ? clip.videoId : undefined}
+          data-video-start={clip.startSeconds}
+          data-video-title={`${clip.name}：${clip.event}`}
+        >
+          <div data-video-stage>
+            <div class="clip-facade" data-video-facade>
+              {
+                provider === "youtube" ? (
+                  <VideoThumbnail videoId={clip.videoId} priority />
+                ) : (
+                  <div class="provider-facade" data-observation-provider="mlb">
+                    <span>MLB 官方影片</span>
+                    <strong>
+                      {clip.name}：{clip.event}
+                    </strong>
+                    <p>播放器尚未載入，不會在此時連線至第三方影音服務。</p>
+                  </div>
+                )
+              }
+              <button
+                type="button"
+                data-video-load
+                hidden
+                aria-describedby={`video-status-${clip.slug}`}
+              >
+                <span aria-hidden="true">▶</span> 載入 {
+                  provider === "mlb" ? "MLB 官方影片" : "YouTube 播放器"
+                }
+                <small
+                  >點擊後才會連線至 {
+                    provider === "mlb" ? "Streamable" : "YouTube"
+                  }</small
+                >
+              </button>
+            </div>
+            <p data-video-failure hidden>
+              播放器載入失敗，請使用下方原始影片連結。
+            </p>
+          </div>
+          <p
+            id={`video-status-${clip.slug}`}
+            class="video-status"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+            data-video-status
+          >
+          </p>
+          <p class="clip-source">
+            <a href={watchUrl.href} target="_blank" rel="noopener noreferrer"
+              >{clip.publisher} · 觀看原始影片 ↗</a
+            >
+          </p>
+          <p class="clip-meta">
+            {
+              clip.startSeconds > 0
+                ? `從 ${formatDurationLabel(clip.startSeconds)} 附近開始 · `
+                : ""
+            }{
+              clip.captionStatus === "available"
+                ? "字幕可由播放器開啟"
+                : clip.captionStatus === "unavailable"
+                  ? "原始影片未提供字幕"
+                  : "字幕請以播放器提供為準"
+            }
+          </p>
+        </section>
+        <div class="clip-notes">
+          <section
+            id="clip-highlights"
+            data-video-text-highlights
+            data-featured-observation={isFeatured ? "true" : undefined}
+          >
+            <h2>影片文字重點</h2>
+            <p>{clip.observation}</p>
+            <dl class="text-highlight-meta">
+              <div>
+                <dt>預設播放起點</dt>
+                <dd>{formatDurationLabel(clip.startSeconds)} 附近開始</dd>
               </div>
+              <div>
+                <dt>字幕狀態</dt>
+                <dd data-caption-status={clip.captionStatus}>
+                  {captionStatusLabel(clip.captionStatus)}
+                </dd>
+              </div>
+            </dl>
+            <p class="clip-meta">
+              文字重點協助理解關鍵畫面，不是完整逐字稿，也不是完整口述影像。
+            </p>
+          </section>
+          {
+            contentSegments.length > 0 && provider === "youtube" && (
+              <section data-video-type-segments>
+                <h2>已標記片段</h2>
+                <ul class="video-type-segments">
+                  {contentSegments.map((segment) => {
+                    const segmentUrl = new URL(clip.videoUrl);
+                    segmentUrl.searchParams.set(
+                      "t",
+                      String(segment.startSeconds),
+                    );
+                    const labels = segment.typeIds
+                      .map(
+                        (typeId) =>
+                          contentTypes.find((type) => type.id === typeId)
+                            ?.label,
+                      )
+                      .filter((label) => label !== undefined);
+                    return (
+                      <li>
+                        <a
+                          href={segmentUrl.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {formatDurationLabel(segment.startSeconds)}：
+                          {labels.join("、")}— 在 YouTube 開啟（新分頁）
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </section>
             )
           }
-          <button
-            type="button"
-            data-video-load
-            hidden
-            aria-describedby={`video-status-${clip.slug}`}
-          >
-            <span aria-hidden="true">▶</span> 載入 {
-              provider === "mlb" ? "MLB 官方影片" : "YouTube 播放器"
-            }
-            <small
-              >點擊後才會連線至 {
-                provider === "mlb" ? "Streamable" : "YouTube"
-              }</small
-            >
-          </button>
-        </div>
-        <p data-video-failure hidden>
-          播放器載入失敗，請使用下方原始影片連結。
-        </p>
-      </div>
-      <p
-        id={`video-status-${clip.slug}`}
-        class="sr-only"
-        role="status"
-        aria-live="polite"
-        aria-atomic="true"
-        data-video-status
-      >
-      </p>
-      <p class="clip-source">
-        <a href={watchUrl.href} target="_blank" rel="noopener noreferrer"
-          >{clip.publisher} · 觀看原始影片 ↗</a
-        >
-      </p>
-      <p class="clip-meta">
-        {
-          clip.startSeconds > 0
-            ? `從 ${formatDurationLabel(clip.startSeconds)} 附近開始 · `
-            : ""
-        }{
-          clip.captionStatus === "available"
-            ? "字幕可由播放器開啟"
-            : clip.captionStatus === "unavailable"
-              ? "原始影片未提供字幕"
-              : "字幕請以播放器提供為準"
-        }
-      </p>
-    </section>
-    <div class="clip-notes">
-      <section
-        data-video-text-highlights
-        data-featured-observation={isFeatured ? "true" : undefined}
-      >
-        <h2>影片文字重點</h2>
-        <p>{clip.observation}</p>
-        <dl class="text-highlight-meta">
-          <div>
-            <dt>預設播放起點</dt>
-            <dd>{formatDurationLabel(clip.startSeconds)} 附近開始</dd>
-          </div>
-          <div>
-            <dt>字幕狀態</dt>
-            <dd data-caption-status={clip.captionStatus}>
-              {captionStatusLabel(clip.captionStatus)}
-            </dd>
-          </div>
-        </dl>
-        <p class="clip-meta">
-          文字重點協助理解關鍵畫面，不是完整逐字稿，也不是完整口述影像。
-        </p>
-      </section>
-      {
-        contentSegments.length > 0 && provider === "youtube" && (
-          <section data-video-type-segments>
-            <h2>已標記片段</h2>
-            <ul class="video-type-segments">
-              {contentSegments.map((segment) => {
-                const segmentUrl = new URL(clip.videoUrl);
-                segmentUrl.searchParams.set("t", String(segment.startSeconds));
-                const labels = segment.typeIds
-                  .map(
-                    (typeId) =>
-                      contentTypes.find((type) => type.id === typeId)?.label,
-                  )
-                  .filter((label) => label !== undefined);
-                return (
-                  <li>
-                    <a
-                      href={segmentUrl.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {formatDurationLabel(segment.startSeconds)}：
-                      {labels.join("、")}— 在 YouTube 開啟（新分頁）
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </section>
-        )
-      }
-      {
-        eventUpdate?.mechanism && (
-          <>
-            <EventMechanism update={eventUpdate} />
-            <EventFollowUp update={eventUpdate} />
-          </>
-        )
-      }
-      {
-        clip.bodyPart === "頭頸部" ? (
-          <section data-general-guidance data-head-injury-care>
-            <h2>一般人參考：當下怎麼做</h2>
-            <p>頭部碰撞後若疑似腦震盪，立即停止運動並接受醫療評估。</p>
-            <p>
-              不得當天回場；後續回場由醫療人員評估。昏迷、叫不醒、抽搐或新出現手腳無力，立即叫救護車。
-            </p>
-            <p class="clip-meta">
-              處理參考：
-              <a
-                href="https://www.cdc.gov/heads-up/response/index.html"
-                target="_blank"
-                rel="noopener noreferrer"
+          {
+            eventUpdate?.mechanism && (
+              <>
+                <EventMechanism update={eventUpdate} />
+                <div id="clip-follow-up">
+                  <EventFollowUp update={eventUpdate} />
+                </div>
+              </>
+            )
+          }
+          {
+            clip.bodyPart === "頭頸部" ? (
+              <section
+                id="clip-guidance"
+                data-general-guidance
+                data-head-injury-care
               >
-                CDC HEADS UP
-              </a>{" "}
-              ·{" "}
-              <a
-                href="https://www.nhs.uk/conditions/head-injury-and-concussion/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                NHS 頭部受傷
-              </a>
-            </p>
-          </section>
-        ) : [
-            "aaron-judge-2026-rib",
-            "fernando-alonso-2016-rib",
-            "drew-brees-2020-rib",
-            "tua-tagovailoa-2021-rib",
-          ].includes(clip.slug) ? (
-          <section data-general-guidance data-rib-injury-care>
-            <h2>一般人參考：當下怎麼做</h2>
-            <h3>胸部傷害與呼吸警訊</h3>
-            <p>
-              先停止會加重疼痛的運動與搬重物，接受醫療評估。保持正常呼吸；不要因怕痛而一直憋氣或長時間不動。
-            </p>
-            <p>
-              嚴重事故後的胸部傷害、呼吸愈來愈困難、胸痛加劇或咳血，應立即急診就醫；情況危急時叫救護車。
-            </p>
-            <p class="clip-meta">
-              處理參考：
-              <a
-                href="https://www.nhs.uk/conditions/broken-or-bruised-ribs/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                NHS 肋骨骨折與挫傷
-              </a>
-              。
-              {clip.slug === "aaron-judge-2026-rib"
-                ? "一般肋骨傷害的衛教不能取代運動員第一肋骨疲勞性骨折的個別復健與回場評估。"
-                : "一般衛教不能取代個別胸部傷害的評估；運動員實際復賽時間不是一般人的回場期限。"}
-            </p>
-          </section>
-        ) : (
-          <section data-general-guidance>
-            <>
-              <h2>一般人參考：當下怎麼做</h2>
-              <p>
-                先停止運動、保護受傷部位，避免勉強移動或承重；不要自行扳正。疼痛加重或無法承重時儘速就醫。
-              </p>
-              <p>
-                若明顯變形、有深傷口或骨頭外露、麻木，或手腳末端冰冷變色，立即叫救護車。
-              </p>
-              <p class="clip-meta">
-                處理參考：NHS{" "}
-                <a
-                  href="https://www.nhs.uk/conditions/sprains-and-strains/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  扭拉傷
-                </a>{" "}
-                ·{" "}
-                <a
-                  href="https://www.nhs.uk/conditions/broken-leg/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  骨折
-                </a>{" "}
-                ·{" "}
-                <a
-                  href="https://www.nhs.uk/conditions/dislocated-shoulder/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  脫位
-                </a>
-              </p>
-            </>
-          </section>
-        )
-      }
-
-      {
-        resources.length > 0 && (
-          <section data-main-site-resources>
-            <h2>一般人參考：主站延伸閱讀</h2>
-            {resourceNote && <p>{resourceNote}</p>}
-            <ul>
-              {resources.map((resource) => (
-                <li>
-                  <span class="resource-kind">
-                    {resource.kind === "topic-overview" ? "主題總覽" : "文章"}
-                  </span>{" "}
+                <h2>一般人參考：當下怎麼做</h2>
+                <p>頭部碰撞後若疑似腦震盪，立即停止運動並接受醫療評估。</p>
+                <p>
+                  不得當天回場；後續回場由醫療人員評估。昏迷、叫不醒、抽搐或新出現手腳無力，立即叫救護車。
+                </p>
+                <p class="clip-meta">
+                  處理參考：
                   <a
-                    href={resource.url}
+                    href="https://www.cdc.gov/heads-up/response/index.html"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {resource.title} ↗
+                    CDC HEADS UP
+                  </a>{" "}
+                  ·{" "}
+                  <a
+                    href="https://www.nhs.uk/conditions/head-injury-and-concussion/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    NHS 頭部受傷
                   </a>
-                  {resource.note && (
-                    <p class="resource-note">{resource.note}</p>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </section>
-        )
-      }
+                </p>
+              </section>
+            ) : [
+                "aaron-judge-2026-rib",
+                "fernando-alonso-2016-rib",
+                "drew-brees-2020-rib",
+                "tua-tagovailoa-2021-rib",
+              ].includes(clip.slug) ? (
+              <section
+                id="clip-guidance"
+                data-general-guidance
+                data-rib-injury-care
+              >
+                <h2>一般人參考：當下怎麼做</h2>
+                <h3>胸部傷害與呼吸警訊</h3>
+                <p>
+                  先停止會加重疼痛的運動與搬重物，接受醫療評估。保持正常呼吸；不要因怕痛而一直憋氣或長時間不動。
+                </p>
+                <p>
+                  嚴重事故後的胸部傷害、呼吸愈來愈困難、胸痛加劇或咳血，應立即急診就醫；情況危急時叫救護車。
+                </p>
+                <p class="clip-meta">
+                  處理參考：
+                  <a
+                    href="https://www.nhs.uk/conditions/broken-or-bruised-ribs/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    NHS 肋骨骨折與挫傷
+                  </a>
+                  。
+                  {clip.slug === "aaron-judge-2026-rib"
+                    ? "一般肋骨傷害的衛教不能取代運動員第一肋骨疲勞性骨折的個別復健與回場評估。"
+                    : "一般衛教不能取代個別胸部傷害的評估；運動員實際復賽時間不是一般人的回場期限。"}
+                </p>
+              </section>
+            ) : (
+              <section id="clip-guidance" data-general-guidance>
+                <>
+                  <h2>一般人參考：當下怎麼做</h2>
+                  <p>
+                    先停止運動、保護受傷部位，避免勉強移動或承重；不要自行扳正。疼痛加重或無法承重時儘速就醫。
+                  </p>
+                  <p>
+                    若明顯變形、有深傷口或骨頭外露、麻木，或手腳末端冰冷變色，立即叫救護車。
+                  </p>
+                  <p class="clip-meta">
+                    處理參考：NHS{" "}
+                    <a
+                      href="https://www.nhs.uk/conditions/sprains-and-strains/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      扭拉傷
+                    </a>{" "}
+                    ·{" "}
+                    <a
+                      href="https://www.nhs.uk/conditions/broken-leg/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      骨折
+                    </a>{" "}
+                    ·{" "}
+                    <a
+                      href="https://www.nhs.uk/conditions/dislocated-shoulder/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      脫位
+                    </a>
+                  </p>
+                </>
+              </section>
+            )
+          }
 
+          {
+            resources.length > 0 && (
+              <section id="clip-resources" data-main-site-resources>
+                <h2>一般人參考：主站延伸閱讀</h2>
+                {resourceNote && <p>{resourceNote}</p>}
+                <ul>
+                  {resources.map((resource) => (
+                    <li>
+                      <span class="resource-kind">
+                        {resource.kind === "topic-overview"
+                          ? "主題總覽"
+                          : "文章"}
+                      </span>{" "}
+                      <a
+                        href={resource.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {resource.title} ↗
+                      </a>
+                      {resource.note && (
+                        <p class="resource-note">{resource.note}</p>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )
+          }
+
+          {
+            eventUpdate?.mechanism ? null : eventUpdate ? (
+              <div id="clip-follow-up">
+                <EventFollowUp update={eventUpdate} />
+              </div>
+            ) : (
+              <section id="clip-follow-up" data-actual-return>
+                <>
+                  <h2>後續回場</h2>
+                  <p>{clip.returnText}</p>
+                </>
+              </section>
+            )
+          }
+        </div>
+      </div>
       {
-        eventUpdate?.mechanism ? null : eventUpdate ? (
-          <EventFollowUp update={eventUpdate} />
-        ) : (
-          <section data-actual-return>
+        (showVideoSource || supplementalSources.length > 0) && (
+          <details class="clip-references" id="clip-references">
             <>
-              <h2>後續回場</h2>
-              <p>{clip.returnText}</p>
+              <summary>{eventUpdate ? "其他補充來源" : "事件來源"}</summary>
+              <ul>
+                {showVideoSource && (
+                  <li>
+                    <a
+                      href={clip.videoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {clip.publisher}：{clip.sourceTitle}
+                    </a>
+                  </li>
+                )}
+                {supplementalSources.map((s) => (
+                  <li>
+                    {externalUrlPresentationFor(s.url) === "clickable-link" ? (
+                      <a href={s.url} target="_blank" rel="noopener noreferrer">
+                        {s.title}
+                      </a>
+                    ) : (
+                      <>
+                        <span>{s.title}</span>
+                        <span style="display:block;overflow-wrap:anywhere">
+                          {s.url}
+                        </span>
+                      </>
+                    )}
+                  </li>
+                ))}
+              </ul>
+              <p>
+                本頁描述公開片段，不以畫面推定診斷、傷勢等級或個人恢復時間。
+              </p>
             </>
-          </section>
+          </details>
         )
       }
     </div>
   </div>
-  {
-    (showVideoSource || supplementalSources.length > 0) && (
-      <details class="clip-references">
-        <>
-          <summary>{eventUpdate ? "其他補充來源" : "事件來源"}</summary>
-          <ul>
-            {showVideoSource && (
-              <li>
-                <a
-                  href={clip.videoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {clip.publisher}：{clip.sourceTitle}
-                </a>
-              </li>
-            )}
-            {supplementalSources.map((s) => (
-              <li>
-                {externalUrlPresentationFor(s.url) === "clickable-link" ? (
-                  <a href={s.url} target="_blank" rel="noopener noreferrer">
-                    {s.title}
-                  </a>
-                ) : (
-                  <>
-                    <span>{s.title}</span>
-                    <span style="display:block;overflow-wrap:anywhere">
-                      {s.url}
-                    </span>
-                  </>
-                )}
-              </li>
-            ))}
-          </ul>
-          <p>本頁描述公開片段，不以畫面推定診斷、傷勢等級或個人恢復時間。</p>
-        </>
-      </details>
-    )
-  }
   <section
     class="related-observations"
     aria-labelledby="related-videos-heading"
   >
     <h2 id="related-videos-heading">相關影片</h2>
-    <ol class="related-video-grid" data-related-observations>
-      {
-        related.map((candidate) => (
-          <li data-related-slug={candidate.slug}>
-            <ObservationCard clip={candidate} />
-          </li>
-        ))
-      }
-    </ol>
-    <nav class="observation-categories" aria-label="這支影片的分類入口">
-      <h3>依分類繼續看</h3>
-      <ul>
-        {
-          categoryLinks.map((link) => (
-            <li data-category-kind={link.kind}>
-              <a href={link.href}>{link.label}</a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
+    <RelatedVideos matches={related} />
+    {categoryLinks.length > 0 && <DetailCategories links={categoryLinks} />}
   </section>
   <MedicalNotice variant="compact" />
 </BaseLayout>
@@ -428,6 +483,18 @@ if (provider === "youtube" && clip.startSeconds > 0)
   initCaseVideos();
 </script>
 <style>
+  .detail-reading-main {
+    min-width: 0;
+  }
+  @media (min-width: 72rem) {
+    .detail-reading-expanded {
+      display: grid;
+      grid-template-columns: 11rem minmax(0, 52rem);
+      gap: 2rem;
+      justify-content: center;
+      align-items: start;
+    }
+  }
   .clip-header {
     margin: 2rem 0;
   }
@@ -514,7 +581,7 @@ if (provider === "youtube" && clip.startSeconds > 0)
     display: none;
   }
   .clip-facade button:focus-visible {
-    outline: 3px solid var(--color-brand-primary-hover);
+    outline: 3px solid var(--color-on-brand);
     outline-offset: -4px;
   }
   .clip-facade small {
@@ -527,6 +594,18 @@ if (provider === "youtube" && clip.startSeconds > 0)
   .clip-meta {
     color: var(--color-ink-muted);
     font-size: 0.8rem;
+  }
+  .video-status {
+    margin: 0;
+  }
+  .video-status:not(:empty) {
+    margin: 0.75rem 0 0;
+    padding: 0.65rem 0.75rem;
+    border-inline-start: 3px solid var(--color-brand-primary);
+    background: var(--color-surface-muted);
+    color: var(--color-ink);
+    font-size: var(--text-meta);
+    line-height: 1.5;
   }
   .clip-source {
     font-size: 0.9rem;
@@ -590,37 +669,13 @@ if (provider === "youtube" && clip.startSeconds > 0)
   .related-observations {
     margin: 2rem 0;
   }
-  .related-observations > h2,
-  .observation-categories h3 {
+  .related-observations > h2 {
     font-family: var(--font-display);
-  }
-  .related-video-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-    padding: 0;
-    list-style: none;
-  }
-  .related-video-grid > li {
-    min-width: 0;
-  }
-  .observation-categories {
-    margin-block-start: 1.5rem;
-  }
-  .observation-categories ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem 1.25rem;
-    padding: 0;
-    list-style: none;
   }
   @media (max-width: 55rem) {
     .clip-layout {
       grid-template-columns: 1fr;
       gap: 1rem;
-    }
-    .related-video-grid {
-      grid-template-columns: 1fr;
     }
   }
   @media (max-width: 25rem) {

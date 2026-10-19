@@ -2,571 +2,691 @@
   {
     "url": "https://www.youtube.com/watch?v=3vHr8d5UQro",
     "path": "/videos/klay-thompson-2019-acl/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:30:55.433Z",
+    "checkedAt": "2026-10-19T16:49:51.474Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/3vHr8d5UQro?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 1.021229,
+      "time": 1.010813,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 3.215
   },
   {
     "url": "https://www.youtube.com/watch?v=5KlgfpqWCkY",
     "path": "/videos/kobe-bryant-2013-achilles/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 33,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:31:04.001Z",
+    "checkedAt": "2026-10-19T16:49:53.512Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/5KlgfpqWCkY?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev&start=33",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 34.017404,
+      "time": 34.01466,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 3.661
   },
   {
     "url": "https://www.youtube.com/watch?v=blW4L9jn6iM",
     "path": "/videos/gianmarco-tamberi-2016-ankle/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 10,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:31:12.040Z",
+    "checkedAt": "2026-10-19T16:49:53.778Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/blW4L9jn6iM?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev&start=10",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 11.019494,
+      "time": 11.015144,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 4.196
   },
   {
     "url": "https://www.youtube.com/watch?v=Gnhby06KpyQ",
     "path": "/videos/john-tavares-2021-concussion/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 92,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:31:20.037Z",
+    "checkedAt": "2026-10-19T16:49:54.406Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/Gnhby06KpyQ?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev&start=92",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 93.016975,
+      "time": 93.017582,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已開啟"]
+    "captionControls": ["字幕/CC 已開啟"],
+    "elapsedSeconds": 3.777
   },
   {
     "url": "https://www.youtube.com/watch?v=YfynOcvpQfY",
     "path": "/videos/neymar-2023-acl/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:31:29.461Z",
+    "checkedAt": "2026-10-19T16:50:29.948Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/YfynOcvpQfY?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 1.009813,
+      "time": 1.014667,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 2.811
   },
   {
     "url": "https://www.youtube.com/watch?v=Ue0VBshhwX8",
     "path": "/videos/cameron-brink-2024-acl/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:31:36.993Z",
+    "checkedAt": "2026-10-19T16:50:30.116Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/Ue0VBshhwX8?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 1.013771,
+      "time": 1.060907,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 2.765
   },
   {
     "url": "https://www.youtube.com/watch?v=A_Wnlt1RP38",
     "path": "/videos/steve-smith-2019-concussion/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 150,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:31:45.124Z",
+    "checkedAt": "2026-10-19T16:50:30.659Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/A_Wnlt1RP38?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev&start=150",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 151.019221,
+      "time": 151.016417,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["這部影片未提供字幕"]
+    "captionControls": ["這部影片未提供字幕"],
+    "elapsedSeconds": 3.807
   },
   {
     "url": "https://www.youtube.com/watch?v=5EclrKrPNvI",
     "path": "/videos/george-north-2015-concussion/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 119,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:31:53.298Z",
+    "checkedAt": "2026-10-19T16:50:31.211Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/5EclrKrPNvI?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev&start=119",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 120.015358,
+      "time": 120.003372,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 4.414
   },
   {
     "url": "https://www.youtube.com/watch?v=O3IZGzHla4U",
     "path": "/videos/mark-cavendish-2023-clavicle/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:32:01.538Z",
+    "checkedAt": "2026-10-19T16:50:32.798Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/O3IZGzHla4U?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 1.013582,
+      "time": 1.023482,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 3.778
   },
   {
     "url": "https://www.youtube.com/watch?v=jo1UlzDeY-o",
     "path": "/videos/derrick-rose-acl-2012/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:32:09.944Z",
+    "checkedAt": "2026-10-19T16:50:32.965Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/jo1UlzDeY-o?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 1.015575,
+      "time": 1.003811,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 3.499
   },
   {
     "url": "https://www.youtube.com/watch?v=LZTOTwvfli0",
     "path": "/videos/demarcus-cousins-achilles-2018/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 10,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:32:18.713Z",
+    "checkedAt": "2026-10-19T16:50:34.474Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/LZTOTwvfli0?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev&start=10",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 11.018268,
+      "time": 11.004143,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 3.35
   },
   {
     "url": "https://www.youtube.com/watch?v=qAZG23aT4IY",
     "path": "/videos/kristaps-porzingis-acl-2018/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 33,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:32:28.710Z",
+    "checkedAt": "2026-10-19T16:50:35.565Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/qAZG23aT4IY?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev&start=33",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 34.012476,
+      "time": 34.005893,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["這部影片未提供字幕"]
+    "captionControls": ["這部影片未提供字幕"],
+    "elapsedSeconds": 3.559
   },
   {
     "url": "https://www.youtube.com/watch?v=HhuFTOZt6TU",
     "path": "/videos/gordon-hayward-ankle-fracture-2017/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 22,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:32:38.294Z",
+    "checkedAt": "2026-10-19T16:50:36.402Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/HhuFTOZt6TU?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev&start=22",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 23.020749,
+      "time": 23.008005,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 3.156
   },
   {
     "url": "https://www.youtube.com/watch?v=yDDkfhw1Qd0",
     "path": "/videos/jamal-murray-acl-2021/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:32:46.302Z",
+    "checkedAt": "2026-10-19T16:50:36.619Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/yDDkfhw1Qd0?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 1.016729,
+      "time": 1.013705,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 3.312
   },
   {
     "url": "https://www.youtube.com/watch?v=Ajto95dt2yQ",
     "path": "/videos/dejounte-murray-acl-2018/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:32:54.380Z",
+    "checkedAt": "2026-10-19T16:50:37.914Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/Ajto95dt2yQ?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 1.010024,
+      "time": 1.012904,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["這部影片未提供字幕"]
+    "captionControls": ["這部影片未提供字幕"],
+    "elapsedSeconds": 3.29
   },
   {
     "url": "https://www.youtube.com/watch?v=iwZgXGRJENE",
     "path": "/videos/kawhi-leonard-acl-2021/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:33:01.453Z",
+    "checkedAt": "2026-10-19T16:50:39.136Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/iwZgXGRJENE?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 1.004139,
+      "time": 1.004556,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 3.551
   },
   {
     "url": "https://www.youtube.com/watch?v=Qoy8tUXsqQs",
     "path": "/videos/paul-george-leg-fracture-2014/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:33:09.233Z",
+    "checkedAt": "2026-10-19T16:50:39.558Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/Qoy8tUXsqQs?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 1.012233,
+      "time": 1.017305,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 2.942
   },
   {
     "url": "https://www.youtube.com/watch?v=g4CkpVi5Iqk",
     "path": "/videos/zach-lavine-acl-2017/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:33:17.128Z",
+    "checkedAt": "2026-10-19T16:50:39.918Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/g4CkpVi5Iqk?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 1.014951,
+      "time": 1.009491,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 3.869
   },
   {
     "url": "https://www.youtube.com/watch?v=cWGLRqXsT54",
     "path": "/videos/shaun-livingston-knee-2007/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:33:26.293Z",
+    "checkedAt": "2026-10-19T16:50:41.199Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/cWGLRqXsT54?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 1.005893,
+      "time": 1.019539,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 3.132
   },
   {
     "url": "https://www.youtube.com/watch?v=rPYOGKhlzag",
     "path": "/videos/alex-oxlade-chamberlain-2018/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:33:34.661Z",
+    "checkedAt": "2026-10-19T16:50:42.513Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/rPYOGKhlzag?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 1.017369,
+      "time": 1.110852,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 3.487
   },
   {
     "url": "https://www.youtube.com/watch?v=cgOemKqIzEE",
     "path": "/videos/david-beckham-2010/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:33:45.002Z",
+    "checkedAt": "2026-10-19T16:50:42.686Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/cgOemKqIzEE?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 1.015393,
+      "time": 1.0183,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["這部影片未提供字幕"]
+    "captionControls": ["這部影片未提供字幕"],
+    "elapsedSeconds": 3.19
   },
   {
     "url": "https://www.youtube.com/watch?v=wgPxm0RKJAk",
     "path": "/videos/cristiano-ronaldo-2016/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:33:52.601Z",
+    "checkedAt": "2026-10-19T16:50:43.745Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/wgPxm0RKJAk?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 1.008614,
+      "time": 1.003269,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 2.914
   },
   {
     "url": "https://www.youtube.com/watch?v=YXpvkHw2BP8",
     "path": "/videos/vivianne-miedema-2022/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:34:01.454Z",
+    "checkedAt": "2026-10-19T16:50:44.325Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/YXpvkHw2BP8?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 1.015953,
+      "time": 1.008459,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 2.995
   },
   {
     "url": "https://www.youtube.com/watch?v=4--y5nQdVE0",
     "path": "/videos/laurent-koscielny-2018/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 40,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:34:09.979Z",
+    "checkedAt": "2026-10-19T16:50:45.907Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/4--y5nQdVE0?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev&start=40",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 41.013595,
+      "time": 41.031872,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 3.456
   },
   {
     "url": "https://www.youtube.com/watch?v=8_d9ITG6Rmk",
     "path": "/videos/andre-gomes-2019/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:34:19.114Z",
+    "checkedAt": "2026-10-19T16:50:46.010Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/8_d9ITG6Rmk?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 1.017103,
+      "time": 1.009571,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["這部影片未提供字幕"]
+    "captionControls": ["這部影片未提供字幕"],
+    "elapsedSeconds": 3.209
   },
   {
     "url": "https://www.youtube.com/watch?v=Kxz1vhDq94Y",
     "path": "/videos/beth-mead-2022/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:34:28.134Z",
+    "checkedAt": "2026-10-19T16:50:46.661Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/Kxz1vhDq94Y?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 1.011175,
+      "time": 1.017509,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已開啟"],
+    "elapsedSeconds": 5.558
   },
   {
     "url": "https://www.youtube.com/watch?v=TygjH39bmfU",
     "path": "/videos/leah-williamson-2023/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:34:36.917Z",
+    "checkedAt": "2026-10-19T16:50:47.323Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/TygjH39bmfU?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 1.018938,
+      "time": 1.013243,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 3.478
   },
   {
     "url": "https://www.youtube.com/watch?v=AzVEucCufd0",
     "path": "/videos/zlatan-ibrahimovic-2017-knee/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:34:44.963Z",
+    "checkedAt": "2026-10-19T16:50:49.250Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/AzVEucCufd0?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 1.008236,
+      "time": 1.014153,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 3.189
   },
   {
     "url": "https://www.youtube.com/watch?v=qGFHQQWFhWg",
     "path": "/videos/victor-oladipo-2019-quadriceps/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:34:53.472Z",
+    "checkedAt": "2026-10-19T16:50:49.428Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/qGFHQQWFhWg?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 1.008402,
+      "time": 1.004437,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 3.328
   },
   {
     "url": "https://www.youtube.com/watch?v=pi0rz4KrTAM",
     "path": "/videos/serena-williams-2021-hamstring/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:35:01.812Z",
+    "checkedAt": "2026-10-19T16:50:50.791Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/pi0rz4KrTAM?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 1.013287,
+      "time": 1.011092,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["這部影片未提供字幕"]
+    "captionControls": ["這部影片未提供字幕"],
+    "elapsedSeconds": 4.307
   }
 ]

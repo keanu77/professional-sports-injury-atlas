@@ -163,3 +163,139 @@ test("loads all remaining batches without duplicates and restores pagination aft
   await page.getByRole("button", { name: "清除搜尋", exact: true }).click();
   await expect(page.locator(visible)).toHaveCount(24);
 });
+
+for (const category of [
+  { path: "/body-parts/knee/", fixed: "body", code: "knee", conflict: "ankle" },
+  {
+    path: "/sports/baseball/",
+    fixed: "sport",
+    code: "baseball",
+    conflict: "basketball",
+  },
+  {
+    path: "/situations/ball-impact/",
+    fixed: "situation",
+    code: "ball-impact",
+    conflict: "landing",
+  },
+  {
+    path: "/video-types/injury-moment/",
+    fixed: "type",
+    code: "injury-moment",
+    conflict: "expert-analysis",
+  },
+]) {
+  test(`searches and clears within fixed category ${category.path}`, async ({
+    page,
+  }) => {
+    await page.goto(
+      `${category.path}?${category.fixed}=${category.conflict}&mode=popular`,
+    );
+    const discovery = page.locator("[data-video-discovery]");
+    await expect(discovery).toHaveAttribute("data-discovery-ready", "true");
+    await expect(discovery).toHaveAttribute(
+      `data-fixed-${category.fixed}`,
+      category.code,
+    );
+    const allCards = page.locator("[data-discovery-slug]");
+    const total = await allCards.count();
+    expect(total).toBeGreaterThan(0);
+    await expect(page.locator(visible)).toHaveCount(Math.min(24, total));
+    expect(new URL(page.url()).pathname).toBe(category.path);
+    expect(new URL(page.url()).searchParams.has("mode")).toBe(false);
+    expect(new URL(page.url()).searchParams.has(category.fixed)).toBe(false);
+    if (category.fixed !== "situation") {
+      await expect(
+        page.locator(
+          `[data-${category.fixed === "type" ? "video-type" : category.fixed}-filter]`,
+        ),
+      ).toBeHidden();
+    }
+    await openFacets(page);
+    const filter = page.getByRole("combobox").first();
+    const option = await filter
+      .locator('option:not([value=""])')
+      .first()
+      .getAttribute("value");
+    await filter.selectOption(option!);
+    expect(await page.locator(visible).count()).toBeGreaterThan(0);
+    await page.getByRole("searchbox").fill("zzzz-no-such-player");
+    await expect(page.locator(visible)).toHaveCount(0);
+    await page.getByRole("button", { name: "清除搜尋", exact: true }).click();
+    expect(await page.locator(visible).count()).toBeGreaterThan(0);
+    await page.locator("[data-active-filters] button:visible").first().click();
+    await expect(page.locator(visible)).toHaveCount(Math.min(24, total));
+    expect(new URL(page.url()).pathname).toBe(category.path);
+    await expect(allCards).toHaveCount(total);
+    if (total > 24) {
+      await page
+        .getByRole("button", { name: "載入更多影片", exact: true })
+        .click();
+      await expect(page.locator(visible)).toHaveCount(Math.min(48, total));
+    }
+  });
+}
+
+test("leaves unchanged card results untouched and restores editorial order after changing modes", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await expect(page.locator(visible)).toHaveCount(24);
+  const original = await page
+    .locator(visible)
+    .evaluateAll((cards) =>
+      cards.map((card) => card.getAttribute("data-discovery-slug")),
+    );
+  await page.getByRole("button", { name: "精選影片", exact: true }).click();
+  await page.getByRole("button", { name: "全部影片", exact: true }).click();
+  expect(
+    await page
+      .locator(visible)
+      .evaluateAll((cards) =>
+        cards.map((card) => card.getAttribute("data-discovery-slug")),
+      ),
+  ).toEqual(original);
+  await page.getByRole("searchbox").fill("Brees");
+  await expect(page.locator(visible)).toHaveCount(1);
+  const mutations = await page.evaluate(() => {
+    const grid = document.querySelector("[data-discovery-grid]")!;
+    const observer = new MutationObserver(() => {});
+    observer.observe(grid, {
+      subtree: true,
+      childList: true,
+      attributes: true,
+      characterData: true,
+    });
+    const input = document.querySelector<HTMLInputElement>(
+      "[data-video-search-input]",
+    )!;
+    input.value = "brees";
+    input.dispatchEvent(new InputEvent("input", { bubbles: true }));
+    const records = observer.takeRecords().map((record) => record.type);
+    observer.disconnect();
+    return records;
+  });
+  expect(mutations).toEqual([]);
+  await expect(page.locator(visible)).toHaveCount(1);
+});
+
+test("returns from a detail page to the originating category and query", async ({
+  page,
+}) => {
+  await page.goto("/sports/american-football/?q=Brees");
+  await expect(page.locator(visible)).toHaveCount(1);
+  await page.locator(visible).locator("h3 a").click();
+  await expect(page).toHaveURL(/\/videos\/drew-brees-2020-rib\/$/u);
+  const back = page.locator("[data-catalog-return]").first();
+  await expect(back).toHaveAttribute(
+    "href",
+    "/sports/american-football/?q=Brees#videos-heading",
+  );
+  await back.click();
+  await expect(page.getByRole("searchbox")).toHaveValue("Brees");
+  await expect(page.locator("[data-video-discovery]")).toHaveAttribute(
+    "data-fixed-sport",
+    "american-football",
+  );
+  await expect(page.locator(visible)).toHaveCount(1);
+});

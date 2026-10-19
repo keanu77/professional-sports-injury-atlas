@@ -1,0 +1,19 @@
+name: Feature request / 改善建議
+description: Explain a user task that the site could support better.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Who is trying to do what? / 使用者與情境
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired behavior / 預期行為
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives or examples / 替代方式與範例

@@ -1,0 +1,217 @@
+[
+  {
+    "path": "e2e/catalog-ux.spec.ts",
+    "sha256": "61413af615435c4d13920e20efa584a41bd4c8dd2c34db13d0560b2068f4b2f6",
+    "candidateMatches": true
+  },
+  {
+    "path": "e2e/decision-39-ux.spec.ts",
+    "sha256": "1f2c255467927b4f0eb86270e60d7e1912bde15f1c7fdf078b613f38319608de",
+    "candidateMatches": true
+  },
+  {
+    "path": "e2e/detail-navigation.spec.ts",
+    "sha256": "5632db1508162f728ecf9e0b0b70c15fbec858cbce86b92b04f35c01df88786f",
+    "candidateMatches": true
+  },
+  {
+    "path": "e2e/layout-accessibility.spec.ts",
+    "sha256": "ecd186a774721964e9adbcbaa6c98af8e64b87e2a73a27220d55d68e1d31cecb",
+    "candidateMatches": true
+  },
+  {
+    "path": "e2e/no-javascript.spec.ts",
+    "sha256": "6fc50ca309b304ccfa316427b62016944283c52763a7dc941bb9b7846ccfaf65",
+    "candidateMatches": true
+  },
+  {
+    "path": "e2e/video-player.spec.ts",
+    "sha256": "62d9f95ff6ae6e37482d8f87e600fe0cc6aa7cffb0c7d0cd5d13770432b8ed8a",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/components/atlas/CaseCard.astro",
+    "sha256": "768bb81b7e2af2c1af9046ca44730f87ca2ce8dfdc5a55d813fb153d0dcd51c1",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/components/atlas/DetailCategories.astro",
+    "sha256": "477f62f0464b27d86252639977fffcb9ab9cb2a895b04b6cf14d4311cce68b44",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/components/atlas/DetailContents.astro",
+    "sha256": "b6aa1d340c005665a75a09674c8774bd04c6b35918b24bda1659b7127983b266",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/components/atlas/DetailNavigation.astro",
+    "sha256": "48e2e94ecb5c878118c65f692316b2c4bd40cab37ccf1029343044c0bb994dcd",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/components/atlas/ObservationCard.astro",
+    "sha256": "9a33e86466cefa87b560b2eddb5b71f4078b26d3d7639f2cb16d47eb411f0aa4",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/components/atlas/RelatedVideos.astro",
+    "sha256": "3fe01eac6f83ef452de4506d38c9e1e3d7f82a32badad0c4908e6a685b0c683f",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/components/atlas/VideoDiscovery.astro",
+    "sha256": "d025ce75f1a836e87c9fea5cb6a34927a1d270cf8a1cc352d6f7f821b6816a60",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/components/atlas/VideoTypeTags.astro",
+    "sha256": "ae169fc01d143f8a1c19e052a25244ef445430041c631b8c4a5b778f3b794195",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/components/cases/CaseVideo.astro",
+    "sha256": "11f18e42ee6f0d146c5568b08b5abd40555ccc8d8e969bdc3292e35a30757596",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/components/layout/FontScaleControl.astro",
+    "sha256": "a301d6a4a6f7fcd1511faed107012705597cf087e64d44274da14ddf042901f8",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/layouts/BaseLayout.astro",
+    "sha256": "7eb34493689f07e48cddbd0b23df156fde9994d3045e1a7c85479fabaa2945e3",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/lib/social/catalog.ts",
+    "sha256": "e8f7c8f45138cb6521ad9c70c71fb7f473884620481664d4a4d2b945f9a920f4",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/lib/social/render-worker.ts",
+    "sha256": "89463abb1d494d2dc68f73d1263334dbfe66db5df0030a838320d644099144a0",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/lib/social/render.ts",
+    "sha256": "53ce4d6dcda38b57bc400ddfdef3f326bdf61423f6c11e946dcd1ace58a69d0e",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/lib/ui/catalog-return.ts",
+    "sha256": "734a7368291c64939becfec8ce57961d9022f4b021bda0235ff7c1babbf47118",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/lib/videos/discovery-state.ts",
+    "sha256": "1a5accadf32cf290bf3f8740108106239071e3fd4a9de7fd920ae0749b12e6ca",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/lib/videos/observation-guidance.ts",
+    "sha256": "21784a7febe5220c9c945fe084b6beccaf2d4de65a2e16d93a9ee733d4c15913",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/lib/videos/related-videos.ts",
+    "sha256": "5c0055fd268631a25f8bfd950a522f056bef43981e921b7910787016788fcd74",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/pages/body-parts/[part].astro",
+    "sha256": "6331d276a0787b04a21747f72d581593d1f91abe5df532e04408079b71ea78d2",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/pages/cases/[slug].astro",
+    "sha256": "964a9a8870f1061226b7ae3af0e8b5afd7952601e32c8dd46320c4642302d2df",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/pages/index.astro",
+    "sha256": "0ad89ae4a5d1e22823e1e74d42de38cd3cf384ddef9f9ccea70f7fbb86b29398",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/pages/injuries/[injury].astro",
+    "sha256": "90b42dc8a425baa937d934943fb6767b05ceb6c509a37e29327fce84963d1efa",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/pages/situations/[situation].astro",
+    "sha256": "d723976a53ea23ae4e06e657761c7a79fc29a36c52e3f998b5e16217af38271a",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/pages/social/[kind]/[slug].png.ts",
+    "sha256": "411aa251441831d0d11476065382370a0bd2695de4d30488ea9d6ea8661bdca5",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/pages/sports/[sport].astro",
+    "sha256": "cf789b5fde82260489c38302ec6db51caf88ce79f6e532c204fab1dcc8504002",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/pages/video-types/[type].astro",
+    "sha256": "2a7308012a1627a82386ba87dcce5731e845d7dce38c8d7df9d6020e2ee828e0",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/pages/videos/[slug].astro",
+    "sha256": "ac38b6907e9a390222a54d8896e1e96680084bdea60a74c577e436b0df65da51",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/scripts/preferences.ts",
+    "sha256": "7cc3174466a4fbf610afd190766a92d94f3de04948b356d808e68167cfb906fa",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/scripts/video-discovery.ts",
+    "sha256": "71a19a6028935f324abd4489cb9c4f072f2918827fad940549b5f904dbff77bf",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/scripts/video-player.ts",
+    "sha256": "d230bf3338e2d6e5006156e1c9775ea22d593c5a36beb35af1ffb29f074072f4",
+    "candidateMatches": true
+  },
+  {
+    "path": "src/styles/catalog-card.css",
+    "sha256": "ccb03c2b74d7625d97569639a577a60b157c5fe62ad0c89d4993a8510f577beb",
+    "candidateMatches": true
+  },
+  {
+    "path": "tests/unit/catalog-return.test.ts",
+    "sha256": "bd36e0d214241c7be3617492f770a41fe8d5aeaa48bdb654f37ebfcd81b6e6a5",
+    "candidateMatches": true
+  },
+  {
+    "path": "tests/unit/color-contrast.test.ts",
+    "sha256": "9144bb132c64d675f69f2a81fa49d2ce95006bfd6f62b89f4b2affef9267b1b8",
+    "candidateMatches": true
+  },
+  {
+    "path": "tests/unit/decision-39-observation-discovery.test.ts",
+    "sha256": "0a9f1c03894bdebd6da466e449c0f580ec73bf6472697d81b743f09c6a6091d4",
+    "candidateMatches": true
+  },
+  {
+    "path": "tests/unit/discovery-state.test.ts",
+    "sha256": "c430901f3037f1246449475643bcf936066b67668f1f7cb4832c96c201e05768",
+    "candidateMatches": true
+  },
+  {
+    "path": "tests/unit/related-videos.test.ts",
+    "sha256": "1d8727dd098fa12c1cdc4ce728bfd9055b9a3e4f2c28cb743296fbf9d99fbf74",
+    "candidateMatches": true
+  },
+  {
+    "path": "tests/unit/social-share.test.ts",
+    "sha256": "10a5719a126155fbc935d1e68f66d30b134aa93ef527a2037a4d90ac72eed947",
+    "candidateMatches": true
+  }
+]

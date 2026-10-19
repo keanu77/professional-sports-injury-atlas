@@ -27,7 +27,7 @@ test("Selected artwork loads with a modern format and leaves discovery reachable
     (img: HTMLImageElement) => img.currentSrc,
   );
   expect(imageUrl).toMatch(/\.(avif|webp)$/);
-  expect(imageUrl).toContain("a-all-sport-burst.");
+  expect(imageUrl).toContain("a-all-sport-burst-r2.");
   const response = await page.request.get(imageUrl);
   expect(response.ok()).toBe(true);
   expect((await response.body()).length).toBeLessThan(400_000);

@@ -43,7 +43,8 @@ export function isApprovedSiteShareScreenshot(root: string): boolean {
 // See docs/reviews/2026-09-22-home-hero-image-swap/authorization.md.
 // This is a decorative generated scene, not a player photograph or case cover.
 // The exact generation prompt and selection are retained beside the asset.
-export const HOME_HERO_PATH = "src/assets/hero/a-all-sport-burst.png";
+// r2 versions encoded rendition URLs after an encoder update; source bytes are unchanged.
+export const HOME_HERO_PATH = "src/assets/hero/a-all-sport-burst-r2.png";
 const HOME_HERO_SHA256 =
   "3ef27311614a5df79b2731d3ec3f9576c09a3275de53250ee2a0c8be94318cc2";
 function isApprovedHomeHero(root: string): boolean {

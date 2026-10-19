@@ -356,10 +356,11 @@ test.describe("registered player covers", () => {
     await expect(hero.locator("picture img")).toBeVisible();
   });
 
-  test("the central route renders all current photo titles, notices, exact links, changes, and license buckets", async ({
+  test("the historical credits retain photo titles, notices, exact links, changes, and license buckets", async ({
     page,
   }) => {
     await page.goto("/credits-notices/");
+    await page.locator(".historical-credits > summary").click();
     const rows = page.locator("[data-asset-credit-row][id]");
     await expect(rows).toHaveCount(21);
 
@@ -539,26 +540,26 @@ test.describe("registered player covers", () => {
         "https://creativecommons.org/licenses/by-sa/4.0",
       );
     }
-    await expect(page.locator("main")).toContainText(
-      "每張照片均依逐檔證據標示實際來源事件",
-    );
+    await expect(page.locator("main")).toContainText("目前影片封面已改用");
     for (const marker of INTERNAL_OWNER_RISK_MARKERS) {
       await expect(page.locator("main")).not.toContainText(marker);
     }
     await expectNoAxeViolations(page);
   });
 
-  test("the reader-facing photo policy states v8 eligibility and retained rights limits", async ({
+  test("the current image policy distinguishes thumbnails from historical photo licenses", async ({
     page,
   }) => {
-    await page.goto("/source-policy/");
-    const photoPolicy = page.locator('[aria-labelledby="photo-heading"]');
-    await expect(photoPolicy).toContainText("明示 CC BY、CC BY-SA、CC0");
-    await expect(photoPolicy).toContainText("公有領域／美國政府作品標示");
-    await expect(photoPolicy).toContainText("授權不明");
-    await expect(photoPolicy).toContainText("照片事件不同於案例的受傷事件");
-    await expect(photoPolicy).toContainText("不得合進 OG、社群圖、案例卡");
-    await expect(photoPolicy).toContainText("不以拍攝場合、攝影者身分");
+    await page.goto("/credits-notices/");
+    const photoPolicy = page.locator("main");
+    await expect(photoPolicy).toContainText(
+      "影片封面使用該支 YouTube 影片的預設縮圖",
+    );
+    await expect(photoPolicy).toContainText("未必是受傷瞬間");
+    await expect(photoPolicy).toContainText("不能當作選手實際受傷影像");
+    await expect(photoPolicy).toContainText(
+      "這些照片的授權不適用於影片或 YouTube 縮圖",
+    );
     for (const marker of INTERNAL_OWNER_RISK_MARKERS) {
       await expect(photoPolicy).not.toContainText(marker);
     }

@@ -88,7 +88,7 @@ function validRecord(): Decision16RenditionRecord {
           withoutEnlargement: true,
         },
         selectedQuality: 95,
-        tool: { name: "sharp", version: "0.35.3" },
+        tool: { name: "sharp", version: "0.35.5" },
       },
     },
     nonClearanceStatement: DECISION_15_NON_CLEARANCE_STATEMENT,

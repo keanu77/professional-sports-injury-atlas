@@ -1,65 +1,57 @@
-# HANDOFF - 2026-09-22 19:13 JST
+# HANDOFF - 2026-10-20 · Repository launch preparation
 
-## 進度
+## 目前任務與授權
 
-**目前任務全部完成並上線，無待辦開發或部署。** 最新設計採使用者附的原始 A 圖 `a-all-sport-burst.png`；已刪除「AI 合成情境圖 · 非實際賽事畫面」及圖說樣式。不要恢復先前 A2 圖或圖說。
+使用者同意依 `repo-launch` skill 整理 repository，選擇自有程式碼採 MIT，並確認「沒有」可公開提及的實際使用場合與人數。不要寫使用人數、教學成效或虛構臨床故事。第三方影音與醫療編輯內容另有授權範圍。
 
-- 最新發布證據 commit：`021970d2ce517d5ec006ed749104fae56ea72de9` — `docs: record verified homepage image replacement`；其後為交接文件提交，最新 HEAD 請以 `git log -1` 核對。
-- 正式網站來源 commit：`ac38ad98a60279f9bc9598c789cd9b0c9d1aa895`；之後只補驗證文件。
-- 整理交接前已核對 origin/main 與本機 HEAD 同為 `021970d2ce517d5ec006ed749104fae56ea72de9`。
-- 使用者既定要求：「社群追蹤入口一樣在前面」。維持目前最前方入口。
+先前 Playwright 與網站部署已獲授權並完成。使用者於本輪回覆「我改公開了」；已由 GitHub API 與無登入 HTTP 確認 Public。PR 尚未合併、release 尚未發布，勿把可見性變更當成合併或 release 完成。
 
-## 本次 Session 完成
+## GitHub 與交付
 
-- [x] 首頁多運動主視覺、手機適配與搜尋區精簡（起始提交 `4fc85b0`，完整版本 `710a721`）。
-- [x] 依後續指示換成附圖原始 A，並移除圖說（`ac38ad9`）；圖片來源紀錄與精確 SHA-256 准入規則同步更新。
-- [x] 桌機／手機驗證、發布及正式資源核對完成，證據提交 `021970d`。
-- [x] 保留 200 支不同事件、8 類多標籤、30 種運動、14 個部位、每批 24 支；搜尋／類型／運動／部位、網址／歷史、IME、熱門資料競態保護與 no-JS 靜態卡片均保留。
+- 分支：`feat/repo-launch-20261020`，來源 main `7adff42`。
+- Draft PR：<https://github.com/keanu77/professional-sports-injury-atlas/pull/3>。
+- Draft release：`v0.1.0`，<https://github.com/keanu77/professional-sports-injury-atlas/releases/tag/untagged-40d54e1d9fcdd1439985>，target 為 launch 分支；發布前需改到實際合併提交。
+- 最後實作／素材與驗證提交：`12e2eba`；本交接另以文件提交保存。沒有未完成的程式修改。
+- Repository 現為 Public；介紹、homepage 與 11 個 topics 已更新，私人漏洞回報已啟用。main 仍未包含新版 README 與 MIT 文件，需先完成 PR #3 合併。
+- Release 的 5 個附件皆已上傳，遠端大小與 SHA-256 均與本機一致。
+- `docs/launch/verification-2026-10-20.md`：可公開的驗證範圍與待辦。
+- `docs/launch/2026-10-20-圖鑑分享草稿.md`：FB 與 X 草稿，未發布。
+- `docs/media/`：約 26 秒完整 MP4、13 秒短版、3.54 MB GIF、1280×640 PNG（212 KB）、manifest。
 
-## 當前狀態
+## 已完成與驗證
 
-- 專案：`/Users/ethanwu/Documents/Vibe coding/claude/Professional sports injury atlas`。
-- Branch：`feat/aaron-judge-rib`；沿用現有工作目錄，不另建 worktree。
-- 寫入交接前工作樹乾淨；本次文件提交範圍僅 `.claude/HANDOFF.md`，使用者後續明確要求 commit and push。下次以 Git status 與 origin/main 核對同步狀態；本次未重新 build 或 deploy。
-- Build／Test：最近發布版本通過；**本次 handoff 沒有重跑測試或線上全面驗證**，下列結果來自已提交的發布證據。
-- 最新換圖版本：Astro 397 檔，0 errors／0 warnings／16 既有 hints；29 項圖片資產單元測試、16 項 Chrome／Pixel 7 相關 E2E 通過，無失敗／略過。45 份文件綁定、原有發布與成品檢查通過。
-- 正式驗證於 `2026-09-22T07:40:24.920Z`：273 HTML＋10 新圖片衍生資源，共 283／283 SHA-256 相同；390px 指定圖片載入、圖說不存在、無橫向溢出、初始24支、搜尋 y≈641。
-- 前一版完整 UI 回歸：1,545 項單元、188 項 E2E 通過，2 項 review-only 略過；這是換圖前的完整回歸，**不能說成換圖後重新跑了全部**。
-- 本次檢查 ports 14339／14340 無監聽程序；沒有待清理的已知本機預覽。
+雙語 README、MIT LICENSE、LICENSE-SCOPE、第三方與字型授權、CONTRIBUTING、SECURITY、issue/PR templates、Ubuntu 24.04/Node 24.14.0 CI、CHANGELOG 與 release 草稿。
 
-## 下一個 Session 的前 2 步
+乾淨 Ubuntu 首測發現 Linux 分享圖無法可靠載入既有 WOFF2。`src/lib/social/render.ts` 與 `render-worker.ts` 已改用 `fonts-noto-cjk` 的原生 TTC 與明確缺字型錯誤；macOS 保留既有字型。修正沒有更動醫療文案或公開發布門檻。
 
-1. **執行** `git status --short --branch`、`git log -3 --oneline`、`git ls-remote origin refs/heads/main` — 核對實際進度，保留本次交接檔與使用者後續修改。
-2. **讀取** `docs/reviews/2026-09-22-home-hero-image-swap/README.md:1`、`release.json:1` 與使用者新需求 — 只處理新指示，不重做已完成的選圖、分類或部署。
+- 完整候選 `0e8b401`：Ubuntu 型別 0 errors / 0 warnings / 16 hints；108 檔、1,577 項單元通過；review build 45 頁；review artifact 通過。
+- fresh npm ci 9 秒；首次含圖片轉檔 build 179 秒；最後快取 build 約 8 秒。README dev 指令已啟動，首頁 HTTP 200。
+- macOS 型別與六項分享圖測試通過；Ubuntu 中文 PNG 已實際檢視。
+- 候選之後只有素材、文件與交接變更；已比對 production input paths 與 `0e8b401` 無差異。
+- Chrome live 錄影：Acuna 搜尋、事件來源、返回搜尋條件通過，無 page errors，POST 全部攔截，未播放原始影片。
+- 388 個歷史 commits 的 Gitleaks 掃描有 3 個測試 fixture 字串；逐項確認不是正式憑證，沒有新增 scanner finding。不能把模式掃描說成完整隱私／授權保證。
+- 紀錄在 ignored `output/repo-launch-20261020/` 與 `/private/tmp/injury-launch-linux/`。不要將帳務錯誤細節或完整掃描資料推到公開文件。
 
-**無更多任務。** 不因 resume 自行重跑建置、重新簽署醫療核准或重部署。原 A2 規格與舊交接屬於歷史紀錄；本次直接指示優先，見 `authorization.md:1`。
+## 當前阻礙與下一步
 
-## 已知 Blocker／限制
+1. **讀取 PR #3 最新 CI 結果**。Public 後 runner 已能正常執行。`39299450679`（d13eedb）在 1,577 項測試中發現一個 private-host access-file inode 重用問題；已補強 metadata 檢查並新增原地改寫回歸測試，修正前失敗、修正後通過，總數變成 1,578。以 `gh pr view 3 --json statusCheckRollup,headRefOid` 讀取修正提交的最新結果，不以舊失敗或本機通過取代遠端結果。
+2. **CI 綠燈後請使用者審閱並合併 PR**。repo-launch skill `/Users/ethanstudio/.claude/skills/repo-launch/SKILL.md` 明確要求使用者自行合併 PR。Public 已由使用者完成，不再詢問是否要公開；私人漏洞回報已啟用，不需重複設定。
+3. **合併後更新並發布 release**。將 draft v0.1.0 target 改到實際合併 SHA，CHANGELOG 改成實際發布日期。依 skill，Social preview 與社群發文由使用者手動完成；圖片在 `docs/media/social-preview-1280x640.png`，GitHub Settings → General → Social preview。
 
-- 無阻擋交付的已知 bug。沒有 migration、環境變數或部署步驟待補。
-- 不把本次 UI／換圖驗證說成重新逐秒觀看全部200支影片；來源、醫療資料與原有七日播放門檻未變更。
-- 未量測 PageSpeed 分數或 SEO 排名；不宣稱此類提升。
-- 歷史完整成品包含3個 Cloudflare 部署設定檔；它們不是公開網址，不應要求 `/_headers`、`/_redirects`、`/_routes.json` 回傳200。一般公開資源及HTML仍需正確核對。
+本輪沒有 GitHub Pages 設定；Cloudflare 正式網站就是 Live Demo。不要將含研究與審計資料的 `docs/` 當 Pages 輸出目錄。
 
-## 關鍵檔案
+## 正式網站狀態與未變更的門檻
 
-- `src/pages/index.astro:3`、`:55` — 目前圖片 import 與響應式 Picture；圖說已移除。
-- `src/assets/hero/a-all-sport-burst.png` — 選定圖片；`src/assets/hero/provenance.json:1` — 生成來源與使用者新指示。
-- `scripts/verify-brand-assets.ts:46` — 只允許目前圖片精確路徑與雜湊。
-- `src/components/atlas/VideoDiscovery.astro:52`、`src/scripts/video-discovery.ts:67` — 首頁／8類型頁共用搜尋與手機篩選。
-- `e2e/home-hero.spec.ts:11`、`e2e/catalog-ux.spec.ts:1` — 圖片、字級、篩選與分享回歸。
-- `docs/reviews/2026-09-22-home-hero-image-swap/README.md:1`、`authorization.md:1`、`release.json:1`、`live.json:1`、`browser-live.json:1` — 最新核准與正式驗證證據。
-- `docs/reviews/2026-09-22-home-hero/README.md:1` — 前一版完整 UI 檢查，僅供追溯。
-- `output/imagegen/2026-09-22-hero-options/` — 本機原圖與 A2／D2／E2／F2 候選；`/output/` 被 Git 忽略，未選圖片不發布。
+前一輪 UX 部署已完成：main / production `7adff42ee523cbbf5fa5eb641a169be1ac427c53`；Cloudflare deployment `a5302076-7b2c-423a-9517-e7be7f7cc1c6`。證據在 `output/deploy-20261020/release-result.json`。公開站仍是 <https://injury.sportsmedicine.tw/>。
 
-## 環境／部署注意事項
+前輪 200 支影片真實播放、5 支必要字幕、273 HTML、828 public files 比對的結果在 `docs/reviews/2026-10-20-ux-release/`。本次僅做錄影流程，沒有重新宣稱 200 支播放測試。
 
-- 正式站：https://injury.sportsmedicine.tw/ 。既有 Cloudflare Pages：`sports-injury-atlas`。
-- 最新部署：https://af901f14.sports-injury-atlas.pages.dev 。
-- 目前輸入摘要：`87e20443a95c2da836ee88ecb27308bb852ae02507066a5436f211e2fc4b5e1b`。
-- 圖片 SHA-256：`3ef27311614a5df79b2731d3ec3f9576c09a3275de53250ee2a0c8be94318cc2`。
-- 固定 Node v24.14.0：`/private/tmp/atlas-judge-node.3pGBJs/node-v24.14.0-darwin-arm64/bin/node`；下次先確認此暫存執行檔仍存在。直接呼叫 binary，避免 npm 子程序意外使用系統 v26。
-- 發布器與內容檢查要求乾淨且已提交的工作樹。維持既有門檻，不能只改摘要替代來源／臨床／播放證據。
-- Node 正式站唯讀驗證使用 `--use-env-proxy`；本機 socket／Chrome 測試可能需要沙箱外權限。
-- Git push 的既有 transport workaround：`git -c http.version=HTTP/1.1 -c http.postBuffer=67108864 push origin HEAD:main`；不需更改全域設定。
-- 歷史交接可查 Git `021970d` 與 `docs/handoffs/2026-09-22.md:1`；歷史任務不是現有待辦。
+本輪 Linux 字型與私有審閱憑證輪替修正會改變 production inputTreeDigest。沒有替新程式碼更新舊 approval、沒有 redeploy；後續若需部署，仍須正常收集並綁定新發布證據，不能只抄新 digest 讓 gate 通過。無 DB migration。
+
+原始 A hero 保持 `src/assets/hero/a-all-sport-burst-r2.png`，SHA-256 `3ef27311614a5df79b2731d3ec3f9576c09a3275de53250ee2a0c8be94318cc2`。不改回會命中舊 immutable CDN 的舊檔名。
+
+## 隔離環境
+
+OrbStack VM `injury-launch-20261020` 已停止並保留，2 CPU / 4 GB，Ubuntu 24.04 ARM64。只掛載 `/private/tmp/injury-launch-linux` 至 `/mnt/launch`，未掛載使用者 home。不要未經同意刪除 VM。驗證 repo 位於 VM `/home/ethanstudio/atlas-launch/repo`。
+
+精確 staging，禁止 `git add -A`。不重複詢問已批准的 MIT、無使用人數與 Playwright 授權。

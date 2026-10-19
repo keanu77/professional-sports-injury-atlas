@@ -2,96 +2,116 @@
   {
     "url": "https://www.youtube.com/watch?v=hxcRVu1-T-c",
     "path": "/videos/shohei-ohtani-world-series-2024/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-20T07:50:09.110Z",
+    "checkedAt": "2026-10-19T16:49:25.966Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/hxcRVu1-T-c?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 1.006843,
+      "time": 1.00579,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 3.106
   },
   {
     "url": "https://www.youtube.com/watch?v=12UNVAkLlmY",
     "path": "/videos/usain-bolt-london-2017/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 30,
-    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-20T07:50:14.902Z",
+    "checkedAt": "2026-10-19T16:50:22.530Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/12UNVAkLlmY?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev&start=30",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 31.013072,
+      "time": 31.006713,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 2.646
   },
   {
     "url": "https://www.youtube.com/watch?v=mi7fXtGTwbc",
     "path": "/videos/mohamed-salah-final-2018/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-20T07:50:20.527Z",
+    "checkedAt": "2026-10-19T16:49:32.134Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/mi7fXtGTwbc?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 1.008633,
+      "time": 1.007551,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["這部影片未提供字幕"]
+    "captionControls": ["這部影片未提供字幕"],
+    "elapsedSeconds": 3.038
   },
   {
     "url": "https://www.youtube.com/watch?v=ctiT9toFmio",
     "path": "/videos/giannis-east-final-2021/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-20T07:50:26.129Z",
+    "checkedAt": "2026-10-19T16:50:24.997Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/ctiT9toFmio?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 1.021094,
+      "time": 1.00929,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 2.658
   },
   {
     "url": "https://www.youtube.com/watch?v=b2vVxFhpEv0",
     "path": "/videos/markelle-fultz-orlando-2021/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://b5f681af.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-20T07:50:32.258Z",
+    "checkedAt": "2026-10-19T16:49:35.172Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/b2vVxFhpEv0?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 1.015242,
+      "time": 1.017729,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已開啟"],
+    "elapsedSeconds": 3.565
   }
 ]

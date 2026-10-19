@@ -2,96 +2,116 @@
   {
     "url": "https://www.youtube.com/watch?v=C4xerhbFNnc",
     "path": "/videos/ronald-acuna-miami-2021/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:29:19.913Z",
+    "checkedAt": "2026-10-19T16:50:25.167Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/C4xerhbFNnc?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 1.017495,
+      "time": 1.006225,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 2.64
   },
   {
     "url": "https://www.youtube.com/watch?v=0TwnwjFJzUo",
     "path": "/videos/lindsey-vonn-schladming-2013/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:29:30.611Z",
+    "checkedAt": "2026-10-19T16:50:26.446Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/0TwnwjFJzUo?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 1.016962,
+      "time": 1.010629,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 4.71
   },
   {
     "url": "https://www.youtube.com/watch?v=LOaTNtmSxUY",
     "path": "/videos/antoine-dupont-world-cup-2023/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:29:39.161Z",
+    "checkedAt": "2026-10-19T16:50:27.659Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/LOaTNtmSxUY?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": [],
     "after": {
-      "time": 1.015907,
+      "time": 1.011006,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["這部影片未提供字幕"]
+    "captionControls": ["這部影片未提供字幕"],
+    "elapsedSeconds": 2.472
   },
   {
     "url": "https://www.youtube.com/watch?v=vM_UU11MMH0",
     "path": "/videos/aksel-svindal-kitzbuhel-2016/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:29:48.280Z",
+    "checkedAt": "2026-10-19T16:50:27.808Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/vM_UU11MMH0?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 1.019089,
+      "time": 1.010769,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 2.839
   },
   {
     "url": "https://www.youtube.com/watch?v=YjDF1Saryg4",
     "path": "/videos/sidney-crosby-concussion-2017/",
+    "origin": "https://700109c4.sports-injury-atlas.pages.dev",
     "startSeconds": 0,
-    "origin": "https://601eab27.sports-injury-atlas.pages.dev",
-    "checkedAt": "2026-09-18T14:29:56.413Z",
+    "checkedAt": "2026-10-19T16:49:49.699Z",
     "status": "played",
+    "telemetry": "POST /api/plays intercepted; media requests unmodified",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/YjDF1Saryg4?enablejsapi=1&origin=https%3A%2F%2F700109c4.sports-injury-atlas.pages.dev",
     "before": {
       "time": 0,
       "paused": true,
       "readyState": 0
     },
+    "playControls": ["播放影片", "隱藏播放器控制項", "", "複製連結"],
     "after": {
-      "time": 1.009583,
+      "time": 1.019162,
       "paused": false,
       "readyState": 4
     },
-    "captionControls": ["字幕/CC 已關閉"]
+    "captionControls": ["字幕/CC 已關閉"],
+    "elapsedSeconds": 3.753
   }
 ]

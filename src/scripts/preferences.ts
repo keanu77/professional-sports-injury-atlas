@@ -66,15 +66,39 @@ function initThemeToggle(root: Document): void {
 
 function initFontScaleControls(root: Document): void {
   const buttons = root.querySelectorAll<HTMLButtonElement>("[data-font-step]");
+  const status = root.querySelector<HTMLElement>("[data-font-scale-status]");
+  const currentScale = (): number =>
+    clampFontScale(
+      Number.parseFloat(
+        document.documentElement.dataset.fontScale ??
+          readStorage(FONT_SCALE_STORAGE_KEY) ??
+          "1",
+      ),
+    );
+  const syncControls = (scale: number): void => {
+    for (const button of buttons) {
+      const atLimit =
+        button.dataset.fontStep === "up"
+          ? scale >= MAX_FONT_SCALE
+          : scale <= MIN_FONT_SCALE;
+      button.setAttribute("aria-disabled", String(atLimit));
+    }
+    if (status !== null) {
+      const limit =
+        scale >= MAX_FONT_SCALE
+          ? "，已達最大字級"
+          : scale <= MIN_FONT_SCALE
+            ? "，已達最小字級"
+            : "";
+      status.textContent = `目前字級 ${Number((scale * 100).toFixed(1))}%${limit}。`;
+    }
+  };
+  syncControls(currentScale());
   for (const button of buttons) {
     button.addEventListener("click", () => {
-      const current = clampFontScale(
-        Number.parseFloat(
-          document.documentElement.dataset.fontScale ??
-            readStorage(FONT_SCALE_STORAGE_KEY) ??
-            "1",
-        ),
-      );
+      // Keep the control focusable at its limit while making activation inert.
+      if (button.getAttribute("aria-disabled") === "true") return;
+      const current = currentScale();
       let index = 0;
       for (let step = 0; step < FONT_SCALE_STEPS.length; step += 1) {
         if (
@@ -91,6 +115,7 @@ function initFontScaleControls(root: Document): void {
       const next = FONT_SCALE_STEPS[nextIndex];
       applyFontScale(next);
       writeStorage(FONT_SCALE_STORAGE_KEY, String(next));
+      syncControls(next);
     });
   }
 }

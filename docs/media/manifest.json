@@ -1,0 +1,32 @@
+{
+  "capturedAt": "2026-10-19T17:47:04.617Z",
+  "source": "https://injury.sportsmedicine.tw/",
+  "workflow": "Search Acuna, open the event, follow its source citation, and return with filters preserved.",
+  "originalVideoPlayback": false,
+  "telemetryPosted": false,
+  "pageErrors": [],
+  "files": [
+    {
+      "path": "docs/media/catalog-demo.mp4",
+      "bytes": 2129875,
+      "sha256": "f387ea0737e02fb1eab0abb9b75d67c68d2b258dc0ad62c6b968e648aebbae35",
+      "durationSeconds": 25.833333
+    },
+    {
+      "path": "docs/media/catalog-demo-short.mp4",
+      "bytes": 1198219,
+      "sha256": "8427380f597c1ab0bd64556edfcb2c1b62cf40082970efa61218ea8d62072c02",
+      "durationSeconds": 13
+    },
+    {
+      "path": "docs/media/catalog-demo.gif",
+      "bytes": 3541725,
+      "sha256": "dbc9e52263cb38c384f1da5bab299ac9b533f74d3d57b2b3f69425774430532a"
+    },
+    {
+      "path": "docs/media/social-preview-1280x640.png",
+      "bytes": 212277,
+      "sha256": "6a8eff1bdfd403302d977ea1e75bb69f1f173f98c853ad63cfdc4de8cba26665"
+    }
+  ]
+}

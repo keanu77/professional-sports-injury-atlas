@@ -6,6 +6,7 @@ import {
   observationFootageLabel,
 } from "../../lib/videos/observation-card";
 import VideoTypeTags from "./VideoTypeTags.astro";
+import "../../styles/catalog-card.css";
 interface Props {
   clip: ObservationClip;
 }
@@ -14,7 +15,11 @@ const metadata = observationCardMetadata(clip);
 const isMlb = clip.provider === "mlb";
 ---
 
-<article class="observation-card" data-observation-card={clip.slug}>
+<article
+  class="observation-card catalog-card"
+  data-video-card="observation"
+  data-observation-card={clip.slug}
+>
   <a
     class="observation-card-media"
     href={`/videos/${clip.slug}/`}
@@ -29,22 +34,30 @@ const isMlb = clip.provider === "mlb";
         </div>
       ) : (
         <VideoThumbnail videoId={clip.videoId}>
-          <span slot="media-action" class="play" aria-hidden="true">
+          <span
+            slot="media-action"
+            class="play catalog-card-play"
+            aria-hidden="true"
+          >
             ▶
           </span>
         </VideoThumbnail>
       )
     }
   </a>
-  <div class="observation-copy">
-    <h3>
+  <div class="observation-copy catalog-card-body">
+    <h3 class="catalog-card-title">
       <a
         href={`/videos/${clip.slug}/`}
         aria-label={`${clip.name}｜${clip.event}`}>{clip.name}</a
       >
     </h3>
-    <p class="observation-event">{clip.event}</p>
-    <ul class="observation-metadata" data-observation-metadata>
+    <p class="observation-event catalog-card-event">{clip.event}</p>
+    <ul
+      class="observation-metadata catalog-card-metadata"
+      role="list"
+      data-observation-metadata
+    >
       <li data-observation-sport>{metadata.sport}</li>
       <li data-observation-body-part>{metadata.bodyPart}</li>
       <li data-observation-event-year>{metadata.eventYear}</li>
@@ -54,7 +67,7 @@ const isMlb = clip.provider === "mlb";
       {observationFootageLabel(clip)}
     </span>
     <a
-      class="observation-card-link"
+      class="observation-card-link catalog-card-action"
       href={`/videos/${clip.slug}/`}
       aria-label={`查看 ${clip.name} 的影片與解析`}
       >查看影片與解析 <span aria-hidden="true">→</span></a
@@ -62,38 +75,14 @@ const isMlb = clip.provider === "mlb";
   </div>
 </article>
 <style>
-  .observation-card {
-    display: block;
-    height: 100%;
-    border: 1px solid var(--hairline);
-    border-radius: var(--radius-card);
-    overflow: hidden;
-    background: var(--color-surface-raised);
-    color: var(--color-ink);
-  }
-  .observation-card:hover {
-    border-color: var(--color-brand-primary);
-  }
   .observation-card-media {
     display: block;
     color: inherit;
   }
-  .play {
-    position: absolute;
-    right: 1rem;
-    bottom: 1rem;
-    display: grid;
-    place-items: center;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    background: var(--color-brand-accent);
-    color: var(--color-brand-900);
-  }
   .provider-facade {
     display: grid;
     align-content: center;
-    min-height: 11rem;
+    aspect-ratio: 16 / 9;
     padding: 1.5rem;
     background: var(--color-brand-50);
     color: var(--color-ink);
@@ -109,65 +98,15 @@ const isMlb = clip.provider === "mlb";
     margin-top: 0.5rem;
     font: 700 1.1rem/1.4 var(--font-display);
   }
-  .observation-copy {
-    padding: 1.2rem;
-  }
-  .observation-copy h3 {
-    font: 700 var(--text-card-title)/1.5 var(--font-body);
-    margin: 0 0 0.5rem;
-  }
-  .observation-copy h3 a {
-    color: var(--color-ink);
-    text-decoration: none;
-  }
-  .observation-copy h3 a:hover {
-    color: var(--color-brand-primary);
-  }
   .observation-copy h3 a:focus-visible {
     outline: 3px solid var(--color-brand-primary);
     outline-offset: 3px;
   }
-  .observation-metadata {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem 0.75rem;
-    padding: 0;
-    margin: 0 0 0.75rem;
-    color: var(--color-ink-muted);
-    font-size: 0.875rem;
-    list-style: none;
-  }
-  .observation-metadata li + li::before {
-    content: "·";
-    margin-inline-end: 0.75rem;
-  }
-  .observation-copy p,
-  .observation-copy > span {
-    margin: 0;
-    color: var(--color-ink-muted);
-    font-size: 0.875rem;
-    line-height: 1.6;
-  }
-  .observation-copy .observation-event {
-    margin-bottom: 0.625rem;
-  }
   .observation-copy > span {
     display: block;
     margin-top: 0.75rem;
-  }
-  .observation-card-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    min-height: 44px;
-    margin-top: 0.25rem;
-    color: var(--color-brand-primary);
+    color: var(--color-ink-muted);
     font-size: 0.875rem;
-    font-weight: 600;
-    text-underline-offset: 0.2em;
-  }
-  .observation-card-link:focus-visible {
-    outline: 3px solid var(--color-brand-primary);
-    outline-offset: 3px;
+    line-height: 1.6;
   }
 </style>

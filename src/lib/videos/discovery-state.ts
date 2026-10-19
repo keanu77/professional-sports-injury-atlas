@@ -6,11 +6,25 @@ export interface DiscoveryState {
   body: string;
   mode: DiscoveryMode;
 }
-export interface DiscoveryOptions {
+export interface DiscoveryScope {
+  fixedType?: string;
+  fixedSport?: string;
+  fixedBody?: string;
+  fixedSituation?: string;
+}
+export interface DiscoveryOptions extends DiscoveryScope {
   types: ReadonlySet<string>;
   sports: ReadonlySet<string>;
   bodies: ReadonlySet<string>;
-  fixedType?: string;
+}
+
+export function hasDiscoveryScope(scope: DiscoveryScope): boolean {
+  return Boolean(
+    scope.fixedType ||
+    scope.fixedSport ||
+    scope.fixedBody ||
+    scope.fixedSituation,
+  );
 }
 
 export function readDiscoveryState(
@@ -25,10 +39,10 @@ export function readDiscoveryState(
   return {
     query: (url.searchParams.get("q") ?? "").trim().slice(0, 120),
     type: options.fixedType || valid("type", options.types),
-    sport: valid("sport", options.sports),
-    body: valid("body", options.bodies),
+    sport: options.fixedSport || valid("sport", options.sports),
+    body: options.fixedBody || valid("body", options.bodies),
     mode:
-      !options.fixedType && (mode === "curated" || mode === "popular")
+      !hasDiscoveryScope(options) && (mode === "curated" || mode === "popular")
         ? mode
         : "all",
   };
@@ -37,15 +51,17 @@ export function readDiscoveryState(
 export function writeDiscoveryState(
   url: URL,
   state: DiscoveryState,
-  fixedType = "",
+  fixed: DiscoveryScope | string = {},
 ): URL {
   const next = new URL(url);
+  const scope = typeof fixed === "string" ? { fixedType: fixed } : fixed;
+  if (scope.fixedSituation) next.searchParams.delete("situation");
   const values = {
-    q: state.query.trim(),
-    type: fixedType ? "" : state.type,
-    sport: state.sport,
-    body: state.body,
-    mode: state.mode === "all" ? "" : state.mode,
+    q: state.query.trim().slice(0, 120),
+    type: scope.fixedType ? "" : state.type,
+    sport: scope.fixedSport ? "" : state.sport,
+    body: scope.fixedBody ? "" : state.body,
+    mode: hasDiscoveryScope(scope) || state.mode === "all" ? "" : state.mode,
   };
   for (const [key, value] of Object.entries(values)) {
     if (value) next.searchParams.set(key, value);
