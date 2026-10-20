@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "scope": "open-source-onboarding-maintenance-release",
+  "recordedAt": "2026-10-20T23:25:15.038Z",
+  "authorization": {
+    "quote": "請合併跟部署",
+    "scope": "Merge PR #4 and deploy its reviewed onboarding changes; no new clinical approval claimed."
+  },
+  "sourceMain": "577c809988507776f265a8cc47ac68916dee4dde",
+  "previousProduction": "291c8f95fd63502918570b532d8dea50a20b15c0",
+  "previousInputTreeDigest": "1159ba70cc5bf9eefef958d6b33275325626dd7869887cef09ebeb844df364de",
+  "inputTreeDigest": "b62d7ffb9e07d92bc0938b1dbd6af5cdd9cd53fe7c7463491d4021f6da0209a2",
+  "changedReleaseInputFiles": ["package.json"],
+  "addedPackageScripts": {
+    "demo:dev": "cd examples/fork-demo && astro dev",
+    "demo:check": "astro check --root examples/fork-demo --minimumFailingSeverity warning",
+    "demo:build": "astro build --root examples/fork-demo && node examples/fork-demo/verify.mjs",
+    "demo:preview": "cd examples/fork-demo && astro preview"
+  },
+  "unchangedBeforeInputBindingRefresh": [
+    "src",
+    "public",
+    "astro.config.mjs",
+    "package-lock.json",
+    "scripts",
+    "functions",
+    "migrations",
+    "wrangler.jsonc"
+  ],
+  "clinicalApprovalFieldsSha256": "8bc9b80a86187c9358ab28e7782ae44f262e9b3acf6efdbfa00f9fa7fc083836",
+  "clinicalApproval": "Only the release-input binding changes. Existing reviewer, quote, timestamp, patient packet, case digests, diagnoses, conclusions, video identities and approval status are preserved.",
+  "playbackReuse": {
+    "path": "docs/reviews/2026-10-20-ux-release/playback.all.json",
+    "sha256": "caab2229ef9203310533c3bc3b5849f1431add7c63ac2c46260e7aa4a1e0218b",
+    "total": 200,
+    "requiredCaptionsPassed": 5,
+    "oldestCheckedAt": "2026-10-19T16:49:08.889Z",
+    "newestCheckedAt": "2026-10-19T16:56:01.833Z",
+    "withinSevenDays": true,
+    "newPlaybackClaim": false
+  },
+  "limitations": [
+    "This input-binding record is not an artifact receipt or proof of deployment. Run the unmodified public release, browser, artifact and live checks on the final commit.",
+    "No playback timestamps or historical evidence are rewritten. Existing evidence is reused only within the unchanged seven-day gate.",
+    "Locked Vite 8.2.0 has a Windows/WSL launch-editor audit advisory; dependencies are unchanged. This macOS build and Cloudflare static/Functions deployment do not run that editor middleware. Dependency remediation remains separate."
+  ]
+}
