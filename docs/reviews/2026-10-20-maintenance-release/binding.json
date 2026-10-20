@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "scope": "source-and-operational-maintenance-release",
+  "recordedAt": "2026-10-20T14:59:02.217Z",
+  "authorization": [
+    "可以去修正我的網站跟github嗎",
+    "請部署",
+    "允許，使用 Playwright 完成驗證與部署"
+  ],
+  "baseMain": "c3100ce41c55a0e4308cc14ee5d02dc8d0ca2954",
+  "previousProduction": "7adff42ee523cbbf5fa5eb641a169be1ac427c53",
+  "previousInputTreeDigest": "149d2cff6354966cd3ceb92160f0e0f758b5d5dcc754d013ed4e8abff7b46dcb",
+  "inputTreeDigest": "1159ba70cc5bf9eefef958d6b33275325626dd7869887cef09ebeb844df364de",
+  "sourceDataFiles": [
+    "src/data/videos/additions.v1.json",
+    "src/data/videos/batch-30.v1.json",
+    "src/data/videos/batch-31.v1.json",
+    "src/data/videos/catalog-200.v1.json",
+    "src/data/videos/event-batch-30.v1.json",
+    "src/data/videos/event-batch-31.v1.json",
+    "src/data/videos/event-catalog-200.v1.json",
+    "src/data/videos/event-judge-rib.v1.json",
+    "src/data/videos/event-updates.v1.json",
+    "src/data/videos/judge-rib.v1.json"
+  ],
+  "sourceChangeScope": "Source metadata and citation indexes only; clinical prose, dates, timelines and video identities unchanged.",
+  "unchangedComparedWithProduction": [
+    "src/components",
+    "src/pages",
+    "src/scripts",
+    "src/styles",
+    "src/content",
+    "src/lib/videos",
+    "functions",
+    "migrations",
+    "wrangler.jsonc"
+  ],
+  "playbackReuse": {
+    "path": "docs/reviews/2026-10-20-ux-release/playback.all.json",
+    "sha256": "caab2229ef9203310533c3bc3b5849f1431add7c63ac2c46260e7aa4a1e0218b",
+    "total": 200,
+    "requiredCaptionsPassed": 5,
+    "oldestCheckedAt": "2026-10-19T16:49:08.889Z",
+    "newestCheckedAt": "2026-10-19T16:56:01.833Z",
+    "withinSevenDays": true,
+    "newPlaybackClaim": false
+  },
+  "clinicalApproval": "Original packet, case digests, reviewer, quote and approval timestamp unchanged. Only maintenance input binding refreshed with this separate authorization/evidence record.",
+  "limitations": [
+    "External access blocks are not verified article availability. See current health artifact.",
+    "Final type/unit/public-build/browser and live deployment results must pass separately before publication."
+  ]
+}

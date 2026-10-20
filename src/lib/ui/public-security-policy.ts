@@ -18,6 +18,8 @@ export const PUBLIC_HEADERS = `/*
   Content-Security-Policy: ${PUBLIC_CSP}
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
+/version.json
+  Cache-Control: no-store
 /preferences-init.js
   Content-Type: text/javascript; charset=utf-8
   Cache-Control: public, max-age=0, must-revalidate

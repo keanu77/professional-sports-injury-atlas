@@ -2,6 +2,7 @@
 // are handled separately by Cloudflare Pages Functions after public launch.
 import { defineConfig } from "astro/config";
 import { writeFile } from "node:fs/promises";
+import { execFileSync } from "node:child_process";
 import { renderPublicSitemap } from "./src/lib/governance/sitemap.ts";
 
 const publicSitemap = {
@@ -33,6 +34,14 @@ const publicSitemap = {
         "https://injury.sportsmedicine.tw",
       );
       await writeFile(new URL("sitemap.xml", dir), sitemap, "utf8");
+      const commit = execFileSync("git", ["rev-parse", "HEAD"], {
+        encoding: "utf8",
+      }).trim();
+      await writeFile(
+        new URL("version.json", dir),
+        `${JSON.stringify({ schemaVersion: 1, commit })}\n`,
+        "utf8",
+      );
     },
   },
 };

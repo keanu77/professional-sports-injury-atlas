@@ -348,14 +348,20 @@ writeFileSync(
     "/_astro/tEHP_6GA6ZA.CTFwOaes.jpg /removed-video/ 302",
   ].join("\n") + "\n",
 );
+const commit = execFileSync("git", ["rev-parse", "HEAD"], {
+  encoding: "utf8",
+}).trim();
+assert.deepEqual(
+  JSON.parse(readFileSync("dist/version.json", "utf8")),
+  { schemaVersion: 1, commit },
+  "Public version marker must identify the exact build commit",
+);
 const receipt = {
   schemaVersion: 1,
   decision: "decision-21",
   mode: "public",
   origin: publicDomain.origin,
-  commit: execFileSync("git", ["rev-parse", "HEAD"], {
-    encoding: "utf8",
-  }).trim(),
+  commit,
   approvalDigest: sha256Hex(canonicalJson(approval)),
   generatedAt: new Date().toISOString(),
   cases: selected.map(({ id, slug }) => ({ id, slug })),
