@@ -57,11 +57,12 @@
 
 ## Fork Guide 實測
 
-使用 macOS、Node 24.14.0、npm 11.9.0。以 `git clone --no-local` 從本機 repository 的已提交分支建立完整歷史 clone，新增 upstream remote 與測試分支，再執行全新 `npm ci`，安裝 433 個套件。沒有複製 `node_modules`、帳密、環境檔或 production bindings。這驗證 Git clone 後的操作，不等於操作 GitHub 帳號上的 Fork 按鈕。
+使用 macOS、Node 24.14.0、npm 11.9.0。以 `git clone --no-local` 從本機 repository 的已提交分支建立完整歷史 clone，新增 upstream remote 與測試分支，再執行全新 `npm ci`，安裝 433 個套件。沒有複製 `node_modules`、帳密或環境檔；demo 不讀取隨 Git 原始碼保留的上游 Wrangler bindings。這驗證 Git clone 後的操作，不等於操作 GitHub 帳號上的 Fork 按鈕。
 
 - `demo:check`：2 檔，0 errors／warnings／hints。
 - `demo:build`：1 頁，僅 3 個產物：`index.html`、`robots.txt`、`_headers`；外部資源為 0。
 - `demo:dev`：localhost HTTP 200；1280px／390px Chrome 兩種寬度均無水平溢出、page errors、外部請求或 Axe 違規，截圖已查看。
+- README 的原專案 `dev` 與 `preview`：最終乾淨 commit 上均 HTTP 200 且含 noindex；所有 4 個測試服務已使用 Astro stop 指令關閉。
 - 客製化：替換 siteName、owner 與一筆虛構標題後，demo type check／build 再次通過；`demo:preview` HTTP 200，三個新值與 noindex 均在產物中。Cloudflare live upload 與 HTTP header delivery 不列為本機通過項目。
 
 第一次 dev 啟動重現 Astro 7.2.8 的背景啟動路徑問題：CLI 先切換 cwd，仍傳入相對 `--root`，使子程序再次套用路徑並逾時。已將 demo dev／preview 改成先 `cd examples/fork-demo` 再啟動 Astro，沒有改依賴或停用檢查。此修正已用相同 clone 重驗 dev 與 preview 啟動。
