@@ -109,7 +109,11 @@
     "verify": "npm run plan:verify && npm run format:check && npm run check && npm run content:check && npm run test:coverage && npm run build:review && npm run test:e2e && npm run test:lighthouse && npm run brand:verify && npm run verify:review-artifact",
     "patient:check": "tsx scripts/public-launch/check-patient-guides.ts",
     "deploy:public": "npm run release:public && wrangler pages deploy dist --project-name=sports-injury-atlas --branch=main",
-    "release:legacy": "npm run patient:check -- --require-approval && ATLAS_BUILD_MODE=public tsx scripts/release-check.ts && ATLAS_BUILD_MODE=public astro build && ATLAS_BUILD_MODE=public tsx scripts/verify-public-artifact.ts"
+    "release:legacy": "npm run patient:check -- --require-approval && ATLAS_BUILD_MODE=public tsx scripts/release-check.ts && ATLAS_BUILD_MODE=public astro build && ATLAS_BUILD_MODE=public tsx scripts/verify-public-artifact.ts",
+    "demo:dev": "cd examples/fork-demo && astro dev",
+    "demo:check": "astro check --root examples/fork-demo --minimumFailingSeverity warning",
+    "demo:build": "astro build --root examples/fork-demo && node examples/fork-demo/verify.mjs",
+    "demo:preview": "cd examples/fork-demo && astro preview"
   },
   "dependencies": {
     "@fontsource/barlow-condensed": "5.3.0",

@@ -27,10 +27,15 @@ Open the URL printed by Astro. `dev` runs review mode. It is intended for layout
 Before a pull request:
 
 ```bash
+npm run plan:verify
 npm run check
+npm run content:check
 npm run test:unit
 npm run build:review
+npm run brand:verify
 npm run verify:review-artifact
+npm run demo:check
+npm run demo:build
 ```
 
 Some provenance checks inspect tracked bytes, history, and the current tree. Full validation should run on a **clean commit in your branch**. Do not remove these checks to accommodate a ZIP export or a shallow clone. Work-in-progress type checks and individual unit tests can run while editing; final verification uses the committed tree. CI checks out full history for the same reason.
@@ -68,4 +73,4 @@ Inspect `playwright.config.ts` before running `npm run test:e2e`: the configured
 
 Changing production input files invalidates the previous release's input digest. A successful review build is not approval to deploy those changes. Maintainers must bind fresh evidence before a later public release; do not automatically copy a new digest into an approval to make a gate pass.
 
-The software is reusable under MIT, but the current curated collection and media have separate rights. See [LICENSE-SCOPE.md](../LICENSE-SCOPE.md). Forks need their own deployment configuration and rights/review process. This repository is not yet a one-command template for publishing a new medical collection.
+The software is reusable under MIT, but the current curated collection and media have separate rights. See [LICENSE-SCOPE.md](../LICENSE-SCOPE.md). Forks need their own deployment configuration and rights/review process. This repository is not a one-command template for publishing a new medical collection. The [fork guide](fork-guide.md) provides a separately built fictional demo, branding instructions, and explicit deployment limitations.

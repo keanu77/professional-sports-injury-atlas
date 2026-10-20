@@ -2,7 +2,7 @@
 
 A video index for sports medicine learners and educators: find material by athlete, sport, and body region, then follow the sources and return-to-sport context. Curated by sports medicine physician Yi-Cheng Wu.
 
-**[Explore the website →](https://injury.sportsmedicine.tw/)** · [繁體中文](README.md) · [Contribute](CONTRIBUTING.md) · [Code license and content scope](LICENSE-SCOPE.md)
+**[Explore the website →](https://injury.sportsmedicine.tw/)** · [繁體中文](README.md) · [Fork guide](docs/fork-guide.md) · [Contribute](CONTRIBUTING.md) · [Code license and content scope](LICENSE-SCOPE.md)
 
 [![Actual workflow: search an athlete, open a video page, and inspect sources](docs/media/catalog-demo.gif)](https://injury.sportsmedicine.tw/)
 
@@ -17,7 +17,15 @@ As of October 20, 2026, the public website contains **200 videos across 30 sport
 
 This is an educational and information discovery tool. Videos cannot establish a diagnosis, prescribe treatment, or determine return-to-sport clearance. The collection is not a diagnostic ground-truth dataset. No user-count or teaching-outcome claims are made. Videos are delivered by their original platforms; embedding and playback can change with location or rights-holder settings.
 
-## Run locally
+## Choose a starting point
+
+| Your goal                                                                  | Start here                                                      |
+| -------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| Clinicians and educators: find videos and sources for teaching discussions | [Public atlas](https://injury.sportsmedicine.tw/)               |
+| Open-source developers: improve docs, interfaces, or tests                 | Quick Start below and the [contribution guide](CONTRIBUTING.md) |
+| Fork authors: start with your own identity and content                     | [Fork guide and synthetic demo](docs/fork-guide.md)             |
+
+## Quick Start: contribute to this project
 
 Install Git and **Node.js 24.14.0** ([`.node-version`](.node-version)). On Ubuntu, install Chinese fonts so share images and their tests can render Chinese correctly:
 
@@ -60,7 +68,7 @@ Public releases have additional source, content-review, asset-rights, and playba
 
 Documentation fixes, accessibility and search improvements, and verifiable video sources are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md). You can also suggest videos or corrections through the [website submission page](https://injury.sportsmedicine.tw/contribute/) without writing code. Report security vulnerabilities privately as described in [SECURITY.md](SECURITY.md).
 
-If the index or its interface implementation helps you, a Star makes it easier to find again.
+If the index or its interface implementation helps you, a [Star](https://github.com/keanu77/professional-sports-injury-atlas) makes it easier to find again. To experiment or contribute, follow the [fork guide](docs/fork-guide.md). Forking does not grant redistribution rights to the medical collection or third-party media.
 
 ## License
 
