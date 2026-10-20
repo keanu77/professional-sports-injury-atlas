@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-20T15:06:16.377080+00:00",
+  "implementationCommit": "3cdda157bfc8ad6773099a80eb7c0e97a635dc30",
+  "typecheck": {
+    "files": 411,
+    "errors": 0,
+    "warnings": 0,
+    "hints": 16
+  },
+  "unitTests": {
+    "filesPassed": 108,
+    "testsPassed": 1604
+  },
+  "publicArtifact": {
+    "command": "npm run release:public",
+    "status": "passed",
+    "htmlPages": 273,
+    "internalLinks": 15112,
+    "receiptFiles": 832,
+    "publicFiles": 829
+  },
+  "publicBrowserTests": {
+    "environment": {
+      "ATLAS_BUILD_MODE": "public",
+      "ATLAS_PUBLIC_LAUNCH": "decision-21",
+      "ATLAS_E2E_PORT": "14342"
+    },
+    "projects": ["chromium", "mobile-chromium"],
+    "stats": {
+      "startTime": "2026-10-20T15:04:35.792Z",
+      "duration": 44063.494,
+      "expected": 210,
+      "skipped": 2,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "skips": "Two review-only assertions are intentionally skipped for public mode.",
+    "initialInvocationFailures": "Preserved locally: missing public-mode and port environment variables; corrected invocation passed without changing tests or application code."
+  },
+  "sourceHealth": {
+    "checkedAt": "2026-10-20T15:00:09.390Z",
+    "overallStatus": "degraded",
+    "exitCode": 2,
+    "summary": {
+      "embedChecksCompleted": 0,
+      "embedChecksIndeterminate": 0,
+      "embedChecksSkipped": 200,
+      "embedMarkupPresent": 199,
+      "indeterminateMetadata": 0,
+      "indeterminateSources": 125,
+      "notEmbeddable": 0,
+      "sourceReasons": {
+        "access-challenge": 18,
+        "access-denied": 93,
+        "network-error": 3,
+        "ok": 667,
+        "timeout": 11
+      },
+      "sourceUrls": 792,
+      "unavailableMetadata": 0,
+      "unavailableSources": 0,
+      "videos": 200
+    },
+    "playbackVerification": "not-performed",
+    "reportSha256": "4e0e580aec17c670bd35b5393cc65280a91c343b90e21a3c63533754e368354c"
+  },
+  "citationRepairs": "13 unique old URLs retired: 12 replacements and one redundant Nishikori source removed with citation indexes repaired.",
+  "replacementTargets": [
+    {
+      "url": "https://legacy.liverpoolfc.com/news/first-team/299392-alex-oxlade-chamberlain-injury-update-jurgen-klopp",
+      "attempts": 1,
+      "finalUrl": "https://legacy.liverpoolfc.com/news/first-team/299392-alex-oxlade-chamberlain-injury-update-jurgen-klopp",
+      "httpStatus": 200,
+      "reason": "ok",
+      "status": "available"
+    },
+    {
+      "url": "https://legacy.liverpoolfc.com/news/first-team/303499-mohamed-salah-liverpool-fc-injury-update",
+      "attempts": 1,
+      "finalUrl": "https://legacy.liverpoolfc.com/news/first-team/303499-mohamed-salah-liverpool-fc-injury-update",
+      "httpStatus": 200,
+      "reason": "ok",
+      "status": "available"
+    },
+    {
+      "url": "https://legacy.liverpoolfc.com/news/first-team/305043-mohamed-salah-goal-egypt-world-cup",
+      "attempts": 1,
+      "finalUrl": "https://legacy.liverpoolfc.com/news/first-team/305043-mohamed-salah-goal-egypt-world-cup",
+      "httpStatus": 200,
+      "reason": "ok",
+      "status": "available"
+    },
+    {
+      "url": "https://legacy.liverpoolfc.com/news/first-team/305536-alex-oxlade-chamberlain-knee-injury-rehabilitation",
+      "attempts": 1,
+      "finalUrl": "https://legacy.liverpoolfc.com/news/first-team/305536-alex-oxlade-chamberlain-knee-injury-rehabilitation",
+      "httpStatus": 200,
+      "reason": "ok",
+      "status": "available"
+    },
+    {
+      "url": "https://legacy.liverpoolfc.com/news/first-team/340949-alex-oxlade-chamberlain-fitness-update",
+      "attempts": 1,
+      "finalUrl": "https://legacy.liverpoolfc.com/news/first-team/340949-alex-oxlade-chamberlain-fitness-update",
+      "httpStatus": 200,
+      "reason": "ok",
+      "status": "available"
+    },
+    {
+      "url": "https://legacy.liverpoolfc.com/news/first-team/347685-jurgen-klopp-liverpool-huddersfield-reaction",
+      "attempts": 1,
+      "finalUrl": "https://legacy.liverpoolfc.com/news/first-team/347685-jurgen-klopp-liverpool-huddersfield-reaction",
+      "httpStatus": 200,
+      "reason": "ok",
+      "status": "available"
+    },
+    {
+      "url": "https://legacy.liverpoolfc.com/news/first-team/443363-harvey-elliott-undergoes-successful-ankle-surgery",
+      "attempts": 1,
+      "finalUrl": "https://legacy.liverpoolfc.com/news/first-team/443363-harvey-elliott-undergoes-successful-ankle-surgery",
+      "httpStatus": 200,
+      "reason": "ok",
+      "status": "available"
+    },
+    {
+      "url": "https://www.arsenal.com/news/match-report-wolves-2-2-arsenal-u-23s-abevG1Z7KSU6",
+      "attempts": 1,
+      "finalUrl": "https://www.arsenal.com/news/match-report-wolves-2-2-arsenal-u-23s-abevG1Z7KSU6",
+      "httpStatus": 200,
+      "reason": "ok",
+      "status": "available"
+    },
+    {
+      "url": "https://www.arsenal.com/news/report-arsenal-women-2-1-aston-villa-women-asbEn9x4Cl61",
+      "attempts": 2,
+      "finalUrl": "https://www.arsenal.com/news/report-arsenal-women-2-1-aston-villa-women-asbEn9x4Cl61",
+      "httpStatus": 200,
+      "reason": "ok",
+      "status": "available"
+    },
+    {
+      "url": "https://www.dewittdailynews.com/aaron-judge-returns-to-yankees-after-99-day-absence-caused-by-broken-rib/",
+      "attempts": 2,
+      "finalUrl": "https://www.dewittdailynews.com/aaron-judge-returns-to-yankees-after-99-day-absence-caused-by-broken-rib/",
+      "httpStatus": 200,
+      "reason": "ok",
+      "status": "available"
+    },
+    {
+      "url": "https://www.liverpoolecho.co.uk/sport/football/football-news/harvey-elliott-liverpool-game-breaking-22917827",
+      "attempts": 1,
+      "finalUrl": "https://www.liverpoolecho.co.uk/sport/football/football-news/harvey-elliott-liverpool-game-breaking-22917827",
+      "httpStatus": 200,
+      "reason": "ok",
+      "status": "available"
+    },
+    {
+      "url": "https://www.wtatennis.com/news/3123711/andreescu-provides-injury-update-praying-for-nothing-serious",
+      "attempts": 1,
+      "finalUrl": "https://www.wtatennis.com/news/3123711/andreescu-provides-injury-update-praying-for-nothing-serious",
+      "httpStatus": 200,
+      "reason": "ok",
+      "status": "available"
+    }
+  ],
+  "retiredUrls": [
+    "https://newyorktennismagazine.com/article/former-finalist-nishikori-out-us-open-wrist-injury/",
+    "https://www-cdn.abcnews.com/Sports/wireStory/aaron-judge-returns-yankees-after-99-day-absence-136284464",
+    "https://www.arsenal.com/fixture/women/2023-Oct-15/women-aston-villa-women-match-report",
+    "https://www.liverpoolfc.com/news/first-team/299392-alex-oxlade-chamberlain-injury-update-jurgen-klopp",
+    "https://www.liverpoolfc.com/news/first-team/303499-mohamed-salah-liverpool-fc-injury-update",
+    "https://www.liverpoolfc.com/news/first-team/305043-mohamed-salah-goal-egypt-world-cup",
+    "https://www.liverpoolfc.com/news/first-team/305536-alex-oxlade-chamberlain-knee-injury-rehabilitation",
+    "https://www.liverpoolfc.com/news/first-team/340949-alex-oxlade-chamberlain-fitness-update",
+    "https://www.liverpoolfc.com/news/first-team/347685-jurgen-klopp-liverpool-huddersfield-reaction",
+    "https://www.liverpoolfc.com/news/first-team/443363-harvey-elliott-undergoes-successful-ankle-surgery",
+    "https://www.liverpoolfc.com/news/watch-harvey-elliotts-goal-and-assists-friendly",
+    "https://www.wolves.co.uk/news/under-21/20190920-perry-earns-dramatic-late-draw/",
+    "https://www.wtatennis.com/news/3123711/andreescu-provides-injury-update-it-could-have-been-much-worse-"
+  ],
+  "releaseAssets": {
+    "matched": 5,
+    "method": "Downloaded existing draft assets and compared SHA-256 to docs/media."
+  },
+  "playback": "No new full playback run. Reuses the 200 played / 5 required captions evidence documented and bound in binding.json, within the seven-day gate.",
+  "publication": "These are local predeployment results. Main CI, live SHA, live bytes, APIs and release target must be verified after the final documentation commit."
+}
