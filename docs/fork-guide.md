@@ -53,7 +53,7 @@ npm run demo:preview -- --host 127.0.0.1
 
 Expected output is **only** `index.html`, `robots.txt`, and `_headers` under `examples/fork-demo/dist/`. The build checks that file list, noindex metadata, absence of active embeds/resources, and the demo notice. This mechanical check cannot judge clinical accuracy, originality, or licensing of text you later enter. Review every addition. The root `dist/` remains the atlas build output; do not confuse the two directories.
 
-Astro CLI behavior and server stop/status controls are documented in the [CLI reference](https://docs.astro.build/en/reference/cli-reference/). If a preview persists after its launcher exits, run `npx --no-install astro preview stop --root examples/fork-demo` rather than killing unrelated processes.
+The dev/preview npm scripts first enter the demo directory so background servers resolve the same root as foreground runs. Astro CLI behavior and server stop/status controls are documented in the [CLI reference](https://docs.astro.build/en/reference/cli-reference/). If a preview persists after its launcher exits, run `npx --no-install astro preview stop --root examples/fork-demo` rather than killing unrelated processes.
 
 ## 4. Replace identity and sample content
 

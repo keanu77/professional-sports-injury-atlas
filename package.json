@@ -110,10 +110,10 @@
     "patient:check": "tsx scripts/public-launch/check-patient-guides.ts",
     "deploy:public": "npm run release:public && wrangler pages deploy dist --project-name=sports-injury-atlas --branch=main",
     "release:legacy": "npm run patient:check -- --require-approval && ATLAS_BUILD_MODE=public tsx scripts/release-check.ts && ATLAS_BUILD_MODE=public astro build && ATLAS_BUILD_MODE=public tsx scripts/verify-public-artifact.ts",
-    "demo:dev": "astro dev --root examples/fork-demo",
+    "demo:dev": "cd examples/fork-demo && astro dev",
     "demo:check": "astro check --root examples/fork-demo --minimumFailingSeverity warning",
     "demo:build": "astro build --root examples/fork-demo && node examples/fork-demo/verify.mjs",
-    "demo:preview": "astro preview --root examples/fork-demo"
+    "demo:preview": "cd examples/fork-demo && astro preview"
   },
   "dependencies": {
     "@fontsource/barlow-condensed": "5.3.0",
