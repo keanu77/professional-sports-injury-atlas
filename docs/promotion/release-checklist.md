@@ -9,7 +9,7 @@ This checklist prepares human review. It does not authorize deployment, publish 
 - [ ] Recheck the live catalog before using the dated 200 / 7 / 193 / 30 / 14 counts. These are content counts, not audience or efficacy metrics.
 - [ ] Confirm the original-code MIT scope, separate content/media rights, and no affiliation or clinical endorsement claims.
 - [ ] Review [Facebook](facebook-zh.md), [LinkedIn](linkedin-en.md), and [developer introduction](github-introduction-en.md) copy for the destination's rules. Post manually; do not claim unmeasured outcomes.
-- [ ] Review [About/topics](../github-discovery.md) and [five issue drafts](../community/initial-issues.md). Check duplicates and label availability before publishing issues.
+- [ ] Review [About/topics](../github-discovery.md) and the status of the [five published contributor issues](../community/initial-issues.md). Recheck duplicates and label availability before opening further issues.
 
 ## Existing media and metadata
 

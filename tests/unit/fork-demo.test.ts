@@ -35,6 +35,25 @@ describe("isolated fork demo artifact", () => {
     writeFileSync(join(directory, "athlete.jpg"), "unexpected asset");
     expect(() => verifyDemo(directory)).toThrow();
   });
+  it("accepts local layout CSS and generated gradients", () => {
+    const style =
+      '<style>body { font-family: "Example Font", sans-serif; width: min(100%, 60rem); background: linear-gradient(red, blue); }</style>';
+    expect(() =>
+      verifyDemo(artifact(html.replace("</head>", `${style}</head>`))),
+    ).not.toThrow();
+  });
+  it.each([
+    'image-set("https://example.com/photo.jpg" 1x)',
+    "IMAGE-SET('//example.com/photo.jpg' 2x)",
+    '-webkit-image-set("https://example.com/photo.jpg" 1x)',
+    'var(--background, image-set("https://example.com/photo.jpg" 1x))',
+    'image("https://example.com/photo.jpg")',
+  ])("rejects CSS string image resources: %s", (value) => {
+    const style = `<style>body { background-image: ${value}; }</style>`;
+    expect(() =>
+      verifyDemo(artifact(html.replace("</head>", `${style}</head>`))),
+    ).toThrow("No CSS resources");
+  });
   it.each([
     '<iframe src="https://example.com/video"></iframe>',
     '<script src="https://example.com/telemetry.js"></script>',

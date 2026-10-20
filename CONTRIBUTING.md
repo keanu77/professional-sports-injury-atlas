@@ -19,7 +19,7 @@ Search [existing issues](https://github.com/keanu77/professional-sports-injury-a
 | Documentation improvement | README, setup instructions, translations, broken documentation links      |
 | Content/source correction | Event text, source links, unavailable media; include dated evidence       |
 
-First contributions can be a single broken documentation step, an accessible label, or a reproducible bug report. See the [scoped issue proposals](docs/community/initial-issues.md); these are drafts, not assigned work. Maintainers confirm scope, label, and review needs before marking an issue `good first issue`. Do not create a PR solely to generate activity.
+First contributions can be a single broken documentation step, an accessible label, or a reproducible bug report. See the [scoped contributor issues](docs/community/initial-issues.md); check each live issue for status and coordinate scope before starting. Maintainers confirm scope, label, and review needs before marking an issue `good first issue`. Do not create a PR solely to generate activity.
 
 ## Code contributions
 

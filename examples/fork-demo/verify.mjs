@@ -54,7 +54,12 @@ export function verifyDemo(directory) {
       const css = (node.childNodes ?? [])
         .map((child) => child.value ?? "")
         .join("");
-      assert(!/url\s*\(|@import|\\/i.test(css), "No CSS resources");
+      // image-set() (including the WebKit alias) and image() can load string
+      // URLs without url(). Keep this text-only demo's CSS contract narrow.
+      assert(
+        !/(?:url|(?:-webkit-)?image(?:-set)?)\s*\(|@import|\\/i.test(css),
+        "No CSS resources",
+      );
     }
     for (const child of node.childNodes ?? []) visit(child);
     if (node.content) visit(node.content);

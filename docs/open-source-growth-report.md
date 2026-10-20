@@ -16,7 +16,7 @@
 | ----- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
 | 1     | 中英文 README 增加角色入口、Fork Guide 連結與自然的 Star/Fork 引導；提供 About/topics 建議                | 未新增數量徽章或擴張醫療宣稱；About/topics 留待人工套用              |
 | 2     | 英文為主、附中文重點的 Fork Guide；獨立 Astro 虛構示範；品牌／內容替換方式；模式、授權、Cloudflare 與 FAQ | 完整醫療內容 Fork 不是一鍵模板；帳號級 Fork 與 Cloudflare 上傳未執行 |
-| 3     | 文件改善 Issue 表單；改善 CONTRIBUTING、PR checklist；labels 建議及 5 個範圍明確的 Issue 草稿             | 未建立公開 Issues、套用 labels 或指派工作，先讓維護者選擇優先順序    |
+| 3     | 文件改善 Issue 表單；改善 CONTRIBUTING、PR checklist；labels 建議及 5 個已發布、有明確範圍的 Issues       | 僅套用既有 labels；未指派人員，實作優先順序仍待維護者決定            |
 | 4     | Facebook 中文、LinkedIn 英文、開發者介紹英文與發布 checklist；檢查既有分享圖及線上 metadata               | 沒有外部發文、上傳 GitHub social preview 或修改正式站 SEO            |
 | 5     | 本機 CI 對應檢查、示範邊界測試、完整 clone 實測與隱私友善的成效追蹤指南；CI 加入 demo check/build         | PR 檢查不代表 public release 或 production 已驗證                    |
 
@@ -89,6 +89,12 @@
 
 沒有執行 public release/deploy、全站 E2E/Lighthouse、原影片播放、來源健康全面重查或正式站投稿。這些不屬於本次文件與隔離示範的通過宣稱。靜態 artifact 檢查不證明 Cloudflare 的 HTTP headers、登入保護或後端服務生效。
 
+## PR 審查後續修正
+
+PR #4 的自動審查指出 demo 驗證器只辨識 `url()`／`@import`，會漏掉 `image-set()` 的字串網址。依 [CSS Images 規格](https://drafts.csswg.org/css-images-4/#image-set-notation) 與回歸測試確認後，擴充拒絕 `image-set()`、WebKit 別名與 `image()`，保留純排版與 CSS 生成漸層。修改僅在隔離 demo 的驗證器及其測試，原站程式與審閱閘門不變。
+
+新增測試先在舊驗證器上重現 5 fail／9 pass，修正後 14 tests 全數通過；`demo:check` 與 `demo:build` 再次通過，產物仍為 3 檔、0 外部資源。先前 1,612 tests 是上述原始驗證快照；新增 6 項後的全套結果以本次 PR 最新 CI 為準。這是 artifact 防護，不宣稱本機開發伺服器會套用 Cloudflare `_headers`。
+
 ## SEO 與素材檢查
 
 唯讀檢查正式首頁與首頁實際連結的 `/videos/kobe-bryant-2013-achilles/`。兩頁及分享圖回傳 200，canonical、description、Open Graph、`summary_large_image`、圖片尺寸與 alt 均存在。首頁分享圖為 1380×542；詳細頁為 1200×630。robots 與 sitemap 回傳 200。正式 `/version.json` 仍為基線 `291c8f9…`，本次沒有部署。
@@ -99,22 +105,22 @@
 
 ## Issues、文章與追蹤
 
-[5 個 Issue 草稿](community/initial-issues.md) 各含 Problem、Expected outcome、Implementation scope、Acceptance criteria、labels 與難度：
+[5 個已發布的 Issues](community/initial-issues.md) 各含 Problem、Expected outcome、Implementation scope、Acceptance criteria、labels 與難度：
 
-1. onboarding 文件的 deterministic link／fragment CI 檢查。
-2. Fork Guide 完整繁體中文版本。
-3. 隔離的本機 Cloudflare Functions／D1 操作指南。
-4. WSL Ubuntu first-run 驗證。
-5. 使用明確 allowlist 的 code-only starter export 設計。
+1. [#5](https://github.com/keanu77/professional-sports-injury-atlas/issues/5)：onboarding 文件的 deterministic link／fragment CI 檢查。
+2. [#6](https://github.com/keanu77/professional-sports-injury-atlas/issues/6)：Fork Guide 完整繁體中文版本。
+3. [#7](https://github.com/keanu77/professional-sports-injury-atlas/issues/7)：隔離的本機 Cloudflare Functions／D1 操作指南。
+4. [#8](https://github.com/keanu77/professional-sports-injury-atlas/issues/8)：WSL Ubuntu first-run 驗證。
+5. [#9](https://github.com/keanu77/professional-sports-injury-atlas/issues/9)：使用明確 allowlist 的 code-only starter export 設計。
 
-這些是有已知缺口與交付條件的建議，不是已建立的公開 Issues；沒有製造假 Issue、PR 或互動數。完整文章：[Facebook 中文](promotion/facebook-zh.md)、[LinkedIn 英文](promotion/linkedin-en.md)、[開發者介紹英文](promotion/github-introduction-en.md)。均待人工發布。
+2026-10-21 續作時重新確認沒有既有 Issues 且帳號有權限，依原任務授權發布以上 5 項，並讀回核對 body、labels、OPEN 狀態與無指派人員。均標示與 PR #4 的關係；大型 starter export 先審查設計再實作。沒有新增 labels 或標成 `good first issue`。這 5 項是維護者準備的待辦，不計為外部社群貢獻或成長成效。完整文章：[Facebook 中文](promotion/facebook-zh.md)、[LinkedIn 英文](promotion/linkedin-en.md)、[開發者介紹英文](promotion/github-introduction-en.md)。均待人工發布。
 
 [成效追蹤指南](community/measurement.md) 定義 Stars、Forks、外部唯一貢獻者、社群 Issues、已合併 PR 與合法可取得的網站彙總資料。區分維護者／bot／外部貢獻，不新增識別碼、追蹤服務或個資蒐集；沒有數據時填 not available。
 
 ## 未完成與下一步
 
 1. 人工審查 PR 與最新 CI，再決定是否合併。本次不自行合併。
-2. 人工選擇 Issues、套用必要 labels 與 About 建議，確認 GitHub social preview。
+2. 人工排定已發布 Issues #5–#9 的優先順序與支援方式；About 建議與 GitHub social preview 設定仍待人工確認。
 3. 合併後再檢查 default-branch Fork Guide 公開連結，按平台規則發布草稿。草稿中的 main 分支新文件連結在合併前不視為已上線。
 4. Cloudflare demo 上傳、完整醫療 Fork 的權利／審閱建立、Windows／WSL、Firefox／WebKit 尚未驗證，原因與範圍已明列於指南。
 5. 若之後部署原站，`package.json` 變動會改變 release input digest，必須取得新發布證據；不能沿用舊 receipt 或改寫既有醫療核可。

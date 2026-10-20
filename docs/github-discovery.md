@@ -20,4 +20,4 @@ The bilingual READMEs already contain an actual workflow recording and distingui
 
 The existing [social preview](media/social-preview-1280x640.png) is prepared for this repository. Upload and inspect it manually in Settings → General → Social preview if not already configured. File existence alone does not prove the GitHub card uses it. The image and recording do not receive a new blanket license through this document; see [license scope](../LICENSE-SCOPE.md).
 
-The [release checklist](promotion/release-checklist.md) covers sharing readiness. Review the [initial issue proposals](community/initial-issues.md) before creating public tasks.
+The [release checklist](promotion/release-checklist.md) covers sharing readiness. The [five initial contributor issues](community/initial-issues.md) are published and unassigned. Review their current status before proposing related tasks.
