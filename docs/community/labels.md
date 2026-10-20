@@ -1,6 +1,6 @@
 # Suggested labels
 
-Prepared for manual maintainer review; this file does not create labels. Inspect existing repository labels before adding or renaming any. Preserve labels already used by issues or automations.
+Prepared for manual maintainer review; this file does not create labels. Inspect existing repository labels before adding or renaming any. Preserve labels already used by issues or automations. On 2026-10-21, `bug`, `documentation`, `duplicate`, `enhancement`, `good first issue`, `help wanted`, `invalid`, `question`, and `wontfix` already existed; do not recreate them. The other suggested labels below have not been applied.
 
 | Label              | Meaning                                                            | Suggested color |
 | ------------------ | ------------------------------------------------------------------ | --------------- |
