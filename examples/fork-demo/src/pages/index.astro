@@ -1,0 +1,110 @@
+---
+import demo from "../demo.json";
+
+const ids = new Set<string>();
+for (const record of demo.records) {
+  if (
+    record.status !== "synthetic" ||
+    !/^[a-z0-9-]+$/.test(record.id) ||
+    ids.has(record.id) ||
+    !record.title.trim() ||
+    !record.summary.trim()
+  ) {
+    throw new Error(
+      "Demo records need unique IDs, text, and synthetic status.",
+    );
+  }
+  ids.add(record.id);
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content={demo.description} />
+    <title>{demo.siteName} · Fictional demo</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">Fictional demo · No clinical approval</p>
+        <h1>{demo.siteName}</h1>
+        <p>{demo.description}</p>
+        <p>Maintained by {demo.owner}.</p>
+      </header>
+      <section aria-labelledby="catalog-heading">
+        <h2 id="catalog-heading">Sample catalog</h2>
+        <ul>
+          {
+            demo.records.map((record) => (
+              <li>
+                <article id={record.id}>
+                  <p class="eyebrow">Synthetic record</p>
+                  <h3>{record.title}</h3>
+                  <p>{record.summary}</p>
+                </article>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+      <footer>
+        <p>
+          These original fictional examples are provided under MIT. They contain
+          no medical guidance or third-party media. This demo is not a clinical
+          review system.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
+
+<style>
+  :global(body) {
+    margin: 0;
+    color: #17313b;
+    background: #f5f7f6;
+    font-family: system-ui, sans-serif;
+    line-height: 1.65;
+  }
+  main {
+    max-width: 60rem;
+    margin: auto;
+    padding: 2rem 1.25rem;
+  }
+  header {
+    padding-bottom: 2rem;
+    border-bottom: 3px solid #236b62;
+  }
+  h1 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+  .eyebrow {
+    color: #365f58;
+    font-weight: 700;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+    gap: 1rem;
+  }
+  article {
+    padding: 1.5rem;
+    border: 1px solid #a8bbb5;
+    background: white;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+  }
+  footer {
+    margin-top: 2rem;
+    border-top: 1px solid #a8bbb5;
+  }
+</style>

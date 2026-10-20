@@ -2,7 +2,7 @@
 
 給運動醫學學習者與教學者的影片索引：依選手、運動項目與受傷部位找素材，接著查閱事件來源與回場脈絡。由運動醫學科吳易澄醫師策劃。
 
-**[開啟網站 →](https://injury.sportsmedicine.tw/)** · [English](README.en.md) · [參與貢獻](CONTRIBUTING.md) · [程式碼授權與內容範圍](LICENSE-SCOPE.md)
+**[開啟網站 →](https://injury.sportsmedicine.tw/)** · [English](README.en.md) · [Fork Guide](docs/fork-guide.md) · [參與貢獻](CONTRIBUTING.md) · [程式碼授權與內容範圍](LICENSE-SCOPE.md)
 
 [![實際操作：搜尋選手、開啟影片頁、查看來源](docs/media/catalog-demo.gif)](https://injury.sportsmedicine.tw/)
 
@@ -17,7 +17,15 @@
 
 這是教育與資料探索工具，不能用影片確診、開立治療處方或決定回場時間，也不是可直接用於診斷模型訓練的標註資料集。目前沒有對外宣稱使用人數或教學成效。影片由原平台提供，嵌入與播放可能隨地區或權利人設定改變。
 
-## 本機開始
+## 選擇你的入口
+
+| 你想做的事                                       | 從這裡開始                                                |
+| ------------------------------------------------ | --------------------------------------------------------- |
+| 醫療專業人員、教育工作者：找影片與來源供教學討論 | [公開圖鑑](https://injury.sportsmedicine.tw/)             |
+| 開源開發者：修文件、介面或測試                   | 下方 Quick Start 與 [Contribution Guide](CONTRIBUTING.md) |
+| Fork 作者：用自己的品牌與內容開始                | [Fork Guide 與純虛構示範](docs/fork-guide.md)             |
+
+## Quick Start：參與原專案
 
 需要 Git 與 **Node.js 24.14.0**（[`.node-version`](.node-version)）。Ubuntu 請先安裝中文字型，讓分享圖片與相關測試能正確呈現中文：
 
@@ -60,7 +68,7 @@ Astro、TypeScript 與少量瀏覽器互動程式；正式環境使用 Cloudflar
 
 歡迎修正文件、改善無障礙與搜尋，或提供可查證的影片來源。請先讀 [CONTRIBUTING.md](CONTRIBUTING.md)。不用寫程式也可透過[網站投稿頁](https://injury.sportsmedicine.tw/contribute/)提出影片與資料修正。安全漏洞請依 [SECURITY.md](SECURITY.md) 私下回報。
 
-如果這份索引或介面實作對你有幫助，歡迎給一顆 Star，方便之後回來查找。
+如果這份索引或介面實作對你有幫助，歡迎給一顆 [Star](https://github.com/keanu77/professional-sports-injury-atlas)，方便之後回來查找。想實驗或提交改善，可依 [Fork Guide](docs/fork-guide.md) 建立自己的分支；Fork 不代表取得整份醫療資料與影音的再散布授權。
 
 ## 授權
 

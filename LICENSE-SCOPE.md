@@ -6,6 +6,8 @@ The MIT license in [LICENSE](LICENSE) applies to original software code and deve
 
 Original application logic, components and styles, build and validation tools, tests, infrastructure configuration, and documentation explaining how to develop or contribute to the software. For mixed files, the grant covers the original software implementation, not embedded editorial content or third-party material.
 
+The original synthetic text in [`examples/fork-demo/`](examples/fork-demo/) is also MIT-licensed. It was written for software onboarding, contains no real case or clinical guidance, and does not import the editorial collection or its approvals. This explicit inclusion applies only to those original demonstration files.
+
 ## Outside the MIT grant
 
 | Material                                                                                           | Where to check                                                                                                      |

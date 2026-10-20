@@ -1,0 +1,19 @@
+{
+  "siteName": "My Learning Catalog",
+  "owner": "Example maintainer",
+  "description": "A fictional catalog for learning the fork workflow.",
+  "records": [
+    {
+      "id": "sample-a",
+      "title": "Fictional sample A",
+      "summary": "Practice changing a catalog title and description. No real event or medical claim is represented.",
+      "status": "synthetic"
+    },
+    {
+      "id": "sample-b",
+      "title": "Fictional sample B",
+      "summary": "Practice adding an original record. This sample has no athlete, video, diagnosis, or review approval.",
+      "status": "synthetic"
+    }
+  ]
+}

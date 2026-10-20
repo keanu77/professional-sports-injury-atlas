@@ -1,0 +1,29 @@
+name: Documentation improvement / 文件改善
+description: Report an unclear, missing, or incorrect development instruction.
+body:
+  - type: markdown
+    attributes:
+      value: "Use the content/source correction form for medical or event text. Do not include secrets, personal medical information, or unlicensed media."
+  - type: input
+    id: location
+    attributes:
+      label: Document path and heading / 文件與段落
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What were you trying to do, and where did you get stuck? / 操作目的與問題
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Proposed clarification / 建議說明
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Commands, environment, and results / 指令、環境與結果
+      description: Include Node/OS versions for setup issues. Redact paths or output that identify private accounts; never paste environment files.

@@ -35,3 +35,5 @@ jobs:
       - run: npm run build:review
       - run: npm run brand:verify
       - run: npm run verify:review-artifact
+      - run: npm run demo:check
+      - run: npm run demo:build
