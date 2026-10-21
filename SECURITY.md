@@ -14,6 +14,10 @@ Security fixes target the current maintained branch and live release. Older comm
 
 The attack surface includes Cloudflare Functions, D1-backed counters/submissions, browser rendering, build provenance, dependencies, and private review hosting tools. A static page passing checks does not establish that every service is secure.
 
+## Dependency checks
+
+Contributor CI runs `npm audit --audit-level=high` after the locked install and blocks known high or critical dependency vulnerabilities. Registry availability is required; a failed audit must not be silently skipped. The Vite override pins the patched 8.2.4 release within Astro's supported range. Review upstream advisories and compatibility before changing that override, and run the normal checks after updating the lockfile.
+
 ## Keep out of Git and artifacts
 
 - Cloudflare tokens and database credentials, YouTube API keys, GitHub tokens, and webhook secrets.
