@@ -895,6 +895,18 @@
     "emma-raducanu-2022-2023-wrists": {
       "resources": ["overview"],
       "note": "延伸閱讀提供運動傷害整體背景；個別診斷與處置仍以本頁來源及專業評估為準。"
+    },
+    "stephen-curry-2025-left-hamstring": {
+      "resources": ["hamstring"],
+      "note": "延伸閱讀提供腿後肌拉傷的一般資訊，不能代替 Curry 個人的檢查、傷害分級或復出決策。"
+    },
+    "stephen-curry-2026-right-patellofemoral-pain": {
+      "resources": ["overview"],
+      "note": "主題總覽提供一般運動傷害資訊；本次為髕股疼痛事件，不以半月板或前十字韌帶傷害的復健時程代用。"
+    },
+    "stephen-curry-2026-right-oblique": {
+      "resources": ["overview"],
+      "note": "主題總覽提供一般運動傷害資訊；腹斜肌撕裂的個人程度與回場時程以球隊後續資料為準，不由其他部位的傷勢類推。"
     }
   }
 }

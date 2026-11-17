@@ -26,7 +26,7 @@ const video = candidate.events[0]!.videoCandidates[1]!;
       url={video.url}
       title="到 YouTube 原平台觀看"
       publisher="NBA on ESPN"
-      publishedAt={video.publishedAt}
+      publishedAt={"publishedAt" in video ? video.publishedAt : null}
     />
     <p>
       已確認原平台播放與英文自動字幕選項；完整內容、字幕品質與本站內嵌仍待核對。
