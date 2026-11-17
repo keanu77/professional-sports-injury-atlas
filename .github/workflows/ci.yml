@@ -58,7 +58,7 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - name: Test actual public catalog UI with mocked external services
-        run: npm run test:e2e:public -- --project=chromium --project=mobile-chromium e2e/catalog-200.spec.ts e2e/catalog-ux.spec.ts e2e/video-types.spec.ts e2e/contributions.spec.ts e2e/video-player.spec.ts e2e/discovery-quality.spec.ts e2e/learning-quality.spec.ts
+        run: npm run test:e2e:public -- --project=chromium --project=mobile-chromium e2e/catalog-200.spec.ts e2e/catalog-ux.spec.ts e2e/video-types.spec.ts e2e/contributions.spec.ts e2e/video-player.spec.ts e2e/discovery-quality.spec.ts e2e/learning-quality.spec.ts e2e/curry-three.spec.ts e2e/video-search.spec.ts
       - name: Measure public preview performance and accessibility
         run: ATLAS_LIGHTHOUSE_MODE=public-preview npm run test:lighthouse
       - name: Preserve mode, commit and tested/skipped evidence
