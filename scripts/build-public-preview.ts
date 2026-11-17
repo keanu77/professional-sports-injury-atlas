@@ -5,7 +5,7 @@ import { join } from "node:path";
 import assert from "node:assert/strict";
 import { loadPublicVideoInventory } from "./lib/public-video-inventory";
 const out = "artifacts/public-preview";
-execFileSync(process.execPath, ["node_modules/astro/astro.js", "build"], {
+execFileSync(process.execPath, ["node_modules/.bin/astro", "build"], {
   stdio: "inherit",
   env: {
     ...process.env,
