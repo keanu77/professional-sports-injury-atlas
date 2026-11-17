@@ -25,15 +25,18 @@ test("reserves search controls while the enhancement module is delayed", async (
     await expect(note).toBeVisible();
     await page.evaluate(() => document.fonts.ready.then(() => undefined));
     await expect(page.getByRole("searchbox")).toBeHidden();
-    const before = await note.boundingBox();
+    const section = page.locator("[data-video-discovery]");
+    const before =
+      (await note.boundingBox())!.y - (await section.boundingBox())!.y;
     release();
     await expect(page.locator("[data-video-discovery]")).toHaveAttribute(
       "data-discovery-ready",
       "true",
     );
     await expect(page.getByRole("searchbox")).toBeVisible();
-    const after = await note.boundingBox();
-    expect(Math.abs(after!.y - before!.y)).toBeLessThanOrEqual(2);
+    const after =
+      (await note.boundingBox())!.y - (await section.boundingBox())!.y;
+    expect(Math.abs(after - before)).toBeLessThanOrEqual(2);
   } finally {
     release();
   }

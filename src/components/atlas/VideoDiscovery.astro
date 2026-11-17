@@ -16,6 +16,10 @@ import { parseYouTubeVideoId } from "../../lib/video/youtube";
 import { videosBySport } from "../../lib/videos/sports";
 import { videosByBodyPart } from "../../lib/videos/body-parts";
 import { eventUpdateFor } from "../../lib/videos/event-updates";
+import {
+  recentTwoYearRange,
+  taipeiToday,
+} from "../../lib/videos/discovery-time";
 interface Props {
   featured: InjuryCase[];
   clips: ObservationClip[];
@@ -80,6 +84,7 @@ const datesBySlug = new Map(
     ] as const;
   }),
 );
+const initialDateRange = recentTwoYearRange(taipeiToday());
 ---
 
 <section
@@ -233,7 +238,9 @@ const datesBySlug = new Map(
           </div>
         </div>
         <p id="video-date-help" class="discovery-date-help" data-date-help>
-          近兩年以台灣當日計算；日期不詳者不列入日期區間，依日期排序時放在最後。內容整理日期不是影片上架或每個來源重新查核的日期。
+          近兩年：{initialDateRange.from} 至 {
+            initialDateRange.to
+          }（台灣日期）。確切日期不詳者不列入日期區間，依日期排序時放在最後。內容整理日期不是影片上架或每個來源重新查核的日期。
         </p>
         <p
           id="video-date-error"
