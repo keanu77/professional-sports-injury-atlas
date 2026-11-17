@@ -94,8 +94,17 @@ if (form) {
   });
   const contentError = () =>
     Object.values(contributionErrors(fields()))[0] ?? "";
+  let renderedErrorSignature: string | undefined;
   const showErrors = () => {
     const errors = contributionErrors(fields());
+    const signature = JSON.stringify(
+      (["url", "note", "sources"] as const).map((name) =>
+        interacted ? (errors[name] ?? "") : "",
+      ),
+    );
+    // Blurring an edited field fires change between pointerdown and click.
+    // Keep unchanged links attached so that click and keyboard focus survive.
+    if (signature === renderedErrorSignature) return;
     const list = errorSummary.querySelector("ul")!;
     list.replaceChildren();
     for (const name of ["url", "note", "sources"] as const) {
@@ -120,6 +129,7 @@ if (form) {
       }
     }
     errorSummary.hidden = !list.childElementCount;
+    renderedErrorSignature = signature;
   };
   const clearStoredDraft = () => {
     clearTimeout(draftExpiryTimer);

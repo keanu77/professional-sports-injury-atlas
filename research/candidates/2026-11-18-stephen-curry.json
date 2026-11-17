@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "athlete": "Stephen Curry",
-  "reviewedAt": "2026-11-18T02:25:00+08:00",
+  "reviewedAt": "2026-11-18",
   "status": "research-only",
   "includedInPublicCatalog": false,
   "medicalApproval": false,
@@ -121,7 +121,7 @@
       "note": "可讀官方文字不等於影片播放通過；三次事件仍分開，未寫入醫療或媒體核准。"
     },
     {
-      "checkedAt": "2026-11-18T02:24:00+08:00",
+      "checkedAt": "2026-11-18",
       "method": "native-chrome-ui",
       "videoUrl": "https://www.youtube.com/watch?v=OYLixb3d7gA",
       "pageTitle": "Shams: Steph Curry to miss at least 1 week with hamstring strain | NBA Today",
@@ -138,7 +138,8 @@
       "signedOutVerified": false,
       "fullContentReviewed": false,
       "medicalApproval": false,
-      "note": "於使用者既有登入環境的新分頁實播，完成後暫停並關閉此分頁。時間點為UI抽查，不代表逐秒完整觀看；字幕選項與字幕顯示不代表翻譯或內容正確。"
+      "note": "於使用者既有登入環境的新分頁實播，完成後暫停並關閉此分頁。時間點為UI抽查，不代表逐秒完整觀看；字幕選項與字幕顯示不代表翻譯或內容正確。",
+      "timePrecision": "day"
     }
   ],
   "sourcePlatformVideosVerified": 1,

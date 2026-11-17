@@ -316,6 +316,28 @@ test("links all correction field errors and clears each after correction", async
   await expectNoAxeViolations(page);
 });
 
+test("activates correction error links with Enter without losing focus", async ({
+  page,
+}) => {
+  await page.goto("/contribute/");
+  await page.getByRole("radio", { name: "資料修正" }).check();
+  await page.getByLabel("需要修正的頁面網址").fill("not-a-url");
+  await page.getByLabel("需要修正的內容與建議").fill("太短");
+  await page.getByLabel("參考來源（選填）").fill("invalid source");
+  const summary = page.locator("[data-contribution-errors]");
+  const noteError = summary.locator('a[href="#contribution-note"]');
+  await noteError.focus();
+  await expect(noteError).toBeFocused();
+  await page.keyboard.press("Enter");
+  await expect(page.getByLabel("需要修正的內容與建議")).toBeFocused();
+  await page.getByLabel("需要修正的內容與建議").fill("請重新確認來源日期");
+  await expect(summary.locator('a[href="#contribution-note"]')).toHaveCount(0);
+  await expect(summary.locator('a[href="#contribution-url"]')).toBeVisible();
+  await expect(
+    summary.locator('a[href="#contribution-sources"]'),
+  ).toBeVisible();
+});
+
 for (const failure of ["network", "missing-api", "render-error"] as const) {
   test(`retries initial challenge ${failure} in place without losing draft`, async ({
     page,

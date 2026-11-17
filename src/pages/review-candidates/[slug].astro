@@ -37,6 +37,9 @@ const video = candidate.events[0]!.videoCandidates[1]!;
           <p>
             事件日期：{event.eventDate ?? "未確認"}。{event.sourceAttribution}
           </p>
+          {event.returnDate && (
+            <p>已知回場日期：{event.returnDate}。出賽不代表完全康復。</p>
+          )}
           <p>{event.followUp}</p>
           <ul>
             {event.sources.map((source) => (

@@ -17,6 +17,9 @@ for (const path of [
   }) => {
     await page.goto(path);
     const learning = page.locator("[data-video-learning]");
+    await page.getByRole("link", { name: "閱讀與學習", exact: true }).click();
+    const heading = learning.getByRole("heading", { name: "如何閱讀本頁" });
+    await expect(heading).toBeInViewport();
     await expect(
       learning.getByRole("heading", { name: "如何閱讀本頁" }),
     ).toBeVisible();

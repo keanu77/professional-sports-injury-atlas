@@ -21,6 +21,7 @@ const FICTIONAL_ID = "fIcTiOnAl01";
 const WATCH_URL = `https://www.youtube.com/watch?v=${FICTIONAL_ID}`;
 const IFRAME_API_URL = "https://www.youtube.com/iframe_api";
 const PAGE_ORIGIN = `http://127.0.0.1:${process.env.ATLAS_E2E_PORT ?? "4321"}`;
+const PUBLIC_PREVIEW = process.env.ATLAS_E2E_MODE === "public-preview";
 const GOVERNED_YOUTUBE_CASES = [
   {
     caseId: "CASE-NBAANKLE-2023-001",
@@ -345,6 +346,10 @@ async function readStub(page: Page): Promise<StubState> {
 }
 
 test.describe("component lab before enhancement", () => {
+  test.skip(
+    PUBLIC_PREVIEW,
+    "Component lab is intentionally absent from public builds; run in review mode",
+  );
   test("initial DOM and network log contain no YouTube artifacts", async ({
     page,
   }) => {
@@ -506,10 +511,14 @@ test.describe("governed case facades", () => {
         "data-caption-status",
         entry.captionStatus,
       );
-      await expect(card.locator("[data-review-state]")).toContainText(
-        "presentation=click-to-load",
-      );
-      if (entry.captionStatus === "unavailable") {
+      if (PUBLIC_PREVIEW) {
+        await expect(card.locator("[data-review-state]")).toHaveCount(0);
+      } else {
+        await expect(card.locator("[data-review-state]")).toContainText(
+          "presentation=click-to-load",
+        );
+      }
+      if (entry.captionStatus === "unavailable" && !PUBLIC_PREVIEW) {
         await expect(card.locator("[data-caption-warning]")).toContainText(
           "公開版將降級為原始平台連結",
         );
@@ -570,6 +579,10 @@ test.describe("governed case facades", () => {
   test("the Taiwan-blocked Anthony Edwards video is a labeled external link with no facade or request", async ({
     page,
   }) => {
+    test.skip(
+      PUBLIC_PREVIEW,
+      "This governed case is intentionally outside the public catalog",
+    );
     const log = await stubYouTubeRoutes(page);
     const thirdPartyRequests: string[] = [];
     page.on("request", (request) => {
@@ -608,6 +621,10 @@ test.describe("governed case facades", () => {
   test("a real NBA case uses its registry v7 photo facade and complete plain-text citation", async ({
     page,
   }) => {
+    test.skip(
+      PUBLIC_PREVIEW,
+      "This governed NBA case is intentionally outside the public catalog",
+    );
     const log = await stubYouTubeRoutes(page);
     const thirdPartyRequests: string[] = [];
     page.on("request", (request) => {
@@ -669,6 +686,10 @@ test.describe("governed case facades", () => {
 });
 
 test.describe("component lab without JavaScript", () => {
+  test.skip(
+    PUBLIC_PREVIEW,
+    "Component lab is intentionally absent from public builds; run in review mode",
+  );
   test.use({ javaScriptEnabled: false });
 
   test("the source anchor remains a normal link and the removed timeline stays absent", async ({
@@ -688,6 +709,10 @@ test.describe("component lab without JavaScript", () => {
 });
 
 test.describe("click-to-load player", () => {
+  test.skip(
+    PUBLIC_PREVIEW,
+    "Component lab is intentionally absent from public builds; run in review mode",
+  );
   test("first click creates one validated no-cookie iframe and one player", async ({
     page,
   }) => {
@@ -900,6 +925,10 @@ test.describe("click-to-load player", () => {
 });
 
 test.describe("non-embedded states and caption policy", () => {
+  test.skip(
+    PUBLIC_PREVIEW,
+    "Component lab is intentionally absent from public builds; run in review mode",
+  );
   test("NBA external-link-only renders a complete plain-text citation and no player", async ({
     page,
   }) => {
