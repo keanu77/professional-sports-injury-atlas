@@ -20,8 +20,8 @@ export default defineConfig({
   retries: 0,
   webServer: {
     command: publicPreview
-      ? `npm run build:public-preview && ATLAS_PUBLIC_PREVIEW=1 npm run preview -- --host 127.0.0.1 --port ${port}`
-      : `npm run build:review && npm run preview -- --host 127.0.0.1 --port ${port}`,
+      ? `npm run build:public-preview && ATLAS_PUBLIC_PREVIEW=1 npm run preview -- --ignore-lock --host 127.0.0.1 --port ${port}`
+      : `npm run build:review && npm run preview -- --ignore-lock --host 127.0.0.1 --port ${port}`,
     url: `${origin}/`,
     reuseExistingServer: false,
     timeout: 300000,

@@ -90,7 +90,7 @@ async function main(): Promise<number> {
   try {
     preview = spawn(
       join("node_modules", ".bin", "astro"),
-      ["preview", "--host", HOST, "--port", String(PORT)],
+      ["preview", "--ignore-lock", "--host", HOST, "--port", String(PORT)],
       {
         stdio: "ignore",
         detached: true,
