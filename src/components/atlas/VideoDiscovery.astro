@@ -428,6 +428,19 @@ const datesBySlug = new Map(
   [hidden] {
     display: none !important;
   }
+  /* Reserve the enhanced controls before the module arrives. With JavaScript
+     disabled the early marker is absent, so the complete static catalog remains. */
+  :global(html[data-js="true"]) .video-search[hidden] {
+    display: block !important;
+    visibility: hidden;
+  }
+  :global(html[data-js="true"]) .discovery-controls[hidden] {
+    display: flex !important;
+    visibility: hidden;
+  }
+  :global(html[data-js="true"]) .discovery-status:empty {
+    display: block;
+  }
   .discovery-controls {
     display: flex;
     flex-wrap: wrap;
@@ -592,6 +605,7 @@ const datesBySlug = new Map(
     color: var(--color-ink-muted);
     font-size: 0.875rem;
     margin-block: 0.75rem 0.5rem;
+    min-block-size: 3.6em;
   }
   .discovery-status:empty {
     display: none;
@@ -734,6 +748,16 @@ const datesBySlug = new Map(
     }
   }
   @media (max-width: 47.999rem) {
+    :global(html[data-js="true"])
+      [data-video-search][hidden]
+      [data-advanced-filters] {
+      display: none;
+    }
+    :global(html[data-js="true"])
+      [data-video-search][hidden]
+      [data-advanced-toggle] {
+      display: flex !important;
+    }
     .discovery-filter-grid,
     .discovery-filter-grid.fixed-type {
       grid-template-columns: minmax(0, 1fr) auto;

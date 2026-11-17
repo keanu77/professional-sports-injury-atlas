@@ -11,7 +11,7 @@
  */
 
 import { spawn, type ChildProcess } from "node:child_process";
-import { mkdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { chromium } from "@playwright/test";
 import * as chromeLauncher from "chrome-launcher";
@@ -125,6 +125,7 @@ async function main(): Promise<number> {
     });
 
     const results = [];
+    const diagnostics = [];
     let failed = false;
     for (const target of targets) {
       const run = await lighthouse(`${BASE_URL}${target.path}`, {
@@ -149,6 +150,14 @@ async function main(): Promise<number> {
         lcpMs <= MAX_LCP_MS &&
         cls <= 0.1;
       if (!pass) failed = true;
+      diagnostics.push({
+        path: target.path,
+        audits: Object.fromEntries(
+          Object.entries(run.lhr.audits).filter(([key]) =>
+            /layout|cls|font/.test(key),
+          ),
+        ),
+      });
       results.push({
         path: target.path,
         accessibilityScore: accessibility,
@@ -160,7 +169,7 @@ async function main(): Promise<number> {
       });
       console.log(
         `${pass ? "PASS" : "FAIL"} ${target.path} ` +
-          `a11y=${accessibility.toFixed(2)} lcp=${Math.round(lcpMs)}ms`,
+          `a11y=${accessibility.toFixed(2)} lcp=${Math.round(lcpMs)}ms cls=${cls.toFixed(3)}`,
       );
     }
 
@@ -176,9 +185,26 @@ async function main(): Promise<number> {
           measuredAt: new Date().toISOString(),
           environment: "local mobile lab; not field Core Web Vitals",
           fieldVerified: false,
+          artifactVersion: existsSync(
+            join(
+              publicPreview ? "artifacts/public-preview" : "dist",
+              "version.json",
+            ),
+          )
+            ? JSON.parse(
+                readFileSync(
+                  join(
+                    publicPreview ? "artifacts/public-preview" : "dist",
+                    "version.json",
+                  ),
+                  "utf8",
+                ),
+              )
+            : null,
           thresholds: {
             minAccessibilityScore: MIN_ACCESSIBILITY_SCORE,
             maxLargestContentfulPaintMs: MAX_LCP_MS,
+            maxCumulativeLayoutShift: 0.1,
           },
           results,
         },
@@ -186,9 +212,14 @@ async function main(): Promise<number> {
         2,
       )}\n`,
     );
+    mkdirSync("output/site-quality-validation", { recursive: true });
+    writeFileSync(
+      "output/site-quality-validation/lighthouse-diagnostics.json",
+      JSON.stringify(diagnostics, null, 2) + "\n",
+    );
     if (failed) {
       console.error(
-        `at least one route missed the Accessibility ${MIN_ACCESSIBILITY_SCORE} / LCP ${MAX_LCP_MS}ms budget`,
+        `at least one route missed the Accessibility ${MIN_ACCESSIBILITY_SCORE} / LCP ${MAX_LCP_MS}ms / CLS 0.1 budget`,
       );
       return 1;
     }
