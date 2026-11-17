@@ -423,7 +423,7 @@ test.describe("component lab before enhancement", () => {
 });
 
 test.describe("governed case facades", () => {
-  test("all seven embeddable YouTube cases use their registry v7 local photo facade and make zero pre-click requests", async ({
+  test("all seven embeddable YouTube cases use the governed local facade for their build mode and make zero pre-click requests", async ({
     page,
   }) => {
     const log = await stubYouTubeRoutes(page);
@@ -474,21 +474,44 @@ test.describe("governed case facades", () => {
         "data-video-orientation",
         entry.orientation,
       );
-      const cover = card.locator("[data-video-facade] [data-case-cover]");
-      await expect(cover).toHaveAttribute("data-case-cover", entry.injuryCode);
-      const selection = selectionByCaseId.get(entry.caseId);
-      expect(
-        selection,
-        `missing registry v7 photo selection for ${entry.caseId}`,
-      ).toBeDefined();
-      await expectLocalResponsiveCover(cover, {
-        athleteName: entry.athleteName,
-        injuryLabel: entry.injuryLabel,
-        selection,
-      });
-      await expect(
-        cover.locator(`[data-cover-illustration="${entry.injuryCode}"]`),
-      ).toHaveCount(1);
+      const cover = card.locator(
+        PUBLIC_PREVIEW
+          ? "[data-video-facade] [data-video-thumbnail]"
+          : "[data-video-facade] [data-case-cover]",
+      );
+      if (PUBLIC_PREVIEW) {
+        await expect(cover).toHaveAttribute(
+          "data-video-thumbnail",
+          entry.videoId,
+        );
+        const thumbnail = cover.locator("img");
+        await expect(thumbnail).toHaveAttribute("alt", "");
+        const src = await thumbnail.getAttribute("src");
+        expect(new URL(src!, PAGE_ORIGIN).origin).toBe(PAGE_ORIGIN);
+        await expect
+          .poll(() =>
+            thumbnail.evaluate((img) => (img as HTMLImageElement).naturalWidth),
+          )
+          .toBeGreaterThan(0);
+      } else {
+        await expect(cover).toHaveAttribute(
+          "data-case-cover",
+          entry.injuryCode,
+        );
+        const selection = selectionByCaseId.get(entry.caseId);
+        expect(
+          selection,
+          `missing registry v7 photo selection for ${entry.caseId}`,
+        ).toBeDefined();
+        await expectLocalResponsiveCover(cover, {
+          athleteName: entry.athleteName,
+          injuryLabel: entry.injuryLabel,
+          selection,
+        });
+        await expect(
+          cover.locator(`[data-cover-illustration="${entry.injuryCode}"]`),
+        ).toHaveCount(1);
+      }
       await expect(card.locator("[data-video-load]")).toContainText(
         "載入 YouTube 播放器",
       );
@@ -525,7 +548,9 @@ test.describe("governed case facades", () => {
       } else {
         await expect(card.locator("[data-caption-warning]")).toHaveCount(0);
       }
-      await expect(page.locator("[data-case-cover]")).toHaveCount(1);
+      await expect(page.locator("[data-case-cover]")).toHaveCount(
+        PUBLIC_PREVIEW ? 0 : 1,
+      );
       await expect(page.locator("iframe")).toHaveCount(0);
       await expect(page.locator("link[rel='preconnect']")).toHaveCount(0);
       await expect(page.locator("link[rel='dns-prefetch']")).toHaveCount(0);
