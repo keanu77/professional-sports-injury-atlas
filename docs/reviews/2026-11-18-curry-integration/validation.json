@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-11-17T23:23:05.678177+00:00",
+  "applicationCommit": "d9cf054e45ca12c29131b253c8d6b35a28a3dc88",
+  "previousCatalogCount": 200,
+  "addedVideos": 3,
+  "catalogCount": 203,
+  "originalCatalogPreserved": true,
+  "eventContentReview": "user-approved-three-events",
+  "checks": {
+    "typecheck": {
+      "files": 442,
+      "errors": 0,
+      "warnings": 0,
+      "hints": 17,
+      "scope": "working files immediately before applicationCommit; identical committed bytes"
+    },
+    "unit": {
+      "sourceCommit": "d9cf054e45ca12c29131b253c8d6b35a28a3dc88",
+      "files": 121,
+      "passed": 1745,
+      "failed": 0
+    },
+    "publicDesktopAndMobile": {
+      "sourceCommit": "629dc972cfe97611b23867c4eb839ff13283bddb",
+      "passed": 224,
+      "skippedReviewOnly": 30,
+      "failed": 0,
+      "flaky": 0
+    },
+    "finalCurryAndLearningPages": {
+      "sourceCommit": "d9cf054e45ca12c29131b253c8d6b35a28a3dc88",
+      "passed": 14,
+      "skipped": 0,
+      "failed": 0,
+      "flaky": 0
+    },
+    "content": "passed: 26 cases, 3 overviews, 1 update",
+    "plan": "passed: 45 bound documents",
+    "brand": "passed: all 3 new original covers have provenance",
+    "format": "passed",
+    "dependencies": "unchanged package and lock; npm ls passed",
+    "environmentAndService": "no new variables, service changes or database migrations",
+    "previewArtifact": {
+      "schemaVersion": 1,
+      "artifactType": "public-ui-preview",
+      "deployable": false,
+      "clinicalApproval": false,
+      "commit": "d9cf054e45ca12c29131b253c8d6b35a28a3dc88",
+      "htmlPages": 277,
+      "publicVideoCount": 203,
+      "builtAt": "2026-11-17T23:21:44.519Z"
+    },
+    "localDelivery": {
+      "checkedAt": "2026-11-17T23:22:10.972617+00:00",
+      "applicationCommit": "d9cf054e45ca12c29131b253c8d6b35a28a3dc88",
+      "localOrigin": "http://127.0.0.1:4325",
+      "checks": [
+        {
+          "path": "/",
+          "status": 200,
+          "sha256": "46a5d42c90123dc65a05835615ae8fabcc45fad4651fa6bbe51e5136ea1307db",
+          "noindex": true,
+          "catalogCards": 203
+        },
+        {
+          "path": "/version.json",
+          "status": 200,
+          "sha256": "89e5ec22576f7ff2afed5d2251c60b6d1d59b5a6a1a9862c50da71c1da7ca4af",
+          "commit": "d9cf054e45ca12c29131b253c8d6b35a28a3dc88"
+        },
+        {
+          "path": "/videos/stephen-curry-2025-left-hamstring/",
+          "status": 200,
+          "sha256": "01f68f4c5a76677e0d45616bff2ea6237dc499945b4ae6c528e77d59c0c28bd7",
+          "noindex": true,
+          "videoId": "OYLixb3d7gA"
+        },
+        {
+          "path": "/videos/stephen-curry-2026-right-patellofemoral-pain/",
+          "status": 200,
+          "sha256": "c7e25b48267a9017f771c803715fd86bfd19e2513758facb1869e8bd72cd3e8c",
+          "noindex": true,
+          "videoId": "iGY5kwMIS2g"
+        },
+        {
+          "path": "/videos/stephen-curry-2026-right-oblique/",
+          "status": 200,
+          "sha256": "484676cbb5f2f118d80c5d20487d444c5517189b9e5ec3f7291765dbb05a3095",
+          "noindex": true,
+          "videoId": "xKsiGQbv2XU"
+        }
+      ],
+      "production": {
+        "status": 200,
+        "version": {
+          "schemaVersion": 1,
+          "commit": "9d6f38a4159ec69715e8e185cc1c363b1430bf49"
+        }
+      },
+      "productionDeployedByThisTask": false
+    },
+    "releaseGate": {
+      "passed": false,
+      "reason": "current playback registry is pending; no exception or approval rewritten"
+    }
+  },
+  "limitations": [
+    "Source-platform partial playback is not full-content or caption-accuracy review.",
+    "The three-event approval does not approve the other 20 learning drafts.",
+    "No production deployment, push, merge or actual form submission.",
+    "No new field-CWV or all-catalog owned-HTTPS playback evidence."
+  ]
+}

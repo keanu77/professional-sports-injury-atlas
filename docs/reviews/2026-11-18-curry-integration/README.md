@@ -25,7 +25,9 @@
 
 ## 驗證
 
-本輪檢查結果與應用 commit 在 `validation.json`，完整日誌在 `output/site-quality-validation/curry-*`。測試包含 203 筆唯一性、原 200 筆保留、三事件各別日期、影片及封面綁定、別名搜尋、引用跳轉、桌機／手機可及性。跨模組完整測試與建置完成後填入實際結果。
+本輪檢查結果與應用 commit 在 `validation.json`，完整日誌在 `output/site-quality-validation/curry-*`。測試包含 203 筆唯一性、原 200 筆保留、三事件各別日期、影片及封面綁定、別名搜尋、引用跳轉、桌機／手機可及性。最終單元測試 121 files／1,745 passed；型別 442 files／0 errors／0 warnings。公開桌機及手機回歸在 `629dc97` 為 224 passed、30 review-only skipped；最後的引用日期型別修正後，以 `d9cf054` 重建並再次驗證 Curry 與教材頁，14 passed／0 skipped。最終預覽為 277 頁、203 支影片。
+
+最終應用版本為 `d9cf054e45ca12c29131b253c8d6b35a28a3dc88`；後續僅交接文件提交。HTTP 實查首頁 203 張目錄卡、三個 Curry 頁面及版本一致，均為 noindex。正式網站仍為 `9d6f38a4159ec69715e8e185cc1c363b1430bf49`，未部署此候選。
 
 ## 發布邊界
 

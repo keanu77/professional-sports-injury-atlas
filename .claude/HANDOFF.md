@@ -2,6 +2,6 @@
 
 目前可執行交接文件為 [`.Codex/HANDOFF.md`](../.Codex/HANDOFF.md)。
 
-網站品質候選分支 `feat/site-quality-20261118`；已驗證應用 commit `70444a51a4827dffd0def7a16839176d2494acc5`，後續文件提交見 `git log -1`。完整交付與未完成條件見 [`implementation-report.md`](../docs/reviews/2026-11-18-site-quality/implementation-report.md)。尚未達 100 分，也未發布；臨床與全目錄媒體核可不能代簽。
+使用者已審核 Curry 三事件；候選目錄由 200 增至 **203 支**。分支 `feat/site-quality-20261118`，最終應用 commit `d9cf054e45ca12c29131b253c8d6b35a28a3dc88`，後續文件提交見 `git log -1`。本機預覽 `http://127.0.0.1:4325/`。
 
-本文件只在隔離候選分支更新。原工作目錄既有 `.claude/HANDOFF.md` 及未提交資料保持原樣。
+本輪收錄、審閱及驗證見 [Curry 收錄報告](../docs/reviews/2026-11-18-curry-integration/README.md)。尚未正式部署；三事件內容確認不等於全站當期實播或其他 20 教材核可。原工作目錄的未提交內容保持原樣。
