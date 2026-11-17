@@ -20,6 +20,12 @@
 
 本輪另找到 [Chiefs 官方的 Patrick Mahomes 2025 左膝 ACL 傷勢與手術公告](https://www.chiefs.com/news/injury-update-on-qb-patrick-mahomes)。這是可繼續蒐集的新事件線索；尚未取得符合本站要求且已實際播放驗證的主影片，因此未加入影片目錄，也未推定 LCL 傷勢或回場日。
 
+## Curry 補查
+
+使用者後續指定「curry呢？」。現有 200 筆目錄未找到 Stephen Curry；已另建 [三筆獨立事件的查核資料](../../../research/candidates/2026-11-18-stephen-curry.json)：2025-05-06 左腿後肌傷、2026 右髕股疼痛症候群（2026-04-05 復出）、2026-11-11 右腹斜肌傷。球隊的兩週後重新評估安排不作為復出日。
+
+另保留 NBA 退場影片、ESPN 新聞與教練訪談共 3 個影片候選。NBA 頁面可讀；兩個 YouTube 頁面讀取失敗，實際播放工具回報 `browser access host unavailable`。因此這三筆是研究資料，尚未加入公開影片目錄，不宣稱影片失效或播放通過。不要把 4 月的膝傷復出日期套用至 11 月的腹部傷勢。
+
 ## 實作與驗證邊界
 
 - 更新公開報導資料及對應觀察頁的 `returnText`、`returnDate`、來源與時間軸。原有來源及時間軸採追加方式保留。
@@ -40,4 +46,6 @@ npm run brand:verify
 npm run verify:review-artifact
 ```
 
-實際執行結果另見本次交班與未追蹤的 `output/recent-update-validation/` 紀錄；上列為重現指令，不代表每項已執行通過。
+本次實測：計畫綁定、型別檢查（0 errors／0 warnings）、內容契約、完整單元測試（109 檔／1,619 項）、review build（45 頁）、品牌資產與 review 產物（962 檔）均通過。沒有執行 production 部署、全站瀏覽器 E2E 或新影片播放驗證。原始日誌位於未追蹤的 `output/recent-update-validation/`。
+
+完整單元測試首次有 1 項既有並行測試失敗：`play-counts.test.ts` 在 60 個競爭請求後重試其中第 32 支影片，可能因該影片已被計入而正確觸發去重。已另以 commit `24792c7` 改用前一批未請求的影片，保留 30 次每分鐘上限與去重的所有原斷言；產品統計程式沒有變更。修正後完整 1,619 項通過。`tsx` 初次在沙盒因本機 pipe 的 `EPERM` 未啟動，允許本機 IPC 後重跑通過。

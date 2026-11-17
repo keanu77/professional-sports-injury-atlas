@@ -1,35 +1,37 @@
-# HANDOFF - 2026-10-20 · PR #1 completion
+# HANDOFF - 2026-11-18 Asia/Taipei
 
-## Current task
+## 目前工作
 
-The user flagged unfinished PR #1, `fix: repair source citations and diagnose video health uncertainty`. Fix branch: `fix/source-video-health`; isolated checkout: `/private/tmp/injury-pr1-20261020`. The original checkout remains on `feat/repo-launch-20261020` without edits.
+使用者要求搜尋近兩年運動傷害影片／資料並更新，後續指定 Curry。已更新 5 個既有事件的後續報導，另整理 Curry 3 個獨立事件與 3 個影片候選。沒有推送、合併或正式部署。
 
-PR #3 is merged into main at `167f29b5061491ab3930f43fc19a5f9068c2974b`. PR #1 now includes that main through merge `9af029d`; CI integration is `11aaf8f`. Do not reuse the old PR #1 conflict or October 10 CI result as current status.
+- 更新工作目錄：`/private/tmp/injury-update-20261118`。
+- 分支：`content/recent-injury-updates-20261118`，基底 main `4bfef220e2f2e525717f6aeb4eede751983f8bc8`。
+- 資料提交：`a283d30`；既有並行測試修正：`24792c7`。之後文件提交見 `git log -3 --oneline`。
+- 原工作目錄保留 `feat/repo-launch-20261020`、`f735ecb` 與原有兩份未提交交班資料，沒有在舊分支開發。
 
-## Completed and verified
+## 更新範圍
 
-- Preserved 13 citation repairs and the deterministic distinct-inode test fixture. Kept main's metadata race guard and in-place-edit regression.
-- Compared all 10 changed video-data files with main: 34 differences, all within sources or citation indexes. No clinical narrative, return date, timeline text or video identity changes. None of the 13 superseded URLs remains in active video JSON.
-- Consolidated deterministic PR validation in `.github/workflows/ci.yml`: plan, type, content, full unit suite, review build, brand, artifact. Existing main checks remain; no coverage threshold or release gate changed.
-- `public-video-health.yml` remains weekly/manual, with schema-v2 artifact upload even on failure. It does not run as a PR gate. CLI exit 1 (confirmed failure) and 2 (incomplete verification) remain unchanged.
-- Local Node 24.14.0: 1,604 unit tests / 108 files pass; 411-file type check: 0 errors, 0 warnings, 16 hints. Review build: 45 pages. Brand/artifact checks pass: 26 case pages, 962 files. Changed code/workflows pass Prettier and `git diff --check`.
-- Fresh source health (2026-10-19T18:24:35Z, October 20 Taipei): 792 URLs, 660 available, 0 confirmed unavailable, 132 indeterminate; CLI exit 2. 199 YouTube metadata/iframe results and one MLB page available. API flags/playback not verified. 11/13 repair targets available; both Arsenal targets still HTTP 500 in a low-concurrency follow-up. Preserve that uncertainty.
-- Local logs and complete health output: ignored `output/pr1-20261020/`. Current public evidence: `docs/reviews/2026-10-20-pr1/`.
+Haliburton、Watkins、Chloe Kim、Medina、Brignone：7 個資料檔、9 個新增來源網址，目錄仍為 200 筆。保留未知日期及來源精度；臨床診斷／機轉文字、醫療審閱簽章、原主影片、歷史 review snapshots 與 release input digest 未更動。
 
-## Next actions
+Curry 尚未加入目錄：研究資料分為 2025 左腿後肌、2026 右髕股疼痛（4 月 5 日復出）、2026 年 11 月 11 日右腹斜肌傷。兩週後重新評估不是回場日。NBA 原影片頁可讀；兩個 YouTube 頁面讀取失敗，瀏覽器工具回報 browser access host unavailable，播放未驗證，候選維持 research-only。
 
-1. Read `gh pr view 1 --repo keanu77/professional-sports-injury-atlas --json headRefOid,isDraft,mergeable,statusCheckRollup` for the final head and CI; completion is based on that head, not the earlier result.
-2. Read `docs/reviews/2026-10-20-pr1/README.md` and `verification.json` for current source-health scope and uncertainty. HTTP/oEmbed checks do not establish playback. No API key was created or configured in this task.
-3. Once final CI passes, PR #1 is ready for the owner's review/merge. The explicitly invoked repo-launch skill requires owner merge unless later user instructions override it. No production deployment was performed for this PR. Further deployment must bind fresh authorized release evidence to the changed inputs; never rewrite old approvals merely to pass a digest check.
+## 已實測
 
-No additional implementation tasks after final-head CI and PR readiness verification.
+- Node 24.14.0、完整 Git 歷史、乾淨提交。
+- Plan binding：45 documents；type check：0 errors／0 warnings。
+- Content contract：26 cases、3 overviews、1 update，通過。
+- 完整單元測試：109 files／1,619 tests 通過。
+- Review build：45 pages；品牌資產與 review artifact：962 files 通過。
+- 產物 Haliburton 頁包含 2026-10-21 復出與 10 月 28 日另一部位傷勢。
+- 完整測試初次出現既有競態：重試影片可能已被前批計入。24792c7 僅修正測試樣本，產品統計程式未改；之後全套通過。
+- 未做新影片實播、全站 E2E、HTTP hosting header、正式站版本比對或部署。
 
-## Launch work to retain
+日誌：`output/recent-update-validation/`。正式發布仍需新的 input digest 綁定、播放及必要審閱證據；不能只改舊授權值讓 gate 通過。
 
-- Repository is public; MIT applies to own code only. User confirmed no public usage counts or educational outcomes to claim. Private vulnerability reporting is enabled.
-- Draft `v0.1.0` release and five verified media attachments exist, not published. Before publication, retarget to the chosen merged commit and set the actual CHANGELOG release date.
-- Social preview upload and X/FB posting remain manual under repo-launch. Drafts/media: `docs/launch/2026-10-20-圖鑑分享草稿.md`, `docs/media/`.
-- Previous production revision: `7adff42ee523cbbf5fa5eb641a169be1ac427c53`; this task did not reverify or redeploy that website. Prior 200-video playback evidence is historical, not a new playback run here.
-- Retain the existing hero `src/assets/hero/a-all-sport-burst-r2.png`; do not revert to the old immutable-cache filename.
-- Dedicated Ubuntu VM `injury-launch-20261020` is retained, previously stopped; do not delete without authorization. No migration needed.
-- Exact file staging only; no force push, no `git add -A`, no credentials in chat/artifacts.
+## 接續步驟
+
+1. 執行 `git status --short --branch`、`git log -3 --oneline`；讀 `docs/reviews/2026-11-18-recent-updates/README.md` 及 `changes.json` 查看逐筆更新。
+2. 如繼續 Curry 收錄，讀 `research/candidates/2026-11-18-stephen-curry.json`，在可用瀏覽器驗證候選影片、上傳者、片長／時間窗與播放，再依新批次流程加入目錄。
+3. 若使用者要求上線，先核對遠端 main 與正式 `/version.json`，按既有發布檢查取得當前證據；臨床簽核不得代填。無更多已確定的程式修正待辦。
+
+不需要 DB migration 或新環境變數。只 stage 本次具名檔案，保留原工作目錄變更。
