@@ -45,7 +45,11 @@ describe("controlled early preferences and public CSP", () => {
         },
       },
     });
-    expect(root.dataset).toEqual({ theme: "dark", fontScale: "1.5" });
+    expect(root.dataset).toEqual({
+      js: "true",
+      theme: "dark",
+      fontScale: "1.5",
+    });
     expect(style["--font-scale"]).toBe("1.5");
     runInNewContext(source, {
       document: { documentElement: root },
@@ -55,7 +59,7 @@ describe("controlled early preferences and public CSP", () => {
         },
       },
     });
-    expect(root.dataset).toEqual({ theme: "dark", fontScale: "1" });
+    expect(root.dataset).toEqual({ js: "true", theme: "dark", fontScale: "1" });
     expect(source).not.toMatch(/fetch\(|XMLHttpRequest|https?:/);
   });
   it("keeps only player and challenge origins without executable inline permission", async () => {
