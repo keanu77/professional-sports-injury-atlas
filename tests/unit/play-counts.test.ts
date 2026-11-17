@@ -305,9 +305,11 @@ describe("shared playback abuse guard", () => {
     expect(results.every((r) => r.status === 200)).toBe(true);
     expect(results.filter((r) => r.accepted)).toHaveLength(30);
     expect(results.filter((r) => r.reason === "rate-limit")).toHaveLength(30);
+    // Completion order is nondeterministic: use a video outside the first batch
+    // so this retry checks the minute limit without triggering video deduplication.
     const retry = await recordPlay(
       {
-        request: request(event(crypto.randomUUID(), ids[31]!)),
+        request: request(event(crypto.randomUUID(), ids[60]!)),
         env: { PLAYBACK_DB: db },
       },
       now + 60,
