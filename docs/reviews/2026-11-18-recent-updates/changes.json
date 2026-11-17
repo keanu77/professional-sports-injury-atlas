@@ -1,0 +1,293 @@
+{
+  "schemaVersion": 1,
+  "baseCommit": "4bfef220e2f2e525717f6aeb4eede751983f8bc8",
+  "reviewedAt": "2026-11-18T01:32:38+08:00",
+  "checkedAtUTC": "2026-11-17",
+  "scope": "attributed-return-and-follow-up-reports-only",
+  "updatedEvents": 5,
+  "medicalApprovalChanged": false,
+  "videoIdentityChanged": false,
+  "historicalReviewEvidenceChanged": false,
+  "changes": [
+    {
+      "kind": "event",
+      "file": "src/data/videos/event-updates.v1.json",
+      "slug": "tyrese-haliburton-achilles-rupture-2025",
+      "before": {
+        "returnDate": null,
+        "returnSummary": "截至本次查核，未核得傷後正式復賽日期。",
+        "checkedAt": "2026-09-12"
+      },
+      "after": {
+        "returnDate": "2026-10-21",
+        "returnSummary": "2026-10-21 對鵜鶘重返 NBA 例行賽。10 月 28 日另有左腿後肌群拉傷報導，不能與原右阿基里斯腱傷勢混為同一次復原。",
+        "checkedAt": "2026-11-17"
+      },
+      "appendSources": [
+        {
+          "title": "Indiana Pacers：Haliburton 重返例行賽",
+          "url": "https://www.nba.com/pacers/news/rewind-pacers-pelicans-261021",
+          "publishedAt": "2026-10-21"
+        },
+        {
+          "title": "Indiana Pacers：後續左腿後肌群拉傷",
+          "url": "https://www.nba.com/pacers/news/rewind-pacers-76ers-261028",
+          "publishedAt": "2026-10-28"
+        }
+      ],
+      "appendTimeline": [
+        {
+          "date": "2026-10-21",
+          "title": "重返 NBA 例行賽",
+          "text": "溜馬官方賽後報導確認他對鵜鶘實際出賽。",
+          "sourceIndexes": [6]
+        },
+        {
+          "date": "2026-10-28",
+          "title": "後續另一部位傷勢",
+          "text": "球隊報導左腿後肌群輕度拉傷；不是右阿基里斯腱再次斷裂的證據。",
+          "sourceIndexes": [7]
+        }
+      ]
+    },
+    {
+      "kind": "event",
+      "file": "src/data/videos/event-recent-150.v1.json",
+      "slug": "juju-watkins-2025-knee",
+      "before": {
+        "returnDate": null,
+        "returnSummary": "USC 在 2025 年 9 月 28 日宣布她缺席整個 2025–26 球季；查核截至 2026 年 9 月 13 日，未取得正式復賽證據。",
+        "checkedAt": "2026-09-12"
+      },
+      "after": {
+        "returnDate": "2026-11-02",
+        "returnSummary": "2026-11-02 代表 USC 對 UNLV 重返 NCAA 正式比賽，出賽 21 分鐘並得 21 分；這是已完成的出賽紀錄，不再沿用缺席 2025–26 球季的公告作為目前回場狀態。",
+        "checkedAt": "2026-11-17"
+      },
+      "appendSources": [
+        {
+          "title": "USC Athletics：Watkins 於 11 月 2 日重返正式比賽",
+          "url": "https://usctrojans.com/news/2026/11/2/no-3-usc-womens-basketball-downs-unlv-100-68-during-season-opener",
+          "publishedAt": "2026-11-02"
+        }
+      ],
+      "appendTimeline": [
+        {
+          "date": "2026-11-02",
+          "title": "重返 NCAA 正式比賽",
+          "text": "USC 賽後報導記載 Watkins 對 UNLV 出賽 21 分鐘、得到 21 分。",
+          "sourceIndexes": [5]
+        }
+      ]
+    },
+    {
+      "kind": "clip",
+      "file": "src/data/videos/recent-150.v1.json",
+      "slug": "juju-watkins-2025-knee",
+      "before": {
+        "returnDate": null,
+        "returnText": "USC 在 2025 年 9 月 28 日宣布她缺席整個 2025–26 球季；查核截至 2026 年 9 月 13 日，未取得正式復賽證據。"
+      },
+      "after": {
+        "returnDate": "2026-11-02",
+        "returnText": "2026-11-02 代表 USC 對 UNLV 重返 NCAA 正式比賽，出賽 21 分鐘並得 21 分；這是已完成的出賽紀錄，不再沿用缺席 2025–26 球季的公告作為目前回場狀態。"
+      },
+      "appendSources": [
+        {
+          "title": "USC Athletics：Watkins 於 11 月 2 日重返正式比賽",
+          "url": "https://usctrojans.com/news/2026/11/2/no-3-usc-womens-basketball-downs-unlv-100-68-during-season-opener"
+        }
+      ],
+      "appendTimeline": []
+    },
+    {
+      "kind": "event",
+      "file": "src/data/videos/event-catalog-200.v1.json",
+      "slug": "chloe-kim-2026-shoulder",
+      "before": {
+        "returnDate": null,
+        "returnSummary": "本人後續說明備戰與參賽意願；本頁未核定首次回場日，也不將樂觀預期寫成醫師放行。",
+        "checkedAt": "2026-09-21"
+      },
+      "after": {
+        "returnDate": null,
+        "returnSummary": "2026-02-11 已在冬奧女子半管資格賽實際出賽，以 90.25 分晉級；NBC 記載這是肩傷後首次參賽。確切受傷日仍未確認，不計算受傷至回場間隔，也不將出賽視為盂唇已癒合。",
+        "checkedAt": "2026-11-17"
+      },
+      "appendSources": [
+        {
+          "title": "NBC Olympics：Chloe Kim 肩傷後重返半管資格賽",
+          "url": "https://www.nbcolympics.com/news/chloe-kim-unfazed-injury-crushes-halfpipe-qualifier-roar-final-mastro-3rd",
+          "publishedAt": null
+        },
+        {
+          "title": "FIS：確認 2 月 11 日女子半管資格賽賽程",
+          "url": "https://www.fis-ski.com/snowboard-park-and-pipe/news/2025-26/kim-begins-snowboard-halfpipe-three-peat-bid-facing-her-reflection-",
+          "publishedAt": "2026-02-10"
+        }
+      ],
+      "appendTimeline": [
+        {
+          "date": "2026-02-11",
+          "title": "肩傷後首次參賽",
+          "text": "在冬奧女子半管資格賽得到 90.25 分並晉級；比賽日期由 FIS 賽程與 NBC 賽後報導交叉核對。",
+          "sourceIndexes": [5, 6]
+        }
+      ]
+    },
+    {
+      "kind": "clip",
+      "file": "src/data/videos/catalog-200.v1.json",
+      "slug": "chloe-kim-2026-shoulder",
+      "before": {
+        "returnDate": null,
+        "returnText": "本人後續說明備戰與參賽意願；本頁未核定首次回場日，也不將樂觀預期寫成醫師放行。"
+      },
+      "after": {
+        "returnDate": null,
+        "returnText": "2026-02-11 已在冬奧女子半管資格賽實際出賽，以 90.25 分晉級；NBC 記載這是肩傷後首次參賽。確切受傷日仍未確認，不計算受傷至回場間隔，也不將出賽視為盂唇已癒合。"
+      },
+      "appendSources": [
+        {
+          "title": "NBC Olympics：Chloe Kim 肩傷後重返半管資格賽",
+          "url": "https://www.nbcolympics.com/news/chloe-kim-unfazed-injury-crushes-halfpipe-qualifier-roar-final-mastro-3rd"
+        },
+        {
+          "title": "FIS：確認 2 月 11 日女子半管資格賽賽程",
+          "url": "https://www.fis-ski.com/snowboard-park-and-pipe/news/2025-26/kim-begins-snowboard-halfpipe-three-peat-bid-facing-her-reflection-"
+        }
+      ],
+      "appendTimeline": []
+    },
+    {
+      "kind": "event",
+      "file": "src/data/videos/event-catalog-200.v1.json",
+      "slug": "gabriel-medina-2025-pectoral-tendon",
+      "before": {
+        "returnDate": null,
+        "returnSummary": "回歸訪談顯示他已再次參與巡迴賽活動；本頁未核定首次正式出賽日，不將原先預估休養時間當成實際康復期。",
+        "checkedAt": "2026-09-21"
+      },
+      "after": {
+        "returnDate": null,
+        "returnSummary": "2026 年 4 月已重返 Bells Beach 巡迴賽並晉級四強。現有來源未核定他的首場出賽日，保留月份，不將參賽邀請或原先預估休養時間當成精確回場日期。",
+        "checkedAt": "2026-11-17"
+      },
+      "appendSources": [
+        {
+          "title": "SURFER：Medina 傷後回歸 Bells Beach 並晉級四強",
+          "url": "https://www.surfer.com/news/gabriel-medina-is-back-in-form-and-the-season-is-just-getting-started",
+          "publishedAt": "2026-04-13"
+        }
+      ],
+      "appendTimeline": [
+        {
+          "date": "2026-04",
+          "title": "重返巡迴賽並晉級四強",
+          "text": "SURFER 賽後報導確認他在 Bells Beach 晉級四強；未取得個人首場比賽的精確日期。",
+          "sourceIndexes": [3]
+        }
+      ]
+    },
+    {
+      "kind": "clip",
+      "file": "src/data/videos/catalog-200.v1.json",
+      "slug": "gabriel-medina-2025-pectoral-tendon",
+      "before": {
+        "returnDate": null,
+        "returnText": "回歸訪談顯示他已再次參與巡迴賽活動；本頁未核定首次正式出賽日，不將原先預估休養時間當成實際康復期。"
+      },
+      "after": {
+        "returnDate": null,
+        "returnText": "2026 年 4 月已重返 Bells Beach 巡迴賽並晉級四強。現有來源未核定他的首場出賽日，保留月份，不將參賽邀請或原先預估休養時間當成精確回場日期。"
+      },
+      "appendSources": [
+        {
+          "title": "SURFER：Medina 傷後回歸 Bells Beach 並晉級四強",
+          "url": "https://www.surfer.com/news/gabriel-medina-is-back-in-form-and-the-season-is-just-getting-started"
+        }
+      ],
+      "appendTimeline": []
+    },
+    {
+      "kind": "event",
+      "file": "src/data/videos/event-recent-120.v1.json",
+      "slug": "federica-brignone-leg-2025",
+      "before": {
+        "returnDate": "2026-01-20",
+        "returnSummary": "2026-01-20 重返世界盃，在 Kronplatz 大曲道獲得第六名。",
+        "checkedAt": "2026-09-12"
+      },
+      "after": {
+        "returnDate": "2026-01-20",
+        "returnSummary": "2026-01-20 重返世界盃，2 月再奪冬奧超大曲道與大曲道金牌。FIS 於 10 月 21 日仍記載她在 8 月手術後復健並將缺席 Sölden；獎牌與復賽不能代表傷勢已完全恢復。",
+        "checkedAt": "2026-11-17"
+      },
+      "appendSources": [
+        {
+          "title": "FIS：Brignone 奪冬奧超大曲道金牌",
+          "url": "https://www.fis-ski.com/alpine-skiing/news/2025-26/brignone-completes-emotional-comeback-with-home-olympic-super-g-gold",
+          "publishedAt": "2026-02-12"
+        },
+        {
+          "title": "FIS：Brignone 再奪冬奧大曲道金牌",
+          "url": "https://www.fis-ski.com/alpine-skiing/news/2025-26/brignone-gets-second-olympic-gold-in-incredible-giant-slalom",
+          "publishedAt": "2026-02-15"
+        },
+        {
+          "title": "FIS：Brignone 術後復健與 Sölden 缺席公告",
+          "url": "https://www.fis-ski.com/alpine-skiing/news/2026-27/women-s-giant-slalom-preview-challengers-chase-scheib-as-season-begins-in-soelden",
+          "publishedAt": "2026-10-21"
+        }
+      ],
+      "appendTimeline": [
+        {
+          "date": "2026-02-12",
+          "title": "冬奧超大曲道金牌",
+          "text": "FIS 賽後報導確認取得女子超大曲道金牌。",
+          "sourceIndexes": [6]
+        },
+        {
+          "date": "2026-02-15",
+          "title": "冬奧大曲道金牌",
+          "text": "FIS 賽後報導確認再取得女子大曲道金牌。",
+          "sourceIndexes": [7]
+        },
+        {
+          "date": "2026-10-21",
+          "title": "後續仍有術後復健",
+          "text": "FIS 記載她在 8 月手術後復健，將缺席 Sölden 季初賽事；此報導沒有提供下一次實際回場日。",
+          "sourceIndexes": [8]
+        }
+      ]
+    },
+    {
+      "kind": "clip",
+      "file": "src/data/videos/recent-120.v1.json",
+      "slug": "federica-brignone-leg-2025",
+      "before": {
+        "returnDate": "2026-01-20",
+        "returnText": "2026-01-20 重返世界盃，在 Kronplatz 大曲道獲得第六名。"
+      },
+      "after": {
+        "returnDate": "2026-01-20",
+        "returnText": "2026-01-20 重返世界盃，2 月再奪冬奧超大曲道與大曲道金牌。FIS 於 10 月 21 日仍記載她在 8 月手術後復健並將缺席 Sölden；獎牌與復賽不能代表傷勢已完全恢復。"
+      },
+      "appendSources": [
+        {
+          "title": "FIS：Brignone 奪冬奧超大曲道金牌",
+          "url": "https://www.fis-ski.com/alpine-skiing/news/2025-26/brignone-completes-emotional-comeback-with-home-olympic-super-g-gold"
+        },
+        {
+          "title": "FIS：Brignone 再奪冬奧大曲道金牌",
+          "url": "https://www.fis-ski.com/alpine-skiing/news/2025-26/brignone-gets-second-olympic-gold-in-incredible-giant-slalom"
+        },
+        {
+          "title": "FIS：Brignone 術後復健與 Sölden 缺席公告",
+          "url": "https://www.fis-ski.com/alpine-skiing/news/2026-27/women-s-giant-slalom-preview-challengers-chase-scheib-as-season-begins-in-soelden"
+        }
+      ],
+      "appendTimeline": []
+    }
+  ]
+}

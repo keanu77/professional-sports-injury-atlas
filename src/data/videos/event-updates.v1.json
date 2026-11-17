@@ -526,8 +526,8 @@
       "videoUrl": "https://www.youtube.com/watch?v=azQpbyDBktk",
       "eventDate": "2025-06-22",
       "injury": "右阿基里斯腱斷裂；溜馬於 2025-06-23 公布已接受修補手術。",
-      "returnDate": null,
-      "returnSummary": "截至本次查核，未核得傷後正式復賽日期。",
+      "returnDate": "2026-10-21",
+      "returnSummary": "2026-10-21 對鵜鶘重返 NBA 例行賽。10 月 28 日另有左腿後肌群拉傷報導，不能與原右阿基里斯腱傷勢混為同一次復原。",
       "context": "NBA 2026-08-24 報導指出他缺席 2025–26 球季；下一季回歸展望不是已完成出賽。",
       "sources": [
         {
@@ -554,6 +554,16 @@
           "title": "Associated Press（KSL 刊載）：總冠軍賽倒地與手術報導",
           "url": "https://www.ksl.com/article/51334269",
           "publishedAt": "2025-06-23"
+        },
+        {
+          "title": "Indiana Pacers：Haliburton 重返例行賽",
+          "url": "https://www.nba.com/pacers/news/rewind-pacers-pelicans-261021",
+          "publishedAt": "2026-10-21"
+        },
+        {
+          "title": "Indiana Pacers：後續左腿後肌群拉傷",
+          "url": "https://www.nba.com/pacers/news/rewind-pacers-76ers-261028",
+          "publishedAt": "2026-10-28"
         }
       ],
       "mechanism": {
@@ -573,7 +583,7 @@
         },
         "limitation": "本頁只用一般肌腱功能解釋可能的推蹬問題，沒有把未看清的踩地或加速動作寫成事實。先前不適與疲勞不能直接認定為斷裂原因，訓練進展也不當作正式復賽。"
       },
-      "checkedAt": "2026-09-12",
+      "checkedAt": "2026-11-17",
       "timeline": [
         {
           "date": "2025-06-22",
@@ -592,6 +602,18 @@
           "title": "仍是回歸展望",
           "text": "NBA 記載他缺席 2025–26 球季；下一季展望不列為已復賽。",
           "sourceIndexes": [2]
+        },
+        {
+          "date": "2026-10-21",
+          "title": "重返 NBA 例行賽",
+          "text": "溜馬官方賽後報導確認他對鵜鶘實際出賽。",
+          "sourceIndexes": [6]
+        },
+        {
+          "date": "2026-10-28",
+          "title": "後續另一部位傷勢",
+          "text": "球隊報導左腿後肌群輕度拉傷；不是右阿基里斯腱再次斷裂的證據。",
+          "sourceIndexes": [7]
         }
       ]
     },

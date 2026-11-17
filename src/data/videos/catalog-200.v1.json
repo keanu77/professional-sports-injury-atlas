@@ -124,7 +124,7 @@
       "footageKind": "athlete-interview",
       "eventDate": "2025-01-09",
       "returnDate": null,
-      "returnText": "回歸訪談顯示他已再次參與巡迴賽活動；本頁未核定首次正式出賽日，不將原先預估休養時間當成實際康復期。",
+      "returnText": "2026 年 4 月已重返 Bells Beach 巡迴賽並晉級四強。現有來源未核定他的首場出賽日，保留月份，不將參賽邀請或原先預估休養時間當成精確回場日期。",
       "videoUrl": "https://www.youtube.com/watch?v=z6KNabUBA88",
       "publisher": "World Surf League",
       "sourceTitle": "Gabriel Medina’s magnificent return to the CT: \"I’ve been here before\" | [Inside Pro Surfing]",
@@ -139,6 +139,10 @@
         {
           "title": "Gabriel Medina’s magnificent return to the CT: \"I’ve been here before\" | [Inside Pro Surfing]",
           "url": "https://www.youtube.com/watch?v=z6KNabUBA88"
+        },
+        {
+          "title": "SURFER：Medina 傷後回歸 Bells Beach 並晉級四強",
+          "url": "https://www.surfer.com/news/gabriel-medina-is-back-in-form-and-the-season-is-just-getting-started"
         }
       ]
     },
@@ -225,7 +229,7 @@
       "footageKind": "news-analysis",
       "eventDate": null,
       "returnDate": null,
-      "returnText": "本人後續說明備戰與參賽意願；本頁未核定首次回場日，也不將樂觀預期寫成醫師放行。",
+      "returnText": "2026-02-11 已在冬奧女子半管資格賽實際出賽，以 90.25 分晉級；NBC 記載這是肩傷後首次參賽。確切受傷日仍未確認，不計算受傷至回場間隔，也不將出賽視為盂唇已癒合。",
       "videoUrl": "https://www.youtube.com/watch?v=iRo0jHPhr2I",
       "publisher": "NBC News",
       "sourceTitle": "Olympic gold medalist Chloe Kim announces she dislocated her shoulder",
@@ -248,6 +252,14 @@
         {
           "title": "Olympic gold medalist Chloe Kim announces she dislocated her shoulder",
           "url": "https://www.youtube.com/watch?v=iRo0jHPhr2I"
+        },
+        {
+          "title": "NBC Olympics：Chloe Kim 肩傷後重返半管資格賽",
+          "url": "https://www.nbcolympics.com/news/chloe-kim-unfazed-injury-crushes-halfpipe-qualifier-roar-final-mastro-3rd"
+        },
+        {
+          "title": "FIS：確認 2 月 11 日女子半管資格賽賽程",
+          "url": "https://www.fis-ski.com/snowboard-park-and-pipe/news/2025-26/kim-begins-snowboard-halfpipe-three-peat-bid-facing-her-reflection-"
         }
       ]
     },

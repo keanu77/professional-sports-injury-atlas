@@ -771,13 +771,13 @@
       "bodyPart": "膝部",
       "observation": "ESPN 新聞前段有該場快攻、右腳支撐後倒地與被協助離場的重播，約 5 秒起可觀察。後段為記者及棚內討論，不能當作醫療檢查結果。",
       "eventDate": "2025-03-24",
-      "returnDate": null,
+      "returnDate": "2026-11-02",
       "videoUrl": "https://www.youtube.com/watch?v=uw0GVL3nfN8",
       "publisher": "ESPN",
       "sourceTitle": "JuJu Watkins leaves the game with apparent knee injury as USC advances to Sweet 16 | SC with SVP",
       "startSeconds": 5,
       "durationSeconds": 716,
-      "returnText": "USC 在 2025 年 9 月 28 日宣布她缺席整個 2025–26 球季；查核截至 2026 年 9 月 13 日，未取得正式復賽證據。",
+      "returnText": "2026-11-02 代表 USC 對 UNLV 重返 NCAA 正式比賽，出賽 21 分鐘並得 21 分；這是已完成的出賽紀錄，不再沿用缺席 2025–26 球季的公告作為目前回場狀態。",
       "footageKind": "injury-motion",
       "captionStatus": "not-verified",
       "sources": [
@@ -796,6 +796,10 @@
         {
           "title": "Anterior Cruciate Ligament (ACL) Injuries - AAOS",
           "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/"
+        },
+        {
+          "title": "USC Athletics：Watkins 於 11 月 2 日重返正式比賽",
+          "url": "https://usctrojans.com/news/2026/11/2/no-3-usc-womens-basketball-downs-unlv-100-68-during-season-opener"
         }
       ]
     },

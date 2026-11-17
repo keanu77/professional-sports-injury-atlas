@@ -611,7 +611,7 @@
       "observation": "片段記錄大曲道摔倒與後續救援；確切骨折與合併傷勢另以義大利滑雪協會公告為準。",
       "eventDate": "2025-04-03",
       "returnDate": "2026-01-20",
-      "returnText": "2026-01-20 重返世界盃，在 Kronplatz 大曲道獲得第六名。",
+      "returnText": "2026-01-20 重返世界盃，2 月再奪冬奧超大曲道與大曲道金牌。FIS 於 10 月 21 日仍記載她在 8 月手術後復健並將缺席 Sölden；獎牌與復賽不能代表傷勢已完全恢復。",
       "videoUrl": "https://www.youtube.com/watch?v=KTaglqZADPw",
       "publisher": "Amanti dello sci alpino",
       "sourceTitle": "Video integrale della caduta di Federica Brignone nel Gigante in val di Fassa",
@@ -630,6 +630,18 @@
         {
           "title": "Strabiliante Brignone! Che rientro, Federica: 6/a nel gigante di Kronplatz. Vince Scheib, Della Mea 10/a",
           "url": "https://www.fisi.org/strabiliante-brignone-che-rientro-federica-6-a-nel-gs-di-kronplatz-vince-scheib-della-mea-10-a/"
+        },
+        {
+          "title": "FIS：Brignone 奪冬奧超大曲道金牌",
+          "url": "https://www.fis-ski.com/alpine-skiing/news/2025-26/brignone-completes-emotional-comeback-with-home-olympic-super-g-gold"
+        },
+        {
+          "title": "FIS：Brignone 再奪冬奧大曲道金牌",
+          "url": "https://www.fis-ski.com/alpine-skiing/news/2025-26/brignone-gets-second-olympic-gold-in-incredible-giant-slalom"
+        },
+        {
+          "title": "FIS：Brignone 術後復健與 Sölden 缺席公告",
+          "url": "https://www.fis-ski.com/alpine-skiing/news/2026-27/women-s-giant-slalom-preview-challengers-chase-scheib-as-season-begins-in-soelden"
         }
       ]
     }

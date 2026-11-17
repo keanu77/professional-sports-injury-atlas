@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import selected from "../../docs/reviews/2026-09-21-catalog-200/selected-cases.json";
 import baseline from "../../docs/reviews/2026-09-21-catalog-200/baseline-before-integration.json";
 import repairs from "../../docs/reviews/2026-10-10-source-video-health/source-repairs.json";
+import followUpRefresh from "../../docs/reviews/2026-11-18-recent-updates/changes.json";
 import resourceData from "../../src/data/videos/observation-resources.v1.json";
 import catalog200EventData from "../../src/data/videos/event-catalog-200.v1.json";
 import { discoveryFor } from "../../src/lib/videos/discovery";
@@ -26,9 +27,10 @@ import {
 import { nerveInjuryGroup } from "../../src/lib/videos/nerve-categories";
 
 // Keep the original review evidence immutable. Apply only the separately
-// documented citation maintenance before comparing every other field exactly.
+// documented citation maintenance and sourced follow-up refresh before
+// comparing every other field exactly. Original review snapshots stay frozen.
 function withRepairedCitations<
-  T extends { sources: Array<{ title: string; url: string }> },
+  T extends { slug: string; sources: Array<{ title: string; url: string }> },
 >(original: T): T {
   const item = structuredClone(original);
   const indexMap = new Map<number, number>();
@@ -65,6 +67,29 @@ function withRepairedCitations<
     }
   };
   remap(item);
+  const kind = "returnText" in item ? "clip" : "event";
+  const refresh = followUpRefresh.changes.find(
+    (change) => change.slug === item.slug && change.kind === kind,
+  );
+  if (refresh) {
+    for (const [key, value] of Object.entries(refresh.before)) {
+      expect(
+        Reflect.get(item, key),
+        `${item.slug}.${key} before refresh`,
+      ).toEqual(value);
+    }
+    for (const [key, value] of Object.entries(refresh.after)) {
+      Reflect.set(item, key, value);
+    }
+    Reflect.set(item, "sources", [...item.sources, ...refresh.appendSources]);
+    if (refresh.appendTimeline.length > 0) {
+      const timeline: unknown = Reflect.get(item, "timeline");
+      if (!Array.isArray(timeline)) {
+        throw new Error(`Missing historical timeline for ${item.slug}`);
+      }
+      Reflect.set(item, "timeline", [...timeline, ...refresh.appendTimeline]);
+    }
+  }
   return item;
 }
 
@@ -101,6 +126,51 @@ describe("catalog 200 sourced expansion", () => {
           expect(entry.sources[i - 1]).toBeDefined();
       expect(observationResourcesFor(clip.slug).length).toBeGreaterThan(0);
       expect(observationCategoryLinks(clip).length).toBe(3);
+    }
+  });
+  it("records actual returns while retaining unknown dates and separate later injuries", () => {
+    const entry = (slug: string) =>
+      eventUpdates.entries.find((item) => item.slug === slug)!;
+    const haliburton = entry("tyrese-haliburton-achilles-rupture-2025");
+    expect(haliburton.returnDate).toBe("2026-10-21");
+    expect(returnDays(haliburton)).toBe(486);
+    expect(haliburton.timeline!.at(-1)!.date).toBe("2026-10-28");
+    expect(haliburton.timeline!.at(-1)!.text).toContain(
+      "不是右阿基里斯腱再次斷裂的證據",
+    );
+    const watkins = entry("juju-watkins-2025-knee");
+    expect(watkins.returnDate).toBe("2026-11-02");
+    expect(returnDays(watkins)).toBe(588);
+    const kim = entry("chloe-kim-2026-shoulder");
+    expect(kim.eventDate).toBeNull();
+    expect(returnDays(kim)).toBeNull();
+    expect(kim.timeline!.at(-1)!.date).toBe("2026-02-11");
+    const medina = entry("gabriel-medina-2025-pectoral-tendon");
+    expect(medina.returnDate).toBeNull();
+    expect(medina.timeline!.at(-1)!.date).toBe("2026-04");
+    const brignone = entry("federica-brignone-leg-2025");
+    expect(brignone.returnDate).toBe("2026-01-20");
+    expect(brignone.timeline!.at(-1)!.date).toBe("2026-10-21");
+    expect(brignone.returnSummary).toContain("不能代表傷勢已完全恢復");
+    for (const refresh of followUpRefresh.changes.filter(
+      (item) => item.kind === "event",
+    )) {
+      const updated = entry(refresh.slug);
+      expect(updated.checkedAt).toBe(followUpRefresh.checkedAtUTC);
+      for (const milestone of refresh.appendTimeline) {
+        for (const index of milestone.sourceIndexes) {
+          expect(refresh.appendSources.map((source) => source.url)).toContain(
+            updated.sources[index - 1]!.url,
+          );
+        }
+      }
+      const clip = allObservationClips.find(
+        (item) => item.slug === updated.slug,
+      );
+      if (clip) {
+        expect(clip.returnDate).toBe(updated.returnDate);
+        expect(clip.returnText).toBe(updated.returnSummary);
+      }
     }
   });
   it("provides the sourced mechanism required by every public detail page", () => {

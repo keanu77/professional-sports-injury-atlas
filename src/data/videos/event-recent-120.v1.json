@@ -1442,9 +1442,9 @@
       "eventDate": "2025-04-03",
       "injury": "公開報導記載：左脛骨平台與腓骨頭多碎片移位骨折。",
       "returnDate": "2026-01-20",
-      "returnSummary": "2026-01-20 重返世界盃，在 Kronplatz 大曲道獲得第六名。",
+      "returnSummary": "2026-01-20 重返世界盃，2 月再奪冬奧超大曲道與大曲道金牌。FIS 於 10 月 21 日仍記載她在 8 月手術後復健並將缺席 Sölden；獎牌與復賽不能代表傷勢已完全恢復。",
       "context": "後續另有膝關節鏡鬆解術；世界盃成績是競賽里程碑，不是關節所有結構已恢復的檢查結果。",
-      "checkedAt": "2026-09-12",
+      "checkedAt": "2026-11-17",
       "sources": [
         {
           "title": "Aggiornamento sulle condizioni di Federica Brignone",
@@ -1470,6 +1470,21 @@
           "title": "AAOS：骨折與外力",
           "url": "https://www.orthoinfo.org/diseases--conditions/fractures-broken-bones/",
           "publishedAt": null
+        },
+        {
+          "title": "FIS：Brignone 奪冬奧超大曲道金牌",
+          "url": "https://www.fis-ski.com/alpine-skiing/news/2025-26/brignone-completes-emotional-comeback-with-home-olympic-super-g-gold",
+          "publishedAt": "2026-02-12"
+        },
+        {
+          "title": "FIS：Brignone 再奪冬奧大曲道金牌",
+          "url": "https://www.fis-ski.com/alpine-skiing/news/2025-26/brignone-gets-second-olympic-gold-in-incredible-giant-slalom",
+          "publishedAt": "2026-02-15"
+        },
+        {
+          "title": "FIS：Brignone 術後復健與 Sölden 缺席公告",
+          "url": "https://www.fis-ski.com/alpine-skiing/news/2026-27/women-s-giant-slalom-preview-challengers-chase-scheib-as-season-begins-in-soelden",
+          "publishedAt": "2026-10-21"
         }
       ],
       "mechanism": {
@@ -1507,6 +1522,24 @@
           "title": "重返世界盃正式比賽",
           "text": "Kronplatz 大曲道第六名；FISI 賽後報導確認回場。",
           "sourceIndexes": [3]
+        },
+        {
+          "date": "2026-02-12",
+          "title": "冬奧超大曲道金牌",
+          "text": "FIS 賽後報導確認取得女子超大曲道金牌。",
+          "sourceIndexes": [6]
+        },
+        {
+          "date": "2026-02-15",
+          "title": "冬奧大曲道金牌",
+          "text": "FIS 賽後報導確認再取得女子大曲道金牌。",
+          "sourceIndexes": [7]
+        },
+        {
+          "date": "2026-10-21",
+          "title": "後續仍有術後復健",
+          "text": "FIS 記載她在 8 月手術後復健，將缺席 Sölden 季初賽事；此報導沒有提供下一次實際回場日。",
+          "sourceIndexes": [8]
         }
       ]
     }

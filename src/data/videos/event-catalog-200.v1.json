@@ -186,7 +186,7 @@
       "eventDateCertainty": "confirmed",
       "injury": "ge 原始報導引述主刀醫師：左側胸大肌肌腱受傷，接受肌腱修復手術。",
       "returnDate": null,
-      "returnSummary": "回歸訪談顯示他已再次參與巡迴賽活動；本頁未核定首次正式出賽日，不將原先預估休養時間當成實際康復期。",
+      "returnSummary": "2026 年 4 月已重返 Bells Beach 巡迴賽並晉級四強。現有來源未核定他的首場出賽日，保留月份，不將參賽邀請或原先預估休養時間當成精確回場日期。",
       "context": "所選影片是傷後回歸的回顧訪談。ge 明載他於 2025 年 1 月 9 日在 Maresias 衝浪訓練時受傷，1 月 11 日手術；不把影片發布時間當成新傷日期。來源未提供足以補寫完全斷裂或分級的資料。",
       "timeline": [
         {
@@ -200,9 +200,15 @@
           "title": "接受肌腱修復",
           "text": "主刀醫師接受訪問說明已進行肌腱修復；這是手術日期，沒有據此推算回場日。",
           "sourceIndexes": [1]
+        },
+        {
+          "date": "2026-04",
+          "title": "重返巡迴賽並晉級四強",
+          "text": "SURFER 賽後報導確認他在 Bells Beach 晉級四強；未取得個人首場比賽的精確日期。",
+          "sourceIndexes": [3]
         }
       ],
-      "checkedAt": "2026-09-21",
+      "checkedAt": "2026-11-17",
       "sources": [
         {
           "title": "ge／Globo：Medina 訓練傷勢及主刀醫師說明",
@@ -213,6 +219,11 @@
           "title": "Gabriel Medina’s magnificent return to the CT: \"I’ve been here before\" | [Inside Pro Surfing]",
           "url": "https://www.youtube.com/watch?v=z6KNabUBA88",
           "publishedAt": null
+        },
+        {
+          "title": "SURFER：Medina 傷後回歸 Bells Beach 並晉級四強",
+          "url": "https://www.surfer.com/news/gabriel-medina-is-back-in-form-and-the-season-is-just-getting-started",
+          "publishedAt": "2026-04-13"
         }
       ],
       "mechanism": {
@@ -353,7 +364,7 @@
       "eventDate": null,
       "injury": "本人公開更新：左肩脫臼，MRI 顯示盂唇撕裂；側別由後續記者會本人說明。",
       "returnDate": null,
-      "returnSummary": "本人後續說明備戰與參賽意願；本頁未核定首次回場日，也不將樂觀預期寫成醫師放行。",
+      "returnSummary": "2026-02-11 已在冬奧女子半管資格賽實際出賽，以 90.25 分晉級；NBC 記載這是肩傷後首次參賽。確切受傷日仍未確認，不計算受傷至回場間隔，也不將出賽視為盂唇已癒合。",
       "context": "所選影片是 2026 年 1 月傷勢公告的新聞剪輯。事件發生於 Laax 訓練，確切受傷日未確認，1 月 8 日公告日不填成受傷日；亦不併入較早 Copper Mountain 的另一場跌落。",
       "timeline": [
         {
@@ -367,9 +378,15 @@
           "title": "本人說明左側",
           "text": "在奧運前記者會談肩部狀況並確認左側；不據此推定盂唇已癒合。",
           "sourceIndexes": [3]
+        },
+        {
+          "date": "2026-02-11",
+          "title": "肩傷後首次參賽",
+          "text": "在冬奧女子半管資格賽得到 90.25 分並晉級；比賽日期由 FIS 賽程與 NBC 賽後報導交叉核對。",
+          "sourceIndexes": [5, 6]
         }
       ],
-      "checkedAt": "2026-09-21",
+      "checkedAt": "2026-11-17",
       "sources": [
         {
           "title": "NBC Olympics：Kim 公布 Laax 訓練肩脫臼",
@@ -390,6 +407,16 @@
           "title": "Olympic gold medalist Chloe Kim announces she dislocated her shoulder",
           "url": "https://www.youtube.com/watch?v=iRo0jHPhr2I",
           "publishedAt": null
+        },
+        {
+          "title": "NBC Olympics：Chloe Kim 肩傷後重返半管資格賽",
+          "url": "https://www.nbcolympics.com/news/chloe-kim-unfazed-injury-crushes-halfpipe-qualifier-roar-final-mastro-3rd",
+          "publishedAt": null
+        },
+        {
+          "title": "FIS：確認 2 月 11 日女子半管資格賽賽程",
+          "url": "https://www.fis-ski.com/snowboard-park-and-pipe/news/2025-26/kim-begins-snowboard-halfpipe-three-peat-bid-facing-her-reflection-",
+          "publishedAt": "2026-02-10"
         }
       ],
       "mechanism": {
