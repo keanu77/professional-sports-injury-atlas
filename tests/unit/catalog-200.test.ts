@@ -9,6 +9,7 @@ import catalog200EventData from "../../src/data/videos/event-catalog-200.v1.json
 import { discoveryFor } from "../../src/lib/videos/discovery";
 import {
   allObservationClips,
+  curryThree,
   catalog200,
   catalog200Schema,
 } from "../../src/lib/videos/expansion";
@@ -107,13 +108,15 @@ describe("catalog 200 sourced expansion", () => {
   it("preserves prior events and admits the selected 42 once", () => {
     expect(catalog200.clips).toEqual(selected.clips.map(withRepairedCitations));
     expect(catalog200.clips).toHaveLength(42);
-    expect(allObservationClips).toHaveLength(193);
-    expect(eventUpdates.entries).toHaveLength(200);
-    expect(publicVideoIds.size).toBe(199);
-    expect(new Set(allObservationClips.map((c) => c.slug)).size).toBe(193);
+    expect(allObservationClips).toHaveLength(196);
+    expect(eventUpdates.entries).toHaveLength(203);
+    expect(publicVideoIds.size).toBe(202);
+    expect(new Set(allObservationClips.map((c) => c.slug)).size).toBe(196);
     expect(new Set(catalog200.clips.map((c) => c.videoId)).size).toBe(42);
     expect(nerveInjuryGroup(allObservationClips).count).toBe(4);
-    const added = new Set(selected.clips.map((c) => c.slug));
+    const added = new Set(
+      [...selected.clips, ...curryThree.clips].map((c) => c.slug),
+    );
     expect(baseline.clips).toHaveLength(151);
     expect(baseline.eventEntries).toHaveLength(158);
     expect(allObservationClips.filter((c) => !added.has(c.slug))).toEqual(

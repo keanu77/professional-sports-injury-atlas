@@ -10,6 +10,7 @@ import judgeRibData from "../../data/videos/judge-rib.v1.json";
 import ribFractureData from "../../data/videos/rib-fracture-three.v1.json";
 import nerveFourData from "../../data/videos/nerve-four.v1.json";
 import catalog200Data from "../../data/videos/catalog-200.v1.json";
+import curryThreeData from "../../data/videos/curry-three.v1.json";
 import data from "../../data/videos/expansion.v1.json";
 import launchData from "../../data/public-launch.v1.json";
 import curationData from "../../data/videos/curation.v1.json";
@@ -1178,12 +1179,78 @@ export const catalog200Schema = z
     }
   });
 export const catalog200 = catalog200Schema.parse(catalog200Data);
-export const allObservationClips: ObservationClip[] = [
+/** The original reviewed 200-video inventory stays independently reproducible. */
+export const catalog200ObservationClips: ObservationClip[] = [
   ...priorObservationClips,
   ...judgeRib.clips,
   ...ribFractureThree.clips,
   ...nerveFour.clips,
   ...catalog200.clips,
+];
+const currySelections = new Map([
+  [
+    "stephen-curry-2025-left-hamstring",
+    ["OYLixb3d7gA", "2025-05-06", null, 210],
+  ],
+  [
+    "stephen-curry-2026-right-patellofemoral-pain",
+    ["iGY5kwMIS2g", null, "2026-04-05", 990],
+  ],
+  [
+    "stephen-curry-2026-right-oblique",
+    ["xKsiGQbv2XU", "2026-11-11", null, 551],
+  ],
+]);
+export const curryThreeSchema = z
+  .strictObject({
+    schemaVersion: z.literal(1),
+    decision: z.literal("curry-three-2026-11-18"),
+    authorizationQuote: z.literal("三個事件已審核，請繼續完成"),
+    eventReviewRef: z.literal(
+      "docs/reviews/2026-11-18-curry-integration/event-content-approval.json",
+    ),
+    clips: z.array(observationClipSchema).length(3),
+  })
+  .superRefine((value, ctx) => {
+    const slugs = new Set(catalog200ObservationClips.map((clip) => clip.slug));
+    const ids = new Set([
+      ...catalog200ObservationClips.map((clip) => clip.videoId),
+      ...[...launchData.cases, ...expansion.cases].map((clip) =>
+        parseYouTubeVideoId(clip.videoUrl),
+      ),
+    ]);
+    for (const clip of value.clips) {
+      const expected = currySelections.get(clip.slug);
+      if (
+        !expected ||
+        JSON.stringify([
+          clip.videoId,
+          clip.eventDate,
+          clip.returnDate,
+          clip.durationSeconds,
+        ]) !== JSON.stringify(expected) ||
+        clip.name !== "Stephen Curry" ||
+        clip.provider !== "youtube" ||
+        parseYouTubeVideoId(clip.videoUrl) !== clip.videoId ||
+        slugs.has(clip.slug) ||
+        ids.has(clip.videoId) ||
+        clip.startSeconds >= clip.durationSeconds ||
+        clip.sources.length === 0 ||
+        !isReturnDateChronological(clip)
+      ) {
+        ctx.addIssue({
+          code: "custom",
+          message: `Invalid Curry event/video binding: ${clip.slug}`,
+        });
+      }
+      slugs.add(clip.slug);
+      ids.add(clip.videoId);
+    }
+  });
+export const curryThree = curryThreeSchema.parse(curryThreeData);
+export const allObservationClips: ObservationClip[] = [
+  ...catalog200ObservationClips,
+  ...curryThree.clips,
 ];
 export const expansionEnabled = () =>
   process.env.ATLAS_PUBLIC_LAUNCH === "decision-21";

@@ -51,15 +51,15 @@ for (const c of selected.clips) {
     },
   );
 }
-test("200 unique events remain searchable", async ({ page }) => {
+test("203 unique events remain searchable", async ({ page }) => {
   await page.goto("/");
-  await expect(page.locator("[data-discovery-slug]")).toHaveCount(200);
+  await expect(page.locator("[data-discovery-slug]")).toHaveCount(203);
   const slugs = await page
     .locator("[data-discovery-slug]")
     .evaluateAll((nodes) =>
       nodes.map((n) => n.getAttribute("data-discovery-slug")),
     );
-  expect(new Set(slugs).size).toBe(200);
+  expect(new Set(slugs).size).toBe(203);
   await page
     .getByRole("searchbox", { name: "搜尋球員或關鍵字" })
     .fill("Rafael Nadal");

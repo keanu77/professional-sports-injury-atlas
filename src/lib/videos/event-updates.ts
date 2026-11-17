@@ -10,6 +10,7 @@ import judgeRibData from "../../data/videos/event-judge-rib.v1.json";
 import ribFractureData from "../../data/videos/event-rib-fracture-three.v1.json";
 import nerveFourData from "../../data/videos/event-nerve-four.v1.json";
 import catalog200Data from "../../data/videos/event-catalog-200.v1.json";
+import curryThreeData from "../../data/videos/event-curry-three.v1.json";
 import newData from "../../data/videos/event-additions.v1.json";
 import { curation } from "./expansion";
 import data from "../../data/videos/event-updates.v1.json";
@@ -295,6 +296,21 @@ export const catalog200EventSchema = z.strictObject({
     .length(42),
 });
 const catalog200 = catalog200EventSchema.parse(catalog200Data);
+const curryThree = z
+  .strictObject({
+    schemaVersion: z.literal(1),
+    decision: z.literal("curry-three-2026-11-18"),
+    checkedAt: z.iso.date(),
+    entries: z
+      .array(
+        eventUpdateEntryInputSchema.required({
+          mechanism: true,
+          timeline: true,
+        }),
+      )
+      .length(3),
+  })
+  .parse(curryThreeData);
 /** Preserve the date of the batch that actually checked each entry. */
 export function normalizeEventUpdateBatches(
   batches: readonly EventUpdateBatchInput[],
@@ -322,6 +338,7 @@ const normalizedEntries = normalizeEventUpdateBatches([
   ribFractureThree,
   nerveFour,
   catalog200,
+  curryThree,
 ]).filter((e) => !curation.removedSlugs.some((slug) => slug === e.slug));
 export const eventUpdates = eventUpdatesSchema.parse({
   ...data,

@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-11-18",
+  "timezone": "Asia/Taipei",
+  "actor": "project-owner-in-this-conversation",
+  "authorizationQuote": "三個事件已審核，請繼續完成",
+  "scope": "the-three-prepared-Stephen-Curry-event-content-records-and-catalog-integration",
+  "approvedEvents": [
+    {
+      "id": "stephen-curry-2025-left-hamstring",
+      "eventDate": "2025-05-06",
+      "bodyPart": "大腿後側",
+      "reportedInjury": "左腿後肌拉傷",
+      "sourceAttribution": "NBA 刊載 AP 報導，引用球隊 MRI 更新。",
+      "returnDate": null,
+      "followUp": "一週後重新評估是當時安排，尚未在本筆核定首次實際回場日。",
+      "sources": [
+        {
+          "title": "NBA：Curry 左腿後肌傷勢更新",
+          "url": "https://www.nba.com/news/stephen-curry-hamstring-injury-warriors-timberwolves",
+          "publishedAt": "2025-05-07",
+          "pageRead": true
+        }
+      ]
+    },
+    {
+      "id": "stephen-curry-2026-right-patellofemoral-pain",
+      "eventDate": null,
+      "bodyPart": "膝部",
+      "reportedInjury": "右髕股疼痛症候群",
+      "sourceAttribution": "勇士官方賽後報導。",
+      "returnDate": "2026-04-05",
+      "followUp": "已對火箭復出；起始受傷日未確認，不計算復原天數。",
+      "sources": [
+        {
+          "title": "Warriors：2026-04-05 Curry 回歸賽後紀錄",
+          "url": "https://www.nba.com/warriors/news/gameday-recap-20260405",
+          "publishedAt": "2026-04-05",
+          "pageRead": true
+        }
+      ]
+    },
+    {
+      "id": "stephen-curry-2026-right-oblique",
+      "eventDate": "2026-11-11",
+      "bodyPart": "軀幹",
+      "reportedInjury": "右側腹斜肌撕裂",
+      "sourceAttribution": "勇士 11 月 12 日公告確認 MRI 診斷，另份球隊賽前公告確認右側。",
+      "returnDate": null,
+      "followUp": "球隊安排兩週後重新評估；未公布確定復出日。",
+      "sources": [
+        {
+          "title": "Warriors：2026-11-12 Curry 傷勢公告",
+          "url": "https://www.nba.com/warriors/news/stephen-curry-injury-update-11-12-26",
+          "publishedAt": "2026-11-12",
+          "pageRead": true
+        },
+        {
+          "title": "Warriors：對馬刺賽前傷勢名單確認右側腹斜肌傷",
+          "url": "https://www.nba.com/warriors/news/gameday-preview-20261113",
+          "publishedAt": "2026-11-12",
+          "pageRead": true
+        }
+      ]
+    }
+  ],
+  "approvedEventContentSha256": "ae8c6b10918ffa01c10a0a089f8edd1ee9ca0b71fe840e9715efa11fedd84c94",
+  "doesNotAttest": [
+    "newly-selected-video-full-content-review",
+    "caption-accuracy",
+    "owned-https-playback",
+    "other-20-learning-drafts",
+    "production-deployment"
+  ]
+}

@@ -11,11 +11,13 @@ export function getStaticPaths() {
 const video = candidate.events[0]!.videoCandidates[1]!;
 ---
 
-<BaseLayout title="Stephen Curry｜案例審閱草稿">
+<BaseLayout title="Stephen Curry｜案例審閱紀錄">
   <article class="candidate-review" data-candidate-review="stephen-curry">
-    <p><strong>編輯預覽・待審閱，尚未列入公開目錄</strong></p>
+    <p><strong>三個事件內容已審核，三支影片已分別加入目錄</strong></p>
     <h1>Stephen Curry：三次傷害分開閱讀</h1>
-    <p>本頁整理來源與待查問題，不能視為醫療核可或球員個人復健建議。</p>
+    <p>
+      本頁保留事件審閱紀錄。內容確認不代表影片全段、字幕品質或本站嵌入播放已驗證，也不是球員個人復健建議。
+    </p>
     <h2>2025 年左腿後肌事件：影片候選</h2>
     <p>{video.title}</p>
     <p>NBA on ESPN｜3 分 30 秒｜新聞報導，並非整段受傷機轉示範。</p>
@@ -34,6 +36,11 @@ const video = candidate.events[0]!.videoCandidates[1]!;
       candidate.events.map((event) => (
         <section aria-labelledby={event.id}>
           <h3 id={event.id}>{event.reportedInjury}</h3>
+          <p>
+            <a data-curry-catalog-link href={`/videos/${event.catalogSlug}/`}>
+              閱讀本事件與對應影片
+            </a>
+          </p>
           <p>
             事件日期：{event.eventDate ?? "未確認"}。{event.sourceAttribution}
           </p>
@@ -65,10 +72,10 @@ const video = candidate.events[0]!.videoCandidates[1]!;
         比較三個事件的來源日期、受傷部位及未確認資訊，避免把不同事件合併。
       </li>
     </ol>
-    <h2>正式收錄前需完成</h2>
+    <h2>仍待完成的媒體驗證</h2>
     <p>
-      逐段內容與字幕審閱、確定觀看範圍、來源與使用政策確認、教材醫療審閱，以及本站
-      HTTPS 頁面的當期播放驗證。
+      三個事件內容的審閱已記錄；逐段內容與字幕品質、教學觀看範圍及本站 HTTPS
+      頁面的當期播放驗證仍分開追蹤。這次確認不延伸至其他 20 份教學草稿。
     </p>
   </article>
 </BaseLayout>

@@ -2363,6 +2363,37 @@
         "docs/reviews/2026-09-21-video-types/classification-review.json#/entries/199"
       ],
       "reviewNote": "Sky 原創新聞呈現 Raducanu 本人的雙手手術聲明，回顧已持續數月的腕／手部問題。她說某個骨頭反覆受傷，並未指明骨名或確認骨折。"
+    },
+    {
+      "slug": "stephen-curry-2025-left-hamstring",
+      "videoUrl": "https://www.youtube.com/watch?v=OYLixb3d7gA",
+      "tags": ["news-report"],
+      "reviewedAt": "2026-11-17T23:14:29.774061Z",
+      "evidenceRefs": [
+        "docs/reviews/2026-11-18-curry-integration/media.json#/entries/0"
+      ],
+      "reviewNote": "NBA on ESPN 的傷勢新聞報導。左腿後肌拉傷與 MRI 更新依 NBA 報導整理；影片標題的一週是當時重新評估安排，不是已確認的復出日期。本輪為片型及原平台部分播放核對，未宣稱全片或字幕品質審閱。"
+    },
+    {
+      "slug": "stephen-curry-2026-right-patellofemoral-pain",
+      "videoUrl": "https://www.youtube.com/watch?v=iGY5kwMIS2g",
+      "tags": ["post-event-interview"],
+      "reviewedAt": "2026-11-17T23:14:29.774061Z",
+      "evidenceRefs": [
+        "docs/reviews/2026-11-18-curry-integration/media.json#/entries/1"
+      ],
+      "reviewNote": "勇士官方發布的 2026 年 4 月 4 日 Curry 本人訪談，主題是可能重返陣容。這是回場前訪談；實際於 4 月 5 日出賽的資訊另依球隊賽後報導，不能把訪談日期當成受傷日。本輪為片型及原平台部分播放核對，未宣稱全片或字幕品質審閱。"
+    },
+    {
+      "slug": "stephen-curry-2026-right-oblique",
+      "videoUrl": "https://www.youtube.com/watch?v=xKsiGQbv2XU",
+      "tags": ["expert-analysis"],
+      "reviewedAt": "2026-11-17T23:14:29.774061Z",
+      "evidenceRefs": [
+        "docs/reviews/2026-11-18-curry-integration/media.json#/entries/2"
+      ],
+      "reviewNote": "Brian Sutterer MD 對腹部傷勢的第三方解說，影片初期談及腹部不適與推測。右側腹斜肌撕裂以後續球隊公告為依據；解說者不是本案治療醫師，不能由影片確認撕裂分級或個人回場日。本輪為片型及原平台部分播放核對，未宣稱全片或字幕品質審閱。",
+      "speakerRole": "第三方醫師解說，非本案治療醫師"
     }
   ]
 }

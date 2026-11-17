@@ -80,6 +80,12 @@ export function loadVideoThumbnails(root: string): {
             "utf8",
           ),
         ).clips,
+        ...JSON.parse(
+          readFileSync(
+            join(root, "src/data/videos/curry-three.v1.json"),
+            "utf8",
+          ),
+        ).clips,
       ]
         .filter(
           (clip: { slug: string; provider?: string }) =>

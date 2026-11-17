@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "decision": "curry-three-2026-11-18",
+  "authorizationQuote": "三個事件已審核，請繼續完成",
+  "eventReviewRef": "docs/reviews/2026-11-18-curry-integration/event-content-approval.json",
+  "clips": [
+    {
+      "slug": "stephen-curry-2025-left-hamstring",
+      "videoId": "OYLixb3d7gA",
+      "provider": "youtube",
+      "eventYear": "2025",
+      "name": "Stephen Curry",
+      "sport": "籃球",
+      "event": "2025 季後賽｜左腿後肌拉傷",
+      "bodyPart": "大腿後側",
+      "observation": "NBA on ESPN 的傷勢新聞報導。左腿後肌拉傷與 MRI 更新依 NBA 報導整理；影片標題的一週是當時重新評估安排，不是已確認的復出日期。",
+      "footageKind": "news-analysis",
+      "eventDate": "2025-05-06",
+      "returnDate": null,
+      "returnText": "一週後重新評估是當時安排，尚未在本筆核定首次實際回場日。",
+      "videoUrl": "https://www.youtube.com/watch?v=OYLixb3d7gA",
+      "publisher": "NBA on ESPN",
+      "sourceTitle": "Shams: Steph Curry to miss at least 1 week with hamstring strain | NBA Today",
+      "captionStatus": "available",
+      "startSeconds": 0,
+      "durationSeconds": 210,
+      "sources": [
+        {
+          "title": "NBA：Curry 左腿後肌傷勢更新",
+          "url": "https://www.nba.com/news/stephen-curry-hamstring-injury-warriors-timberwolves"
+        },
+        {
+          "title": "Shams: Steph Curry to miss at least 1 week with hamstring strain | NBA Today",
+          "url": "https://www.youtube.com/watch?v=OYLixb3d7gA"
+        }
+      ]
+    },
+    {
+      "slug": "stephen-curry-2026-right-patellofemoral-pain",
+      "videoId": "iGY5kwMIS2g",
+      "provider": "youtube",
+      "eventYear": "2026",
+      "name": "Stephen Curry",
+      "sport": "籃球",
+      "event": "2026 勇士｜右髕股疼痛與回場前訪談",
+      "bodyPart": "膝部",
+      "observation": "勇士官方發布的 2026 年 4 月 4 日 Curry 本人訪談，主題是可能重返陣容。這是回場前訪談；實際於 4 月 5 日出賽的資訊另依球隊賽後報導，不能把訪談日期當成受傷日。",
+      "footageKind": "athlete-interview",
+      "eventDate": null,
+      "returnDate": "2026-04-05",
+      "returnText": "已對火箭復出；起始受傷日未確認，不計算復原天數。",
+      "videoUrl": "https://www.youtube.com/watch?v=iGY5kwMIS2g",
+      "publisher": "Golden State Warriors",
+      "sourceTitle": "Stephen Curry on Potential Return to Warriors Lineup | April 4, 2026",
+      "captionStatus": "available",
+      "startSeconds": 0,
+      "durationSeconds": 990,
+      "sources": [
+        {
+          "title": "Warriors：2026-04-05 Curry 回歸賽後紀錄",
+          "url": "https://www.nba.com/warriors/news/gameday-recap-20260405"
+        },
+        {
+          "title": "Stephen Curry on Potential Return to Warriors Lineup | April 4, 2026",
+          "url": "https://www.youtube.com/watch?v=iGY5kwMIS2g"
+        }
+      ]
+    },
+    {
+      "slug": "stephen-curry-2026-right-oblique",
+      "videoId": "xKsiGQbv2XU",
+      "provider": "youtube",
+      "eventYear": "2026",
+      "name": "Stephen Curry",
+      "sport": "籃球",
+      "event": "2026 對火箭｜右側腹斜肌撕裂",
+      "bodyPart": "軀幹",
+      "observation": "Brian Sutterer MD 對腹部傷勢的第三方解說，影片初期談及腹部不適與推測。右側腹斜肌撕裂以後續球隊公告為依據；解說者不是本案治療醫師，不能由影片確認撕裂分級或個人回場日。",
+      "footageKind": "news-analysis",
+      "eventDate": "2026-11-11",
+      "returnDate": null,
+      "returnText": "球隊安排兩週後重新評估；未公布確定復出日。",
+      "videoUrl": "https://www.youtube.com/watch?v=xKsiGQbv2XU",
+      "publisher": "Brian Sutterer MD",
+      "sourceTitle": "Steph Curry Winces in Pain and Leaves with Ab Injury - Doctor Explains",
+      "captionStatus": "available",
+      "startSeconds": 0,
+      "durationSeconds": 551,
+      "sources": [
+        {
+          "title": "Warriors：2026-11-12 Curry 傷勢公告",
+          "url": "https://www.nba.com/warriors/news/stephen-curry-injury-update-11-12-26"
+        },
+        {
+          "title": "Warriors：對馬刺賽前傷勢名單確認右側腹斜肌傷",
+          "url": "https://www.nba.com/warriors/news/gameday-preview-20261113"
+        },
+        {
+          "title": "Steph Curry Winces in Pain and Leaves with Ab Injury - Doctor Explains",
+          "url": "https://www.youtube.com/watch?v=xKsiGQbv2XU"
+        }
+      ]
+    }
+  ]
+}

@@ -20,7 +20,7 @@ test("keeps social links ahead of search, exposes all mobile category controls, 
 }) => {
   await page.setViewportSize({ width: 320, height: 740 });
   await page.goto("/");
-  await expect(page.locator("[data-discovery-slug]")).toHaveCount(200);
+  await expect(page.locator("[data-discovery-slug]")).toHaveCount(203);
   await expect(page.locator(visible)).toHaveCount(24);
   const geometry = await page.evaluate(() => {
     const top = (selector: string) =>
@@ -50,7 +50,7 @@ test("keeps social links ahead of search, exposes all mobile category controls, 
   await page.getByRole("button", { name: "載入更多影片", exact: true }).click();
   await expect(page.locator(visible)).toHaveCount(48);
   await expect(page.locator("[data-discovery-page-status]")).toContainText(
-    "48 / 200",
+    "48 / 203",
   );
   await page.getByRole("searchbox").fill("Drew Brees");
   await expect(page.locator(visible)).toHaveCount(1);
@@ -149,7 +149,7 @@ test("loads all remaining batches without duplicates and restores pagination aft
     await expect(page.locator(visible)).toHaveCount(count);
   }
   await more.click();
-  await expect(page.locator(visible)).toHaveCount(200);
+  await expect(page.locator(visible)).toHaveCount(203);
   await expect(more).toBeHidden();
   expect(
     await page
@@ -158,7 +158,7 @@ test("loads all remaining batches without duplicates and restores pagination aft
         (items) =>
           new Set(items.map((x) => x.getAttribute("data-discovery-slug"))).size,
       ),
-  ).toBe(200);
+  ).toBe(203);
   await page.getByRole("searchbox").fill("Brees");
   await page.getByRole("button", { name: "清除搜尋", exact: true }).click();
   await expect(page.locator(visible)).toHaveCount(24);

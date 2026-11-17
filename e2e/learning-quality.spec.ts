@@ -42,14 +42,15 @@ for (const path of [
   });
 }
 
-test("Curry preview separates three events without claiming publication or embedded playback", async ({
+test("Curry review records the approved events and links their separate catalog pages", async ({
   page,
 }) => {
   await page.goto("/review-candidates/stephen-curry/");
   await expect(page.locator("[data-candidate-review]")).toContainText(
-    "尚未列入公開目錄",
+    "三個事件內容已審核",
   );
   await expect(page.locator("article section")).toHaveCount(3);
+  await expect(page.locator("[data-curry-catalog-link]")).toHaveCount(3);
   await expect(page.locator("iframe")).toHaveCount(0);
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
     "content",

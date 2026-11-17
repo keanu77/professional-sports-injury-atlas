@@ -179,7 +179,7 @@ test("keeps all videos browsable with scripts disabled", async ({
     const page = await context.newPage();
     await page.goto(baseURL!);
     await expect(page.locator("[data-video-search]")).toBeHidden();
-    await expect(page.locator(visibleCards)).toHaveCount(200);
+    await expect(page.locator(visibleCards)).toHaveCount(203);
     await expect(page.locator("[data-discovery-controls]")).toBeHidden();
   } finally {
     await context.close();

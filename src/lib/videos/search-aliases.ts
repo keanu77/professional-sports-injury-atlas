@@ -5,6 +5,10 @@ import { normalizeVideoSearch } from "./search";
  * Each published event keeps its own slug, dates and sources.
  */
 export const ATHLETE_SEARCH_ALIASES = [
+  {
+    name: "Stephen Curry",
+    aliases: ["Steph Curry", "Curry", "柯瑞", "柯里", "庫里", "史蒂芬柯瑞"],
+  },
   { name: "Kobe Bryant", aliases: ["Kobe", "柯比", "科比", "柯比布萊恩"] },
   { name: "Kevin Durant", aliases: ["杜蘭特", "凱文杜蘭特"] },
   { name: "Klay Thompson", aliases: ["湯普森", "克雷湯普森"] },

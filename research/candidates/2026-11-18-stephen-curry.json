@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "athlete": "Stephen Curry",
   "reviewedAt": "2026-11-18",
-  "status": "research-only",
-  "includedInPublicCatalog": false,
+  "status": "catalog-integrated-local",
+  "includedInPublicCatalog": true,
   "medicalApproval": false,
   "playbackVerified": false,
-  "verificationLimit": "已以原生 Chrome 確認 NBA on ESPN 候選影片在 YouTube 原平台播放與英文自動字幕選項。未驗本站內嵌、台灣網路位置、未登入瀏覽、字幕正確性與完整教學內容；未獲醫療審閱或正式收錄。",
+  "verificationLimit": "三個事件內容已由使用者確認並納入候選分支目錄。三支不同影片均有原平台部分播放與英文自動字幕選項證據；完整片段、字幕品質、本站 HTTPS 嵌入與正式發布尚未驗證。medicalApproval 欄位不代表將本次事件確認延伸為全部教材的具名臨床簽章。",
   "events": [
     {
       "id": "stephen-curry-2025-left-hamstring",
@@ -61,7 +61,9 @@
           "playbackVerified": false,
           "contentTypeCandidate": "post-event-interview"
         }
-      ]
+      ],
+      "catalogSlug": "stephen-curry-2025-left-hamstring",
+      "selectedVideoUrl": "https://www.youtube.com/watch?v=OYLixb3d7gA"
     },
     {
       "id": "stephen-curry-2026-right-patellofemoral-pain",
@@ -79,7 +81,25 @@
           "pageRead": true
         }
       ],
-      "videoCandidates": []
+      "videoCandidates": [
+        {
+          "url": "https://www.youtube.com/watch?v=iGY5kwMIS2g",
+          "publisher": "Golden State Warriors",
+          "title": "Stephen Curry on Potential Return to Warriors Lineup | April 4, 2026",
+          "pageRead": true,
+          "playbackVerified": true,
+          "playbackScope": "source-platform-only",
+          "durationSeconds": 990,
+          "captionEvidence": {
+            "available": true,
+            "language": "en",
+            "type": "automatic",
+            "accuracyReviewed": false
+          }
+        }
+      ],
+      "catalogSlug": "stephen-curry-2026-right-patellofemoral-pain",
+      "selectedVideoUrl": "https://www.youtube.com/watch?v=iGY5kwMIS2g"
     },
     {
       "id": "stephen-curry-2026-right-oblique",
@@ -103,7 +123,25 @@
           "pageRead": true
         }
       ],
-      "videoCandidates": []
+      "videoCandidates": [
+        {
+          "url": "https://www.youtube.com/watch?v=xKsiGQbv2XU",
+          "publisher": "Brian Sutterer MD",
+          "title": "Steph Curry Winces in Pain and Leaves with Ab Injury - Doctor Explains",
+          "pageRead": true,
+          "playbackVerified": true,
+          "playbackScope": "source-platform-only",
+          "durationSeconds": 551,
+          "captionEvidence": {
+            "available": true,
+            "language": "en",
+            "type": "automatic",
+            "accuracyReviewed": false
+          }
+        }
+      ],
+      "catalogSlug": "stephen-curry-2026-right-oblique",
+      "selectedVideoUrl": "https://www.youtube.com/watch?v=xKsiGQbv2XU"
     }
   ],
   "verificationAttempts": [
@@ -140,8 +178,24 @@
       "medicalApproval": false,
       "note": "於使用者既有登入環境的新分頁實播，完成後暫停並關閉此分頁。時間點為UI抽查，不代表逐秒完整觀看；字幕選項與字幕顯示不代表翻譯或內容正確。",
       "timePrecision": "day"
+    },
+    {
+      "checkedAt": "2026-11-17T23:14:29.774061Z",
+      "method": "three-event-catalog-integration",
+      "eventReviewRef": "docs/reviews/2026-11-18-curry-integration/event-content-approval.json",
+      "mediaRef": "docs/reviews/2026-11-18-curry-integration/media.json",
+      "includedInPublicCatalog": true,
+      "productionDeployed": false,
+      "ownedHttpsPlaybackVerified": false
     }
   ],
-  "sourcePlatformVideosVerified": 1,
-  "ownedHttpsPlaybackVerified": false
+  "sourcePlatformVideosVerified": 3,
+  "ownedHttpsPlaybackVerified": false,
+  "productionDeployed": false,
+  "eventContentReview": {
+    "status": "approved",
+    "reviewedAt": "2026-11-18",
+    "authorizationQuote": "三個事件已審核，請繼續完成",
+    "evidenceRef": "docs/reviews/2026-11-18-curry-integration/event-content-approval.json"
+  }
 }

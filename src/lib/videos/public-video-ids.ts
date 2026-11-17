@@ -12,6 +12,7 @@ import judgeRib from "../../data/videos/judge-rib.v1.json";
 import ribFractureThree from "../../data/videos/rib-fracture-three.v1.json";
 import nerveFour from "../../data/videos/nerve-four.v1.json";
 import catalog200 from "../../data/videos/catalog-200.v1.json";
+import curryThree from "../../data/videos/curry-three.v1.json";
 
 /** Shared public allowlist; no research candidates or removed videos. */
 export const publicVideoIds = new Set([
@@ -32,6 +33,7 @@ export const publicVideoIds = new Set([
     ...ribFractureThree.clips,
     ...nerveFour.clips.filter((clip) => clip.provider === "youtube"),
     ...catalog200.clips,
+    ...curryThree.clips,
   ]
     .filter((entry) => !curation.removedSlugs.includes(entry.slug))
     .map((entry) => entry.videoId),
