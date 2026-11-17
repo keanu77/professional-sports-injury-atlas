@@ -44,7 +44,38 @@
 
 ## 驗證紀錄
 
-整合驗證進行中，完成後在本節填入實際 commit、通過／失敗／skip 數與環境。工作目錄含修改時的三個 provenance 測試失敗保留於原始 log；後續須在乾淨提交上重新驗證，沒有修改歷史核可白名單來消除失敗。
+已驗證應用版本：`70444a51a4827dffd0def7a16839176d2494acc5`。Node 24.14.0；後續若只有交接文件提交，不代表重新測過另一組程式輸入。
+
+| 檢查               | 實際結果                                                                          |
+| ------------------ | --------------------------------------------------------------------------------- |
+| 型別               | 440 files；0 errors、0 warnings、17 既有 hints                                    |
+| 完整單元測試       | 120 files；1,732 passed                                                           |
+| 公開模式桌機／手機 | 204 passed、30 review-only skipped、0 failed、0 flaky                             |
+| 審閱模式播放器     | 34 passed、0 skipped、0 failed；包含上述公開模式略過項目                          |
+| 審閱版             | 45 頁，內容／品牌／artifact 檢查通過                                              |
+| 公開預覽           | 274 頁；200 支目錄影片的詳情均存在；全部 noindex、無播放統計；Curry 只在預覽存在  |
+| 投稿錯誤焦點       | 另以四種瀏覽器 focused 8/8 通過；完整公開測試亦通過                               |
+| 手機 Lighthouse    | 5/5 頁通過；a11y 全為 100，LCP 1,054–2,479 ms，CLS 0.0002–0.056；field CWV 未驗證 |
+| 來源巡檢           | 876 URLs：732 可讀、144 indeterminate、0 直接證實失效；不是實播證據               |
+| 正式發布 gate      | 未通過：current playback registry pending；未代填核可                             |
+
+第一次 dirty-tree 的三個 provenance failures、審閱 fixtures 誤用公開 artifact 的失敗，以及實際找到並修正的投稿焦點與 CLS 問題，均與最後成功結果分開保留。沒有放寬歷史核可、CSP 或安全門檻。
+
+2026-11-18 再讀正式 `/version.json` 為 `9d6f38a4159ec69715e8e185cc1c363b1430bf49`，並非上述候選；本輪沒有 push、merge 或 production deploy。
+
+首頁 CLS 由 0.359 降至 0.056；膝部列表由 0.360 降至 0.055。修正首屏腳本載入前後的控制區尺寸與日期說明換行，未降低 Lighthouse 門檻。首頁 LCP 2,479 ms 接近 2,500 ms 門檻，正式環境仍需觀察。
+
+## 依賴安全
+
+已更新 Astro 7.4.12、Vite 8.3.6、Vitest／coverage 4.1.12、fast-uri 3.1.9，解除 10 項 distinct advisories。`npm audit --audit-level=high` 仍不通過：16 筆 high dependency entries 都來自尚無修補版的 [picomatch GHSA-fc5q-39xc-vjpf](https://github.com/advisories/GHSA-fc5q-39xc-vjpf)。這不是 16 個新漏洞，也不是 audit 已通過。未採用 npm 建議的不相容降版，CI 安全 gate 保持原規則。
+
+詳細版本與前後稽核見 `output/site-quality-validation/dependency-security-update.md` 和 `dependency-security-summary.json`。
+
+## 繼續審閱
+
+本機預覽使用 `http://127.0.0.1:4325/`；[20 份教材](learning-review.md) 表內連結可直接跳到問題。[Curry 待審頁](http://127.0.0.1:4325/review-candidates/stephen-curry/) 保留三個事件、來源與未確認範圍。
+
+依使用者核准計劃的第 6、9 節，尚須由實際審閱者確認影片與教材，以及完成真實讀者任務；目前已詢問醫療審閱責任人，未收到指派或簽核。此項不是再次詢問一般程式修改權限。
 
 ## 尚未滿足的 100 分條件
 
