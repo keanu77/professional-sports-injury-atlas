@@ -9,6 +9,12 @@ export function getStaticPaths() {
     : [];
 }
 const video = candidate.events[0]!.videoCandidates[1]!;
+if (!("publishedAt" in video) || typeof video.publishedAt !== "string") {
+  throw new Error(
+    "The selected hamstring video must retain its publication date",
+  );
+}
+const videoPublishedAt = video.publishedAt;
 ---
 
 <BaseLayout title="Stephen Curry｜案例審閱紀錄">
@@ -18,7 +24,7 @@ const video = candidate.events[0]!.videoCandidates[1]!;
     <p>
       本頁保留事件審閱紀錄。內容確認不代表影片全段、字幕品質或本站嵌入播放已驗證，也不是球員個人復健建議。
     </p>
-    <h2>2025 年左腿後肌事件：影片候選</h2>
+    <h2>2025 年左腿後肌事件：新聞影片</h2>
     <p>{video.title}</p>
     <p>NBA on ESPN｜3 分 30 秒｜新聞報導，並非整段受傷機轉示範。</p>
     <ExternalSourceCitation
@@ -26,7 +32,7 @@ const video = candidate.events[0]!.videoCandidates[1]!;
       url={video.url}
       title="到 YouTube 原平台觀看"
       publisher="NBA on ESPN"
-      publishedAt={"publishedAt" in video ? video.publishedAt : null}
+      publishedAt={videoPublishedAt}
     />
     <p>
       已確認原平台播放與英文自動字幕選項；完整內容、字幕品質與本站內嵌仍待核對。
