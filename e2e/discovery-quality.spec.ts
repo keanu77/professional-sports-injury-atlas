@@ -8,6 +8,37 @@ test.beforeEach(() =>
 );
 const cards = "[data-discovery-slug]:visible";
 
+test("reserves search controls while the enhancement module is delayed", async ({
+  page,
+}) => {
+  let release!: () => void;
+  const gate = new Promise<void>((resolve) => {
+    release = resolve;
+  });
+  await page.route("**/_astro/*.js", async (route) => {
+    await gate;
+    await route.continue();
+  });
+  try {
+    await page.goto("/", { waitUntil: "commit" });
+    const note = page.locator(".discovery-count-note");
+    await expect(note).toBeVisible();
+    await page.evaluate(() => document.fonts.ready.then(() => undefined));
+    await expect(page.getByRole("searchbox")).toBeHidden();
+    const before = await note.boundingBox();
+    release();
+    await expect(page.locator("[data-video-discovery]")).toHaveAttribute(
+      "data-discovery-ready",
+      "true",
+    );
+    await expect(page.getByRole("searchbox")).toBeVisible();
+    const after = await note.boundingBox();
+    expect(Math.abs(after!.y - before!.y)).toBeLessThanOrEqual(2);
+  } finally {
+    release();
+  }
+});
+
 test("finds Chinese aliases and offers an explicit typo suggestion without rewriting the query", async ({
   page,
 }) => {
