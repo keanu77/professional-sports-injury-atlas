@@ -1,5 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 
+const publicPreview = process.env.ATLAS_E2E_MODE === "public-preview";
+if (publicPreview) process.env.ATLAS_PUBLIC_LAUNCH = "decision-21";
 const port = Number(process.env.ATLAS_E2E_PORT ?? "4321");
 if (!Number.isInteger(port) || port < 1024 || port > 65535) {
   throw new Error("ATLAS_E2E_PORT must be an integer between 1024 and 65535");
@@ -10,11 +12,16 @@ const origin = `http://127.0.0.1:${port}`;
 // against the exact static output, never a dev server.
 export default defineConfig({
   testDir: "e2e",
+  reporter: process.env.CI
+    ? [["list"], ["json", { outputFile: "test-results/e2e-results.json" }]]
+    : "list",
   fullyParallel: true,
   forbidOnly: true,
   retries: 0,
   webServer: {
-    command: `npm run build:review && npm run preview -- --host 127.0.0.1 --port ${port}`,
+    command: publicPreview
+      ? `npm run build:public-preview && ATLAS_PUBLIC_PREVIEW=1 npm run preview -- --host 127.0.0.1 --port ${port}`
+      : `npm run build:review && npm run preview -- --host 127.0.0.1 --port ${port}`,
     url: `${origin}/`,
     reuseExistingServer: false,
     timeout: 300000,

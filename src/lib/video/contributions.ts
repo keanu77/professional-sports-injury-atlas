@@ -6,12 +6,25 @@ import { publicContributionUrl as publicUrl } from "./contribution-content";
 const allowRequest = createRequestLimiter(3);
 const CONTACT_ENDPOINT = "https://sportsmedicine-tw.pages.dev/api/contact";
 type DeliveryLogStatus =
-  "invalid" | "guard-unavailable" | "rejected" | "uncertain" | "sent";
-const logDelivery = (status: DeliveryLogStatus) =>
-  console.info(JSON.stringify({ event: "contribution-delivery", status }));
+  | "invalid"
+  | "guard-unavailable"
+  | "rejected"
+  | "uncertain"
+  | "sent"
+  | "settle-failed";
+type DeliveryReason =
+  | "invalid-fields"
+  | "missing-guard"
+  | "quota"
+  | "upstream-status"
+  | "unconfirmed-response"
+  | "transport"
+  | "accepted"
+  | "settlement";
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 export const CONTRIBUTION_SUCCESS =
   "謝謝你協助完善運動傷害影片圖鑑！你的訊息已送出，我們會查核後評估更新。";
-const respond = (status: number, body: object, extraHeaders = {}) =>
+const responseWithHeaders = (status: number, body: object, extraHeaders = {}) =>
   Response.json(body, {
     status,
     headers: {
@@ -27,6 +40,32 @@ export async function submitContribution(
   send: typeof fetch = fetch,
   guard?: ContributionGuard,
 ): Promise<Response> {
+  const requestId = crypto.randomUUID();
+  const startedAt = Date.now();
+  let reservationId: string | undefined;
+  const respond = (status: number, body: object, extraHeaders = {}) =>
+    responseWithHeaders(status, body, {
+      "X-Contribution-Request-Id": requestId,
+      ...extraHeaders,
+    });
+  // Bounded labels and random identifiers only: never log content, IP, token,
+  // upstream body, arbitrary exception text or submitted URLs.
+  const logDelivery = (
+    status: DeliveryLogStatus,
+    reason: DeliveryReason,
+    upstreamStatus?: number,
+  ) =>
+    console.info(
+      JSON.stringify({
+        event: "contribution-delivery",
+        requestId,
+        status,
+        reason,
+        latencyMs: Math.max(0, Date.now() - startedAt),
+        ...(reservationId && UUID.test(reservationId) ? { reservationId } : {}),
+        ...(upstreamStatus === undefined ? {} : { upstreamStatus }),
+      }),
+    );
   if (request.method !== "POST") return respond(405, { error: "method" });
   if (
     request.headers.get("Origin") !== new URL(request.url).origin ||
@@ -87,7 +126,7 @@ export async function submitContribution(
         ].includes(k),
     )
   ) {
-    logDelivery("invalid");
+    logDelivery("invalid", "invalid-fields");
     return respond(400, { error: "invalid" });
   }
   if (data.website) return respond(400, { error: "invalid" });
@@ -118,11 +157,11 @@ export async function submitContribution(
     ? sources.split(/\r?\n/).filter(Boolean).map(publicUrl)
     : [];
   if (sourceUrls.length > 3 || sourceUrls.some((u) => u === null)) {
-    logDelivery("invalid");
+    logDelivery("invalid", "invalid-fields");
     return respond(400, { error: "sources" });
   }
   if (data.type === "video" && !url && !note && sourceUrls.length === 0) {
-    logDelivery("invalid");
+    logDelivery("invalid", "invalid-fields");
     return respond(400, { error: "empty-content" });
   }
   if (data.type === "reference" && !url && !sourceUrls.length)
@@ -147,7 +186,7 @@ export async function submitContribution(
     "此訊息由影片圖鑑匿名表單送出，沒有收集訪客姓名或回覆信箱。Email 欄為系統 no-reply 地址，請勿回覆。",
   ].join("\n");
   if (message.length > 5000) {
-    logDelivery("invalid");
+    logDelivery("invalid", "invalid-fields");
     return respond(413, { error: "too-large" });
   }
   let reservation: Reservation;
@@ -165,30 +204,35 @@ export async function submitContribution(
       content,
     );
   } catch {
-    logDelivery("guard-unavailable");
+    logDelivery("guard-unavailable", "missing-guard");
     return respond(503, { error: "guard-unavailable" });
   }
   if (!reservation.allowed) {
-    logDelivery("rejected");
+    logDelivery("rejected", "quota");
     return respond(
       429,
       { error: reservation.reason },
       { "Retry-After": String(reservation.retryAfter) },
     );
   }
-  const reservationId = reservation.id;
+  const settlementId = reservation.id;
+  reservationId = settlementId;
   const settle = async (state: "sent" | "uncertain" | "rejected") => {
     // A failed status update retains the original pending reservation: fail closed.
     try {
-      await guard!.settle(reservationId, state);
+      await guard!.settle(settlementId, state);
     } catch {
-      /* quota remains reserved */
+      logDelivery("settle-failed", "settlement");
     }
   };
+  let upstreamStatus: number | undefined;
   try {
     const result = await send(CONTACT_ENDPOINT, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "X-Contribution-Request-Id": requestId,
+      },
       body: JSON.stringify({
         name: "影片圖鑑匿名讀者",
         email: "no-reply@injury.sportsmedicine.tw",
@@ -201,13 +245,14 @@ export async function submitContribution(
       // is rejected below without forwarding the token to another destination.
       redirect: "manual",
     });
+    upstreamStatus = result.status;
     if (!result.ok) {
       const state =
         result.status >= 400 && result.status < 500 && result.status !== 408
           ? "rejected"
           : "uncertain";
       await settle(state);
-      logDelivery(state);
+      logDelivery(state, "upstream-status", result.status);
       if (result.status === 400)
         return respond(400, { error: "verification-invalid" });
       if (result.status === 503)
@@ -219,15 +264,19 @@ export async function submitContribution(
     const body = (await result.json()) as { ok?: boolean };
     if (body.ok !== true) {
       await settle("uncertain");
-      logDelivery("uncertain");
+      logDelivery("uncertain", "unconfirmed-response", result.status);
       return respond(502, { error: "delivery" });
     }
     await settle("sent");
-    logDelivery("sent");
+    logDelivery("sent", "accepted", result.status);
     return respond(200, { ok: true, message: CONTRIBUTION_SUCCESS });
   } catch {
     await settle("uncertain");
-    logDelivery("uncertain");
+    logDelivery(
+      "uncertain",
+      upstreamStatus === undefined ? "transport" : "unconfirmed-response",
+      upstreamStatus,
+    );
     return respond(502, { error: "delivery" });
   }
 }

@@ -66,7 +66,8 @@ const {
   heroImageSizes = "(min-width: 72rem) 72rem, 100vw",
 } = Astro.props;
 const buildMode = resolveBuildMode(process.env.ATLAS_BUILD_MODE);
-const robotsContent = robotsMetaContent(buildMode);
+const isPublicPreview = process.env.ATLAS_PUBLIC_PREVIEW === "1";
+const robotsContent = robotsMetaContent(isPublicPreview ? "review" : buildMode);
 const sortedArtifactRecordIds = [...artifactRecordIds].sort(compareCodePoints);
 if (
   sortedArtifactRecordIds.some(
@@ -150,7 +151,9 @@ const casePreload =
 <html
   lang="zh-Hant"
   data-theme="dark"
-  data-playback-statistics={buildMode === "public" && isLaunchEnabled()
+  data-playback-statistics={!isPublicPreview &&
+  buildMode === "public" &&
+  isLaunchEnabled()
     ? "enabled"
     : undefined}
 >

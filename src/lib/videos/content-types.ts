@@ -26,6 +26,7 @@ const contentTypeById = new Map(CONTENT_TYPES.map((type) => [type.id, type]));
 
 const segmentSchema = z.strictObject({
   startSeconds: z.number().int().nonnegative(),
+  endSeconds: z.number().int().positive().optional(),
   typeIds: z.array(z.enum(contentTypeIds)).min(1),
   note: z.string().min(1),
 });
@@ -73,6 +74,19 @@ export const videoContentTypesSchema = z
           message: "Repeated video content type",
         });
       for (const [segmentIndex, segment] of (entry.segments ?? []).entries()) {
+        if (
+          (segment.endSeconds !== undefined &&
+            segment.endSeconds <= segment.startSeconds) ||
+          (segmentIndex > 0 &&
+            segment.startSeconds <
+              entry.segments![segmentIndex - 1]!.startSeconds)
+        )
+          ctx.addIssue({
+            code: "custom",
+            path: [...path, "segments", segmentIndex],
+            message:
+              "Segment end must follow start and segments must be ordered",
+          });
         if (new Set(segment.typeIds).size !== segment.typeIds.length)
           ctx.addIssue({
             code: "custom",
@@ -121,8 +135,32 @@ export function contentTypesFor(
   );
 }
 
-export function contentTypeSegmentsFor(slug: string, videoUrl: string) {
-  return contentTypeEntryFor(slug, videoUrl)?.segments ?? [];
+export function contentTypeSegmentsFor(
+  slug: string,
+  videoUrl: string,
+  durationSeconds?: number,
+) {
+  const segments = contentTypeEntryFor(slug, videoUrl)?.segments ?? [];
+  if (durationSeconds !== undefined)
+    validateSegmentDuration(segments, durationSeconds);
+  return segments;
+}
+
+export function validateSegmentDuration(
+  segments: NonNullable<VideoContentTypeEntry["segments"]>,
+  durationSeconds: number,
+): void {
+  if (
+    !Number.isFinite(durationSeconds) ||
+    durationSeconds <= 0 ||
+    segments.some(
+      (segment) =>
+        segment.startSeconds >= durationSeconds ||
+        (segment.endSeconds !== undefined &&
+          segment.endSeconds > durationSeconds),
+    )
+  )
+    throw new Error("Segment outside the bound video duration");
 }
 
 export function videosByContentType(

@@ -9,9 +9,16 @@ const options = {
   sports: new Set(["basketball"]),
   bodies: new Set(["ankle"]),
 };
+const temporal = {
+  period: "" as const,
+  from: "",
+  to: "",
+  sort: "editorial" as const,
+};
 describe("shareable discovery state", () => {
   it("round trips all independent filters, Unicode query and scope without losing unrelated URL state", () => {
     const state = {
+      ...temporal,
       query: "大谷 / Drew Brees",
       type: "injury-moment",
       sport: "basketball",
@@ -32,6 +39,7 @@ describe("shareable discovery state", () => {
         "x".repeat(200),
     );
     expect(readDiscoveryState(url, options)).toEqual({
+      ...temporal,
       query: "x".repeat(120),
       type: "",
       sport: "",
@@ -96,7 +104,7 @@ describe("shareable discovery state", () => {
       );
       const cleared = writeDiscoveryState(
         normalized,
-        { query: "", type: "", sport: "", body: "", mode: "all" },
+        { ...temporal, query: "", type: "", sport: "", body: "", mode: "all" },
         scope,
       );
       expect(cleared.pathname).toBe(path);
@@ -109,5 +117,57 @@ describe("shareable discovery state", () => {
       { ...options, fixedBody: "knee" },
     );
     expect(state.body).toBe("knee");
+  });
+  it("round trips inclusive date ranges and sorting on category pages", () => {
+    const url = new URL(
+      "https://example.test/sports/basketball/?period=custom&from=2024-11-18&to=2026-11-18&sort=updated-newest&ref=lesson#videos-heading",
+    );
+    const state = readDiscoveryState(url, {
+      ...options,
+      fixedSport: "basketball",
+    });
+    expect(state).toMatchObject({
+      period: "custom",
+      from: "2024-11-18",
+      to: "2026-11-18",
+      sort: "updated-newest",
+    });
+    expect(
+      writeDiscoveryState(url, state, { fixedSport: "basketball" }).href,
+    ).toBe(url.href);
+  });
+  it("rejects malformed dates, clears unrelated dates and normalizes popularity order", () => {
+    expect(
+      readDiscoveryState(
+        new URL(
+          "https://example.test/?period=custom&from=2026-02-30&to=2026-11-18&sort=bad",
+        ),
+        options,
+      ),
+    ).toMatchObject({
+      period: "custom",
+      from: "",
+      to: "2026-11-18",
+      sort: "editorial",
+    });
+    const url = new URL(
+      "https://example.test/?period=recent-2y&from=2020-01-01&mode=popular&sort=event-newest",
+    );
+    const state = readDiscoveryState(url, options);
+    expect(state).toMatchObject({
+      period: "recent-2y",
+      from: "",
+      to: "",
+      sort: "editorial",
+    });
+    expect(writeDiscoveryState(url, state).search).toBe(
+      "?period=recent-2y&mode=popular",
+    );
+    expect(
+      readDiscoveryState(
+        new URL("https://example.test/?period=bad&from=2020-01-01"),
+        options,
+      ),
+    ).toMatchObject(temporal);
   });
 });

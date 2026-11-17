@@ -23,7 +23,10 @@ const PORT = 4331;
 const BASE_URL = `http://${HOST}:${PORT}`;
 const MIN_ACCESSIBILITY_SCORE = 0.95;
 const MAX_LCP_MS = 2500;
-const ARTIFACT_PATH = "artifacts/lighthouse-review.json";
+const publicPreview = process.env.ATLAS_LIGHTHOUSE_MODE === "public-preview";
+const ARTIFACT_PATH = publicPreview
+  ? "artifacts/lighthouse-public-preview.json"
+  : "artifacts/lighthouse-review.json";
 
 interface RouteTarget {
   path: string;
@@ -32,6 +35,20 @@ interface RouteTarget {
 }
 
 function routeTargets(): RouteTarget[] {
+  if (publicPreview)
+    return [
+      { path: "/", identityMarker: "data-discovery-slug" },
+      { path: "/body-parts/knee/", identityMarker: "data-discovery-slug" },
+      {
+        path: "/cases/tyrese-haliburton-achilles-rupture-2025/",
+        identityMarker: "data-event-follow-up",
+      },
+      {
+        path: "/videos/tony-hawk-2022-femur/",
+        identityMarker: "data-video-embed",
+      },
+      { path: "/contribute/", identityMarker: "data-contribution-form" },
+    ];
   return [
     { path: "/", identityMarker: "data-total-reviewed-count" },
     ...INJURIES.map((injury) => ({
@@ -74,7 +91,14 @@ async function main(): Promise<number> {
     preview = spawn(
       join("node_modules", ".bin", "astro"),
       ["preview", "--host", HOST, "--port", String(PORT)],
-      { stdio: "ignore", detached: true },
+      {
+        stdio: "ignore",
+        detached: true,
+        env: {
+          ...process.env,
+          ...(publicPreview ? { ATLAS_PUBLIC_PREVIEW: "1" } : {}),
+        },
+      },
     );
     await waitForServer(`${BASE_URL}/`, 60_000);
 
@@ -116,13 +140,22 @@ async function main(): Promise<number> {
       const lcpMs =
         run.lhr.audits["largest-contentful-paint"]?.numericValue ??
         Number.POSITIVE_INFINITY;
+      const cls =
+        run.lhr.audits["cumulative-layout-shift"]?.numericValue ??
+        Number.POSITIVE_INFINITY;
+      const tbt = run.lhr.audits["total-blocking-time"]?.numericValue ?? null;
       const pass =
-        accessibility >= MIN_ACCESSIBILITY_SCORE && lcpMs <= MAX_LCP_MS;
+        accessibility >= MIN_ACCESSIBILITY_SCORE &&
+        lcpMs <= MAX_LCP_MS &&
+        cls <= 0.1;
       if (!pass) failed = true;
       results.push({
         path: target.path,
         accessibilityScore: accessibility,
         largestContentfulPaintMs: Math.round(lcpMs),
+        cumulativeLayoutShift: cls,
+        totalBlockingTimeMs: tbt,
+        interactionToNextPaint: null,
         pass,
       });
       console.log(
@@ -137,7 +170,12 @@ async function main(): Promise<number> {
       `${JSON.stringify(
         {
           schemaVersion: 1,
-          artifactType: "lighthouse-review",
+          artifactType: publicPreview
+            ? "lighthouse-public-preview"
+            : "lighthouse-review",
+          measuredAt: new Date().toISOString(),
+          environment: "local mobile lab; not field Core Web Vitals",
+          fieldVerified: false,
           thresholds: {
             minAccessibilityScore: MIN_ACCESSIBILITY_SCORE,
             maxLargestContentfulPaintMs: MAX_LCP_MS,

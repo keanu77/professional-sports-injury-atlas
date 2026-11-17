@@ -1,0 +1,167 @@
+---
+import { resolveBuildMode } from "../../lib/governance/build-mode";
+import {
+  LEARNING_BASIS_LABELS,
+  VIDEO_READING_PROMPTS,
+  learningComparisonHref,
+  learningComparisonTitle,
+  learningFor,
+} from "../../lib/videos/learning";
+import ReportSourceRefs from "./ReportSourceRefs.astro";
+interface Props {
+  slug: string;
+  videoUrl: string;
+  showDrafts?: boolean;
+}
+const { slug, videoUrl, showDrafts = false } = Astro.props;
+const draft = learningFor(slug, videoUrl, {
+  showDrafts,
+  buildMode: resolveBuildMode(),
+  publicPreview: process.env.ATLAS_PUBLIC_PREVIEW === "1",
+});
+---
+
+<section
+  class="video-learning"
+  aria-labelledby={`video-learning-${slug}`}
+  data-video-learning={slug}
+>
+  <h2 id={`video-learning-${slug}`}>如何閱讀本頁</h2>
+  <ol class="reading-prompts">
+    {
+      VIDEO_READING_PROMPTS.map((prompt) => (
+        <li>
+          <strong>{prompt.label}：</strong>
+          {prompt.question}
+        </li>
+      ))
+    }
+  </ol>
+  {
+    draft && (
+      <div class="learning-draft" data-learning-draft>
+        <p class="draft-notice">
+          <>
+            <strong>教學草稿・待專業審閱</strong>
+            <br />
+          </>
+          以下問題依本站既有文字整理；尚未完成獨立醫療審閱、影片實看與學習者驗收。原案例的核可不涵蓋這份教材。
+        </p>
+        <h3>{draft.title}</h3>
+        <p>
+          <strong>學習目標：</strong>
+          {draft.objective}
+        </p>
+        <h4>先觀察與核對</h4>
+        <ol>
+          {draft.observationQuestions.map((question) => (
+            <li>{question}</li>
+          ))}
+        </ol>
+        <h4>自我檢核</h4>
+        <p>先試著回答，再展開核對方向。以下答案仍是待審草稿。</p>
+        {draft.selfChecks.map((check) => (
+          <details>
+            <summary>{check.question}</summary>
+            <p>{check.answer}</p>
+            <ul class="learning-basis">
+              {check.basisFields.map((field) => {
+                const basis = draft.basis.find((item) => item.field === field)!;
+                return (
+                  <li>
+                    <strong>{LEARNING_BASIS_LABELS[field]}：</strong>
+                    {basis.text}
+                    {basis.sourceIndexes.length > 0 && (
+                      <ReportSourceRefs
+                        slug={slug}
+                        indexes={basis.sourceIndexes}
+                      />
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </details>
+        ))}
+        <h4>比較另一個案例</h4>
+        <p>{draft.comparison.prompt}</p>
+        <a href={learningComparisonHref(draft)}>
+          {learningComparisonTitle(draft)}
+        </a>
+      </div>
+    )
+  }
+</section>
+
+<style>
+  .video-learning {
+    margin-block: 1.5rem;
+    margin-inline: auto;
+    max-inline-size: 52rem;
+    padding: 1.25rem;
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-card);
+    background: var(--color-surface-raised);
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  h2 {
+    font: 700 clamp(1.25rem, 3vw, 1.5rem)/1.5 var(--font-display);
+    margin-block: 0 1rem;
+  }
+  h3 {
+    font-size: 1.15rem;
+  }
+  h4 {
+    font-size: 1rem;
+    margin-block: 1.25rem 0.5rem;
+  }
+  li {
+    margin-block: 0.65rem;
+  }
+  ol,
+  ul {
+    padding-inline-start: 1.5rem;
+  }
+  .learning-draft {
+    margin-block-start: 1.5rem;
+    border-top: 1px solid var(--hairline);
+    padding-block-start: 1rem;
+  }
+  .draft-notice {
+    background: var(--color-surface-muted);
+    padding: 1rem;
+    border-inline-start: 3px solid var(--color-brand-primary);
+  }
+  details {
+    margin-block: 0.75rem;
+    padding: 0.75rem;
+    border: 1px solid var(--hairline);
+    border-radius: 0.5rem;
+  }
+  summary {
+    cursor: pointer;
+    min-height: 44px;
+    padding-block: 0.5rem;
+    font-weight: 600;
+  }
+  summary:focus-visible,
+  a:focus-visible {
+    outline: 3px solid var(--color-brand-primary);
+    outline-offset: 3px;
+  }
+  .learning-basis {
+    color: var(--color-ink-muted);
+    font-size: 0.925rem;
+  }
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  @media (max-width: 40rem) {
+    .video-learning {
+      padding: 1rem;
+    }
+  }
+</style>

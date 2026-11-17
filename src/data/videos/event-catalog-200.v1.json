@@ -363,7 +363,7 @@
       "videoUrl": "https://www.youtube.com/watch?v=iRo0jHPhr2I",
       "eventDate": null,
       "injury": "本人公開更新：左肩脫臼，MRI 顯示盂唇撕裂；側別由後續記者會本人說明。",
-      "returnDate": null,
+      "returnDate": "2026-02-11",
       "returnSummary": "2026-02-11 已在冬奧女子半管資格賽實際出賽，以 90.25 分晉級；NBC 記載這是肩傷後首次參賽。確切受傷日仍未確認，不計算受傷至回場間隔，也不將出賽視為盂唇已癒合。",
       "context": "所選影片是 2026 年 1 月傷勢公告的新聞剪輯。事件發生於 Laax 訓練，確切受傷日未確認，1 月 8 日公告日不填成受傷日；亦不併入較早 Copper Mountain 的另一場跌落。",
       "timeline": [
@@ -434,7 +434,8 @@
           "sourceIndexes": [3]
         },
         "limitation": "新聞剪輯不是連續事故回放，不能判定盂唇損傷形成的瞬間或癒合情況；公告日期也不是確定受傷日。"
-      }
+      },
+      "returnMilestone": "正式賽"
     },
     {
       "slug": "adam-peaty-2022-foot",

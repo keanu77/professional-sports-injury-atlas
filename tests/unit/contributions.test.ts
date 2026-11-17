@@ -66,9 +66,16 @@ describe("anonymous contributions", () => {
       expect(response.status).toBe(status);
       expect(await response.json()).toEqual({ error });
       expect(guard.settle).toHaveBeenCalledWith("test-reservation", state);
-      expect(log.mock.calls).toEqual([
-        [JSON.stringify({ event: "contribution-delivery", status: state })],
-      ]);
+      const entry = JSON.parse(log.mock.calls[0]![0]);
+      expect(entry).toMatchObject({
+        event: "contribution-delivery",
+        status: state,
+        reason: "upstream-status",
+        upstreamStatus: upstream,
+        requestId: response.headers.get("X-Contribution-Request-Id"),
+      });
+      expect(entry.latencyMs).toBeGreaterThanOrEqual(0);
+      expect(log).toHaveBeenCalledOnce();
     },
   );
   it("logs only bounded non-content labels for local and delivery outcomes", async () => {
@@ -88,15 +95,88 @@ describe("anonymous contributions", () => {
       successfulGuard(),
     );
     const labels = log.mock.calls.map((call) => JSON.parse(call[0]));
-    expect(labels).toEqual(
-      ["invalid", "guard-unavailable", "sent", "uncertain"].map((status) => ({
+    expect(labels.map(({ status }) => status)).toEqual([
+      "invalid",
+      "guard-unavailable",
+      "sent",
+      "uncertain",
+    ]);
+    expect(labels.map(({ reason }) => reason)).toEqual([
+      "invalid-fields",
+      "missing-guard",
+      "accepted",
+      "transport",
+    ]);
+    for (const entry of labels) {
+      expect(entry).toMatchObject({
         event: "contribution-delivery",
-        status,
-      })),
-    );
+        requestId: expect.any(String),
+        latencyMs: expect.any(Number),
+      });
+      expect(entry.requestId).toMatch(/^[0-9a-f-]{36}$/);
+      expect(entry.latencyMs).toBeGreaterThanOrEqual(0);
+    }
+    expect(new Set(labels.map(({ requestId }) => requestId)).size).toBe(4);
     expect(JSON.stringify(labels)).not.toMatch(
       /private|test-only-token|youtube|test-reservation|test-\d/,
     );
+  });
+  it("correlates the response, upstream header and structured log without trusting incoming IDs", async () => {
+    const log = vi.spyOn(console, "info").mockImplementation(() => {});
+    const send = successfulMail();
+    const response = await handleContribution(
+      request(valid, { "X-Contribution-Request-Id": "untrusted-client-value" }),
+      send,
+      successfulGuard(),
+    );
+    const requestId = response.headers.get("X-Contribution-Request-Id");
+    expect(requestId).toMatch(/^[0-9a-f-]{36}$/);
+    expect(
+      new Headers(send.mock.calls[0]![1]!.headers).get(
+        "X-Contribution-Request-Id",
+      ),
+    ).toBe(requestId);
+    expect(JSON.parse(log.mock.calls[0]![0]).requestId).toBe(requestId);
+    expect(JSON.stringify(log.mock.calls)).not.toContain(
+      "untrusted-client-value",
+    );
+    expect(response.headers.get("Cache-Control")).toBe("no-store");
+  });
+  it("records settlement failure while retaining the reserved quota and never resending", async () => {
+    const log = vi.spyOn(console, "info").mockImplementation(() => {});
+    const guard = successfulGuard();
+    vi.mocked(guard.settle).mockRejectedValue(
+      new Error("private database details"),
+    );
+    const send = successfulMail();
+    const response = await handleContribution(request(), send, guard);
+    expect(response.status).toBe(200);
+    expect(send).toHaveBeenCalledOnce();
+    expect(guard.reserve).toHaveBeenCalledOnce();
+    expect(guard.settle).toHaveBeenCalledOnce();
+    const entries = log.mock.calls.map(([value]) => JSON.parse(value));
+    expect(entries.map(({ status }) => status)).toEqual([
+      "settle-failed",
+      "sent",
+    ]);
+    expect(new Set(entries.map(({ requestId }) => requestId)).size).toBe(1);
+    expect(JSON.stringify(entries)).not.toContain("private database details");
+  });
+  it("records an ambiguous malformed upstream response as uncertain with its HTTP status", async () => {
+    const log = vi.spyOn(console, "info").mockImplementation(() => {});
+    const guard = successfulGuard();
+    const send = vi
+      .fn<typeof fetch>()
+      .mockResolvedValue(new Response("not json", { status: 200 }));
+    const response = await handleContribution(request(), send, guard);
+    expect(response.status).toBe(502);
+    expect(guard.settle).toHaveBeenCalledWith("test-reservation", "uncertain");
+    expect(JSON.parse(log.mock.calls[0]![0])).toMatchObject({
+      status: "uncertain",
+      reason: "unconfirmed-response",
+      upstreamStatus: 200,
+    });
+    expect(send).toHaveBeenCalledOnce();
   });
   it("does not send without a working shared guard", async () => {
     const send = successfulMail();

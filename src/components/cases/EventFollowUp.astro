@@ -22,6 +22,10 @@ const multipleInjuries = milestone === "跨兩次傷害後出賽";
   data-actual-return
 >
   <h2>傷勢與後續</h2>
+  <p class="event-note" data-event-as-of>
+    資訊截至 <time datetime={update.checkedAt}>{update.checkedAt}</time
+    >；內容整理日不等於影片播放查核日。
+  </p>
   <p>{update.injury}</p>
   <h3>
     {
@@ -45,7 +49,35 @@ const multipleInjuries = milestone === "跨兩次傷害後出賽";
       </p>
     )
   }
+  {
+    update.returnDate && days === null && (
+      <p class="event-dates">
+        <time datetime={update.returnDate}>{update.returnDate}</time> ·{" "}
+        {milestone}；日期資訊不足以計算確定的傷停天數。
+      </p>
+    )
+  }
+  {
+    days !== null && (
+      <p class="event-note">
+        這是兩個日期的間隔，不是復健療程長度或個人的回場期限。
+      </p>
+    )
+  }
   <p>{update.returnSummary}</p>
+  {
+    update.returnMilestones && (
+      <ul data-return-milestones>
+        {update.returnMilestones.map((item) => (
+          <li>
+            <time datetime={item.date}>{formatTimelineDate(item.date)}</time> ·{" "}
+            {item.kind}：{item.text}
+            <ReportSourceRefs slug={update.slug} indexes={item.sourceIndexes} />
+          </li>
+        ))}
+      </ul>
+    )
+  }
   {
     days !== null && update.eventDate && update.returnDate && (
       <p class="event-dates">

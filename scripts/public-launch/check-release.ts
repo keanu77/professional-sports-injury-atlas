@@ -24,7 +24,18 @@ import {
 } from "../../src/lib/patient/guides";
 import { sha256Hex } from "../../src/lib/contracts/canonical";
 import { inputTreeDigest } from "./input-tree";
+import { loadCurrentPlaybackRegistry } from "./current-playback";
+import { loadPublicVideoInventory } from "../lib/public-video-inventory";
 
+assert.notEqual(
+  process.env.ATLAS_PUBLIC_PREVIEW,
+  "1",
+  "Preview artifacts cannot be released",
+);
+assert.ok(
+  !existsSync("dist/PREVIEW_ONLY.json"),
+  "Cannot deploy a copied preview artifact",
+);
 const approval = launchApprovalSchema.parse(
   JSON.parse(readFileSync("src/data/public-launch.v1.json", "utf8")),
 );
@@ -33,6 +44,12 @@ assert.equal(
   "",
   "Release requires a clean committed tree",
 );
+// An existing current registry is authoritative; pending or failed evidence
+// must never fall through to a historical successful receipt.
+const currentPlayback = loadCurrentPlaybackRegistry(process.cwd(), {
+  inventory: loadPublicVideoInventory(),
+  now: new Date(),
+});
 assert.equal(
   approval.inputTreeDigest,
   inputTreeDigest(),
@@ -69,12 +86,14 @@ assert.equal(
   approval.cases.length,
   "Duplicate release case",
 );
-const evidence = JSON.parse(
-  readFileSync(
-    "docs/reviews/evidence/decision-21/playback.chrome.v1.json",
-    "utf8",
-  ),
-);
+const evidence = currentPlayback
+  ? []
+  : JSON.parse(
+      readFileSync(
+        "docs/reviews/evidence/decision-21/playback.chrome.v1.json",
+        "utf8",
+      ),
+    );
 process.env.ATLAS_PUBLIC_LAUNCH = "decision-21";
 for (const item of [...approval.cases, ...expansion.cases]) {
   const record = records.find((candidate) => candidate.id === item.id);
@@ -95,6 +114,13 @@ for (const item of [...approval.cases, ...expansion.cases]) {
     guide && isPatientGuideApproved(guide),
     `Missing reviewed guide: ${item.id}`,
   );
+  if (currentPlayback) {
+    assert.ok(
+      currentPlayback.proofsByPath.has(`/cases/${record.slug}/`),
+      `Current core playback missing: ${item.id}`,
+    );
+    continue;
+  }
   if (expansion.cases.some((c) => c.id === item.id)) continue;
   const proof = evidence.find(
     (entry: { caseId: string; url: string }) =>
@@ -119,126 +145,133 @@ console.log(
   `Decision 21: ${approval.cases.length} approved native embeds; patient approval, source provenance, D20 facts, input hashes and playback passed.`,
 );
 
-const additional = JSON.parse(
-  readFileSync(
-    "docs/reviews/evidence/decision-23/playback.preview.v1.json",
-    "utf8",
-  ),
-);
-const additionsProof = JSON.parse(
-  readFileSync(
-    "docs/reviews/evidence/decision-27/playback.preview.json",
-    "utf8",
-  ),
-);
-const curationProof = JSON.parse(
-  readFileSync(
-    "docs/reviews/evidence/decision-28/playback.preview.json",
-    "utf8",
-  ),
-);
-const batch30Proof = JSON.parse(
-  readFileSync(
-    "docs/reviews/evidence/decision-30/playback.preview.json",
-    "utf8",
-  ),
-);
-const batch31Proof = JSON.parse(
-  readFileSync(
-    "docs/reviews/evidence/decision-31/playback.preview.json",
-    "utf8",
-  ),
-);
-const batch32Proof = JSON.parse(
-  readFileSync(
-    "docs/reviews/evidence/decision-32/playback.preview.json",
-    "utf8",
-  ),
-);
-const batch34Proof = JSON.parse(
-  readFileSync(
-    "docs/reviews/evidence/decision-34/playback.preview.json",
-    "utf8",
-  ),
-);
-const recent120Proof = JSON.parse(
-  readFileSync(
-    "docs/reviews/2026-09-12-recent-120/playback.preview.json",
-    "utf8",
-  ),
-);
-const recent150Proof = JSON.parse(
-  readFileSync(
-    "docs/reviews/2026-09-13-recent-150/playback.preview.json",
-    "utf8",
-  ),
-);
-const judgeRibProofPath =
-  "docs/reviews/2026-09-18-judge-rib/playback.preview.json";
-const judgeRibProof = existsSync(judgeRibProofPath)
-  ? JSON.parse(readFileSync(judgeRibProofPath, "utf8"))
-  : [];
-const ribFractureProofPath =
-  "docs/reviews/2026-09-20-rib-fracture/playback.preview.json";
-const ribFractureProof = existsSync(ribFractureProofPath)
-  ? JSON.parse(readFileSync(ribFractureProofPath, "utf8"))
-  : [];
-const nerveFourProofPath =
-  "docs/reviews/2026-09-21-nerve-four/playback.preview.json";
-const nerveFourProof = existsSync(nerveFourProofPath)
-  ? JSON.parse(readFileSync(nerveFourProofPath, "utf8"))
-  : [];
-const catalog200ProofPath =
-  "docs/reviews/2026-09-21-catalog-200/playback.preview.json";
-const catalog200Proof = existsSync(catalog200ProofPath)
-  ? JSON.parse(readFileSync(catalog200ProofPath, "utf8"))
-  : [];
-for (const item of [...expansion.cases, ...allObservationClips]) {
-  const proof = [
-    ...additional,
-    ...additionsProof,
-    ...curationProof,
-    ...batch30Proof,
-    ...batch31Proof,
-    ...batch32Proof,
-    ...batch34Proof,
-    ...recent120Proof,
-    ...recent150Proof,
-    ...judgeRibProof,
-    ...ribFractureProof,
-    ...nerveFourProof,
-    ...catalog200Proof,
-  ].find((p: { url: string }) => p.url === item.videoUrl);
-  assert.ok(
-    proof &&
-      proof.status === "played" &&
-      !proof.error &&
-      proof.after.time > proof.before.time &&
-      !proof.after.paused &&
-      proof.after.readyState >= 3,
-    `New playback missing: ${item.videoUrl}`,
+if (!currentPlayback) {
+  // Legacy mode remains available only when no current registry exists.
+  const additional = JSON.parse(
+    readFileSync(
+      "docs/reviews/evidence/decision-23/playback.preview.v1.json",
+      "utf8",
+    ),
   );
-  const playbackOrigin = new URL(proof.origin);
-  assert.ok(
-    playbackOrigin.protocol === "https:" &&
-      (playbackOrigin.hostname === "sports-injury-atlas.pages.dev" ||
-        playbackOrigin.hostname.endsWith(".sports-injury-atlas.pages.dev")),
-    "New playback must be verified on the owned HTTPS site or preview",
+  const additionsProof = JSON.parse(
+    readFileSync(
+      "docs/reviews/evidence/decision-27/playback.preview.json",
+      "utf8",
+    ),
   );
-  assert.equal(
-    proof.path,
-    `${"startSeconds" in item ? "/videos/" : "/cases/"}${item.slug}/`,
+  const curationProof = JSON.parse(
+    readFileSync(
+      "docs/reviews/evidence/decision-28/playback.preview.json",
+      "utf8",
+    ),
   );
-  const age = Date.now() - Date.parse(proof.checkedAt);
-  assert.ok(
-    age >= 0 && age < 7 * 86400000,
-    `Refresh new playback: ${item.videoUrl}`,
+  const batch30Proof = JSON.parse(
+    readFileSync(
+      "docs/reviews/evidence/decision-30/playback.preview.json",
+      "utf8",
+    ),
   );
-  if ("startSeconds" in item)
+  const batch31Proof = JSON.parse(
+    readFileSync(
+      "docs/reviews/evidence/decision-31/playback.preview.json",
+      "utf8",
+    ),
+  );
+  const batch32Proof = JSON.parse(
+    readFileSync(
+      "docs/reviews/evidence/decision-32/playback.preview.json",
+      "utf8",
+    ),
+  );
+  const batch34Proof = JSON.parse(
+    readFileSync(
+      "docs/reviews/evidence/decision-34/playback.preview.json",
+      "utf8",
+    ),
+  );
+  const recent120Proof = JSON.parse(
+    readFileSync(
+      "docs/reviews/2026-09-12-recent-120/playback.preview.json",
+      "utf8",
+    ),
+  );
+  const recent150Proof = JSON.parse(
+    readFileSync(
+      "docs/reviews/2026-09-13-recent-150/playback.preview.json",
+      "utf8",
+    ),
+  );
+  const judgeRibProofPath =
+    "docs/reviews/2026-09-18-judge-rib/playback.preview.json";
+  const judgeRibProof = existsSync(judgeRibProofPath)
+    ? JSON.parse(readFileSync(judgeRibProofPath, "utf8"))
+    : [];
+  const ribFractureProofPath =
+    "docs/reviews/2026-09-20-rib-fracture/playback.preview.json";
+  const ribFractureProof = existsSync(ribFractureProofPath)
+    ? JSON.parse(readFileSync(ribFractureProofPath, "utf8"))
+    : [];
+  const nerveFourProofPath =
+    "docs/reviews/2026-09-21-nerve-four/playback.preview.json";
+  const nerveFourProof = existsSync(nerveFourProofPath)
+    ? JSON.parse(readFileSync(nerveFourProofPath, "utf8"))
+    : [];
+  const catalog200ProofPath =
+    "docs/reviews/2026-09-21-catalog-200/playback.preview.json";
+  const catalog200Proof = existsSync(catalog200ProofPath)
+    ? JSON.parse(readFileSync(catalog200ProofPath, "utf8"))
+    : [];
+  for (const item of [...expansion.cases, ...allObservationClips]) {
+    const proof = [
+      ...additional,
+      ...additionsProof,
+      ...curationProof,
+      ...batch30Proof,
+      ...batch31Proof,
+      ...batch32Proof,
+      ...batch34Proof,
+      ...recent120Proof,
+      ...recent150Proof,
+      ...judgeRibProof,
+      ...ribFractureProof,
+      ...nerveFourProof,
+      ...catalog200Proof,
+    ].find((p: { url: string }) => p.url === item.videoUrl);
     assert.ok(
-      proof.after.time >= item.startSeconds,
-      `Playback before selected segment: ${item.videoUrl}`,
+      proof &&
+        proof.status === "played" &&
+        !proof.error &&
+        proof.after.time > proof.before.time &&
+        !proof.after.paused &&
+        proof.after.readyState >= 3,
+      `New playback missing: ${item.videoUrl}`,
     );
+    const playbackOrigin = new URL(proof.origin);
+    assert.ok(
+      playbackOrigin.protocol === "https:" &&
+        (playbackOrigin.hostname === "sports-injury-atlas.pages.dev" ||
+          playbackOrigin.hostname.endsWith(".sports-injury-atlas.pages.dev")),
+      "New playback must be verified on the owned HTTPS site or preview",
+    );
+    assert.equal(
+      proof.path,
+      `${"startSeconds" in item ? "/videos/" : "/cases/"}${item.slug}/`,
+    );
+    const age = Date.now() - Date.parse(proof.checkedAt);
+    assert.ok(
+      age >= 0 && age < 7 * 86400000,
+      `Refresh new playback: ${item.videoUrl}`,
+    );
+    if ("startSeconds" in item)
+      assert.ok(
+        proof.after.time >= item.startSeconds,
+        `Playback before selected segment: ${item.videoUrl}`,
+      );
+  }
+} else {
+  console.log(
+    `Current playback: ${currentPlayback.proofsByPath.size} public paths; source revision ${currentPlayback.sourceCommit}; historical receipts preserved.`,
+  );
 }
 console.log(
   `Video expansions: ${expansion.cases.length + allObservationClips.length} additional videos (${recent120.clips.length + recent150.clips.length} recent cases); source records preserved.`,

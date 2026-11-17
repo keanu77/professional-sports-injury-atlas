@@ -177,13 +177,36 @@ describe("source-backed event updates", () => {
       ),
     ).toBe(561);
   });
+  it("keeps a known return date without inventing an injury date or elapsed days", () => {
+    const changed = structuredClone(eventUpdates);
+    const entry = changed.entries[0]!;
+    entry.eventDate = null;
+    entry.returnDate = "2026-01-01";
+    entry.returnMilestone = "正式賽";
+    entry.returnMilestones = [
+      {
+        date: "2026-01",
+        kind: "正式賽",
+        text: "月份精度的出賽紀錄",
+        sourceIndexes: [1],
+      },
+    ];
+    expect(eventUpdatesSchema.safeParse(changed).success).toBe(true);
+    expect(returnDays(entry)).toBeNull();
+    entry.returnMilestones[0]!.sourceIndexes = [entry.sources.length + 1];
+    expect(eventUpdatesSchema.safeParse(changed).success).toBe(false);
+  });
+  it("does not calculate a precise interval for a reported return date", () => {
+    const entry = {
+      ...eventUpdates.entries[0]!,
+      returnDateCertainty: "reported" as const,
+    };
+    expect(returnDays(entry)).toBeNull();
+  });
   it("rejects future, unsupported, reversed, and duplicate records", () => {
     for (const mutate of [
       (d: typeof eventUpdates) => {
         d.entries[0]!.returnDate = "2099-01-01";
-      },
-      (d: typeof eventUpdates) => {
-        d.entries[0]!.eventDate = null;
       },
       (d: typeof eventUpdates) => {
         d.entries[0]!.returnDate = "1900-01-01";

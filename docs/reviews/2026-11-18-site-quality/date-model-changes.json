@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "baseCommit": "cde2089b7529b1f8967c81a9692aee9b1499cc5c",
+  "scope": "normalize-existing-sourced-return-date-no-new-clinical-claim",
+  "changes": [
+    {
+      "kind": "event",
+      "file": "src/data/videos/event-catalog-200.v1.json",
+      "slug": "chloe-kim-2026-shoulder",
+      "before": {
+        "returnDate": null
+      },
+      "after": {
+        "returnDate": "2026-02-11",
+        "returnMilestone": "正式賽"
+      },
+      "sourceUrl": "https://www.nbcolympics.com/news/chloe-kim-unfazed-injury-crushes-halfpipe-qualifier-roar-final-mastro-3rd",
+      "basis": "既有已查核時間軸的2026-02-11資格賽；僅正規化日期，受傷日仍未知，不計算傷停天數。"
+    },
+    {
+      "kind": "clip",
+      "file": "src/data/videos/catalog-200.v1.json",
+      "slug": "chloe-kim-2026-shoulder",
+      "before": {
+        "returnDate": null
+      },
+      "after": {
+        "returnDate": "2026-02-11"
+      },
+      "sourceUrl": "https://www.nbcolympics.com/news/chloe-kim-unfazed-injury-crushes-halfpipe-qualifier-roar-final-mastro-3rd",
+      "basis": "既有已查核時間軸的2026-02-11資格賽；僅正規化日期，受傷日仍未知，不計算傷停天數。"
+    }
+  ]
+}

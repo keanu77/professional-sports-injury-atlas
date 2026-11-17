@@ -9,6 +9,15 @@ import {
   normalizeVideoSearch,
   videoSearchTerms,
 } from "../lib/videos/search";
+import { suggestAthleteQueries } from "../lib/videos/search-aliases";
+import {
+  matchesDiscoveryDate,
+  recentTwoYearRange,
+  sortDiscoveryDates,
+  taipeiToday,
+  type DiscoveryPeriod,
+  type DiscoverySort,
+} from "../lib/videos/discovery-time";
 
 export interface PopularVideo {
   videoId: string;
@@ -93,6 +102,26 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
   const clearSport =
     root.querySelector<HTMLButtonElement>("[data-sport-clear]");
   const clearBody = root.querySelector<HTMLButtonElement>("[data-body-clear]");
+  const periodFilter = root.querySelector<HTMLSelectElement>(
+    "[data-period-filter]",
+  );
+  const dateFrom = root.querySelector<HTMLInputElement>("[data-date-from]");
+  const dateTo = root.querySelector<HTMLInputElement>("[data-date-to]");
+  const dateRange = root.querySelector<HTMLElement>("[data-date-range]");
+  const dateError = root.querySelector<HTMLElement>("[data-date-error]");
+  const dateHelp = root.querySelector<HTMLElement>("[data-date-help]");
+  const clearPeriod = root.querySelector<HTMLButtonElement>(
+    "[data-period-clear]",
+  );
+  const sortFilter = root.querySelector<HTMLSelectElement>(
+    "[data-discovery-sort]",
+  );
+  const suggestions = root.querySelector<HTMLElement>(
+    "[data-search-suggestions]",
+  );
+  const suggestionButtons = root.querySelector<HTMLElement>(
+    "[data-search-suggestion-buttons]",
+  );
   const activeFilters = root.querySelector<HTMLElement>(
     "[data-active-filters]",
   );
@@ -227,6 +256,10 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
         sport: sportFilter?.value ?? "",
         body: bodyFilter?.value ?? "",
         mode,
+        period: (periodFilter?.value ?? "") as DiscoveryPeriod,
+        from: dateFrom?.value ?? "",
+        to: dateTo?.value ?? "",
+        sort: (sortFilter?.value ?? "editorial") as DiscoverySort,
       },
       fixedScope,
     );
@@ -241,6 +274,10 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
     if (typeFilter) typeFilter.value = contentType;
     if (sportFilter) sportFilter.value = state.sport;
     if (bodyFilter) bodyFilter.value = state.body;
+    if (periodFilter) periodFilter.value = state.period;
+    if (dateFrom) dateFrom.value = state.from;
+    if (dateTo) dateTo.value = state.to;
+    if (sortFilter) sortFilter.value = state.sort;
     visibleLimit = pageSize;
     updateLocation(true);
   };
@@ -251,11 +288,41 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
     const searching = terms.length > 0;
     const sport = fixedSport || sportFilter?.value || "";
     const body = fixedBody || bodyFilter?.value || "";
+    const period = (periodFilter?.value ?? "") as DiscoveryPeriod;
+    const from = dateFrom?.value ?? "";
+    const to = dateTo?.value ?? "";
+    const sort = (sortFilter?.value ?? "editorial") as DiscoverySort;
+    const today = taipeiToday();
+    const recent = recentTwoYearRange(today);
+    const invalidRange =
+      period === "custom" && Boolean(from && to && from > to);
+    const periodLabel =
+      period === "recent-2y"
+        ? `近兩年（${recent.from} 至 ${recent.to}）`
+        : period === "custom"
+          ? `事件日期：${from || "不限起日"} 至 ${to || "不限迄日"}`
+          : period === "unknown"
+            ? "確切日期不詳"
+            : "";
+    setHidden(dateRange, period !== "custom");
+    setHidden(dateError, !invalidRange);
+    setText(
+      dateError,
+      invalidRange ? "開始日期不能晚於結束日期，請修改日期範圍。" : "",
+    );
+    setAttribute(dateFrom, "aria-invalid", String(invalidRange));
+    setAttribute(dateTo, "aria-invalid", String(invalidRange));
+    if (sortFilter) sortFilter.disabled = mode === "popular";
+    setText(
+      dateHelp,
+      `近兩年：${recent.from} 至 ${recent.to}（台灣日期）。確切日期不詳者不列入日期區間，依日期排序時放在最後。內容整理日期不是影片上架或每個來源重新查核的日期。${mode === "popular" ? "本站熱門維持播放次數排序。" : ""}`,
+    );
     const narrowed =
       searching ||
       (contentType && !fixedType) ||
       (sport && !fixedSport) ||
-      (body && !fixedBody);
+      (body && !fixedBody) ||
+      period;
     const typeLabel = typeFilter?.selectedOptions[0]?.textContent ?? "全部類型";
     const label =
       mode === "all"
@@ -265,19 +332,32 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
         : mode === "curated"
           ? "精選影片"
           : "本站熱門前 10 名";
-    const ordered =
+    const modeOrdered =
       mode === "all"
         ? cards
         : mode === "curated"
           ? curated
           : ranking.map((item) => byId.get(item.videoId)!);
+    const ordered =
+      mode === "popular"
+        ? modeOrdered
+        : sortDiscoveryDates(
+            modeOrdered.map((card) => ({
+              card,
+              eventDate: card.dataset.eventDate,
+              checkedAt: card.dataset.contentCheckedAt,
+            })),
+            sort,
+          ).map(({ card }) => card);
     const selected = ordered.filter(
       (card) =>
         matchesVideoSearch(searchText.get(card)!, terms) &&
         (!contentType ||
           (card.dataset.contentTypes ?? "").split(" ").includes(contentType)) &&
         (!sport || card.dataset.sport === sport) &&
-        (!body || card.dataset.body === body),
+        (!body || card.dataset.body === body) &&
+        !invalidRange &&
+        matchesDiscoveryDate(card.dataset.eventDate, period, from, to, today),
     );
     const displayed = selected.slice(0, visibleLimit);
     const visible = new Set(displayed);
@@ -294,7 +374,7 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
       if (rank) setText(count, rankLabel(rank));
     }
     // Filtering and loading more normally preserve relative DOM order. Only
-    // move cards when a mode change actually produces a different visible order.
+    // move cards when a mode or date-sort change produces a different order.
     const currentVisibleOrder = domOrder.filter((card) => visible.has(card));
     if (displayed.some((card, index) => currentVisibleOrder[index] !== card)) {
       for (const card of displayed) grid.append(card);
@@ -332,17 +412,20 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
       fixedBody ? "" : body,
       `部位：${bodyFilter?.selectedOptions[0]?.textContent ?? ""}`,
     );
+    updateChip(clearPeriod, period, periodLabel);
     setHidden(
       activeFilters,
       !(
         (sport && !fixedSport) ||
         (body && !fixedBody) ||
-        (contentType && !fixedType)
+        (contentType && !fixedType) ||
+        period
       ),
     );
     const selectedFacets =
       Number(Boolean(sport && !fixedSport)) +
-      Number(Boolean(body && !fixedBody));
+      Number(Boolean(body && !fixedBody)) +
+      Number(Boolean(period));
     if (advancedCount) {
       setText(advancedCount, String(selectedFacets));
       setHidden(advancedCount, !selectedFacets);
@@ -360,9 +443,32 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
         setText(
           empty,
           searching
-            ? `目前篩選條件中沒有符合「${query}」的影片；可清除搜尋、運動或部位後瀏覽。`
-            : `目前沒有符合篩選條件的影片；可清除運動、部位或影片類型後瀏覽。`,
+            ? `目前篩選條件中沒有符合「${query}」的影片；可清除搜尋、運動、部位或日期後瀏覽。`
+            : `目前沒有符合篩選條件的影片；可清除運動、部位、日期或影片類型後瀏覽。`,
         );
+    }
+    if (suggestionButtons) {
+      const proposed =
+        searching && selected.length === 0 && !unavailable
+          ? suggestAthleteQueries(query, Array.from(searchText.values()))
+          : [];
+      suggestionButtons.replaceChildren(
+        ...proposed.map((name) => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.textContent = name;
+          button.addEventListener("click", () => {
+            if (!searchInput) return;
+            searchInput.value = name;
+            visibleLimit = pageSize;
+            updateLocation();
+            render();
+            searchInput.focus();
+          });
+          return button;
+        }),
+      );
+      setHidden(suggestions, proposed.length === 0);
     }
     setHidden(pagination, unavailable || selected.length === 0);
     setHidden(more, displayed.length >= selected.length);
@@ -389,6 +495,7 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
           ? sportFilter?.selectedOptions[0]?.textContent
           : "",
         body && !fixedBody ? bodyFilter?.selectedOptions[0]?.textContent : "",
+        periodLabel,
       ]
         .filter(Boolean)
         .join("、");
@@ -423,6 +530,7 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
     pending?.abort();
     pending = undefined;
     mode = scoped ? "all" : next;
+    if (mode === "popular" && sortFilter) sortFilter.value = "editorial";
     visibleLimit = pageSize;
     if (mode !== "popular") {
       render();
@@ -540,6 +648,16 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
   };
   sportFilter?.addEventListener("change", updateFacets);
   bodyFilter?.addEventListener("change", updateFacets);
+  periodFilter?.addEventListener("change", () => {
+    if (periodFilter.value !== "custom") {
+      if (dateFrom) dateFrom.value = "";
+      if (dateTo) dateTo.value = "";
+    }
+    updateFacets();
+  });
+  dateFrom?.addEventListener("change", updateFacets);
+  dateTo?.addEventListener("change", updateFacets);
+  sortFilter?.addEventListener("change", updateFacets);
   const removeFacet = (select: HTMLSelectElement | null) => {
     if (!select) return;
     select.value = "";
@@ -549,6 +667,11 @@ export function initializeVideoDiscovery(root: HTMLElement): void {
   };
   clearSport?.addEventListener("click", () => removeFacet(sportFilter));
   clearBody?.addEventListener("click", () => removeFacet(bodyFilter));
+  clearPeriod?.addEventListener("click", () => {
+    if (dateFrom) dateFrom.value = "";
+    if (dateTo) dateTo.value = "";
+    removeFacet(periodFilter);
+  });
   grid.addEventListener("click", (event) => {
     const link =
       event.target instanceof Element

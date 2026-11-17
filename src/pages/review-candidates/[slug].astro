@@ -1,0 +1,85 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ExternalSourceCitation from "../../components/citations/ExternalSourceCitation.astro";
+import candidate from "../../../research/candidates/2026-11-18-stephen-curry.json";
+
+export function getStaticPaths() {
+  return process.env.ATLAS_PUBLIC_PREVIEW === "1"
+    ? [{ params: { slug: "stephen-curry" } }]
+    : [];
+}
+const video = candidate.events[0]!.videoCandidates[1]!;
+---
+
+<BaseLayout title="Stephen Curry｜案例審閱草稿">
+  <article class="candidate-review" data-candidate-review="stephen-curry">
+    <p><strong>編輯預覽・待審閱，尚未列入公開目錄</strong></p>
+    <h1>Stephen Curry：三次傷害分開閱讀</h1>
+    <p>本頁整理來源與待查問題，不能視為醫療核可或球員個人復健建議。</p>
+    <h2>2025 年左腿後肌事件：影片候選</h2>
+    <p>{video.title}</p>
+    <p>NBA on ESPN｜3 分 30 秒｜新聞報導，並非整段受傷機轉示範。</p>
+    <ExternalSourceCitation
+      context="video"
+      url={video.url}
+      title="到 YouTube 原平台觀看"
+      publisher="NBA on ESPN"
+      publishedAt={video.publishedAt}
+    />
+    <p>
+      已確認原平台播放與英文自動字幕選項；完整內容、字幕品質與本站內嵌仍待核對。
+    </p>
+    <h2>事件與來源</h2>
+    {
+      candidate.events.map((event) => (
+        <section aria-labelledby={event.id}>
+          <h3 id={event.id}>{event.reportedInjury}</h3>
+          <p>
+            事件日期：{event.eventDate ?? "未確認"}。{event.sourceAttribution}
+          </p>
+          <p>{event.followUp}</p>
+          <ul>
+            {event.sources.map((source) => (
+              <li>
+                <ExternalSourceCitation
+                  context="source-list"
+                  url={source.url}
+                  title={source.title}
+                  publisher="NBA / Golden State Warriors"
+                  publishedAt={source.publishedAt}
+                />
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+    <h2>觀看與討論任務</h2>
+    <ol>
+      <li>分辨畫面直接可見的資訊，以及記者轉述的檢查結果。</li>
+      <li>將「重新評估時間」與「實際回場日期」分開記錄。</li>
+      <li>
+        比較三個事件的來源日期、受傷部位及未確認資訊，避免把不同事件合併。
+      </li>
+    </ol>
+    <h2>正式收錄前需完成</h2>
+    <p>
+      逐段內容與字幕審閱、確定觀看範圍、來源與使用政策確認、教材醫療審閱，以及本站
+      HTTPS 頁面的當期播放驗證。
+    </p>
+  </article>
+</BaseLayout>
+<style>
+  .candidate-review {
+    max-width: 52rem;
+    margin: 2rem auto;
+    padding: 1.25rem;
+    overflow-wrap: anywhere;
+  }
+  h2 {
+    margin-top: 2rem;
+  }
+  li {
+    margin-block: 0.75rem;
+  }
+</style>

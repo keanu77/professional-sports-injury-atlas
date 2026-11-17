@@ -42,6 +42,23 @@ export function formatTimelineDate(date: string): string {
     return `${date.slice(0, 4)} 年 ${Number(date.slice(5))} 月`;
   return date;
 }
+export const RETURN_MILESTONES = [
+  "訓練",
+  "復健賽",
+  "春訓",
+  "季前賽",
+  "熱身賽",
+  "正式賽",
+  "帶傷出賽",
+  "術後出賽",
+  "跨兩次傷害後出賽",
+  "首次出賽",
+  "再次出賽",
+] as const;
+const returnMilestoneSchema = citedReportSchema.extend({
+  date: timelineDateSchema,
+  kind: z.enum(RETURN_MILESTONES),
+});
 const eventUpdateEntryInputSchema = z.strictObject({
   slug: text,
   videoUrl: https,
@@ -49,6 +66,9 @@ const eventUpdateEntryInputSchema = z.strictObject({
   eventDateCertainty: z.enum(["confirmed", "reported"]).optional(),
   injury: text,
   returnDate: z.iso.date().nullable(),
+  returnDateCertainty: z.enum(["confirmed", "reported"]).optional(),
+  returnMilestone: z.enum(RETURN_MILESTONES).optional(),
+  returnMilestones: z.array(returnMilestoneSchema).min(1).optional(),
   returnSummary: text,
   context: text,
   mechanism: z
@@ -108,6 +128,7 @@ export const eventUpdatesSchema = z
             ]
           : []),
         ...(entry.timeline ?? []),
+        ...(entry.returnMilestones ?? []),
       ];
       if (
         citedReports.some((report) =>
@@ -134,6 +155,17 @@ export const eventUpdatesSchema = z
             message: `Invalid timeline date: ${entry.slug}`,
           });
       }
+      for (const milestone of entry.returnMilestones ?? []) {
+        const [start, end] = timelineDateBounds(milestone.date);
+        if (
+          start > entry.checkedAt ||
+          (entry.eventDate && end < entry.eventDate)
+        )
+          ctx.addIssue({
+            code: "custom",
+            message: `Invalid return milestone: ${entry.slug}`,
+          });
+      }
       if (slugs.has(entry.slug) || videos.has(entry.videoUrl))
         ctx.addIssue({ code: "custom", message: "Duplicate event update" });
       slugs.add(entry.slug);
@@ -145,8 +177,7 @@ export const eventUpdatesSchema = z
         });
       if (
         entry.returnDate &&
-        (!entry.eventDate ||
-          entry.returnDate < entry.eventDate ||
+        ((entry.eventDate && entry.returnDate < entry.eventDate) ||
           entry.returnDate > entry.checkedAt)
       )
         ctx.addIssue({
@@ -314,24 +345,15 @@ export function eventUpdateFor(
 export function returnDays(entry: EventUpdate): number | null {
   return entry.eventDate &&
     entry.returnDate &&
-    entry.eventDateCertainty !== "reported"
+    entry.eventDateCertainty !== "reported" &&
+    entry.returnDateCertainty !== "reported"
     ? Math.round(
         (Date.parse(entry.returnDate) - Date.parse(entry.eventDate)) / 86400000,
       )
     : null;
 }
 
-export type ReturnMilestone =
-  | "復健賽"
-  | "春訓"
-  | "季前賽"
-  | "熱身賽"
-  | "正式賽"
-  | "帶傷出賽"
-  | "術後出賽"
-  | "跨兩次傷害後出賽"
-  | "首次出賽"
-  | "再次出賽";
+export type ReturnMilestone = (typeof RETURN_MILESTONES)[number];
 
 const RETURN_MILESTONE_BY_SLUG: Readonly<
   Partial<Record<EventUpdate["slug"], ReturnMilestone>>
@@ -343,8 +365,12 @@ const RETURN_MILESTONE_BY_SLUG: Readonly<
 
 /** Labels the recorded return event without changing or extending its facts. */
 export function classifyReturnMilestone(
-  entry: Pick<EventUpdate, "slug" | "returnSummary" | "context">,
+  entry: Pick<
+    EventUpdate,
+    "slug" | "returnSummary" | "context" | "returnMilestone"
+  >,
 ): ReturnMilestone {
+  if (entry.returnMilestone) return entry.returnMilestone;
   const summary = entry.returnSummary;
   const governedLabel = RETURN_MILESTONE_BY_SLUG[entry.slug];
   if (governedLabel) return governedLabel;

@@ -12,6 +12,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <p data-contribution-intro>一起讓圖鑑更完整、正確。不必填寫姓名或信箱。</p>
     <p data-contribution-context hidden></p>
     <form data-contribution-form>
+      <div
+        data-contribution-errors
+        hidden
+        tabindex="-1"
+        aria-labelledby="contribution-errors-heading"
+      >
+        <h2 id="contribution-errors-heading">請確認以下欄位</h2>
+        <ul></ul>
+      </div>
       <fieldset>
         <legend>你想提供什麼？</legend>
         <label
@@ -35,25 +44,28 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         maxlength="2048"
         placeholder="https://"
         autocomplete="off"
-        aria-describedby="contribution-content-help"
+        aria-describedby="contribution-content-help contribution-url-error"
       />
+      <p id="contribution-url-error" class="contribution-error" hidden></p>
       <label for="contribution-note" data-note-label>補充說明（選填）</label>
       <textarea
         id="contribution-note"
         name="note"
         rows="4"
         maxlength="2000"
-        aria-describedby="contribution-content-help"
+        aria-describedby="contribution-content-help contribution-note-error"
         placeholder="例如：選手、運動項目，或需要修正的內容"></textarea>
+      <p id="contribution-note-error" class="contribution-error" hidden></p>
       <label for="contribution-sources">參考來源（選填）</label>
       <textarea
         id="contribution-sources"
         name="sources"
         rows="2"
         maxlength="3000"
-        aria-describedby="contribution-content-help"
+        aria-describedby="contribution-content-help contribution-sources-error"
         placeholder="每行一個公開網址，最多 3 個；可貼 DOI、PubMed 或學會教材連結"
       ></textarea>
+      <p id="contribution-sources-error" class="contribution-error" hidden></p>
       <div class="contribution-trap" aria-hidden="true">
         <label
           >網站<input name="website" tabindex="-1" autocomplete="off" /></label
@@ -64,7 +76,27 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           href="/privacy/#contributions-heading">資料使用說明</a
         >
       </p>
+      <p class="contribution-privacy" data-contribution-draft-status>
+        若瀏覽器允許，內容會在此分頁暫存 30
+        分鐘，重新整理後可恢復；成功送出後清除。請勿填寫個資或病情。
+      </p>
+      <button class="control-button" type="button" data-contribution-clear-draft
+        >清除本分頁草稿</button
+      >
       <div data-contribution-challenge></div>
+      <button
+        class="control-button"
+        type="button"
+        data-contribution-retry-challenge
+        hidden>重新載入安全驗證</button
+      >
+      <button
+        class="control-button"
+        type="button"
+        data-contribution-retry-delivery
+        hidden>我已確認仍需重試</button
+      >
+      <p data-contribution-receipt class="contribution-privacy" hidden></p>
       <p class="contribution-privacy">
         每個網路位址每日最多送出 10 次；相同內容 10
         分鐘內不重寄。本站每日通知上限 50 封，每日額度於台灣時間午夜重置。
@@ -151,6 +183,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   }
   textarea {
     resize: vertical;
+  }
+  [data-contribution-errors] {
+    border: 1px solid var(--color-ink);
+    padding: 1rem;
+    border-radius: 0.75rem;
+  }
+  [data-contribution-errors] h2 {
+    font-size: 1rem;
+    margin-block: 0 0.5rem;
+  }
+  .contribution-error {
+    font-weight: 600;
+    margin: 0;
+  }
+  [aria-invalid="true"] {
+    border: 2px solid var(--color-ink);
+  }
+  [data-contribution-receipt] {
+    overflow-wrap: anywhere;
   }
   .contribution-privacy {
     font-size: 0.875rem;

@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import selected from "../../docs/reviews/2026-09-21-catalog-200/selected-cases.json";
 import baseline from "../../docs/reviews/2026-09-21-catalog-200/baseline-before-integration.json";
 import repairs from "../../docs/reviews/2026-10-10-source-video-health/source-repairs.json";
+import dateModelChanges from "../../docs/reviews/2026-11-18-site-quality/date-model-changes.json";
 import followUpRefresh from "../../docs/reviews/2026-11-18-recent-updates/changes.json";
 import resourceData from "../../src/data/videos/observation-resources.v1.json";
 import catalog200EventData from "../../src/data/videos/event-catalog-200.v1.json";
@@ -90,6 +91,15 @@ function withRepairedCitations<
       Reflect.set(item, "timeline", [...timeline, ...refresh.appendTimeline]);
     }
   }
+  const dateChange = dateModelChanges.changes.find(
+    (change) => change.slug === item.slug && change.kind === kind,
+  );
+  if (dateChange) {
+    for (const [key, value] of Object.entries(dateChange.before))
+      expect(Reflect.get(item, key)).toEqual(value);
+    for (const [key, value] of Object.entries(dateChange.after))
+      Reflect.set(item, key, value);
+  }
   return item;
 }
 
@@ -143,6 +153,7 @@ describe("catalog 200 sourced expansion", () => {
     expect(returnDays(watkins)).toBe(588);
     const kim = entry("chloe-kim-2026-shoulder");
     expect(kim.eventDate).toBeNull();
+    expect(kim.returnDate).toBe("2026-02-11");
     expect(returnDays(kim)).toBeNull();
     expect(kim.timeline!.at(-1)!.date).toBe("2026-02-11");
     const medina = entry("gabriel-medina-2025-pectoral-tendon");

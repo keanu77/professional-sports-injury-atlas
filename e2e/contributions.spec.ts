@@ -34,6 +34,21 @@ for (const [status, error, message] of [
       "請協助查核這個影片",
     );
     await expect(page.locator("[data-contribution-thanks]")).toBeHidden();
+    expect(
+      await page.evaluate(
+        () =>
+          JSON.parse(sessionStorage.getItem("atlas-contribution-draft:v1")!)
+            .deliveryUncertain,
+      ),
+    ).toBe(error === "verification-unavailable");
+    if (error !== "verification-unavailable") {
+      await expect(
+        page.getByRole("button", { name: "我已確認仍需重試" }),
+      ).toBeHidden();
+      await expect(
+        page.getByRole("button", { name: "送出", exact: true }),
+      ).toBeEnabled();
+    }
   });
 }
 test("accepts an anonymous video and shows thanks only after confirmation", async ({
@@ -95,6 +110,10 @@ test("prefills a correction, preserves text on failure, and allows retry", async
     "建議重新確認回場日期",
   );
   await expect(page.locator("[data-contribution-thanks]")).toBeHidden();
+  await expect(
+    page.getByRole("button", { name: "送出", exact: true }),
+  ).toBeDisabled();
+  await page.getByRole("button", { name: "我已確認仍需重試" }).click();
   await page.getByRole("button", { name: "送出", exact: true }).click();
   await expect(page.locator("[data-contribution-thanks]")).toBeVisible();
 });
@@ -212,7 +231,10 @@ test("preserves input and distinguishes an HTML gateway failure from a disconnec
   await expect(page.locator("[data-contribution-thanks]")).toBeHidden();
   await expect(
     page.getByRole("button", { name: "送出", exact: true }),
-  ).toBeEnabled();
+  ).toBeDisabled();
+  await expect(
+    page.getByRole("button", { name: "我已確認仍需重試" }),
+  ).toBeVisible();
 });
 
 test("imaging literature retains unit context and returns to the course", async ({
@@ -257,4 +279,268 @@ test("unknown contribution context cannot change the return destination", async 
     "href",
     "/",
   );
+});
+
+test("links all correction field errors and clears each after correction", async ({
+  page,
+}) => {
+  await page.goto("/contribute/");
+  await page.getByRole("radio", { name: "資料修正" }).check();
+  await page.getByLabel("需要修正的頁面網址").fill("not-a-url");
+  await page.getByLabel("需要修正的內容與建議").fill("太短");
+  await page.getByLabel("參考來源（選填）").fill("invalid source");
+  for (const name of ["url", "note", "sources"]) {
+    await expect(page.locator(`#contribution-${name}`)).toHaveAttribute(
+      "aria-invalid",
+      "true",
+    );
+    await expect(page.locator(`#contribution-${name}`)).toHaveAttribute(
+      "aria-describedby",
+      new RegExp(`contribution-${name}-error`),
+    );
+    await expect(page.locator(`#contribution-${name}-error`)).toBeVisible();
+  }
+  await page
+    .locator('[data-contribution-errors] a[href="#contribution-note"]')
+    .click();
+  await expect(page.getByLabel("需要修正的內容與建議")).toBeFocused();
+  await page
+    .getByLabel("需要修正的頁面網址")
+    .fill("https://injury.sportsmedicine.tw/");
+  await page.getByLabel("需要修正的內容與建議").fill("請重新確認來源日期");
+  await page.getByLabel("參考來源（選填）").fill("");
+  await expect(page.locator("[data-contribution-errors]")).toBeHidden();
+  await expect(
+    page.getByRole("button", { name: "送出", exact: true }),
+  ).toBeEnabled();
+  await expectNoAxeViolations(page);
+});
+
+for (const failure of ["network", "missing-api", "render-error"] as const) {
+  test(`retries initial challenge ${failure} in place without losing draft`, async ({
+    page,
+  }) => {
+    let loads = 0;
+    let submissions = 0;
+    await page.route("**/api/contributions", async (route) => {
+      submissions++;
+      await route.fulfill({ json: { ok: true } });
+    });
+    await page.route(
+      "https://challenges.cloudflare.com/turnstile/v0/api.js*",
+      async (route) => {
+        loads++;
+        if (loads === 1 && failure === "network") {
+          await route.abort();
+          return;
+        }
+        if (loads === 1 && failure === "missing-api") {
+          await route.fulfill({
+            contentType: "application/javascript",
+            body: "/* API unavailable */",
+          });
+          return;
+        }
+        await route.fulfill({
+          contentType: "application/javascript",
+          body: `
+        window.turnstile={render(el, options){
+          if (${failure === "render-error"} && !window.__renderRetried) { window.__renderRetried=true;throw new Error('test render error'); }
+          window.__challengeCallback=options.callback;
+          setTimeout(()=>options.callback('test-token'),0);return 'test-widget';
+        },reset(){setTimeout(()=>window.__challengeCallback('new-test-token'),0);}};
+      `,
+        });
+      },
+    );
+    await page.goto("/contribute/");
+    await page.getByLabel("補充說明（選填）").fill("保留這段公開影片說明");
+    await expect(
+      page.getByRole("button", { name: "重新載入安全驗證" }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: "送出", exact: true }),
+    ).toBeDisabled();
+    await page.getByRole("button", { name: "重新載入安全驗證" }).click();
+    await expect(page.getByLabel("補充說明（選填）")).toHaveValue(
+      "保留這段公開影片說明",
+    );
+    await expect(
+      page.getByRole("button", { name: "送出", exact: true }),
+    ).toBeEnabled();
+    expect(submissions).toBe(0);
+    expect(loads).toBe(failure === "render-error" ? 1 : 2);
+  });
+}
+
+test("restores a same-tab correction draft without a token and clears it on confirmed success", async ({
+  page,
+}) => {
+  await page.route("**/api/contributions", (route) =>
+    route.fulfill({ json: { ok: true } }),
+  );
+  await page.goto("/contribute/?page=%2F");
+  await page.getByRole("radio", { name: "資料修正" }).check();
+  await page.getByLabel("需要修正的內容與建議").fill("請查核這個公開來源");
+  const saved = await page.evaluate(() =>
+    JSON.parse(sessionStorage.getItem("atlas-contribution-draft:v1")!),
+  );
+  expect(Object.keys(saved).sort()).toEqual([
+    "deliveryUncertain",
+    "note",
+    "savedAt",
+    "scope",
+    "sources",
+    "type",
+    "url",
+    "version",
+  ]);
+  expect(JSON.stringify(saved)).not.toMatch(
+    /test-token|turnstileToken|website/,
+  );
+  await page.reload();
+  await expect(page.getByRole("radio", { name: "資料修正" })).toBeChecked();
+  await expect(page.getByLabel("需要修正的內容與建議")).toHaveValue(
+    "請查核這個公開來源",
+  );
+  await expect(page.locator("[data-contribution-draft-status]")).toContainText(
+    "已恢復",
+  );
+  await page.getByRole("button", { name: "送出", exact: true }).click();
+  await expect(page.locator("[data-contribution-thanks]")).toBeVisible();
+  expect(
+    await page.evaluate(() =>
+      sessionStorage.getItem("atlas-contribution-draft:v1"),
+    ),
+  ).toBeNull();
+});
+
+test("keeps an ambiguous delivery locked across reload until explicit retry", async ({
+  page,
+}) => {
+  let submissions = 0;
+  await page.route("**/api/contributions", async (route) => {
+    submissions++;
+    await route.fulfill({
+      status: 502,
+      headers: {
+        "X-Contribution-Request-Id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+      },
+      json: { error: "delivery" },
+    });
+  });
+  await page.goto("/contribute/");
+  await page.getByLabel("補充說明（選填）").fill("請查核公開影片");
+  await page.getByRole("button", { name: "送出", exact: true }).click();
+  await expect(page.locator("[data-contribution-receipt]")).toContainText(
+    "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+  );
+  await expect(
+    page.getByRole("button", { name: "送出", exact: true }),
+  ).toBeDisabled();
+  await page.reload();
+  await expect(page.getByLabel("補充說明（選填）")).toHaveValue(
+    "請查核公開影片",
+  );
+  await expect(
+    page.getByRole("button", { name: "送出", exact: true }),
+  ).toBeDisabled();
+  await expect(
+    page.getByRole("button", { name: "我已確認仍需重試" }),
+  ).toBeVisible();
+  expect(submissions).toBe(1);
+  await page.getByRole("button", { name: "我已確認仍需重試" }).click();
+  await expect(
+    page.getByRole("button", { name: "送出", exact: true }),
+  ).toBeEnabled();
+  expect(submissions).toBe(1);
+});
+
+test("locks a request interrupted by reload before its response until explicit retry", async ({
+  page,
+}) => {
+  let submissions = 0;
+  let respondToPending: (() => Promise<void>) | undefined;
+  await page.route("**/api/contributions", (route) => {
+    submissions++;
+    // Hold the response so navigation can interrupt the original document.
+    respondToPending = () => route.fulfill({ json: { ok: true } });
+  });
+  await page.goto("/contribute/");
+  await page.getByLabel("補充說明（選填）").fill("回應前重新整理的投稿");
+  await page.getByRole("button", { name: "送出", exact: true }).click();
+  await expect.poll(() => submissions).toBe(1);
+  expect(
+    await page.evaluate(
+      () =>
+        JSON.parse(sessionStorage.getItem("atlas-contribution-draft:v1")!)
+          .deliveryUncertain,
+    ),
+  ).toBe(true);
+  await page.reload();
+  await respondToPending?.().catch(() => {
+    // Reload may have already aborted the browser side of the original request.
+  });
+  await expect(page.getByLabel("補充說明（選填）")).toHaveValue(
+    "回應前重新整理的投稿",
+  );
+  await expect(page.locator("[data-contribution-status]")).toContainText(
+    "上次送出結果尚未確認",
+  );
+  await expect(
+    page.getByRole("button", { name: "送出", exact: true }),
+  ).toBeDisabled();
+  await expect(page.locator("[data-contribution-thanks]")).toBeHidden();
+  await page.getByRole("button", { name: "我已確認仍需重試" }).click();
+  await expect(
+    page.getByRole("button", { name: "送出", exact: true }),
+  ).toBeEnabled();
+  expect(submissions).toBe(1);
+});
+
+test("keeps an unconfirmed JSON success response locked for explicit retry", async ({
+  page,
+}) => {
+  await page.route("**/api/contributions", (route) =>
+    route.fulfill({ json: { ok: false } }),
+  );
+  await page.goto("/contribute/");
+  await page.getByLabel("補充說明（選填）").fill("尚未確認成功的投稿");
+  await page.getByRole("button", { name: "送出", exact: true }).click();
+  await expect(
+    page.getByRole("button", { name: "我已確認仍需重試" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "送出", exact: true }),
+  ).toBeDisabled();
+  await expect(page.locator("[data-contribution-thanks]")).toBeHidden();
+});
+
+test("clears the draft and remains usable when session storage is unavailable", async ({
+  page,
+}) => {
+  await page.goto("/contribute/");
+  await page.getByLabel("補充說明（選填）").fill("暫存公開資料");
+  await page.getByRole("button", { name: "清除本分頁草稿" }).click();
+  await expect(page.getByLabel("補充說明（選填）")).toHaveValue("");
+  expect(
+    await page.evaluate(() =>
+      sessionStorage.getItem("atlas-contribution-draft:v1"),
+    ),
+  ).toBeNull();
+  await page.addInitScript(() =>
+    Object.defineProperty(window, "sessionStorage", {
+      get() {
+        throw new DOMException("blocked", "SecurityError");
+      },
+    }),
+  );
+  await page.reload();
+  await page.getByLabel("補充說明（選填）").fill("不儲存也可編輯");
+  await expect(page.locator("[data-contribution-draft-status]")).toContainText(
+    "無法暫存",
+  );
+  await expect(
+    page.getByRole("button", { name: "送出", exact: true }),
+  ).toBeEnabled();
 });

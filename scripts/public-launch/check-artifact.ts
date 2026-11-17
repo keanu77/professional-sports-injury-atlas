@@ -30,6 +30,15 @@ import {
   PUBLIC_HEADERS,
 } from "../../src/lib/ui/public-security-policy";
 
+assert.notEqual(
+  process.env.ATLAS_PUBLIC_PREVIEW,
+  "1",
+  "Preview artifacts cannot be released",
+);
+assert.ok(
+  !existsSync("dist/PREVIEW_ONLY.json"),
+  "Cannot deploy a copied preview artifact",
+);
 const approval = launchApprovalSchema.parse(
   JSON.parse(readFileSync("src/data/public-launch.v1.json", "utf8")),
 );

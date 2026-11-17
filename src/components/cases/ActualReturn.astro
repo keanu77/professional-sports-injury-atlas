@@ -13,16 +13,19 @@ const summary = actualReturnSummary(record, followUp);
 
 <section class="actual-return" data-actual-return aria-label="球員實際回場紀錄">
   <p class="eyebrow">球員實際紀錄</p>
-  <h2>傷後多久再出賽？</h2>
+  <h2>已知的傷後出賽紀錄</h2>
   {
     summary ? (
       <>
         <>
           <p class="elapsed">
-            距受傷 <strong>{summary.elapsedDays}</strong> 天
+            距受傷 <strong>{summary.elapsedDays}</strong> 天 · 已知出賽紀錄
           </p>
           <p>
             {record.eventDate} 受傷 → {summary.date} 有出賽紀錄
+          </p>
+          <p class="note">
+            日期差不代表首次復出、完整復健療程或個人的回場期限。
           </p>
           <details>
             <>

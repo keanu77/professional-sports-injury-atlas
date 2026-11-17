@@ -10,11 +10,16 @@ import type { ObservationClip } from "./expansion";
 import { eventUpdateFor } from "./event-updates";
 import { normalizeVideoSearch } from "./search";
 import { SPORTS } from "./sports";
+import { athleteSearchAliases, injurySearchAliases } from "./search-aliases";
 
 export function caseVideoSearchText(record: InjuryCase): string {
   return normalizeVideoSearch(
     [
       record.athlete.name,
+      athleteSearchAliases(record.athlete.name),
+      injurySearchAliases(
+        `${record.injury.code} ${record.injury.confirmedDiagnosis}`,
+      ),
       record.slug,
       record.sport.code,
       findSport(record.sport.code)?.labelZh,
@@ -40,6 +45,8 @@ export function observationVideoSearchText(clip: ObservationClip): string {
   return normalizeVideoSearch(
     [
       clip.name,
+      athleteSearchAliases(clip.name),
+      injurySearchAliases(update?.injury ?? ""),
       clip.slug,
       clip.sport,
       SPORTS.find((sport) => sport.label === clip.sport)?.code,

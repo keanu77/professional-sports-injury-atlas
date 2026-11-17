@@ -49,6 +49,10 @@ const publicSitemap = {
 export default defineConfig({
   integrations: [publicSitemap],
   output: "static",
+  outDir:
+    process.env.ATLAS_PUBLIC_PREVIEW === "1"
+      ? "./artifacts/public-preview/"
+      : "./dist/",
   trailingSlash: "always",
   build: {
     // The complete editorial stylesheet is small; inlining it removes the

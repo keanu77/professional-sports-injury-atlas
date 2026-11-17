@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "athlete": "Stephen Curry",
-  "reviewedAt": "2026-11-18T01:39:56+08:00",
+  "reviewedAt": "2026-11-18T02:25:00+08:00",
   "status": "research-only",
   "includedInPublicCatalog": false,
   "medicalApproval": false,
   "playbackVerified": false,
-  "verificationLimit": "NBA 與球隊來源頁可讀；兩個 YouTube 頁面直接讀取失敗。瀏覽器工具回報 browser access host unavailable，無法實際播放。保留候選，不宣稱影片失效或已通過播放。",
+  "verificationLimit": "已以原生 Chrome 確認 NBA on ESPN 候選影片在 YouTube 原平台播放與英文自動字幕選項。未驗本站內嵌、台灣網路位置、未登入瀏覽、字幕正確性與完整教學內容；未獲醫療審閱或正式收錄。",
   "events": [
     {
       "id": "stephen-curry-2025-left-hamstring",
@@ -39,9 +39,18 @@
           "publisherCandidate": "NBA on ESPN",
           "title": "Shams: Steph Curry to miss at least 1 week with hamstring strain | NBA Today",
           "publishedAt": "2025-05-07",
-          "pageRead": false,
-          "playbackVerified": false,
-          "contentTypeCandidate": "news-report"
+          "pageRead": true,
+          "playbackVerified": true,
+          "contentTypeCandidate": "news-report",
+          "playbackScope": "source-platform-only",
+          "publisher": "NBA on ESPN",
+          "durationSeconds": 210,
+          "captionEvidence": {
+            "available": true,
+            "language": "en-US",
+            "type": "automatic",
+            "accuracyReviewed": false
+          }
         },
         {
           "url": "https://www.youtube.com/watch?v=rJkoSMss1dM",
@@ -96,5 +105,42 @@
       ],
       "videoCandidates": []
     }
-  ]
+  ],
+  "verificationAttempts": [
+    {
+      "checkedAt": "2026-11-17T18:21:01.116657+00:00",
+      "method": "official-source-page-and-browser-capability-check",
+      "officialSourcesReadable": [
+        "https://www.nba.com/news/stephen-curry-hamstring-injury-warriors-timberwolves",
+        "https://www.nba.com/warriors/news/stephen-curry-injury-update-11-12-26"
+      ],
+      "youtubePage": "indeterminate-fetch-failed",
+      "browserPlayback": "not-verified",
+      "browserFailure": "The browser access host is unavailable",
+      "includedInPublicCatalog": false,
+      "note": "可讀官方文字不等於影片播放通過；三次事件仍分開，未寫入醫療或媒體核准。"
+    },
+    {
+      "checkedAt": "2026-11-18T02:24:00+08:00",
+      "method": "native-chrome-ui",
+      "videoUrl": "https://www.youtube.com/watch?v=OYLixb3d7gA",
+      "pageTitle": "Shams: Steph Curry to miss at least 1 week with hamstring strain | NBA Today",
+      "publisher": "NBA on ESPN",
+      "observedPlaybackSeconds": [0, 26, 35, 72],
+      "durationSeconds": 210,
+      "audioTrack": "English (US), original",
+      "captionsMenu": "English (auto-generated)",
+      "captionTextObserved": true,
+      "sourcePlatformPlaybackVerified": true,
+      "ownedHttpsPlaybackVerified": false,
+      "embeddedPlaybackVerified": false,
+      "networkCountryVerified": false,
+      "signedOutVerified": false,
+      "fullContentReviewed": false,
+      "medicalApproval": false,
+      "note": "於使用者既有登入環境的新分頁實播，完成後暫停並關閉此分頁。時間點為UI抽查，不代表逐秒完整觀看；字幕選項與字幕顯示不代表翻譯或內容正確。"
+    }
+  ],
+  "sourcePlatformVideosVerified": 1,
+  "ownedHttpsPlaybackVerified": false
 }

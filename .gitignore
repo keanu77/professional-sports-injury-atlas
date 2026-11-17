@@ -17,3 +17,11 @@ artifacts/public-launch-receipt.v1.json
 
 # Local image candidates and design comparisons; chosen assets live in src/assets.
 /output/
+
+# Isolated non-deployable public UI test artifacts
+artifacts/public-preview/
+artifacts/lighthouse-public-preview.json
+artifacts/public-preview-test-results/
+artifacts/public-video-inventory.v1.json
+artifacts/playback-inventory.v1.json
+artifacts/playback-current.json

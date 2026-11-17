@@ -1,8 +1,12 @@
 import { contributionContext } from "../lib/video/contribution-context";
 import {
-  CONTRIBUTION_CONTENT_REQUIRED,
-  publicContributionUrl,
-} from "../lib/video/contribution-content";
+  CONTRIBUTION_DRAFT_KEY,
+  CONTRIBUTION_DRAFT_TTL_MS,
+  contributionErrors,
+  parseContributionDraft,
+  type ContributionFields,
+  type ContributionKind,
+} from "../lib/video/contribution-form";
 
 interface ChallengeApi {
   render: (element: HTMLElement, options: Record<string, unknown>) => string;
@@ -25,6 +29,28 @@ if (form) {
   let busy = false;
   let attempted = false;
   let challengeStarted = false;
+  let challengeFailed = false;
+  let challengeGeneration = 0;
+  let challengeScript: HTMLScriptElement | undefined;
+  let interacted = false;
+  let deliveryUncertain = false;
+  let draftExpiryTimer: ReturnType<typeof setTimeout> | undefined;
+  const errorSummary = form.querySelector<HTMLElement>(
+    "[data-contribution-errors]",
+  )!;
+  const draftStatus = form.querySelector<HTMLElement>(
+    "[data-contribution-draft-status]",
+  )!;
+  const retryChallenge = form.querySelector<HTMLButtonElement>(
+    "[data-contribution-retry-challenge]",
+  )!;
+  const retryDelivery = form.querySelector<HTMLButtonElement>(
+    "[data-contribution-retry-delivery]",
+  )!;
+  const receipt = form.querySelector<HTMLElement>(
+    "[data-contribution-receipt]",
+  )!;
+  const controls = { url, note, sources };
   const challenge = () =>
     (window as Window & { turnstile?: ChallengeApi }).turnstile;
   const requestedPage = new URLSearchParams(location.search).get("page");
@@ -60,43 +86,98 @@ if (form) {
     !requestedPage.includes("\\")
       ? new URL(requestedPage, "https://injury.sportsmedicine.tw").href
       : "");
-  const contentError = () => {
-    const kind = new FormData(form).get("type");
-    const correction = kind === "correction";
-    const sourceUrls = sources.value.trim()
-      ? sources.value
-          .trim()
-          .split(/\r?\n/)
-          .filter(Boolean)
-          .map(publicContributionUrl)
-      : [];
-    if (sourceUrls.length > 3 || sourceUrls.some((value) => !value))
-      return "參考來源請填寫有效的公開網址，每行一個，最多 3 個。";
-    if (url.value.trim() && !publicContributionUrl(url.value))
-      return "請填寫有效的公開網址。";
-    if (kind === "reference" && !url.value.trim() && !sourceUrls.length)
-      return "請提供至少一個文獻連結，可使用 DOI、PubMed 或學會教材網址。";
-    if (correction && (!url.value.trim() || note.value.trim().length < 5))
-      return "請提供需要修正的頁面網址，以及至少 5 個字的修正說明。";
-    if (
-      !correction &&
-      !url.value.trim() &&
-      !note.value.trim() &&
-      !sourceUrls.length
-    )
-      return CONTRIBUTION_CONTENT_REQUIRED;
-    return "";
+  const fields = (): ContributionFields => ({
+    type: new FormData(form).get("type") as ContributionKind,
+    url: url.value,
+    note: note.value,
+    sources: sources.value,
+  });
+  const contentError = () =>
+    Object.values(contributionErrors(fields()))[0] ?? "";
+  const showErrors = () => {
+    const errors = contributionErrors(fields());
+    const list = errorSummary.querySelector("ul")!;
+    list.replaceChildren();
+    for (const name of ["url", "note", "sources"] as const) {
+      const message = interacted ? errors[name] : undefined;
+      const help = form.querySelector<HTMLElement>(
+        `#contribution-${name}-error`,
+      )!;
+      controls[name].setAttribute("aria-invalid", String(!!message));
+      help.hidden = !message;
+      help.textContent = message ?? "";
+      if (message) {
+        const item = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = `#contribution-${name}`;
+        link.textContent = message;
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          controls[name].focus();
+        });
+        item.append(link);
+        list.append(item);
+      }
+    }
+    errorSummary.hidden = !list.childElementCount;
+  };
+  const clearStoredDraft = () => {
+    clearTimeout(draftExpiryTimer);
+    try {
+      sessionStorage.removeItem(CONTRIBUTION_DRAFT_KEY);
+    } catch {
+      /* unavailable storage */
+    }
+  };
+  const expireDraftAt = (savedAt: number) => {
+    clearTimeout(draftExpiryTimer);
+    draftExpiryTimer = setTimeout(
+      () => {
+        clearStoredDraft();
+        draftStatus.textContent =
+          "暫存草稿已到期清除；頁面上的文字仍可編輯。再次輸入後會重新暫存。";
+      },
+      Math.max(0, savedAt + CONTRIBUTION_DRAFT_TTL_MS - Date.now()),
+    );
+  };
+  const saveDraft = () => {
+    const content = fields();
+    if (!content.url && !content.note && !content.sources) {
+      clearStoredDraft();
+      return;
+    }
+    try {
+      const savedAt = Date.now();
+      sessionStorage.setItem(
+        CONTRIBUTION_DRAFT_KEY,
+        JSON.stringify({
+          version: 1,
+          scope: pageUrl,
+          savedAt,
+          deliveryUncertain,
+          ...content,
+        }),
+      );
+      expireDraftAt(savedAt);
+      draftStatus.textContent =
+        "內容已在本分頁暫存 30 分鐘，成功送出後會清除。請勿填寫個資或病情。";
+    } catch {
+      draftStatus.textContent =
+        "瀏覽器無法暫存草稿，重新整理前請自行保留公開連結與說明。";
+    }
   };
   const refreshContent = () => {
     const error = contentError();
-    submit.disabled = busy || !!error || !token;
+    showErrors();
+    submit.disabled = busy || !!error || !token || deliveryUncertain;
     if (error) status.textContent = error;
-    else if (!challengeStarted) startChallenge();
+    else if (deliveryUncertain) {
+      retryDelivery.hidden = false;
+    } else if (!challengeStarted && !challengeFailed) startChallenge();
     else if (!attempted && token) status.textContent = "驗證完成，可以送出。";
   };
-  form.addEventListener("input", refreshContent);
-  form.addEventListener("change", () => {
-    const kind = new FormData(form).get("type");
+  const syncKind = (prefill: boolean) => {
+    const kind = fields().type;
     const correction = kind === "correction";
     form.querySelector("[data-url-label]")!.textContent = correction
       ? "需要修正的頁面網址"
@@ -115,17 +196,71 @@ if (form) {
     url.required = correction;
     note.required = correction;
     note.minLength = correction ? 5 : 0;
-    if (correction && !url.value) url.value = pageUrl;
-    else if (!correction && url.value === pageUrl) url.value = "";
+    if (prefill) {
+      if (correction && !url.value) url.value = pageUrl;
+      else if (!correction && url.value === pageUrl) url.value = "";
+    }
+  };
+  form.addEventListener("input", () => {
+    interacted = true;
+    saveDraft();
     refreshContent();
   });
+  form.addEventListener("change", (event) => {
+    if (
+      event.target instanceof HTMLInputElement &&
+      event.target.name === "type"
+    )
+      syncKind(true);
+    interacted = true;
+    saveDraft();
+    refreshContent();
+  });
+  form
+    .querySelector<HTMLButtonElement>("[data-contribution-clear-draft]")!
+    .addEventListener("click", () => {
+      if (busy) return;
+      clearStoredDraft();
+      form.reset();
+      interacted = false;
+      attempted = false;
+      deliveryUncertain = false;
+      retryDelivery.hidden = true;
+      receipt.hidden = true;
+      draftStatus.textContent =
+        "本分頁草稿已清除。重新輸入後會再次暫存，請勿填寫個資或病情。";
+      syncKind(false);
+      refreshContent();
+      url.focus();
+    });
+  retryDelivery.addEventListener("click", () => {
+    if (busy) return;
+    deliveryUncertain = false;
+    retryDelivery.hidden = true;
+    attempted = false;
+    saveDraft();
+    refreshContent();
+    status.textContent =
+      contentError() ||
+      (token
+        ? "已允許重試。請確認內容後再按送出；相同內容仍受防重寄限制。"
+        : "請重新完成安全驗證，再決定是否送出。相同內容仍受防重寄限制。");
+  });
+  const markUncertain = () => {
+    deliveryUncertain = true;
+    retryDelivery.hidden = false;
+    saveDraft();
+  };
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
-    if (busy) return;
+    if (busy || deliveryUncertain) return;
+    interacted = true;
     const error = contentError();
     if (error) {
       status.textContent = error;
       submit.disabled = true;
+      showErrors();
+      errorSummary.focus();
       return;
     }
     if (!token || !form.reportValidity()) return;
@@ -134,6 +269,10 @@ if (form) {
     submit.disabled = true;
     status.textContent = "正在送出…";
     const fields = new FormData(form);
+    // Persist before fetch: navigation can destroy this document before either
+    // the response or catch runs, while the server may already have accepted it.
+    deliveryUncertain = true;
+    saveDraft();
     try {
       const response = await fetch("/api/contributions", {
         method: "POST",
@@ -150,9 +289,15 @@ if (form) {
         }),
         signal: AbortSignal.timeout(20000),
       });
+      const requestId = response.headers.get("X-Contribution-Request-Id");
+      receipt.hidden = !requestId || !/^[0-9a-f-]{36}$/i.test(requestId);
+      receipt.textContent = receipt.hidden
+        ? ""
+        : `回報編號：${requestId}。此編號供查詢送件狀態，不代表已收件。`;
       if (!response.headers.get("content-type")?.includes("application/json")) {
         status.textContent =
-          "寄信服務暫時無法回應，尚未確認送出。你填寫的內容已保留，請稍後再試。";
+          "寄信服務暫時無法回應，尚未確認送出。內容已保留；為避免重寄，請確認後再允許重試。";
+        markUncertain();
         return;
       }
       const result = (await response.json()) as {
@@ -160,6 +305,7 @@ if (form) {
         error?: string;
       };
       if (response.ok && result.ok === true) {
+        clearStoredDraft();
         form.hidden = true;
         thanks.hidden = false;
         thanks.focus();
@@ -184,59 +330,155 @@ if (form) {
                   ? "請確認網址、修正說明及參考來源，再重新驗證。"
                   : response.status === 413
                     ? "內容較長，請縮短說明或參考網址後再試。"
-                    : "目前無法確認訊息送出，請稍後再試，或使用主站聯絡頁。";
+                    : "目前無法確認訊息送出。內容已保留；為避免重寄，請確認後再允許重試，或使用主站聯絡頁。";
+      if (
+        result.error === "delivery" ||
+        result.error === "verification-unavailable" ||
+        response.status < 400 ||
+        (response.status >= 500 && result.error !== "guard-unavailable")
+      ) {
+        markUncertain();
+      } else {
+        // Only an explicit rejection makes a fresh attempt safe to offer.
+        deliveryUncertain = false;
+        retryDelivery.hidden = true;
+        saveDraft();
+      }
     } catch {
-      status.textContent = "連線中斷，無法確認送出結果。請稍後再試。";
+      status.textContent =
+        "連線中斷，無法確認送出結果。內容已保留；為避免重寄，請確認後再允許重試。";
+      markUncertain();
     } finally {
       busy = false;
       token = "";
-      if (!form.hidden && widget) challenge()?.reset(widget);
+      if (!form.hidden && widget) {
+        try {
+          challenge()?.reset(widget);
+        } catch {
+          challengeFailed = true;
+          retryChallenge.hidden = false;
+        }
+      }
+      submit.disabled = true;
     }
   });
   const startChallenge = () => {
     if (challengeStarted) return;
     challengeStarted = true;
+    challengeFailed = false;
+    retryChallenge.hidden = true;
     status.textContent = "正在準備安全驗證…";
-    const script = document.createElement("script");
-    script.src =
-      "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
-    script.async = true;
-    script.addEventListener("load", () => {
+    const generation = ++challengeGeneration;
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const fail = () => {
+      if (generation !== challengeGeneration) return;
+      clearTimeout(timer);
+      challengeFailed = true;
+      challengeStarted = false;
+      token = "";
+      submit.disabled = true;
+      retryChallenge.hidden = false;
+      status.textContent =
+        "安全驗證無法載入。內容已保留，可按「重新載入安全驗證」，或使用主站聯絡頁。";
+    };
+    const render = () => {
+      if (generation !== challengeGeneration || challengeFailed) return;
+      clearTimeout(timer);
       const api = challenge();
       if (!api) {
-        status.textContent = "安全驗證無法載入，請重新整理，或使用主站聯絡頁。";
+        fail();
         return;
       }
       status.textContent = contentError() || "請完成上方安全驗證，再送出資料。";
-      widget = api.render(
-        form.querySelector<HTMLElement>("[data-contribution-challenge]")!,
-        {
-          sitekey: "0x4AAAAAADyuOfFI_URsi8Ap",
-          action: "atlas-contribution",
-          size: form.clientWidth < 300 ? "compact" : "flexible",
-          theme: "auto",
-          callback: (value: string) => {
-            token = value;
-            refreshContent();
+      try {
+        widget = api.render(
+          form.querySelector<HTMLElement>("[data-contribution-challenge]")!,
+          {
+            sitekey: "0x4AAAAAADyuOfFI_URsi8Ap",
+            action: "atlas-contribution",
+            size: form.clientWidth < 300 ? "compact" : "flexible",
+            theme: "auto",
+            callback: (value: string) => {
+              if (generation !== challengeGeneration) return;
+              challengeFailed = false;
+              retryChallenge.hidden = true;
+              token = value;
+              refreshContent();
+            },
+            "expired-callback": () => {
+              token = "";
+              submit.disabled = true;
+              retryChallenge.hidden = false;
+              status.textContent = "驗證已過期，請重新完成驗證。";
+            },
+            "error-callback": fail,
           },
-          "expired-callback": () => {
-            token = "";
-            submit.disabled = true;
-            status.textContent = "驗證已過期，請重新完成驗證。";
-          },
-          "error-callback": () => {
-            token = "";
-            submit.disabled = true;
-            status.textContent = "安全驗證暫時無法載入，請重新整理頁面再試。";
-          },
-        },
-      );
-    });
-    script.addEventListener("error", () => {
-      status.textContent = "安全驗證無法載入，請重新整理，或使用主站聯絡頁。";
-    });
-    document.head.append(script);
+        );
+      } catch {
+        fail();
+      }
+    };
+    if (challenge()) {
+      render();
+      return;
+    }
+    challengeScript?.remove();
+    challengeScript = document.createElement("script");
+    challengeScript.src =
+      "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+    challengeScript.async = true;
+    challengeScript.addEventListener("load", render, { once: true });
+    challengeScript.addEventListener("error", fail, { once: true });
+    timer = setTimeout(fail, 15000);
+    document.head.append(challengeScript);
   };
+  retryChallenge.addEventListener("click", () => {
+    if (busy) return;
+    token = "";
+    challengeFailed = false;
+    retryChallenge.hidden = true;
+    if (widget && challenge()) {
+      try {
+        challengeStarted = true;
+        status.textContent = "請重新完成安全驗證。";
+        challenge()!.reset(widget);
+      } catch {
+        challengeFailed = true;
+        retryChallenge.hidden = false;
+        status.textContent =
+          "安全驗證暫時無法重新啟動，內容已保留，請稍後再試。";
+      }
+    } else {
+      challengeStarted = false;
+      startChallenge();
+    }
+    submit.disabled = true;
+  });
+  try {
+    const raw = sessionStorage.getItem(CONTRIBUTION_DRAFT_KEY);
+    const draft = parseContributionDraft(raw, pageUrl);
+    if (draft) {
+      form.querySelector<HTMLInputElement>(
+        `input[name="type"][value="${draft.type}"]`,
+      )!.checked = true;
+      url.value = draft.url;
+      note.value = draft.note;
+      sources.value = draft.sources;
+      deliveryUncertain = draft.deliveryUncertain;
+      expireDraftAt(draft.savedAt);
+      syncKind(false);
+      draftStatus.textContent =
+        "已恢復本分頁 30 分鐘內的草稿；安全驗證需重新完成。成功送出後會清除草稿。";
+      if (deliveryUncertain) {
+        retryDelivery.hidden = false;
+        status.textContent =
+          "上次送出結果尚未確認。請先確認是否需要重試，避免重寄。";
+      }
+    } else if (raw) clearStoredDraft();
+  } catch {
+    draftStatus.textContent =
+      "瀏覽器無法暫存草稿，重新整理前請自行保留公開連結與說明。";
+  }
   refreshContent();
 }
 export {};

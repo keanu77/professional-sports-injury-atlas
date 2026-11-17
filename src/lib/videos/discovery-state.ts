@@ -1,3 +1,8 @@
+import {
+  validDiscoveryDate,
+  type DiscoveryPeriod,
+  type DiscoverySort,
+} from "./discovery-time";
 export type DiscoveryMode = "all" | "curated" | "popular";
 export interface DiscoveryState {
   query: string;
@@ -5,6 +10,10 @@ export interface DiscoveryState {
   sport: string;
   body: string;
   mode: DiscoveryMode;
+  period: DiscoveryPeriod;
+  from: string;
+  to: string;
+  sort: DiscoverySort;
 }
 export interface DiscoveryScope {
   fixedType?: string;
@@ -36,15 +45,33 @@ export function readDiscoveryState(
     return allowed.has(value) ? value : "";
   };
   const mode = url.searchParams.get("mode");
+  const period = url.searchParams.get("period");
+  const sort = url.searchParams.get("sort");
+  const effectiveMode =
+    !hasDiscoveryScope(options) && (mode === "curated" || mode === "popular")
+      ? mode
+      : "all";
   return {
     query: (url.searchParams.get("q") ?? "").trim().slice(0, 120),
     type: options.fixedType || valid("type", options.types),
     sport: options.fixedSport || valid("sport", options.sports),
     body: options.fixedBody || valid("body", options.bodies),
-    mode:
-      !hasDiscoveryScope(options) && (mode === "curated" || mode === "popular")
-        ? mode
-        : "all",
+    mode: effectiveMode,
+    period:
+      period === "recent-2y" || period === "custom" || period === "unknown"
+        ? period
+        : "",
+    from:
+      period === "custom"
+        ? validDiscoveryDate(url.searchParams.get("from"))
+        : "",
+    to:
+      period === "custom" ? validDiscoveryDate(url.searchParams.get("to")) : "",
+    sort:
+      effectiveMode !== "popular" &&
+      (sort === "event-newest" || sort === "updated-newest")
+        ? sort
+        : "editorial",
   };
 }
 
@@ -62,6 +89,10 @@ export function writeDiscoveryState(
     sport: scope.fixedSport ? "" : state.sport,
     body: scope.fixedBody ? "" : state.body,
     mode: hasDiscoveryScope(scope) || state.mode === "all" ? "" : state.mode,
+    period: state.period,
+    from: state.period === "custom" ? validDiscoveryDate(state.from) : "",
+    to: state.period === "custom" ? validDiscoveryDate(state.to) : "",
+    sort: state.sort === "editorial" ? "" : state.sort,
   };
   for (const [key, value] of Object.entries(values)) {
     if (value) next.searchParams.set(key, value);

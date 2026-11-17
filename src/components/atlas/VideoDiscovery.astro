@@ -15,6 +15,7 @@ import { discoveryFor } from "../../lib/videos/discovery";
 import { parseYouTubeVideoId } from "../../lib/video/youtube";
 import { videosBySport } from "../../lib/videos/sports";
 import { videosByBodyPart } from "../../lib/videos/body-parts";
+import { eventUpdateFor } from "../../lib/videos/event-updates";
 interface Props {
   featured: InjuryCase[];
   clips: ObservationClip[];
@@ -54,6 +55,30 @@ const bodyBySlug = new Map(
       (item) => [item.slug, group.code] as const,
     ),
   ),
+);
+const datesBySlug = new Map(
+  [
+    ...featured.map((record) => ({
+      slug: record.slug,
+      url: record.video.canonicalUrl,
+      eventDate: record.eventDate,
+    })),
+    ...clips.map((clip) => ({
+      slug: clip.slug,
+      url: clip.videoUrl,
+      eventDate: clip.eventDate,
+    })),
+  ].map(({ slug, url, eventDate }) => {
+    const update = eventUpdateFor(slug, url, eventDate);
+    return [
+      slug,
+      {
+        eventDate: update?.eventDate ?? eventDate,
+        checkedAt: update?.checkedAt ?? "",
+        reported: update?.eventDateCertainty === "reported",
+      },
+    ] as const;
+  }),
 );
 ---
 
@@ -158,11 +183,71 @@ const bodyBySlug = new Map(
             }
           </select>
         </div>
+        <div>
+          <label for="video-period-filter">事件日期範圍</label>
+          <select
+            id="video-period-filter"
+            data-period-filter
+            aria-controls="discovery-videos"
+            aria-describedby="video-date-help"
+          >
+            <option value="">不限日期</option>
+            <option value="recent-2y">近兩年</option>
+            <option value="custom">自訂日期</option>
+            <option value="unknown">確切日期不詳</option>
+          </select>
+        </div>
+        <div>
+          <label for="video-sort">排序</label>
+          <select
+            id="video-sort"
+            data-discovery-sort
+            aria-controls="discovery-videos"
+            aria-describedby="video-date-help"
+          >
+            <option value="editorial">預設順序</option>
+            <option value="event-newest">事件日期：新到舊</option>
+            <option value="updated-newest">內容整理日期：新到舊</option>
+          </select>
+        </div>
+        <div class="discovery-date-range" data-date-range hidden>
+          <div>
+            <label for="video-date-from">開始日期（含當日）</label>
+            <input
+              id="video-date-from"
+              type="date"
+              data-date-from
+              aria-controls="discovery-videos"
+              aria-describedby="video-date-help video-date-error"
+            />
+          </div>
+          <div>
+            <label for="video-date-to">結束日期（含當日）</label>
+            <input
+              id="video-date-to"
+              type="date"
+              data-date-to
+              aria-controls="discovery-videos"
+              aria-describedby="video-date-help video-date-error"
+            />
+          </div>
+        </div>
+        <p id="video-date-help" class="discovery-date-help" data-date-help>
+          近兩年以台灣當日計算；日期不詳者不列入日期區間，依日期排序時放在最後。內容整理日期不是影片上架或每個來源重新查核的日期。
+        </p>
+        <p
+          id="video-date-error"
+          class="discovery-date-help"
+          data-date-error
+          role="status"
+          hidden
+        >
+        </p>
       </div>
     </div>
     <div class="discovery-search-meta">
       <p id="video-search-help">
-        可搜尋姓名、傷勢或賽事；多個關鍵字以空格分開。
+        可搜尋中英文姓名、傷勢或賽事；多個關鍵字以空格分開。
       </p>
       <div class="video-search-scope">
         <p id="video-search-scope" data-video-search-scope>
@@ -182,6 +267,7 @@ const bodyBySlug = new Map(
       <button type="button" data-video-type-clear hidden></button>
       <button type="button" data-sport-clear hidden></button>
       <button type="button" data-body-clear hidden></button>
+      <button type="button" data-period-clear hidden></button>
     </div>
   </form>
   <div
@@ -232,6 +318,16 @@ const bodyBySlug = new Map(
   <p class="video-search-empty" data-video-search-empty hidden>
     試試球員姓氏、英文姓名或其他受傷部位，也可以清除搜尋後瀏覽。
   </p>
+  <div
+    class="discovery-suggestions"
+    data-search-suggestions
+    hidden
+    role="group"
+    aria-label="搜尋建議"
+  >
+    <span>是否要搜尋：</span>
+    <span data-search-suggestion-buttons></span>
+  </div>
   <slot />
   <ol
     data-video-type-videos={fixedType || undefined}
@@ -252,6 +348,10 @@ const bodyBySlug = new Map(
           data-video-id={parseYouTubeVideoId(record.video.canonicalUrl)}
           data-sport={sportBySlug.get(record.slug)}
           data-body={bodyBySlug.get(record.slug)}
+          data-event-date={datesBySlug.get(record.slug)?.eventDate ?? ""}
+          data-content-checked-at={
+            datesBySlug.get(record.slug)?.checkedAt ?? ""
+          }
           data-content-types={contentTypesFor(
             record.slug,
             record.video.canonicalUrl,
@@ -267,6 +367,14 @@ const bodyBySlug = new Map(
             compact
             priority={priorityFirst && index === 0}
           />
+          <p class="discovery-card-dates">
+            事件日期{datesBySlug.get(record.slug)?.reported ? "（報導）" : ""}：
+            {datesBySlug.get(record.slug)?.eventDate || "確切日期不詳"}
+            <span>
+              內容整理：
+              {datesBySlug.get(record.slug)?.checkedAt || "日期未標示"}
+            </span>
+          </p>
         </li>
       ))
     }
@@ -279,6 +387,8 @@ const bodyBySlug = new Map(
           data-video-id={clip.provider === "mlb" ? undefined : clip.videoId}
           data-sport={sportBySlug.get(clip.slug)}
           data-body={bodyBySlug.get(clip.slug)}
+          data-event-date={datesBySlug.get(clip.slug)?.eventDate ?? ""}
+          data-content-checked-at={datesBySlug.get(clip.slug)?.checkedAt ?? ""}
           data-content-types={contentTypesFor(clip.slug, clip.videoUrl)
             .map((type) => type.id)
             .join(" ")}
@@ -286,6 +396,13 @@ const bodyBySlug = new Map(
         >
           <span class="popular-count" data-popular-count hidden />
           <ObservationCard clip={clip} />
+          <p class="discovery-card-dates">
+            事件日期{datesBySlug.get(clip.slug)?.reported ? "（報導）" : ""}：
+            {datesBySlug.get(clip.slug)?.eventDate || "確切日期不詳"}
+            <span>
+              內容整理：{datesBySlug.get(clip.slug)?.checkedAt || "日期未標示"}
+            </span>
+          </p>
         </li>
       ))
     }
@@ -535,6 +652,47 @@ const bodyBySlug = new Map(
     border: 1px solid var(--hairline-strong);
     border-radius: 0.65rem;
   }
+  .discovery-date-range {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.875rem;
+  }
+  .discovery-date-range input {
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 0;
+    font-size: 0.875rem;
+    padding-inline: 0.35rem;
+  }
+  .discovery-date-help {
+    grid-column: 1 / -1;
+  }
+  .discovery-card-dates {
+    margin-block: 0.5rem 0;
+    color: var(--color-ink-muted);
+    font-size: 0.8125rem;
+  }
+  .discovery-card-dates span {
+    display: block;
+  }
+  .discovery-suggestions {
+    margin-block: 0.5rem 1rem;
+  }
+  .discovery-suggestions button {
+    min-height: 44px;
+    margin-inline-end: 0.5rem;
+    padding: 0.5rem;
+    color: var(--color-brand-primary);
+    background: var(--color-surface-raised);
+    border: 1px solid var(--hairline-strong);
+    border-radius: 0.5rem;
+    font: inherit;
+  }
+  .discovery-suggestions button:focus-visible {
+    outline: 3px solid var(--color-brand-primary);
+    outline-offset: 3px;
+  }
   .discovery-pagination {
     display: flex;
     flex-wrap: wrap;
@@ -599,6 +757,9 @@ const bodyBySlug = new Map(
     }
   }
   @media (max-width: 40rem) {
+    .discovery-date-range {
+      grid-template-columns: minmax(0, 1fr);
+    }
     .video-grid {
       grid-template-columns: 1fr;
     }

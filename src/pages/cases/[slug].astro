@@ -24,6 +24,7 @@ import {
 } from "../../lib/videos/related-videos";
 import PatientGuide from "../../components/cases/PatientGuide.astro";
 import EventFollowUp from "../../components/cases/EventFollowUp.astro";
+import VideoLearning from "../../components/cases/VideoLearning.astro";
 import EventMechanism from "../../components/cases/EventMechanism.astro";
 import { eventUpdateFor } from "../../lib/videos/event-updates";
 import ActualReturn from "../../components/cases/ActualReturn.astro";
@@ -109,6 +110,7 @@ const contentTypes = contentTypesFor(record.slug, record.video.canonicalUrl);
 const contentSegments = contentTypeSegmentsFor(
   record.slug,
   record.video.canonicalUrl,
+  record.video.durationSeconds,
 );
 const isYouTubeVideo = parseYouTubeVideoId(record.video.canonicalUrl) !== null;
 const related = relatedVideosFor({ kind: "case", record }, [
@@ -128,6 +130,7 @@ const contents = [
     : buildMode === "public"
       ? [{ id: "case-observation", label: "影片觀察" }]
       : []),
+  { id: `video-learning-${record.slug}`, label: "閱讀與學習" },
   { id: `${record.injury.code}-now`, label: "當下處理" },
   { id: `${record.injury.code}-urgent`, label: "就醫警訊" },
   ...(eventUpdate?.mechanism
@@ -225,9 +228,13 @@ if (videoSource === undefined) {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {formatDurationLabel(segment.startSeconds)}：
-                      {labels.join("、")}
+                      {formatDurationLabel(segment.startSeconds)}
+                      {segment.endSeconds !== undefined
+                        ? `–${formatDurationLabel(segment.endSeconds)}`
+                        : ""}
+                      ：{labels.join("、")}
                     </a>
+                    <p class="segment-note">{segment.note}</p>
                   </li>
                 );
               })}
@@ -261,6 +268,11 @@ if (videoSource === undefined) {
         </>
       )
     }
+    <VideoLearning
+      slug={record.slug}
+      videoUrl={record.video.canonicalUrl}
+      showDrafts
+    />
     <PatientGuide injuryCode={record.injury.code} buildMode={buildMode} />
     {
       eventUpdate?.mechanism ? null : eventUpdate ? (

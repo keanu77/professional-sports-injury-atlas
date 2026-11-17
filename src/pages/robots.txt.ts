@@ -13,12 +13,14 @@ import { resolveBuildMode, robotsTxtBody } from "../lib/governance/build-mode";
 
 export const GET: APIRoute = () => {
   const body =
-    isLaunchEnabled() && resolveBuildMode() === "public"
-      ? `User-agent: *\nAllow: /\nSitemap: ${new URL("/sitemap.xml", publicDomain.origin).href}\n`
-      : robotsTxtBody(
-          resolveBuildMode(process.env.ATLAS_BUILD_MODE),
-          governance,
-        );
+    process.env.ATLAS_PUBLIC_PREVIEW === "1"
+      ? "User-agent: *\nDisallow: /\n"
+      : isLaunchEnabled() && resolveBuildMode() === "public"
+        ? `User-agent: *\nAllow: /\nSitemap: ${new URL("/sitemap.xml", publicDomain.origin).href}\n`
+        : robotsTxtBody(
+            resolveBuildMode(process.env.ATLAS_BUILD_MODE),
+            governance,
+          );
   return new Response(body, {
     headers: { "Content-Type": "text/plain; charset=utf-8" },
   });

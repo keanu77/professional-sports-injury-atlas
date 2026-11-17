@@ -72,6 +72,9 @@ export interface PublicVideoHealthArtifact {
   checkedAt: string;
   requestUserAgent: string;
   playbackVerification: "not-performed";
+  provenance: HealthProvenance & {
+    deploymentMatch: "same-revision" | "different-revision" | "unknown";
+  };
   overallStatus: "healthy" | "degraded" | "failed";
   summary: {
     videos: number;
@@ -90,6 +93,14 @@ export interface PublicVideoHealthArtifact {
   videos: PublicVideoHealthResult[];
 }
 
+export interface HealthProvenance {
+  sourceCommit: string | null;
+  sourceDirty: boolean | null;
+  catalogDigest: string | null;
+  targetOrigin: string | null;
+  deploymentCommit: string | null;
+}
+
 export interface HealthMonitorOptions {
   fetchImpl?: typeof fetch;
   now?: () => Date;
@@ -99,6 +110,7 @@ export interface HealthMonitorOptions {
   concurrency?: number;
   /** Only transient network/timeout/server errors are retried, at most once. */
   retryDelayMs?: number;
+  provenance?: HealthProvenance;
 }
 
 function createLimiter(limit: number) {
@@ -234,6 +246,13 @@ export async function monitorPublicVideos(
   const maxBodyBytes = options.maxBodyBytes ?? 65_536;
   const concurrency = Math.max(1, Math.min(8, options.concurrency ?? 4));
   const limited = createLimiter(concurrency);
+  const provenance: HealthProvenance = options.provenance ?? {
+    sourceCommit: null,
+    sourceDirty: null,
+    catalogDigest: null,
+    targetOrigin: null,
+    deploymentCommit: null,
+  };
 
   const probe = async (
     url: URL,
@@ -505,6 +524,16 @@ export async function monitorPublicVideos(
     checkedAt: now().toISOString(),
     requestUserAgent: HEALTH_USER_AGENT,
     playbackVerification: "not-performed",
+    provenance: {
+      ...provenance,
+      deploymentMatch:
+        provenance.sourceCommit && provenance.deploymentCommit
+          ? provenance.sourceCommit === provenance.deploymentCommit &&
+            provenance.sourceDirty === false
+            ? "same-revision"
+            : "different-revision"
+          : "unknown",
+    },
     overallStatus:
       summary.unavailableSources ||
       summary.unavailableMetadata ||

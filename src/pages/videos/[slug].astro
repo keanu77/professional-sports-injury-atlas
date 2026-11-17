@@ -1,5 +1,6 @@
 ---
 import EventFollowUp from "../../components/cases/EventFollowUp.astro";
+import VideoLearning from "../../components/cases/VideoLearning.astro";
 import EventMechanism from "../../components/cases/EventMechanism.astro";
 import { getCollection } from "astro:content";
 import DetailNavigation from "../../components/atlas/DetailNavigation.astro";
@@ -70,7 +71,11 @@ const isFeatured = discoveryFor(clip.slug).curatedRank !== undefined;
 const footageLabel = observationFootageLabel(clip);
 const provider = observationProviderFor(clip.provider);
 const contentTypes = contentTypesFor(clip.slug, clip.videoUrl);
-const contentSegments = contentTypeSegmentsFor(clip.slug, clip.videoUrl);
+const contentSegments = contentTypeSegmentsFor(
+  clip.slug,
+  clip.videoUrl,
+  clip.durationSeconds,
+);
 const watchUrl = new URL(clip.videoUrl);
 if (provider === "youtube" && clip.startSeconds > 0)
   watchUrl.searchParams.set("t", String(clip.startSeconds));
@@ -83,6 +88,7 @@ const contents = [
         { id: "clip-follow-up", label: "傷勢與後續" },
       ]
     : []),
+  { id: `video-learning-${clip.slug}`, label: "閱讀與學習" },
   { id: "clip-guidance", label: "當下處理與警訊" },
   ...(resources.length > 0
     ? [{ id: "clip-resources", label: "延伸閱讀" }]
@@ -253,9 +259,13 @@ const contents = [
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          {formatDurationLabel(segment.startSeconds)}：
-                          {labels.join("、")}— 在 YouTube 開啟（新分頁）
+                          {formatDurationLabel(segment.startSeconds)}
+                          {segment.endSeconds !== undefined
+                            ? `–${formatDurationLabel(segment.endSeconds)}`
+                            : ""}
+                          ：{labels.join("、")}— 在 YouTube 開啟（新分頁）
                         </a>
+                        <p class="segment-note">{segment.note}</p>
                       </li>
                     );
                   })}
@@ -273,6 +283,7 @@ const contents = [
               </>
             )
           }
+          <VideoLearning slug={clip.slug} videoUrl={clip.videoUrl} showDrafts />
           {
             clip.bodyPart === "頭頸部" ? (
               <section

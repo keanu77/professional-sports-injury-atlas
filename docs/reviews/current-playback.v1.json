@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "status": "pending",
+  "sourceCommit": null,
+  "inputTreeDigest": null,
+  "catalogDigest": null,
+  "origin": null,
+  "receiptFiles": [],
+  "note": "2026-11-18 quality implementation: current real playback and owner evidence review are pending. This registry intentionally blocks release and does not alter historical clinical approvals."
+}

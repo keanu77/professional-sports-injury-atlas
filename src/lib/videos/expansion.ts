@@ -50,6 +50,23 @@ export const observationClipSchema = z.strictObject({
   durationSeconds: z.number().int().positive(),
   sources: z.array(z.strictObject({ title: z.string().min(1), url })),
 });
+/** A known return does not require an invented injury day. Year bounds still apply. */
+export function isReturnDateChronological(
+  clip: {
+    eventDate: string | null;
+    eventYear?: string;
+    returnDate: string | null;
+  },
+  today = new Date().toISOString().slice(0, 10),
+): boolean {
+  if (!clip.returnDate) return true;
+  const earliest =
+    clip.eventDate ?? (clip.eventYear ? `${clip.eventYear}-01-01` : null);
+  return (
+    clip.returnDate <= today &&
+    (earliest === null || clip.returnDate >= earliest)
+  );
+}
 export const expansionSchema = z
   .strictObject({
     schemaVersion: z.literal(1),
@@ -95,7 +112,7 @@ export const expansionSchema = z
         });
       if (
         c.returnDate &&
-        (!c.eventDate || c.returnDate < c.eventDate || c.sources.length === 0)
+        (!isReturnDateChronological(c) || c.sources.length === 0)
       )
         ctx.addIssue({
           code: "custom",
@@ -127,9 +144,7 @@ export const additionsSchema = z
         parseYouTubeVideoId(c.videoUrl) !== c.videoId ||
         c.startSeconds >= c.durationSeconds ||
         (c.returnDate &&
-          (!c.eventDate ||
-            c.returnDate < c.eventDate ||
-            c.sources.length === 0))
+          (!isReturnDateChronological(c) || c.sources.length === 0))
       ) {
         ctx.addIssue({
           code: "custom",
@@ -490,9 +505,7 @@ export const ribFractureThreeSchema = z
         parseYouTubeVideoId(clip.videoUrl) !== clip.videoId ||
         clip.startSeconds >= clip.durationSeconds ||
         (clip.returnDate &&
-          (!clip.eventDate ||
-            clip.returnDate < clip.eventDate ||
-            clip.sources.length === 0))
+          (!isReturnDateChronological(clip) || clip.sources.length === 0))
       )
         ctx.addIssue({
           code: "custom",
@@ -570,8 +583,7 @@ export const nerveFourSchema = z
         (clip.eventYear &&
           clip.eventDate &&
           clip.eventYear !== clip.eventDate.slice(0, 4)) ||
-        (clip.returnDate &&
-          (!clip.eventDate || clip.returnDate < clip.eventDate))
+        (clip.returnDate && !isReturnDateChronological(clip))
       ) {
         ctx.addIssue({
           code: "custom",
@@ -1153,8 +1165,7 @@ export const catalog200Schema = z
         parseYouTubeVideoId(clip.videoUrl) !== clip.videoId ||
         clip.startSeconds >= clip.durationSeconds ||
         clip.sources.length === 0 ||
-        (clip.returnDate !== null &&
-          (clip.eventDate === null || clip.returnDate < clip.eventDate))
+        (clip.returnDate !== null && !isReturnDateChronological(clip))
       ) {
         ctx.addIssue({
           code: "custom",

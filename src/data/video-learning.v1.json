@@ -1,0 +1,964 @@
+{
+  "schemaVersion": 1,
+  "preparedAt": "2026-11-18",
+  "preparedBy": "assistant",
+  "status": "editorial-draft",
+  "clinicalApproval": "pending",
+  "scope": "page-evidence-reading-not-clinical-approval",
+  "entries": [
+    {
+      "slug": "tyrese-haliburton-achilles-rupture-2025",
+      "videoUrl": "https://www.youtube.com/watch?v=azQpbyDBktk",
+      "status": "editorial-draft",
+      "clinicalApproval": "pending",
+      "title": "Haliburton：畫面範圍與不同次傷害",
+      "objective": "區分短片可提供的資訊、正式回場與後續另一部位的傷害。",
+      "observationQuestions": [
+        "這段短片能看到完整起步過程，還是主要看到離場？請先記錄實際可見範圍。",
+        "回場摘要的兩個日期各屬哪一次事件？請核對部位與來源。"
+      ],
+      "selfChecks": [
+        {
+          "question": "可否從短片補出精確斷裂順序？",
+          "answer": "不能。頁面說明短片主要呈現被協助離場，未看清的踩地與加速不能寫成事實。",
+          "basisFields": ["mechanism.summary", "mechanism.limitation"]
+        },
+        {
+          "question": "復出後另一部位受傷，是否可合併成同一傷勢的復健期？",
+          "answer": "不可以。本頁回場摘要把右阿基里斯腱事件與後來左腿後肌群拉傷分開。",
+          "basisFields": ["returnSummary"]
+        }
+      ],
+      "comparison": {
+        "slug": "kevin-durant-achilles-rupture-2019",
+        "videoUrl": "https://www.youtube.com/watch?v=YcSOLHMsJYw",
+        "prompt": "比較兩頁如何區分既往不適、原傷與回場紀錄。"
+      },
+      "basis": [
+        {
+          "field": "mechanism.summary",
+          "text": "AP 報導 Haliburton 在總冠軍賽第 7 戰第一節倒地，之後確認右阿基里斯腱傷勢。本頁短片主要呈現他由他人協助離場；起步、踩地與斷裂的精確順序，無法由這段畫面完整還原。",
+          "sourceIndexes": [5, 1, 3],
+          "sourceUrls": [
+            "https://www.ksl.com/article/51334269",
+            "https://www.nba.com/pacers/news/indiana-pacers-medical-update-tyrese-haliburton-250623",
+            "https://www.youtube.com/watch?v=azQpbyDBktk"
+          ]
+        },
+        {
+          "field": "mechanism.limitation",
+          "text": "本頁只用一般肌腱功能解釋可能的推蹬問題，沒有把未看清的踩地或加速動作寫成事實。先前不適與疲勞不能直接認定為斷裂原因，訓練進展也不當作正式復賽。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        },
+        {
+          "field": "returnSummary",
+          "text": "2026-10-21 對鵜鶘重返 NBA 例行賽。10 月 28 日另有左腿後肌群拉傷報導，不能與原右阿基里斯腱傷勢混為同一次復原。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "slug": "jayson-tatum-achilles-rupture-2025",
+      "videoUrl": "https://www.youtube.com/watch?v=xSUKd03LJwE",
+      "status": "editorial-draft",
+      "clinicalApproval": "pending",
+      "title": "Tatum：公開分析與治療團隊資訊",
+      "objective": "辨識第三方專業分析的來源與推論範圍。",
+      "observationQuestions": [
+        "哪些動作是你自己能看清的，哪些是頁面引用分析者的描述？",
+        "請查出機轉分析者的身分，以及本頁對其分析設下的限制。"
+      ],
+      "selfChecks": [
+        {
+          "question": "具名治療師分析是否等於治療團隊確診？",
+          "answer": "不是。頁面明確指出受訪治療師並非 Tatum 的醫療團隊。",
+          "basisFields": ["mechanism.limitation"]
+        },
+        {
+          "question": "能否據此認定疲勞或既有肌腱病變造成受傷？",
+          "answer": "不能。這些因果與受傷前狀態不在本頁可確認的範圍。",
+          "basisFields": ["mechanism.limitation"]
+        }
+      ],
+      "comparison": {
+        "slug": "tyrese-haliburton-achilles-rupture-2025",
+        "videoUrl": "https://www.youtube.com/watch?v=azQpbyDBktk",
+        "prompt": "比較兩頁引用的分析來源與影片可見範圍。"
+      },
+      "basis": [
+        {
+          "field": "mechanism.summary",
+          "text": "Tatum 在第四節追球起步時倒地。波士頓大學物理治療師 Dan Sieczkiewicz 分析公開影片：他想往前衝，右腳卻先向後踏，再準備蹬地。這符合非接觸、起步加速型的受傷機轉。",
+          "sourceIndexes": [4],
+          "sourceUrls": [
+            "https://www.bu.edu/articles/2025/jayson-tatum-achilles-injury-and-recovery/"
+          ]
+        },
+        {
+          "field": "mechanism.limitation",
+          "text": "受訪治療師並非 Tatum 的醫療團隊。機轉說明是依公開影片與研究整理，不能據此認定疲勞是致傷原因，也不能推論他受傷前已有肌腱病變。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "slug": "lamelo-ball-ankle-sprain-2025",
+      "videoUrl": "https://www.youtube.com/watch?v=zZdndTqOexc",
+      "status": "editorial-draft",
+      "clinicalApproval": "pending",
+      "title": "Ball 2025：事件與側別",
+      "objective": "將本次左踝事件與其他年份傷害分開閱讀。",
+      "observationQuestions": [
+        "先記下本頁事件日期與傷側，再核對影片與報導是否描述同一次事件。",
+        "如果畫面有接觸，哪些部分能直接看見？哪些關於意圖或嚴重度的判斷仍沒有依據？"
+      ],
+      "selfChecks": [
+        {
+          "question": "能否與 2023 年的右踝事件合併？",
+          "answer": "不能。本頁明示本次為左踝，與 2023 年右踝事件分開記錄。",
+          "basisFields": ["mechanism.limitation"]
+        },
+        {
+          "question": "能否因為回場較快便判定是輕傷？",
+          "answer": "不能。公開公告未提供細部分級，不能以回場快慢補上分級。",
+          "basisFields": ["mechanism.limitation"]
+        }
+      ],
+      "comparison": {
+        "slug": "lamelo-ball-ankle-sprain-2023",
+        "videoUrl": "https://www.youtube.com/watch?v=RDDGpqOvSdg",
+        "prompt": "比較事件日期、左右側及公告用語，保留兩次事件。"
+      },
+      "basis": [
+        {
+          "field": "mechanism.summary",
+          "text": "NBA 報導描述 Ball 投進三分球後倒退，踩到他人腳部。這類接觸會讓腳底的支撐突然改變；觀察重點是踩下去時，腳與小腿是否仍能維持原來的方向。",
+          "sourceIndexes": [1, 4],
+          "sourceUrls": [
+            "https://www.nba.com/news/hornets-lamelo-ball-injury-update",
+            "https://www.orthoinfo.org/diseases--conditions/sprained-ankle"
+          ]
+        },
+        {
+          "field": "mechanism.limitation",
+          "text": "本次為左踝事件。公開公告未提供細部分級，不能因為回場較快就判定是輕傷，也不能從一次踩腳認定對方有意致傷。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "slug": "lamelo-ball-ankle-sprain-2023",
+      "videoUrl": "https://www.youtube.com/watch?v=RDDGpqOvSdg",
+      "status": "editorial-draft",
+      "clinicalApproval": "pending",
+      "title": "Ball 2023：初報與後續更新",
+      "objective": "辨識初始報導、後續檢查更新與其他年份資料的邊界。",
+      "observationQuestions": [
+        "影片中哪些落地細節能看清？請將看不清的接觸點列為未知。",
+        "對照本頁傷勢與來源，初報和後續公告的用語是否相同？"
+      ],
+      "selfChecks": [
+        {
+          "question": "可以補寫踩到誰或確定往哪一側翻嗎？",
+          "answer": "不可以。頁面說明短片不足以確認每個接觸細節。",
+          "basisFields": ["mechanism.summary"]
+        },
+        {
+          "question": "其他年份的手術可否當成本次扭傷的治療？",
+          "answer": "不能。本頁要求將不同年份與不同側踝傷分開。",
+          "basisFields": ["mechanism.limitation"]
+        }
+      ],
+      "comparison": {
+        "slug": "lamelo-ball-ankle-sprain-2025",
+        "videoUrl": "https://www.youtube.com/watch?v=zZdndTqOexc",
+        "prompt": "對照兩頁的傷側、公告時間與回場紀錄。"
+      },
+      "basis": [
+        {
+          "field": "mechanism.summary",
+          "text": "NBA 初報描述 Ball 上籃落地後受傷。短片有動作重播，但不足以確認每個接觸細節，因此不把踩到誰、腳往哪一側翻，寫成已確定的致傷動作。",
+          "sourceIndexes": [3],
+          "sourceUrls": [
+            "https://www.nba.com/news/hornets-lamelo-ball-out-right-ankle-strain"
+          ]
+        },
+        {
+          "field": "mechanism.limitation",
+          "text": "這次是右踝，與 2025 年的左踝扭傷分開記錄。也不能把其他年份的手術，當成本次扭傷的治療。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "slug": "anfernee-simons-ankle-sprain-2023",
+      "videoUrl": "https://www.youtube.com/watch?v=8TIJGIRP634",
+      "status": "editorial-draft",
+      "clinicalApproval": "pending",
+      "title": "Simons：觀察與韌帶診斷",
+      "objective": "區分可見的事件過程與需要醫療來源的組織診斷。",
+      "observationQuestions": [
+        "哪些事件階段能在影片中辨識？看不清的落地接觸點是否已標為未知？",
+        "二級扭傷的依據出自哪項公開更新，而不是哪個畫面？"
+      ],
+      "selfChecks": [
+        {
+          "question": "被協助離場能告訴我們是哪條韌帶受傷嗎？",
+          "answer": "不能。頁面區分事件過程與韌帶診斷的資訊來源。",
+          "basisFields": ["mechanism.summary"]
+        },
+        {
+          "question": "首次復出後再傷，能否單靠日期認定復健不足？",
+          "answer": "不能。頁面沒有把再次受傷直接等同醫療判斷錯誤或復健不足。",
+          "basisFields": ["mechanism.limitation"]
+        }
+      ],
+      "comparison": {
+        "slug": "kyrie-irving-ankle-sprain-2021",
+        "videoUrl": "https://www.youtube.com/watch?v=FQAPZASQyX0",
+        "prompt": "比較兩頁如何限定畫面、接觸及缺賽時間的解讀。"
+      },
+      "basis": [
+        {
+          "field": "mechanism.summary",
+          "text": "片段呈現 Simons 從外圍切入、起跳出手，落地後停止比賽。理解本例時，重點在落地承重的轉換；被協助離場的畫面本身，無法告訴我們是哪條韌帶受傷。",
+          "sourceIndexes": [5],
+          "sourceUrls": ["https://www.youtube.com/watch?v=8TIJGIRP634"]
+        },
+        {
+          "field": "mechanism.limitation",
+          "text": "本頁不從轉播角度判定確切接觸點。首次復出後再傷，也不能單靠日期認定醫療判斷錯誤或復健不足。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "slug": "kyrie-irving-ankle-sprain-2021",
+      "videoUrl": "https://www.youtube.com/watch?v=FQAPZASQyX0",
+      "status": "editorial-draft",
+      "clinicalApproval": "pending",
+      "title": "Irving：片名與賽事紀錄",
+      "objective": "在影片標題與資料不一致時，以具體事件及來源核對。",
+      "observationQuestions": [
+        "請比較原片標題與本頁事件標示，哪些資訊需要回到賽事來源確認？",
+        "畫面能否直接證明其他人的意圖？把可見動作與意圖推論分開寫。"
+      ],
+      "selfChecks": [
+        {
+          "question": "原片的場次標題是否能直接沿用？",
+          "answer": "不能直接沿用。本頁依賽事日期記為第 4 戰，並指出原片誤寫第 3 戰。",
+          "basisFields": ["mechanism.limitation"]
+        },
+        {
+          "question": "後來整段缺賽時間是否都是踝傷恢復期？",
+          "answer": "不能如此解讀。本頁明確限制這種日期差推論。",
+          "basisFields": ["mechanism.limitation"]
+        }
+      ],
+      "comparison": {
+        "slug": "anfernee-simons-ankle-sprain-2023",
+        "videoUrl": "https://www.youtube.com/watch?v=8TIJGIRP634",
+        "prompt": "比較兩頁對缺賽、再次出賽與醫療判斷的限制。"
+      },
+      "basis": [
+        {
+          "field": "mechanism.summary",
+          "text": "Irving 在籃下得分後落地、腳踝翻轉。分析這類動作，重點是落腳空間和承重方向的變化，不能只看到跌倒，就把跌倒本身當成受傷原因。",
+          "sourceIndexes": [1],
+          "sourceUrls": [
+            "https://www.nba.com/news/kyrie-irving-exits-game-4-with-right-ankle-sprain"
+          ]
+        },
+        {
+          "field": "mechanism.limitation",
+          "text": "本頁依賽事日期記為第 4 戰，原片標題誤寫第 3 戰。影片不能證明對手意圖；也不能把後來整段缺賽時間都算成踝傷恢復期。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "slug": "kevin-durant-achilles-rupture-2019",
+      "videoUrl": "https://www.youtube.com/watch?v=YcSOLHMsJYw",
+      "status": "editorial-draft",
+      "clinicalApproval": "pending",
+      "title": "Durant：先前傷勢與因果",
+      "objective": "避免將既往不適、受傷動作與因果關係混在一起。",
+      "observationQuestions": [
+        "影片中可辨識哪些承重或移動過程？哪些資訊只是報導描述？",
+        "頁面提到先前小腿拉傷時，是當作背景還是已證實原因？"
+      ],
+      "selfChecks": [
+        {
+          "question": "本頁是否量到肌腱張力或斷裂瞬間？",
+          "answer": "沒有。本頁機轉說明結合公開報導與一般研究，不是對當事人的直接量測。",
+          "basisFields": ["mechanism.limitation"]
+        },
+        {
+          "question": "先前小腿拉傷是否已被證明造成這次斷裂？",
+          "answer": "沒有。頁面將其列為背景，沒有直接建立因果。",
+          "basisFields": ["mechanism.limitation"]
+        }
+      ],
+      "comparison": {
+        "slug": "jayson-tatum-achilles-rupture-2025",
+        "videoUrl": "https://www.youtube.com/watch?v=xSUKd03LJwE",
+        "prompt": "比較兩頁如何呈現一般研究與個別選手事實的差別。"
+      },
+      "basis": [
+        {
+          "field": "mechanism.summary",
+          "text": "公開報導記載 Durant 運球變向時受傷，診斷為右阿基里斯腱斷裂。觀察這類動作時，重點在於踩地承重與推蹬的轉換。",
+          "sourceIndexes": [1, 5],
+          "sourceUrls": [
+            "https://www.nba.com/news/warriors-durant-achilles-injury-update",
+            "https://pubmed.ncbi.nlm.nih.gov/36265841/"
+          ]
+        },
+        {
+          "field": "mechanism.limitation",
+          "text": "機轉說明結合公開報導與一般研究，沒有量到 Durant 的肌腱張力或斷裂瞬間。先前小腿拉傷是背景資料，不能直接證明它造成這次斷裂。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "slug": "juju-watkins-2025-knee",
+      "videoUrl": "https://www.youtube.com/watch?v=uw0GVL3nfN8",
+      "status": "editorial-draft",
+      "clinicalApproval": "pending",
+      "title": "Watkins：診斷歸因與實際回場",
+      "objective": "分清具名報導、學校公告與已完成的出賽紀錄。",
+      "observationQuestions": [
+        "請找出 ACL 名稱及手術／球季資訊分別來自誰的報導或公告。",
+        "畫面中能看到哪些事件過程？哪些組織傷害仍需依公開診斷來源？"
+      ],
+      "selfChecks": [
+        {
+          "question": "轉播畫面本身能顯示韌帶撕裂嗎？",
+          "answer": "不能。本頁 ACL 名稱依報導，不能僅由影像得出，也不能排除合併傷害。",
+          "basisFields": ["mechanism.limitation"]
+        },
+        {
+          "question": "較早的缺席公告是否可永久當作目前回場狀態？",
+          "answer": "不可以。本頁已有 2026-11-02 的正式出賽紀錄，應依截至日期閱讀最新摘要。",
+          "basisFields": ["returnSummary"]
+        }
+      ],
+      "comparison": {
+        "slug": "ronald-acuna-acl-2024",
+        "videoUrl": "https://www.youtube.com/watch?v=S2NsAbb8MNg",
+        "prompt": "比較兩頁對診斷來源、受傷側別與回場紀錄的寫法。"
+      },
+      "basis": [
+        {
+          "field": "mechanism.summary",
+          "text": "Watkins 在快攻上籃前右腳支撐時倒地；媒體報導右膝 ACL 撕裂，USC 確認需手術及停止當季比賽。",
+          "sourceIndexes": [1, 2],
+          "sourceUrls": [
+            "https://www.espn.com/womens-college-basketball/story/_/id/44393492/usc-trojans-star-juju-watkins-carried-injury-vs-mississippi-state-women-ncaa-tournament",
+            "https://usctrojans.com/news/2025/3/26/womens-basketball-usc-all-american-juju-watkins-sustains-season-ending-injury"
+          ]
+        },
+        {
+          "field": "mechanism.limitation",
+          "text": "轉播角度不能顯示韌帶撕裂本身，也不能排除同時合併其他組織傷害；ACL 名稱依報導，非僅看影像所得。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        },
+        {
+          "field": "returnSummary",
+          "text": "2026-11-02 代表 USC 對 UNLV 重返 NCAA 正式比賽，出賽 21 分鐘並得 21 分；這是已完成的出賽紀錄，不再沿用缺席 2025–26 球季的公告作為目前回場狀態。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "slug": "drew-brees-2020-rib",
+      "videoUrl": "https://www.youtube.com/watch?v=_jrPqJow81Q",
+      "status": "editorial-draft",
+      "clinicalApproval": "pending",
+      "title": "Brees：分次肋傷與第三方解說",
+      "objective": "辨識不同賽事的傷害及教育性解說的適用範圍。",
+      "observationQuestions": [
+        "主影片屬事故畫面還是第三方解說？請先確認影片類型。",
+        "球隊回顧如何區分先後兩場比賽的傷害？"
+      ],
+      "selfChecks": [
+        {
+          "question": "第三方醫師解析是否等同治療團隊診斷？",
+          "answer": "不是。頁面將其定位為教育性分析，不能推算每根肋骨的受傷時間。",
+          "basisFields": ["mechanism.limitation"]
+        },
+        {
+          "question": "正式復出是否代表所有骨折同時完全癒合？",
+          "answer": "不代表。回場摘要明示這是實際出賽紀錄，不是全部癒合的證明。",
+          "basisFields": ["returnSummary"]
+        }
+      ],
+      "comparison": {
+        "slug": "aaron-judge-2026-rib",
+        "videoUrl": "https://www.youtube.com/watch?v=-M5v2OSrnEY",
+        "prompt": "比較不同肋傷事件的來源類型與不確定事項。"
+      },
+      "basis": [
+        {
+          "field": "mechanism.summary",
+          "text": "Saints 的季末回顧區分較早對 Buccaneers 的肋傷，以及對 49ers 後新增的骨折與肺部傷害；主影片是第三方醫師解析，不是完整病歷。",
+          "sourceIndexes": [1],
+          "sourceUrls": [
+            "https://www.neworleanssaints.com/news/new-orleans-saints-2020-season-recap-drew-brees"
+          ]
+        },
+        {
+          "field": "mechanism.limitation",
+          "text": "影片中的解剖與機制說明屬教育性分析，不是治療團隊診斷。本頁不推算每根肋骨受傷時間，也不把缺席四場換算成人人適用的回場標準。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        },
+        {
+          "field": "returnSummary",
+          "text": "2020-12-20 對 Chiefs 正式復出，結束四場缺賽。這是實際出賽紀錄，不代表所有骨折同時或完全癒合。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "slug": "chloe-kim-2026-shoulder",
+      "videoUrl": "https://www.youtube.com/watch?v=iRo0jHPhr2I",
+      "status": "editorial-draft",
+      "clinicalApproval": "pending",
+      "title": "Chloe Kim：未知受傷日與已知出賽日",
+      "objective": "保留不同日期的精確度，避免捏造受傷到回場的日數。",
+      "observationQuestions": [
+        "新聞剪輯是否包含連續事故回放？哪些資訊來自本人後續說明？",
+        "公告日期、受傷日期與資格賽出賽日期，在本頁各代表什麼？"
+      ],
+      "selfChecks": [
+        {
+          "question": "公告日期是否就是確定受傷日？",
+          "answer": "不是。頁面明示確切受傷日未確認，不能用公告日代填。",
+          "basisFields": ["mechanism.limitation"]
+        },
+        {
+          "question": "已知資格賽出賽日，是否就能計算完整傷停天數？",
+          "answer": "不能。本頁保留確切受傷日未知，也不把出賽視為盂唇已癒合。",
+          "basisFields": ["returnSummary"]
+        }
+      ],
+      "comparison": {
+        "slug": "shohei-ohtani-world-series-2024",
+        "videoUrl": "https://www.youtube.com/watch?v=hxcRVu1-T-c",
+        "prompt": "比較兩頁的出賽紀錄與肩部恢復資訊，各自保留限制。"
+      },
+      "basis": [
+        {
+          "field": "mechanism.summary",
+          "text": "本人公布訓練時肩脫臼，後續更新 MRI 顯示盂唇撕裂；確切受傷日留空。",
+          "sourceIndexes": [1, 2],
+          "sourceUrls": [
+            "https://www.nbcolympics.com/news/chloe-kim-announces-she-dislocated-her-shoulder-one-month-2026-milan-cortina-olympics",
+            "https://www.nbcolympics.com/news/chloe-kim-says-shes-good-go-milan-cortina-olympics-after-being-diagnosed-torn-labrum"
+          ]
+        },
+        {
+          "field": "mechanism.limitation",
+          "text": "新聞剪輯不是連續事故回放，不能判定盂唇損傷形成的瞬間或癒合情況；公告日期也不是確定受傷日。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        },
+        {
+          "field": "returnSummary",
+          "text": "2026-02-11 已在冬奧女子半管資格賽實際出賽，以 90.25 分晉級；NBC 記載這是肩傷後首次參賽。確切受傷日仍未確認，不計算受傷至回場間隔，也不將出賽視為盂唇已癒合。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "slug": "gabriel-medina-2025-pectoral-tendon",
+      "videoUrl": "https://www.youtube.com/watch?v=z6KNabUBA88",
+      "status": "editorial-draft",
+      "clinicalApproval": "pending",
+      "title": "Medina：訪談與月份精度",
+      "objective": "區分本人訪談能提供的敘述、傷害分級與出賽日期精度。",
+      "observationQuestions": [
+        "哪些內容是本人訪談敘述，哪些有主刀醫師或賽事來源？",
+        "回場資訊只有月份時，應如何呈現而不補造某一天？"
+      ],
+      "selfChecks": [
+        {
+          "question": "可以從訪談推定完全斷裂或撕裂分級嗎？",
+          "answer": "不可以。頁面限制訪談對傷害分級、組織受力與首次正式出賽日的判讀。",
+          "basisFields": ["mechanism.limitation"]
+        },
+        {
+          "question": "已知 2026 年 4 月參賽，可否自行填一個精確復出日？",
+          "answer": "不能。本頁保留月份精度，沒有將邀請或預估休養時間當作精確回場日。",
+          "basisFields": ["returnSummary"]
+        }
+      ],
+      "comparison": {
+        "slug": "chloe-kim-2026-shoulder",
+        "videoUrl": "https://www.youtube.com/watch?v=iRo0jHPhr2I",
+        "prompt": "比較兩頁的日期缺口，分別指出哪些日數可以或不能計算。"
+      },
+      "basis": [
+        {
+          "field": "mechanism.summary",
+          "text": "ge 報導在衝浪訓練動作中左側胸大肌肌腱受傷。",
+          "sourceIndexes": [1],
+          "sourceUrls": [
+            "https://ge.globo.com/surfe/noticia/2025/01/11/gabriel-medina-sofre-lesao-passa-por-cirurgia-e-vai-perder-temporada.ghtml"
+          ]
+        },
+        {
+          "field": "mechanism.limitation",
+          "text": "本人訪談不能判定完全斷裂、撕裂分級或組織受力，也不能由回歸活動推算首次正式出賽日期。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        },
+        {
+          "field": "returnSummary",
+          "text": "2026 年 4 月已重返 Bells Beach 巡迴賽並晉級四強。現有來源未核定他的首場出賽日，保留月份，不將參賽邀請或原先預估休養時間當成精確回場日期。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "slug": "federica-brignone-leg-2025",
+      "videoUrl": "https://www.youtube.com/watch?v=KTaglqZADPw",
+      "status": "editorial-draft",
+      "clinicalApproval": "pending",
+      "title": "Brignone：復賽、成績與後續復健",
+      "objective": "將競賽成績與不同時間點的後續醫療資訊分開。",
+      "observationQuestions": [
+        "單一拍攝角度能清楚交代所有扭轉與器材作用嗎？請列出不能確定的部分。",
+        "請按時間軸整理復賽、獎牌與後續復健，而不是只看最後一個成績。"
+      ],
+      "selfChecks": [
+        {
+          "question": "可以從摔倒外觀補上合併韌帶診斷嗎？",
+          "answer": "不可以。頁面將合併韌帶傷勢歸因於官方後續公告。",
+          "basisFields": ["mechanism.limitation"]
+        },
+        {
+          "question": "獎牌或復賽是否足以證明已完全恢復？",
+          "answer": "不夠。本頁同時保留其後手術與復健資訊，明示獎牌及復賽不代表完全恢復。",
+          "basisFields": ["returnSummary"]
+        }
+      ],
+      "comparison": {
+        "slug": "tony-hawk-2022-femur",
+        "videoUrl": "https://www.youtube.com/watch?v=Kvm-WXQ2w2Y",
+        "prompt": "比較兩頁對骨折資訊完整度及後續活動的解讀限制。"
+      },
+      "basis": [
+        {
+          "field": "mechanism.summary",
+          "text": "Brignone 在義大利錦標賽大曲道賽事中摔倒，後續確認左脛骨平台與腓骨頭骨折。脛骨平台是承重的膝關節面附近，這類傷害不能只用「小腿骨折」推算恢復時間。",
+          "sourceIndexes": [4, 1],
+          "sourceUrls": [
+            "https://www.youtube.com/watch?v=KTaglqZADPw",
+            "https://www.fisi.org/aggiornamento-sulle-condizioni-di-federica-brignone/"
+          ]
+        },
+        {
+          "field": "mechanism.limitation",
+          "text": "單一拍攝角度無法量出膝部扭轉程度或判定固定器的作用。合併韌帶傷勢依官方後續公告，不由摔倒外觀補診斷。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        },
+        {
+          "field": "returnSummary",
+          "text": "2026-01-20 重返世界盃，2 月再奪冬奧超大曲道與大曲道金牌。FIS 於 10 月 21 日仍記載她在 8 月手術後復健並將缺席 Sölden；獎牌與復賽不能代表傷勢已完全恢復。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "slug": "zoey-clark-2023-disc-nerve",
+      "videoUrl": "https://www.youtube.com/watch?v=7_GZg1qIZLQ",
+      "status": "editorial-draft",
+      "clinicalApproval": "pending",
+      "title": "Zoey Clark：本人自述與影像證據",
+      "objective": "區分本人敘述、未取得的檢查報告及神經分類限制。",
+      "observationQuestions": [
+        "MRI 與症狀資訊是本人回顧，還是本頁取得的完整影像報告？",
+        "本頁哪些日期屬症狀、檢查或訓練進展？有沒有可確認的單一正式回場日？"
+      ],
+      "selfChecks": [
+        {
+          "question": "能否據此認定某場比賽造成全部病變？",
+          "answer": "不能。頁面未取得影像報告，也未建立該場比賽與全部病變的因果。",
+          "basisFields": ["mechanism.limitation"]
+        },
+        {
+          "question": "影片有復健歷程，就等於神經已完全恢復或已正式回場嗎？",
+          "answer": "不等於。本頁未核定單一正式回場日或神經完全恢復日期。",
+          "basisFields": ["returnSummary"]
+        }
+      ],
+      "comparison": {
+        "slug": "sally-fitzgibbons-2015-eardrum",
+        "videoUrl": "https://www.youtube.com/watch?v=wTaCr8olPck",
+        "prompt": "比較兩頁哪些資訊仍未知，避免從症狀或外觀自行加診斷。"
+      },
+      "basis": [
+        {
+          "field": "mechanism.summary",
+          "text": "本人回顧 1 月中旬的室內 60 公尺賽後背部症狀，並說明後續 MRI 與神經受壓資訊。",
+          "sourceIndexes": [1, 2],
+          "sourceUrls": [
+            "https://www.scottishathletics.org.uk/zoey-documentary/",
+            "https://www.youtube.com/watch?v=7_GZg1qIZLQ"
+          ]
+        },
+        {
+          "field": "mechanism.limitation",
+          "text": "未取得影像報告，不能認定該場比賽造成全部病變，也不能將脊椎相關症狀直接分類為具名周邊神經或神經叢損傷。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        },
+        {
+          "field": "returnSummary",
+          "text": "紀錄片記錄物理治療與調整訓練的歷程；未核定單一正式回場日期或神經完全恢復日期。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "slug": "tiger-woods-2008-tibial-stress-fractures",
+      "videoUrl": "https://www.youtube.com/watch?v=kb_9JHJu1oo",
+      "status": "editorial-draft",
+      "clinicalApproval": "pending",
+      "title": "Tiger Woods：慢性形成與比賽成績",
+      "objective": "理解比賽片段無法直接顯示疲勞性傷害形成的時間。",
+      "observationQuestions": [
+        "這支片段能顯示傷害形成，還是只能提供參賽或不適的線索？",
+        "本頁如何區分已知傷害、其他舊傷與不能分辨的疼痛來源？"
+      ],
+      "selfChecks": [
+        {
+          "question": "可以在影片中指出疲勞性骨折形成的瞬間嗎？",
+          "answer": "不可以。頁面明示畫面無法指出形成瞬間，也無法分配膝部舊傷與脛骨痛的比例。",
+          "basisFields": ["mechanism.limitation"]
+        },
+        {
+          "question": "奪冠是否就是癒合證明？",
+          "answer": "不是。頁面的限制明確指出奪冠不是癒合證明。",
+          "basisFields": ["mechanism.limitation"]
+        }
+      ],
+      "comparison": {
+        "slug": "aaron-judge-2026-rib",
+        "videoUrl": "https://www.youtube.com/watch?v=-M5v2OSrnEY",
+        "prompt": "比較兩頁對疲勞性骨折起點及回場資訊的限制。"
+      },
+      "basis": [
+        {
+          "field": "mechanism.summary",
+          "text": "本人官方年表記載高爾夫訓練時左脛骨兩處疲勞性骨折。",
+          "sourceIndexes": [1, 2],
+          "sourceUrls": [
+            "https://news.tigerwoods.com/about-tiger/",
+            "https://tigerwoods.com/wp-content/uploads/2021/08/TWBio19-20_PDF.pdf"
+          ]
+        },
+        {
+          "field": "mechanism.limitation",
+          "text": "畫面無法指出疲勞性骨折形成瞬間，也不能區分膝部舊傷與脛骨痛的比例；奪冠不是癒合證明。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "slug": "sally-fitzgibbons-2015-eardrum",
+      "videoUrl": "https://www.youtube.com/watch?v=wTaCr8olPck",
+      "status": "editorial-draft",
+      "clinicalApproval": "pending",
+      "title": "Sally Fitzgibbons：外觀、側別與續賽",
+      "objective": "避免由包紮與續賽經驗補出未公開診斷或一般建議。",
+      "observationQuestions": [
+        "影片或訪談究竟能確認哪一側受傷？若無法確認，應如何記錄？",
+        "現場建議與後續續賽是否屬同一件事？請分開記錄來源與行為。"
+      ],
+      "selfChecks": [
+        {
+          "question": "看到頭部包紮就能推定腦震盪嗎？",
+          "answer": "不能。本頁也未確認傷側，不應由包紮外觀補診斷。",
+          "basisFields": ["mechanism.limitation"]
+        },
+        {
+          "question": "這段續賽經驗是否可作為一般帶耳傷參賽的建議？",
+          "answer": "不能。頁面明示這段經驗不構成帶耳傷參賽的建議。",
+          "basisFields": ["mechanism.limitation"]
+        }
+      ],
+      "comparison": {
+        "slug": "zoey-clark-2023-disc-nerve",
+        "videoUrl": "https://www.youtube.com/watch?v=7_GZg1qIZLQ",
+        "prompt": "比較兩頁哪些症狀與診斷仍須保留不確定性。"
+      },
+      "basis": [
+        {
+          "field": "mechanism.summary",
+          "text": "ABC 報導週二第二輪浪中摔落造成鼓膜穿孔；日依當地週日曆對照。",
+          "sourceIndexes": [2],
+          "sourceUrls": [
+            "https://www.abc.net.au/news/2015-06-04/courage-sally-fitzgibbons-wins-back-to-back-fiji-pros/6521694"
+          ]
+        },
+        {
+          "field": "mechanism.limitation",
+          "text": "片段未確認傷側，也不能由頭部包紮推定腦震盪；這段續賽經驗不構成帶耳傷參賽的建議。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "slug": "nikola-karabatic-2020-acl",
+      "videoUrl": "https://www.youtube.com/watch?v=ApTbpxIuUJ8",
+      "status": "editorial-draft",
+      "clinicalApproval": "pending",
+      "title": "Karabatic：復健示範與個人處方",
+      "objective": "辨識復健片型的學習範圍，避免回推受傷機轉或直接套用訓練。",
+      "observationQuestions": [
+        "影片呈現的是事故、復健訓練還是回場？先確認片型再選觀察問題。",
+        "展示動作是否同時提供個別評估、負荷與進階條件？未提供處請列為未知。"
+      ],
+      "selfChecks": [
+        {
+          "question": "復健畫面能否重建受傷當時的機轉？",
+          "answer": "不能。頁面限制復健畫面對原受傷事件的推論。",
+          "basisFields": ["mechanism.limitation"]
+        },
+        {
+          "question": "是否可以照著影片作為自己的完整復健處方？",
+          "answer": "不可以。本頁明示展示動作不是一般復健處方。",
+          "basisFields": ["mechanism.limitation"]
+        }
+      ],
+      "comparison": {
+        "slug": "juju-watkins-2025-knee",
+        "videoUrl": "https://www.youtube.com/watch?v=uw0GVL3nfN8",
+        "prompt": "比較不同片型可回答的問題，區分原事件與後續歷程。"
+      },
+      "basis": [
+        {
+          "field": "mechanism.summary",
+          "text": "同期手術報導記錄右膝 ACL 斷裂發生於 10 月 17 日。",
+          "sourceIndexes": [3],
+          "sourceUrls": [
+            "https://www.lequipe.fr/Handball/Actualites/Nikola-karabatic-psg-a-ete-opere-avec-succes-du-genou-droit/1188456"
+          ]
+        },
+        {
+          "field": "mechanism.limitation",
+          "text": "復健畫面無法重建受傷機轉，展示動作也不是一般復健處方；後來的血栓或肺栓塞不屬比賽當場傷勢。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "slug": "tony-hawk-2022-femur",
+      "videoUrl": "https://www.youtube.com/watch?v=Kvm-WXQ2w2Y",
+      "status": "editorial-draft",
+      "clinicalApproval": "pending",
+      "title": "Tony Hawk：長訪談與未公開資訊",
+      "objective": "從對談整理已提供的資訊，保留側別及骨折型態未知。",
+      "observationQuestions": [
+        "對談中有哪些資訊明確由本人說出？哪些是讀者自行聯想？",
+        "後續活動的描述是否提供首次正式復賽或癒合的證據？"
+      ],
+      "selfChecks": [
+        {
+          "question": "能否自行補上傷側與骨折型態？",
+          "answer": "不能。頁面說明對談無法判定這些未公開資訊。",
+          "basisFields": ["mechanism.limitation"]
+        },
+        {
+          "question": "後續活動是否能直接證明骨折癒合？",
+          "answer": "不能。頁面將後續活動與骨折癒合的推論分開。",
+          "basisFields": ["mechanism.limitation"]
+        }
+      ],
+      "comparison": {
+        "slug": "federica-brignone-leg-2025",
+        "videoUrl": "https://www.youtube.com/watch?v=KTaglqZADPw",
+        "prompt": "比較兩頁對骨折型態與後續資料的完整程度。"
+      },
+      "basis": [
+        {
+          "field": "mechanism.summary",
+          "text": "同期節目介紹將骨折連結至 3 月 7 日的滑板事故。",
+          "sourceIndexes": [3],
+          "sourceUrls": [
+            "https://www.theinertia.com/video/tony-hawk-on-his-freshly-broken-femur-and-what-it-means-for-his-skateboarding/"
+          ]
+        },
+        {
+          "field": "mechanism.limitation",
+          "text": "對談無法判定未公開的傷側、骨折型態或完整致傷過程，也不能由後續活動推定骨折癒合。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "slug": "ronald-acuna-acl-2024",
+      "videoUrl": "https://www.youtube.com/watch?v=S2NsAbb8MNg",
+      "status": "editorial-draft",
+      "clinicalApproval": "pending",
+      "title": "Acuña 2024：同一選手不同側事件",
+      "objective": "以事件日期及左右側維持多次受傷的正確對應。",
+      "observationQuestions": [
+        "本頁與另一個 2021 年事件的日期及側別有何不同？",
+        "哪些動作可見，哪些關於張力、斷裂時點或風險因素仍未量測？"
+      ],
+      "selfChecks": [
+        {
+          "question": "2021 與 2024 年的回場日期可以互換嗎？",
+          "answer": "不可以。本頁明示兩次 ACL 傷分屬不同側膝蓋。",
+          "basisFields": ["mechanism.limitation"]
+        },
+        {
+          "question": "轉播能提供斷裂時點、張力與個人風險因素的量測嗎？",
+          "answer": "不能。本頁明示轉播未提供斷裂時點、張力或個人風險因素的量測。",
+          "basisFields": ["mechanism.limitation"]
+        }
+      ],
+      "comparison": {
+        "slug": "juju-watkins-2025-knee",
+        "videoUrl": "https://www.youtube.com/watch?v=uw0GVL3nfN8",
+        "prompt": "比較兩頁如何把畫面觀察與診斷來源分開。"
+      },
+      "basis": [
+        {
+          "field": "mechanism.summary",
+          "text": "Acuña 在壘間調整跑動、準備回壘時左膝受傷，過程沒有明顯直接撞擊。後續確認左膝 ACL 完全撕裂；這不是本站另一個 2021 年右膝事件。",
+          "sourceIndexes": [3, 1],
+          "sourceUrls": [
+            "https://www.youtube.com/watch?v=S2NsAbb8MNg",
+            "https://www.mlb.com/mets/news/ronald-acuna-jr-exits-game-vs-pirates"
+          ]
+        },
+        {
+          "field": "mechanism.limitation",
+          "text": "兩次 ACL 傷分屬不同側膝蓋，回場日期不能互換。轉播不能提供斷裂時點、張力或個人風險因素的量測。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "slug": "shohei-ohtani-world-series-2024",
+      "videoUrl": "https://www.youtube.com/watch?v=hxcRVu1-T-c",
+      "status": "editorial-draft",
+      "clinicalApproval": "pending",
+      "title": "大谷：帶傷出賽與不同復原歷程",
+      "objective": "分開看待帶傷打擊、季後肩部手術及另一側投球恢復。",
+      "observationQuestions": [
+        "滑壘片段能清楚看到哪些過程？哪些組織診斷仍需查公告？",
+        "回場日期指哪一種出賽身分？是否與季後手術及投球紀錄相同？"
+      ],
+      "selfChecks": [
+        {
+          "question": "能否只看影片就區分半脫位、完全脫臼或關節唇撕裂型態？",
+          "answer": "不能。本頁明確限制這些影像判讀。",
+          "basisFields": ["mechanism.limitation"]
+        },
+        {
+          "question": "帶傷打擊、季後左肩手術與右手投球恢復，可以合成同一回場日期嗎？",
+          "answer": "不可以。本頁將這些列為不同紀錄。",
+          "basisFields": ["mechanism.limitation"]
+        }
+      ],
+      "comparison": {
+        "slug": "chloe-kim-2026-shoulder",
+        "videoUrl": "https://www.youtube.com/watch?v=iRo0jHPhr2I",
+        "prompt": "比較兩頁的出賽層級、日期精度與恢復限制。"
+      },
+      "basis": [
+        {
+          "field": "mechanism.summary",
+          "text": "這次事件發生在盜壘滑向二壘時，接著大谷留在壘旁接受協助。理解這類肩傷時，可注意身體滑動、手臂接觸地面，以及上肢是否跟得上軀幹的移動。",
+          "sourceIndexes": [4],
+          "sourceUrls": ["https://www.youtube.com/watch?v=hxcRVu1-T-c"]
+        },
+        {
+          "field": "mechanism.limitation",
+          "text": "不能單靠影片分辨半脫位與完全脫臼，也不能指定關節唇撕裂的型態。2024 年帶傷打擊、季後左肩手術與右手投球的恢復，是不同的紀錄。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        }
+      ]
+    },
+    {
+      "slug": "aaron-judge-2026-rib",
+      "videoUrl": "https://www.youtube.com/watch?v=-M5v2OSrnEY",
+      "status": "editorial-draft",
+      "clinicalApproval": "pending",
+      "title": "Judge：歷史畫面與目前事件",
+      "objective": "核對影音年份與本人回溯說法，避免把背景畫面當成新傷。",
+      "observationQuestions": [
+        "影片的拍攝年份與本頁事件年份是否相同？先核對日期與來源標示。",
+        "飛撲與症狀起點的關係由誰提出？是本人回溯還是影片直接證明？"
+      ],
+      "selfChecks": [
+        {
+          "question": "2019 年飛撲影片能否當成 2026 年受傷畫面？",
+          "answer": "不能。頁面明示它是歷史背景，其他年份公開的併發狀況也不能套用到本次。",
+          "basisFields": ["mechanism.limitation"]
+        },
+        {
+          "question": "實際出賽日是否可作為一般患者的回場標準？",
+          "answer": "不能。本頁回場摘要將其限定為選手的實際出賽紀錄。",
+          "basisFields": ["returnSummary"]
+        }
+      ],
+      "comparison": {
+        "slug": "drew-brees-2020-rib",
+        "videoUrl": "https://www.youtube.com/watch?v=_jrPqJow81Q",
+        "prompt": "比較兩頁如何分隔不同年份、不同次傷害與第三方分析。"
+      },
+      "basis": [
+        {
+          "field": "mechanism.summary",
+          "text": "Judge 回溯休士頓系列賽的一次飛撲，認為閃避隊友時的動作可能是起點；此為球員陳述，不能從新聞影片確定骨折發生時刻。",
+          "sourceIndexes": [2],
+          "sourceUrls": [
+            "https://www.mlb.com/news/aaron-judge-discusses-fractured-rib-move-to-injured-list"
+          ]
+        },
+        {
+          "field": "mechanism.limitation",
+          "text": "未取得 Judge 的完整影像與病歷，不能判定骨折型態、是否與舊傷相同位置或是否需手術。2019-09-18 的 MLB 飛撲影片是歷史背景，不能當作 2026 年畫面；2020 年曾公開的併發狀況也不能套用到本次。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        },
+        {
+          "field": "returnSummary",
+          "text": "AP 報導 Judge 於 2026-09-08 對洛磯的 MLB 例行賽先發守右外野、打第三棒；自 5 月 31 日最後出賽後缺席 84 場。這是實際出賽紀錄，並非一般患者的回場標準。",
+          "sourceIndexes": [],
+          "sourceUrls": []
+        }
+      ]
+    }
+  ]
+}
