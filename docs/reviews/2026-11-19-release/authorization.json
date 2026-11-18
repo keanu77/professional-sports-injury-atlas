@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "2026-11-19-owner-exception",
+  "candidateCommit": "ab3f0484d8f4e14405d46f05d9324ec6c970c2e4",
+  "sourceCommit": "865709b2f415fd7be046add5e41d3083ec45741a",
+  "authorizedAt": "2026-11-18T16:08:09.497Z",
+  "expiresAt": "2026-11-19T16:08:09.497Z",
+  "approvalQuote": "允許",
+  "approvalQuestion": "是否同意對本次 203 支影片版本（ab3f048）採用一次性發布例外？例外範圍只有兩項：接受 picomatch 的本地防護（官方 audit 仍未通過），以及暫緩全數影片的本次實播驗收；失敗與待驗證紀錄會保留，不改寫醫療核可。",
+  "inputTreeDigest": "358f38047e78da2331c792193e9dad10d6760bdcd90fe2ace7665cf63175b74d",
+  "lockSha256": "231406332fd66089c26da881db1bbfa3900cec989e713eabcee1be37e17ff3d8",
+  "catalogDigest": "bd0db90b377c45df2a3de2515851e34d1defadf8d8f8af76f56b64d2dd550019",
+  "clinicalApprovalSha256": "ca8ca5cd54527384c24119d6d5987e1e235d3f3a6a19bd0ca062e4e59fdf3177",
+  "playbackRegistrySha256": "10e1ec0c22f33de09c22c4398d167f898873275672fe08ae86ed0b7eb814a5df",
+  "publicVideoCount": 203,
+  "allowedAdvisory": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf",
+  "deferCurrentPlayback": true,
+  "clinicalApprovalChanges": false,
+  "project": "sports-injury-atlas",
+  "origin": "https://injury.sportsmedicine.tw"
+}
