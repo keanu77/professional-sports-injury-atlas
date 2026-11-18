@@ -32,3 +32,7 @@ node --import tsx scripts/check-semantic-review.ts
 ## 工程驗證
 
 完整單元測試 1,755 項、桌機／手機回歸 86 項通過。最後僅更新兩筆事件日期後，57 項相關單測、14 項受影響頁面回歸及 445 檔型別檢查通過。最終預覽 277 頁／203 影片、來源綁定驗證通過；本機 HTTP 實際確認更正文字。逐檢查版本與限制見 `validation.json`。安全稽核仍為預期的阻擋結果，不算通過。
+
+## 發布要求處理
+
+依使用者「commit and push 部署」指示，已推送 `feat/site-quality-20261118`，遠端核對 `bed2ed2` 一致；本段文件的後續提交另以 Git 記錄為準。重新執行正式發布前檢查，仍由安全稽核（單一 picomatch advisory，16 high 依賴項目）及 pending 實播紀錄阻擋。官方 advisory 仍無已修補版本。沒有上傳 Cloudflare、合併 main 或把不可部署的預覽當正式成品；正式站版本仍為 `9d6f38a`。詳見 [本次發布紀錄](release-attempt.json)。工作分支 push 不會觸發僅適用 PR／main 的 CI，也不會啟用尚未合併的每日排程。

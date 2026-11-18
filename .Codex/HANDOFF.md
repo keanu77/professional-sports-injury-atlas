@@ -2,7 +2,15 @@
 
 ## 目前可執行狀態
 
-使用者最新要求：「請繼續處理來源語意核對、讀者測試，以及上游尚未修補的安全漏洞」。本輪完成第一批 8 事件語意核對、實際引用修正、讀者測試工具與安全發布阻擋；**未完成全站語意／真人讀者／上游修補，也未部署**。
+前一輪要求：「請繼續處理來源語意核對、讀者測試，以及上游尚未修補的安全漏洞」。本輪完成第一批 8 事件語意核對、實際引用修正、讀者測試工具與安全發布阻擋；**未完成全站語意／真人讀者／上游修補，也未部署**。
+
+### 最新發布要求：commit and push 部署
+
+- 使用者已授權 commit、push、部署。`feat/site-quality-20261118` 已推送；同次 `git ls-remote` 核對遠端與本機均為 `bed2ed21a432227d96c8ee86e441259385b9b54b`，後續本筆交接提交以 `git log -1`／遠端查詢為準。沒有合併 main。
+- 2026-11-18 15:09 UTC 重跑 `npm run release:public`，在安全檢查 exit 1：16 high，單一 picomatch GHSA-fc5q-39xc-vjpf 傳遞影響；官方 advisory 仍列 patched versions None。另獨立執行 `check-release.ts`，因 current playback registry pending 而 exit 1。
+- 正式部署未執行、沒有上傳 preview artifact。同期正式站 `/version.json` 仍為 `9d6f38a4159ec69715e8e185cc1c363b1430bf49`。
+- 這是發布前檢查失敗，不是要求使用者再次授權。先解決上游修補與目前 N=203 實播證據，再重跑完整發布流程；不要跳過檢查。
+- 本次紀錄見 `docs/reviews/2026-11-18-followup/release-attempt.json`；本機 logs 在 `output/deploy-20261118/`。原 checkout 三個檔案 hash 再次確認未變。
 
 - 工作目錄：`/Users/ethanstudio/Documents/Vibe coding/professional-sports injury/output/site-quality-20261118/implementation`。
 - 分支 `feat/site-quality-20261118`；最新應用 `88cc73191a99bd866c48be76187320f65d2a5f58`，前一主要實作 `fd2cb3069279fc417a8670e2b061cb8f69510c9e`。其後僅文件交接，文件 SHA 請查 `git log -1`。
@@ -35,8 +43,8 @@
 - 2026-11-18 官方 npm registry latest picomatch 4.0.7；GHSA-fc5q-39xc-vjpf 無 patched version。audit 16 high 是同一 advisory 傳遞影響；root 4.0.7 與 nested 2.3.2 均可在隔離程序重現。
 - 依全域 AGENTS 安全 Pass2 要求，獨立 agent 完整檢查可達性與新閘門。未找到公開使用者輸入進 glob 的路徑；這不是證明所有部署版本安全。見 `security.md`。
 - 發現並修補本機 release 沒有 audit 的缺口。`security:check` 使用 full lockfile + dev/optional/peer，高／重大、無效報告、網路／程序失敗都 fail-closed。`release:public`、`release:legacy` 都先檢查，`deploy:public` 繼承。每筆 severity 與 metadata 逐級重算；兩個 Pass2 缺口已修正並由獨立 agent 確認。
-- `.github/workflows/dependency-security.yml` 每日 01:23 UTC，限制查詢時間，失敗也保存 artifact；**未 push／合併，所以排程未啟用**。
-- 實際 `npm run release:public` 已在 security:check exit 1 停止。`artifacts/dependency-security/` 保存 clean fd2cb30 的 audit＋lock hash；後續僅日期修改，依賴不變。原始 registry/tree 在 `output/site-quality-validation/security-followup/`。
+- `.github/workflows/dependency-security.yml` 每日 01:23 UTC，限制查詢時間，失敗也保存 artifact；**已 push 工作分支，未合併 default branch，所以排程未啟用**。既有 CI 僅在 PR／main push／手動 dispatch 觸發，這次 feature push 不等於 CI 通過。
+- 實際 `npm run release:public` 已在 security:check exit 1 停止。`artifacts/dependency-security/` 已由本次 clean bed2ed2 的 audit＋lock hash 更新；此前 fd2cb30 證據在 validation.json／followup logs。原始 registry/tree 在 `output/site-quality-validation/security-followup/`。
 
 ## 驗證範圍
 
@@ -44,7 +52,7 @@
 - 88cc731：日期修正相同位元組 57 related unit passed；重新預覽建置及受影響頁 E2E 14 passed／0 skipped；type 445 files／0 errors／0 warnings／17 hints；32 receipts 當前綁定通過。
 - 實際 HTTP 首頁 203 cards、更正 Haliburton 文字、Curry CBS 引用、投稿頁皆 200/noindex；log `followup-delivery.json`。
 - 初次 dirty provenance 測試／build 失敗已留 log；依原規則 clean commit 後通過，沒有放寬門檻。所有 `followup-*` logs 在 `output/site-quality-validation/`。
-- 無依賴版本／secret／環境變數／DB／服務變更。沒有真實投稿、外寄、push、merge 或正式部署。
+- 無依賴版本／secret／環境變數／DB／服務變更。沒有真實投稿、外寄、merge 或正式部署；工作分支已依最新指示 push。
 
 ## 下一個 session 前 3 步
 
@@ -61,4 +69,4 @@ export PATH="/Users/ethanstudio/.local/share/mise/installs/node/24.14.0/bin:$PAT
 ATLAS_PUBLIC_PREVIEW=1 node node_modules/.bin/astro preview --background --host 127.0.0.1 --port 4325
 ```
 
-停止：`node node_modules/.bin/astro preview stop`；E2E foreground 用 `--ignore-lock`。正式站最後讀取是前輪 07:22 Taipei 的 9d6f38a，本輪未重查，勿當即時線上版本。前輪 source HTTP/Lighthouse/playback 證據維持歷史範圍。
+停止：`node node_modules/.bin/astro preview stop`；E2E foreground 用 `--ignore-lock`。本次發布要求已重新讀取正式站 version.json，仍為 9d6f38a；這只證明版本，未延伸為新的 HTTP 全站／Lighthouse／playback 驗證。前輪證據維持歷史範圍。

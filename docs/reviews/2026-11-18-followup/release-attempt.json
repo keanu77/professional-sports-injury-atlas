@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-11-18T15:12:11.065293+00:00",
+  "request": "commit and push 部署",
+  "status": "pushed-deployment-blocked",
+  "sourceCommit": "bed2ed21a432227d96c8ee86e441259385b9b54b",
+  "applicationCommit": "88cc73191a99bd866c48be76187320f65d2a5f58",
+  "git": {
+    "branch": "feat/site-quality-20261118",
+    "remote": "https://github.com/keanu77/professional-sports-injury-atlas.git",
+    "pushSucceeded": true,
+    "remoteHeadVerified": "bed2ed21a432227d96c8ee86e441259385b9b54b",
+    "mainHeadVerified": "4bfef220e2f2e525717f6aeb4eede751983f8bc8",
+    "merged": false,
+    "note": "This receipt describes the observed application/docs snapshot; its own subsequent documentation commit is identified by Git history."
+  },
+  "release": {
+    "command": "npm run release:public",
+    "exitCode": 1,
+    "stoppedAt": "security:check",
+    "security": {
+      "schemaVersion": 1,
+      "checkedAt": "2026-11-18T15:09:29.125Z",
+      "sourceCommit": "bed2ed21a432227d96c8ee86e441259385b9b54b",
+      "sourceDirty": false,
+      "lockSha256": "816b1516bc5dc095727cbddd7979aad64d1a20f9c71db9ac36acfcf27ee84703",
+      "command": [
+        "npm",
+        "audit",
+        "--json",
+        "--audit-level=high",
+        "--package-lock-only",
+        "--include=dev",
+        "--include=optional",
+        "--include=peer"
+      ],
+      "exitCode": 1,
+      "signal": null,
+      "passed": false,
+      "reason": "high-or-critical-vulnerabilities",
+      "counts": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 16,
+        "critical": 0,
+        "total": 16
+      },
+      "scope": "lockfile-dependency-audit; not runtime reachability or a patch receipt"
+    },
+    "uniqueAdvisories": [
+      {
+        "package": "picomatch",
+        "url": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf",
+        "affected": "<=4.0.7",
+        "patchedVersionListed": null,
+        "verification": "Official advisory read during this attempt; counts are affected dependency entries, not distinct advisories."
+      }
+    ]
+  },
+  "independentContentGate": {
+    "command": "node --import tsx scripts/public-launch/check-release.ts",
+    "exitCode": 1,
+    "error": "Current playback registry is pending: complete real playback and evidence review before release",
+    "registry": "docs/reviews/current-playback.v1.json",
+    "inventoryCount": 203,
+    "note": "Run separately to diagnose remaining blockers; did not bypass the security gate or perform deployment."
+  },
+  "production": {
+    "url": "https://injury.sportsmedicine.tw/version.json",
+    "observedCommit": "9d6f38a4159ec69715e8e185cc1c363b1430bf49",
+    "deploymentInvoked": false,
+    "artifactUploaded": false,
+    "scope": "Version endpoint only; no new production playback or full-site QA claim."
+  },
+  "secretPatternScan": {
+    "changedFilesScanned": 142,
+    "highConfidenceSecretPatternFiles": [],
+    "sensitiveEnvironmentFiles": [],
+    "scope": "high-confidence patterns only; not exhaustive secret detection"
+  },
+  "validation": "Reuse exact application validation scopes in validation.json; this attempt changes only release documentation.",
+  "ci": {
+    "featurePushTriggersContributorChecks": false,
+    "dailySecurityScheduleActiveFromThisBranch": false,
+    "note": "Existing CI triggers are PR, main push, and workflow_dispatch; scheduled workflows require the default branch."
+  },
+  "originalCheckoutPreserved": true,
+  "localLogs": {
+    "output/deploy-20261118/release.log": "b1e2e3c187bfbb30012307fa51d5a9fab596b36286ba2248fd6eafd08c7d6eb0",
+    "output/deploy-20261118/content-release.log": "34d76edd432efde56f98ee8d5abb4e291c301538e777458645d7954b0c7097c8"
+  }
+}
