@@ -1,5 +1,7 @@
 # 2026-11-19 單次發布例外
 
+**已部署並完成線上驗證**：[正式站](https://injury.sportsmedicine.tw)，版本 `efd5aa5aca4b6754b1ca4a6440b2aed20d7a67ad`，Cloudflare production `9a38af65-df01-4d12-83d8-df61b0f4e4d8`。正式成品 276 頁、203 支影片、15,269 個站內連結。部署紀錄見 [deployment.json](deployment.json)，逐項驗證及範圍見 [verification.json](verification.json)。本次授權已使用，不能再次執行。
+
 使用者在得知兩項發布門檻仍未完成後，對以下確認回答「允許」：
 
 > 是否同意對本次 203 支影片版本（ab3f048）採用一次性發布例外？例外範圍只有兩項：接受 picomatch 的本地防護（官方 audit 仍未通過），以及暫緩全數影片的本次實播驗收；失敗與待驗證紀錄會保留，不改寫醫療核可。

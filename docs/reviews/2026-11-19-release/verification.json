@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-18T16:18:37.924670+00:00",
+  "deployedCommit": "efd5aa5aca4b6754b1ca4a6440b2aed20d7a67ad",
+  "applicationCommit": "179ce7eb9c34fee271114420145cc89d68aad3ac",
+  "deploymentId": "9a38af65-df01-4d12-83d8-df61b0f4e4d8",
+  "productionUrl": "https://injury.sportsmedicine.tw",
+  "status": "passed-with-authorized-exceptions",
+  "build": {
+    "htmlPages": 276,
+    "coreCases": 7,
+    "observationClips": 196,
+    "publicVideoCount": 203,
+    "internalLinks": 15269,
+    "hashedFiles": 841,
+    "allFileHashesVerifiedBeforeUpload": true,
+    "previewArtifact": false,
+    "exitCode": 0
+  },
+  "tests": {
+    "fullUnit": {
+      "commit": "f0d2cd589fd56491de50914dafcd8b5ab7d0d387",
+      "files": 125,
+      "passed": 1790,
+      "scope": "Before final Curry classification serialization repair."
+    },
+    "finalClassificationRelated": {
+      "applicationCommit": "179ce7eb9c34fee271114420145cc89d68aad3ac",
+      "files": 3,
+      "passed": 20
+    },
+    "finalTypecheck": {
+      "applicationCommit": "179ce7eb9c34fee271114420145cc89d68aad3ac",
+      "files": 453,
+      "errors": 0,
+      "warnings": 0,
+      "hints": 17
+    },
+    "finalReleaseIntegration": {
+      "commit": "efd5aa5aca4b6754b1ca4a6440b2aed20d7a67ad",
+      "exitCode": 0,
+      "checkedEventBindings": 203,
+      "checkedContentTypeBindings": 203,
+      "clinicalApprovalsPreserved": true
+    }
+  },
+  "browser": {
+    "checkedAt": "2026-11-18T16:15:56.249Z",
+    "expectedCommit": "efd5aa5aca4b6754b1ca4a6440b2aed20d7a67ad",
+    "scope": "Read-only deployed UI and source/asset verification; no video playback, contribution submission or clinical approval",
+    "viewports": [
+      {
+        "width": 1440,
+        "catalogCards": 203,
+        "curryMatches": 3,
+        "horizontalOverflow": false
+      },
+      {
+        "width": 390,
+        "catalogCards": 203,
+        "curryMatches": 3,
+        "horizontalOverflow": false
+      }
+    ],
+    "curryPages": [
+      {
+        "slug": "stephen-curry-2025-left-hamstring",
+        "status": 200,
+        "videoId": "OYLixb3d7gA",
+        "iframesBeforeConsent": 0,
+        "robots": []
+      },
+      {
+        "slug": "stephen-curry-2026-right-patellofemoral-pain",
+        "status": 200,
+        "videoId": "iGY5kwMIS2g",
+        "iframesBeforeConsent": 0,
+        "robots": []
+      },
+      {
+        "slug": "stephen-curry-2026-right-oblique",
+        "status": 200,
+        "videoId": "xKsiGQbv2XU",
+        "iframesBeforeConsent": 0,
+        "robots": []
+      }
+    ],
+    "assets": [
+      {
+        "path": "/_astro/DetailNavigation.astro_astro_type_script_index_0_lang.Co6n6aQ9.js",
+        "sha256": "1504e0cc4f12887b860419b98db8cd304be4c56669152793d4aca1e4e1ee9449"
+      },
+      {
+        "path": "/_astro/DetailContents.astro_astro_type_script_index_0_lang.F7-tFdRa.js",
+        "sha256": "b5796412a9463dcce72b195e9894785fb614f57395f3818d684ba2c1b661e8d3"
+      },
+      {
+        "path": "/_astro/BaseLayout.astro_astro_type_script_index_0_lang.DfhmEK8v.js",
+        "sha256": "e329c59589723261d13f2a49514287a2bbcae916741ca7881af224061233db08"
+      },
+      {
+        "path": "/_astro/_slug_.astro_astro_type_script_index_0_lang.BecnWMl0.js",
+        "sha256": "cd97c53f5e7b0b377106ba9605361bcbaffa57d50d5ab1d953fe51e457c01d4d"
+      }
+    ],
+    "contributeStatus": 200,
+    "pageErrors": [],
+    "passed": true
+  },
+  "thumbnails": {
+    "passed": true,
+    "checkedAt": "2026-11-18T16:16:55.593Z",
+    "results": [
+      {
+        "width": 1440,
+        "loaded": [
+          {
+            "src": "https://injury.sportsmedicine.tw/_astro/OYLixb3d7gA.ek5SoUoZ_13QQOJ.webp",
+            "naturalWidth": 480,
+            "naturalHeight": 360
+          },
+          {
+            "src": "https://injury.sportsmedicine.tw/_astro/iGY5kwMIS2g.kPDtuFfe_Z1tgv09.webp",
+            "naturalWidth": 480,
+            "naturalHeight": 360
+          },
+          {
+            "src": "https://injury.sportsmedicine.tw/_astro/xKsiGQbv2XU.B3DqtPsp_Z1jphxn.webp",
+            "naturalWidth": 480,
+            "naturalHeight": 360
+          }
+        ]
+      },
+      {
+        "width": 390,
+        "loaded": [
+          {
+            "src": "https://injury.sportsmedicine.tw/_astro/OYLixb3d7gA.ek5SoUoZ_13QQOJ.webp",
+            "naturalWidth": 480,
+            "naturalHeight": 360
+          },
+          {
+            "src": "https://injury.sportsmedicine.tw/_astro/iGY5kwMIS2g.kPDtuFfe_Z1tgv09.webp",
+            "naturalWidth": 480,
+            "naturalHeight": 360
+          },
+          {
+            "src": "https://injury.sportsmedicine.tw/_astro/xKsiGQbv2XU.B3DqtPsp_Z1jphxn.webp",
+            "naturalWidth": 480,
+            "naturalHeight": 360
+          }
+        ]
+      }
+    ]
+  },
+  "visualInspection": {
+    "screenshots": ["live-search-1440.png", "live-search-390.png"],
+    "reviewed": true,
+    "scope": "Headless Chromium desktop and mobile viewport screenshots; not physical-device or real playback validation."
+  },
+  "environment": {
+    "status": "passed-with-scoped-limitations",
+    "newRuntimeEnvironmentRequirements": [],
+    "runtimeBindings": [
+      {
+        "name": "PLAYBACK_DB",
+        "kind": "D1",
+        "productionDatabaseName": "atlas-playback-production",
+        "configUnchangedFromBaseline": true,
+        "platformBindingVerification": "Direct Cloudflare Pages production config download matches expected production database ID"
+      }
+    ],
+    "requiredRuntimeSecretEnvironmentVariables": [],
+    "directPlatformBindingEvidence": {
+      "platformDownloadExitCode": 0,
+      "project": "sports-injury-atlas",
+      "environment": "production",
+      "binding": "PLAYBACK_DB",
+      "databaseId": "d7fae228-d624-4746-bfad-a00bc9ed7800",
+      "databaseNameFromWranglerDownload": "PLAYBACK_DB",
+      "matchesExpectedProductionId": true,
+      "downloadSha256": "809ce79e9fe2bd16288483a47e028ae477d678c5f0c5795f17ac69ff71e61be9",
+      "downloadPath": "output/release-20261119/platform-config/wrangler.toml",
+      "note": "Wrangler download synthesizes database_name from the binding name; database_id is the direct platform value."
+    },
+    "limitations": [
+      "No form submission or mail-delivery test was performed.",
+      "No claim about the upstream contact service secret configuration.",
+      "D1 schema and guard-key availability remain covered by the separate D1 strand."
+    ]
+  },
+  "database": {
+    "status": "passed",
+    "connectionVerified": true,
+    "migrationListMatchesLocal": true,
+    "matchedTables": 5,
+    "matchedIndexes": 7,
+    "requiredKeyRowsPresent": {
+      "contribution_guard_key_present": true,
+      "play_guard_key_present": true
+    },
+    "allQuerySuccess": true,
+    "totalRowsWritten": 0,
+    "databaseChanged": false
+  },
+  "api": {
+    "checks": {
+      "versionMatches": true,
+      "popular200": true,
+      "popularSchema": true,
+      "uniqueVideoIds": true,
+      "descendingCountThenId": true,
+      "completedHourCutoff": true,
+      "methodDenials": true,
+      "externalPlayOriginRejected": true,
+      "denialsNoStoreNosniff": true,
+      "apiDoesNotEnableCrossOrigin": true,
+      "popularIdsAllInPublishedAllowlist": true
+    },
+    "popularItemCount": 94,
+    "publicIdAllowlistCount": 202,
+    "limits": [
+      "No POST /api/contributions performed; no submission or email.",
+      "No valid play event submitted; no intentional database write.",
+      "Popular response verifies one read-only aggregate request, not load capacity or data completeness.",
+      "OPTIONS and external-Origin denial verify deliberate same-origin boundary, not authenticated cross-origin use."
+    ]
+  },
+  "independentReview": {
+    "reviewer": "review_picomatch_containment",
+    "scope": "One-release authorization and exact legacy classification serialization",
+    "confidence": 0.99,
+    "candidateProtectionIssueFixed": true,
+    "additionalAdvisoryAndInvalidReportMutationsRejected": 9,
+    "protectedPathsRejected": 7,
+    "classificationMutationsRejected": 18,
+    "clinicalAndPlaybackOriginalBytesUnchanged": true
+  },
+  "exceptions": {
+    "ownerResponse": "允許",
+    "authorizationFile": "authorization.json",
+    "dependencyAuditPassed": false,
+    "highDependencyEntries": 16,
+    "advisory": "GHSA-fc5q-39xc-vjpf",
+    "localContainmentVerified": true,
+    "currentPlaybackAccepted": false,
+    "pendingRegistryPreserved": true,
+    "clinicalApprovalChanges": false,
+    "consumedAuthorizationRejectedOnReuse": true
+  },
+  "verificationCorrections": [
+    "Initial clean authorized release stopped on existing Curry media receipt missing tags. Added a separate hash-bound serialization receipt; original source evidence and registry labels unchanged. Final release and artifact checks passed.",
+    "Initial browser verifier assumed every production page had a robots meta and timed out. Actual production HTML intentionally omits it. Corrected verifier checks for absence of noindex in existing meta and response headers; final run passed. Initial logs preserved.",
+    "Full-page capture initially showed offscreen lazy images before scrolling. Targeted checks scrolled every Curry card, verified natural image dimensions, and regenerated desktop/mobile screenshots."
+  ],
+  "remainingLimits": [
+    "No actual video playback acceptance or physical-device/VoiceOver validation.",
+    "No valid play event, contribution submission or test email sent.",
+    "No load testing or upstream contact-service secret verification.",
+    "Default-branch CI and scheduled dependency workflow were not activated by feature-branch push."
+  ],
+  "evidenceDirectory": "output/release-20261119",
+  "evidenceSha256": {
+    "api-verification.json": "3771a3905cbb169cfa22efae55ed7ed8fefdfdb055f3d05e1e2c95ce15817754",
+    "authorized-release-final.log": "8c87dcdf9dbbe90fd1e3d425eca88fa6c462dc5dc4d0c1e87aeae1b35b1fc76d",
+    "authorized-release.log": "866e0698fc6300f52b2dd1f150d09bd966a2461bcdcd25f180c84cfa03d929dd",
+    "build-before-commit.log": "7a0ee09088db15b4857e68ba50f2685fe151cc1b4f9079331fa7ffb21ea2ee8e",
+    "classification-tests.log": "0e2cf03a72610bcaf75eb6928abae95e87cc679533cdbeed54243eb24a1a7455",
+    "cloudflare-after.json": "adca3e883bf7a7dc439b785fb1e988e38cd408eec3bca7abc83761d33cdafcc4",
+    "db-schema-details.raw.json": "872dd510c5046c11cfb004e8269bddd030516006b9f32fc1857ed079bd5c94bf",
+    "db-schema-inventory.raw.json": "becea8d5140e366cd8c6c7852d415a9063c232d4a50d90aa6145086b8e7a580d",
+    "db-verification.json": "5720bf3e6944edc34bb6a4318192e35ee637db165c620adb1cae5a57551c43c8",
+    "deploy.log": "bc2f51360af06f446fe092608d18e9536b6261be0c2bd0e2b30640faea0439be",
+    "env-verification.json": "2a4776d423008f174f37b3eaa69b9b12c39c2dfd77fd20d947cf0372fe334fa7",
+    "env-wrangler-download.log": "fd81cd655d4e06c60b9a23649361976537b45c63d2dec27e629a7dadf9e91de4",
+    "env-wrangler.log": "601b468f9e03e4d974ca10dd998a83a9b62d43502be099d117c8bec1aa20cf70",
+    "live-browser-first.json": "ecf7bd3c28cb5e2a4301ac7b3e4716c8d26e0caa91ff9f09f31c9770dfc746bb",
+    "live-browser-first.log": "9ca9eb4dfc22d389a753cd5efe38b596df48e8023300d5dcefacce25039950ab",
+    "live-browser.json": "dbc4cba4859dbe4a06056437cbc183c1d95d26c950c98708f56c641ae7804706",
+    "live-browser.log": "dbc4cba4859dbe4a06056437cbc183c1d95d26c950c98708f56c641ae7804706",
+    "live-search-1440.png": "f535c8a4cf6106411cee921b96937afa488604775b32b960f96b138a96edc098",
+    "live-search-390.png": "9f381dc5af35f77c2d4d575c0a31dfbc8fcd09fd6e33e770d6afb67a42d2d577",
+    "live-thumbnails.json": "0e535e30c78d91964a41f780b3259c1b56c4b684da2c14618c35244db2a80344",
+    "live-version.json": "0a3afc3df2ab75298ab3a5801977332ece38dfec409a925b38dc74d48b64fbac",
+    "public-artifact-receipt.json": "71f410215e643188e8edcb205aa0922b89efba015f1361b4e30648b342a9571f",
+    "related-tests.log": "df6eccce665c58be4dffb34ae8898353f33db331ca31d3aacac86e86fde3e639",
+    "type-classification.log": "90dabd3fce8f83f6ccb1f3aacc23bf493617cedc0ee2c564b02118cf9b3c73bf",
+    "type-clean.log": "3f065b3e8ccb5d3209920f98926f06c7b3459b943a15fb3f8b8da00cdba93d77",
+    "type.log": "66e1ec047dfa717a1036b8b7d9860c35142275c0b4a61e67e06be9b41ac4fbad",
+    "unit-clean.log": "dc59c319c2936978056a40d81fb0830712711c0aa0ad1d462ef62d6ac044f0a0",
+    "wrangler-db.log": "4d9810a081fadfe746b742748164520ba2e8c182690403028daa926ad9c4065d",
+    "wrangler-deploy.log": "57e52785c5ea92d1e0fa274fb930735b189a529dd7845033d95e68a811b3a968",
+    "wrangler-verify.log": "c81243b81f5dff59873509ab83ba7bb343a02cc40e3e0226645b7ab0ed9aae06"
+  }
+}

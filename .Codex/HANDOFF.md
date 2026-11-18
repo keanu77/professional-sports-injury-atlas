@@ -1,10 +1,21 @@
-# HANDOFF - 2026-11-18 Asia/Taipei
+# HANDOFF - 2026-11-19 Asia/Taipei
 
 ## 目前可執行狀態
 
-最新要求：「請部署」。部署授權已收到；在 clean `ab3f048` 實際重跑發布檢查，仍被 audit／current-playback 擋下，**尚未上傳 Cloudflare**。已透過問答提出只適用本次 203 支版本的一次性例外（接受 picomatch 本地防護、暫緩全數本次實播），截至此筆交接尚無答覆，不能把 pending 寫成通過。
+最新要求：使用者對兩項一次性發布例外回答「允許」。**已部署正式站並完成線上驗證**，正式版本 `efd5aa5aca4b6754b1ca4a6440b2aed20d7a67ad`，203 支影片。上游 audit 及完整本次實播仍未通過；本次依明示例外發布，未改寫成成功或新醫療核可。
 
-### 本次部署準備：ab3f048
+### 已完成正式部署：efd5aa5
+
+- 網站 `https://injury.sportsmedicine.tw`；Cloudflare production `9a38af65-df01-4d12-83d8-df61b0f4e4d8`，preview-independent deployment URL `https://9a38af65.sports-injury-atlas.pages.dev`。custom domain `/version.json`、平台 source、4 個線上 JS 的 SHA-256 與成品完全一致。正式建置 276 頁／7 core＋196 observation／15,269 local links／841 hashed files。未上傳 noindex preview。
+- 使用者原句與限定範圍在 `docs/reviews/2026-11-19-release/authorization.json`；只接受既有 picomatch 本地防護與延後全 N 實播。一般 `security:check`／`release:public`／`release:legacy` 保留原門檻。`deployment.json` 已保存且實測拒絕再次使用；**後續發布不能沿用此例外**。歷史 `public-launch.v1.json`、current-playback pending、Curry 原 media.json 位元組都與候選 ab3f048 相同。
+- 發布準備程式 865709b；獨立安全 Pass2 補上候選版 protected path 比對。後續正式 checker 找出 Curry 原 media.json 缺 tags，179ce7e 新增獨立 hash-bound 分類補充，保留原文與影片／時間窗；18 種錯誤綁定測試均拒絕。efd5aa5 為最終授權綁定與正式建置 commit，後續只提交部署證據／交接。
+- 125 unit files／1,790 passed（f0d2cd5，最後分類格式修復前）；分類格式修復同位元組 20 related passed；453 type files 0 errors／0 warnings／17 hints。最終 efd5aa5 完整 release integration（203 events／203分類）及 artifact checker 通過。實際 audit 仍為16 high，保留失敗報告；例外只接受指定 GHSA，其他 advisory／registry failure 仍拒絕。
+- 正式 Chromium 1440px／390px：首頁203張、柯瑞搜尋3筆、三個事件頁200且正確影片ID、點擊前iframe0、投稿頁200、page errors0、overflow0；六次卡片縮圖載入均有實際image dimensions。已目視桌機／手機截圖，未做真正手機／VoiceOver／實播或投稿寄信。
+- 獨立環境/API/D1驗證：平台 production PLAYBACK_DB ID與設定完全一致；無新增runtime secret要求；popular API200、94列及allowlist/schema通過；錯誤method405、跨來源空body plays403（DB操作前拒絕），未送有效播放或投稿。遠端D1三個migration、5表、7索引與兩筆必要key存在確認，所有查詢零寫入且未讀secret值。
+- 證據 `docs/reviews/2026-11-19-release/{deployment,verification}.json`、README；raw logs／截圖 `output/release-20261119/`。初次瀏覽器驗證器錯把robots meta視為必有，修正為檢查任何既有meta/header不得noindex後通過，原失敗log保留。初次dirty build依既有provenance拒絕，clean後成功。這些未改變網站或放寬未授權門檻。
+- 回復目標仍為前一production `28c920c4-d58e-409d-94f9-3d3100400383`／source `9d6f38a4159ec69715e8e185cc1c363b1430bf49`。未合併Git main；已推送工作分支，後續文件SHA請查git。feature push不等於CI通過或每日排程已啟用。真人讀者0、其他20教材核可與全站語意待辦均未被此次部署取代。
+
+### 前輪部署準備：ab3f048（歷史，當時尚未獲得例外）
 
 - `release:public` exit 1，單一 picomatch advisory 的 16 high 傳遞影響；本地兩份 parser 防護檢查通過。獨立 `check-release.ts` exit 1：current playback registry pending。沒有改動這些門檻或歷史核可。
 - 唯讀檢查後續 assertions：7 個核心案例的內容／影片核可綁定通過，病人指南與原審閱文件 digest 相符，content／brand 無錯誤，203 事件綁定齊全。最初診斷未設定 public launch mode，兩個 expansion case 顯示 false；補上與正式 checker 相同的 `ATLAS_PUBLIC_LAUNCH=decision-21` 後全部通過，不是核可變更。
@@ -13,7 +24,7 @@
 - 相對正式版，wrangler 設定與 migrations 未變；`.env.example` 新增的都是本機測試用途註解，Functions diff 移除暫時的上游診斷 log，沒有新增 runtime secret 要求。Wrangler 初次因 sandbox 無法寫全域 log，改用已查證的 `WRANGLER_LOG_PATH` 寫入任務 output；並非登入或網站故障。
 - 完整證據在 `output/deploy-request-20261118/{readiness,remaining-checks,cloudflare-production}.json` 與 `release.log`。原 checkout 未修改。若使用者同意本次例外，僅按明示範圍建立發布紀錄、保留 audit 失敗與實播 pending、完成正式 artifact 檢查後部署並驗證線上 SHA；不要把例外擴大為永久放行或新的醫療核可。
 
-### 最新安全處理：5860800
+### 前輪安全處理：5860800（歷史）
 
 - 最新應用 `5860800724dc5d947c0f2ed447200f4c7566dd21`，分支 `feat/site-quality-20261118`。文件提交與遠端 SHA 以 `git log -1`／`git ls-remote` 為準；既有 commit/push 授權持續有效。
 - `scripts/security/picomatch-containment.mjs` 覆蓋 root 4.0.7、anymatch nested 2.3.2：拒絕解析後的 `+(...)`／`*(...)`，並在 parser／fastpaths 強制 `regex:false`，封住本次實際重現的重複 regex 路徑。包含良性重複 extglob 也會被拒絕；這不是所有 regex／任意不可信 pattern 安全保證。
@@ -49,7 +60,7 @@
 - 原 checkout `feat/repo-launch-20261020` / f735ecb 不動；原三份 dirty/untracked 檔案對 `output/site-quality-validation/original-worktree-preservation.json` 的 hash 皆未變。不要在舊 `/private/tmp/injury-update-20261118` clone 繼續編輯。
 - 使用者已核准 Curry 三個事件內容，維持 200 → 203（7 core、196 observation；202 YouTube、1 MLB）。勿重問，也勿延伸為另外 20 教材或全片實播核可。
 
-## 前輪紀錄（以下數字為歷史，最新見上方 5860800）
+## 前輪紀錄（以下數字為歷史，最新部署見上方 efd5aa5）
 
 `docs/reviews/2026-11-18-followup/README.md`、`validation.json` 為本輪索引與逐版本驗證證據。
 
@@ -87,7 +98,7 @@
 
 ## 下一個 session 前 3 步
 
-1. **核對工作版本與防護**：在上述 durable worktree 執行 `git status --short --branch`、`git log -4 --oneline`、`npm run security:containment:check`。讀 security-repair-validation.json；一般 `npm ci` 會自動套用，若使用 `--ignore-scripts` 必須明確 `npm run security:containment:apply`。來源工作另讀 optimization-validation.json，跑 `npm run quality:semantic-check`。不要把舊整站 0 語意完成欄位誤解為沒有獨立編輯 receipt。
+1. **核對正式版本與防護**：在上述 durable worktree 執行 `git status --short --branch`、`git log -6 --oneline`、`curl -fsS https://injury.sportsmedicine.tw/version.json`、`npm run security:containment:check`。讀 2026-11-19-release/deployment.json、verification.json；正式app為efd5aa5，後續純文件HEAD可以較新。一般 `npm ci` 自動套用，若用 `--ignore-scripts` 必須明確apply。此次例外已使用，不能再執行同一授權發布。
 2. **接續來源與真人任務**：兩條舊 unverifiable 已補強，勿重做；按 `output/site-quality-validation/content-review.json` 選其他高風險 claims，逐條保存引用與時間。讀者開始前實看 A01 的長訪談並整理核心時間窗；複製 round-template.json、填固定commit及真實已安排匿名名冊，按手冊彙整，不能代填真人結果或重問 Curry 核可。
 3. **上游與發布條件**：`npm run security:check` 並查官方 advisory。本地防護不解除 audit；有官方修補則同時處理所有 nested 副本，重跑隔離及相容性測試，再移除 containment manifest／postinstall／入口檢查。未知版本被拒絕是預期，不要刪檢查來放行。另依 `docs/reviews/2026-11-18-site-quality/current-playback.md` 補全 N=203 owned HTTPS 實播及其餘 20 教材具名審閱。單元／來源文字通過不替代這些條件。
 
