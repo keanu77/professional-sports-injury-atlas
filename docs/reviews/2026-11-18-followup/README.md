@@ -28,3 +28,7 @@ node --import tsx scripts/check-semantic-review.ts
 ## 安全
 
 詳見 [安全紀錄](security.md)。新增本機發布阻擋及每日稽核 workflow；仍有單一上游 picomatch advisory，未宣稱修好。排程尚未合併啟用。所有 production、臨床核可、全 N 播放與讀者條件保持原門檻。
+
+## 工程驗證
+
+完整單元測試 1,755 項、桌機／手機回歸 86 項通過。最後僅更新兩筆事件日期後，57 項相關單測、14 項受影響頁面回歸及 445 檔型別檢查通過。最終預覽 277 頁／203 影片、來源綁定驗證通過；本機 HTTP 實際確認更正文字。逐檢查版本與限制見 `validation.json`。安全稽核仍為預期的阻擋結果，不算通過。

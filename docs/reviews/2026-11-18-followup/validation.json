@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-11-18T00:36:13.395798+00:00",
+  "applicationCommit": "88cc73191a99bd866c48be76187320f65d2a5f58",
+  "checks": [
+    {
+      "name": "full-unit",
+      "sourceCommit": "fd2cb3069279fc417a8670e2b061cb8f69510c9e",
+      "passed": 1755,
+      "files": 122,
+      "log": "output/site-quality-validation/followup-unit-final.log"
+    },
+    {
+      "name": "date-correction-unit",
+      "sourceCommit": "88cc73191a99bd866c48be76187320f65d2a5f58",
+      "passed": 57,
+      "files": 4,
+      "note": "Checked identical working bytes immediately before commit",
+      "log": "output/site-quality-validation/followup-date-unit.log"
+    },
+    {
+      "name": "type",
+      "sourceCommit": "88cc73191a99bd866c48be76187320f65d2a5f58",
+      "files": 445,
+      "errors": 0,
+      "warnings": 0,
+      "hints": 17,
+      "log": "output/site-quality-validation/followup-type-delivery.log"
+    },
+    {
+      "name": "public-desktop-mobile-regression",
+      "sourceCommit": "fd2cb3069279fc417a8670e2b061cb8f69510c9e",
+      "stats": {
+        "startTime": "2026-11-18T00:32:05.814Z",
+        "duration": 48218.455,
+        "expected": 86,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "name": "public-affected-pages-after-dates",
+      "sourceCommit": "88cc73191a99bd866c48be76187320f65d2a5f58",
+      "stats": {
+        "startTime": "2026-11-18T00:33:54.671Z",
+        "duration": 44841.15,
+        "expected": 14,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "name": "semantic-current-bindings",
+      "sourceCommit": "88cc73191a99bd866c48be76187320f65d2a5f58",
+      "passed": true,
+      "claims": 32,
+      "supported": 30,
+      "unverifiable": 2,
+      "clinicalApproval": false
+    },
+    {
+      "name": "content-plan-brand",
+      "sourceCommit": "fd2cb3069279fc417a8670e2b061cb8f69510c9e",
+      "passed": true,
+      "cases": 26,
+      "overviews": 3,
+      "updates": 1,
+      "boundPlans": 45
+    },
+    {
+      "name": "offline-reader-form",
+      "evidence": {
+        "testedAt": "2026-11-18T00:29:39.318Z",
+        "scope": "offline-form-engineering-only",
+        "tasks": 9,
+        "downloadValid": true,
+        "incompleteResponseBlocked": true,
+        "overflowAt320": 0,
+        "httpRequests": 0,
+        "actualReaders": 0
+      }
+    }
+  ],
+  "releaseAttempt": {
+    "command": "npm run release:public",
+    "exitCode": 1,
+    "stoppedAt": "security:check",
+    "evidence": {
+      "schemaVersion": 1,
+      "checkedAt": "2026-11-18T00:31:56.852Z",
+      "sourceCommit": "fd2cb3069279fc417a8670e2b061cb8f69510c9e",
+      "sourceDirty": false,
+      "lockSha256": "816b1516bc5dc095727cbddd7979aad64d1a20f9c71db9ac36acfcf27ee84703",
+      "command": [
+        "npm",
+        "audit",
+        "--json",
+        "--audit-level=high",
+        "--package-lock-only",
+        "--include=dev",
+        "--include=optional",
+        "--include=peer"
+      ],
+      "exitCode": 1,
+      "signal": null,
+      "passed": false,
+      "reason": "high-or-critical-vulnerabilities",
+      "counts": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 16,
+        "critical": 0,
+        "total": 16
+      },
+      "scope": "lockfile-dependency-audit; not runtime reachability or a patch receipt"
+    },
+    "log": "output/site-quality-validation/followup-release-block.log"
+  },
+  "preview": {
+    "schemaVersion": 1,
+    "artifactType": "public-ui-preview",
+    "deployable": false,
+    "clinicalApproval": false,
+    "commit": "88cc73191a99bd866c48be76187320f65d2a5f58",
+    "htmlPages": 277,
+    "publicVideoCount": 203,
+    "builtAt": "2026-11-18T00:34:34.414Z"
+  },
+  "localDelivery": {
+    "checkedAt": "2026-11-18T00:35:13.059Z",
+    "origin": "http://127.0.0.1:4325",
+    "version": {
+      "schemaVersion": 1,
+      "commit": "88cc73191a99bd866c48be76187320f65d2a5f58"
+    },
+    "rows": [
+      {
+        "path": "/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "path": "/cases/tyrese-haliburton-achilles-rupture-2025/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "path": "/videos/stephen-curry-2025-left-hamstring/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "path": "/contribute/",
+        "status": 200,
+        "noindex": true
+      }
+    ],
+    "publicVideoCount": 203,
+    "deployable": false
+  },
+  "dependencyVersionsChanged": false,
+  "newEnvironmentVariables": false,
+  "newServicesOrMigrations": false,
+  "originalWorktreeFilesPreserved": true,
+  "realParticipants": 0,
+  "readerAcceptancePassed": false,
+  "scheduledWorkflowActivated": false,
+  "productionDeployed": false,
+  "pushed": false,
+  "limitations": [
+    "Only selected claims across eight events were semantically checked, not the entire catalog.",
+    "AI source notes do not grant clinical approval.",
+    "Actual readers, reviewed time windows and full owned-HTTPS playback remain pending.",
+    "One upstream advisory remains; release correctly fails."
+  ],
+  "intermediateFailures": [
+    "Initial 320px offline-form overflow fixed with fieldset min-width:0; recheck passed.",
+    "Frozen historical event snapshot required an explicit separately versioned correction; original review evidence retained.",
+    "Dirty worktree failed three provenance unit checks and preview build; clean committed validation passed without weakening gates."
+  ]
+}
