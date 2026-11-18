@@ -26,6 +26,7 @@ import { sha256Hex } from "../../src/lib/contracts/canonical";
 import { inputTreeDigest } from "./input-tree";
 import { loadCurrentPlaybackRegistry } from "./current-playback";
 import { loadPublicVideoInventory } from "../lib/public-video-inventory";
+import { loadReleaseAuthorization } from "./release-authorization";
 
 assert.notEqual(
   process.env.ATLAS_PUBLIC_PREVIEW,
@@ -46,12 +47,15 @@ assert.equal(
 );
 // An existing current registry is authoritative; pending or failed evidence
 // must never fall through to a historical successful receipt.
-const currentPlayback = loadCurrentPlaybackRegistry(process.cwd(), {
-  inventory: loadPublicVideoInventory(),
-  now: new Date(),
-});
+const authorization = loadReleaseAuthorization();
+const currentPlayback = authorization
+  ? null
+  : loadCurrentPlaybackRegistry(process.cwd(), {
+      inventory: loadPublicVideoInventory(),
+      now: new Date(),
+    });
 assert.equal(
-  approval.inputTreeDigest,
+  authorization?.inputTreeDigest ?? approval.inputTreeDigest,
   inputTreeDigest(),
   "Release inputs changed after artifact preparation",
 );
@@ -86,14 +90,15 @@ assert.equal(
   approval.cases.length,
   "Duplicate release case",
 );
-const evidence = currentPlayback
-  ? []
-  : JSON.parse(
-      readFileSync(
-        "docs/reviews/evidence/decision-21/playback.chrome.v1.json",
-        "utf8",
-      ),
-    );
+const evidence =
+  currentPlayback || authorization
+    ? []
+    : JSON.parse(
+        readFileSync(
+          "docs/reviews/evidence/decision-21/playback.chrome.v1.json",
+          "utf8",
+        ),
+      );
 process.env.ATLAS_PUBLIC_LAUNCH = "decision-21";
 for (const item of [...approval.cases, ...expansion.cases]) {
   const record = records.find((candidate) => candidate.id === item.id);
@@ -114,6 +119,7 @@ for (const item of [...approval.cases, ...expansion.cases]) {
     guide && isPatientGuideApproved(guide),
     `Missing reviewed guide: ${item.id}`,
   );
+  if (authorization) continue;
   if (currentPlayback) {
     assert.ok(
       currentPlayback.proofsByPath.has(`/cases/${record.slug}/`),
@@ -142,10 +148,10 @@ for (const item of [...approval.cases, ...expansion.cases]) {
   );
 }
 console.log(
-  `Decision 21: ${approval.cases.length} approved native embeds; patient approval, source provenance, D20 facts, input hashes and playback passed.`,
+  `Decision 21: ${approval.cases.length} approved native embeds; patient approval, source provenance, D20 facts and input hashes passed; playback ${authorization ? "deferred by explicit owner exception" : "passed"}.`,
 );
 
-if (!currentPlayback) {
+if (!currentPlayback && !authorization) {
   // Legacy mode remains available only when no current registry exists.
   const additional = JSON.parse(
     readFileSync(
@@ -268,9 +274,13 @@ if (!currentPlayback) {
         `Playback before selected segment: ${item.videoUrl}`,
       );
   }
-} else {
+} else if (currentPlayback) {
   console.log(
     `Current playback: ${currentPlayback.proofsByPath.size} public paths; source revision ${currentPlayback.sourceCommit}; historical receipts preserved.`,
+  );
+} else {
+  console.log(
+    `Current playback remains pending under ${authorization!.id}; no successful playback receipt was created.`,
   );
 }
 console.log(

@@ -25,6 +25,7 @@ import { launchApprovalSchema } from "../../src/lib/patient/public-launch";
 import { canonicalJson, sha256Hex } from "../../src/lib/contracts/canonical";
 import { loadContentCollections } from "../check-content";
 import { inputTreeDigest } from "./input-tree";
+import { loadReleaseAuthorization } from "./release-authorization";
 import {
   isExecutableScript,
   PUBLIC_HEADERS,
@@ -42,8 +43,9 @@ assert.ok(
 const approval = launchApprovalSchema.parse(
   JSON.parse(readFileSync("src/data/public-launch.v1.json", "utf8")),
 );
+const authorization = loadReleaseAuthorization();
 assert.equal(
-  approval.inputTreeDigest,
+  authorization?.inputTreeDigest ?? approval.inputTreeDigest,
   inputTreeDigest(),
   "Inputs changed during build",
 );
@@ -372,6 +374,15 @@ const receipt = {
   origin: publicDomain.origin,
   commit,
   approvalDigest: sha256Hex(canonicalJson(approval)),
+  releaseAuthorization: authorization
+    ? {
+        id: authorization.id,
+        digest: sha256Hex(canonicalJson(authorization)),
+        dependencyAuditPassed: false,
+        currentPlaybackAccepted: false,
+        clinicalApprovalChanges: false,
+      }
+    : null,
   generatedAt: new Date().toISOString(),
   cases: selected.map(({ id, slug }) => ({ id, slug })),
   clips: allObservationClips.map(({ slug, videoUrl, startSeconds }) => ({
