@@ -2,7 +2,16 @@
 
 ## 目前可執行狀態
 
-最新要求：「請繼續修補漏洞」。已完成兩份 picomatch 的本地防護及乾淨重裝驗證；**官方 advisory 尚未修補，完整 audit 仍阻擋發布，未部署**。全站語意／真人讀者／實播待辦不變。
+最新要求：「請部署」。部署授權已收到；在 clean `ab3f048` 實際重跑發布檢查，仍被 audit／current-playback 擋下，**尚未上傳 Cloudflare**。已透過問答提出只適用本次 203 支版本的一次性例外（接受 picomatch 本地防護、暫緩全數本次實播），截至此筆交接尚無答覆，不能把 pending 寫成通過。
+
+### 本次部署準備：ab3f048
+
+- `release:public` exit 1，單一 picomatch advisory 的 16 high 傳遞影響；本地兩份 parser 防護檢查通過。獨立 `check-release.ts` exit 1：current playback registry pending。沒有改動這些門檻或歷史核可。
+- 唯讀檢查後續 assertions：7 個核心案例的內容／影片核可綁定通過，病人指南與原審閱文件 digest 相符，content／brand 無錯誤，203 事件綁定齊全。最初診斷未設定 public launch mode，兩個 expansion case 顯示 false；補上與正式 checker 相同的 `ATLAS_PUBLIC_LAUNCH=decision-21` 後全部通過，不是核可變更。
+- 發布 input digest 尚未重新綁定；需要在例外決策後建立可追溯的新發布紀錄，不能為消除錯誤而冒改歷史臨床核可。`ab3f048` 相對已完整驗證的 `5860800` 僅四份文件變更，既有 1,780 unit／230 public E2E 通過證據仍限於前述應用版本。
+- Cloudflare CLI 4.125.0 與 Pages 讀取權限已確認；project `sports-injury-atlas`，正式部署 `28c920c4-d58e-409d-94f9-3d3100400383`，source `9d6f38a`，正式站 GET version 同為 `9d6f38a4159ec69715e8e185cc1c363b1430bf49`。回復版本已記錄，未執行 upload／rollback／merge。
+- 相對正式版，wrangler 設定與 migrations 未變；`.env.example` 新增的都是本機測試用途註解，Functions diff 移除暫時的上游診斷 log，沒有新增 runtime secret 要求。Wrangler 初次因 sandbox 無法寫全域 log，改用已查證的 `WRANGLER_LOG_PATH` 寫入任務 output；並非登入或網站故障。
+- 完整證據在 `output/deploy-request-20261118/{readiness,remaining-checks,cloudflare-production}.json` 與 `release.log`。原 checkout 未修改。若使用者同意本次例外，僅按明示範圍建立發布紀錄、保留 audit 失敗與實播 pending、完成正式 artifact 檢查後部署並驗證線上 SHA；不要把例外擴大為永久放行或新的醫療核可。
 
 ### 最新安全處理：5860800
 
