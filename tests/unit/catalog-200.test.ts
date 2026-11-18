@@ -183,7 +183,12 @@ describe("catalog 200 sourced expansion", () => {
       (item) => item.kind === "event",
     )) {
       const updated = entry(refresh.slug);
-      expect(updated.checkedAt).toBe(followUpRefresh.checkedAtUTC);
+      const correction = semanticCorrections.changes.find(
+        (change) => change.kind === "event" && change.slug === refresh.slug,
+      );
+      expect(updated.checkedAt).toBe(
+        correction?.after.checkedAt ?? followUpRefresh.checkedAtUTC,
+      );
       for (const milestone of refresh.appendTimeline) {
         for (const index of milestone.sourceIndexes) {
           expect(refresh.appendSources.map((source) => source.url)).toContain(

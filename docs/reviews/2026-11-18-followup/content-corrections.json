@@ -39,7 +39,8 @@
             "text": "球隊報導左腿後肌群輕度拉傷；不是右阿基里斯腱再次斷裂的證據。",
             "sourceIndexes": [7]
           }
-        ]
+        ],
+        "checkedAt": "2026-11-17"
       },
       "after": {
         "injury": "右阿基里斯腱斷裂；AP 後續報導確認於 2025-06-23 接受修補手術。",
@@ -74,7 +75,8 @@
             "text": "球隊報導左腿後肌群輕度拉傷；不是右阿基里斯腱再次斷裂的證據。",
             "sourceIndexes": [7]
           }
-        ]
+        ],
+        "checkedAt": "2026-11-18"
       },
       "scope": "source-attribution correction; no new clinical or publication approval"
     },
@@ -124,7 +126,8 @@
             "sourceIndexes": [1, 2]
           },
           "limitation": "新聞報導不能單獨證明受傷瞬間、拉傷分級或實際恢復日數。"
-        }
+        },
+        "checkedAt": "2026-11-17"
       },
       "after": {
         "sources": [
@@ -173,9 +176,11 @@
             "sourceIndexes": [1, 2, 3]
           },
           "limitation": "新聞報導不能單獨證明受傷瞬間、拉傷分級或實際恢復日數。"
-        }
+        },
+        "checkedAt": "2026-11-18"
       },
       "scope": "source-attribution correction; no new clinical or publication approval"
     }
-  ]
+  ],
+  "dateNote": "checkedAt before is the effective entry date (entry override or batch fallback); only two edited events advance."
 }
