@@ -1,0 +1,305 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-18T15:45:57.985667+00:00",
+  "sourceCommit": "5860800724dc5d947c0f2ed447200f4c7566dd21",
+  "sourceDirty": false,
+  "status": "locally-contained-not-upstream-fixed",
+  "auditWaiver": false,
+  "deployed": false,
+  "changes": [
+    "Reject parsed plus/star repeated extglobs in every installed picomatch copy, including otherwise benign uses of that syntax.",
+    "Force regex:false at parser and fastpaths initialization to contain the independently reproduced raw-regex repetition paths.",
+    "Verify known upstream and patched bytes, versions, registry integrity, lockfile and installed-copy completeness before applying or accepting the patch.",
+    "Apply on postinstall; verify standard development/test/build/release commands plus direct Astro config and public-preview build entry; invalidate stale success receipts on CLI check failure."
+  ],
+  "officialSources": [
+    {
+      "url": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf",
+      "checkedOn": "2026-11-18",
+      "finding": "Affected <=4.0.7; patched versions None."
+    },
+    {
+      "url": "https://github.com/micromatch/picomatch/pull/194",
+      "checkedOn": "2026-11-18",
+      "finding": "Open; not accepted as a verified advisory fix."
+    },
+    {
+      "url": "https://registry.npmjs.org/picomatch",
+      "checkedOn": "2026-11-18",
+      "finding": "latest 4.0.7"
+    }
+  ],
+  "reproduction": {
+    "pattern": "+(*a)",
+    "inputDescription": "28 a characters followed by !",
+    "timeoutMs": 1500,
+    "before": [
+      {
+        "version": "2.3.2",
+        "path": "node_modules/anymatch/node_modules/picomatch",
+        "timeoutMs": 1500,
+        "status": null,
+        "signal": "SIGTERM",
+        "errorCode": "ETIMEDOUT",
+        "result": ""
+      },
+      {
+        "version": "4.0.7",
+        "path": "node_modules/picomatch",
+        "timeoutMs": 1500,
+        "status": null,
+        "signal": "SIGTERM",
+        "errorCode": "ETIMEDOUT",
+        "result": ""
+      }
+    ],
+    "after": [
+      {
+        "path": "node_modules/anymatch/node_modules/picomatch",
+        "timeoutMs": 1500,
+        "elapsedMs": 29,
+        "status": 0,
+        "signal": null,
+        "errorCode": null,
+        "result": "{\"code\":\"ATLAS_REPEATED_EXTGLOB_DISABLED\",\"message\":\"Repeated extglobs are disabled by the atlas security policy\"}"
+      },
+      {
+        "path": "node_modules/picomatch",
+        "timeoutMs": 1500,
+        "elapsedMs": 26,
+        "status": 0,
+        "signal": null,
+        "errorCode": null,
+        "result": "{\"code\":\"ATLAS_REPEATED_EXTGLOB_DISABLED\",\"message\":\"Repeated extglobs are disabled by the atlas security policy\"}"
+      }
+    ],
+    "scope": "Isolated local child processes only; elapsed time includes process startup, is not a performance benchmark, and does not prove arbitrary pattern safety."
+  },
+  "officialBaseline": [
+    {
+      "version": "2.3.2",
+      "path": "node_modules/anymatch/node_modules/picomatch",
+      "integrity": "sha512-V7+vQEJ06Z+c5tSye8S+nHUfI51xoXIXjHQ99cQtKUkQqqO1kO/KCJUfZXuB47h/YBlDhah2H3hdUGXn8ie0oA==",
+      "parseSha256": "3a91656f440069aa8f8e15c9d695b9f6b2209df1eab2be8127c72cbcca45ff5f"
+    },
+    {
+      "version": "4.0.7",
+      "path": "node_modules/picomatch",
+      "integrity": "sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA==",
+      "parseSha256": "4e1e05447668aa1e94366c5516a2bcd8f5fff800cc92b1d0cd7d77703b8618c4"
+    }
+  ],
+  "manifest": {
+    "schemaVersion": 1,
+    "advisory": "GHSA-fc5q-39xc-vjpf",
+    "scope": "Conservative local rejection of parsed plus/star extglobs and forced regex:false in parser/fastpaths; upstream audit remains blocked. Not a general regex safety guarantee.",
+    "versions": {
+      "2.3.2": {
+        "resolved": "https://registry.npmjs.org/picomatch/-/picomatch-2.3.2.tgz",
+        "integrity": "sha512-V7+vQEJ06Z+c5tSye8S+nHUfI51xoXIXjHQ99cQtKUkQqqO1kO/KCJUfZXuB47h/YBlDhah2H3hdUGXn8ie0oA==",
+        "upstreamSha256": "3a91656f440069aa8f8e15c9d695b9f6b2209df1eab2be8127c72cbcca45ff5f",
+        "containedSha256": "d515c3a061c39b42bf8ccfe92d99c6fdd80ecdc4bd398f024441e4dcfdfa4dbc"
+      },
+      "4.0.7": {
+        "resolved": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.7.tgz",
+        "integrity": "sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA==",
+        "upstreamSha256": "4e1e05447668aa1e94366c5516a2bcd8f5fff800cc92b1d0cd7d77703b8618c4",
+        "containedSha256": "317c4fee3f48c9e66bb6fbbafe0f1db7c06a42824be7171584206de4d33dc93c"
+      }
+    }
+  },
+  "installedContainment": {
+    "schemaVersion": 1,
+    "advisory": "GHSA-fc5q-39xc-vjpf",
+    "state": "locally-contained-not-upstream-fixed",
+    "copies": [
+      {
+        "path": "node_modules/anymatch/node_modules/picomatch",
+        "version": "2.3.2",
+        "sha256": "d515c3a061c39b42bf8ccfe92d99c6fdd80ecdc4bd398f024441e4dcfdfa4dbc"
+      },
+      {
+        "path": "node_modules/picomatch",
+        "version": "4.0.7",
+        "sha256": "317c4fee3f48c9e66bb6fbbafe0f1db7c06a42824be7171584206de4d33dc93c"
+      }
+    ],
+    "auditWaiver": false,
+    "checkedAt": "2026-11-18T15:42:42.271Z"
+  },
+  "validation": {
+    "freshInstall": {
+      "command": "npm ci --no-audit --no-fund",
+      "installedPackages": 434,
+      "postinstallContainedCopies": 2,
+      "nodeVersion": "v24.14.0",
+      "dependencyVersionChanges": false,
+      "lockChange": "Root hasInstallScript:true only"
+    },
+    "relatedTests": {
+      "command": "node node_modules/.bin/vitest run tests/unit/picomatch-containment.test.ts tests/unit/dependency-security.test.ts",
+      "files": 2,
+      "passed": 21
+    },
+    "unit": {
+      "command": "npm run test:unit",
+      "files": 124,
+      "passed": 1780,
+      "failed": 0
+    },
+    "typecheck": {
+      "command": "npm run check",
+      "files": 450,
+      "errors": 0,
+      "warnings": 0,
+      "hints": 17
+    },
+    "e2e": {
+      "command": "npm run test:e2e:public -- --project=chromium --project=mobile-chromium e2e/catalog-200.spec.ts e2e/catalog-ux.spec.ts e2e/video-types.spec.ts e2e/contributions.spec.ts e2e/video-player.spec.ts e2e/discovery-quality.spec.ts e2e/learning-quality.spec.ts e2e/curry-three.spec.ts e2e/video-search.spec.ts",
+      "exitCode": 0,
+      "passed": 230,
+      "failed": 0,
+      "skipped": 30,
+      "retries": 0,
+      "skippedReason": "Component-lab and two governed case fixtures are intentionally outside the public artifact; existing conditional skips, not test failures.",
+      "scope": "Selected public-preview suites on desktop and mobile Chromium; mocked/consent-limited external services, no real-device or actual-video playback acceptance."
+    },
+    "preview": {
+      "schemaVersion": 1,
+      "artifactType": "public-ui-preview",
+      "deployable": false,
+      "clinicalApproval": false,
+      "commit": "5860800724dc5d947c0f2ed447200f4c7566dd21",
+      "htmlPages": 277,
+      "publicVideoCount": 203,
+      "builtAt": "2026-11-18T15:43:30.156Z"
+    },
+    "release": {
+      "schemaVersion": 1,
+      "checkedAt": "2026-11-18T15:42:46.529Z",
+      "sourceCommit": "5860800724dc5d947c0f2ed447200f4c7566dd21",
+      "sourceDirty": false,
+      "lockSha256": "231406332fd66089c26da881db1bbfa3900cec989e713eabcee1be37e17ff3d8",
+      "command": [
+        "npm",
+        "audit",
+        "--json",
+        "--audit-level=high",
+        "--package-lock-only",
+        "--include=dev",
+        "--include=optional",
+        "--include=peer"
+      ],
+      "exitCode": 1,
+      "signal": null,
+      "passed": false,
+      "reason": "high-or-critical-vulnerabilities",
+      "counts": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 16,
+        "critical": 0,
+        "total": 16
+      },
+      "scope": "lockfile-dependency-audit; not runtime reachability or a patch receipt"
+    },
+    "separatePlaybackGate": {
+      "command": "node --import tsx scripts/public-launch/check-release.ts",
+      "exitCode": 1,
+      "reason": "Current playback registry is pending: complete real playback and evidence review before release"
+    },
+    "productionVersionRead": {
+      "schemaVersion": 1,
+      "commit": "9d6f38a4159ec69715e8e185cc1c363b1430bf49"
+    }
+  },
+  "independentReview": {
+    "agent": "review_picomatch_containment",
+    "requirement": "Security Pass 2 in applicable AGENTS.md",
+    "evidenceType": "Independent reviewer messages in this session, transcribed here; not represented as a separate committed machine-run report.",
+    "resolvedFindings": [
+      {
+        "finding": "Repeated-extglob-only first iteration still timed out on (a+)+ and @(a+)+, including regex:true variants.",
+        "fix": "Force regex:false in both parser and fastpaths.",
+        "confidence": 0.99
+      },
+      {
+        "finding": "Failed CLI check could leave a prior success receipt.",
+        "fix": "Overwrite receipt with containment-check-failed and auditWaiver:false on failure.",
+        "confidence": 1.0
+      },
+      {
+        "finding": "Npm prehooks alone can be skipped.",
+        "fix": "Also verify in Astro config and the public-preview build entry.",
+        "confidence": 0.99
+      },
+      {
+        "finding": "Earlier comment overstated regex:false as disabling all regex syntax.",
+        "fix": "Limit wording to tested regex repetition paths; document optional/named groups and low-level APIs outside the guarantee.",
+        "confidence": 1.0
+      }
+    ],
+    "isolatedCases": {
+      "total": 352,
+      "guardRejected": 180,
+      "returned": 172,
+      "timeouts": 0,
+      "otherErrors": 0
+    },
+    "installedApiRejections": {
+      "total": 490,
+      "rejected": 490,
+      "copies": 2,
+      "apis": ["parse", "makeRe", "matcher", "array", "ignore"]
+    },
+    "benignCompatibility": {
+      "passed": 14,
+      "total": 14
+    },
+    "tarballFixture": "Original archives verified; apply changed only both lib/parse.js files; all other file hashes unchanged; apply/check idempotent.",
+    "finalByteVerification": {
+      "confidence": 1.0,
+      "method": "Both final installed parser hashes match manifest and reconstruction from official tarballs. Reverting only the two comment-line changes per parser exactly reproduces the earlier matrix-reviewed bytes; no executable change.",
+      "matrixReviewedHashes": {
+        "2.3.2": "bcd560288cef1c814a6ecb2b624b76e917a338816bf0ad2f25feeec7a12b3189",
+        "4.0.7": "b48044258909549a5d34affc057d49273fb4b0413cfb7d807c25f3d12c4e1420"
+      },
+      "matrixRerunAfterCommentOnlyChange": false
+    },
+    "remainingScopeLimit": "Finite tested glob patterns only. Caller-supplied RegExp, parser state, compileRe/toRegex and arbitrary other pattern complexity are not proven safe."
+  },
+  "historicalFailedAttempt": {
+    "log": "build-before-commit.log",
+    "reason": "Dirty source failed existing decision18-batch-dirty-path-outside-allowlist provenance gate; clean 5860800 then built successfully. No gate weakened."
+  },
+  "remainingConditions": [
+    "Official picomatch advisory is unresolved; full lockfile audit still reports 16 high dependency entries from this advisory and blocks release.",
+    "Repeated extglob syntax is intentionally unavailable, including benign patterns; do not disable containment to restore it.",
+    "Current N=203 playback registry remains pending; no clinical or media approvals changed.",
+    "No merge to main or production deployment; feature push does not imply CI completion or activation of the default-branch scheduled audit."
+  ],
+  "logDirectory": "output/security-repair-20261118",
+  "logSha256": {
+    "after.json": "b54b5f9eefacfb56049e048c40372f00fd08ba5dd46f031274f4e22998e71d23",
+    "before.json": "05884eca8f2712b429ba8a40920f41e714d641fd330e146dd51f9f265ea73b9d",
+    "build-before-commit.log": "fa574c692ee65e4a91568e31b33885f7529572985dd8e64ed2acd8b438a04083",
+    "e2e-clean.log": "06ff896521df0a664d49ef90148ab2b0237581684fde9fcb0146d3291f649d17",
+    "fresh-install-final.log": "967e18b7c2d7f2c48bca122089abae7f6b82a596a63731c81a0f0f760ebc04ca",
+    "fresh-install.log": "44e5cafa9c113f52c7e431fe2112c0934dfc7b2fc2a60da088fe2d89bec0e565",
+    "lock-update.log": "02fe3721cbb587024a67a4eae28ed144b693897f4501c0c99604668726f1b55d",
+    "official-baseline.json": "b19bd72e06bab2ced54d706d0b4048d1a18d3c8f1b309ce3be664fc981588379",
+    "packs.json": "853e025933eec621ba7553c2185642eb8d74e3c7c66bb7ec329e1ff9c6d0d24c",
+    "playback-release-check.log": "34d76edd432efde56f98ee8d5abb4e291c301538e777458645d7954b0c7097c8",
+    "production-version.json": "95c83648b18cf204f7062e987860a12c6a030ab17d3fe7babd7dc59503d3f538",
+    "related-final.log": "6777a6c482307aad6ef124eb1d8ad14a9256e6b7b48a1142d5a3406c7bea8cfb",
+    "related.log": "d5d69b7d057d4689c9ca5f8190a32b7138a78d1dde65cf9584bbb2483d28b502",
+    "release-clean.log": "8e62a68b42a6359a5d7d906f76f24425b73aeb27a7499677c368cf5c32c67ae0",
+    "tree.json": "aff202389f84e7660bb1e0ad594415d8dbed6728732c8dda3cbe3abb69e544df",
+    "type-before-commit.log": "ff978041eee67813271c070850bda2fe178eee5aa95d8082541bc55825ecc449",
+    "type-clean.log": "8737844df3abd112825af5401090e6d772b22e0c23ed607df366cab0a4c799f2",
+    "unit-clean.log": "86edb8c2c00bd7465ca4a17144b082d568462fee667a42c38eaac0c1044bf128",
+    "upstream.json": "232f9d0463df2cc81dfd695e26fbf32df6d51159eb6bfd7d241c73f16c003061"
+  },
+  "originalCheckoutPreserved": true
+}

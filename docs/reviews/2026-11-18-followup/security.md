@@ -1,6 +1,6 @@
 # picomatch 安全後續與對抗驗證
 
-最新處理：已加入涵蓋 4.0.7／2.3.2 的可重現本地緩解，限制重複 extglob 與 regex 量詞，詳見 [本地修補與相容性界線](picomatch-containment.md)。官方漏洞仍未結案，audit／發布門檻不變。下文為加入本地修補前的歷史稽核與流程補強紀錄。
+最新處理：已加入涵蓋 4.0.7／2.3.2 的可重現本地緩解，拒絕重複 extglob 並強制 `regex:false` 以限制本次實際重現的 regex 重複路徑，詳見 [本地修補與相容性界線](picomatch-containment.md) 及 [驗證紀錄](security-repair-validation.json)。官方漏洞仍未結案，audit／發布門檻不變。下文為加入本地修補前的歷史稽核與流程補強紀錄。
 
 2026-11-18 再查官方 npm registry、完整 npm audit 與 [GitHub advisory](https://github.com/advisories/GHSA-fc5q-39xc-vjpf)：latest 4.0.7，affected ≤4.0.7，官方無 patched version。16 個 high dependency entries 來自同一個 advisory，不能報成 16 個不同漏洞，也不能因只有一個就視為無風險。[上游 PR #194](https://github.com/micromatch/picomatch/pull/194) 未合併，不能作正式完整修補。
 

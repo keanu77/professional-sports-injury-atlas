@@ -2,9 +2,20 @@
 
 ## 目前可執行狀態
 
-最新要求：「請繼續優化」。已完成下列三項及驗證，**未完成全站語意／真人讀者／上游修補，也未部署**。
+最新要求：「請繼續修補漏洞」。已完成兩份 picomatch 的本地防護及乾淨重裝驗證；**官方 advisory 尚未修補，完整 audit 仍阻擋發布，未部署**。全站語意／真人讀者／實播待辦不變。
 
-### 最新優化：7bfcfa0
+### 最新安全處理：5860800
+
+- 最新應用 `5860800724dc5d947c0f2ed447200f4c7566dd21`，分支 `feat/site-quality-20261118`。文件提交與遠端 SHA 以 `git log -1`／`git ls-remote` 為準；既有 commit/push 授權持續有效。
+- `scripts/security/picomatch-containment.mjs` 覆蓋 root 4.0.7、anymatch nested 2.3.2：拒絕解析後的 `+(...)`／`*(...)`，並在 parser／fastpaths 強制 `regex:false`，封住本次實際重現的重複 regex 路徑。包含良性重複 extglob 也會被拒絕；這不是所有 regex／任意不可信 pattern 安全保證。
+- `postinstall` 自動套用；正常 dev/type/test/build/release 與 Astro 設定／預覽 build entry 核對防護。所有副本的版本、lock integrity、原始／修補後 parser hash 都必須已知，遺漏或未知副本拒絕執行；CLI check 失敗作廢舊成功報告。完整 audit 未豁免。沒有換依賴版本；lock 只新增 root `hasInstallScript:true`。
+- 實際乾淨 `npm ci` 重裝 434 套件，兩份副本自動套用成功。原版相同 `+(*a)` 測例超過 1.5 秒；最終版隔離程序在 29／26 ms 明確拒絕（含啟動時間，非效能 benchmark）。
+- 獨立 Pass 2 發現的原生 regex timeout、舊成功報告、只依賴 npm prehooks、註解過度承諾皆已處理。352 隔離案例 0 timeout，490 API 拒絕／14 良性相容案例通過；最終兩處註解改動後，審查者重新驗證官方 tarball → patch → installed byte 一致、執行邏輯與已測矩陣相同。有限範圍與 hash 詳見 `docs/reviews/2026-11-18-followup/security-repair-validation.json`。
+- clean 5860800：124 unit files／1,780 passed；450 檔 type 0 errors／0 warnings／17 hints；公開預覽九組 E2E suites（桌機＋mobile Chromium）230 passed、30 skipped、0 failed，跳過項為不在公開成品中的既有 component lab／兩個 case fixtures。277 頁／203 影片預覽建置成功，deployable=false；不代表真人手機或完整影片播放驗收。
+- `release:public` 仍在完整 audit exit 1：單一 GHSA 傳遞影響的 16 high。獨立 `check-release.ts` 也因 current-playback pending exit 1。重新 GET 正式站仍為 `9d6f38a4159ec69715e8e185cc1c363b1430bf49`。未上傳、未合併 main，feature push 不等於 CI／排程已啟用。
+- 詳細說明 `docs/reviews/2026-11-18-followup/picomatch-containment.md`；原始 logs／tarballs／前後測例在 `output/security-repair-20261118/`。原 checkout 三檔 hash 再次核對未變。初次 dirty build 被既有 provenance 擋下，提交同位元組後建置成功，未放寬門檻。
+
+### 前輪優化：7bfcfa0（歷史）
 
 - 最新應用 `7bfcfa02fd28ec573aff36602f7a3b144cd5ca03`：長影片全長／片段狀態／文字入口、兩條來源待查補強、離線讀者測試彙整。分支 `feat/site-quality-20261118`；其後文件提交與遠端以 `git log -1`／`git ls-remote` 為準，既有 commit/push 授權持續有效。
 - 乾淨版本 123 unit files／1,769 passed；桌機＋mobile Chromium 36 passed／0 skipped；448 檔 type 0 errors／0 warnings／17 hints；content 26 cases／3 overviews／1 update、plan 45、變更檔格式通過。`docs/reviews/2026-11-18-followup/optimization-validation.json` 保存本輪版本與範圍；logs、截圖在 `output/optimization-20261118/`。
@@ -29,7 +40,7 @@
 - 原 checkout `feat/repo-launch-20261020` / f735ecb 不動；原三份 dirty/untracked 檔案對 `output/site-quality-validation/original-worktree-preservation.json` 的 hash 皆未變。不要在舊 `/private/tmp/injury-update-20261118` clone 繼續編輯。
 - 使用者已核准 Curry 三個事件內容，維持 200 → 203（7 core、196 observation；202 YouTube、1 MLB）。勿重問，也勿延伸為另外 20 教材或全片實播核可。
 
-## 前輪紀錄（以下數字為歷史，最新見上方 7bfcfa0）
+## 前輪紀錄（以下數字為歷史，最新見上方 5860800）
 
 `docs/reviews/2026-11-18-followup/README.md`、`validation.json` 為本輪索引與逐版本驗證證據。
 
@@ -67,9 +78,9 @@
 
 ## 下一個 session 前 3 步
 
-1. **核對工作版本**：在上述 durable worktree 執行 `git status --short --branch`、`git log -4 --oneline`、`curl -fsS http://127.0.0.1:4325/version.json`。讀 optimization-validation.json，跑 `npm run quality:semantic-check`。不要把舊整站 0 語意完成欄位誤解為沒有本輪獨立編輯 receipt。
+1. **核對工作版本與防護**：在上述 durable worktree 執行 `git status --short --branch`、`git log -4 --oneline`、`npm run security:containment:check`。讀 security-repair-validation.json；一般 `npm ci` 會自動套用，若使用 `--ignore-scripts` 必須明確 `npm run security:containment:apply`。來源工作另讀 optimization-validation.json，跑 `npm run quality:semantic-check`。不要把舊整站 0 語意完成欄位誤解為沒有獨立編輯 receipt。
 2. **接續來源與真人任務**：兩條舊 unverifiable 已補強，勿重做；按 `output/site-quality-validation/content-review.json` 選其他高風險 claims，逐條保存引用與時間。讀者開始前實看 A01 的長訪談並整理核心時間窗；複製 round-template.json、填固定commit及真實已安排匿名名冊，按手冊彙整，不能代填真人結果或重問 Curry 核可。
-3. **上游與發布條件**：`npm run security:check` 並查官方 advisory。無 verified patch 不忽略／降門檻／換大版本；有修補則同時處理所有 nested 副本並測相容性。另依 `docs/reviews/2026-11-18-site-quality/current-playback.md` 補全 N=203 owned HTTPS 實播及其餘 20 教材具名審閱。單元／來源文字通過不替代這些條件。
+3. **上游與發布條件**：`npm run security:check` 並查官方 advisory。本地防護不解除 audit；有官方修補則同時處理所有 nested 副本，重跑隔離及相容性測試，再移除 containment manifest／postinstall／入口檢查。未知版本被拒絕是預期，不要刪檢查來放行。另依 `docs/reviews/2026-11-18-site-quality/current-playback.md` 補全 N=203 owned HTTPS 實播及其餘 20 教材具名審閱。單元／來源文字通過不替代這些條件。
 
 ## 既有 Curry 影片證據與啟動
 

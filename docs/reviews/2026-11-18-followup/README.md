@@ -2,6 +2,12 @@
 
 日期：2026-11-18（Asia/Taipei）。工作分支 `feat/site-quality-20261118`。維持 203 支影片，未部署。
 
+## 最新安全修補
+
+應用提交 `5860800` 加入 picomatch 4.0.7／2.3.2 的可重現本地防護：乾淨重裝自動套用、所有已安裝副本核對、拒絕重複 extglob 並強制 `regex:false` 以封住本次重現的慢速路徑。這會限制部分合法 pattern；不是任意 regex 安全保證，也沒有解除官方 advisory 或 npm audit。詳見 [本地修補與相容性界線](picomatch-containment.md)。
+
+乾淨版本 1,780 單元測試通過；公開預覽九組 suites 在桌機／mobile Chromium 230 通過、30 因公開成品不含既有 lab／case fixtures 而跳過；型別檢查 0 errors／0 warnings、17 hints；277 頁預覽建置成功。獨立審查 352 隔離案例無 timeout，另核對乾淨重裝與最終 parser 位元組。完整 audit 仍回報單一 advisory 的 16 high 傳遞影響，實播門檻仍 pending，正式站未部署。逐項範圍、hash 與前後重現見 [安全修補驗證](security-repair-validation.json)。下列保留前輪內容與驗證歷史。
+
 ## 已完成的來源語意工作
 
 第一批對 8 個事件的 32 條指定時間軸／摘要核對來源：30 條支持、2 條無法核對。後續已補官方來源並限縮敘述，目前這 32 條均有對應支持，其中 Curry 訪談發布日期／主題一條僅依官方影片的索引文字資料，不代表核對訪談內容。當前引用涉及 28 個 URL：27 個曾讀到相應正文、1 個官方影片 metadata。這不是全站 2,573 條敘述的完整審閱，也不代表新醫療核可或完整媒體審閱。
