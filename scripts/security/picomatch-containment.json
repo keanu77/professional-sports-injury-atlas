@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "advisory": "GHSA-fc5q-39xc-vjpf",
+  "scope": "Conservative local rejection of parsed plus/star extglobs and forced regex:false in parser/fastpaths; upstream audit remains blocked. Not a general regex safety guarantee.",
+  "versions": {
+    "2.3.2": {
+      "resolved": "https://registry.npmjs.org/picomatch/-/picomatch-2.3.2.tgz",
+      "integrity": "sha512-V7+vQEJ06Z+c5tSye8S+nHUfI51xoXIXjHQ99cQtKUkQqqO1kO/KCJUfZXuB47h/YBlDhah2H3hdUGXn8ie0oA==",
+      "upstreamSha256": "3a91656f440069aa8f8e15c9d695b9f6b2209df1eab2be8127c72cbcca45ff5f",
+      "containedSha256": "d515c3a061c39b42bf8ccfe92d99c6fdd80ecdc4bd398f024441e4dcfdfa4dbc"
+    },
+    "4.0.7": {
+      "resolved": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.7.tgz",
+      "integrity": "sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA==",
+      "upstreamSha256": "4e1e05447668aa1e94366c5516a2bcd8f5fff800cc92b1d0cd7d77703b8618c4",
+      "containedSha256": "317c4fee3f48c9e66bb6fbbafe0f1db7c06a42824be7171584206de4d33dc93c"
+    }
+  }
+}

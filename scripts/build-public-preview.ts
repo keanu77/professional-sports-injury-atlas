@@ -4,6 +4,8 @@ import { writeFileSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import assert from "node:assert/strict";
 import { loadPublicVideoInventory } from "./lib/public-video-inventory";
+import { containPicomatch } from "./security/picomatch-containment.mjs";
+containPicomatch();
 const out = "artifacts/public-preview";
 execFileSync(process.execPath, ["node_modules/.bin/astro", "build"], {
   stdio: "inherit",

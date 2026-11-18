@@ -121,7 +121,18 @@
     "quality:impact": "node --import tsx scripts/public-launch/change-impact.ts",
     "security:check": "node scripts/security/check-dependencies.mjs",
     "quality:semantic-check": "node --import tsx scripts/check-semantic-review.ts",
-    "quality:readers": "node --import tsx scripts/assess-reader-testing.ts"
+    "quality:readers": "node --import tsx scripts/assess-reader-testing.ts",
+    "postinstall": "node scripts/security/picomatch-containment.mjs --apply",
+    "security:containment:apply": "node scripts/security/picomatch-containment.mjs --apply",
+    "security:containment:check": "node scripts/security/picomatch-containment.mjs --check",
+    "predev": "npm run security:containment:check",
+    "precheck": "npm run security:containment:check",
+    "pretest:unit": "npm run security:containment:check",
+    "pretest:coverage": "npm run security:containment:check",
+    "prebuild:review": "npm run security:containment:check",
+    "prebuild:public-preview": "npm run security:containment:check",
+    "prerelease:public": "npm run security:containment:check",
+    "prerelease:legacy": "npm run security:containment:check"
   },
   "dependencies": {
     "@fontsource/barlow-condensed": "5.3.0",

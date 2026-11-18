@@ -3,7 +3,10 @@
 import { defineConfig } from "astro/config";
 import { writeFile } from "node:fs/promises";
 import { execFileSync } from "node:child_process";
+import { fileURLToPath } from "node:url";
+import { containPicomatch } from "./scripts/security/picomatch-containment.mjs";
 import { renderPublicSitemap } from "./src/lib/governance/sitemap.ts";
+containPicomatch(fileURLToPath(new URL(".", import.meta.url)));
 
 const publicSitemap = {
   name: "atlas-public-sitemap",
