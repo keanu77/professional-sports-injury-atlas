@@ -42,3 +42,28 @@
 - A03：尚無真實參與者與跨裝置紀錄；自動 E2E、表單下載測試及編輯檢視全部另記。
 
 先導試做可直接開始；上列缺口未解除前，不會把本輪紀錄升為正式通過。
+
+## 離線彙整與主持人核對
+
+`npm run quality:readers` 會讀取空白 `round-template.json`，產生 `output/reader-testing/assessment.json`；目前應為 0 位、成功率 null、acceptancePassed=false。這是工具執行成功，不是讀者驗收成功。加 `--require-acceptance` 時，尚未達標會回傳 exit 1。工具不會改寫 `results.json`、寄送資料或把合成測試當真人。
+
+正式開始前，複製 `round-template.json` 到本機工作資料夾，填入固定網站 commit 與已安排的匿名代號／cohort（clinician、student、public，各至少四位）。缺席者留在名冊，不能為了提高成功率刪除。每輪用獨立名冊與輸出檔；不同 commit、重複代號及與名冊不符的讀者會被拒絕。
+
+```sh
+npm run quality:readers -- --roster output/reader-testing/round-01.json \
+  --session output/reader-testing/reader-P01.json \
+  --session output/reader-testing/reader-P02.json \
+  --output output/reader-testing/round-01-assessment.json
+```
+
+每份下載紀錄先保持 `pending-facilitator-review`；初次彙整的 `sessionDigests` 提供該份內容摘要。主持人依九項成功條件逐一核對，另存審閱後的副本，將 `reviewStatus` 改成 `reviewed`，增加 `facilitatorReview`：
+
+- `reviewerId`：主持人代號，例如 H01；`reviewedAt`：實際核對時間（ISO 8601）。
+- `sessionDigest`：初次彙整列出的完整摘要；後改答案、秒數或網站版本會使核對失效。
+- `tasks`：九筆 `taskId`、`answerCorrect`（布林）、`majorMisreading`（布林）、`note`（具體核對理由）。不能以「有填答案」代替答案正確。
+
+只有現場觀察且完成核對的紀錄可計入成功。自行填表即使附核對也另列，需另安排觀察測試；owner-pilot 永遠不補正式人數。自行完成也必須在該任務時限內、答案正確且無重大誤讀；缺測、受阻、超時與未核對紀錄仍占原分母。整體高分不能抵銷單題未達 90% 或重大誤讀。重大誤讀修正後另開重測輪，保留原紀錄。
+
+先導不計入正式成功人數，但先導發現的重大誤讀仍會阻擋驗收；不能只排除先導紀錄便宣稱問題已解決。摘要雜湊只檢查內容一致，無法證明參與者身分、觀察真實性或主持人資格。真機／讀屏結果、醫療審閱與正式發布仍分別驗收。
+
+長影片頁已加入全長、尚無時間碼提示及文字重點入口；這改善尋路，但 **A01／T03 的已審閱核心時間窗仍待完成**，不得因提示更清楚便改記通過。

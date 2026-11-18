@@ -76,6 +76,7 @@ const contentSegments = contentTypeSegmentsFor(
   clip.videoUrl,
   clip.durationSeconds,
 );
+const hasMarkedSegments = contentSegments.length > 0 && provider === "youtube";
 const watchUrl = new URL(clip.videoUrl);
 if (provider === "youtube" && clip.startSeconds > 0)
   watchUrl.searchParams.set("t", String(clip.startSeconds));
@@ -197,6 +198,7 @@ const contents = [
             >
           </p>
           <p class="clip-meta">
+            影片全長 {formatDurationLabel(clip.durationSeconds)} ·
             {
               clip.startSeconds > 0
                 ? `從 ${formatDurationLabel(clip.startSeconds)} 附近開始 · `
@@ -209,6 +211,29 @@ const contents = [
                   : "字幕請以播放器提供為準"
             }
           </p>
+          {
+            clip.durationSeconds >= 300 && (
+              <aside
+                class="watch-guide"
+                aria-label="長影片觀看提示"
+                data-watch-guide
+              >
+                <p>
+                  {hasMarkedSegments
+                    ? "本頁已標記部分片段，可依主題選擇起點。"
+                    : "這是較長的影片，目前尚未整理核心片段時間碼。預設播放起點不代表建議教學段落。"}
+                </p>
+                <a
+                  href={
+                    hasMarkedSegments ? "#clip-segments" : "#clip-highlights"
+                  }
+                >
+                  {hasMarkedSegments ? "選擇已標記片段" : "先讀影片文字重點"}
+                </a>
+                <a href="#clip-follow-up">查看傷勢與後續來源</a>
+              </aside>
+            )
+          }
         </section>
         <div class="clip-notes">
           <section
@@ -235,8 +260,8 @@ const contents = [
             </p>
           </section>
           {
-            contentSegments.length > 0 && provider === "youtube" && (
-              <section data-video-type-segments>
+            hasMarkedSegments && (
+              <section id="clip-segments" data-video-type-segments>
                 <h2>已標記片段</h2>
                 <ul class="video-type-segments">
                   {contentSegments.map((segment) => {
@@ -527,6 +552,26 @@ const contents = [
     border: 1px solid var(--hairline);
     border-radius: var(--radius-card);
     background: var(--color-surface-raised);
+  }
+  .watch-guide {
+    margin-block-start: 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--color-surface-muted);
+    border-inline-start: 3px solid var(--color-brand-primary);
+    overflow-wrap: anywhere;
+  }
+  .watch-guide p {
+    margin-block: 0 0.5rem;
+  }
+  .watch-guide a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding-block: 0.5rem;
+  }
+  .watch-guide a:focus-visible {
+    outline: 3px solid var(--color-brand-primary);
+    outline-offset: 3px;
   }
   .clip-layout-expanded {
     grid-template-columns: minmax(0, 1fr);

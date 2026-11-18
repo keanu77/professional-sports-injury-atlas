@@ -180,7 +180,130 @@
         "checkedAt": "2026-11-18"
       },
       "scope": "source-attribution correction; no new clinical or publication approval"
+    },
+    {
+      "kind": "event",
+      "slug": "juju-watkins-2025-knee",
+      "file": "src/data/videos/event-recent-150.v1.json",
+      "before": {
+        "sources": [
+          {
+            "title": "JuJu Watkins tears ACL, sources say, ending USC star's season",
+            "url": "https://www.espn.com/womens-college-basketball/story/_/id/44393492/usc-trojans-star-juju-watkins-carried-injury-vs-mississippi-state-women-ncaa-tournament",
+            "publishedAt": "2025-03-24"
+          },
+          {
+            "title": "USC All-American JuJu Watkins Sustains Season-Ending Injury",
+            "url": "https://usctrojans.com/news/2025/3/26/womens-basketball-usc-all-american-juju-watkins-sustains-season-ending-injury",
+            "publishedAt": "2025-03-26"
+          },
+          {
+            "title": "USC’s JuJu Watkins to Miss 2025-26 Season to Focus on Recovery",
+            "url": "https://usctrojans.com/news/2025/9/28/womens-basketball-uscs-juju-watkins-to-miss-2025-26-season-to-focus-on-recovery",
+            "publishedAt": "2025-09-28"
+          },
+          {
+            "title": "Anterior Cruciate Ligament (ACL) Injuries - AAOS",
+            "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+            "publishedAt": null
+          },
+          {
+            "title": "USC Athletics：Watkins 於 11 月 2 日重返正式比賽",
+            "url": "https://usctrojans.com/news/2026/11/2/no-3-usc-womens-basketball-downs-unlv-100-68-during-season-opener",
+            "publishedAt": "2026-11-02"
+          }
+        ],
+        "timeline": [
+          {
+            "date": "2025-03-24",
+            "title": "比賽中受傷",
+            "text": "NCAA 第二輪快攻時右膝受傷，未再上場。",
+            "sourceIndexes": [1]
+          },
+          {
+            "date": "2025-03-26",
+            "title": "球季結束並安排手術",
+            "text": "USC 正式公告她將接受手術，缺席剩餘 NCAA 賽程。",
+            "sourceIndexes": [2]
+          },
+          {
+            "date": "2025-09-28",
+            "title": "延長恢復期",
+            "text": "USC 宣布她不參加 2025–26 球季。這是休賽公告，並非復賽日期。",
+            "sourceIndexes": [3]
+          },
+          {
+            "date": "2026-11-02",
+            "title": "重返 NCAA 正式比賽",
+            "text": "USC 賽後報導記載 Watkins 對 UNLV 出賽 21 分鐘、得到 21 分。",
+            "sourceIndexes": [5]
+          }
+        ],
+        "checkedAt": "2026-11-17"
+      },
+      "after": {
+        "sources": [
+          {
+            "title": "JuJu Watkins tears ACL, sources say, ending USC star's season",
+            "url": "https://www.espn.com/womens-college-basketball/story/_/id/44393492/usc-trojans-star-juju-watkins-carried-injury-vs-mississippi-state-women-ncaa-tournament",
+            "publishedAt": "2025-03-24"
+          },
+          {
+            "title": "USC All-American JuJu Watkins Sustains Season-Ending Injury",
+            "url": "https://usctrojans.com/news/2025/3/26/womens-basketball-usc-all-american-juju-watkins-sustains-season-ending-injury",
+            "publishedAt": "2025-03-26"
+          },
+          {
+            "title": "USC’s JuJu Watkins to Miss 2025-26 Season to Focus on Recovery",
+            "url": "https://usctrojans.com/news/2025/9/28/womens-basketball-uscs-juju-watkins-to-miss-2025-26-season-to-focus-on-recovery",
+            "publishedAt": "2025-09-28"
+          },
+          {
+            "title": "Anterior Cruciate Ligament (ACL) Injuries - AAOS",
+            "url": "https://www.orthoinfo.org/diseases--conditions/anterior-cruciate-ligament-acl-injuries/",
+            "publishedAt": null
+          },
+          {
+            "title": "USC Athletics：Watkins 於 11 月 2 日重返正式比賽",
+            "url": "https://usctrojans.com/news/2026/11/2/no-3-usc-womens-basketball-downs-unlv-100-68-during-season-opener",
+            "publishedAt": "2026-11-02"
+          },
+          {
+            "title": "USC Athletics：對 Mississippi State 賽後報導",
+            "url": "https://usctrojans.com/news/2025/3/24/womens-basketball-no-1-seed-usc-womens-basketball-scores-sweet-sixteen-spot-with-96-59-win-over-bulldogs",
+            "publishedAt": "2025-03-24"
+          }
+        ],
+        "timeline": [
+          {
+            "date": "2025-03-24",
+            "title": "比賽中受傷",
+            "text": "USC 賽後報導記載，她在 NCAA 第二輪首節受傷，未再上場；該報導未指明受傷側別或韌帶名稱。",
+            "sourceIndexes": [6]
+          },
+          {
+            "date": "2025-03-26",
+            "title": "球季結束並安排手術",
+            "text": "USC 正式公告她將接受手術，缺席剩餘 NCAA 賽程。",
+            "sourceIndexes": [2]
+          },
+          {
+            "date": "2025-09-28",
+            "title": "延長恢復期",
+            "text": "USC 宣布她不參加 2025–26 球季。這是休賽公告，並非復賽日期。",
+            "sourceIndexes": [3]
+          },
+          {
+            "date": "2026-11-02",
+            "title": "重返 NCAA 正式比賽",
+            "text": "USC 賽後報導記載 Watkins 對 UNLV 出賽 21 分鐘、得到 21 分。",
+            "sourceIndexes": [5]
+          }
+        ],
+        "checkedAt": "2026-11-18"
+      },
+      "scope": "Replace inaccessible timeline citation with read official recap and match wording to its scope; no new clinical or publication approval"
     }
   ],
-  "dateNote": "checkedAt before is the effective entry date (entry override or batch fallback); only two edited events advance."
+  "dateNote": "checkedAt before is the effective entry date (entry override or batch fallback); only the three edited events advance."
 }

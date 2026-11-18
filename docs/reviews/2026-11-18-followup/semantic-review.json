@@ -555,7 +555,7 @@
         "slug": "juju-watkins-2025-knee",
         "videoUrl": "https://www.youtube.com/watch?v=uw0GVL3nfN8",
         "field": "timeline[0]",
-        "text": "NCAA 第二輪快攻時右膝受傷，未再上場。",
+        "text": "USC 賽後報導記載，她在 NCAA 第二輪首節受傷，未再上場；該報導未指明受傷側別或韌帶名稱。",
         "context": {
           "eventDate": "2025-03-24",
           "eventDateCertainty": "not-specified",
@@ -564,34 +564,34 @@
           "date": "2025-03-24",
           "title": "比賽中受傷"
         },
-        "sourceIndexes": [1],
+        "sourceIndexes": [6],
         "citations": [
           {
-            "id": "source-e4ead92420547ebacb0546e25b8c38948be2f4c893208bfbbc6feeabf4ceb26c",
-            "url": "https://www.espn.com/womens-college-basketball/story/_/id/44393492/usc-trojans-star-juju-watkins-carried-injury-vs-mississippi-state-women-ncaa-tournament",
-            "sourceIndex": 1,
-            "title": "JuJu Watkins tears ACL, sources say, ending USC star's season",
+            "id": "source-64e98ddcdbc79144f155805a7689939eb743e5029b0efa8d5076eff0a2e82ef6",
+            "url": "https://usctrojans.com/news/2025/3/24/womens-basketball-no-1-seed-usc-womens-basketball-scores-sweet-sixteen-spot-with-96-59-win-over-bulldogs",
+            "sourceIndex": 6,
+            "title": "USC Athletics：對 Mississippi State 賽後報導",
             "publishedAt": "2025-03-24"
           }
         ],
         "citationState": "existing-explicit-reference",
-        "digest": "9e91f6da0217e9e2ac6f4486f47c13cd97471cc5f495d71ce350c62f0b57d0d6",
+        "digest": "40a8d757d449205673584aaef99f1d3967e7981b9fb184a6d94e968456b30c21",
         "reviewStatus": "pending-current-semantic-review",
         "medicalApproval": false
       },
-      "evidenceText": "{\"assessment\":\"Current source cannot establish this complete claim in this batch.\",\"claimId\":\"juju-watkins-2025-knee#timeline[0]\",\"scope\":\"text-source support only; no clinical or playback approval\",\"sources\":[{\"accessedAt\":\"2026-11-18T00:25:46.400296Z\",\"id\":\"source-e4ead92420547ebacb0546e25b8c38948be2f4c893208bfbbc6feeabf4ceb26c\",\"locator\":\"Fetched page: JavaScript is disabled / verify not a robot\",\"method\":\"web-text-read\",\"quotedWords\":0,\"reviewerParaphrase\":\"Access challenge prevented current semantic reading; do not treat as a dead source or as supported.\",\"url\":\"https://www.espn.com/womens-college-basketball/story/_/id/44393492/usc-trojans-star-juju-watkins-carried-injury-vs-mississippi-state-women-ncaa-tournament\"}]}",
+      "evidenceText": "{\"assessment\":\"The official March 24 recap supports the narrowed timeline: first-quarter injury in the NCAA Second Round and no return to this game. The recap does not specify side or ligament; no inference is made about those details.\",\"claimId\":\"juju-watkins-2025-knee#timeline[0]\",\"scope\":\"text and publisher metadata support only; no clinical or playback approval\",\"sources\":[{\"accessedAt\":\"2026-11-18T15:18:12.564Z\",\"id\":\"source-64e98ddcdbc79144f155805a7689939eb743e5029b0efa8d5076eff0a2e82ef6\",\"locator\":\"Official recap dated March 24, 2025, paragraphs beginning During the first quarter and After delivering two free throws.\",\"method\":\"web-text-read\",\"quotedWords\":0,\"reviewerParaphrase\":\"USC describes a first-quarter season-ending injury and explicitly says Watkins would not return. It does not identify side or ligament. The inaccessible ESPN reference is retained elsewhere without relabeling its access status.\",\"url\":\"https://usctrojans.com/news/2025/3/24/womens-basketball-no-1-seed-usc-womens-basketball-scores-sweet-sixteen-spot-with-96-59-win-over-bulldogs\"}]}",
       "receipt": {
         "schemaVersion": 1,
         "claimId": "juju-watkins-2025-knee#timeline[0]",
-        "claimDigest": "9e91f6da0217e9e2ac6f4486f47c13cd97471cc5f495d71ce350c62f0b57d0d6",
+        "claimDigest": "40a8d757d449205673584aaef99f1d3967e7981b9fb184a6d94e968456b30c21",
         "videoUrl": "https://www.youtube.com/watch?v=uw0GVL3nfN8",
         "sourceIds": [
-          "source-e4ead92420547ebacb0546e25b8c38948be2f4c893208bfbbc6feeabf4ceb26c"
+          "source-64e98ddcdbc79144f155805a7689939eb743e5029b0efa8d5076eff0a2e82ef6"
         ],
-        "decision": "unverifiable",
+        "decision": "supported",
         "reviewerId": "codex-source-assistant",
-        "reviewedAt": "2026-11-18T00:25:46.400296Z",
-        "evidenceSha256": "85b6db1dccb61f996ea232f59a6505ff434c7b0d5d291defe6fa519366deedaf",
+        "reviewedAt": "2026-11-18T15:18:12.564Z",
+        "evidenceSha256": "8af8048c5283d81e4c81eac66da22f7ea42135f62728542cb557a298a513c4d4",
         "medicalApproval": false,
         "publicationApproval": false
       }
@@ -1355,7 +1355,7 @@
         "reviewStatus": "pending-current-semantic-review",
         "medicalApproval": false
       },
-      "evidenceText": "{\"assessment\":\"Current source cannot establish this complete claim in this batch.\",\"claimId\":\"stephen-curry-2026-right-patellofemoral-pain#timeline[0]\",\"scope\":\"text-source support only; no clinical or playback approval\",\"sources\":[{\"accessedAt\":\"2026-11-18T00:25:46.400296Z\",\"id\":\"source-e99cdfa5ff5204387b444fd4d55e72a1ae39b34be340d0e1ac2f699b31c83749\",\"locator\":\"Video is outside this text-source review\",\"method\":\"not-read-in-this-batch\",\"quotedWords\":0,\"reviewerParaphrase\":\"Earlier metadata and partial viewing exist; this batch did not independently check the complete interview. Not counted as a current semantic pass.\",\"url\":\"https://www.youtube.com/watch?v=iGY5kwMIS2g\"}]}",
+      "evidenceText": "{\"assessment\":\"The official publisher metadata supports only this publication-date and interview-topic claim. The date is the publication date, not an injury onset. This is not evidence about statements inside the recording.\",\"claimId\":\"stephen-curry-2026-right-patellofemoral-pain#timeline[0]\",\"scope\":\"text and publisher metadata support only; no clinical or playback approval\",\"sources\":[{\"accessedAt\":\"2026-11-18T15:18:12.564Z\",\"id\":\"source-e99cdfa5ff5204387b444fd4d55e72a1ae39b34be340d0e1ac2f699b31c83749\",\"locator\":\"Search-indexed official YouTube page: publisher Golden State Warriors (Verified), title ending April 4, 2026, published 2026-04-04, description on possible return after practice. Direct web open returned a cache miss.\",\"method\":\"official-video-metadata-search-index\",\"quotedWords\":0,\"reviewerParaphrase\":\"The official page metadata describes Curry speaking to media after practice about a potential return. No transcript, full playback, captions, clinical statements, or teaching timestamps were verified in this followup.\",\"url\":\"https://www.youtube.com/watch?v=iGY5kwMIS2g\"}]}",
       "receipt": {
         "schemaVersion": 1,
         "claimId": "stephen-curry-2026-right-patellofemoral-pain#timeline[0]",
@@ -1364,10 +1364,10 @@
         "sourceIds": [
           "source-e99cdfa5ff5204387b444fd4d55e72a1ae39b34be340d0e1ac2f699b31c83749"
         ],
-        "decision": "unverifiable",
+        "decision": "supported",
         "reviewerId": "codex-source-assistant",
-        "reviewedAt": "2026-11-18T00:25:46.400296Z",
-        "evidenceSha256": "2ca86c1a1c767fbd41561df5a9176cebc5836048205fdbb596e2902b2f815669",
+        "reviewedAt": "2026-11-18T15:18:12.564Z",
+        "evidenceSha256": "c0fb452bc76d0f80ada36cd0b7b2652b9acfe8fdc11cb7c91df1d4348a015c89",
         "medicalApproval": false,
         "publicationApproval": false
       }
@@ -1709,11 +1709,22 @@
   "summary": {
     "events": 8,
     "currentClaims": 32,
-    "supported": 30,
-    "unverifiable": 2,
+    "supported": 32,
+    "unverifiable": 0,
     "originalClaimsCorrected": 3,
     "distinctCitationUrls": 28,
     "medicalApprovals": 0,
     "participantSessions": 0
+  },
+  "followup": {
+    "reviewedAt": "2026-11-18T15:18:12.564Z",
+    "inputSourceCommit": "082b3bc76befa6998b6e58fcad1b599f5b7d7ce7",
+    "inputSourceDirty": true,
+    "claimIds": [
+      "juju-watkins-2025-knee#timeline[0]",
+      "stephen-curry-2026-right-patellofemoral-pain#timeline[0]"
+    ],
+    "previousReceipts": "docs/reviews/2026-11-18-followup/previous-unverifiable.json",
+    "scope": "Two bounded claim resolutions; original batch metadata and other receipts retain their original dates. One uses indexed official publisher metadata only."
   }
 }

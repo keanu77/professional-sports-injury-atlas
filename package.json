@@ -120,7 +120,8 @@
     "quality:prepare": "node --import tsx scripts/prepare-quality-review.ts",
     "quality:impact": "node --import tsx scripts/public-launch/change-impact.ts",
     "security:check": "node scripts/security/check-dependencies.mjs",
-    "quality:semantic-check": "node --import tsx scripts/check-semantic-review.ts"
+    "quality:semantic-check": "node --import tsx scripts/check-semantic-review.ts",
+    "quality:readers": "node --import tsx scripts/assess-reader-testing.ts"
   },
   "dependencies": {
     "@fontsource/barlow-condensed": "5.3.0",

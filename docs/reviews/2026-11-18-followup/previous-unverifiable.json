@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "scope": "Historical receipts before the followup source resolution; never current approval",
+  "receipts": [
+    {
+      "claim": {
+        "id": "juju-watkins-2025-knee#timeline[0]",
+        "slug": "juju-watkins-2025-knee",
+        "videoUrl": "https://www.youtube.com/watch?v=uw0GVL3nfN8",
+        "field": "timeline[0]",
+        "text": "NCAA 第二輪快攻時右膝受傷，未再上場。",
+        "context": {
+          "eventDate": "2025-03-24",
+          "eventDateCertainty": "not-specified",
+          "returnDate": "2026-11-02",
+          "returnDateCertainty": "not-specified",
+          "date": "2025-03-24",
+          "title": "比賽中受傷"
+        },
+        "sourceIndexes": [1],
+        "citations": [
+          {
+            "id": "source-e4ead92420547ebacb0546e25b8c38948be2f4c893208bfbbc6feeabf4ceb26c",
+            "url": "https://www.espn.com/womens-college-basketball/story/_/id/44393492/usc-trojans-star-juju-watkins-carried-injury-vs-mississippi-state-women-ncaa-tournament",
+            "sourceIndex": 1,
+            "title": "JuJu Watkins tears ACL, sources say, ending USC star's season",
+            "publishedAt": "2025-03-24"
+          }
+        ],
+        "citationState": "existing-explicit-reference",
+        "digest": "9e91f6da0217e9e2ac6f4486f47c13cd97471cc5f495d71ce350c62f0b57d0d6",
+        "reviewStatus": "pending-current-semantic-review",
+        "medicalApproval": false
+      },
+      "evidenceText": "{\"assessment\":\"Current source cannot establish this complete claim in this batch.\",\"claimId\":\"juju-watkins-2025-knee#timeline[0]\",\"scope\":\"text-source support only; no clinical or playback approval\",\"sources\":[{\"accessedAt\":\"2026-11-18T00:25:46.400296Z\",\"id\":\"source-e4ead92420547ebacb0546e25b8c38948be2f4c893208bfbbc6feeabf4ceb26c\",\"locator\":\"Fetched page: JavaScript is disabled / verify not a robot\",\"method\":\"web-text-read\",\"quotedWords\":0,\"reviewerParaphrase\":\"Access challenge prevented current semantic reading; do not treat as a dead source or as supported.\",\"url\":\"https://www.espn.com/womens-college-basketball/story/_/id/44393492/usc-trojans-star-juju-watkins-carried-injury-vs-mississippi-state-women-ncaa-tournament\"}]}",
+      "receipt": {
+        "schemaVersion": 1,
+        "claimId": "juju-watkins-2025-knee#timeline[0]",
+        "claimDigest": "9e91f6da0217e9e2ac6f4486f47c13cd97471cc5f495d71ce350c62f0b57d0d6",
+        "videoUrl": "https://www.youtube.com/watch?v=uw0GVL3nfN8",
+        "sourceIds": [
+          "source-e4ead92420547ebacb0546e25b8c38948be2f4c893208bfbbc6feeabf4ceb26c"
+        ],
+        "decision": "unverifiable",
+        "reviewerId": "codex-source-assistant",
+        "reviewedAt": "2026-11-18T00:25:46.400296Z",
+        "evidenceSha256": "85b6db1dccb61f996ea232f59a6505ff434c7b0d5d291defe6fa519366deedaf",
+        "medicalApproval": false,
+        "publicationApproval": false
+      }
+    },
+    {
+      "claim": {
+        "id": "stephen-curry-2026-right-patellofemoral-pain#timeline[0]",
+        "slug": "stephen-curry-2026-right-patellofemoral-pain",
+        "videoUrl": "https://www.youtube.com/watch?v=iGY5kwMIS2g",
+        "field": "timeline[0]",
+        "text": "勇士官方發布 Curry 討論可能重返陣容的訪談，這個日期不是受傷起始日。",
+        "context": {
+          "eventDate": "unknown",
+          "eventDateCertainty": "not-specified",
+          "returnDate": "2026-04-05",
+          "returnDateCertainty": "not-specified",
+          "date": "2026-04-04",
+          "title": "回場前本人訪談"
+        },
+        "sourceIndexes": [2],
+        "citations": [
+          {
+            "id": "source-e99cdfa5ff5204387b444fd4d55e72a1ae39b34be340d0e1ac2f699b31c83749",
+            "url": "https://www.youtube.com/watch?v=iGY5kwMIS2g",
+            "sourceIndex": 2,
+            "title": "Stephen Curry on Potential Return to Warriors Lineup | April 4, 2026",
+            "publishedAt": "2026-04-04"
+          }
+        ],
+        "citationState": "existing-explicit-reference",
+        "digest": "b9ce4de56bfcd64530fd83ef2d2178a3578914093a97d9c6135886b6ad902224",
+        "reviewStatus": "pending-current-semantic-review",
+        "medicalApproval": false
+      },
+      "evidenceText": "{\"assessment\":\"Current source cannot establish this complete claim in this batch.\",\"claimId\":\"stephen-curry-2026-right-patellofemoral-pain#timeline[0]\",\"scope\":\"text-source support only; no clinical or playback approval\",\"sources\":[{\"accessedAt\":\"2026-11-18T00:25:46.400296Z\",\"id\":\"source-e99cdfa5ff5204387b444fd4d55e72a1ae39b34be340d0e1ac2f699b31c83749\",\"locator\":\"Video is outside this text-source review\",\"method\":\"not-read-in-this-batch\",\"quotedWords\":0,\"reviewerParaphrase\":\"Earlier metadata and partial viewing exist; this batch did not independently check the complete interview. Not counted as a current semantic pass.\",\"url\":\"https://www.youtube.com/watch?v=iGY5kwMIS2g\"}]}",
+      "receipt": {
+        "schemaVersion": 1,
+        "claimId": "stephen-curry-2026-right-patellofemoral-pain#timeline[0]",
+        "claimDigest": "b9ce4de56bfcd64530fd83ef2d2178a3578914093a97d9c6135886b6ad902224",
+        "videoUrl": "https://www.youtube.com/watch?v=iGY5kwMIS2g",
+        "sourceIds": [
+          "source-e99cdfa5ff5204387b444fd4d55e72a1ae39b34be340d0e1ac2f699b31c83749"
+        ],
+        "decision": "unverifiable",
+        "reviewerId": "codex-source-assistant",
+        "reviewedAt": "2026-11-18T00:25:46.400296Z",
+        "evidenceSha256": "2ca86c1a1c767fbd41561df5a9176cebc5836048205fdbb596e2902b2f815669",
+        "medicalApproval": false,
+        "publicationApproval": false
+      }
+    }
+  ]
+}

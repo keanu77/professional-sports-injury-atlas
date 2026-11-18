@@ -1486,8 +1486,8 @@
         {
           "date": "2025-03-24",
           "title": "比賽中受傷",
-          "text": "NCAA 第二輪快攻時右膝受傷，未再上場。",
-          "sourceIndexes": [1]
+          "text": "USC 賽後報導記載，她在 NCAA 第二輪首節受傷，未再上場；該報導未指明受傷側別或韌帶名稱。",
+          "sourceIndexes": [6]
         },
         {
           "date": "2025-03-26",
@@ -1508,7 +1508,7 @@
           "sourceIndexes": [5]
         }
       ],
-      "checkedAt": "2026-11-17",
+      "checkedAt": "2026-11-18",
       "sources": [
         {
           "title": "JuJu Watkins tears ACL, sources say, ending USC star's season",
@@ -1534,6 +1534,11 @@
           "title": "USC Athletics：Watkins 於 11 月 2 日重返正式比賽",
           "url": "https://usctrojans.com/news/2026/11/2/no-3-usc-womens-basketball-downs-unlv-100-68-during-season-opener",
           "publishedAt": "2026-11-02"
+        },
+        {
+          "title": "USC Athletics：對 Mississippi State 賽後報導",
+          "url": "https://usctrojans.com/news/2025/3/24/womens-basketball-no-1-seed-usc-womens-basketball-scores-sweet-sixteen-spot-with-96-59-win-over-bulldogs",
+          "publishedAt": "2025-03-24"
         }
       ]
     },
