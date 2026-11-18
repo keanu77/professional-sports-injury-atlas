@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <meta charset="utf-8" /><meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  /><title>運動傷害圖鑑｜讀者測試紀錄</title>
+  <style>
+    body {
+      font:
+        18px/1.7 system-ui,
+        sans-serif;
+      max-width: 850px;
+      margin: auto;
+      padding: 24px;
+      background: #faf8f2;
+      color: #17282b;
+    }
+    h1 {
+      font-size: 1.6rem;
+    }
+    fieldset {
+      min-width: 0;
+      margin: 24px 0;
+      padding: 20px;
+      border: 1px solid #adbab5;
+      border-radius: 10px;
+      background: white;
+    }
+    legend {
+      font-weight: 700;
+    }
+    label {
+      display: block;
+      margin: 12px 0;
+    }
+    input,
+    select,
+    textarea,
+    button {
+      font: inherit;
+      max-width: 100%;
+      box-sizing: border-box;
+      padding: 8px;
+      border: 1px solid #768b86;
+      border-radius: 5px;
+    }
+    input:not([type="checkbox"]),
+    textarea {
+      width: 100%;
+    }
+    a {
+      color: #00665a;
+    }
+    button {
+      background: #00665a;
+      color: white;
+      cursor: pointer;
+    }
+    :focus-visible {
+      outline: 3px solid #db951c;
+      outline-offset: 3px;
+    }
+    .note {
+      border-left: 4px solid #00665a;
+      padding-left: 16px;
+    }
+    small {
+      display: block;
+    }
+    #status {
+      font-weight: bold;
+    }
+  </style>
+  <h1>運動傷害圖鑑｜第一輪讀者測試</h1>
+  <p class="note">
+    這張表供真實讀者記錄操作。沒有預填答案，也不會把開啟表單算成完成測試。資料只下載到你的電腦，不會外傳或自動儲存；請勿填姓名、病情或聯絡資料。隨時可以停止。
+  </p>
+  <p>
+    使用本機候選網站
+    <a href="http://127.0.0.1:4325/" target="_blank" rel="noopener">開啟預覽</a
+    >。請先確認它能開啟，再由
+    <a href="http://127.0.0.1:4325/version.json" target="_blank" rel="noopener"
+      >版本資料</a
+    >
+    複製 commit。這份測試含預覽教學草稿，不能代表正式網站已完成驗收。
+  </p>
+  <form id="reader">
+    <fieldset>
+      <legend>匿名測試資訊</legend>
+      <label
+        >匿名代號（例如 P01）<input
+          name="participantId"
+          required
+          pattern="[A-Za-z][A-Za-z0-9-]{1,19}"
+          maxlength="20"
+      /></label>
+      <label
+        >讀者類別<select name="cohort" required>
+          <option value="">請選擇</option>
+          <option value="clinician">醫師／治療師</option>
+          <option value="student">醫療相關學生</option>
+          <option value="public">一般民眾</option>
+          <option value="owner-pilot">
+            專案負責人先導試做（不併入 12 人驗收）
+          </option>
+        </select></label
+      >
+      <label
+        >網站版本 commit<input
+          name="commit"
+          required
+          pattern="[a-f0-9]{40}"
+          maxlength="40"
+      /></label>
+      <label
+        >裝置／瀏覽器／輔助工具<input
+          name="device"
+          required
+          maxlength="160"
+          placeholder="例如 Mac / Safari / 鍵盤與 VoiceOver"
+      /></label>
+      <label
+        >紀錄方式<select name="evidenceKind">
+          <option value="participant-self-report">
+            讀者自行紀錄，待主持人核對
+          </option>
+          <option value="facilitator-observed">主持人現場觀察</option>
+        </select></label
+      >
+    </fieldset>
+    <div id="tasks"></div>
+    <button type="submit">下載本次紀錄 JSON</button>
+    <p id="status" role="status"></p>
+  </form>
+  <script>
+    const tasks = [
+      {
+        id: "T01",
+        title: "找選手與分開事件",
+        prompt:
+          "從首頁分別搜尋「柯比」、「Kobe」、「Curry」，記錄找到的事件，說明哪些屬於同一事件。",
+        path: "/",
+        timeLimitSeconds: 180,
+      },
+      {
+        id: "T02",
+        title: "近兩年篩選與分享",
+        prompt:
+          "找出近兩年籃球膝部事件，複製網址在新分頁打開，比較篩選是否保留；再找一筆日期不詳的事件。",
+        path: "/",
+        timeLimitSeconds: 180,
+      },
+      {
+        id: "T03",
+        title: "長訪談核心片段",
+        prompt:
+          "在 Curry 膝部事件長訪談頁，用 30 秒找出建議先看的時間段與觀察任務；找不到請直接記錄，不用猜時間碼。",
+        path: "/videos/stephen-curry-2026-right-patellofemoral-pain/",
+        timeLimitSeconds: 30,
+      },
+      {
+        id: "T04",
+        title: "分辨資料與推論",
+        prompt:
+          "只看 Curry 腹部事件摘要，說明哪些是球隊確認資訊、哪些是解說者推測、哪些仍未知。",
+        path: "/videos/stephen-curry-2026-right-oblique/",
+        timeLimitSeconds: 120,
+      },
+      {
+        id: "T05",
+        title: "理解回場日期",
+        prompt:
+          "閱讀 Haliburton 及 Curry 膝部頁，說明回場代表哪一種出賽；能否推算受傷至回場天數？是否能套用到自己？",
+        path: "/cases/tyrese-haliburton-achilles-rupture-2025/",
+        timeLimitSeconds: 180,
+      },
+      {
+        id: "T06",
+        title: "無聲閱讀與影片失敗",
+        prompt:
+          "關閉聲音閱讀 Chloe Kim 頁，說出重點與限制；暫不允許載入影片，找出替代的資料入口。若平常用讀屏，另以讀屏操作。",
+        path: "/videos/chloe-kim-2026-shoulder/",
+        timeLimitSeconds: 180,
+      },
+      {
+        id: "T07",
+        title: "鍵盤與小畫面",
+        prompt:
+          "只用鍵盤由首頁完成搜尋、開啟詳情再返回。另在 320 CSS px 或 200% 縮放下記錄被擋住或無法操作的內容。手機讀者另記觸控結果，不算鍵盤成功。",
+        path: "/",
+        timeLimitSeconds: 240,
+      },
+      {
+        id: "T08",
+        title: "投稿錯誤與復原",
+        prompt:
+          "只在本機 127.0.0.1 預覽填入匿名測試文字和錯誤來源網址，觀察錯誤能否定位，重新整理檢查草稿。不要在正式站送件；驗證服務故障情境由主持人另跑既有模擬測試。",
+        path: "/contribute/",
+        timeLimitSeconds: 180,
+      },
+      {
+        id: "T09",
+        title: "找到來源並提出更正",
+        prompt:
+          "找出 Haliburton 手術敘述的來源與整理日期，說明來源各自支持什麼；指出提交更正的入口，但不要真的送出。",
+        path: "/cases/tyrese-haliburton-achilles-rupture-2025/",
+        timeLimitSeconds: 180,
+      },
+    ];
+    const container = document.querySelector("#tasks");
+    for (const task of tasks) {
+      const box = document.createElement("fieldset");
+      const legend = document.createElement("legend");
+      legend.textContent = task.id + " " + task.title;
+      box.append(legend);
+      const prompt = document.createElement("p");
+      prompt.textContent = task.prompt;
+      box.append(prompt);
+      const link = document.createElement("a");
+      link.href = "http://127.0.0.1:4325" + task.path;
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.textContent = "開啟任務起始頁";
+      box.append(link);
+      const time = document.createElement("small");
+      time.textContent =
+        "任務上限 " +
+        task.timeLimitSeconds +
+        " 秒。到時可記錄未完成；不需要延長或由主持人代做。";
+      box.append(time);
+      const label = document.createElement("label");
+      label.textContent = "操作結果 ";
+      const select = document.createElement("select");
+      select.name = task.id + "-outcome";
+      for (const [v, t] of [
+        ["not-tried", "尚未試做"],
+        ["unassisted", "自行完成"],
+        ["assisted", "提示後完成"],
+        ["failed", "未完成或理解錯誤"],
+        ["blocked", "環境阻礙／頁面缺資料"],
+      ]) {
+        const o = document.createElement("option");
+        o.value = v;
+        o.textContent = t;
+        select.append(o);
+      }
+      label.append(select);
+      box.append(label);
+      const seconds = document.createElement("label");
+      seconds.textContent = "實際秒數（未試做留空）";
+      const input = document.createElement("input");
+      input.type = "number";
+      input.min = "0";
+      input.max = "3600";
+      input.name = task.id + "-seconds";
+      seconds.append(input);
+      box.append(seconds);
+      const answer = document.createElement("label");
+      answer.textContent = "你的答案、操作路徑或卡住的地方";
+      const text = document.createElement("textarea");
+      text.rows = 3;
+      text.maxLength = 3000;
+      text.name = task.id + "-response";
+      answer.append(text);
+      box.append(answer);
+      container.append(box);
+    }
+    document.querySelector("#reader").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      const data = new FormData(form);
+      const rows = tasks.map((t) => ({
+        taskId: t.id,
+        outcome: data.get(t.id + "-outcome"),
+        elapsedSeconds:
+          data.get(t.id + "-seconds") === ""
+            ? null
+            : Number(data.get(t.id + "-seconds")),
+        response: data.get(t.id + "-response"),
+      }));
+      const invalid = rows.find(
+        (r) =>
+          r.outcome !== "not-tried" &&
+          (r.elapsedSeconds === null || !r.response.trim()),
+      );
+      if (invalid) {
+        document.querySelector("#status").textContent =
+          "請補上 " + invalid.taskId + " 的秒數與紀錄，或選尚未試做。";
+        form.elements.namedItem(invalid.taskId + "-response").focus();
+        return;
+      }
+      const result = {
+        schemaVersion: 1,
+        protocolVersion: "2026-11-18-v1",
+        recordedAt: new Date().toISOString(),
+        participantId: data.get("participantId"),
+        cohort: data.get("cohort"),
+        commit: data.get("commit"),
+        device: data.get("device"),
+        evidenceKind: data.get("evidenceKind"),
+        reviewStatus: "pending-facilitator-review",
+        clinicalApproval: false,
+        publicationApproval: false,
+        tasks: rows,
+      };
+      const url = URL.createObjectURL(
+        new Blob([JSON.stringify(result, null, 2) + "\n"], {
+          type: "application/json",
+        }),
+      );
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "reader-" + result.participantId + ".json";
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      document.querySelector("#status").textContent =
+        "已產生下載檔。尚未提交或取得驗收；請將檔案交給主持人核對。";
+    });
+  </script>
+</html>

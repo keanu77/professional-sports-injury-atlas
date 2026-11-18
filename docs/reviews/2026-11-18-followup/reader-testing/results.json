@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "protocolVersion": "2026-11-18-v1",
+  "status": "awaiting-real-participants",
+  "sessions": [],
+  "completedParticipants": 0,
+  "successRate": null,
+  "majorMisreadingsResolved": null,
+  "acceptancePassed": false
+}

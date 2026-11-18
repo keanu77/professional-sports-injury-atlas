@@ -525,7 +525,7 @@
       "slug": "tyrese-haliburton-achilles-rupture-2025",
       "videoUrl": "https://www.youtube.com/watch?v=azQpbyDBktk",
       "eventDate": "2025-06-22",
-      "injury": "右阿基里斯腱斷裂；溜馬於 2025-06-23 公布已接受修補手術。",
+      "injury": "右阿基里斯腱斷裂；AP 後續報導確認於 2025-06-23 接受修補手術。",
       "returnDate": "2026-10-21",
       "returnSummary": "2026-10-21 對鵜鶘重返 NBA 例行賽。10 月 28 日另有左腿後肌群拉傷報導，不能與原右阿基里斯腱傷勢混為同一次復原。",
       "context": "NBA 2026-08-24 報導指出他缺席 2025–26 球季；下一季回歸展望不是已完成出賽。",
@@ -589,13 +589,13 @@
           "date": "2025-06-22",
           "title": "總冠軍賽第 7 戰受傷",
           "text": "右阿基里斯腱事件導致退場。",
-          "sourceIndexes": [1]
+          "sourceIndexes": [1, 5]
         },
         {
           "date": "2025-06-23",
-          "title": "接受手術",
-          "text": "溜馬公布右阿基里斯腱修補手術完成。",
-          "sourceIndexes": [1]
+          "title": "手術安排與後續完成報導",
+          "text": "球隊先公布手術安排；AP 後續報導確認當日完成修補手術。",
+          "sourceIndexes": [1, 5]
         },
         {
           "date": "2026-08-24",

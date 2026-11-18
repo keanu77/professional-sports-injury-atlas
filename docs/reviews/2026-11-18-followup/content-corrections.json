@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "review": "semantic-review.json",
+  "changes": [
+    {
+      "kind": "event",
+      "slug": "tyrese-haliburton-achilles-rupture-2025",
+      "file": "src/data/videos/event-updates.v1.json",
+      "before": {
+        "injury": "右阿基里斯腱斷裂；溜馬於 2025-06-23 公布已接受修補手術。",
+        "timeline": [
+          {
+            "date": "2025-06-22",
+            "title": "總冠軍賽第 7 戰受傷",
+            "text": "右阿基里斯腱事件導致退場。",
+            "sourceIndexes": [1]
+          },
+          {
+            "date": "2025-06-23",
+            "title": "接受手術",
+            "text": "溜馬公布右阿基里斯腱修補手術完成。",
+            "sourceIndexes": [1]
+          },
+          {
+            "date": "2026-08-24",
+            "title": "仍是回歸展望",
+            "text": "NBA 記載他缺席 2025–26 球季；下一季展望不列為已復賽。",
+            "sourceIndexes": [2]
+          },
+          {
+            "date": "2026-10-21",
+            "title": "重返 NBA 例行賽",
+            "text": "溜馬官方賽後報導確認他對鵜鶘實際出賽。",
+            "sourceIndexes": [6]
+          },
+          {
+            "date": "2026-10-28",
+            "title": "後續另一部位傷勢",
+            "text": "球隊報導左腿後肌群輕度拉傷；不是右阿基里斯腱再次斷裂的證據。",
+            "sourceIndexes": [7]
+          }
+        ]
+      },
+      "after": {
+        "injury": "右阿基里斯腱斷裂；AP 後續報導確認於 2025-06-23 接受修補手術。",
+        "timeline": [
+          {
+            "date": "2025-06-22",
+            "title": "總冠軍賽第 7 戰受傷",
+            "text": "右阿基里斯腱事件導致退場。",
+            "sourceIndexes": [1, 5]
+          },
+          {
+            "date": "2025-06-23",
+            "title": "手術安排與後續完成報導",
+            "text": "球隊先公布手術安排；AP 後續報導確認當日完成修補手術。",
+            "sourceIndexes": [1, 5]
+          },
+          {
+            "date": "2026-08-24",
+            "title": "仍是回歸展望",
+            "text": "NBA 記載他缺席 2025–26 球季；下一季展望不列為已復賽。",
+            "sourceIndexes": [2]
+          },
+          {
+            "date": "2026-10-21",
+            "title": "重返 NBA 例行賽",
+            "text": "溜馬官方賽後報導確認他對鵜鶘實際出賽。",
+            "sourceIndexes": [6]
+          },
+          {
+            "date": "2026-10-28",
+            "title": "後續另一部位傷勢",
+            "text": "球隊報導左腿後肌群輕度拉傷；不是右阿基里斯腱再次斷裂的證據。",
+            "sourceIndexes": [7]
+          }
+        ]
+      },
+      "scope": "source-attribution correction; no new clinical or publication approval"
+    },
+    {
+      "kind": "event",
+      "slug": "stephen-curry-2025-left-hamstring",
+      "file": "src/data/videos/event-curry-three.v1.json",
+      "before": {
+        "sources": [
+          {
+            "title": "NBA：Curry 左腿後肌傷勢更新",
+            "url": "https://www.nba.com/news/stephen-curry-hamstring-injury-warriors-timberwolves",
+            "publishedAt": "2025-05-07"
+          },
+          {
+            "title": "Shams: Steph Curry to miss at least 1 week with hamstring strain | NBA Today",
+            "url": "https://www.youtube.com/watch?v=OYLixb3d7gA",
+            "publishedAt": "2025-05-07"
+          }
+        ],
+        "timeline": [
+          {
+            "date": "2025-05-06",
+            "title": "左腿後肌事件",
+            "text": "在對灰狼的季後賽首戰退場；本筆與 2026 年膝部、腹部事件分開。",
+            "sourceIndexes": [1]
+          },
+          {
+            "date": "2025-05-07",
+            "title": "MRI 後的傷勢更新",
+            "text": "報導左腿後肌拉傷並安排一週後重新評估；未以此推定實際回場日。",
+            "sourceIndexes": [1]
+          }
+        ],
+        "mechanism": {
+          "title": "事件與影片判讀",
+          "summary": {
+            "text": "NBA 刊載 AP 報導，引用球隊 MRI 更新。左腿後肌拉傷。",
+            "sourceIndexes": [1]
+          },
+          "steps": [
+            "先確認影片發布者、年份與所屬事件。",
+            "將來源報告、影片解說與未確認資訊分開閱讀。"
+          ],
+          "explanation": {
+            "text": "NBA on ESPN 的傷勢新聞報導。左腿後肌拉傷與 MRI 更新依 NBA 報導整理；影片標題的一週是當時重新評估安排，不是已確認的復出日期。",
+            "sourceIndexes": [1, 2]
+          },
+          "limitation": "新聞報導不能單獨證明受傷瞬間、拉傷分級或實際恢復日數。"
+        }
+      },
+      "after": {
+        "sources": [
+          {
+            "title": "NBA：Curry 左腿後肌傷勢更新",
+            "url": "https://www.nba.com/news/stephen-curry-hamstring-injury-warriors-timberwolves",
+            "publishedAt": "2025-05-07"
+          },
+          {
+            "title": "Shams: Steph Curry to miss at least 1 week with hamstring strain | NBA Today",
+            "url": "https://www.youtube.com/watch?v=OYLixb3d7gA",
+            "publishedAt": "2025-05-07"
+          },
+          {
+            "title": "CBS Bay Area：球隊宣布一週後重新評估",
+            "url": "https://www.cbsnews.com/sanfrancisco/news/warriors-timberwolves-stephen-curry-reportedly-out-game-2-hamstring-strain/",
+            "publishedAt": "2025-05-07"
+          }
+        ],
+        "timeline": [
+          {
+            "date": "2025-05-06",
+            "title": "左腿後肌事件",
+            "text": "在對灰狼的季後賽首戰退場；本筆與 2026 年膝部、腹部事件分開。",
+            "sourceIndexes": [1]
+          },
+          {
+            "date": "2025-05-07",
+            "title": "MRI 後的傷勢更新",
+            "text": "報導左腿後肌拉傷並安排一週後重新評估；未以此推定實際回場日。",
+            "sourceIndexes": [1, 3]
+          }
+        ],
+        "mechanism": {
+          "title": "事件與影片判讀",
+          "summary": {
+            "text": "NBA 刊載 AP 報導，引用球隊 MRI 更新。左腿後肌拉傷。",
+            "sourceIndexes": [1]
+          },
+          "steps": [
+            "先確認影片發布者、年份與所屬事件。",
+            "將來源報告、影片解說與未確認資訊分開閱讀。"
+          ],
+          "explanation": {
+            "text": "NBA on ESPN 的傷勢新聞報導。左腿後肌拉傷與 MRI 更新依 NBA 報導整理；影片標題的一週是當時重新評估安排，不是已確認的復出日期。",
+            "sourceIndexes": [1, 2, 3]
+          },
+          "limitation": "新聞報導不能單獨證明受傷瞬間、拉傷分級或實際恢復日數。"
+        }
+      },
+      "scope": "source-attribution correction; no new clinical or publication approval"
+    }
+  ]
+}

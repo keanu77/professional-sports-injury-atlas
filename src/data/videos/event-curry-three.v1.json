@@ -23,7 +23,7 @@
         ],
         "explanation": {
           "text": "NBA on ESPN 的傷勢新聞報導。左腿後肌拉傷與 MRI 更新依 NBA 報導整理；影片標題的一週是當時重新評估安排，不是已確認的復出日期。",
-          "sourceIndexes": [1, 2]
+          "sourceIndexes": [1, 2, 3]
         },
         "limitation": "新聞報導不能單獨證明受傷瞬間、拉傷分級或實際恢復日數。"
       },
@@ -38,7 +38,7 @@
           "date": "2025-05-07",
           "title": "MRI 後的傷勢更新",
           "text": "報導左腿後肌拉傷並安排一週後重新評估；未以此推定實際回場日。",
-          "sourceIndexes": [1]
+          "sourceIndexes": [1, 3]
         }
       ],
       "sources": [
@@ -50,6 +50,11 @@
         {
           "title": "Shams: Steph Curry to miss at least 1 week with hamstring strain | NBA Today",
           "url": "https://www.youtube.com/watch?v=OYLixb3d7gA",
+          "publishedAt": "2025-05-07"
+        },
+        {
+          "title": "CBS Bay Area：球隊宣布一週後重新評估",
+          "url": "https://www.cbsnews.com/sanfrancisco/news/warriors-timberwolves-stephen-curry-reportedly-out-game-2-hamstring-strain/",
           "publishedAt": "2025-05-07"
         }
       ]

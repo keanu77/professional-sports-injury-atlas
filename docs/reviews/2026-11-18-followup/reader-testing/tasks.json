@@ -1,0 +1,65 @@
+[
+  {
+    "id": "T01",
+    "title": "找選手與分開事件",
+    "prompt": "從首頁分別搜尋「柯比」、「Kobe」、「Curry」，記錄找到的事件，說明哪些屬於同一事件。",
+    "path": "/",
+    "timeLimitSeconds": 180
+  },
+  {
+    "id": "T02",
+    "title": "近兩年篩選與分享",
+    "prompt": "找出近兩年籃球膝部事件，複製網址在新分頁打開，比較篩選是否保留；再找一筆日期不詳的事件。",
+    "path": "/",
+    "timeLimitSeconds": 180
+  },
+  {
+    "id": "T03",
+    "title": "長訪談核心片段",
+    "prompt": "在 Curry 膝部事件長訪談頁，用 30 秒找出建議先看的時間段與觀察任務；找不到請直接記錄，不用猜時間碼。",
+    "path": "/videos/stephen-curry-2026-right-patellofemoral-pain/",
+    "timeLimitSeconds": 30
+  },
+  {
+    "id": "T04",
+    "title": "分辨資料與推論",
+    "prompt": "只看 Curry 腹部事件摘要，說明哪些是球隊確認資訊、哪些是解說者推測、哪些仍未知。",
+    "path": "/videos/stephen-curry-2026-right-oblique/",
+    "timeLimitSeconds": 120
+  },
+  {
+    "id": "T05",
+    "title": "理解回場日期",
+    "prompt": "閱讀 Haliburton 及 Curry 膝部頁，說明回場代表哪一種出賽；能否推算受傷至回場天數？是否能套用到自己？",
+    "path": "/cases/tyrese-haliburton-achilles-rupture-2025/",
+    "timeLimitSeconds": 180
+  },
+  {
+    "id": "T06",
+    "title": "無聲閱讀與影片失敗",
+    "prompt": "關閉聲音閱讀 Chloe Kim 頁，說出重點與限制；暫不允許載入影片，找出替代的資料入口。若平常用讀屏，另以讀屏操作。",
+    "path": "/videos/chloe-kim-2026-shoulder/",
+    "timeLimitSeconds": 180
+  },
+  {
+    "id": "T07",
+    "title": "鍵盤與小畫面",
+    "prompt": "只用鍵盤由首頁完成搜尋、開啟詳情再返回。另在 320 CSS px 或 200% 縮放下記錄被擋住或無法操作的內容。手機讀者另記觸控結果，不算鍵盤成功。",
+    "path": "/",
+    "timeLimitSeconds": 240
+  },
+  {
+    "id": "T08",
+    "title": "投稿錯誤與復原",
+    "prompt": "只在本機 127.0.0.1 預覽填入匿名測試文字和錯誤來源網址，觀察錯誤能否定位，重新整理檢查草稿。不要在正式站送件；驗證服務故障情境由主持人另跑既有模擬測試。",
+    "path": "/contribute/",
+    "timeLimitSeconds": 180
+  },
+  {
+    "id": "T09",
+    "title": "找到來源並提出更正",
+    "prompt": "找出 Haliburton 手術敘述的來源與整理日期，說明來源各自支持什麼；指出提交更正的入口，但不要真的送出。",
+    "path": "/cases/tyrese-haliburton-achilles-rupture-2025/",
+    "timeLimitSeconds": 180
+  }
+]

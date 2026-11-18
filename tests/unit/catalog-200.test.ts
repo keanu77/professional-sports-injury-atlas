@@ -4,6 +4,7 @@ import baseline from "../../docs/reviews/2026-09-21-catalog-200/baseline-before-
 import repairs from "../../docs/reviews/2026-10-10-source-video-health/source-repairs.json";
 import dateModelChanges from "../../docs/reviews/2026-11-18-site-quality/date-model-changes.json";
 import followUpRefresh from "../../docs/reviews/2026-11-18-recent-updates/changes.json";
+import semanticCorrections from "../../docs/reviews/2026-11-18-followup/content-corrections.json";
 import resourceData from "../../src/data/videos/observation-resources.v1.json";
 import catalog200EventData from "../../src/data/videos/event-catalog-200.v1.json";
 import { discoveryFor } from "../../src/lib/videos/discovery";
@@ -99,6 +100,18 @@ function withRepairedCitations<
     for (const [key, value] of Object.entries(dateChange.before))
       expect(Reflect.get(item, key)).toEqual(value);
     for (const [key, value] of Object.entries(dateChange.after))
+      Reflect.set(item, key, value);
+  }
+  const correction = semanticCorrections.changes.find(
+    (change) => change.slug === item.slug && change.kind === kind,
+  );
+  if (correction) {
+    for (const [key, value] of Object.entries(correction.before))
+      expect(
+        Reflect.get(item, key),
+        `${item.slug}.${key} before semantic correction`,
+      ).toEqual(value);
+    for (const [key, value] of Object.entries(correction.after))
       Reflect.set(item, key, value);
   }
   return item;

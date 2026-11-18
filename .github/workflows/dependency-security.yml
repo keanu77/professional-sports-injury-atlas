@@ -1,0 +1,38 @@
+name: Dependency security follow-up
+
+on:
+  schedule:
+    - cron: "23 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dependency-security-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+      # Built-in Node APIs only; audit the lockfile without running dependency scripts.
+      - run: npm run security:check
+      - name: Record upstream version (does not imply a security fix)
+        if: always()
+        run: |
+          mkdir -p artifacts/dependency-security
+          timeout 60s npm view picomatch dist-tags time.modified --json --fetch-retries=0 --fetch-timeout=30000 > artifacts/dependency-security/upstream.json
+      - name: Preserve audit even when the gate fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dependency-security-${{ github.run_id }}
+          path: artifacts/dependency-security/
+          retention-days: 30
+          if-no-files-found: error

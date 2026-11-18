@@ -25,3 +25,6 @@ artifacts/public-preview-test-results/
 artifacts/public-video-inventory.v1.json
 artifacts/playback-inventory.v1.json
 artifacts/playback-current.json
+
+# Local dependency audit evidence
+artifacts/dependency-security/

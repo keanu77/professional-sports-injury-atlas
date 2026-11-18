@@ -1,0 +1,79 @@
+[
+  {
+    "id": "tyrese-haliburton-achilles-rupture-2025#injury",
+    "slug": "tyrese-haliburton-achilles-rupture-2025",
+    "videoUrl": "https://www.youtube.com/watch?v=azQpbyDBktk",
+    "field": "injury",
+    "text": "右阿基里斯腱斷裂；溜馬於 2025-06-23 公布已接受修補手術。",
+    "context": {
+      "eventDate": "2025-06-22",
+      "eventDateCertainty": "not-specified",
+      "returnDate": "2026-10-21",
+      "returnDateCertainty": "not-specified"
+    },
+    "sourceIndexes": null,
+    "citations": [],
+    "citationState": "unlinked-no-inference",
+    "digest": "7809e00c03ffcc30ed14d66df92f6f18ac3665fa31689ecf16fb905ebdcfd985",
+    "reviewStatus": "pending-current-semantic-review",
+    "medicalApproval": false
+  },
+  {
+    "id": "tyrese-haliburton-achilles-rupture-2025#timeline[1]",
+    "slug": "tyrese-haliburton-achilles-rupture-2025",
+    "videoUrl": "https://www.youtube.com/watch?v=azQpbyDBktk",
+    "field": "timeline[1]",
+    "text": "溜馬公布右阿基里斯腱修補手術完成。",
+    "context": {
+      "eventDate": "2025-06-22",
+      "eventDateCertainty": "not-specified",
+      "returnDate": "2026-10-21",
+      "returnDateCertainty": "not-specified",
+      "date": "2025-06-23",
+      "title": "接受手術"
+    },
+    "sourceIndexes": [1],
+    "citations": [
+      {
+        "id": "source-59bbc8fa519483dd64f3e349e4262f186d1d7cf2f8008b3e03f50e79f84ed0f6",
+        "url": "https://www.nba.com/pacers/news/indiana-pacers-medical-update-tyrese-haliburton-250623",
+        "sourceIndex": 1,
+        "title": "溜馬：手術醫療更新",
+        "publishedAt": "2025-06-23"
+      }
+    ],
+    "citationState": "existing-explicit-reference",
+    "digest": "d08a40f93a8f8b84ecc289937a2bf758e42b5e8b27c09dd8265e95a016936bbe",
+    "reviewStatus": "pending-current-semantic-review",
+    "medicalApproval": false
+  },
+  {
+    "id": "stephen-curry-2025-left-hamstring#timeline[1]",
+    "slug": "stephen-curry-2025-left-hamstring",
+    "videoUrl": "https://www.youtube.com/watch?v=OYLixb3d7gA",
+    "field": "timeline[1]",
+    "text": "報導左腿後肌拉傷並安排一週後重新評估；未以此推定實際回場日。",
+    "context": {
+      "eventDate": "2025-05-06",
+      "eventDateCertainty": "not-specified",
+      "returnDate": "unknown",
+      "returnDateCertainty": "not-specified",
+      "date": "2025-05-07",
+      "title": "MRI 後的傷勢更新"
+    },
+    "sourceIndexes": [1],
+    "citations": [
+      {
+        "id": "source-8038c0d3a411cd991a11d22d803d5ed8315d438a1f671a82bd7613c64a07a9ec",
+        "url": "https://www.nba.com/news/stephen-curry-hamstring-injury-warriors-timberwolves",
+        "sourceIndex": 1,
+        "title": "NBA：Curry 左腿後肌傷勢更新",
+        "publishedAt": "2025-05-07"
+      }
+    ],
+    "citationState": "existing-explicit-reference",
+    "digest": "0159203781062307462c02d5f666b89942ad290a468dfc71034f3af6e1102200",
+    "reviewStatus": "pending-current-semantic-review",
+    "medicalApproval": false
+  }
+]
