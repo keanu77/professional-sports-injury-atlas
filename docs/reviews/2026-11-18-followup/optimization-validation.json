@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-18T15:26:39.659357+00:00",
+  "sourceCommit": "7bfcfa02fd28ec573aff36602f7a3b144cd5ca03",
+  "sourceDirty": false,
+  "changes": [
+    "Long videos show duration, marked-segment status and text/source shortcuts without inferred timecodes.",
+    "Watkins timeline cites a read official recap at its stated precision; Curry publication claim supported by indexed official metadata only.",
+    "Offline reader assessment keeps missing tasks in planned denominators, binds facilitator review, separates pilot and self reports, and blocks major misreadings."
+  ],
+  "validation": {
+    "unit": {
+      "command": "npm run test:unit",
+      "exitCode": 0,
+      "files": 123,
+      "passed": 1769
+    },
+    "typecheck": {
+      "command": "npm run check",
+      "exitCode": 0,
+      "files": 448,
+      "errors": 0,
+      "warnings": 0,
+      "hints": 17
+    },
+    "e2e": {
+      "command": "ATLAS_E2E_PORT=4327 npm run test:e2e:public -- --project=chromium --project=mobile-chromium e2e/learning-quality.spec.ts e2e/curry-three.spec.ts e2e/video-types.spec.ts",
+      "exitCode": 0,
+      "passed": 36,
+      "failed": 0,
+      "skipped": 0,
+      "retries": 0,
+      "scope": "Local preview, mocked/consent-limited external services; no real-device or video playback approval"
+    },
+    "content": {
+      "command": "node --import tsx scripts/check-content.ts",
+      "exitCode": 0,
+      "cases": 26,
+      "overviews": 3,
+      "updates": 1
+    },
+    "plan": {
+      "exitCode": 0,
+      "boundDocuments": 45
+    },
+    "format": {
+      "exitCode": 0,
+      "scope": "All changed supported files"
+    },
+    "semantic": {
+      "exitCode": 0,
+      "claims": 32,
+      "supported": 32,
+      "unverifiable": 0,
+      "publicationMetadataOnlyClaims": 1,
+      "allSiteClaims": 2573,
+      "medicalApproval": false
+    },
+    "preview": {
+      "schemaVersion": 1,
+      "artifactType": "public-ui-preview",
+      "deployable": false,
+      "clinicalApproval": false,
+      "commit": "7bfcfa02fd28ec573aff36602f7a3b144cd5ca03",
+      "htmlPages": 277,
+      "publicVideoCount": 203,
+      "builtAt": "2026-11-18T15:24:29.409Z"
+    },
+    "visual": {
+      "version": {
+        "schemaVersion": 1,
+        "commit": "7bfcfa02fd28ec573aff36602f7a3b144cd5ca03"
+      },
+      "checkedAt": "2026-11-18T15:25:14.982Z",
+      "screenshots": [
+        {
+          "path": "output/optimization-20261118/curry-guide-desktop.png",
+          "width": 1440,
+          "overflow": false,
+          "guide": "這是較長的影片，目前尚未整理核心片段時間碼。預設播放起點不代表建議教學段落。\n\n先讀影片文字重點\n查看傷勢與後續來源",
+          "iframes": 0
+        },
+        {
+          "path": "output/optimization-20261118/curry-guide-mobile.png",
+          "width": 390,
+          "overflow": false,
+          "guide": "這是較長的影片，目前尚未整理核心片段時間碼。預設播放起點不代表建議教學段落。\n\n先讀影片文字重點\n查看傷勢與後續來源",
+          "iframes": 0
+        }
+      ]
+    }
+  },
+  "independentReview": {
+    "agent": "review_reader_optimization",
+    "issues": [
+      {
+        "finding": "Owner-pilot major misreadings were excluded from blockers",
+        "confidence": 0.97,
+        "resolved": true,
+        "fix": "Count major misreadings from all submitted sessions while excluding pilots from quorum/success."
+      },
+      {
+        "finding": "Output aliases could overwrite input evidence",
+        "confidence": 0.98,
+        "resolved": true,
+        "fix": "Reject symbolic output and compare input/output device and inode; preserve evidence in temporary-file tests."
+      }
+    ],
+    "verification": "Independent reviewer reran all 14 reader tests and reported no remaining issue in this scope."
+  },
+  "initialFailures": {
+    "unit": "16 failures before commit: 3 dirty provenance checks and 13 local socket restrictions. Clean committed rerun with local socket permission passed all 1769.",
+    "build": "Pre-commit public-preview build refused dirty paths. Same-byte committed build passed via the E2E pipeline.",
+    "content": "tsx CLI IPC hit sandbox EPERM; node --import tsx invocation passed without changing code."
+  },
+  "blocked": {
+    "readerRound": {
+      "participants": 0,
+      "expectedParticipants": 12,
+      "acceptancePassed": false,
+      "requireAcceptanceExitCode": 1
+    },
+    "currentPlaybackRegistry": "pending; independent check-release exit 1",
+    "longInterviewCoreWindows": "Curry knee, Medina and Tony Hawk remain unreviewed; A01/T03 not passed",
+    "security": {
+      "schemaVersion": 1,
+      "checkedAt": "2026-11-18T15:23:44.856Z",
+      "sourceCommit": "7bfcfa02fd28ec573aff36602f7a3b144cd5ca03",
+      "sourceDirty": false,
+      "lockSha256": "816b1516bc5dc095727cbddd7979aad64d1a20f9c71db9ac36acfcf27ee84703",
+      "command": [
+        "npm",
+        "audit",
+        "--json",
+        "--audit-level=high",
+        "--package-lock-only",
+        "--include=dev",
+        "--include=optional",
+        "--include=peer"
+      ],
+      "exitCode": 1,
+      "signal": null,
+      "passed": false,
+      "reason": "high-or-critical-vulnerabilities",
+      "counts": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 16,
+        "critical": 0,
+        "total": 16
+      },
+      "scope": "lockfile-dependency-audit; not runtime reachability or a patch receipt"
+    },
+    "upstreamAdvisory": {
+      "url": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf",
+      "patchedVersionListed": null,
+      "verifiedInThisTurn": true
+    },
+    "clinicalTeachingDraftsPending": 20
+  },
+  "production": {
+    "version": {
+      "schemaVersion": 1,
+      "commit": "9d6f38a4159ec69715e8e185cc1c363b1430bf49"
+    },
+    "deployed": false
+  },
+  "dependenciesAndEnvironment": {
+    "lockfileChanged": false,
+    "dependencyVersionsChanged": false,
+    "newEnvironmentVariables": false,
+    "migrations": false
+  },
+  "originalCheckoutPreserved": true,
+  "logsSha256": {
+    "output/optimization-20261118/build-before-commit.log": "89e2b3917d11b0bb621ddce434c7dfff54aa820f5711631fadc5da7c1e7f6c5f",
+    "output/optimization-20261118/content-clean.log": "486a2f4c3b002bd386a34fcf5416491aa3c33f6e035866939ee987e443af43aa",
+    "output/optimization-20261118/content-release-clean.log": "34d76edd432efde56f98ee8d5abb4e291c301538e777458645d7954b0c7097c8",
+    "output/optimization-20261118/content.log": "0bf29fd67885b6e39dd0d3ac878059229b995103a20b7448b20cd0f66bf4049d",
+    "output/optimization-20261118/e2e.log": "018d52956ba95f62eab8686a02061be58d4f553080b8bdb895552c0d5c3589e9",
+    "output/optimization-20261118/format.log": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+    "output/optimization-20261118/plan.log": "651e153e79c366a61a15c7c5bb3d410ba56fbd32ff4e3950793a3561701fb5cb",
+    "output/optimization-20261118/reader-acceptance-clean.log": "fa2a54475159dc44abfd9655587c0faae62fc69d469f68d319d0740f1f3d6622",
+    "output/optimization-20261118/readers-clean.log": "88a9d3e22447b08d48ae31883877c5f1705742e44417c45373e5614831cbad0c",
+    "output/optimization-20261118/readers.log": "fa2a54475159dc44abfd9655587c0faae62fc69d469f68d319d0740f1f3d6622",
+    "output/optimization-20261118/related.log": "a95f399d95faf6aeedac9cdbf43b24b57cc625ea23946a15b8eec27ff113b476",
+    "output/optimization-20261118/release-clean.log": "763f7a44c330bc57b2d7404f0969835550ffd39c050cc49759f6799f0823f7eb",
+    "output/optimization-20261118/semantic-clean.log": "097b88478d7d12d1c54604dc6d63192f28e22d50869bd680793c2e1d29806ee0",
+    "output/optimization-20261118/semantic.log": "fd4177dcda834daf85e6e39a03af3a4291b3b5fa4d7f4138b0ad91a138b96b7e",
+    "output/optimization-20261118/type-clean.log": "ada4ac32b6153e7042ca96e7a9df3aec62f27b121450962dc3772f1f9497ae8d",
+    "output/optimization-20261118/type.log": "73d928e8cbb8e353374a5b93b19648098d7abfc4ec7501bdca3f513bcc4f7e8d",
+    "output/optimization-20261118/unit-clean.log": "bea45940c59d4665a40b314cde9f481e62038c69afb514476de8b068dac6ebf8",
+    "output/optimization-20261118/unit.log": "3472b566e10a7a0029f587dba9cdca1746160fae687aeaa7246d3b6107c5c8be"
+  }
+}

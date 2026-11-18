@@ -38,3 +38,7 @@ node --import tsx scripts/check-semantic-review.ts
 ## 發布要求處理
 
 依使用者「commit and push 部署」指示，已推送 `feat/site-quality-20261118`，遠端核對 `bed2ed2` 一致；本段文件的後續提交另以 Git 記錄為準。重新執行正式發布前檢查，仍由安全稽核（單一 picomatch advisory，16 high 依賴項目）及 pending 實播紀錄阻擋。官方 advisory 仍無已修補版本。沒有上傳 Cloudflare、合併 main 或把不可部署的預覽當正式成品；正式站版本仍為 `9d6f38a`。詳見 [本次發布紀錄](release-attempt.json)。工作分支 push 不會觸發僅適用 PR／main 的 CI，也不會啟用尚未合併的每日排程。
+
+## 後續優化驗證
+
+應用提交 `7bfcfa0`：完整單元測試 1,769 項、桌機／手機 Chromium 回歸 36 項通過；448 檔型別檢查 0 errors／0 warnings、17 hints。277 頁預覽保持 noindex／deployable=false，影片 203 支。獨立審查指出的先導重大誤讀與輸出檔案別名問題已修復，14 項讀者工具測試由審查者重跑通過。詳見 [本輪驗證紀錄](optimization-validation.json)。真人仍 0 人、實播 pending、picomatch 16 high 阻擋不變；沒有正式部署。

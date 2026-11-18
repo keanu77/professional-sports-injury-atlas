@@ -2,9 +2,20 @@
 
 ## 目前可執行狀態
 
-前一輪要求：「請繼續處理來源語意核對、讀者測試，以及上游尚未修補的安全漏洞」。本輪完成第一批 8 事件語意核對、實際引用修正、讀者測試工具與安全發布阻擋；**未完成全站語意／真人讀者／上游修補，也未部署**。
+最新要求：「請繼續優化」。已完成下列三項及驗證，**未完成全站語意／真人讀者／上游修補，也未部署**。
 
-### 最新發布要求：commit and push 部署
+### 最新優化：7bfcfa0
+
+- 最新應用 `7bfcfa02fd28ec573aff36602f7a3b144cd5ca03`：長影片全長／片段狀態／文字入口、兩條來源待查補強、離線讀者測試彙整。分支 `feat/site-quality-20261118`；其後文件提交與遠端以 `git log -1`／`git ls-remote` 為準，既有 commit/push 授權持續有效。
+- 乾淨版本 123 unit files／1,769 passed；桌機＋mobile Chromium 36 passed／0 skipped；448 檔 type 0 errors／0 warnings／17 hints；content 26 cases／3 overviews／1 update、plan 45、變更檔格式通過。`docs/reviews/2026-11-18-followup/optimization-validation.json` 保存本輪版本與範圍；logs、截圖在 `output/optimization-20261118/`。
+- 預覽 `http://127.0.0.1:4325/` 實際 GET 為 7bfcfa0；277 頁／203 影片／noindex／deployable=false。已目視桌機1440px、手機390px截圖；自動測試另含320px與axe。這不是實際手機／VoiceOver／影片播放驗收。
+- Watkins timeline[0] 改引 USC 3/24 官方賽後報導，限於首節受傷、未再上場，明示此報導沒有側別／韌帶名稱。只有這筆事件 checkedAt 前進；與先前兩筆合計三筆引用維護，保留 before/after。ESPN 仍遇驗證頁。
+- Curry timeline[0] 僅以索引中的官方 YouTube 發布者／日期／主題核對；直接 open cache miss，沒有全片或字幕核可。這批 32 條現在 supported=32，其中一條僅 publisher metadata。原兩筆 unverifiable 完整留 `previous-unverifiable.json`。其他 2,541 條不是已完成；未把工作台狀態升為醫療審閱。
+- `npm run quality:readers` 讀空名冊，輸出 0 位／successRate=null／acceptancePassed=false；加 `--require-acceptance` exit 1。主持人操作見 reader-testing/README.md。工具保留缺測分母、區分自填／先導、核對 session digest、時限與答案；先導重大誤讀也阻擋。獨立審查發現並驗證修正兩個問題：pilot 誤讀被排除、輸出 symlink/hardlink 可能覆寫輸入。14 項讀者工具測試由獨立審查者重跑通過。
+- 實際 `release:public` 於 clean 7bfcfa0 仍被 picomatch 16 high 阻擋；官方 patched versions None。獨立 `check-release.ts` 仍因 current-playback pending exit 1；真人仍0、A01/T03核心時間窗未解、20教材待專業審閱。正式站重讀仍9d6f38a，沒有上傳。
+- 初次 dirty build／3個provenance tests，以及沙箱 socket／tsx IPC 失敗已留log；提交同位元組並允許本機測試連線後完整通過，沒有放寬發布門檻。無新增依賴／lock變更／env／migration；原checkout三檔hash再次確認未變。
+
+### 前輪發布要求：commit and push 部署
 
 - 使用者已授權 commit、push、部署。`feat/site-quality-20261118` 已推送；同次 `git ls-remote` 核對遠端與本機均為 `bed2ed21a432227d96c8ee86e441259385b9b54b`，後續本筆交接提交以 `git log -1`／遠端查詢為準。沒有合併 main。
 - 2026-11-18 15:09 UTC 重跑 `npm run release:public`，在安全檢查 exit 1：16 high，單一 picomatch GHSA-fc5q-39xc-vjpf 傳遞影響；官方 advisory 仍列 patched versions None。另獨立執行 `check-release.ts`，因 current playback registry pending 而 exit 1。
@@ -18,7 +29,7 @@
 - 原 checkout `feat/repo-launch-20261020` / f735ecb 不動；原三份 dirty/untracked 檔案對 `output/site-quality-validation/original-worktree-preservation.json` 的 hash 皆未變。不要在舊 `/private/tmp/injury-update-20261118` clone 繼續編輯。
 - 使用者已核准 Curry 三個事件內容，維持 200 → 203（7 core、196 observation；202 YouTube、1 MLB）。勿重問，也勿延伸為另外 20 教材或全片實播核可。
 
-## 本輪實際交付
+## 前輪紀錄（以下數字為歷史，最新見上方 7bfcfa0）
 
 `docs/reviews/2026-11-18-followup/README.md`、`validation.json` 為本輪索引與逐版本驗證證據。
 
@@ -56,8 +67,8 @@
 
 ## 下一個 session 前 3 步
 
-1. **核對工作版本**：在上述 durable worktree 執行 `git status --short --branch`、`git log -4 --oneline`、`curl -fsS http://127.0.0.1:4325/version.json`。讀 followup README／validation，跑 `npm run quality:semantic-check`。不要把舊整站 0 語意完成欄位誤解為沒有本輪獨立編輯 receipt。
-2. **接續來源與真人任務**：先處理兩條 unverifiable（Watkins ESPN timeline[0]、Curry 膝部 YouTube timeline[0]），再按工作台選其他高風險 claims；每筆保留原文、引用、來源定位、時間及 reviewer 種類。讀者開始前處理 A01 的真正時間窗；按使用者回覆安排先導／12人，不代填結果或重問 Curry 三事件核可。
+1. **核對工作版本**：在上述 durable worktree 執行 `git status --short --branch`、`git log -4 --oneline`、`curl -fsS http://127.0.0.1:4325/version.json`。讀 optimization-validation.json，跑 `npm run quality:semantic-check`。不要把舊整站 0 語意完成欄位誤解為沒有本輪獨立編輯 receipt。
+2. **接續來源與真人任務**：兩條舊 unverifiable 已補強，勿重做；按 `output/site-quality-validation/content-review.json` 選其他高風險 claims，逐條保存引用與時間。讀者開始前實看 A01 的長訪談並整理核心時間窗；複製 round-template.json、填固定commit及真實已安排匿名名冊，按手冊彙整，不能代填真人結果或重問 Curry 核可。
 3. **上游與發布條件**：`npm run security:check` 並查官方 advisory。無 verified patch 不忽略／降門檻／換大版本；有修補則同時處理所有 nested 副本並測相容性。另依 `docs/reviews/2026-11-18-site-quality/current-playback.md` 補全 N=203 owned HTTPS 實播及其餘 20 教材具名審閱。單元／來源文字通過不替代這些條件。
 
 ## 既有 Curry 影片證據與啟動
