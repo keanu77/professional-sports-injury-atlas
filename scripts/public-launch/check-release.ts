@@ -363,12 +363,53 @@ for (const item of selectedEvents) {
         );
         evidence = (evidence as Record<string, unknown>)[key];
       }
-      const binding = evidence as {
+      let binding = evidence as {
         slug?: string;
         videoUrl?: string;
         tags?: string[];
         segments?: unknown[];
       };
+      // The original Curry media receipt preserved playback observations but omitted
+      // machine-readable classification fields already described in its README.
+      // Preserve those bytes; bind the existing labels through a separate receipt.
+      if (
+        binding.tags === undefined &&
+        file === "docs/reviews/2026-11-18-curry-integration/media.json"
+      ) {
+        const supplement = JSON.parse(
+          readFileSync(
+            "docs/reviews/2026-11-19-release/curry-classification-binding.json",
+            "utf8",
+          ),
+        );
+        assert.equal(supplement.schemaVersion, 1);
+        assert.equal(
+          supplement.sourceMediaSha256,
+          sha256Hex(readFileSync(file)),
+          "Original Curry media evidence changed",
+        );
+        assert.equal(
+          supplement.sourceReviewNoteSha256,
+          sha256Hex(
+            readFileSync("docs/reviews/2026-11-18-curry-integration/README.md"),
+          ),
+          "Original Curry classification note changed",
+        );
+        const matches = supplement.entries.filter(
+          (row: { slug: string; videoUrl: string }) =>
+            row.slug === binding.slug && row.videoUrl === binding.videoUrl,
+        );
+        assert.equal(
+          matches.length,
+          1,
+          "Missing or ambiguous supplemental classification binding",
+        );
+        binding = {
+          ...binding,
+          tags: matches[0].tags,
+          segments: matches[0].segments,
+        };
+      }
       assert.equal(
         binding.slug,
         item.slug,

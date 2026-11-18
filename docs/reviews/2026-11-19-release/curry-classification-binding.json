@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "scope": "Serialize the three existing source-format classifications documented in the original integration README; no new playback or clinical approval.",
+  "sourceMediaSha256": "b3aa9298b6b7b8ce577cbae974320171157bd6912ab9916cbe9402a2748a4711",
+  "sourceReviewNoteSha256": "16cd89a597ee5fa913583bfdbb6162dcbd324a32d54ed1c1563a45b74bfeabef",
+  "entries": [
+    {
+      "slug": "stephen-curry-2025-left-hamstring",
+      "videoUrl": "https://www.youtube.com/watch?v=OYLixb3d7gA",
+      "tags": ["news-report"],
+      "segments": []
+    },
+    {
+      "slug": "stephen-curry-2026-right-patellofemoral-pain",
+      "videoUrl": "https://www.youtube.com/watch?v=iGY5kwMIS2g",
+      "tags": ["post-event-interview"],
+      "segments": []
+    },
+    {
+      "slug": "stephen-curry-2026-right-oblique",
+      "videoUrl": "https://www.youtube.com/watch?v=xKsiGQbv2XU",
+      "tags": ["expert-analysis"],
+      "segments": []
+    }
+  ]
+}

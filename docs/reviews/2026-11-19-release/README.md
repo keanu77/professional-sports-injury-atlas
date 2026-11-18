@@ -15,3 +15,7 @@ ATLAS_RELEASE_AUTHORIZATION=2026-11-19-owner-exception node --import tsx scripts
 這個命令保留完整 audit 的失敗報告，只對指定 advisory 的傳遞影響允許本次發布建置。它會核對 picomatch 防護、其他內容／臨床／來源條件，重新建置 production artifact 並執行既有完整 artifact 檢查。新 input binding 留在本次授權，不更動 2026-09-06 的臨床核可。上傳是建置驗證後獨立執行的步驟，不能上傳 `artifacts/public-preview`。
 
 正式站：`https://injury.sportsmedicine.tw`，Cloudflare Pages project `sports-injury-atlas`。前一正式部署 `28c920c4-d58e-409d-94f9-3d3100400383`／source `9d6f38a4159ec69715e8e185cc1c363b1430bf49`，保留為本次回復目標。
+
+## 發布時發現的資料格式修復
+
+完整 checker 找到 Curry 三筆分類的既有格式缺口：`video-content-types.v1.json` 已列新聞／本人訪談／專業解說，原 integration README 也記載相同片型，但被引用的 `media.json` 沒有 `tags`。新增 `curry-classification-binding.json` 將既有分類序列化，綁定原媒體證據與原 README 的 SHA-256。checker 只對這個明確來源套用補充欄位，仍逐筆核對 slug、URL、tags 與 segments。原媒體證據位元組、播放狀態、時間窗與臨床核可均未更改。
